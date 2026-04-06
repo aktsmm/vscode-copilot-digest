@@ -1,32 +1,67 @@
 name: Rerun blocked Copilot workflows
 
 on:
-  workflow_run:
-    workflows:
-      - Request Copilot review
-      - Validate generated PR
-    types:
-      - completed
+  schedule:
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
 
 permissions:
   actions: write
   contents: read
-  pull-requests: read
 
 jobs:
   rerun-blocked:
-    if: github.event.workflow_run.conclusion == 'action_required' && github.event.workflow_run.run_attempt == 1 && github.event.workflow_run.actor.login == 'Copilot' && startsWith(github.event.workflow_run.head_branch, 'copilot/')
     runs-on: ubuntu-latest
 
     steps:
-      - name: Rerun once without manual approval
+      - name: Rerun recent blocked runs once
         uses: actions/github-script@v8
         with:
           script: |
-            const run = context.payload.workflow_run;
-            await github.request('POST /repos/{owner}/{repo}/actions/runs/{run_id}/rerun', {
+            const workflowNames = [
+              'Request Copilot review',
+              'Validate generated PR',
+              'Auto-merge generated PR',
+            ];
+            const cutoff = Date.now() - 60 * 60 * 1000;
+            const workflows = await github.paginate(github.rest.actions.listRepoWorkflows, {
               owner: context.repo.owner,
               repo: context.repo.repo,
-              run_id: run.id,
+              per_page: 100,
             });
-            core.info(`Requested rerun for blocked workflow run ${run.id} (${run.name}).`);
+
+            const targetWorkflows = workflows.filter((workflow) => workflowNames.includes(workflow.name));
+            let rerunCount = 0;
+
+            for (const workflow of targetWorkflows) {
+              const runs = await github.paginate(github.rest.actions.listWorkflowRuns, {
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                workflow_id: workflow.id,
+                per_page: 20,
+              });
+
+              for (const run of runs) {
+                const createdAt = Date.parse(run.created_at || 0);
+                const isRecent = Number.isFinite(createdAt) && createdAt >= cutoff;
+                const isBlocked = run.conclusion === 'action_required';
+                const isFirstAttempt = run.run_attempt === 1;
+                const isCopilotActor = run.actor?.login === 'Copilot';
+
+                if (!isRecent || !isBlocked || !isFirstAttempt || !isCopilotActor) {
+                  continue;
+                }
+
+                await github.request('POST /repos/{owner}/{repo}/actions/runs/{run_id}/rerun', {
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  run_id: run.id,
+                });
+                rerunCount += 1;
+                core.info(`Requested rerun for blocked workflow run ${run.id} (${workflow.name}).`);
+              }
+            }
+
+            if (rerunCount === 0) {
+              core.info('No recent blocked Copilot workflow runs needed rerun.');
+            }
