@@ -165,6 +165,11 @@ jobs:
             const body = process.env.ISSUE_BODY;
             const labels = ['copilot', 'digest-authoring', 'auto-pr'];
             const copilotLogins = new Set(['Copilot', 'copilot-swe-agent']);
+            const assignmentInstructions = [
+              'PR タイトルと本文は Issue のルールに合わせてください。',
+              '不確実な場合は needs-human-review を付けて停止してください。',
+              '許可された変更対象以外は触らないでください。',
+            ].join('\n');
             const issues = await github.paginate(github.rest.issues.listForRepo, {
               owner: context.repo.owner,
               repo: context.repo.repo,
@@ -205,6 +210,7 @@ jobs:
               const assignmentContext = await github.graphql(
                 `query($owner: String!, $repo: String!, $issueNumber: Int!) {
                   repository(owner: $owner, name: $repo) {
+                    id
                     issue(number: $issueNumber) {
                       id
                       assignees(first: 10) {
@@ -235,17 +241,26 @@ jobs:
               );
 
               const issueId = assignmentContext.repository.issue?.id;
+              const repositoryId = assignmentContext.repository.id;
               const existingAssignees = assignmentContext.repository.issue?.assignees?.nodes ?? [];
               const copilotActor = (assignmentContext.repository.suggestedActors?.nodes ?? []).find(
                 (actor) => copilotLogins.has(actor.login) && actor.id,
               );
 
-              if (!issueId || !copilotActor?.id) {
+              if (!issueId || !repositoryId || !copilotActor?.id) {
                 core.warning('Could not resolve the Copilot actor ID for automatic issue assignment.');
               } else if (!existingAssignees.some((assignee) => copilotLogins.has(assignee.login))) {
                 await github.graphql(
-                  `mutation($assignableId: ID!, $actorIds: [ID!]!) {
-                    replaceActorsForAssignable(input: {assignableId: $assignableId, actorIds: $actorIds}) {
+                  `mutation($assignableId: ID!, $actorIds: [ID!]!, $targetRepositoryId: ID!, $customInstructions: String!) {
+                    replaceActorsForAssignable(input: {
+                      assignableId: $assignableId,
+                      actorIds: $actorIds,
+                      agentAssignment: {
+                        targetRepositoryId: $targetRepositoryId,
+                        baseRef: "main",
+                        customInstructions: $customInstructions,
+                      }
+                    }) {
                       assignable {
                         ... on Issue {
                           id
@@ -261,6 +276,8 @@ jobs:
                   {
                     assignableId: issueId,
                     actorIds: [copilotActor.id],
+                    targetRepositoryId: repositoryId,
+                    customInstructions: assignmentInstructions,
                   },
                 );
               }
@@ -282,10 +299,9 @@ jobs:
                 issue_number: issueNumber,
                 body: [
                   marker,
-                  '@copilot この Issue を処理して、許可範囲内の変更だけで PR を作成してください。',
-                  '- PR タイトルと本文は Issue のルールに合わせてください。',
-                  '- 不確実な場合は needs-human-review を付けて停止してください。',
-                  '- workflow は GraphQL で Copilot assignment も試行します。Issue 右サイドバーで Copilot が assignee に入っているか確認してください。',
+                  'Copilot への assignment を workflow から試行しました。',
+                  '- 追加の task 指示は assignment 時の agentAssignment に渡します。',
+                  '- このコメントは通知と監査用です。',
                   '- 10 分以内に PR が出ない場合は、assignment 状態と Copilot cloud agent 設定を確認してください。',
                 ].join('\n'),
               });
