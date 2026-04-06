@@ -92,6 +92,16 @@ jobs:
                 labels: ['needs-human-review'],
               });
             } else {
+              const authoringIssues = await github.paginate(github.rest.issues.listForRepo, {
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                state: 'open',
+                labels: 'digest-authoring',
+                per_page: 100,
+              });
+              const linkedIssue = authoringIssues.find((issue) =>
+                !issue.pull_request && issue.title === `Digest authoring request: ${dateKey}`,
+              );
               const expectedTitle = buildExpectedTitle(dateKey, files);
               const expectedMarkerLine = `Generated from data/events/${dateKey}.json`;
               let nextBody = pr.body || '';
@@ -103,6 +113,13 @@ jobs:
                 );
               } else {
                 nextBody = [expectedMarkerLine, '', nextBody].filter(Boolean).join('\n');
+              }
+
+              if (
+                linkedIssue &&
+                !new RegExp(`(?:close[sd]?|fix(?:e[sd])?|resolve[sd]?)\\s+#${linkedIssue.number}\\b`, 'i').test(nextBody)
+              ) {
+                nextBody = [nextBody, '', `Closes #${linkedIssue.number}`].filter(Boolean).join('\n');
               }
 
               if (pr.title !== expectedTitle || nextBody !== (pr.body || '')) {

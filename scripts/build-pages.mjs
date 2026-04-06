@@ -76,18 +76,15 @@ function formatDate(value, locale = "ja") {
 }
 
 function formatDateTime(value, locale = "ja") {
-  const parts = new Intl.DateTimeFormat(
-    locale === "ja" ? "ja-JP" : "en-GB",
-    {
-      timeZone: "Asia/Tokyo",
-      year: "numeric",
-      month: "2-digit",
-      day: "2-digit",
-      hour: "2-digit",
-      minute: "2-digit",
-      hour12: false,
-    },
-  ).formatToParts(safeDate(value));
+  const parts = new Intl.DateTimeFormat(locale === "ja" ? "ja-JP" : "en-GB", {
+    timeZone: "Asia/Tokyo",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false,
+  }).formatToParts(safeDate(value));
 
   const lookup = Object.fromEntries(
     parts
@@ -135,7 +132,7 @@ function buildText(locale) {
       heroTitle:
         "Track GitHub Copilot and VS Code updates in a format you can actually read.",
       heroCopy:
-        "We collect GitHub Changelog, VS Code updates, and complementary sources every day, then publish deduplicated highlights together with raw Markdown and JSON.",
+        "GitHub Actions collects GitHub Changelog, VS Code updates, and complementary sources every day, then GitHub Copilot cloud agent workflows help keep deduplicated highlights and raw Markdown and JSON continuously published.",
       publishedCount: "Published daily digests",
       publishedCountDetail: "Number of daily digests on Pages",
       overallCount: "Tracked updates",
@@ -242,7 +239,7 @@ function buildText(locale) {
     lastUpdatedLabel: "最終更新",
     heroTitle: "GitHub Copilot と VS Code の更新を、毎日読む。",
     heroCopy:
-      "GitHub Changelog、VS Code Updates、補完ソースを毎日収集し、重複を除いたハイライトと元データをまとめて公開します。",
+      "GitHub Actions が GitHub Changelog、VS Code Updates、補完ソースを毎日収集し、GitHub Copilot cloud agent と検証 workflow が回せる形で、重複を除いたハイライトと元データを継続公開します。",
     publishedCount: "公開済み日次",
     publishedCountDetail: "Pages に載っている日次ダイジェスト数",
     overallCount: "累計更新件数",
@@ -805,6 +802,7 @@ function renderLayout({
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="${escapeHtml(title)}" />
     <meta name="twitter:description" content="${escapeHtml(description)}" />
+    <link rel="icon" type="image/svg+xml" href="${relativePrefix === "." ? "./assets/favicon.svg" : `${relativePrefix}/assets/favicon.svg`}" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
@@ -1247,6 +1245,21 @@ h1 { margin: 0 0 16px; font-size: clamp(2.3rem, 4vw, 4.2rem); line-height: 1.04;
 `;
 }
 
+function faviconSvg() {
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="vscode-copilot-digest favicon">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f8f1e7"/>
+      <stop offset="100%" stop-color="#efe4d4"/>
+    </linearGradient>
+  </defs>
+  <rect x="4" y="4" width="56" height="56" rx="16" fill="url(#bg)"/>
+  <rect x="11" y="11" width="42" height="42" rx="13" fill="#fffaf2" stroke="#d8c7b2" stroke-width="2"/>
+  <path d="M20 32c0-8 5-13 12-13 4 0 8 1.6 10.8 4.6l-4.1 4.1c-1.8-1.9-4.2-2.8-6.7-2.8-4.8 0-7.9 3-7.9 7.1s3.1 7.1 7.9 7.1c2.5 0 4.9-.9 6.7-2.8l4.1 4.1C40 43.4 36 45 32 45c-7 0-12-5-12-13z" fill="#0f766e"/>
+  <circle cx="46" cy="20" r="5" fill="#ea580c"/>
+</svg>`;
+}
+
 async function readDailyLogs() {
   const entries = await fs.readdir(eventsDir, { withFileTypes: true });
   const files = entries
@@ -1295,13 +1308,18 @@ function findLastUpdatedAt(logs) {
     return new Date();
   }
 
-  return logs.reduce((latest, log) => {
-    const candidate = safeDate(
-      log.generatedAt ?? log.latestRun?.generatedAt ?? log.date,
-    );
+  return logs.reduce(
+    (latest, log) => {
+      const candidate = safeDate(
+        log.generatedAt ?? log.latestRun?.generatedAt ?? log.date,
+      );
 
-    return candidate > latest ? candidate : latest;
-  }, safeDate(logs[0].generatedAt ?? logs[0].latestRun?.generatedAt ?? logs[0].date));
+      return candidate > latest ? candidate : latest;
+    },
+    safeDate(
+      logs[0].generatedAt ?? logs[0].latestRun?.generatedAt ?? logs[0].date,
+    ),
+  );
 }
 
 async function main() {
@@ -1326,6 +1344,11 @@ async function main() {
     stylesCss(),
     "utf8",
   );
+  await fs.writeFile(
+    path.join(siteDir, "assets", "favicon.svg"),
+    faviconSvg(),
+    "utf8",
+  );
   await fs.writeFile(path.join(siteDir, ".nojekyll"), "", "utf8");
 
   const jaText = buildText("ja");
@@ -1334,22 +1357,36 @@ async function main() {
   await Promise.all([
     fs.writeFile(
       path.join(siteDir, "index.html"),
-      renderIndexPage({ dailyDigests, weeklyDigests }, "ja", jaText, lastUpdatedAt, ".", {
-        home: "./index.html",
-        langSwitch: "./en/index.html",
-        dayHref: (date) => `./days/${date}.html`,
-        weekHref: (key) => `./weeks/${key}.html`,
-      }),
+      renderIndexPage(
+        { dailyDigests, weeklyDigests },
+        "ja",
+        jaText,
+        lastUpdatedAt,
+        ".",
+        {
+          home: "./index.html",
+          langSwitch: "./en/index.html",
+          dayHref: (date) => `./days/${date}.html`,
+          weekHref: (key) => `./weeks/${key}.html`,
+        },
+      ),
       "utf8",
     ),
     fs.writeFile(
       path.join(siteDir, "en", "index.html"),
-      renderIndexPage({ dailyDigests, weeklyDigests }, "en", enText, lastUpdatedAt, "..", {
-        home: "./index.html",
-        langSwitch: "../index.html",
-        dayHref: (date) => `./days/${date}.html`,
-        weekHref: (key) => `./weeks/${key}.html`,
-      }),
+      renderIndexPage(
+        { dailyDigests, weeklyDigests },
+        "en",
+        enText,
+        lastUpdatedAt,
+        "..",
+        {
+          home: "./index.html",
+          langSwitch: "../index.html",
+          dayHref: (date) => `./days/${date}.html`,
+          weekHref: (key) => `./weeks/${key}.html`,
+        },
+      ),
       "utf8",
     ),
   ]);
