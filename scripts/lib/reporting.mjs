@@ -49,9 +49,25 @@ const vscodeReleaseSummaries = {
     ja: "最初の weekly stable release。agent permission picker、Autopilot preview、agent-scoped hooks、debug event snapshot、改善された chat tips、AI CLI profile group など、agent 自律性と運用性を前に進めた。",
     en: "The first weekly Stable release introduced the agent permission picker, Autopilot preview, agent-scoped hooks, debug event snapshots, improved chat tips, and an AI CLI profile group to make agents more autonomous and easier to operate.",
   },
+  "1.110": {
+    ja: "Agent plugin やブラウザー自動操作ツール、session memory、context compaction、chat session fork など agent 拡張性とセッション管理を中心に強化。NES の長距離版、Kitty graphics protocol、TypeScript 7 への内部移行も進んだ。",
+    en: "The release advances agent extensibility via agent plugins, agentic browser tools, session memory, context compaction, and chat session forking. Long-distance NES, Kitty graphics protocol support, and TypeScript-Go adoption for internal builds also landed.",
+  },
   "1.109": {
     ja: "multi-agent development を前面に出したリリース。message steering と queueing、agent hooks、Claude 設定互換、slash command としての skills、session 管理、Copilot Memory、sandboxing、統合ブラウザー強化などがまとまって入った。",
     en: "This release positioned VS Code as the home for multi-agent development, with message steering and queueing, agent hooks, Claude config compatibility, skills as slash commands, session management, Copilot Memory, sandboxing, and integrated browser improvements.",
+  },
+  "1.108": {
+    ja: "年末ハウスキーピングで 6,000 件の issue をクローズ。Agent Skills (Experimental)、session picker 統合、terminal tool の auto approve 拡大、custom glyph 800 種対応、git blame の ignore-whitespace 設定が追加された。",
+    en: "The December housekeeping closed nearly 6,000 issues. Agent Skills (Experimental), session picker unification, expanded terminal auto-approve rules, 800 custom glyphs, and a git blame ignore-whitespace setting were added.",
+  },
+  "1.107": {
+    ja: "マルチエージェント連携が主題。Agent Sessions と Chat の統合ビュー、ローカルセッションのバックグラウンド継続、Git worktree 隔離、Claude skills 再利用、custom agent のサブエージェント化、org 共有 agent (Experimental) が入った。",
+    en: "Multi-agent orchestration is the headline. Agent Sessions are unified into the Chat view with local sessions running in background, Git worktree isolation, Claude skills reuse, custom agents as subagents, and org-shared agents (Experimental).",
+  },
+  "1.106": {
+    ja: "Agent HQ を一元管理するリリース。Agent Sessions view、Plan agent、Cloud / CLI agent 統合、chat mode → custom agent リネーム、Terminal IntelliSense GA、inline suggestions OSS 化、tool approval と trust 強化が入った。",
+    en: "The release centers on Agent HQ: Agent Sessions view, Plan agent, Cloud and CLI agent integration, chat modes renamed to custom agents, Terminal IntelliSense GA, inline suggestions open-sourced, and enhanced tool approval and trust.",
   },
 };
 
@@ -527,17 +543,43 @@ export function buildHighlightTags(event, locale = "ja") {
   const tags = [localizedImportanceLabel(event, locale), topicBadgeLabel(event, locale)];
   const text = eventText(event);
 
-  if (/sdk/.test(text)) {
-    tags.push("SDK");
-  } else if (/cli/.test(text)) {
-    tags.push("CLI");
-  } else if (/model|codex/.test(text)) {
-    tags.push(locale === "ja" ? "モデル" : "Models");
-  } else if (/firewall|signed commits|vulnerability|security/.test(text)) {
-    tags.push(locale === "ja" ? "セキュリティ" : "Security");
+  const featureTag = detectFeatureTag(text, locale);
+  if (featureTag) {
+    tags.push(featureTag);
   }
 
   return [...new Set(tags)].slice(0, 3);
+}
+
+function detectFeatureTag(text, locale) {
+  const rules = [
+    [/\bsdk\b/, "SDK", "SDK"],
+    [/\bcli\b/, "CLI", "CLI"],
+    [/\bmcp\b|model context protocol/, "MCP", "MCP"],
+    [/\bagent\b.*skill|skill.*agent|\bskill\.md\b/, locale === "ja" ? "スキル" : "Skills", locale === "ja" ? "スキル" : "Skills"],
+    [/\bagent\b.*(?:hook|plugin|subagent|delegate|handoff)|(?:hook|plugin|subagent|delegate|handoff).*\bagent\b/, locale === "ja" ? "エージェント" : "Agents", locale === "ja" ? "エージェント" : "Agents"],
+    [/\bnes\b|next edit suggest|inline suggest|ghost text/, "NES", "NES"],
+    [/\bmodel\b|codex|gpt-?[45]|claude|gemini|thinking.*token|reasoning/, locale === "ja" ? "モデル" : "Models", locale === "ja" ? "モデル" : "Models"],
+    [/firewall|signed commits|vulnerability|security|sandbox|trust|auto.?approv/, locale === "ja" ? "セキュリティ" : "Security", locale === "ja" ? "セキュリティ" : "Security"],
+    [/open.?source|oss\b/, locale === "ja" ? "オープンソース" : "Open Source", locale === "ja" ? "オープンソース" : "Open Source"],
+    [/release note|version 1\.\d{3}|monthly release|vs code \d+\.\d+/, locale === "ja" ? "リリース" : "Release", locale === "ja" ? "リリース" : "Release"],
+    [/terminal|shell integration/, locale === "ja" ? "ターミナル" : "Terminal", locale === "ja" ? "ターミナル" : "Terminal"],
+    [/\bchat\b.*(?:view|session|picker|inline)|inline chat/, locale === "ja" ? "チャット" : "Chat", locale === "ja" ? "チャット" : "Chat"],
+    [/\bextension\b.*author|extension api|proposed api/, locale === "ja" ? "拡張 API" : "Extension API", locale === "ja" ? "拡張 API" : "Extension API"],
+    [/notebook|jupyter/, "Notebook", "Notebook"],
+    [/debug|breakpoint/, locale === "ja" ? "デバッグ" : "Debug", locale === "ja" ? "デバッグ" : "Debug"],
+    [/source control|git blame|worktree/, locale === "ja" ? "ソース管理" : "Source Control", locale === "ja" ? "ソース管理" : "Source Control"],
+    [/accessibility|screen reader|aria/, locale === "ja" ? "アクセシビリティ" : "A11y", locale === "ja" ? "アクセシビリティ" : "A11y"],
+    [/enterprise|policy|organization/, locale === "ja" ? "エンタープライズ" : "Enterprise", locale === "ja" ? "エンタープライズ" : "Enterprise"],
+  ];
+
+  for (const [pattern, ja, en] of rules) {
+    if (pattern.test(text)) {
+      return locale === "ja" ? ja : en;
+    }
+  }
+
+  return null;
 }
 
 function normalizeArray(values) {

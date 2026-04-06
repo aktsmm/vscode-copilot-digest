@@ -244,9 +244,12 @@ function renderEventCard(event, locale, text, options = {}) {
     : "";
   const cardClass = options.compact ? "mini-highlight" : "update-card";
 
+  const isExternal = event.url && !event.url.startsWith('./') && !event.url.startsWith('../');
+  const linkAttrs = isExternal ? ` target="_blank" rel="noopener"` : "";
+
   return `<article class="${cardClass}">
     ${renderBadges(event, locale)}
-    <h3><a href="${escapeHtml(event.url)}">${escapeHtml(localizedTitle(event, locale))}</a></h3>
+    <h3><a href="${escapeHtml(event.url)}"${linkAttrs}>${escapeHtml(localizedTitle(event, locale))}${isExternal ? ' <span class="ext-icon" aria-hidden="true">&#8599;</span>' : ''}</a></h3>
     ${rawTitle ? `<p class="original-title">${escapeHtml(text.originalTitleLabel)}: ${escapeHtml(rawTitle)}</p>` : ""}
     ${renderDateMeta(event, locale, text)}
     ${renderSourceMeta(event, text)}
@@ -545,6 +548,7 @@ function renderIndexPage({ dailyDigests, weeklyDigests }, locale, text, relative
 
 function renderLayout({ locale, text, title, description, body, relativePrefix, homeHref, weeklyHref, langSwitchHref }) {
   const assetHref = relativePrefix === "." ? "./assets/styles.css" : `${relativePrefix}/assets/styles.css`;
+  const pageUrl = typeof langSwitchHref === "string" ? "" : "";
   return `<!doctype html>
 <html lang="${escapeHtml(text.htmlLang)}">
   <head>
@@ -552,6 +556,12 @@ function renderLayout({ locale, text, title, description, body, relativePrefix, 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>${escapeHtml(title)}</title>
     <meta name="description" content="${escapeHtml(description)}" />
+    <meta property="og:title" content="${escapeHtml(title)}" />
+    <meta property="og:description" content="${escapeHtml(description)}" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="${escapeHtml(title)}" />
+    <meta name="twitter:description" content="${escapeHtml(description)}" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
@@ -568,12 +578,87 @@ function renderLayout({ locale, text, title, description, body, relativePrefix, 
           <a href="${escapeHtml(homeHref)}">${escapeHtml(text.dailyNav)}</a>
           <a href="${escapeHtml(weeklyHref)}">${escapeHtml(text.weeklyNav)}</a>
           <a href="https://github.com/aktsmm/vscode-copilot-digest">${escapeHtml(text.repositoryNav)}</a>
-          <a class="lang-switch" href="${escapeHtml(langSwitchHref)}">${escapeHtml(text.langSwitchLabel)}</a>
+          <button class="lang-toggle" data-href="${escapeHtml(langSwitchHref)}" aria-label="${escapeHtml(locale === "ja" ? "Switch to English" : "日本語に切り替え")}">
+            <span class="lang-toggle-track">
+              <span class="lang-toggle-option${locale === "ja" ? " active" : ""}">JA</span>
+              <span class="lang-toggle-option${locale === "en" ? " active" : ""}">EN</span>
+            </span>
+          </button>
         </nav>
       </header>
       <main>${body}</main>
-      <footer class="site-footer"><p>${escapeHtml(text.footer)}</p></footer>
+      <button class="back-to-top" aria-label="${escapeHtml(locale === "ja" ? "ページ上部へ" : "Back to top")}" title="${escapeHtml(locale === "ja" ? "ページ上部へ" : "Back to top")}">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+      </button>
+      <footer class="site-footer">
+        <p>${escapeHtml(text.footer)}</p>
+        <div class="share-links">
+          <span class="share-label">${escapeHtml(locale === "ja" ? "共有" : "Share")}:</span>
+          <a class="share-btn share-x" data-share="x" href="#" aria-label="Share on X" title="X (Twitter)">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a class="share-btn share-linkedin" data-share="linkedin" href="#" aria-label="Share on LinkedIn" title="LinkedIn">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a class="share-btn share-hatena" data-share="hatena" href="#" aria-label="${escapeHtml(locale === "ja" ? "はてなブックマーク" : "Hatena Bookmark")}" title="${escapeHtml(locale === "ja" ? "はてなブックマーク" : "Hatena")}">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M20.47 0C22.42 0 24 1.58 24 3.53v16.94c0 1.95-1.58 3.53-3.53 3.53H3.53C1.58 24 0 22.42 0 20.47V3.53C0 1.58 1.58 0 3.53 0h16.94zM8.8 17.57c0-.8-.65-1.44-1.44-1.44-.8 0-1.44.65-1.44 1.44 0 .8.65 1.44 1.44 1.44.8 0 1.44-.65 1.44-1.44zM8.55 5H6.12v8.14h2.26c1.57 0 2.39-.22 3.07-.84.67-.6 1.02-1.49 1.02-2.58 0-1.14-.37-2.02-1.1-2.63-.72-.6-1.56-.87-2.82-.87zm8.3 4.4c-1.64 0-2.98 1.34-2.98 2.98s1.34 2.98 2.98 2.98 2.98-1.34 2.98-2.98-1.34-2.98-2.98-2.98z"/></svg>
+          </a>
+          <button class="share-btn share-copy" data-share="copy" aria-label="${escapeHtml(locale === "ja" ? "リンクをコピー" : "Copy link")}" title="${escapeHtml(locale === "ja" ? "リンクをコピー" : "Copy link")}">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          </button>
+        </div>
+      </footer>
     </div>
+    <script>
+    (function(){
+      var toggle=document.querySelector('.lang-toggle');
+      if(toggle){
+        var pref=localStorage.getItem('vcd-lang');
+        toggle.addEventListener('click',function(){
+          var dest=toggle.getAttribute('data-href');
+          localStorage.setItem('vcd-lang','${locale === "ja" ? "en" : "ja"}');
+          window.location.href=dest;
+        });
+        if(pref&&pref!=='${locale}'){
+          var dest=toggle.getAttribute('data-href');
+          if(dest)window.location.replace(dest);
+        }
+      }
+      document.querySelectorAll('[data-share]').forEach(function(btn){
+        btn.addEventListener('click',function(e){
+          e.preventDefault();
+          var url=encodeURIComponent(window.location.href);
+          var title=encodeURIComponent(document.title);
+          var kind=btn.getAttribute('data-share');
+          if(kind==='x')window.open('https://x.com/intent/tweet?url='+url+'&text='+title,'_blank','noopener');
+          else if(kind==='linkedin')window.open('https://www.linkedin.com/sharing/share-offsite/?url='+url,'_blank','noopener');
+          else if(kind==='hatena')window.open('https://b.hatena.ne.jp/entry/s/'+window.location.href.replace(/^https?:\\/\\//,''),'_blank','noopener');
+          else if(kind==='copy'){
+            navigator.clipboard.writeText(window.location.href).then(function(){
+              btn.classList.add('copied');
+              setTimeout(function(){btn.classList.remove('copied');},1500);
+            });
+          }
+        });
+      });
+    })();
+    (function(){
+      var btn=document.querySelector('.back-to-top');
+      if(!btn)return;
+      window.addEventListener('scroll',function(){
+        btn.classList.toggle('visible',window.scrollY>600);
+      },{passive:true});
+      btn.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+    })();
+    (function(){
+      document.querySelectorAll('.topic-list a, .digest-card a').forEach(function(a){
+        if(a.hostname&&a.hostname!==location.hostname){
+          a.setAttribute('target','_blank');
+          a.setAttribute('rel','noopener');
+        }
+      });
+    })();
+    </script>
   </body>
 </html>`;
 }
@@ -620,12 +705,6 @@ a { color: inherit; }
 .site-lead { margin: 6px 0 0; color: var(--muted); font-size: 0.92rem; }
 .site-nav { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
 .site-nav a, .data-links a { text-decoration: none; color: var(--muted); }
-.lang-switch {
-  padding: 8px 12px;
-  border-radius: 999px;
-  border: 1px solid var(--line);
-  background: rgba(255, 255, 255, 0.45);
-}
 .hero {
   display: grid;
   grid-template-columns: 1.4fr 1fr;
@@ -725,7 +804,44 @@ h1 { margin: 0 0 16px; font-size: clamp(2.3rem, 4vw, 4.2rem); line-height: 1.04;
 .digest-card ul { margin: 14px 0 0; padding-left: 18px; color: var(--muted); }
 .digest-card-head { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
 .empty-state, .empty-card p { color: var(--muted); }
-.site-footer { margin-top: 32px; padding: 20px; justify-content: center; color: var(--muted); }
+.site-footer { margin-top: 32px; padding: 20px; display: flex; flex-direction: column; align-items: center; gap: 12px; color: var(--muted); }
+.share-links { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.share-label { font-size: 0.85rem; font-weight: 500; }
+.share-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 36px; height: 36px; border-radius: 50%;
+  border: 1px solid var(--line); background: var(--panel);
+  color: var(--muted); text-decoration: none; cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+.share-btn:hover { background: var(--accent-soft); color: var(--accent); }
+.share-btn.copied { background: var(--accent); color: #fff; }
+.lang-toggle {
+  display: inline-flex; align-items: center; cursor: pointer;
+  padding: 0; border: 1px solid var(--line);
+  border-radius: 999px; background: rgba(255,255,255,0.45);
+  overflow: hidden; font-size: 0.82rem; font-weight: 700;
+}
+.lang-toggle-track { display: flex; }
+.lang-toggle-option {
+  padding: 7px 12px; color: var(--muted);
+  transition: background 0.15s, color 0.15s;
+}
+.lang-toggle-option.active {
+  background: var(--accent); color: #fff; border-radius: 999px;
+}
+.back-to-top {
+  position: fixed; bottom: 24px; right: 24px;
+  width: 44px; height: 44px; border-radius: 50%;
+  border: 1px solid var(--line); background: var(--panel);
+  color: var(--muted); cursor: pointer; display: none;
+  align-items: center; justify-content: center;
+  box-shadow: var(--shadow); z-index: 100;
+  transition: opacity 0.2s;
+}
+.back-to-top.visible { display: flex; }
+.back-to-top:hover { background: var(--accent-soft); color: var(--accent); }
+.ext-icon { font-size: 0.8em; opacity: 0.5; margin-left: 2px; }
 @media (max-width: 960px) {
   .hero, .page-grid { grid-template-columns: 1fr; }
 }
