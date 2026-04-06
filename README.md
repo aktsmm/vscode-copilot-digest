@@ -139,6 +139,9 @@ node scripts/publish-qiita.mjs drafts/biweekly-YYYYMMDD-YYYYMMDD.md
 - [publish-qiita.yml](.github/workflows/publish-qiita.yml)
   workflow_dispatch で指定ファイルを Qiita へ公開し、投稿メタデータをドラフトへ書き戻します。
 
+- [test-discord-notification.yml](.github/workflows/test-discord-notification.yml)
+  workflow_dispatch で指定日または最新日の Discord preview 通知を実送信し、Webhook 設定を確認できます。
+
 - [copilot-setup-steps.yml](.github/workflows/copilot-setup-steps.yml)
   Copilot cloud agent が作業を始める前に Node.js と依存関係を準備します。
 
