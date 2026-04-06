@@ -32,7 +32,7 @@ jobs:
               repo: context.repo.repo,
               pull_number: pullRequests[0].number,
             });
-            const pr = pull.data;
+            let pr = pull.data;
             const labels = new Set((pr.labels || []).map((label) => label.name));
             const titlePattern = /^docs: update digest \d{4}-\d{2}-\d{2}(?: \+ drafts)?(?: \+ reporting)?$/;
             const bodyPattern = /Generated from data\/events\/\d{4}-\d{2}-\d{2}\.json/;
@@ -53,8 +53,8 @@ jobs:
               core.info(reason);
             }
 
-            if (pr.state !== 'open' || pr.draft) {
-              core.info(`PR #${pr.number} is not ready for auto-merge.`);
+            if (pr.state !== 'open') {
+              core.info(`PR #${pr.number} is not open.`);
               return;
             }
 
@@ -102,6 +102,31 @@ jobs:
             if (!bodyPattern.test(pr.body || '')) {
               await markForHumanReview(`PR #${pr.number} body does not include the required source marker.`);
               return;
+            }
+
+            if (pr.draft) {
+              try {
+                await github.graphql(
+                  `mutation($pullRequestId: ID!) {
+                    markPullRequestReadyForReview(input: {pullRequestId: $pullRequestId}) {
+                      pullRequest {
+                        number
+                      }
+                    }
+                  }`,
+                  { pullRequestId: pr.node_id },
+                );
+                core.info(`Marked PR #${pr.number} ready for review.`);
+                const refreshed = await github.rest.pulls.get({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  pull_number: pr.number,
+                });
+                pr = refreshed.data;
+              } catch (error) {
+                core.warning(`Failed to mark PR #${pr.number} ready for review: ${error.message}`);
+                return;
+              }
             }
 
             try {

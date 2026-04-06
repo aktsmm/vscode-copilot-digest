@@ -164,6 +164,12 @@ jobs:
             const title = process.env.ISSUE_TITLE;
             const body = process.env.ISSUE_BODY;
             const labels = ['copilot', 'digest-authoring', 'auto-pr'];
+            const copilotLogins = new Set(['Copilot', 'copilot-swe-agent']);
+            const assignmentInstructions = [
+              'PR タイトルと本文は Issue のルールに合わせてください。',
+              '不確実な場合は needs-human-review を付けて停止してください。',
+              '許可された変更対象以外は触らないでください。',
+            ].join('\n');
             const issues = await github.paginate(github.rest.issues.listForRepo, {
               owner: context.repo.owner,
               repo: context.repo.repo,
@@ -200,6 +206,85 @@ jobs:
               labels,
             });
 
+            try {
+              const assignmentContext = await github.graphql(
+                `query($owner: String!, $repo: String!, $issueNumber: Int!) {
+                  repository(owner: $owner, name: $repo) {
+                    id
+                    issue(number: $issueNumber) {
+                      id
+                      assignees(first: 10) {
+                        nodes {
+                          login
+                        }
+                      }
+                    }
+                    suggestedActors(capabilities: [CAN_BE_ASSIGNED], first: 20) {
+                      nodes {
+                        login
+                        __typename
+                        ... on Bot {
+                          id
+                        }
+                        ... on User {
+                          id
+                        }
+                      }
+                    }
+                  }
+                }`,
+                {
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issueNumber,
+                },
+              );
+
+              const issueId = assignmentContext.repository.issue?.id;
+              const repositoryId = assignmentContext.repository.id;
+              const existingAssignees = assignmentContext.repository.issue?.assignees?.nodes ?? [];
+              const copilotActor = (assignmentContext.repository.suggestedActors?.nodes ?? []).find(
+                (actor) => copilotLogins.has(actor.login) && actor.id,
+              );
+
+              if (!issueId || !repositoryId || !copilotActor?.id) {
+                core.warning('Could not resolve the Copilot actor ID for automatic issue assignment.');
+              } else if (!existingAssignees.some((assignee) => copilotLogins.has(assignee.login))) {
+                await github.graphql(
+                  `mutation($assignableId: ID!, $actorIds: [ID!]!, $targetRepositoryId: ID!, $customInstructions: String!) {
+                    replaceActorsForAssignable(input: {
+                      assignableId: $assignableId,
+                      actorIds: $actorIds,
+                      agentAssignment: {
+                        targetRepositoryId: $targetRepositoryId,
+                        baseRef: "main",
+                        customInstructions: $customInstructions,
+                      }
+                    }) {
+                      assignable {
+                        ... on Issue {
+                          id
+                          assignees(first: 10) {
+                            nodes {
+                              login
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }`,
+                  {
+                    assignableId: issueId,
+                    actorIds: [copilotActor.id],
+                    targetRepositoryId: repositoryId,
+                    customInstructions: assignmentInstructions,
+                  },
+                );
+              }
+            } catch (error) {
+              core.warning(`Failed to assign the issue to Copilot via GraphQL: ${error.message}`);
+            }
+
             const comments = await github.paginate(github.rest.issues.listComments, {
               owner: context.repo.owner,
               repo: context.repo.repo,
@@ -214,11 +299,10 @@ jobs:
                 issue_number: issueNumber,
                 body: [
                   marker,
-                  '@copilot この Issue を処理して、許可範囲内の変更だけで PR を作成してください。',
-                  '- PR タイトルと本文は Issue のルールに合わせてください。',
-                  '- 不確実な場合は needs-human-review を付けて停止してください。',
-                  '- GitHub Docs 上の正式導線は Issue を Copilot に assign することです。右サイドバーの Assign to Agent または assignee から Copilot を選んでください。',
-                  '- copilot ラベルや @copilot コメントだけでは、Copilot cloud agent の task pickup は保証されません。',
+                  'Copilot への assignment を workflow から試行しました。',
+                  '- 追加の task 指示は assignment 時の agentAssignment に渡します。',
+                  '- このコメントは通知と監査用です。',
+                  '- 10 分以内に PR が出ない場合は、assignment 状態と Copilot cloud agent 設定を確認してください。',
                 ].join('\n'),
               });
             }

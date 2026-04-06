@@ -15,7 +15,6 @@ permissions:
 
 jobs:
   validate:
-    if: github.event.pull_request.draft == false
     runs-on: ubuntu-latest
     env:
       PR_TITLE: ${{ github.event.pull_request.title }}
@@ -37,10 +36,28 @@ jobs:
         id: changed
         shell: bash
         run: |
-          git fetch origin "${{ github.base_ref }}" --depth=1
+          base_ref="origin/${{ github.base_ref }}"
+          git fetch --no-tags --prune origin "${{ github.base_ref }}" --depth=50
+          merge_base="$(git merge-base "$base_ref" HEAD || true)"
+
+          if [ -z "$merge_base" ]; then
+            git fetch --no-tags --prune origin "${{ github.base_ref }}" --depth=500
+            merge_base="$(git merge-base "$base_ref" HEAD || true)"
+          fi
+
+          if [ -z "$merge_base" ]; then
+            git fetch --no-tags --prune origin "${{ github.base_ref }}" --unshallow || true
+            merge_base="$(git merge-base "$base_ref" HEAD || true)"
+          fi
+
+          if [ -z "$merge_base" ]; then
+            echo "Could not determine a merge base with $base_ref" >&2
+            exit 1
+          fi
+
           {
             echo 'files<<EOF'
-            git diff --name-only "origin/${{ github.base_ref }}...HEAD"
+            git diff --name-only "$merge_base..HEAD"
             echo EOF
           } >> "$GITHUB_OUTPUT"
 
