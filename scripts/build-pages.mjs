@@ -74,6 +74,34 @@ function formatDate(value, locale = "ja") {
     },
   );
 }
+
+function formatDateTime(value, locale = "ja") {
+  const parts = new Intl.DateTimeFormat(
+    locale === "ja" ? "ja-JP" : "en-GB",
+    {
+      timeZone: "Asia/Tokyo",
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: false,
+    },
+  ).formatToParts(safeDate(value));
+
+  const lookup = Object.fromEntries(
+    parts
+      .filter((part) => part.type !== "literal")
+      .map((part) => [part.type, part.value]),
+  );
+
+  if (locale === "ja") {
+    return `${lookup.year}/${lookup.month}/${lookup.day} ${lookup.hour}:${lookup.minute} JST`;
+  }
+
+  return `${lookup.year}-${lookup.month}-${lookup.day} ${lookup.hour}:${lookup.minute} JST`;
+}
+
 function formatCount(count, locale, singular, plural) {
   if (locale === "ja") {
     return `${count}`;
@@ -103,6 +131,7 @@ function buildText(locale) {
       repositoryNav: "Repository",
       langSwitchLabel: "日本語",
       heroEyebrow: "GitHub Pages",
+      lastUpdatedLabel: "Last updated",
       heroTitle:
         "Track GitHub Copilot and VS Code updates in a format you can actually read.",
       heroCopy:
@@ -210,6 +239,7 @@ function buildText(locale) {
     repositoryNav: "Repository",
     langSwitchLabel: "EN",
     heroEyebrow: "GitHub Pages",
+    lastUpdatedLabel: "最終更新",
     heroTitle: "GitHub Copilot と VS Code の更新を、毎日読む。",
     heroCopy:
       "GitHub Changelog、VS Code Updates、補完ソースを毎日収集し、重複を除いたハイライトと元データをまとめて公開します。",
@@ -650,6 +680,7 @@ function renderRangePage(digest, locale, text, options) {
     title: options.pageTitle,
     description: options.description,
     body,
+    lastUpdatedAt: options.lastUpdatedAt,
     relativePrefix: options.relativePrefix,
     homeHref: options.homeHref,
     weeklyHref: options.weeklyHref,
@@ -661,6 +692,7 @@ function renderIndexPage(
   { dailyDigests, weeklyDigests },
   locale,
   text,
+  lastUpdatedAt,
   relativePrefix,
   links,
 ) {
@@ -735,6 +767,7 @@ function renderIndexPage(
     title: "vscode-copilot-digest",
     description: text.siteLead,
     body,
+    lastUpdatedAt,
     relativePrefix,
     homeHref: links.home,
     weeklyHref: `${links.home}#weekly-archive`,
@@ -748,6 +781,7 @@ function renderLayout({
   title,
   description,
   body,
+  lastUpdatedAt,
   relativePrefix,
   homeHref,
   weeklyHref,
@@ -782,6 +816,7 @@ function renderLayout({
         <div>
           <a class="site-brand" href="${escapeHtml(homeHref)}">vscode-copilot-digest</a>
           <p class="site-lead">${escapeHtml(text.siteLead)}</p>
+          ${lastUpdatedAt ? `<p class="site-updated">${escapeHtml(text.lastUpdatedLabel)}: ${escapeHtml(formatDateTime(lastUpdatedAt, locale))}</p>` : ""}
         </div>
         <nav class="site-nav">
           <a href="${escapeHtml(homeHref)}">${escapeHtml(text.dailyNav)}</a>
@@ -992,6 +1027,7 @@ a { color: inherit; }
 .site-brand, h1, h2, h3 { font-family: "Space Grotesk", "IBM Plex Sans JP", sans-serif; }
 .site-brand { text-decoration: none; font-weight: 700; letter-spacing: 0.02em; }
 .site-lead { margin: 6px 0 0; color: var(--muted); font-size: 0.92rem; }
+.site-updated { margin: 8px 0 0; color: var(--muted); font-size: 0.85rem; }
 .site-nav { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
 .site-nav a, .data-links a { text-decoration: none; color: var(--muted); }
 .hero {
@@ -1254,10 +1290,25 @@ async function copyRawFiles(date) {
   ]);
 }
 
+function findLastUpdatedAt(logs) {
+  if (logs.length === 0) {
+    return new Date();
+  }
+
+  return logs.reduce((latest, log) => {
+    const candidate = safeDate(
+      log.generatedAt ?? log.latestRun?.generatedAt ?? log.date,
+    );
+
+    return candidate > latest ? candidate : latest;
+  }, safeDate(logs[0].generatedAt ?? logs[0].latestRun?.generatedAt ?? logs[0].date));
+}
+
 async function main() {
   const logs = await readDailyLogs();
   const dailyDigests = logs.map((log) => buildDailyDigest(log));
   const weeklyDigests = buildWeeklyDigests(logs);
+  const lastUpdatedAt = findLastUpdatedAt(logs);
 
   await fs.rm(siteDir, { recursive: true, force: true });
   await Promise.all([
@@ -1283,7 +1334,7 @@ async function main() {
   await Promise.all([
     fs.writeFile(
       path.join(siteDir, "index.html"),
-      renderIndexPage({ dailyDigests, weeklyDigests }, "ja", jaText, ".", {
+      renderIndexPage({ dailyDigests, weeklyDigests }, "ja", jaText, lastUpdatedAt, ".", {
         home: "./index.html",
         langSwitch: "./en/index.html",
         dayHref: (date) => `./days/${date}.html`,
@@ -1293,7 +1344,7 @@ async function main() {
     ),
     fs.writeFile(
       path.join(siteDir, "en", "index.html"),
-      renderIndexPage({ dailyDigests, weeklyDigests }, "en", enText, "..", {
+      renderIndexPage({ dailyDigests, weeklyDigests }, "en", enText, lastUpdatedAt, "..", {
         home: "./index.html",
         langSwitch: "../index.html",
         dayHref: (date) => `./days/${date}.html`,
@@ -1311,6 +1362,7 @@ async function main() {
           kind: "day",
           pageTitle: `${digest.date} Daily Digest | vscode-copilot-digest`,
           description: `${digest.date} の GitHub Copilot / VS Code 更新ダイジェスト`,
+          lastUpdatedAt,
           relativePrefix: "..",
           homeHref: "../index.html",
           weeklyHref: "../index.html#weekly-archive",
@@ -1326,6 +1378,7 @@ async function main() {
           kind: "day",
           pageTitle: `${digest.date} Daily Digest | vscode-copilot-digest`,
           description: `${digest.date} GitHub Copilot / VS Code daily digest`,
+          lastUpdatedAt,
           relativePrefix: "../..",
           homeHref: "../index.html",
           weeklyHref: "../index.html#weekly-archive",
@@ -1347,6 +1400,7 @@ async function main() {
           kind: "week",
           pageTitle: `${digest.startDate}〜${digest.endDate} Weekly Digest | vscode-copilot-digest`,
           description: `${digest.startDate}〜${digest.endDate} の GitHub Copilot / VS Code 週間ダイジェスト`,
+          lastUpdatedAt,
           relativePrefix: "..",
           homeHref: "../index.html",
           weeklyHref: "../index.html#weekly-archive",
@@ -1360,6 +1414,7 @@ async function main() {
           kind: "week",
           pageTitle: `${digest.startDate} - ${digest.endDate} Weekly Digest | vscode-copilot-digest`,
           description: `${digest.startDate} - ${digest.endDate} GitHub Copilot / VS Code weekly digest`,
+          lastUpdatedAt,
           relativePrefix: "../..",
           homeHref: "../index.html",
           weeklyHref: "../index.html#weekly-archive",
