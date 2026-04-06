@@ -38,13 +38,17 @@ jobs:
 
     steps:
       - name: Checkout main
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           ref: main
 
       - name: Prepare digest target
         id: target
-        uses: actions/github-script@v7
+        uses: actions/github-script@v8
+        env:
+          MANUAL_DATE_KEY: ${{ inputs.date_key }}
+          MANUAL_SCOPE: ${{ inputs.scope }}
+          FORCE_ISSUE: ${{ inputs.force_issue }}
         with:
           script: |
             const fs = require('fs');
@@ -55,9 +59,9 @@ jobs:
               .filter((file) => file.endsWith('.json'))
               .sort();
             const isManual = context.eventName === 'workflow_dispatch';
-            const requestedDateKey = isManual ? '${{ inputs.date_key }}'.trim() : '';
-            const requestedScope = (isManual ? '${{ inputs.scope }}' : 'full') || 'full';
-            const forceIssue = isManual && '${{ inputs.force_issue }}' === 'true';
+            const requestedDateKey = isManual ? (process.env.MANUAL_DATE_KEY || '').trim() : '';
+            const requestedScope = (isManual ? process.env.MANUAL_SCOPE : 'full') || 'full';
+            const forceIssue = isManual && process.env.FORCE_ISSUE === 'true';
 
             if (files.length === 0) {
               core.setOutput('should_run', 'false');
@@ -150,12 +154,13 @@ jobs:
 
       - name: Create or update authoring issue
         if: steps.target.outputs.should_run == 'true'
-        uses: actions/github-script@v7
+        uses: actions/github-script@v8
         env:
           ISSUE_TITLE: ${{ steps.target.outputs.issue_title }}
           ISSUE_BODY: ${{ steps.target.outputs.issue_body }}
         with:
           script: |
+            const marker = '<!-- copilot-author-request -->';
             const title = process.env.ISSUE_TITLE;
             const body = process.env.ISSUE_BODY;
             const labels = ['copilot', 'digest-authoring', 'auto-pr'];
@@ -204,4 +209,25 @@ jobs:
               });
             } catch (error) {
               core.warning(`Failed to assign @copilot automatically: ${error.message}`);
+            }
+
+            const comments = await github.paginate(github.rest.issues.listComments, {
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: issueNumber,
+              per_page: 100,
+            });
+
+            if (!comments.some((comment) => comment.body?.includes(marker))) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issueNumber,
+                body: [
+                  marker,
+                  '@copilot この Issue を処理して、許可範囲内の変更だけで PR を作成してください。',
+                  '- PR タイトルと本文は Issue のルールに合わせてください。',
+                  '- 不確実な場合は needs-human-review を付けて停止してください。',
+                ].join('\n'),
+              });
             }

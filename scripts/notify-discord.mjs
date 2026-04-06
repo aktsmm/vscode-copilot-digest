@@ -9,6 +9,7 @@ import {
 
 const workspaceRoot = process.cwd();
 const eventsDir = path.join(workspaceRoot, "data", "events");
+const DISCORD_CONTENT_LIMIT = 1900;
 
 function parseArgs(argv) {
   const options = {
@@ -105,6 +106,10 @@ function dedupeEvents(events) {
   return [...deduped.values()];
 }
 
+function joinLines(lines) {
+  return lines.join("\n");
+}
+
 function buildPayload(date, eventLog, options = {}) {
   const latestRun = eventLog.latestRun ?? {
     newEventsCount: 0,
@@ -137,7 +142,7 @@ function buildPayload(date, eventLog, options = {}) {
     .map(([sourceName, count]) => `${sourceName}: ${count}`)
     .join(" / ");
 
-  const lines = [
+  const headerLines = [
     options.forcePreview && latestRun.newEventsCount === 0
       ? `GitHub Copilot / VS Code 監視の preview として ${uniqueEvents.length} 件の更新候補を表示します。`
       : `GitHub Copilot / VS Code 監視で ${uniqueEvents.length} 件の新着を検知しました。`,
@@ -145,41 +150,75 @@ function buildPayload(date, eventLog, options = {}) {
   ];
 
   if (options.forcePreview && latestRun.newEventsCount === 0) {
-    lines.push(
+    headerLines.push(
       "注記: これは通知 preview です。直近 run に新着がないため、その日の既存イベントから代表項目を表示しています。",
     );
   }
 
   if (eventLog.editorialNote) {
-    lines.push(eventLog.editorialNote);
+    headerLines.push(eventLog.editorialNote);
   }
 
   if (sourceSummary) {
-    lines.push(`内訳: ${sourceSummary}`);
+    headerLines.push(`内訳: ${sourceSummary}`);
   }
 
-  lines.push("");
-  for (const event of uniqueEvents.slice(0, 5)) {
-    lines.push(
-      `- [${localizedImportanceLabel(event)}] ${trimLine(localizedTitle(event), 120)}`,
-    );
-    lines.push(`  ${trimLine(localizedSummary(event), 120)}`);
-    lines.push(`  ${event.url}`);
-    if (event.sourceNames.length > 1) {
-      lines.push(`  ソース: ${event.sourceNames.join(", ")}`);
-    }
-  }
-
+  const footerLines = [];
   if (summaryUrl) {
-    lines.push("");
-    lines.push(`日次サマリー: ${summaryUrl}`);
+    footerLines.push(`日次サマリー: ${summaryUrl}`);
   }
 
   if (pagesUrl) {
-    lines.push(`Pages: ${pagesUrl}`);
+    footerLines.push(`Pages: ${pagesUrl}`);
   }
 
-  const content = lines.join("\n").slice(0, 1900);
+  const eventBlocks = uniqueEvents.slice(0, 5).map((event) => {
+    const block = [
+      `- [${localizedImportanceLabel(event)}] ${trimLine(localizedTitle(event), 120)}`,
+      `  ${trimLine(localizedSummary(event), 120)}`,
+      `  ${event.url}`,
+    ];
+
+    if (event.sourceNames.length > 1) {
+      block.push(`  ソース: ${event.sourceNames.join(", ")}`);
+    }
+
+    return block;
+  });
+
+  let lines = [...headerLines];
+  if (eventBlocks.length > 0) {
+    lines.push("");
+  }
+
+  for (const block of eventBlocks) {
+    const nextLines = lines.at(-1) === "" ? [...lines, ...block] : [...lines, "", ...block];
+    const candidateLines = footerLines.length > 0 ? [...nextLines, "", ...footerLines] : nextLines;
+
+    if (joinLines(candidateLines).length > DISCORD_CONTENT_LIMIT) {
+      break;
+    }
+
+    lines = nextLines;
+  }
+
+  if (footerLines.length > 0) {
+    if (lines.at(-1) !== "") {
+      lines.push("");
+    }
+    lines.push(...footerLines);
+  }
+
+  let content = joinLines(lines);
+  if (content.length > DISCORD_CONTENT_LIMIT) {
+    const footer = footerLines.length > 0 ? joinLines(footerLines) : "";
+    const reserved = footer ? footer.length + 2 : 0;
+    const prefixLimit = Math.max(0, DISCORD_CONTENT_LIMIT - reserved);
+    let prefix = joinLines(headerLines).slice(0, prefixLimit);
+    prefix = prefix.replace(/\n?[^\n]*$/, "").trimEnd();
+    content = footer ? [prefix, footer].filter(Boolean).join("\n\n") : prefix;
+  }
+
   return { content };
 }
 

@@ -16,12 +16,12 @@ permissions:
 
 jobs:
   request-review:
-    if: contains(github.event.pull_request.user.login, 'copilot') || contains(github.event.pull_request.title, 'Digest authoring request')
+    if: github.event.pull_request.head.repo.full_name == github.repository && (contains(github.event.pull_request.user.login, 'copilot') || contains(github.event.pull_request.title, 'Digest authoring request') || contains(github.event.pull_request.body, 'Generated from data/events/'))
     runs-on: ubuntu-latest
 
     steps:
       - name: Add labels and request Copilot review
-        uses: actions/github-script@v7
+        uses: actions/github-script@v8
         with:
           script: |
             const marker = '<!-- copilot-review-requested -->';
