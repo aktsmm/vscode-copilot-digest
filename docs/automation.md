@@ -7,6 +7,7 @@
 - 毎日 12:30 JST に [collect-updates.yml](../.github/workflows/collect-updates.yml) が収集を実行する
 - 変更があれば `data/**` と `summaries/**` をコミットする
 - main 更新で [deploy-pages.yml](../.github/workflows/deploy-pages.yml) が Pages を再生成する
+- Pages のヘッダーに出す `最終更新` は最新ダイジェスト日付ではなく、Pages ビルドが実際に走った時刻を表示する
 - 新着がある日は Discord Webhook に通知する
 - collect 成功後に [author-digest-pr.yml](../.github/workflows/author-digest-pr.yml) が Copilot 向け Issue を作成または更新する
 - 生成 PR では [request-copilot-review.yml](../.github/workflows/request-copilot-review.yml) が metadata を正規化し、[validate-generated-pr.yml](../.github/workflows/validate-generated-pr.yml) が検証し、[auto-merge-generated-pr.yml](../.github/workflows/auto-merge-generated-pr.yml) が安全なものだけ merge する

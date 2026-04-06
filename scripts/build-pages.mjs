@@ -1304,22 +1304,7 @@ async function copyRawFiles(date) {
 }
 
 function findLastUpdatedAt(logs) {
-  if (logs.length === 0) {
-    return new Date();
-  }
-
-  return logs.reduce(
-    (latest, log) => {
-      const candidate = safeDate(
-        log.generatedAt ?? log.latestRun?.generatedAt ?? log.date,
-      );
-
-      return candidate > latest ? candidate : latest;
-    },
-    safeDate(
-      logs[0].generatedAt ?? logs[0].latestRun?.generatedAt ?? logs[0].date,
-    ),
-  );
+  return new Date();
 }
 
 async function main() {
