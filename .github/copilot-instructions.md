@@ -6,7 +6,7 @@ Prefer the existing scripts instead of reimplementing behavior. The main entry p
 
 For digest authoring tasks, treat `data/events/*.json` as source material and update only the files explicitly requested in the task. Unless the task explicitly says otherwise, do not modify `data/**`, `config/**`, or workflow files while preparing a digest PR.
 
-For GitHub.com issue-driven coding tasks, labels and `@copilot` comments are not a reliable substitute for agent assignment. The supported path is to assign the issue to Copilot via the issue sidebar (`Assign to Agent` / selecting `Copilot` as assignee).
+For GitHub.com issue-driven coding tasks, labels and `@copilot` comments alone are not enough. The supported path is to assign the issue to Copilot, and this repository now attempts that automatically in `author-digest-pr.yml` via GraphQL actor assignment.
 
 When validating the end-to-end digest authoring flow, expect `author-digest-pr.yml` to create a `digest-authoring` issue first. If no Copilot-generated PR appears within about 10 minutes after issue creation, check the repository's Copilot cloud agent settings before assuming the workflow is broken. If it still has not appeared after about 15 minutes, treat it as a GitHub-side configuration or queue problem rather than a local workflow failure.
 

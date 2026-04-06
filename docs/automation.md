@@ -18,8 +18,8 @@
 - リポジトリ設定で Copilot cloud agent を有効化している必要がある
 - Copilot Code Review を自動で回すには GitHub 側設定が必要
 - `needs-human-review` が付いた PR は意図的に自動 merge しない
-- GitHub Docs 上の正式導線は、Issue を Copilot に assign すること。`copilot` ラベルや `@copilot` コメントだけでは task pickup を保証しない
-- そのため `author-digest-pr.yml` は執筆依頼 Issue と補助コメントまでは自動で作るが、必要に応じて右サイドバーの `Assign to Agent` から Copilot を明示 assign する
+- GitHub Docs 上の正式導線は、Issue を Copilot に assign すること。`author-digest-pr.yml` は GraphQL で Copilot assignment まで自動化する
+- それでも PR が出ない場合は、Issue 右サイドバーで Copilot assignee が付いているかと GitHub 側キューを確認する
 
 ## Workflow 一覧
 
@@ -65,6 +65,6 @@ GitHub hosted runner の Node 20 deprecation warning に合わせて、主要 ac
 ## 次に確認すること
 
 - `author-digest-pr.yml` で作成した `digest-authoring` Issue から、GitHub Copilot cloud agent が実際に PR を起こすところを本番経路で確認する
-- `digest-authoring` Issue の右サイドバーに Copilot が assignee として入っているか、または `Assign to Agent` で Copilot を選べているかを確認する
+- `digest-authoring` Issue の右サイドバーに Copilot が assignee として自動で入っているかを確認する
 - 新しい `digest-authoring` Issue を作っても 10 分以内に PR が出ない場合は、workflow 失敗より先に GitHub リポジトリ設定の Copilot cloud agent 有効化状態を確認する
 - 15 分を超えても PR が出ない場合は、GitHub 側のキューや設定を疑い、手動で repo 設定と Copilot Code Review 設定を見直す
