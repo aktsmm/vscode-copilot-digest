@@ -142,5 +142,16 @@ jobs:
               );
               core.info(`Enabled auto-merge for PR #${pr.number}.`);
             } catch (error) {
+              if ((error.message || '').includes('Pull request is in clean status')) {
+                await github.rest.pulls.merge({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  pull_number: pr.number,
+                  merge_method: 'squash',
+                });
+                core.info(`Merged PR #${pr.number} directly because auto-merge is not available for clean PRs in this repository.`);
+                return;
+              }
+
               core.warning(`Failed to enable auto-merge for PR #${pr.number}: ${error.message}`);
             }
