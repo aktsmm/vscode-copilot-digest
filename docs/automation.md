@@ -9,7 +9,7 @@
 - main 更新で [deploy-pages.yml](../.github/workflows/deploy-pages.yml) が Pages を再生成する
 - 新着がある日は Discord Webhook に通知する
 - collect 成功後に [author-digest-pr.yml](../.github/workflows/author-digest-pr.yml) が Copilot 向け Issue を作成または更新する
-- 生成 PR では [request-copilot-review.yml](../.github/workflows/request-copilot-review.yml) が metadata を正規化し、[validate-generated-pr.yml](../.github/workflows/validate-generated-pr.yml) が検証し、[auto-merge-generated-pr.yml](../.github/workflows/auto-merge-generated-pr.yml) が安全なものだけ auto-merge する
+- 生成 PR では [request-copilot-review.yml](../.github/workflows/request-copilot-review.yml) が metadata を正規化し、[validate-generated-pr.yml](../.github/workflows/validate-generated-pr.yml) が検証し、[auto-merge-generated-pr.yml](../.github/workflows/auto-merge-generated-pr.yml) が安全なものだけ merge する
 - Copilot 起点で `action_required` になった review / validate / auto-merge workflow は [rerun-blocked-copilot-workflows.yml](../.github/workflows/rerun-blocked-copilot-workflows.yml) が定期的に検出して 1 回だけ rerun する
 
 ## 完全自動か
@@ -18,6 +18,7 @@
 
 - リポジトリ設定で Copilot cloud agent を有効化している必要がある
 - repo 設定では auto-merge を有効化し、Actions の `GITHUB_TOKEN` は write 権限と PR review approve 権限を持つ前提にしている
+- branch protection が無い repo では GitHub の auto-merge API が使えないことがあるため、安全条件を満たした生成 PR は workflow が直接 squash merge する
 - Copilot Code Review を ruleset で自動化する設定は GitHub 側で有効化が必要で、この repo の workflow だけでは完結しない
 - `needs-human-review` が付いた PR は意図的に自動 merge しない
 - GitHub Docs 上の正式導線は、Issue を Copilot に assign すること。`author-digest-pr.yml` は GraphQL で Copilot assignment まで自動化する
@@ -37,7 +38,7 @@
 - [request-copilot-review.yml](../.github/workflows/request-copilot-review.yml): 生成 PR のラベル付けと metadata 正規化
 - [rerun-blocked-copilot-workflows.yml](../.github/workflows/rerun-blocked-copilot-workflows.yml): Copilot 起点で `action_required` になった review / validate / auto-merge workflow の自動 rerun
 - [validate-generated-pr.yml](../.github/workflows/validate-generated-pr.yml): 生成 PR の allow-list と build 検証
-- [auto-merge-generated-pr.yml](../.github/workflows/auto-merge-generated-pr.yml): 安全な生成 PR を ready for review に切り替えて auto-merge
+- [auto-merge-generated-pr.yml](../.github/workflows/auto-merge-generated-pr.yml): 安全な生成 PR を ready for review に切り替え、可能なら auto-merge、不可なら直接 squash merge
 
 ## Secrets
 
