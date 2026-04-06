@@ -355,12 +355,19 @@ function summaryFromPatterns(event, locale = "ja") {
       : "The GPT-5.1 Codex model family is deprecated, so existing workflows should move to GPT-5.3-Codex and enterprise admins may need to update model policies.";
   }
 
+  if (/gpt-5\.4 mini/i.test(title) && /student/i.test(title)) {
+    return locale === "ja"
+      ? "GPT-5.4 mini が Copilot Student の auto model selection で利用可能になった。Student プランの自動モデル選択の選択肢が広がった。"
+      : "GPT-5.4 mini is now included in the auto model selection pool for Copilot Student, expanding the model options available under that plan.";
+  }
+
+  if (/usage metrics/i.test(title) && /organization reports/i.test(title)) {
+    return locale === "ja"
+      ? "organization report でユーザー別 Copilot CLI 利用状況を見られるようになった。1日 / 28日単位の activity、session 数、request 数、token 使用量、CLI version の把握に使える。"
+      : "Organization reports now include per-user Copilot CLI activity, including 1-day and 28-day usage, session and request counts, token consumption, and the last seen CLI version per user.";
+  }
+
   if (/custom instructions/i.test(title) && /available/i.test(title)) {
-    if (/usage metrics/i.test(title) && /organization reports/i.test(title)) {
-      return locale === "ja"
-        ? "organization report でユーザー別 Copilot CLI 利用状況を見られるようになった。1日 / 28日単位の activity、session 数、request 数、token 使用量、CLI version の把握に使える。"
-        : "Organization reports now include per-user Copilot CLI activity, including 1-day and 28-day usage, session and request counts, token consumption, and the last seen CLI version per user.";
-    }
     return locale === "ja"
       ? "organization custom instructions が GA になった。Copilot の前提知識や振る舞いを組織全体で揃えやすくなる。"
       : "Organization custom instructions are now generally available, making it easier to define shared Copilot behavior across a whole organization.";
@@ -399,16 +406,16 @@ function summaryFromPatterns(event, locale = "ja") {
       : "A behind-the-scenes VS Code article about AI usage and implementation decisions.";
   }
 
-  if (/copilot cli/i.test(text)) {
-    return locale === "ja"
-      ? "GitHub Copilot CLI の使い方や新機能に関する更新。ターミナル中心の運用を強化したいときの参考になる。"
-      : "An update about GitHub Copilot CLI capabilities and workflows for terminal-heavy usage.";
-  }
-
   if (/fleet/i.test(text) && /copilot cli/i.test(text)) {
     return locale === "ja"
       ? "Copilot CLI の /fleet で複数の subagent を並列実行できるようになった。大きめの作業を並列分解して進める運用に効く。"
       : "Copilot CLI can now run multiple subagents in parallel through /fleet, which is useful for breaking larger tasks into coordinated workstreams.";
+  }
+
+  if (/copilot cli/i.test(text)) {
+    return locale === "ja"
+      ? "GitHub Copilot CLI の使い方や新機能に関する更新。ターミナル中心の運用を強化したいときの参考になる。"
+      : "An update about GitHub Copilot CLI capabilities and workflows for terminal-heavy usage.";
   }
 
   if (/issue triage/i.test(text) && /copilot sdk/i.test(text)) {
