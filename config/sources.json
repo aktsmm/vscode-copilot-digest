@@ -1,0 +1,79 @@
+[
+  {
+    "id": "github-changelog",
+    "name": "GitHub Changelog",
+    "kind": "rss",
+    "url": "https://github.blog/changelog/feed/",
+    "maxItems": 30,
+    "includeKeywords": [
+      "copilot",
+      "vs code",
+      "visual studio code",
+      "coding agent",
+      "cloud agent"
+    ]
+  },
+  {
+    "id": "github-changelog-copilot",
+    "name": "GitHub Changelog / Copilot",
+    "kind": "rss",
+    "url": "https://github.blog/changelog/feed/?label=copilot",
+    "maxItems": 20
+  },
+  {
+    "id": "github-copilot-blog",
+    "name": "GitHub Blog / GitHub Copilot",
+    "kind": "rss",
+    "url": "https://github.blog/ai-and-ml/github-copilot/feed/",
+    "maxItems": 12
+  },
+  {
+    "id": "vscode-feed",
+    "name": "VS Code Feed",
+    "kind": "atom",
+    "url": "https://code.visualstudio.com/feed.xml",
+    "maxItems": 16
+  },
+  {
+    "id": "vscode-updates",
+    "name": "VS Code Updates",
+    "kind": "html_snapshot",
+    "url": "https://code.visualstudio.com/updates/",
+    "rootSelector": "main",
+    "contentSelector": "h1, h2, h3, p, li",
+    "maxDiffLines": 16
+  },
+  {
+    "id": "vscode-release-notes-1-109",
+    "name": "VS Code Release Notes 1.109",
+    "kind": "html_snapshot",
+    "url": "https://code.visualstudio.com/updates/v1_109",
+    "rootSelector": "main",
+    "contentSelector": "h1, h2, h3, p, li",
+    "maxDiffLines": 16
+  },
+  {
+    "id": "copilot-whats-new",
+    "name": "GitHub Copilot What's New",
+    "kind": "html_snapshot",
+    "url": "https://github.com/features/copilot/whats-new",
+    "rootSelector": "main",
+    "contentSelector": "h1, h2, h3, p, li",
+    "maxDiffLines": 16
+  },
+  {
+    "id": "publickey",
+    "name": "Publickey",
+    "kind": "rss",
+    "url": "https://www.publickey1.jp/atom.xml",
+    "maxItems": 20,
+    "includeKeywords": [
+      "github copilot",
+      "copilot cli",
+      "copilot sdk",
+      "coding agent",
+      "cloud agent",
+      "copilot"
+    ]
+  }
+]

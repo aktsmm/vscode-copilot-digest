@@ -1,0 +1,98 @@
+{
+  "version": 1,
+  "sources": {
+    "github-changelog-copilot": {
+      "seenIds": [
+        "https://github.blog/changelog/2026-04-03-organization-runner-controls-for-copilot-cloud-agent",
+        "https://github.blog/changelog/2026-04-03-gpt-5-1-codex-gpt-5-1-codex-max-and-gpt-5-1-codex-mini-deprecated",
+        "https://github.blog/changelog/2026-04-03-organization-firewall-settings-for-copilot-cloud-agent",
+        "https://github.blog/changelog/2026-04-03-copilot-cloud-agent-signs-its-commits",
+        "https://github.blog/changelog/2026-04-02-copilot-sdk-in-public-preview",
+        "https://github.blog/changelog/2026-04-02-copilot-usage-metrics-now-includes-per-user-github-copilot-cli-activity-in-organization-reports",
+        "https://github.blog/changelog/2026-04-01-github-copilot-in-visual-studio-march-update",
+        "https://github.blog/changelog/2026-04-02-copilot-organization-custom-instructions-are-generally-available",
+        "https://github.blog/changelog/2026-03-31-research-plan-and-code-with-copilot-cloud-agent",
+        "https://github.blog/changelog/2026-04-01-gpt-5-4-mini-is-now-available-in-copilot-education-auto-model-selection"
+      ],
+      "lastCheckedAt": "2026-04-06T14:02:21.769Z"
+    },
+    "github-copilot-blog": {
+      "seenIds": [
+        "https://github.blog/?p=94908",
+        "https://github.blog/?p=94904",
+        "https://github.blog/?p=94665",
+        "https://github.blog/?p=94634",
+        "https://github.blog/?p=94451",
+        "https://github.blog/?p=94415",
+        "https://github.blog/?p=94298",
+        "https://github.blog/?p=94244",
+        "https://github.blog/?p=94179",
+        "https://github.blog/?p=94157"
+      ],
+      "lastCheckedAt": "2026-04-06T14:02:21.797Z"
+    },
+    "vscode-feed": {
+      "seenIds": [
+        "https://code.visualstudio.com/updates/v1_114",
+        "https://code.visualstudio.com/updates/v1_113",
+        "https://code.visualstudio.com/updates/v1_112",
+        "https://code.visualstudio.com/blogs/2026/03/13/how-VS-Code-Builds-with-AI",
+        "https://code.visualstudio.com/updates/v1_111",
+        "https://code.visualstudio.com/blogs/2026/03/05/making-agents-practical-for-real-world-development",
+        "https://code.visualstudio.com/updates/v1_110",
+        "https://code.visualstudio.com/blogs/2026/02/26/long-distance-nes",
+        "https://code.visualstudio.com/blogs/2026/02/05/multi-agent-development",
+        "https://code.visualstudio.com/updates/v1_109",
+        "https://code.visualstudio.com/blogs/2026/01/26/mcp-apps-support",
+        "https://code.visualstudio.com/blogs/2026/01/15/docfind",
+        "https://code.visualstudio.com/updates/v1_108",
+        "https://code.visualstudio.com/updates/v1_107",
+        "https://code.visualstudio.com/blogs/2025/12/03/introducing-vs-code-insiders-podcast",
+        "https://code.visualstudio.com/updates/v1_115"
+      ],
+      "lastCheckedAt": "2026-04-06T14:02:21.997Z"
+    },
+    "vscode-release-notes-1-109": {
+      "snapshotHash": "795e024cf2ecc4e681a2873b1d29435c5e6ca0a1771e5ee68fb8f91f859c2bf6",
+      "lastCheckedAt": "2026-04-06T14:02:22.545Z"
+    },
+    "copilot-whats-new": {
+      "snapshotHash": "b420f1decd1c48516d66030e4292d9537371f69c4260aeb4b1a29975eb279571",
+      "lastCheckedAt": "2026-04-06T14:02:23.156Z"
+    },
+    "publickey": {
+      "seenIds": [
+        "tag:www.publickey1.jp,2026://2.8536",
+        "tag:www.publickey1.jp,2026://2.8527",
+        "tag:www.publickey1.jp,2026://2.8534",
+        "tag:www.publickey1.jp,2026://2.8538",
+        "tag:www.publickey1.jp,2026://2.8537",
+        "tag:www.publickey1.jp,2026://2.8535",
+        "tag:www.publickey1.jp,2026://2.8531",
+        "tag:www.publickey1.jp,2026://2.8528",
+        "tag:www.publickey1.jp,2026://2.8526",
+        "tag:www.publickey1.jp,2026://2.8524",
+        "tag:www.publickey1.jp,2026://2.8523",
+        "tag:www.publickey1.jp,2026://2.8522"
+      ],
+      "lastCheckedAt": "2026-04-06T14:02:23.309Z"
+    },
+    "github-changelog": {
+      "seenIds": [
+        "https://github.blog/changelog/2026-04-03-organization-runner-controls-for-copilot-cloud-agent",
+        "https://github.blog/changelog/2026-04-03-gpt-5-1-codex-gpt-5-1-codex-max-and-gpt-5-1-codex-mini-deprecated",
+        "https://github.blog/changelog/2026-04-03-organization-firewall-settings-for-copilot-cloud-agent",
+        "https://github.blog/changelog/2026-04-03-copilot-cloud-agent-signs-its-commits",
+        "https://github.blog/changelog/2026-04-02-copilot-sdk-in-public-preview",
+        "https://github.blog/changelog/2026-04-02-copilot-usage-metrics-now-includes-per-user-github-copilot-cli-activity-in-organization-reports",
+        "https://github.blog/changelog/2026-04-01-github-copilot-in-visual-studio-march-update",
+        "https://github.blog/changelog/2026-04-02-github-actions-early-april-2026-updates"
+      ],
+      "lastCheckedAt": "2026-04-06T14:02:21.747Z"
+    },
+    "vscode-updates": {
+      "snapshotHash": "d2d9d6bb244271aec140e3a3b5d01efb96f2c576f021fc61c88932a151060664",
+      "lastCheckedAt": "2026-04-06T14:02:22.404Z"
+    }
+  }
+}

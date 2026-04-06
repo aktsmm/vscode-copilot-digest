@@ -1,0 +1,18 @@
+{
+  "name": "vscode-copilot-digest",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "collect": "node scripts/collect.mjs",
+    "biweekly": "node scripts/build-biweekly.mjs",
+    "notify:discord": "node scripts/notify-discord.mjs",
+    "build:pages": "node scripts/build-pages.mjs"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0",
+    "diff": "^7.0.0",
+    "fast-xml-parser": "^5.2.5",
+    "gray-matter": "^4.0.3"
+  }
+}

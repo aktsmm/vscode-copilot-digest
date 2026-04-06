@@ -1,0 +1,727 @@
+{
+  "date": "2026-04-06",
+  "generatedAt": "2026-04-06T14:02:23.320Z",
+  "latestRun": {
+    "generatedAt": "2026-04-06T14:02:23.320Z",
+    "newEventsCount": 0,
+    "newEventIds": [],
+    "errorCount": 0
+  },
+  "editorialNote": "注記: この記録には当日公開分だけでなく、初回取り込みや未取得分の回収が含まれる可能性があります。最も古い公開日は 2025-12-02 です。",
+  "events": [
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-04-03-organization-runner-controls-for-copilot-cloud-agent",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-06T12:57:01.113Z",
+      "publishedAt": "2026-04-03T19:15:11.000Z",
+      "title": "Organization runner controls for Copilot cloud agent",
+      "url": "https://github.blog/changelog/2026-04-03-organization-runner-controls-for-copilot-cloud-agent",
+      "summary": "Each time Copilot cloud agent works on a task, it starts a new development environment powered by GitHub Actions.\nBy default, this runs on a standard GitHub-hosted runner, but teams can also customize the agent environment to use large runners or self-hosted runners for faster performance, access to internal resources, and more.\nUntil now, the runner was configured at the repository level with a copilot-setup-steps.yml file. This made it difficult to roll out consistent defaults or enforce guardrails across an organization.\nOrganization admins can now:\n\nSet a default runner to be used automatically across all repositories, without requiring each repository to be individually configured.\nLock the runner setting so individual repositories can’t override the organization default.\n\nThis means you can set sensible defaults for your teams (e.g., using larger GitHub Actions runners for better performance) and optionally ensure that the agent always runs where you want it to, such as on your self-hosted runners.\nTo learn more, see “Configuring runners for GitHub Copilot cloud agent in your organization” in the GitHub Docs.\n\nThe post Organization runner controls for Copilot cloud agent appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "score": 6
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-04-03-organization-runner-controls-for-copilot-cloud-agent",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-06T12:59:00.248Z",
+      "publishedAt": "2026-04-03T19:15:11.000Z",
+      "title": "Organization runner controls for Copilot cloud agent",
+      "url": "https://github.blog/changelog/2026-04-03-organization-runner-controls-for-copilot-cloud-agent",
+      "summary": "Each time Copilot cloud agent works on a task, it starts a new development environment powered by GitHub Actions. By default, this runs on a standard GitHub-hosted runner, but teams…\nThe post Organization runner controls for Copilot cloud agent appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "score": 6
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-04-03-gpt-5-1-codex-gpt-5-1-codex-max-and-gpt-5-1-codex-mini-deprecated",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-06T12:57:01.114Z",
+      "publishedAt": "2026-04-03T17:11:31.000Z",
+      "title": "GPT-5.1 Codex, GPT-5.1-Codex-Max, and GPT-5.1-Codex-Mini deprecated",
+      "url": "https://github.blog/changelog/2026-04-03-gpt-5-1-codex-gpt-5-1-codex-max-and-gpt-5-1-codex-mini-deprecated",
+      "summary": "We have deprecated the following models across all GitHub Copilot experiences (including Copilot Chat, inline edits, ask and agent modes, and code completions) on April 1, 2026.\n\nModel\nDeprecation date\nSuggested alternative\n\nGPT-5.1-Codex\n2026-04-01\nGPT-5.3-Codex\n\nGPT-5.1-Codex-Mini\n2026-04-01\nGPT-5.3-Codex\n\nGPT-5.1-Codex-Max\n2026-04-01\nGPT-5.3-Codex\n\nPlease update your workflows and integrations to use supported models. Copilot Enterprise administrators may need to enable access to alternative models through their model policies in Copilot settings. As an administrator, you can verify availability by checking your individual Copilot settings and confirming that the policy is enabled for the specific model. Once enabled, you’ll see the model in the Copilot Chat model selector in VS Code and on github.com. No action is required to remove the deprecated models.\nGitHub Enterprise customers with questions or concerns are encouraged to reach out to their account manager for further assistance.\nShare your feedback\nTo learn more about the models available in Copilot, see our documentation on models and get started with Copilot today.\nJoin the GitHub Community to share your feedback.\n\nThe post GPT-5.1 Codex, GPT-5.1-Codex-Max, and GPT-5.1-Codex-Mini deprecated appeared first on The GitHub Blog.",
+      "categories": [
+        "Retired",
+        "copilot"
+      ],
+      "score": 5
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-04-03-gpt-5-1-codex-gpt-5-1-codex-max-and-gpt-5-1-codex-mini-deprecated",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-06T12:59:00.248Z",
+      "publishedAt": "2026-04-03T17:11:31.000Z",
+      "title": "GPT-5.1 Codex, GPT-5.1-Codex-Max, and GPT-5.1-Codex-Mini deprecated",
+      "url": "https://github.blog/changelog/2026-04-03-gpt-5-1-codex-gpt-5-1-codex-max-and-gpt-5-1-codex-mini-deprecated",
+      "summary": "We have deprecated the following models across all GitHub Copilot experiences (including Copilot Chat, inline edits, ask and agent modes, and code completions) on April 1, 2026. Model Deprecation date…\nThe post GPT-5.1 Codex, GPT-5.1-Codex-Max, and GPT-5.1-Codex-Mini deprecated appeared first on The GitHub Blog.",
+      "categories": [
+        "Retired",
+        "copilot"
+      ],
+      "score": 5
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-04-03-organization-firewall-settings-for-copilot-cloud-agent",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-06T12:57:01.114Z",
+      "publishedAt": "2026-04-03T14:12:27.000Z",
+      "title": "Organization firewall settings for Copilot cloud agent",
+      "url": "https://github.blog/changelog/2026-04-03-organization-firewall-settings-for-copilot-cloud-agent",
+      "summary": "Copilot cloud agent includes a built-in agent firewall to control Copilot’s internet access and help protect against prompt injection and data exfiltration. Until now, the firewall was configured at the repository level by repository admins.\nOrganization admins can now manage the agent firewall across all repositories in their organization. This makes it easier to roll out Copilot cloud agent at scale with the right defaults and guardrails for your needs. Organization admins can:\n\nTurn the firewall on or off across all repositories, or allow each repository to decide.\nTurn the recommended allowlist on or off across all repositories, or allow each repository to decide.\nAdd entries to an organization-wide custom allowlist, covering all repositories (e.g., allowing access to an internal package registry).\nControl whether repository admins are allowed to add their own custom allowlist entries.\n\nBy default, all settings allow each repository to decide, preserving existing behavior.\nTo learn more, see “Customizing the agent firewall for Copilot cloud agent” in the GitHub Docs.\n\nThe post Organization firewall settings for Copilot cloud agent appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "copilot"
+      ],
+      "score": 3
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-04-03-organization-firewall-settings-for-copilot-cloud-agent",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-06T12:59:00.248Z",
+      "publishedAt": "2026-04-03T14:12:27.000Z",
+      "title": "Organization firewall settings for Copilot cloud agent",
+      "url": "https://github.blog/changelog/2026-04-03-organization-firewall-settings-for-copilot-cloud-agent",
+      "summary": "Copilot cloud agent includes a built-in agent firewall to control Copilot’s internet access and help protect against prompt injection and data exfiltration. Until now, the firewall was configured at the…\nThe post Organization firewall settings for Copilot cloud agent appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "copilot"
+      ],
+      "score": 3
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-04-03-copilot-cloud-agent-signs-its-commits",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-06T12:57:01.114Z",
+      "publishedAt": "2026-04-03T12:05:23.000Z",
+      "title": "Copilot cloud agent signs its commits",
+      "url": "https://github.blog/changelog/2026-04-03-copilot-cloud-agent-signs-its-commits",
+      "summary": "Copilot cloud agent now signs every commit it makes. Signed commits appear as Verified on GitHub, giving you confidence that the commit was genuinely made by the agent and hasn’t been tampered with.\nThis means that Copilot cloud agent now works in repositories with the “Require signed commits” branch protection rule or ruleset enabled. Previously, this was one of the rules that the agent couldn’t comply with, which blocked it entirely from being used in those repositories.\nTo learn more about Copilot cloud agent, head to “About Copilot cloud agent” in the documentation.\n\nThe post Copilot cloud agent signs its commits appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "copilot"
+      ],
+      "score": 2
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-04-03-copilot-cloud-agent-signs-its-commits",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-06T12:59:00.248Z",
+      "publishedAt": "2026-04-03T12:05:23.000Z",
+      "title": "Copilot cloud agent signs its commits",
+      "url": "https://github.blog/changelog/2026-04-03-copilot-cloud-agent-signs-its-commits",
+      "summary": "Copilot cloud agent now signs every commit it makes. Signed commits appear as Verified on GitHub, giving you confidence that the commit was genuinely made by the agent and hasn’t…\nThe post Copilot cloud agent signs its commits appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "copilot"
+      ],
+      "score": 2
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-04-02-copilot-sdk-in-public-preview",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-06T12:57:01.114Z",
+      "publishedAt": "2026-04-02T21:26:37.000Z",
+      "title": "Copilot SDK in public preview",
+      "url": "https://github.blog/changelog/2026-04-02-copilot-sdk-in-public-preview",
+      "summary": "The GitHub Copilot SDK is now available in public preview. This gives you the building blocks to embed Copilot’s agentic capabilities directly into your own applications, workflows, and platform services.\nThe Copilot SDK exposes the same production-tested agent runtime that powers GitHub Copilot cloud agent and Copilot CLI. Instead of building your own AI orchestration layer, you get tool invocation, streaming, file operations, and multi-turn sessions out of the box.\nNow available in five languages\nBuild with the SDK in your language of choice:\n\nNode.js / TypeScript: npm install @github/copilot-sdk\nPython: pip install github-copilot-sdk\nGo: go get github.com/github/copilot-sdk/go\n.NET: dotnet add package GitHub.Copilot.SDK\nJava: Newly available to install via Maven.\n\nKey capabilities\n\nCustom tools and agents: Define domain-specific tools with handlers and let the agent decide when to invoke them. Build custom agents with tailored instructions for your use case.\nFine-grained system prompt customization: Customize sections of the Copilot system prompt using replace, append, prepend, or dynamic transform callbacks. There’s no need to rewrite the entire prompt.\nStreaming and real-time responses: Stream responses token-by-token for responsive user experiences.\nBlob attachments: Send images, screenshots, and binary data inline without writing to disk.\nOpenTelemetry support: Built-in distributed tracing with W3C trace context propagation across all SDKs.\nPermission framework: Gate sensitive operations with approval handlers, or mark read-only tools to skip permissions entirely.\nBring Your Own Key (BYOK): Use your own API keys for OpenAI, Azure AI Foundry, or Anthropic.\n\nGet started\nThe Copilot SDK is available to all Copilot and non-Copilot subscribers, including Copilot Free for personal use and BYOK for enterprises. Each prompt counts toward your premium request quota for Copilot subscribers.\nCheck out the getting started guide to start building and join the discussion in the GitHub Community.\n\nThe post Copilot SDK in public preview appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "score": 8
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-04-02-copilot-sdk-in-public-preview",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-06T12:59:00.248Z",
+      "publishedAt": "2026-04-02T21:26:37.000Z",
+      "title": "Copilot SDK in public preview",
+      "url": "https://github.blog/changelog/2026-04-02-copilot-sdk-in-public-preview",
+      "summary": "The GitHub Copilot SDK is now available in public preview. This gives you the building blocks to embed Copilot’s agentic capabilities directly into your own applications, workflows, and platform services.…\nThe post Copilot SDK in public preview appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "score": 7
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-04-02-copilot-usage-metrics-now-includes-per-user-github-copilot-cli-activity-in-organization-reports",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-06T12:57:01.114Z",
+      "publishedAt": "2026-04-02T17:27:35.000Z",
+      "title": "Copilot usage metrics now includes per-user GitHub Copilot CLI activity in organization reports",
+      "url": "https://github.blog/changelog/2026-04-02-copilot-usage-metrics-now-includes-per-user-github-copilot-cli-activity-in-organization-reports",
+      "summary": "Following our enterprise-level, user-level, and organization-level CLI metrics releases, we’re completing coverage with per-user CLI breakdowns in organization reports.\nOrganization admins can now see which individual users are active on the CLI and view their usage details in both 1-day and 28-day reports. This includes:\n\nWhether each user has CLI activity (used_cli).\nPer-user CLI session and request counts.\nToken usage totals, including average tokens per request.\nLast known CLI version per user, to help plan upgrade rollouts.\n\nWhy this matters\n\nIdentify which developers are actively using Copilot from the command line and where enablement may be needed.\nUnderstand per-user consumption patterns to support cost allocation and expanded rollout planning.\nTrack CLI version distribution across your organization to ensure teams are on supported versions.\n\nVisit our API documentation to learn more. Join the discussion within GitHub Community.\n\nThe post Copilot usage metrics now includes per-user GitHub Copilot CLI activity in organization reports appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "account management",
+        "copilot",
+        "enterprise management tools"
+      ],
+      "score": 2
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-04-02-copilot-usage-metrics-now-includes-per-user-github-copilot-cli-activity-in-organization-reports",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-06T12:59:00.248Z",
+      "publishedAt": "2026-04-02T17:27:35.000Z",
+      "title": "Copilot usage metrics now includes per-user GitHub Copilot CLI activity in organization reports",
+      "url": "https://github.blog/changelog/2026-04-02-copilot-usage-metrics-now-includes-per-user-github-copilot-cli-activity-in-organization-reports",
+      "summary": "Following our enterprise-level, user-level, and organization-level CLI metrics releases, we’re completing coverage with per-user CLI breakdowns in organization reports. Organization admins can now see which individual users are active on…\nThe post Copilot usage metrics now includes per-user GitHub Copilot CLI activity...",
+      "categories": [
+        "Improvement",
+        "account management",
+        "copilot",
+        "enterprise management tools"
+      ],
+      "score": 2
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-04-01-github-copilot-in-visual-studio-march-update",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-06T12:57:01.114Z",
+      "publishedAt": "2026-04-02T15:00:31.000Z",
+      "title": "GitHub Copilot in Visual Studio — March update",
+      "url": "https://github.blog/changelog/2026-04-02-github-copilot-in-visual-studio-march-update",
+      "summary": "March 2026 brought a major step forward for GitHub Copilot extensibility in Visual Studio, with custom agents, agent skills, and new tools that make the agent smarter and more capable.\nHighlights\nHere’s what’s new with GitHub Copilot in the March update of Visual Studio 2026:\n\nBuild your own custom agents: Define specialized Copilot agents as .agent.md files in your repository. Custom agents get full access to workspace awareness, code understanding, tools, your preferred model, and MCP connections to external knowledge sources. They appear in the agent picker, ready for your team to use.\nEnterprise MCP governance: MCP server usage now respects allowlist policies set through GitHub. Admins can specify which MCP servers are allowed within their organizations, keeping sensitive data controlled and compliant with security policies.\nUse agent skills: Agent skills are reusable instruction sets that teach agents how to perform specific tasks. Define them in your repository or user profile, and Copilot automatically discovers and applies them. See awesome-copilot for community-shared skills.\nfind_symbol tool for agent mode: The new find_symbol tool gives agents language-aware symbol navigation, including finding all references, accessing type metadata, and understanding declarations and scope. Supported for C++, C#, Razor, TypeScript, and any language with an LSP extension.\nProfile tests with Copilot: A new Profile with Copilot command in Test Explorer lets you profile a specific test with the Profiling Agent, which automatically runs the test and analyzes CPU and instrumentation data to deliver actionable performance insights.\nPerfTips powered by live profiling: Debug-time PerfTips now integrate with the Profiler Agent. Click an inline performance signal while debugging and Copilot analyzes elapsed time, CPU usage, and memory behavior to suggest targeted optimizations.\nSmart Watch suggestions: Copilot now offers context-aware expression suggestions directly in Watch windows during debugging, helping you monitor the most meaningful runtime values faster.\nFix vulnerabilities with Copilot: Copilot can now fix NuGet package vulnerabilities directly from Solution Explorer. Click the Fix with GitHub Copilot link when a vulnerability is detected, and Copilot recommends targeted dependency updates.\n\nTo learn more about what’s new, check out the Visual Studio blog and release notes.\nWhat’s next for Copilot in Visual Studio\nStay up to date on the latest Copilot features by following the Visual Studio blog, where you’ll find roadmap updates and opportunities to share feedback.\n\nThe post GitHub Copilot in Visual Studio — March update appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "score": 7
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-04-01-github-copilot-in-visual-studio-march-update",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-06T12:59:00.249Z",
+      "publishedAt": "2026-04-02T15:00:31.000Z",
+      "title": "GitHub Copilot in Visual Studio — March update",
+      "url": "https://github.blog/changelog/2026-04-02-github-copilot-in-visual-studio-march-update",
+      "summary": "March 2026 brought a major step forward for GitHub Copilot extensibility in Visual Studio, with custom agents, agent skills, and new tools that make the agent smarter and more capable.…\nThe post GitHub Copilot in Visual Studio — March update appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "score": 5
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-04-02-copilot-organization-custom-instructions-are-generally-available",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-06T12:57:01.114Z",
+      "publishedAt": "2026-04-02T13:03:32.000Z",
+      "title": "Copilot organization custom instructions are generally available",
+      "url": "https://github.blog/changelog/2026-04-02-copilot-organization-custom-instructions-are-generally-available",
+      "summary": "Organization custom instructions for GitHub Copilot, first introduced in April 2025, are now generally available.\nWith organization custom instructions, Copilot Business and Copilot Enterprise organization administrators can set default instructions that guide Copilot’s behavior across all repositories in their organization.\nOrganization custom instructions are applied across:\n\nCopilot Chat on github.com\nCopilot code review\nCopilot cloud agent\n\nTo add custom instructions, navigate to your organization’s settings, select Copilot, then click Custom instructions.\nTo learn more, see “Adding organization custom instructions for GitHub Copilot” in the documentation.\n\nThe post Copilot organization custom instructions are generally available appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "copilot"
+      ],
+      "score": 3
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-03-31-research-plan-and-code-with-copilot-cloud-agent",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-06T12:57:01.114Z",
+      "publishedAt": "2026-04-01T18:36:08.000Z",
+      "title": "Research, plan, and code with Copilot cloud agent",
+      "url": "https://github.blog/changelog/2026-04-01-research-plan-and-code-with-copilot-cloud-agent",
+      "summary": "Copilot cloud agent (formerly known as Copilot coding agent) is no longer limited to pull-request workflows, unlocking a broader range of ways to put Copilot to work.\nMore control over when you open a pull request\nUp until now, working with Copilot cloud agent meant opening a pull request. Now Copilot can work on a branch without creating one, giving you more flexibility over how and when you move your work forward.\n\nCopilot generates code on a branch without opening a pull request.\nReview the full diff before deciding if you are ready for a pull request,by clicking the Diff button.\nIterate with Copilot until you are ready for a review. When you are, click Create pull request.\nKnow you want a pull request from the start? Just say so in your prompt and Copilot will create one when the session completes.\n\nGenerate implementation plans\nAsk Copilot to produce an implementation plan and review the approach before Copilot writes any code.\n\nAsk for a plan in your prompt and Copilot will generate one before taking any action.\nReview Copilot’s proposed approach and approve or provide feedback before any code is written.\nOnce the plan is approved, Copilot uses the plan to guide its implementation.\n\nConduct deep research in your codebase\nKick off a research session to have Copilot answer questions requiring thorough investigation and comprehensive answers.\n\nAsk broad questions about your codebase and get answers grounded in your repository context.\n\nYou can also kick off a deep research session from a Copilot chat conversation by asking Copilot a question.\n\nTo get started\nThis functionality is available exclusively via all agent entry points, such as the Agents tab in the repository and in Copilot Chat.\nCopilot cloud agent is available with all paid Copilot plans. If you’re a Copilot Business or Copilot Enterprise user, an administrator will have to enable Copilot cloud agent before you can use it.\nJoin the discussion within GitHub Community.\n\nThe post Research, plan, and code with Copilot cloud agent appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "score": 6
+    },
+    {
+      "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_114",
+      "sourceId": "vscode-feed",
+      "sourceName": "VS Code Feed",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-06T12:57:01.355Z",
+      "publishedAt": "2026-04-01T17:00:00.000Z",
+      "title": "Visual Studio Code 1.114",
+      "url": "https://code.visualstudio.com/updates/v1_114",
+      "summary": "Learn what's new in Visual Studio Code 1.114\n Read the full article",
+      "categories": [
+        "release"
+      ],
+      "score": 4
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-04-01-gpt-5-4-mini-is-now-available-in-copilot-education-auto-model-selection",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-06T12:57:01.114Z",
+      "publishedAt": "2026-04-01T16:46:07.000Z",
+      "title": "GPT-5.4 mini is now available in Copilot Student auto model selection",
+      "url": "https://github.blog/changelog/2026-04-01-gpt-5-4-mini-is-now-available-in-copilot-student-auto-model-selection",
+      "summary": "GPT-5.4 mini is now generally available to Copilot Student plan via Copilot auto model selection.\nThis model is part of Auto in GitHub Copilot Chat on Visual Studio Code, Visual Studio, JetBrains IDEs, Xcode, and Eclipse.\nTo learn more about the models available in Copilot, see our documentation on models and get started with Copilot today.\nShare your feedback\nJoin the GitHub Community to share your feedback.\n\nThe post GPT-5.4 mini is now available in Copilot Student auto model selection appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "score": 5
+    },
+    {
+      "eventId": "github-copilot-blog:https://github.blog/?p=94908",
+      "sourceId": "github-copilot-blog",
+      "sourceName": "GitHub Blog / GitHub Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-06T12:57:01.224Z",
+      "publishedAt": "2026-04-01T15:00:00.000Z",
+      "title": "Run multiple agents at once with /fleet in Copilot CLI",
+      "url": "https://github.blog/ai-and-ml/github-copilot/run-multiple-agents-at-once-with-fleet-in-copilot-cli/",
+      "summary": "What if GitHub Copilot CLI could work on five files at the same time instead of one? That’s where /fleet comes in.\n\n/fleet is a slash command in Copilot CLI that enables Copilot to simultaneously work with multiple subagents in parallel. Instead of working through tasks sequentially, Copilot now has a behind the scenes orchestrator that plans and breaks your objective into independent work items and dispatches multiple agents to execute them simultaneously. On different files, in different parts of your codebase, all at once.\n\nWant to learn more about how /fleet works, and more importantly, how to use it most effectively? Let’s jump in.\n\nHow it works\n\nWhen you run /fleet with a prompt, the behind-the-scenes orchestrator:\n\nDecomposes your task into discrete work items with dependencies.\n\nIdentifies which items can run in parallel versus which must wait.\n\nDispatches independent items as background sub-agents simultaneously.\n\nPolls for completion, then dispatches the next wave.\n\nVerifies outputs and synthesizes any final artifacts.\n\nEach sub-agent gets its own context window but shares the same filesystem. They can’t talk to each other directly; only the orchestrator coordinates.\n\nThink of it as a project lead who assigns work to a team, checks in on progress, and assembles the final deliverable.\n\nGetting started\n\nStart fleet mode by sending /fleet <YOUR OBJECTIVE PROMPT>. For example:\n\n/fleet Refactor the auth module, update tests, and fix the related docs in the folder docs/auth/ \n\nThat’s it. The orchestrator takes your objective, figures out what can be parallelized, and starts dispatching.\n\nYou can also run it non-interactively in your terminal:\n\ncopilot -p \"/fleet <YOUR TASK>\" --no-ask-user\n\nThe --no-ask-user flag is required for non-interactive mode, since there’s no way to respond to prompts. Now let’s look at what makes a good prompt.\n\nWrite prompts that parallelize well\n\nThe quality of your /fleet prompt determines how effectively work gets distributed. The key is giving the orchestrator enough structure to cleanly break down your task.\n\nA good way to do that is being specific about deliverables. Map every work item to a concrete artifact like a file, a test suite, or a section of documentation. Vague prompts lead to sequential execution because the orchestrator can’t identify independent pieces.\n\nFor example, instead of: /fleet Build the documentation, you could try:\n\n/fleet Create docs for the API module: \n\n- docs/authentication.md covering token flow and examples \n\n- docs/endpoints.md with request/response schemas for all REST endpoints \n\n- docs/errors.md with error codes and troubleshooting steps \n\n- docs/index.md linking to all three pages (depends on the others finishing first)\n\nThe second prompt gives the orchestrator four distinct deliverables, three of which can run in parallel, and one that depends on them.\n\nSet explicit boundaries\n\nSub-agents work best when they know exactly where their scope starts and ends. When writing your prompt include:\n\nFile or module boundaries: Which directories or files each track owns\n\nConstraints: What not to touch (e.g., no test changes, no dependency upgrades)\n\nValidation criteria: Lint, type checks, tests that must pass\n\nHere’s a prompt that showcases these boundaries:\n\n/fleet Implement feature flags in three tracks: \n\n1. API layer: add flag evaluation to src/api/middleware/ and include unit tests that look for successful flag evaluation and tests API endpoints \n\n2. UI: wire toggle components in src/components/flags/ and introduce no new dependencies \n\n3. Config: add flag definitions to config/features.yaml and validate against schema \n\nRun independent tracks in parallel. No changes outside assigned directories. \n\nDeclare dependencies when they exist\n\nIf one piece of work depends on another, say so. The orchestrator will serialize those items and parallelize the rest. For example:\n\n/fleet Migrate the database layer: \n\n1. Write new schema in migrations/005_users.sql \n\n2. Update the ORM models in src/models/user.ts (depends on 1) \n\n3. Update API handlers in src/api/users.ts (depends on 2) \n\n4. Write integration tests in tests/users.test.ts (depends on 2) \n\n Items 3 and 4 can run in parallel after item 2 completes. \n\nUse custom agents for different jobs\n\nYou can define specialized agents in .github/agents/ and reference them in your /fleet prompt. Each agent can specify its own model, tools, and instructions. Be aware that if you don’t specify which model to use, agents will use the current default model.\n\n# .github/agents/technical-writer.md \n\n--- \n\nname: technical-writer \n\ndescription: Documentation specialist \n\nmodel: claude-sonnet-4 \n\ntools: [\"bash\", \"create\", \"edit\", \"view\"] \n\n--- \n\nYou write clear, concise technical documentation. Follow the project style guide in /docs/styleguide.md. \n\nThen reference the custom agent in your prompt:\n\n/fleet Use @technical-writer.md as the agent for all docs tasks and the default agent for code changes. \n\nThis is useful when different tracks need different strengths such as using a heavier model for complex logic and a lighter one for boilerplate documentation.\n\nHow to verify subagents are deploying\n\nWatch how the orchestrator deploys subagents, it’s the fastest way to learn how to write prompts that parallelize well.\n\nUse this quick checklist:\n\nDecomposition appears: Before it starts working, review the plan Copilot shares with you to see if it breaks work into multiple tracks, instead of one long linear plan.\n\nBackground task UI confirms activity: Once it begins working, run /tasks to open the tasks dialog and inspect running background tasks.\n\nParallel progress appears: Updates reference separate tracks moving at the same time.\n\nIf the fleet doesn’t seem to be parallelizing, try stopping Copilot’s work and asking for an explicit decomposition:\n\nDecompose this into independent tracks first, then execute tracks in parallel. Report each track separately with status and blockers. \n\nAvoiding common pitfalls\n\nFleet is powerful, but a few gotchas are worth knowing upfront.\n\nPartition your files\n\nSub-agents share a filesystem with no file locking. If two agents write to the same file, the last one to finish wins—silently. No error, no merge, just an overwrite.\n\nThe fix is to assign each agent distinct files in your prompt. If multiple agents need to contribute to a single file, consider having each write to a temporary path and let the orchestrator merge them at the end. Or set an explicit order for the agents to follow.\n\nKeep prompts self-contained\n\nSub-agents can’t see the orchestrator’s conversation history. When the orchestrator dispatches a sub-agent, it passes along a prompt, but that prompt needs to include everything the sub-agent needs. If you’ve already gathered useful context earlier in the session, make sure your /fleet prompt includes it (or references files the sub-agents can read).\n\nSteering a fleet in progress\n\nAfter dispatching, you can send follow-up prompts to guide the orchestrator:\n\nPrioritize failing tests first, then complete remaining tasks.\n\nList active sub-agents and what each is currently doing.\n\nMark done only when lint, type check, and all tests pass.\n\nWhen to use /fleet (and when not to)\n\n/fleet shines when your task has natural parallelism—multiple files, independent modules, or separable concerns. It’s particularly effective for:\n\nRefactoring across multiple files simultaneously.\n\nGenerating documentation for several components at once.\n\nImplementing a feature that spans API, UI, and tests.\n\nRunning independent code modifications that don’t share state.\n\nFor strictly linear, single-file work, regular Copilot CLI prompts are simpler and just as fast. Fleet adds coordination overhead, so it pays off when there’s real work to distribute.\n\n/fleet is most useful when you treat it like a team, not a magic trick. Start small. Pick a task with clear outputs, clean file boundaries, and obvious parallelism. See how the orchestrator decomposes the work, where it helps, and where it gets in the way. As you get more comfortable, push it further with larger refactors, multi‑track features, or docs and tests in parallel. The fastest way to learn when /fleet pays off is to try it on real work and adjust your prompts based on what you see.\n\nThe post Run multiple agents at once with /fleet in Copilot CLI appeared first on The GitHub Blog.",
+      "categories": [
+        "AI & ML",
+        "GitHub Copilot",
+        "GitHub Copilot CLI"
+      ],
+      "score": 3
+    },
+    {
+      "eventId": "github-copilot-blog:https://github.blog/?p=94904",
+      "sourceId": "github-copilot-blog",
+      "sourceName": "GitHub Blog / GitHub Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-06T12:57:01.224Z",
+      "publishedAt": "2026-03-31T16:00:00.000Z",
+      "title": "Agent-driven development in Copilot Applied Science",
+      "url": "https://github.blog/ai-and-ml/github-copilot/agent-driven-development-in-copilot-applied-science/",
+      "summary": "I may have just automated myself into a completely different job…\n\nThis is a familiar pattern among software engineers, who often, through inspiration, frustration, or sometimes even laziness, build systems to remove toil and focus on more creative work. We then end up owning and maintaining those systems, unlocking that automated goodness for the rest of those around us.\n\nAs an AI researcher, I recently took this beyond what was previously possible and have automated away my intellectual toil. And now I find myself maintaining this tool to enable all my peers on the Copilot Applied Science team to do the same.\n\nDuring this process, I learned a lot about how to effectively create and collaborate using GitHub Copilot. Applying these learnings has unlocked an incredibly fast development loop for myself as well as enabled my team mates to build solutions to fit their needs.\n\nBefore I get into explaining how I made this possible, let me set the stage for what spawned this project so you better understand the scope of what you can do with GitHub Copilot.\n\nThe impetus\n\nA large part of my job involves analyzing coding agent performance as measured against standardized evaluation benchmarks, like TerminalBench2 or SWEBench-Pro. This often involves poring through tons of what are called trajectories, which are essentially lists of the thought processes and actions agents take while performing tasks.\n\nEach task in an evaluation dataset produces its own trajectory, showing how the agent attempted to solve that task. These trajectories are often .json files with hundreds of lines of code. Multiply that over dozens of tasks in a benchmark set and again over the many benchmark runs needing analysis on any given day, and we’re talking hundreds of thousands of lines of code to analyze.\n\nIt’s an impossible task to do alone, so I would typically turn to AI to help. When analyzing new benchmark runs, I found that I kept repeating the same loop: I used GitHub Copilot to surface patterns in the trajectories then investigated them myself—reducing the number of lines of code I had to read from hundreds of thousands to a few hundred.\n\nHowever, the engineer in me saw this repetitive task and said, “I want to automate that.” Agents provide us with the means to automate this kind of intellectual work, and thus eval-agents was born.\n\nThe plan\n\nEngineering and science teams work better together. That was my guiding principle as I set about solving this new challenge.\n\nThus, I approached the design and implementation strategy of this project with a couple of goals in mind:\n\nMake these agents easy to share and use\n\nMake it easy to author new agents\n\nMake coding agents the primary vehicle for contributions\n\nBullets one and two are in GitHub’s lifeblood and are values and skills I’ve gained throughout my career, especially during my stint as an OSS maintainer on the GitHub CLI.\n\nHowever, goal three shaped the project the most. I noticed that when I set GitHub Copilot up to help me build the tool effectively, it also made the project easier to use and collaborate on. That experience taught me a few key lessons, which ultimately helped push the first and second goals forward in ways I didn’t expect.\n\nMaking coding agents your primary contributor\n\nI’ll start by describing my agentic coding setup:\n\nCoding agent: Copilot CLI\n\nModel used: Claude Opus 4.6\n\nIDE: VSCode\n\nIt’s also noteworthy that I leveraged the Copilot SDK to accelerate agent creation, which is powered under the hood by the Copilot CLI. This gave me access to existing tools and MCP servers, a way to register new tools and skills, and a whole bunch of other agentic goodness out of the box that I didn’t have to reinvent myself.\n\nWith that out of the way, I could streamline the whole development process very quickly by following a few core principles:\n\nPrompting strategies: agents work best when you’re conversational, verbose, and when you leverage planning modes before agent modes.\n\nArchitectural strategies: refactor often, update docs often, clean up often.\n\nIteration strategies: “trust but verify” is now “blame process, not agents.”\n\nUncovering and following these strategies led to an incredible phenomenon: adding new agents and features was fast and easy. We had five folks jump into the project for the first time, and we created a total of 11 new agents, four new skills, and the concept of eval-agent workflows (think scientist streams of reasoning) in less than three days. That amounted to a change of +28,858/-2,884 lines of code across 345 files.\n\nHoly crap!\n\nBelow, I’ll go into detail about these three principles and how they enabled this amazing feat of collaboration and innovation.\n\nPrompting strategies\n\nWe know that AI coding agents are really good at solving well-scoped problems but need handholding for the more complex problems you’d only entrust to your more senior engineers.\n\nSo, if you want your agent to act like an engineer, treat it like one. Guide its thinking, over-explain your assumptions, and leverage its research speed to plan before jumping into changes. I found it far more effective to put some stream-of-consciousness musings about a problem I was chewing on into a prompt and working with Copilot in planning mode than to give it a terse problem statement or solution.\n\nHere’s an example of a prompt I wrote to add more robust regression tests to the tool:\n\n> /plan I've recently observed Copilot happily updating tests to fit its new paradigms even though those tests shouldn't be updated. How can I create a reserved test space that Copilot can't touch or must reserve to protect against regressions?\n\nThis resulted in a back and forth that ultimately led to a series of guardrails akin to contract testing that can only be updated by humans. I had an idea of what I wanted, and through conversation, Copilot helped me get to the right solution.\n\nIt turns out that the things that make human engineers the most effective at doing their jobs are the same things that make these agents effective at doing theirs.\n\nArchitectural strategies\n\nEngineers, rejoice! Remember all those refactors you wanted to do to make the codebase more readable, the tests you never had time to write, and the docs you wish had existed when you onboarded? They’re now the most important thing you can be working on when building an agent-first repository.\n\nGone are the days where deprioritizing this work over new feature work was necessary, because delivering features with Copilot becomes trivial when you have a well-maintained, agent-first project.\n\nI’ve spent most of my time on this project refactoring names and file structures, documenting new features or patterns, and adding test cases for problems that I’ve uncovered as I go. I’ve even spent a few cycles cleaning up the dead code that the agents (like your junior engineers) may have missed while implementing all these new features and changes.\n\nThis work makes it easy for Copilot to navigate the codebase and understand the patterns, just like it would for any other engineer.\n\nI can even ask, “Knowing what I know now, how would I design this differently?” And I can then justify actually going back and rearchitecting the whole project (with the help of Copilot, of course).\n\nIt’s a dream come true!\n\nAnd this leads me to my last bit of guidance.\n\nIteration strategies\n\nAs agents and models have improved, I have moved from a “trust but verify” mindset to one that is more trusting than doubtful. This mirrors how the industry treats human teams: “blame process, not people.” It’s how the most effective teams operate, because people make mistakes, so we build systems around that reality.\n\nThis idea of blameless culture provides psychological safety for teams to iterate and innovate, knowing that they won’t be blamed if they make a mistake. The core principle is that we implement processes and guardrails to protect against mistakes, and if a mistake does happen, we learn from it and introduce new processes and guardrails so that our teams won’t make the same mistake again.\n\nApplying this same philosophy to agent-driven development has been fundamental to unlocking this incredibly rapid iteration pipeline. That means we add processes and guardrails to help prevent the agent from making mistakes, but when it does make a mistake, we add additional guardrails and processes—like more robust tests and better prompts—so the agent can’t make the same mistake again. Taking this one step further means that practicing good CI/CD principles is a must.\n\nPractices like strict typing ensure the agent conforms to interfaces. Robust linters impose implementation rules on the agent that keep it following good patterns and practices. And integration, end-to-end, and contract tests—which can be expensive to build manually—become much cheaper to implement with agent assistance, while giving you confidence that new changes don’t break existing features.\n\nWhen Copilot has these tools available in its development loop, it can check its own work. You’re setting it up for success, much in the same way you’d set up a junior engineer for success in your project.\n\nPutting it all together\n\nHere’s what all this means for your development loop when you’ve got your codebase set up for agent-driven development:\n\nPlan a new feature with Copilot using /plan.\n\nIterate on the plan.\n\nEnsure that testing is included in the plan.\n\nEnsure that docs updates are included in the plan and done before code is implemented. These can serve as additional guidelines that live beside your plan.\n\nLet Copilot implement the feature on /autopilot.\n\nPrompt Copilot to initiate a review loop with the Copilot Code Review agent. For me, it’s often something like: request Copilot Code Review, wait for the review to finish, address any relevant comments, and then re-request review. Continue this loop until there are no more relevant comments.\n\nHuman review. This is where I enforce the patterns I discussed in the previous sections.\n\nAdditionally, outside of your feature loop, be sure you’re prompting Copilot early and often with the following:\n\n/plan Review the code for any missing tests, any tests that may be broken, and dead code\n\n/plan Review the code for any duplication or opportunities for abstraction\n\n/plan Review the documentation and code to identify any documentation gaps. Be sure to update the copilot-instructions.md to reflect any relevant changes\n\nI have these run automatically once a week, but I often find myself running them throughout the week as new features and fixes go in to maintain my agent-driven development environment.\n\nTake this with you\n\nWhat started as a frustration with an impossibly repetitive analysis task turned into something far more interesting: a new way of thinking about how we build software, how we collaborate, and how we grow as engineers.\n\nBuilding agents with a coding agent-first mindset has fundamentally changed how I work. It’s not just about the automation wins—though watching four scientists ship 11 agents, four skills, and a brand-new concept in under three days is nothing short of remarkable. It’s about what this style of development forces you to prioritize: clean architecture, thorough documentation, meaningful tests, and thoughtful design—the things we always knew mattered but never had time for.\n\nThe analogy to a junior engineer keeps proving itself out. You onboard them well, give them clear context, build guardrails so their mistakes don’t become disasters, and then trust them to grow. If something goes wrong, you blame the process. Not the agent. If there’s one thing I want you to take away from this, it’s that the skills that make you a great engineer and a great teammate are the same skills that make you great at building with Copilot. The technology is new. The principles aren’t.\n\nSo go clean up that codebase, write that documentation you’ve been putting off, and start treating your Copilot like the newest member of your team. You might just automate yourself into the most interesting work of your career.\n\nThink I’m crazy? Well, try this:\n\nDownload Copilot CLI\n\nActivate Copilot CLI in any repo: cd <repo_path> && copilot\n\nPaste in the following prompt: /plan Read <link to this blog post> and help me plan how I could best improve this repo for agent-first development\n\nThe post Agent-driven development in Copilot Applied Science appeared first on The GitHub Blog.",
+      "categories": [
+        "AI & ML",
+        "Application development",
+        "Architecture & optimization",
+        "GitHub Copilot",
+        "AI agents",
+        "automation",
+        "GitHub Copilot CLI"
+      ],
+      "score": 5
+    },
+    {
+      "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_113",
+      "sourceId": "vscode-feed",
+      "sourceName": "VS Code Feed",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-06T12:57:01.355Z",
+      "publishedAt": "2026-03-25T17:00:00.000Z",
+      "title": "Visual Studio Code 1.113",
+      "url": "https://code.visualstudio.com/updates/v1_113",
+      "summary": "Learn what's new in Visual Studio Code 1.113\n Read the full article",
+      "categories": [
+        "release"
+      ],
+      "score": 4
+    },
+    {
+      "eventId": "github-copilot-blog:https://github.blog/?p=94665",
+      "sourceId": "github-copilot-blog",
+      "sourceName": "GitHub Blog / GitHub Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-06T12:57:01.224Z",
+      "publishedAt": "2026-03-24T16:00:00.000Z",
+      "title": "Building AI-powered GitHub issue triage with the Copilot SDK",
+      "url": "https://github.blog/ai-and-ml/github-copilot/building-ai-powered-github-issue-triage-with-the-copilot-sdk/",
+      "summary": "The Copilot SDK lets you add the same AI that powers Copilot Chat to your own applications. I wanted to see what that looks like in practice, so I built an issue triage app called IssueCrush. Here’s what I learned and how you can get started.\n\nIf you’ve ever maintained an open source project, or worked on a team with active repositories, you know the feeling. You open GitHub and see that notification badge: 47 issues. Some are bugs, some are feature requests, some are questions that should be discussions, and some are duplicates of issues from three years ago.\n\nThe mental overhead of triaging issues is real. Each one requires context-switching: read the title, scan the description, check the labels, think about priority, decide what to do. Multiply that by dozens of issues across multiple repositories, and suddenly your brain is mush.\n\nI wanted to make this faster. And with the GitHub Copilot SDK, I found a way.\n\nEnter IssueCrush: Swipe right to ship\n\nIssueCrush shows your GitHub issues as swipeable cards. Left to close, right to keep. When you tap “Get AI Summary,” Copilot reads the issue and tells you what it’s about and what to do with it. Instead of reading through every lengthy description, maintainers can get instant, actionable context to make faster triage decisions. Here’s how I integrated the GitHub Copilot SDK to make it happen.\n\nThe architecture challenge\n\nThe first technical decision was figuring out where to run the Copilot SDK. React Native apps can’t directly use Node.js packages, and the Copilot SDK requires a Node.js runtime. Internally, the SDK manages a local Copilot CLI process and communicates with it over JSON-RPC. Because of this dependency on the CLI binary and a Node environment, the integration must run server-side rather than directly in a React Native app. This means the server must have the Copilot CLI installed and available on the system PATH.\n\nI settled on a server-side integration pattern:\n\nHere’s why this setup works:\n\nSingle SDK instance shared across all clients, so you’re not spinning up a new connection per mobile client. The server manages one instance for every request. Less overhead, fewer auth handshakes, simpler cleanup.\n\nServer-side secrets for Copilot authentication, to keep credentials secure. Your API tokens never touch the client. They live on the server where they belongnot inside a React Native bundle someone can decompile.\n\nGraceful degradation when AI is unavailable, so you can still triage issues even if the Copilot service goes down or times out. The app falls back to a basic summary. AI makes triage faster, but it shouldn’t be a single point of failure.\n\nLogging of requests for debugging and monitoring, because every prompt and response passes through your server. You can track latency, catch failures, and debug prompt issues without bolting instrumentation onto the mobile client.\n\nBefore you build something like this, you need:\n\nThe Copilot CLI installed on your server.\n\nA GitHub Copilot subscription, or a BYOK configuration with your own API keys.\n\nThe Copilot CLI authenticated. Run copilot auth on your server, or set a COPILOT_GITHUB_TOKEN environment variable.\n\nHow to implement the Copilot SDK integration\n\nThe Copilot SDK uses a session-based model. You start a client (which spawns the CLI process), create a session, send messages, then clean up.\n\nconst { CopilotClient, approveAll } = await import('@github/copilot-sdk');\n \nlet client = null; \nlet session = null; \n \ntry { \n // 1. Initialize the client (spawns Copilot CLI in server mode) \n client = new CopilotClient(); \n await client.start(); \n \n // 2. Create a session with your preferred model \n session = await client.createSession({\n model: 'gpt-4.1',\n onPermissionRequest: approveAll,\n});\n \n // 3. Send your prompt and wait for response \n const response = await session.sendAndWait({ prompt }); \n \n // 4. Extract the content \n if (response && response.data && response.data.content) { \n const summary = response.data.content; \n // Use the summary... \n } \n \n} finally { \n // 5. Always clean up \n if (session) await session.disconnect().catch(() => {}); \n if (client) await client.stop().catch(() => {}); \n} \n\nKey SDK patterns\n\n1. Lifecycle management\n\nThe SDK follows a strict lifecycle: start() → createSession() → sendAndWait() → disconnect() → stop().\n\nHere’s something I learned the hard way: failing to clean up sessions leaks resources. I spent two hours debugging memory issues before realizing I’d forgotten a disconnect() call. Wrap every session interaction in try/finally. The .catch(() => {}) on cleanup calls prevents cleanup errors from masking the original error.\n\n2. Prompt engineering for triage\n\nPrompt structure gives the model enough context to do its job. I provide structured information about the issue rather than dumping raw text:\n\nconst prompt = `You are analyzing a GitHub issue to help a developer quickly understand it and decide how to handle it. \n \nIssue Details: \n- Title: ${issue.title} \n- Number: #${issue.number} \n- Repository: ${issue.repository?.full_name || 'Unknown'} \n- State: ${issue.state} \n- Labels: ${issue.labels?.length ? issue.labels.map(l => l.name).join(', ') : 'None'} \n- Created: ${issue.created_at} \n- Author: ${issue.user?.login || 'Unknown'} \n \nIssue Body: \n${issue.body || 'No description provided.'} \n \nProvide a concise 2-3 sentence summary that: \n1. Explains what the issue is about \n2. Identifies the key problem or request \n3. Suggests a recommended action (e.g., \"needs investigation\", \"ready to implement\", \"assign to backend team\", \"close as duplicate\") \n \nKeep it clear, actionable, and helpful for quick triage. No markdown formatting.`; \n\nThe labels and author context matter more than you’d think. An issue from a first-time contributor needs different handling than one from a core maintainer, and the AI uses this information to adjust its summary.\n\n3. Response handling\n\nThe sendAndWait() method returns the assistant’s response once the session goes idle. Always validate that the response chain exists before accessing nested properties:\n\nconst response = await session.sendAndWait({ prompt }, 30000); // 30 second timeout \n \nlet summary; \nif (response && response.data && response.data.content) { \n summary = response.data.content; \n} else { \n throw new Error('No content received from Copilot'); \n} \n\nThe second argument to sendAndWait() is a timeout in milliseconds. Set it high enough for complex issues but low enough that users aren’t staring at a spinner. I’ve seen enough “undefined is not an object” errors to know you should never skip the null checks on the response chain.\n\nClient-side service layer\n\nOn the React Native side, I wrap the API calls in a service class that handles initialization and error states:\n\n// src/lib/copilotService.ts \nimport type { GitHubIssue } from '../api/github'; \nimport { getToken } from './tokenStorage'; \nexport interface SummaryResult { \n summary: string; \n fallback?: boolean; \n requiresCopilot?: boolean; \n} \n \nexport class CopilotService { \n private backendUrl = process.env.EXPO_PUBLIC_API_URL || 'http://localhost:3000'; \n \n async initialize(): Promise<{ copilotMode: string }> { \n try { \n const response = await fetch(`${this.backendUrl}/health`); \n const data = await response.json(); \n \n console.log('Backend health check:', data); \n return { copilotMode: data.copilotMode || 'unknown' }; \n } catch (error) { \n console.error('Failed to connect to backend:', error); \n throw new Error('Backend server not available'); \n } \n } \n \n async summarizeIssue(issue: GitHubIssue): Promise<SummaryResult> { \n try { \n const token = await getToken(); \n \n if (!token) { \n throw new Error('No GitHub token available'); \n } \n \n const response = await fetch(`${this.backendUrl}/api/ai-summary`, { \n method: 'POST', \n headers: { \n 'Content-Type': 'application/json', \n }, \n body: JSON.stringify({ issue, token }), \n }); \n \n const data = await response.json(); \n \n if (!response.ok) { \n if (response.status === 403 && data.requiresCopilot) { \n return { \n summary: data.message || 'AI summaries require a GitHub Copilot subscription.', \n requiresCopilot: true, \n }; \n } \n throw new Error(data.error || 'Failed to generate summary'); \n } \n \n return { \n summary: data.summary || 'Unable to generate summary', \n fallback: data.fallback || false, \n }; \n } catch (error) { \n console.error('Copilot summarization error:', error); \n throw error; \n } \n } \n} \n \nexport const copilotService = new CopilotService(); \n\nReact Native integration\n\nThe UI is straightforward React state management. Tap the button, call the service, cache the result:\n\nconst [loadingAiSummary, setLoadingAiSummary] = useState(false); \n \nconst handleGetAiSummary = async () => { \n const issue = issues[currentIndex]; \n if (!issue || issue.aiSummary) return; \n \n setLoadingAiSummary(true); \n try { \n const result = await copilotService.summarizeIssue(issue); \n setIssues(prevIssues => \n prevIssues.map((item, index) => \n index === currentIndex ? { ...item, aiSummary: result.summary } : item \n ) \n ); \n } catch (error) { \n console.error('AI Summary error:', error); \n } finally { \n setLoadingAiSummary(false); \n } \n}; \n\nOnce a summary exists on the issue object, the card swaps the button for the summary text. If the user swipes away and comes back, the cached version renders instantly. No second API call needed.\n\nGraceful degradation\n\nAI services can fail. Network issues, rate limits, and service outages happen. The server handles two failure modes: subscription errors return a 403 so the client can show a clear message, and everything else falls back to a summary built from issue metadata.\n\n} catch (error) { \n // Clean up on error \n try { \n if (session) await session.disconnect().catch(() => {}); \n if (client) await client.stop().catch(() => {}); \n } catch (cleanupError) { \n // Ignore cleanup errors \n } \n \n const errorMessage = error.message.toLowerCase(); \n \n // Copilot subscription errors get a clear 403 \n if (errorMessage.includes('unauthorized') || \n errorMessage.includes('forbidden') || \n errorMessage.includes('copilot') || \n errorMessage.includes('subscription')) { \n return res.status(403).json({ \n error: 'Copilot access required', \n message: 'AI summaries require a GitHub Copilot subscription.', \n requiresCopilot: true \n }); \n } \n \n // Everything else falls back to a metadata-based summary \n const fallbackSummary = generateFallbackSummary(issue); \n res.json({ summary: fallbackSummary, fallback: true }); \n} \n\nThe fallback builds a useful summary from what we already have:\n\nfunction generateFallbackSummary(issue) { \n const parts = [issue.title]; \n \n if (issue.labels?.length) { \n parts.push(`\\nLabels: ${issue.labels.map(l => l.name).join(', ')}`); \n } \n \n if (issue.body) { \n const firstSentence = issue.body.split(/[.!?]\\s/)[0]; \n if (firstSentence && firstSentence.length < 200) { \n parts.push(`\\n\\n${firstSentence}.`); \n } \n } \n \n parts.push('\\n\\nReview the full issue details to determine next steps.'); \n return parts.join(''); \n} \n\nA few other patterns worth noting\n\nThe server exposes a /health endpoint that signals AI availability. Clients check it on startup and hide the summary button entirely if the backend can’t support it. No broken buttons.\n\nSummaries are generated on -demand, not preemptively. This keeps API costs down and avoids wasted calls when users swipe past an issue without reading it.\n\nThe SDK is loaded with await import('@github/copilot-sdk') instead of a top-level require. This lets the server start even if the SDK has issues, which makes deployment and debugging smoother.\n\nDependencies\n\n{ \n \"dependencies\": { \n \"@github/copilot-sdk\": \"^0.1.14\", \n \"express\": \"^5.2.1\" \n } \n} \n\nThe SDK communicates with the Copilot CLI process via JSON-RPC. You need the Copilot CLI installed and available in your PATH. Check the SDK’s package requirements for the minimum Node.js version.\n\nWhat I learned building this\n\nServer-side is the right call. The SDK needs the Copilot CLI binary, and you’re not installing that on a phone. Running it on a server keeps AI logic in one place, simplifies the mobile client, and means credentials never leave the backend.\n\nPrompt structure matters more than prompt length. Feeding the model organized metadata like title, labels, and author produces much better summaries than dumping the entire issue body as raw text. Give the model something to work with, and it’ll give you something useful back.\n\nAlways have a fallback. AI services go down. Rate limits happen. Design for graceful degradation from day one. Your users should still be able to triage issues even if the AI piece is offline.\n\nClean up your sessions. The SDK requires explicit cleanup: disconnect() then stop(). I skipped a disconnect() call once and spent two hours chasing a memory leak. Use try/finally every time.\n\nCache the results. Once you have a summary, store it on the issue object. If the user swipes away and comes back, the cached version renders instantly. No second API call, no wasted money, no extra latency.\n\nAI can make maintainership sustainable. Triage is one of those invisible tasks that burns people out. Nobody thanks you for it, and it piles up fast. If you can cut the time it takes to process 50 issues in half, that’s time back for code review, mentoring, or just not dreading your notification badge. The Copilot SDK is one tool, but the bigger idea matters more: look at the parts of maintaining that drain you and ask if AI can take a first pass.\n\nTry it yourself\n\nThe @github/copilot-sdk opens real possibilities for building intelligent developer tools. Combined with React Native’s cross-platform reach, you can bring AI-powered workflows to mobile in a way that feels native and fast.\n\nIf you’re building something similar, start with the server-side pattern I’ve outlined here. It’s the simplest path to a working integration, and it scales with your app. The source code is available on GitHub: AndreaGriffiths11/IssueCrush.\n\nGet started with the Copilot SDK to see what else you can build. The Getting Started guide walks you through your first integration in about five lines of code. Have feedback or ideas? Join the conversation in the SDK discussions.\n\nThe post Building AI-powered GitHub issue triage with the Copilot SDK appeared first on The GitHub Blog.",
+      "categories": [
+        "AI & ML",
+        "Application development",
+        "Developer skills",
+        "GitHub Copilot",
+        "AI integration",
+        "GitHub Copilot SDK",
+        "GitHub Issue",
+        "React Native"
+      ],
+      "score": 3
+    },
+    {
+      "eventId": "github-copilot-blog:https://github.blog/?p=94634",
+      "sourceId": "github-copilot-blog",
+      "sourceName": "GitHub Blog / GitHub Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-06T12:57:01.224Z",
+      "publishedAt": "2026-03-19T16:09:50.000Z",
+      "title": "How Squad runs coordinated AI agents inside your repository",
+      "url": "https://github.blog/ai-and-ml/github-copilot/how-squad-runs-coordinated-ai-agents-inside-your-repository/",
+      "summary": "If you’ve used AI coding tools before, you know the pattern. You write a prompt, the model misunderstands, you refine it, and you coax better output. Progress depends more on steering the model than on building the software.\n\nAs projects grow, the challenge stops being “how do I prompt?” and starts becoming “how do I coordinate design, implementation, testing, and review without losing context along the way.”\n\nMulti-agent systems are a great way to move past this plateau, but usually require a massive amount of setup. People spend hours building orchestration layers, wiring up frameworks, and configuring vector databases before they can delegate a single task.\n\nSquad, an open source project built on GitHub Copilot, initializes a preconfigured AI team directly inside your repository. It is a bet that multi-agent development can be accessible, legible, and useful without requiring heavy orchestration infrastructure or deep prompt engineering expertise. \n\nTwo commands—npm install -g @bradygaster/squad-cli once globally, squad init once per repo—and Squad drops a specialized AI team: a lead, frontend developer, backend developer, and tester directly against your repository.\n\nInstead of a single chatbot switching roles, Squad demonstrates repository native multi-agent orchestration without heavy centralized infrastructure.\n\nHow Squad coordinates work across agents\n\nYou describe the work you need done in natural language. From there, a coordinator agent inside Squad figures out the routing, loads repository context, and spawns specialists with task-specific instructions.\n\nFor example, you type: “Team, I need JWT auth—refresh tokens, bcrypt, the works.” Then you watch the team spin up in parallel. The backend specialist takes the implementation. The tester starts writing the accompanying test suite. A documentation specialist opens a pull request. Within minutes, files are written and branches are created. These specialists already know your naming conventions and what you decided about database connections last Tuesday—not because you put it in the prompt, but because agents load from shared team decisions and their own project history files committed to the repository.\n\nInstead of forcing you to manually test the output and prompt the model through multiple rounds of fixes, Squad handles iteration internally. Once the backend specialist drafts the initial implementation, the tester runs their test suite against it. If those tests fail, the tester rejects the code. Crucially, the orchestration layer prevents the original agent from revising its own work. Squad’s reviewer protocol can prevent the original author from revising rejected work, and a different agent must step in to fix it. This forces genuine independent review with a separate context window and a fresh perspective, rather than asking a single AI to review its own mistakes. In workflows where reviewer automation is enabled, you review the pull request that survives this internal loop rather than every intermediate attempt.\n\nIt’s not autopilot, and it’s not magic on session one. Agents will ask clarifying questions and sometimes make reasonable but wrong assumptions. You still review and merge every pull request. It is collaborative orchestration, not autonomous execution.\n\n \n \n \n\nArchitectural patterns behind repository-native orchestration\n\nWhether you use Squad or build your own multi-agent workflows, there are a few architectural patterns we’ve learned from building repository-native orchestration. These patterns move the architecture away from “black box” behavior toward something inspectable and predictable at the repository level.\n\n1. The “Drop-box” pattern for shared memory\n\nMost AI orchestration relies on real-time chat or complex vector database lookups to keep agents in sync. We’ve found that this is often too fragile; synchronizing state across live agents is a fool’s errand.\n\nInstead, Squad uses a “drop-box” pattern. Every architectural choice, like choosing a specific library or a naming convention, is appended as a structured block to a versioned decisions.md file in the repository. This is a bet that asynchronous knowledge sharing inside the repository scales better than real-time synchronization. By treating a markdown file as the team’s shared brain, you get persistence, legibility, and a perfect audit trail of every decision the team has made. Because this memory lives in project files rather than a live session, the team can also recover context after disconnects or restarts and continue from where it left off.\n\n2. Context replication over context splitting\n\nOne of the biggest hurdles in AI development is the context window limit. When a single agent tries to do everything, the “working memory” gets crowded with meta-management, leading to hallucinations.\n\nSquad solves this by ensuring the coordinator agent remains a thin router. It doesn’t do the work; it spawns specialists. Because each specialist runs as a separate inference call with its own large context window (e.g., up to 200K tokens on supported models), you aren’t splitting one context among four agents, you’re replicating repository context across them.\n\nRunning multiple specialists in parallel gives you multiple independent reasoning contexts operating simultaneously. This allows each agent to “see” the relevant parts of the repository without competing for space with the other agents’ thoughts.\n\n3. Explicit memory in the prompt vs. implicit memory in the weights\n\nWe believe an AI team’s memory should be legible and versioned. You shouldn’t have to wonder what an agent “knows” about your project.\n\nIn Squad, an agent’s identity is built primarily on two repository files: a charter (who they are) and a history (what they’ve done), alongside shared team decisions. These are plain text. Because these live in your .squad/ folder, the AI’s memory is versioned right alongside your code. When you clone a repo, you aren’t just getting the code; you are getting an already “onoboarded” AI team because their memory lives alongside the code directly in the repository.\n\nLowering the barrier to multi-agent workflows\n\nOur biggest win with Squad is that it makes it easy for anyone to get started with agentic development in a low-touch, low-ceremony way. You shouldn’t have to spend hours wrestling with infrastructure, learning complex prompt engineering, or managing convoluted CLI interactions just to get an AI team to help you write code.\n\nTo see what repository-native orchestration feels like, check out the Squad repository and throw a squad at a problem to see how the workflow evolves.\n\nThe post How Squad runs coordinated AI agents inside your repository appeared first on The GitHub Blog.",
+      "categories": [
+        "AI & ML",
+        "GitHub Copilot",
+        "AI",
+        "multi-agent workflows"
+      ],
+      "score": 3
+    },
+    {
+      "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_112",
+      "sourceId": "vscode-feed",
+      "sourceName": "VS Code Feed",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-06T12:57:01.355Z",
+      "publishedAt": "2026-03-18T17:00:00.000Z",
+      "title": "Visual Studio Code 1.112",
+      "url": "https://code.visualstudio.com/updates/v1_112",
+      "summary": "Learn what's new in Visual Studio Code 1.112\n Read the full article",
+      "categories": [
+        "release"
+      ],
+      "score": 4
+    },
+    {
+      "eventId": "vscode-feed:https://code.visualstudio.com/blogs/2026/03/13/how-VS-Code-Builds-with-AI",
+      "sourceId": "vscode-feed",
+      "sourceName": "VS Code Feed",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-06T12:57:01.355Z",
+      "publishedAt": "2026-03-13T00:00:00.000Z",
+      "title": "How VS Code Builds with AI",
+      "url": "https://code.visualstudio.com/blogs/2026/03/13/how-VS-Code-Builds-with-AI",
+      "summary": "Learn how VS Code uses AI across its own development workflow with GitHub Copilot agent mode, automated testing, and AI-powered code review.\n Read the full article",
+      "categories": [
+        "blog"
+      ],
+      "score": 2
+    },
+    {
+      "eventId": "github-copilot-blog:https://github.blog/?p=94451",
+      "sourceId": "github-copilot-blog",
+      "sourceName": "GitHub Blog / GitHub Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-06T12:57:01.224Z",
+      "publishedAt": "2026-03-12T16:00:00.000Z",
+      "title": "Continuous AI for accessibility: How GitHub transforms feedback into inclusion",
+      "url": "https://github.blog/ai-and-ml/github-copilot/continuous-ai-for-accessibility-how-github-transforms-feedback-into-inclusion/",
+      "summary": "For years, accessibility feedback at GitHub didn’t have a clear place to go.\n\nUnlike typical product feedback, accessibility issues don’t belong to any single team—they cut across the entire ecosystem. For example, a screen reader user might report a broken workflow that touches navigation, authentication, and settings. A keyboard-only user might hit a trap in a shared component used across dozens of pages. A low vision user might flag a color contrast issue that affects every surface using a shared design element. No single team owns any of these problems—but every one of them blocks a real person.\n\nThese reports require coordination that our existing processes weren’t originally built for. Feedback was often scattered across backlogs, bugs lingered without owners, and users followed up to silence. Improvements were often promised for a mythical “phase two” that rarely materialized.\n\nWe knew we needed to change this. But before we could build something better, we had to lay the groundwork—centralizing scattered reports, creating templates, and triaging years of backlog. Only once we had that foundation in place could we ask: How can AI make this easier?\n\nThe answer was an internal workflow, powered by GitHub Actions, GitHub Copilot, and GitHub Models, that ensures every piece of user and customer feedback becomes a tracked, prioritized issue. When someone reports an accessibility barrier, their feedback is captured, reviewed, and followed through until it’s addressed. We didn’t want AI to replace human judgment—we wanted it to handle repetitive work so humans could focus on fixing the software.\n\nThis is how we went from chaos to a system where every piece of accessibility feedback is tracked, prioritized, and acted on—not eventually, but continuously.\n\nAccessibility as a living system\n\nContinuous AI for accessibility weaves inclusion into the fabric of software development. It’s not a single product or a one-time audit—it’s a living methodology that combines automation, artificial intelligence, and human expertise.\n\nThis philosophy connects directly to our support for the 2025 Global Accessibility Awareness Day (GAAD) pledge: strengthening accessibility across the open source ecosystem by ensuring user and customer feedback is routed to the right teams and translated into meaningful platform improvements.\n\nThe most important breakthroughs rarely come from code scanners—they come from listening to real people. But listening at scale is hard, which is why we needed technology to help amplify those voices. We built a feedback workflow that functions less like a static ticketing system and more like a dynamic engine—leveraging GitHub products to clarify, structure, and track user and customer feedback, turning it into implementation-ready solutions.\n\nDesigning for people first\n\nBefore jumping into solutions, we stepped back to understand who this system needed to serve:\n\nIssue submitters: Community managers, support agents, and sales reps submit issues on behalf of users and customers. They aren’t always accessibility experts, so they need a system that guides them and teaches accessibility concepts in the flow of work.\n\nAccessibility and service teams: Engineers and designers responsible for fixes need structured, actionable data—reproducible steps, WCAG mapping, severity scores, and clear ownership.\n\nProgram and product managers: Leadership needs visibility into pain points by category, trends, and progress over time to allocate resources strategically.\n\nWith these personas in mind, we knew we wanted to 1) treat feedback as data flowing through a pipeline and 2) build a system able to evolve with us.\n\nHow feedback flows\n\nWith that foundation set, we built an architecture around an event-driven pattern, where each step triggers a GitHub Action that orchestrates what comes next—ensuring consistent handling no matter where the feedback originates. We built this system largely by hand starting in mid-2024. Today, tools like Agentic Workflows let you create GitHub Actions using natural language—meaning this kind of system could be built in a fraction of the time.\n\nThe workflow reacts to key events: Issue creation launches GitHub Copilot analysis via the GitHub Models API, status changes initiate hand-offs between teams, and resolution triggers submitter follow-up with the user. Every Action can also be triggered manually or re-run as needed—automation covers the common path, while humans can step in at any point.\n\nFeedback isn’t just captured—it continuously flows through the right channels, providing visibility, structure, and actionability at every stage.\n\n*Click images to enlarge.\n\n1. Actioning intake\n\nFeedback can come from anywhere—support tickets, social media posts, email, direct outreach—but most users choose the GitHub accessibility discussion board. It’s where they can work together and build community around shared experiences. Today, 90% of the accessibility feedback flows through that single channel. Because posts are public, other users can confirm the problem, add context, or suggest workarounds—so issues often arrive with richer detail than a support ticket ever could. Regardless of the source, every piece of feedback gets acknowledged within five business days, and even feedback we can’t act on gets a response pointing to helpful resources.\n\nWhen feedback requires action from internal teams, a team member manually creates a tracking issue using our custom accessibility feedback issue template. Issue templates are pre-defined forms that standardize how information is collected when opening a new issue. The template captures the initial context—what the user reported, where it came from, and which components are involved—so nothing is lost between intake and triage.\n\nThis is where automation kicks in. Creating the issue triggers a GitHub Action that engages GitHub Copilot, and a second Action adds the issue to a project board, providing a centralized view of current status, surfacing trends, and helping identify emerging needs.\n\n2. GitHub Copilot analysis\n\nWith the tracking issue created, a GitHub Action workflow programmatically calls the GitHub Models API to analyze the report. We chose stored prompts over model fine-tuning so that anyone on the team can update the AI’s behavior through a pull request—no retraining pipeline, no specialized ML knowledge required.\n\nWe configured GitHub Copilot using custom instructions developed by our accessibility subject matter experts. Our prompt serves two roles: triage analysis, which classifies issues by WCAG violation, severity, and affected user group, and accessibility coaching, where GitHub Copilot acts as a subject-matter expert to help teams write and review accessible code.\n\nThese instruction files point to our accessibility policies, component library, and internal documentation that details how we interpret and apply WCAG success criteria. When our standards evolve, the team updates the markdown and instruction files via pull request—the AI’s behavior changes with the next run, not the next training cycle. For a detailed walkthrough of this approach, see our guide on optimizing GitHub Copilot custom instructions for accessibility.\n\nThe automation works in two steps. First, an Action fires on issue creation and triggers GitHub Copilot to analyze the report. GitHub Copilot populates approximately 80% of the issue’s metadata automatically—over 40 data points including issue type, user segment, original source, affected components, and enough context to understand the user’s experience. The remaining 20% requires manual input from the team member. GitHub Copilot then posts a comment on the issue containing:\n\nA summary of the problem and user impact\n\nSuggested WCAG success criteria for potential violations\n\nSeverity level (sev1 through sev4, where sev1 is critical)\n\nImpacted user groups (screen reader users, keyboard users, low vision users, etc.)\n\nRecommended team assignment (design, engineering, or both)\n\nA checklist of low-barrier accessibility tests so the submitter can verify the issue\n\nThen a second Action fires on that comment, parses the response, applies labels based on the severity GitHub Copilot assigned, updates the issue’s status on the project board, and assigns it to the submitter for review.\n\nIf GitHub Copilot’s analysis seems off, anyone can flag it by opening an issue describing what it got wrong and what it should have said—feeding directly into our continuous improvement process.\n\n3. Submitter review\n\nBefore we act on GitHub Copilot’s recommendations, two layers of review happen—starting with the issue submitter.\n\nThe submitter attempts to replicate the problem the user reported. The checklist GitHub Copilot provides in its comment guides our community managers, support agents, and sales reps through expert-level testing procedures—no accessibility expertise required. Each item includes plain-language explanations, step-by-step instructions, and links to tools and documentation.\n\nExample questions include:\n\nCan you navigate the page using only a keyboard? Press “Tab” to move through interactive elements. Can you reach all buttons, links, and form fields? Can you see where your focus is at all times?\n\nDo images have descriptive alt text? Right-click an image and select “Inspect” to view the markup. Does the alt attribute describe the image’s purpose, or is it a generic file name?\n\nAre interactive elements clearly labeled? Using a screen reader, navigate to a button or link. Is its purpose announced clearly? Alternatively, review the accessibility tree in your browser’s developer tools to inspect how elements are exposed to assistive technologies.\n\nIf the submitter can replicate the problem, they mark the issue as reviewed, which triggers the next GitHub Action. If they can’t reproduce it, they reach out to the user for more details. Once new information arrives, the submitter can re-run the GitHub Copilot analysis—either by manually triggering the Action from the Actions tab or by removing and re-adding the relevant label to kick it off automatically. AI provides the draft, but humans provide the verification.\n\n4. Accessibility team review\n\nOnce the submitter marks the issue as reviewed, a GitHub Action updates its status on the workflow project board and adds it to a separate accessibility first responder board. This alerts the accessibility team—engineers, designers, champions, testing vendors, and managers—that GitHub Copilot’s analysis is ready for their review.\n\nThe team validates GitHub Copilot’s analysis—checking the severity level, WCAG mapping, and category labels—and corrects anything the AI got wrong. When there’s a discrepancy, we assume the human is correct. We log these corrections and use them to refine the prompt files, improving future accuracy.\n\nOnce validated, the team determines the resolution approach:\n\nDocumentation or settings update: Provide the solution directly to the user.\n\nCode fix by the accessibility team: Create a pull request directly.\n\nService team needed: Assign the issue to the appropriate service team and track it through resolution.\n\nWith a path forward set, the team marks the issue as triaged. An Action then reassigns it to the submitter, who communicates the plan to the user—letting them know what’s being done and what to expect.\n\n5. Linking to audits\n\nAs part of the review process, the team connects user and customer feedback to our formal accessibility audit system.\n\nRoughly 75–80% of the time, reported issues correspond to something we already know about from internal audits. Instead of creating duplicates, we find the existing internal audit issue and add a customer-reported label. This lets us prioritize based on real-world impact—a sev2 issue might technically be less critical than a sev1, but if multiple users are reporting it, we bump up its priority.\n\nIf the feedback reveals something new, we create a new audit issue and link it to the tracking issue.\n\n6. Closing the loop\n\nThis is the most critical step for trust. Users who take the time to report accessibility barriers deserve to know their feedback led to action.\n\nOnce a resolution path is set, the submitter reaches out to the original user to let them know the plan—what’s being fixed, and what to expect. When the fix ships, the submitter follows up again and asks the user to test it. Because most issues originate from the community discussion board, we post confirmations there for everyone to see.\n\nIf the user confirms the fix works, we close the tracking issue. If the fix doesn’t fully address the problem, the submitter gathers more details and the process loops back to the accessibility team review. We don’t close issues until the user confirms the fix works for them.\n\n7. Continuous improvement\n\nThe workflow doesn’t end when an issue closes—it feeds back into itself.\n\nWhen submitters or accessibility team members spot inaccuracies in GitHub Copilot’s output, they open a new issue requesting a review of the results. Every GitHub Copilot analysis comment includes a link to create this issue at the bottom, so the feedback loop is built into the workflow itself. The team reviews the inaccuracy, and the correction becomes a pull request to the custom instruction and prompt files described earlier.\n\nWe also automate the integration of new accessibility guidance. A separate GitHub Action scans our internal accessibility guide repository weekly and incorporates changes into GitHub Copilot’s custom instructions automatically.\n\nThe goal isn’t perfection—it’s continuous improvement. Each quarter, we review accuracy metrics and refine our instructions. These reviews feed into quarterly and fiscal year reports that track resolution times, WCAG failure patterns, and feedback volume trends—giving leadership visibility into both progress and persistent gaps. The system gets smarter over time, and now we have the data to show it.\n\nImpact in numbers\n\nA year ago, nearly half of accessibility feedback sat unresolved for over 300 days. Today, that backlog isn’t just smaller—it’s gone. And the improvements don’t stop there.\n\n89% of issues now close within 90 days (up from 21%)\n\n62% reduction in average resolution time (118 days → 45 days)\n\n70% reduction in manual administrative time\n\n1,150% increase in issues resolved within 30 days (4 → 50 year-over-year)\n\n50% reduction in critical sev1 issues\n\n100% of issues closed within 60 days in our most recent quarter\n\nWe track this through automated weekly and quarterly reports generated by GitHub Actions—surfacing which WCAG criteria fail most often and how resolution times trend over time.\n\nBeyond the numbers\n\nA user named James emailed us to report that the GitHub Copilot CLI was inaccessible. Decorative formatting created noise for screen readers, and interactive elements were impossible to navigate.\n\nA team member created a tracking issue. Within moments, GitHub Copilot analyzed the report—mapping James’s description to specific technical concepts, linking to internal documentation, and providing reproduction steps so the submitter could experience the product exactly as James did.\n\nWith that context, the team member realized our engineering team had already shipped accessible CLI updates earlier in the year—James simply wasn’t aware.\n\nThey replied immediately. His response? “Thanks for pointing out the –screen-reader mode, which I think will help massively.”\n\nBecause the AI workflow identified the problem correctly, we turned a frustration into a resolution in hours.\n\nBut the most rewarding result isn’t the speed—it’s the feedback from users. Not just that we responded, but that the fixes actually worked for them:\n\n“Huge thanks to the team for updating the contributions graph in the high contrast theme. The addition of borders around the grid edges is a small but meaningful improvement. Keep it up!”\n\n“Let’s say you want to create several labels for your GitHub-powered workflow: bug, enhancement, dependency updates… But what if you are blind? Before you had only hex codes randomly thrown at you… now it’s fixed, and those colors have meaningful English names. Well done, GitHub!”\n\n“This may not be very professional but I literally just screamed! This fix has actually made my day… Before this I was getting my wife to manage the GitHub issues but now I can actually navigate them by myself! It means a lot that I can now be a bit more independent so thank you again.”\n\nThat independence is the point. Every workflow, every automation, every review—it all exists so moments like these are the expectation, not the exception.\n\nThe bigger picture\n\nStories like these remind us why the foundation matters. Design annotations, code scanners, accessibility champions, and testing with people with disabilities—these aren’t replaced by AI. They are what make AI-assisted workflows effective. Without that human foundation, AI is just a faster way to miss the point.\n\nWe’re still learning, and the system is still evolving. But every piece of feedback teaches us something, and that knowledge now flows continuously back to our team, our users, and the tools we build. \n\nIf you maintain a repository—whether it’s a massive enterprise project or a weekend open-source library—you can build this kind of system today. Start small. Create an issue template for accessibility. Add a .github/copilot-instructions.md file with your team’s accessibility standards. Let AI handle the triage and formatting so your team can focus on what really matters: writing more inclusive code.\n\nAnd if you hit an accessibility barrier while using GitHub, please share your feedback. It won’t disappear into a backlog. We’re listening—and now we have the system to follow through.\n\nThe post Continuous AI for accessibility: How GitHub transforms feedback into inclusion appeared first on The GitHub Blog.",
+      "categories": [
+        "AI & ML",
+        "Architecture & optimization",
+        "Engineering",
+        "GitHub Copilot",
+        "User experience",
+        "accessibility",
+        "developer experience",
+        "engineering",
+        "GitHub Actions",
+        "social impact"
+      ],
+      "score": 3
+    },
+    {
+      "eventId": "github-copilot-blog:https://github.blog/?p=94415",
+      "sourceId": "github-copilot-blog",
+      "sourceName": "GitHub Blog / GitHub Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-06T12:57:01.224Z",
+      "publishedAt": "2026-03-10T20:16:01.000Z",
+      "title": "The era of “AI as text” is over. Execution is the new interface.",
+      "url": "https://github.blog/ai-and-ml/github-copilot/the-era-of-ai-as-text-is-over-execution-is-the-new-interface/",
+      "summary": "Over the past two years, most teams have interacted with AI the same way: provide text input, receive text output, and manually decide what to do next.\n\nBut production software doesn’t operate on isolated exchanges. Real systems execute. They plan steps, invoke tools, modify files, recover from errors, and adapt under constraints you define.\n\nAs a developer, you’ve gotten used to using GitHub Copilot as your trusted AI in the IDE. But I bet you’ve thought more than once: “Why can’t I use this kind of agentic workflow inside my own apps too?”\n\nNow you can.\n\nThe GitHub Copilot SDK makes that execution layer available as a programmable capability inside your software.\n\nInstead of maintaining your own orchestration stack, you can embed the same production-tested planning and execution engine that powers GitHub Copilot CLI directly into your systems.\n\nIf your application can trigger logic, it can now trigger agentic execution. This shift changes the architecture of AI-powered systems.\n\nSo how does it work? Here are three concrete patterns teams are using to embed agentic execution into real applications.\n\nPattern #1: Delegate multi-step work to agents\n\nFor years, teams have relied on scripts and glue code to automate repetitive tasks. But the moment a workflow depends on context, changes shape mid-run, or requires error recovery, scripts become brittle. You either hard-code edge cases, or start building a homegrown orchestration layer.\n\nWith the Copilot SDK, your application can delegate intent rather than encode fixed steps.\n\nFor example:\n\nYour app exposes an action like “Prepare this repository for release.”\n\nInstead of defining every step manually, you pass intent and constraints. The agent:\n\nExplores the repository\n\nPlans required steps\n\nModifies files\n\nRuns commands\n\nAdapts if something fails\n\nAll while operating within defined boundaries.\n\nWhy this matters: As systems scale, fixed workflows break down. Agentic execution allows software to adapt while remaining constrained and observable, without rebuilding orchestration from scratch.\n\nView multi-step execution examples →\n\nPattern #2: Ground execution in structured runtime context\n\nMany teams attempt to push more behavior into prompts. But encoding system logic in text makes workflows harder to test, reason about, and evolve. Over time, prompts become brittle substitutes for structured system integration.\n\nWith the Copilot SDK, context becomes structured and composable.\n\nYou can:\n\nDefine domain-specific tools or agent skills\n\nExpose tools via Model Context Protocol (MCP)\n\nLet the execution engine retrieve context at runtime\n\nInstead of stuffing ownership data, API schemas, or dependency rules into prompts, your agents access those systems directly during planning and execution.\n\nFor example, an internal agent might:\n\nQuery service ownership\n\nPull historical decision records\n\nCheck dependency graphs\n\nReference internal APIs\n\nAct under defined safety constraints\n\nWhy this matters: Reliable AI workflows depend on structured, permissioned context. MCP provides the plumbing that keeps agentic execution grounded in real tools and real data, without guesswork embedded in prompts.\n\nPattern #3: Embed execution outside the IDE\n\nMuch of today’s AI tooling assumes meaningful work happens inside the IDE. But modern software ecosystems extend far beyond an editor.\n\nTeams want agentic capabilities inside:\n\nDesktop applications\n\nInternal operational tools\n\nBackground services\n\nSaaS platforms\n\nEvent-driven systems\n\nWith the Copilot SDK, execution becomes an application-layer capability.\n\nYour system can listen for an event—such as a file change, deployment trigger, or user action—and invoke Copilot programmatically.\n\nThe planning and execution loop runs inside your product, not in a separate interface or developer tool.\n\nWhy this matters: When execution is embedded into your application, AI stops being a helper in a side window and becomes infrastructure. It’s available wherever your software runs, not just inside an IDE or terminal.\n\nBuild your first Copilot-powered app →\n\nExecution is the new interface\n\nThe shift from “AI as text” to “AI as execution” is architectural. Agentic workflows are programmable planning and execution loops that operate under constraints, integrate with real systems, and adapt at runtime.\n\nThe GitHub Copilot SDK makes those execution capabilities accessible as a programmable layer. Teams can focus on defining what their software should accomplish, rather than rebuilding how orchestration works every time they introduce AI.\n\nIf your application can trigger logic, it can trigger agentic execution.\n\nExplore the GitHub Copilot SDK →\n\nThe post The era of “AI as text” is over. Execution is the new interface. appeared first on The GitHub Blog.",
+      "categories": [
+        "AI & ML",
+        "Generative AI",
+        "GitHub Copilot",
+        "Branching Out_",
+        "GitHub Copilot SDK",
+        "MCP"
+      ],
+      "score": 4
+    },
+    {
+      "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_111",
+      "sourceId": "vscode-feed",
+      "sourceName": "VS Code Feed",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-06T12:57:01.355Z",
+      "publishedAt": "2026-03-09T17:00:00.000Z",
+      "title": "Visual Studio Code 1.111",
+      "url": "https://code.visualstudio.com/updates/v1_111",
+      "summary": "Learn what's new in Visual Studio Code 1.111\n Read the full article",
+      "categories": [
+        "release"
+      ],
+      "score": 4
+    },
+    {
+      "eventId": "github-copilot-blog:https://github.blog/?p=94298",
+      "sourceId": "github-copilot-blog",
+      "sourceName": "GitHub Blog / GitHub Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-06T12:57:01.224Z",
+      "publishedAt": "2026-03-05T20:10:43.000Z",
+      "title": "60 million Copilot code reviews and counting",
+      "url": "https://github.blog/ai-and-ml/github-copilot/60-million-copilot-code-reviews-and-counting/",
+      "summary": "Since our initial launch of Copilot code review (CCR) last April, usage has grown 10X, now accounting for more than one in five code reviews on GitHub.\n\nBehind the scenes, we’ve been running continuous experiments to enhance comment quality. We also moved to an agentic architecture that retrieves repository context and reasons across changes. At every step of the way, we’ve listened to your feedback: your survey answers and even your simple thumbs-up and thumbs-down reactions on comments have helped us identify key issues and iterate on our UX to provide a comprehensive review experience.\n\nCopilot code review handles pull request reviews and summaries, allowing teams to focus on more complex tasks.\nSuvarna Rane, Software Development Manager, General Motors\n\nRedefining a “good” code review\n\nAs Copilot code review evolved over time, so has our definition of a “good code review.” When we started building it in 2024, our goal was simple thoroughness. Since then, we’ve learned that what developers actually value is high-signal feedback that helps them move a pull request forward quickly. Today, Copilot code review leverages the best models, memory, and agentic tool-calling to conduct comprehensive reviews. To get here, we’ve used a continuous evaluation loop to tune the agent’s judgment, focusing on three qualities that shape that experience: accuracy, signal, and speed.\n\nAccuracy\n\nOur aim has been for Copilot code review to deliver sound judgment, prioritizing consequential logic and maintainability issues. We evaluate performance in two ways: through internal testing against known code issues, and through production signals from real pull requests. In production, we track two key indicators:\n\nDeveloper feedback: Thumbs-up and thumbs-down reactions on comments help us understand whether suggestions are helpful.\n\nProduction signals: We measure whether flagged issues are resolved before merging.\n\nTogether, these signals help ensure that Copilot code review surfaces issues that matter, and that faster merges come from confident fixes, not less scrutiny.\n\nSignal\n\nIn code review, more comments don’t necessarily mean a better review. Our goal isn’t to maximize comment volume, but to surface issues that actually matter.\n\nA high-signal comment helps a developer understand both the problem and the fix:\n\nSilence is better than noise. In 71% of the reviews, Copilot code review surfaces actionable feedback. In the remaining 29%, the agent says nothing at all.\n\nAs our ability to identify high-signal findings improves, we’re also able to comment more confidently, now averaging about 5.1 comments per review without increasing review churn or lowering our quality threshold.\n\nSpeed\n\nIn code review, speed matters, but signal matters more. Copilot code review is designed to provide a reliable first pass shortly after a pull request is opened. That being said, meaningful reviews still require analysis. As reasoning capabilities improve, so does the computation required to surface deeper issues.\n\nWe treat this as a deliberate trade-off. In one recent change, adopting a more advanced reasoning model improved positive feedback rates by 6%, even though review latency increased by 16%.\n\nFor us, that’s the right exchange. A slightly slower review that surfaces real issues is far more valuable than instant feedback that adds noise. We continue to reduce latency wherever possible, but never at the expense of high-signal findings developers can trust.\n\nTry Copilot code review: AI code review agent that understands your codebase\n\nCopilot code review helps you catch bugs, improve readability, and speed up pull request feedback with AI suggestions right where you work on GitHub. It fits into your existing pull request workflow, so your team can ship faster with more confidence.\n\n👉 Get started with Copilot code review on GitHub >\n\nAbout the agentic architecture\n\nGiven our new definition of “good,” we redeveloped our code review system. Today’s agentic design can retrieve context intelligently and explore the repository to understand logic, architecture, and specific invariants.\n\nThis shift alone has driven an initial 8.1% increase in positive feedback.\n\nHere’s why:\n\nIt catches issues as it reads, not just at the end: Previously, agents waited until the end of a review to finalize results, which often led to “forgetting” early discoveries.\n\nIt can maintain memory across reviews: Now, every pull request doesn’t need to be an isolated event. If it flags a pattern in one part of the codebase, it can reuse that context in future reviews.\n\nIt keeps long pull requests reviewable with an explicit plan: It can map out its review strategy ahead of time, significantly improving its performance on long, complex pull requests, where context is easily lost.\n\nIt reads linked issues and pull requests: That extra context helps it flag subtle gaps. This includes cases where the code looks reasonable in isolation but doesn’t match the project’s requirements.\n\nMaking reviews easier to navigate\n\nBy iterating on how the agent interacts with pull requests, we’ve reduced noise and made feedback more actionable. Here’s what that means for you.\n\nQuickly understand feedback (and the fix) with multi-line comments: We moved away from pinning comments to single lines. By attaching feedback to logical code ranges, Copilot makes it easier to see what it’s referring to and apply the suggested change.\n\nKeep your pull request timeline readable: Instead of multiple separate comments for the same pattern error, which can be overwhelming, the agent clusters them into a single, cohesive unit to reduce cognitive load.\n\nFix whole classes of issues at once with batch autofixes: Apply suggested fixes in batches, resolving an entire class of logic bugs or style issues at once, rather than context-switching through a dozen individual suggestions.\n\nTake this with you\n\nAs AI continues to accelerate software development, it’s more important than ever to help teams review and trust code at scale. Copilot code review helps teams keep pace by surfacing high-signal feedback directly in pull requests, enabling developers to catch issues earlier and merge with greater confidence.\n\nMore than 12,000 organizations now run Copilot code review automatically on every pull request. At WEX, this shift toward default AI –assisted reviews has helped scale Copilot adoption across the engineering organization:\n\nToday, two-thirds of developers are using Copilot — including the organization’s most active contributors. WEX has since expanded adoption by making Copilot code review a default across every repository. Developers are also heavily utilizing agent mode and the coding agent to drive autonomy, helping WEX see a huge lift in deployments, with ~30% more code shipped. — WEX customer story\n\nGoing forward, we’re focused on deeper personalization and high-fidelity interactivity, refining the agent to learn your team’s unwritten preferences while enabling two-way conversations that let you refine fixes and explore alternatives before merging.\n\nAs Copilot capabilities continue to evolve, from coding and planning to review and automation, the goal is simple: help developers move faster while maintaining the trust and quality that great software demands.\n\nGet started today\n\nCopilot code review is a premium feature available with Copilot Pro, Copilot Pro+, Copilot Business, and Copilot Enterprise. See the following resources to:\n\nChoose a plan\n\nEnable Copilot code review without a Copilot license\n\nWatch a demo video\n\nAlready enabled Copilot code review? See these docs to set up automatic Copilot code reviews on every pull request within your repository or organization.\n\nHave thoughts or feedback? Please let us know in our community discussion post.\n\nThe post 60 million Copilot code reviews and counting appeared first on The GitHub Blog.",
+      "categories": [
+        "AI & ML",
+        "Generative AI",
+        "GitHub Copilot",
+        "code quality",
+        "GitHub Actions",
+        "GitHub Copilot code review"
+      ],
+      "score": 3
+    },
+    {
+      "eventId": "vscode-feed:https://code.visualstudio.com/blogs/2026/03/05/making-agents-practical-for-real-world-development",
+      "sourceId": "vscode-feed",
+      "sourceName": "VS Code Feed",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-06T12:57:01.356Z",
+      "publishedAt": "2026-03-05T00:00:00.000Z",
+      "title": "Making agents practical for real-world development",
+      "url": "https://code.visualstudio.com/blogs/2026/03/05/making-agents-practical-for-real-world-development",
+      "summary": "Explore agent orchestration, extensibility, and continuity in VS Code 1.110: lifecycle hooks, agent skills, session memory, and integrated browser tools.\n Read the full article",
+      "categories": [
+        "blog"
+      ],
+      "score": 1
+    },
+    {
+      "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_110",
+      "sourceId": "vscode-feed",
+      "sourceName": "VS Code Feed",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-06T12:57:01.356Z",
+      "publishedAt": "2026-03-04T17:00:00.000Z",
+      "title": "February 2026 (version 1.110)",
+      "url": "https://code.visualstudio.com/updates/v1_110",
+      "summary": "What's new in the Visual Studio Code February 2026 Release (1.110).\n Read the full article",
+      "categories": [
+        "release"
+      ],
+      "score": 4
+    },
+    {
+      "eventId": "github-copilot-blog:https://github.blog/?p=94244",
+      "sourceId": "github-copilot-blog",
+      "sourceName": "GitHub Blog / GitHub Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-06T12:57:01.225Z",
+      "publishedAt": "2026-03-03T16:55:00.000Z",
+      "title": "Join or host a GitHub Copilot Dev Days event near you",
+      "url": "https://github.blog/ai-and-ml/github-copilot/join-or-host-a-github-copilot-dev-days-event-near-you/",
+      "summary": "The way we build software is changing fast. AI is no longer a “someday” tool. It’s reshaping how we plan, write, review, and ship code right now. As products evolve faster than ever, developers are expected to keep up just as quickly. That’s why GitHub Copilot Dev Days exists: for developers to level up together on how they can use AI-assisted coding today.\n\nGitHub Copilot Dev Days is a global series of hands-on, in-person, community-led events designed to help developers explore real-world AI-assisted coding with GitHub Copilot. Join us for the knowledge, stay for the great food, good vibes, and plenty of fun along the way. Find an event near you and register today.\n\nWho is GitHub Copilot Dev Days for?\n\nAnyone and everyone who is looking to improve their development workflow and learn something new! We have events run by and for folks from professional developers to students. Sessions cover various levels and programming backgrounds.\n\nIf it’s your first time trying out AI-assisted development, this event will introduce you to the tools and best practices to succeed from day one. If you’re more advanced, we’re excited to show you the latest tips and tricks to ensure you’re fully up to date.\n\nWhat to expect from a GitHub Copilot Dev Day\n\nEach event will feature live demos, practical sessions, and interactive workshops with high-quality training content. We will focus on real workflows you can use right away, whether you’re already using Copilot daily or just getting started. Your hosts are development experts: GitHub Stars, Microsoft MVPs, GitHub Campus Experts, Microsoft Student Ambassadors, GitHub and Microsoft employees, to name a few.\n\nWe will have training materials covering the GitHub Copilot CLI, Cloud Agent, GitHub Copilot in VS Code, Visual Studio, and other editors, and more! Different events will focus on different topics, so be sure to review the registration page beforehand.\n\nThe specific event details will vary, as each community event organizer might tweak the event to fit the interests of their local developer community. Here is a sample agenda:\n\nIntroductory session: 30-45 minutes on GitHub Copilot.\n\nLocal community session: 30-45 minutes by a local developer or community leader on relevant topics.\n\nHands-on workshop: 1 hour of coding and practical exercises.\n\nAll events are an opportunity to connect with your local developer community, learn something new, and enjoy some snacks and swag!\n\nEvents begin in March\n\nEvents are now live in cities around the world starting in March. Spots are limited and dates are approaching—now’s the time to grab a seat.\n\nWant to bring GitHub Copilot Dev Days to your user group? Fill out our form.\n\nFind a GitHub Copilot Dev Days event near you and register today >\n\nThe post Join or host a GitHub Copilot Dev Days event near you appeared first on The GitHub Blog.",
+      "categories": [
+        "AI & ML",
+        "GitHub Copilot"
+      ],
+      "score": 3
+    },
+    {
+      "eventId": "github-copilot-blog:https://github.blog/?p=94179",
+      "sourceId": "github-copilot-blog",
+      "sourceName": "GitHub Blog / GitHub Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-06T12:57:01.225Z",
+      "publishedAt": "2026-02-27T16:00:00.000Z",
+      "title": "From idea to pull request: A practical guide to building with GitHub Copilot CLI",
+      "url": "https://github.blog/ai-and-ml/github-copilot/from-idea-to-pull-request-a-practical-guide-to-building-with-github-copilot-cli/",
+      "summary": "Most developers already do real work in the terminal.\n\nWe initialize projects there, run tests there, debug CI failures there, and make fast, mechanical changes there before anything is ready for review. GitHub Copilot CLI fits into that reality by helping you move from intent to reviewable diffs directly in your terminal—and then carry that work into your editor or pull request.\n\nThis blog walks through a practical workflow for using Copilot CLI to create and evolve an application, based on a new GitHub Skills exercise. The Skills exercise provides a guided, hands-on walkthrough; this post focuses on why each step works and when to use it in real projects.\n\n🔍 Go deeper with the GitHub Skills exercise\n\nIf you want a fully guided version of this workflow, including hands-on practice, check out the GitHub Skills exercise Create applications with the Copilot CLI.\n\nIt walks through these patterns step by step in a preconfigured instance of GitHub Codespaces and is a good way to experiment safely before applying them to production code. The exercise covers the following:\n\nInstall the Copilot CLI and use the issue template to create an issue\n\nGenerate a Node.js CLI calculator app\n\nExpand calculator functionality with additional operations\n\nWrite unit tests for calculator functions\n\nCreate, review, and merge your pull request\n\nWhat Copilot CLI is (and is not)\n\nCopilot CLI is a GitHub-aware coding agent in your terminal. You can describe what you want in natural language, use /plan to outline the work before touching code, and then review concrete commands or diffs before anything runs. Copilot may reason internally, but it only executes commands or applies changes after you explicitly approve them. \n\nIn practice, Copilot CLI helps you:\n\nExplore a problem based on your intent\n\nPropose structured plans using /plan (or you can hit Shift + Tab to enter planning mode), or suggest concrete commands and diffs you can review\n\nGenerate or modify files\n\nExplain failures where they occur\n\nWhat it does not do:\n\nSilently run commands or apply changes without your approval\n\nReplace careful design work\n\nEliminate the need for review\n\nYou stay in control of what runs, what changes, and what ships.\n\nStep 1: Start with intent, not scaffolding\n\nInstead of starting by choosing a framework or copying a template, start by stating what you want to build.\n\nFrom an empty directory, run:\n\ncopilot\n> Create a small web service with a single JSON endpoint and basic tests\n\nIf you want to generate a proposal in a single prompt instead of entering interactive mode, you can also run:\n\ncopilot -p \"Create a small web service with a single JSON endpoint and basic tests\"\n\nIn the Skills exercise, this pattern is used repeatedly: describe intent first, then decide which suggested commands you actually want to run.\n\nAt this stage, Copilot CLI is exploring the problem space. It may:\n\nSuggest a stack\n\nOutline files\n\nPropose setup commands\n\nNothing runs automatically. You inspect everything before deciding what to execute. This makes the CLI a good place to experiment before committing to a design.\n\nStep 2: Scaffold only what you’re ready to own\n\nOnce you see a direction you’re comfortable with, ask Copilot CLI to help scaffold:\n\n> Scaffold this as a minimal Node.js project with a test runner and README\n\nThis is where Copilot CLI is most immediately useful. It can:\n\nCreate directories and config,\n\nWire basic project structure,\n\nGenerate boilerplate you would otherwise type or copy by hand.\n\nCopilot CLI does not “own” the project structure. It suggests scaffolding based on common conventions, which you should treat as a starting point, not a prescription.\n\nThe important constraint is that you’re always responsible for the result. Treat the output like code from a teammate: review it, edit it, or discard it.\n\nStep 3: Iterate at the point of failure\n\nRun your tests directly inside Copilot CLI:\n\nRun all my tests and make sure they pass\n\nWhen something fails, ask Copilot about that exact failure in the same session:\n\n> Why are these tests failing?\n\nIf you want a concrete proposal instead of an explanation, try:\n\n> Fix this test failure and show the diff\n\nThis pattern—run (!command), inspect, ask, review diff—keeps the agent grounded in real output instead of abstract prompts.\n\n💡Pro tip: In practice, explain is useful when you want understanding, while suggest is better when you want a concrete proposal you can review. Learn more about slash commands in Copilot CLI in our guide. \n\nStep 4: Make mechanical or repo-wide changes\n\nCopilot CLI is also well suited to changes that are easy to describe but tedious to execute:\n\n> Rename all instances of X to Y across the repository and update tests\n\nBecause these changes are mechanical and scoped, they’re easy to review and easy to roll back. The CLI gives you a concrete diff instead of a wall of generated text.\n\nStep 5: Move into your editor when you need to start shaping your code\n\nEventually, speed matters less than precision.\n\nThis is the natural handoff point to your editor or IDE, so it can:\n\nReason about edge cases\n\nRefine APIs\n\nMake design decisions\n\nCopilot works there too, but the key point is why you switch environments. The CLI helps you quickly get to something real. The IDE is where you can shape your code into exactly what you want. \n\nA good rule of thumb: \n\nCLI: use /plan, generate a /diff, and move quickly with low ceremony\n\nIDE: use /IDE when you need to refine logic and make decisions you’ll defend in review\n\nGitHub: commit, open a pull request with the command /delegate, and collaborate asynchronously\n\nStep 6: Ship on GitHub\n\nOnce the changes look good, commit and open a pull request which you can do through the Copilot CLI in natural language:\n\nAdd and commit all files with a applicable descriptive messages, push the changes.\n\nCreate a pull request and add Copilot as a reviewer\n\nNow the work becomes durable:\n\nReviewable by teammates\n\nTestable in CI\n\nReady for async iteration\n\nThis is where Copilot’s value compounds as part of a flow that ends with shipping versus just being a single surface. The Skills exercise intentionally ends here, because this is where Copilot’s value becomes durable: in commits, pull requests, and review (not just suggestions).\n\nOne workflow, three moments\n\nA helpful mental model for Copilot looks like this:\n\nCLI: prove value quickly with low ceremony\n\nIDE: shape and refine your code\n\nGitHub: review, collaborate, and ship\n\nCopilot CLI is powerful precisely because it fits into this system instead of trying to replace it.\n\nBuilding with Copilot? A note on the Copilot SDK\n\nIf you’re building a developer tool, internal system, or application where agentic execution itself is part of the product (not just something you run in a terminal), you may want to look at the GitHub Copilot SDK, now in technical preview.\n\nThe Copilot SDK gives you programmatic access to the same planning and execution engine that powers Copilot CLI, without requiring you to build or maintain your own orchestration layer. Instead of wiring planners, tools, and recovery logic yourself, you define agent behavior and let Copilot handle execution.\n\nUse Copilot CLI when you want fast, interactive execution in your own workflow. Use the Copilot SDK when you want those same agentic capabilities embedded inside your application. The SDK exposes the execution engine behind Copilot CLI, but not GitHub-specific features like repository-scoped memory or delegated pull request workflows.\n\nExplore Copilot SDK >\n\nTake this with you\n\nCopilot CLI is most useful when you treat it like a tool for momentum, not a replacement for judgment.\n\nUsed well, it helps you move from intent to concrete changes faster: exploring ideas, scaffolding projects, diagnosing failures, and handling mechanical work directly in the terminal. When precision matters, you move into your editor. When the work is ready to share, it lands on GitHub as a pull request—reviewable, testable, and shippable.\n\nThat flow matters more than any single command.\n\nIf you take one thing away from this guide, it’s this: Copilot works best when it fits naturally into how developers already build software. Start in the CLI to get unstuck or move quickly, slow down in the IDE to make decisions you can stand behind, and rely on GitHub to make the work durable.\n\nGet started with GitHub Copilot CLI or take the Skills course >\n\nThe post From idea to pull request: A practical guide to building with GitHub Copilot CLI appeared first on The GitHub Blog.",
+      "categories": [
+        "AI & ML",
+        "GitHub Copilot",
+        "GitHub Copilot CLI",
+        "GitHub Skills"
+      ],
+      "score": 4
+    },
+    {
+      "eventId": "github-copilot-blog:https://github.blog/?p=94157",
+      "sourceId": "github-copilot-blog",
+      "sourceName": "GitHub Blog / GitHub Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-06T12:57:01.225Z",
+      "publishedAt": "2026-02-26T20:47:02.000Z",
+      "title": "What&#8217;s new with GitHub Copilot coding agent",
+      "url": "https://github.blog/ai-and-ml/github-copilot/whats-new-with-github-copilot-coding-agent/",
+      "summary": "You open an issue before lunch. By the time you’re back, there’s a pull request waiting.\n\nThat’s what GitHub Copilot coding agent is built for. It works in the background, fixing bugs, adding tests, cleaning up debt, and comes back with a pull request when it’s done. While you’re writing code in your editor with Copilot in real time, the coding agent is handling the work you’ve delegated.\n\nA few recent updates make that handoff more useful. Here’s what shipped and how to start using it.\n\nVisual learner? Watch the video above! ☝️\n\nChoose the right model for each task\n\nThe Agents panel now includes a model picker.\n\nBefore, every background task ran on a single default model. You couldn’t pay for a more robust model to complete harder work or prioritize speed on routine tasks.\n\nNow you can. Use a faster model for straightforward work like adding unit tests. Upgrade your model for a gnarly refactor or integration tests with real edge cases. If you’d rather not think about it, leave it on auto.\n\nTo get started:\n\nOpen the Agents panel (top-right in GitHub), select your repo, and pick a model.\n\nWrite a clear prompt and kick off the task.\n\nLeave the model on auto if you’d rather let GitHub choose.\n\nModel selection is available for Copilot Pro and Pro+ users now, with support for Business and Enterprise coming soon.\n\nLearn more about model selection with Copilot coding agent. 👉\n\nPull requests that arrive in better shape\n\nThe painful part of reviewing agent output has always been the cleanup. You open the diff and there it is: logic that technically works, but nobody would write it that way.\n\nCopilot coding agent now reviews its own changes using Copilot code review before it opens the pull request. It gets feedback, iterates, and improves the patch. By the time you’re tagged for review, someone already went through it.\n\nIn one session, the agent caught that its own string concatenation was overly complex and fixed it before the pull request landed. That kind of thing used to be your problem.\n\nTo get started:\n\nAssign an issue to Copilot or create a task from the Agents panel.\n\nClick into the task to view the logs.\n\nSee the moments where the agent ran Copilot code review and applied feedback.\n\nReview the pull request when prompted. Copilot requests your review only after it has iterated.\n\nLearn more about Copilot code review + Copilot coding agent. 👉\n\nSecurity checks that run while the agent works\n\nJust like with human-generated code, AI-generated code can introduce real risks: vulnerable patterns, secrets accidentally committed, dependencies with known CVEs. The difference is it does it faster. And you really don’t want to find that in review.\n\nCopilot coding agent now runs code scanning, secret scanning, and dependency vulnerability checks directly inside its workflow. If a dependency has a known issue, or something looks like a committed API key, it gets flagged before the pull request opens.\n\nCode scanning is normally part of GitHub Advanced Security. With Copilot coding agent, you get it for free.\n\nTo get started:\n\nRun any task through the Agents panel.\n\nCheck the session logs as it runs. You’ll see scanning entries as the agent works.\n\nReview the pull request. It’s already been through the security filter.\n\nLearn more about security scanning in Copilot coding agent. 👉\n\nCustom agents that follow your team’s process\n\nA short prompt leaves a lot to judgment. And that judgment isn’t always consistent with how your team actually works.\n\nCustom agents let you codify it. Create a file under .github/agents/ and define a specific approach. A performance optimizer agent, for example, can be wired to benchmark first, make the change, then measure the difference before opening a pull request.\n\nIn a recent GitHub Checkout demo, that’s exactly what happened. The agent benchmarked a lookup, made a targeted fix, and came back with a 99% improvement on that one function. Small scope, real data, no guessing.\n\nYou can share custom agents across your org or enterprise too, so the same process applies everywhere teams are using the coding agent.\n\nTo get started:\n\nCreate an agent file under .github/agents/ in your repo.\n\nOpen the Agents panel and start a new task.\n\nSelect your custom agent from the options.\n\nWrite a prompt scoped to what that agent does.\n\nLearn more about creating custom agents. 👉\n\nMove between cloud and local without losing context\n\nSometimes you start something in the cloud and want to finish it locally. Sometimes you’re deep in your terminal and want to hand something off without losing your flow. Either way, switching contexts used to mean starting the conversation over.\n\nNow it doesn’t. Pull a cloud session into your terminal and you get the branch, the logs, and the full context. Or press & in the CLI to push work back to the cloud and keep going on your end.\n\nTo get started:\n\nStart a task with Copilot coding agent and wait for the session to appear.\n\nClick “Continue in Copilot CLI” and copy the command.\n\nPaste it in your terminal to load the session locally with branch, logs, and context intact.\n\nPress the ampersand symbol (&) in the CLI to delegate work back to the cloud and keep going locally.\n\nLearn more about Copilot coding agent + CLI handoff. 👉\n\nWhat this adds up to\n\nCopilot coding agent has come a long way. Model selection, self-review, security scanning, custom agents, CLI handoff—and that’s just what shipped recently. The team is actively working on private mode, planning before coding, and using the agent for things that don’t even need a pull request, like summarizing issues or generating reports. There’s a lot more coming. Stay tuned.\n\nShare feedback on what ships next in GitHub Community discussions.\n\nGet started with GitHub Copilot coding agent >\n\nThe post What’s new with GitHub Copilot coding agent appeared first on The GitHub Blog.",
+      "categories": [
+        "AI & ML",
+        "GitHub Copilot",
+        "GitHub Checkout",
+        "GitHub Copilot coding agent"
+      ],
+      "score": 3
+    },
+    {
+      "eventId": "vscode-feed:https://code.visualstudio.com/blogs/2026/02/26/long-distance-nes",
+      "sourceId": "vscode-feed",
+      "sourceName": "VS Code Feed",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-06T12:57:01.356Z",
+      "publishedAt": "2026-02-26T00:00:00.000Z",
+      "title": "Building Long-Distance Next Edit Suggestions",
+      "url": "https://code.visualstudio.com/blogs/2026/02/26/long-distance-nes",
+      "summary": "Learn how we extended next edit suggestions to work across your entire file, reducing friction and improving productivity in GitHub Copilot.\n Read the full article",
+      "categories": [
+        "blog"
+      ],
+      "score": 1
+    },
+    {
+      "eventId": "vscode-feed:https://code.visualstudio.com/blogs/2026/02/05/multi-agent-development",
+      "sourceId": "vscode-feed",
+      "sourceName": "VS Code Feed",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-06T12:57:01.356Z",
+      "publishedAt": "2026-02-05T00:00:00.000Z",
+      "title": "Your Home for Multi-Agent Development",
+      "url": "https://code.visualstudio.com/blogs/2026/02/05/multi-agent-development",
+      "summary": "VS Code has become the unified interface for all your coding agents. Manage local, background, and cloud agents in one place, use Claude and Codex agents alongside Copilot, and benefit from open standards like MCP and Agent Skills.\n Read the full article",
+      "categories": [
+        "blog"
+      ],
+      "score": 2
+    },
+    {
+      "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_109",
+      "sourceId": "vscode-feed",
+      "sourceName": "VS Code Feed",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-06T12:57:01.356Z",
+      "publishedAt": "2026-02-04T17:00:00.000Z",
+      "title": "January 2026 (version 1.109)",
+      "url": "https://code.visualstudio.com/updates/v1_109",
+      "summary": "Learn what is new in the Visual Studio Code January 2026 Release (1.109).\n Read the full article",
+      "categories": [
+        "release"
+      ],
+      "score": 4
+    },
+    {
+      "eventId": "vscode-feed:https://code.visualstudio.com/blogs/2026/01/26/mcp-apps-support",
+      "sourceId": "vscode-feed",
+      "sourceName": "VS Code Feed",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-06T12:57:01.356Z",
+      "publishedAt": "2026-01-26T00:00:00.000Z",
+      "title": "Giving Agents a Visual Voice: MCP Apps Support in VS Code",
+      "url": "https://code.visualstudio.com/blogs/2026/01/26/mcp-apps-support",
+      "summary": "VS Code now supports MCP Apps, enabling AI agents to display interactive UIs for richer developer workflows.\n Read the full article",
+      "categories": [
+        "blog"
+      ],
+      "score": 1
+    },
+    {
+      "eventId": "vscode-feed:https://code.visualstudio.com/blogs/2026/01/15/docfind",
+      "sourceId": "vscode-feed",
+      "sourceName": "VS Code Feed",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-06T12:57:01.356Z",
+      "publishedAt": "2026-01-15T00:00:00.000Z",
+      "title": "Building docfind: Fast Client-Side Search with Rust and WebAssembly",
+      "url": "https://code.visualstudio.com/blogs/2026/01/15/docfind",
+      "summary": "How we built docfind, a high-performance client-side search engine using Rust and WebAssembly, and how GitHub Copilot accelerated development.\n Read the full article",
+      "categories": [
+        "blog"
+      ],
+      "score": 1
+    },
+    {
+      "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_108",
+      "sourceId": "vscode-feed",
+      "sourceName": "VS Code Feed",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-06T12:57:01.356Z",
+      "publishedAt": "2026-01-08T17:00:00.000Z",
+      "title": "December 2025 (version 1.108)",
+      "url": "https://code.visualstudio.com/updates/v1_108",
+      "summary": "Learn what is new in the Visual Studio Code December 2025 Release (1.108).\n Read the full article",
+      "categories": [
+        "release"
+      ],
+      "score": 4
+    },
+    {
+      "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_107",
+      "sourceId": "vscode-feed",
+      "sourceName": "VS Code Feed",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-06T12:57:01.356Z",
+      "publishedAt": "2025-12-10T17:00:00.000Z",
+      "title": "November 2025 (version 1.107)",
+      "url": "https://code.visualstudio.com/updates/v1_107",
+      "summary": "What's new in the Visual Studio Code November 2025 Release (1.107).\n Read the full article",
+      "categories": [
+        "release"
+      ],
+      "score": 4
+    },
+    {
+      "eventId": "vscode-feed:https://code.visualstudio.com/blogs/2025/12/03/introducing-vs-code-insiders-podcast",
+      "sourceId": "vscode-feed",
+      "sourceName": "VS Code Feed",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-06T12:57:01.356Z",
+      "publishedAt": "2025-12-03T00:00:00.000Z",
+      "title": "Introducing the VS Code Insiders Podcast",
+      "url": "https://code.visualstudio.com/blogs/2025/12/03/introducing-vs-code-insiders-podcast",
+      "summary": "The VS Code Insiders Podcast is your insider's guide to the features, decisions, and people shaping the future of Visual Studio Code.\n Read the full article",
+      "categories": [
+        "blog"
+      ],
+      "score": 1
+    },
+    {
+      "eventId": "publickey:tag:www.publickey1.jp,2026://2.8527",
+      "sourceId": "publickey",
+      "sourceName": "Publickey",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-06T12:57:02.244Z",
+      "publishedAt": "2026-03-24T14:41:29.000Z",
+      "title": "マイクロソフト、Claude CodeやGitHub Copilotに「このアプリをデプロイせよ」と指示すればAIが最適なインフラ構成やサービスでデプロイしてくれる「Azure Skills Plugin」公開",
+      "url": "https://www.publickey1.jp/blog/26/claude_codegithub_copilotaiazure_skills_plugin.html",
+      "summary": "AWSがClaude Codeに、アプリケーションの内容に応じて自動的に適切なインフラを構成してデプロイできる能力を与える「Agent Plugins for AWS」をリリースしたのと同様に、マイクロソフトもClaude CodeやGitHubCopilotに自律的なインフラ構成とデプロイの能力を与える「Azure Skills Plugin」を公開しています。 これにより、Claude CodeやGitHub CopilotなどのAIエージェントに対して、アプリケーション……",
+      "categories": [
+        "Microsoft Azure",
+        "クラウド",
+        "機械学習・AI",
+        "運用・監視"
+      ],
+      "score": 2
+    }
+  ],
+  "errors": []
+}

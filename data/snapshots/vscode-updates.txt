@@ -1,0 +1,240 @@
+Insiders
+1.114
+1.113
+1.112
+1.111
+February 2026
+January 2026
+December 2025
+November 2025
+October 2025
+September 2025
+August 2025
+July 2025
+June 2025
+May 2025
+April 2025
+March 2025
+View All Releases
+H1: Visual Studio Code 1.114
+Follow us on LinkedIn, X, Bluesky |
+Release date: April 1, 2026
+Downloads: Windows: x64 Arm64 | Mac: Universal Intel silicon | Linux: deb rpm tarball Arm snap
+Welcome to the 1.114 release of Visual Studio Code. This release focuses on streamlining your chat experience.
+Preview videos: preview videos in the image carousel for chat attachments and the Explorer context menu.
+Preview videos: preview videos in the image carousel for chat attachments and the Explorer context menu.
+Copy chat response: copy the final Markdown chat response for easy sharing.
+Copy chat response: copy the final Markdown chat response for easy sharing.
+Troubleshooting chat: use /troubleshoot to diagnose chat customization issues in previous sessions.
+Troubleshooting chat: use /troubleshoot to diagnose chat customization issues in previous sessions.
+Simplified workspace search: get faster, more consistent semantic search results.
+Simplified workspace search: get faster, more consistent semantic search results.
+Happy Coding!
+H2: Chat experience
+H3: Preview videos in the image carousel
+Settings: 
+ 
+ 
+ imageCarousel.chat.enabled
+ 
+ 
+ 
+ 
+ 
+ Open in VS Code
+ Open in VS Code Insiders
+ 
+ , 
+ 
+ 
+ imageCarousel.explorerContextMenu.enabled
+ 
+ 
+ 
+ 
+ 
+ Open in VS Code
+ Open in VS Code Insiders
+The image carousel, introduced in version 1.113, now also supports videos. You can play and navigate videos from chat attachments or the Explorer context menu.
+The viewer includes:
+Video playback with controls
+Navigation for all images and videos using arrows or thumbnails
+H3: Copy final response in chat
+The Chat view already has commands to copy the entire conversation or a specific response. However, that also includes the agent's thinking process and tool calls.
+For those cases where you only want to copy the final response, there is now a Copy Final Response command in the chat context menu that copies the last Markdown section of the agent's response, after all tool calls have run.
+H3: Workspace search simplification
+The #codebase tool lets Copilot do a semantic search of your codebase. This can be especially useful for finding relevant code snippets in codebases with tens to hundreds of thousands of files.
+When the #codebase tool was first introduced, it was designed for Copilot's ask flow: you ask a question or request an edit and Copilot produces a result directly in its response. Now that almost all Copilot interactions are agentic, with agents able to run multiple tools and iterate before producing an edit or response, much of the original #codebase design is no longer relevant.
+The first important change is that #codebase is now purely used for semantic searches. Previously, it could fall back to less accurate (and less efficient) fuzzy text searches. The agent can still do text and fuzzy searches if it wants, but we want to keep #codebase purely focused on semantic searches.
+We've also simplified how the codebase index is managed. This index is what enables the #codebase tool to provide semantic search results quickly. Previously, we had the concept of both a "local index" and a "remote index". The local indexes were limited to a few thousand files and weren't always semantic. The remote index was stored remotely for a given repo, could be shared across a team, and could support millions of files.
+Now there's just a single state: is your codebase semantically indexed or not? No more local vs remote. Behind the scenes, some parts of the index might still be stored on your machine and some might come from remote sources, however you no longer have to manage these indexes yourself.
+Here's what all of these changes mean for using Copilot:
+The #codebase tool is now always semantic and provides consistent results.
+The #codebase tool is now always semantic and provides consistent results.
+Copilot automatically uses #codebase for semantic searches when it makes sense. We build indexes for you on demand and use them automatically. You do not have to manage the index yourself.
+Copilot automatically uses #codebase for semantic searches when it makes sense. We build indexes for you on demand and use them automatically. You do not have to manage the index yourself.
+Workspaces that previously were shown as being indexed will need to be reindexed. This is typically because they were using a local, non-semantic index.
+Workspaces that previously were shown as being indexed will need to be reindexed. This is typically because they were using a local, non-semantic index.
+Especially large codebases without a GitHub repo might not currently be indexable. We are slowly rolling out support for indexing these as well.
+Especially large codebases without a GitHub repo might not currently be indexable. We are slowly rolling out support for indexing these as well.
+Even if your workspace is not semantically indexed, we've found you can still get good results through Copilot's other search methods (text, grep, symbols).
+All these changes should make working with agents faster and provide higher quality context to the models. We also believe they simplify using Copilot and understanding what tools are available to it.
+For more details, see the workspace guide.
+H3: Troubleshoot previous chat sessions (Preview)
+Settings: 
+ 
+ 
+ github.copilot.chat.agentDebugLog.enabled
+ 
+ 
+ 
+ 
+ 
+ Open in VS Code
+ Open in VS Code Insiders
+ 
+ , 
+ 
+ 
+ github.copilot.chat.agentDebugLog.fileLogging.enabled
+ 
+ 
+ 
+ 
+ 
+ Open in VS Code
+ Open in VS Code Insiders
+The troubleshoot skill (invoked via /troubleshoot) helps with diagnosing chat issues by analyzing agent debug logs and surfacing insights into the agent's behavior. For example, to investigate why custom instructions were ignored or responses are slow.
+With this release, you can now reference any previous chat session when troubleshooting. This makes it easier to investigate issues after the fact, without needing to reproduce them.
+To troubleshoot a previous session, use the /troubleshoot command and include #session in your prompt. This will trigger a session picker where you can select from a list of your previous chat sessions.
+Tip: You can also attach a session by selecting + (Add Context) > Sessions.
+H2: Languages
+H3: TypeScript 6.0
+Our JavaScript and TypeScript support now uses TypeScript 6.0. This major update includes important fixes and improvements. Importantly, this TypeScript release also deprecates a number of older options in preparation for the TypeScript 7.0 rewrite.
+You can read all about the TypeScript 6.0 release on the TypeScript blog.
+H3: Python
+Various bug fixes in the Python Environments extension for env file notifications and environment manager selection priority:
+
+The workspace's saved interpreter selection now takes precedence over terminal-activated virtual or conda environments across restarts.
+The env file change notification now includes a "Don't Show Again" option to permanently dismiss it.
+
+vscode-python#25867, vscode-python-environments#1347, vscode-python-environments#1393
+Various bug fixes in the Python Environments extension for env file notifications and environment manager selection priority:
+The workspace's saved interpreter selection now takes precedence over terminal-activated virtual or conda environments across restarts.
+The env file change notification now includes a "Don't Show Again" option to permanently dismiss it.
+vscode-python#25867, vscode-python-environments#1347, vscode-python-environments#1393
+The Python Environments extension now recommends the community Pixi extension when Pixi environments are detected, and includes Pixi in the environment manager priority order. vscode-python-environments#1291
+The Python Environments extension now recommends the community Pixi extension when Pixi environments are detected, and includes Pixi in the environment manager priority order. vscode-python-environments#1291
+H2: Enterprise
+H3: Group policy to disable Claude agent
+Administrators can now use a group policy to disable the Claude agent integration in chat. When this policy is applied, the 
+ 
+ 
+ github.copilot.chat.claudeAgent.enabled
+ 
+ 
+ 
+ 
+ 
+ Open in VS Code
+ Open in VS Code Insiders
+ 
+ setting is managed by the organization and users cannot enable the Claude agent.
+This policy is configured as a boolean with key Claude3PIntegration. Learn more about device management policies in the enterprise documentation.
+H2: Contributions to extensions
+H3: GitHub Pull Requests
+There has been more progress on the GitHub Pull Requests extension, which enables you to work on, create, and manage pull requests and issues. New features include:
+Branch names in the create PR view are now cached for faster target branch loading.
+GitHub permalink links in PR and issue overview webviews now open the corresponding local file when the file exists in the workspace.
+Review the changelog for the 0.134.0 release of the extension to learn about everything in the release.
+H2: Proposed APIs
+H3: Fine-grained tool approval
+Language model tools with an approval flow can now scope approval to a specific combination of arguments.
+For example, the built-in "Run VS Code Command" tool can run any VS Code command. A user might feel comfortable always approving editor.action.formatDocument, but not other commands. With this API, the tool implementation can scope approval to the specific command, so users approve each command individually.
+See the full API proposal for more details: Fine grain tool approval.
+See an example of the API in use in the Copilot Chat extension.
+H2: Deprecated features and settings
+H3: New deprecations in this release
+None
+H3: Upcoming deprecations
+Edit Mode is officially deprecated as of VS Code version 1.110. Users can temporarily re-enable Edit Mode via VS Code setting 
+ 
+ 
+ chat.editMode.hidden
+ 
+ 
+ 
+ 
+ 
+ Open in VS Code
+ Open in VS Code Insiders
+ 
+ . This setting will remain supported through version 1.125. Beginning with version 1.125, Edit Mode will be fully removed and can no longer be enabled via settings.
+H2: Notable fixes
+microsoft/vscode #303908 Fix VS Code shortcuts taking precedence over page shortcuts in Integrated Browser
+microsoft/vscode #299777 Fix "Add Element to Chat" not working while debugging is paused in the Integrated Browser
+H2: Thank you
+Contributions to our issue tracking:
+@gjsjohnmurray (John Murray)
+@RedCMD (RedCMD)
+@IllusionMH (Andrii Dieiev)
+@albertosantini (Alberto Santini)
+Contributions to vscode:
+@a77ming: Fix wrapped title spacing on the agent sessions welcome page PR #304686
+@AshtonYoon (Ashton Yoon): Fix janky scrolling in markdown preview with code blocks PR #287050
+@buley (Tay): fix: destroy read streams to prevent file descriptor leaks PR #303395
+@ConsoleTVs (Erik C. Forés): fix(mcp): resolve env vars in agent plugin MCP server definitions PR #303156
+@jonathanrao99 (Jonathan Thota): browser: prevent new tab from flashing in quick pick PR #304297
+@ShehabSherif0 (Shehab Sherif)
+
+Fix operator precedence in fuzzyScore2 test assertion PR #304449
+Fix copy-paste bug in performance view blocking startup count PR #304452
+Fix operator precedence in fuzzyScore2 test assertion PR #304449
+Fix copy-paste bug in performance view blocking startup count PR #304452
+@Tyriar (Daniel Imms): Remove self from notify, classifier, events, etc. PR #304498
+@xingsy97 (xingsy97)
+
+Keyboard layout - replace all dashes/dots in macOS layout labels PR #303971
+Editor - fix paste preference filter matching all providers PR #304044
+Settings editor - avoid repeated extension list refresh PR #303957
+settings: use local StopWatch to avoid timing corruption between concurrent searches PR #304361
+mergeEditor: optimize removeDiffs from O(K*N) to single-pass O(N) PR #304404
+timeline: fix memory leak when toggling pane visibility PR #304668
+notebook: fix unused cell lookup and broken selection deduplication PR #305105
+Chat - remove deprecated prompt attribute spelling PR #301976
+Keyboard layout - replace all dashes/dots in macOS layout labels PR #303971
+Editor - fix paste preference filter matching all providers PR #304044
+Settings editor - avoid repeated extension list refresh PR #303957
+settings: use local StopWatch to avoid timing corruption between concurrent searches PR #304361
+mergeEditor: optimize removeDiffs from O(K*N) to single-pass O(N) PR #304404
+timeline: fix memory leak when toggling pane visibility PR #304668
+notebook: fix unused cell lookup and broken selection deduplication PR #305105
+Chat - remove deprecated prompt attribute spelling PR #301976
+@yogeshwaran-c (Yogeshwaran C)
+
+fix: prevent terminal panel from overwriting terminalEditorActive context key PR #304802
+fix: modernize HTML sample snippet PR #304818
+fix: make testing icon colors inherit from list error/warning foreground PR #304959
+fix: enable zoom for SVGs without explicit width/height dimensions PR #304973
+fix: persist test coverage sort order across sessions PR #304979
+fix: send user preferences to TS server even without visible editor PR #304987
+fix: prevent terminal panel from overwriting terminalEditorActive context key PR #304802
+fix: modernize HTML sample snippet PR #304818
+fix: make testing icon colors inherit from list error/warning foreground PR #304959
+fix: enable zoom for SVGs without explicit width/height dimensions PR #304973
+fix: persist test coverage sort order across sessions PR #304979
+fix: send user preferences to TS server even without visible editor PR #304987
+Contributions to vscode-pull-request-github:
+@Daniel-Aaron-Bloom: Link to local file for permalinks in webview PR #8583
+Contributions to monaco-editor:
+@pgoslatara (Pádraic Slattery): chore: Update outdated GitHub Actions versions PR #5214
+We really appreciate people trying our new features as soon as they are ready, so check back here often and learn what's new.
+If you'd like to read release notes for previous VS Code versions, go to Updates on code.visualstudio.com.
+Chat experience
+Languages
+Enterprise
+Contributions to extensions
+Proposed APIs
+Deprecated features and settings
+Notable fixes
+Thank you
