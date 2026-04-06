@@ -1,0 +1,42 @@
+name: Digest authoring request
+description: Copilot cloud agent に日次ダイジェスト更新を依頼する
+title: "Digest authoring request: "
+labels:
+  - copilot
+  - digest-authoring
+  - auto-pr
+assignees:
+  - copilot
+body:
+  - type: input
+    id: date-key
+    attributes:
+      label: Date key
+      description: 対象日 (`YYYY-MM-DD`)
+      placeholder: 2026-04-06
+    validations:
+      required: true
+  - type: input
+    id: event-file
+    attributes:
+      label: Event data path
+      description: 対象イベント JSON のパス
+      placeholder: data/events/2026-04-06.json
+    validations:
+      required: true
+  - type: dropdown
+    id: update-scope
+    attributes:
+      label: Scope
+      description: どこまで更新するか
+      options:
+        - summaries/daily のみ
+        - summaries/daily と drafts の要点
+        - summaries/daily と drafts 全体と reporting.mjs
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional notes
+      description: 補足があれば記入

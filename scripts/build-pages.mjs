@@ -14,12 +14,20 @@ import {
   originalTitle,
   rankEvent,
   safeDate,
+  sourceGroup,
 } from "./lib/reporting.mjs";
 
 const workspaceRoot = process.cwd();
 const eventsDir = path.join(workspaceRoot, "data", "events");
 const summariesDir = path.join(workspaceRoot, "summaries", "daily");
 const siteDir = path.join(workspaceRoot, "site");
+const topicOrder = [
+  "GitHub Copilot",
+  "VS Code",
+  "GitHub Platform",
+  "周辺ニュース",
+];
+const sourceGroupOrder = ["github", "vscode", "platform", "other"];
 
 function toDateOnly(value) {
   const date = safeDate(value);
@@ -74,19 +82,31 @@ function formatCount(count, locale, singular, plural) {
   return `${count} ${count === 1 ? singular : plural}`;
 }
 
+function sourceGroupMeta(group, text) {
+  return {
+    label: text.sourceGroupNames[group] ?? group,
+    short: text.sourceGroupShort[group] ?? group,
+    tag: text.sourceGroupTags[group] ?? `#${group}`,
+  };
+}
+
 function buildText(locale) {
   if (locale === "en") {
     return {
       htmlLang: "en",
-      siteLead: "An unofficial daily digest of GitHub Copilot and VS Code updates.",
-      footer: "An unofficial daily digest of GitHub Copilot and VS Code updates.",
+      siteLead:
+        "An unofficial daily digest of GitHub Copilot and VS Code updates.",
+      footer:
+        "An unofficial daily digest of GitHub Copilot and VS Code updates.",
       dailyNav: "Daily",
       weeklyNav: "Weekly",
       repositoryNav: "Repository",
       langSwitchLabel: "日本語",
       heroEyebrow: "GitHub Pages",
-      heroTitle: "Track GitHub Copilot and VS Code updates in a format you can actually read.",
-      heroCopy: "We collect GitHub Changelog, VS Code updates, and complementary sources every day, then publish deduplicated highlights together with raw Markdown and JSON.",
+      heroTitle:
+        "Track GitHub Copilot and VS Code updates in a format you can actually read.",
+      heroCopy:
+        "We collect GitHub Changelog, VS Code updates, and complementary sources every day, then publish deduplicated highlights together with raw Markdown and JSON.",
       publishedCount: "Published daily digests",
       publishedCountDetail: "Number of daily digests on Pages",
       overallCount: "Tracked updates",
@@ -96,11 +116,15 @@ function buildText(locale) {
       latestRunCount: "Latest run new items",
       latestRunCountDetail: "Detected in the most recent collect run",
       howToReadTitle: "How to read this site",
-      howToReadBody1: "Start with the highlight cards to see the changes most likely to matter. Drop into topic sections or the full update list only when you need more detail.",
-      howToReadBody2: "Raw Markdown and JSON are published alongside the rendered pages so you can verify the source material or reuse it in your own workflow.",
+      howToReadBody1:
+        "Start with the highlight cards to see the changes most likely to matter. Drop into topic sections or the full update list only when you need more detail.",
+      howToReadBody2:
+        "Raw Markdown and JSON are published alongside the rendered pages so you can verify the source material or reuse it in your own workflow.",
       policyTitle: "Coverage policy",
-      policyBody1: "Official GitHub and VS Code sources are prioritized, future-dated feed items are excluded until their publish date, and surrounding news is capped to reduce noise.",
-      policyBody2: "The site is bilingual. Japanese is the default and matching English pages are generated under /en/.",
+      policyBody1:
+        "Official GitHub and VS Code sources are prioritized, future-dated feed items are excluded until their publish date, and surrounding news is capped to reduce noise.",
+      policyBody2:
+        "The site is bilingual. Japanese is the default and matching English pages are generated under /en/.",
       latestHighlightsTitle: "Latest highlights",
       latestHighlightsLabel: "Cross-day view",
       weeklyArchiveTitle: "Weekly digest",
@@ -137,27 +161,58 @@ function buildText(locale) {
       errorMetric: "Errors",
       errorMetricDetail: "Collection failures in this digest",
       groupedLabel: "Grouped",
+      filterTitle: "Filters",
+      filterReset: "Clear",
+      filterSourceLabel: "Source",
+      filterTopicLabel: "Topic",
       itemSuffix: " items",
+      sourceGroupNames: {
+        github: "GitHub official",
+        vscode: "VS Code official",
+        platform: "GitHub Platform",
+        other: "Other",
+      },
+      sourceGroupShort: {
+        github: "GH",
+        vscode: "VS",
+        platform: "PF",
+        other: "OT",
+      },
+      sourceGroupTags: {
+        github: "#GitHubOfficial",
+        vscode: "#VSCodeOfficial",
+        platform: "#GitHubPlatform",
+        other: "#Other",
+      },
+      topicFilterTags: {
+        "GitHub Copilot": "#GitHubCopilot",
+        "VS Code": "#VSCode",
+        "GitHub Platform": "#GitHubPlatform",
+        周辺ニュース: "#Ecosystem",
+      },
       topicNames: {
         "GitHub Copilot": "GitHub Copilot",
         "VS Code": "VS Code",
         "GitHub Platform": "GitHub Platform",
-        "周辺ニュース": "Ecosystem",
+        周辺ニュース: "Ecosystem",
       },
     };
   }
 
   return {
     htmlLang: "ja",
-    siteLead: "GitHub Copilot と VS Code の更新を日次で集約した非公式ダイジェストです。",
-    footer: "GitHub Copilot / VS Code 周辺の更新を日次で集約した非公式ダイジェストです。",
+    siteLead:
+      "GitHub Copilot と VS Code の更新を日次で集約した非公式ダイジェストです。",
+    footer:
+      "GitHub Copilot / VS Code 周辺の更新を日次で集約した非公式ダイジェストです。",
     dailyNav: "日次ダイジェスト",
     weeklyNav: "週間ダイジェスト",
     repositoryNav: "Repository",
     langSwitchLabel: "EN",
     heroEyebrow: "GitHub Pages",
-    heroTitle: "GitHub Copilot と VS Code の更新を、毎日読める形で残す。",
-    heroCopy: "GitHub Changelog、VS Code Updates、補完ソースを毎日収集し、重複を除いたハイライトと元データをまとめて公開します。",
+    heroTitle: "GitHub Copilot と VS Code の更新を、毎日読む。",
+    heroCopy:
+      "GitHub Changelog、VS Code Updates、補完ソースを毎日収集し、重複を除いたハイライトと元データをまとめて公開します。",
     publishedCount: "公開済み日次",
     publishedCountDetail: "Pages に載っている日次ダイジェスト数",
     overallCount: "累計更新件数",
@@ -167,11 +222,15 @@ function buildText(locale) {
     latestRunCount: "直近新規件数",
     latestRunCountDetail: "最新 collect 実行の検知件数",
     howToReadTitle: "このサイトの見方",
-    howToReadBody1: "まずはハイライトで重要な更新だけを把握し、必要ならテーマ別まとめと全件リストへ降りていく構成です。",
-    howToReadBody2: "Markdown と JSON の生データも毎日併設しているので、要約の元ネタ確認や二次利用もしやすくしています。",
+    howToReadBody1:
+      "まずはハイライトで重要な更新だけを把握し、必要ならテーマ別まとめと全件リストへ降りていく構成です。",
+    howToReadBody2:
+      "Markdown と JSON の生データも毎日併設しているので、要約の元ネタ確認や二次利用もしやすくしています。",
     policyTitle: "公開方針",
-    policyBody1: "GitHub / VS Code の公式ソースを優先し、未来日付の feed 項目は公開日まで除外し、周辺ニュースは量を絞ってノイズを抑えています。",
-    policyBody2: "サイトは日本語を既定にしつつ、同じ内容の英語ページを /en/ 配下にも生成します。",
+    policyBody1:
+      "GitHub / VS Code の公式ソースを優先し、未来日付の feed 項目は公開日まで除外し、周辺ニュースは量を絞ってノイズを抑えています。",
+    policyBody2:
+      "サイトは日本語を既定にしつつ、同じ内容の英語ページを /en/ 配下にも生成します。",
     latestHighlightsTitle: "最新ハイライト",
     latestHighlightsLabel: "横断表示",
     weeklyArchiveTitle: "週間ダイジェスト",
@@ -208,12 +267,40 @@ function buildText(locale) {
     errorMetric: "エラー",
     errorMetricDetail: "取得失敗の件数",
     groupedLabel: "分類済み",
+    filterTitle: "フィルター",
+    filterReset: "クリア",
+    filterSourceLabel: "ソース",
+    filterTopicLabel: "テーマ",
     itemSuffix: "件",
+    sourceGroupNames: {
+      github: "GitHub 公式",
+      vscode: "VS Code 公式",
+      platform: "GitHub Platform",
+      other: "その他",
+    },
+    sourceGroupShort: {
+      github: "GH",
+      vscode: "VS",
+      platform: "PF",
+      other: "OT",
+    },
+    sourceGroupTags: {
+      github: "#GitHub公式",
+      vscode: "#VSCode公式",
+      platform: "#GitHubPlatform",
+      other: "#その他",
+    },
+    topicFilterTags: {
+      "GitHub Copilot": "#GitHubCopilot",
+      "VS Code": "#VSCode",
+      "GitHub Platform": "#GitHubPlatform",
+      周辺ニュース: "#周辺ニュース",
+    },
     topicNames: {
       "GitHub Copilot": "GitHub Copilot",
       "VS Code": "VS Code",
       "GitHub Platform": "GitHub Platform",
-      "周辺ニュース": "周辺ニュース",
+      周辺ニュース: "周辺ニュース",
     },
   };
 }
@@ -222,8 +309,18 @@ function renderMetric(label, value, detail) {
   return `<article class="metric-card"><span class="metric-label">${escapeHtml(label)}</span><strong class="metric-value">${escapeHtml(value)}</strong><span class="metric-detail">${escapeHtml(detail)}</span></article>`;
 }
 
-function renderBadges(event, locale) {
-  return `<div class="badge-row">${buildHighlightTags(event, locale)
+function renderSourceBadge(event, text) {
+  const group = sourceGroup(event);
+  const meta = sourceGroupMeta(group, text);
+
+  return `<span class="pill source-badge source-badge--${escapeHtml(group)}"><span class="source-badge-mark">${escapeHtml(meta.short)}</span><span>${escapeHtml(meta.label)}</span></span>`;
+}
+
+function renderBadges(event, locale, text) {
+  return `<div class="badge-row">${renderSourceBadge(event, text)}${buildHighlightTags(
+    event,
+    locale,
+  )
     .map((tag) => `<span class="pill">${escapeHtml(tag)}</span>`)
     .join("")}</div>`;
 }
@@ -232,27 +329,67 @@ function renderDateMeta(event, locale, text) {
   return `<div class="meta-row"><span>${escapeHtml(text.updatedLabel)}: ${escapeHtml(formatDate(event.publishedAt, locale))}</span><span>${escapeHtml(text.detectedLabel)}: ${escapeHtml(formatDate(event.detectedAt ?? event.publishedAt, locale))}</span></div>`;
 }
 
-function renderSourceMeta(event, text) {
-  return `<div class="meta-row"><span>${escapeHtml(text.sourceLabel)}: ${escapeHtml((event.sourceNames ?? [event.sourceName]).join(" / "))}</span></div>`;
+function renderSourceMeta(event, locale, text) {
+  return `<div class="meta-row source-meta"><span>${escapeHtml(text.sourceLabel)}:</span><span class="source-meta-value">${renderSourceBadge(event, text)}<span class="source-name-list">${escapeHtml((event.sourceNames ?? [event.sourceName]).join(" / "))}</span></span></div>`;
+}
+
+function renderFilterChip(kind, value, label, extraClass = "") {
+  return `<button type="button" class="filter-chip ${extraClass}" data-filter-kind="${escapeHtml(kind)}" data-filter-value="${escapeHtml(value)}" aria-pressed="false">${escapeHtml(label)}</button>`;
+}
+
+function renderFilterBar(text) {
+  return `<section class="section-block filter-block" data-filter-root>
+    <div class="section-heading"><h2>${escapeHtml(text.filterTitle)}</h2><button type="button" class="filter-reset" data-filter-reset>${escapeHtml(text.filterReset)}</button></div>
+    <div class="filter-stack">
+      <div class="filter-row">
+        <span class="filter-label">${escapeHtml(text.filterSourceLabel)}</span>
+        <div class="filter-chip-row">${sourceGroupOrder
+          .map((group) =>
+            renderFilterChip(
+              "source",
+              group,
+              sourceGroupMeta(group, text).tag,
+              `source-badge--${group}`,
+            ),
+          )
+          .join("")}</div>
+      </div>
+      <div class="filter-row">
+        <span class="filter-label">${escapeHtml(text.filterTopicLabel)}</span>
+        <div class="filter-chip-row">${topicOrder
+          .map((topic) =>
+            renderFilterChip(
+              "topic",
+              topic,
+              text.topicFilterTags[topic] ?? topic,
+            ),
+          )
+          .join("")}</div>
+      </div>
+    </div>
+  </section>`;
 }
 
 function renderEventCard(event, locale, text, options = {}) {
   const rawTitle = locale === "ja" ? originalTitle(event) : null;
   const summaryMaxLength = options.compact ? 170 : 260;
+  const group = sourceGroup(event);
+  const topic = classifyEvent(event);
   const why = options.includeWhy
     ? `<p class="why-it-matters"><strong>${escapeHtml(text.whyLabel)}:</strong> ${escapeHtml(importanceReason(event, locale))}</p>`
     : "";
   const cardClass = options.compact ? "mini-highlight" : "update-card";
 
-  const isExternal = event.url && !event.url.startsWith('./') && !event.url.startsWith('../');
+  const isExternal =
+    event.url && !event.url.startsWith("./") && !event.url.startsWith("../");
   const linkAttrs = isExternal ? ` target="_blank" rel="noopener"` : "";
 
-  return `<article class="${cardClass}">
-    ${renderBadges(event, locale)}
-    <h3><a href="${escapeHtml(event.url)}"${linkAttrs}>${escapeHtml(localizedTitle(event, locale))}${isExternal ? ' <span class="ext-icon" aria-hidden="true">&#8599;</span>' : ''}</a></h3>
+  return `<article class="${cardClass}" data-filter-card data-source-group="${escapeHtml(group)}" data-topic="${escapeHtml(topic)}">
+    ${renderBadges(event, locale, text)}
+    <h3><a href="${escapeHtml(event.url)}"${linkAttrs}>${escapeHtml(localizedTitle(event, locale))}${isExternal ? ' <span class="ext-icon" aria-hidden="true">&#8599;</span>' : ""}</a></h3>
     ${rawTitle ? `<p class="original-title">${escapeHtml(text.originalTitleLabel)}: ${escapeHtml(rawTitle)}</p>` : ""}
     ${renderDateMeta(event, locale, text)}
-    ${renderSourceMeta(event, text)}
+    ${renderSourceMeta(event, locale, text)}
     <p>${escapeHtml(trimText(localizedSummary(event, locale), summaryMaxLength))}</p>
     ${why}
   </article>`;
@@ -311,26 +448,27 @@ function buildRangeDigest(logs, range) {
       sourceBreakdown.set(sourceName, new Set());
     }
 
-    sourceBreakdown.get(sourceName).add(event.url || event.title || event.eventId);
+    sourceBreakdown
+      .get(sourceName)
+      .add(event.url || event.title || event.eventId);
   }
 
-  const topicOrder = [
-    "GitHub Copilot",
-    "VS Code",
-    "GitHub Platform",
-    "周辺ニュース",
-  ];
   const topicMap = new Map(topicOrder.map((topic) => [topic, []]));
   for (const event of uniqueEvents) {
     topicMap.get(classifyEvent(event)).push(event);
   }
 
-  const editorialNotes = [...new Set(
-    logs
-      .filter((log) => safeDate(log.date) >= startDate && safeDate(log.date) <= endDate)
-      .map((log) => log.editorialNote)
-      .filter(Boolean),
-  )];
+  const editorialNotes = [
+    ...new Set(
+      logs
+        .filter(
+          (log) =>
+            safeDate(log.date) >= startDate && safeDate(log.date) <= endDate,
+        )
+        .map((log) => log.editorialNote)
+        .filter(Boolean),
+    ),
+  ];
 
   return {
     kind: range.kind,
@@ -341,7 +479,10 @@ function buildRangeDigest(logs, range) {
     uniqueEventCount: uniqueEvents.length,
     sourceBreakdown: [...sourceBreakdown.entries()]
       .map(([name, keys]) => ({ name, count: keys.size }))
-      .sort((left, right) => right.count - left.count || left.name.localeCompare(right.name, "ja")),
+      .sort(
+        (left, right) =>
+          right.count - left.count || left.name.localeCompare(right.name, "ja"),
+      ),
     highlights: uniqueEvents.slice(0, 6),
     uniqueEvents,
     topics: topicOrder.map((topic) => ({
@@ -387,12 +528,17 @@ function buildWeeklyDigests(logs) {
 }
 
 function renderArchiveCard(digest, locale, text, href, kind) {
-  const rangeLabel = kind === "week" ? `${digest.startDate} - ${digest.endDate}` : digest.date;
-  const title = kind === "week" ? `${digest.startDate} - ${digest.endDate}` : `${digest.date}`;
+  const rangeLabel =
+    kind === "week" ? `${digest.startDate} - ${digest.endDate}` : digest.date;
+  const title =
+    kind === "week"
+      ? `${digest.startDate} - ${digest.endDate}`
+      : `${digest.date}`;
   const topItems = digest.highlights.slice(0, 3);
-  const itemCount = locale === "ja"
-    ? `${digest.uniqueEventCount}${escapeHtml(text.itemSuffix)}`
-    : formatCount(digest.uniqueEventCount, locale, "item", "items");
+  const itemCount =
+    locale === "ja"
+      ? `${digest.uniqueEventCount}${escapeHtml(text.itemSuffix)}`
+      : formatCount(digest.uniqueEventCount, locale, "item", "items");
 
   return `<article class="digest-card">
     <div class="digest-card-head"><p>${escapeHtml(rangeLabel)}</p><span>${itemCount}</span></div>
@@ -407,35 +553,73 @@ function renderRangePage(digest, locale, text, options) {
     locale === "ja"
       ? `${count}${text.itemSuffix}`
       : formatCount(count, locale, "item", "items");
-  const metrics = options.kind === "day"
-    ? [
-        renderMetric(text.trackedUpdates, itemCount(digest.uniqueEventCount), text.trackedUpdatesDetail),
-        renderMetric(text.latestRunMetric, itemCount(digest.latestRun.newEventsCount), text.latestRunMetricDetail),
-        renderMetric(text.trackedSources, itemCount(digest.sourceBreakdown.length), text.trackedSourcesDetail),
-        renderMetric(text.errorMetric, itemCount(digest.errorCount), text.errorMetricDetail),
-      ]
-    : [
-        renderMetric(text.rangeLabel, `${digest.startDate} - ${digest.endDate}`, text.rangeDetail),
-        renderMetric(text.trackedUpdates, itemCount(digest.uniqueEventCount), text.trackedUpdatesDetail),
-        renderMetric(text.trackedSources, itemCount(digest.sourceBreakdown.length), text.trackedSourcesDetail),
-        renderMetric(text.noteCount, itemCount(digest.editorialNotes.length), text.noteCountDetail),
-      ];
+  const metrics =
+    options.kind === "day"
+      ? [
+          renderMetric(
+            text.trackedUpdates,
+            itemCount(digest.uniqueEventCount),
+            text.trackedUpdatesDetail,
+          ),
+          renderMetric(
+            text.latestRunMetric,
+            itemCount(digest.latestRun.newEventsCount),
+            text.latestRunMetricDetail,
+          ),
+          renderMetric(
+            text.trackedSources,
+            itemCount(digest.sourceBreakdown.length),
+            text.trackedSourcesDetail,
+          ),
+          renderMetric(
+            text.errorMetric,
+            itemCount(digest.errorCount),
+            text.errorMetricDetail,
+          ),
+        ]
+      : [
+          renderMetric(
+            text.rangeLabel,
+            `${digest.startDate} - ${digest.endDate}`,
+            text.rangeDetail,
+          ),
+          renderMetric(
+            text.trackedUpdates,
+            itemCount(digest.uniqueEventCount),
+            text.trackedUpdatesDetail,
+          ),
+          renderMetric(
+            text.trackedSources,
+            itemCount(digest.sourceBreakdown.length),
+            text.trackedSourcesDetail,
+          ),
+          renderMetric(
+            text.noteCount,
+            itemCount(digest.editorialNotes.length),
+            text.noteCountDetail,
+          ),
+        ];
 
-  const editorialNotes = options.kind === "day"
-    ? (digest.editorialNote ? [digest.editorialNote] : [])
-    : digest.editorialNotes;
+  const editorialNotes =
+    options.kind === "day"
+      ? digest.editorialNote
+        ? [digest.editorialNote]
+        : []
+      : digest.editorialNotes;
 
   const body = `
     <section class="hero hero-day">
       <div>
         <p class="eyebrow">${escapeHtml(options.kind === "day" ? text.dayPageEyebrow : text.weekPageEyebrow)}</p>
         <h1>${escapeHtml(options.kind === "day" ? digest.date : `${digest.startDate} - ${digest.endDate}`)}</h1>
-        <p class="hero-copy">${escapeHtml(options.kind === "day" ? (locale === "ja" ? "当日の監視結果を、重複を除いた読みやすい形に再構成しています。" : "This page reorganizes one day's collected updates into a deduplicated, readable digest.") : (locale === "ja" ? "直近 7 日の更新をまとめて追えるように、ハイライトと全件を週単位で再構成しています。" : "This page groups the last seven days of updates into a weekly digest with highlights and a full update list."))}</p>
+        <p class="hero-copy">${escapeHtml(options.kind === "day" ? (locale === "ja" ? "当日の監視結果を、重複を除いた読みやすい形に再構成しています。" : "This page reorganizes one day's collected updates into a deduplicated, readable digest.") : locale === "ja" ? "直近 7 日の更新をまとめて追えるように、ハイライトと全件を週単位で再構成しています。" : "This page groups the last seven days of updates into a weekly digest with highlights and a full update list.")}</p>
       </div>
       <div class="metrics-grid">${metrics.join("")}</div>
     </section>
 
     ${renderEditorialNotes(editorialNotes, text)}
+
+    ${renderFilterBar(text)}
 
     <section class="section-block">
       <div class="section-heading"><h2>${escapeHtml(text.highlightsTitle)}</h2><span>${escapeHtml(itemCount(digest.highlights.length))}</span></div>
@@ -473,11 +657,22 @@ function renderRangePage(digest, locale, text, options) {
   });
 }
 
-function renderIndexPage({ dailyDigests, weeklyDigests }, locale, text, relativePrefix, links) {
+function renderIndexPage(
+  { dailyDigests, weeklyDigests },
+  locale,
+  text,
+  relativePrefix,
+  links,
+) {
   const latestDigest = dailyDigests[0];
-  const overallUnique = dailyDigests.reduce((total, digest) => total + digest.uniqueEventCount, 0);
+  const overallUnique = dailyDigests.reduce(
+    (total, digest) => total + digest.uniqueEventCount,
+    0,
+  );
   const latestHighlights = dailyDigests
-    .flatMap((digest) => digest.highlights.map((event) => ({ ...event, digestDate: digest.date })))
+    .flatMap((digest) =>
+      digest.highlights.map((event) => ({ ...event, digestDate: digest.date })),
+    )
     .sort(
       (left, right) =>
         safeDate(right.publishedAt) - safeDate(left.publishedAt) ||
@@ -485,9 +680,10 @@ function renderIndexPage({ dailyDigests, weeklyDigests }, locale, text, relative
     )
     .slice(0, 6);
 
-  const weeklyMarkup = weeklyDigests.length === 0
-    ? `<div class="content-card empty-card"><p>${escapeHtml(text.weeklyEmpty)}</p></div>`
-    : `<div class="digest-grid">${weeklyDigests.map((digest) => renderArchiveCard(digest, locale, text, links.weekHref(digest.key), "week")).join("")}</div>`;
+  const weeklyMarkup =
+    weeklyDigests.length === 0
+      ? `<div class="content-card empty-card"><p>${escapeHtml(text.weeklyEmpty)}</p></div>`
+      : `<div class="digest-grid">${weeklyDigests.map((digest) => renderArchiveCard(digest, locale, text, links.weekHref(digest.key), "week")).join("")}</div>`;
 
   const body = `
     <section class="hero">
@@ -546,8 +742,21 @@ function renderIndexPage({ dailyDigests, weeklyDigests }, locale, text, relative
   });
 }
 
-function renderLayout({ locale, text, title, description, body, relativePrefix, homeHref, weeklyHref, langSwitchHref }) {
-  const assetHref = relativePrefix === "." ? "./assets/styles.css" : `${relativePrefix}/assets/styles.css`;
+function renderLayout({
+  locale,
+  text,
+  title,
+  description,
+  body,
+  relativePrefix,
+  homeHref,
+  weeklyHref,
+  langSwitchHref,
+}) {
+  const assetHref =
+    relativePrefix === "."
+      ? "./assets/styles.css"
+      : `${relativePrefix}/assets/styles.css`;
   const pageUrl = typeof langSwitchHref === "string" ? "" : "";
   return `<!doctype html>
 <html lang="${escapeHtml(text.htmlLang)}">
@@ -616,11 +825,13 @@ function renderLayout({ locale, text, title, description, body, relativePrefix, 
         var pref=localStorage.getItem('vcd-lang');
         toggle.addEventListener('click',function(){
           var dest=toggle.getAttribute('data-href');
+          if(dest&&window.location.search){dest+=window.location.search;}
           localStorage.setItem('vcd-lang','${locale === "ja" ? "en" : "ja"}');
           window.location.href=dest;
         });
         if(pref&&pref!=='${locale}'){
           var dest=toggle.getAttribute('data-href');
+          if(dest&&window.location.search){dest+=window.location.search;}
           if(dest)window.location.replace(dest);
         }
       }
@@ -629,8 +840,9 @@ function renderLayout({ locale, text, title, description, body, relativePrefix, 
           e.preventDefault();
           var url=encodeURIComponent(window.location.href);
           var title=encodeURIComponent(document.title);
+          var taggedTitle=encodeURIComponent(document.title+'\\n#AI #AIAgent #GitHubCopilot #ClaudeCode #VSCODE');
           var kind=btn.getAttribute('data-share');
-          if(kind==='x')window.open('https://x.com/intent/tweet?url='+url+'&text='+title,'_blank','noopener');
+          if(kind==='x')window.open('https://x.com/intent/tweet?url='+url+'&text='+taggedTitle,'_blank','noopener');
           else if(kind==='linkedin')window.open('https://www.linkedin.com/sharing/share-offsite/?url='+url,'_blank','noopener');
           else if(kind==='hatena')window.open('https://b.hatena.ne.jp/entry/s/'+window.location.href.replace(/^https?:\\/\\//,''),'_blank','noopener');
           else if(kind==='copy'){
@@ -641,6 +853,75 @@ function renderLayout({ locale, text, title, description, body, relativePrefix, 
           }
         });
       });
+    })();
+    (function(){
+      var root=document.querySelector('[data-filter-root]');
+      if(!root)return;
+      var cards=[].slice.call(document.querySelectorAll('[data-filter-card]'));
+      var reset=root.querySelector('[data-filter-reset]');
+      var state={source:new Set(),topic:new Set()};
+      function readList(value){
+        if(!value)return [];
+        return value.split(',').map(function(item){return decodeURIComponent(item).trim();}).filter(Boolean);
+      }
+      function syncStateFromUrl(){
+        var params=new URLSearchParams(window.location.search);
+        state.source=new Set(readList(params.get('sources')));
+        state.topic=new Set(readList(params.get('topics')));
+      }
+      function syncButtons(){
+        root.querySelectorAll('[data-filter-kind]').forEach(function(btn){
+          var kind=btn.getAttribute('data-filter-kind');
+          var value=btn.getAttribute('data-filter-value');
+          var active=state[kind].has(value);
+          btn.classList.toggle('active',active);
+          btn.setAttribute('aria-pressed',active?'true':'false');
+        });
+        if(reset){
+          reset.disabled=state.source.size===0&&state.topic.size===0;
+        }
+      }
+      function applyFilters(){
+        cards.forEach(function(card){
+          var sourceValue=card.getAttribute('data-source-group');
+          var topicValue=card.getAttribute('data-topic');
+          var sourceMatch=state.source.size===0||state.source.has(sourceValue);
+          var topicMatch=state.topic.size===0||state.topic.has(topicValue);
+          card.classList.toggle('is-hidden',!(sourceMatch&&topicMatch));
+        });
+      }
+      function syncUrl(){
+        var url=new URL(window.location.href);
+        if(state.source.size>0)url.searchParams.set('sources',Array.from(state.source).join(','));
+        else url.searchParams.delete('sources');
+        if(state.topic.size>0)url.searchParams.set('topics',Array.from(state.topic).join(','));
+        else url.searchParams.delete('topics');
+        window.history.replaceState({},'',url);
+      }
+      function refresh(){
+        syncButtons();
+        applyFilters();
+        syncUrl();
+      }
+      root.querySelectorAll('[data-filter-kind]').forEach(function(btn){
+        btn.addEventListener('click',function(){
+          var kind=btn.getAttribute('data-filter-kind');
+          var value=btn.getAttribute('data-filter-value');
+          if(state[kind].has(value))state[kind].delete(value);
+          else state[kind].add(value);
+          refresh();
+        });
+      });
+      if(reset){
+        reset.addEventListener('click',function(){
+          state.source.clear();
+          state.topic.clear();
+          refresh();
+        });
+      }
+      syncStateFromUrl();
+      syncButtons();
+      applyFilters();
     })();
     (function(){
       var btn=document.querySelector('.back-to-top');
@@ -672,6 +953,14 @@ function stylesCss() {
   --muted: #65594f;
   --accent: #0f766e;
   --accent-soft: rgba(15, 118, 110, 0.1);
+  --source-github: #8b5cf6;
+  --source-github-soft: rgba(139, 92, 246, 0.14);
+  --source-vscode: #0078d4;
+  --source-vscode-soft: rgba(0, 120, 212, 0.14);
+  --source-platform: #ea580c;
+  --source-platform-soft: rgba(234, 88, 12, 0.14);
+  --source-other: #4b5563;
+  --source-other-soft: rgba(75, 85, 99, 0.14);
   --shadow: 0 20px 60px rgba(31, 26, 23, 0.08);
 }
 * { box-sizing: border-box; }
@@ -745,6 +1034,34 @@ h1 { margin: 0 0 16px; font-size: clamp(2.3rem, 4vw, 4.2rem); line-height: 1.04;
 }
 .notice-list { display: grid; gap: 10px; }
 .notice-list p { margin: 0; color: var(--text); line-height: 1.7; }
+.filter-block {
+  padding: 18px 20px;
+  background: rgba(255, 252, 246, 0.72);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+}
+.filter-stack { display: grid; gap: 12px; }
+.filter-row { display: grid; gap: 10px; }
+.filter-label { color: var(--muted); font-size: 0.9rem; font-weight: 700; }
+.filter-chip-row { display: flex; flex-wrap: wrap; gap: 10px; }
+.filter-chip,
+.filter-reset {
+  appearance: none;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.66);
+  color: var(--text);
+  border-radius: 999px;
+  padding: 7px 12px;
+  font: inherit;
+  cursor: pointer;
+  transition: transform 0.15s, border-color 0.15s, box-shadow 0.15s;
+}
+.filter-chip.active {
+  border-color: currentColor;
+  box-shadow: inset 0 0 0 1px currentColor;
+  transform: translateY(-1px);
+}
+.filter-reset:disabled { cursor: default; opacity: 0.45; }
 .section-heading {
   display: flex;
   justify-content: space-between;
@@ -776,6 +1093,34 @@ h1 { margin: 0 0 16px; font-size: clamp(2.3rem, 4vw, 4.2rem); line-height: 1.04;
   font-size: 0.82rem;
   font-weight: 700;
 }
+.source-badge { gap: 8px; }
+.source-badge-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.8rem;
+  padding: 2px 6px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.72);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+}
+.source-badge--github {
+  background: var(--source-github-soft);
+  color: var(--source-github);
+}
+.source-badge--vscode {
+  background: var(--source-vscode-soft);
+  color: var(--source-vscode);
+}
+.source-badge--platform {
+  background: var(--source-platform-soft);
+  color: var(--source-platform);
+}
+.source-badge--other {
+  background: var(--source-other-soft);
+  color: var(--source-other);
+}
 .why-it-matters { margin-top: 12px; padding-top: 12px; border-top: 1px dashed var(--line); }
 .original-title { margin: 0; color: var(--muted); font-size: 0.86rem; }
 .meta-row {
@@ -785,6 +1130,14 @@ h1 { margin: 0 0 16px; font-size: clamp(2.3rem, 4vw, 4.2rem); line-height: 1.04;
   flex-wrap: wrap;
   margin: 6px 0;
 }
+.source-meta { align-items: center; }
+.source-meta-value {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.source-name-list { color: var(--muted); }
 .source-breakdown, .topic-list {
   list-style: none;
   padding: 0;
@@ -816,6 +1169,7 @@ h1 { margin: 0 0 16px; font-size: clamp(2.3rem, 4vw, 4.2rem); line-height: 1.04;
 }
 .share-btn:hover { background: var(--accent-soft); color: var(--accent); }
 .share-btn.copied { background: var(--accent); color: #fff; }
+.is-hidden { display: none !important; }
 .lang-toggle {
   display: inline-flex; align-items: center; cursor: pointer;
   padding: 0; border: 1px solid var(--line);
@@ -876,15 +1230,27 @@ async function copyRawFiles(date) {
   const eventSource = path.join(eventsDir, `${date}.json`);
   const summarySource = path.join(summariesDir, `${date}.md`);
   await Promise.all([
-    fs.copyFile(eventSource, path.join(siteDir, "raw", "events", `${date}.json`)),
-    fs.copyFile(summarySource, path.join(siteDir, "raw", "summaries", `${date}.md`)).catch(async (error) => {
-      if (error.code === "ENOENT") {
-        await fs.writeFile(path.join(siteDir, "raw", "summaries", `${date}.md`), "# Summary not found\n", "utf8");
-        return;
-      }
+    fs.copyFile(
+      eventSource,
+      path.join(siteDir, "raw", "events", `${date}.json`),
+    ),
+    fs
+      .copyFile(
+        summarySource,
+        path.join(siteDir, "raw", "summaries", `${date}.md`),
+      )
+      .catch(async (error) => {
+        if (error.code === "ENOENT") {
+          await fs.writeFile(
+            path.join(siteDir, "raw", "summaries", `${date}.md`),
+            "# Summary not found\n",
+            "utf8",
+          );
+          return;
+        }
 
-      throw error;
-    }),
+        throw error;
+      }),
   ]);
 }
 
@@ -904,7 +1270,11 @@ async function main() {
     fs.mkdir(path.join(siteDir, "assets"), { recursive: true }),
   ]);
 
-  await fs.writeFile(path.join(siteDir, "assets", "styles.css"), stylesCss(), "utf8");
+  await fs.writeFile(
+    path.join(siteDir, "assets", "styles.css"),
+    stylesCss(),
+    "utf8",
+  );
   await fs.writeFile(path.join(siteDir, ".nojekyll"), "", "utf8");
 
   const jaText = buildText("ja");
@@ -913,34 +1283,22 @@ async function main() {
   await Promise.all([
     fs.writeFile(
       path.join(siteDir, "index.html"),
-      renderIndexPage(
-        { dailyDigests, weeklyDigests },
-        "ja",
-        jaText,
-        ".",
-        {
-          home: "./index.html",
-          langSwitch: "./en/index.html",
-          dayHref: (date) => `./days/${date}.html`,
-          weekHref: (key) => `./weeks/${key}.html`,
-        },
-      ),
+      renderIndexPage({ dailyDigests, weeklyDigests }, "ja", jaText, ".", {
+        home: "./index.html",
+        langSwitch: "./en/index.html",
+        dayHref: (date) => `./days/${date}.html`,
+        weekHref: (key) => `./weeks/${key}.html`,
+      }),
       "utf8",
     ),
     fs.writeFile(
       path.join(siteDir, "en", "index.html"),
-      renderIndexPage(
-        { dailyDigests, weeklyDigests },
-        "en",
-        enText,
-        "..",
-        {
-          home: "./index.html",
-          langSwitch: "../index.html",
-          dayHref: (date) => `./days/${date}.html`,
-          weekHref: (key) => `./weeks/${key}.html`,
-        },
-      ),
+      renderIndexPage({ dailyDigests, weeklyDigests }, "en", enText, "..", {
+        home: "./index.html",
+        langSwitch: "../index.html",
+        dayHref: (date) => `./days/${date}.html`,
+        weekHref: (key) => `./weeks/${key}.html`,
+      }),
       "utf8",
     ),
   ]);
@@ -1012,7 +1370,9 @@ async function main() {
     ]);
   }
 
-  console.log(`Built GitHub Pages site with ${dailyDigests.length} daily page(s) and ${weeklyDigests.length} weekly page(s).`);
+  console.log(
+    `Built GitHub Pages site with ${dailyDigests.length} daily page(s) and ${weeklyDigests.length} weekly page(s).`,
+  );
 }
 
 await main();

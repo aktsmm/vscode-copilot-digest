@@ -72,6 +72,14 @@ function buildRepoSummaryUrl(date) {
   return `${serverUrl}/${repository}/blob/${refName}/summaries/daily/${date}.md`;
 }
 
+function buildPagesDigestUrl(date) {
+  const baseUrl =
+    process.env.PAGES_BASE_URL ||
+    "https://aktsmm.github.io/vscode-copilot-digest";
+
+  return `${baseUrl.replace(/\/$/, "")}/days/${date}.html`;
+}
+
 function dedupeEvents(events) {
   const deduped = new Map();
 
@@ -116,6 +124,7 @@ function buildPayload(date, eventLog, options = {}) {
   );
 
   const summaryUrl = buildRepoSummaryUrl(date);
+  const pagesUrl = buildPagesDigestUrl(date);
   const sourceCounts = new Map();
   for (const event of uniqueEvents) {
     sourceCounts.set(
@@ -164,6 +173,10 @@ function buildPayload(date, eventLog, options = {}) {
   if (summaryUrl) {
     lines.push("");
     lines.push(`日次サマリー: ${summaryUrl}`);
+  }
+
+  if (pagesUrl) {
+    lines.push(`Pages: ${pagesUrl}`);
   }
 
   const content = lines.join("\n").slice(0, 1900);

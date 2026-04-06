@@ -16,6 +16,8 @@ GitHub Copilot と VS Code 周辺の更新を毎日収集し、日次ダイジ�
 - 7 日分の記録から週間ドラフトを生成する
 - 必要なら Qiita API へ投稿し、投稿 ID と URL をドラフト frontmatter に反映する
 - 新着がある日だけ Discord Webhook へ通知する
+- Pages 上でソース出自バッジとハッシュタグ付きフィルタで更新を見分ける
+- GitHub.com 上の Copilot cloud agent 向け Issue / PR フローを自動起票する
 
 ## 監視対象
 
@@ -123,27 +125,52 @@ node scripts/publish-qiita.mjs drafts/biweekly-YYYYMMDD-YYYYMMDD.md
 ## GitHub Actions
 
 - [collect-updates.yml](.github/workflows/collect-updates.yml)
-  毎日収集し、変更があれば data と summaries をコミットします。新着がある場合だけ Discord 通知を送ります。
+  毎日 12:30 JST に収集し、変更があれば data と summaries をコミットします。新着がある場合だけ Discord 通知を送ります。
 
 - [deploy-pages.yml](.github/workflows/deploy-pages.yml)
-main への push を契機に Pages を再生成して公開します。日本語と英語の両ページ、日次ページ、週間ページをまとめて出力します。
+  main への push を契機に Pages を再生成して公開します。日本語と英語の両ページ、日次ページ、週間ページをまとめて出力します。
 
 - [build-biweekly-draft.yml](.github/workflows/build-biweekly-draft.yml)
   workflow_dispatch で指定日数の隔週ドラフトを作り、drafts をコミットします。
 
 - [build-weekly-draft.yml](.github/workflows/build-weekly-draft.yml)
-毎週土曜日に週間ドラフトを生成し、必要なら手動実行でも更新できます。
+  毎週土曜日 12:30 JST に週間ドラフトを生成し、必要なら手動実行でも更新できます。
 
 - [publish-qiita.yml](.github/workflows/publish-qiita.yml)
   workflow_dispatch で指定ファイルを Qiita へ公開し、投稿メタデータをドラフトへ書き戻します。
+
+- [copilot-setup-steps.yml](.github/workflows/copilot-setup-steps.yml)
+  Copilot cloud agent が作業を始める前に Node.js と依存関係を準備します。
+
+- [author-digest-pr.yml](.github/workflows/author-digest-pr.yml)
+  collect 完了後に最新イベントを見て、Copilot cloud agent 向けの執筆依頼 Issue を自動作成または更新します。手動実行時は対象日、スコープ、0件でも起票するかを選べます。
+
+- [request-copilot-review.yml](.github/workflows/request-copilot-review.yml)
+  Copilot 由来 PR にラベルを付け、Copilot reviewer の追加を試みます。review API が使えない環境では設定依存のため warning に留めます。
+
+- [validate-generated-pr.yml](.github/workflows/validate-generated-pr.yml)
+  自動生成 PR の変更対象、Markdown 構造、`npm run collect`、`npm run build:pages` を検証します。
+
+- [auto-merge-generated-pr.yml](.github/workflows/auto-merge-generated-pr.yml)
+  validate 成功後、許可ファイルのみを変更している Copilot PR に対して auto-merge を有効化します。
 
 ## 必要な Secrets
 
 - `DISCORD_WEBHOOK_URL`
   Discord 通知を有効にする場合のみ必要です。
 
+- `PAGES_BASE_URL`
+  Discord 通知に載せる Pages URL のベースです。未設定時は `https://aktsmm.github.io/vscode-copilot-digest` を使います。
+
 - `QIITA_ACCESS_TOKEN`
   Qiita 投稿を有効にする場合のみ必要です。
+
+## Copilot cloud agent 運用メモ
+
+- リポジトリ全体の指示は [.github/copilot-instructions.md](.github/copilot-instructions.md) に置きます。
+- Copilot cloud agent の開発環境は [.github/workflows/copilot-setup-steps.yml](.github/workflows/copilot-setup-steps.yml) で事前セットアップします。
+- 自動執筆フローを使うには、リポジトリ設定で Copilot cloud agent へのアクセスを有効化してください。
+- Copilot Code Review を自動で使うには、リポジトリ設定の Copilot > Code review で自動レビューを有効にしてください。
 
 ## Pages 構成
 

@@ -171,13 +171,15 @@ function renderEventSection(events) {
 }
 
 async function readEventLogs() {
-  const entries = await fs.readdir(eventsDir, { withFileTypes: true }).catch((error) => {
-    if (error.code === "ENOENT") {
-      return [];
-    }
+  const entries = await fs
+    .readdir(eventsDir, { withFileTypes: true })
+    .catch((error) => {
+      if (error.code === "ENOENT") {
+        return [];
+      }
 
-    throw error;
-  });
+      throw error;
+    });
 
   const files = entries
     .filter((entry) => entry.isFile() && entry.name.endsWith(".json"))

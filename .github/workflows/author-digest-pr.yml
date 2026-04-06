@@ -1,0 +1,207 @@
+name: Author digest PR
+
+on:
+  workflow_run:
+    workflows:
+      - Collect updates
+    types:
+      - completed
+  workflow_dispatch:
+    inputs:
+      date_key:
+        description: Target date (YYYY-MM-DD). Leave blank to use the latest event log.
+        required: false
+        type: string
+      scope:
+        description: Requested authoring scope.
+        required: false
+        default: full
+        type: choice
+        options:
+          - daily
+          - highlights-and-drafts
+          - full
+      force_issue:
+        description: Create or update the issue even if the latest run has 0 new events.
+        required: false
+        default: false
+        type: boolean
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  author-request:
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Prepare digest target
+        id: target
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+
+            const eventsDir = path.join(process.env.GITHUB_WORKSPACE, 'data', 'events');
+            const files = fs.readdirSync(eventsDir)
+              .filter((file) => file.endsWith('.json'))
+              .sort();
+            const isManual = context.eventName === 'workflow_dispatch';
+            const requestedDateKey = isManual ? '${{ inputs.date_key }}'.trim() : '';
+            const requestedScope = (isManual ? '${{ inputs.scope }}' : 'full') || 'full';
+            const forceIssue = isManual && '${{ inputs.force_issue }}' === 'true';
+
+            if (files.length === 0) {
+              core.setOutput('should_run', 'false');
+              return;
+            }
+
+            const latestFile = files[files.length - 1];
+            const selectedFile = requestedDateKey
+              ? `${requestedDateKey}.json`
+              : latestFile;
+
+            if (!files.includes(selectedFile)) {
+              core.setFailed(`Event log not found: ${selectedFile}`);
+              return;
+            }
+
+            const dateKey = selectedFile.replace(/\.json$/, '');
+            const eventLog = JSON.parse(
+              fs.readFileSync(path.join(eventsDir, selectedFile), 'utf8'),
+            );
+            const newEventsCount = Number(eventLog.latestRun?.newEventsCount ?? 0);
+
+            if (newEventsCount === 0 && !forceIssue) {
+              core.info(`No new events in ${selectedFile}.`);
+              core.setOutput('should_run', 'false');
+              return;
+            }
+
+            const scopeLabelMap = {
+              daily: 'summaries/daily のみ',
+              'highlights-and-drafts': 'summaries/daily と drafts の要点',
+              full: 'summaries/daily と drafts 全体と reporting.mjs',
+            };
+            const requestedScopeLabel = scopeLabelMap[requestedScope] ?? scopeLabelMap.full;
+            const prTitleRule = `docs: update digest ${dateKey}`;
+
+            const highlights = (eventLog.events ?? [])
+              .slice(0, 5)
+              .map((event, index) => `${index + 1}. ${event.title}\n   - ${event.url}`)
+              .join('\n');
+
+            const body = [
+              '## 日次ダイジェスト自動更新依頼',
+              '',
+              '本日の更新データを基に、GitHub.com 上で本文・要約・必要な対訳追加を行い、PR を作成してください。',
+              '',
+              '### 対象',
+              `- イベントデータ: \`data/events/${dateKey}.json\``,
+              `- 日次本文: \`summaries/daily/${dateKey}.md\``,
+              '- 必要に応じて週次/隔週ドラフト: `drafts/**`',
+              '- 必要に応じて対訳追加: `scripts/lib/reporting.mjs`',
+              '',
+              '### やってほしいこと',
+              `1. \`data/events/${dateKey}.json\` を読み、重要な更新を把握する`,
+              `2. \`summaries/daily/${dateKey}.md\` の \`注目トピック\` と \`テーマ別まとめ\` を更新する`,
+              '3. 今週分・隔週分のドラフト対象期間に含まれる場合は、`drafts/**` の要点または本文を更新する',
+              '4. `reporting.mjs` に未登録のタイトルや要約パターンが必要なら追加する',
+              '5. 変更を 1 つの PR として作成する',
+              '',
+              '### 文章ルール',
+              '- 日本語で簡潔に書く',
+              '- 1 項目ごとに「何が変わったか」と「運用上なぜ気にするか」を含める',
+              '- 根拠のない断定や誇張をしない',
+              '- 元ソースにない数値や固有名詞を足さない',
+              '- 既存の文体とセクション構成を崩さない',
+              '',
+              '### 制約',
+              '- `data/**` の生データは変更しない',
+              '- 許可された変更対象以外は触らない',
+              '- `npm run collect` と `npm run build:pages` が通る状態を維持する',
+              '- 不確実な場合は `needs-human-review` を明記して PR を作る',
+              '',
+              '### 依頼スコープ',
+              `- 選択: ${requestedScopeLabel}`,
+              '',
+              '### PR ルール',
+              `- PR タイトルは \\`${prTitleRule}\\` を基本形にする`,
+              `- PR 本文には \\`Generated from data/events/${dateKey}.json\\` を含める`,
+              '- 根拠が弱い場合や許可外変更が必要な場合は `needs-human-review` を付けて止める',
+              '',
+              '### 直近の候補',
+              highlights || '- なし',
+            ].join('\n');
+
+            core.setOutput('should_run', 'true');
+            core.setOutput('date_key', dateKey);
+            core.setOutput('pr_title_rule', prTitleRule);
+            core.setOutput('issue_title', `Digest authoring request: ${dateKey}`);
+            core.setOutput('issue_body', body);
+
+      - name: Create or update authoring issue
+        if: steps.target.outputs.should_run == 'true'
+        uses: actions/github-script@v7
+        env:
+          ISSUE_TITLE: ${{ steps.target.outputs.issue_title }}
+          ISSUE_BODY: ${{ steps.target.outputs.issue_body }}
+        with:
+          script: |
+            const title = process.env.ISSUE_TITLE;
+            const body = process.env.ISSUE_BODY;
+            const labels = ['copilot', 'digest-authoring', 'auto-pr'];
+            const issues = await github.paginate(github.rest.issues.listForRepo, {
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: 'digest-authoring',
+              per_page: 100,
+            });
+            const existing = issues.find((issue) => issue.title === title);
+
+            let issueNumber;
+            if (existing) {
+              await github.rest.issues.update({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: existing.number,
+                body,
+              });
+              issueNumber = existing.number;
+            } else {
+              const created = await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title,
+                body,
+                labels,
+              });
+              issueNumber = created.data.number;
+            }
+
+            await github.rest.issues.addLabels({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: issueNumber,
+              labels,
+            });
+
+            try {
+              await github.rest.issues.addAssignees({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issueNumber,
+                assignees: ['copilot'],
+              });
+            } catch (error) {
+              core.warning(`Failed to assign @copilot automatically: ${error.message}`);
+            }

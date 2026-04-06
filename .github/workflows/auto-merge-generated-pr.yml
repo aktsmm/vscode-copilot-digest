@@ -1,0 +1,121 @@
+name: Auto-merge generated PR
+
+on:
+  workflow_run:
+    workflows:
+      - Validate generated PR
+    types:
+      - completed
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  auto-merge:
+    if: github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Enable auto-merge when the PR is safe
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const pullRequests = context.payload.workflow_run.pull_requests || [];
+            if (pullRequests.length === 0) {
+              core.info('No pull request is associated with this workflow run.');
+              return;
+            }
+
+            const pull = await github.rest.pulls.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: pullRequests[0].number,
+            });
+            const pr = pull.data;
+            const labels = new Set((pr.labels || []).map((label) => label.name));
+            const titlePattern = /^docs: update digest \d{4}-\d{2}-\d{2}(?: \+ drafts)?(?: \+ reporting)?$/;
+            const bodyPattern = /Generated from data\/events\/\d{4}-\d{2}-\d{2}\.json/;
+
+            async function markForHumanReview(reason) {
+              await github.rest.issues.addLabels({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: pr.number,
+                labels: ['needs-human-review'],
+              });
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: pr.number,
+                body: `Auto-merge stopped: ${reason}`,
+              });
+              core.info(reason);
+            }
+
+            if (pr.state !== 'open' || pr.draft) {
+              core.info(`PR #${pr.number} is not ready for auto-merge.`);
+              return;
+            }
+
+            if (!labels.has('auto-pr') && !(pr.user?.login || '').includes('copilot')) {
+              core.info(`PR #${pr.number} is not marked as a generated PR.`);
+              return;
+            }
+
+            const files = await github.paginate(github.rest.pulls.listFiles, {
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: pr.number,
+              per_page: 100,
+            });
+            const blocked = files
+              .map((file) => file.filename)
+              .filter((file) => !/^summaries\/daily\//.test(file) && !/^drafts\//.test(file) && file !== 'scripts/lib/reporting.mjs');
+
+            if (blocked.length > 0) {
+              await markForHumanReview(`PR #${pr.number} changed disallowed files: ${blocked.join(', ')}`);
+              return;
+            }
+
+            const reviews = await github.paginate(github.rest.pulls.listReviews, {
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: pr.number,
+              per_page: 100,
+            });
+            const blockingPattern = /(blocking|must fix|cannot merge|do not merge|needs human review)/i;
+            const copilotBlocking = reviews.some((review) =>
+              (review.user?.login || '').includes('copilot') && blockingPattern.test(review.body || ''),
+            );
+
+            if (labels.has('needs-human-review') || copilotBlocking) {
+              core.info(`PR #${pr.number} requires human review.`);
+              return;
+            }
+
+            if (!titlePattern.test(pr.title || '')) {
+              await markForHumanReview(`PR #${pr.number} title does not match the generated rule: ${pr.title}`);
+              return;
+            }
+
+            if (!bodyPattern.test(pr.body || '')) {
+              await markForHumanReview(`PR #${pr.number} body does not include the required source marker.`);
+              return;
+            }
+
+            try {
+              await github.graphql(
+                `mutation($pullRequestId: ID!) {
+                  enablePullRequestAutoMerge(input: {pullRequestId: $pullRequestId, mergeMethod: SQUASH}) {
+                    pullRequest {
+                      number
+                    }
+                  }
+                }`,
+                { pullRequestId: pr.node_id },
+              );
+              core.info(`Enabled auto-merge for PR #${pr.number}.`);
+            } catch (error) {
+              core.warning(`Failed to enable auto-merge for PR #${pr.number}: ${error.message}`);
+            }

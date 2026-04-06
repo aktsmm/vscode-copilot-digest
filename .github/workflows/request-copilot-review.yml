@@ -1,0 +1,165 @@
+name: Request Copilot review
+
+on:
+  pull_request_target:
+    types:
+      - opened
+      - reopened
+      - ready_for_review
+      - synchronize
+      - edited
+
+permissions:
+  contents: read
+  issues: write
+  pull-requests: write
+
+jobs:
+  request-review:
+    if: contains(github.event.pull_request.user.login, 'copilot') || contains(github.event.pull_request.title, 'Digest authoring request')
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Add labels and request Copilot review
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const marker = '<!-- copilot-review-requested -->';
+            const normalizedMarker = '<!-- copilot-metadata-normalized -->';
+            const issueNumber = context.payload.pull_request.number;
+
+            function buildExpectedTitle(dateKey, files) {
+              const hasDrafts = files.some((file) => /^drafts\//.test(file.filename));
+              const hasReporting = files.some((file) => file.filename === 'scripts/lib/reporting.mjs');
+              return [
+                `docs: update digest ${dateKey}`,
+                hasDrafts ? '+ drafts' : null,
+                hasReporting ? '+ reporting' : null,
+              ]
+                .filter(Boolean)
+                .join(' ');
+            }
+
+            function resolveDateKey(pr, files) {
+              const summaryFile = files
+                .map((file) => file.filename.match(/^summaries\/daily\/(\d{4}-\d{2}-\d{2})\.md$/))
+                .find(Boolean);
+              if (summaryFile) {
+                return summaryFile[1];
+              }
+
+              const bodyMatch = (pr.body || '').match(/Generated from data\/events\/(\d{4}-\d{2}-\d{2})\.json/);
+              if (bodyMatch) {
+                return bodyMatch[1];
+              }
+
+              const titleMatch = (pr.title || '').match(/(\d{4}-\d{2}-\d{2})/);
+              if (titleMatch) {
+                return titleMatch[1];
+              }
+
+              return null;
+            }
+
+            await github.rest.issues.addLabels({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: issueNumber,
+              labels: ['copilot', 'auto-pr'],
+            });
+
+            const files = await github.paginate(github.rest.pulls.listFiles, {
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: issueNumber,
+              per_page: 100,
+            });
+
+            const pull = await github.rest.pulls.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: issueNumber,
+            });
+            const pr = pull.data;
+            const dateKey = resolveDateKey(pr, files);
+
+            if (!dateKey) {
+              core.warning('Could not infer a date key for generated PR metadata normalization.');
+              await github.rest.issues.addLabels({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issueNumber,
+                labels: ['needs-human-review'],
+              });
+            } else {
+              const expectedTitle = buildExpectedTitle(dateKey, files);
+              const expectedMarkerLine = `Generated from data/events/${dateKey}.json`;
+              let nextBody = pr.body || '';
+
+              if (/Generated from data\/events\/\d{4}-\d{2}-\d{2}\.json/.test(nextBody)) {
+                nextBody = nextBody.replace(
+                  /Generated from data\/events\/\d{4}-\d{2}-\d{2}\.json/,
+                  expectedMarkerLine,
+                );
+              } else {
+                nextBody = [expectedMarkerLine, '', nextBody].filter(Boolean).join('\n');
+              }
+
+              if (pr.title !== expectedTitle || nextBody !== (pr.body || '')) {
+                await github.rest.pulls.update({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  pull_number: issueNumber,
+                  title: expectedTitle,
+                  body: nextBody,
+                });
+              }
+            }
+
+            try {
+              await github.rest.pulls.requestReviewers({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                pull_number: issueNumber,
+                reviewers: ['copilot'],
+              });
+            } catch (error) {
+              core.warning(`Could not request Copilot reviewer via API: ${error.message}`);
+            }
+
+            const comments = await github.paginate(github.rest.issues.listComments, {
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: issueNumber,
+              per_page: 100,
+            });
+
+            if (dateKey && !comments.some((comment) => comment.body?.includes(normalizedMarker))) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issueNumber,
+                body: [
+                  normalizedMarker,
+                  `Generated PR metadata was normalized automatically for ${dateKey}.`,
+                  '- Title and body marker were aligned to the repository PR convention.',
+                  '- If validation still fails, the remaining failure is treated as a content or policy issue rather than metadata drift.',
+                ].join('\n'),
+              });
+            }
+
+            if (!comments.some((comment) => comment.body?.includes(marker))) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issueNumber,
+                body: [
+                  marker,
+                  'Copilot 由来 PR としてラベルを付与しました。',
+                  '',
+                  '- Copilot reviewer の API 追加は試行済みです。',
+                  '- リポジトリ設定で Copilot > Code review の自動レビューを有効にしている場合は、そちらが優先されます。',
+                  '- merge 判定は `validate-generated-pr.yml` と `needs-human-review` ラベルを優先します。',
+                ].join('\n'),
+              });
+            }
