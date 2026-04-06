@@ -1,0 +1,32 @@
+name: Rerun blocked Copilot workflows
+
+on:
+  workflow_run:
+    workflows:
+      - Request Copilot review
+      - Validate generated PR
+    types:
+      - completed
+
+permissions:
+  actions: write
+  contents: read
+  pull-requests: read
+
+jobs:
+  rerun-blocked:
+    if: github.event.workflow_run.conclusion == 'action_required' && github.event.workflow_run.run_attempt == 1 && github.event.workflow_run.actor.login == 'Copilot' && startsWith(github.event.workflow_run.head_branch, 'copilot/')
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Rerun once without manual approval
+        uses: actions/github-script@v8
+        with:
+          script: |
+            const run = context.payload.workflow_run;
+            await github.request('POST /repos/{owner}/{repo}/actions/runs/{run_id}/rerun', {
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              run_id: run.id,
+            });
+            core.info(`Requested rerun for blocked workflow run ${run.id} (${run.name}).`);

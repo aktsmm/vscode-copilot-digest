@@ -10,15 +10,18 @@
 - 新着がある日は Discord Webhook に通知する
 - collect 成功後に [author-digest-pr.yml](../.github/workflows/author-digest-pr.yml) が Copilot 向け Issue を作成または更新する
 - 生成 PR では [request-copilot-review.yml](../.github/workflows/request-copilot-review.yml) が metadata を正規化し、[validate-generated-pr.yml](../.github/workflows/validate-generated-pr.yml) が検証し、[auto-merge-generated-pr.yml](../.github/workflows/auto-merge-generated-pr.yml) が安全なものだけ auto-merge する
+- Copilot 起点で `action_required` になった review / validate workflow は [rerun-blocked-copilot-workflows.yml](../.github/workflows/rerun-blocked-copilot-workflows.yml) が 1 回だけ自動 rerun する
 
 ## 完全自動か
 
-かなり自動化されていますが、GitHub.com 側の Copilot cloud agent 設定に依存する部分があります。
+かなり自動化されていますが、GitHub.com 側の Copilot 機能設定に依存する部分はまだあります。
 
 - リポジトリ設定で Copilot cloud agent を有効化している必要がある
-- Copilot Code Review を自動で回すには GitHub 側設定が必要
+- repo 設定では auto-merge を有効化し、Actions の `GITHUB_TOKEN` は write 権限と PR review approve 権限を持つ前提にしている
+- Copilot Code Review を ruleset で自動化する設定は GitHub 側で有効化が必要で、この repo の workflow だけでは完結しない
 - `needs-human-review` が付いた PR は意図的に自動 merge しない
 - GitHub Docs 上の正式導線は、Issue を Copilot に assign すること。`author-digest-pr.yml` は GraphQL で Copilot assignment まで自動化する
+- Cloud agent の `Require approval for workflow runs` が ON でも、Copilot 由来の blocked run は workflow から 1 回だけ rerun して先へ進める
 - それでも PR が出ない場合は、Issue 右サイドバーで Copilot assignee が付いているかと GitHub 側キューを確認する
 
 ## Workflow 一覧
@@ -32,8 +35,9 @@
 - [copilot-setup-steps.yml](../.github/workflows/copilot-setup-steps.yml): Copilot cloud agent 用の Node.js セットアップ
 - [author-digest-pr.yml](../.github/workflows/author-digest-pr.yml): Copilot 向け執筆依頼 Issue の自動作成
 - [request-copilot-review.yml](../.github/workflows/request-copilot-review.yml): 生成 PR のラベル付けと metadata 正規化
+- [rerun-blocked-copilot-workflows.yml](../.github/workflows/rerun-blocked-copilot-workflows.yml): Copilot 起点で `action_required` になった review / validate workflow の自動 rerun
 - [validate-generated-pr.yml](../.github/workflows/validate-generated-pr.yml): 生成 PR の allow-list と build 検証
-- [auto-merge-generated-pr.yml](../.github/workflows/auto-merge-generated-pr.yml): 安全な生成 PR の auto-merge
+- [auto-merge-generated-pr.yml](../.github/workflows/auto-merge-generated-pr.yml): 安全な生成 PR を ready for review に切り替えて auto-merge
 
 ## Secrets
 
@@ -48,6 +52,7 @@
 - `github-script` への workflow input は script 直埋め込みではなく `env` 経由で渡します
 - auto-merge は `summaries/daily/**`、`drafts/**`、`scripts/lib/reporting.mjs` 以外を変更した PR では止まります
 - `needs-human-review` ラベルがある PR は必ず手動確認に倒れます
+- blocked workflow の rerun は Copilot actor が起点の run に 1 回だけ限定し、無限 rerun を避けます
 
 ## Node 24 対応
 
@@ -64,7 +69,7 @@ GitHub hosted runner の Node 20 deprecation warning に合わせて、主要 ac
 
 ## 次に確認すること
 
-- `author-digest-pr.yml` で作成した `digest-authoring` Issue から、GitHub Copilot cloud agent が実際に PR を起こすところを本番経路で確認する
-- `digest-authoring` Issue の右サイドバーに Copilot が assignee として自動で入っているかを確認する
+- repository ruleset で Copilot Code Review の自動 review を有効化し、PR 上の review comment まで GitHub 側機能で補完する
+- 新しい `digest-authoring` Issue で、draft PR の validate 成功後に ready for review 化と auto-merge 有効化まで人手なしで進むかを確認する
 - 新しい `digest-authoring` Issue を作っても 10 分以内に PR が出ない場合は、workflow 失敗より先に GitHub リポジトリ設定の Copilot cloud agent 有効化状態を確認する
-- 15 分を超えても PR が出ない場合は、GitHub 側のキューや設定を疑い、手動で repo 設定と Copilot Code Review 設定を見直す
+- 15 分を超えても PR が出ない、または review ruleset が動かない場合は、GitHub 側の Copilot Code Review 設定と GitHub 側キューを見直す
