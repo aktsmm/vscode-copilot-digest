@@ -200,17 +200,6 @@ jobs:
               labels,
             });
 
-            try {
-              await github.rest.issues.addAssignees({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                issue_number: issueNumber,
-                assignees: ['copilot'],
-              });
-            } catch (error) {
-              core.warning(`Failed to assign @copilot automatically: ${error.message}`);
-            }
-
             const comments = await github.paginate(github.rest.issues.listComments, {
               owner: context.repo.owner,
               repo: context.repo.repo,
@@ -228,6 +217,8 @@ jobs:
                   '@copilot この Issue を処理して、許可範囲内の変更だけで PR を作成してください。',
                   '- PR タイトルと本文は Issue のルールに合わせてください。',
                   '- 不確実な場合は needs-human-review を付けて停止してください。',
+                  '- GitHub Docs 上の正式導線は Issue を Copilot に assign することです。右サイドバーの Assign to Agent または assignee から Copilot を選んでください。',
+                  '- copilot ラベルや @copilot コメントだけでは、Copilot cloud agent の task pickup は保証されません。',
                 ].join('\n'),
               });
             }
