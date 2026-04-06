@@ -60,3 +60,9 @@ GitHub hosted runner の Node 20 deprecation warning に合わせて、主要 ac
 
 - `gh workflow run author-digest-pr.yml -f date_key=YYYY-MM-DD -f scope=full -f force_issue=true`
 - `gh workflow run test-discord-notification.yml -f date_key=YYYY-MM-DD`
+
+## 次に確認すること
+
+- `author-digest-pr.yml` で作成した `digest-authoring` Issue から、GitHub Copilot cloud agent が実際に PR を起こすところを本番経路で確認する
+- 新しい `digest-authoring` Issue を作っても 10 分以内に PR が出ない場合は、workflow 失敗より先に GitHub リポジトリ設定の Copilot cloud agent 有効化状態を確認する
+- 15 分を超えても PR が出ない場合は、GitHub 側のキューや設定を疑い、手動で repo 設定と Copilot Code Review 設定を見直す

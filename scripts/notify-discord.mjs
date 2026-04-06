@@ -192,8 +192,10 @@ function buildPayload(date, eventLog, options = {}) {
   }
 
   for (const block of eventBlocks) {
-    const nextLines = lines.at(-1) === "" ? [...lines, ...block] : [...lines, "", ...block];
-    const candidateLines = footerLines.length > 0 ? [...nextLines, "", ...footerLines] : nextLines;
+    const nextLines =
+      lines.at(-1) === "" ? [...lines, ...block] : [...lines, "", ...block];
+    const candidateLines =
+      footerLines.length > 0 ? [...nextLines, "", ...footerLines] : nextLines;
 
     if (joinLines(candidateLines).length > DISCORD_CONTENT_LIMIT) {
       break;
