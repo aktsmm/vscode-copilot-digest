@@ -11,6 +11,7 @@
 - collect 成功後に [author-digest-pr.yml](../.github/workflows/author-digest-pr.yml) が Copilot 向け Issue を作成または更新する
 - 生成 PR では [request-copilot-review.yml](../.github/workflows/request-copilot-review.yml) が metadata を正規化し、[validate-generated-pr.yml](../.github/workflows/validate-generated-pr.yml) が検証し、[auto-merge-generated-pr.yml](../.github/workflows/auto-merge-generated-pr.yml) が安全なものだけ merge する
 - Copilot 起点で `action_required` になった review / validate / auto-merge workflow は [rerun-blocked-copilot-workflows.yml](../.github/workflows/rerun-blocked-copilot-workflows.yml) が定期的に検出して 1 回だけ rerun する
+- direct squash merge を workflow から実行した場合は、その merge では push 起点 workflow が連鎖しないため、Pages 再生成は [auto-merge-generated-pr.yml](../.github/workflows/auto-merge-generated-pr.yml) から [deploy-pages.yml](../.github/workflows/deploy-pages.yml) を明示 dispatch する
 
 ## 完全自動か
 
@@ -19,6 +20,7 @@
 - リポジトリ設定で Copilot cloud agent を有効化している必要がある
 - repo 設定では auto-merge を有効化し、Actions の `GITHUB_TOKEN` は write 権限と PR review approve 権限を持つ前提にしている
 - branch protection が無い repo では GitHub の auto-merge API が使えないことがあるため、安全条件を満たした生成 PR は workflow が直接 squash merge する
+- workflow の `GITHUB_TOKEN` で実行した direct merge は通常の push workflow を自動連鎖しないため、Pages 再デプロイは別途 dispatch で補う
 - Copilot Code Review を ruleset で自動化する設定は GitHub 側で有効化が必要で、この repo の workflow だけでは完結しない
 - `needs-human-review` が付いた PR は意図的に自動 merge しない
 - GitHub Docs 上の正式導線は、Issue を Copilot に assign すること。`author-digest-pr.yml` は GraphQL で Copilot assignment まで自動化する

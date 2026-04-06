@@ -8,6 +8,7 @@ on:
       - completed
 
 permissions:
+  actions: write
   contents: write
   pull-requests: write
 
@@ -36,6 +37,16 @@ jobs:
             const labels = new Set((pr.labels || []).map((label) => label.name));
             const titlePattern = /^docs: update digest \d{4}-\d{2}-\d{2}(?: \+ drafts)?(?: \+ reporting)?$/;
             const bodyPattern = /Generated from data\/events\/\d{4}-\d{2}-\d{2}\.json/;
+
+            async function dispatchPagesDeploy() {
+              await github.rest.actions.createWorkflowDispatch({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                workflow_id: 'deploy-pages.yml',
+                ref: 'main',
+              });
+              core.info('Dispatched Deploy GitHub Pages for the latest main branch state.');
+            }
 
             async function markForHumanReview(reason) {
               await github.rest.issues.addLabels({
@@ -149,6 +160,7 @@ jobs:
                   pull_number: pr.number,
                   merge_method: 'squash',
                 });
+                await dispatchPagesDeploy();
                 core.info(`Merged PR #${pr.number} directly because auto-merge is not available for clean PRs in this repository.`);
                 return;
               }
