@@ -67,14 +67,16 @@ jobs:
           const title = process.env.PR_TITLE || '';
           const body = process.env.PR_BODY || '';
           const titlePattern = /^docs: update digest \d{4}-\d{2}-\d{2}(?: \+ drafts)?(?: \+ reporting)?$/;
+          const authoringRequestTitlePattern = /^Digest authoring request: \d{4}-\d{2}-\d{2}$/;
           const bodyPattern = /Generated from data\/events\/\d{4}-\d{2}-\d{2}\.json/;
+          const isPendingNormalization = authoringRequestTitlePattern.test(title);
 
-          if (!titlePattern.test(title)) {
+          if (!titlePattern.test(title) && !isPendingNormalization) {
             console.error(`PR title does not match the generated PR rule: ${title}`);
             process.exit(1);
           }
 
-          if (!bodyPattern.test(body)) {
+          if (!bodyPattern.test(body) && !isPendingNormalization) {
             console.error('PR body is missing the required source marker: Generated from data/events/YYYY-MM-DD.json');
             process.exit(1);
           }
