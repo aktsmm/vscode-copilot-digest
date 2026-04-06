@@ -18,14 +18,6 @@ const workspaceRoot = process.cwd();
 const eventsDir = path.join(workspaceRoot, "data", "events");
 const draftsDir = path.join(workspaceRoot, "drafts");
 
-function normalizeWhitespace(value) {
-  return String(value ?? "")
-    .replace(/\r/g, "")
-    .replace(/[ \t]+/g, " ")
-    .replace(/\n{3,}/g, "\n\n")
-    .trim();
-}
-
 function toDateOnly(date) {
   const year = date.getFullYear();
   const month = String(date.getMonth() + 1).padStart(2, "0");
@@ -35,7 +27,7 @@ function toDateOnly(date) {
 
 function parseArgs(argv) {
   const options = {
-    days: 14,
+    days: 7,
     from: null,
     to: null,
     output: null,
@@ -82,10 +74,7 @@ function computeRange(options) {
   }
   startDate.setHours(0, 0, 0, 0);
 
-  return {
-    startDate,
-    endDate,
-  };
+  return { startDate, endDate };
 }
 
 function isWithinRange(dateString, range) {
@@ -110,11 +99,11 @@ function rankEvent(event) {
 function renderFrontmatter(range) {
   return [
     "---",
-    `title: GitHub Copilot / VS Code アップデートまとめ (${toDateOnly(range.startDate)}〜${toDateOnly(range.endDate)})`,
+    `title: GitHub Copilot / VS Code 週間ダイジェスト (${toDateOnly(range.startDate)}〜${toDateOnly(range.endDate)})`,
     "tags:",
     "  - GitHubCopilot",
     "  - VSCode",
-    "  - GitHubActions",
+    "  - WeeklyDigest",
     "  - AI",
     "private: true",
     "tweet: false",
@@ -129,7 +118,7 @@ function renderFrontmatter(range) {
 
 function renderHighlights(events) {
   if (events.length === 0) {
-    return "- 今回の期間では新しい更新は記録されませんでした。";
+    return "- 今週の期間では新しい更新は記録されませんでした。";
   }
 
   return events
@@ -182,15 +171,13 @@ function renderEventSection(events) {
 }
 
 async function readEventLogs() {
-  const entries = await fs
-    .readdir(eventsDir, { withFileTypes: true })
-    .catch((error) => {
-      if (error.code === "ENOENT") {
-        return [];
-      }
+  const entries = await fs.readdir(eventsDir, { withFileTypes: true }).catch((error) => {
+    if (error.code === "ENOENT") {
+      return [];
+    }
 
-      throw error;
-    });
+    throw error;
+  });
 
   const files = entries
     .filter((entry) => entry.isFile() && entry.name.endsWith(".json"))
@@ -223,6 +210,7 @@ async function main() {
     )
     .map((log) => log.editorialNote)
     .filter(Boolean);
+
   const events = dedupeEvents(
     applyEditorialPolicy(
       logs
@@ -253,14 +241,14 @@ async function main() {
     ? path.resolve(workspaceRoot, options.output)
     : path.join(
         draftsDir,
-        `biweekly-${toDateOnly(range.startDate).replace(/-/g, "")}-${toDateOnly(range.endDate).replace(/-/g, "")}.md`,
+        `weekly-${toDateOnly(range.startDate).replace(/-/g, "")}-${toDateOnly(range.endDate).replace(/-/g, "")}.md`,
       );
 
   await fs.mkdir(path.dirname(outputFile), { recursive: true });
 
   const sections = [
     renderFrontmatter(range),
-    "## 今回の要点",
+    "## 今週の要点",
     "",
     renderHighlights(events),
     "",
@@ -284,9 +272,9 @@ async function main() {
     "",
     renderEventSection(grouped["周辺ニュース"]),
     "",
-    "## ひとこと",
+    "## 今週の所感",
     "",
-    "ここは手動で追記する前提です。今回の更新を通して見えたテーマ、すぐ触るべきもの、様子見でよいものを自分の言葉で追加してください。",
+    "ここは手動で追記する前提です。今週すぐ触るべきもの、翌週まで様子見でよいもの、継続監視したい流れを書き足してください。",
     "",
     "## 参考ソース",
     "",

@@ -433,7 +433,9 @@ function renderMarkdownSummary(dateKey, eventLog) {
       }
       lines.push(`- なぜ重要か: ${importanceReason(event)}`);
       lines.push(`- URL: ${event.url}`);
-      lines.push(`- ソース: ${(event.sourceNames ?? [event.sourceName]).join(", ")}`);
+      lines.push(
+        `- ソース: ${(event.sourceNames ?? [event.sourceName]).join(", ")}`,
+      );
       lines.push(`- 要点: ${localizedSummary(event)}`);
       lines.push("");
     }
@@ -471,7 +473,9 @@ function renderMarkdownSummary(dateKey, eventLog) {
         lines.push(`- ${localizedTitle(event)}`);
         lines.push(`  - 公開日時: ${event.publishedAt}`);
         lines.push(`  - ラベル: ${localizedImportanceLabel(event)}`);
-        lines.push(`  - ソース: ${(event.sourceNames ?? [event.sourceName]).join(", ")}`);
+        lines.push(
+          `  - ソース: ${(event.sourceNames ?? [event.sourceName]).join(", ")}`,
+        );
         lines.push(`  - URL: ${event.url}`);
         const rawTitle = originalTitle(event);
         if (rawTitle) {
@@ -568,7 +572,8 @@ async function main() {
   const collectionTime = new Date();
   const filteredMergedEvents = applyEditorialPolicy(
     mergedEvents.filter(
-      (event) => safeDate(event.publishedAt ?? event.detectedAt) <= collectionTime,
+      (event) =>
+        safeDate(event.publishedAt ?? event.detectedAt) <= collectionTime,
     ),
   );
 

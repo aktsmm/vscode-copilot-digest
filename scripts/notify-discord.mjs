@@ -136,7 +136,9 @@ function buildPayload(date, eventLog, options = {}) {
   ];
 
   if (options.forcePreview && latestRun.newEventsCount === 0) {
-    lines.push("注記: これは通知 preview です。直近 run に新着がないため、その日の既存イベントから代表項目を表示しています。");
+    lines.push(
+      "注記: これは通知 preview です。直近 run に新着がないため、その日の既存イベントから代表項目を表示しています。",
+    );
   }
 
   if (eventLog.editorialNote) {
@@ -149,7 +151,9 @@ function buildPayload(date, eventLog, options = {}) {
 
   lines.push("");
   for (const event of uniqueEvents.slice(0, 5)) {
-    lines.push(`- [${localizedImportanceLabel(event)}] ${trimLine(localizedTitle(event), 120)}`);
+    lines.push(
+      `- [${localizedImportanceLabel(event)}] ${trimLine(localizedTitle(event), 120)}`,
+    );
     lines.push(`  ${trimLine(localizedSummary(event), 120)}`);
     lines.push(`  ${event.url}`);
     if (event.sourceNames.length > 1) {

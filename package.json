@@ -6,6 +6,7 @@
   "scripts": {
     "collect": "node scripts/collect.mjs",
     "biweekly": "node scripts/build-biweekly.mjs",
+    "weekly": "node scripts/build-weekly.mjs",
     "notify:discord": "node scripts/notify-discord.mjs",
     "build:pages": "node scripts/build-pages.mjs"
   },

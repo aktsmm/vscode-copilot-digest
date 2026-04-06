@@ -8,13 +8,13 @@ export function safeDate(value) {
 }
 
 const officialSourceIds = new Set([
-  'github-changelog',
-  'github-changelog-copilot',
-  'github-copilot-blog',
-  'vscode-feed',
-  'vscode-updates',
-  'vscode-release-notes-1-109',
-  'copilot-whats-new',
+  "github-changelog",
+  "github-changelog-copilot",
+  "github-copilot-blog",
+  "vscode-feed",
+  "vscode-updates",
+  "vscode-release-notes-1-109",
+  "copilot-whats-new",
 ]);
 
 const monthMap = {
@@ -32,8 +32,35 @@ const monthMap = {
   December: "12月",
 };
 
+const vscodeReleaseSummaries = {
+  "1.114": {
+    ja: "Chat 体験の整理が中心。画像カルーセルで動画プレビュー、最終回答だけをコピーするコマンド、過去セッションにも使える /troubleshoot、常時 semantic になった #codebase、TypeScript 6.0 対応が入った。",
+    en: "This release focuses on streamlining chat: video previews in the carousel, a Copy Final Response command, /troubleshoot support for previous sessions, a simplified semantic-only #codebase flow, and TypeScript 6.0 support.",
+  },
+  "1.113": {
+    ja: "Chat customization を 1 画面で管理するエディタ、モデル picker からの thinking effort 切り替え、CLI / Claude agent での MCP と session fork、nested subagents、画像プレビュー、新しい既定テーマが中心。",
+    en: "The main themes are a unified chat customizations editor, thinking-effort controls in the model picker, MCP and session forking for CLI and Claude agents, nested subagents, image preview, and refreshed default themes.",
+  },
+  "1.112": {
+    ja: "Agent と developer experience の改善が中心。Copilot CLI の steering / queueing と権限レベル、/troubleshoot と debug log の export/import、画像とバイナリ対応、monorepo customization、MCP sandboxing、統合ブラウザーのデバッグが入った。",
+    en: "This release improves both agent and developer experience with Copilot CLI steering and permission levels, /troubleshoot plus debug-log export and import, image and binary support, monorepo customizations, MCP sandboxing, and integrated browser debugging.",
+  },
+  "1.111": {
+    ja: "最初の weekly stable release。agent permission picker、Autopilot preview、agent-scoped hooks、debug event snapshot、改善された chat tips、AI CLI profile group など、agent 自律性と運用性を前に進めた。",
+    en: "The first weekly Stable release introduced the agent permission picker, Autopilot preview, agent-scoped hooks, debug event snapshots, improved chat tips, and an AI CLI profile group to make agents more autonomous and easier to operate.",
+  },
+  "1.109": {
+    ja: "multi-agent development を前面に出したリリース。message steering と queueing、agent hooks、Claude 設定互換、slash command としての skills、session 管理、Copilot Memory、sandboxing、統合ブラウザー強化などがまとまって入った。",
+    en: "This release positioned VS Code as the home for multi-agent development, with message steering and queueing, agent hooks, Claude config compatibility, skills as slash commands, session management, Copilot Memory, sandboxing, and integrated browser improvements.",
+  },
+};
+
 function toDateOnly(value) {
-  return safeDate(value).toISOString().slice(0, 10);
+  const date = safeDate(value);
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+  return `${year}-${month}-${day}`;
 }
 
 function normalizeWhitespace(value) {
@@ -45,14 +72,14 @@ function normalizeWhitespace(value) {
 }
 
 function decodeHtmlEntities(value) {
-  return String(value ?? '')
+  return String(value ?? "")
     .replace(/&#8217;|&#39;/g, "'")
     .replace(/&#8220;|&#8221;/g, '"')
-    .replace(/&#8211;|&#8212;/g, '-')
-    .replace(/&#8230;/g, '...')
-    .replace(/&amp;/g, '&')
-    .replace(/&lt;/g, '<')
-    .replace(/&gt;/g, '>')
+    .replace(/&#8211;|&#8212;/g, "-")
+    .replace(/&#8230;/g, "...")
+    .replace(/&amp;/g, "&")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
     .replace(/&quot;/g, '"');
 }
 
@@ -79,6 +106,20 @@ function cleanupSummary(summary) {
       .replace(/What\'s new in /gi, "")
       .replace(/\s+/g, " "),
   );
+}
+
+function releaseVersionFromTitle(title) {
+  const directMatch = title.match(/^Visual Studio Code ([0-9.]+)$/i);
+  if (directMatch) {
+    return directMatch[1];
+  }
+
+  const monthMatch = title.match(/version ([0-9.]+)/i);
+  return monthMatch?.[1] ?? null;
+}
+
+function trimmedEnglishSummary(summary) {
+  return trimText(cleanupSummary(summary), 320);
 }
 
 function replaceMonth(text) {
@@ -240,106 +281,175 @@ function patternTitle(title) {
   return replaceMonth(normalized);
 }
 
-function summaryFromPatterns(event) {
+function summaryFromPatterns(event, locale = "ja") {
   const title = normalizeWhitespace(event.title);
   const text = `${title} ${event.summary}`.toLowerCase();
+  const version = releaseVersionFromTitle(title);
+
+  if (version && vscodeReleaseSummaries[version]) {
+    return vscodeReleaseSummaries[version][locale];
+  }
 
   if (containsJapanese(title) || containsJapanese(event.summary)) {
-    return trimText(cleanupSummary(event.summary));
+    if (locale === "en") {
+      if (/Azure Skills Plugin/i.test(title)) {
+        return "Japanese coverage of Microsoft's Azure Skills Plugin, which lets Claude Code and GitHub Copilot choose infrastructure and deploy applications more autonomously.";
+      }
+
+      return trimText(cleanupSummary(event.summary), 320);
+    }
+
+    return trimText(cleanupSummary(event.summary), 280);
   }
 
   if (/copilot sdk in public preview/i.test(title)) {
-    return "GitHub Copilot SDK が public preview になった。自前のアプリやワークフローに Copilot のエージェント機能を組み込むための土台が整った。";
+    return locale === "ja"
+      ? "GitHub Copilot SDK が public preview になった。Node.js、Python、Go、.NET、Java で使え、custom tools、streaming、approval handler、BYOK まで含む agent 実行基盤を自前アプリへ埋め込める。"
+      : "The GitHub Copilot SDK is now in public preview across Node.js, Python, Go, .NET, and Java, giving you agent runtime features such as custom tools, streaming, approval handlers, and BYOK in your own apps.";
   }
 
   if (/runner controls/i.test(title)) {
-    return "Copilot cloud agent が使う runner を organization 単位で既定化したり、リポジトリ側の上書きを制限したりできるようになった。";
+    return locale === "ja"
+      ? "Copilot cloud agent が使う runner を organization 単位で既定化し、repo 側の上書き可否も制御できるようになった。large runner や self-hosted runner を全体方針として揃えやすい。"
+      : "Organizations can now define default runners for Copilot cloud agent and decide whether repositories may override them, making it easier to standardize on large or self-hosted runners.";
   }
 
   if (/firewall settings/i.test(title)) {
-    return "Copilot cloud agent の firewall 設定を organization 単位で管理できるようになり、許可リストや既定値を横断的に揃えやすくなった。";
+    return locale === "ja"
+      ? "Copilot cloud agent の firewall を organization 単位で管理できるようになった。recommended allowlist、独自 allowlist、repo 管理者の追加可否まで横断制御できる。"
+      : "Organization admins can now manage the Copilot cloud agent firewall centrally, including recommended allowlists, custom allowlists, and whether repository admins may add their own rules.";
   }
 
   if (/signs its commits/i.test(title)) {
-    return "Copilot cloud agent が作る commit が署名付きになり、署名必須のルールを入れたリポジトリでも使いやすくなった。";
+    return locale === "ja"
+      ? "Copilot cloud agent が作る commit が Verified 付きになり、Require signed commits を有効にした repo でも agent を止めずに使いやすくなった。"
+      : "Copilot cloud agent now signs all of its commits, so repositories that require signed commits can use the agent without being blocked by branch protection.";
   }
 
   if (/deprecated/i.test(title)) {
-    return "既存モデルの廃止予定が告知された。利用中のモデル設定やワークフローを見直し、代替モデルへ移る準備が必要。";
+    return locale === "ja"
+      ? "GPT-5.1 Codex 系モデルの廃止予定が告知された。GPT-5.3-Codex への移行と、Enterprise の model policy 見直しが必要になる。"
+      : "The GPT-5.1 Codex model family is deprecated, so existing workflows should move to GPT-5.3-Codex and enterprise admins may need to update model policies.";
   }
 
   if (/custom instructions/i.test(title) && /available/i.test(title)) {
-    return "organization custom instructions が一般提供になった。組織全体で Copilot の既定挙動を揃えやすくなる。";
+      if (/usage metrics/i.test(title) && /organization reports/i.test(title)) {
+        return locale === "ja"
+          ? "organization report でユーザー別 Copilot CLI 利用状況を見られるようになった。1日 / 28日単位の activity、session 数、request 数、token 使用量、CLI version の把握に使える。"
+          : "Organization reports now include per-user Copilot CLI activity, including 1-day and 28-day usage, session and request counts, token consumption, and the last seen CLI version per user.";
+      }
+    return locale === "ja"
+      ? "organization custom instructions が GA になった。Copilot の前提知識や振る舞いを組織全体で揃えやすくなる。"
+      : "Organization custom instructions are now generally available, making it easier to define shared Copilot behavior across a whole organization.";
   }
 
   if (/research, plan, and code/i.test(title)) {
-    return "Copilot cloud agent が branch ベースの作業、実装前の plan、深い調査フローを扱いやすくする更新。";
+    return locale === "ja"
+      ? "Copilot cloud agent が research、plan、code の流れを扱いやすくなった。branch 単位の作業や、実装前の段取り整理を前提にした使い方へ寄っている。"
+      : "Copilot cloud agent now better supports a research-plan-code workflow, with improvements aimed at branch-based work and planning before implementation.";
   }
 
   if (/visual studio/i.test(title) && /march update/i.test(title)) {
-    return "Visual Studio 側の Copilot 更新。custom agents、skills、find_symbol など、agent 拡張まわりが強化された。";
+    return locale === "ja"
+      ? "Visual Studio 側では custom agents、agent skills、find_symbol、Profiler Agent 連携、Watch suggestion、NuGet 脆弱性修正提案まで入り、Copilot extensibility が一段広がった。"
+      : "The Visual Studio March update expands Copilot extensibility with custom agents, agent skills, find_symbol, profiler-assisted diagnostics, smarter Watch suggestions, and vulnerability fixes for NuGet packages.";
   }
 
   if (/github actions/i.test(title) && /updates/i.test(title)) {
-    return "GitHub Actions の定期アップデート。runner やセキュリティ、運用まわりの変更をまとめて押さえるための更新。";
+    return locale === "ja"
+      ? "GitHub Actions の定期アップデート。runner、セキュリティ、運用面の変更点をまとめて押さえるための更新。"
+      : "A regular GitHub Actions update covering runner, security, and operational changes worth tracking.";
   }
 
   if (
     /^visual studio code [0-9.]+$/i.test(title) ||
     /version [0-9.]+/i.test(title)
   ) {
-    return "Visual Studio Code の月次リリース。Copilot、agent、エディタ、ワークベンチ周辺の変更点をまとめて確認できる。";
+    return locale === "ja"
+      ? "Visual Studio Code のリリース。Copilot、agent、エディタ、ワークベンチ周辺の変更点をまとめて確認できる。"
+      : "A Visual Studio Code release covering changes across Copilot, agents, the editor, and the workbench.";
   }
 
   if (/vs code/i.test(text) && /ai/i.test(text)) {
-    return "VS Code チームによる AI 活用や実装改善の解説記事。運用の考え方や設計の背景を押さえる材料になる。";
+    return locale === "ja"
+      ? "VS Code チームによる AI 活用や実装改善の解説記事。運用の考え方や設計の背景を押さえる材料になる。"
+      : "A behind-the-scenes VS Code article about AI usage and implementation decisions.";
   }
 
   if (/copilot cli/i.test(text)) {
-    return "GitHub Copilot CLI の使い方や新機能に関する更新。ターミナル中心の運用を強化したいときの参考になる。";
+    return locale === "ja"
+      ? "GitHub Copilot CLI の使い方や新機能に関する更新。ターミナル中心の運用を強化したいときの参考になる。"
+      : "An update about GitHub Copilot CLI capabilities and workflows for terminal-heavy usage.";
   }
 
   if (/fleet/i.test(text) && /copilot cli/i.test(text)) {
-    return "Copilot CLI の /fleet で複数の subagent を並列実行できるようになった。大きめの作業を並列分解して進める運用に効く。";
+    return locale === "ja"
+      ? "Copilot CLI の /fleet で複数の subagent を並列実行できるようになった。大きめの作業を並列分解して進める運用に効く。"
+      : "Copilot CLI can now run multiple subagents in parallel through /fleet, which is useful for breaking larger tasks into coordinated workstreams.";
   }
 
   if (/issue triage/i.test(text) && /copilot sdk/i.test(text)) {
-    return "Copilot SDK を使って GitHub issue の要約やトリアージを組み込む実装例。自前アプリへの agent 機能統合を考えるときの参考になる。";
+    return locale === "ja"
+      ? "Copilot SDK を使って GitHub issue の要約やトリアージを組み込む実装例。自前アプリへの agent 機能統合を考えるときの参考になる。"
+      : "An implementation example showing how the Copilot SDK can power GitHub issue triage and summarization in your own application.";
   }
 
   if (/applied science/i.test(text) && /agent/i.test(text)) {
-    return "Copilot を前提にした agent 駆動開発の実践例。計画、テスト、文書化を含めてリポジトリを agent 向けに整える考え方が参考になる。";
+    return locale === "ja"
+      ? "Copilot を前提にした agent 駆動開発の実践例。計画、テスト、文書化を含めてリポジトリを agent 向けに整える考え方が参考になる。"
+      : "A practical look at agent-driven development, including how to shape planning, testing, and documentation around agent workflows.";
   }
 
   if (/squad/i.test(text) && /agents/i.test(text)) {
-    return "リポジトリ内で複数 agent を協調動作させる実践例。チーム運用や orchestration の設計を見る材料になる。";
+    return locale === "ja"
+      ? "リポジトリ内で複数 agent を協調動作させる実践例。チーム運用や orchestration の設計を見る材料になる。"
+      : "A practical example of coordinating multiple agents inside a repository, useful for thinking about team-level orchestration design.";
   }
 
-  if (/execution is the new interface/i.test(text) || /copilot sdk/i.test(text)) {
-    return "Copilot SDK を使って agent 的な実行基盤を自前アプリへ組み込む考え方の整理。SDK をどう位置づけるかの理解に役立つ。";
+  if (
+    /execution is the new interface/i.test(text) ||
+    /copilot sdk/i.test(text)
+  ) {
+    return locale === "ja"
+      ? "Copilot SDK を使って agent 的な実行基盤を自前アプリへ組み込む考え方の整理。SDK をどう位置づけるかの理解に役立つ。"
+      : "A conceptual piece on using the Copilot SDK as an execution interface for agentic applications rather than building orchestration from scratch.";
   }
 
   if (/code review/i.test(text)) {
-    return "GitHub Copilot code review 関連の更新。レビュー自動化や品質改善への影響を確認しておきたい。";
+    return locale === "ja"
+      ? "GitHub Copilot code review 関連の更新。レビュー自動化や品質改善への影響を確認しておきたい。"
+      : "An update related to GitHub Copilot code review and its impact on review automation and quality workflows.";
   }
 
   if (/visual studio/i.test(text) && /copilot/i.test(text)) {
-    return "Visual Studio 側の GitHub Copilot 更新。IDE 連携や agent 拡張の強化点を押さえたい。";
+    return locale === "ja"
+      ? "Visual Studio 側の GitHub Copilot 更新。IDE 連携や agent 拡張の強化点を押さえたい。"
+      : "A GitHub Copilot update for Visual Studio that is worth checking for IDE integration and agent-extensibility changes.";
   }
 
   if (/github copilot/i.test(text)) {
-    return "GitHub Copilot 関連の更新。詳細は原文を確認しつつ、運用への影響があるかを見ておきたい。";
+    return locale === "ja"
+      ? "GitHub Copilot 関連の更新。詳細は原文を確認しつつ、運用への影響があるかを見ておきたい。"
+      : "A GitHub Copilot update that should be reviewed for its impact on usage and operations.";
   }
 
   if (/visual studio code|vs code/i.test(text)) {
-    return "Visual Studio Code 関連の更新。詳細は原文を確認しつつ、日々の開発フローに効くかを見ておきたい。";
+    return locale === "ja"
+      ? "Visual Studio Code 関連の更新。詳細は原文を確認しつつ、日々の開発フローに効くかを見ておきたい。"
+      : "A Visual Studio Code update worth checking for its effect on day-to-day development workflows.";
   }
 
-  return "英語ソースの更新。詳細は原文リンクを確認しつつ、運用への影響があるかを見ておきたい。";
+  return locale === "ja"
+    ? "英語ソースの更新。詳細は原文リンクを確認しつつ、運用への影響があるかを見ておきたい。"
+    : trimmedEnglishSummary(event.summary || "English-language update from a tracked source.");
 }
 
-export function localizedTitle(event) {
+export function localizedTitle(event, locale = "ja") {
   const title = normalizeWhitespace(decodeHtmlEntities(event.title));
+  if (locale === "en") {
+    return title;
+  }
+
   if (containsJapanese(title)) {
     return title;
   }
@@ -347,13 +457,19 @@ export function localizedTitle(event) {
   return patternTitle(title);
 }
 
-export function localizedSummary(event) {
+export function localizedSummary(event, locale = "ja") {
   const summary = cleanupSummary(event.summary);
-  if (containsJapanese(summary)) {
-    return trimText(summary, 280);
+  if (locale === "en" && !containsJapanese(summary)) {
+    return trimText(summaryFromPatterns({ ...event, summary }, "en"), 320);
   }
 
-  return summaryFromPatterns({ ...event, summary });
+  if (containsJapanese(summary)) {
+    return locale === "en"
+      ? trimText(summaryFromPatterns({ ...event, summary }, "en"), 320)
+      : trimText(summary, 280);
+  }
+
+  return trimText(summaryFromPatterns({ ...event, summary }, locale), locale === "en" ? 320 : 280);
 }
 
 export function originalTitle(event) {
@@ -362,18 +478,66 @@ export function originalTitle(event) {
   return localized === title ? null : title;
 }
 
-export function localizedImportanceLabel(event) {
+export function localizedImportanceLabel(event, locale = "ja") {
   const label = importanceLabel(event);
-  const map = {
-    Retired: "廃止・移行",
-    Preview: "プレビュー",
-    Release: "リリース",
-    Improvement: "改善",
-    Snapshot: "差分",
-    Update: "更新",
-  };
+  const map = locale === "ja"
+    ? {
+        GA: "GA",
+        Retired: "廃止・移行",
+        Preview: "プレビュー",
+        Release: "リリース",
+        Improvement: "機能更新",
+        Snapshot: "差分",
+        Update: "更新",
+      }
+    : {
+        GA: "GA",
+        Retired: "Retired",
+        Preview: "Preview",
+        Release: "Release",
+        Improvement: "Feature Update",
+        Snapshot: "Snapshot",
+        Update: "Update",
+      };
 
   return map[label] ?? label;
+}
+
+function topicBadgeLabel(event, locale = "ja") {
+  const topic = classifyEvent(event);
+  const topicLabels = {
+    ja: {
+      "GitHub Copilot": "GitHub Copilot",
+      "VS Code": "VS Code",
+      "GitHub Platform": "GitHub Platform",
+      周辺ニュース: "周辺ニュース",
+    },
+    en: {
+      "GitHub Copilot": "GitHub Copilot",
+      "VS Code": "VS Code",
+      "GitHub Platform": "GitHub Platform",
+      周辺ニュース: "Ecosystem",
+    },
+  };
+
+  return topicLabels[locale]?.[topic] ?? topic;
+}
+
+export function buildHighlightTags(event, locale = "ja") {
+  const tags = [localizedImportanceLabel(event, locale), topicBadgeLabel(event, locale)];
+  const text = eventText(event);
+
+  if (/sdk/.test(text)) {
+    tags.push("SDK");
+  } else if (/cli/.test(text)) {
+    tags.push("CLI");
+  } else if (/model|codex/.test(text)) {
+    tags.push(locale === "ja" ? "モデル" : "Models");
+  } else if (/firewall|signed commits|vulnerability|security/.test(text)) {
+    tags.push(locale === "ja" ? "セキュリティ" : "Security");
+  }
+
+  return [...new Set(tags)].slice(0, 3);
 }
 
 function normalizeArray(values) {
@@ -393,7 +557,7 @@ function eventText(event) {
         event.sourceName,
         ...(event.sourceNames ?? []),
         ...(event.categories ?? []),
-      ].join(' '),
+      ].join(" "),
     ),
   ).toLowerCase();
 }
@@ -404,21 +568,28 @@ export function isOfficialSource(event) {
 
 export function isRelevantEvent(event) {
   const text = eventText(event);
-  const categories = (event.categories ?? []).map((category) => String(category));
+  const categories = (event.categories ?? []).map((category) =>
+    String(category),
+  );
 
-  if (categories.includes('編集後記')) {
+  if (categories.includes("編集後記")) {
     return false;
   }
 
   if (isOfficialSource(event)) {
-    if (event.sourceId === 'github-changelog') {
-      return /copilot|cloud agent|coding agent|vs code|visual studio code/.test(text);
+    if (event.sourceId === "github-changelog") {
+      return /copilot|cloud agent|coding agent|vs code|visual studio code/.test(
+        text,
+      );
     }
 
     return true;
   }
 
-  return /copilot|cloud agent|coding agent|copilot cli|copilot sdk/.test(text) || ((/vs code|visual studio code/.test(text)) && /agent/.test(text));
+  return (
+    /copilot|cloud agent|coding agent|copilot cli|copilot sdk/.test(text) ||
+    (/vs code|visual studio code/.test(text) && /agent/.test(text))
+  );
 }
 
 export function applyEditorialPolicy(events) {
@@ -466,7 +637,9 @@ export function buildEditorialNote(date, events) {
   }
 
   oldestPublishedAt.setHours(0, 0, 0, 0);
-  const diffDays = Math.floor((day.getTime() - oldestPublishedAt.getTime()) / 86400000);
+  const diffDays = Math.floor(
+    (day.getTime() - oldestPublishedAt.getTime()) / 86400000,
+  );
   if (diffDays < 7) {
     return null;
   }
@@ -523,6 +696,10 @@ export function dedupeEvents(events) {
         ...(existing.categories ?? []),
         ...(event.categories ?? []),
       ]),
+      detectedAt:
+        safeDate(event.detectedAt) < safeDate(existing.detectedAt)
+          ? event.detectedAt
+          : existing.detectedAt,
       sourceNames: normalizeArray([
         ...(existing.sourceNames ?? []),
         event.sourceName,
@@ -578,6 +755,10 @@ export function importanceLabel(event) {
     String(category).toLowerCase(),
   );
 
+  if (text.includes("generally available") || /\bga\b/.test(text)) {
+    return "GA";
+  }
+
   if (categories.includes("retired")) {
     return "Retired";
   }
@@ -601,30 +782,48 @@ export function importanceLabel(event) {
   return "Update";
 }
 
-export function importanceReason(event) {
+export function importanceReason(event, locale = "ja") {
   const label = importanceLabel(event);
 
   if (label === "Retired") {
-    return "既存の設定や利用モデルの見直しが必要になりやすい更新です。";
+    return locale === "ja"
+      ? "既存の設定や利用モデルの見直しが必要になりやすい更新です。"
+      : "This update is likely to require changes to existing model choices or workflows.";
+  }
+
+  if (label === "GA") {
+    return locale === "ja"
+      ? "試用段階を越えて、本番運用の候補として見やすくなった更新です。"
+      : "This feature has moved beyond preview and is now easier to treat as production-ready.";
   }
 
   if (label === "Release") {
-    return "新機能が実際の利用候補に入ったことを示す更新です。";
+    return locale === "ja"
+      ? "新機能が実際の利用候補に入ったことを示す更新です。"
+      : "This indicates newly shipped capabilities that may be ready for immediate evaluation.";
   }
 
   if (label === "Preview") {
-    return "早めに検証して運用適合を判断しやすい更新です。";
+    return locale === "ja"
+      ? "早めに検証して運用適合を判断しやすい更新です。"
+      : "This is worth validating early so you can decide whether it fits your workflow.";
   }
 
   if (label === "Improvement") {
-    return "既存ワークフローの制約や手間を減らす方向の更新です。";
+    return locale === "ja"
+      ? "既存ワークフローの制約や手間を減らす方向の更新です。"
+      : "This tends to reduce friction or constraints in an existing workflow.";
   }
 
   if (label === "Snapshot") {
-    return "固定ページの追記や差し替えを拾うための更新です。";
+    return locale === "ja"
+      ? "固定ページの追記や差し替えを拾うための更新です。"
+      : "This reflects a detected change on a tracked static page.";
   }
 
-  return "継続ウォッチ対象として押さえておきたい更新です。";
+  return locale === "ja"
+    ? "継続ウォッチ対象として押さえておきたい更新です。"
+    : "This is a useful update to keep on your watch list.";
 }
 
 export function buildDailyDigest(eventLog) {
@@ -635,7 +834,8 @@ export function buildDailyDigest(eventLog) {
       (event) => safeDate(event.publishedAt ?? event.detectedAt) <= reportDate,
     ),
   );
-  const editorialNote = eventLog.editorialNote ?? buildEditorialNote(eventLog.date, rawEvents);
+  const editorialNote =
+    eventLog.editorialNote ?? buildEditorialNote(eventLog.date, rawEvents);
   const latestRunIds = new Set(eventLog.latestRun?.newEventIds ?? []);
   const uniqueEvents = dedupeEvents(rawEvents).sort(
     (left, right) =>

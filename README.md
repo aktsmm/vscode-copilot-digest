@@ -1,17 +1,23 @@
 # vscode-copilot-digest
 
-GitHub Actions で日次の情報収集を回し、2週間単位でブログ記事のたたきを作るための最小構成です。
+GitHub Copilot と VS Code 周辺の更新を毎日収集し、日次ダイジェストと隔週ドラフトを自動生成するリポジトリです。
 
-## 何をするか
+現在の公開先:
 
-- GitHub Actions で毎日ソースを巡回する
-- 新着フィードと HTML スナップショット差分を記録する
-- 日次サマリーを Markdown と JSON で残す
-- GitHub Pages に日次ダイジェストを公開する
-- 14日分の記録から Qiita 向けの下書きを生成する
-- 必要なら Qiita API で公開する
+- GitHub Pages: https://aktsmm.github.io/vscode-copilot-digest/
 
-## 監視ソース
+## できること
+
+- RSS / Atom / HTML スナップショットから更新を収集する
+- 日次イベントを JSON と Markdown で保存する
+- GitHub Pages 用の静的サイトを生成して公開する
+- 日次ページに加えて、直近 7 日単位の週間ダイジェストも Pages に出す
+- 14 日分の記録から Qiita 向けドラフトを生成する
+- 7 日分の記録から週間ドラフトを生成する
+- 必要なら Qiita API へ投稿し、投稿 ID と URL をドラフト frontmatter に反映する
+- 新着がある日だけ Discord Webhook へ通知する
+
+## 監視対象
 
 - GitHub Changelog
 - GitHub Changelog / Copilot ラベル
@@ -22,72 +28,142 @@ GitHub Actions で日次の情報収集を回し、2週間単位でブログ記�
 - GitHub Copilot What's New
 - Publickey
 
-上のうち、現時点での必須ソースは GitHub Changelog と VS Code Updates です。
+ソース定義は [config/sources.json](config/sources.json) にあります。
 
-運用ルール:
+## 編集ポリシー
 
 - GitHub / VS Code の公式ソースを優先する
 - 周辺ニュースは 1 日あたり最大 3 件までに絞る
-- GitHub Copilot や VS Code の coding agent と関係が薄い周辺記事は除外する
+- GitHub Copilot や VS Code の coding agent と関係が薄い記事は除外する
+- feed に未来日付の項目が見えても、その公開日時までは取り込まない
+- 初回取り込みや未取得分の回収が混ざる日は、日次と隔週ドラフトに注記を出す
+- 通知文面、日次 Markdown、Pages 表示で同じ日本語化ルールを使う
+- Pages では文書更新日とこのサイトに載った日を両方表示する
+- Pages は日本語と英語の両方を静的生成する
 
-ソース定義は [config/sources.json](config/sources.json) にあります。
+## セットアップ
 
-## ディレクトリ
+前提:
 
-- [config/sources.json](config/sources.json): 監視ソース定義
-- [data/state.json](data/state.json): 既読 ID とスナップショット状態
-- [data/events](data/events): 日次イベント JSON
-- [data/snapshots](data/snapshots): HTML 差分比較用テキスト
-- [summaries/daily](summaries/daily): 日次 Markdown サマリー
-- [drafts](drafts): 2週間まとめの下書き
-- [scripts/collect.mjs](scripts/collect.mjs): 日次収集
-- [scripts/build-biweekly.mjs](scripts/build-biweekly.mjs): 14日まとめ作成
-- [scripts/build-pages.mjs](scripts/build-pages.mjs): GitHub Pages 用の静的サイト生成
-- [scripts/publish-qiita.mjs](scripts/publish-qiita.mjs): Qiita 投稿
+- Node.js 22 系推奨
+- npm
+- GitHub Actions と GitHub Pages を使える GitHub リポジトリ
 
-## 使い方
+インストール:
 
 ```bash
-npm install
+npm ci
+```
+
+## ローカル実行
+
+日次収集:
+
+```bash
 npm run collect
+```
+
+Pages 生成:
+
+```bash
 npm run build:pages
+```
+
+隔週ドラフト生成:
+
+```bash
 npm run biweekly
 ```
 
-Qiita へ投稿する場合は、`QIITA_ACCESS_TOKEN` を設定してから次を実行します。
+週間ドラフト生成:
+
+```bash
+npm run weekly
+```
+
+任意の日数でドラフト生成:
+
+```bash
+node scripts/build-biweekly.mjs --days 14
+node scripts/build-biweekly.mjs --from 2026-03-23 --to 2026-04-05
+```
+
+Discord 通知 preview:
+
+```bash
+npm run notify:discord -- --date 2026-04-06 --dry-run --force-preview
+```
+
+Qiita 投稿:
 
 ```bash
 node scripts/publish-qiita.mjs drafts/biweekly-YYYYMMDD-YYYYMMDD.md
 ```
 
+引数を省略すると、[scripts/publish-qiita.mjs](scripts/publish-qiita.mjs) は drafts 配下の最新 Markdown を対象にします。
+
+## 生成物
+
+- [data/events](data/events): 日次イベント JSON
+- [data/snapshots](data/snapshots): HTML スナップショット比較用テキスト
+- [summaries/daily](summaries/daily): 日次 Markdown
+- [drafts](drafts): 14 日ドラフト
+- [site](site): GitHub Pages 用の静的出力
+
+## 主要スクリプト
+
+- [scripts/collect.mjs](scripts/collect.mjs): ソース収集、未来日付除外、日次 JSON / Markdown 生成
+- [scripts/build-pages.mjs](scripts/build-pages.mjs): Pages 用静的サイト生成
+- [scripts/build-biweekly.mjs](scripts/build-biweekly.mjs): 14 日ドラフト生成
+- [scripts/build-weekly.mjs](scripts/build-weekly.mjs): 7 日ドラフト生成
+- [scripts/notify-discord.mjs](scripts/notify-discord.mjs): Discord 通知と preview 出力
+- [scripts/publish-qiita.mjs](scripts/publish-qiita.mjs): Qiita API への新規投稿 / 更新
+- [scripts/lib/reporting.mjs](scripts/lib/reporting.mjs): 分類、重複除去、日本語化、注記生成の共通ロジック
+
 ## GitHub Actions
 
-- [.github/workflows/collect-updates.yml](.github/workflows/collect-updates.yml): 毎日収集して記録をコミット
-- [.github/workflows/deploy-pages.yml](.github/workflows/deploy-pages.yml): main への push を契機に GitHub Pages を再生成して公開
-- [.github/workflows/build-biweekly-draft.yml](.github/workflows/build-biweekly-draft.yml): 手動で 14 日ドラフトを生成
-- [.github/workflows/publish-qiita.yml](.github/workflows/publish-qiita.yml): 手動で Qiita に公開
+- [collect-updates.yml](.github/workflows/collect-updates.yml)
+  毎日収集し、変更があれば data と summaries をコミットします。新着がある場合だけ Discord 通知を送ります。
 
-日次収集 workflow は、その実行で新着が 1 件以上あったときだけ Discord Webhook に通知できます。
+- [deploy-pages.yml](.github/workflows/deploy-pages.yml)
+main への push を契機に Pages を再生成して公開します。日本語と英語の両ページ、日次ページ、週間ページをまとめて出力します。
 
-## Pages の見せ方
+- [build-biweekly-draft.yml](.github/workflows/build-biweekly-draft.yml)
+  workflow_dispatch で指定日数の隔週ドラフトを作り、drafts をコミットします。
 
-- トップページ: 最新日次への導線、公開方針、横断ハイライト
-- 日次ページ: 概況、注目トピック、テーマ別まとめ、ソース内訳、全件一覧
-- 生データ: 各日ごとの Markdown と JSON をそのまま参照可能
+- [build-weekly-draft.yml](.github/workflows/build-weekly-draft.yml)
+毎週土曜日に週間ドラフトを生成し、必要なら手動実行でも更新できます。
 
-## 運用メモ
+- [publish-qiita.yml](.github/workflows/publish-qiita.yml)
+  workflow_dispatch で指定ファイルを Qiita へ公開し、投稿メタデータをドラフトへ書き戻します。
 
-- feed に未来日付の項目が見えても、その公開日時になるまでは収集しない
-- 初回取り込み日や未取得分の回収が混ざる日は、日次や隔週ドラフトに注記を出す
-- 通知や Pages でも日次サマリーと同じ日本語化ルールを使う
+## 必要な Secrets
 
-## シークレット
+- `DISCORD_WEBHOOK_URL`
+  Discord 通知を有効にする場合のみ必要です。
 
-- `QIITA_ACCESS_TOKEN`: Qiita 投稿用。手動公開 workflow と `publish-qiita.mjs` で使用
-- `DISCORD_WEBHOOK_URL`: Discord 通知用。日次収集で新着があったときだけ使用
+- `QIITA_ACCESS_TOKEN`
+  Qiita 投稿を有効にする場合のみ必要です。
+
+## Pages 構成
+
+- トップページ: 公開方針、最新ハイライト、週間アーカイブ、日次アーカイブ
+- 日次ページ: 概況、注記、注目トピック、テーマ別まとめ、ソース内訳、全件一覧
+- 週間ページ: 直近 7 日のハイライト、テーマ別まとめ、ソース内訳、全件一覧
+- raw データ: 各日の Markdown と JSON をそのまま参照可能
+
+## ディレクトリ概要
+
+- [config](config): 監視ソース定義
+- [data](data): 収集結果と内部状態
+- [summaries](summaries): 日次要約
+- [drafts](drafts): 記事ドラフト
+- [scripts](scripts): 収集 / 生成 / 投稿処理
+- [docs](docs): 設計メモ
+- [research](research): 調査メモ
 
 ## 補足
 
-- X 自動投稿は技術的には可能ですが、2026 年時点では課金と認証管理のコストが高いため、この初期構成には入れていません。
-- 通知を追加するなら Bluesky、Mastodon、Slack のほうが現実的です。
-- 設計メモは [docs/architecture.md](docs/architecture.md) にまとめています。
+- X 自動投稿は技術的には可能ですが、2026 年時点では課金と認証管理のコストが高いため、この構成には含めていません。
+- 通知追加先としては Bluesky、Mastodon、Slack のほうが現実的です。
+- 設計メモは [docs/architecture.md](docs/architecture.md) にあります。
