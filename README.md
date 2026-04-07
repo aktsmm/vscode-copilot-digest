@@ -15,7 +15,7 @@ GitHub Copilot と VS Code 周辺の更新を毎日収集し、日次ダイジ�
 - 14 日分の記録から Qiita 向けドラフトを生成する
 - 7 日分の記録から週間ドラフトを生成する
 - 必要なら Qiita API へ投稿し、投稿 ID と URL をドラフト frontmatter に反映する
-- 新着がある日だけ Discord Webhook へ通知する
+- collect は毎日動かしつつ、Discord Webhook には 5 日ごとに直近 5 日分をまとめて通知する
 - Pages 上でソース出自バッジとハッシュタグ付きフィルタで更新を見分ける
 - GitHub.com 上の Copilot cloud agent 向け Issue / PR フローを自動起票する
 
@@ -39,7 +39,7 @@ GitHub Copilot と VS Code 周辺の更新を毎日収集し、日次ダイジ�
 - GitHub / VS Code の公式ソースを優先する
 - 周辺ニュースは 1 日あたり最大 3 件までに絞る
 - GitHub Copilot や VS Code の coding agent と関係が薄い記事は除外する
-- feed に未来日付の項目が見えても、その公開日時までは取り込まない
+- feed に未来日付の項目が見えた場合は、通常のハイライトには混ぜず、警告付きの別セクションで扱う
 - 初回取り込みや未取得分の回収が混ざる日は、日次と隔週ドラフトに注記を出す
 - 通知文面、日次 Markdown、Pages 表示で同じ日本語化ルールを使う
 - Pages では文書更新日とこのサイトに載った日を両方表示する
@@ -53,7 +53,7 @@ GitHub Copilot と VS Code 周辺の更新を毎日収集し、日次ダイジ�
 - npm
 - GitHub Actions と GitHub Pages を使える GitHub リポジトリ
 
-GitHub Actions 内部で使う action は Node 24 対応版へ更新済みです。
+GitHub Actions 内部の主要 action は新しい major へ更新済みですが、Pages 系 action は upstream 側の都合で Node 20 deprecation warning が出る可能性があります。
 
 インストール:
 
@@ -128,7 +128,7 @@ node scripts/publish-qiita.mjs drafts/biweekly-YYYYMMDD-YYYYMMDD.md
 
 ## GitHub Actions
 
-- 主要な自動化は毎日 12:30 JST の収集、Pages 再生成、Discord 通知、Copilot 向け Issue / PR フローです。
+- 主要な自動化は毎日 12:30 JST の収集、Pages 再生成、5 日ごとの Discord まとめ通知、Copilot 向け Issue / PR フローです。
 - workflow ごとの役割、Secrets、手動テスト手順は [docs/automation.md](docs/automation.md) を参照してください。
 
 ## 必要な Secrets

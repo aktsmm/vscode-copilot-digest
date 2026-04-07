@@ -4,10 +4,11 @@
 
 ## いま自動で動くもの
 
-- 毎日 12:30 JST に [collect-updates.yml](../.github/workflows/collect-updates.yml) が収集を実行する
+- 毎日 12:30 JST を目安に [collect-updates.yml](../.github/workflows/collect-updates.yml) が収集を実行する（GitHub Actions の schedule は高負荷時に遅延しうる）
 - 変更があれば `data/**` と `summaries/**` をコミットする
 - main 更新で [deploy-pages.yml](../.github/workflows/deploy-pages.yml) が Pages を再生成する
 - Pages のヘッダーに出す `最終更新` は、最新の collect / 生成で `data/events/*.json` に書かれた時刻を表示する
+- feed に未来日付の項目が見えた場合は、通常のハイライトには混ぜず、警告付きの別セクションで扱う
 - Discord Webhook 通知は collect 自体は毎日走らせつつ、2026-04-06 を基準日に 5日ごとに直近5日分をまとめて投稿する
 - collect 成功後に [author-digest-pr.yml](../.github/workflows/author-digest-pr.yml) が Copilot 向け Issue を作成または更新する
 - 生成 PR では [request-copilot-review.yml](../.github/workflows/request-copilot-review.yml) が metadata を正規化し、[validate-generated-pr.yml](../.github/workflows/validate-generated-pr.yml) が検証し、[auto-merge-generated-pr.yml](../.github/workflows/auto-merge-generated-pr.yml) が安全なものだけ merge する
@@ -62,7 +63,7 @@
 
 ## Node 24 対応
 
-GitHub hosted runner の Node 20 deprecation warning に合わせて、主要 action は Node 24 対応版へ更新しています。
+GitHub hosted runner の Node 20 deprecation warning に合わせて主要 action は新しい major へ更新していますが、Pages 系 action は upstream 側の都合で warning が出る可能性があります。
 
 - `actions/checkout@v6`
 - `actions/setup-node@v6`

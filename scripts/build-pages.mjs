@@ -148,7 +148,7 @@ function buildText(locale) {
         "Raw Markdown and JSON are published alongside the rendered pages so you can verify the source material or reuse it in your own workflow.",
       policyTitle: "Coverage policy",
       policyBody1:
-        "Official GitHub and VS Code sources are prioritized, future-dated feed items are excluded until their publish date, and surrounding news is capped to reduce noise.",
+        "Official GitHub and VS Code sources are prioritized, future-dated feed items are shown in a warning section until their publish date, and surrounding news is capped to reduce noise.",
       policyBody2:
         "The site is bilingual. Japanese is the default and matching English pages are generated under /en/.",
       latestHighlightsTitle: "Latest highlights",
@@ -170,11 +170,16 @@ function buildText(locale) {
       rawJson: "Open JSON",
       noItems: "No updates were recorded in this category.",
       noteTitle: "Editorial notes",
+      futureTitle: "Future-dated items",
+      futureDescription:
+        "These items were visible in a feed before their publish date. They stay in a separate warning section until that date arrives, because titles, summaries, or URLs may still change.",
       updatedLabel: "Document updated",
+      futurePublishedLabel: "Scheduled publish date",
       detectedLabel: "Seen on this site",
       sourceLabel: "Sources",
       whyLabel: "Why it matters",
       originalTitleLabel: "Original",
+      futureBadge: "Future-dated",
       rangeLabel: "Coverage",
       rangeDetail: "Date window covered by this digest",
       trackedUpdates: "Deduplicated updates",
@@ -256,7 +261,7 @@ function buildText(locale) {
       "Markdown と JSON の生データも毎日併設しているので、要約の元ネタ確認や二次利用もしやすくしています。",
     policyTitle: "",
     policyBody1:
-      "GitHub / VS Code の公式ソースを優先し、未来日付の feed 項目は公開日まで除外し、周辺ニュースは量を絞ってノイズを抑えています。",
+      "GitHub / VS Code の公式ソースを優先し、未来日付の feed 項目は公開日まで警告付き別セクションで扱い、周辺ニュースは量を絞ってノイズを抑えています。",
     policyBody2:
       "サイトは日本語を既定にしつつ、同じ内容の英語ページを /en/ 配下にも生成します。",
     latestHighlightsTitle: "最新ハイライト",
@@ -278,11 +283,16 @@ function buildText(locale) {
     rawJson: "JSON を開く",
     noItems: "このカテゴリの更新はありませんでした。",
     noteTitle: "注記",
+    futureTitle: "先行検知した未来日付の項目",
+    futureDescription:
+      "feed では見えているものの、公開日が未来なので通常のハイライトやテーマ別まとめにはまだ混ぜていません。正式公開までに文言や URL が変わる可能性があります。",
     updatedLabel: "文書更新日",
+    futurePublishedLabel: "公開予定日",
     detectedLabel: "このサイトに載った日",
     sourceLabel: "ソース",
     whyLabel: "なぜ重要か",
     originalTitleLabel: "原題",
+    futureBadge: "未来日付",
     rangeLabel: "対象期間",
     rangeDetail: "このダイジェストがカバーしている日付範囲",
     trackedUpdates: "重複除去後の更新",
@@ -346,7 +356,7 @@ function renderSourceBadge(event, text) {
 }
 
 function renderBadges(event, locale, text) {
-  return `<div class="badge-row">${renderSourceBadge(event, text)}${buildHighlightTags(
+  return `<div class="badge-row">${renderSourceBadge(event, text)}${event.isFutureDated ? `<span class="pill pill-warning">${escapeHtml(text.futureBadge)}</span>` : ""}${buildHighlightTags(
     event,
     locale,
   )
@@ -355,7 +365,7 @@ function renderBadges(event, locale, text) {
 }
 
 function renderDateMeta(event, locale, text) {
-  return `<div class="meta-row"><span>${escapeHtml(text.updatedLabel)}: ${escapeHtml(formatDate(event.publishedAt, locale))}</span><span>${escapeHtml(text.detectedLabel)}: ${escapeHtml(formatDate(event.detectedAt ?? event.publishedAt, locale))}</span></div>`;
+  return `<div class="meta-row"><span>${escapeHtml(event.isFutureDated ? text.futurePublishedLabel : text.updatedLabel)}: ${escapeHtml(formatDate(event.publishedAt, locale))}</span><span>${escapeHtml(text.detectedLabel)}: ${escapeHtml(formatDate(event.detectedAt ?? event.publishedAt, locale))}</span></div>`;
 }
 
 function renderSourceMeta(event, locale, text) {
@@ -447,6 +457,14 @@ function renderEditorialNotes(notes, text) {
   }
 
   return `<section class="section-block notice-block"><div class="section-heading"><h2>${escapeHtml(text.noteTitle)}</h2><span>${notes.length}</span></div><div class="notice-list">${notes.map((note) => `<p>${escapeHtml(note)}</p>`).join("")}</div></section>`;
+}
+
+function renderFutureSection(events, locale, text) {
+  if ((events ?? []).length === 0) {
+    return "";
+  }
+
+  return `<section class="section-block notice-block future-block"><div class="section-heading"><h2>${escapeHtml(text.futureTitle)}</h2><span>${events.length}</span></div><p class="future-note">${escapeHtml(text.futureDescription)}</p><div class="highlight-grid">${events.map((event) => renderEventCard(event, locale, text, { includeWhy: false })).join("")}</div></section>`;
 }
 
 function buildRangeDigest(logs, range) {
@@ -647,6 +665,8 @@ function renderRangePage(digest, locale, text, options) {
     </section>
 
     ${renderEditorialNotes(editorialNotes, text)}
+
+    ${options.kind === "day" ? renderFutureSection(digest.futureEvents, locale, text) : ""}
 
     ${renderFilterBar(text)}
 
@@ -1076,6 +1096,8 @@ h1 { margin: 0 0 16px; font-size: clamp(2.3rem, 4vw, 4.2rem); line-height: 1.04;
 }
 .notice-list { display: grid; gap: 10px; }
 .notice-list p { margin: 0; color: var(--text); line-height: 1.7; }
+.future-note { margin: 0 0 18px; color: var(--text); line-height: 1.7; }
+.pill-warning { background: rgba(15, 118, 110, 0.12); color: var(--accent-strong); }
 .filter-block {
   padding: 18px 20px;
   background: rgba(255, 252, 246, 0.72);

@@ -306,13 +306,22 @@ function scoreEntry(entry) {
 
 async function collectFeedSource(source, sourceState) {
   const xmlText = await fetchText(source.url);
-  const entries = parseFeed(source, xmlText)
-    .filter((entry) => matchesKeywords(source, entry))
-    .filter((entry) => safeDate(entry.publishedAt) <= new Date());
+  const entries = parseFeed(source, xmlText).filter((entry) =>
+    matchesKeywords(source, entry),
+  );
+  const collectionTime = new Date();
   const seenIds = new Set(sourceState.seenIds ?? []);
+  const futureSeenIds = new Set(sourceState.futureSeenIds ?? []);
   const events = [];
 
-  for (const entry of entries) {
+  const publishedEntries = entries.filter(
+    (entry) => safeDate(entry.publishedAt) <= collectionTime,
+  );
+  const futureEntries = entries.filter(
+    (entry) => safeDate(entry.publishedAt) > collectionTime,
+  );
+
+  for (const entry of publishedEntries) {
     if (seenIds.has(entry.id)) {
       continue;
     }
@@ -328,12 +337,42 @@ async function collectFeedSource(source, sourceState) {
       url: entry.url,
       summary: entry.summary,
       categories: entry.categories,
+      isFutureDated: false,
+      score: scoreEntry(entry),
+    });
+  }
+
+  for (const entry of futureEntries) {
+    if (seenIds.has(entry.id) || futureSeenIds.has(entry.id)) {
+      continue;
+    }
+
+    events.push({
+      eventId: `${source.id}:${entry.id}`,
+      sourceId: source.id,
+      sourceName: source.name,
+      kind: "feed_entry",
+      detectedAt: new Date().toISOString(),
+      publishedAt: entry.publishedAt,
+      title: entry.title,
+      url: entry.url,
+      summary: entry.summary,
+      categories: entry.categories,
+      isFutureDated: true,
       score: scoreEntry(entry),
     });
   }
 
   const updatedSeenIds = [
-    ...new Set([...entries.map((entry) => entry.id), ...seenIds]),
+    ...new Set([...publishedEntries.map((entry) => entry.id), ...seenIds]),
+  ].slice(0, 500);
+  const updatedFutureSeenIds = [
+    ...new Set([
+      ...futureEntries.map((entry) => entry.id),
+      ...[...futureSeenIds].filter(
+        (entryId) => !updatedSeenIds.includes(entryId),
+      ),
+    ]),
   ].slice(0, 500);
 
   return {
@@ -341,6 +380,7 @@ async function collectFeedSource(source, sourceState) {
     nextState: {
       ...sourceState,
       seenIds: updatedSeenIds,
+      futureSeenIds: updatedFutureSeenIds,
       lastCheckedAt: new Date().toISOString(),
     },
   };
@@ -409,6 +449,7 @@ function renderMarkdownSummary(dateKey, eventLog) {
   lines.push("## 概況", "");
   lines.push(`- 直近 run の新規件数: ${digest.latestRun.newEventsCount}`);
   lines.push(`- 重複除去後の更新件数: ${digest.uniqueEventCount}`);
+  lines.push(`- 未来日付の予告件数: ${digest.futureUniqueCount}`);
   lines.push(`- 収集対象イベント数: ${digest.rawEventCount}`);
   lines.push(`- 更新を拾ったソース数: ${digest.sourceBreakdown.length}`);
   lines.push(`- 取得エラー数: ${digest.errorCount}`);
@@ -419,8 +460,27 @@ function renderMarkdownSummary(dateKey, eventLog) {
     lines.push("");
   }
 
+  if (digest.futureUniqueCount > 0) {
+    lines.push("## 先行検知した未来日付の項目", "");
+    lines.push(
+      "- 注記: feed 上では見えているものの、公開日が未来なので通常のハイライトやテーマ別まとめにはまだ混ぜていません。正式公開までは文言や URL が変わる可能性があります。",
+      "",
+    );
+    for (const [index, event] of digest.futureEvents.entries()) {
+      lines.push(`### F${index + 1}. ${localizedTitle(event)}`);
+      lines.push("");
+      lines.push(`- 公開予定日: ${event.publishedAt}`);
+      lines.push(`- URL: ${event.url}`);
+      lines.push(
+        `- ソース: ${(event.sourceNames ?? [event.sourceName]).join(", ")}`,
+      );
+      lines.push(`- 要点: ${localizedSummary(event)}`);
+      lines.push("");
+    }
+  }
+
   if (digest.uniqueEventCount === 0) {
-    lines.push("この日の新しい更新はありませんでした。", "");
+    lines.push("この日の公開済み更新はありませんでした。", "");
   } else {
     lines.push("## 注目トピック", "");
     for (const [index, event] of digest.highlights.entries()) {
@@ -559,10 +619,23 @@ async function main() {
     events: [],
   });
   const mergedEvents = [...existingEventLog.events];
-  const seenEventIds = new Set(mergedEvents.map((event) => event.eventId));
+  const seenEventIds = new Map(
+    mergedEvents.map((event, index) => [event.eventId, index]),
+  );
   for (const event of events) {
-    if (!seenEventIds.has(event.eventId)) {
+    const existingIndex = seenEventIds.get(event.eventId);
+    if (existingIndex === undefined) {
       mergedEvents.push(event);
+      seenEventIds.set(event.eventId, mergedEvents.length - 1);
+      continue;
+    }
+
+    const existingEvent = mergedEvents[existingIndex];
+    if (existingEvent?.isFutureDated && !event.isFutureDated) {
+      mergedEvents[existingIndex] = {
+        ...existingEvent,
+        ...event,
+      };
     }
   }
 
@@ -570,11 +643,11 @@ async function main() {
     (left, right) => safeDate(right.publishedAt) - safeDate(left.publishedAt),
   );
   const collectionTime = new Date();
-  const filteredMergedEvents = applyEditorialPolicy(
-    mergedEvents.filter(
-      (event) =>
-        safeDate(event.publishedAt ?? event.detectedAt) <= collectionTime,
-    ),
+  const filteredMergedEvents = applyEditorialPolicy(mergedEvents);
+  const publishedEvents = filteredMergedEvents.filter(
+    (event) =>
+      !event.isFutureDated &&
+      safeDate(event.publishedAt ?? event.detectedAt) <= collectionTime,
   );
 
   const latestRun = {
@@ -588,7 +661,7 @@ async function main() {
     date: today,
     generatedAt: latestRun.generatedAt,
     latestRun,
-    editorialNote: buildEditorialNote(today, filteredMergedEvents),
+    editorialNote: buildEditorialNote(today, publishedEvents),
     events: filteredMergedEvents,
     errors,
   };

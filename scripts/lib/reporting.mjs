@@ -1008,10 +1008,16 @@ export function importanceReason(event, locale = "ja") {
 export function buildDailyDigest(eventLog) {
   const reportDate = safeDate(eventLog.date ?? Date.now());
   reportDate.setHours(23, 59, 59, 999);
-  const rawEvents = applyEditorialPolicy(
-    (eventLog.events ?? []).filter(
-      (event) => safeDate(event.publishedAt ?? event.detectedAt) <= reportDate,
-    ),
+  const allEvents = applyEditorialPolicy(eventLog.events ?? []);
+  const futureEvents = allEvents.filter(
+    (event) =>
+      event.isFutureDated ||
+      safeDate(event.publishedAt ?? event.detectedAt) > reportDate,
+  );
+  const rawEvents = allEvents.filter(
+    (event) =>
+      !event.isFutureDated &&
+      safeDate(event.publishedAt ?? event.detectedAt) <= reportDate,
   );
   const editorialNote =
     eventLog.editorialNote ?? buildEditorialNote(eventLog.date, rawEvents);
@@ -1027,6 +1033,11 @@ export function buildDailyDigest(eventLog) {
     (left, right) =>
       rankEvent(right) - rankEvent(left) ||
       safeDate(right.publishedAt) - safeDate(left.publishedAt),
+  );
+  const futureUniqueEvents = dedupeEvents(futureEvents).sort(
+    (left, right) =>
+      safeDate(left.publishedAt) - safeDate(right.publishedAt) ||
+      rankEvent(right) - rankEvent(left),
   );
 
   const sourceBreakdown = new Map();
@@ -1063,10 +1074,12 @@ export function buildDailyDigest(eventLog) {
     rawEventCount: rawEvents.length,
     uniqueEventCount: uniqueEvents.length,
     freshUniqueCount: freshUniqueEvents.length,
+    futureUniqueCount: futureUniqueEvents.length,
     highlights: (freshUniqueEvents.length > 0
       ? freshUniqueEvents
       : uniqueEvents
     ).slice(0, 5),
+    futureEvents: futureUniqueEvents.slice(0, 5),
     uniqueEvents,
     sourceBreakdown: [...sourceBreakdown.entries()]
       .map(([name, keys]) => ({ name, count: keys.size }))
