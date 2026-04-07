@@ -181,6 +181,7 @@ jobs:
             const existing = issues.find((issue) => issue.title === title);
 
             let issueNumber;
+            let createdNewIssue = false;
             if (existing) {
               await github.rest.issues.update({
                 owner: context.repo.owner,
@@ -198,14 +199,17 @@ jobs:
                 labels,
               });
               issueNumber = created.data.number;
+              createdNewIssue = true;
             }
 
-            await github.rest.issues.addLabels({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              issue_number: issueNumber,
-              labels,
-            });
+            if (!createdNewIssue) {
+              await github.rest.issues.setLabels({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issueNumber,
+                labels,
+              });
+            }
 
             try {
               const assignmentContext = await github.graphql(
