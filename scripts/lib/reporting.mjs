@@ -419,7 +419,7 @@ function summaryFromPatterns(event, locale = "ja") {
   if (/copilot cli/i.test(text)) {
     if (/agent/i.test(text)) {
       return locale === "ja"
-        ? "Copilot CLI の agent 機能に関する更新。タスクの自動実行や agent ワークフロー、CLI からの実行時に参考になる。"
+        ? "Copilot CLI の agent 機能に関する更新。タスク自動化や agent ワークフローを CLI から扱う運用では確認しておきたい。"
         : "An update about Copilot CLI agent capabilities, useful for those building agentic workflows from the terminal.";
     }
     if (/mcp/i.test(text)) {
