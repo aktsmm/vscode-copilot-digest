@@ -1335,30 +1335,11 @@ async function copyRawFiles(date) {
   ]);
 }
 
-function findLastUpdatedAt(logs) {
-  if (logs.length === 0) {
-    return new Date();
-  }
-
-  return logs.reduce(
-    (latest, log) => {
-      const candidate = safeDate(
-        log.generatedAt ?? log.latestRun?.generatedAt ?? log.date,
-      );
-
-      return candidate > latest ? candidate : latest;
-    },
-    safeDate(
-      logs[0].generatedAt ?? logs[0].latestRun?.generatedAt ?? logs[0].date,
-    ),
-  );
-}
-
 async function main() {
   const logs = await readDailyLogs();
   const dailyDigests = logs.map((log) => buildDailyDigest(log));
   const weeklyDigests = buildWeeklyDigests(logs);
-  const lastUpdatedAt = findLastUpdatedAt(logs);
+  const lastUpdatedAt = new Date();
 
   await fs.rm(siteDir, { recursive: true, force: true });
   await Promise.all([

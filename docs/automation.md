@@ -7,7 +7,7 @@
 - 毎日 12:30 JST を目安に [collect-updates.yml](../.github/workflows/collect-updates.yml) が収集を実行する（GitHub Actions の schedule は高負荷時に遅延しうる）
 - 変更があれば `data/**` と `summaries/**` をコミットする
 - main 更新で [deploy-pages.yml](../.github/workflows/deploy-pages.yml) が Pages を再生成する
-- Pages のヘッダーに出す `最終更新` は、最新の collect / 生成で `data/events/*.json` に書かれた時刻を表示する
+- Pages のヘッダーに出す `最終更新` は、最新の Pages 再生成時刻を表示する
 - feed に未来日付の項目が見えた場合は、通常のハイライトには混ぜず、警告付きの別セクションで扱う
 - Discord Webhook 通知は collect 自体は毎日走らせつつ、2026-04-06 を基準日に 5日ごとに直近5日分をまとめて投稿する
 - collect 成功後に [author-digest-pr.yml](../.github/workflows/author-digest-pr.yml) が Copilot 向け Issue を作成または更新する
