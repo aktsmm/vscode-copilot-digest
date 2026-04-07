@@ -155,10 +155,8 @@ jobs:
       - name: Create or update authoring issue
         if: steps.target.outputs.should_run == 'true'
         uses: actions/github-script@v8
-        env:
-          ISSUE_TITLE: ${{ steps.target.outputs.issue_title }}
-          ISSUE_BODY: ${{ steps.target.outputs.issue_body }}
         with:
+          github-token: ${{ secrets.COPILOT_ASSIGN_TOKEN }}
           script: |
             const marker = '<!-- copilot-author-request -->';
             const repoSlug = `${context.repo.owner}/${context.repo.repo}`;
@@ -338,3 +336,6 @@ jobs:
                 body: commentBody,
               });
             }
+        env:
+          ISSUE_TITLE: ${{ steps.target.outputs.issue_title }}
+          ISSUE_BODY: ${{ steps.target.outputs.issue_body }}
