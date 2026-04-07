@@ -1,15 +1,10 @@
 {
   "date": "2026-04-07",
-  "generatedAt": "2026-04-07T21:47:20.883Z",
+  "generatedAt": "2026-04-07T22:32:27.588Z",
   "latestRun": {
-    "generatedAt": "2026-04-07T21:47:20.883Z",
-    "newEventsCount": 4,
-    "newEventIds": [
-      "github-changelog:https://github.blog/changelog/2026-04-07-copilot-cli-now-supports-byok-and-local-models",
-      "github-changelog:https://github.blog/changelog/2026-04-05-dependabot-alerts-are-now-assignable-to-ai-agents-for-remediation",
-      "github-changelog-copilot:https://github.blog/changelog/2026-04-07-copilot-cli-now-supports-byok-and-local-models",
-      "publickey:tag:www.publickey1.jp,2026://2.8540"
-    ],
+    "generatedAt": "2026-04-07T22:32:27.588Z",
+    "newEventsCount": 0,
+    "newEventIds": [],
     "errorCount": 0
   },
   "editorialNote": null,
