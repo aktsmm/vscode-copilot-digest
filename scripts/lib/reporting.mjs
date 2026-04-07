@@ -429,7 +429,7 @@ function summaryFromPatterns(event, locale = "ja") {
     }
     if (/session/i.test(text)) {
       return locale === "ja"
-        ? "Copilot CLI のセッション管理に関する更新。長時間の対話や複数context の管理が必要な運用へ確認を。"
+        ? "Copilot CLI のセッション管理に関する更新。長時間の対話や複数の context を扱う運用では確認しておきたい。"
         : "An update about session management in Copilot CLI, worth reviewing if you work with long-running or context-heavy interactions.";
     }
     if (/model/i.test(text)) {
