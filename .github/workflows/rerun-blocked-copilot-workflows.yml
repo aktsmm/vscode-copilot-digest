@@ -3,6 +3,7 @@ name: Rerun blocked Copilot workflows
 on:
   workflow_run:
     workflows:
+      - Copilot coding agent
       - Request Copilot review
       - Validate generated PR
       - Auto-merge generated PR
