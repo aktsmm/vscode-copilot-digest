@@ -176,6 +176,10 @@ function patternTitle(title) {
       "organization report でユーザー別 Copilot CLI 利用状況を確認できるようになった",
     ],
     [
+      "Copilot usage metrics now identify active and passive Copilot code review users",
+      "Copilot usage metrics でコードレビューユーザーのアクティブ・パッシブを識別できるようになった",
+    ],
+    [
       "Copilot cloud agent signs its commits",
       "Copilot cloud agent が commit 署名に対応した",
     ],
@@ -443,6 +447,12 @@ function summaryFromPatterns(event, locale = "ja") {
     return locale === "ja"
       ? "Copilot SDK を使って agent 的な実行基盤を自前アプリへ組み込む考え方の整理。SDK をどう位置づけるかの理解に役立つ。"
       : "A conceptual piece on using the Copilot SDK as an execution interface for agentic applications rather than building orchestration from scratch.";
+  }
+
+  if (/usage metrics/i.test(title) && /active.*passive|passive.*active/i.test(title) && /code review/i.test(title)) {
+    return locale === "ja"
+      ? "Copilot usage metrics が Copilot code review (CCR) のアクティブ利用者とパッシブ関与者を区別して報告するようになった。Enterprise・組織管理者が CCR の実際の使われ方を定量的に把握できる。"
+      : "Copilot usage metrics now distinguish between users who actively used Copilot code review to review PRs and those who were passively involved (their PRs were reviewed by CCR). Enterprise and organization admins can track actual CCR engagement.";
   }
 
   if (/code review/i.test(text)) {
