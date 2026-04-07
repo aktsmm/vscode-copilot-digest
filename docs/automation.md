@@ -11,6 +11,7 @@
 - feed に未来日付の項目が見えた場合は、通常のハイライトには混ぜず、警告付きの別セクションで扱う
 - Discord Webhook 通知は collect 自体は毎日走らせつつ、2026-04-06 を基準日に 5日ごとに直近5日分をまとめて投稿する
 - collect 成功後に [author-digest-pr.yml](../.github/workflows/author-digest-pr.yml) が Copilot 向け Issue を作成または更新する
+- GitHub Copilot Cloud Agent は、その Issue から日次本文、要点、必要な対訳・日本語化更新を含む PR を作成する
 - 生成 PR では [request-copilot-review.yml](../.github/workflows/request-copilot-review.yml) が metadata を正規化し、[validate-generated-pr.yml](../.github/workflows/validate-generated-pr.yml) が検証し、[auto-merge-generated-pr.yml](../.github/workflows/auto-merge-generated-pr.yml) が安全なものだけ merge する
 - Copilot 起点で `action_required` になった review / validate / auto-merge workflow は [rerun-blocked-copilot-workflows.yml](../.github/workflows/rerun-blocked-copilot-workflows.yml) が定期的に検出して 1 回だけ rerun する
 - direct squash merge を workflow から実行した場合は、その merge では push 起点 workflow が連鎖しないため、Pages 再生成は [auto-merge-generated-pr.yml](../.github/workflows/auto-merge-generated-pr.yml) から [deploy-pages.yml](../.github/workflows/deploy-pages.yml) を明示 dispatch する

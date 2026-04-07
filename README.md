@@ -18,6 +18,7 @@ GitHub Copilot と VS Code 周辺の更新を毎日収集し、日次ダイジ�
 - collect は毎日動かしつつ、Discord Webhook には 5 日ごとに直近 5 日分をまとめて通知する
 - Pages 上でソース出自バッジとハッシュタグ付きフィルタで更新を見分ける
 - GitHub.com 上の Copilot cloud agent 向け Issue / PR フローを自動起票する
+- 日次本文、要点、日本語化・対訳の更新には GitHub Copilot Cloud Agent を使う
 
 運用の詳細は [docs/automation.md](docs/automation.md) にまとめています。
 
@@ -41,7 +42,7 @@ GitHub Copilot と VS Code 周辺の更新を毎日収集し、日次ダイジ�
 - GitHub Copilot や VS Code の coding agent と関係が薄い記事は除外する
 - feed に未来日付の項目が見えた場合は、通常のハイライトには混ぜず、警告付きの別セクションで扱う
 - 初回取り込みや未取得分の回収が混ざる日は、日次と隔週ドラフトに注記を出す
-- 通知文面、日次 Markdown、Pages 表示で同じ日本語化ルールを使う
+- 通知文面、日次 Markdown、Pages 表示で同じ日本語化ルールを使い、必要な対訳更新は GitHub Copilot Cloud Agent の PR フローで反映する
 - Pages では文書更新日とこのサイトに載った日を両方表示する
 - Pages は日本語と英語の両方を静的生成する
 

@@ -134,7 +134,7 @@ function buildText(locale) {
       heroTitle:
         "Track GitHub Copilot and VS Code updates in a format you can actually read.",
       heroCopy:
-        "GitHub Actions collects GitHub Changelog, VS Code updates, and complementary sources every day, then publishes deduplicated highlights and raw Markdown/JSON. Start with highlights, then drop into topic sections, the full list, or /en/ when you need more detail.",
+        "GitHub Actions collects GitHub Changelog, VS Code updates, and complementary sources every day, while GitHub Copilot Cloud Agent updates digest copy and translation mappings. Start with highlights, then drop into topic sections, the full list, or /en/ when you need more detail.",
       publishedCount: "Published daily digests",
       publishedCountDetail: "Number of daily digests on Pages",
       overallCount: "Tracked updates",
@@ -249,7 +249,7 @@ function buildText(locale) {
     lastUpdatedLabel: "最終更新",
     heroTitle: "GitHub Copilot と VS Code の更新を、毎日読む。",
     heroCopy:
-      "GitHub Actions が GitHub Changelog、VS Code Updates、補完ソースを毎日収集し、重複を除いたハイライトと Markdown/JSON の元データを継続公開します。まずはハイライトを見て、必要ならテーマ別まとめ・全件リスト・/en/ に進めます。",
+      "GitHub Actions が GitHub Changelog、VS Code Updates、補完ソースを毎日収集し、GitHub Copilot Cloud Agent が日次本文や対訳更新を反映します。まずはハイライトを見て、必要ならテーマ別まとめ・全件リスト・/en/ に進めます。",
     publishedCount: "公開済み日次",
     publishedCountDetail: "Pages に載っている日次ダイジェスト数",
     overallCount: "累計更新件数",
