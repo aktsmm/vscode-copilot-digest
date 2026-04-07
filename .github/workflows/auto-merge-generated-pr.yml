@@ -102,6 +102,25 @@ jobs:
               pull_number: pr.number,
               per_page: 100,
             });
+
+            if (files.length === 0) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: pr.number,
+                body: 'Auto-merge skipped because this generated PR has no file changes. Closing the PR and any linked issue automatically.',
+              });
+              await github.rest.pulls.update({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                pull_number: pr.number,
+                state: 'closed',
+              });
+              await closeLinkedIssuesFromBody(pr.body || '');
+              core.info(`Closed no-op PR #${pr.number}.`);
+              return;
+            }
+
             const blocked = files
               .map((file) => file.filename)
               .filter((file) => !/^summaries\/daily\//.test(file) && !/^drafts\//.test(file) && file !== 'scripts/lib/reporting.mjs');
