@@ -203,6 +203,12 @@ jobs:
               createdNewIssue = true;
             }
 
+            const currentIssue = await github.rest.issues.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: issueNumber,
+            });
+
             if (!createdNewIssue) {
               await github.rest.issues.setLabels({
                 owner: context.repo.owner,
@@ -214,17 +220,9 @@ jobs:
 
             try {
               const assignmentContext = await github.graphql(
-                `query($owner: String!, $repo: String!, $issueNumber: Int!) {
+                `query($owner: String!, $repo: String!) {
                   repository(owner: $owner, name: $repo) {
                     id
-                    issue(number: $issueNumber) {
-                      id
-                      assignees(first: 10) {
-                        nodes {
-                          login
-                        }
-                      }
-                    }
                     suggestedActors(capabilities: [CAN_BE_ASSIGNED], first: 20) {
                       nodes {
                         login
@@ -242,13 +240,12 @@ jobs:
                 {
                   owner: context.repo.owner,
                   repo: context.repo.repo,
-                  issueNumber,
                 },
               );
 
-              const issueId = assignmentContext.repository.issue?.id;
+              const issueId = currentIssue.data.node_id;
               const repositoryId = assignmentContext.repository.id;
-              const existingAssignees = assignmentContext.repository.issue?.assignees?.nodes ?? [];
+              const existingAssignees = currentIssue.data.assignees ?? [];
               const copilotActor = (assignmentContext.repository.suggestedActors?.nodes ?? []).find(
                 (actor) => copilotLogins.has(actor.login) && actor.id,
               );
