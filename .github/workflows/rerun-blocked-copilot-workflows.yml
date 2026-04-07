@@ -2,7 +2,7 @@ name: Rerun blocked Copilot workflows
 
 on:
   schedule:
-    - cron: '*/5 * * * *'
+    - cron: '* * * * *'
   workflow_dispatch:
 
 permissions:
@@ -24,6 +24,7 @@ jobs:
               'Auto-merge generated PR',
             ];
             const cutoff = Date.now() - 60 * 60 * 1000;
+            const maxAttempts = 3;
             const workflows = await github.paginate(github.rest.actions.listRepoWorkflows, {
               owner: context.repo.owner,
               repo: context.repo.repo,
@@ -45,10 +46,11 @@ jobs:
                 const createdAt = Date.parse(run.created_at || 0);
                 const isRecent = Number.isFinite(createdAt) && createdAt >= cutoff;
                 const isBlocked = run.conclusion === 'action_required';
-                const isFirstAttempt = run.run_attempt === 1;
-                const isCopilotActor = run.actor?.login === 'Copilot';
+                const canRetry = Number(run.run_attempt ?? 0) < maxAttempts;
+                const actorLogin = run.actor?.login || run.triggering_actor?.login || '';
+                const isCopilotActor = /copilot/i.test(actorLogin);
 
-                if (!isRecent || !isBlocked || !isFirstAttempt || !isCopilotActor) {
+                if (!isRecent || !isBlocked || !canRetry || !isCopilotActor) {
                   continue;
                 }
 
@@ -58,7 +60,7 @@ jobs:
                   run_id: run.id,
                 });
                 rerunCount += 1;
-                core.info(`Requested rerun for blocked workflow run ${run.id} (${workflow.name}).`);
+                core.info(`Requested rerun for blocked workflow run ${run.id} (${workflow.name}, attempt ${run.run_attempt}).`);
               }
             }
 
