@@ -87,6 +87,22 @@ jobs:
               core.info(reason);
             }
 
+            async function clearHumanReviewLabel(reason) {
+              try {
+                await github.rest.issues.removeLabel({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: pr.number,
+                  name: 'needs-human-review',
+                });
+                core.info(`Removed needs-human-review from PR #${pr.number}: ${reason}`);
+              } catch (error) {
+                if (error.status !== 404) {
+                  core.warning(`Failed to remove needs-human-review from PR #${pr.number}: ${error.message}`);
+                }
+              }
+            }
+
             if (pr.state !== 'open') {
               core.info(`PR #${pr.number} is not open.`);
               return;
@@ -142,7 +158,7 @@ jobs:
               (review.user?.login || '').includes('copilot') && blockingPattern.test(review.body || ''),
             );
 
-            if (labels.has('needs-human-review') || copilotBlocking) {
+            if (copilotBlocking) {
               core.info(`PR #${pr.number} requires human review.`);
               return;
             }
@@ -155,6 +171,10 @@ jobs:
             if (!bodyPattern.test(pr.body || '')) {
               await markForHumanReview(`PR #${pr.number} body does not include the required source marker.`);
               return;
+            }
+
+            if (labels.has('needs-human-review')) {
+              await clearHumanReviewLabel('current title, body, paths, and validation are now safe');
             }
 
             if (pr.draft) {

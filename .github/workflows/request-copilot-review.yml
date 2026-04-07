@@ -133,6 +133,20 @@ jobs:
                   body: nextBody,
                 });
               }
+
+              try {
+                await github.rest.issues.removeLabel({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: issueNumber,
+                  name: 'needs-human-review',
+                });
+                core.info(`Removed stale needs-human-review label from PR #${issueNumber}.`);
+              } catch (error) {
+                if (error.status !== 404) {
+                  core.warning(`Could not remove needs-human-review from PR #${issueNumber}: ${error.message}`);
+                }
+              }
             }
 
             try {
