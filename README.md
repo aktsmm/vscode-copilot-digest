@@ -100,14 +100,6 @@ Discord 通知 preview:
 node scripts/notify-discord.mjs --date 2026-04-06 --window-days 5 --cadence-days 5 --anchor-date 2026-04-06 --dry-run --force-preview
 ```
 
-Qiita 投稿:
-
-```bash
-node scripts/publish-qiita.mjs drafts/biweekly-YYYYMMDD-YYYYMMDD.md
-```
-
-引数を省略すると、[scripts/publish-qiita.mjs](scripts/publish-qiita.mjs) は drafts 配下の最新 Markdown を対象にします。
-
 ## 生成物
 
 - [data/events](data/events): 日次イベント JSON
@@ -118,7 +110,7 @@ node scripts/publish-qiita.mjs drafts/biweekly-YYYYMMDD-YYYYMMDD.md
 
 ## 主要スクリプト
 
-- [scripts/collect.mjs](scripts/collect.mjs): ソース収集、未来日付除外、日次 JSON / Markdown 生成
+- [scripts/collect.mjs](scripts/collect.mjs): ソース収集、未来日付項目の警告付き分離、日次 JSON / Markdown 生成
 - [scripts/build-pages.mjs](scripts/build-pages.mjs): Pages 用静的サイト生成
 - [scripts/build-biweekly.mjs](scripts/build-biweekly.mjs): 14 日ドラフト生成
 - [scripts/build-weekly.mjs](scripts/build-weekly.mjs): 7 日ドラフト生成
@@ -128,8 +120,34 @@ node scripts/publish-qiita.mjs drafts/biweekly-YYYYMMDD-YYYYMMDD.md
 
 ## GitHub Actions
 
-- 主要な自動化は毎日 12:30 JST の収集、Pages 再生成、5 日ごとの Discord まとめ通知、Copilot 向け Issue / PR フローです。
-- workflow ごとの役割、Secrets、手動テスト手順は [docs/automation.md](docs/automation.md) を参照してください。
+### 日次収集と Pages 公開
+
+- 毎日 12:30 JST を目安に `collect-updates.yml` がスケジュール実行される（GitHub Actions の schedule は遅延しうる）
+- 変更があれば `data/**` と `summaries/**` をコミットする
+- main への push で自動的に `deploy-pages.yml` が Pages を再生成する
+- Discord Webhook には 5 日ごとに直近 5 日分をまとめて通知する
+
+### Copilot Coding Agent による自動化
+
+- `collect-updates.yml` 成功後に `author-digest-pr.yml` が Copilot 向けの執筆依頼 Issue を自動作成する
+- Issue の Copilot assignee が自動化され、Copilot cloud agent がダイジェスト PR を生成する
+- 生成 PR に対して以下の workflow が自動実行される：
+  - `request-copilot-review.yml`: PR にラベルやメタデータを付与する
+  - `validate-generated-pr.yml`: draft の構文と内容を検証する
+  - `auto-merge-generated-pr.yml`: 検証成功時に PR を ready for review に変更し、可能なら自動 merge する
+- Copilot が作成した workflow run が `action_required` で blocked された場合、`rerun-blocked-copilot-workflows.yml` が定期的に検出して 1 回だけ自動リトライする
+
+### workflow の詳細
+
+- GitHub hosted runner の Node 20 deprecation warning に対応し、主要 action は新しい major へ更新済み
+- 生成 PR は `summaries/daily/**`、`drafts/**`、`scripts/lib/reporting.mjs` 以外を変更しない限り auto-merge される
+- `needs-human-review` ラベルがある PR は自動 merge から除外される
+- Pages 再生成は commit や squash merge の直後に別途 dispatch で呼び出す（push 起点の workflow が自動連鎖しないため）
+
+### 詳細は設計資産を参照
+
+- workflow ごとの役割、Secrets、手動テスト手順は [docs/automation.md](docs/automation.md) を参照してください
+- 設計資産や learnings は [AGENTS.md](AGENTS.md) を参照してください
 
 ## 必要な Secrets
 
@@ -137,7 +155,7 @@ node scripts/publish-qiita.mjs drafts/biweekly-YYYYMMDD-YYYYMMDD.md
 
 ## Pages 構成
 
-- トップページ: 、最新ハイライト、週間アーカイブ、日次アーカイブ
+- トップページ: このサイトの見方、公開方針、最新ハイライト、週間アーカイブ、日次アーカイブ
 - 日次ページ: 概況、注記、注目トピック、テーマ別まとめ、ソース内訳、全件一覧
 - 週間ページ: 直近 7 日のハイライト、テーマ別まとめ、ソース内訳、全件一覧
 - raw データ: 各日の Markdown と JSON をそのまま参照可能
