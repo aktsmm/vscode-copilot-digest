@@ -392,7 +392,12 @@ jobs:
               });
               const pr = openPulls.find((pull) =>
                 /copilot/i.test(pull.user?.login || '') &&
-                (pull.title || '').includes(dateKey),
+                (
+                  (pull.title || '').includes(dateKey) ||
+                  (pull.head?.ref || '').includes(dateKey) ||
+                  String(pull.body || '').includes(`#${issueNumber}`) ||
+                  String(pull.body || '').includes(`Digest authoring request: ${dateKey}`)
+                ),
               );
 
               if (!pr) {
