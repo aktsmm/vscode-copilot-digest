@@ -121,8 +121,7 @@ function buildText(locale) {
       htmlLang: "en",
       siteLead:
         "An unofficial daily digest of GitHub Copilot and VS Code updates.",
-      footer:
-        "An unofficial daily digest of GitHub Copilot and VS Code updates.",
+      footerLabel: "Copyright (c) 2026",
       licenseNotice: "Site content and generated Pages",
       licenseName: "CC BY-NC-SA 4.0 + Microsoft commercial-use exception",
       dailyNav: "Daily",
@@ -237,10 +236,9 @@ function buildText(locale) {
     htmlLang: "ja",
     siteLead:
       "GitHub Copilot と VS Code の更新を日次で集約した非公式ダイジェストです。",
-    footer:
-      "GitHub Copilot / VS Code 周辺の更新を日次で集約した非公式ダイジェストです。",
-    licenseNotice: "サイト本文と生成済み Pages",
-    licenseName: "CC BY-NC-SA 4.0 + Microsoft 商用利用特例",
+    footerLabel: "Copyright (c) 2026",
+    licenseNotice: "Site content and generated Pages",
+    licenseName: "CC BY-NC-SA 4.0 + Microsoft commercial-use exception",
     dailyNav: "日次ダイジェスト",
     weeklyNav: "週間ダイジェスト",
     repositoryNav: "Repository",
@@ -852,7 +850,7 @@ function renderLayout({
         <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
       </button>
       <footer class="site-footer">
-        <p>${escapeHtml(text.footer)}</p>
+        <p>${escapeHtml(text.footerLabel)} <a href="https://github.com/aktsmm" rel="author noopener" target="_blank">aktsmm</a></p>
         <p class="site-license">${escapeHtml(text.licenseNotice)}: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license noopener" target="_blank">${escapeHtml(text.licenseName)}</a></p>
         <div class="share-links">
           <span class="share-label">${escapeHtml(locale === "ja" ? "共有" : "Share")}:</span>
