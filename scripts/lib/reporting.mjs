@@ -119,6 +119,33 @@ function containsJapanese(text) {
   return /[ぁ-んァ-ヶ一-龠々]/.test(String(text ?? ""));
 }
 
+function englishTitleFallback(event) {
+  const title = normalizeWhitespace(decodeHtmlEntities(event.title));
+  const text = `${title} ${cleanupSummary(event.summary)}`;
+
+  if (/Azure Skills Plugin/i.test(text)) {
+    return "Microsoft's Azure Skills Plugin for Claude Code and GitHub Copilot";
+  }
+
+  if (/rubber duck/i.test(text) || (/copilot cli/i.test(text) && /セカンドオピニオン/.test(text))) {
+    return "GitHub Copilot CLI uses a second-opinion model in Rubber Duck mode";
+  }
+
+  if (/copilot cli/i.test(text)) {
+    return "Japanese-language coverage of a GitHub Copilot CLI update";
+  }
+
+  if (/github copilot/i.test(text)) {
+    return "Japanese-language coverage of a GitHub Copilot update";
+  }
+
+  if (/visual studio code|vs code/i.test(text)) {
+    return "Japanese-language coverage of a Visual Studio Code update";
+  }
+
+  return "Japanese-language coverage of a tracked update";
+}
+
 function cleanupSummary(summary) {
   return normalizeWhitespace(
     decodeHtmlEntities(String(summary ?? ""))
@@ -331,7 +358,23 @@ function summaryFromPatterns(event, locale = "ja") {
         return "Japanese coverage of Microsoft's Azure Skills Plugin, which lets Claude Code and GitHub Copilot choose infrastructure and deploy applications more autonomously.";
       }
 
-      return trimText(cleanupSummary(event.summary), 320);
+      if (/rubber duck/i.test(text) || (/copilot cli/i.test(text) && /セカンドオピニオン/.test(text))) {
+        return "Japanese-language coverage of GitHub Copilot CLI's experimental Rubber Duck mode, which lets you ask a different model for a second opinion during CLI-based workflows.";
+      }
+
+      if (/copilot cli/i.test(text)) {
+        return "Japanese-language coverage of a GitHub Copilot CLI update. Check the original article for the source-specific details and examples.";
+      }
+
+      if (/github copilot/i.test(text)) {
+        return "Japanese-language coverage of a GitHub Copilot update. Check the original article for the full context and source-specific details.";
+      }
+
+      if (/visual studio code|vs code/i.test(text)) {
+        return "Japanese-language coverage of a Visual Studio Code update. Check the original article for the full context and source-specific details.";
+      }
+
+      return "Japanese-language coverage of a tracked update. Check the original article for the full context and source-specific details.";
     }
 
     return trimText(cleanupSummary(event.summary), 280);
@@ -539,6 +582,10 @@ function summaryFromPatterns(event, locale = "ja") {
 export function localizedTitle(event, locale = "ja") {
   const title = normalizeWhitespace(decodeHtmlEntities(event.title));
   if (locale === "en") {
+    if (containsJapanese(title)) {
+      return englishTitleFallback(event);
+    }
+
     return title;
   }
 
