@@ -264,6 +264,10 @@ function patternTitle(title) {
       "What's new with GitHub Copilot coding agent",
       "GitHub Copilot coding agent の新機能まとめ",
     ],
+    [
+      "Copilot usage metrics now identify active and passive Copilot code review users",
+      "usage metrics で Copilot code review のアクティブ・パッシブ利用者を識別できるようになった",
+    ],
   ]);
 
   if (exactMappings.has(normalized)) {
@@ -443,6 +447,12 @@ function summaryFromPatterns(event, locale = "ja") {
     return locale === "ja"
       ? "Copilot SDK を使って agent 的な実行基盤を自前アプリへ組み込む考え方の整理。SDK をどう位置づけるかの理解に役立つ。"
       : "A conceptual piece on using the Copilot SDK as an execution interface for agentic applications rather than building orchestration from scratch.";
+  }
+
+  if (/usage metrics/i.test(text) && /active and passive/i.test(text)) {
+    return locale === "ja"
+      ? "Copilot usage metrics で、コードレビュー(CCR)を明示的に依頼したユーザー(アクティブ)と自動追加されたユーザー(パッシブ)を区別して把握できるようになった。Enterprise・組織管理者が CCR の実際の採用状況を測りやすくなる。"
+      : "Copilot usage metrics can now distinguish active CCR users (who explicitly requested a review) from passive ones (where the review was added automatically), giving enterprise and organization admins better insight into actual code review adoption.";
   }
 
   if (/code review/i.test(text)) {
