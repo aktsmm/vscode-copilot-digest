@@ -8,7 +8,7 @@
 - 変更があれば `data/**` と `summaries/**` をコミットする
 - main 更新で [deploy-pages.yml](../.github/workflows/deploy-pages.yml) が Pages を再生成する
 - Pages のヘッダーに出す `最終更新` は、最新の collect / 生成で `data/events/*.json` に書かれた時刻を表示する
-- 新着がある日は Discord Webhook に通知する
+- Discord Webhook 通知は collect 自体は毎日走らせつつ、2026-04-06 を基準日に 5日ごとに直近5日分をまとめて投稿する
 - collect 成功後に [author-digest-pr.yml](../.github/workflows/author-digest-pr.yml) が Copilot 向け Issue を作成または更新する
 - 生成 PR では [request-copilot-review.yml](../.github/workflows/request-copilot-review.yml) が metadata を正規化し、[validate-generated-pr.yml](../.github/workflows/validate-generated-pr.yml) が検証し、[auto-merge-generated-pr.yml](../.github/workflows/auto-merge-generated-pr.yml) が安全なものだけ merge する
 - Copilot 起点で `action_required` になった review / validate / auto-merge workflow は [rerun-blocked-copilot-workflows.yml](../.github/workflows/rerun-blocked-copilot-workflows.yml) が定期的に検出して 1 回だけ rerun する
@@ -32,7 +32,7 @@
 
 ## Workflow 一覧
 
-- [collect-updates.yml](../.github/workflows/collect-updates.yml): 毎日 12:30 JST の収集と Discord 通知
+- [collect-updates.yml](../.github/workflows/collect-updates.yml): 毎日 12:30 JST の収集と、5日ごとの Discord まとめ通知
 - [deploy-pages.yml](../.github/workflows/deploy-pages.yml): main push で Pages 公開
 - [build-weekly-draft.yml](../.github/workflows/build-weekly-draft.yml): 毎週土曜 12:30 JST の週間ドラフト生成
 - [build-biweekly-draft.yml](../.github/workflows/build-biweekly-draft.yml): 手動の隔週ドラフト生成
@@ -72,6 +72,7 @@ GitHub hosted runner の Node 20 deprecation warning に合わせて、主要 ac
 
 - `gh workflow run author-digest-pr.yml -f date_key=YYYY-MM-DD -f scope=full -f force_issue=true`
 - `gh workflow run test-discord-notification.yml -f date_key=YYYY-MM-DD`
+- `node scripts/notify-discord.mjs --date YYYY-MM-DD --window-days 5 --cadence-days 5 --anchor-date 2026-04-06 --dry-run --force-preview`
 
 ## 次に確認すること
 

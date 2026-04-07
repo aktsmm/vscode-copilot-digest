@@ -16,6 +16,9 @@ function parseArgs(argv) {
     date: new Date().toISOString().slice(0, 10),
     dryRun: false,
     forcePreview: false,
+    windowDays: 1,
+    cadenceDays: 1,
+    anchorDate: null,
   };
 
   for (let index = 0; index < argv.length; index += 1) {
@@ -28,20 +31,80 @@ function parseArgs(argv) {
 
     if (argument === "--dry-run") {
       options.dryRun = true;
+      continue;
     }
 
     if (argument === "--force-preview") {
       options.forcePreview = true;
+      continue;
+    }
+
+    if (argument === "--window-days") {
+      options.windowDays = Number.parseInt(argv[index + 1] ?? "1", 10);
+      index += 1;
+      continue;
+    }
+
+    if (argument === "--cadence-days") {
+      options.cadenceDays = Number.parseInt(argv[index + 1] ?? "1", 10);
+      index += 1;
+      continue;
+    }
+
+    if (argument === "--anchor-date") {
+      options.anchorDate = argv[index + 1] ?? null;
+      index += 1;
     }
   }
 
   return options;
 }
 
+async function listEventLogDates() {
+  const files = await fs.readdir(eventsDir);
+  return files
+    .filter((file) => /^\d{4}-\d{2}-\d{2}\.json$/.test(file))
+    .map((file) => file.replace(/\.json$/, ""))
+    .sort();
+}
+
 async function readEventLog(date) {
   const filePath = path.join(eventsDir, `${date}.json`);
   const raw = await fs.readFile(filePath, "utf8");
   return JSON.parse(raw);
+}
+
+function parseDateKey(dateKey) {
+  return new Date(`${dateKey}T00:00:00Z`);
+}
+
+function diffDays(leftDateKey, rightDateKey) {
+  const left = parseDateKey(leftDateKey);
+  const right = parseDateKey(rightDateKey);
+  return Math.floor((left - right) / 86400000);
+}
+
+function resolveAnchorDate(availableDates, explicitAnchorDate, targetDate) {
+  if (explicitAnchorDate) {
+    return explicitAnchorDate;
+  }
+
+  return availableDates[0] ?? targetDate;
+}
+
+function shouldNotify(targetDate, anchorDate, cadenceDays) {
+  if (cadenceDays <= 1) {
+    return true;
+  }
+
+  const delta = diffDays(targetDate, anchorDate);
+  return delta >= 0 && delta % cadenceDays === 0;
+}
+
+function resolveWindowDates(availableDates, targetDate, windowDays) {
+  return availableDates
+    .filter((date) => date <= targetDate)
+    .slice(-Math.max(windowDays, 1));
 }
 
 function rankEvent(event) {
@@ -92,6 +155,7 @@ function dedupeEvents(events) {
       deduped.set(key, {
         ...event,
         sourceNames: [event.sourceName],
+        dateKeys: [event.dateKey],
       });
       continue;
     }
@@ -100,6 +164,7 @@ function dedupeEvents(events) {
       ...existing,
       score: Math.max(Number(existing.score ?? 0), Number(event.score ?? 0)),
       sourceNames: [...new Set([...existing.sourceNames, event.sourceName])],
+      dateKeys: [...new Set([...existing.dateKeys, event.dateKey])].sort(),
     });
   }
 
@@ -110,21 +175,75 @@ function joinLines(lines) {
   return lines.join("\n");
 }
 
-function buildPayload(date, eventLog, options = {}) {
-  const latestRun = eventLog.latestRun ?? {
-    newEventsCount: 0,
-    newEventIds: [],
-  };
-  const candidateEvents =
-    options.forcePreview && latestRun.newEventsCount === 0
-      ? [...(eventLog.events ?? [])]
-      : (eventLog.events ?? []).filter((event) =>
-          latestRun.newEventIds.includes(event.eventId),
-        );
-  const newEvents = candidateEvents.sort(
-    (left, right) => rankEvent(right) - rankEvent(left),
-  );
-  const uniqueEvents = dedupeEvents(newEvents).sort(
+function buildEventBlock(event, options = {}) {
+  const block = [
+    `- [${localizedImportanceLabel(event)}] ${trimLine(localizedTitle(event), 120)}`,
+    `  ${trimLine(localizedSummary(event), 120)}`,
+    `  ${event.url}`,
+  ];
+
+  if (options.includeDates && event.dateKeys?.length > 0) {
+    block.splice(2, 0, `  日付: ${event.dateKeys.join(", ")}`);
+  }
+
+  if (event.sourceNames.length > 1) {
+    block.push(`  ソース: ${event.sourceNames.join(", ")}`);
+  }
+
+  return block;
+}
+
+function buildGroupedEventBlocks(uniqueEvents) {
+  const grouped = new Map();
+
+  for (const event of uniqueEvents.slice(0, 5)) {
+    const dateKey = event.dateKeys?.at(-1) ?? event.dateKey;
+    if (!grouped.has(dateKey)) {
+      grouped.set(dateKey, []);
+    }
+    grouped.get(dateKey).push(event);
+  }
+
+  return [...grouped.entries()]
+    .sort(([left], [right]) => right.localeCompare(left))
+    .map(([dateKey, events]) => {
+      const block = [`【${dateKey}】`];
+
+      for (const [index, event] of events.entries()) {
+        if (index > 0) {
+          block.push("");
+        }
+        block.push(...buildEventBlock(event));
+      }
+
+      return block;
+    });
+}
+
+function buildPayload(date, datedLogs, options = {}) {
+  const collectedEvents = [];
+  const perDateCounts = [];
+
+  for (const { date: entryDate, eventLog } of datedLogs) {
+    const latestRun = eventLog.latestRun ?? {
+      newEventsCount: 0,
+      newEventIds: [],
+    };
+    const candidateEvents =
+      options.forcePreview && latestRun.newEventsCount === 0
+        ? [...(eventLog.events ?? [])]
+        : (eventLog.events ?? []).filter((event) =>
+            latestRun.newEventIds.includes(event.eventId),
+          );
+    const rankedEvents = candidateEvents
+      .map((event) => ({ ...event, dateKey: entryDate }))
+      .sort((left, right) => rankEvent(right) - rankEvent(left));
+
+    collectedEvents.push(...rankedEvents);
+    perDateCounts.push({ date: entryDate, count: rankedEvents.length });
+  }
+
+  const uniqueEvents = dedupeEvents(collectedEvents).sort(
     (left, right) => rankEvent(right) - rankEvent(left),
   );
 
@@ -141,22 +260,45 @@ function buildPayload(date, eventLog, options = {}) {
   const sourceSummary = [...sourceCounts.entries()]
     .map(([sourceName, count]) => `${sourceName}: ${count}`)
     .join(" / ");
+  const activeWindowLabel =
+    datedLogs.length > 1
+      ? `${datedLogs[0].date}〜${datedLogs[datedLogs.length - 1].date}`
+      : date;
+  const dailySummary = perDateCounts
+    .filter((entry) => entry.count > 0)
+    .map((entry) => `${entry.date}: ${entry.count}件`)
+    .join(" / ");
+  const latestLog = datedLogs[datedLogs.length - 1]?.eventLog;
 
   const headerLines = [
-    options.forcePreview && latestRun.newEventsCount === 0
-      ? `GitHub Copilot / VS Code 監視の preview として ${uniqueEvents.length} 件の更新候補を表示します。`
-      : `GitHub Copilot / VS Code 監視で ${uniqueEvents.length} 件の新着を検知しました。`,
-    `日付: ${date}`,
+    options.windowDays > 1
+      ? options.forcePreview && uniqueEvents.length === 0
+        ? `GitHub Copilot / VS Code 監視の ${options.windowDays}日分 preview として更新候補を表示します。`
+        : `GitHub Copilot / VS Code 監視で直近${options.windowDays}日分の新着 ${uniqueEvents.length} 件をまとめました。`
+      : options.forcePreview && uniqueEvents.length === 0
+        ? `GitHub Copilot / VS Code 監視の preview として ${uniqueEvents.length} 件の更新候補を表示します。`
+        : `GitHub Copilot / VS Code 監視で ${uniqueEvents.length} 件の新着を検知しました。`,
+    options.windowDays > 1 ? `対象期間: ${activeWindowLabel}` : `日付: ${date}`,
   ];
 
-  if (options.forcePreview && latestRun.newEventsCount === 0) {
+  if (options.forcePreview && uniqueEvents.length === 0) {
     headerLines.push(
-      "注記: これは通知 preview です。直近 run に新着がないため、その日の既存イベントから代表項目を表示しています。",
+      options.windowDays > 1
+        ? "注記: これは通知 preview です。対象期間に新着がないため、既存イベントから代表項目を表示しています。"
+        : "注記: これは通知 preview です。直近 run に新着がないため、その日の既存イベントから代表項目を表示しています。",
     );
   }
 
-  if (eventLog.editorialNote) {
-    headerLines.push(eventLog.editorialNote);
+  if (options.windowDays > 1) {
+    headerLines.push(`通知間隔: ${options.cadenceDays}日ごと`);
+  }
+
+  if (latestLog?.editorialNote) {
+    headerLines.push(latestLog.editorialNote);
+  }
+
+  if (dailySummary) {
+    headerLines.push(`日別件数: ${dailySummary}`);
   }
 
   if (sourceSummary) {
@@ -172,19 +314,12 @@ function buildPayload(date, eventLog, options = {}) {
     footerLines.push(`Pages: ${pagesUrl}`);
   }
 
-  const eventBlocks = uniqueEvents.slice(0, 5).map((event) => {
-    const block = [
-      `- [${localizedImportanceLabel(event)}] ${trimLine(localizedTitle(event), 120)}`,
-      `  ${trimLine(localizedSummary(event), 120)}`,
-      `  ${event.url}`,
-    ];
-
-    if (event.sourceNames.length > 1) {
-      block.push(`  ソース: ${event.sourceNames.join(", ")}`);
-    }
-
-    return block;
-  });
+  const eventBlocks =
+    options.windowDays > 1
+      ? buildGroupedEventBlocks(uniqueEvents)
+      : uniqueEvents
+          .slice(0, 5)
+          .map((event) => buildEventBlock(event, { includeDates: false }));
 
   let lines = [...headerLines];
   if (eventBlocks.length > 0) {
@@ -256,22 +391,57 @@ async function postWebhook(payload, dryRun) {
 
 async function main() {
   const options = parseArgs(process.argv.slice(2));
-  const eventLog = await readEventLog(options.date);
-  const latestRun = eventLog.latestRun ?? { newEventsCount: 0 };
+  const availableDates = await listEventLogDates();
+  const anchorDate = resolveAnchorDate(
+    availableDates,
+    options.anchorDate,
+    options.date,
+  );
+  const windowDates = resolveWindowDates(
+    availableDates,
+    options.date,
+    options.windowDays,
+  );
 
-  if (latestRun.newEventsCount === 0 && !options.forcePreview) {
+  if (windowDates.length === 0) {
+    throw new Error(`No event logs available up to ${options.date}.`);
+  }
+
+  if (
+    !options.forcePreview &&
+    !shouldNotify(options.date, anchorDate, options.cadenceDays)
+  ) {
     console.log(
-      `No new events for ${options.date}. Skipping Discord notification.`,
+      `Skipping Discord notification for ${options.date}. The ${options.cadenceDays}-day cadence is anchored at ${anchorDate}.`,
     );
     return;
   }
 
-  const payload = buildPayload(options.date, eventLog, options);
+  const datedLogs = await Promise.all(
+    windowDates.map(async (date) => ({
+      date,
+      eventLog: await readEventLog(date),
+    })),
+  );
+  const totalNewEvents = datedLogs.reduce(
+    (sum, { eventLog }) =>
+      sum + Number(eventLog.latestRun?.newEventsCount ?? 0),
+    0,
+  );
+
+  if (totalNewEvents === 0 && !options.forcePreview) {
+    console.log(
+      `No new events across the last ${windowDates.length} day(s) ending on ${options.date}. Skipping Discord notification.`,
+    );
+    return;
+  }
+
+  const payload = buildPayload(options.date, datedLogs, options);
   await postWebhook(payload, options.dryRun);
   console.log(
-    options.forcePreview && latestRun.newEventsCount === 0
+    options.forcePreview && totalNewEvents === 0
       ? `Prepared Discord preview payload for ${options.date}.`
-      : `Prepared Discord notification for ${latestRun.newEventsCount} new event(s).`,
+      : `Prepared Discord notification for ${totalNewEvents} new event(s) across ${windowDates.length} day(s).`,
   );
 }
 

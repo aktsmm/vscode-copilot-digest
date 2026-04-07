@@ -44,4 +44,4 @@ jobs:
       - name: Send Discord preview notification
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
-        run: node scripts/notify-discord.mjs --date "${{ steps.target.outputs.date_key }}" --force-preview
+        run: node scripts/notify-discord.mjs --date "${{ steps.target.outputs.date_key }}" --window-days 5 --cadence-days 5 --anchor-date 2026-04-06 --force-preview

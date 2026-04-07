@@ -4,12 +4,10 @@
   "latestRun": {
     "generatedAt": "2026-04-06T23:46:36.805Z",
     "newEventsCount": 1,
-    "newEventIds": [
-      "github-copilot-blog:https://github.blog/?p=95067"
-    ],
+    "newEventIds": ["github-copilot-blog:https://github.blog/?p=95067"],
     "errorCount": 0
   },
-  "editorialNote": "注記: この記録には当日公開分だけでなく、初回取り込みや未取得分の回収が含まれる可能性があります。最も古い公開日は 2025-12-03 です。",
+  "editorialNote": "",
   "events": [
     {
       "eventId": "github-copilot-blog:https://github.blog/?p=95067",
@@ -39,10 +37,7 @@
       "title": "Organization runner controls for Copilot cloud agent",
       "url": "https://github.blog/changelog/2026-04-03-organization-runner-controls-for-copilot-cloud-agent",
       "summary": "Each time Copilot cloud agent works on a task, it starts a new development environment powered by GitHub Actions.\nBy default, this runs on a standard GitHub-hosted runner, but teams can also customize the agent environment to use large runners or self-hosted runners for faster performance, access to internal resources, and more.\nUntil now, the runner was configured at the repository level with a copilot-setup-steps.yml file. This made it difficult to roll out consistent defaults or enforce guardrails across an organization.\nOrganization admins can now:\n\nSet a default runner to be used automatically across all repositories, without requiring each repository to be individually configured.\nLock the runner setting so individual repositories can’t override the organization default.\n\nThis means you can set sensible defaults for your teams (e.g., using larger GitHub Actions runners for better performance) and optionally ensure that the agent always runs where you want it to, such as on your self-hosted runners.\nTo learn more, see “Configuring runners for GitHub Copilot cloud agent in your organization” in the GitHub Docs.\n\nThe post Organization runner controls for Copilot cloud agent appeared first on The GitHub Blog.",
-      "categories": [
-        "Release",
-        "copilot"
-      ],
+      "categories": ["Release", "copilot"],
       "score": 6
     },
     {
@@ -55,10 +50,7 @@
       "title": "Organization runner controls for Copilot cloud agent",
       "url": "https://github.blog/changelog/2026-04-03-organization-runner-controls-for-copilot-cloud-agent",
       "summary": "Each time Copilot cloud agent works on a task, it starts a new development environment powered by GitHub Actions. By default, this runs on a standard GitHub-hosted runner, but teams…\nThe post Organization runner controls for Copilot cloud agent appeared first on The GitHub Blog.",
-      "categories": [
-        "Release",
-        "copilot"
-      ],
+      "categories": ["Release", "copilot"],
       "score": 6
     },
     {
@@ -71,10 +63,7 @@
       "title": "GPT-5.1 Codex, GPT-5.1-Codex-Max, and GPT-5.1-Codex-Mini deprecated",
       "url": "https://github.blog/changelog/2026-04-03-gpt-5-1-codex-gpt-5-1-codex-max-and-gpt-5-1-codex-mini-deprecated",
       "summary": "We have deprecated the following models across all GitHub Copilot experiences (including Copilot Chat, inline edits, ask and agent modes, and code completions) on April 1, 2026.\n\nModel\nDeprecation date\nSuggested alternative\n\nGPT-5.1-Codex\n2026-04-01\nGPT-5.3-Codex\n\nGPT-5.1-Codex-Mini\n2026-04-01\nGPT-5.3-Codex\n\nGPT-5.1-Codex-Max\n2026-04-01\nGPT-5.3-Codex\n\nPlease update your workflows and integrations to use supported models. Copilot Enterprise administrators may need to enable access to alternative models through their model policies in Copilot settings. As an administrator, you can verify availability by checking your individual Copilot settings and confirming that the policy is enabled for the specific model. Once enabled, you’ll see the model in the Copilot Chat model selector in VS Code and on github.com. No action is required to remove the deprecated models.\nGitHub Enterprise customers with questions or concerns are encouraged to reach out to their account manager for further assistance.\nShare your feedback\nTo learn more about the models available in Copilot, see our documentation on models and get started with Copilot today.\nJoin the GitHub Community to share your feedback.\n\nThe post GPT-5.1 Codex, GPT-5.1-Codex-Max, and GPT-5.1-Codex-Mini deprecated appeared first on The GitHub Blog.",
-      "categories": [
-        "Retired",
-        "copilot"
-      ],
+      "categories": ["Retired", "copilot"],
       "score": 5
     },
     {
@@ -87,10 +76,7 @@
       "title": "GPT-5.1 Codex, GPT-5.1-Codex-Max, and GPT-5.1-Codex-Mini deprecated",
       "url": "https://github.blog/changelog/2026-04-03-gpt-5-1-codex-gpt-5-1-codex-max-and-gpt-5-1-codex-mini-deprecated",
       "summary": "We have deprecated the following models across all GitHub Copilot experiences (including Copilot Chat, inline edits, ask and agent modes, and code completions) on April 1, 2026. Model Deprecation date…\nThe post GPT-5.1 Codex, GPT-5.1-Codex-Max, and GPT-5.1-Codex-Mini deprecated appeared first on The GitHub Blog.",
-      "categories": [
-        "Retired",
-        "copilot"
-      ],
+      "categories": ["Retired", "copilot"],
       "score": 5
     },
     {
@@ -103,10 +89,7 @@
       "title": "Organization firewall settings for Copilot cloud agent",
       "url": "https://github.blog/changelog/2026-04-03-organization-firewall-settings-for-copilot-cloud-agent",
       "summary": "Copilot cloud agent includes a built-in agent firewall to control Copilot’s internet access and help protect against prompt injection and data exfiltration. Until now, the firewall was configured at the repository level by repository admins.\nOrganization admins can now manage the agent firewall across all repositories in their organization. This makes it easier to roll out Copilot cloud agent at scale with the right defaults and guardrails for your needs. Organization admins can:\n\nTurn the firewall on or off across all repositories, or allow each repository to decide.\nTurn the recommended allowlist on or off across all repositories, or allow each repository to decide.\nAdd entries to an organization-wide custom allowlist, covering all repositories (e.g., allowing access to an internal package registry).\nControl whether repository admins are allowed to add their own custom allowlist entries.\n\nBy default, all settings allow each repository to decide, preserving existing behavior.\nTo learn more, see “Customizing the agent firewall for Copilot cloud agent” in the GitHub Docs.\n\nThe post Organization firewall settings for Copilot cloud agent appeared first on The GitHub Blog.",
-      "categories": [
-        "Improvement",
-        "copilot"
-      ],
+      "categories": ["Improvement", "copilot"],
       "score": 3
     },
     {
@@ -119,10 +102,7 @@
       "title": "Organization firewall settings for Copilot cloud agent",
       "url": "https://github.blog/changelog/2026-04-03-organization-firewall-settings-for-copilot-cloud-agent",
       "summary": "Copilot cloud agent includes a built-in agent firewall to control Copilot’s internet access and help protect against prompt injection and data exfiltration. Until now, the firewall was configured at the…\nThe post Organization firewall settings for Copilot cloud agent appeared first on The GitHub Blog.",
-      "categories": [
-        "Improvement",
-        "copilot"
-      ],
+      "categories": ["Improvement", "copilot"],
       "score": 3
     },
     {
@@ -135,10 +115,7 @@
       "title": "Copilot cloud agent signs its commits",
       "url": "https://github.blog/changelog/2026-04-03-copilot-cloud-agent-signs-its-commits",
       "summary": "Copilot cloud agent now signs every commit it makes. Signed commits appear as Verified on GitHub, giving you confidence that the commit was genuinely made by the agent and hasn’t been tampered with.\nThis means that Copilot cloud agent now works in repositories with the “Require signed commits” branch protection rule or ruleset enabled. Previously, this was one of the rules that the agent couldn’t comply with, which blocked it entirely from being used in those repositories.\nTo learn more about Copilot cloud agent, head to “About Copilot cloud agent” in the documentation.\n\nThe post Copilot cloud agent signs its commits appeared first on The GitHub Blog.",
-      "categories": [
-        "Improvement",
-        "copilot"
-      ],
+      "categories": ["Improvement", "copilot"],
       "score": 2
     },
     {
@@ -151,10 +128,7 @@
       "title": "Copilot cloud agent signs its commits",
       "url": "https://github.blog/changelog/2026-04-03-copilot-cloud-agent-signs-its-commits",
       "summary": "Copilot cloud agent now signs every commit it makes. Signed commits appear as Verified on GitHub, giving you confidence that the commit was genuinely made by the agent and hasn’t…\nThe post Copilot cloud agent signs its commits appeared first on The GitHub Blog.",
-      "categories": [
-        "Improvement",
-        "copilot"
-      ],
+      "categories": ["Improvement", "copilot"],
       "score": 2
     },
     {
@@ -167,10 +141,7 @@
       "title": "Copilot SDK in public preview",
       "url": "https://github.blog/changelog/2026-04-02-copilot-sdk-in-public-preview",
       "summary": "The GitHub Copilot SDK is now available in public preview. This gives you the building blocks to embed Copilot’s agentic capabilities directly into your own applications, workflows, and platform services.\nThe Copilot SDK exposes the same production-tested agent runtime that powers GitHub Copilot cloud agent and Copilot CLI. Instead of building your own AI orchestration layer, you get tool invocation, streaming, file operations, and multi-turn sessions out of the box.\nNow available in five languages\nBuild with the SDK in your language of choice:\n\nNode.js / TypeScript: npm install @github/copilot-sdk\nPython: pip install github-copilot-sdk\nGo: go get github.com/github/copilot-sdk/go\n.NET: dotnet add package GitHub.Copilot.SDK\nJava: Newly available to install via Maven.\n\nKey capabilities\n\nCustom tools and agents: Define domain-specific tools with handlers and let the agent decide when to invoke them. Build custom agents with tailored instructions for your use case.\nFine-grained system prompt customization: Customize sections of the Copilot system prompt using replace, append, prepend, or dynamic transform callbacks. There’s no need to rewrite the entire prompt.\nStreaming and real-time responses: Stream responses token-by-token for responsive user experiences.\nBlob attachments: Send images, screenshots, and binary data inline without writing to disk.\nOpenTelemetry support: Built-in distributed tracing with W3C trace context propagation across all SDKs.\nPermission framework: Gate sensitive operations with approval handlers, or mark read-only tools to skip permissions entirely.\nBring Your Own Key (BYOK): Use your own API keys for OpenAI, Azure AI Foundry, or Anthropic.\n\nGet started\nThe Copilot SDK is available to all Copilot and non-Copilot subscribers, including Copilot Free for personal use and BYOK for enterprises. Each prompt counts toward your premium request quota for Copilot subscribers.\nCheck out the getting started guide to start building and join the discussion in the GitHub Community.\n\nThe post Copilot SDK in public preview appeared first on The GitHub Blog.",
-      "categories": [
-        "Release",
-        "copilot"
-      ],
+      "categories": ["Release", "copilot"],
       "score": 8
     },
     {
@@ -183,10 +154,7 @@
       "title": "Copilot SDK in public preview",
       "url": "https://github.blog/changelog/2026-04-02-copilot-sdk-in-public-preview",
       "summary": "The GitHub Copilot SDK is now available in public preview. This gives you the building blocks to embed Copilot’s agentic capabilities directly into your own applications, workflows, and platform services.…\nThe post Copilot SDK in public preview appeared first on The GitHub Blog.",
-      "categories": [
-        "Release",
-        "copilot"
-      ],
+      "categories": ["Release", "copilot"],
       "score": 7
     },
     {
@@ -235,10 +203,7 @@
       "title": "GitHub Copilot in Visual Studio — March update",
       "url": "https://github.blog/changelog/2026-04-02-github-copilot-in-visual-studio-march-update",
       "summary": "March 2026 brought a major step forward for GitHub Copilot extensibility in Visual Studio, with custom agents, agent skills, and new tools that make the agent smarter and more capable.\nHighlights\nHere’s what’s new with GitHub Copilot in the March update of Visual Studio 2026:\n\nBuild your own custom agents: Define specialized Copilot agents as .agent.md files in your repository. Custom agents get full access to workspace awareness, code understanding, tools, your preferred model, and MCP connections to external knowledge sources. They appear in the agent picker, ready for your team to use.\nEnterprise MCP governance: MCP server usage now respects allowlist policies set through GitHub. Admins can specify which MCP servers are allowed within their organizations, keeping sensitive data controlled and compliant with security policies.\nUse agent skills: Agent skills are reusable instruction sets that teach agents how to perform specific tasks. Define them in your repository or user profile, and Copilot automatically discovers and applies them. See awesome-copilot for community-shared skills.\nfind_symbol tool for agent mode: The new find_symbol tool gives agents language-aware symbol navigation, including finding all references, accessing type metadata, and understanding declarations and scope. Supported for C++, C#, Razor, TypeScript, and any language with an LSP extension.\nProfile tests with Copilot: A new Profile with Copilot command in Test Explorer lets you profile a specific test with the Profiling Agent, which automatically runs the test and analyzes CPU and instrumentation data to deliver actionable performance insights.\nPerfTips powered by live profiling: Debug-time PerfTips now integrate with the Profiler Agent. Click an inline performance signal while debugging and Copilot analyzes elapsed time, CPU usage, and memory behavior to suggest targeted optimizations.\nSmart Watch suggestions: Copilot now offers context-aware expression suggestions directly in Watch windows during debugging, helping you monitor the most meaningful runtime values faster.\nFix vulnerabilities with Copilot: Copilot can now fix NuGet package vulnerabilities directly from Solution Explorer. Click the Fix with GitHub Copilot link when a vulnerability is detected, and Copilot recommends targeted dependency updates.\n\nTo learn more about what’s new, check out the Visual Studio blog and release notes.\nWhat’s next for Copilot in Visual Studio\nStay up to date on the latest Copilot features by following the Visual Studio blog, where you’ll find roadmap updates and opportunities to share feedback.\n\nThe post GitHub Copilot in Visual Studio — March update appeared first on The GitHub Blog.",
-      "categories": [
-        "Release",
-        "copilot"
-      ],
+      "categories": ["Release", "copilot"],
       "score": 7
     },
     {
@@ -251,10 +216,7 @@
       "title": "GitHub Copilot in Visual Studio — March update",
       "url": "https://github.blog/changelog/2026-04-02-github-copilot-in-visual-studio-march-update",
       "summary": "March 2026 brought a major step forward for GitHub Copilot extensibility in Visual Studio, with custom agents, agent skills, and new tools that make the agent smarter and more capable.…\nThe post GitHub Copilot in Visual Studio — March update appeared first on The GitHub Blog.",
-      "categories": [
-        "Release",
-        "copilot"
-      ],
+      "categories": ["Release", "copilot"],
       "score": 5
     },
     {
@@ -267,10 +229,7 @@
       "title": "Copilot organization custom instructions are generally available",
       "url": "https://github.blog/changelog/2026-04-02-copilot-organization-custom-instructions-are-generally-available",
       "summary": "Organization custom instructions for GitHub Copilot, first introduced in April 2025, are now generally available.\nWith organization custom instructions, Copilot Business and Copilot Enterprise organization administrators can set default instructions that guide Copilot’s behavior across all repositories in their organization.\nOrganization custom instructions are applied across:\n\nCopilot Chat on github.com\nCopilot code review\nCopilot cloud agent\n\nTo add custom instructions, navigate to your organization’s settings, select Copilot, then click Custom instructions.\nTo learn more, see “Adding organization custom instructions for GitHub Copilot” in the documentation.\n\nThe post Copilot organization custom instructions are generally available appeared first on The GitHub Blog.",
-      "categories": [
-        "Improvement",
-        "copilot"
-      ],
+      "categories": ["Improvement", "copilot"],
       "score": 3
     },
     {
@@ -283,10 +242,7 @@
       "title": "Research, plan, and code with Copilot cloud agent",
       "url": "https://github.blog/changelog/2026-04-01-research-plan-and-code-with-copilot-cloud-agent",
       "summary": "Copilot cloud agent (formerly known as Copilot coding agent) is no longer limited to pull-request workflows, unlocking a broader range of ways to put Copilot to work.\nMore control over when you open a pull request\nUp until now, working with Copilot cloud agent meant opening a pull request. Now Copilot can work on a branch without creating one, giving you more flexibility over how and when you move your work forward.\n\nCopilot generates code on a branch without opening a pull request.\nReview the full diff before deciding if you are ready for a pull request,by clicking the Diff button.\nIterate with Copilot until you are ready for a review. When you are, click Create pull request.\nKnow you want a pull request from the start? Just say so in your prompt and Copilot will create one when the session completes.\n\nGenerate implementation plans\nAsk Copilot to produce an implementation plan and review the approach before Copilot writes any code.\n\nAsk for a plan in your prompt and Copilot will generate one before taking any action.\nReview Copilot’s proposed approach and approve or provide feedback before any code is written.\nOnce the plan is approved, Copilot uses the plan to guide its implementation.\n\nConduct deep research in your codebase\nKick off a research session to have Copilot answer questions requiring thorough investigation and comprehensive answers.\n\nAsk broad questions about your codebase and get answers grounded in your repository context.\n\nYou can also kick off a deep research session from a Copilot chat conversation by asking Copilot a question.\n\nTo get started\nThis functionality is available exclusively via all agent entry points, such as the Agents tab in the repository and in Copilot Chat.\nCopilot cloud agent is available with all paid Copilot plans. If you’re a Copilot Business or Copilot Enterprise user, an administrator will have to enable Copilot cloud agent before you can use it.\nJoin the discussion within GitHub Community.\n\nThe post Research, plan, and code with Copilot cloud agent appeared first on The GitHub Blog.",
-      "categories": [
-        "Release",
-        "copilot"
-      ],
+      "categories": ["Release", "copilot"],
       "score": 6
     },
     {
@@ -299,9 +255,7 @@
       "title": "Visual Studio Code 1.114",
       "url": "https://code.visualstudio.com/updates/v1_114",
       "summary": "Learn what's new in Visual Studio Code 1.114\n Read the full article",
-      "categories": [
-        "release"
-      ],
+      "categories": ["release"],
       "score": 4
     },
     {
@@ -314,10 +268,7 @@
       "title": "GPT-5.4 mini is now available in Copilot Student auto model selection",
       "url": "https://github.blog/changelog/2026-04-01-gpt-5-4-mini-is-now-available-in-copilot-student-auto-model-selection",
       "summary": "GPT-5.4 mini is now generally available to Copilot Student plan via Copilot auto model selection.\nThis model is part of Auto in GitHub Copilot Chat on Visual Studio Code, Visual Studio, JetBrains IDEs, Xcode, and Eclipse.\nTo learn more about the models available in Copilot, see our documentation on models and get started with Copilot today.\nShare your feedback\nJoin the GitHub Community to share your feedback.\n\nThe post GPT-5.4 mini is now available in Copilot Student auto model selection appeared first on The GitHub Blog.",
-      "categories": [
-        "Release",
-        "copilot"
-      ],
+      "categories": ["Release", "copilot"],
       "score": 5
     },
     {
@@ -330,11 +281,7 @@
       "title": "Run multiple agents at once with /fleet in Copilot CLI",
       "url": "https://github.blog/ai-and-ml/github-copilot/run-multiple-agents-at-once-with-fleet-in-copilot-cli/",
       "summary": "What if GitHub Copilot CLI could work on five files at the same time instead of one? That’s where /fleet comes in.\n\n/fleet is a slash command in Copilot CLI that enables Copilot to simultaneously work with multiple subagents in parallel. Instead of working through tasks sequentially, Copilot now has a behind the scenes orchestrator that plans and breaks your objective into independent work items and dispatches multiple agents to execute them simultaneously. On different files, in different parts of your codebase, all at once.\n\nWant to learn more about how /fleet works, and more importantly, how to use it most effectively? Let’s jump in.\n\nHow it works\n\nWhen you run /fleet with a prompt, the behind-the-scenes orchestrator:\n\nDecomposes your task into discrete work items with dependencies.\n\nIdentifies which items can run in parallel versus which must wait.\n\nDispatches independent items as background sub-agents simultaneously.\n\nPolls for completion, then dispatches the next wave.\n\nVerifies outputs and synthesizes any final artifacts.\n\nEach sub-agent gets its own context window but shares the same filesystem. They can’t talk to each other directly; only the orchestrator coordinates.\n\nThink of it as a project lead who assigns work to a team, checks in on progress, and assembles the final deliverable.\n\nGetting started\n\nStart fleet mode by sending /fleet <YOUR OBJECTIVE PROMPT>. For example:\n\n/fleet Refactor the auth module, update tests, and fix the related docs in the folder docs/auth/ \n\nThat’s it. The orchestrator takes your objective, figures out what can be parallelized, and starts dispatching.\n\nYou can also run it non-interactively in your terminal:\n\ncopilot -p \"/fleet <YOUR TASK>\" --no-ask-user\n\nThe --no-ask-user flag is required for non-interactive mode, since there’s no way to respond to prompts. Now let’s look at what makes a good prompt.\n\nWrite prompts that parallelize well\n\nThe quality of your /fleet prompt determines how effectively work gets distributed. The key is giving the orchestrator enough structure to cleanly break down your task.\n\nA good way to do that is being specific about deliverables. Map every work item to a concrete artifact like a file, a test suite, or a section of documentation. Vague prompts lead to sequential execution because the orchestrator can’t identify independent pieces.\n\nFor example, instead of: /fleet Build the documentation, you could try:\n\n/fleet Create docs for the API module: \n\n- docs/authentication.md covering token flow and examples \n\n- docs/endpoints.md with request/response schemas for all REST endpoints \n\n- docs/errors.md with error codes and troubleshooting steps \n\n- docs/index.md linking to all three pages (depends on the others finishing first)\n\nThe second prompt gives the orchestrator four distinct deliverables, three of which can run in parallel, and one that depends on them.\n\nSet explicit boundaries\n\nSub-agents work best when they know exactly where their scope starts and ends. When writing your prompt include:\n\nFile or module boundaries: Which directories or files each track owns\n\nConstraints: What not to touch (e.g., no test changes, no dependency upgrades)\n\nValidation criteria: Lint, type checks, tests that must pass\n\nHere’s a prompt that showcases these boundaries:\n\n/fleet Implement feature flags in three tracks: \n\n1. API layer: add flag evaluation to src/api/middleware/ and include unit tests that look for successful flag evaluation and tests API endpoints \n\n2. UI: wire toggle components in src/components/flags/ and introduce no new dependencies \n\n3. Config: add flag definitions to config/features.yaml and validate against schema \n\nRun independent tracks in parallel. No changes outside assigned directories. \n\nDeclare dependencies when they exist\n\nIf one piece of work depends on another, say so. The orchestrator will serialize those items and parallelize the rest. For example:\n\n/fleet Migrate the database layer: \n\n1. Write new schema in migrations/005_users.sql \n\n2. Update the ORM models in src/models/user.ts (depends on 1) \n\n3. Update API handlers in src/api/users.ts (depends on 2) \n\n4. Write integration tests in tests/users.test.ts (depends on 2) \n\n Items 3 and 4 can run in parallel after item 2 completes. \n\nUse custom agents for different jobs\n\nYou can define specialized agents in .github/agents/ and reference them in your /fleet prompt. Each agent can specify its own model, tools, and instructions. Be aware that if you don’t specify which model to use, agents will use the current default model.\n\n# .github/agents/technical-writer.md \n\n--- \n\nname: technical-writer \n\ndescription: Documentation specialist \n\nmodel: claude-sonnet-4 \n\ntools: [\"bash\", \"create\", \"edit\", \"view\"] \n\n--- \n\nYou write clear, concise technical documentation. Follow the project style guide in /docs/styleguide.md. \n\nThen reference the custom agent in your prompt:\n\n/fleet Use @technical-writer.md as the agent for all docs tasks and the default agent for code changes. \n\nThis is useful when different tracks need different strengths such as using a heavier model for complex logic and a lighter one for boilerplate documentation.\n\nHow to verify subagents are deploying\n\nWatch how the orchestrator deploys subagents, it’s the fastest way to learn how to write prompts that parallelize well.\n\nUse this quick checklist:\n\nDecomposition appears: Before it starts working, review the plan Copilot shares with you to see if it breaks work into multiple tracks, instead of one long linear plan.\n\nBackground task UI confirms activity: Once it begins working, run /tasks to open the tasks dialog and inspect running background tasks.\n\nParallel progress appears: Updates reference separate tracks moving at the same time.\n\nIf the fleet doesn’t seem to be parallelizing, try stopping Copilot’s work and asking for an explicit decomposition:\n\nDecompose this into independent tracks first, then execute tracks in parallel. Report each track separately with status and blockers. \n\nAvoiding common pitfalls\n\nFleet is powerful, but a few gotchas are worth knowing upfront.\n\nPartition your files\n\nSub-agents share a filesystem with no file locking. If two agents write to the same file, the last one to finish wins—silently. No error, no merge, just an overwrite.\n\nThe fix is to assign each agent distinct files in your prompt. If multiple agents need to contribute to a single file, consider having each write to a temporary path and let the orchestrator merge them at the end. Or set an explicit order for the agents to follow.\n\nKeep prompts self-contained\n\nSub-agents can’t see the orchestrator’s conversation history. When the orchestrator dispatches a sub-agent, it passes along a prompt, but that prompt needs to include everything the sub-agent needs. If you’ve already gathered useful context earlier in the session, make sure your /fleet prompt includes it (or references files the sub-agents can read).\n\nSteering a fleet in progress\n\nAfter dispatching, you can send follow-up prompts to guide the orchestrator:\n\nPrioritize failing tests first, then complete remaining tasks.\n\nList active sub-agents and what each is currently doing.\n\nMark done only when lint, type check, and all tests pass.\n\nWhen to use /fleet (and when not to)\n\n/fleet shines when your task has natural parallelism—multiple files, independent modules, or separable concerns. It’s particularly effective for:\n\nRefactoring across multiple files simultaneously.\n\nGenerating documentation for several components at once.\n\nImplementing a feature that spans API, UI, and tests.\n\nRunning independent code modifications that don’t share state.\n\nFor strictly linear, single-file work, regular Copilot CLI prompts are simpler and just as fast. Fleet adds coordination overhead, so it pays off when there’s real work to distribute.\n\n/fleet is most useful when you treat it like a team, not a magic trick. Start small. Pick a task with clear outputs, clean file boundaries, and obvious parallelism. See how the orchestrator decomposes the work, where it helps, and where it gets in the way. As you get more comfortable, push it further with larger refactors, multi‑track features, or docs and tests in parallel. The fastest way to learn when /fleet pays off is to try it on real work and adjust your prompts based on what you see.\n\nThe post Run multiple agents at once with /fleet in Copilot CLI appeared first on The GitHub Blog.",
-      "categories": [
-        "AI & ML",
-        "GitHub Copilot",
-        "GitHub Copilot CLI"
-      ],
+      "categories": ["AI & ML", "GitHub Copilot", "GitHub Copilot CLI"],
       "score": 3
     },
     {
@@ -368,9 +315,7 @@
       "title": "Visual Studio Code 1.113",
       "url": "https://code.visualstudio.com/updates/v1_113",
       "summary": "Learn what's new in Visual Studio Code 1.113\n Read the full article",
-      "categories": [
-        "release"
-      ],
+      "categories": ["release"],
       "score": 4
     },
     {
@@ -423,9 +368,7 @@
       "title": "Visual Studio Code 1.112",
       "url": "https://code.visualstudio.com/updates/v1_112",
       "summary": "Learn what's new in Visual Studio Code 1.112\n Read the full article",
-      "categories": [
-        "release"
-      ],
+      "categories": ["release"],
       "score": 4
     },
     {
@@ -438,9 +381,7 @@
       "title": "How VS Code Builds with AI",
       "url": "https://code.visualstudio.com/blogs/2026/03/13/how-VS-Code-Builds-with-AI",
       "summary": "Learn how VS Code uses AI across its own development workflow with GitHub Copilot agent mode, automated testing, and AI-powered code review.\n Read the full article",
-      "categories": [
-        "blog"
-      ],
+      "categories": ["blog"],
       "score": 2
     },
     {
@@ -497,9 +438,7 @@
       "title": "Visual Studio Code 1.111",
       "url": "https://code.visualstudio.com/updates/v1_111",
       "summary": "Learn what's new in Visual Studio Code 1.111\n Read the full article",
-      "categories": [
-        "release"
-      ],
+      "categories": ["release"],
       "score": 4
     },
     {
@@ -532,9 +471,7 @@
       "title": "Making agents practical for real-world development",
       "url": "https://code.visualstudio.com/blogs/2026/03/05/making-agents-practical-for-real-world-development",
       "summary": "Explore agent orchestration, extensibility, and continuity in VS Code 1.110: lifecycle hooks, agent skills, session memory, and integrated browser tools.\n Read the full article",
-      "categories": [
-        "blog"
-      ],
+      "categories": ["blog"],
       "score": 1
     },
     {
@@ -547,9 +484,7 @@
       "title": "February 2026 (version 1.110)",
       "url": "https://code.visualstudio.com/updates/v1_110",
       "summary": "What's new in the Visual Studio Code February 2026 Release (1.110).\n Read the full article",
-      "categories": [
-        "release"
-      ],
+      "categories": ["release"],
       "score": 4
     },
     {
@@ -562,10 +497,7 @@
       "title": "Join or host a GitHub Copilot Dev Days event near you",
       "url": "https://github.blog/ai-and-ml/github-copilot/join-or-host-a-github-copilot-dev-days-event-near-you/",
       "summary": "The way we build software is changing fast. AI is no longer a “someday” tool. It’s reshaping how we plan, write, review, and ship code right now. As products evolve faster than ever, developers are expected to keep up just as quickly. That’s why GitHub Copilot Dev Days exists: for developers to level up together on how they can use AI-assisted coding today.\n\nGitHub Copilot Dev Days is a global series of hands-on, in-person, community-led events designed to help developers explore real-world AI-assisted coding with GitHub Copilot. Join us for the knowledge, stay for the great food, good vibes, and plenty of fun along the way. Find an event near you and register today.\n\nWho is GitHub Copilot Dev Days for?\n\nAnyone and everyone who is looking to improve their development workflow and learn something new! We have events run by and for folks from professional developers to students. Sessions cover various levels and programming backgrounds.\n\nIf it’s your first time trying out AI-assisted development, this event will introduce you to the tools and best practices to succeed from day one. If you’re more advanced, we’re excited to show you the latest tips and tricks to ensure you’re fully up to date.\n\nWhat to expect from a GitHub Copilot Dev Day\n\nEach event will feature live demos, practical sessions, and interactive workshops with high-quality training content. We will focus on real workflows you can use right away, whether you’re already using Copilot daily or just getting started. Your hosts are development experts: GitHub Stars, Microsoft MVPs, GitHub Campus Experts, Microsoft Student Ambassadors, GitHub and Microsoft employees, to name a few.\n\nWe will have training materials covering the GitHub Copilot CLI, Cloud Agent, GitHub Copilot in VS Code, Visual Studio, and other editors, and more! Different events will focus on different topics, so be sure to review the registration page beforehand.\n\nThe specific event details will vary, as each community event organizer might tweak the event to fit the interests of their local developer community. Here is a sample agenda:\n\nIntroductory session: 30-45 minutes on GitHub Copilot.\n\nLocal community session: 30-45 minutes by a local developer or community leader on relevant topics.\n\nHands-on workshop: 1 hour of coding and practical exercises.\n\nAll events are an opportunity to connect with your local developer community, learn something new, and enjoy some snacks and swag!\n\nEvents begin in March\n\nEvents are now live in cities around the world starting in March. Spots are limited and dates are approaching—now’s the time to grab a seat.\n\nWant to bring GitHub Copilot Dev Days to your user group? Fill out our form.\n\nFind a GitHub Copilot Dev Days event near you and register today >\n\nThe post Join or host a GitHub Copilot Dev Days event near you appeared first on The GitHub Blog.",
-      "categories": [
-        "AI & ML",
-        "GitHub Copilot"
-      ],
+      "categories": ["AI & ML", "GitHub Copilot"],
       "score": 3
     },
     {
@@ -614,9 +546,7 @@
       "title": "Building Long-Distance Next Edit Suggestions",
       "url": "https://code.visualstudio.com/blogs/2026/02/26/long-distance-nes",
       "summary": "Learn how we extended next edit suggestions to work across your entire file, reducing friction and improving productivity in GitHub Copilot.\n Read the full article",
-      "categories": [
-        "blog"
-      ],
+      "categories": ["blog"],
       "score": 1
     },
     {
@@ -629,9 +559,7 @@
       "title": "Your Home for Multi-Agent Development",
       "url": "https://code.visualstudio.com/blogs/2026/02/05/multi-agent-development",
       "summary": "VS Code has become the unified interface for all your coding agents. Manage local, background, and cloud agents in one place, use Claude and Codex agents alongside Copilot, and benefit from open standards like MCP and Agent Skills.\n Read the full article",
-      "categories": [
-        "blog"
-      ],
+      "categories": ["blog"],
       "score": 2
     },
     {
@@ -644,9 +572,7 @@
       "title": "January 2026 (version 1.109)",
       "url": "https://code.visualstudio.com/updates/v1_109",
       "summary": "Learn what is new in the Visual Studio Code January 2026 Release (1.109).\n Read the full article",
-      "categories": [
-        "release"
-      ],
+      "categories": ["release"],
       "score": 4
     },
     {
@@ -659,9 +585,7 @@
       "title": "Giving Agents a Visual Voice: MCP Apps Support in VS Code",
       "url": "https://code.visualstudio.com/blogs/2026/01/26/mcp-apps-support",
       "summary": "VS Code now supports MCP Apps, enabling AI agents to display interactive UIs for richer developer workflows.\n Read the full article",
-      "categories": [
-        "blog"
-      ],
+      "categories": ["blog"],
       "score": 1
     },
     {
@@ -674,9 +598,7 @@
       "title": "Building docfind: Fast Client-Side Search with Rust and WebAssembly",
       "url": "https://code.visualstudio.com/blogs/2026/01/15/docfind",
       "summary": "How we built docfind, a high-performance client-side search engine using Rust and WebAssembly, and how GitHub Copilot accelerated development.\n Read the full article",
-      "categories": [
-        "blog"
-      ],
+      "categories": ["blog"],
       "score": 1
     },
     {
@@ -689,9 +611,7 @@
       "title": "December 2025 (version 1.108)",
       "url": "https://code.visualstudio.com/updates/v1_108",
       "summary": "Learn what is new in the Visual Studio Code December 2025 Release (1.108).\n Read the full article",
-      "categories": [
-        "release"
-      ],
+      "categories": ["release"],
       "score": 4
     },
     {
@@ -704,9 +624,7 @@
       "title": "November 2025 (version 1.107)",
       "url": "https://code.visualstudio.com/updates/v1_107",
       "summary": "What's new in the Visual Studio Code November 2025 Release (1.107).\n Read the full article",
-      "categories": [
-        "release"
-      ],
+      "categories": ["release"],
       "score": 4
     },
     {
@@ -719,9 +637,7 @@
       "title": "Introducing the VS Code Insiders Podcast",
       "url": "https://code.visualstudio.com/blogs/2025/12/03/introducing-vs-code-insiders-podcast",
       "summary": "The VS Code Insiders Podcast is your insider's guide to the features, decisions, and people shaping the future of Visual Studio Code.\n Read the full article",
-      "categories": [
-        "blog"
-      ],
+      "categories": ["blog"],
       "score": 1
     },
     {

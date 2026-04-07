@@ -97,7 +97,7 @@ node scripts/build-biweekly.mjs --from 2026-03-23 --to 2026-04-05
 Discord 通知 preview:
 
 ```bash
-npm run notify:discord -- --date 2026-04-06 --dry-run --force-preview
+node scripts/notify-discord.mjs --date 2026-04-06 --window-days 5 --cadence-days 5 --anchor-date 2026-04-06 --dry-run --force-preview
 ```
 
 Qiita 投稿:
@@ -122,7 +122,7 @@ node scripts/publish-qiita.mjs drafts/biweekly-YYYYMMDD-YYYYMMDD.md
 - [scripts/build-pages.mjs](scripts/build-pages.mjs): Pages 用静的サイト生成
 - [scripts/build-biweekly.mjs](scripts/build-biweekly.mjs): 14 日ドラフト生成
 - [scripts/build-weekly.mjs](scripts/build-weekly.mjs): 7 日ドラフト生成
-- [scripts/notify-discord.mjs](scripts/notify-discord.mjs): Discord 通知と preview 出力
+- [scripts/notify-discord.mjs](scripts/notify-discord.mjs): Discord 通知と preview 出力。workflow では 2026-04-06 を基準日に、5日ごとに直近5日分をまとめて投稿する設定で使う
 - [scripts/publish-qiita.mjs](scripts/publish-qiita.mjs): Qiita API への新規投稿 / 更新
 - [scripts/lib/reporting.mjs](scripts/lib/reporting.mjs): 分類、重複除去、日本語化、注記生成の共通ロジック
 
@@ -137,7 +137,7 @@ node scripts/publish-qiita.mjs drafts/biweekly-YYYYMMDD-YYYYMMDD.md
 
 ## Pages 構成
 
-- トップページ: 公開方針、最新ハイライト、週間アーカイブ、日次アーカイブ
+- トップページ: 、最新ハイライト、週間アーカイブ、日次アーカイブ
 - 日次ページ: 概況、注記、注目トピック、テーマ別まとめ、ソース内訳、全件一覧
 - 週間ページ: 直近 7 日のハイライト、テーマ別まとめ、ソース内訳、全件一覧
 - raw データ: 各日の Markdown と JSON をそのまま参照可能

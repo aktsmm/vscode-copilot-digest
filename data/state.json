@@ -3,7 +3,6 @@
   "sources": {
     "github-changelog-copilot": {
       "seenIds": [
-        "https://github.blog/changelog/2026-04-06-copilot-usage-metrics-now-identify-active-and-passive-copilot-code-review-users",
         "https://github.blog/changelog/2026-04-03-organization-runner-controls-for-copilot-cloud-agent",
         "https://github.blog/changelog/2026-04-03-gpt-5-1-codex-gpt-5-1-codex-max-and-gpt-5-1-codex-mini-deprecated",
         "https://github.blog/changelog/2026-04-03-organization-firewall-settings-for-copilot-cloud-agent",
@@ -13,7 +12,8 @@
         "https://github.blog/changelog/2026-04-01-github-copilot-in-visual-studio-march-update",
         "https://github.blog/changelog/2026-04-02-copilot-organization-custom-instructions-are-generally-available",
         "https://github.blog/changelog/2026-03-31-research-plan-and-code-with-copilot-cloud-agent",
-        "https://github.blog/changelog/2026-04-01-gpt-5-4-mini-is-now-available-in-copilot-education-auto-model-selection"
+        "https://github.blog/changelog/2026-04-01-gpt-5-4-mini-is-now-available-in-copilot-education-auto-model-selection",
+        "https://github.blog/changelog/2026-04-06-copilot-usage-metrics-now-identify-active-and-passive-copilot-code-review-users"
       ],
       "lastCheckedAt": "2026-04-07T02:40:13.195Z"
     },
@@ -53,6 +53,7 @@
         "https://code.visualstudio.com/updates/v1_115"
       ],
       "lastCheckedAt": "2026-04-07T02:40:13.255Z"
+      "lastCheckedAt": "2026-04-07T02:40:13.255Z"
     },
     "vscode-release-notes-1-109": {
       "snapshotHash": "795e024cf2ecc4e681a2873b1d29435c5e6ca0a1771e5ee68fb8f91f859c2bf6",
@@ -91,6 +92,7 @@
         "https://github.blog/changelog/2026-04-01-github-copilot-in-visual-studio-march-update",
         "https://github.blog/changelog/2026-04-02-github-actions-early-april-2026-updates"
       ],
+      "lastCheckedAt": "2026-04-07T02:40:13.176Z"
       "lastCheckedAt": "2026-04-07T02:40:13.176Z"
     },
     "vscode-updates": {
