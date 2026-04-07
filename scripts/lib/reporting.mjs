@@ -419,7 +419,7 @@ function summaryFromPatterns(event, locale = "ja") {
   if (/copilot cli/i.test(text)) {
     if (/agent/i.test(text)) {
       return locale === "ja"
-        ? "Copilot CLI の agent 機能に関する更新。タスクの自律実行や agentic workflow を CLI から構成する際の参考になる。"
+        ? "Copilot CLI の agent 機能に関する更新。タスクの自律実行や agent ワークフローを CLI から構成する際の参考になる。"
         : "An update about Copilot CLI agent capabilities, useful for those building agentic workflows from the terminal.";
     }
     if (/mcp/i.test(text)) {
@@ -429,7 +429,7 @@ function summaryFromPatterns(event, locale = "ja") {
     }
     if (/session/i.test(text)) {
       return locale === "ja"
-        ? "Copilot CLI のセッション管理に関する更新。長い対話や文脈を維持しながら作業する運用への影響を確認したい。"
+        ? "Copilot CLI のセッション管理に関する更新。長時間の対話や文脈保持が必要な運用への影響を確認したい。"
         : "An update about session management in Copilot CLI, worth reviewing if you work with long-running or context-heavy interactions.";
     }
     if (/model/i.test(text)) {
