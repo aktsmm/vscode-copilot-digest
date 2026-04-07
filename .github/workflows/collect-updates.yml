@@ -6,6 +6,7 @@ on:
   workflow_dispatch:
 
 permissions:
+  actions: write
   contents: write
 
 jobs:
@@ -40,6 +41,18 @@ jobs:
           git add data summaries
           git commit -m "chore: collect daily updates"
           git push
+
+      - name: Redeploy Pages after collect commit
+        uses: actions/github-script@v8
+        with:
+          script: |
+            await github.rest.actions.createWorkflowDispatch({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: 'deploy-pages.yml',
+              ref: 'main',
+            });
+            core.info('Dispatched Deploy GitHub Pages for the latest collected content.');
 
       - name: Notify Discord when new updates are found
         env:
