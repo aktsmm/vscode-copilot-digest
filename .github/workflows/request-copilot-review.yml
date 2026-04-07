@@ -40,8 +40,6 @@ jobs:
                 .join(' ');
             }
 
-            const sourceMarkerPattern = /Generated from `?data\/events\/(\d{4}-\d{2}-\d{2})\.json`?/;
-
             function resolveDateKey(pr, files) {
               const summaryFile = files
                 .map((file) => file.filename.match(/^summaries\/daily\/(\d{4}-\d{2}-\d{2})\.md$/))
@@ -50,7 +48,7 @@ jobs:
                 return summaryFile[1];
               }
 
-              const bodyMatch = (pr.body || '').match(sourceMarkerPattern);
+              const bodyMatch = (pr.body || '').match(/Generated from data\/events\/(\d{4}-\d{2}-\d{2})\.json/);
               if (bodyMatch) {
                 return bodyMatch[1];
               }
@@ -108,9 +106,9 @@ jobs:
               const expectedMarkerLine = `Generated from data/events/${dateKey}.json`;
               let nextBody = pr.body || '';
 
-              if (sourceMarkerPattern.test(nextBody)) {
+              if (/Generated from data\/events\/\d{4}-\d{2}-\d{2}\.json/.test(nextBody)) {
                 nextBody = nextBody.replace(
-                  /Generated from `?data\/events\/\d{4}-\d{2}-\d{2}\.json`?/,
+                  /Generated from data\/events\/\d{4}-\d{2}-\d{2}\.json/,
                   expectedMarkerLine,
                 );
               } else {

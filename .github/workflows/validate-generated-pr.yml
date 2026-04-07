@@ -85,7 +85,7 @@ jobs:
           const body = process.env.PR_BODY || '';
           const titlePattern = /^docs: update digest \d{4}-\d{2}-\d{2}(?: \+ drafts)?(?: \+ reporting)?$/;
           const authoringRequestTitlePattern = /^Digest authoring request: \d{4}-\d{2}-\d{2}$/;
-          const bodyPattern = /Generated from `?data\/events\/\d{4}-\d{2}-\d{2}\.json`?/;
+          const bodyPattern = /Generated from data\/events\/\d{4}-\d{2}-\d{2}\.json/;
           const isPendingNormalization = authoringRequestTitlePattern.test(title);
 
           if (!titlePattern.test(title) && !isPendingNormalization) {
@@ -133,9 +133,8 @@ jobs:
             }
 
             if (file.startsWith('drafts/')) {
-              const acceptedDraftHeadings = ['## 今回の要点', '## 今週の要点'];
-              if (!acceptedDraftHeadings.some((heading) => content.includes(heading))) {
-                console.error(`${file} is missing one of the required draft headings: ${acceptedDraftHeadings.join(', ')}`);
+              if (!content.includes('## 今回の要点')) {
+                console.error(`${file} is missing heading: ## 今回の要点`);
                 process.exit(1);
               }
             }
