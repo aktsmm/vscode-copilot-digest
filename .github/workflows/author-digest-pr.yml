@@ -161,6 +161,7 @@ jobs:
         with:
           script: |
             const marker = '<!-- copilot-author-request -->';
+            const repoSlug = `${context.repo.owner}/${context.repo.repo}`;
             const title = process.env.ISSUE_TITLE;
             const body = process.env.ISSUE_BODY;
             const labels = ['copilot', 'digest-authoring', 'auto-pr'];
@@ -170,6 +171,8 @@ jobs:
               '不確実な場合は needs-human-review を付けて停止してください。',
               '許可された変更対象以外は触らないでください。',
             ].join('\n');
+            let assignmentStatus = 'not-attempted';
+            let assignmentDetail = '';
             const issues = await github.paginate(github.rest.issues.listForRepo, {
               owner: context.repo.owner,
               repo: context.repo.repo,
@@ -248,7 +251,12 @@ jobs:
               );
 
               if (!issueId || !repositoryId || !copilotActor?.id) {
+                assignmentStatus = 'manual-required';
+                assignmentDetail = 'Copilot actor ID を取得できませんでした。';
                 core.warning('Could not resolve the Copilot actor ID for automatic issue assignment.');
+              } else if (existingAssignees.some((assignee) => copilotLogins.has(assignee.login))) {
+                assignmentStatus = 'already-assigned';
+                assignmentDetail = 'Issue にはすでに Copilot が割り当てられています。';
               } else if (!existingAssignees.some((assignee) => copilotLogins.has(assignee.login))) {
                 await github.graphql(
                   `mutation($assignableId: ID!, $actorIds: [ID!]!, $targetRepositoryId: ID!, $customInstructions: String!) {
@@ -280,8 +288,12 @@ jobs:
                     customInstructions: assignmentInstructions,
                   },
                 );
+                assignmentStatus = 'assigned';
+                assignmentDetail = 'Workflow から Copilot assignment を実行しました。';
               }
             } catch (error) {
+              assignmentStatus = 'manual-required';
+              assignmentDetail = error.message;
               core.warning(`Failed to assign the issue to Copilot via GraphQL: ${error.message}`);
             }
 
@@ -292,17 +304,37 @@ jobs:
               per_page: 100,
             });
 
-            if (!comments.some((comment) => comment.body?.includes(marker))) {
+            const commentBody = [
+              marker,
+              'Copilot への assignment を workflow から試行しました。',
+              assignmentStatus === 'assigned'
+                ? '- 自動 assignment: 成功'
+                : assignmentStatus === 'already-assigned'
+                  ? '- 自動 assignment: 既に割り当て済み'
+                  : '- 自動 assignment: 失敗。手動フォールバックを使ってください。',
+              assignmentDetail ? `- 詳細: ${assignmentDetail}` : null,
+              '- 追加の task 指示は assignment 時の agentAssignment に渡します。',
+              '- 手動フォールバック: Issue 右サイドバーの Assign to Agent を開き、この repository を選んで Assign を押してください。',
+              `- Repository selector: ${repoSlug}`,
+              '- Optional prompt は空でも構いません。必要なら issue 本文のルールをそのまま追加してください。',
+              '- 10 分以内に PR が出ない場合は、assignment 状態と Copilot cloud agent 設定を確認してください。',
+              '- このコメントは通知と監査用です。',
+            ].filter(Boolean).join('\n');
+
+            const existingMarkerComment = comments.find((comment) => comment.body?.includes(marker));
+
+            if (existingMarkerComment) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: existingMarkerComment.id,
+                body: commentBody,
+              });
+            } else {
               await github.rest.issues.createComment({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 issue_number: issueNumber,
-                body: [
-                  marker,
-                  'Copilot への assignment を workflow から試行しました。',
-                  '- 追加の task 指示は assignment 時の agentAssignment に渡します。',
-                  '- このコメントは通知と監査用です。',
-                  '- 10 分以内に PR が出ない場合は、assignment 状態と Copilot cloud agent 設定を確認してください。',
-                ].join('\n'),
+                body: commentBody,
               });
             }
