@@ -1,0 +1,53 @@
+{
+  "date": "2026-04-07",
+  "generatedAt": "2026-04-07T00:03:01.219Z",
+  "latestRun": {
+    "generatedAt": "2026-04-07T00:03:01.219Z",
+    "newEventsCount": 2,
+    "newEventIds": [
+      "github-changelog:https://github.blog/changelog/2026-04-06-copilot-usage-metrics-now-identify-active-and-passive-copilot-code-review-users",
+      "github-changelog-copilot:https://github.blog/changelog/2026-04-06-copilot-usage-metrics-now-identify-active-and-passive-copilot-code-review-users"
+    ],
+    "errorCount": 0
+  },
+  "editorialNote": null,
+  "events": [
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-04-06-copilot-usage-metrics-now-identify-active-and-passive-copilot-code-review-users",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-07T00:02:58.459Z",
+      "publishedAt": "2026-04-06T23:20:14.000Z",
+      "title": "Copilot usage metrics now identify active and passive Copilot code review users",
+      "url": "https://github.blog/changelog/2026-04-06-copilot-usage-metrics-now-identify-active-and-passive-copilot-code-review-users",
+      "summary": "Copilot usage metrics now indicate which users have Copilot code review (CCR) activity, and whether that activity was active or passive. Enterprise and organization admins can see how users engage…\nThe post Copilot usage metrics now identify active and passive Copilot code review users appeared first on The GitHub Blo...",
+      "categories": [
+        "Release",
+        "account management",
+        "copilot",
+        "enterprise management tools"
+      ],
+      "score": 5
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-04-06-copilot-usage-metrics-now-identify-active-and-passive-copilot-code-review-users",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-07T00:02:58.876Z",
+      "publishedAt": "2026-04-06T23:20:14.000Z",
+      "title": "Copilot usage metrics now identify active and passive Copilot code review users",
+      "url": "https://github.blog/changelog/2026-04-06-copilot-usage-metrics-now-identify-active-and-passive-copilot-code-review-users",
+      "summary": "Copilot usage metrics now indicate which users have Copilot code review (CCR) activity, and whether that activity was active or passive. Enterprise and organization admins can see how users engage…\nThe post Copilot usage metrics now identify active and passive Copilot code review users appeared first on The GitHub Blo...",
+      "categories": [
+        "Release",
+        "account management",
+        "copilot",
+        "enterprise management tools"
+      ],
+      "score": 5
+    }
+  ],
+  "errors": []
+}
