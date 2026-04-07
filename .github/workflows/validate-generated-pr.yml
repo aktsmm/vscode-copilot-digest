@@ -133,8 +133,9 @@ jobs:
             }
 
             if (file.startsWith('drafts/')) {
-              if (!content.includes('## 今回の要点')) {
-                console.error(`${file} is missing heading: ## 今回の要点`);
+              const acceptedDraftHeadings = ['## 今回の要点', '## 今週の要点'];
+              if (!acceptedDraftHeadings.some((heading) => content.includes(heading))) {
+                console.error(`${file} is missing one of the required draft headings: ${acceptedDraftHeadings.join(', ')}`);
                 process.exit(1);
               }
             }
