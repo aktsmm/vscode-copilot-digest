@@ -254,7 +254,7 @@ function buildText(locale) {
       "まずはハイライトで重要な更新だけを把握し、必要ならテーマ別まとめと全件リストへ降りていく構成です。",
     howToReadBody2:
       "Markdown と JSON の生データも毎日併設しているので、要約の元ネタ確認や二次利用もしやすくしています。",
-    policyTitle: "公開方針",
+    policyTitle: "",
     policyBody1:
       "GitHub / VS Code の公式ソースを優先し、未来日付の feed 項目は公開日まで除外し、周辺ニュースは量を絞ってノイズを抑えています。",
     policyBody2:
@@ -700,10 +700,16 @@ function renderIndexPage(
     (total, digest) => total + digest.uniqueEventCount,
     0,
   );
-  const latestHighlights = dailyDigests
-    .flatMap((digest) =>
-      digest.highlights.map((event) => ({ ...event, digestDate: digest.date })),
-    )
+  const latestHighlights = [
+    ...new Map(
+      dailyDigests.flatMap((digest) =>
+        digest.uniqueEvents.map((event) => [
+          event.url || event.title,
+          { ...event, digestDate: digest.date },
+        ]),
+      ),
+    ).values(),
+  ]
     .sort(
       (left, right) =>
         safeDate(right.publishedAt) - safeDate(left.publishedAt) ||
@@ -738,7 +744,7 @@ function renderIndexPage(
         <p>${escapeHtml(text.howToReadBody2)}</p>
       </article>
       <article class="content-card">
-        <div class="section-heading"><h2>${escapeHtml(text.policyTitle)}</h2><span>${escapeHtml(locale === "ja" ? "公開方針" : "Policy")}</span></div>
+        <div class="section-heading"><h2>${escapeHtml(text.policyTitle)}</h2><span>${escapeHtml(locale === "ja" ? "" : "Policy")}</span></div>
         <p>${escapeHtml(text.policyBody1)}</p>
         <p>${escapeHtml(text.policyBody2)}</p>
       </article>
