@@ -268,6 +268,14 @@ function patternTitle(title) {
       "Copilot usage metrics now identify active and passive Copilot code review users",
       "usage metrics で Copilot code review のアクティブ・パッシブ利用者を識別できるようになった",
     ],
+    [
+      "Copilot CLI now supports BYOK and local models",
+      "Copilot CLI で BYOK とローカルモデルが利用可能になった",
+    ],
+    [
+      "Dependabot alerts are now assignable to AI agents for remediation",
+      "Dependabot アラートを AI エージェントに割り当てて修正できるようになった",
+    ],
   ]);
 
   if (exactMappings.has(normalized)) {
@@ -414,6 +422,18 @@ function summaryFromPatterns(event, locale = "ja") {
     return locale === "ja"
       ? "Copilot CLI の /fleet で複数の subagent を並列実行できるようになった。大きめの作業を並列分解して進める運用に効く。"
       : "Copilot CLI can now run multiple subagents in parallel through /fleet, which is useful for breaking larger tasks into coordinated workstreams.";
+  }
+
+  if (/byok/i.test(title) || (/copilot cli/i.test(title) && /local model/i.test(title))) {
+    return locale === "ja"
+      ? "GitHub Copilot CLI で、GitHub が提供するモデルルーティングを使わずに、自前のモデルプロバイダーまたは完全ローカルのモデルを接続できるようになった。用途に応じてモデルを選べる幅が広がった。"
+      : "GitHub Copilot CLI can now connect to your own model provider or run fully local models instead of GitHub-hosted routing, giving you more control over which models power your CLI workflows.";
+  }
+
+  if (/dependabot/i.test(title) && /ai agents/i.test(title)) {
+    return locale === "ja"
+      ? "依存パッケージの脆弱性対応が単純なバージョン更新では完結しない場合に、Dependabot アラートを Copilot や Claude、Codex などの AI コーディングエージェントに割り当てて修正を依頼できるようになった。コード変更を伴う脆弱性修正の自動化につながる。"
+      : "Dependabot alerts can now be assigned to AI coding agents such as Copilot, Claude, and Codex for remediation that requires code changes beyond a simple version bump.";
   }
 
   if (/copilot cli/i.test(text)) {
