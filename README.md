@@ -175,3 +175,10 @@ node scripts/notify-discord.mjs --date 2026-04-06 --window-days 5 --cadence-days
 - X 自動投稿は技術的には可能ですが、2026 年時点では課金と認証管理のコストが高いため、この構成には含めていません。
 - 通知追加先としては Bluesky、Mastodon、Slack のほうが現実的です。
 - 設計メモは [docs/architecture.md](docs/architecture.md) にあります。
+
+## ライセンス
+
+- このリポジトリのサイト本文、README、docs、日次要約、drafts、生成済み Pages は [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) が基本です。
+- ただし Microsoft Corporation とその関連会社には、対象コンテンツについて商用利用を含む追加許諾を与えます。
+- 詳細な適用範囲は [LICENSE](LICENSE) を参照してください。
+- GitHub、GitHub Copilot、Visual Studio Code などの名称やロゴは各権利者に帰属します。

@@ -123,6 +123,8 @@ function buildText(locale) {
         "An unofficial daily digest of GitHub Copilot and VS Code updates.",
       footer:
         "An unofficial daily digest of GitHub Copilot and VS Code updates.",
+      licenseNotice: "Site content and generated Pages",
+      licenseName: "CC BY-NC-SA 4.0 + Microsoft commercial-use exception",
       dailyNav: "Daily",
       weeklyNav: "Weekly",
       repositoryNav: "Repository",
@@ -132,7 +134,7 @@ function buildText(locale) {
       heroTitle:
         "Track GitHub Copilot and VS Code updates in a format you can actually read.",
       heroCopy:
-        "GitHub Actions collects GitHub Changelog, VS Code updates, and complementary sources every day, then GitHub Copilot cloud agent workflows help keep deduplicated highlights and raw Markdown and JSON continuously published.",
+        "GitHub Actions collects GitHub Changelog, VS Code updates, and complementary sources every day, then publishes deduplicated highlights and raw Markdown/JSON. Start with highlights, then drop into topic sections, the full list, or /en/ when you need more detail.",
       publishedCount: "Published daily digests",
       publishedCountDetail: "Number of daily digests on Pages",
       overallCount: "Tracked updates",
@@ -237,6 +239,8 @@ function buildText(locale) {
       "GitHub Copilot と VS Code の更新を日次で集約した非公式ダイジェストです。",
     footer:
       "GitHub Copilot / VS Code 周辺の更新を日次で集約した非公式ダイジェストです。",
+    licenseNotice: "サイト本文と生成済み Pages",
+    licenseName: "CC BY-NC-SA 4.0 + Microsoft 商用利用特例",
     dailyNav: "日次ダイジェスト",
     weeklyNav: "週間ダイジェスト",
     repositoryNav: "Repository",
@@ -245,7 +249,7 @@ function buildText(locale) {
     lastUpdatedLabel: "最終更新",
     heroTitle: "GitHub Copilot と VS Code の更新を、毎日読む。",
     heroCopy:
-      "GitHub Actions が GitHub Changelog、VS Code Updates、補完ソースを毎日収集し、GitHub Copilot cloud agent と検証 workflow が回せる形で、重複を除いたハイライトと元データを継続公開します。",
+      "GitHub Actions が GitHub Changelog、VS Code Updates、補完ソースを毎日収集し、重複を除いたハイライトと Markdown/JSON の元データを継続公開します。まずはハイライトを見て、必要ならテーマ別まとめ・全件リスト・/en/ に進めます。",
     publishedCount: "公開済み日次",
     publishedCountDetail: "Pages に載っている日次ダイジェスト数",
     overallCount: "累計更新件数",
@@ -757,19 +761,6 @@ function renderIndexPage(
       </div>
     </section>
 
-    <section class="section-block overview-grid">
-      <article class="content-card">
-        <div class="section-heading"><h2>${escapeHtml(text.howToReadTitle)}</h2><span>${escapeHtml(locale === "ja" ? "導線" : "Flow")}</span></div>
-        <p>${escapeHtml(text.howToReadBody1)}</p>
-        <p>${escapeHtml(text.howToReadBody2)}</p>
-      </article>
-      <article class="content-card">
-        <div class="section-heading"><h2>${escapeHtml(text.policyTitle)}</h2><span>${escapeHtml(locale === "ja" ? "" : "Policy")}</span></div>
-        <p>${escapeHtml(text.policyBody1)}</p>
-        <p>${escapeHtml(text.policyBody2)}</p>
-      </article>
-    </section>
-
     <section class="section-block">
       <div class="section-heading"><h2>${escapeHtml(text.latestHighlightsTitle)}</h2><span>${escapeHtml(locale === "ja" ? `${latestHighlights.length}${text.latestHighlightsCountSuffix}` : `${latestHighlights.length}${text.latestHighlightsCountSuffix}`)}</span></div>
       <div class="highlight-grid latest-highlights-grid">${latestHighlights.map((event) => renderEventCard(event, locale, text, { compact: true, includeWhy: false })).join("")}</div>
@@ -862,6 +853,7 @@ function renderLayout({
       </button>
       <footer class="site-footer">
         <p>${escapeHtml(text.footer)}</p>
+        <p class="site-license">${escapeHtml(text.licenseNotice)}: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license noopener" target="_blank">${escapeHtml(text.licenseName)}</a></p>
         <div class="share-links">
           <span class="share-label">${escapeHtml(locale === "ja" ? "共有" : "Share")}:</span>
           <a class="share-btn share-x" data-share="x" href="#" aria-label="Share on X" title="X (Twitter)">
@@ -1223,6 +1215,9 @@ h1 { margin: 0 0 16px; font-size: clamp(2.3rem, 4vw, 4.2rem); line-height: 1.04;
 .digest-card-head { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
 .empty-state, .empty-card p { color: var(--muted); }
 .site-footer { margin-top: 32px; padding: 20px; display: flex; flex-direction: column; align-items: center; gap: 12px; color: var(--muted); }
+.site-license { margin: 0; }
+.site-footer a { color: inherit; }
+.site-footer a:hover { color: var(--accent); }
 .share-links { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
 .share-label { font-size: 0.85rem; font-weight: 500; }
 .share-btn {
