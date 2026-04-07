@@ -1,11 +1,11 @@
 {
   "date": "2026-04-07",
-  "generatedAt": "2026-04-07T05:58:18.830Z",
+  "generatedAt": "2026-04-07T06:15:09.541Z",
   "latestRun": {
-    "generatedAt": "2026-04-07T05:58:18.830Z",
+    "generatedAt": "2026-04-07T06:15:09.541Z",
     "newEventsCount": 0,
     "newEventIds": [],
-    "errorCount": 1
+    "errorCount": 0
   },
   "editorialNote": null,
   "events": [
@@ -46,10 +46,5 @@
       "score": 5
     }
   ],
-  "errors": [
-    {
-      "sourceId": "copilot-whats-new",
-      "message": "fetch failed"
-    }
-  ]
+  "errors": []
 }
