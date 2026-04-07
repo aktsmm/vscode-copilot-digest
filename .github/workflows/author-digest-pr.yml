@@ -352,11 +352,13 @@ jobs:
         uses: actions/github-script@v8
         env:
           DATE_KEY: ${{ steps.target.outputs.date_key }}
+          PR_TITLE_RULE: ${{ steps.target.outputs.pr_title_rule }}
           ISSUE_NUMBER: ${{ steps.create_or_update_authoring_issue.outputs.issue_number }}
         with:
           github-token: ${{ secrets.COPILOT_ASSIGN_TOKEN }}
           script: |
             const dateKey = process.env.DATE_KEY;
+            const prTitleRule = process.env.PR_TITLE_RULE;
             const issueNumber = Number(process.env.ISSUE_NUMBER || '0');
             const workflowNames = [
               'Request Copilot review',
@@ -366,6 +368,7 @@ jobs:
             const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
             const cutoff = Date.now() - 60 * 60 * 1000;
             const maxAttempts = 3;
+            const sourceMarker = `Generated from data/events/${dateKey}.json`;
 
             const workflows = await github.paginate(github.rest.actions.listRepoWorkflows, {
               owner: context.repo.owner,
@@ -407,8 +410,33 @@ jobs:
                 repo: context.repo.repo,
                 pull_number: pr.number,
               });
+              let livePr = currentPr.data;
 
-              if (currentPr.data.state !== 'open') {
+              const normalizedTitle = /^docs: update digest \d{4}-\d{2}-\d{2}(?: \+ drafts)?(?: \+ reporting)?$/.test(livePr.title || '')
+                ? livePr.title
+                : prTitleRule;
+              const normalizedBody = String(livePr.body || '').includes(sourceMarker)
+                ? String(livePr.body || '')
+                : `${sourceMarker}\n\n${String(livePr.body || '').trim()}`.trim();
+
+              if (normalizedTitle !== livePr.title || normalizedBody !== String(livePr.body || '')) {
+                await github.rest.pulls.update({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  pull_number: pr.number,
+                  title: normalizedTitle,
+                  body: normalizedBody,
+                });
+                core.info(`Attempt ${attempt}: normalized PR #${pr.number} metadata.`);
+                const refreshedPr = await github.rest.pulls.get({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  pull_number: pr.number,
+                });
+                livePr = refreshedPr.data;
+              }
+
+              if (livePr.state !== 'open') {
                 core.info(`PR #${pr.number} is already closed.`);
                 return;
               }
@@ -425,13 +453,13 @@ jobs:
                 for (const run of runs) {
                   const createdAt = Date.parse(run.created_at || 0);
                   const isRecent = Number.isFinite(createdAt) && createdAt >= cutoff;
-                  const isBlocked = run.conclusion === 'action_required';
+                  const isRetryable = run.conclusion === 'action_required' || run.conclusion === 'failure';
                   const canRetry = Number(run.run_attempt ?? 0) < maxAttempts;
                   const isTargetPr = (run.pull_requests || []).some((pullRef) => pullRef.number === pr.number);
                   const actorLogin = run.actor?.login || run.triggering_actor?.login || '';
                   const isCopilotActor = /copilot/i.test(actorLogin);
 
-                  if (!isRecent || !isBlocked || !canRetry || !isTargetPr || !isCopilotActor) {
+                  if (!isRecent || !isRetryable || !canRetry || !isTargetPr || !isCopilotActor) {
                     continue;
                   }
 
