@@ -417,8 +417,38 @@ function summaryFromPatterns(event, locale = "ja") {
   }
 
   if (/copilot cli/i.test(text)) {
+    if (/agent/i.test(text)) {
+      return locale === "ja"
+        ? "Copilot CLI の agent 機能に関する更新。タスクの自律実行や agentic workflow を CLI から構成する際の参考になる。"
+        : "An update about Copilot CLI agent capabilities, useful for those building agentic workflows from the terminal.";
+    }
+    if (/mcp/i.test(text)) {
+      return locale === "ja"
+        ? "Copilot CLI への MCP 統合に関する更新。外部ツールやサービスを CLI 経由で接続するパターンが変わる可能性がある。"
+        : "An update covering MCP integration for Copilot CLI, which may affect how external tools and services connect to CLI workflows.";
+    }
+    if (/session/i.test(text)) {
+      return locale === "ja"
+        ? "Copilot CLI のセッション管理に関する更新。長い対話や文脈を維持しながら作業する運用への影響を確認したい。"
+        : "An update about session management in Copilot CLI, worth reviewing if you work with long-running or context-heavy interactions.";
+    }
+    if (/model/i.test(text)) {
+      return locale === "ja"
+        ? "Copilot CLI でのモデル選択や切り替えに関する更新。用途に合わせたモデルの使い分けが変わる可能性がある。"
+        : "An update about model selection or switching in Copilot CLI, which may change how you choose models for different tasks.";
+    }
+    if (/install|setup|upgrade/i.test(text)) {
+      return locale === "ja"
+        ? "Copilot CLI のインストールやセットアップに関する更新。導入手順やアップグレードパスに影響がある場合は確認したい。"
+        : "An update about installing or setting up Copilot CLI, worth checking if you are onboarding or upgrading.";
+    }
+    if (/command/i.test(text)) {
+      return locale === "ja"
+        ? "Copilot CLI のコマンドや操作体系に関する更新。ターミナルでの日常的な使い方に影響する変更を押さえておきたい。"
+        : "An update about Copilot CLI commands and usage patterns, worth reviewing for day-to-day terminal workflows.";
+    }
     return locale === "ja"
-      ? "GitHub Copilot CLI の使い方や新機能に関する更新。ターミナル中心の運用を強化したいときの参考になる。"
+      ? "GitHub Copilot CLI の更新。CLI を活用しているチームはターミナル操作や自動化フローへの影響を確認しておきたい。"
       : "An update about GitHub Copilot CLI capabilities and workflows for terminal-heavy usage.";
   }
 
