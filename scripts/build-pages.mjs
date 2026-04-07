@@ -153,6 +153,7 @@ function buildText(locale) {
         "The site is bilingual. Japanese is the default and matching English pages are generated under /en/.",
       latestHighlightsTitle: "Latest highlights",
       latestHighlightsLabel: "Cross-day view",
+      latestHighlightsCountSuffix: " items shown",
       weeklyArchiveTitle: "Weekly digest",
       weeklyArchiveLabel: "Rolling 7-day windows",
       weeklyEmpty: "Weekly digests will appear as more daily logs accumulate.",
@@ -259,7 +260,8 @@ function buildText(locale) {
     policyBody2:
       "サイトは日本語を既定にしつつ、同じ内容の英語ページを /en/ 配下にも生成します。",
     latestHighlightsTitle: "最新ハイライト",
-    latestHighlightsLabel: "横断表示",
+    latestHighlightsLabel: "最新6件",
+    latestHighlightsCountSuffix: "件表示",
     weeklyArchiveTitle: "週間ダイジェスト",
     weeklyArchiveLabel: "直近 7 日単位",
     weeklyEmpty: "日次ログが増えると週間ダイジェストもここに並びます。",
@@ -743,8 +745,8 @@ function renderIndexPage(
     </section>
 
     <section class="section-block">
-      <div class="section-heading"><h2>${escapeHtml(text.latestHighlightsTitle)}</h2><span>${escapeHtml(text.latestHighlightsLabel)}</span></div>
-      <div class="highlight-grid">${latestHighlights.map((event) => renderEventCard(event, locale, text, { compact: true, includeWhy: false })).join("")}</div>
+      <div class="section-heading"><h2>${escapeHtml(text.latestHighlightsTitle)}</h2><span>${escapeHtml(locale === "ja" ? `${latestHighlights.length}${text.latestHighlightsCountSuffix}` : `${latestHighlights.length}${text.latestHighlightsCountSuffix}`)}</span></div>
+      <div class="highlight-grid latest-highlights-grid">${latestHighlights.map((event) => renderEventCard(event, locale, text, { compact: true, includeWhy: false })).join("")}</div>
     </section>
 
     <section class="section-block" id="weekly-archive">
@@ -1107,6 +1109,7 @@ h1 { margin: 0 0 16px; font-size: clamp(2.3rem, 4vw, 4.2rem); line-height: 1.04;
 .overview-grid, .highlight-grid, .digest-grid, .update-list { display: grid; gap: 16px; }
 .overview-grid { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
 .highlight-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+.latest-highlights-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .digest-grid { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
 .update-list { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
 .page-grid {
@@ -1233,6 +1236,7 @@ h1 { margin: 0 0 16px; font-size: clamp(2.3rem, 4vw, 4.2rem); line-height: 1.04;
 @media (max-width: 960px) {
   .hero, .page-grid { grid-template-columns: 1fr; }
 }
+  .latest-highlights-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 @media (max-width: 720px) {
   .page-shell { padding: 16px; }
   .site-header { padding: 14px 16px; align-items: flex-start; flex-direction: column; }
