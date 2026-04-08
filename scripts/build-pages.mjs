@@ -6,6 +6,7 @@ import {
   buildDailyDigest,
   buildHighlightTags,
   classifyEvent,
+  eventKey,
   dedupeEvents,
   importanceReason,
   localizedImportanceLabel,
@@ -122,9 +123,10 @@ function buildText(locale) {
       siteLead:
         "An unofficial daily digest of GitHub Copilot and VS Code updates.",
       footerLabel: "Copyright (c) 2026",
+      licenseNotice: "Site content and generated Pages",
+      licenseName: "CC BY-NC-SA 4.0 + Microsoft commercial-use exception",
       dailyNav: "Daily",
       weeklyNav: "Weekly",
-      tagNav: "Tags",
       repositoryNav: "Repository",
       langSwitchLabel: "日本語",
       heroEyebrow: "GitHub Pages",
@@ -154,26 +156,10 @@ function buildText(locale) {
       latestHighlightsTitle: "Latest highlights",
       latestHighlightsLabel: "Cross-day view",
       latestHighlightsCountSuffix: " items shown",
-      latestHighlightsMore: "View all from this source",
-      latestHighlightsEmpty:
-        "No recent highlights are available for the selected source.",
       weeklyArchiveTitle: "Weekly digest",
       weeklyArchiveLabel: "Rolling 7-day windows",
       weeklyEmpty: "Weekly digests will appear as more daily logs accumulate.",
       dailyArchiveTitle: "Daily archive",
-      sourcePageLink: "Browse by source",
-      sourcePageEyebrow: "Source archive",
-      sourcePageTitle: "Browse updates by source.",
-      sourcePageCopy:
-        "Use this page when the latest highlight cards are not enough and you want the full published list grouped by source family.",
-      sourceJumpTitle: "Sources",
-      sourceCountMetric: "Sources",
-      sourceCountMetricDetail:
-        "Distinct source groups represented on this page",
-      sourceUpdatesMetric: "Listed updates",
-      sourceUpdatesMetricDetail: "Published updates grouped on this page",
-      sourceTopMetric: "Top source",
-      sourceTopMetricDetail: "Source group with the most updates",
       dayCountSuffix: " days",
       dayPageEyebrow: "Daily digest",
       weekPageEyebrow: "Weekly digest",
@@ -182,25 +168,9 @@ function buildText(locale) {
       sourceBreakdownTitle: "Source breakdown",
       sourceBreakdownLabel: "Before dedupe",
       fullListTitle: "Full update list",
-      tagsPageEyebrow: "Tag archive",
-      tagsPageTitle: "Browse updates by tag.",
-      tagsPageCopy:
-        "Use the tag cloud to jump into recurring themes, then open a filtered digest view or inspect representative updates for each tag.",
-      tagCloudTitle: "Tag cloud",
-      tagArchiveTitle: "Tag archive",
-      totalTagsMetric: "Tags",
-      totalTagsMetricDetail: "Distinct tags across published digests",
-      taggedUpdatesMetric: "Tagged updates",
-      taggedUpdatesMetricDetail:
-        "Published updates represented in the tag archive",
-      topTagMetric: "Top tag",
-      topTagMetricDetail: "Most frequent tag across published digests",
-      tagOpenLabel: "Open filtered digest",
-      tagSamplesLabel: "Recent tagged items",
       rawMarkdown: "Open Markdown",
       rawJson: "Open JSON",
       noItems: "No updates were recorded in this category.",
-      emptyDayCopy: "No published updates were recorded for this day.",
       noteTitle: "Editorial notes",
       futureTitle: "Future-dated items",
       futureDescription:
@@ -229,7 +199,6 @@ function buildText(locale) {
       filterReset: "Clear",
       filterSourceLabel: "Source",
       filterTopicLabel: "Topic",
-      filterTagLabel: "Tags",
       itemSuffix: " items",
       sourceGroupNames: {
         github: "GitHub official",
@@ -269,9 +238,10 @@ function buildText(locale) {
     siteLead:
       "GitHub Copilot と VS Code の更新を日次で集約した非公式ダイジェストです。",
     footerLabel: "Copyright (c) 2026",
+    licenseNotice: "Site content and generated Pages",
+    licenseName: "CC BY-NC-SA 4.0 + Microsoft commercial-use exception",
     dailyNav: "日次ダイジェスト",
     weeklyNav: "週間ダイジェスト",
-    tagNav: "タグ一覧",
     repositoryNav: "Repository",
     langSwitchLabel: "EN",
     heroEyebrow: "GitHub Pages",
@@ -300,24 +270,10 @@ function buildText(locale) {
     latestHighlightsTitle: "最新ハイライト",
     latestHighlightsLabel: "最新6件",
     latestHighlightsCountSuffix: "件表示",
-    latestHighlightsMore: "このソースを全部見る",
-    latestHighlightsEmpty: "選択中ソースの直近ハイライトはありません。",
     weeklyArchiveTitle: "週間ダイジェスト",
     weeklyArchiveLabel: "直近 7 日単位",
     weeklyEmpty: "日次ログが増えると週間ダイジェストもここに並びます。",
     dailyArchiveTitle: "日次アーカイブ",
-    sourcePageLink: "ソース別一覧",
-    sourcePageEyebrow: "ソース別一覧",
-    sourcePageTitle: "ソース別に更新をたどる。",
-    sourcePageCopy:
-      "GitHub 公式、VS Code 公式、GitHub Platform、その他の単位で、公開済み更新をまとめて見られるページです。最新ハイライトで足りないときの全件確認に使えます。",
-    sourceJumpTitle: "ソース別ショートカット",
-    sourceCountMetric: "ソース群数",
-    sourceCountMetricDetail: "このページに出てくるソース分類数",
-    sourceUpdatesMetric: "掲載更新数",
-    sourceUpdatesMetricDetail: "ソース別に並べた公開済み更新数",
-    sourceTopMetric: "最多ソース",
-    sourceTopMetricDetail: "公開済み更新が最も多いソース分類",
     dayCountSuffix: "日分",
     dayPageEyebrow: "日次ダイジェスト",
     weekPageEyebrow: "週間ダイジェスト",
@@ -326,24 +282,9 @@ function buildText(locale) {
     sourceBreakdownTitle: "ソース内訳",
     sourceBreakdownLabel: "重複除去前",
     fullListTitle: "全件リスト",
-    tagsPageEyebrow: "タグ一覧",
-    tagsPageTitle: "タグから更新をたどる。",
-    tagsPageCopy:
-      "よく出るテーマをタグ単位でまとめて見られるページです。タグを押すとフィルター済みのダイジェストに飛べて、各タグの代表的な更新も確認できます。",
-    tagCloudTitle: "タグクラウド",
-    tagArchiveTitle: "タグ別アーカイブ",
-    totalTagsMetric: "タグ数",
-    totalTagsMetricDetail: "公開済みダイジェスト内のユニークタグ数",
-    taggedUpdatesMetric: "タグ付き更新",
-    taggedUpdatesMetricDetail: "タグ一覧に載る公開済み更新数",
-    topTagMetric: "最多タグ",
-    topTagMetricDetail: "公開済みダイジェストで最も多いタグ",
-    tagOpenLabel: "このタグで見る",
-    tagSamplesLabel: "このタグの主な更新",
     rawMarkdown: "Markdown を開く",
     rawJson: "JSON を開く",
     noItems: "このカテゴリの更新はありませんでした。",
-    emptyDayCopy: "この日の公開済み更新はありませんでした。",
     noteTitle: "注記",
     futureTitle: "先行検知した未来日付の項目",
     futureDescription:
@@ -372,7 +313,6 @@ function buildText(locale) {
     filterReset: "クリア",
     filterSourceLabel: "ソース",
     filterTopicLabel: "テーマ",
-    filterTagLabel: "タグ",
     itemSuffix: "件",
     sourceGroupNames: {
       github: "GitHub 公式",
@@ -418,13 +358,11 @@ function renderSourceBadge(event, text) {
   return `<span class="pill source-badge source-badge--${escapeHtml(group)}"><span class="source-badge-mark">${escapeHtml(meta.short)}</span><span>${escapeHtml(meta.label)}</span></span>`;
 }
 
-function renderBadges(
-  event,
-  locale,
-  text,
-  tags = buildHighlightTags(event, locale),
-) {
-  return `<div class="badge-row">${renderSourceBadge(event, text)}${event.isFutureDated ? `<span class="pill pill-warning">${escapeHtml(text.futureBadge)}</span>` : ""}${tags
+function renderBadges(event, locale, text) {
+  return `<div class="badge-row">${renderSourceBadge(event, text)}${event.isFutureDated ? `<span class="pill pill-warning">${escapeHtml(text.futureBadge)}</span>` : ""}${buildHighlightTags(
+    event,
+    locale,
+  )
     .map((tag) => `<span class="pill">${escapeHtml(tag)}</span>`)
     .join("")}</div>`;
 }
@@ -435,40 +373,6 @@ function renderDateMeta(event, locale, text) {
 
 function renderSourceMeta(event, locale, text) {
   return `<div class="meta-row source-meta"><span>${escapeHtml(text.sourceLabel)}:</span><span class="source-meta-value">${renderSourceBadge(event, text)}<span class="source-name-list">${escapeHtml((event.sourceNames ?? [event.sourceName]).join(" / "))}</span></span></div>`;
-}
-
-function buildTagCloud(events, locale) {
-  const tagCounts = new Map();
-
-  for (const event of events ?? []) {
-    for (const tag of buildHighlightTags(event, locale)) {
-      tagCounts.set(tag, (tagCounts.get(tag) ?? 0) + 1);
-    }
-  }
-
-  const maxCount = Math.max(0, ...tagCounts.values());
-
-  return [...tagCounts.entries()]
-    .map(([value, count]) => {
-      const ratio = maxCount > 0 ? count / maxCount : 0;
-      const weightClass =
-        ratio >= 0.8
-          ? "filter-chip--tag-3"
-          : ratio >= 0.5
-            ? "filter-chip--tag-2"
-            : "filter-chip--tag-1";
-
-      return {
-        value,
-        label: `#${value}`,
-        count,
-        weightClass,
-      };
-    })
-    .sort(
-      (left, right) =>
-        right.count - left.count || left.value.localeCompare(right.value, "ja"),
-    );
 }
 
 function buildPublishedEventEntries(dailyDigests, options = {}) {
@@ -482,7 +386,7 @@ function buildPublishedEventEntries(dailyDigests, options = {}) {
       : digest.uniqueEvents;
 
     for (const event of events) {
-      const key = event.url || event.title || event.eventId;
+      const key = eventKey(event);
       if (seen.has(key)) {
         continue;
       }
@@ -514,88 +418,8 @@ function buildSourceHighlightGroups(dailyDigests) {
     .filter((entry) => entry.events.length > 0);
 }
 
-function buildSourceArchive(events) {
-  const sourceMap = new Map(sourceGroupOrder.map((group) => [group, []]));
-
-  for (const event of events ?? []) {
-    sourceMap.get(sourceGroup(event))?.push(event);
-  }
-
-  return sourceGroupOrder
-    .map((group) => ({
-      group,
-      events: sourceMap.get(group) ?? [],
-      count: (sourceMap.get(group) ?? []).length,
-    }))
-    .filter((entry) => entry.count > 0);
-}
-
-function createSourceAnchorId(group) {
-  return `source-${group}`;
-}
-
-function buildTagArchive(events, locale) {
-  const tagMap = new Map();
-
-  for (const event of events ?? []) {
-    for (const tag of buildHighlightTags(event, locale)) {
-      if (!tagMap.has(tag)) {
-        tagMap.set(tag, []);
-      }
-
-      tagMap.get(tag).push(event);
-    }
-  }
-
-  const maxCount = Math.max(
-    0,
-    ...[...tagMap.values()].map((items) => items.length),
-  );
-
-  return [...tagMap.entries()]
-    .map(([value, items]) => {
-      const count = items.length;
-      const ratio = maxCount > 0 ? count / maxCount : 0;
-      const weightClass =
-        ratio >= 0.8
-          ? "filter-chip--tag-3"
-          : ratio >= 0.5
-            ? "filter-chip--tag-2"
-            : "filter-chip--tag-1";
-
-      return {
-        value,
-        label: `#${value}`,
-        count,
-        weightClass,
-        events: items.slice(0, 4),
-      };
-    })
-    .sort(
-      (left, right) =>
-        right.count - left.count || left.value.localeCompare(right.value, "ja"),
-    );
-}
-
 function renderFilterChip(kind, value, label, extraClass = "") {
   return `<button type="button" class="filter-chip ${extraClass}" data-filter-kind="${escapeHtml(kind)}" data-filter-value="${escapeHtml(value)}" aria-pressed="false">${escapeHtml(label)}</button>`;
-}
-
-function renderTagFilterChip(tag) {
-  return `<button type="button" class="filter-chip filter-chip--tag ${escapeHtml(tag.weightClass)}" data-filter-kind="tag" data-filter-value="${escapeHtml(tag.value)}" aria-pressed="false">${escapeHtml(tag.label)}<span class="filter-chip-count">${escapeHtml(String(tag.count))}</span></button>`;
-}
-
-function renderTagArchiveChip(tag, href) {
-  return `<a class="filter-chip filter-chip--tag ${escapeHtml(tag.weightClass)} tag-cloud-link" href="${escapeHtml(href)}">${escapeHtml(tag.label)}<span class="filter-chip-count">${escapeHtml(String(tag.count))}</span></a>`;
-}
-
-function renderSourceArchiveChip(group, text, count, href) {
-  const meta = sourceGroupMeta(group, text);
-  return `<a class="filter-chip ${escapeHtml(`source-badge--${group}`)} tag-cloud-link" href="${escapeHtml(href)}">${escapeHtml(meta.tag)}<span class="filter-chip-count">${escapeHtml(String(count))}</span></a>`;
-}
-
-function createTagAnchorId(tagValue) {
-  return `tag-${encodeURIComponent(tagValue)}`;
 }
 
 function renderFilterBar(text) {
@@ -615,6 +439,18 @@ function renderFilterBar(text) {
           )
           .join("")}</div>
       </div>
+      <div class="filter-row">
+        <span class="filter-label">${escapeHtml(text.filterTopicLabel)}</span>
+        <div class="filter-chip-row">${topicOrder
+          .map((topic) =>
+            renderFilterChip(
+              "topic",
+              topic,
+              text.topicFilterTags[topic] ?? topic,
+            ),
+          )
+          .join("")}</div>
+      </div>
     </div>
   </section>`;
 }
@@ -624,7 +460,6 @@ function renderEventCard(event, locale, text, options = {}) {
   const summaryMaxLength = options.compact ? 170 : 260;
   const group = sourceGroup(event);
   const topic = classifyEvent(event);
-  const tags = buildHighlightTags(event, locale);
   const why = options.includeWhy
     ? `<p class="why-it-matters"><strong>${escapeHtml(text.whyLabel)}:</strong> ${escapeHtml(importanceReason(event, locale))}</p>`
     : "";
@@ -634,8 +469,8 @@ function renderEventCard(event, locale, text, options = {}) {
     event.url && !event.url.startsWith("./") && !event.url.startsWith("../");
   const linkAttrs = isExternal ? ` target="_blank" rel="noopener"` : "";
 
-  return `<article class="${cardClass}" data-filter-card data-source-group="${escapeHtml(group)}" data-topic="${escapeHtml(topic)}" data-tags="${escapeHtml(tags.map((tag) => encodeURIComponent(tag)).join(","))}">
-    ${renderBadges(event, locale, text, tags)}
+  return `<article class="${cardClass}" data-filter-card data-source-group="${escapeHtml(group)}" data-topic="${escapeHtml(topic)}">
+    ${renderBadges(event, locale, text)}
     <h3><a href="${escapeHtml(event.url)}"${linkAttrs}>${escapeHtml(localizedTitle(event, locale))}${isExternal ? ' <span class="ext-icon" aria-hidden="true">&#8599;</span>' : ""}</a></h3>
     ${rawTitle ? `<p class="original-title">${escapeHtml(text.originalTitleLabel)}: ${escapeHtml(rawTitle)}</p>` : ""}
     ${renderDateMeta(event, locale, text)}
@@ -645,48 +480,17 @@ function renderEventCard(event, locale, text, options = {}) {
   </article>`;
 }
 
-function renderTagArchiveCard(tag, locale, text, options) {
-  const anchorId = createTagAnchorId(tag.value);
-  const items = tag.events
-    .map(
-      (event) =>
-        `<li><a href="${escapeHtml(event.url)}">${escapeHtml(trimText(localizedTitle(event, locale), 88))}</a><span>${escapeHtml(event.digestDate ?? "")}</span></li>`,
-    )
-    .join("");
-
-  return `<article class="content-card tag-card" id="${escapeHtml(anchorId)}">
-    <div class="tag-card-head">
-      ${renderTagArchiveChip(tag, `#${anchorId}`)}
-    </div>
-    <p class="tag-card-meta">${escapeHtml(text.tagSamplesLabel)}</p>
-    <ul class="topic-list tag-card-list">${items}</ul>
-  </article>`;
-}
-
-function renderSourceHighlightPanel(entry, locale, text, sourceHref) {
-  const meta = sourceGroupMeta(entry.group, text);
+function renderSourceHighlightPanel(entry, locale, text) {
   const itemCount =
     locale === "ja"
       ? `${entry.events.length}${text.itemSuffix}`
       : formatCount(entry.events.length, locale, "item", "items");
+  const topicName = sourceGroupMeta(entry.group, text).label;
 
   return `<div class="source-highlight-panel is-hidden" data-highlight-source-section="${escapeHtml(entry.group)}" data-highlight-count="${escapeHtml(String(entry.events.length))}">
-    <div class="section-heading section-heading--sub"><h3>${escapeHtml(meta.label)}</h3><div class="section-actions"><span>${escapeHtml(itemCount)}</span><a class="section-link" href="${escapeHtml(`${sourceHref}#${createSourceAnchorId(entry.group)}`)}">${escapeHtml(text.latestHighlightsMore)}</a></div></div>
+    <div class="section-heading section-heading--sub"><h3>${escapeHtml(topicName)}</h3><span>${escapeHtml(itemCount)}</span></div>
     <div class="highlight-grid latest-highlights-grid">${entry.events.map((event) => renderEventCard(event, locale, text, { compact: true, includeWhy: false })).join("")}</div>
   </div>`;
-}
-
-function renderSourceArchiveSection(entry, locale, text) {
-  const meta = sourceGroupMeta(entry.group, text);
-  const itemCount =
-    locale === "ja"
-      ? `${entry.count}${text.itemSuffix}`
-      : formatCount(entry.count, locale, "item", "items");
-
-  return `<section class="section-block source-archive-section" id="${escapeHtml(createSourceAnchorId(entry.group))}">
-    <div class="section-heading"><h2>${escapeHtml(meta.label)}</h2><span>${escapeHtml(itemCount)}</span></div>
-    <div class="update-list">${entry.events.map((event) => renderEventCard(event, locale, text, { includeWhy: false })).join("")}</div>
-  </section>`;
 }
 
 function renderTopicSection(topic, locale, text) {
@@ -759,12 +563,6 @@ function buildRangeDigest(logs, range) {
   for (const event of uniqueEvents) {
     topicMap.get(classifyEvent(event)).push(event);
   }
-  const sourceGroups = [
-    ...new Set(uniqueEvents.map((event) => sourceGroup(event)).filter(Boolean)),
-  ].sort(
-    (left, right) =>
-      sourceGroupOrder.indexOf(left) - sourceGroupOrder.indexOf(right),
-  );
 
   const editorialNotes = [
     ...new Set(
@@ -785,7 +583,6 @@ function buildRangeDigest(logs, range) {
     endDate: toDateOnly(endDate),
     editorialNotes,
     uniqueEventCount: uniqueEvents.length,
-    sourceGroups,
     sourceBreakdown: [...sourceBreakdown.entries()]
       .map(([name, keys]) => ({ name, count: keys.size }))
       .sort(
@@ -844,18 +641,16 @@ function renderArchiveCard(digest, locale, text, href, kind) {
       ? `${digest.startDate} - ${digest.endDate}`
       : `${digest.date}`;
   const topItems = digest.highlights.slice(0, 3);
-  const isEmptyDigest = digest.uniqueEventCount === 0;
   const itemCount =
     locale === "ja"
       ? `${digest.uniqueEventCount}${escapeHtml(text.itemSuffix)}`
       : formatCount(digest.uniqueEventCount, locale, "item", "items");
-  const sourceGroups = (digest.sourceGroups ?? []).join(",");
 
-  return `<article class="digest-card" data-filter-card data-source-groups="${escapeHtml(sourceGroups)}">
-    <div class="digest-card-head"><p>${escapeHtml(rangeLabel)}</p>${isEmptyDigest ? "" : `<span>${itemCount}</span>`}</div>
+  return `<article class="digest-card">
+    <div class="digest-card-head"><p>${escapeHtml(rangeLabel)}</p><span>${itemCount}</span></div>
     <h3><a href="${escapeHtml(href)}">${escapeHtml(title)}</a></h3>
-    ${isEmptyDigest ? "" : `<p>${escapeHtml(trimText(localizedSummary(topItems[0], locale), 150))}</p>`}
-    ${isEmptyDigest ? "" : `<ul>${topItems.map((event) => `<li>${escapeHtml(trimText(localizedTitle(event, locale), 84))}</li>`).join("")}</ul>`}
+    <p>${escapeHtml(trimText(localizedSummary(topItems[0] ?? { summary: locale === "ja" ? "更新はありませんでした。" : "No updates were found." }, locale), 150))}</p>
+    <ul>${topItems.map((event) => `<li>${escapeHtml(trimText(localizedTitle(event, locale), 84))}</li>`).join("")}</ul>
   </article>`;
 }
 
@@ -864,12 +659,6 @@ function renderRangePage(digest, locale, text, options) {
     locale === "ja"
       ? `${count}${text.itemSuffix}`
       : formatCount(count, locale, "item", "items");
-  const futureEvents = digest.futureEvents ?? [];
-  const shouldUseEmptyDayLayout =
-    options.kind === "day" &&
-    digest.uniqueEventCount === 0 &&
-    futureEvents.length === 0 &&
-    digest.errorCount === 0;
   const metrics =
     options.kind === "day"
       ? [
@@ -923,23 +712,20 @@ function renderRangePage(digest, locale, text, options) {
         ? [digest.editorialNote]
         : []
       : digest.editorialNotes;
-  const dayDataLinks =
-    options.kind === "day"
-      ? `<div class="data-links"><a href="${escapeHtml(options.rawSummaryPath)}">${escapeHtml(text.rawMarkdown)}</a><a href="${escapeHtml(options.rawJsonPath)}">${escapeHtml(text.rawJson)}</a></div>`
-      : "";
-  const bodySections = shouldUseEmptyDayLayout
-    ? `
-    <section class="section-block">
-      <div class="content-card empty-card">
-        <p>${escapeHtml(text.emptyDayCopy)}</p>
-        ${dayDataLinks}
+
+  const body = `
+    <section class="hero hero-day">
+      <div>
+        <p class="eyebrow">${escapeHtml(options.kind === "day" ? text.dayPageEyebrow : text.weekPageEyebrow)}</p>
+        <h1>${escapeHtml(options.kind === "day" ? digest.date : `${digest.startDate} - ${digest.endDate}`)}</h1>
+        <p class="hero-copy">${escapeHtml(options.kind === "day" ? (locale === "ja" ? "当日の監視結果を、重複を除いた読みやすい形に再構成しています。" : "This page reorganizes one day's collected updates into a deduplicated, readable digest.") : locale === "ja" ? "直近 7 日の更新をまとめて追えるように、ハイライトと全件を週単位で再構成しています。" : "This page groups the last seven days of updates into a weekly digest with highlights and a full update list.")}</p>
       </div>
+      <div class="metrics-grid">${metrics.join("")}</div>
     </section>
-  `
-    : `
+
     ${renderEditorialNotes(editorialNotes, text)}
 
-    ${options.kind === "day" ? renderFutureSection(futureEvents, locale, text) : ""}
+    ${options.kind === "day" ? renderFutureSection(digest.futureEvents, locale, text) : ""}
 
     ${renderFilterBar(text)}
 
@@ -956,7 +742,7 @@ function renderRangePage(digest, locale, text, options) {
       <aside class="side-panel">
         <div class="section-heading"><h2>${escapeHtml(text.sourceBreakdownTitle)}</h2><span>${escapeHtml(text.sourceBreakdownLabel)}</span></div>
         <ul class="source-breakdown">${digest.sourceBreakdown.map((source) => `<li><span>${escapeHtml(source.name)}</span><strong>${source.count}</strong></li>`).join("")}</ul>
-        ${dayDataLinks}
+        ${options.kind === "day" ? `<div class="data-links"><a href="${escapeHtml(options.rawSummaryPath)}">${escapeHtml(text.rawMarkdown)}</a><a href="${escapeHtml(options.rawJsonPath)}">${escapeHtml(text.rawJson)}</a></div>` : ""}
       </aside>
     </section>
 
@@ -964,19 +750,6 @@ function renderRangePage(digest, locale, text, options) {
       <div class="section-heading"><h2>${escapeHtml(text.fullListTitle)}</h2><span>${escapeHtml(itemCount(digest.uniqueEventCount))}</span></div>
       <div class="update-list">${digest.uniqueEvents.map((event) => renderEventCard(event, locale, text, { includeWhy: true })).join("")}</div>
     </section>
-  `;
-
-  const body = `
-    <section class="hero hero-day">
-      <div>
-        <p class="eyebrow">${escapeHtml(options.kind === "day" ? text.dayPageEyebrow : text.weekPageEyebrow)}</p>
-        <h1>${escapeHtml(options.kind === "day" ? digest.date : `${digest.startDate} - ${digest.endDate}`)}</h1>
-        <p class="hero-copy">${escapeHtml(options.kind === "day" ? (locale === "ja" ? "当日の監視結果を、重複を除いた読みやすい形に再構成しています。" : "This page reorganizes one day's collected updates into a deduplicated, readable digest.") : locale === "ja" ? "直近 7 日の更新をまとめて追えるように、ハイライトと全件を週単位で再構成しています。" : "This page groups the last seven days of updates into a weekly digest with highlights and a full update list.")}</p>
-      </div>
-      ${shouldUseEmptyDayLayout ? "" : `<div class="metrics-grid">${metrics.join("")}</div>`}
-    </section>
-
-    ${bodySections}
   `;
 
   return renderLayout({
@@ -989,7 +762,6 @@ function renderRangePage(digest, locale, text, options) {
     relativePrefix: options.relativePrefix,
     homeHref: options.homeHref,
     weeklyHref: options.weeklyHref,
-    tagHref: options.tagHref,
     langSwitchHref: options.langSwitchHref,
   });
 }
@@ -1007,10 +779,9 @@ function renderIndexPage(
     (total, digest) => total + digest.uniqueEventCount,
     0,
   );
-  const publishedEntries = buildPublishedEventEntries(dailyDigests, {
+  const latestHighlights = buildPublishedEventEntries(dailyDigests, {
     includeFuture: false,
-  });
-  const latestHighlights = publishedEntries.slice(0, 6);
+  }).slice(0, 6);
   const sourceHighlightGroups = buildSourceHighlightGroups(dailyDigests);
 
   const weeklyMarkup =
@@ -1036,10 +807,10 @@ function renderIndexPage(
     ${latestHighlights.length > 0 ? renderFilterBar(text) : ""}
 
     <section class="section-block" data-latest-highlights data-count-suffix="${escapeHtml(text.latestHighlightsCountSuffix)}">
-      <div class="section-heading"><h2>${escapeHtml(text.latestHighlightsTitle)}</h2><div class="section-actions"><span data-latest-count>${escapeHtml(`${latestHighlights.length}${text.latestHighlightsCountSuffix}`)}</span><a class="section-link" href="${escapeHtml(links.source)}">${escapeHtml(text.sourcePageLink)}</a></div></div>
-      <div class="highlight-grid latest-highlights-grid" data-highlight-group="all" data-highlight-count="${escapeHtml(String(latestHighlights.length))}">${latestHighlights.map((event) => renderEventCard(event, locale, text, { compact: true, includeWhy: false })).join("")}</div>
-      ${sourceHighlightGroups.map((entry) => renderSourceHighlightPanel(entry, locale, text, links.source)).join("")}
-      <p class="latest-highlights-empty is-hidden" data-latest-empty>${escapeHtml(text.latestHighlightsEmpty)}</p>
+      <div class="section-heading"><h2>${escapeHtml(text.latestHighlightsTitle)}</h2><span data-latest-count>${escapeHtml(locale === "ja" ? `${latestHighlights.length}${text.latestHighlightsCountSuffix}` : `${latestHighlights.length}${text.latestHighlightsCountSuffix}`)}</span></div>
+      <div class="highlight-grid latest-highlights-grid" data-highlight-group="all">${latestHighlights.map((event) => renderEventCard(event, locale, text, { compact: true, includeWhy: false })).join("")}</div>
+      ${sourceHighlightGroups.map((entry) => renderSourceHighlightPanel(entry, locale, text)).join("")}
+      <p class="latest-highlights-empty is-hidden" data-latest-empty>${escapeHtml(text.noItems)}</p>
     </section>
 
     <section class="section-block" id="weekly-archive">
@@ -1063,112 +834,6 @@ function renderIndexPage(
     relativePrefix,
     homeHref: links.home,
     weeklyHref: `${links.home}#weekly-archive`,
-    tagHref: links.tags,
-    langSwitchHref: links.langSwitch,
-  });
-}
-
-function renderSourcePage(
-  { dailyDigests },
-  locale,
-  text,
-  lastUpdatedAt,
-  relativePrefix,
-  links,
-) {
-  const events = buildPublishedEventEntries(dailyDigests, {
-    includeFuture: false,
-  });
-  const sourceArchive = buildSourceArchive(events);
-  const topSource = sourceArchive[0]
-    ? sourceGroupMeta(sourceArchive[0].group, text).label
-    : "-";
-  const body = `
-    <section class="hero">
-      <div>
-        <p class="eyebrow">${escapeHtml(text.sourcePageEyebrow)}</p>
-        <h1>${escapeHtml(text.sourcePageTitle)}</h1>
-        <p class="hero-copy">${escapeHtml(text.sourcePageCopy)}</p>
-      </div>
-      <div class="metrics-grid">
-        ${renderMetric(text.sourceCountMetric, locale === "ja" ? `${sourceArchive.length}${escapeHtml(text.itemSuffix)}` : formatCount(sourceArchive.length, locale, "source", "sources"), text.sourceCountMetricDetail)}
-        ${renderMetric(text.sourceUpdatesMetric, locale === "ja" ? `${events.length}${escapeHtml(text.itemSuffix)}` : formatCount(events.length, locale, "item", "items"), text.sourceUpdatesMetricDetail)}
-        ${renderMetric(text.sourceTopMetric, topSource, text.sourceTopMetricDetail)}
-        ${renderMetric(text.latestDate, dailyDigests[0]?.date ?? "N/A", text.latestDateDetail)}
-      </div>
-    </section>
-
-    <section class="section-block">
-      <div class="section-heading"><h2>${escapeHtml(text.sourceJumpTitle)}</h2><span>${locale === "ja" ? `${sourceArchive.length}${escapeHtml(text.itemSuffix)}` : formatCount(sourceArchive.length, locale, "source", "sources")}</span></div>
-      <div class="filter-chip-row filter-chip-row--cloud">${sourceArchive.map((entry) => renderSourceArchiveChip(entry.group, text, entry.count, `#${createSourceAnchorId(entry.group)}`)).join("")}</div>
-    </section>
-
-    ${sourceArchive.map((entry) => renderSourceArchiveSection(entry, locale, text)).join("")}
-  `;
-
-  return renderLayout({
-    locale,
-    text,
-    title: `${text.sourcePageLink} | vscode-copilot-digest`,
-    description: text.sourcePageCopy,
-    body,
-    lastUpdatedAt,
-    relativePrefix,
-    homeHref: links.home,
-    weeklyHref: links.weekly,
-    tagHref: links.tags,
-    langSwitchHref: links.langSwitch,
-  });
-}
-
-function renderTagPage(
-  { dailyDigests },
-  locale,
-  text,
-  lastUpdatedAt,
-  relativePrefix,
-  links,
-) {
-  const taggedEvents = buildPublishedEventEntries(dailyDigests);
-  const tagArchive = buildTagArchive(taggedEvents, locale);
-  const topTag = tagArchive[0]?.label ?? "-";
-  const body = `
-    <section class="hero">
-      <div>
-        <p class="eyebrow">${escapeHtml(text.tagsPageEyebrow)}</p>
-        <h1>${escapeHtml(text.tagsPageTitle)}</h1>
-        <p class="hero-copy">${escapeHtml(text.tagsPageCopy)}</p>
-      </div>
-      <div class="metrics-grid">
-        ${renderMetric(text.totalTagsMetric, locale === "ja" ? `${tagArchive.length}${escapeHtml(text.itemSuffix)}` : formatCount(tagArchive.length, locale, "tag", "tags"), text.totalTagsMetricDetail)}
-        ${renderMetric(text.taggedUpdatesMetric, locale === "ja" ? `${taggedEvents.length}${escapeHtml(text.itemSuffix)}` : formatCount(taggedEvents.length, locale, "item", "items"), text.taggedUpdatesMetricDetail)}
-        ${renderMetric(text.topTagMetric, topTag, text.topTagMetricDetail)}
-        ${renderMetric(text.latestDate, dailyDigests[0]?.date ?? "N/A", text.latestDateDetail)}
-      </div>
-    </section>
-
-    <section class="section-block">
-      <div class="section-heading"><h2>${escapeHtml(text.tagCloudTitle)}</h2><span>${locale === "ja" ? `${tagArchive.length}${escapeHtml(text.itemSuffix)}` : formatCount(tagArchive.length, locale, "tag", "tags")}</span></div>
-      <div class="filter-chip-row filter-chip-row--cloud tag-cloud-links">${tagArchive.map((tag) => renderTagArchiveChip(tag, `#${createTagAnchorId(tag.value)}`)).join("")}</div>
-    </section>
-
-    <section class="section-block">
-      <div class="section-heading"><h2>${escapeHtml(text.tagArchiveTitle)}</h2><span>${locale === "ja" ? `${tagArchive.length}${escapeHtml(text.itemSuffix)}` : formatCount(tagArchive.length, locale, "tag", "tags")}</span></div>
-      <div class="tag-grid">${tagArchive.map((tag) => renderTagArchiveCard(tag, locale, text, { homeHref: links.home })).join("")}</div>
-    </section>
-  `;
-
-  return renderLayout({
-    locale,
-    text,
-    title: `${text.tagNav} | vscode-copilot-digest`,
-    description: text.tagsPageCopy,
-    body,
-    lastUpdatedAt,
-    relativePrefix,
-    homeHref: links.home,
-    weeklyHref: links.weekly,
-    tagHref: links.tags,
     langSwitchHref: links.langSwitch,
   });
 }
@@ -1183,7 +848,6 @@ function renderLayout({
   relativePrefix,
   homeHref,
   weeklyHref,
-  tagHref,
   langSwitchHref,
 }) {
   const assetHref =
@@ -1221,7 +885,6 @@ function renderLayout({
         <nav class="site-nav">
           <a href="${escapeHtml(homeHref)}">${escapeHtml(text.dailyNav)}</a>
           <a href="${escapeHtml(weeklyHref)}">${escapeHtml(text.weeklyNav)}</a>
-          <a href="${escapeHtml(tagHref)}">${escapeHtml(text.tagNav)}</a>
           <a href="https://github.com/aktsmm/vscode-copilot-digest">${escapeHtml(text.repositoryNav)}</a>
           <button class="lang-toggle" data-href="${escapeHtml(langSwitchHref)}" aria-label="${escapeHtml(locale === "ja" ? "Switch to English" : "日本語に切り替え")}">
             <span class="lang-toggle-track">
@@ -1237,6 +900,7 @@ function renderLayout({
       </button>
       <footer class="site-footer">
         <p>${escapeHtml(text.footerLabel)} <a href="https://github.com/aktsmm" rel="author noopener" target="_blank">aktsmm</a></p>
+        <p class="site-license">${escapeHtml(text.licenseNotice)}: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license noopener" target="_blank">${escapeHtml(text.licenseName)}</a></p>
         <div class="share-links">
           <span class="share-label">${escapeHtml(locale === "ja" ? "共有" : "Share")}:</span>
           <a class="share-btn share-x" data-share="x" href="#" aria-label="Share on X" title="X (Twitter)">
@@ -1300,7 +964,7 @@ function renderLayout({
       var latestPanels=latestRoot?[].slice.call(latestRoot.querySelectorAll('[data-highlight-source-section]')):[];
       var latestCount=latestRoot?latestRoot.querySelector('[data-latest-count]'):null;
       var latestEmpty=latestRoot?latestRoot.querySelector('[data-latest-empty]'):null;
-      var state={source:new Set()};
+      var state={source:new Set(),topic:new Set()};
       function readList(value){
         if(!value)return [];
         return value.split(',').map(function(item){return decodeURIComponent(item).trim();}).filter(Boolean);
@@ -1308,6 +972,7 @@ function renderLayout({
       function syncStateFromUrl(){
         var params=new URLSearchParams(window.location.search);
         state.source=new Set(readList(params.get('sources')));
+        state.topic=new Set(readList(params.get('topics')));
       }
       function syncButtons(){
         root.querySelectorAll('[data-filter-kind]').forEach(function(btn){
@@ -1318,56 +983,51 @@ function renderLayout({
           btn.setAttribute('aria-pressed',active?'true':'false');
         });
         if(reset){
-          reset.disabled=state.source.size===0;
+          reset.disabled=state.source.size===0&&state.topic.size===0;
         }
       }
       function applyFilters(){
         cards.forEach(function(card){
           var sourceValue=card.getAttribute('data-source-group');
-          var sourceGroups=readList(card.getAttribute('data-source-groups'));
-          var sourceMatch=state.source.size===0||(
-            sourceGroups.length>0
-              ? sourceGroups.some(function(group){return state.source.has(group);})
-              : state.source.has(sourceValue)
-          );
-          card.classList.toggle('is-hidden',!sourceMatch);
+          var topicValue=card.getAttribute('data-topic');
+          var sourceMatch=state.source.size===0||state.source.has(sourceValue);
+          var topicMatch=state.topic.size===0||state.topic.has(topicValue);
+          card.classList.toggle('is-hidden',!(sourceMatch&&topicMatch));
         });
       }
       function syncLatestHighlights(){
         if(!latestRoot)return;
-        var countSuffix=latestRoot.getAttribute('data-count-suffix')||'';
         if(state.source.size===0){
           if(latestDefault)latestDefault.classList.remove('is-hidden');
-          latestPanels.forEach(function(panel){ panel.classList.add('is-hidden'); });
+          latestPanels.forEach(function(panel){panel.classList.add('is-hidden');});
           if(latestEmpty)latestEmpty.classList.add('is-hidden');
-          if(latestCount&&latestDefault){
-            latestCount.textContent=(latestDefault.getAttribute('data-highlight-count')||'0')+countSuffix;
-          }
-          return;
+        }else{
+          if(latestDefault)latestDefault.classList.add('is-hidden');
+          var visiblePanels=0;
+          latestPanels.forEach(function(panel){
+            var visible=state.source.has(panel.getAttribute('data-highlight-source-section'));
+            panel.classList.toggle('is-hidden',!visible);
+            if(visible)visiblePanels+=1;
+          });
+          if(latestEmpty)latestEmpty.classList.toggle('is-hidden',visiblePanels!==0);
         }
-
-        if(latestDefault)latestDefault.classList.add('is-hidden');
-        var visiblePanels=0;
-        var visibleCount=0;
-        latestPanels.forEach(function(panel){
-          var visible=state.source.has(panel.getAttribute('data-highlight-source-section'));
-          panel.classList.toggle('is-hidden',!visible);
-          if(visible){
-            visiblePanels+=1;
-            visibleCount+=Number(panel.getAttribute('data-highlight-count')||0);
-          }
-        });
-        if(latestEmpty)latestEmpty.classList.toggle('is-hidden',visiblePanels!==0);
-        if(latestCount)latestCount.textContent=String(visibleCount)+countSuffix;
+        if(latestCount){
+          var countSuffix=latestRoot.getAttribute('data-count-suffix')||'';
+          var visibleCards=latestRoot.querySelectorAll('.mini-highlight:not(.is-hidden)').length;
+          latestCount.textContent=String(visibleCards)+countSuffix;
+        }
       }
       function syncUrl(){
         var url=new URL(window.location.href);
         if(state.source.size>0)url.searchParams.set('sources',Array.from(state.source).join(','));
         else url.searchParams.delete('sources');
+        if(state.topic.size>0)url.searchParams.set('topics',Array.from(state.topic).join(','));
+        else url.searchParams.delete('topics');
         window.history.replaceState({},'',url);
       }
       function refresh(){
         syncButtons();
+        syncLatestHighlights();
         applyFilters();
         syncLatestHighlights();
         syncUrl();
@@ -1384,11 +1044,13 @@ function renderLayout({
       if(reset){
         reset.addEventListener('click',function(){
           state.source.clear();
+          state.topic.clear();
           refresh();
         });
       }
       syncStateFromUrl();
       syncButtons();
+      syncLatestHighlights();
       applyFilters();
       syncLatestHighlights();
     })();
@@ -1516,7 +1178,6 @@ h1 { margin: 0 0 16px; font-size: clamp(2.3rem, 4vw, 4.2rem); line-height: 1.04;
 .filter-row { display: grid; gap: 10px; }
 .filter-label { color: var(--muted); font-size: 0.9rem; font-weight: 700; }
 .filter-chip-row { display: flex; flex-wrap: wrap; gap: 10px; }
-.filter-chip-row--cloud { gap: 12px; }
 .filter-chip,
 .filter-reset {
   appearance: none;
@@ -1534,28 +1195,6 @@ h1 { margin: 0 0 16px; font-size: clamp(2.3rem, 4vw, 4.2rem); line-height: 1.04;
   box-shadow: inset 0 0 0 1px currentColor;
   transform: translateY(-1px);
 }
-.tag-cloud-link { text-decoration: none; }
-.filter-chip--tag {
-  gap: 8px;
-  background: rgba(15, 118, 110, 0.09);
-  border-color: rgba(15, 118, 110, 0.16);
-  color: var(--accent);
-}
-.filter-chip--tag-1 { font-size: 0.82rem; }
-.filter-chip--tag-2 { font-size: 0.92rem; }
-.filter-chip--tag-3 { font-size: 1rem; }
-.filter-chip-count {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 1.5rem;
-  padding: 0 6px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.82);
-  color: inherit;
-  font-size: 0.74rem;
-  line-height: 1.5;
-}
 .filter-reset:disabled { cursor: default; opacity: 0.45; }
 .section-heading {
   display: flex;
@@ -1565,21 +1204,7 @@ h1 { margin: 0 0 16px; font-size: clamp(2.3rem, 4vw, 4.2rem); line-height: 1.04;
   margin-bottom: 14px;
 }
 .section-heading h2 { margin: 0; font-size: 1.55rem; }
-.section-heading--sub h3 { margin: 0; font-size: 1.15rem; }
-.section-actions {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  flex-wrap: wrap;
-  color: var(--muted);
-  font-size: 0.9rem;
-}
-.section-link {
-  color: var(--accent);
-  font-weight: 700;
-  text-decoration: none;
-}
-.section-link:hover { text-decoration: underline; }
+.section-heading--sub h3 { margin: 0; font-size: 1.1rem; }
 .overview-grid, .highlight-grid, .digest-grid, .update-list { display: grid; gap: 16px; }
 .overview-grid { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
 .highlight-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
@@ -1591,27 +1216,8 @@ h1 { margin: 0 0 16px; font-size: clamp(2.3rem, 4vw, 4.2rem); line-height: 1.04;
   grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.9fr);
   gap: 20px;
 }
-.tag-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
 .update-card, .content-card, .side-panel, .topic-section, .mini-highlight, .digest-card { padding: 20px; }
-.source-highlight-panel + .source-highlight-panel { margin-top: 18px; }
-.latest-highlights-empty { margin: 14px 0 0; color: var(--muted); }
-.source-archive-section { scroll-margin-top: 24px; }
 .update-card h3, .mini-highlight h3, .digest-card h3 { margin: 12px 0 10px; font-size: 1.08rem; }
-.tag-card { display: grid; gap: 14px; }
-.tag-card-head {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-.tag-card-link {
-  color: var(--accent);
-  font-weight: 700;
-  text-decoration: none;
-}
-.tag-card-meta { margin: 0; color: var(--muted); font-size: 0.9rem; }
-.tag-card-list li span { color: var(--muted); white-space: nowrap; font-size: 0.82rem; }
 .badge-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 8px; }
 .pill {
   display: inline-flex;
@@ -1687,7 +1293,10 @@ h1 { margin: 0 0 16px; font-size: clamp(2.3rem, 4vw, 4.2rem); line-height: 1.04;
 .digest-card ul { margin: 14px 0 0; padding-left: 18px; color: var(--muted); }
 .digest-card-head { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
 .empty-state, .empty-card p { color: var(--muted); }
+.source-highlight-panel + .source-highlight-panel { margin-top: 18px; }
+.latest-highlights-empty { margin: 12px 0 0; color: var(--muted); }
 .site-footer { margin-top: 32px; padding: 20px; display: flex; flex-direction: column; align-items: center; gap: 12px; color: var(--muted); }
+.site-license { margin: 0; }
 .site-footer a { color: inherit; }
 .site-footer a:hover { color: var(--accent); }
 .share-links { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
@@ -1802,14 +1411,9 @@ async function copyRawFiles(date) {
   ]);
 }
 
-function shouldPublishDailyDigest(digest) {
-  return digest.uniqueEventCount > 0 || digest.futureUniqueCount > 0;
-}
-
 async function main() {
   const logs = await readDailyLogs();
-  const allDailyDigests = logs.map((log) => buildDailyDigest(log));
-  const dailyDigests = allDailyDigests.filter(shouldPublishDailyDigest);
+  const dailyDigests = logs.map((log) => buildDailyDigest(log));
   const weeklyDigests = buildWeeklyDigests(logs);
   const lastUpdatedAt = new Date();
 
@@ -1851,8 +1455,6 @@ async function main() {
         {
           home: "./index.html",
           langSwitch: "./en/index.html",
-          tags: "./tags.html",
-          source: "./sources.html",
           dayHref: (date) => `./days/${date}.html`,
           weekHref: (key) => `./weeks/${key}.html`,
         },
@@ -1870,52 +1472,10 @@ async function main() {
         {
           home: "./index.html",
           langSwitch: "../index.html",
-          tags: "./tags.html",
-          source: "./sources.html",
           dayHref: (date) => `./days/${date}.html`,
           weekHref: (key) => `./weeks/${key}.html`,
         },
       ),
-      "utf8",
-    ),
-    fs.writeFile(
-      path.join(siteDir, "tags.html"),
-      renderTagPage({ dailyDigests }, "ja", jaText, lastUpdatedAt, ".", {
-        home: "./index.html",
-        weekly: "./index.html#weekly-archive",
-        tags: "./tags.html",
-        langSwitch: "./en/tags.html",
-      }),
-      "utf8",
-    ),
-    fs.writeFile(
-      path.join(siteDir, "en", "tags.html"),
-      renderTagPage({ dailyDigests }, "en", enText, lastUpdatedAt, "..", {
-        home: "./index.html",
-        weekly: "./index.html#weekly-archive",
-        tags: "./tags.html",
-        langSwitch: "../tags.html",
-      }),
-      "utf8",
-    ),
-    fs.writeFile(
-      path.join(siteDir, "sources.html"),
-      renderSourcePage({ dailyDigests }, "ja", jaText, lastUpdatedAt, ".", {
-        home: "./index.html",
-        weekly: "./index.html#weekly-archive",
-        tags: "./tags.html",
-        langSwitch: "./en/sources.html",
-      }),
-      "utf8",
-    ),
-    fs.writeFile(
-      path.join(siteDir, "en", "sources.html"),
-      renderSourcePage({ dailyDigests }, "en", enText, lastUpdatedAt, "..", {
-        home: "./index.html",
-        weekly: "./index.html#weekly-archive",
-        tags: "./tags.html",
-        langSwitch: "../sources.html",
-      }),
       "utf8",
     ),
   ]);
@@ -1932,7 +1492,6 @@ async function main() {
           relativePrefix: "..",
           homeHref: "../index.html",
           weeklyHref: "../index.html#weekly-archive",
-          tagHref: "../tags.html",
           langSwitchHref: `../en/days/${digest.date}.html`,
           rawJsonPath: `../raw/events/${digest.date}.json`,
           rawSummaryPath: `../raw/summaries/${digest.date}.md`,
@@ -1949,7 +1508,6 @@ async function main() {
           relativePrefix: "../..",
           homeHref: "../index.html",
           weeklyHref: "../index.html#weekly-archive",
-          tagHref: "../tags.html",
           langSwitchHref: `../../days/${digest.date}.html`,
           rawJsonPath: `../../raw/events/${digest.date}.json`,
           rawSummaryPath: `../../raw/summaries/${digest.date}.md`,
@@ -1958,12 +1516,6 @@ async function main() {
       ),
       copyRawFiles(digest.date),
     ]);
-  }
-
-  for (const digest of allDailyDigests.filter(
-    (digest) => !dailyDigests.some((item) => item.date === digest.date),
-  )) {
-    await copyRawFiles(digest.date);
   }
 
   for (const digest of weeklyDigests) {
@@ -1978,7 +1530,6 @@ async function main() {
           relativePrefix: "..",
           homeHref: "../index.html",
           weeklyHref: "../index.html#weekly-archive",
-          tagHref: "../tags.html",
           langSwitchHref: `../en/weeks/${digest.key}.html`,
         }),
         "utf8",
@@ -1993,7 +1544,6 @@ async function main() {
           relativePrefix: "../..",
           homeHref: "../index.html",
           weeklyHref: "../index.html#weekly-archive",
-          tagHref: "../tags.html",
           langSwitchHref: `../../weeks/${digest.key}.html`,
         }),
         "utf8",

@@ -388,7 +388,7 @@ function extractVsCodeReleaseSections(source, html) {
       .filter(
         (section) => section.summary && isRelevantVsCodeReleaseSection(section),
       )
-      .slice(0, 8),
+      .slice(0, 4),
   };
 }
 
@@ -422,6 +422,20 @@ function summarizeDiff(previousText, nextText, maxDiffLines) {
     headings: headingLines.slice(0, maxDiffLines),
     additions: uniqueLines.slice(0, maxDiffLines),
   };
+}
+
+function buildVsCodeSectionStateKey(sourceId, sectionHeading, sectionTitle) {
+  return `${sourceId}:${sectionHeading}:${sectionTitle}`;
+}
+
+function getVsCodeSectionTitle(event) {
+  if (event.sectionTitle) {
+    return String(event.sectionTitle);
+  }
+
+  const title = String(event.title ?? "");
+  const separatorIndex = title.indexOf(": ");
+  return separatorIndex >= 0 ? title.slice(separatorIndex + 2) : title;
 }
 
 function scoreEntry(entry) {
@@ -569,8 +583,13 @@ async function collectHtmlSnapshotSource(source, sourceState) {
     publishedAt ??
     parseReleaseDateFromText(normalizedText) ??
     new Date().toISOString();
+  const shouldEmitSnapshotEvent = !(source.trackSections && sections.length > 0);
 
-  if (!sourceState.snapshotHash && source.emitOnInitialSnapshot) {
+  if (
+    shouldEmitSnapshotEvent &&
+    !sourceState.snapshotHash &&
+    source.emitOnInitialSnapshot
+  ) {
     events.push({
       eventId: `${source.id}:${snapshotHash}`,
       sourceId: source.id,
@@ -592,6 +611,7 @@ async function collectHtmlSnapshotSource(source, sourceState) {
       score: 2 + headings.length,
     });
   } else if (
+    shouldEmitSnapshotEvent &&
     sourceState.snapshotHash &&
     sourceState.snapshotHash !== snapshotHash
   ) {
@@ -624,13 +644,18 @@ async function collectHtmlSnapshotSource(source, sourceState) {
     const knownSections = {
       ...(sourceState.sectionHashes ?? {}),
     };
-    const nextSectionHashes = { ...knownSections };
+    const nextSectionHashes = {};
 
     for (const section of sections) {
-      const sectionKey = `${headingTitle}:${section.parentHeading}:${section.title}`;
+      const sectionKey = buildVsCodeSectionStateKey(
+        source.id,
+        section.parentHeading,
+        section.title,
+      );
       const sectionHash = hashText(
         `${section.parentHeading}\n${section.title}\n${section.summary}`,
       );
+      nextSectionHashes[sectionKey] = sectionHash;
       if (knownSections[sectionKey] === sectionHash) {
         continue;
       }
@@ -649,9 +674,9 @@ async function collectHtmlSnapshotSource(source, sourceState) {
           Boolean,
         ),
         sectionHeading: section.parentHeading,
+        sectionTitle: section.title,
         score: 4,
       });
-      nextSectionHashes[sectionKey] = sectionHash;
     }
 
     sourceState = {
@@ -675,27 +700,50 @@ async function collectHtmlSnapshotSource(source, sourceState) {
 }
 
 function normalizeTrackedEventMetadata(events, sourceStates) {
-  return (events ?? []).map((event) => {
-    const sourceId = String(event.sourceId ?? "");
-    if (!sourceId.startsWith("vscode-release-notes-")) {
-      return event;
-    }
+  return (events ?? [])
+    .map((event) => {
+      const sourceId = String(event.sourceId ?? "");
+      if (!sourceId.startsWith("vscode-release-notes-")) {
+        return event;
+      }
 
-    const sourceState = sourceStates?.[sourceId];
-    const releasePublishedAt = sourceState?.releasePublishedAt;
-    if (!releasePublishedAt) {
-      return event;
-    }
+      const sourceState = sourceStates?.[sourceId];
+      const releasePublishedAt = sourceState?.releasePublishedAt;
+      if (!releasePublishedAt || event.publishedAt === releasePublishedAt) {
+        return event;
+      }
 
-    if (event.publishedAt === releasePublishedAt) {
-      return event;
-    }
+      return {
+        ...event,
+        publishedAt: releasePublishedAt,
+      };
+    })
+    .filter((event) => {
+      const sourceId = String(event.sourceId ?? "");
+      if (!sourceId.startsWith("vscode-release-notes-")) {
+        return true;
+      }
 
-    return {
-      ...event,
-      publishedAt: releasePublishedAt,
-    };
-  });
+      const sourceState = sourceStates?.[sourceId];
+      const sectionHashes = sourceState?.sectionHashes ?? {};
+      const hasTrackedSections = Object.keys(sectionHashes).length > 0;
+
+      if (event.kind === "html_snapshot_change" && hasTrackedSections) {
+        return false;
+      }
+
+      if (event.kind !== "vscode_release_note_section" || !hasTrackedSections) {
+        return true;
+      }
+
+      const sectionKey = buildVsCodeSectionStateKey(
+        sourceId,
+        String(event.sectionHeading ?? ""),
+        getVsCodeSectionTitle(event),
+      );
+
+      return Boolean(sectionHashes[sectionKey]);
+    });
 }
 
 function renderMarkdownSummary(dateKey, eventLog) {
