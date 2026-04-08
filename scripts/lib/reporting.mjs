@@ -1173,6 +1173,11 @@ export function buildDailyDigest(eventLog) {
   for (const event of uniqueEvents) {
     topicMap.get(classifyEvent(event)).push(event);
   }
+  const sourceGroups = [
+    ...new Set(uniqueEvents.map((event) => sourceGroup(event)).filter(Boolean)),
+  ].sort(
+    (left, right) => sourceGroupPriority[right] - sourceGroupPriority[left],
+  );
 
   return {
     date: eventLog.date,
@@ -1188,6 +1193,7 @@ export function buildDailyDigest(eventLog) {
     uniqueEventCount: uniqueEvents.length,
     freshUniqueCount: freshUniqueEvents.length,
     futureUniqueCount: futureUniqueEvents.length,
+    sourceGroups,
     highlights: (freshUniqueEvents.length > 0
       ? freshUniqueEvents
       : uniqueEvents

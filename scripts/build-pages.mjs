@@ -661,6 +661,12 @@ function buildRangeDigest(logs, range) {
   for (const event of uniqueEvents) {
     topicMap.get(classifyEvent(event)).push(event);
   }
+  const sourceGroups = [
+    ...new Set(uniqueEvents.map((event) => sourceGroup(event)).filter(Boolean)),
+  ].sort(
+    (left, right) =>
+      sourceGroupOrder.indexOf(left) - sourceGroupOrder.indexOf(right),
+  );
 
   const editorialNotes = [
     ...new Set(
@@ -681,6 +687,7 @@ function buildRangeDigest(logs, range) {
     endDate: toDateOnly(endDate),
     editorialNotes,
     uniqueEventCount: uniqueEvents.length,
+    sourceGroups,
     sourceBreakdown: [...sourceBreakdown.entries()]
       .map(([name, keys]) => ({ name, count: keys.size }))
       .sort(
@@ -744,8 +751,9 @@ function renderArchiveCard(digest, locale, text, href, kind) {
     locale === "ja"
       ? `${digest.uniqueEventCount}${escapeHtml(text.itemSuffix)}`
       : formatCount(digest.uniqueEventCount, locale, "item", "items");
+  const sourceGroups = (digest.sourceGroups ?? []).join(",");
 
-  return `<article class="digest-card">
+  return `<article class="digest-card" data-filter-card data-source-groups="${escapeHtml(sourceGroups)}">
     <div class="digest-card-head"><p>${escapeHtml(rangeLabel)}</p>${isEmptyDigest ? "" : `<span>${itemCount}</span>`}</div>
     <h3><a href="${escapeHtml(href)}">${escapeHtml(title)}</a></h3>
     ${isEmptyDigest ? "" : `<p>${escapeHtml(trimText(localizedSummary(topItems[0], locale), 150))}</p>`}
@@ -1169,7 +1177,12 @@ function renderLayout({
       function applyFilters(){
         cards.forEach(function(card){
           var sourceValue=card.getAttribute('data-source-group');
-          var sourceMatch=state.source.size===0||state.source.has(sourceValue);
+          var sourceGroups=readList(card.getAttribute('data-source-groups'));
+          var sourceMatch=state.source.size===0||(
+            sourceGroups.length>0
+              ? sourceGroups.some(function(group){return state.source.has(group);})
+              : state.source.has(sourceValue)
+          );
           card.classList.toggle('is-hidden',!sourceMatch);
         });
       }
