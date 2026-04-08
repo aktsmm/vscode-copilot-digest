@@ -16,7 +16,7 @@
         "https://github.blog/changelog/2026-03-31-research-plan-and-code-with-copilot-cloud-agent",
         "https://github.blog/changelog/2026-04-01-gpt-5-4-mini-is-now-available-in-copilot-education-auto-model-selection"
       ],
-      "lastCheckedAt": "2026-04-08T00:00:17.907Z",
+      "lastCheckedAt": "2026-04-08T01:51:03.909Z",
       "futureSeenIds": []
     },
     "github-copilot-blog": {
@@ -33,7 +33,7 @@
         "https://github.blog/?p=94179",
         "https://github.blog/?p=94157"
       ],
-      "lastCheckedAt": "2026-04-08T00:00:17.934Z",
+      "lastCheckedAt": "2026-04-08T01:51:03.921Z",
       "futureSeenIds": []
     },
     "vscode-feed": {
@@ -55,18 +55,16 @@
         "https://code.visualstudio.com/blogs/2025/12/03/introducing-vs-code-insiders-podcast",
         "https://code.visualstudio.com/updates/v1_115"
       ],
-      "lastCheckedAt": "2026-04-08T00:00:18.043Z",
-      "futureSeenIds": [
-        "https://code.visualstudio.com/updates/v1_115"
-      ]
+      "lastCheckedAt": "2026-04-08T01:51:03.943Z",
+      "futureSeenIds": ["https://code.visualstudio.com/updates/v1_115"]
     },
     "vscode-release-notes-1-109": {
       "snapshotHash": "795e024cf2ecc4e681a2873b1d29435c5e6ca0a1771e5ee68fb8f91f859c2bf6",
-      "lastCheckedAt": "2026-04-08T00:00:18.756Z"
+      "lastCheckedAt": "2026-04-08T01:51:04.583Z"
     },
     "copilot-whats-new": {
       "snapshotHash": "b420f1decd1c48516d66030e4292d9537371f69c4260aeb4b1a29975eb279571",
-      "lastCheckedAt": "2026-04-08T00:00:19.254Z",
+      "lastCheckedAt": "2026-04-08T01:51:05.150Z",
       "lastError": "fetch failed"
     },
     "publickey": {
@@ -85,7 +83,7 @@
         "tag:www.publickey1.jp,2026://2.8523",
         "tag:www.publickey1.jp,2026://2.8522"
       ],
-      "lastCheckedAt": "2026-04-08T00:00:19.876Z",
+      "lastCheckedAt": "2026-04-08T01:51:05.313Z",
       "futureSeenIds": []
     },
     "github-changelog": {
@@ -102,12 +100,38 @@
         "https://github.blog/changelog/2026-04-01-github-copilot-in-visual-studio-march-update",
         "https://github.blog/changelog/2026-04-02-github-actions-early-april-2026-updates"
       ],
-      "lastCheckedAt": "2026-04-08T00:00:17.885Z",
+      "lastCheckedAt": "2026-04-08T01:51:03.898Z",
       "futureSeenIds": []
     },
     "vscode-updates": {
       "snapshotHash": "d2d9d6bb244271aec140e3a3b5d01efb96f2c576f021fc61c88932a151060664",
-      "lastCheckedAt": "2026-04-08T00:00:18.347Z"
+      "lastCheckedAt": "2026-04-08T01:51:04.504Z"
+    },
+    "vscode-release-notes-1-114": {
+      "snapshotHash": "d2d9d6bb244271aec140e3a3b5d01efb96f2c576f021fc61c88932a151060664",
+      "lastCheckedAt": "2026-04-08T01:51:05.364Z",
+      "sectionHashes": {
+        "Visual Studio Code 1.114:Chat experience:Preview videos in the image carousel": "c0160eb777193e47d47a27a7be068bd19f50b3d22ad4af7c1749c22630cfa1d7",
+        "Visual Studio Code 1.114:Chat experience:Copy final response in chat": "6a3758f17f42e54cc2a5585d9c321a2754e9e8a3611f54db4f279cfeea3f3c3b",
+        "Visual Studio Code 1.114:Chat experience:Workspace search simplification": "13c42eccbf7988ca374e9f919d2a6f6dcb14b96677dd4f8edf4e5e4b02f3ce78",
+        "Visual Studio Code 1.114:Chat experience:Troubleshoot previous chat sessions (Preview)": "7bbe575b9e0dee8a2cc66a6cd13a3f415375366615eb8f8ab2861885c2e9cb2f",
+        "Visual Studio Code 1.114:Languages:Python": "c6573921c6901c0740ff6813d9294b2b1ef5bf73a6ae67f3bd64e280b050019f",
+        "Visual Studio Code 1.114:Enterprise:Group policy to disable Claude agent": "aec8ad4937e5e301dc2cfa71bbd24f139a9e92826038b0d08031884918bedd74",
+        "Visual Studio Code 1.114:Contributions to extensions:GitHub Pull Requests": "e12a26380199f497a8aadf94df27977d113f9c120a00a3ff5fa008ff0798802d",
+        "Visual Studio Code 1.114:Proposed APIs:Fine-grained tool approval": "fa2eb56297168bf4bd890c694cef0d77bf55fbd525b71c06b727f7f26e4dec1b"
+      }
+    },
+    "vscode-release-notes-1-113": {
+      "snapshotHash": "5482b1f49b2d0023616b2141da578b868899f8cab8c66f6d85feafb577566a6a",
+      "lastCheckedAt": "2026-04-08T01:51:05.394Z"
+    },
+    "vscode-release-notes-1-112": {
+      "snapshotHash": "a124d3545d10e70f3af851dcc32f11b4b4c317877194e09399a8c11c46d7ee8a",
+      "lastCheckedAt": "2026-04-08T01:51:05.427Z"
+    },
+    "vscode-release-notes-1-111": {
+      "snapshotHash": "7e591bc2bd66085ca33e6bdedc680a1ff23978f68236a1ae93b1251917fc1b0f",
+      "lastCheckedAt": "2026-04-08T01:51:05.460Z"
     }
   }
 }

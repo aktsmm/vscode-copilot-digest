@@ -234,6 +234,164 @@ function buildHtmlSnapshot(source, html) {
   };
 }
 
+function normalizeUrl(baseUrl, href) {
+  try {
+    return new URL(String(href ?? ""), baseUrl).toString();
+  } catch {
+    return "";
+  }
+}
+
+function parseVsCodeReleaseVersion(url) {
+  const match = String(url ?? "").match(/\/updates\/v(\d+)_(\d+)(?:$|[#/?])/i);
+  if (!match) {
+    return null;
+  }
+
+  return `${match[1]}.${match[2]}`;
+}
+
+function compareVersionStrings(left, right) {
+  const leftParts = String(left ?? "")
+    .split(".")
+    .map((part) => Number.parseInt(part, 10) || 0);
+  const rightParts = String(right ?? "")
+    .split(".")
+    .map((part) => Number.parseInt(part, 10) || 0);
+  const length = Math.max(leftParts.length, rightParts.length);
+
+  for (let index = 0; index < length; index += 1) {
+    const diff = (leftParts[index] ?? 0) - (rightParts[index] ?? 0);
+    if (diff !== 0) {
+      return diff;
+    }
+  }
+
+  return 0;
+}
+
+function discoverVsCodeReleaseNoteSources(indexSource, html) {
+  const $ = cheerio.load(html);
+  const root = $(indexSource.rootSelector ?? "main").first();
+  const target = root.length > 0 ? root : $("body").first();
+  const releaseLinks = new Map();
+  const currentStableVersion =
+    normalizeWhitespace(target.text()).match(
+      /Visual Studio Code ([0-9.]+)/i,
+    )?.[1] ?? null;
+
+  target.find('a[href*="/updates/v"]').each((_, element) => {
+    const url = normalizeUrl(indexSource.url, $(element).attr("href"));
+    const version = parseVsCodeReleaseVersion(url);
+    if (!version) {
+      return;
+    }
+
+    if (
+      currentStableVersion &&
+      compareVersionStrings(version, currentStableVersion) > 0
+    ) {
+      return;
+    }
+
+    releaseLinks.set(version, url.split("#")[0]);
+  });
+
+  const sortedReleases = [...releaseLinks.entries()]
+    .sort((left, right) => compareVersionStrings(right[0], left[0]))
+    .slice(0, 4);
+
+  return sortedReleases.map(([version, url]) => ({
+    id: `vscode-release-notes-${version.replace(/\./g, "-")}`,
+    name: `VS Code Release Notes ${version}`,
+    kind: "html_snapshot",
+    url,
+    rootSelector: indexSource.rootSelector ?? "main",
+    contentSelector: indexSource.contentSelector ?? "h1, h2, h3, p, li",
+    maxDiffLines: 24,
+    emitOnInitialSnapshot: true,
+    eventTitleMode: "heading",
+    trackSections: version === currentStableVersion,
+  }));
+}
+
+function parseReleaseDateFromText(text) {
+  const match = text.match(/Release date:\s*([A-Za-z]+ \d{1,2}, \d{4})/i);
+  if (!match) {
+    return null;
+  }
+
+  const date = new Date(match[1]);
+  return Number.isNaN(date.getTime()) ? null : date.toISOString();
+}
+
+function isRelevantVsCodeReleaseSection(section) {
+  const text =
+    `${section.parentHeading} ${section.title} ${section.summary}`.toLowerCase();
+  return /chat|copilot|agent|semantic|workspace search|#codebase|troubleshoot|session|mcp|claude|tool approval|approval|prompt|debug|github pull requests|extension api|extensions?/i.test(
+    text,
+  );
+}
+
+function extractVsCodeReleaseSections(source, html) {
+  if (!source.trackSections) {
+    return { releaseTitle: null, publishedAt: null, sections: [] };
+  }
+
+  const $ = cheerio.load(html);
+  const root = $(source.rootSelector ?? "main").first();
+  const target = root.length > 0 ? root : $("body").first();
+  const releaseTitle = normalizeWhitespace(target.find("h1").first().text());
+  const publishedAt = parseReleaseDateFromText(
+    normalizeWhitespace(target.text()),
+  );
+  const sections = [];
+  let currentH2 = "";
+  let currentSection = null;
+
+  target.find("h2, h3, p, li").each((_, element) => {
+    const tag = String(element.tagName ?? "").toLowerCase();
+    const text = normalizeWhitespace($(element).text());
+    if (!text) {
+      return;
+    }
+
+    if (tag === "h2") {
+      currentH2 = text;
+      currentSection = null;
+      return;
+    }
+
+    if (tag === "h3") {
+      currentSection = {
+        parentHeading: currentH2,
+        title: text,
+        lines: [],
+      };
+      sections.push(currentSection);
+      return;
+    }
+
+    if (currentSection) {
+      currentSection.lines.push(text);
+    }
+  });
+
+  return {
+    releaseTitle,
+    publishedAt,
+    sections: sections
+      .map((section) => ({
+        ...section,
+        summary: createExcerpt(section.lines.join(" "), 420),
+      }))
+      .filter(
+        (section) => section.summary && isRelevantVsCodeReleaseSection(section),
+      )
+      .slice(0, 8),
+  };
+}
+
 function summarizeDiff(previousText, nextText, maxDiffLines) {
   const addedLines = [];
   for (const part of diffLines(previousText, nextText)) {
@@ -389,6 +547,10 @@ async function collectFeedSource(source, sourceState) {
 async function collectHtmlSnapshotSource(source, sourceState) {
   const html = await fetchText(source.url);
   const { normalizedText, headings } = buildHtmlSnapshot(source, html);
+  const { releaseTitle, publishedAt, sections } = extractVsCodeReleaseSections(
+    source,
+    html,
+  );
   const snapshotHash = hashText(normalizedText);
   const snapshotFile = path.join(snapshotsDir, `${source.id}.txt`);
   const previousText = await fs
@@ -402,7 +564,37 @@ async function collectHtmlSnapshotSource(source, sourceState) {
     });
 
   const events = [];
-  if (sourceState.snapshotHash && sourceState.snapshotHash !== snapshotHash) {
+  const headingTitle = headings[0] || releaseTitle || source.name;
+  const basePublishedAt =
+    publishedAt ??
+    parseReleaseDateFromText(normalizedText) ??
+    new Date().toISOString();
+
+  if (!sourceState.snapshotHash && source.emitOnInitialSnapshot) {
+    events.push({
+      eventId: `${source.id}:${snapshotHash}`,
+      sourceId: source.id,
+      sourceName: source.name,
+      kind: "html_snapshot_change",
+      detectedAt: new Date().toISOString(),
+      publishedAt: basePublishedAt,
+      title:
+        source.eventTitleMode === "heading"
+          ? headingTitle
+          : `${source.name} changed`,
+      url: source.url,
+      summary:
+        headings.length > 1
+          ? `Captured the current snapshot for ${headingTitle}.`
+          : `Captured the current snapshot for ${source.name}.`,
+      categories: ["snapshot"],
+      headings: headings.slice(0, 12),
+      score: 2 + headings.length,
+    });
+  } else if (
+    sourceState.snapshotHash &&
+    sourceState.snapshotHash !== snapshotHash
+  ) {
     const diffSummary = summarizeDiff(
       previousText,
       normalizedText,
@@ -414,8 +606,11 @@ async function collectHtmlSnapshotSource(source, sourceState) {
       sourceName: source.name,
       kind: "html_snapshot_change",
       detectedAt: new Date().toISOString(),
-      publishedAt: new Date().toISOString(),
-      title: `${source.name} changed`,
+      publishedAt: basePublishedAt,
+      title:
+        source.eventTitleMode === "heading"
+          ? headingTitle
+          : `${source.name} changed`,
       url: source.url,
       summary: `Detected ${diffSummary.addedLineCount} added lines on the monitored page.`,
       categories: ["snapshot"],
@@ -423,6 +618,46 @@ async function collectHtmlSnapshotSource(source, sourceState) {
       headings: headings.slice(0, 12),
       score: 2 + diffSummary.headings.length,
     });
+  }
+
+  if (source.trackSections && sections.length > 0) {
+    const knownSections = {
+      ...(sourceState.sectionHashes ?? {}),
+    };
+    const nextSectionHashes = { ...knownSections };
+
+    for (const section of sections) {
+      const sectionKey = `${headingTitle}:${section.parentHeading}:${section.title}`;
+      const sectionHash = hashText(
+        `${section.parentHeading}\n${section.title}\n${section.summary}`,
+      );
+      if (knownSections[sectionKey] === sectionHash) {
+        continue;
+      }
+
+      events.push({
+        eventId: `${source.id}:section:${sectionHash}`,
+        sourceId: source.id,
+        sourceName: source.name,
+        kind: "vscode_release_note_section",
+        detectedAt: new Date().toISOString(),
+        publishedAt: basePublishedAt,
+        title: `${headingTitle}: ${section.title}`,
+        url: source.url,
+        summary: section.summary,
+        categories: ["release", "section", section.parentHeading].filter(
+          Boolean,
+        ),
+        sectionHeading: section.parentHeading,
+        score: 4,
+      });
+      nextSectionHashes[sectionKey] = sectionHash;
+    }
+
+    sourceState = {
+      ...sourceState,
+      sectionHashes: nextSectionHashes,
+    };
   }
 
   await fs.writeFile(snapshotFile, normalizedText, "utf8");
@@ -573,10 +808,33 @@ async function main() {
     ensureDirectory(summaryDir),
   ]);
 
-  const [sources, state] = await Promise.all([
+  const [configuredSources, state] = await Promise.all([
     readJson(configFile, []),
     readJson(stateFile, { version: 1, sources: {} }),
   ]);
+
+  const sources = [...configuredSources];
+  const vscodeUpdatesSource = configuredSources.find(
+    (source) => source.id === "vscode-updates",
+  );
+  if (vscodeUpdatesSource) {
+    try {
+      const indexHtml = await fetchText(vscodeUpdatesSource.url);
+      const dynamicReleaseSources = discoverVsCodeReleaseNoteSources(
+        vscodeUpdatesSource,
+        indexHtml,
+      );
+      const configuredIds = new Set(sources.map((source) => source.id));
+      for (const source of dynamicReleaseSources) {
+        if (!configuredIds.has(source.id)) {
+          sources.push(source);
+        }
+      }
+    } catch (error) {
+      const message = error instanceof Error ? error.message : String(error);
+      console.warn(`Failed to discover VS Code release notes: ${message}`);
+    }
+  }
 
   const nextState = {
     version: 1,

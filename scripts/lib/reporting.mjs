@@ -127,7 +127,10 @@ function englishTitleFallback(event) {
     return "Microsoft's Azure Skills Plugin for Claude Code and GitHub Copilot";
   }
 
-  if (/rubber duck/i.test(text) || (/copilot cli/i.test(text) && /セカンドオピニオン/.test(text))) {
+  if (
+    /rubber duck/i.test(text) ||
+    (/copilot cli/i.test(text) && /セカンドオピニオン/.test(text))
+  ) {
     return "GitHub Copilot CLI uses a second-opinion model in Rubber Duck mode";
   }
 
@@ -358,7 +361,10 @@ function summaryFromPatterns(event, locale = "ja") {
         return "Japanese coverage of Microsoft's Azure Skills Plugin, which lets Claude Code and GitHub Copilot choose infrastructure and deploy applications more autonomously.";
       }
 
-      if (/rubber duck/i.test(text) || (/copilot cli/i.test(text) && /セカンドオピニオン/.test(text))) {
+      if (
+        /rubber duck/i.test(text) ||
+        (/copilot cli/i.test(text) && /セカンドオピニオン/.test(text))
+      ) {
         return "Japanese-language coverage of GitHub Copilot CLI's experimental Rubber Duck mode, which lets you ask a different model for a second opinion during CLI-based workflows.";
       }
 
@@ -467,7 +473,10 @@ function summaryFromPatterns(event, locale = "ja") {
       : "Copilot CLI can now run multiple subagents in parallel through /fleet, which is useful for breaking larger tasks into coordinated workstreams.";
   }
 
-  if (/byok/i.test(title) || (/copilot cli/i.test(title) && /local model/i.test(title))) {
+  if (
+    /byok/i.test(title) ||
+    (/copilot cli/i.test(title) && /local model/i.test(title))
+  ) {
     return locale === "ja"
       ? "GitHub Copilot CLI で、GitHub が提供するモデルルーティングを使わずに、自前のモデルプロバイダーまたは完全ローカルのモデルを接続できるようになった。用途に応じてモデルを選べる幅が広がった。"
       : "GitHub Copilot CLI can now connect to your own model provider or run fully local models instead of GitHub-hosted routing, giving you more control over which models power your CLI workflows.";
@@ -598,6 +607,10 @@ export function localizedTitle(event, locale = "ja") {
 
 export function localizedSummary(event, locale = "ja") {
   const summary = cleanupSummary(event.summary);
+  if (event.kind === "vscode_release_note_section") {
+    return trimText(summary, locale === "en" ? 320 : 280);
+  }
+
   if (locale === "en" && !containsJapanese(summary)) {
     return trimText(summaryFromPatterns({ ...event, summary }, "en"), 320);
   }
@@ -815,7 +828,10 @@ function eventText(event) {
 }
 
 export function isOfficialSource(event) {
-  return officialSourceIds.has(event.sourceId);
+  return (
+    officialSourceIds.has(event.sourceId) ||
+    String(event.sourceId ?? "").startsWith("vscode-release-notes-")
+  );
 }
 
 export function isRelevantEvent(event) {
