@@ -841,9 +841,20 @@ function renderDigestStreamItem(digest, locale, text, href, kind) {
   </article>`;
 }
 
-function renderHighlightsArchivePage(events, locale, text, lastUpdatedAt, relativePrefix, links, options = {}) {
+function renderHighlightsArchivePage(
+  events,
+  locale,
+  text,
+  lastUpdatedAt,
+  relativePrefix,
+  links,
+  options = {},
+) {
   const pageNumber = options.pageNumber ?? 1;
-  const totalPages = Math.max(1, Math.ceil(events.length / HIGHLIGHTS_PAGE_SIZE));
+  const totalPages = Math.max(
+    1,
+    Math.ceil(events.length / HIGHLIGHTS_PAGE_SIZE),
+  );
   const pageEvents = events.slice(
     (pageNumber - 1) * HIGHLIGHTS_PAGE_SIZE,
     pageNumber * HIGHLIGHTS_PAGE_SIZE,
@@ -856,8 +867,11 @@ function renderHighlightsArchivePage(events, locale, text, lastUpdatedAt, relati
     locale === "ja"
       ? `${pageEvents.length}${text.itemSuffix}`
       : formatCount(pageEvents.length, locale, "item", "items");
-  const sourceCount = new Set(pageEvents.map((event) => sourceGroup(event))).size;
-  const latestDate = pageEvents[0]?.publishedAt ? formatDate(pageEvents[0].publishedAt, locale) : "N/A";
+  const sourceCount = new Set(pageEvents.map((event) => sourceGroup(event)))
+    .size;
+  const latestDate = pageEvents[0]?.publishedAt
+    ? formatDate(pageEvents[0].publishedAt, locale)
+    : "N/A";
   const filterAxes = renderFilterAxes(pageEvents);
   const pager = renderPager(locale, pageNumber, totalPages, links.pageHref);
   const body = `
@@ -865,7 +879,7 @@ function renderHighlightsArchivePage(events, locale, text, lastUpdatedAt, relati
       <div>
         <p class="eyebrow">${escapeHtml(locale === "ja" ? "ハイライト一覧" : "Highlights archive")}</p>
         <h1>${escapeHtml(locale === "ja" ? "最新ハイライトをまとめて見る。" : "Browse all highlights.")}</h1>
-        <p class="hero-copy">${escapeHtml(locale === "ja" ? "トップページでは最新の一部だけを見せています。このページでは公開済みのハイライトを時系列でまとめて追えます。50件を超えるとページ分割します。" : "The home page shows only a subset. This page lists published highlights in reverse chronological order and splits them into pages of 50 items." )}</p>
+        <p class="hero-copy">${escapeHtml(locale === "ja" ? "トップページでは最新の一部だけを見せています。このページでは公開済みのハイライトを時系列でまとめて追えます。50件を超えるとページ分割します。" : "The home page shows only a subset. This page lists published highlights in reverse chronological order and splits them into pages of 50 items.")}</p>
       </div>
       <div class="metrics-grid">
         ${renderMetric(text.trackedUpdates, visibleCount, locale === "ja" ? "このページに表示している件数" : "Items shown on this page")}
@@ -890,8 +904,14 @@ function renderHighlightsArchivePage(events, locale, text, lastUpdatedAt, relati
   return renderLayout({
     locale,
     text,
-    title: locale === "ja" ? "ハイライト一覧 | vscode-copilot-digest" : "Highlights | vscode-copilot-digest",
-    description: locale === "ja" ? "公開済みハイライトの一覧ページ" : "Published highlights archive",
+    title:
+      locale === "ja"
+        ? "ハイライト一覧 | vscode-copilot-digest"
+        : "Highlights | vscode-copilot-digest",
+    description:
+      locale === "ja"
+        ? "公開済みハイライトの一覧ページ"
+        : "Published highlights archive",
     body,
     lastUpdatedAt,
     relativePrefix,
@@ -901,16 +921,34 @@ function renderHighlightsArchivePage(events, locale, text, lastUpdatedAt, relati
   });
 }
 
-function renderDigestArchivePage(digests, kind, locale, text, lastUpdatedAt, relativePrefix, links) {
+function renderDigestArchivePage(
+  digests,
+  kind,
+  locale,
+  text,
+  lastUpdatedAt,
+  relativePrefix,
+  links,
+) {
   const countLabel =
     locale === "ja"
       ? `${digests.length}${kind === "day" ? text.dayCountSuffix : text.itemSuffix}`
-      : formatCount(digests.length, locale, kind === "day" ? "day" : "window", kind === "day" ? "days" : "windows");
+      : formatCount(
+          digests.length,
+          locale,
+          kind === "day" ? "day" : "window",
+          kind === "day" ? "days" : "windows",
+        );
   const latestLabel =
     kind === "day"
-      ? digests[0]?.date ?? "N/A"
-      : digests[0] ? `${digests[0].startDate} - ${digests[0].endDate}` : "N/A";
-  const totalItems = digests.reduce((sum, digest) => sum + digest.uniqueEventCount, 0);
+      ? (digests[0]?.date ?? "N/A")
+      : digests[0]
+        ? `${digests[0].startDate} - ${digests[0].endDate}`
+        : "N/A";
+  const totalItems = digests.reduce(
+    (sum, digest) => sum + digest.uniqueEventCount,
+    0,
+  );
   const body = `
     <section class="hero hero-day">
       <div>
@@ -935,8 +973,22 @@ function renderDigestArchivePage(digests, kind, locale, text, lastUpdatedAt, rel
   return renderLayout({
     locale,
     text,
-    title: kind === "day" ? (locale === "ja" ? "日次アーカイブ | vscode-copilot-digest" : "Daily archive | vscode-copilot-digest") : locale === "ja" ? "週間ダイジェスト一覧 | vscode-copilot-digest" : "Weekly digests | vscode-copilot-digest",
-    description: kind === "day" ? (locale === "ja" ? "公開済み日次ダイジェストの一覧ページ" : "Published daily digest archive") : locale === "ja" ? "公開済み週間ダイジェストの一覧ページ" : "Published weekly digest archive",
+    title:
+      kind === "day"
+        ? locale === "ja"
+          ? "日次アーカイブ | vscode-copilot-digest"
+          : "Daily archive | vscode-copilot-digest"
+        : locale === "ja"
+          ? "週間ダイジェスト一覧 | vscode-copilot-digest"
+          : "Weekly digests | vscode-copilot-digest",
+    description:
+      kind === "day"
+        ? locale === "ja"
+          ? "公開済み日次ダイジェストの一覧ページ"
+          : "Published daily digest archive"
+        : locale === "ja"
+          ? "公開済み週間ダイジェストの一覧ページ"
+          : "Published weekly digest archive",
     body,
     lastUpdatedAt,
     relativePrefix,
@@ -995,7 +1047,9 @@ function renderRangePage(digest, locale, text, options) {
           renderMetric(
             text.highlightsTitle,
             itemCount(digest.highlights.length),
-            locale === "ja" ? "この週の代表ハイライト件数" : "Representative highlights in this weekly digest",
+            locale === "ja"
+              ? "この週の代表ハイライト件数"
+              : "Representative highlights in this weekly digest",
           ),
         ];
 
@@ -1107,11 +1161,19 @@ function renderIndexPage(
     <section class="section-block" data-latest-highlights data-count-suffix="${escapeHtml(text.latestHighlightsCountSuffix)}">
       ${renderSectionHeading(
         text.latestHighlightsTitle,
-        renderVisibleCountLabel(locale, latestHighlights.length, text.itemSuffix),
+        renderVisibleCountLabel(
+          locale,
+          latestHighlights.length,
+          text.itemSuffix,
+        ),
         allHighlights.length > 0
           ? renderSectionAction(
               links.highlights,
-              renderTotalActionLabel(locale, allHighlights.length, text.itemSuffix),
+              renderTotalActionLabel(
+                locale,
+                allHighlights.length,
+                text.itemSuffix,
+              ),
             )
           : "",
       )}
@@ -1125,9 +1187,16 @@ function renderIndexPage(
         text.weeklyArchiveTitle,
         weeklyHomeDigests.length === 0
           ? text.weeklyArchiveLabel
-          : renderVisibleCountLabel(locale, weeklyHomeDigests.length, text.itemSuffix),
+          : renderVisibleCountLabel(
+              locale,
+              weeklyHomeDigests.length,
+              text.itemSuffix,
+            ),
         weeklyDigests.length > 0
-          ? renderSectionAction(links.weeklyArchive, locale === "ja" ? "すべてを見る" : "View all")
+          ? renderSectionAction(
+              links.weeklyArchive,
+              locale === "ja" ? "すべてを見る" : "View all",
+            )
           : "",
       )}
       ${weeklyMarkup}
@@ -1136,9 +1205,16 @@ function renderIndexPage(
     <section class="section-block">
       ${renderSectionHeading(
         text.dailyArchiveTitle,
-        renderVisibleCountLabel(locale, dailyHomeDigests.length, text.dayCountSuffix),
+        renderVisibleCountLabel(
+          locale,
+          dailyHomeDigests.length,
+          text.dayCountSuffix,
+        ),
         dailyDigests.length > 0
-          ? renderSectionAction(links.dailyArchive, locale === "ja" ? "すべてを見る" : "View all")
+          ? renderSectionAction(
+              links.dailyArchive,
+              locale === "ja" ? "すべてを見る" : "View all",
+            )
           : "",
       )}
       ${dailyMarkup}
@@ -1767,16 +1843,17 @@ a { color: inherit; }
   box-shadow: var(--shadow);
 }
 .hero-home {
-  grid-template-columns: minmax(0, 1.58fr) minmax(320px, 0.82fr);
+  grid-template-columns: minmax(0, 1.72fr) minmax(300px, 0.78fr);
   gap: 14px;
   padding: 22px 24px;
   align-items: start;
 }
 .hero-day { margin-bottom: 24px; }
 .hero-home h1 {
-  font-size: clamp(1.5rem, 2.55vw, 2.55rem);
-  line-height: 1.06;
-  max-width: 15.5ch;
+  font-size: clamp(1.34rem, 2.2vw, 2.18rem);
+  line-height: 1.08;
+  max-width: none;
+  text-wrap: balance;
   margin-bottom: 8px;
 }
 .hero-home .hero-copy {
@@ -2458,66 +2535,112 @@ async function main() {
     ),
     fs.writeFile(
       path.join(siteDir, "highlights.html"),
-      renderHighlightsArchivePage(allHighlights, "ja", jaText, lastUpdatedAt, ".", {
-        home: "./index.html",
-        weekly: "./weeks/index.html",
-        langSwitch: "./en/highlights.html",
-        pageHref: (page) => `./${highlightArchiveFileName(page)}`,
-      }),
+      renderHighlightsArchivePage(
+        allHighlights,
+        "ja",
+        jaText,
+        lastUpdatedAt,
+        ".",
+        {
+          home: "./index.html",
+          weekly: "./weeks/index.html",
+          langSwitch: "./en/highlights.html",
+          pageHref: (page) => `./${highlightArchiveFileName(page)}`,
+        },
+      ),
       "utf8",
     ),
     fs.writeFile(
       path.join(siteDir, "en", "highlights.html"),
-      renderHighlightsArchivePage(allHighlights, "en", enText, lastUpdatedAt, "..", {
-        home: "./index.html",
-        weekly: "./weeks/index.html",
-        langSwitch: "../highlights.html",
-        pageHref: (page) => `./${highlightArchiveFileName(page)}`,
-      }),
+      renderHighlightsArchivePage(
+        allHighlights,
+        "en",
+        enText,
+        lastUpdatedAt,
+        "..",
+        {
+          home: "./index.html",
+          weekly: "./weeks/index.html",
+          langSwitch: "../highlights.html",
+          pageHref: (page) => `./${highlightArchiveFileName(page)}`,
+        },
+      ),
       "utf8",
     ),
     fs.writeFile(
       path.join(siteDir, "days", "index.html"),
-      renderDigestArchivePage(dailyDigests, "day", "ja", jaText, lastUpdatedAt, "..", {
-        home: "../index.html",
-        weekly: "../weeks/index.html",
-        langSwitch: "../en/days/index.html",
-        dayHref: (date) => `./${date}.html`,
-        weekHref: (key) => `../weeks/${key}.html`,
-      }),
+      renderDigestArchivePage(
+        dailyDigests,
+        "day",
+        "ja",
+        jaText,
+        lastUpdatedAt,
+        "..",
+        {
+          home: "../index.html",
+          weekly: "../weeks/index.html",
+          langSwitch: "../en/days/index.html",
+          dayHref: (date) => `./${date}.html`,
+          weekHref: (key) => `../weeks/${key}.html`,
+        },
+      ),
       "utf8",
     ),
     fs.writeFile(
       path.join(siteDir, "en", "days", "index.html"),
-      renderDigestArchivePage(dailyDigests, "day", "en", enText, lastUpdatedAt, "../..", {
-        home: "../index.html",
-        weekly: "../weeks/index.html",
-        langSwitch: "../../days/index.html",
-        dayHref: (date) => `./${date}.html`,
-        weekHref: (key) => `../weeks/${key}.html`,
-      }),
+      renderDigestArchivePage(
+        dailyDigests,
+        "day",
+        "en",
+        enText,
+        lastUpdatedAt,
+        "../..",
+        {
+          home: "../index.html",
+          weekly: "../weeks/index.html",
+          langSwitch: "../../days/index.html",
+          dayHref: (date) => `./${date}.html`,
+          weekHref: (key) => `../weeks/${key}.html`,
+        },
+      ),
       "utf8",
     ),
     fs.writeFile(
       path.join(siteDir, "weeks", "index.html"),
-      renderDigestArchivePage(weeklyDigests, "week", "ja", jaText, lastUpdatedAt, "..", {
-        home: "../index.html",
-        weekly: "./index.html",
-        langSwitch: "../en/weeks/index.html",
-        dayHref: (date) => `../days/${date}.html`,
-        weekHref: (key) => `./${key}.html`,
-      }),
+      renderDigestArchivePage(
+        weeklyDigests,
+        "week",
+        "ja",
+        jaText,
+        lastUpdatedAt,
+        "..",
+        {
+          home: "../index.html",
+          weekly: "./index.html",
+          langSwitch: "../en/weeks/index.html",
+          dayHref: (date) => `../days/${date}.html`,
+          weekHref: (key) => `./${key}.html`,
+        },
+      ),
       "utf8",
     ),
     fs.writeFile(
       path.join(siteDir, "en", "weeks", "index.html"),
-      renderDigestArchivePage(weeklyDigests, "week", "en", enText, lastUpdatedAt, "../..", {
-        home: "../index.html",
-        weekly: "./index.html",
-        langSwitch: "../../weeks/index.html",
-        dayHref: (date) => `../days/${date}.html`,
-        weekHref: (key) => `./${key}.html`,
-      }),
+      renderDigestArchivePage(
+        weeklyDigests,
+        "week",
+        "en",
+        enText,
+        lastUpdatedAt,
+        "../..",
+        {
+          home: "../index.html",
+          weekly: "./index.html",
+          langSwitch: "../../weeks/index.html",
+          dayHref: (date) => `../days/${date}.html`,
+          weekHref: (key) => `./${key}.html`,
+        },
+      ),
       "utf8",
     ),
   ]);
@@ -2526,26 +2649,42 @@ async function main() {
     await Promise.all([
       fs.writeFile(
         path.join(siteDir, highlightArchiveFileName(pageNumber)),
-        renderHighlightsArchivePage(allHighlights, "ja", jaText, lastUpdatedAt, ".", {
-          home: "./index.html",
-          weekly: "./weeks/index.html",
-          langSwitch: `./en/${highlightArchiveFileName(pageNumber)}`,
-          pageHref: (page) => `./${highlightArchiveFileName(page)}`,
-        }, {
-          pageNumber,
-        }),
+        renderHighlightsArchivePage(
+          allHighlights,
+          "ja",
+          jaText,
+          lastUpdatedAt,
+          ".",
+          {
+            home: "./index.html",
+            weekly: "./weeks/index.html",
+            langSwitch: `./en/${highlightArchiveFileName(pageNumber)}`,
+            pageHref: (page) => `./${highlightArchiveFileName(page)}`,
+          },
+          {
+            pageNumber,
+          },
+        ),
         "utf8",
       ),
       fs.writeFile(
         path.join(siteDir, "en", highlightArchiveFileName(pageNumber)),
-        renderHighlightsArchivePage(allHighlights, "en", enText, lastUpdatedAt, "..", {
-          home: "./index.html",
-          weekly: "./weeks/index.html",
-          langSwitch: `../${highlightArchiveFileName(pageNumber)}`,
-          pageHref: (page) => `./${highlightArchiveFileName(page)}`,
-        }, {
-          pageNumber,
-        }),
+        renderHighlightsArchivePage(
+          allHighlights,
+          "en",
+          enText,
+          lastUpdatedAt,
+          "..",
+          {
+            home: "./index.html",
+            weekly: "./weeks/index.html",
+            langSwitch: `../${highlightArchiveFileName(pageNumber)}`,
+            pageHref: (page) => `./${highlightArchiveFileName(page)}`,
+          },
+          {
+            pageNumber,
+          },
+        ),
         "utf8",
       ),
     ]);
