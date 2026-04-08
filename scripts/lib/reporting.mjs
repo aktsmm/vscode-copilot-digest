@@ -165,6 +165,195 @@ const exactSummaryMappings = {
   },
 };
 
+const exactImportanceMappings = {
+  "Visual Studio Code 1.114: Preview videos in the image carousel": {
+    ja: "画像だけでなく動画添付の確認まで chat 内で閉じられるので、レビューや調査の往復を減らしやすい更新です。",
+    en: "This keeps more attachment review inside chat by covering videos as well as images, reducing context switching during investigation and review.",
+  },
+  "Visual Studio Code 1.114: Copy final response in chat": {
+    ja: "tool call や思考過程を除いた最終回答だけを共有しやすくなり、社内展開や記録への転記が楽になります。",
+    en: "This makes it easier to share or archive only the final answer, without exposing tool calls or intermediate reasoning.",
+  },
+  "Visual Studio Code 1.114: Workspace search simplification": {
+    ja: "semantic search の挙動と index 管理が単純化されるので、agent 検索の再現性と説明しやすさに直接効きます。",
+    en: "This directly improves the consistency and explainability of agent workspace search by simplifying semantic indexing behavior.",
+  },
+  "Visual Studio Code 1.114: Troubleshoot previous chat sessions (Preview)": {
+    ja: "再現が難しい chat 問題でも過去 session を後追いで調べられるため、運用時の切り分けがかなりしやすくなります。",
+    en: "This makes post-incident debugging much easier because previous chat sessions can be inspected without reproducing the issue.",
+  },
+  "GitHub Copilot CLI combines model families for a second opinion": {
+    ja: "複雑な実装や計画の初期判断で別モデルの視点を差し込めるため、手戻りの大きい見落としを減らしやすい更新です。",
+    en: "This can reduce expensive downstream rework by bringing a second model's perspective into planning and complex implementation checkpoints.",
+  },
+  "Copilot CLI now supports BYOK and local models": {
+    ja: "モデル選択を GitHub 提供ルーティングから切り離せるので、コスト、統制、データ所在の要件がある組織に直結します。",
+    en: "This matters directly to organizations with cost, governance, or data residency requirements because model routing no longer has to stay GitHub-managed.",
+  },
+  "Dependabot alerts are now assignable to AI agents for remediation": {
+    ja: "単なる依存更新では済まない脆弱性修正を agent に任せられるため、セキュリティ対応の滞留を減らしやすくなります。",
+    en: "This helps reduce security backlog by letting agents handle remediation work that requires actual code changes, not just dependency bumps.",
+  },
+  "Copilot usage metrics now identify active and passive Copilot code review users":
+    {
+      ja: "本当に能動利用されている code review かを分けて見られるので、ライセンス評価や定着施策の精度が上がります。",
+      en: "This improves adoption analysis by distinguishing truly intentional code-review usage from reviews that were only added automatically.",
+    },
+  "Organization runner controls for Copilot cloud agent": {
+    ja: "runner を組織既定にできるので、cloud agent の実行環境を性能・ネットワーク・統制の観点でそろえやすくなります。",
+    en: "This matters because organizations can standardize cloud-agent execution environments for performance, network access, and governance.",
+  },
+  "Organization firewall settings for Copilot cloud agent": {
+    ja: "agent の外部通信制御を組織単位で統一できるため、prompt injection やデータ流出対策を repo ごとにばらつかせずに済みます。",
+    en: "This is important because outbound agent access can now be governed consistently at the organization level instead of varying repo by repo.",
+  },
+  "Copilot cloud agent signs its commits": {
+    ja: "signed commit 必須の branch protection があっても cloud agent を止めずに使えるようになるため、導入できる repo が増えます。",
+    en: "This expands where cloud agent can be used by making it compatible with repositories that require signed commits.",
+  },
+  "Copilot SDK in public preview": {
+    ja: "自前アプリや workflow に agent 実行基盤を埋め込める入口なので、Copilot を製品機能として組み込みたいチームに影響が大きい更新です。",
+    en: "This is a high-impact entry point for teams that want to embed Copilot-style agent capabilities into their own products and workflows.",
+  },
+  "GPT-5.1 Codex, GPT-5.1-Codex-Max, and GPT-5.1-Codex-Mini deprecated": {
+    ja: "model policy や既定選択を見直す必要があるので、既存運用へ直接影響する廃止告知です。",
+    en: "This matters because existing defaults, model policies, and migration plans may need to change immediately for teams still relying on the GPT-5.1 Codex family.",
+  },
+  "GitHub Copilot CLI、メインのAIモデルとは異なるAIモデルをセカンドオピニオンに使う「Rubber Duck」モード":
+    {
+      ja: "CLI での複雑作業に別モデル視点を差し込めることを示していて、実運用での agent 品質向上余地を判断する材料になります。",
+      en: "This is a useful signal for teams evaluating whether a second-model review loop can improve agent quality in CLI-heavy workflows.",
+    },
+  "Copilot usage metrics now includes per-user GitHub Copilot CLI activity in organization reports":
+    {
+      ja: "CLI 利用の実態をユーザー単位で追えるので、定着状況、教育対象、コスト配分の見直しに使いやすい更新です。",
+      en: "This gives organizations a clearer basis for rollout planning, enablement, and cost attribution by exposing who is actually using Copilot CLI and how heavily.",
+    },
+  "GitHub Copilot in Visual Studio — March update": {
+    ja: "Visual Studio 側でも custom agents や診断支援が広がっていて、IDE ごとの agent 体験差を埋める流れとして重要です。",
+    en: "This matters because it broadens serious agent and diagnostic workflows in Visual Studio, reducing the capability gap across GitHub Copilot surfaces.",
+  },
+  "Copilot organization custom instructions are generally available": {
+    ja: "組織全体で Copilot の前提知識や振る舞いをそろえられるため、repo ごとのばらつきやレビュー負荷を減らしやすくなります。",
+    en: "This is important because organizations can now enforce shared Copilot behavior and context at scale instead of relying on repository-by-repository conventions.",
+  },
+  "Research, plan, and code with Copilot cloud agent": {
+    ja: "実装前の plan 確認や branch 上での試行がやりやすくなり、cloud agent をいきなり PR 前提で使わなくて済むようになります。",
+    en: "This matters because cloud-agent work no longer has to begin and end as a pull request, making planning and branch-level iteration much more practical.",
+  },
+  "Visual Studio Code 1.114": {
+    ja: "chat の実運用で効く改善がまとまっていて、共有、検索、障害切り分けの負荷を下げる release として意味があります。",
+    en: "This release matters because it improves day-to-day chat operations across sharing, search, and troubleshooting rather than adding a single isolated feature.",
+  },
+  "Visual Studio Code 1.113": {
+    ja: "customization と subagent 周りの操作性が前に進んでいて、agent を継続利用するチームほど影響が大きい release です。",
+    en: "This is important for teams using agents continuously because it improves customization, model control, and subagent workflows rather than just one-off prompts.",
+  },
+  "Visual Studio Code 1.112": {
+    ja: "permission、troubleshoot、browser debugging など agent 運用の土台を固める変更が多く、実導入の安定性に効きます。",
+    en: "This matters because it strengthens the operational foundation for agents with better permissions, troubleshooting, and browser-debugging support.",
+  },
+  "Visual Studio Code 1.111": {
+    ja: "Autopilot preview や permission picker など、agent を任せる前提の UI と制御がそろい始めた節目の release です。",
+    en: "This is a meaningful milestone because it starts to put the UI and control model in place for workflows where agents are trusted with more autonomy.",
+  },
+  "February 2026 (version 1.110)": {
+    ja: "plugin、session memory、browser tools など agent 拡張の基盤が広がる release なので、中長期の活用余地に効きます。",
+    en: "This matters because it expands the platform surface for agent workflows through plugins, session memory, and browser tooling rather than a narrow feature tweak.",
+  },
+  "December 2025 (version 1.108)": {
+    ja: "session picker や terminal 承認など運用まわりの改善が多く、日常的な agent 利用の扱いやすさに効く release です。",
+    en: "This matters because it improves the day-to-day ergonomics of agent use through session handling, terminal approvals, and broader editor polish rather than a single headline feature.",
+  },
+  "November 2025 (version 1.107)": {
+    ja: "session 統合や org 共有 agent など、VS Code を multi-agent の作業面として使う方向性を強めた release です。",
+    en: "This matters because it pushed VS Code further toward a practical multi-agent workspace with shared sessions, worktree isolation, and org-level agent reuse.",
+  },
+  "January 2026 (version 1.109)": {
+    ja: "multi-agent development を前に進める土台が多く入っていて、その後の VS Code agent 体験の方向性を決める release です。",
+    en: "This is foundational because it established much of the session, memory, and orchestration model that later multi-agent VS Code work builds on.",
+  },
+  "Run multiple agents at once with /fleet in Copilot CLI": {
+    ja: "CLI でも並列分解前提の作業が現実的になるので、複数ファイルや複数領域にまたがるタスクの進め方を変えうる更新です。",
+    en: "This can materially change how larger CLI tasks are executed by making parallel decomposition practical across multiple files and workstreams.",
+  },
+  "Agent-driven development in Copilot Applied Science": {
+    ja: "agent-first な repository 運用をどう成立させるかの実例なので、導入時の process 設計や guardrail の考え方に直接効きます。",
+    en: "This is valuable because it provides a concrete operating model for agent-first repositories, including process design and guardrails rather than just prompting tips.",
+  },
+  "Building AI-powered GitHub issue triage with the Copilot SDK": {
+    ja: "Copilot SDK を自前サービスへ組み込むときの実装像が具体的で、agent 機能を製品化したいチームの参考になります。",
+    en: "This matters because it shows what a production-minded Copilot SDK integration looks like when agent functionality is embedded into a real product flow.",
+  },
+  "How Squad runs coordinated AI agents inside your repository": {
+    ja: "複数 agent の協調を repo 内でどう回すかの具体像があり、orchestration 設計や共有メモリの置き方を考える材料になります。",
+    en: "This is useful because it gives a concrete repository-native model for multi-agent orchestration, including how coordination and shared memory can work in practice.",
+  },
+  "How VS Code Builds with AI": {
+    ja: "VS Code チーム自身の運用事例なので、どの作業に AI を当てているかを見る材料として価値があります。",
+    en: "This matters because it shows how the VS Code team itself applies AI in practice, which is more actionable than a generic product announcement.",
+  },
+  "Continuous AI for accessibility: How GitHub transforms feedback into inclusion":
+    {
+      ja: "アクセシビリティ対応を一回限りでなく継続改善へ組み込む観点があり、AI 活用の運用設計を見る材料になります。",
+      en: "This is important because it frames accessibility work as a continuous AI-assisted improvement loop rather than a one-time remediation effort.",
+    },
+  "The era of “AI as text” is over. Execution is the new interface.": {
+    ja: "AI を実行主体として扱う設計思想を整理していて、SDK や tool integration をどう位置づけるかの理解に効きます。",
+    en: "This matters because it gives a sharper conceptual model for treating AI as an execution layer, which influences how teams evaluate SDKs and tool integrations.",
+  },
+  "60 million Copilot code reviews and counting": {
+    ja: "code review の利用規模がどこまで来ているかの指標で、レビュー自動化を導入判断する際の材料になります。",
+    en: "This is useful as an adoption signal for teams deciding how seriously to treat AI-assisted code review in their own engineering process.",
+  },
+  "Join or host a GitHub Copilot Dev Days event near you": {
+    ja: "単なる告知ではなく、学習機会や社内展開の場を増やせるので、enablement の観点で意味があります。",
+    en: "This matters from an enablement perspective because it points to concrete ways teams can accelerate learning and internal rollout around Copilot.",
+  },
+  "From idea to pull request: A practical guide to building with GitHub Copilot CLI":
+    {
+      ja: "CLI、IDE、GitHub をまたぐ実践フローが整理されていて、導入時の標準手順を考える材料になります。",
+      en: "This is useful because it outlines a practical end-to-end operating model that spans CLI exploration, IDE judgment, and GitHub reviewable output.",
+    },
+  "What's new with GitHub Copilot coding agent": {
+    ja: "coding agent の更新点を横断して把握できるので、背景作業の自動化をどこまで任せられるかを見極める助けになります。",
+    en: "This matters because it helps teams evaluate how much more background work can be delegated safely to the coding agent across the latest updates.",
+  },
+  "Building Long-Distance Next Edit Suggestions": {
+    ja: "より長い編集候補を出すための技術背景が分かるので、Copilot 編集体験の限界や今後の伸び代を理解しやすくなります。",
+    en: "This is useful because it explains the technical work behind more ambitious edit suggestions, helping teams understand where Copilot editing is heading.",
+  },
+  "Your Home for Multi-Agent Development": {
+    ja: "VS Code が multi-agent のハブを狙っていることを示していて、今後どこへ寄せていくべきかの判断材料になります。",
+    en: "This matters because it signals VS Code's strategic direction as a hub for multi-agent work, which affects longer-term tooling decisions.",
+  },
+  "Making agents practical for real-world development": {
+    ja: "単なる機能追加ではなく、agent を日常運用に乗せるための課題整理なので、導入側の視点と噛み合います。",
+    en: "This is useful because it focuses on the practical constraints of making agents work in daily development, not just showcasing raw capabilities.",
+  },
+  "Giving Agents a Visual Voice: MCP Apps Support in VS Code": {
+    ja: "agent が UI を返せる方向へ広がるので、テキスト中心だった応答設計を見直すきっかけになります。",
+    en: "This matters because it expands agent outputs beyond plain text, which can change how teams think about interactive workflows in VS Code.",
+  },
+  "Building docfind: Fast Client-Side Search with Rust and WebAssembly": {
+    ja: "大規模ドキュメントでも静的配布のまま検索性を上げる実装例として、docs 基盤の改善に応用しやすい話です。",
+    en: "This is useful as an implementation reference for teams improving search in large static documentation sites without adding server-side infrastructure.",
+  },
+  "Introducing the VS Code Insiders Podcast": {
+    ja: "公式の継続情報源が増えるので、release note 以外の背景情報を追いやすくなります。",
+    en: "This matters as a new ongoing signal source for teams that want more continuous context than release notes alone provide.",
+  },
+  "GPT-5.4 mini is now available in Copilot Student auto model selection": {
+    ja: "Student プランでも auto selection の選択肢が広がるので、教育・学習用途で触れられるモデル体験が増えます。",
+    en: "This matters because it broadens the auto-model experience available to Student users, which affects what learners can access by default.",
+  },
+  "マイクロソフト、Claude CodeやGitHub Copilotに「このアプリをデプロイせよ」と指示すればAIが最適なインフラ構成やサービスでデプロイしてくれる「Azure Skills Plugin」公開":
+    {
+      ja: "AI agent にクラウド構成判断まで任せる方向を示していて、開発支援から運用自動化へ広がる流れの確認材料になります。",
+      en: "This is a useful signal for teams tracking the shift from coding assistance toward agent-driven infrastructure planning and deployment.",
+    },
+};
+
 function toDateOnly(value) {
   const date = safeDate(value);
   const year = date.getFullYear();
@@ -1182,6 +1371,12 @@ export function importanceLabel(event) {
 }
 
 export function importanceReason(event, locale = "ja") {
+  const title = normalizeWhitespace(decodeHtmlEntities(event.title));
+
+  if (exactImportanceMappings[title]?.[locale]) {
+    return exactImportanceMappings[title][locale];
+  }
+
   const label = importanceLabel(event);
 
   if (label === "Retired") {
