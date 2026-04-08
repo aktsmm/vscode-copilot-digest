@@ -30,6 +30,8 @@ const topicOrder = [
   "周辺ニュース",
 ];
 const sourceGroupOrder = ["github", "vscode", "platform", "other"];
+const HOME_HIGHLIGHT_LIMIT = 6;
+const HOME_ARCHIVE_LIMIT = 6;
 
 function toDateOnly(value) {
   const date = safeDate(value);
@@ -398,6 +400,30 @@ function renderMetric(label, value, detail) {
   return `<article class="metric-card"><span class="metric-label">${escapeHtml(label)}</span><strong class="metric-value">${escapeHtml(value)}</strong><span class="metric-detail">${escapeHtml(detail)}</span></article>`;
 }
 
+function renderSectionHeading(title, trailing = "", action = "") {
+  return `<div class="section-heading"><h2>${escapeHtml(title)}</h2><div class="section-heading-tools">${trailing ? `<span>${escapeHtml(trailing)}</span>` : ""}${action}</div></div>`;
+}
+
+function renderSectionAction(href, label) {
+  return `<a class="section-action" href="${escapeHtml(href)}">${escapeHtml(label)}</a>`;
+}
+
+function renderTotalActionLabel(locale, count, unitLabel) {
+  if (locale === "ja") {
+    return `全${count}${unitLabel}を見る`;
+  }
+
+  return `View all ${count}`;
+}
+
+function renderVisibleCountLabel(locale, count, unitLabel) {
+  if (locale === "ja") {
+    return `${count}${unitLabel}表示`;
+  }
+
+  return `${count} shown`;
+}
+
 function renderSourceBadge(event, text) {
   const group = sourceGroup(event);
   const meta = sourceGroupMeta(group, text);
@@ -732,6 +758,141 @@ function renderArchiveCard(digest, locale, text, href, kind) {
   </article>`;
 }
 
+function renderEventStreamItem(event, locale, text) {
+  const rawTitle = locale === "ja" ? originalTitle(event) : null;
+  const group = sourceGroup(event);
+  const topic = classifyEvent(event);
+  const isExternal =
+    event.url && !event.url.startsWith("./") && !event.url.startsWith("../");
+  const linkAttrs = isExternal ? ` target="_blank" rel="noopener"` : "";
+
+  return `<article class="stream-item" data-filter-card data-source-group="${escapeHtml(group)}" data-topic="${escapeHtml(topic)}">
+    <div class="stream-item-head">
+      ${renderBadges(event, locale, text)}
+      <div class="stream-item-meta">${renderDateMeta(event, locale, text)}${renderSourceMeta(event, locale, text)}</div>
+    </div>
+    <div class="stream-item-body">
+      <h3><a href="${escapeHtml(event.url)}"${linkAttrs}>${escapeHtml(localizedTitle(event, locale))}${isExternal ? ' <span class="ext-icon" aria-hidden="true">&#8599;</span>' : ""}</a></h3>
+      ${rawTitle ? `<p class="original-title">${escapeHtml(text.originalTitleLabel)}: ${escapeHtml(rawTitle)}</p>` : ""}
+      <p>${escapeHtml(trimText(localizedSummary(event, locale), 520))}</p>
+      <p class="why-it-matters"><strong>${escapeHtml(text.whyLabel)}:</strong> ${escapeHtml(importanceReason(event, locale))}</p>
+    </div>
+  </article>`;
+}
+
+function renderDigestStreamItem(digest, locale, text, href, kind) {
+  const rangeLabel =
+    kind === "week" ? `${digest.startDate} - ${digest.endDate}` : digest.date;
+  const itemCount =
+    locale === "ja"
+      ? `${digest.uniqueEventCount}${text.itemSuffix}`
+      : formatCount(digest.uniqueEventCount, locale, "item", "items");
+  const topItems = digest.highlights.slice(0, 3);
+
+  return `<article class="archive-stream-item">
+    <div class="archive-stream-side">
+      <p class="archive-stream-range">${escapeHtml(rangeLabel)}</p>
+      <span class="archive-stream-count">${escapeHtml(itemCount)}</span>
+    </div>
+    <div class="archive-stream-body">
+      <h3><a href="${escapeHtml(href)}">${escapeHtml(rangeLabel)}</a></h3>
+      <p>${escapeHtml(trimText(localizedSummary(topItems[0] ?? { summary: locale === "ja" ? "更新はありませんでした。" : "No updates were found." }, locale), 280))}</p>
+      <ul>${topItems.map((event) => `<li>${escapeHtml(trimText(localizedTitle(event, locale), 120))}</li>`).join("")}</ul>
+    </div>
+    <div class="archive-stream-link">${renderSectionAction(href, locale === "ja" ? "開く" : "Open")}</div>
+  </article>`;
+}
+
+function renderHighlightsArchivePage(events, locale, text, lastUpdatedAt, relativePrefix, links) {
+  const itemCount =
+    locale === "ja"
+      ? `${events.length}${text.itemSuffix}`
+      : formatCount(events.length, locale, "item", "items");
+  const sourceCount = new Set(events.map((event) => sourceGroup(event))).size;
+  const latestDate = events[0]?.publishedAt ? formatDate(events[0].publishedAt, locale) : "N/A";
+  const filterAxes = renderFilterAxes(events);
+  const body = `
+    <section class="hero hero-day">
+      <div>
+        <p class="eyebrow">${escapeHtml(locale === "ja" ? "ハイライト一覧" : "Highlights archive")}</p>
+        <h1>${escapeHtml(locale === "ja" ? "最新ハイライトをまとめて見る。" : "Browse all highlights.")}</h1>
+        <p class="hero-copy">${escapeHtml(locale === "ja" ? "トップページでは最新の一部だけを見せています。このページでは公開済みのハイライトを時系列でまとめて追えます。" : "The home page shows only a subset. This page lists all published highlights in reverse chronological order.")}</p>
+      </div>
+      <div class="metrics-grid">
+        ${renderMetric(text.trackedUpdates, itemCount, text.trackedUpdatesDetail)}
+        ${renderMetric(text.searchSourcesMetric, locale === "ja" ? `${sourceCount}${text.itemSuffix}` : formatCount(sourceCount, locale, "source", "sources"), text.searchSourcesMetricDetail)}
+        ${renderMetric(text.latestDate, latestDate, text.latestDateDetail)}
+        ${renderMetric(locale === "ja" ? "公開済みハイライト" : "Published highlights", locale === "ja" ? `${events.length}${text.itemSuffix}` : itemCount, locale === "ja" ? "一覧ページに並ぶ総件数" : "Total number of published highlights in this list")}
+      </div>
+    </section>
+
+    ${renderFilterBar(text, { showSource: filterAxes.showSource, showTopic: false })}
+
+    <section class="section-block">
+      ${renderSectionHeading(locale === "ja" ? "ハイライト一覧" : "All highlights", itemCount)}
+      <div class="stream-list">${events.map((event) => renderEventStreamItem(event, locale, text)).join("")}</div>
+    </section>
+  `;
+
+  return renderLayout({
+    locale,
+    text,
+    title: locale === "ja" ? "ハイライト一覧 | vscode-copilot-digest" : "Highlights | vscode-copilot-digest",
+    description: locale === "ja" ? "公開済みハイライトの一覧ページ" : "Published highlights archive",
+    body,
+    lastUpdatedAt,
+    relativePrefix,
+    homeHref: links.home,
+    weeklyHref: links.weekly,
+    langSwitchHref: links.langSwitch,
+  });
+}
+
+function renderDigestArchivePage(digests, kind, locale, text, lastUpdatedAt, relativePrefix, links) {
+  const countLabel =
+    locale === "ja"
+      ? `${digests.length}${kind === "day" ? text.dayCountSuffix : text.itemSuffix}`
+      : formatCount(digests.length, locale, kind === "day" ? "day" : "window", kind === "day" ? "days" : "windows");
+  const latestLabel =
+    kind === "day"
+      ? digests[0]?.date ?? "N/A"
+      : digests[0] ? `${digests[0].startDate} - ${digests[0].endDate}` : "N/A";
+  const totalItems = digests.reduce((sum, digest) => sum + digest.uniqueEventCount, 0);
+  const body = `
+    <section class="hero hero-day">
+      <div>
+        <p class="eyebrow">${escapeHtml(kind === "day" ? (locale === "ja" ? "日次アーカイブ" : "Daily archive") : locale === "ja" ? "週間アーカイブ" : "Weekly archive")}</p>
+        <h1>${escapeHtml(kind === "day" ? (locale === "ja" ? "日次アーカイブをまとめて見る。" : "Browse all daily digests.") : locale === "ja" ? "週間ダイジェストをまとめて見る。" : "Browse all weekly digests.")}</h1>
+        <p class="hero-copy">${escapeHtml(kind === "day" ? (locale === "ja" ? "日付ごとのダイジェストを縦に並べて追える一覧です。トップページよりも古い記録までまとめて確認できます。" : "A vertical list of day-by-day digests, including older entries beyond the home page.") : locale === "ja" ? "週単位でまとめたダイジェストを縦一覧で追えます。公開済みの週次をまとめて見返したいとき向けです。" : "A vertical list of rolling weekly digests for reviewing published weekly windows.")}</p>
+      </div>
+      <div class="metrics-grid">
+        ${renderMetric(kind === "day" ? text.dailyArchiveTitle : text.weeklyArchiveTitle, countLabel, locale === "ja" ? "公開済み一覧件数" : "Published archive count")}
+        ${renderMetric(text.latestDate, latestLabel, locale === "ja" ? "一番新しい対象期間" : "Newest covered range")}
+        ${renderMetric(text.overallCount, locale === "ja" ? `${totalItems}${text.itemSuffix}` : formatCount(totalItems, locale, "item", "items"), text.overallCountDetail)}
+        ${renderMetric(locale === "ja" ? "ホーム表示枠" : "Home page batch", locale === "ja" ? `${Math.min(HOME_ARCHIVE_LIMIT, digests.length)}${kind === "day" ? text.dayCountSuffix : text.itemSuffix}` : `${Math.min(HOME_ARCHIVE_LIMIT, digests.length)}`, locale === "ja" ? "トップページで先頭に出す件数" : "Items shown on the home page before opening the full archive")}
+      </div>
+    </section>
+
+    <section class="section-block">
+      ${renderSectionHeading(kind === "day" ? text.dailyArchiveTitle : text.weeklyArchiveTitle, countLabel)}
+      <div class="archive-stream">${digests.map((digest) => renderDigestStreamItem(digest, locale, text, kind === "day" ? links.dayHref(digest.date) : links.weekHref(digest.key), kind)).join("")}</div>
+    </section>
+  `;
+
+  return renderLayout({
+    locale,
+    text,
+    title: kind === "day" ? (locale === "ja" ? "日次アーカイブ | vscode-copilot-digest" : "Daily archive | vscode-copilot-digest") : locale === "ja" ? "週間ダイジェスト一覧 | vscode-copilot-digest" : "Weekly digests | vscode-copilot-digest",
+    description: kind === "day" ? (locale === "ja" ? "公開済み日次ダイジェストの一覧ページ" : "Published daily digest archive") : locale === "ja" ? "公開済み週間ダイジェストの一覧ページ" : "Published weekly digest archive",
+    body,
+    lastUpdatedAt,
+    relativePrefix,
+    homeHref: links.home,
+    weeklyHref: links.weekly,
+    langSwitchHref: links.langSwitch,
+  });
+}
+
 function renderRangePage(digest, locale, text, options) {
   const itemCount = (count) =>
     locale === "ja"
@@ -859,16 +1020,20 @@ function renderIndexPage(
     0,
   );
   const searchHref = links.home.replace(/index\.html$/, "search.html");
-  const latestHighlights = buildPublishedEventEntries(dailyDigests, {
+  const allHighlights = buildPublishedEventEntries(dailyDigests, {
     includeFuture: false,
-  }).slice(0, 6);
+  });
+  const latestHighlights = allHighlights.slice(0, HOME_HIGHLIGHT_LIMIT);
   const latestFilterAxes = renderFilterAxes(latestHighlights);
   const sourceHighlightGroups = buildSourceHighlightGroups(dailyDigests);
+  const weeklyHomeDigests = weeklyDigests.slice(0, HOME_ARCHIVE_LIMIT);
+  const dailyHomeDigests = dailyDigests.slice(0, HOME_ARCHIVE_LIMIT);
 
   const weeklyMarkup =
-    weeklyDigests.length === 0
+    weeklyHomeDigests.length === 0
       ? `<div class="content-card empty-card"><p>${escapeHtml(text.weeklyEmpty)}</p></div>`
-      : `<div class="digest-grid">${weeklyDigests.map((digest) => renderArchiveCard(digest, locale, text, links.weekHref(digest.key), "week")).join("")}</div>`;
+      : `<div class="digest-grid">${weeklyHomeDigests.map((digest) => renderArchiveCard(digest, locale, text, links.weekHref(digest.key), "week")).join("")}</div>`;
+  const dailyMarkup = `<div class="digest-grid">${dailyHomeDigests.map((digest) => renderArchiveCard(digest, locale, text, links.dayHref(digest.date), "day")).join("")}</div>`;
 
   const body = `
     <section class="hero hero-home">
@@ -896,20 +1061,43 @@ function renderIndexPage(
     ${latestHighlights.length > 0 ? renderFilterBar(text, { showSource: latestFilterAxes.showSource, showTopic: false }) : ""}
 
     <section class="section-block" data-latest-highlights data-count-suffix="${escapeHtml(text.latestHighlightsCountSuffix)}">
-      <div class="section-heading"><h2>${escapeHtml(text.latestHighlightsTitle)}</h2><span data-latest-count>${escapeHtml(locale === "ja" ? `${latestHighlights.length}${text.latestHighlightsCountSuffix}` : `${latestHighlights.length}${text.latestHighlightsCountSuffix}`)}</span></div>
+      ${renderSectionHeading(
+        text.latestHighlightsTitle,
+        renderVisibleCountLabel(locale, latestHighlights.length, text.itemSuffix),
+        allHighlights.length > 0
+          ? renderSectionAction(
+              links.highlights,
+              renderTotalActionLabel(locale, allHighlights.length, text.itemSuffix),
+            )
+          : "",
+      )}
       <div class="highlight-grid latest-highlights-grid" data-highlight-group="all">${latestHighlights.map((event) => renderEventCard(event, locale, text, { compact: true, includeWhy: true })).join("")}</div>
       ${sourceHighlightGroups.map((entry) => renderSourceHighlightPanel(entry, locale, text)).join("")}
       <p class="latest-highlights-empty is-hidden" data-latest-empty>${escapeHtml(text.noItems)}</p>
     </section>
 
     <section class="section-block" id="weekly-archive">
-      <div class="section-heading"><h2>${escapeHtml(text.weeklyArchiveTitle)}</h2><span>${escapeHtml(text.weeklyArchiveLabel)}</span></div>
+      ${renderSectionHeading(
+        text.weeklyArchiveTitle,
+        weeklyHomeDigests.length === 0
+          ? text.weeklyArchiveLabel
+          : renderVisibleCountLabel(locale, weeklyHomeDigests.length, text.itemSuffix),
+        weeklyDigests.length > 0
+          ? renderSectionAction(links.weeklyArchive, locale === "ja" ? "すべてを見る" : "View all")
+          : "",
+      )}
       ${weeklyMarkup}
     </section>
 
     <section class="section-block">
-      <div class="section-heading"><h2>${escapeHtml(text.dailyArchiveTitle)}</h2><span>${locale === "ja" ? `${dailyDigests.length}${escapeHtml(text.dayCountSuffix)}` : formatCount(dailyDigests.length, locale, "day", "days")}</span></div>
-      <div class="digest-grid">${dailyDigests.map((digest) => renderArchiveCard(digest, locale, text, links.dayHref(digest.date), "day")).join("")}</div>
+      ${renderSectionHeading(
+        text.dailyArchiveTitle,
+        renderVisibleCountLabel(locale, dailyHomeDigests.length, text.dayCountSuffix),
+        dailyDigests.length > 0
+          ? renderSectionAction(links.dailyArchive, locale === "ja" ? "すべてを見る" : "View all")
+          : "",
+      )}
+      ${dailyMarkup}
     </section>
   `;
 
@@ -1258,9 +1446,11 @@ function renderLayout({
     <div class="page-shell">
       <header class="site-header">
         <div>
-          <a class="site-brand" href="${escapeHtml(homeHref)}">vscode-copilot-digest</a>
+          <div class="site-brand-row">
+            <a class="site-brand" href="${escapeHtml(homeHref)}">vscode-copilot-digest</a>
+            ${lastUpdatedAt ? `<span class="site-updated-inline">${escapeHtml(text.lastUpdatedLabel)}: ${escapeHtml(formatDateTime(lastUpdatedAt, locale))}</span>` : ""}
+          </div>
           <p class="site-lead">${escapeHtml(text.siteLead)}</p>
-          ${lastUpdatedAt ? `<p class="site-updated">${escapeHtml(text.lastUpdatedLabel)}: ${escapeHtml(formatDateTime(lastUpdatedAt, locale))}</p>` : ""}
         </div>
         <nav class="site-nav">
           <a href="${escapeHtml(homeHref)}">${escapeHtml(text.dailyNav)}</a>
@@ -1377,23 +1567,31 @@ function renderLayout({
       }
       function syncLatestHighlights(){
         if(!latestRoot)return;
+        var visibleContainers=[];
         if(state.source.size===0){
           if(latestDefault)latestDefault.classList.remove('is-hidden');
           latestPanels.forEach(function(panel){panel.classList.add('is-hidden');});
           if(latestEmpty)latestEmpty.classList.add('is-hidden');
+          if(latestDefault)visibleContainers=[latestDefault];
         }else{
           if(latestDefault)latestDefault.classList.add('is-hidden');
           var visiblePanels=0;
           latestPanels.forEach(function(panel){
             var visible=state.source.has(panel.getAttribute('data-highlight-source-section'));
             panel.classList.toggle('is-hidden',!visible);
-            if(visible)visiblePanels+=1;
+            if(visible){
+              visiblePanels+=1;
+              visibleContainers.push(panel);
+            }
           });
           if(latestEmpty)latestEmpty.classList.toggle('is-hidden',visiblePanels!==0);
         }
         if(latestCount){
           var countSuffix=latestRoot.getAttribute('data-count-suffix')||'';
-          var visibleCards=latestRoot.querySelectorAll('.mini-highlight:not(.is-hidden)').length;
+          var visibleCards=0;
+          visibleContainers.forEach(function(container){
+            visibleCards+=container.querySelectorAll('.mini-highlight').length;
+          });
           latestCount.textContent=String(visibleCards)+countSuffix;
         }
       }
@@ -1494,16 +1692,23 @@ a { color: inherit; }
   gap: 16px;
 }
 .site-header {
-  margin-bottom: 24px;
-  padding: 18px 20px;
+  margin-bottom: 18px;
+  padding: 14px 18px;
   background: rgba(255, 250, 242, 0.78);
   border: 1px solid var(--line);
   border-radius: 24px;
   backdrop-filter: blur(14px);
 }
+.site-brand-row {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+}
 .site-brand, h1, h2, h3 { font-family: "Space Grotesk", "IBM Plex Sans JP", sans-serif; }
 .site-brand { text-decoration: none; font-weight: 700; letter-spacing: 0.02em; }
-.site-lead { margin: 6px 0 0; color: var(--muted); font-size: 0.92rem; }
+.site-lead { margin: 4px 0 0; color: var(--muted); font-size: 0.9rem; }
+.site-updated-inline { color: var(--muted); font-size: 0.8rem; }
 .site-updated { margin: 8px 0 0; color: var(--muted); font-size: 0.85rem; }
 .site-nav { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
 .site-nav a, .data-links a { text-decoration: none; color: var(--muted); }
@@ -1518,21 +1723,22 @@ a { color: inherit; }
   box-shadow: var(--shadow);
 }
 .hero-home {
-  grid-template-columns: minmax(0, 1.08fr) minmax(280px, 0.78fr);
-  gap: 20px;
-  padding: 28px;
-  align-items: start;
+  grid-template-columns: minmax(0, 1.34fr) minmax(360px, 0.96fr);
+  gap: 18px;
+  padding: 22px 24px;
+  align-items: center;
 }
 .hero-day { margin-bottom: 24px; }
 .hero-home h1 {
-  font-size: clamp(1.95rem, 3.3vw, 3.35rem);
-  line-height: 1.08;
-  max-width: 8.4ch;
-  margin-bottom: 12px;
+  font-size: clamp(1.62rem, 2.9vw, 2.9rem);
+  line-height: 1.06;
+  max-width: 11.5ch;
+  margin-bottom: 10px;
 }
 .hero-home .hero-copy {
-  max-width: 58ch;
-  font-size: 0.98rem;
+  max-width: 66ch;
+  font-size: 0.95rem;
+  line-height: 1.66;
 }
 .hero-search {
   margin-top: 22px;
@@ -1540,8 +1746,8 @@ a { color: inherit; }
   gap: 10px;
 }
 .hero-home .hero-search {
-  margin-top: 16px;
-  gap: 8px;
+  margin-top: 12px;
+  gap: 6px;
 }
 .hero-search-label {
   margin: 0;
@@ -1583,13 +1789,16 @@ h1 { margin: 0 0 16px; font-size: clamp(2.3rem, 4vw, 4.2rem); line-height: 1.04;
 }
 .metric-card { padding: 18px; display: flex; flex-direction: column; gap: 8px; }
 .metrics-grid--compact .metric-card {
-  padding: 16px;
-  gap: 6px;
+  padding: 14px;
+  gap: 4px;
 }
 .metric-label, .metric-detail, .meta-row, .digest-card-head { color: var(--muted); font-size: 0.9rem; }
 .metric-value { font-size: 1.9rem; }
-.metrics-grid--compact .metric-value { font-size: 1.65rem; }
+.metrics-grid--compact .metric-label { font-size: 0.84rem; }
+.metrics-grid--compact .metric-detail { font-size: 0.82rem; }
+.metrics-grid--compact .metric-value { font-size: 1.52rem; }
 .section-block { margin-top: 28px; }
+.hero-home + .section-block { margin-top: 16px; }
 .notice-block {
   padding: 18px 20px;
   background: rgba(15, 118, 110, 0.08);
@@ -1722,14 +1931,109 @@ h1 { margin: 0 0 16px; font-size: clamp(2.3rem, 4vw, 4.2rem); line-height: 1.04;
   gap: 12px;
   margin-bottom: 14px;
 }
+.section-heading-tools {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 10px;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
 .section-heading h2 { margin: 0; font-size: 1.55rem; }
 .section-heading--sub h3 { margin: 0; font-size: 1.1rem; }
+.section-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.7);
+  color: var(--accent);
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.section-action:hover {
+  background: var(--accent-soft);
+}
 .overview-grid, .highlight-grid, .digest-grid, .update-list { display: grid; gap: 16px; }
 .overview-grid { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
 .highlight-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
 .latest-highlights-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .digest-grid { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
 .update-list { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
+.stream-list,
+.archive-stream {
+  display: grid;
+  gap: 14px;
+}
+.stream-item,
+.archive-stream-item {
+  display: grid;
+  gap: 14px;
+  padding: 18px 20px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  box-shadow: var(--shadow);
+}
+.stream-item h3,
+.archive-stream-item h3 {
+  margin: 0;
+  font-size: 1.08rem;
+}
+.stream-item p,
+.archive-stream-item p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+.stream-item-head {
+  display: grid;
+  gap: 10px;
+}
+.stream-item-meta {
+  display: grid;
+  gap: 8px;
+}
+.stream-item-body {
+  display: grid;
+  gap: 10px;
+}
+.archive-stream-item {
+  grid-template-columns: minmax(140px, 180px) minmax(0, 1fr) auto;
+  align-items: start;
+}
+.archive-stream-side {
+  display: grid;
+  gap: 8px;
+}
+.archive-stream-range {
+  font-weight: 700;
+  color: var(--text) !important;
+}
+.archive-stream-count {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.archive-stream-body {
+  display: grid;
+  gap: 10px;
+}
+.archive-stream-body ul {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+  display: grid;
+  gap: 6px;
+}
+.archive-stream-link {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
 .page-grid {
   display: grid;
   grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.9fr);
@@ -1865,16 +2169,22 @@ h1 { margin: 0 0 16px; font-size: clamp(2.3rem, 4vw, 4.2rem); line-height: 1.04;
 .ext-icon { font-size: 0.8em; opacity: 0.5; margin-left: 2px; }
 @media (max-width: 960px) {
   .hero, .page-grid { grid-template-columns: 1fr; }
+  .archive-stream-item { grid-template-columns: 1fr; }
+  .archive-stream-link { justify-content: flex-start; }
 }
   .latest-highlights-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 @media (max-width: 720px) {
   .page-shell { padding: 16px; }
   .site-header { padding: 14px 16px; align-items: flex-start; flex-direction: column; }
+  .site-brand-row { align-items: flex-start; gap: 6px 10px; }
   .hero { padding: 24px; }
+  .hero-home h1 { max-width: none; }
   .metrics-grid { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 520px) {
   .metrics-grid, .update-list, .highlight-grid, .digest-grid, .overview-grid { grid-template-columns: 1fr; }
+  .section-heading { align-items: flex-start; }
+  .section-heading-tools { justify-content: flex-start; }
 }
 `;
 }
@@ -1944,6 +2254,7 @@ async function main() {
   const searchableEvents = buildPublishedEventEntries(dailyDigests, {
     includeFuture: false,
   });
+  const allHighlights = searchableEvents;
   const lastUpdatedAt = new Date();
 
   await fs.rm(siteDir, { recursive: true, force: true });
@@ -1984,6 +2295,9 @@ async function main() {
         {
           home: "./index.html",
           langSwitch: "./en/index.html",
+          highlights: "./highlights.html",
+          dailyArchive: "./days/index.html",
+          weeklyArchive: "./weeks/index.html",
           dayHref: (date) => `./days/${date}.html`,
           weekHref: (key) => `./weeks/${key}.html`,
         },
@@ -2018,6 +2332,9 @@ async function main() {
         {
           home: "./index.html",
           langSwitch: "../index.html",
+          highlights: "./highlights.html",
+          dailyArchive: "./days/index.html",
+          weeklyArchive: "./weeks/index.html",
           dayHref: (date) => `./days/${date}.html`,
           weekHref: (key) => `./weeks/${key}.html`,
         },
@@ -2039,6 +2356,68 @@ async function main() {
           langSwitch: "../search.html",
         },
       ),
+      "utf8",
+    ),
+    fs.writeFile(
+      path.join(siteDir, "highlights.html"),
+      renderHighlightsArchivePage(allHighlights, "ja", jaText, lastUpdatedAt, ".", {
+        home: "./index.html",
+        weekly: "./weeks/index.html",
+        langSwitch: "./en/highlights.html",
+      }),
+      "utf8",
+    ),
+    fs.writeFile(
+      path.join(siteDir, "en", "highlights.html"),
+      renderHighlightsArchivePage(allHighlights, "en", enText, lastUpdatedAt, "..", {
+        home: "./index.html",
+        weekly: "./weeks/index.html",
+        langSwitch: "../highlights.html",
+      }),
+      "utf8",
+    ),
+    fs.writeFile(
+      path.join(siteDir, "days", "index.html"),
+      renderDigestArchivePage(dailyDigests, "day", "ja", jaText, lastUpdatedAt, "..", {
+        home: "../index.html",
+        weekly: "../weeks/index.html",
+        langSwitch: "../en/days/index.html",
+        dayHref: (date) => `./${date}.html`,
+        weekHref: (key) => `../weeks/${key}.html`,
+      }),
+      "utf8",
+    ),
+    fs.writeFile(
+      path.join(siteDir, "en", "days", "index.html"),
+      renderDigestArchivePage(dailyDigests, "day", "en", enText, lastUpdatedAt, "../..", {
+        home: "../index.html",
+        weekly: "../weeks/index.html",
+        langSwitch: "../../days/index.html",
+        dayHref: (date) => `./${date}.html`,
+        weekHref: (key) => `../weeks/${key}.html`,
+      }),
+      "utf8",
+    ),
+    fs.writeFile(
+      path.join(siteDir, "weeks", "index.html"),
+      renderDigestArchivePage(weeklyDigests, "week", "ja", jaText, lastUpdatedAt, "..", {
+        home: "../index.html",
+        weekly: "./index.html",
+        langSwitch: "../en/weeks/index.html",
+        dayHref: (date) => `../days/${date}.html`,
+        weekHref: (key) => `./${key}.html`,
+      }),
+      "utf8",
+    ),
+    fs.writeFile(
+      path.join(siteDir, "en", "weeks", "index.html"),
+      renderDigestArchivePage(weeklyDigests, "week", "en", enText, lastUpdatedAt, "../..", {
+        home: "../index.html",
+        weekly: "./index.html",
+        langSwitch: "../../weeks/index.html",
+        dayHref: (date) => `../days/${date}.html`,
+        weekHref: (key) => `./${key}.html`,
+      }),
       "utf8",
     ),
   ]);

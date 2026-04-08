@@ -713,7 +713,10 @@ function summaryFromPatterns(event, locale = "ja") {
   const text = `${title} ${event.summary}`.toLowerCase();
   const version = releaseVersionFromTitle(title);
   const cleanedSummary = cleanupSummary(event.summary);
-  const summaryLeadText = summaryLead(event.summary, locale === "ja" ? 220 : 260);
+  const summaryLeadText = summaryLead(
+    event.summary,
+    locale === "ja" ? 220 : 260,
+  );
 
   if (version && vscodeReleaseSummaries[version]) {
     return vscodeReleaseSummaries[version][locale];
