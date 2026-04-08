@@ -160,6 +160,9 @@ function buildText(locale) {
       searchPageTitle: "Search across published digests.",
       searchPageCopy:
         "Search published daily digests with Pagefind across titles, summaries, sources, topics, tags, and dates.",
+      homeSearchTitle: "Search from the home page",
+      homeSearchHelp: "Open recent published updates directly from the top page, or move to the full search page for a wider scan.",
+      homeSearchOpenLink: "Open full search page",
       searchItemsMetric: "Searchable updates",
       searchItemsMetricDetail: "Published daily updates indexed by Pagefind",
       searchSourcesMetric: "Source groups",
@@ -170,7 +173,13 @@ function buildText(locale) {
         "High-level topics represented in indexed daily pages",
       searchTitle: "Site search",
       searchHelp:
-        "Results come from published daily pages and support heading-level sub-results.",
+        "Results come from published daily pages, newest matching days are shown first, and heading-level matches are expanded.",
+      searchPlaceholder: "Search updates, topics, or dates",
+      searchResultsTitle: "Results",
+      searchPrompt: "Type a keyword to start searching.",
+      searchLoading: "Searching published updates...",
+      searchEmpty: "No matching updates were found.",
+      searchOpenDigest: "Open daily page",
       weeklyArchiveTitle: "Weekly digest",
       weeklyArchiveLabel: "Rolling 7-day windows",
       weeklyEmpty: "Weekly digests will appear as more daily logs accumulate.",
@@ -288,6 +297,10 @@ function buildText(locale) {
     searchPageTitle: "公開済み更新を横断検索する。",
     searchPageCopy:
       "Pagefind で、公開済みの日次更新をタイトル、要約、ソース、テーマ、タグ、日付から横断検索できます。",
+    homeSearchTitle: "トップページから検索",
+    homeSearchHelp:
+      "ここから最近の公開済み更新を直接探せます。広く見たいときは専用の検索ページを使えます。",
+    homeSearchOpenLink: "検索ページを開く",
     searchItemsMetric: "検索対象更新",
     searchItemsMetricDetail: "Pagefind が index する公開済み日次更新数",
     searchSourcesMetric: "ソース群数",
@@ -296,7 +309,13 @@ function buildText(locale) {
     searchTopicsMetricDetail: "index 対象の日次ページに含まれる大分類",
     searchTitle: "サイト内検索",
     searchHelp:
-      "公開済み日次ページだけを対象に、見出し単位の sub-results 付きで検索します。",
+      "公開済み日次ページだけを対象に、より新しい日付を上に並べつつ、見出し単位の一致を展開します。",
+    searchPlaceholder: "更新、テーマ、日付で検索",
+    searchResultsTitle: "検索結果",
+    searchPrompt: "キーワードを入力すると結果を表示します。",
+    searchLoading: "公開済み更新を検索中...",
+    searchEmpty: "一致する更新は見つかりませんでした。",
+    searchOpenDigest: "この日次を見る",
     weeklyArchiveTitle: "週間ダイジェスト",
     weeklyArchiveLabel: "直近 7 日単位",
     weeklyEmpty: "日次ログが増えると週間ダイジェストもここに並びます。",
@@ -449,10 +468,23 @@ function renderFilterChip(kind, value, label, extraClass = "") {
   return `<button type="button" class="filter-chip ${extraClass}" data-filter-kind="${escapeHtml(kind)}" data-filter-value="${escapeHtml(value)}" aria-pressed="false">${escapeHtml(label)}</button>`;
 }
 
-function renderFilterBar(text) {
-  return `<section class="section-block filter-block" data-filter-root>
-    <div class="section-heading"><h2>${escapeHtml(text.filterTitle)}</h2><button type="button" class="filter-reset" data-filter-reset>${escapeHtml(text.filterReset)}</button></div>
-    <div class="filter-stack">
+function renderFilterAxes(events) {
+  return {
+    showSource: new Set(events.map((event) => sourceGroup(event))).size > 1,
+    showTopic: new Set(events.map((event) => classifyEvent(event))).size > 1,
+  };
+}
+
+function renderFilterBar(text, options = {}) {
+  const showSource = options.showSource ?? true;
+  const showTopic = options.showTopic ?? true;
+  if (!showSource && !showTopic) {
+    return "";
+  }
+
+  const rows = [];
+  if (showSource) {
+    rows.push(`
       <div class="filter-row">
         <span class="filter-label">${escapeHtml(text.filterSourceLabel)}</span>
         <div class="filter-chip-row">${sourceGroupOrder
@@ -465,7 +497,11 @@ function renderFilterBar(text) {
             ),
           )
           .join("")}</div>
-      </div>
+      </div>`);
+  }
+
+  if (showTopic) {
+    rows.push(`
       <div class="filter-row">
         <span class="filter-label">${escapeHtml(text.filterTopicLabel)}</span>
         <div class="filter-chip-row">${topicOrder
@@ -477,7 +513,13 @@ function renderFilterBar(text) {
             ),
           )
           .join("")}</div>
-      </div>
+      </div>`);
+  }
+
+  return `<section class="section-block filter-block" data-filter-root>
+    <div class="section-heading"><h2>${escapeHtml(text.filterTitle)}</h2><button type="button" class="filter-reset" data-filter-reset>${escapeHtml(text.filterReset)}</button></div>
+    <div class="filter-stack">
+      ${rows.join("")}
     </div>
   </section>`;
 }
@@ -691,6 +733,7 @@ function renderRangePage(digest, locale, text, options) {
     locale === "ja"
       ? `${count}${text.itemSuffix}`
       : formatCount(count, locale, "item", "items");
+  const filterAxes = renderFilterAxes(digest.uniqueEvents);
   const metrics =
     options.kind === "day"
       ? [
@@ -759,7 +802,7 @@ function renderRangePage(digest, locale, text, options) {
 
     ${options.kind === "day" ? renderFutureSection(digest.futureEvents, locale, text) : ""}
 
-    ${renderFilterBar(text)}
+  ${renderFilterBar(text, filterAxes)}
 
     <section class="section-block">
       <div class="section-heading"><h2>${escapeHtml(text.highlightsTitle)}</h2><span>${escapeHtml(itemCount(digest.highlights.length))}</span></div>
@@ -811,10 +854,14 @@ function renderIndexPage(
     (total, digest) => total + digest.uniqueEventCount,
     0,
   );
+  const searchHref = links.home.replace(/index\.html$/, "search.html");
   const latestHighlights = buildPublishedEventEntries(dailyDigests, {
     includeFuture: false,
   }).slice(0, 6);
   const sourceHighlightGroups = buildSourceHighlightGroups(dailyDigests);
+  const latestSourceCount = new Set(
+    latestHighlights.map((event) => sourceGroup(event)),
+  ).size;
 
   const weeklyMarkup =
     weeklyDigests.length === 0
@@ -827,6 +874,14 @@ function renderIndexPage(
         <p class="eyebrow">${escapeHtml(text.heroEyebrow)}</p>
         <h1>${escapeHtml(text.heroTitle)}</h1>
         <p class="hero-copy">${escapeHtml(text.heroCopy)}</p>
+        <div class="hero-search">
+          <p class="hero-search-label">${escapeHtml(text.homeSearchTitle)}</p>
+          <div class="pagefind-shell pagefind-shell--compact">
+            <pagefind-config preload></pagefind-config>
+            <pagefind-searchbox placeholder="${escapeHtml(text.searchPlaceholder)}" max-results="6" show-sub-results hide-shortcut></pagefind-searchbox>
+          </div>
+          <p class="hero-search-help">${escapeHtml(text.homeSearchHelp)} <a class="hero-search-link" href="${escapeHtml(searchHref)}">${escapeHtml(text.homeSearchOpenLink)}</a></p>
+        </div>
       </div>
       <div class="metrics-grid">
         ${renderMetric(text.publishedCount, locale === "ja" ? `${dailyDigests.length}${escapeHtml(text.dayCountSuffix)}` : formatCount(dailyDigests.length, locale, "day", "days"), text.publishedCountDetail)}
@@ -836,7 +891,7 @@ function renderIndexPage(
       </div>
     </section>
 
-    ${latestHighlights.length > 0 ? renderFilterBar(text) : ""}
+    ${latestHighlights.length > 0 ? renderFilterBar(text, { showSource: latestSourceCount > 1, showTopic: false }) : ""}
 
     <section class="section-block" data-latest-highlights data-count-suffix="${escapeHtml(text.latestHighlightsCountSuffix)}">
       <div class="section-heading"><h2>${escapeHtml(text.latestHighlightsTitle)}</h2><span data-latest-count>${escapeHtml(locale === "ja" ? `${latestHighlights.length}${text.latestHighlightsCountSuffix}` : `${latestHighlights.length}${text.latestHighlightsCountSuffix}`)}</span></div>
@@ -867,21 +922,204 @@ function renderIndexPage(
     homeHref: links.home,
     weeklyHref: `${links.home}#weekly-archive`,
     langSwitchHref: links.langSwitch,
+    pagefindUi: true,
+    extraScript: renderPagefindComponentSetupScript(),
+    extraScriptType: "module",
   });
 }
 
-function renderSearchPageScript(text, locale) {
-  const placeholder =
-    locale === "ja" ? "公開済み更新を検索" : "Search published updates";
-
-  return `const rootPath = window.location.pathname.replace(/(?:en\\/)?search\\.html$/, "");
+function renderPagefindComponentSetupScript() {
+  return `const rootPath = window.location.pathname.replace(/(?:en\\/)?index\\.html$/, "");
 const basePath = /\\/$/.test(rootPath) ? rootPath : rootPath + "/";
-const config = document.querySelector("pagefind-config");
-if (config) {
+document.querySelectorAll("pagefind-config").forEach((config) => {
   config.setAttribute("bundle-path", basePath + "pagefind/");
   config.setAttribute("base-url", basePath);
+});
+await import(basePath + "pagefind/pagefind-component-ui.js");`;
 }
-await import(basePath + "pagefind/pagefind-component-ui.js");
+
+function renderSearchPageScript(text, locale) {
+  const strings = {
+    prompt: text.searchPrompt,
+    loading: text.searchLoading,
+    empty: text.searchEmpty,
+    openDigest: text.searchOpenDigest,
+  };
+
+  return `const strings = ${JSON.stringify(strings)};
+const root = document.querySelector("[data-search-root]");
+if (!root) {
+  throw new Error("Search root not found");
+}
+const input = root.querySelector("[data-search-input]");
+const clearButton = root.querySelector("[data-search-clear]");
+const countNode = root.querySelector("[data-search-count]");
+const resultsNode = root.querySelector("[data-search-results]");
+const emptyNode = root.querySelector("[data-search-empty]");
+const rootPath = window.location.pathname.replace(/(?:en\\/)?search\\.html$/, "");
+const basePath = /\\/$/.test(rootPath) ? rootPath : rootPath + "/";
+const pagefind = await import(basePath + "pagefind/pagefind.js");
+await pagefind.options({
+  bundlePath: basePath + "pagefind/",
+  baseUrl: basePath,
+});
+await pagefind.init();
+
+function escapeHtml(value) {
+  return String(value ?? "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/\"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+function extractDigestDate(value) {
+  const match = String(value ?? "").match(/\\d{4}-\\d{2}-\\d{2}/);
+  return match ? match[0] : "";
+}
+
+function resultLabel(count) {
+  return ${locale === "ja" ? "String(count) + '件'" : "count === 1 ? '1 result' : String(count) + ' results'"};
+}
+
+function renderRow(row) {
+  const excerpt = row.excerpt
+    ? '<p class="search-result-excerpt">' + row.excerpt + '</p>'
+    : "";
+  return '<article class="update-card search-result-card">'
+    + '<div class="badge-row"><span class="pill">' + escapeHtml(row.digestDate || "N/A") + '</span></div>'
+    + '<h3><a href="' + escapeHtml(row.url) + '">' + escapeHtml(row.title) + '</a></h3>'
+    + excerpt
+    + '<div class="search-result-links"><a href="' + escapeHtml(row.dayUrl) + '">' + escapeHtml(strings.openDigest) + '</a></div>'
+    + '</article>';
+}
+
+function setIdle() {
+  countNode.textContent = strings.prompt;
+  emptyNode.textContent = strings.prompt;
+  emptyNode.classList.remove("is-hidden");
+  resultsNode.innerHTML = "";
+}
+
+function setLoading() {
+  countNode.textContent = strings.loading;
+  emptyNode.textContent = strings.loading;
+  emptyNode.classList.remove("is-hidden");
+  resultsNode.innerHTML = "";
+}
+
+function updateUrl(query) {
+  const url = new URL(window.location.href);
+  if (query) {
+    url.searchParams.set("q", query);
+  } else {
+    url.searchParams.delete("q");
+  }
+  window.history.replaceState({}, "", url);
+}
+
+function applyResults(rows, rawQuery) {
+  if (!rawQuery) {
+    setIdle();
+    return;
+  }
+  countNode.textContent = resultLabel(rows.length);
+  if (!rows.length) {
+    emptyNode.textContent = strings.empty;
+    emptyNode.classList.remove("is-hidden");
+    resultsNode.innerHTML = "";
+    return;
+  }
+  emptyNode.classList.add("is-hidden");
+  resultsNode.innerHTML = rows.map(renderRow).join("");
+}
+
+async function runSearch() {
+  const rawQuery = String(input.value ?? "").trim();
+  updateUrl(rawQuery);
+  if (!rawQuery) {
+    setIdle();
+    return;
+  }
+
+  setLoading();
+  const search = await pagefind.search(rawQuery);
+  const loaded = await Promise.all(
+    search.results.slice(0, 24).map((result, index) =>
+      result.data().then((data) => ({ data, rank: index })),
+    ),
+  );
+
+  const rows = loaded
+    .flatMap(({ data, rank }) => {
+      const digestDate = extractDigestDate(
+        data.meta?.title || data.raw_url || data.url || data.content,
+      );
+      const base = {
+        digestDate,
+        dayUrl: data.raw_url || data.url,
+        rank,
+      };
+
+      if (Array.isArray(data.sub_results) && data.sub_results.length > 0) {
+        return data.sub_results.map((sub, subIndex) => ({
+          ...base,
+          title: sub.title || data.meta?.title || digestDate,
+          url: sub.url || data.url,
+          excerpt: sub.excerpt || data.excerpt || "",
+          subIndex,
+        }));
+      }
+
+      return [{
+        ...base,
+        title: data.meta?.title || digestDate || data.url,
+        url: data.url,
+        excerpt: data.excerpt || "",
+        subIndex: 0,
+      }];
+    })
+    .sort((left, right) =>
+      right.digestDate.localeCompare(left.digestDate) ||
+      left.rank - right.rank ||
+      left.subIndex - right.subIndex,
+    )
+    .slice(0, 40);
+
+  applyResults(rows, rawQuery);
+}
+
+let timer = null;
+function scheduleSearch() {
+  window.clearTimeout(timer);
+  const nextValue = String(input.value ?? "").trim();
+  if (nextValue) {
+    pagefind.preload(nextValue);
+  }
+  timer = window.setTimeout(runSearch, 180);
+}
+
+input.addEventListener("input", scheduleSearch);
+input.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    input.value = "";
+    runSearch();
+  }
+});
+clearButton.addEventListener("click", () => {
+  input.value = "";
+  input.focus();
+  runSearch();
+});
+
+const initial = new URLSearchParams(window.location.search).get("q") || "";
+input.value = initial;
+if (initial) {
+  await runSearch();
+} else {
+  setIdle();
+}
 `;
 }
 
@@ -914,15 +1152,14 @@ function renderSearchPage(
 
     <section class="section-block">
       <div class="section-heading"><h2>${escapeHtml(text.searchTitle)}</h2><span>${escapeHtml(text.searchHelp)}</span></div>
-      <div class="content-card search-panel">
-        <div class="pagefind-shell">
-          <pagefind-config preload></pagefind-config>
-          <pagefind-input placeholder="${escapeHtml(
-            locale === "ja" ? "公開済み更新を検索" : "Search published updates",
-          )}"></pagefind-input>
-          <pagefind-summary></pagefind-summary>
-          <pagefind-results max-sub-results="3"></pagefind-results>
+      <div class="content-card search-panel" data-search-root>
+        <div class="search-input-row">
+          <input class="search-input" type="search" value="" placeholder="${escapeHtml(text.searchPlaceholder)}" autocomplete="off" spellcheck="false" data-search-input />
+          <button type="button" class="filter-reset" data-search-clear>${escapeHtml(text.filterReset)}</button>
         </div>
+        <p class="search-status" data-search-count>${escapeHtml(text.searchPrompt)}</p>
+        <p class="search-empty" data-search-empty>${escapeHtml(text.searchPrompt)}</p>
+        <div class="search-results-grid" data-search-results></div>
       </div>
     </section>
   `;
@@ -938,7 +1175,6 @@ function renderSearchPage(
     homeHref: links.home,
     weeklyHref: links.weekly,
     langSwitchHref: links.langSwitch,
-    pagefindUi: true,
     extraScript: renderSearchPageScript(text, locale),
     extraScriptType: "module",
   });
@@ -1252,6 +1488,29 @@ a { color: inherit; }
   box-shadow: var(--shadow);
 }
 .hero-day { margin-bottom: 24px; }
+.hero-search {
+  margin-top: 22px;
+  display: grid;
+  gap: 10px;
+}
+.hero-search-label {
+  margin: 0;
+  color: var(--text);
+  font-weight: 700;
+}
+.hero-search-help {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+.hero-search-link {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 700;
+}
+.hero-search-link:hover {
+  text-decoration: underline;
+}
 .eyebrow {
   margin: 0 0 12px;
   color: var(--accent);
@@ -1314,13 +1573,68 @@ h1 { margin: 0 0 16px; font-size: clamp(2.3rem, 4vw, 4.2rem); line-height: 1.04;
   --pf-shadow-sm: none;
   --pf-shadow-md: none;
 }
+.pagefind-shell--compact {
+  --pf-searchbox-max-width: 100%;
+}
 .pagefind-shell pagefind-input,
+.pagefind-shell pagefind-searchbox,
 .pagefind-shell pagefind-summary,
 .pagefind-shell pagefind-results {
   display: block;
 }
 .pagefind-shell pagefind-summary {
   margin: 12px 0 16px;
+}
+.search-input-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.search-input {
+  flex: 1;
+  min-width: 240px;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.84);
+  color: var(--text);
+  font: inherit;
+}
+.search-input:focus {
+  outline: 2px solid rgba(15, 118, 110, 0.18);
+  outline-offset: 2px;
+  border-color: var(--accent);
+}
+.search-status,
+.search-empty {
+  margin: 12px 0 0;
+  color: var(--muted);
+}
+.search-results-grid {
+  display: grid;
+  gap: 16px;
+  margin-top: 16px;
+}
+.search-result-excerpt {
+  color: var(--muted);
+}
+.search-result-excerpt mark {
+  background: var(--accent-soft);
+  color: inherit;
+  padding: 0 0.15em;
+  border-radius: 0.2em;
+}
+.search-result-links {
+  margin-top: 12px;
+}
+.search-result-links a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 700;
+}
+.search-result-links a:hover {
+  text-decoration: underline;
 }
 .filter-chip,
 .filter-reset {
