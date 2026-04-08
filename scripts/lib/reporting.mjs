@@ -41,19 +41,19 @@ const monthMap = {
 
 const vscodeReleaseSummaries = {
   1.114: {
-    ja: "Chat 体験の整理が中心。画像カルーセルで動画プレビュー、最終回答だけをコピーするコマンド、過去セッションにも使える /troubleshoot、常時 semantic になった #codebase、TypeScript 6.0 対応が入った。",
+    ja: "chat 体験の整理が中心。画像カルーセルで動画もプレビューでき、最終回答だけをコピーするコマンドや、過去セッションにも使える /troubleshoot が入った。#codebase は常に semantic search となり、TypeScript 6.0 にも対応した。",
     en: "This release focuses on streamlining chat: video previews in the carousel, a Copy Final Response command, /troubleshoot support for previous sessions, a simplified semantic-only #codebase flow, and TypeScript 6.0 support.",
   },
   1.113: {
-    ja: "Chat customization を 1 画面で管理するエディタ、モデル picker からの thinking effort 切り替え、CLI / Claude agent での MCP と session fork、nested subagents、画像プレビュー、新しい既定テーマが中心。",
+    ja: "チャットカスタマイズを 1 画面で管理するエディタ、モデル picker からの思考量切り替え、CLI / Claude agent での MCP 対応と session fork、入れ子の subagent、画像プレビュー、新しい既定テーマが中心。",
     en: "The main themes are a unified chat customizations editor, thinking-effort controls in the model picker, MCP and session forking for CLI and Claude agents, nested subagents, image preview, and refreshed default themes.",
   },
   1.112: {
-    ja: "Agent と developer experience の改善が中心。Copilot CLI の steering / queueing と権限レベル、/troubleshoot と debug log の export/import、画像とバイナリ対応、monorepo customization、MCP sandboxing、統合ブラウザーのデバッグが入った。",
+    ja: "agent 運用と開発体験の改善が中心。Copilot CLI の steering / queueing と権限レベル、/troubleshoot と debug log の export/import、画像とバイナリ対応、monorepo customization、MCP sandboxing、統合ブラウザーのデバッグが入った。",
     en: "This release improves both agent and developer experience with Copilot CLI steering and permission levels, /troubleshoot plus debug-log export and import, image and binary support, monorepo customizations, MCP sandboxing, and integrated browser debugging.",
   },
   1.111: {
-    ja: "最初の weekly stable release。agent permission picker、Autopilot preview、agent-scoped hooks、debug event snapshot、改善された chat tips、AI CLI profile group など、agent 自律性と運用性を前に進めた。",
+    ja: "週次 stable 化後の最初のリリース。agent permission picker、Autopilot preview、agent-scoped hooks、debug event snapshot、改善された chat tips、AI CLI profile group など、agent の自律性と運用性を前に進めた。",
     en: "The first weekly Stable release introduced the agent permission picker, Autopilot preview, agent-scoped hooks, debug event snapshots, improved chat tips, and an AI CLI profile group to make agents more autonomous and easier to operate.",
   },
   "1.110": {
@@ -75,6 +75,89 @@ const vscodeReleaseSummaries = {
   1.106: {
     ja: "Agent HQ を一元管理するリリース。Agent Sessions view、Plan agent、Cloud / CLI agent 統合、chat mode → custom agent リネーム、Terminal IntelliSense GA、inline suggestions OSS 化、tool approval と trust 強化が入った。",
     en: "The release centers on Agent HQ: Agent Sessions view, Plan agent, Cloud and CLI agent integration, chat modes renamed to custom agents, Terminal IntelliSense GA, inline suggestions open-sourced, and enhanced tool approval and trust.",
+  },
+};
+
+const exactSummaryMappings = {
+  "Visual Studio Code 1.114: Preview videos in the image carousel": {
+    ja: "チャット添付や Explorer のコンテキストメニューから開く画像カルーセルで、動画もそのまま再生・切り替えできるようになった。画像と動画を同じビューアーで確認でき、会話中の確認作業がしやすくなる。",
+    en: "The image carousel now supports videos from chat attachments and the Explorer context menu, so images and videos can be previewed and navigated in the same viewer.",
+  },
+  "Visual Studio Code 1.114: Copy final response in chat": {
+    ja: "チャットのコンテキストメニューに、agent の思考や tool call を除いた最終 Markdown 部分だけをコピーするコマンドが追加された。共有や転記のときに最終回答だけを抜き出しやすい。",
+    en: "Chat now includes a Copy Final Response command that copies only the final Markdown section of the agent response, excluding thinking traces and tool calls.",
+  },
+  "Visual Studio Code 1.114: Workspace search simplification": {
+    ja: "#codebase が常に semantic search 専用になり、local index と remote index の区別も廃止された。index 管理を意識せず、より一貫したコードベース検索を agent が使えるようになる。",
+    en: "The #codebase tool is now purely semantic and no longer distinguishes between local and remote indexes, giving agents more consistent workspace search without manual index management.",
+  },
+  "Visual Studio Code 1.114: Troubleshoot previous chat sessions (Preview)": {
+    ja: "/troubleshoot で過去の chat session を #session から選んで調査できるようになった。問題を再現しなくても、以前の session の debug log をもとに振る舞いを追いやすい。",
+    en: "The /troubleshoot flow can now inspect previous chat sessions via #session, making it easier to diagnose problems after the fact without reproducing them.",
+  },
+  "GitHub Copilot CLI combines model families for a second opinion": {
+    ja: "Copilot CLI に experimental な Rubber Duck が入り、別モデル系列からセカンドオピニオンを受けられるようになった。計画直後や複雑な実装後、テスト前の見落とし検出に効く。",
+    en: "Copilot CLI now has an experimental Rubber Duck reviewer that asks a model from a different family to critique plans and implementations at high-value checkpoints, helping catch blind spots before they compound.",
+  },
+  "Agent-driven development in Copilot Applied Science": {
+    ja: "Copilot Applied Science チームが、評価データ分析の toil を減らすために agent-first なリポジトリと運用を整えた事例。/plan を軸にした計画、継続的な refactor と docs、process で agent を支える考え方が中心。",
+    en: "A Copilot Applied Science case study on building an agent-first repository to automate benchmark-analysis toil, emphasizing planning with /plan, continuous refactoring and documentation, and process guardrails over blaming agents.",
+  },
+  "Building AI-powered GitHub issue triage with the Copilot SDK": {
+    ja: "Copilot SDK と Copilot CLI をサーバー側で動かし、React Native の issue triage アプリに AI 要約を組み込む実装例。session lifecycle の後始末、fallback、cache を含めて本番運用寄りの構成が示されている。",
+    en: "A practical example of adding AI issue triage to a React Native app by running the Copilot SDK and Copilot CLI server-side, with production-minded patterns for session cleanup, fallback behavior, and cached summaries.",
+  },
+  "マイクロソフト、Claude CodeやGitHub Copilotに「このアプリをデプロイせよ」と指示すればAIが最適なインフラ構成やサービスでデプロイしてくれる「Azure Skills Plugin」公開": {
+    ja: "Microsoft が Azure Skills Plugin を公開し、Claude Code や GitHub Copilot にアプリ配備を指示すると、適した Azure インフラやサービス構成の提案とデプロイ実行を進められるようにする内容。AI agent にクラウド構成判断を持たせる流れとして注目される。",
+    en: "Japanese-language coverage of Microsoft's Azure Skills Plugin, which lets Claude Code and GitHub Copilot guide Azure infrastructure selection and application deployment more autonomously.",
+  },
+  "GitHub Copilot CLI、メインのAIモデルとは異なるAIモデルをセカンドオピニオンに使う「Rubber Duck」モード": {
+    ja: "GitHub Copilot CLI の experimental な Rubber Duck モードを紹介する記事。メインとは別の AI モデルをセカンドオピニオン役として呼び、計画や実装の見落とし確認に使える点が主題。",
+    en: "Japanese-language coverage of GitHub Copilot CLI's Rubber Duck mode, which brings in a second model as a reviewer to critique plans and implementation decisions.",
+  },
+  "Continuous AI for accessibility: How GitHub transforms feedback into inclusion": {
+    ja: "アクセシビリティに関するフィードバックを継続的に AI で取り込み、製品改善へ回す GitHub の取り組み。単発修正で終わらせず、改善ループを開発プロセスへ組み込む考え方が主題。",
+    en: "A look at how GitHub uses AI continuously to turn accessibility feedback into product improvements, treating accessibility work as an ongoing loop rather than a one-off fix.",
+  },
+  "The era of “AI as text” is over. Execution is the new interface.": {
+    ja: "AI をテキスト応答だけでなく実行主体として組み込む時代に入った、という整理。Copilot SDK や MCP を前提に、agent が action を起こす interface として AI を使う考え方が主題。",
+    en: "A framing piece that argues AI should be treated as an execution layer, with tools, SDKs, and workflows that let agents take action instead of only returning text.",
+  },
+  "Join or host a GitHub Copilot Dev Days event near you": {
+    ja: "GitHub Copilot Dev Days の参加・開催案内。近隣イベントへの参加や、自分でイベントを主催するための情報がまとまっている。",
+    en: "An announcement for GitHub Copilot Dev Days that points readers to nearby events and explains how to host one themselves.",
+  },
+  "From idea to pull request: A practical guide to building with GitHub Copilot CLI": {
+    ja: "Copilot CLI を起点に計画し、IDE で判断し、最後は GitHub の pull request へつなぐ実践ガイド。issue 作成から Node.js CLI アプリ実装、テスト、PR までをハンズオンで追える。",
+    en: "A practical guide to starting in Copilot CLI, making decisions in the IDE, and finishing in a GitHub pull request, walking through issue creation, app implementation, tests, and reviewable output.",
+  },
+  "What's new with GitHub Copilot coding agent": {
+    ja: "GitHub Copilot coding agent の最近の更新まとめ。branch や pull request をまたぐ開発フローと、agent の作業体験がどう広がったかを俯瞰できる。",
+    en: "A roundup of recent GitHub Copilot coding agent changes, useful for understanding how branch, pull request, and agent workflows are expanding.",
+  },
+  "Building Long-Distance Next Edit Suggestions": {
+    ja: "離れた位置まで一度に編集提案する Long-Distance Next Edit Suggestions の実装解説。長距離編集候補を成立させるためのモデル設計と評価の工夫が主題。",
+    en: "A technical deep dive into making Next Edit Suggestions work across larger distances in a file, covering the model and product changes needed for more ambitious edit predictions.",
+  },
+  "Your Home for Multi-Agent Development": {
+    ja: "VS Code をマルチエージェント開発のハブとして位置づける記事。複数 agent の役割分担や session 管理をひとつの開発体験として扱う方向性が示されている。",
+    en: "An overview of how VS Code is positioning itself as the hub for multi-agent development, bringing agent roles, sessions, and tools into one workflow.",
+  },
+  "Making agents practical for real-world development": {
+    ja: "agent を実運用に載せるための VS Code 側の改善をまとめた記事。guardrail、context、debugging など、試用から日常利用へ進めるための整理が中心。",
+    en: "A VS Code article about the work required to make agents usable in day-to-day development, especially around context, guardrails, debugging, and trust.",
+  },
+  "Giving Agents a Visual Voice: MCP Apps Support in VS Code": {
+    ja: "VS Code で MCP Apps を扱えるようにし、agent がテキストだけでなく UI を伴う形で結果を返せるようにする解説。MCP を通じた app 的な拡張体験が主題。",
+    en: "An explanation of MCP Apps support in VS Code, which lets agents return richer app-like experiences instead of only plain text responses.",
+  },
+  "Building docfind: Fast Client-Side Search with Rust and WebAssembly": {
+    ja: "Rust と WebAssembly で高速な client-side 検索を実装する docfind の技術解説。大きいドキュメント群でも静的配布のまま検索体験を保つ設計が中心。",
+    en: "A technical article on building a fast client-side search experience with Rust and WebAssembly for large static documentation sets.",
+  },
+  "Introducing the VS Code Insiders Podcast": {
+    ja: "VS Code Insiders Podcast の開始告知。新機能や開発の舞台裏を音声で追える公式チャンネルが追加された。",
+    en: "An announcement for the VS Code Insiders Podcast, a new official audio channel for release chatter and behind-the-scenes development updates.",
   },
 };
 
@@ -347,12 +430,16 @@ function patternTitle(title) {
 }
 
 function summaryFromPatterns(event, locale = "ja") {
-  const title = normalizeWhitespace(event.title);
+  const title = normalizeWhitespace(decodeHtmlEntities(event.title));
   const text = `${title} ${event.summary}`.toLowerCase();
   const version = releaseVersionFromTitle(title);
 
   if (version && vscodeReleaseSummaries[version]) {
     return vscodeReleaseSummaries[version][locale];
+  }
+
+  if (exactSummaryMappings[title]?.[locale]) {
+    return exactSummaryMappings[title][locale];
   }
 
   if (containsJapanese(title) || containsJapanese(event.summary)) {
@@ -488,6 +575,33 @@ function summaryFromPatterns(event, locale = "ja") {
       : "Dependabot alerts can now be assigned to AI coding agents such as Copilot, Claude, and Codex for remediation that requires code changes beyond a simple version bump.";
   }
 
+  if (/issue triage/i.test(text) && /copilot sdk/i.test(text)) {
+    return locale === "ja"
+      ? "Copilot SDK を使って GitHub issue の要約やトリアージを組み込む実装例。自前アプリへの agent 機能統合を考えるときの参考になる。"
+      : "An implementation example showing how the Copilot SDK can power GitHub issue triage and summarization in your own application.";
+  }
+
+  if (/applied science/i.test(text) && /agent/i.test(text)) {
+    return locale === "ja"
+      ? "Copilot を前提にした agent 駆動開発の実践例。計画、テスト、文書化を含めてリポジトリを agent 向けに整える考え方が参考になる。"
+      : "A practical look at agent-driven development, including how to shape planning, testing, and documentation around agent workflows.";
+  }
+
+  if (/squad/i.test(text) && /agents/i.test(text)) {
+    return locale === "ja"
+      ? "リポジトリ内で複数 agent を協調動作させる実践例。チーム運用や orchestration の設計を見る材料になる。"
+      : "A practical example of coordinating multiple agents inside a repository, useful for thinking about team-level orchestration design.";
+  }
+
+  if (
+    /execution is the new interface/i.test(text) ||
+    /copilot sdk/i.test(text)
+  ) {
+    return locale === "ja"
+      ? "Copilot SDK を使って agent 的な実行基盤を自前アプリへ組み込む考え方の整理。SDK をどう位置づけるかの理解に役立つ。"
+      : "A conceptual piece on using the Copilot SDK as an execution interface for agentic applications rather than building orchestration from scratch.";
+  }
+
   if (/copilot cli/i.test(text)) {
     if (/agent/i.test(text)) {
       return locale === "ja"
@@ -522,33 +636,6 @@ function summaryFromPatterns(event, locale = "ja") {
     return locale === "ja"
       ? "GitHub Copilot CLI の更新。CLI を実用している層はターミナル操作や自動化フローへの確認を。"
       : "An update about GitHub Copilot CLI capabilities and workflows for terminal-heavy usage.";
-  }
-
-  if (/issue triage/i.test(text) && /copilot sdk/i.test(text)) {
-    return locale === "ja"
-      ? "Copilot SDK を使って GitHub issue の要約やトリアージを組み込む実装例。自前アプリへの agent 機能統合を考えるときの参考になる。"
-      : "An implementation example showing how the Copilot SDK can power GitHub issue triage and summarization in your own application.";
-  }
-
-  if (/applied science/i.test(text) && /agent/i.test(text)) {
-    return locale === "ja"
-      ? "Copilot を前提にした agent 駆動開発の実践例。計画、テスト、文書化を含めてリポジトリを agent 向けに整える考え方が参考になる。"
-      : "A practical look at agent-driven development, including how to shape planning, testing, and documentation around agent workflows.";
-  }
-
-  if (/squad/i.test(text) && /agents/i.test(text)) {
-    return locale === "ja"
-      ? "リポジトリ内で複数 agent を協調動作させる実践例。チーム運用や orchestration の設計を見る材料になる。"
-      : "A practical example of coordinating multiple agents inside a repository, useful for thinking about team-level orchestration design.";
-  }
-
-  if (
-    /execution is the new interface/i.test(text) ||
-    /copilot sdk/i.test(text)
-  ) {
-    return locale === "ja"
-      ? "Copilot SDK を使って agent 的な実行基盤を自前アプリへ組み込む考え方の整理。SDK をどう位置づけるかの理解に役立つ。"
-      : "A conceptual piece on using the Copilot SDK as an execution interface for agentic applications rather than building orchestration from scratch.";
   }
 
   if (/usage metrics/i.test(text) && /active and passive/i.test(text)) {
@@ -611,6 +698,15 @@ export function localizedTitle(event, locale = "ja") {
 
 export function localizedSummary(event, locale = "ja") {
   const summary = cleanupSummary(event.summary);
+  const title = normalizeWhitespace(decodeHtmlEntities(event.title));
+
+  if (exactSummaryMappings[title]?.[locale]) {
+    return trimText(
+      exactSummaryMappings[title][locale],
+      locale === "en" ? 320 : 280,
+    );
+  }
+
   if (locale === "en" && !containsJapanese(summary)) {
     return trimText(summaryFromPatterns({ ...event, summary }, "en"), 320);
   }
