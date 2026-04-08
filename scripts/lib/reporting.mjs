@@ -163,6 +163,38 @@ const exactSummaryMappings = {
     ja: "VS Code Insiders Podcast の開始告知。新機能や開発の舞台裏を音声で追える公式チャンネルが追加された。",
     en: "An announcement for the VS Code Insiders Podcast, a new official audio channel for release chatter and behind-the-scenes development updates.",
   },
+  "GitHub Mobile: Research and code with Copilot cloud agent anywhere": {
+    ja: "GitHub Mobile でも Copilot cloud agent で調査や実装を進めやすくなり、pull request 以外の作業もモバイルから継続できるようになった。席を離れていても cloud agent の流れを止めにくい。",
+    en: "GitHub Mobile now supports a broader research-and-code flow with Copilot cloud agent beyond pull-request-only work, so progress can continue away from the desktop.",
+  },
+  "GitHub Copilot in Visual Studio Code, March Releases": {
+    ja: "VS Code の weekly stable 化後、v1.111 から v1.115 までの Copilot / agent 更新をまとめた changelog。Autopilot、browser / terminal tool 改善、customization など、この 1 か月の変化を横断して追える。",
+    en: "A changelog roundup for GitHub Copilot in VS Code covering the weekly stable releases from v1.111 through v1.115, including Autopilot, browser and terminal tool improvements, and broader agent workflow changes.",
+  },
+  "VS Code Updates changed": {
+    ja: "VS Code Updates のハブページが更新され、1.115 リリースと Agents app、browser / terminal tool 改善などの新しい見出しが追加された。公開導線の更新を追うための差分。",
+    en: "The VS Code Updates landing page changed to point at the 1.115 release and new sections such as the Agents app plus browser and terminal tool improvements.",
+  },
+  "Visual Studio Code 1.115: Browser agent tools improvements": {
+    ja: "browser tool の呼び出しラベルが分かりやすくなり、対象タブへ直接飛べるリンクも付いた。Run Playwright Code では長時間実行の deferred result も改善され、browser automation の追跡がしやすくなった。",
+    en: "Browser tool calls now have clearer labels and direct links to the target tab, while Run Playwright Code has better deferred handling for long-running scripts.",
+  },
+  "Visual Studio Code 1.115: Send input to background terminals": {
+    ja: "新しい send_to_terminal tool により、background terminal に移ったプロセスにも agent が追加入力できるようになった。待機中に foreground から外れた SSH や長時間タスクでも対話を続けやすい。",
+    en: "The new send_to_terminal tool lets agents keep interacting with background terminals, so SSH sessions and long-running tasks remain operable even after moving out of the foreground.",
+  },
+  "Visual Studio Code 1.115: Background terminal notifications (Experimental)": {
+    ja: "experimental な background terminal notifications により、agent が background command の完了や追加入力要求を待ち受けられるようになった。手動ポーリングなしで terminal 状態を追いやすい。",
+    en: "Experimental background terminal notifications let agents react when a background command finishes or needs input, instead of polling terminal output manually.",
+  },
+  "Visual Studio Code 1.115: Upcoming deprecations": {
+    ja: "Edit Mode は 1.110 で正式 deprecated になっており、`chat.editMode.hidden` での一時再有効化も 1.125 までで終わる予定になった。旧 edit flow を使っている環境向けの撤去タイムライン整理。",
+    en: "Edit Mode has been officially deprecated since 1.110, and the temporary `chat.editMode.hidden` escape hatch will stop working after 1.125, clarifying the removal timeline.",
+  },
+  "VS Code Release Notes 1.109 changed": {
+    ja: "VS Code Release Notes 1.109 の固定ページ差分を検知した。過去 release note の追記や修正を追うための更新で、新機能追加そのものではない。",
+    en: "A snapshot change was detected on the VS Code Release Notes 1.109 page, indicating edits to the published documentation rather than a newly shipped feature.",
+  },
 };
 
 const exactImportanceMappings = {
@@ -352,6 +384,38 @@ const exactImportanceMappings = {
       ja: "AI agent にクラウド構成判断まで任せる方向を示していて、開発支援から運用自動化へ広がる流れの確認材料になります。",
       en: "This is a useful signal for teams tracking the shift from coding assistance toward agent-driven infrastructure planning and deployment.",
     },
+  "GitHub Mobile: Research and code with Copilot cloud agent anywhere": {
+    ja: "cloud agent をデスクトップや pull request 画面に縛らず使えるので、移動中や外出先でも作業継続しやすくなります。",
+    en: "This matters because cloud-agent workflows are no longer tied as tightly to desktop or pull-request contexts, making mobile continuity much more practical.",
+  },
+  "GitHub Copilot in Visual Studio Code, March Releases": {
+    ja: "月次ではなく週次リリースへ移った後の変化をまとめて追えるので、VS Code Copilot の運用差分を短時間で把握しやすい更新です。",
+    en: "This matters because it gives teams a consolidated view of the first wave of weekly VS Code Copilot changes, making rollout impact easier to assess.",
+  },
+  "VS Code Updates changed": {
+    ja: "固定ハブページの変化から新しい release note 導線や主要見出しを早く拾えるので、監視入口として意味があります。",
+    en: "This matters because changes on the landing page can surface new release-note entry points and major themes before you inspect every page in detail.",
+  },
+  "Visual Studio Code 1.115: Browser agent tools improvements": {
+    ja: "agent がブラウザー操作をした後の追跡と再介入がしやすくなるので、Playwright 系の検証フローを安定させやすい更新です。",
+    en: "This matters because browser-agent workflows become easier to inspect and resume, which reduces friction in Playwright-heavy validation flows.",
+  },
+  "Visual Studio Code 1.115: Send input to background terminals": {
+    ja: "長時間実行や timeout 後でも terminal セッションを捨てずに済むため、agent の terminal 作業がかなり実用的になります。",
+    en: "This matters because agents no longer lose interactivity when a terminal session moves to the background, making long-running terminal workflows much more practical.",
+  },
+  "Visual Studio Code 1.115: Background terminal notifications (Experimental)": {
+    ja: "background terminal を細かく見張り続ける必要が減るので、並列作業時の見落としと polling コストを下げられます。",
+    en: "This matters because it reduces polling overhead and missed prompts while agents juggle multiple background tasks.",
+  },
+  "Visual Studio Code 1.115: Upcoming deprecations": {
+    ja: "旧 Edit Mode に依存する運用は移行期限が明確になったので、settings や利用手順の見直しを前倒ししやすくなります。",
+    en: "This matters because teams still relying on Edit Mode now have a clearer migration deadline for settings and workflow changes.",
+  },
+  "VS Code Release Notes 1.109 changed": {
+    ja: "過去 release note の記述修正でも、参照中の docs や比較メモの前提が変わることがあるため、アーカイブ監視として押さえておく価値があります。",
+    en: "This matters because even edits to archived release notes can change the guidance or references that downstream notes and comparisons rely on.",
+  },
 };
 
 function toDateOnly(value) {
