@@ -161,7 +161,8 @@ function buildText(locale) {
       searchPageCopy:
         "Search published daily digests with Pagefind across titles, summaries, sources, topics, tags, and dates.",
       homeSearchTitle: "Search from the home page",
-      homeSearchHelp: "Open recent published updates directly from the top page, or move to the full search page for a wider scan.",
+      homeSearchHelp:
+        "Open recent published updates directly from the top page, or move to the full search page for a wider scan.",
       homeSearchOpenLink: "Open full search page",
       searchItemsMetric: "Searchable updates",
       searchItemsMetricDetail: "Published daily updates indexed by Pagefind",

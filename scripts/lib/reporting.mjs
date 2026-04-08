@@ -107,18 +107,21 @@ const exactSummaryMappings = {
     ja: "Copilot SDK と Copilot CLI をサーバー側で動かし、React Native の issue triage アプリに AI 要約を組み込む実装例。session lifecycle の後始末、fallback、cache を含めて本番運用寄りの構成が示されている。",
     en: "A practical example of adding AI issue triage to a React Native app by running the Copilot SDK and Copilot CLI server-side, with production-minded patterns for session cleanup, fallback behavior, and cached summaries.",
   },
-  "マイクロソフト、Claude CodeやGitHub Copilotに「このアプリをデプロイせよ」と指示すればAIが最適なインフラ構成やサービスでデプロイしてくれる「Azure Skills Plugin」公開": {
-    ja: "Microsoft が Azure Skills Plugin を公開し、Claude Code や GitHub Copilot にアプリ配備を指示すると、適した Azure インフラやサービス構成の提案とデプロイ実行を進められるようにする内容。AI agent にクラウド構成判断を持たせる流れとして注目される。",
-    en: "Japanese-language coverage of Microsoft's Azure Skills Plugin, which lets Claude Code and GitHub Copilot guide Azure infrastructure selection and application deployment more autonomously.",
-  },
-  "GitHub Copilot CLI、メインのAIモデルとは異なるAIモデルをセカンドオピニオンに使う「Rubber Duck」モード": {
-    ja: "GitHub Copilot CLI の experimental な Rubber Duck モードを紹介する記事。メインとは別の AI モデルをセカンドオピニオン役として呼び、計画や実装の見落とし確認に使える点が主題。",
-    en: "Japanese-language coverage of GitHub Copilot CLI's Rubber Duck mode, which brings in a second model as a reviewer to critique plans and implementation decisions.",
-  },
-  "Continuous AI for accessibility: How GitHub transforms feedback into inclusion": {
-    ja: "アクセシビリティに関するフィードバックを継続的に AI で取り込み、製品改善へ回す GitHub の取り組み。単発修正で終わらせず、改善ループを開発プロセスへ組み込む考え方が主題。",
-    en: "A look at how GitHub uses AI continuously to turn accessibility feedback into product improvements, treating accessibility work as an ongoing loop rather than a one-off fix.",
-  },
+  "マイクロソフト、Claude CodeやGitHub Copilotに「このアプリをデプロイせよ」と指示すればAIが最適なインフラ構成やサービスでデプロイしてくれる「Azure Skills Plugin」公開":
+    {
+      ja: "Microsoft が Azure Skills Plugin を公開し、Claude Code や GitHub Copilot にアプリ配備を指示すると、適した Azure インフラやサービス構成の提案とデプロイ実行を進められるようにする内容。AI agent にクラウド構成判断を持たせる流れとして注目される。",
+      en: "Japanese-language coverage of Microsoft's Azure Skills Plugin, which lets Claude Code and GitHub Copilot guide Azure infrastructure selection and application deployment more autonomously.",
+    },
+  "GitHub Copilot CLI、メインのAIモデルとは異なるAIモデルをセカンドオピニオンに使う「Rubber Duck」モード":
+    {
+      ja: "GitHub Copilot CLI の experimental な Rubber Duck モードを紹介する記事。メインとは別の AI モデルをセカンドオピニオン役として呼び、計画や実装の見落とし確認に使える点が主題。",
+      en: "Japanese-language coverage of GitHub Copilot CLI's Rubber Duck mode, which brings in a second model as a reviewer to critique plans and implementation decisions.",
+    },
+  "Continuous AI for accessibility: How GitHub transforms feedback into inclusion":
+    {
+      ja: "アクセシビリティに関するフィードバックを継続的に AI で取り込み、製品改善へ回す GitHub の取り組み。単発修正で終わらせず、改善ループを開発プロセスへ組み込む考え方が主題。",
+      en: "A look at how GitHub uses AI continuously to turn accessibility feedback into product improvements, treating accessibility work as an ongoing loop rather than a one-off fix.",
+    },
   "The era of “AI as text” is over. Execution is the new interface.": {
     ja: "AI をテキスト応答だけでなく実行主体として組み込む時代に入った、という整理。Copilot SDK や MCP を前提に、agent が action を起こす interface として AI を使う考え方が主題。",
     en: "A framing piece that argues AI should be treated as an execution layer, with tools, SDKs, and workflows that let agents take action instead of only returning text.",
@@ -127,10 +130,11 @@ const exactSummaryMappings = {
     ja: "GitHub Copilot Dev Days の参加・開催案内。近隣イベントへの参加や、自分でイベントを主催するための情報がまとまっている。",
     en: "An announcement for GitHub Copilot Dev Days that points readers to nearby events and explains how to host one themselves.",
   },
-  "From idea to pull request: A practical guide to building with GitHub Copilot CLI": {
-    ja: "Copilot CLI を起点に計画し、IDE で判断し、最後は GitHub の pull request へつなぐ実践ガイド。issue 作成から Node.js CLI アプリ実装、テスト、PR までをハンズオンで追える。",
-    en: "A practical guide to starting in Copilot CLI, making decisions in the IDE, and finishing in a GitHub pull request, walking through issue creation, app implementation, tests, and reviewable output.",
-  },
+  "From idea to pull request: A practical guide to building with GitHub Copilot CLI":
+    {
+      ja: "Copilot CLI を起点に計画し、IDE で判断し、最後は GitHub の pull request へつなぐ実践ガイド。issue 作成から Node.js CLI アプリ実装、テスト、PR までをハンズオンで追える。",
+      en: "A practical guide to starting in Copilot CLI, making decisions in the IDE, and finishing in a GitHub pull request, walking through issue creation, app implementation, tests, and reviewable output.",
+    },
   "What's new with GitHub Copilot coding agent": {
     ja: "GitHub Copilot coding agent の最近の更新まとめ。branch や pull request をまたぐ開発フローと、agent の作業体験がどう広がったかを俯瞰できる。",
     en: "A roundup of recent GitHub Copilot coding agent changes, useful for understanding how branch, pull request, and agent workflows are expanding.",
