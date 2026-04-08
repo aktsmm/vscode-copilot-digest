@@ -16,7 +16,7 @@
         "https://github.blog/changelog/2026-03-31-research-plan-and-code-with-copilot-cloud-agent",
         "https://github.blog/changelog/2026-04-01-gpt-5-4-mini-is-now-available-in-copilot-education-auto-model-selection"
       ],
-      "lastCheckedAt": "2026-04-07T23:13:52.144Z",
+      "lastCheckedAt": "2026-04-08T00:00:17.907Z",
       "futureSeenIds": []
     },
     "github-copilot-blog": {
@@ -33,7 +33,7 @@
         "https://github.blog/?p=94179",
         "https://github.blog/?p=94157"
       ],
-      "lastCheckedAt": "2026-04-07T23:13:52.169Z",
+      "lastCheckedAt": "2026-04-08T00:00:17.934Z",
       "futureSeenIds": []
     },
     "vscode-feed": {
@@ -55,18 +55,18 @@
         "https://code.visualstudio.com/blogs/2025/12/03/introducing-vs-code-insiders-podcast",
         "https://code.visualstudio.com/updates/v1_115"
       ],
-      "lastCheckedAt": "2026-04-07T23:13:52.271Z",
+      "lastCheckedAt": "2026-04-08T00:00:18.043Z",
       "futureSeenIds": [
         "https://code.visualstudio.com/updates/v1_115"
       ]
     },
     "vscode-release-notes-1-109": {
       "snapshotHash": "795e024cf2ecc4e681a2873b1d29435c5e6ca0a1771e5ee68fb8f91f859c2bf6",
-      "lastCheckedAt": "2026-04-07T23:13:53.186Z"
+      "lastCheckedAt": "2026-04-08T00:00:18.756Z"
     },
     "copilot-whats-new": {
       "snapshotHash": "b420f1decd1c48516d66030e4292d9537371f69c4260aeb4b1a29975eb279571",
-      "lastCheckedAt": "2026-04-07T23:13:53.654Z",
+      "lastCheckedAt": "2026-04-08T00:00:19.254Z",
       "lastError": "fetch failed"
     },
     "publickey": {
@@ -85,7 +85,7 @@
         "tag:www.publickey1.jp,2026://2.8523",
         "tag:www.publickey1.jp,2026://2.8522"
       ],
-      "lastCheckedAt": "2026-04-07T23:13:54.251Z",
+      "lastCheckedAt": "2026-04-08T00:00:19.876Z",
       "futureSeenIds": []
     },
     "github-changelog": {
@@ -102,12 +102,12 @@
         "https://github.blog/changelog/2026-04-01-github-copilot-in-visual-studio-march-update",
         "https://github.blog/changelog/2026-04-02-github-actions-early-april-2026-updates"
       ],
-      "lastCheckedAt": "2026-04-07T23:13:52.118Z",
+      "lastCheckedAt": "2026-04-08T00:00:17.885Z",
       "futureSeenIds": []
     },
     "vscode-updates": {
       "snapshotHash": "d2d9d6bb244271aec140e3a3b5d01efb96f2c576f021fc61c88932a151060664",
-      "lastCheckedAt": "2026-04-07T23:13:52.797Z"
+      "lastCheckedAt": "2026-04-08T00:00:18.347Z"
     }
   }
 }
