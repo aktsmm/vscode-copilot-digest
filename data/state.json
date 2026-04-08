@@ -16,7 +16,7 @@
         "https://github.blog/changelog/2026-03-31-research-plan-and-code-with-copilot-cloud-agent",
         "https://github.blog/changelog/2026-04-01-gpt-5-4-mini-is-now-available-in-copilot-education-auto-model-selection"
       ],
-      "lastCheckedAt": "2026-04-08T03:25:44.318Z",
+      "lastCheckedAt": "2026-04-08T05:24:24.183Z",
       "futureSeenIds": []
     },
     "github-copilot-blog": {
@@ -33,7 +33,7 @@
         "https://github.blog/?p=94179",
         "https://github.blog/?p=94157"
       ],
-      "lastCheckedAt": "2026-04-08T03:25:44.336Z",
+      "lastCheckedAt": "2026-04-08T05:24:24.202Z",
       "futureSeenIds": []
     },
     "vscode-feed": {
@@ -55,22 +55,22 @@
         "https://code.visualstudio.com/blogs/2025/12/03/introducing-vs-code-insiders-podcast",
         "https://code.visualstudio.com/updates/v1_115"
       ],
-      "lastCheckedAt": "2026-04-08T03:25:44.499Z",
+      "lastCheckedAt": "2026-04-08T05:24:24.253Z",
       "futureSeenIds": [
         "https://code.visualstudio.com/updates/v1_115"
       ]
     },
     "vscode-release-notes-1-109": {
       "snapshotHash": "795e024cf2ecc4e681a2873b1d29435c5e6ca0a1771e5ee68fb8f91f859c2bf6",
-      "lastCheckedAt": "2026-04-08T03:25:45.184Z",
-      "releasePublishedAt": "2026-02-03T15:00:00.000Z",
+      "lastCheckedAt": "2026-04-08T05:24:24.443Z",
+      "releasePublishedAt": "2026-02-04T00:00:00.000Z",
       "releaseTitle": "January 2026 (version 1.109)"
     },
     "copilot-whats-new": {
       "snapshotHash": "b420f1decd1c48516d66030e4292d9537371f69c4260aeb4b1a29975eb279571",
-      "lastCheckedAt": "2026-04-08T03:25:45.697Z",
+      "lastCheckedAt": "2026-04-08T05:24:24.685Z",
       "lastError": "fetch failed",
-      "releasePublishedAt": "2026-04-08T03:25:45.695Z",
+      "releasePublishedAt": "2026-04-08T05:24:24.684Z",
       "releaseTitle": "Preview upcoming features for GitHub Copilot"
     },
     "publickey": {
@@ -89,7 +89,7 @@
         "tag:www.publickey1.jp,2026://2.8523",
         "tag:www.publickey1.jp,2026://2.8522"
       ],
-      "lastCheckedAt": "2026-04-08T03:25:45.887Z",
+      "lastCheckedAt": "2026-04-08T05:24:25.419Z",
       "futureSeenIds": []
     },
     "github-changelog": {
@@ -106,18 +106,18 @@
         "https://github.blog/changelog/2026-04-01-github-copilot-in-visual-studio-march-update",
         "https://github.blog/changelog/2026-04-02-github-actions-early-april-2026-updates"
       ],
-      "lastCheckedAt": "2026-04-08T03:25:44.302Z",
+      "lastCheckedAt": "2026-04-08T05:24:24.168Z",
       "futureSeenIds": []
     },
     "vscode-updates": {
       "snapshotHash": "d2d9d6bb244271aec140e3a3b5d01efb96f2c576f021fc61c88932a151060664",
-      "lastCheckedAt": "2026-04-08T03:25:45.063Z",
-      "releasePublishedAt": "2026-03-31T15:00:00.000Z",
+      "lastCheckedAt": "2026-04-08T05:24:24.327Z",
+      "releasePublishedAt": "2026-04-01T00:00:00.000Z",
       "releaseTitle": "Visual Studio Code 1.114"
     },
     "vscode-release-notes-1-114": {
       "snapshotHash": "d2d9d6bb244271aec140e3a3b5d01efb96f2c576f021fc61c88932a151060664",
-      "lastCheckedAt": "2026-04-08T03:25:45.936Z",
+      "lastCheckedAt": "2026-04-08T05:24:25.461Z",
       "sectionHashes": {
         "Visual Studio Code 1.114:Chat experience:Preview videos in the image carousel": "c0160eb777193e47d47a27a7be068bd19f50b3d22ad4af7c1749c22630cfa1d7",
         "Visual Studio Code 1.114:Chat experience:Copy final response in chat": "6a3758f17f42e54cc2a5585d9c321a2754e9e8a3611f54db4f279cfeea3f3c3b",
@@ -128,25 +128,25 @@
         "Visual Studio Code 1.114:Contributions to extensions:GitHub Pull Requests": "e12a26380199f497a8aadf94df27977d113f9c120a00a3ff5fa008ff0798802d",
         "Visual Studio Code 1.114:Proposed APIs:Fine-grained tool approval": "fa2eb56297168bf4bd890c694cef0d77bf55fbd525b71c06b727f7f26e4dec1b"
       },
-      "releasePublishedAt": "2026-03-31T15:00:00.000Z",
+      "releasePublishedAt": "2026-04-01T00:00:00.000Z",
       "releaseTitle": "Visual Studio Code 1.114"
     },
     "vscode-release-notes-1-113": {
       "snapshotHash": "5482b1f49b2d0023616b2141da578b868899f8cab8c66f6d85feafb577566a6a",
-      "lastCheckedAt": "2026-04-08T03:25:45.981Z",
-      "releasePublishedAt": "2026-03-24T15:00:00.000Z",
+      "lastCheckedAt": "2026-04-08T05:24:25.485Z",
+      "releasePublishedAt": "2026-03-25T00:00:00.000Z",
       "releaseTitle": "Visual Studio Code 1.113"
     },
     "vscode-release-notes-1-112": {
       "snapshotHash": "a124d3545d10e70f3af851dcc32f11b4b4c317877194e09399a8c11c46d7ee8a",
-      "lastCheckedAt": "2026-04-08T03:25:46.029Z",
-      "releasePublishedAt": "2026-03-17T15:00:00.000Z",
+      "lastCheckedAt": "2026-04-08T05:24:25.572Z",
+      "releasePublishedAt": "2026-03-18T00:00:00.000Z",
       "releaseTitle": "Visual Studio Code 1.112"
     },
     "vscode-release-notes-1-111": {
       "snapshotHash": "7e591bc2bd66085ca33e6bdedc680a1ff23978f68236a1ae93b1251917fc1b0f",
-      "lastCheckedAt": "2026-04-08T03:25:46.748Z",
-      "releasePublishedAt": "2026-03-08T15:00:00.000Z",
+      "lastCheckedAt": "2026-04-08T05:24:25.637Z",
+      "releasePublishedAt": "2026-03-09T00:00:00.000Z",
       "releaseTitle": "Visual Studio Code 1.111"
     }
   }
