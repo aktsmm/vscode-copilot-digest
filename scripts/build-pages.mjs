@@ -168,8 +168,7 @@ function buildText(locale) {
       rawMarkdown: "Open Markdown",
       rawJson: "Open JSON",
       noItems: "No updates were recorded in this category.",
-      emptyDayCopy:
-        "No published updates were recorded for this day.",
+      emptyDayCopy: "No published updates were recorded for this day.",
       noteTitle: "Editorial notes",
       futureTitle: "Future-dated items",
       futureDescription:
