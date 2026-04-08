@@ -124,6 +124,7 @@ function buildText(locale) {
       footerLabel: "Copyright (c) 2026",
       dailyNav: "Daily",
       weeklyNav: "Weekly",
+      tagNav: "Tags",
       repositoryNav: "Repository",
       langSwitchLabel: "日本語",
       heroEyebrow: "GitHub Pages",
@@ -165,6 +166,20 @@ function buildText(locale) {
       sourceBreakdownTitle: "Source breakdown",
       sourceBreakdownLabel: "Before dedupe",
       fullListTitle: "Full update list",
+      tagsPageEyebrow: "Tag archive",
+      tagsPageTitle: "Browse updates by tag.",
+      tagsPageCopy:
+        "Use the tag cloud to jump into recurring themes, then open a filtered digest view or inspect representative updates for each tag.",
+      tagCloudTitle: "Tag cloud",
+      tagArchiveTitle: "Tag archive",
+      totalTagsMetric: "Tags",
+      totalTagsMetricDetail: "Distinct tags across published digests",
+      taggedUpdatesMetric: "Tagged updates",
+      taggedUpdatesMetricDetail: "Published updates represented in the tag archive",
+      topTagMetric: "Top tag",
+      topTagMetricDetail: "Most frequent tag across published digests",
+      tagOpenLabel: "Open filtered digest",
+      tagSamplesLabel: "Recent tagged items",
       rawMarkdown: "Open Markdown",
       rawJson: "Open JSON",
       noItems: "No updates were recorded in this category.",
@@ -197,6 +212,7 @@ function buildText(locale) {
       filterReset: "Clear",
       filterSourceLabel: "Source",
       filterTopicLabel: "Topic",
+      filterTagLabel: "Tags",
       itemSuffix: " items",
       sourceGroupNames: {
         github: "GitHub official",
@@ -238,6 +254,7 @@ function buildText(locale) {
     footerLabel: "Copyright (c) 2026",
     dailyNav: "日次ダイジェスト",
     weeklyNav: "週間ダイジェスト",
+    tagNav: "タグ一覧",
     repositoryNav: "Repository",
     langSwitchLabel: "EN",
     heroEyebrow: "GitHub Pages",
@@ -278,6 +295,20 @@ function buildText(locale) {
     sourceBreakdownTitle: "ソース内訳",
     sourceBreakdownLabel: "重複除去前",
     fullListTitle: "全件リスト",
+    tagsPageEyebrow: "タグ一覧",
+    tagsPageTitle: "タグから更新をたどる。",
+    tagsPageCopy:
+      "よく出るテーマをタグ単位でまとめて見られるページです。タグを押すとフィルター済みのダイジェストに飛べて、各タグの代表的な更新も確認できます。",
+    tagCloudTitle: "タグクラウド",
+    tagArchiveTitle: "タグ別アーカイブ",
+    totalTagsMetric: "タグ数",
+    totalTagsMetricDetail: "公開済みダイジェスト内のユニークタグ数",
+    taggedUpdatesMetric: "タグ付き更新",
+    taggedUpdatesMetricDetail: "タグ一覧に載る公開済み更新数",
+    topTagMetric: "最多タグ",
+    topTagMetricDetail: "公開済みダイジェストで最も多いタグ",
+    tagOpenLabel: "このタグで見る",
+    tagSamplesLabel: "このタグの主な更新",
     rawMarkdown: "Markdown を開く",
     rawJson: "JSON を開く",
     noItems: "このカテゴリの更新はありませんでした。",
@@ -310,6 +341,7 @@ function buildText(locale) {
     filterReset: "クリア",
     filterSourceLabel: "ソース",
     filterTopicLabel: "テーマ",
+    filterTagLabel: "タグ",
     itemSuffix: "件",
     sourceGroupNames: {
       github: "GitHub 公式",
@@ -355,11 +387,8 @@ function renderSourceBadge(event, text) {
   return `<span class="pill source-badge source-badge--${escapeHtml(group)}"><span class="source-badge-mark">${escapeHtml(meta.short)}</span><span>${escapeHtml(meta.label)}</span></span>`;
 }
 
-function renderBadges(event, locale, text) {
-  return `<div class="badge-row">${renderSourceBadge(event, text)}${event.isFutureDated ? `<span class="pill pill-warning">${escapeHtml(text.futureBadge)}</span>` : ""}${buildHighlightTags(
-    event,
-    locale,
-  )
+function renderBadges(event, locale, text, tags = buildHighlightTags(event, locale)) {
+  return `<div class="badge-row">${renderSourceBadge(event, text)}${event.isFutureDated ? `<span class="pill pill-warning">${escapeHtml(text.futureBadge)}</span>` : ""}${tags
     .map((tag) => `<span class="pill">${escapeHtml(tag)}</span>`)
     .join("")}</div>`;
 }
@@ -372,11 +401,116 @@ function renderSourceMeta(event, locale, text) {
   return `<div class="meta-row source-meta"><span>${escapeHtml(text.sourceLabel)}:</span><span class="source-meta-value">${renderSourceBadge(event, text)}<span class="source-name-list">${escapeHtml((event.sourceNames ?? [event.sourceName]).join(" / "))}</span></span></div>`;
 }
 
+function buildTagCloud(events, locale) {
+  const tagCounts = new Map();
+
+  for (const event of events ?? []) {
+    for (const tag of buildHighlightTags(event, locale)) {
+      tagCounts.set(tag, (tagCounts.get(tag) ?? 0) + 1);
+    }
+  }
+
+  const maxCount = Math.max(0, ...tagCounts.values());
+
+  return [...tagCounts.entries()]
+    .map(([value, count]) => {
+      const ratio = maxCount > 0 ? count / maxCount : 0;
+      const weightClass =
+        ratio >= 0.8
+          ? "filter-chip--tag-3"
+          : ratio >= 0.5
+            ? "filter-chip--tag-2"
+            : "filter-chip--tag-1";
+
+      return {
+        value,
+        label: `#${value}`,
+        count,
+        weightClass,
+      };
+    })
+    .sort(
+      (left, right) =>
+        right.count - left.count || left.value.localeCompare(right.value, "ja"),
+    );
+}
+
+function buildPublishedEventEntries(dailyDigests) {
+  const entries = [];
+  const seen = new Set();
+
+  for (const digest of dailyDigests) {
+    for (const event of [...digest.uniqueEvents, ...(digest.futureEvents ?? [])]) {
+      const key = event.url || event.title || event.eventId;
+      if (seen.has(key)) {
+        continue;
+      }
+
+      seen.add(key);
+      entries.push({ ...event, digestDate: digest.date });
+    }
+  }
+
+  return entries.sort(
+    (left, right) =>
+      safeDate(right.publishedAt) - safeDate(left.publishedAt) ||
+      rankEvent(right) - rankEvent(left),
+  );
+}
+
+function buildTagArchive(events, locale) {
+  const tagMap = new Map();
+
+  for (const event of events ?? []) {
+    for (const tag of buildHighlightTags(event, locale)) {
+      if (!tagMap.has(tag)) {
+        tagMap.set(tag, []);
+      }
+
+      tagMap.get(tag).push(event);
+    }
+  }
+
+  const maxCount = Math.max(0, ...[...tagMap.values()].map((items) => items.length));
+
+  return [...tagMap.entries()]
+    .map(([value, items]) => {
+      const count = items.length;
+      const ratio = maxCount > 0 ? count / maxCount : 0;
+      const weightClass =
+        ratio >= 0.8
+          ? "filter-chip--tag-3"
+          : ratio >= 0.5
+            ? "filter-chip--tag-2"
+            : "filter-chip--tag-1";
+
+      return {
+        value,
+        label: `#${value}`,
+        count,
+        weightClass,
+        events: items.slice(0, 4),
+      };
+    })
+    .sort(
+      (left, right) =>
+        right.count - left.count || left.value.localeCompare(right.value, "ja"),
+    );
+}
+
 function renderFilterChip(kind, value, label, extraClass = "") {
   return `<button type="button" class="filter-chip ${extraClass}" data-filter-kind="${escapeHtml(kind)}" data-filter-value="${escapeHtml(value)}" aria-pressed="false">${escapeHtml(label)}</button>`;
 }
 
-function renderFilterBar(text) {
+function renderTagFilterChip(tag) {
+  return `<button type="button" class="filter-chip filter-chip--tag ${escapeHtml(tag.weightClass)}" data-filter-kind="tag" data-filter-value="${escapeHtml(tag.value)}" aria-pressed="false">${escapeHtml(tag.label)}<span class="filter-chip-count">${escapeHtml(String(tag.count))}</span></button>`;
+}
+
+function renderTagArchiveChip(tag, href) {
+  return `<a class="filter-chip filter-chip--tag ${escapeHtml(tag.weightClass)} tag-cloud-link" href="${escapeHtml(href)}">${escapeHtml(tag.label)}<span class="filter-chip-count">${escapeHtml(String(tag.count))}</span></a>`;
+}
+
+function renderFilterBar(text, tagCloud = []) {
   return `<section class="section-block filter-block" data-filter-root>
     <div class="section-heading"><h2>${escapeHtml(text.filterTitle)}</h2><button type="button" class="filter-reset" data-filter-reset>${escapeHtml(text.filterReset)}</button></div>
     <div class="filter-stack">
@@ -405,6 +539,10 @@ function renderFilterBar(text) {
           )
           .join("")}</div>
       </div>
+      ${tagCloud.length > 0 ? `<div class="filter-row">
+        <span class="filter-label">${escapeHtml(text.filterTagLabel)}</span>
+        <div class="filter-chip-row filter-chip-row--cloud">${tagCloud.map((tag) => renderTagFilterChip(tag)).join("")}</div>
+      </div>` : ""}
     </div>
   </section>`;
 }
@@ -414,6 +552,7 @@ function renderEventCard(event, locale, text, options = {}) {
   const summaryMaxLength = options.compact ? 170 : 260;
   const group = sourceGroup(event);
   const topic = classifyEvent(event);
+  const tags = buildHighlightTags(event, locale);
   const why = options.includeWhy
     ? `<p class="why-it-matters"><strong>${escapeHtml(text.whyLabel)}:</strong> ${escapeHtml(importanceReason(event, locale))}</p>`
     : "";
@@ -423,14 +562,33 @@ function renderEventCard(event, locale, text, options = {}) {
     event.url && !event.url.startsWith("./") && !event.url.startsWith("../");
   const linkAttrs = isExternal ? ` target="_blank" rel="noopener"` : "";
 
-  return `<article class="${cardClass}" data-filter-card data-source-group="${escapeHtml(group)}" data-topic="${escapeHtml(topic)}">
-    ${renderBadges(event, locale, text)}
+  return `<article class="${cardClass}" data-filter-card data-source-group="${escapeHtml(group)}" data-topic="${escapeHtml(topic)}" data-tags="${escapeHtml(tags.map((tag) => encodeURIComponent(tag)).join(","))}">
+    ${renderBadges(event, locale, text, tags)}
     <h3><a href="${escapeHtml(event.url)}"${linkAttrs}>${escapeHtml(localizedTitle(event, locale))}${isExternal ? ' <span class="ext-icon" aria-hidden="true">&#8599;</span>' : ""}</a></h3>
     ${rawTitle ? `<p class="original-title">${escapeHtml(text.originalTitleLabel)}: ${escapeHtml(rawTitle)}</p>` : ""}
     ${renderDateMeta(event, locale, text)}
     ${renderSourceMeta(event, locale, text)}
     <p>${escapeHtml(trimText(localizedSummary(event, locale), summaryMaxLength))}</p>
     ${why}
+  </article>`;
+}
+
+function renderTagArchiveCard(tag, locale, text, options) {
+  const filteredHref = `${options.homeHref}?tags=${encodeURIComponent(tag.value)}`;
+  const items = tag.events
+    .map(
+      (event) =>
+        `<li><a href="${escapeHtml(event.url)}">${escapeHtml(trimText(localizedTitle(event, locale), 88))}</a><span>${escapeHtml(event.digestDate ?? "")}</span></li>`,
+    )
+    .join("");
+
+  return `<article class="content-card tag-card">
+    <div class="tag-card-head">
+      ${renderTagArchiveChip(tag, filteredHref)}
+      <a class="tag-card-link" href="${escapeHtml(filteredHref)}">${escapeHtml(text.tagOpenLabel)}</a>
+    </div>
+    <p class="tag-card-meta">${escapeHtml(text.tagSamplesLabel)}</p>
+    <ul class="topic-list tag-card-list">${items}</ul>
   </article>`;
 }
 
@@ -601,10 +759,15 @@ function renderRangePage(digest, locale, text, options) {
     locale === "ja"
       ? `${count}${text.itemSuffix}`
       : formatCount(count, locale, "item", "items");
+  const futureEvents = digest.futureEvents ?? [];
+  const tagCloud = buildTagCloud(
+    [...digest.uniqueEvents, ...futureEvents],
+    locale,
+  );
   const shouldUseEmptyDayLayout =
     options.kind === "day" &&
     digest.uniqueEventCount === 0 &&
-    digest.futureEvents.length === 0 &&
+    futureEvents.length === 0 &&
     digest.errorCount === 0;
   const metrics =
     options.kind === "day"
@@ -675,9 +838,9 @@ function renderRangePage(digest, locale, text, options) {
     : `
     ${renderEditorialNotes(editorialNotes, text)}
 
-    ${options.kind === "day" ? renderFutureSection(digest.futureEvents, locale, text) : ""}
+    ${options.kind === "day" ? renderFutureSection(futureEvents, locale, text) : ""}
 
-    ${renderFilterBar(text)}
+    ${renderFilterBar(text, tagCloud)}
 
     <section class="section-block">
       <div class="section-heading"><h2>${escapeHtml(text.highlightsTitle)}</h2><span>${escapeHtml(itemCount(digest.highlights.length))}</span></div>
@@ -725,6 +888,7 @@ function renderRangePage(digest, locale, text, options) {
     relativePrefix: options.relativePrefix,
     homeHref: options.homeHref,
     weeklyHref: options.weeklyHref,
+    tagHref: options.tagHref,
     langSwitchHref: options.langSwitchHref,
   });
 }
@@ -758,6 +922,7 @@ function renderIndexPage(
         rankEvent(right) - rankEvent(left),
     )
     .slice(0, 6);
+  const tagCloud = buildTagCloud(latestHighlights, locale);
 
   const weeklyMarkup =
     weeklyDigests.length === 0
@@ -778,6 +943,8 @@ function renderIndexPage(
         ${renderMetric(text.latestRunCount, locale === "ja" ? (latestDigest ? `${latestDigest.latestRun.newEventsCount}${escapeHtml(text.itemSuffix)}` : `0${escapeHtml(text.itemSuffix)}`) : formatCount(latestDigest?.latestRun?.newEventsCount ?? 0, locale, "item", "items"), text.latestRunCountDetail)}
       </div>
     </section>
+
+    ${latestHighlights.length > 0 ? renderFilterBar(text, tagCloud) : ""}
 
     <section class="section-block">
       <div class="section-heading"><h2>${escapeHtml(text.latestHighlightsTitle)}</h2><span>${escapeHtml(locale === "ja" ? `${latestHighlights.length}${text.latestHighlightsCountSuffix}` : `${latestHighlights.length}${text.latestHighlightsCountSuffix}`)}</span></div>
@@ -805,6 +972,59 @@ function renderIndexPage(
     relativePrefix,
     homeHref: links.home,
     weeklyHref: `${links.home}#weekly-archive`,
+    tagHref: links.tags,
+    langSwitchHref: links.langSwitch,
+  });
+}
+
+function renderTagPage(
+  { dailyDigests },
+  locale,
+  text,
+  lastUpdatedAt,
+  relativePrefix,
+  links,
+) {
+  const taggedEvents = buildPublishedEventEntries(dailyDigests);
+  const tagArchive = buildTagArchive(taggedEvents, locale);
+  const topTag = tagArchive[0]?.label ?? "-";
+  const body = `
+    <section class="hero">
+      <div>
+        <p class="eyebrow">${escapeHtml(text.tagsPageEyebrow)}</p>
+        <h1>${escapeHtml(text.tagsPageTitle)}</h1>
+        <p class="hero-copy">${escapeHtml(text.tagsPageCopy)}</p>
+      </div>
+      <div class="metrics-grid">
+        ${renderMetric(text.totalTagsMetric, locale === "ja" ? `${tagArchive.length}${escapeHtml(text.itemSuffix)}` : formatCount(tagArchive.length, locale, "tag", "tags"), text.totalTagsMetricDetail)}
+        ${renderMetric(text.taggedUpdatesMetric, locale === "ja" ? `${taggedEvents.length}${escapeHtml(text.itemSuffix)}` : formatCount(taggedEvents.length, locale, "item", "items"), text.taggedUpdatesMetricDetail)}
+        ${renderMetric(text.topTagMetric, topTag, text.topTagMetricDetail)}
+        ${renderMetric(text.latestDate, dailyDigests[0]?.date ?? "N/A", text.latestDateDetail)}
+      </div>
+    </section>
+
+    <section class="section-block">
+      <div class="section-heading"><h2>${escapeHtml(text.tagCloudTitle)}</h2><span>${locale === "ja" ? `${tagArchive.length}${escapeHtml(text.itemSuffix)}` : formatCount(tagArchive.length, locale, "tag", "tags")}</span></div>
+      <div class="filter-chip-row filter-chip-row--cloud tag-cloud-links">${tagArchive.map((tag) => renderTagArchiveChip(tag, `${links.home}?tags=${encodeURIComponent(tag.value)}`)).join("")}</div>
+    </section>
+
+    <section class="section-block">
+      <div class="section-heading"><h2>${escapeHtml(text.tagArchiveTitle)}</h2><span>${locale === "ja" ? `${tagArchive.length}${escapeHtml(text.itemSuffix)}` : formatCount(tagArchive.length, locale, "tag", "tags")}</span></div>
+      <div class="tag-grid">${tagArchive.map((tag) => renderTagArchiveCard(tag, locale, text, { homeHref: links.home })).join("")}</div>
+    </section>
+  `;
+
+  return renderLayout({
+    locale,
+    text,
+    title: `${text.tagNav} | vscode-copilot-digest`,
+    description: text.tagsPageCopy,
+    body,
+    lastUpdatedAt,
+    relativePrefix,
+    homeHref: links.home,
+    weeklyHref: links.weekly,
+    tagHref: links.tags,
     langSwitchHref: links.langSwitch,
   });
 }
@@ -819,6 +1039,7 @@ function renderLayout({
   relativePrefix,
   homeHref,
   weeklyHref,
+  tagHref,
   langSwitchHref,
 }) {
   const assetHref =
@@ -856,6 +1077,7 @@ function renderLayout({
         <nav class="site-nav">
           <a href="${escapeHtml(homeHref)}">${escapeHtml(text.dailyNav)}</a>
           <a href="${escapeHtml(weeklyHref)}">${escapeHtml(text.weeklyNav)}</a>
+          <a href="${escapeHtml(tagHref)}">${escapeHtml(text.tagNav)}</a>
           <a href="https://github.com/aktsmm/vscode-copilot-digest">${escapeHtml(text.repositoryNav)}</a>
           <button class="lang-toggle" data-href="${escapeHtml(langSwitchHref)}" aria-label="${escapeHtml(locale === "ja" ? "Switch to English" : "日本語に切り替え")}">
             <span class="lang-toggle-track">
@@ -929,7 +1151,7 @@ function renderLayout({
       if(!root)return;
       var cards=[].slice.call(document.querySelectorAll('[data-filter-card]'));
       var reset=root.querySelector('[data-filter-reset]');
-      var state={source:new Set(),topic:new Set()};
+      var state={source:new Set(),topic:new Set(),tag:new Set()};
       function readList(value){
         if(!value)return [];
         return value.split(',').map(function(item){return decodeURIComponent(item).trim();}).filter(Boolean);
@@ -938,6 +1160,7 @@ function renderLayout({
         var params=new URLSearchParams(window.location.search);
         state.source=new Set(readList(params.get('sources')));
         state.topic=new Set(readList(params.get('topics')));
+        state.tag=new Set(readList(params.get('tags')));
       }
       function syncButtons(){
         root.querySelectorAll('[data-filter-kind]').forEach(function(btn){
@@ -948,16 +1171,18 @@ function renderLayout({
           btn.setAttribute('aria-pressed',active?'true':'false');
         });
         if(reset){
-          reset.disabled=state.source.size===0&&state.topic.size===0;
+          reset.disabled=state.source.size===0&&state.topic.size===0&&state.tag.size===0;
         }
       }
       function applyFilters(){
         cards.forEach(function(card){
           var sourceValue=card.getAttribute('data-source-group');
           var topicValue=card.getAttribute('data-topic');
+          var tagValues=readList(card.getAttribute('data-tags'));
           var sourceMatch=state.source.size===0||state.source.has(sourceValue);
           var topicMatch=state.topic.size===0||state.topic.has(topicValue);
-          card.classList.toggle('is-hidden',!(sourceMatch&&topicMatch));
+          var tagMatch=state.tag.size===0||tagValues.some(function(tag){return state.tag.has(tag);});
+          card.classList.toggle('is-hidden',!(sourceMatch&&topicMatch&&tagMatch));
         });
       }
       function syncUrl(){
@@ -966,6 +1191,8 @@ function renderLayout({
         else url.searchParams.delete('sources');
         if(state.topic.size>0)url.searchParams.set('topics',Array.from(state.topic).join(','));
         else url.searchParams.delete('topics');
+        if(state.tag.size>0)url.searchParams.set('tags',Array.from(state.tag).join(','));
+        else url.searchParams.delete('tags');
         window.history.replaceState({},'',url);
       }
       function refresh(){
@@ -986,6 +1213,7 @@ function renderLayout({
         reset.addEventListener('click',function(){
           state.source.clear();
           state.topic.clear();
+          state.tag.clear();
           refresh();
         });
       }
@@ -1117,6 +1345,7 @@ h1 { margin: 0 0 16px; font-size: clamp(2.3rem, 4vw, 4.2rem); line-height: 1.04;
 .filter-row { display: grid; gap: 10px; }
 .filter-label { color: var(--muted); font-size: 0.9rem; font-weight: 700; }
 .filter-chip-row { display: flex; flex-wrap: wrap; gap: 10px; }
+.filter-chip-row--cloud { gap: 12px; }
 .filter-chip,
 .filter-reset {
   appearance: none;
@@ -1133,6 +1362,28 @@ h1 { margin: 0 0 16px; font-size: clamp(2.3rem, 4vw, 4.2rem); line-height: 1.04;
   border-color: currentColor;
   box-shadow: inset 0 0 0 1px currentColor;
   transform: translateY(-1px);
+}
+.tag-cloud-link { text-decoration: none; }
+.filter-chip--tag {
+  gap: 8px;
+  background: rgba(15, 118, 110, 0.09);
+  border-color: rgba(15, 118, 110, 0.16);
+  color: var(--accent);
+}
+.filter-chip--tag-1 { font-size: 0.82rem; }
+.filter-chip--tag-2 { font-size: 0.92rem; }
+.filter-chip--tag-3 { font-size: 1rem; }
+.filter-chip-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.5rem;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.82);
+  color: inherit;
+  font-size: 0.74rem;
+  line-height: 1.5;
 }
 .filter-reset:disabled { cursor: default; opacity: 0.45; }
 .section-heading {
@@ -1154,8 +1405,24 @@ h1 { margin: 0 0 16px; font-size: clamp(2.3rem, 4vw, 4.2rem); line-height: 1.04;
   grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.9fr);
   gap: 20px;
 }
+.tag-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
 .update-card, .content-card, .side-panel, .topic-section, .mini-highlight, .digest-card { padding: 20px; }
 .update-card h3, .mini-highlight h3, .digest-card h3 { margin: 12px 0 10px; font-size: 1.08rem; }
+.tag-card { display: grid; gap: 14px; }
+.tag-card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.tag-card-link {
+  color: var(--accent);
+  font-weight: 700;
+  text-decoration: none;
+}
+.tag-card-meta { margin: 0; color: var(--muted); font-size: 0.9rem; }
+.tag-card-list li span { color: var(--muted); white-space: nowrap; font-size: 0.82rem; }
 .badge-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 8px; }
 .pill {
   display: inline-flex;
@@ -1395,6 +1662,7 @@ async function main() {
         {
           home: "./index.html",
           langSwitch: "./en/index.html",
+          tags: "./tags.html",
           dayHref: (date) => `./days/${date}.html`,
           weekHref: (key) => `./weeks/${key}.html`,
         },
@@ -1412,8 +1680,43 @@ async function main() {
         {
           home: "./index.html",
           langSwitch: "../index.html",
+          tags: "./tags.html",
           dayHref: (date) => `./days/${date}.html`,
           weekHref: (key) => `./weeks/${key}.html`,
+        },
+      ),
+      "utf8",
+    ),
+    fs.writeFile(
+      path.join(siteDir, "tags.html"),
+      renderTagPage(
+        { dailyDigests },
+        "ja",
+        jaText,
+        lastUpdatedAt,
+        ".",
+        {
+          home: "./index.html",
+          weekly: "./index.html#weekly-archive",
+          tags: "./tags.html",
+          langSwitch: "./en/tags.html",
+        },
+      ),
+      "utf8",
+    ),
+    fs.writeFile(
+      path.join(siteDir, "en", "tags.html"),
+      renderTagPage(
+        { dailyDigests },
+        "en",
+        enText,
+        lastUpdatedAt,
+        "..",
+        {
+          home: "./index.html",
+          weekly: "./index.html#weekly-archive",
+          tags: "./tags.html",
+          langSwitch: "../tags.html",
         },
       ),
       "utf8",
@@ -1432,6 +1735,7 @@ async function main() {
           relativePrefix: "..",
           homeHref: "../index.html",
           weeklyHref: "../index.html#weekly-archive",
+          tagHref: "../tags.html",
           langSwitchHref: `../en/days/${digest.date}.html`,
           rawJsonPath: `../raw/events/${digest.date}.json`,
           rawSummaryPath: `../raw/summaries/${digest.date}.md`,
@@ -1448,6 +1752,7 @@ async function main() {
           relativePrefix: "../..",
           homeHref: "../index.html",
           weeklyHref: "../index.html#weekly-archive",
+          tagHref: "../tags.html",
           langSwitchHref: `../../days/${digest.date}.html`,
           rawJsonPath: `../../raw/events/${digest.date}.json`,
           rawSummaryPath: `../../raw/summaries/${digest.date}.md`,
@@ -1476,6 +1781,7 @@ async function main() {
           relativePrefix: "..",
           homeHref: "../index.html",
           weeklyHref: "../index.html#weekly-archive",
+          tagHref: "../tags.html",
           langSwitchHref: `../en/weeks/${digest.key}.html`,
         }),
         "utf8",
@@ -1490,6 +1796,7 @@ async function main() {
           relativePrefix: "../..",
           homeHref: "../index.html",
           weeklyHref: "../index.html#weekly-archive",
+          tagHref: "../tags.html",
           langSwitchHref: `../../weeks/${digest.key}.html`,
         }),
         "utf8",
