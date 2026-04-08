@@ -168,6 +168,8 @@ function buildText(locale) {
       rawMarkdown: "Open Markdown",
       rawJson: "Open JSON",
       noItems: "No updates were recorded in this category.",
+      emptyDayCopy:
+        "No published updates were recorded for this day.",
       noteTitle: "Editorial notes",
       futureTitle: "Future-dated items",
       futureDescription:
@@ -280,6 +282,7 @@ function buildText(locale) {
     rawMarkdown: "Markdown を開く",
     rawJson: "JSON を開く",
     noItems: "このカテゴリの更新はありませんでした。",
+    emptyDayCopy: "この日の公開済み更新はありませんでした。",
     noteTitle: "注記",
     futureTitle: "先行検知した未来日付の項目",
     futureDescription:
@@ -580,16 +583,17 @@ function renderArchiveCard(digest, locale, text, href, kind) {
       ? `${digest.startDate} - ${digest.endDate}`
       : `${digest.date}`;
   const topItems = digest.highlights.slice(0, 3);
+  const isEmptyDigest = digest.uniqueEventCount === 0;
   const itemCount =
     locale === "ja"
       ? `${digest.uniqueEventCount}${escapeHtml(text.itemSuffix)}`
       : formatCount(digest.uniqueEventCount, locale, "item", "items");
 
   return `<article class="digest-card">
-    <div class="digest-card-head"><p>${escapeHtml(rangeLabel)}</p><span>${itemCount}</span></div>
+    <div class="digest-card-head"><p>${escapeHtml(rangeLabel)}</p>${isEmptyDigest ? "" : `<span>${itemCount}</span>`}</div>
     <h3><a href="${escapeHtml(href)}">${escapeHtml(title)}</a></h3>
-    <p>${escapeHtml(trimText(localizedSummary(topItems[0] ?? { summary: locale === "ja" ? "更新はありませんでした。" : "No updates were found." }, locale), 150))}</p>
-    <ul>${topItems.map((event) => `<li>${escapeHtml(trimText(localizedTitle(event, locale), 84))}</li>`).join("")}</ul>
+    ${isEmptyDigest ? "" : `<p>${escapeHtml(trimText(localizedSummary(topItems[0], locale), 150))}</p>`}
+    ${isEmptyDigest ? "" : `<ul>${topItems.map((event) => `<li>${escapeHtml(trimText(localizedTitle(event, locale), 84))}</li>`).join("")}</ul>`}
   </article>`;
 }
 
@@ -598,6 +602,11 @@ function renderRangePage(digest, locale, text, options) {
     locale === "ja"
       ? `${count}${text.itemSuffix}`
       : formatCount(count, locale, "item", "items");
+  const shouldUseEmptyDayLayout =
+    options.kind === "day" &&
+    digest.uniqueEventCount === 0 &&
+    digest.futureEvents.length === 0 &&
+    digest.errorCount === 0;
   const metrics =
     options.kind === "day"
       ? [
@@ -651,17 +660,20 @@ function renderRangePage(digest, locale, text, options) {
         ? [digest.editorialNote]
         : []
       : digest.editorialNotes;
-
-  const body = `
-    <section class="hero hero-day">
-      <div>
-        <p class="eyebrow">${escapeHtml(options.kind === "day" ? text.dayPageEyebrow : text.weekPageEyebrow)}</p>
-        <h1>${escapeHtml(options.kind === "day" ? digest.date : `${digest.startDate} - ${digest.endDate}`)}</h1>
-        <p class="hero-copy">${escapeHtml(options.kind === "day" ? (locale === "ja" ? "当日の監視結果を、重複を除いた読みやすい形に再構成しています。" : "This page reorganizes one day's collected updates into a deduplicated, readable digest.") : locale === "ja" ? "直近 7 日の更新をまとめて追えるように、ハイライトと全件を週単位で再構成しています。" : "This page groups the last seven days of updates into a weekly digest with highlights and a full update list.")}</p>
+  const dayDataLinks =
+    options.kind === "day"
+      ? `<div class="data-links"><a href="${escapeHtml(options.rawSummaryPath)}">${escapeHtml(text.rawMarkdown)}</a><a href="${escapeHtml(options.rawJsonPath)}">${escapeHtml(text.rawJson)}</a></div>`
+      : "";
+  const bodySections = shouldUseEmptyDayLayout
+    ? `
+    <section class="section-block">
+      <div class="content-card empty-card">
+        <p>${escapeHtml(text.emptyDayCopy)}</p>
+        ${dayDataLinks}
       </div>
-      <div class="metrics-grid">${metrics.join("")}</div>
     </section>
-
+  `
+    : `
     ${renderEditorialNotes(editorialNotes, text)}
 
     ${options.kind === "day" ? renderFutureSection(digest.futureEvents, locale, text) : ""}
@@ -681,7 +693,7 @@ function renderRangePage(digest, locale, text, options) {
       <aside class="side-panel">
         <div class="section-heading"><h2>${escapeHtml(text.sourceBreakdownTitle)}</h2><span>${escapeHtml(text.sourceBreakdownLabel)}</span></div>
         <ul class="source-breakdown">${digest.sourceBreakdown.map((source) => `<li><span>${escapeHtml(source.name)}</span><strong>${source.count}</strong></li>`).join("")}</ul>
-        ${options.kind === "day" ? `<div class="data-links"><a href="${escapeHtml(options.rawSummaryPath)}">${escapeHtml(text.rawMarkdown)}</a><a href="${escapeHtml(options.rawJsonPath)}">${escapeHtml(text.rawJson)}</a></div>` : ""}
+        ${dayDataLinks}
       </aside>
     </section>
 
@@ -689,6 +701,19 @@ function renderRangePage(digest, locale, text, options) {
       <div class="section-heading"><h2>${escapeHtml(text.fullListTitle)}</h2><span>${escapeHtml(itemCount(digest.uniqueEventCount))}</span></div>
       <div class="update-list">${digest.uniqueEvents.map((event) => renderEventCard(event, locale, text, { includeWhy: true })).join("")}</div>
     </section>
+  `;
+
+  const body = `
+    <section class="hero hero-day">
+      <div>
+        <p class="eyebrow">${escapeHtml(options.kind === "day" ? text.dayPageEyebrow : text.weekPageEyebrow)}</p>
+        <h1>${escapeHtml(options.kind === "day" ? digest.date : `${digest.startDate} - ${digest.endDate}`)}</h1>
+        <p class="hero-copy">${escapeHtml(options.kind === "day" ? (locale === "ja" ? "当日の監視結果を、重複を除いた読みやすい形に再構成しています。" : "This page reorganizes one day's collected updates into a deduplicated, readable digest.") : locale === "ja" ? "直近 7 日の更新をまとめて追えるように、ハイライトと全件を週単位で再構成しています。" : "This page groups the last seven days of updates into a weekly digest with highlights and a full update list.")}</p>
+      </div>
+      ${shouldUseEmptyDayLayout ? "" : `<div class="metrics-grid">${metrics.join("")}</div>`}
+    </section>
+
+    ${bodySections}
   `;
 
   return renderLayout({
@@ -1322,9 +1347,14 @@ async function copyRawFiles(date) {
   ]);
 }
 
+function shouldPublishDailyDigest(digest) {
+  return digest.uniqueEventCount > 0 || digest.futureUniqueCount > 0;
+}
+
 async function main() {
   const logs = await readDailyLogs();
-  const dailyDigests = logs.map((log) => buildDailyDigest(log));
+  const allDailyDigests = logs.map((log) => buildDailyDigest(log));
+  const dailyDigests = allDailyDigests.filter(shouldPublishDailyDigest);
   const weeklyDigests = buildWeeklyDigests(logs);
   const lastUpdatedAt = new Date();
 
@@ -1427,6 +1457,12 @@ async function main() {
       ),
       copyRawFiles(digest.date),
     ]);
+  }
+
+  for (const digest of allDailyDigests.filter(
+    (digest) => !dailyDigests.some((item) => item.date === digest.date),
+  )) {
+    await copyRawFiles(digest.date);
   }
 
   for (const digest of weeklyDigests) {
