@@ -531,7 +531,7 @@ function eventAnchorId(event) {
 
 function renderEventCard(event, locale, text, options = {}) {
   const rawTitle = locale === "ja" ? originalTitle(event) : null;
-  const summaryMaxLength = options.compact ? 150 : 260;
+  const summaryMaxLength = options.compact ? 210 : 340;
   const group = sourceGroup(event);
   const topic = classifyEvent(event);
   const anchorId = options.anchorId ?? null;
@@ -727,7 +727,7 @@ function renderArchiveCard(digest, locale, text, href, kind) {
   return `<article class="digest-card">
     <div class="digest-card-head"><p>${escapeHtml(rangeLabel)}</p><span>${itemCount}</span></div>
     <h3><a href="${escapeHtml(href)}">${escapeHtml(title)}</a></h3>
-    <p>${escapeHtml(trimText(localizedSummary(topItems[0] ?? { summary: locale === "ja" ? "更新はありませんでした。" : "No updates were found." }, locale), 150))}</p>
+    <p>${escapeHtml(trimText(localizedSummary(topItems[0] ?? { summary: locale === "ja" ? "更新はありませんでした。" : "No updates were found." }, locale), 220))}</p>
     <ul>${topItems.map((event) => `<li>${escapeHtml(trimText(localizedTitle(event, locale), 84))}</li>`).join("")}</ul>
   </article>`;
 }
@@ -871,7 +871,7 @@ function renderIndexPage(
       : `<div class="digest-grid">${weeklyDigests.map((digest) => renderArchiveCard(digest, locale, text, links.weekHref(digest.key), "week")).join("")}</div>`;
 
   const body = `
-    <section class="hero">
+    <section class="hero hero-home">
       <div>
         <p class="eyebrow">${escapeHtml(text.heroEyebrow)}</p>
         <h1>${escapeHtml(text.heroTitle)}</h1>
@@ -885,7 +885,7 @@ function renderIndexPage(
           <p class="hero-search-help">${escapeHtml(text.homeSearchHelp)} <a class="hero-search-link" href="${escapeHtml(searchHref)}">${escapeHtml(text.homeSearchOpenLink)}</a></p>
         </div>
       </div>
-      <div class="metrics-grid">
+      <div class="metrics-grid metrics-grid--compact">
         ${renderMetric(text.publishedCount, locale === "ja" ? `${dailyDigests.length}${escapeHtml(text.dayCountSuffix)}` : formatCount(dailyDigests.length, locale, "day", "days"), text.publishedCountDetail)}
         ${renderMetric(text.overallCount, locale === "ja" ? `${overallUnique}${escapeHtml(text.itemSuffix)}` : formatCount(overallUnique, locale, "item", "items"), text.overallCountDetail)}
         ${renderMetric(text.latestDate, latestDigest ? latestDigest.date : "N/A", text.latestDateDetail)}
@@ -893,7 +893,7 @@ function renderIndexPage(
       </div>
     </section>
 
-    ${latestHighlights.length > 0 ? renderFilterBar(text, latestFilterAxes) : ""}
+    ${latestHighlights.length > 0 ? renderFilterBar(text, { showSource: latestFilterAxes.showSource, showTopic: false }) : ""}
 
     <section class="section-block" data-latest-highlights data-count-suffix="${escapeHtml(text.latestHighlightsCountSuffix)}">
       <div class="section-heading"><h2>${escapeHtml(text.latestHighlightsTitle)}</h2><span data-latest-count>${escapeHtml(locale === "ja" ? `${latestHighlights.length}${text.latestHighlightsCountSuffix}` : `${latestHighlights.length}${text.latestHighlightsCountSuffix}`)}</span></div>
@@ -1517,11 +1517,31 @@ a { color: inherit; }
   border-radius: 32px;
   box-shadow: var(--shadow);
 }
+.hero-home {
+  grid-template-columns: minmax(0, 1.08fr) minmax(280px, 0.78fr);
+  gap: 20px;
+  padding: 28px;
+  align-items: start;
+}
 .hero-day { margin-bottom: 24px; }
+.hero-home h1 {
+  font-size: clamp(1.95rem, 3.3vw, 3.35rem);
+  line-height: 1.08;
+  max-width: 8.4ch;
+  margin-bottom: 12px;
+}
+.hero-home .hero-copy {
+  max-width: 58ch;
+  font-size: 0.98rem;
+}
 .hero-search {
   margin-top: 22px;
   display: grid;
   gap: 10px;
+}
+.hero-home .hero-search {
+  margin-top: 16px;
+  gap: 8px;
 }
 .hero-search-label {
   margin: 0;
@@ -1552,6 +1572,9 @@ a { color: inherit; }
 h1 { margin: 0 0 16px; font-size: clamp(2.3rem, 4vw, 4.2rem); line-height: 1.04; }
 .hero-copy, .content-card p, .update-card p, .mini-highlight p { color: var(--muted); line-height: 1.75; }
 .metrics-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.metrics-grid--compact {
+  gap: 12px;
+}
 .metric-card, .content-card, .side-panel, .digest-card, .update-card, .mini-highlight, .topic-section {
   background: var(--panel);
   border: 1px solid var(--line);
@@ -1559,8 +1582,13 @@ h1 { margin: 0 0 16px; font-size: clamp(2.3rem, 4vw, 4.2rem); line-height: 1.04;
   box-shadow: var(--shadow);
 }
 .metric-card { padding: 18px; display: flex; flex-direction: column; gap: 8px; }
+.metrics-grid--compact .metric-card {
+  padding: 16px;
+  gap: 6px;
+}
 .metric-label, .metric-detail, .meta-row, .digest-card-head { color: var(--muted); font-size: 0.9rem; }
 .metric-value { font-size: 1.9rem; }
+.metrics-grid--compact .metric-value { font-size: 1.65rem; }
 .section-block { margin-top: 28px; }
 .notice-block {
   padding: 18px 20px;

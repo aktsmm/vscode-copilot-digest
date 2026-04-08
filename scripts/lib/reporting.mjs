@@ -183,10 +183,11 @@ const exactSummaryMappings = {
     ja: "新しい send_to_terminal tool により、background terminal に移ったプロセスにも agent が追加入力できるようになった。待機中に foreground から外れた SSH や長時間タスクでも対話を続けやすい。",
     en: "The new send_to_terminal tool lets agents keep interacting with background terminals, so SSH sessions and long-running tasks remain operable even after moving out of the foreground.",
   },
-  "Visual Studio Code 1.115: Background terminal notifications (Experimental)": {
-    ja: "experimental な background terminal notifications により、agent が background command の完了や追加入力要求を待ち受けられるようになった。手動ポーリングなしで terminal 状態を追いやすい。",
-    en: "Experimental background terminal notifications let agents react when a background command finishes or needs input, instead of polling terminal output manually.",
-  },
+  "Visual Studio Code 1.115: Background terminal notifications (Experimental)":
+    {
+      ja: "experimental な background terminal notifications により、agent が background command の完了や追加入力要求を待ち受けられるようになった。手動ポーリングなしで terminal 状態を追いやすい。",
+      en: "Experimental background terminal notifications let agents react when a background command finishes or needs input, instead of polling terminal output manually.",
+    },
   "Visual Studio Code 1.115: Upcoming deprecations": {
     ja: "Edit Mode は 1.110 で正式 deprecated になっており、`chat.editMode.hidden` での一時再有効化も 1.125 までで終わる予定になった。旧 edit flow を使っている環境向けの撤去タイムライン整理。",
     en: "Edit Mode has been officially deprecated since 1.110, and the temporary `chat.editMode.hidden` escape hatch will stop working after 1.125, clarifying the removal timeline.",
@@ -404,10 +405,11 @@ const exactImportanceMappings = {
     ja: "長時間実行や timeout 後でも terminal セッションを捨てずに済むため、agent の terminal 作業がかなり実用的になります。",
     en: "This matters because agents no longer lose interactivity when a terminal session moves to the background, making long-running terminal workflows much more practical.",
   },
-  "Visual Studio Code 1.115: Background terminal notifications (Experimental)": {
-    ja: "background terminal を細かく見張り続ける必要が減るので、並列作業時の見落としと polling コストを下げられます。",
-    en: "This matters because it reduces polling overhead and missed prompts while agents juggle multiple background tasks.",
-  },
+  "Visual Studio Code 1.115: Background terminal notifications (Experimental)":
+    {
+      ja: "background terminal を細かく見張り続ける必要が減るので、並列作業時の見落としと polling コストを下げられます。",
+      en: "This matters because it reduces polling overhead and missed prompts while agents juggle multiple background tasks.",
+    },
   "Visual Studio Code 1.115: Upcoming deprecations": {
     ja: "旧 Edit Mode に依存する運用は移行期限が明確になったので、settings や利用手順の見直しを前倒ししやすくなります。",
     en: "This matters because teams still relying on Edit Mode now have a clearer migration deadline for settings and workflow changes.",
@@ -499,6 +501,26 @@ function cleanupSummary(summary) {
       .replace(/What\'s new in /gi, "")
       .replace(/\s+/g, " "),
   );
+}
+
+function summaryLead(summary, maxLength = 220) {
+  const cleaned = cleanupSummary(summary);
+  if (!cleaned) {
+    return "";
+  }
+
+  const sentenceMatch = cleaned.match(/^(.+?[。.!?])(\s|$)/);
+  const lead = sentenceMatch ? sentenceMatch[1] : cleaned;
+  return trimText(lead, maxLength);
+}
+
+function joinedHeadings(event, limit = 3) {
+  return normalizeArray([
+    ...(event.diffSummary?.headings ?? []),
+    ...(event.headings ?? []),
+  ])
+    .filter(Boolean)
+    .slice(0, limit);
 }
 
 function releaseVersionFromTitle(title) {
@@ -690,6 +712,8 @@ function summaryFromPatterns(event, locale = "ja") {
   const title = normalizeWhitespace(decodeHtmlEntities(event.title));
   const text = `${title} ${event.summary}`.toLowerCase();
   const version = releaseVersionFromTitle(title);
+  const cleanedSummary = cleanupSummary(event.summary);
+  const summaryLeadText = summaryLead(event.summary, locale === "ja" ? 220 : 260);
 
   if (version && vscodeReleaseSummaries[version]) {
     return vscodeReleaseSummaries[version][locale];
@@ -728,6 +752,32 @@ function summaryFromPatterns(event, locale = "ja") {
     }
 
     return trimText(cleanupSummary(event.summary), 280);
+  }
+
+  if (event.kind === "html_snapshot_change") {
+    const headings = joinedHeadings(event);
+    if (locale === "ja") {
+      return headings.length > 0
+        ? `監視対象ページで差分を検知し、${headings.join("、")} などの見出しが追加または更新された。固定ページ側の公開導線や注目トピックの変化をまとめて追える。`
+        : "監視対象ページで差分を検知した。固定ページ側の公開導線や注目トピックの変化をまとめて追える。";
+    }
+
+    return headings.length > 0
+      ? `A monitored page changed and now highlights headings such as ${headings.join(", ")}, making it easier to spot shifts in the published entry points and featured topics.`
+      : "A monitored page changed, signaling an update in the published entry points or featured topics for this source.";
+  }
+
+  if (event.kind === "vscode_release_note_section") {
+    const sectionTitle = event.sectionTitle ?? title;
+    if (locale === "ja") {
+      return summaryLeadText
+        ? `${sectionTitle} に関する release note 更新。${summaryLeadText}`
+        : `${sectionTitle} に関する release note 更新。開発フローや agent 体験に関わる変更点を個別セクションとして拾っている。`;
+    }
+
+    return summaryLeadText
+      ? `A release-note update for ${sectionTitle}. ${summaryLeadText}`
+      : `A release-note update for ${sectionTitle}, captured as an individual section change rather than the full release.`;
   }
 
   if (/copilot sdk in public preview/i.test(title)) {
@@ -915,20 +965,26 @@ function summaryFromPatterns(event, locale = "ja") {
 
   if (/github copilot/i.test(text)) {
     return locale === "ja"
-      ? "GitHub Copilot 関連の更新。詳細は原文を確認しつつ、運用への影響があるかを見ておきたい。"
+      ? summaryLeadText
+        ? `GitHub Copilot 関連の更新。${summaryLeadText}`
+        : "GitHub Copilot 関連の更新。運用や導入判断に関わる変更点を原文で確認しておきたい。"
       : "A GitHub Copilot update that should be reviewed for its impact on usage and operations.";
   }
 
   if (/visual studio code|vs code/i.test(text)) {
     return locale === "ja"
-      ? "Visual Studio Code 関連の更新。詳細は原文を確認しつつ、日々の開発フローに効くかを見ておきたい。"
+      ? summaryLeadText
+        ? `Visual Studio Code 関連の更新。${summaryLeadText}`
+        : "Visual Studio Code 関連の更新。日々の開発フローや agent 利用に効く変更点を確認しておきたい。"
       : "A Visual Studio Code update worth checking for its effect on day-to-day development workflows.";
   }
 
   return locale === "ja"
-    ? "英語ソースの更新。詳細は原文リンクを確認しつつ、運用への影響があるかを見ておきたい。"
+    ? summaryLeadText
+      ? `英語ソースの更新。${summaryLeadText}`
+      : "英語ソースの更新。公開内容の変化や運用への影響を原文で確認しておきたい。"
     : trimmedEnglishSummary(
-        event.summary || "English-language update from a tracked source.",
+        cleanedSummary || "English-language update from a tracked source.",
       );
 }
 
@@ -960,7 +1016,7 @@ export function localizedSummary(event, locale = "ja") {
   if (exactSummaryMappings[title]?.[locale]) {
     return trimText(
       exactSummaryMappings[title][locale],
-      locale === "en" ? 320 : 280,
+      locale === "en" ? 420 : 360,
     );
   }
 
@@ -971,12 +1027,12 @@ export function localizedSummary(event, locale = "ja") {
   if (containsJapanese(summary)) {
     return locale === "en"
       ? trimText(summaryFromPatterns({ ...event, summary }, "en"), 320)
-      : trimText(summary, 280);
+      : trimText(summary, 360);
   }
 
   return trimText(
     summaryFromPatterns({ ...event, summary }, locale),
-    locale === "en" ? 320 : 280,
+    locale === "en" ? 420 : 360,
   );
 }
 
