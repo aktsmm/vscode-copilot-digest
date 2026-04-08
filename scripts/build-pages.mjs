@@ -531,12 +531,15 @@ function eventAnchorId(event) {
 
 function renderEventCard(event, locale, text, options = {}) {
   const rawTitle = locale === "ja" ? originalTitle(event) : null;
-  const summaryMaxLength = options.compact ? 170 : 260;
+  const summaryMaxLength = options.compact ? 150 : 260;
   const group = sourceGroup(event);
   const topic = classifyEvent(event);
   const anchorId = options.anchorId ?? null;
+  const whyText = importanceReason(event, locale);
   const why = options.includeWhy
-    ? `<p class="why-it-matters"><strong>${escapeHtml(text.whyLabel)}:</strong> ${escapeHtml(importanceReason(event, locale))}</p>`
+    ? options.compact
+      ? `<p class="mini-why">${escapeHtml(trimText(whyText, locale === "ja" ? 78 : 96))}</p>`
+      : `<p class="why-it-matters"><strong>${escapeHtml(text.whyLabel)}:</strong> ${escapeHtml(whyText)}</p>`
     : "";
   const cardClass = options.compact ? "mini-highlight" : "update-card";
 
@@ -564,7 +567,7 @@ function renderSourceHighlightPanel(entry, locale, text) {
 
   return `<div class="source-highlight-panel is-hidden" data-highlight-source-section="${escapeHtml(entry.group)}" data-highlight-count="${escapeHtml(String(entry.events.length))}">
     <div class="section-heading section-heading--sub"><h3>${escapeHtml(topicName)}</h3><span>${escapeHtml(itemCount)}</span></div>
-    <div class="highlight-grid latest-highlights-grid">${entry.events.map((event) => renderEventCard(event, locale, text, { compact: true, includeWhy: false })).join("")}</div>
+    <div class="highlight-grid latest-highlights-grid">${entry.events.map((event) => renderEventCard(event, locale, text, { compact: true, includeWhy: true })).join("")}</div>
   </div>`;
 }
 
@@ -859,10 +862,8 @@ function renderIndexPage(
   const latestHighlights = buildPublishedEventEntries(dailyDigests, {
     includeFuture: false,
   }).slice(0, 6);
+  const latestFilterAxes = renderFilterAxes(latestHighlights);
   const sourceHighlightGroups = buildSourceHighlightGroups(dailyDigests);
-  const latestSourceCount = new Set(
-    latestHighlights.map((event) => sourceGroup(event)),
-  ).size;
 
   const weeklyMarkup =
     weeklyDigests.length === 0
@@ -892,11 +893,11 @@ function renderIndexPage(
       </div>
     </section>
 
-    ${latestHighlights.length > 0 ? renderFilterBar(text, { showSource: latestSourceCount > 1, showTopic: false }) : ""}
+    ${latestHighlights.length > 0 ? renderFilterBar(text, latestFilterAxes) : ""}
 
     <section class="section-block" data-latest-highlights data-count-suffix="${escapeHtml(text.latestHighlightsCountSuffix)}">
       <div class="section-heading"><h2>${escapeHtml(text.latestHighlightsTitle)}</h2><span data-latest-count>${escapeHtml(locale === "ja" ? `${latestHighlights.length}${text.latestHighlightsCountSuffix}` : `${latestHighlights.length}${text.latestHighlightsCountSuffix}`)}</span></div>
-      <div class="highlight-grid latest-highlights-grid" data-highlight-group="all">${latestHighlights.map((event) => renderEventCard(event, locale, text, { compact: true, includeWhy: false })).join("")}</div>
+      <div class="highlight-grid latest-highlights-grid" data-highlight-group="all">${latestHighlights.map((event) => renderEventCard(event, locale, text, { compact: true, includeWhy: true })).join("")}</div>
       ${sourceHighlightGroups.map((entry) => renderSourceHighlightPanel(entry, locale, text)).join("")}
       <p class="latest-highlights-empty is-hidden" data-latest-empty>${escapeHtml(text.noItems)}</p>
     </section>
@@ -940,6 +941,18 @@ await import(basePath + "pagefind/pagefind-component-ui.js");`;
 }
 
 function renderSearchPageScript(text, locale) {
+  const searchMetadata = {};
+  for (const event of text.searchEntries ?? []) {
+    const title = localizedTitle(event, locale);
+    searchMetadata[`${event.digestDate}\t${title}`] = {
+      sourceClass: `source-badge--${sourceGroup(event)}`,
+      sourceShort: sourceGroupMeta(sourceGroup(event), text).short,
+      sourceLabel: sourceGroupMeta(sourceGroup(event), text).label,
+      topicLabel: text.topicNames[classifyEvent(event)] ?? classifyEvent(event),
+      importanceLabel: localizedImportanceLabel(event, locale),
+    };
+  }
+
   const strings = {
     prompt: text.searchPrompt,
     loading: text.searchLoading,
@@ -948,6 +961,7 @@ function renderSearchPageScript(text, locale) {
   };
 
   return `const strings = ${JSON.stringify(strings)};
+const metadataIndex = ${JSON.stringify(searchMetadata)};
 const root = document.querySelector("[data-search-root]");
 if (!root) {
   throw new Error("Search root not found");
@@ -984,12 +998,25 @@ function resultLabel(count) {
   return ${locale === "ja" ? "String(count) + '件'" : "count === 1 ? '1 result' : String(count) + ' results'"};
 }
 
+function lookupMeta(row) {
+  return metadataIndex[(row.digestDate || "") + "\t" + row.title] || null;
+}
+
 function renderRow(row) {
+  const meta = lookupMeta(row);
   const excerpt = row.excerpt
     ? '<p class="search-result-excerpt">' + row.excerpt + '</p>'
     : "";
+  const badges = meta
+    ? '<div class="badge-row">'
+      + '<span class="pill">' + escapeHtml(row.digestDate || "N/A") + '</span>'
+      + '<span class="pill source-badge ' + escapeHtml(meta.sourceClass) + '"><span class="source-badge-mark">' + escapeHtml(meta.sourceShort) + '</span><span>' + escapeHtml(meta.sourceLabel) + '</span></span>'
+      + '<span class="pill">' + escapeHtml(meta.topicLabel) + '</span>'
+      + '<span class="pill">' + escapeHtml(meta.importanceLabel) + '</span>'
+      + '</div>'
+    : '<div class="badge-row"><span class="pill">' + escapeHtml(row.digestDate || "N/A") + '</span></div>';
   return '<article class="update-card search-result-card">'
-    + '<div class="badge-row"><span class="pill">' + escapeHtml(row.digestDate || "N/A") + '</span></div>'
+    + badges
     + '<h3><a href="' + escapeHtml(row.url) + '">' + escapeHtml(row.title) + '</a></h3>'
     + excerpt
     + '<div class="search-result-links"><a href="' + escapeHtml(row.dayUrl) + '">' + escapeHtml(strings.openDigest) + '</a></div>'
@@ -1126,6 +1153,7 @@ if (initial) {
 
 function renderSearchPage(
   searchEntries,
+  latestDigestDate,
   locale,
   text,
   lastUpdatedAt,
@@ -1136,6 +1164,7 @@ function renderSearchPage(
     .size;
   const topicCount = new Set(searchEntries.map((event) => classifyEvent(event)))
     .size;
+  const searchText = { ...text, searchEntries };
   const body = `
     <section class="hero hero-day">
       <div>
@@ -1147,7 +1176,7 @@ function renderSearchPage(
         ${renderMetric(text.searchItemsMetric, locale === "ja" ? `${searchEntries.length}${escapeHtml(text.itemSuffix)}` : formatCount(searchEntries.length, locale, "item", "items"), text.searchItemsMetricDetail)}
         ${renderMetric(text.searchSourcesMetric, locale === "ja" ? `${sourceCount}${escapeHtml(text.itemSuffix)}` : formatCount(sourceCount, locale, "source", "sources"), text.searchSourcesMetricDetail)}
         ${renderMetric(text.searchTopicsMetric, locale === "ja" ? `${topicCount}${escapeHtml(text.itemSuffix)}` : formatCount(topicCount, locale, "topic", "topics"), text.searchTopicsMetricDetail)}
-        ${renderMetric(text.latestDate, searchEntries[0]?.digestDate ?? "N/A", text.latestDateDetail)}
+        ${renderMetric(text.latestDate, latestDigestDate || "N/A", text.latestDateDetail)}
       </div>
     </section>
 
@@ -1176,7 +1205,7 @@ function renderSearchPage(
     homeHref: links.home,
     weeklyHref: links.weekly,
     langSwitchHref: links.langSwitch,
-    extraScript: renderSearchPageScript(text, locale),
+    extraScript: renderSearchPageScript(searchText, locale),
     extraScriptType: "module",
   });
 }
@@ -1629,6 +1658,9 @@ h1 { margin: 0 0 16px; font-size: clamp(2.3rem, 4vw, 4.2rem); line-height: 1.04;
 .search-result-links {
   margin-top: 12px;
 }
+.search-result-card .badge-row {
+  margin-bottom: 10px;
+}
 .search-result-links a {
   color: var(--accent);
   text-decoration: none;
@@ -1677,6 +1709,14 @@ h1 { margin: 0 0 16px; font-size: clamp(2.3rem, 4vw, 4.2rem); line-height: 1.04;
 }
 .update-card, .content-card, .side-panel, .topic-section, .mini-highlight, .digest-card { padding: 20px; }
 .update-card h3, .mini-highlight h3, .digest-card h3 { margin: 12px 0 10px; font-size: 1.08rem; }
+.mini-why {
+  margin: 12px 0 0;
+  padding-top: 10px;
+  border-top: 1px dashed rgba(38, 33, 28, 0.1);
+  color: var(--text);
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
 .badge-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 8px; }
 .pill {
   display: inline-flex;
@@ -1924,11 +1964,19 @@ async function main() {
     ),
     fs.writeFile(
       path.join(siteDir, "search.html"),
-      renderSearchPage(searchableEvents, "ja", jaText, lastUpdatedAt, ".", {
-        home: "./index.html",
-        weekly: "./index.html#weekly-archive",
-        langSwitch: "./en/search.html",
-      }),
+      renderSearchPage(
+        searchableEvents,
+        dailyDigests[0]?.date ?? "N/A",
+        "ja",
+        jaText,
+        lastUpdatedAt,
+        ".",
+        {
+          home: "./index.html",
+          weekly: "./index.html#weekly-archive",
+          langSwitch: "./en/search.html",
+        },
+      ),
       "utf8",
     ),
     fs.writeFile(
@@ -1950,11 +1998,19 @@ async function main() {
     ),
     fs.writeFile(
       path.join(siteDir, "en", "search.html"),
-      renderSearchPage(searchableEvents, "en", enText, lastUpdatedAt, "..", {
-        home: "./index.html",
-        weekly: "./index.html#weekly-archive",
-        langSwitch: "../search.html",
-      }),
+      renderSearchPage(
+        searchableEvents,
+        dailyDigests[0]?.date ?? "N/A",
+        "en",
+        enText,
+        lastUpdatedAt,
+        "..",
+        {
+          home: "./index.html",
+          weekly: "./index.html#weekly-archive",
+          langSwitch: "../search.html",
+        },
+      ),
       "utf8",
     ),
   ]);

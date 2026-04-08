@@ -8,6 +8,8 @@
 - 変更があれば `data/**` と `summaries/**` をコミットする
 - main 更新で [deploy-pages.yml](../.github/workflows/deploy-pages.yml) が Pages を再生成する
 - Pages のヘッダーに出す `最終更新` は、最新の Pages 再生成時刻を表示する
+- まれに live の Pages 配信が stale で、日本語 / 英語のどちらか片方だけ古い HTML を返すことがある。その場合は `site/**` と live ページを見比べ、必要なら [deploy-pages.yml](../.github/workflows/deploy-pages.yml) を手動 dispatch して再確認する
+- Pages build の最後に Pagefind インデックスも生成し、トップページの簡易検索と `search.html` の専用検索 UI から同じ静的インデックスを参照する
 - feed に未来日付の項目が見えた場合は、通常のハイライトには混ぜず、警告付きの別セクションで扱う
 - Discord Webhook 通知は collect 自体は毎日走らせつつ、2026-04-06 を基準日に 5日ごとに直近5日分をまとめて投稿する
 - collect 成功後に [author-digest-pr.yml](../.github/workflows/author-digest-pr.yml) が Copilot 向け Issue を作成または更新する
@@ -74,6 +76,7 @@ GitHub hosted runner の Node 20 deprecation warning に合わせて主要 actio
 
 - `gh workflow run author-digest-pr.yml -f date_key=YYYY-MM-DD -f scope=full -f force_issue=true`
 - `gh workflow run test-discord-notification.yml -f date_key=YYYY-MM-DD`
+- `gh workflow run deploy-pages.yml`
 - `node scripts/notify-discord.mjs --date YYYY-MM-DD --window-days 5 --cadence-days 5 --anchor-date 2026-04-06 --dry-run --force-preview`
 
 ## 次に確認すること
