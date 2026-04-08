@@ -32,6 +32,7 @@ const topicOrder = [
 const sourceGroupOrder = ["github", "vscode", "platform", "other"];
 const HOME_HIGHLIGHT_LIMIT = 6;
 const HOME_ARCHIVE_LIMIT = 6;
+const HIGHLIGHTS_PAGE_SIZE = 50;
 
 function toDateOnly(value) {
   const date = safeDate(value);
@@ -416,6 +417,41 @@ function renderTotalActionLabel(locale, count, unitLabel) {
   return `View all ${count}`;
 }
 
+function highlightArchiveFileName(pageNumber) {
+  return pageNumber <= 1 ? "highlights.html" : `highlights-${pageNumber}.html`;
+}
+
+function renderPager(locale, currentPage, totalPages, hrefForPage) {
+  if (totalPages <= 1) {
+    return "";
+  }
+
+  const previousLabel = locale === "ja" ? "前へ" : "Previous";
+  const nextLabel = locale === "ja" ? "次へ" : "Next";
+  const summary =
+    locale === "ja"
+      ? `${currentPage} / ${totalPages} ページ`
+      : `Page ${currentPage} of ${totalPages}`;
+
+  const numberLinks = Array.from({ length: totalPages }, (_, index) => {
+    const page = index + 1;
+    if (page === currentPage) {
+      return `<span class="pager-link is-current">${page}</span>`;
+    }
+
+    return `<a class="pager-link" href="${escapeHtml(hrefForPage(page))}">${page}</a>`;
+  }).join("");
+
+  return `<nav class="pager" aria-label="${escapeHtml(locale === "ja" ? "ページ送り" : "Pagination")}">
+    <div class="pager-summary">${escapeHtml(summary)}</div>
+    <div class="pager-links">
+      ${currentPage > 1 ? `<a class="pager-link pager-link--edge" href="${escapeHtml(hrefForPage(currentPage - 1))}">${escapeHtml(previousLabel)}</a>` : ""}
+      ${numberLinks}
+      ${currentPage < totalPages ? `<a class="pager-link pager-link--edge" href="${escapeHtml(hrefForPage(currentPage + 1))}">${escapeHtml(nextLabel)}</a>` : ""}
+    </div>
+  </nav>`;
+}
+
 function renderVisibleCountLabel(locale, count, unitLabel) {
   if (locale === "ja") {
     return `${count}${unitLabel}表示`;
@@ -505,6 +541,8 @@ function renderFilterAxes(events) {
 function renderFilterBar(text, options = {}) {
   const showSource = options.showSource ?? true;
   const showTopic = options.showTopic ?? true;
+  const showAxisLabels = options.showAxisLabels ?? true;
+  const extraClass = options.extraClass ?? "";
   if (!showSource && !showTopic) {
     return "";
   }
@@ -513,7 +551,7 @@ function renderFilterBar(text, options = {}) {
   if (showSource) {
     rows.push(`
       <div class="filter-row">
-        <span class="filter-label">${escapeHtml(text.filterSourceLabel)}</span>
+        ${showAxisLabels ? `<span class="filter-label">${escapeHtml(text.filterSourceLabel)}</span>` : ""}
         <div class="filter-chip-row">${sourceGroupOrder
           .map((group) =>
             renderFilterChip(
@@ -530,7 +568,7 @@ function renderFilterBar(text, options = {}) {
   if (showTopic) {
     rows.push(`
       <div class="filter-row">
-        <span class="filter-label">${escapeHtml(text.filterTopicLabel)}</span>
+        ${showAxisLabels ? `<span class="filter-label">${escapeHtml(text.filterTopicLabel)}</span>` : ""}
         <div class="filter-chip-row">${topicOrder
           .map((topic) =>
             renderFilterChip(
@@ -543,7 +581,7 @@ function renderFilterBar(text, options = {}) {
       </div>`);
   }
 
-  return `<section class="section-block filter-block" data-filter-root>
+  return `<section class="section-block filter-block ${escapeHtml(extraClass)}" data-filter-root>
     <div class="section-heading"><h2>${escapeHtml(text.filterTitle)}</h2><button type="button" class="filter-reset" data-filter-reset>${escapeHtml(text.filterReset)}</button></div>
     <div class="filter-stack">
       ${rows.join("")}
@@ -803,35 +841,50 @@ function renderDigestStreamItem(digest, locale, text, href, kind) {
   </article>`;
 }
 
-function renderHighlightsArchivePage(events, locale, text, lastUpdatedAt, relativePrefix, links) {
+function renderHighlightsArchivePage(events, locale, text, lastUpdatedAt, relativePrefix, links, options = {}) {
+  const pageNumber = options.pageNumber ?? 1;
+  const totalPages = Math.max(1, Math.ceil(events.length / HIGHLIGHTS_PAGE_SIZE));
+  const pageEvents = events.slice(
+    (pageNumber - 1) * HIGHLIGHTS_PAGE_SIZE,
+    pageNumber * HIGHLIGHTS_PAGE_SIZE,
+  );
   const itemCount =
     locale === "ja"
       ? `${events.length}${text.itemSuffix}`
       : formatCount(events.length, locale, "item", "items");
-  const sourceCount = new Set(events.map((event) => sourceGroup(event))).size;
-  const latestDate = events[0]?.publishedAt ? formatDate(events[0].publishedAt, locale) : "N/A";
-  const filterAxes = renderFilterAxes(events);
+  const visibleCount =
+    locale === "ja"
+      ? `${pageEvents.length}${text.itemSuffix}`
+      : formatCount(pageEvents.length, locale, "item", "items");
+  const sourceCount = new Set(pageEvents.map((event) => sourceGroup(event))).size;
+  const latestDate = pageEvents[0]?.publishedAt ? formatDate(pageEvents[0].publishedAt, locale) : "N/A";
+  const filterAxes = renderFilterAxes(pageEvents);
+  const pager = renderPager(locale, pageNumber, totalPages, links.pageHref);
   const body = `
     <section class="hero hero-day">
       <div>
         <p class="eyebrow">${escapeHtml(locale === "ja" ? "ハイライト一覧" : "Highlights archive")}</p>
         <h1>${escapeHtml(locale === "ja" ? "最新ハイライトをまとめて見る。" : "Browse all highlights.")}</h1>
-        <p class="hero-copy">${escapeHtml(locale === "ja" ? "トップページでは最新の一部だけを見せています。このページでは公開済みのハイライトを時系列でまとめて追えます。" : "The home page shows only a subset. This page lists all published highlights in reverse chronological order.")}</p>
+        <p class="hero-copy">${escapeHtml(locale === "ja" ? "トップページでは最新の一部だけを見せています。このページでは公開済みのハイライトを時系列でまとめて追えます。50件を超えるとページ分割します。" : "The home page shows only a subset. This page lists published highlights in reverse chronological order and splits them into pages of 50 items." )}</p>
       </div>
       <div class="metrics-grid">
-        ${renderMetric(text.trackedUpdates, itemCount, text.trackedUpdatesDetail)}
+        ${renderMetric(text.trackedUpdates, visibleCount, locale === "ja" ? "このページに表示している件数" : "Items shown on this page")}
         ${renderMetric(text.searchSourcesMetric, locale === "ja" ? `${sourceCount}${text.itemSuffix}` : formatCount(sourceCount, locale, "source", "sources"), text.searchSourcesMetricDetail)}
         ${renderMetric(text.latestDate, latestDate, text.latestDateDetail)}
         ${renderMetric(locale === "ja" ? "公開済みハイライト" : "Published highlights", locale === "ja" ? `${events.length}${text.itemSuffix}` : itemCount, locale === "ja" ? "一覧ページに並ぶ総件数" : "Total number of published highlights in this list")}
       </div>
     </section>
 
-    ${renderFilterBar(text, { showSource: filterAxes.showSource, showTopic: false })}
+    ${pager}
+
+    ${renderFilterBar(text, { showSource: filterAxes.showSource, showTopic: false, showAxisLabels: false, extraClass: "filter-block--compact" })}
 
     <section class="section-block">
-      ${renderSectionHeading(locale === "ja" ? "ハイライト一覧" : "All highlights", itemCount)}
-      <div class="stream-list">${events.map((event) => renderEventStreamItem(event, locale, text)).join("")}</div>
+      ${renderSectionHeading(locale === "ja" ? "ハイライト一覧" : "All highlights", locale === "ja" ? `${visibleCount} / 全${events.length}${text.itemSuffix}` : `${visibleCount} / ${itemCount}`)}
+      <div class="stream-list">${pageEvents.map((event) => renderEventStreamItem(event, locale, text)).join("")}</div>
     </section>
+
+    ${pager}
   `;
 
   return renderLayout({
@@ -940,18 +993,11 @@ function renderRangePage(digest, locale, text, options) {
             text.trackedSourcesDetail,
           ),
           renderMetric(
-            text.noteCount,
-            itemCount(digest.editorialNotes.length),
-            text.noteCountDetail,
+            text.highlightsTitle,
+            itemCount(digest.highlights.length),
+            locale === "ja" ? "この週の代表ハイライト件数" : "Representative highlights in this weekly digest",
           ),
         ];
-
-  const editorialNotes =
-    options.kind === "day"
-      ? digest.editorialNote
-        ? [digest.editorialNote]
-        : []
-      : digest.editorialNotes;
 
   const body = `
     <section class="hero hero-day">
@@ -963,11 +1009,9 @@ function renderRangePage(digest, locale, text, options) {
       <div class="metrics-grid">${metrics.join("")}</div>
     </section>
 
-    ${renderEditorialNotes(editorialNotes, text)}
-
     ${options.kind === "day" ? renderFutureSection(digest.futureEvents, locale, text) : ""}
 
-  ${renderFilterBar(text, filterAxes)}
+  ${renderFilterBar(text, { showSource: filterAxes.showSource, showTopic: false, showAxisLabels: false, extraClass: "filter-block--compact" })}
 
     <section class="section-block">
       <div class="section-heading"><h2>${escapeHtml(text.highlightsTitle)}</h2><span>${escapeHtml(itemCount(digest.highlights.length))}</span></div>
@@ -1058,7 +1102,7 @@ function renderIndexPage(
       </div>
     </section>
 
-    ${latestHighlights.length > 0 ? renderFilterBar(text, { showSource: latestFilterAxes.showSource, showTopic: false }) : ""}
+    ${latestHighlights.length > 0 ? renderFilterBar(text, { showSource: latestFilterAxes.showSource, showTopic: false, showAxisLabels: false, extraClass: "filter-block--compact" }) : ""}
 
     <section class="section-block" data-latest-highlights data-count-suffix="${escapeHtml(text.latestHighlightsCountSuffix)}">
       ${renderSectionHeading(
@@ -1723,22 +1767,22 @@ a { color: inherit; }
   box-shadow: var(--shadow);
 }
 .hero-home {
-  grid-template-columns: minmax(0, 1.34fr) minmax(360px, 0.96fr);
-  gap: 18px;
+  grid-template-columns: minmax(0, 1.58fr) minmax(320px, 0.82fr);
+  gap: 14px;
   padding: 22px 24px;
-  align-items: center;
+  align-items: start;
 }
 .hero-day { margin-bottom: 24px; }
 .hero-home h1 {
-  font-size: clamp(1.62rem, 2.9vw, 2.9rem);
+  font-size: clamp(1.5rem, 2.55vw, 2.55rem);
   line-height: 1.06;
-  max-width: 11.5ch;
-  margin-bottom: 10px;
+  max-width: 15.5ch;
+  margin-bottom: 8px;
 }
 .hero-home .hero-copy {
-  max-width: 66ch;
-  font-size: 0.95rem;
-  line-height: 1.66;
+  max-width: 72ch;
+  font-size: 0.93rem;
+  line-height: 1.62;
 }
 .hero-search {
   margin-top: 22px;
@@ -1746,7 +1790,7 @@ a { color: inherit; }
   gap: 10px;
 }
 .hero-home .hero-search {
-  margin-top: 12px;
+  margin-top: 10px;
   gap: 6px;
 }
 .hero-search-label {
@@ -1792,6 +1836,9 @@ h1 { margin: 0 0 16px; font-size: clamp(2.3rem, 4vw, 4.2rem); line-height: 1.04;
   padding: 14px;
   gap: 4px;
 }
+.hero-home .metrics-grid {
+  align-content: start;
+}
 .metric-label, .metric-detail, .meta-row, .digest-card-head { color: var(--muted); font-size: 0.9rem; }
 .metric-value { font-size: 1.9rem; }
 .metrics-grid--compact .metric-label { font-size: 0.84rem; }
@@ -1818,6 +1865,8 @@ h1 { margin: 0 0 16px; font-size: clamp(2.3rem, 4vw, 4.2rem); line-height: 1.04;
 .filter-stack { display: grid; gap: 12px; }
 .filter-row { display: grid; gap: 10px; }
 .filter-label { color: var(--muted); font-size: 0.9rem; font-weight: 700; }
+.filter-block--home .filter-label,
+.filter-block--compact .filter-label { display: none; }
 .filter-chip-row { display: flex; flex-wrap: wrap; gap: 10px; }
 .search-panel { padding: 24px; }
 .pagefind-shell {
@@ -1957,6 +2006,50 @@ h1 { margin: 0 0 16px; font-size: clamp(2.3rem, 4vw, 4.2rem); line-height: 1.04;
 }
 .section-action:hover {
   background: var(--accent-soft);
+}
+.pager {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 16px;
+}
+.pager-summary {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+.pager-links {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.pager-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36px;
+  height: 36px;
+  padding: 0 12px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.7);
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 700;
+}
+.pager-link:hover {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+.pager-link.is-current {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+.pager-link--edge {
+  color: var(--accent);
 }
 .overview-grid, .highlight-grid, .digest-grid, .update-list { display: grid; gap: 16px; }
 .overview-grid { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
@@ -2185,6 +2278,7 @@ h1 { margin: 0 0 16px; font-size: clamp(2.3rem, 4vw, 4.2rem); line-height: 1.04;
   .metrics-grid, .update-list, .highlight-grid, .digest-grid, .overview-grid { grid-template-columns: 1fr; }
   .section-heading { align-items: flex-start; }
   .section-heading-tools { justify-content: flex-start; }
+  .pager { align-items: flex-start; }
 }
 `;
 }
@@ -2255,6 +2349,10 @@ async function main() {
     includeFuture: false,
   });
   const allHighlights = searchableEvents;
+  const highlightPageCount = Math.max(
+    1,
+    Math.ceil(allHighlights.length / HIGHLIGHTS_PAGE_SIZE),
+  );
   const lastUpdatedAt = new Date();
 
   await fs.rm(siteDir, { recursive: true, force: true });
@@ -2364,6 +2462,7 @@ async function main() {
         home: "./index.html",
         weekly: "./weeks/index.html",
         langSwitch: "./en/highlights.html",
+        pageHref: (page) => `./${highlightArchiveFileName(page)}`,
       }),
       "utf8",
     ),
@@ -2373,6 +2472,7 @@ async function main() {
         home: "./index.html",
         weekly: "./weeks/index.html",
         langSwitch: "../highlights.html",
+        pageHref: (page) => `./${highlightArchiveFileName(page)}`,
       }),
       "utf8",
     ),
@@ -2421,6 +2521,35 @@ async function main() {
       "utf8",
     ),
   ]);
+
+  for (let pageNumber = 2; pageNumber <= highlightPageCount; pageNumber += 1) {
+    await Promise.all([
+      fs.writeFile(
+        path.join(siteDir, highlightArchiveFileName(pageNumber)),
+        renderHighlightsArchivePage(allHighlights, "ja", jaText, lastUpdatedAt, ".", {
+          home: "./index.html",
+          weekly: "./weeks/index.html",
+          langSwitch: `./en/${highlightArchiveFileName(pageNumber)}`,
+          pageHref: (page) => `./${highlightArchiveFileName(page)}`,
+        }, {
+          pageNumber,
+        }),
+        "utf8",
+      ),
+      fs.writeFile(
+        path.join(siteDir, "en", highlightArchiveFileName(pageNumber)),
+        renderHighlightsArchivePage(allHighlights, "en", enText, lastUpdatedAt, "..", {
+          home: "./index.html",
+          weekly: "./weeks/index.html",
+          langSwitch: `../${highlightArchiveFileName(pageNumber)}`,
+          pageHref: (page) => `./${highlightArchiveFileName(page)}`,
+        }, {
+          pageNumber,
+        }),
+        "utf8",
+      ),
+    ]);
+  }
 
   for (const digest of dailyDigests) {
     await Promise.all([
