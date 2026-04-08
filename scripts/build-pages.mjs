@@ -122,8 +122,6 @@ function buildText(locale) {
       siteLead:
         "An unofficial daily digest of GitHub Copilot and VS Code updates.",
       footerLabel: "Copyright (c) 2026",
-      licenseNotice: "Site content and generated Pages",
-      licenseName: "CC BY-NC-SA 4.0 + Microsoft commercial-use exception",
       dailyNav: "Daily",
       weeklyNav: "Weekly",
       repositoryNav: "Repository",
@@ -237,8 +235,6 @@ function buildText(locale) {
     siteLead:
       "GitHub Copilot と VS Code の更新を日次で集約した非公式ダイジェストです。",
     footerLabel: "Copyright (c) 2026",
-    licenseNotice: "Site content and generated Pages",
-    licenseName: "CC BY-NC-SA 4.0 + Microsoft commercial-use exception",
     dailyNav: "日次ダイジェスト",
     weeklyNav: "週間ダイジェスト",
     repositoryNav: "Repository",
@@ -851,7 +847,6 @@ function renderLayout({
       </button>
       <footer class="site-footer">
         <p>${escapeHtml(text.footerLabel)} <a href="https://github.com/aktsmm" rel="author noopener" target="_blank">aktsmm</a></p>
-        <p class="site-license">${escapeHtml(text.licenseNotice)}: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license noopener" target="_blank">${escapeHtml(text.licenseName)}</a></p>
         <div class="share-links">
           <span class="share-label">${escapeHtml(locale === "ja" ? "共有" : "Share")}:</span>
           <a class="share-btn share-x" data-share="x" href="#" aria-label="Share on X" title="X (Twitter)">
@@ -1213,7 +1208,6 @@ h1 { margin: 0 0 16px; font-size: clamp(2.3rem, 4vw, 4.2rem); line-height: 1.04;
 .digest-card-head { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
 .empty-state, .empty-card p { color: var(--muted); }
 .site-footer { margin-top: 32px; padding: 20px; display: flex; flex-direction: column; align-items: center; gap: 12px; color: var(--muted); }
-.site-license { margin: 0; }
 .site-footer a { color: inherit; }
 .site-footer a:hover { color: var(--accent); }
 .share-links { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
