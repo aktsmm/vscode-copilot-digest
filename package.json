@@ -8,12 +8,15 @@
     "biweekly": "node scripts/build-biweekly.mjs",
     "weekly": "node scripts/build-weekly.mjs",
     "notify:discord": "node scripts/notify-discord.mjs",
-    "build:pages": "node scripts/build-pages.mjs"
+    "build:pages": "node scripts/build-pages.mjs && pagefind --site site --output-subdir pagefind"
   },
   "dependencies": {
     "cheerio": "^1.0.0",
     "diff": "^7.0.0",
     "fast-xml-parser": "^5.2.5",
     "gray-matter": "^4.0.3"
+  },
+  "devDependencies": {
+    "pagefind": "^1.3.0"
   }
 }

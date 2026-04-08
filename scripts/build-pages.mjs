@@ -1,5 +1,6 @@
 import fs from "node:fs/promises";
 import path from "node:path";
+import { createHash } from "node:crypto";
 
 import {
   applyEditorialPolicy,
@@ -125,6 +126,7 @@ function buildText(locale) {
       footerLabel: "Copyright (c) 2026",
       dailyNav: "Daily",
       weeklyNav: "Weekly",
+      searchNav: "Search",
       repositoryNav: "Repository",
       langSwitchLabel: "日本語",
       heroEyebrow: "GitHub Pages",
@@ -154,6 +156,21 @@ function buildText(locale) {
       latestHighlightsTitle: "Latest highlights",
       latestHighlightsLabel: "Cross-day view",
       latestHighlightsCountSuffix: " items shown",
+      searchPageEyebrow: "Search",
+      searchPageTitle: "Search across published digests.",
+      searchPageCopy:
+        "Search published daily digests with Pagefind across titles, summaries, sources, topics, tags, and dates.",
+      searchItemsMetric: "Searchable updates",
+      searchItemsMetricDetail: "Published daily updates indexed by Pagefind",
+      searchSourcesMetric: "Source groups",
+      searchSourcesMetricDetail:
+        "Source families represented in indexed daily pages",
+      searchTopicsMetric: "Topics",
+      searchTopicsMetricDetail:
+        "High-level topics represented in indexed daily pages",
+      searchTitle: "Site search",
+      searchHelp:
+        "Results come from published daily pages and support heading-level sub-results.",
       weeklyArchiveTitle: "Weekly digest",
       weeklyArchiveLabel: "Rolling 7-day windows",
       weeklyEmpty: "Weekly digests will appear as more daily logs accumulate.",
@@ -238,6 +255,7 @@ function buildText(locale) {
     footerLabel: "Copyright (c) 2026",
     dailyNav: "日次ダイジェスト",
     weeklyNav: "週間ダイジェスト",
+    searchNav: "検索",
     repositoryNav: "Repository",
     langSwitchLabel: "EN",
     heroEyebrow: "GitHub Pages",
@@ -266,6 +284,19 @@ function buildText(locale) {
     latestHighlightsTitle: "最新ハイライト",
     latestHighlightsLabel: "最新6件",
     latestHighlightsCountSuffix: "件表示",
+    searchPageEyebrow: "検索",
+    searchPageTitle: "公開済み更新を横断検索する。",
+    searchPageCopy:
+      "Pagefind で、公開済みの日次更新をタイトル、要約、ソース、テーマ、タグ、日付から横断検索できます。",
+    searchItemsMetric: "検索対象更新",
+    searchItemsMetricDetail: "Pagefind が index する公開済み日次更新数",
+    searchSourcesMetric: "ソース群数",
+    searchSourcesMetricDetail: "index 対象の日次ページに含まれるソース分類",
+    searchTopicsMetric: "テーマ数",
+    searchTopicsMetricDetail: "index 対象の日次ページに含まれる大分類",
+    searchTitle: "サイト内検索",
+    searchHelp:
+      "公開済み日次ページだけを対象に、見出し単位の sub-results 付きで検索します。",
     weeklyArchiveTitle: "週間ダイジェスト",
     weeklyArchiveLabel: "直近 7 日単位",
     weeklyEmpty: "日次ログが増えると週間ダイジェストもここに並びます。",
@@ -451,11 +482,16 @@ function renderFilterBar(text) {
   </section>`;
 }
 
+function eventAnchorId(event) {
+  return `event-${createHash("sha1").update(eventKey(event)).digest("hex").slice(0, 12)}`;
+}
+
 function renderEventCard(event, locale, text, options = {}) {
   const rawTitle = locale === "ja" ? originalTitle(event) : null;
   const summaryMaxLength = options.compact ? 170 : 260;
   const group = sourceGroup(event);
   const topic = classifyEvent(event);
+  const anchorId = options.anchorId ?? null;
   const why = options.includeWhy
     ? `<p class="why-it-matters"><strong>${escapeHtml(text.whyLabel)}:</strong> ${escapeHtml(importanceReason(event, locale))}</p>`
     : "";
@@ -467,7 +503,7 @@ function renderEventCard(event, locale, text, options = {}) {
 
   return `<article class="${cardClass}" data-filter-card data-source-group="${escapeHtml(group)}" data-topic="${escapeHtml(topic)}">
     ${renderBadges(event, locale, text)}
-    <h3><a href="${escapeHtml(event.url)}"${linkAttrs}>${escapeHtml(localizedTitle(event, locale))}${isExternal ? ' <span class="ext-icon" aria-hidden="true">&#8599;</span>' : ""}</a></h3>
+    <h3${anchorId ? ` id="${escapeHtml(anchorId)}"` : ""}><a href="${escapeHtml(event.url)}"${linkAttrs}>${escapeHtml(localizedTitle(event, locale))}${isExternal ? ' <span class="ext-icon" aria-hidden="true">&#8599;</span>' : ""}</a></h3>
     ${rawTitle ? `<p class="original-title">${escapeHtml(text.originalTitleLabel)}: ${escapeHtml(rawTitle)}</p>` : ""}
     ${renderDateMeta(event, locale, text)}
     ${renderSourceMeta(event, locale, text)}
@@ -742,9 +778,9 @@ function renderRangePage(digest, locale, text, options) {
       </aside>
     </section>
 
-    <section class="section-block">
+    <section class="section-block" data-pagefind-body>
       <div class="section-heading"><h2>${escapeHtml(text.fullListTitle)}</h2><span>${escapeHtml(itemCount(digest.uniqueEventCount))}</span></div>
-      <div class="update-list">${digest.uniqueEvents.map((event) => renderEventCard(event, locale, text, { includeWhy: true })).join("")}</div>
+      <div class="update-list">${digest.uniqueEvents.map((event) => renderEventCard(event, locale, text, { includeWhy: true, anchorId: eventAnchorId(event) })).join("")}</div>
     </section>
   `;
 
@@ -834,6 +870,80 @@ function renderIndexPage(
   });
 }
 
+function renderSearchPageScript(text, locale) {
+  const placeholder =
+    locale === "ja" ? "公開済み更新を検索" : "Search published updates";
+
+  return `const rootPath = window.location.pathname.replace(/(?:en\\/)?search\\.html$/, "");
+const basePath = /\\/$/.test(rootPath) ? rootPath : rootPath + "/";
+const config = document.querySelector("pagefind-config");
+if (config) {
+  config.setAttribute("bundle-path", basePath + "pagefind/");
+  config.setAttribute("base-url", basePath);
+}
+await import(basePath + "pagefind/pagefind-component-ui.js");
+`;
+}
+
+function renderSearchPage(
+  searchEntries,
+  locale,
+  text,
+  lastUpdatedAt,
+  relativePrefix,
+  links,
+) {
+  const sourceCount = new Set(searchEntries.map((event) => sourceGroup(event)))
+    .size;
+  const topicCount = new Set(searchEntries.map((event) => classifyEvent(event)))
+    .size;
+  const body = `
+    <section class="hero hero-day">
+      <div>
+        <p class="eyebrow">${escapeHtml(text.searchPageEyebrow)}</p>
+        <h1>${escapeHtml(text.searchPageTitle)}</h1>
+        <p class="hero-copy">${escapeHtml(text.searchPageCopy)}</p>
+      </div>
+      <div class="metrics-grid">
+        ${renderMetric(text.searchItemsMetric, locale === "ja" ? `${searchEntries.length}${escapeHtml(text.itemSuffix)}` : formatCount(searchEntries.length, locale, "item", "items"), text.searchItemsMetricDetail)}
+        ${renderMetric(text.searchSourcesMetric, locale === "ja" ? `${sourceCount}${escapeHtml(text.itemSuffix)}` : formatCount(sourceCount, locale, "source", "sources"), text.searchSourcesMetricDetail)}
+        ${renderMetric(text.searchTopicsMetric, locale === "ja" ? `${topicCount}${escapeHtml(text.itemSuffix)}` : formatCount(topicCount, locale, "topic", "topics"), text.searchTopicsMetricDetail)}
+        ${renderMetric(text.latestDate, searchEntries[0]?.digestDate ?? "N/A", text.latestDateDetail)}
+      </div>
+    </section>
+
+    <section class="section-block">
+      <div class="section-heading"><h2>${escapeHtml(text.searchTitle)}</h2><span>${escapeHtml(text.searchHelp)}</span></div>
+      <div class="content-card search-panel">
+        <div class="pagefind-shell">
+          <pagefind-config preload></pagefind-config>
+          <pagefind-input placeholder="${escapeHtml(
+            locale === "ja" ? "公開済み更新を検索" : "Search published updates",
+          )}"></pagefind-input>
+          <pagefind-summary></pagefind-summary>
+          <pagefind-results max-sub-results="3"></pagefind-results>
+        </div>
+      </div>
+    </section>
+  `;
+
+  return renderLayout({
+    locale,
+    text,
+    title: `${text.searchNav} | vscode-copilot-digest`,
+    description: text.searchPageCopy,
+    body,
+    lastUpdatedAt,
+    relativePrefix,
+    homeHref: links.home,
+    weeklyHref: links.weekly,
+    langSwitchHref: links.langSwitch,
+    pagefindUi: true,
+    extraScript: renderSearchPageScript(text, locale),
+    extraScriptType: "module",
+  });
+}
+
 function renderLayout({
   locale,
   text,
@@ -845,12 +955,19 @@ function renderLayout({
   homeHref,
   weeklyHref,
   langSwitchHref,
+  pagefindUi = false,
+  extraScript = "",
+  extraScriptType = "text/javascript",
 }) {
   const assetHref =
     relativePrefix === "."
       ? "./assets/styles.css"
       : `${relativePrefix}/assets/styles.css`;
-  const pageUrl = typeof langSwitchHref === "string" ? "" : "";
+  const searchHref = homeHref.replace(/index\.html$/, "search.html");
+  const pagefindCssHref =
+    relativePrefix === "."
+      ? "./pagefind/pagefind-component-ui.css"
+      : `${relativePrefix}/pagefind/pagefind-component-ui.css`;
   return `<!doctype html>
 <html lang="${escapeHtml(text.htmlLang)}">
   <head>
@@ -869,6 +986,7 @@ function renderLayout({
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="${assetHref}" />
+    ${pagefindUi ? `<link rel="stylesheet" href="${pagefindCssHref}" />` : ""}
   </head>
   <body>
     <div class="page-shell">
@@ -881,6 +999,7 @@ function renderLayout({
         <nav class="site-nav">
           <a href="${escapeHtml(homeHref)}">${escapeHtml(text.dailyNav)}</a>
           <a href="${escapeHtml(weeklyHref)}">${escapeHtml(text.weeklyNav)}</a>
+          <a href="${escapeHtml(searchHref)}">${escapeHtml(text.searchNav)}</a>
           <a href="https://github.com/aktsmm/vscode-copilot-digest">${escapeHtml(text.repositoryNav)}</a>
           <button class="lang-toggle" data-href="${escapeHtml(langSwitchHref)}" aria-label="${escapeHtml(locale === "ja" ? "Switch to English" : "日本語に切り替え")}">
             <span class="lang-toggle-track">
@@ -1066,6 +1185,7 @@ function renderLayout({
       });
     })();
     </script>
+    ${extraScript ? `<script type="${extraScriptType}">${extraScript}</script>` : ""}
   </body>
 </html>`;
 }
@@ -1173,6 +1293,35 @@ h1 { margin: 0 0 16px; font-size: clamp(2.3rem, 4vw, 4.2rem); line-height: 1.04;
 .filter-row { display: grid; gap: 10px; }
 .filter-label { color: var(--muted); font-size: 0.9rem; font-weight: 700; }
 .filter-chip-row { display: flex; flex-wrap: wrap; gap: 10px; }
+.search-panel { padding: 24px; }
+.pagefind-shell {
+  --pf-text: var(--text);
+  --pf-text-secondary: var(--muted);
+  --pf-text-muted: var(--muted);
+  --pf-background: rgba(255, 252, 246, 0.92);
+  --pf-border: rgba(38, 33, 28, 0.14);
+  --pf-border-focus: var(--accent);
+  --pf-hover: rgba(15, 118, 110, 0.08);
+  --pf-mark: var(--accent);
+  --pf-outline-focus: rgba(15, 118, 110, 0.35);
+  --pf-font: "IBM Plex Sans JP", "Noto Sans JP", sans-serif;
+  --pf-border-radius: 18px;
+  --pf-input-height: 48px;
+  --pf-input-font-size: 16px;
+  --pf-result-title-font-size: 0.98rem;
+  --pf-result-excerpt-font-size: 0.92rem;
+  --pf-results-gap: 14px;
+  --pf-shadow-sm: none;
+  --pf-shadow-md: none;
+}
+.pagefind-shell pagefind-input,
+.pagefind-shell pagefind-summary,
+.pagefind-shell pagefind-results {
+  display: block;
+}
+.pagefind-shell pagefind-summary {
+  margin: 12px 0 16px;
+}
 .filter-chip,
 .filter-reset {
   appearance: none;
@@ -1409,6 +1558,9 @@ async function main() {
   const logs = await readDailyLogs();
   const dailyDigests = logs.map((log) => buildDailyDigest(log));
   const weeklyDigests = buildWeeklyDigests(logs);
+  const searchableEvents = buildPublishedEventEntries(dailyDigests, {
+    includeFuture: false,
+  });
   const lastUpdatedAt = new Date();
 
   await fs.rm(siteDir, { recursive: true, force: true });
@@ -1456,6 +1608,15 @@ async function main() {
       "utf8",
     ),
     fs.writeFile(
+      path.join(siteDir, "search.html"),
+      renderSearchPage(searchableEvents, "ja", jaText, lastUpdatedAt, ".", {
+        home: "./index.html",
+        weekly: "./index.html#weekly-archive",
+        langSwitch: "./en/search.html",
+      }),
+      "utf8",
+    ),
+    fs.writeFile(
       path.join(siteDir, "en", "index.html"),
       renderIndexPage(
         { dailyDigests, weeklyDigests },
@@ -1470,6 +1631,15 @@ async function main() {
           weekHref: (key) => `./weeks/${key}.html`,
         },
       ),
+      "utf8",
+    ),
+    fs.writeFile(
+      path.join(siteDir, "en", "search.html"),
+      renderSearchPage(searchableEvents, "en", enText, lastUpdatedAt, "..", {
+        home: "./index.html",
+        weekly: "./index.html#weekly-archive",
+        langSwitch: "../search.html",
+      }),
       "utf8",
     ),
   ]);
