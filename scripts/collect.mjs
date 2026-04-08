@@ -666,10 +666,36 @@ async function collectHtmlSnapshotSource(source, sourceState) {
     events,
     nextState: {
       ...sourceState,
+      releasePublishedAt: basePublishedAt,
+      releaseTitle: headingTitle,
       snapshotHash,
       lastCheckedAt: new Date().toISOString(),
     },
   };
+}
+
+function normalizeTrackedEventMetadata(events, sourceStates) {
+  return (events ?? []).map((event) => {
+    const sourceId = String(event.sourceId ?? "");
+    if (!sourceId.startsWith("vscode-release-notes-")) {
+      return event;
+    }
+
+    const sourceState = sourceStates?.[sourceId];
+    const releasePublishedAt = sourceState?.releasePublishedAt;
+    if (!releasePublishedAt) {
+      return event;
+    }
+
+    if (event.publishedAt === releasePublishedAt) {
+      return event;
+    }
+
+    return {
+      ...event,
+      publishedAt: releasePublishedAt,
+    };
+  });
 }
 
 function renderMarkdownSummary(dateKey, eventLog) {
@@ -897,11 +923,16 @@ async function main() {
     }
   }
 
-  mergedEvents.sort(
+  const normalizedMergedEvents = normalizeTrackedEventMetadata(
+    mergedEvents,
+    nextState.sources,
+  );
+
+  normalizedMergedEvents.sort(
     (left, right) => safeDate(right.publishedAt) - safeDate(left.publishedAt),
   );
   const collectionTime = new Date();
-  const filteredMergedEvents = applyEditorialPolicy(mergedEvents);
+  const filteredMergedEvents = applyEditorialPolicy(normalizedMergedEvents);
   const publishedEvents = filteredMergedEvents.filter(
     (event) =>
       !event.isFutureDated &&

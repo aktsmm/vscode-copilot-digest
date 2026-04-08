@@ -1,89 +1,27 @@
 {
   "date": "2026-04-08",
-  "generatedAt": "2026-04-08T01:51:05.463Z",
+  "generatedAt": "2026-04-08T03:25:46.751Z",
   "latestRun": {
-    "generatedAt": "2026-04-08T01:51:05.463Z",
-    "newEventsCount": 9,
-    "newEventIds": [
-      "vscode-release-notes-1-114:section:c0160eb777193e47d47a27a7be068bd19f50b3d22ad4af7c1749c22630cfa1d7",
-      "vscode-release-notes-1-114:section:6a3758f17f42e54cc2a5585d9c321a2754e9e8a3611f54db4f279cfeea3f3c3b",
-      "vscode-release-notes-1-114:section:13c42eccbf7988ca374e9f919d2a6f6dcb14b96677dd4f8edf4e5e4b02f3ce78",
-      "vscode-release-notes-1-114:section:7bbe575b9e0dee8a2cc66a6cd13a3f415375366615eb8f8ab2861885c2e9cb2f",
-      "vscode-release-notes-1-114:section:c6573921c6901c0740ff6813d9294b2b1ef5bf73a6ae67f3bd64e280b050019f",
-      "vscode-release-notes-1-114:section:aec8ad4937e5e301dc2cfa71bbd24f139a9e92826038b0d08031884918bedd74",
-      "vscode-release-notes-1-114:section:e12a26380199f497a8aadf94df27977d113f9c120a00a3ff5fa008ff0798802d",
-      "vscode-release-notes-1-114:section:fa2eb56297168bf4bd890c694cef0d77bf55fbd525b71c06b727f7f26e4dec1b",
-      "vscode-release-notes-1-111:7e591bc2bd66085ca33e6bdedc680a1ff23978f68236a1ae93b1251917fc1b0f"
-    ],
+    "generatedAt": "2026-04-08T03:25:46.751Z",
+    "newEventsCount": 0,
+    "newEventIds": [],
     "errorCount": 0
   },
   "editorialNote": "注記: この記録には当日公開分だけでなく、初回取り込みや未取得分の回収が含まれる可能性があります。最も古い公開日は 2026-03-09 です。",
   "events": [
-    {
-      "eventId": "vscode-release-notes-1-112:a124d3545d10e70f3af851dcc32f11b4b4c317877194e09399a8c11c46d7ee8a",
-      "sourceId": "vscode-release-notes-1-112",
-      "sourceName": "VS Code Release Notes 1.112",
-      "kind": "html_snapshot_change",
-      "detectedAt": "2026-04-08T01:47:34.278Z",
-      "publishedAt": "2026-04-08T01:47:34.278Z",
-      "title": "Visual Studio Code 1.112",
-      "url": "https://code.visualstudio.com/updates/v1_112",
-      "summary": "Captured the current snapshot for Visual Studio Code 1.112.",
-      "categories": ["snapshot"],
-      "headings": [
-        "Visual Studio Code 1.112",
-        "Agent experience",
-        "Message steering and queueing in Copilot CLI",
-        "Preview changes before delegating to Copilot CLI",
-        "Clickable file links in Copilot CLI terminal output",
-        "Permissions levels in Copilot CLI",
-        "Troubleshoot agent behavior with /troubleshoot (Preview)",
-        "Export and import agent debug logs (Preview)",
-        "Image and binary file support for agents",
-        "Automatic symbol references",
-        "Agent extensibility",
-        "Customizations discovery in parent repositories"
-      ],
-      "score": 29
-    },
-    {
-      "eventId": "vscode-release-notes-1-113:5482b1f49b2d0023616b2141da578b868899f8cab8c66f6d85feafb577566a6a",
-      "sourceId": "vscode-release-notes-1-113",
-      "sourceName": "VS Code Release Notes 1.113",
-      "kind": "html_snapshot_change",
-      "detectedAt": "2026-04-08T01:47:33.815Z",
-      "publishedAt": "2026-04-08T01:47:33.815Z",
-      "title": "Visual Studio Code 1.113",
-      "url": "https://code.visualstudio.com/updates/v1_113",
-      "summary": "Captured the current snapshot for Visual Studio Code 1.113.",
-      "categories": ["snapshot"],
-      "headings": [
-        "Visual Studio Code 1.113",
-        "Agent experience",
-        "MCP support in Copilot CLI & Claude agents",
-        "Forking sessions in Copilot CLI & Claude agents",
-        "Agent debug logs for Copilot CLI and Claude CLI sessions (Preview)",
-        "Claude session listing powered by SDK APIs",
-        "Nested subagents",
-        "Manage plugin marketplaces",
-        "URL handlers for plugin installation",
-        "Chat experience",
-        "Chat Customizations editor (Preview)",
-        "Configurable thinking effort in model picker"
-      ],
-      "score": 24
-    },
     {
       "eventId": "vscode-release-notes-1-114:d2d9d6bb244271aec140e3a3b5d01efb96f2c576f021fc61c88932a151060664",
       "sourceId": "vscode-release-notes-1-114",
       "sourceName": "VS Code Release Notes 1.114",
       "kind": "html_snapshot_change",
       "detectedAt": "2026-04-08T01:47:33.192Z",
-      "publishedAt": "2026-04-08T01:47:33.192Z",
+      "publishedAt": "2026-03-31T15:00:00.000Z",
       "title": "Visual Studio Code 1.114",
       "url": "https://code.visualstudio.com/updates/v1_114",
       "summary": "Captured the current snapshot for Visual Studio Code 1.114.",
-      "categories": ["snapshot"],
+      "categories": [
+        "snapshot"
+      ],
       "headings": [
         "Visual Studio Code 1.114",
         "Chat experience",
@@ -110,7 +48,11 @@
       "title": "Visual Studio Code 1.114: Preview videos in the image carousel",
       "url": "https://code.visualstudio.com/updates/v1_114",
       "summary": "Settings: \n \n \n imageCarousel.chat.enabled\n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders\n \n , \n \n \n imageCarousel.explorerContextMenu.enabled\n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders The image carousel, introduced in version 1.113, now also supports videos. You can play and navigate videos from chat attachments or the Explorer context menu. The viewer includes: Video playback with controls...",
-      "categories": ["release", "section", "Chat experience"],
+      "categories": [
+        "release",
+        "section",
+        "Chat experience"
+      ],
       "sectionHeading": "Chat experience",
       "score": 4
     },
@@ -124,7 +66,11 @@
       "title": "Visual Studio Code 1.114: Copy final response in chat",
       "url": "https://code.visualstudio.com/updates/v1_114",
       "summary": "The Chat view already has commands to copy the entire conversation or a specific response. However, that also includes the agent's thinking process and tool calls. For those cases where you only want to copy the final response, there is now a Copy Final Response command in the chat context menu that copies the last Markdown section of the agent's response, after all tool calls have run.",
-      "categories": ["release", "section", "Chat experience"],
+      "categories": [
+        "release",
+        "section",
+        "Chat experience"
+      ],
       "sectionHeading": "Chat experience",
       "score": 4
     },
@@ -138,7 +84,11 @@
       "title": "Visual Studio Code 1.114: Workspace search simplification",
       "url": "https://code.visualstudio.com/updates/v1_114",
       "summary": "The #codebase tool lets Copilot do a semantic search of your codebase. This can be especially useful for finding relevant code snippets in codebases with tens to hundreds of thousands of files. When the #codebase tool was first introduced, it was designed for Copilot's ask flow: you ask a question or request an edit and Copilot produces a result directly in its response. Now that almost all Copilot interactions are...",
-      "categories": ["release", "section", "Chat experience"],
+      "categories": [
+        "release",
+        "section",
+        "Chat experience"
+      ],
       "sectionHeading": "Chat experience",
       "score": 4
     },
@@ -152,7 +102,11 @@
       "title": "Visual Studio Code 1.114: Troubleshoot previous chat sessions (Preview)",
       "url": "https://code.visualstudio.com/updates/v1_114",
       "summary": "Settings: \n \n \n github.copilot.chat.agentDebugLog.enabled\n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders\n \n , \n \n \n github.copilot.chat.agentDebugLog.fileLogging.enabled\n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders The troubleshoot skill (invoked via /troubleshoot) helps with diagnosing chat issues by analyzing agent debug logs and surfacing insights into the agent's behavior. For example, to i...",
-      "categories": ["release", "section", "Chat experience"],
+      "categories": [
+        "release",
+        "section",
+        "Chat experience"
+      ],
       "sectionHeading": "Chat experience",
       "score": 4
     },
@@ -166,7 +120,11 @@
       "title": "Visual Studio Code 1.114: Python",
       "url": "https://code.visualstudio.com/updates/v1_114",
       "summary": "Various bug fixes in the Python Environments extension for env file notifications and environment manager selection priority:\n\nThe workspace's saved interpreter selection now takes precedence over terminal-activated virtual or conda environments across restarts.\nThe env file change notification now includes a \"Don't Show Again\" option to permanently dismiss it.\n\nvscode-python#25867, vscode-python-environments#1347,...",
-      "categories": ["release", "section", "Languages"],
+      "categories": [
+        "release",
+        "section",
+        "Languages"
+      ],
       "sectionHeading": "Languages",
       "score": 4
     },
@@ -180,7 +138,11 @@
       "title": "Visual Studio Code 1.114: Group policy to disable Claude agent",
       "url": "https://code.visualstudio.com/updates/v1_114",
       "summary": "Administrators can now use a group policy to disable the Claude agent integration in chat. When this policy is applied, the \n \n \n github.copilot.chat.claudeAgent.enabled\n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders\n \n setting is managed by the organization and users cannot enable the Claude agent. This policy is configured as a boolean with key Claude3PIntegration. Learn more about device management poli...",
-      "categories": ["release", "section", "Enterprise"],
+      "categories": [
+        "release",
+        "section",
+        "Enterprise"
+      ],
       "sectionHeading": "Enterprise",
       "score": 4
     },
@@ -194,7 +156,11 @@
       "title": "Visual Studio Code 1.114: GitHub Pull Requests",
       "url": "https://code.visualstudio.com/updates/v1_114",
       "summary": "There has been more progress on the GitHub Pull Requests extension, which enables you to work on, create, and manage pull requests and issues. New features include: Branch names in the create PR view are now cached for faster target branch loading. GitHub permalink links in PR and issue overview webviews now open the corresponding local file when the file exists in the workspace. Review the changelog for the 0.134.0...",
-      "categories": ["release", "section", "Contributions to extensions"],
+      "categories": [
+        "release",
+        "section",
+        "Contributions to extensions"
+      ],
       "sectionHeading": "Contributions to extensions",
       "score": 4
     },
@@ -208,9 +174,71 @@
       "title": "Visual Studio Code 1.114: Fine-grained tool approval",
       "url": "https://code.visualstudio.com/updates/v1_114",
       "summary": "Language model tools with an approval flow can now scope approval to a specific combination of arguments. For example, the built-in \"Run VS Code Command\" tool can run any VS Code command. A user might feel comfortable always approving editor.action.formatDocument, but not other commands. With this API, the tool implementation can scope approval to the specific command, so users approve each command individually. See...",
-      "categories": ["release", "section", "Proposed APIs"],
+      "categories": [
+        "release",
+        "section",
+        "Proposed APIs"
+      ],
       "sectionHeading": "Proposed APIs",
       "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-113:5482b1f49b2d0023616b2141da578b868899f8cab8c66f6d85feafb577566a6a",
+      "sourceId": "vscode-release-notes-1-113",
+      "sourceName": "VS Code Release Notes 1.113",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-04-08T01:47:33.815Z",
+      "publishedAt": "2026-03-24T15:00:00.000Z",
+      "title": "Visual Studio Code 1.113",
+      "url": "https://code.visualstudio.com/updates/v1_113",
+      "summary": "Captured the current snapshot for Visual Studio Code 1.113.",
+      "categories": [
+        "snapshot"
+      ],
+      "headings": [
+        "Visual Studio Code 1.113",
+        "Agent experience",
+        "MCP support in Copilot CLI & Claude agents",
+        "Forking sessions in Copilot CLI & Claude agents",
+        "Agent debug logs for Copilot CLI and Claude CLI sessions (Preview)",
+        "Claude session listing powered by SDK APIs",
+        "Nested subagents",
+        "Manage plugin marketplaces",
+        "URL handlers for plugin installation",
+        "Chat experience",
+        "Chat Customizations editor (Preview)",
+        "Configurable thinking effort in model picker"
+      ],
+      "score": 24
+    },
+    {
+      "eventId": "vscode-release-notes-1-112:a124d3545d10e70f3af851dcc32f11b4b4c317877194e09399a8c11c46d7ee8a",
+      "sourceId": "vscode-release-notes-1-112",
+      "sourceName": "VS Code Release Notes 1.112",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-04-08T01:47:34.278Z",
+      "publishedAt": "2026-03-17T15:00:00.000Z",
+      "title": "Visual Studio Code 1.112",
+      "url": "https://code.visualstudio.com/updates/v1_112",
+      "summary": "Captured the current snapshot for Visual Studio Code 1.112.",
+      "categories": [
+        "snapshot"
+      ],
+      "headings": [
+        "Visual Studio Code 1.112",
+        "Agent experience",
+        "Message steering and queueing in Copilot CLI",
+        "Preview changes before delegating to Copilot CLI",
+        "Clickable file links in Copilot CLI terminal output",
+        "Permissions levels in Copilot CLI",
+        "Troubleshoot agent behavior with /troubleshoot (Preview)",
+        "Export and import agent debug logs (Preview)",
+        "Image and binary file support for agents",
+        "Automatic symbol references",
+        "Agent extensibility",
+        "Customizations discovery in parent repositories"
+      ],
+      "score": 29
     },
     {
       "eventId": "vscode-release-notes-1-111:7e591bc2bd66085ca33e6bdedc680a1ff23978f68236a1ae93b1251917fc1b0f",
@@ -222,7 +250,9 @@
       "title": "Visual Studio Code 1.111",
       "url": "https://code.visualstudio.com/updates/v1_111",
       "summary": "Captured the current snapshot for Visual Studio Code 1.111.",
-      "categories": ["snapshot"],
+      "categories": [
+        "snapshot"
+      ],
       "headings": [
         "Visual Studio Code 1.111",
         "Autopilot and agent permissions",
