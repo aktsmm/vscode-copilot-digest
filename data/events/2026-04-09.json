@@ -1,0 +1,87 @@
+{
+  "date": "2026-04-09",
+  "generatedAt": "2026-04-09T01:29:06.633Z",
+  "latestRun": {
+    "generatedAt": "2026-04-09T01:29:06.633Z",
+    "newEventsCount": 0,
+    "newEventIds": [],
+    "errorCount": 0
+  },
+  "editorialNote": null,
+  "events": [
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-04-08-copilot-reviewed-pull-request-merge-metrics-now-in-the-usage-metrics-api",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-09T01:02:18.079Z",
+      "publishedAt": "2026-04-08T23:21:50.000Z",
+      "title": "Copilot-reviewed pull request merge metrics now in the usage metrics API",
+      "url": "https://github.blog/changelog/2026-04-08-copilot-reviewed-pull-request-merge-metrics-now-in-the-usage-metrics-api",
+      "summary": "Building on the pull request throughput and cycle-time metrics shipped in February, which track Copilot-created pull requests from the coding agent, the Copilot usage metrics API now includes two new…\nThe post Copilot-reviewed pull request merge metrics now in the usage metrics API appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "account management",
+        "copilot",
+        "enterprise management tools"
+      ],
+      "isFutureDated": false,
+      "score": 5
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-04-08-copilot-reviewed-pull-request-merge-metrics-now-in-the-usage-metrics-api",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-09T01:02:18.463Z",
+      "publishedAt": "2026-04-08T23:21:50.000Z",
+      "title": "Copilot-reviewed pull request merge metrics now in the usage metrics API",
+      "url": "https://github.blog/changelog/2026-04-08-copilot-reviewed-pull-request-merge-metrics-now-in-the-usage-metrics-api",
+      "summary": "Building on the pull request throughput and cycle-time metrics shipped in February, which track Copilot-created pull requests from the coding agent, the Copilot usage metrics API now includes two new…\nThe post Copilot-reviewed pull request merge metrics now in the usage metrics API appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "account management",
+        "copilot",
+        "enterprise management tools"
+      ],
+      "isFutureDated": false,
+      "score": 5
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-04-08-github-mobile-research-and-code-with-copilot-cloud-agent-anywhere",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-09T01:02:18.463Z",
+      "publishedAt": "2026-04-08T19:37:15.000Z",
+      "title": "GitHub Mobile: Research and code with Copilot cloud agent anywhere",
+      "url": "https://github.blog/changelog/2026-04-08-github-mobile-research-and-code-with-copilot-cloud-agent-anywhere",
+      "summary": "Copilot cloud agent now supports more than pull request workflows on GitHub Mobile, so you can keep work moving even when you’re away from your desk. Ask Copilot to research…\nThe post GitHub Mobile: Research and code with Copilot cloud agent anywhere appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "client apps",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 2
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-04-08-github-copilot-in-visual-studio-code-march-releases",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-09T01:02:18.464Z",
+      "publishedAt": "2026-04-08T13:44:52.000Z",
+      "title": "GitHub Copilot in Visual Studio Code, March Releases",
+      "url": "https://github.blog/changelog/2026-04-08-github-copilot-in-visual-studio-code-march-releases",
+      "summary": "VS Code moved to weekly stable releases. This changelog covers releases v1.111 through v1.115, the releases we shipped throughout March and early April 2026. The highlights include Autopilot for fully…\nThe post GitHub Copilot in Visual Studio Code, March Releases appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 5
+    }
+  ],
+  "errors": []
+}

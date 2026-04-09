@@ -15,6 +15,7 @@ import {
   localizedSummary,
   localizedTitle,
   originalTitle,
+  summarizeEventSet,
 } from "./lib/reporting.mjs";
 
 const workspaceRoot = process.cwd();
@@ -110,6 +111,29 @@ async function readJson(filePath, fallbackValue) {
 
 async function ensureDirectory(directoryPath) {
   await fs.mkdir(directoryPath, { recursive: true });
+}
+
+async function readExistingEventLogs() {
+  const entries = await fs
+    .readdir(eventsDir, { withFileTypes: true })
+    .catch((error) => {
+      if (error.code === "ENOENT") {
+        return [];
+      }
+
+      throw error;
+    });
+
+  const files = entries
+    .filter((entry) => entry.isFile() && entry.name.endsWith(".json"))
+    .map((entry) => path.join(eventsDir, entry.name));
+
+  const logs = [];
+  for (const filePath of files) {
+    logs.push(await readJson(filePath, null));
+  }
+
+  return logs.filter(Boolean);
 }
 
 async function fetchText(url) {
@@ -583,7 +607,9 @@ async function collectHtmlSnapshotSource(source, sourceState) {
     publishedAt ??
     parseReleaseDateFromText(normalizedText) ??
     new Date().toISOString();
-  const shouldEmitSnapshotEvent = !(source.trackSections && sections.length > 0);
+  const shouldEmitSnapshotEvent = !(
+    source.trackSections && sections.length > 0
+  );
 
   if (
     shouldEmitSnapshotEvent &&
@@ -762,6 +788,11 @@ function renderMarkdownSummary(dateKey, eventLog) {
   lines.push(`- 収集対象イベント数: ${digest.rawEventCount}`);
   lines.push(`- 更新を拾ったソース数: ${digest.sourceBreakdown.length}`);
   lines.push(`- 取得エラー数: ${digest.errorCount}`);
+  if (digest.uniqueEventCount > 0) {
+    lines.push(
+      `- 公開済み更新サマリー: ${summarizeEventSet(digest.uniqueEvents, "ja", { maxLength: 240 })}`,
+    );
+  }
   lines.push("");
 
   if (digest.editorialNote) {
@@ -886,6 +917,7 @@ async function main() {
     readJson(configFile, []),
     readJson(stateFile, { version: 1, sources: {} }),
   ]);
+  const logs = await readExistingEventLogs();
 
   const sources = [...configuredSources];
   const vscodeUpdatesSource = configuredSources.find(
@@ -1002,12 +1034,21 @@ async function main() {
     events: filteredMergedEvents,
     errors,
   };
-  const summaryMarkdown = renderMarkdownSummary(today, eventLog);
+  const allLogs = [...logs.filter((log) => log.date !== today), eventLog].sort(
+    (left, right) => safeDate(left.date) - safeDate(right.date),
+  );
+  const summaryWrites = allLogs.map((log) =>
+    fs.writeFile(
+      path.join(summaryDir, `${log.date}.md`),
+      renderMarkdownSummary(log.date, log),
+      "utf8",
+    ),
+  );
 
   await Promise.all([
     fs.writeFile(eventFile, JSON.stringify(eventLog, null, 2), "utf8"),
-    fs.writeFile(path.join(summaryDir, `${today}.md`), summaryMarkdown, "utf8"),
     fs.writeFile(stateFile, JSON.stringify(nextState, null, 2), "utf8"),
+    ...summaryWrites,
   ]);
 
   console.log(`Collected ${events.length} new event(s).`);

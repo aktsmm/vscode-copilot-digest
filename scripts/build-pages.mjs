@@ -17,6 +17,7 @@ import {
   rankEvent,
   safeDate,
   sourceGroup,
+  summarizeEventSet,
 } from "./lib/reporting.mjs";
 
 const workspaceRoot = process.cwd();
@@ -783,6 +784,9 @@ function renderArchiveCard(digest, locale, text, href, kind) {
       ? `${digest.startDate} - ${digest.endDate}`
       : `${digest.date}`;
   const topItems = digest.highlights.slice(0, 3);
+  const digestSummary = summarizeEventSet(digest.uniqueEvents, locale, {
+    maxLength: 220,
+  });
   const itemCount =
     locale === "ja"
       ? `${digest.uniqueEventCount}${escapeHtml(text.itemSuffix)}`
@@ -791,7 +795,7 @@ function renderArchiveCard(digest, locale, text, href, kind) {
   return `<article class="digest-card">
     <div class="digest-card-head"><p>${escapeHtml(rangeLabel)}</p><span>${itemCount}</span></div>
     <h3><a href="${escapeHtml(href)}">${escapeHtml(title)}</a></h3>
-    <p>${escapeHtml(trimText(localizedSummary(topItems[0] ?? { summary: locale === "ja" ? "更新はありませんでした。" : "No updates were found." }, locale), 220))}</p>
+    <p>${escapeHtml(digestSummary)}</p>
     <ul>${topItems.map((event) => `<li>${escapeHtml(trimText(localizedTitle(event, locale), 84))}</li>`).join("")}</ul>
   </article>`;
 }
@@ -826,6 +830,9 @@ function renderDigestStreamItem(digest, locale, text, href, kind) {
       ? `${digest.uniqueEventCount}${text.itemSuffix}`
       : formatCount(digest.uniqueEventCount, locale, "item", "items");
   const topItems = digest.highlights.slice(0, 3);
+  const digestSummary = summarizeEventSet(digest.uniqueEvents, locale, {
+    maxLength: 280,
+  });
 
   return `<article class="archive-stream-item">
     <div class="archive-stream-side">
@@ -834,7 +841,7 @@ function renderDigestStreamItem(digest, locale, text, href, kind) {
     </div>
     <div class="archive-stream-body">
       <h3><a href="${escapeHtml(href)}">${escapeHtml(rangeLabel)}</a></h3>
-      <p>${escapeHtml(trimText(localizedSummary(topItems[0] ?? { summary: locale === "ja" ? "更新はありませんでした。" : "No updates were found." }, locale), 280))}</p>
+      <p>${escapeHtml(digestSummary)}</p>
       <ul>${topItems.map((event) => `<li>${escapeHtml(trimText(localizedTitle(event, locale), 120))}</li>`).join("")}</ul>
     </div>
     <div class="archive-stream-link">${renderSectionAction(href, locale === "ja" ? "開く" : "Open")}</div>
@@ -1333,15 +1340,15 @@ function renderRow(row) {
 
 function setIdle() {
   countNode.textContent = strings.prompt;
-  emptyNode.textContent = strings.prompt;
-  emptyNode.classList.remove("is-hidden");
+  emptyNode.textContent = "";
+  emptyNode.classList.add("is-hidden");
   resultsNode.innerHTML = "";
 }
 
 function setLoading() {
   countNode.textContent = strings.loading;
-  emptyNode.textContent = strings.loading;
-  emptyNode.classList.remove("is-hidden");
+  emptyNode.textContent = "";
+  emptyNode.classList.add("is-hidden");
   resultsNode.innerHTML = "";
 }
 

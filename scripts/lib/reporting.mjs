@@ -1039,6 +1039,97 @@ export function localizedSummary(event, locale = "ja") {
   );
 }
 
+function digestTopicLabel(topic, locale = "ja") {
+  const labels = {
+    ja: {
+      "GitHub Copilot": "GitHub Copilot",
+      "VS Code": "VS Code",
+      "GitHub Platform": "GitHub Platform",
+      周辺ニュース: "周辺ニュース",
+    },
+    en: {
+      "GitHub Copilot": "GitHub Copilot",
+      "VS Code": "VS Code",
+      "GitHub Platform": "GitHub Platform",
+      周辺ニュース: "Ecosystem",
+    },
+  };
+
+  return labels[locale]?.[topic] ?? topic;
+}
+
+export function summarizeEventSet(events, locale = "ja", options = {}) {
+  const items = (events ?? []).filter(Boolean);
+  if (items.length === 0) {
+    return locale === "ja"
+      ? "公開済み更新はありませんでした。"
+      : "No published updates were found.";
+  }
+
+  const topicResolver = options.topicResolver ?? classifyEvent;
+  const maxTopics = options.maxTopics ?? 3;
+  const maxHighlights = options.maxHighlights ?? 3;
+  const maxLength = options.maxLength ?? (locale === "ja" ? 180 : 240);
+  const ordered = items
+    .slice()
+    .sort(
+      (left, right) =>
+        safeDate(right.publishedAt) - safeDate(left.publishedAt) ||
+        rankEvent(right) - rankEvent(left),
+    );
+
+  const topicCounts = new Map();
+  for (const event of ordered) {
+    const topic = topicResolver(event);
+    topicCounts.set(topic, (topicCounts.get(topic) ?? 0) + 1);
+  }
+
+  const topicParts = [...topicCounts.entries()]
+    .sort(
+      (left, right) =>
+        right[1] - left[1] || String(left[0]).localeCompare(String(right[0])),
+    )
+    .slice(0, maxTopics)
+    .map(([topic, count]) =>
+      locale === "ja"
+        ? `${digestTopicLabel(topic, locale)} ${count}件`
+        : `${digestTopicLabel(topic, locale)} (${count})`,
+    );
+
+  const highlightTitles = [
+    ...new Set(
+      ordered
+        .slice(0, maxHighlights)
+        .map((event) =>
+          trimText(localizedTitle(event, locale), locale === "ja" ? 34 : 52),
+        ),
+    ),
+  ];
+
+  const message =
+    locale === "ja"
+      ? [
+          `${items.length}件の更新を反映。`,
+          topicParts.length > 0 ? `内訳は${topicParts.join("、")}。` : "",
+          highlightTitles.length > 0
+            ? `主な話題は${highlightTitles.join("、")}。`
+            : "",
+        ]
+          .filter(Boolean)
+          .join("")
+      : [
+          `Reflects ${items.length} published updates.`,
+          topicParts.length > 0 ? `Main areas: ${topicParts.join(", ")}.` : "",
+          highlightTitles.length > 0
+            ? `Key items: ${highlightTitles.join(", ")}.`
+            : "",
+        ]
+          .filter(Boolean)
+          .join(" ");
+
+  return trimText(message, maxLength);
+}
+
 export function originalTitle(event) {
   const localized = localizedTitle(event);
   const title = normalizeWhitespace(decodeHtmlEntities(event.title));

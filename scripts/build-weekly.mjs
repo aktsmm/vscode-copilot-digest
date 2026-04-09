@@ -12,6 +12,7 @@ import {
   originalTitle,
   rankEvent as rankEventShared,
   safeDate as safeDateShared,
+  summarizeEventSet,
 } from "./lib/reporting.mjs";
 
 const workspaceRoot = process.cwd();
@@ -250,6 +251,13 @@ async function main() {
 
   const sections = [
     renderFrontmatter(range),
+    "## 今週のまとめ",
+    "",
+    summarizeEventSet(events, "ja", {
+      topicResolver: classifyEvent,
+      maxLength: 260,
+    }),
+    "",
     "## 今週の要点",
     "",
     renderHighlights(events),
