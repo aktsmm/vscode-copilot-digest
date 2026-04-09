@@ -1,6 +1,6 @@
 # vscode-copilot-digest
 
-GitHub Copilot と VS Code 周辺の更新を毎日収集し、日次ダイジェストと隔週ドラフトを自動生成するリポジトリです。
+GitHub Copilot と VS Code 周辺の更新を毎日収集し、日次イベント、日次本文、週間・隔週ドラフト、GitHub Pages 用の静的サイトを自動生成するリポジトリです。GitHub Actions が収集と公開を回し、GitHub.com 側の Copilot cloud agent が本文・要点・対訳の更新 PR を自動作成します。
 
 現在の公開先:
 
@@ -8,20 +8,29 @@ GitHub Copilot と VS Code 周辺の更新を毎日収集し、日次ダイジ�
 
 ## できること
 
-- RSS / Atom / HTML スナップショットから更新を収集する
+- RSS / Atom / HTML スナップショットから GitHub Copilot / VS Code 関連更新を収集する
 - 日次イベントを JSON と Markdown で保存する
-- GitHub Pages 用の静的サイトを生成して公開する
-- 日次ページに加えて、直近 7 日単位の週間ダイジェストも Pages に出す
-- 14 日分の記録から Qiita 向けドラフトを生成する
-- 7 日分の記録から週間ドラフトを生成する
+- GitHub Pages 用に、日本語 / 英語のトップページ、日次詳細、週間詳細、ハイライト一覧、日次アーカイブ一覧、週間アーカイブ一覧、検索ページを静的生成する
+- 最新ハイライトをトップページでは 6 件表示し、全件一覧は 50 件単位でページ分割して公開する
+- 7 日分の記録から週間ドラフト、14 日分の記録から隔週ドラフトを生成する
 - 必要なら Qiita API へ投稿し、投稿 ID と URL をドラフト frontmatter に反映する
 - collect は毎日動かしつつ、Discord Webhook には 5 日ごとに直近 5 日分をまとめて通知する
-- Pages 上でソース出自バッジとハッシュタグ付きフィルタで更新を見分ける
-- Pages 上で Pagefind を使った全文検索を提供し、トップページの簡易検索と専用の検索ページの両方から日次更新を探せる
-- GitHub.com 上の Copilot cloud agent 向け Issue / PR フローを自動起票する
+- Pages 上では source-only の簡素なフィルタと、Pagefind による全文検索を提供する
+- GitHub.com 上の Copilot cloud agent 向け執筆依頼 Issue / PR フローを自動起票する
 - 日次本文、要点、日本語化・対訳の更新には GitHub Copilot Cloud Agent を使う
 
 運用の詳細は [docs/automation.md](docs/automation.md) にまとめています。
+検索の仕組みは [docs/search-architecture.md](docs/search-architecture.md) に分けてあります。
+
+## 自動更新と自動執筆の流れ
+
+1. [collect-updates.yml](.github/workflows/collect-updates.yml) が毎日ソースを収集し、[data/events](data/events) と [summaries/daily](summaries/daily) を更新する
+2. 変更があれば `github-actions[bot]` が `data/**` と `summaries/**` を commit する
+3. collect commit の直後に workflow から [deploy-pages.yml](.github/workflows/deploy-pages.yml) を dispatch し、最新データで Pages を再生成する
+4. collect 成功後に [author-digest-pr.yml](.github/workflows/author-digest-pr.yml) が Copilot 向け執筆依頼 Issue を作成または更新する
+5. Copilot cloud agent が Issue を受けて、日次本文・ドラフト・必要な対訳更新を含む PR を作成する
+6. [request-copilot-review.yml](.github/workflows/request-copilot-review.yml)、[validate-generated-pr.yml](.github/workflows/validate-generated-pr.yml)、[auto-merge-generated-pr.yml](.github/workflows/auto-merge-generated-pr.yml) が PR を正規化・検証・自動 merge する
+7. 生成 PR が merge されたときは [redeploy-pages-after-generated-pr-merge.yml](.github/workflows/redeploy-pages-after-generated-pr-merge.yml) が Pages を再度 dispatch し、本文更新を live へ反映する
 
 ## 監視対象
 
@@ -41,12 +50,11 @@ GitHub Copilot と VS Code 周辺の更新を毎日収集し、日次ダイジ�
 - GitHub / VS Code の公式ソースを優先する
 - 周辺ニュースは 1 日あたり最大 3 件までに絞る
 - GitHub Copilot や VS Code の coding agent と関係が薄い記事は除外する
-- feed に未来日付の項目が見えた場合は、通常のハイライトには混ぜず、警告付きの別セクションで扱う
-- 初回取り込みや未取得分の回収が混ざる日は、日次と隔週ドラフトに注記を出す
+- feed に未来日付の項目が見えた場合は、通常のハイライトには混ぜず、日次ページの警告付き別セクションで扱う
 - 通知文面、日次 Markdown、Pages 表示で同じ日本語化ルールを使い、必要な対訳更新は GitHub Copilot Cloud Agent の PR フローで反映する
 - `要点` と `なぜ重要か / Why it matters` は、単なる release / preview ラベルの定型文に寄りすぎないよう、主要タイトルには個別の説明文を優先して使う
 - Pages では文書更新日とこのサイトに載った日を両方表示する
-- Pages は日本語と英語の両方を静的生成する
+- Pages は日本語と英語の両方を静的生成し、フィルタ UI は source-only の簡素版に揃える
 
 ## セットアップ
 
@@ -114,7 +122,7 @@ node scripts/notify-discord.mjs --date 2026-04-06 --window-days 5 --cadence-days
 ## 主要スクリプト
 
 - [scripts/collect.mjs](scripts/collect.mjs): ソース収集、未来日付項目の警告付き分離、日次 JSON / Markdown 生成
-- [scripts/build-pages.mjs](scripts/build-pages.mjs): Pages 用静的サイト生成
+- [scripts/build-pages.mjs](scripts/build-pages.mjs): トップページ、日次・週間詳細、ハイライト一覧、日次・週間アーカイブ一覧、検索ページを含む Pages 用静的サイト生成
 - [scripts/build-biweekly.mjs](scripts/build-biweekly.mjs): 14 日ドラフト生成
 - [scripts/build-weekly.mjs](scripts/build-weekly.mjs): 7 日ドラフト生成
 - [scripts/notify-discord.mjs](scripts/notify-discord.mjs): Discord 通知と preview 出力。workflow では 2026-04-06 を基準日に、5日ごとに直近5日分をまとめて投稿する設定で使う
@@ -127,8 +135,9 @@ node scripts/notify-discord.mjs --date 2026-04-06 --window-days 5 --cadence-days
 
 - 毎日 12:30 JST を目安に `collect-updates.yml` がスケジュール実行される（GitHub Actions の schedule は遅延しうる）
 - 変更があれば `data/**` と `summaries/**` をコミットする
-- main への push で自動的に `deploy-pages.yml` が Pages を再生成する
+- collect commit の直後に workflow dispatch で `deploy-pages.yml` を呼び出し、Pages を再生成する
 - Discord Webhook には 5 日ごとに直近 5 日分をまとめて通知する
+- Copilot 由来の PR が merge されたときも `redeploy-pages-after-generated-pr-merge.yml` が `deploy-pages.yml` を再 dispatch する
 
 ### Copilot Coding Agent による自動化
 
@@ -159,10 +168,13 @@ node scripts/notify-discord.mjs --date 2026-04-06 --window-days 5 --cadence-days
 
 ## Pages 構成
 
-- トップページ: このサイトの見方、公開方針、最新ハイライト、週間アーカイブ、日次アーカイブ
-- 日次ページ: 概況、注記、注目トピック、テーマ別まとめ、ソース内訳、全件一覧
+- トップページ: 最新 6 件ハイライト、週間アーカイブ、日次アーカイブ、簡易検索
+- ハイライト一覧: 公開済みハイライトの全件一覧。50 件ごとにページ分割
+- 日次アーカイブ一覧: 日付ごとのダイジェストを 1 行 1 件寄りの縦一覧で表示
+- 週間アーカイブ一覧: 週単位ダイジェストを 1 行 1 件寄りの縦一覧で表示
+- 日次ページ: 未来日付項目の警告セクション、注目トピック、テーマ別まとめ、ソース内訳、全件一覧
 - 週間ページ: 直近 7 日のハイライト、テーマ別まとめ、ソース内訳、全件一覧
-- 検索ページ: Pagefind のインデックスを使い、公開済み日次ページから title / excerpt を横断検索する
+- 検索ページ: Pagefind のインデックスを使い、公開済み日次・週間詳細ページから title / excerpt を横断検索する
 - raw データ: 各日の Markdown と JSON をそのまま参照可能
 
 ## 検索実装
@@ -170,7 +182,8 @@ node scripts/notify-discord.mjs --date 2026-04-06 --window-days 5 --cadence-days
 - `npm run build:pages` は静的 HTML 生成のあとに `pagefind --site site --output-subdir pagefind` を実行し、公開用インデックスを作る
 - トップページは `pagefind-component-ui` を使った簡易検索を埋め込み、最近の公開更新へすぐ飛べるようにしている
 - 専用の `search.html` は `pagefind.js` を直接読み込み、クエリ文字列同期、preload、結果整形を含む軽量な検索 UI を静的配布している
-- 検索対象は `data-pagefind-body` を持つ公開ページだけで、日次・週間の本文から検索できる
+- 検索対象は `data-pagefind-body` を持つ公開ページだけで、日次・週間の詳細本文から検索できる
+- 詳細設計は [docs/search-architecture.md](docs/search-architecture.md) を参照
 
 ## ディレクトリ概要
 
@@ -187,6 +200,7 @@ node scripts/notify-discord.mjs --date 2026-04-06 --window-days 5 --cadence-days
 - X 自動投稿は技術的には可能ですが、2026 年時点では課金と認証管理のコストが高いため、この構成には含めていません。
 - 通知追加先としては Bluesky、Mastodon、Slack のほうが現実的です。
 - 設計メモは [docs/architecture.md](docs/architecture.md) にあります。
+- 検索 UI / index の設計は [docs/search-architecture.md](docs/search-architecture.md) にあります。
 
 ## ライセンス
 

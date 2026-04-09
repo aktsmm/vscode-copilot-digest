@@ -1,51 +1,72 @@
 # 自動化運用メモ
 
-このリポジトリの自動化は、日次収集、Pages 公開、Discord 通知、Copilot cloud agent 向けの Issue / PR フローで構成しています。
+このリポジトリの自動化は、日次収集レーン、Pages 公開レーン、Discord 通知レーン、Copilot cloud agent による自動執筆レーンで構成しています。データ収集と本文更新を分離しつつ、最終的な Pages 公開までを GitHub Actions 側でつなぐのが基本方針です。
 
-## いま自動で動くもの
+## 全体像
 
-- 毎日 12:30 JST を目安に [collect-updates.yml](../.github/workflows/collect-updates.yml) が収集を実行する（GitHub Actions の schedule は高負荷時に遅延しうる）
-- 変更があれば `data/**` と `summaries/**` をコミットする
-- main 更新で [deploy-pages.yml](../.github/workflows/deploy-pages.yml) が Pages を再生成する
-- Pages のヘッダーに出す `最終更新` は、最新の Pages 再生成時刻を表示する
+1. [collect-updates.yml](../.github/workflows/collect-updates.yml) が毎日ソースを収集する
+2. 変更があれば `data/**` と `summaries/**` を `github-actions[bot]` が commit する
+3. collect workflow から [deploy-pages.yml](../.github/workflows/deploy-pages.yml) を workflow dispatch し、最新データで Pages を再生成する
+4. collect 成功後に [author-digest-pr.yml](../.github/workflows/author-digest-pr.yml) が Copilot 向け執筆依頼 Issue を作成または更新する
+5. Copilot cloud agent がその Issue を受けて PR を作成する
+6. [request-copilot-review.yml](../.github/workflows/request-copilot-review.yml)、[validate-generated-pr.yml](../.github/workflows/validate-generated-pr.yml)、[auto-merge-generated-pr.yml](../.github/workflows/auto-merge-generated-pr.yml) が PR を正規化・検証・自動 merge する
+7. 生成 PR が merge されたときは [redeploy-pages-after-generated-pr-merge.yml](../.github/workflows/redeploy-pages-after-generated-pr-merge.yml) が Pages を再 dispatch し、本文更新を live へ反映する
+
+## 日次収集と通知
+
+- [collect-updates.yml](../.github/workflows/collect-updates.yml) は毎日 12:30 JST 目安で実行する。GitHub Actions の schedule は高負荷時に遅延しうる
+- Node.js 22 で `npm ci` と `npm run collect` を実行し、[data/events](../data/events) と [summaries/daily](../summaries/daily) を更新する
+- 変更がなければ commit せず終了する
+- 変更があった場合は `github-actions[bot]` が `data/**` と `summaries/**` を commit / push する
+- collect の最後に [deploy-pages.yml](../.github/workflows/deploy-pages.yml) を dispatch して、push 起点 workflow の非連鎖を補う
+- Discord 通知は collect 自体は毎日走らせつつ、2026-04-06 を基準日に 5 日ごとに直近 5 日分をまとめて送る
+
+## Pages 公開の仕組み
+
+- Pages 用の HTML は [scripts/build-pages.mjs](../scripts/build-pages.mjs) で静的生成する
+- 生成対象はトップページ、日本語 / 英語の日次詳細、週間詳細、ハイライト一覧、日次アーカイブ一覧、週間アーカイブ一覧、検索ページ、raw データ導線を含む
+- トップページは最新 6 件のハイライトを表示し、全件一覧は 50 件ごとにページ分割する
+- 日次・週間・ハイライト一覧のフィルタは source-only の簡素版で統一している
+- Pages build の最後に Pagefind インデックスも生成し、トップページの簡易検索と `search.html` の専用検索 UI が同じ静的インデックスを参照する
+- 検索対象は `data-pagefind-body` を持つ公開ページだけで、現状は日次・週間の詳細本文が主対象になる
+- 検索 UI / index の詳細設計は [search-architecture.md](search-architecture.md) を参照する
+- Pages のヘッダーに出す `最終更新` は最新の Pages 再生成時刻を表示する
 - まれに live の Pages 配信が stale で、日本語 / 英語のどちらか片方だけ古い HTML を返すことがある。その場合は `site/**` と live ページを見比べ、必要なら [deploy-pages.yml](../.github/workflows/deploy-pages.yml) を手動 dispatch して再確認する
-- Pages build の最後に Pagefind インデックスも生成し、トップページの簡易検索と `search.html` の専用検索 UI から同じ静的インデックスを参照する
-- feed に未来日付の項目が見えた場合は、通常のハイライトには混ぜず、警告付きの別セクションで扱う
-- Discord Webhook 通知は collect 自体は毎日走らせつつ、2026-04-06 を基準日に 5日ごとに直近5日分をまとめて投稿する
-- collect 成功後に [author-digest-pr.yml](../.github/workflows/author-digest-pr.yml) が Copilot 向け Issue を作成または更新する
-- GitHub Copilot Cloud Agent は、その Issue から日次本文、要点、必要な対訳・日本語化更新を含む PR を作成する
-- 生成 PR では [request-copilot-review.yml](../.github/workflows/request-copilot-review.yml) が metadata を正規化し、[validate-generated-pr.yml](../.github/workflows/validate-generated-pr.yml) が検証し、[auto-merge-generated-pr.yml](../.github/workflows/auto-merge-generated-pr.yml) が安全なものだけ merge する
+
+## Copilot cloud agent の自動執筆レーン
+
+- [author-digest-pr.yml](../.github/workflows/author-digest-pr.yml) は collect 成功後に、対象日付とスコープを決めて執筆依頼 Issue を作成または更新する
+- Issue 本文には、対象ファイル、文章ルール、変更許可範囲、PR タイトル規則、検証要件が埋め込まれる
+- workflow は GraphQL で Copilot actor を解決し、Issue assignment まで自動化する
+- Copilot cloud agent は、その Issue から日次本文、週間 / 隔週ドラフト、必要な対訳更新を含む PR を作成する
+- 生成 PR は [request-copilot-review.yml](../.github/workflows/request-copilot-review.yml) が metadata を正規化し、[validate-generated-pr.yml](../.github/workflows/validate-generated-pr.yml) が allow-list と build を検証し、[auto-merge-generated-pr.yml](../.github/workflows/auto-merge-generated-pr.yml) が安全なものだけ merge する
 - Copilot 起点で `action_required` になった review / validate / auto-merge workflow は [rerun-blocked-copilot-workflows.yml](../.github/workflows/rerun-blocked-copilot-workflows.yml) が定期的に検出して 1 回だけ rerun する
-- direct squash merge を workflow から実行した場合は、その merge では push 起点 workflow が連鎖しないため、Pages 再生成は [auto-merge-generated-pr.yml](../.github/workflows/auto-merge-generated-pr.yml) から [deploy-pages.yml](../.github/workflows/deploy-pages.yml) を明示 dispatch する
-- collect workflow が `GITHUB_TOKEN` で `main` に commit した場合も push 起点 workflow は自動連鎖しないため、Pages 再生成は [collect-updates.yml](../.github/workflows/collect-updates.yml) から [deploy-pages.yml](../.github/workflows/deploy-pages.yml) を明示 dispatch する
+- Copilot 由来 PR が merge されたときは [redeploy-pages-after-generated-pr-merge.yml](../.github/workflows/redeploy-pages-after-generated-pr-merge.yml) が [deploy-pages.yml](../.github/workflows/deploy-pages.yml) を再 dispatch し、本文更新を live ページへ反映する
 
-## 完全自動か
+## 完全自動ではない部分
 
-かなり自動化されていますが、GitHub.com 側の Copilot 機能設定に依存する部分はまだあります。
-
-- リポジトリ設定で Copilot cloud agent を有効化している必要がある
-- repo 設定では auto-merge を有効化し、Actions の `GITHUB_TOKEN` は write 権限と PR review approve 権限を持つ前提にしている
+- GitHub リポジトリ設定で Copilot cloud agent を有効化している必要がある
+- repo 側では auto-merge を有効化し、Actions の `GITHUB_TOKEN` は write 権限と PR review approve 権限を持つ前提にしている
 - branch protection が無い repo では GitHub の auto-merge API が使えないことがあるため、安全条件を満たした生成 PR は workflow が直接 squash merge する
-- workflow の `GITHUB_TOKEN` で実行した direct merge は通常の push workflow を自動連鎖しないため、Pages 再デプロイは別途 dispatch で補う
-- workflow の `GITHUB_TOKEN` で実行した collect commit も通常の push workflow を自動連鎖しないため、Pages 再デプロイは別途 dispatch で補う
+- workflow の `GITHUB_TOKEN` で実行した collect commit や direct merge は通常の push workflow を自動連鎖しないため、Pages 再デプロイは dispatch で補う
 - Copilot Code Review を ruleset で自動化する設定は GitHub 側で有効化が必要で、この repo の workflow だけでは完結しない
 - `needs-human-review` が付いた PR は意図的に自動 merge しない
-- GitHub Docs 上の正式導線は、Issue を Copilot に assign すること。`author-digest-pr.yml` は GraphQL で Copilot assignment まで自動化する
 - Cloud agent の `Require approval for workflow runs` が ON でも、Copilot 由来の blocked run は定期 workflow が検出して 1 回だけ rerun して先へ進める
 - それでも PR が出ない場合は、Issue 右サイドバーで Copilot assignee が付いているかと GitHub 側キューを確認する
 
 ## Workflow 一覧
 
-- [collect-updates.yml](../.github/workflows/collect-updates.yml): 毎日 12:30 JST の収集と、5日ごとの Discord まとめ通知
-- [deploy-pages.yml](../.github/workflows/deploy-pages.yml): main push で Pages 公開
+- [collect-updates.yml](../.github/workflows/collect-updates.yml): 毎日 12:30 JST の収集と、5 日ごとの Discord まとめ通知
+- [deploy-pages.yml](../.github/workflows/deploy-pages.yml): Pages 再生成と公開
+- [redeploy-pages-after-generated-pr-merge.yml](../.github/workflows/redeploy-pages-after-generated-pr-merge.yml): Copilot 生成 PR merge 後の Pages 再 dispatch
 - [build-weekly-draft.yml](../.github/workflows/build-weekly-draft.yml): 毎週土曜 12:30 JST の週間ドラフト生成
 - [build-biweekly-draft.yml](../.github/workflows/build-biweekly-draft.yml): 手動の隔週ドラフト生成
 - [publish-qiita.yml](../.github/workflows/publish-qiita.yml): Qiita 投稿
 - [test-discord-notification.yml](../.github/workflows/test-discord-notification.yml): Discord preview 通知の実送信テスト
 - [copilot-setup-steps.yml](../.github/workflows/copilot-setup-steps.yml): Copilot cloud agent 用の Node.js セットアップ
-- [author-digest-pr.yml](../.github/workflows/author-digest-pr.yml): Copilot 向け執筆依頼 Issue の自動作成
+- [author-digest-pr.yml](../.github/workflows/author-digest-pr.yml): Copilot 向け執筆依頼 Issue の自動作成 / 更新
 - [request-copilot-review.yml](../.github/workflows/request-copilot-review.yml): 生成 PR のラベル付けと metadata 正規化
-- [rerun-blocked-copilot-workflows.yml](../.github/workflows/rerun-blocked-copilot-workflows.yml): Copilot 起点で `action_required` になった review / validate / auto-merge workflow の自動 rerun
+- [rerun-blocked-copilot-workflows.yml](../.github/workflows/rerun-blocked-copilot-workflows.yml): Copilot 起点で `action_required` になった workflow の自動 rerun
 - [validate-generated-pr.yml](../.github/workflows/validate-generated-pr.yml): 生成 PR の allow-list と build 検証
 - [auto-merge-generated-pr.yml](../.github/workflows/auto-merge-generated-pr.yml): 安全な生成 PR を ready for review に切り替え、可能なら auto-merge、不可なら直接 squash merge
 
@@ -54,6 +75,7 @@
 - `DISCORD_WEBHOOK_URL`: Discord 通知と通知テスト用
 - `PAGES_BASE_URL`: Discord 通知に載せる Pages URL のベース。未設定時は公開 URL を既定値として使う
 - `QIITA_ACCESS_TOKEN`: Qiita 投稿用
+- `COPILOT_ASSIGN_TOKEN`: authoring Issue を Copilot に割り当てるための token
 
 ## セキュリティメモ
 
@@ -64,7 +86,7 @@
 - `needs-human-review` ラベルがある PR は必ず手動確認に倒れます
 - blocked workflow の rerun は Copilot actor が起点の run に 1 回だけ限定し、無限 rerun を避けます
 
-## Node 24 対応
+## Node / action バージョン
 
 GitHub hosted runner の Node 20 deprecation warning に合わせて主要 action は新しい major へ更新していますが、Pages 系 action は upstream 側の都合で warning が出る可能性があります。
 
@@ -79,9 +101,8 @@ GitHub hosted runner の Node 20 deprecation warning に合わせて主要 actio
 - `gh workflow run deploy-pages.yml`
 - `node scripts/notify-discord.mjs --date YYYY-MM-DD --window-days 5 --cadence-days 5 --anchor-date 2026-04-06 --dry-run --force-preview`
 
-## 次に確認すること
+## まず見るべき確認ポイント
 
-- repository ruleset で Copilot Code Review の自動 review を有効化し、PR 上の review comment まで GitHub 側機能で補完する
-- 新しい `digest-authoring` Issue で、draft PR の validate 成功後に ready for review 化と auto-merge 有効化まで人手なしで進むかを確認する
 - 新しい `digest-authoring` Issue を作っても 10 分以内に PR が出ない場合は、workflow 失敗より先に GitHub リポジトリ設定の Copilot cloud agent 有効化状態を確認する
 - 15 分を超えても PR が出ない、または review ruleset が動かない場合は、GitHub 側の Copilot Code Review 設定と GitHub 側キューを見直す
+- Pages だけ古い場合は workflow 失敗より先に live HTML の stale 配信を疑い、[deploy-pages.yml](../.github/workflows/deploy-pages.yml) を手動 dispatch して再確認する
