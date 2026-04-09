@@ -55,4 +55,3 @@ jobs:
               ref: 'main',
             });
             core.info('Dispatched Deploy GitHub Pages for the latest collected content.');
-

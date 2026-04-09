@@ -332,12 +332,12 @@ function buildPayload(date, datedLogs, options = {}) {
         ? `GitHub Copilot / VS Code の週次 preview として更新候補を表示します。`
         : `GitHub Copilot / VS Code の週次まとめを送ります。`
       : options.windowDays > 1
-      ? options.forcePreview && uniqueEvents.length === 0
-        ? `GitHub Copilot / VS Code 監視の ${options.windowDays}日分 preview として更新候補を表示します。`
-        : `GitHub Copilot / VS Code 監視で直近${options.windowDays}日分の新着 ${uniqueEvents.length} 件をまとめました。`
-      : options.forcePreview && uniqueEvents.length === 0
-        ? `GitHub Copilot / VS Code 監視の preview として ${uniqueEvents.length} 件の更新候補を表示します。`
-        : `GitHub Copilot / VS Code 監視で ${uniqueEvents.length} 件の新着を検知しました。`,
+        ? options.forcePreview && uniqueEvents.length === 0
+          ? `GitHub Copilot / VS Code 監視の ${options.windowDays}日分 preview として更新候補を表示します。`
+          : `GitHub Copilot / VS Code 監視で直近${options.windowDays}日分の新着 ${uniqueEvents.length} 件をまとめました。`
+        : options.forcePreview && uniqueEvents.length === 0
+          ? `GitHub Copilot / VS Code 監視の preview として ${uniqueEvents.length} 件の更新候補を表示します。`
+          : `GitHub Copilot / VS Code 監視で ${uniqueEvents.length} 件の新着を検知しました。`,
     options.windowDays > 1 || isWeeklyMode
       ? `対象期間: ${activeWindowLabel}`
       : `日付: ${date}`,
@@ -364,7 +364,9 @@ function buildPayload(date, datedLogs, options = {}) {
   }
 
   if (dailySummary) {
-    headerLines.push(`${isWeeklyMode ? "日別内訳" : "日別件数"}: ${dailySummary}`);
+    headerLines.push(
+      `${isWeeklyMode ? "日別内訳" : "日別件数"}: ${dailySummary}`,
+    );
   }
 
   if (sourceSummary) {
