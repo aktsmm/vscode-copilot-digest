@@ -167,6 +167,10 @@ const exactSummaryMappings = {
     ja: "GitHub Mobile でも Copilot cloud agent で調査や実装を進めやすくなり、pull request 以外の作業もモバイルから継続できるようになった。席を離れていても cloud agent の流れを止めにくい。",
     en: "GitHub Mobile now supports a broader research-and-code flow with Copilot cloud agent beyond pull-request-only work, so progress can continue away from the desktop.",
   },
+  "Copilot-reviewed pull request merge metrics now in the usage metrics API": {
+    ja: "Copilot usage metrics API に、Copilot が関与した pull request の merge metrics が追加された。レビュー済み PR の throughput や cycle time に続いて、agent 活用の成果を API 経由で追いやすくなる。",
+    en: "The Copilot usage metrics API now includes merge metrics for Copilot-reviewed pull requests, extending the earlier throughput and cycle-time reporting for agent-assisted pull requests.",
+  },
   "GitHub Copilot in Visual Studio Code, March Releases": {
     ja: "VS Code の weekly stable 化後、v1.111 から v1.115 までの Copilot / agent 更新をまとめた changelog。Autopilot、browser / terminal tool 改善、customization など、この 1 か月の変化を横断して追える。",
     en: "A changelog roundup for GitHub Copilot in VS Code covering the weekly stable releases from v1.111 through v1.115, including Autopilot, browser and terminal tool improvements, and broader agent workflow changes.",
@@ -1058,6 +1062,71 @@ function digestTopicLabel(topic, locale = "ja") {
   return labels[locale]?.[topic] ?? topic;
 }
 
+function digestSourceGroupLabel(group, locale = "ja") {
+  const labels = {
+    ja: {
+      github: "GitHub 公式",
+      vscode: "VS Code 公式",
+      platform: "GitHub Platform",
+      other: "その他",
+    },
+    en: {
+      github: "GitHub official",
+      vscode: "VS Code official",
+      platform: "GitHub Platform",
+      other: "Other",
+    },
+  };
+
+  return labels[locale]?.[group] ?? group;
+}
+
+function stripGenericJapaneseSummary(summary) {
+  return normalizeWhitespace(
+    String(summary ?? "")
+      .replace(/^英語ソースの更新。/, "")
+      .replace(/^Visual Studio Code 関連の更新。/, "")
+      .replace(/^GitHub Copilot 関連の更新。/, "")
+      .replace(/^VS Code チームによる AI 活用や実装改善の解説記事。/, "")
+      .replace(
+        /^詳細は原文を確認しつつ、日々の開発フローに効くかを見ておきたい。/,
+        "",
+      )
+      .replace(/^IDE 連携や agent 拡張の強化点を押さえたい。/, "")
+      .replace(/^ターミナル中心の運用を強化したいときの参考になる。/, ""),
+  );
+}
+
+export function localizedDigestMention(event, locale = "ja", maxLength = 72) {
+  const title = localizedTitle(event, locale);
+  if (locale !== "ja") {
+    return trimText(title, maxLength);
+  }
+
+  if (containsJapanese(title) && !/[A-Za-z]{4,}/.test(title)) {
+    return trimText(title, maxLength);
+  }
+
+  const summaryLeadText = summaryLead(
+    stripGenericJapaneseSummary(localizedSummary(event, locale)),
+    maxLength + 24,
+  );
+  if (containsJapanese(summaryLeadText)) {
+    return trimText(summaryLeadText, maxLength);
+  }
+
+  const topic = digestTopicLabel(classifyEvent(event), locale);
+  const featureTag = buildHighlightTags(event, locale).find(
+    (tag) =>
+      tag !== localizedImportanceLabel(event, locale) &&
+      tag !== digestTopicLabel(classifyEvent(event), locale),
+  );
+  const fallback = featureTag
+    ? `${topic}の${featureTag}関連更新`
+    : `${topic}の主要更新`;
+  return trimText(fallback, maxLength);
+}
+
 export function summarizeEventSet(events, locale = "ja", options = {}) {
   const items = (events ?? []).filter(Boolean);
   if (items.length === 0) {
@@ -1068,7 +1137,7 @@ export function summarizeEventSet(events, locale = "ja", options = {}) {
 
   const topicResolver = options.topicResolver ?? classifyEvent;
   const maxTopics = options.maxTopics ?? 3;
-  const maxHighlights = options.maxHighlights ?? 3;
+  const maxHighlights = options.maxHighlights ?? (locale === "ja" ? 4 : 3);
   const maxLength = options.maxLength ?? (locale === "ja" ? 180 : 240);
   const ordered = items
     .slice()
@@ -1096,12 +1165,46 @@ export function summarizeEventSet(events, locale = "ja", options = {}) {
         : `${digestTopicLabel(topic, locale)} (${count})`,
     );
 
+  const sourceCounts = new Map();
+  for (const event of ordered) {
+    const group = sourceGroup(event);
+    sourceCounts.set(group, (sourceCounts.get(group) ?? 0) + 1);
+  }
+
+  const sourceParts = [...sourceCounts.entries()]
+    .sort(
+      (left, right) =>
+        right[1] - left[1] || String(left[0]).localeCompare(String(right[0])),
+    )
+    .slice(0, maxTopics)
+    .map(([group, count]) =>
+      locale === "ja"
+        ? `${digestSourceGroupLabel(group, locale)} ${count}件`
+        : `${digestSourceGroupLabel(group, locale)} (${count})`,
+    );
+
+  const importanceCounts = new Map();
+  for (const event of ordered) {
+    const label = localizedImportanceLabel(event, locale);
+    importanceCounts.set(label, (importanceCounts.get(label) ?? 0) + 1);
+  }
+
+  const importanceParts = [...importanceCounts.entries()]
+    .sort(
+      (left, right) =>
+        right[1] - left[1] || String(left[0]).localeCompare(String(right[0])),
+    )
+    .slice(0, 3)
+    .map(([label, count]) =>
+      locale === "ja" ? `${label} ${count}件` : `${label} (${count})`,
+    );
+
   const highlightTitles = [
     ...new Set(
       ordered
         .slice(0, maxHighlights)
         .map((event) =>
-          trimText(localizedTitle(event, locale), locale === "ja" ? 34 : 52),
+          localizedDigestMention(event, locale, locale === "ja" ? 78 : 72),
         ),
     ),
   ];
@@ -1111,8 +1214,14 @@ export function summarizeEventSet(events, locale = "ja", options = {}) {
       ? [
           `${items.length}件の更新を反映。`,
           topicParts.length > 0 ? `内訳は${topicParts.join("、")}。` : "",
+          sourceParts.length > 0
+            ? `ソース群では${sourceParts.join("、")}。`
+            : "",
+          importanceParts.length > 0
+            ? `更新種別では${importanceParts.join("、")}。`
+            : "",
           highlightTitles.length > 0
-            ? `主な話題は${highlightTitles.join("、")}。`
+            ? `主な話題は、${highlightTitles.join("、")}。`
             : "",
         ]
           .filter(Boolean)
@@ -1120,6 +1229,10 @@ export function summarizeEventSet(events, locale = "ja", options = {}) {
       : [
           `Reflects ${items.length} published updates.`,
           topicParts.length > 0 ? `Main areas: ${topicParts.join(", ")}.` : "",
+          sourceParts.length > 0 ? `Sources: ${sourceParts.join(", ")}.` : "",
+          importanceParts.length > 0
+            ? `Update types: ${importanceParts.join(", ")}.`
+            : "",
           highlightTitles.length > 0
             ? `Key items: ${highlightTitles.join(", ")}.`
             : "",

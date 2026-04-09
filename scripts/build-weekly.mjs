@@ -255,7 +255,8 @@ async function main() {
     "",
     summarizeEventSet(events, "ja", {
       topicResolver: classifyEvent,
-      maxLength: 260,
+      maxLength: 1280,
+      maxHighlights: 6,
     }),
     "",
     "## 今週の要点",

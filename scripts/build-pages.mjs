@@ -11,6 +11,7 @@ import {
   dedupeEvents,
   importanceReason,
   localizedImportanceLabel,
+  localizedDigestMention,
   localizedSummary,
   localizedTitle,
   originalTitle,
@@ -785,7 +786,8 @@ function renderArchiveCard(digest, locale, text, href, kind) {
       : `${digest.date}`;
   const topItems = digest.highlights.slice(0, 3);
   const digestSummary = summarizeEventSet(digest.uniqueEvents, locale, {
-    maxLength: 220,
+    maxLength: 880,
+    maxHighlights: 5,
   });
   const itemCount =
     locale === "ja"
@@ -796,7 +798,7 @@ function renderArchiveCard(digest, locale, text, href, kind) {
     <div class="digest-card-head"><p>${escapeHtml(rangeLabel)}</p><span>${itemCount}</span></div>
     <h3><a href="${escapeHtml(href)}">${escapeHtml(title)}</a></h3>
     <p>${escapeHtml(digestSummary)}</p>
-    <ul>${topItems.map((event) => `<li>${escapeHtml(trimText(localizedTitle(event, locale), 84))}</li>`).join("")}</ul>
+    <ul>${topItems.map((event) => `<li>${escapeHtml(localizedDigestMention(event, locale, locale === "ja" ? 120 : 96))}</li>`).join("")}</ul>
   </article>`;
 }
 
@@ -831,7 +833,8 @@ function renderDigestStreamItem(digest, locale, text, href, kind) {
       : formatCount(digest.uniqueEventCount, locale, "item", "items");
   const topItems = digest.highlights.slice(0, 3);
   const digestSummary = summarizeEventSet(digest.uniqueEvents, locale, {
-    maxLength: 280,
+    maxLength: 1120,
+    maxHighlights: 5,
   });
 
   return `<article class="archive-stream-item">
@@ -842,7 +845,7 @@ function renderDigestStreamItem(digest, locale, text, href, kind) {
     <div class="archive-stream-body">
       <h3><a href="${escapeHtml(href)}">${escapeHtml(rangeLabel)}</a></h3>
       <p>${escapeHtml(digestSummary)}</p>
-      <ul>${topItems.map((event) => `<li>${escapeHtml(trimText(localizedTitle(event, locale), 120))}</li>`).join("")}</ul>
+      <ul>${topItems.map((event) => `<li>${escapeHtml(localizedDigestMention(event, locale, locale === "ja" ? 148 : 120))}</li>`).join("")}</ul>
     </div>
     <div class="archive-stream-link">${renderSectionAction(href, locale === "ja" ? "開く" : "Open")}</div>
   </article>`;

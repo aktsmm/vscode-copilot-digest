@@ -790,7 +790,7 @@ function renderMarkdownSummary(dateKey, eventLog) {
   lines.push(`- 取得エラー数: ${digest.errorCount}`);
   if (digest.uniqueEventCount > 0) {
     lines.push(
-      `- 公開済み更新サマリー: ${summarizeEventSet(digest.uniqueEvents, "ja", { maxLength: 240 })}`,
+      `- 公開済み更新サマリー: ${summarizeEventSet(digest.uniqueEvents, "ja", { maxLength: 960, maxHighlights: 5 })}`,
     );
   }
   lines.push("");
