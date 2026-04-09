@@ -2,7 +2,7 @@ name: Build weekly draft
 
 on:
   schedule:
-    - cron: "30 3 * * 6"
+    - cron: "0 21 * * 4"
   workflow_dispatch:
     inputs:
       days:

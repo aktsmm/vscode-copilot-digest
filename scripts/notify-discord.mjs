@@ -2,9 +2,11 @@ import fs from "node:fs/promises";
 import path from "node:path";
 
 import {
+  localizedDigestMention,
   localizedImportanceLabel,
   localizedSummary,
   localizedTitle,
+  summarizeEventSet,
 } from "./lib/reporting.mjs";
 
 const workspaceRoot = process.cwd();
@@ -19,6 +21,7 @@ function parseArgs(argv) {
     windowDays: 1,
     cadenceDays: 1,
     anchorDate: null,
+    mode: "daily",
   };
 
   for (let index = 0; index < argv.length; index += 1) {
@@ -54,10 +57,20 @@ function parseArgs(argv) {
     if (argument === "--anchor-date") {
       options.anchorDate = argv[index + 1] ?? null;
       index += 1;
+      continue;
+    }
+
+    if (argument === "--mode") {
+      options.mode = argv[index + 1] ?? "daily";
+      index += 1;
     }
   }
 
   return options;
+}
+
+function compactDateKey(dateKey) {
+  return String(dateKey ?? "").replace(/-/g, "");
 }
 
 async function listEventLogDates() {
@@ -136,12 +149,36 @@ function buildRepoSummaryUrl(date) {
   return `${serverUrl}/${repository}/blob/${refName}/summaries/daily/${date}.md`;
 }
 
+function buildRepoWeeklyDraftUrl(startDate, endDate) {
+  const serverUrl = process.env.GITHUB_SERVER_URL;
+  const repository = process.env.GITHUB_REPOSITORY;
+  const refName = process.env.GITHUB_REF_NAME || "main";
+
+  if (!serverUrl || !repository || !startDate || !endDate) {
+    return null;
+  }
+
+  return `${serverUrl}/${repository}/blob/${refName}/drafts/weekly-${compactDateKey(startDate)}-${compactDateKey(endDate)}.md`;
+}
+
 function buildPagesDigestUrl(date) {
   const baseUrl =
     process.env.PAGES_BASE_URL ||
     "https://aktsmm.github.io/vscode-copilot-digest";
 
   return `${baseUrl.replace(/\/$/, "")}/days/${date}.html`;
+}
+
+function buildPagesWeeklyDigestUrl(startDate, endDate) {
+  const baseUrl =
+    process.env.PAGES_BASE_URL ||
+    "https://aktsmm.github.io/vscode-copilot-digest";
+
+  if (!startDate || !endDate) {
+    return null;
+  }
+
+  return `${baseUrl.replace(/\/$/, "")}/weeks/${compactDateKey(startDate)}-${compactDateKey(endDate)}.html`;
 }
 
 function dedupeEvents(events) {
@@ -176,9 +213,15 @@ function joinLines(lines) {
 }
 
 function buildEventBlock(event, options = {}) {
+  const mode = options.mode ?? "daily";
+  const title =
+    mode === "weekly"
+      ? localizedDigestMention(event, "ja", 110)
+      : localizedTitle(event);
+  const summary = localizedSummary(event);
   const block = [
-    `- [${localizedImportanceLabel(event)}] ${trimLine(localizedTitle(event), 120)}`,
-    `  ${trimLine(localizedSummary(event), 120)}`,
+    `- [${localizedImportanceLabel(event)}] ${trimLine(title, mode === "weekly" ? 110 : 120)}`,
+    `  ${trimLine(summary, mode === "weekly" ? 150 : 120)}`,
     `  ${event.url}`,
   ];
 
@@ -193,10 +236,12 @@ function buildEventBlock(event, options = {}) {
   return block;
 }
 
-function buildGroupedEventBlocks(uniqueEvents) {
+function buildGroupedEventBlocks(uniqueEvents, options = {}) {
+  const maxEvents = options.maxEvents ?? 5;
+  const maxPerDate = options.maxPerDate ?? Number.POSITIVE_INFINITY;
   const grouped = new Map();
 
-  for (const event of uniqueEvents.slice(0, 5)) {
+  for (const event of uniqueEvents.slice(0, maxEvents)) {
     const dateKey = event.dateKeys?.at(-1) ?? event.dateKey;
     if (!grouped.has(dateKey)) {
       grouped.set(dateKey, []);
@@ -209,11 +254,11 @@ function buildGroupedEventBlocks(uniqueEvents) {
     .map(([dateKey, events]) => {
       const block = [`【${dateKey}】`];
 
-      for (const [index, event] of events.entries()) {
+      for (const [index, event] of events.slice(0, maxPerDate).entries()) {
         if (index > 0) {
           block.push("");
         }
-        block.push(...buildEventBlock(event));
+        block.push(...buildEventBlock(event, options));
       }
 
       return block;
@@ -221,6 +266,7 @@ function buildGroupedEventBlocks(uniqueEvents) {
 }
 
 function buildPayload(date, datedLogs, options = {}) {
+  const isWeeklyMode = options.mode === "weekly";
   const collectedEvents = [];
   const perDateCounts = [];
 
@@ -247,8 +293,14 @@ function buildPayload(date, datedLogs, options = {}) {
     (left, right) => rankEvent(right) - rankEvent(left),
   );
 
-  const summaryUrl = buildRepoSummaryUrl(date);
-  const pagesUrl = buildPagesDigestUrl(date);
+  const startDate = datedLogs[0]?.date ?? date;
+  const endDate = datedLogs[datedLogs.length - 1]?.date ?? date;
+  const summaryUrl = isWeeklyMode
+    ? buildRepoWeeklyDraftUrl(startDate, endDate)
+    : buildRepoSummaryUrl(date);
+  const pagesUrl = isWeeklyMode
+    ? buildPagesWeeklyDigestUrl(startDate, endDate)
+    : buildPagesDigestUrl(date);
   const sourceCounts = new Map();
   for (const event of uniqueEvents) {
     sourceCounts.set(
@@ -269,27 +321,41 @@ function buildPayload(date, datedLogs, options = {}) {
     .map((entry) => `${entry.date}: ${entry.count}件`)
     .join(" / ");
   const latestLog = datedLogs[datedLogs.length - 1]?.eventLog;
+  const aggregateSummary = summarizeEventSet(uniqueEvents, "ja", {
+    maxLength: isWeeklyMode ? 1000 : 520,
+    maxHighlights: isWeeklyMode ? 6 : 4,
+  });
 
   const headerLines = [
-    options.windowDays > 1
+    isWeeklyMode
+      ? options.forcePreview && uniqueEvents.length === 0
+        ? `GitHub Copilot / VS Code の週次 preview として更新候補を表示します。`
+        : `GitHub Copilot / VS Code の週次まとめを送ります。`
+      : options.windowDays > 1
       ? options.forcePreview && uniqueEvents.length === 0
         ? `GitHub Copilot / VS Code 監視の ${options.windowDays}日分 preview として更新候補を表示します。`
         : `GitHub Copilot / VS Code 監視で直近${options.windowDays}日分の新着 ${uniqueEvents.length} 件をまとめました。`
       : options.forcePreview && uniqueEvents.length === 0
         ? `GitHub Copilot / VS Code 監視の preview として ${uniqueEvents.length} 件の更新候補を表示します。`
         : `GitHub Copilot / VS Code 監視で ${uniqueEvents.length} 件の新着を検知しました。`,
-    options.windowDays > 1 ? `対象期間: ${activeWindowLabel}` : `日付: ${date}`,
+    options.windowDays > 1 || isWeeklyMode
+      ? `対象期間: ${activeWindowLabel}`
+      : `日付: ${date}`,
   ];
+
+  if (aggregateSummary && uniqueEvents.length > 0) {
+    headerLines.push(`要約: ${aggregateSummary}`);
+  }
 
   if (options.forcePreview && uniqueEvents.length === 0) {
     headerLines.push(
-      options.windowDays > 1
+      options.windowDays > 1 || isWeeklyMode
         ? "注記: これは通知 preview です。対象期間に新着がないため、既存イベントから代表項目を表示しています。"
         : "注記: これは通知 preview です。直近 run に新着がないため、その日の既存イベントから代表項目を表示しています。",
     );
   }
 
-  if (options.windowDays > 1) {
+  if (options.windowDays > 1 && !isWeeklyMode) {
     headerLines.push(`通知間隔: ${options.cadenceDays}日ごと`);
   }
 
@@ -298,7 +364,7 @@ function buildPayload(date, datedLogs, options = {}) {
   }
 
   if (dailySummary) {
-    headerLines.push(`日別件数: ${dailySummary}`);
+    headerLines.push(`${isWeeklyMode ? "日別内訳" : "日別件数"}: ${dailySummary}`);
   }
 
   if (sourceSummary) {
@@ -307,19 +373,27 @@ function buildPayload(date, datedLogs, options = {}) {
 
   const footerLines = [];
   if (summaryUrl) {
-    footerLines.push(`日次サマリー: ${summaryUrl}`);
+    footerLines.push(
+      `${isWeeklyMode ? "週間ドラフト" : "日次サマリー"}: ${summaryUrl}`,
+    );
   }
 
   if (pagesUrl) {
-    footerLines.push(`Pages: ${pagesUrl}`);
+    footerLines.push(`${isWeeklyMode ? "週間Pages" : "Pages"}: ${pagesUrl}`);
   }
 
   const eventBlocks =
-    options.windowDays > 1
-      ? buildGroupedEventBlocks(uniqueEvents)
+    options.windowDays > 1 || isWeeklyMode
+      ? buildGroupedEventBlocks(uniqueEvents, {
+          mode: isWeeklyMode ? "weekly" : "daily",
+          maxEvents: isWeeklyMode ? 10 : 5,
+          maxPerDate: isWeeklyMode ? 2 : 5,
+        })
       : uniqueEvents
           .slice(0, 5)
-          .map((event) => buildEventBlock(event, { includeDates: false }));
+          .map((event) =>
+            buildEventBlock(event, { includeDates: false, mode: "daily" }),
+          );
 
   let lines = [...headerLines];
   if (eventBlocks.length > 0) {

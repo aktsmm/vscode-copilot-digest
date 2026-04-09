@@ -1,14 +1,55 @@
 {
   "date": "2026-04-09",
-  "generatedAt": "2026-04-09T05:25:02.452Z",
+  "generatedAt": "2026-04-09T23:20:32.231Z",
   "latestRun": {
-    "generatedAt": "2026-04-09T05:25:02.452Z",
-    "newEventsCount": 0,
-    "newEventIds": [],
+    "generatedAt": "2026-04-09T23:20:32.231Z",
+    "newEventsCount": 7,
+    "newEventIds": [
+      "github-changelog:https://github.blog/changelog/2026-04-09-auto-draft",
+      "vscode-feed:https://code.visualstudio.com/updates/v1_116",
+      "vscode-updates:463cb2daf5ac90ca88cb894d653d3ef7762d06241b5af3e6afb0b957b3585d83",
+      "vscode-release-notes-1-109:3ec5027738a204ed9815dce3b31d3f7112c83702d7c2bad38f3fe8de038caccb",
+      "vscode-release-notes-1-114:cb52fa54cfe4f8751cad22fabba8b98f7d2478ef36fc1472a47bddbc12c011e7",
+      "vscode-release-notes-1-113:41c86f67518fa585ed33e5dfa8e6045269307755b565a2ecc5e2220218d6e521",
+      "vscode-release-notes-1-112:d1c83d8a6689e7c33981bf5d67eba1e9dcf7c520afa5835a6037c0ff4eb6c307"
+    ],
     "errorCount": 0
   },
-  "editorialNote": null,
+  "editorialNote": "注記: この記録には当日公開分だけでなく、初回取り込みや未取得分の回収が含まれる可能性があります。最も古い公開日は 2026-02-04 です。",
   "events": [
+    {
+      "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_116",
+      "sourceId": "vscode-feed",
+      "sourceName": "VS Code Feed",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-09T23:20:28.692Z",
+      "publishedAt": "2026-04-15T17:00:00.000Z",
+      "title": "Visual Studio Code 1.116",
+      "url": "https://code.visualstudio.com/updates/v1_116",
+      "summary": "Learn what's new in Visual Studio Code 1.116 (Insiders)\n Read the full article",
+      "categories": [
+        "release"
+      ],
+      "isFutureDated": true,
+      "score": 4
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-04-09-auto-draft",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-09T23:20:27.833Z",
+      "publishedAt": "2026-04-09T19:33:16.000Z",
+      "title": "Ask Copilot in security assessments now available",
+      "url": "https://github.blog/changelog/2026-04-09-ask-copilot-in-security-assessments-now-available",
+      "summary": "Organization admins and security managers can now jump into a Copilot experience directly from secret risk assessment or Code Security risk assessment results to get contextual explanations and guided next…\nThe post Ask Copilot in security assessments now available appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "application security"
+      ],
+      "isFutureDated": false,
+      "score": 2
+    },
     {
       "eventId": "github-changelog:https://github.blog/changelog/2026-04-08-copilot-reviewed-pull-request-merge-metrics-now-in-the-usage-metrics-api",
       "sourceId": "github-changelog",
@@ -81,6 +122,150 @@
       ],
       "isFutureDated": false,
       "score": 5
+    },
+    {
+      "eventId": "vscode-updates:463cb2daf5ac90ca88cb894d653d3ef7762d06241b5af3e6afb0b957b3585d83",
+      "sourceId": "vscode-updates",
+      "sourceName": "VS Code Updates",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-04-09T23:20:29.306Z",
+      "publishedAt": "2026-04-07T15:00:00.000Z",
+      "title": "VS Code Updates changed",
+      "url": "https://code.visualstudio.com/updates/",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [],
+        "additions": [
+          "Insiders"
+        ]
+      },
+      "headings": [
+        "Visual Studio Code 1.115",
+        "Visual Studio Code Agents (Preview)",
+        "Integrated browser",
+        "Browser agent tools improvements",
+        "Pinch-to-zoom in the integrated browser (macOS)",
+        "Terminal tools improvements",
+        "Send input to background terminals",
+        "Background terminal notifications (Experimental)",
+        "Deprecated features and settings",
+        "New deprecations in this release",
+        "Upcoming deprecations",
+        "Notable fixes"
+      ],
+      "score": 2
+    },
+    {
+      "eventId": "vscode-release-notes-1-113:41c86f67518fa585ed33e5dfa8e6045269307755b565a2ecc5e2220218d6e521",
+      "sourceId": "vscode-release-notes-1-113",
+      "sourceName": "VS Code Release Notes 1.113",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-04-09T23:20:31.357Z",
+      "publishedAt": "2026-03-24T15:00:00.000Z",
+      "title": "Visual Studio Code 1.113",
+      "url": "https://code.visualstudio.com/updates/v1_113",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [],
+        "additions": [
+          "Insiders"
+        ]
+      },
+      "headings": [
+        "Visual Studio Code 1.113",
+        "Agent experience",
+        "MCP support in Copilot CLI & Claude agents",
+        "Forking sessions in Copilot CLI & Claude agents",
+        "Agent debug logs for Copilot CLI and Claude CLI sessions (Preview)",
+        "Claude session listing powered by SDK APIs",
+        "Nested subagents",
+        "Manage plugin marketplaces",
+        "URL handlers for plugin installation",
+        "Chat experience",
+        "Chat Customizations editor (Preview)",
+        "Configurable thinking effort in model picker"
+      ],
+      "score": 2
+    },
+    {
+      "eventId": "vscode-release-notes-1-112:d1c83d8a6689e7c33981bf5d67eba1e9dcf7c520afa5835a6037c0ff4eb6c307",
+      "sourceId": "vscode-release-notes-1-112",
+      "sourceName": "VS Code Release Notes 1.112",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-04-09T23:20:32.221Z",
+      "publishedAt": "2026-03-17T15:00:00.000Z",
+      "title": "Visual Studio Code 1.112",
+      "url": "https://code.visualstudio.com/updates/v1_112",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [],
+        "additions": [
+          "Insiders"
+        ]
+      },
+      "headings": [
+        "Visual Studio Code 1.112",
+        "Agent experience",
+        "Message steering and queueing in Copilot CLI",
+        "Preview changes before delegating to Copilot CLI",
+        "Clickable file links in Copilot CLI terminal output",
+        "Permissions levels in Copilot CLI",
+        "Troubleshoot agent behavior with /troubleshoot (Preview)",
+        "Export and import agent debug logs (Preview)",
+        "Image and binary file support for agents",
+        "Automatic symbol references",
+        "Agent extensibility",
+        "Customizations discovery in parent repositories"
+      ],
+      "score": 2
+    },
+    {
+      "eventId": "vscode-release-notes-1-109:3ec5027738a204ed9815dce3b31d3f7112c83702d7c2bad38f3fe8de038caccb",
+      "sourceId": "vscode-release-notes-1-109",
+      "sourceName": "VS Code Release Notes 1.109",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-04-09T23:20:30.412Z",
+      "publishedAt": "2026-02-03T15:00:00.000Z",
+      "title": "VS Code Release Notes 1.109 changed",
+      "url": "https://code.visualstudio.com/updates/v1_109",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [],
+        "additions": [
+          "Insiders"
+        ]
+      },
+      "headings": [
+        "January 2026 (version 1.109)",
+        "Upcoming events",
+        "Agent Sessions Day",
+        "Chat UX",
+        "Message steering and queueing (Experimental)",
+        "Anthropic models now show thinking tokens",
+        "Mermaid diagrams in chat responses",
+        "Ask Questions tool (Experimental)",
+        "Plan agent",
+        "Context window details",
+        "Inline chat UX revamp (Preview)",
+        "Model descriptions in the model picker"
+      ],
+      "score": 2
     }
   ],
   "errors": []

@@ -2,7 +2,9 @@ name: Collect updates
 
 on:
   schedule:
-    - cron: "30 3 * * *"
+    - cron: "30 21 * * *"
+    - cron: "30 5 * * *"
+    - cron: "30 13 * * *"
   workflow_dispatch:
 
 permissions:
@@ -54,7 +56,3 @@ jobs:
             });
             core.info('Dispatched Deploy GitHub Pages for the latest collected content.');
 
-      - name: Notify Discord when new updates are found
-        env:
-          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
-        run: node scripts/notify-discord.mjs --window-days 5 --cadence-days 5 --anchor-date 2026-04-06

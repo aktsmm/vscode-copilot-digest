@@ -10,7 +10,7 @@ on:
     types:
       - completed
   schedule:
-    - cron: "* * * * *"
+    - cron: "*/15 * * * *"
   workflow_dispatch:
 
 permissions:
