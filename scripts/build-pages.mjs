@@ -1496,7 +1496,7 @@ function renderSearchPage(
           <button type="button" class="filter-reset" data-search-clear>${escapeHtml(text.filterReset)}</button>
         </div>
         <p class="search-status" data-search-count>${escapeHtml(text.searchPrompt)}</p>
-        <p class="search-empty" data-search-empty>${escapeHtml(text.searchPrompt)}</p>
+        <p class="search-empty" data-search-empty></p>
         <div class="search-results-grid" data-search-results></div>
       </div>
     </section>
@@ -1850,10 +1850,10 @@ a { color: inherit; }
 }
 .hero-day { margin-bottom: 24px; }
 .hero-home h1 {
-  font-size: clamp(1.34rem, 2.2vw, 2.18rem);
-  line-height: 1.08;
+  font-size: clamp(1.5rem, 2.4vw, 2.2rem);
+  line-height: 1.1;
   max-width: none;
-  text-wrap: balance;
+  white-space: nowrap;
   margin-bottom: 8px;
 }
 .hero-home .hero-copy {
@@ -1896,7 +1896,7 @@ a { color: inherit; }
   letter-spacing: 0.08em;
   font-size: 0.8rem;
 }
-h1 { margin: 0 0 16px; font-size: clamp(2.3rem, 4vw, 4.2rem); line-height: 1.04; }
+h1 { margin: 0 0 16px; font-size: clamp(1.5rem, 2.4vw, 2.2rem); line-height: 1.1; }
 .hero-copy, .content-card p, .update-card p, .mini-highlight p { color: var(--muted); line-height: 1.75; }
 .metrics-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
 .metrics-grid--compact {
