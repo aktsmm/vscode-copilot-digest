@@ -2428,10 +2428,24 @@ async function copyRawFiles(date) {
   ]);
 }
 
+function shouldPublishDailyDigest(digest) {
+  return (digest?.uniqueEventCount ?? 0) > 0;
+}
+
 async function main() {
   const logs = await readDailyLogs();
-  const dailyDigests = logs.map((log) => buildDailyDigest(log));
-  const weeklyDigests = buildWeeklyDigests(logs);
+  const digestEntries = logs.map((log) => ({
+    log,
+    digest: buildDailyDigest(log),
+  }));
+  const dailyDigests = digestEntries
+    .map((entry) => entry.digest)
+    .filter(shouldPublishDailyDigest);
+  const weeklyDigests = buildWeeklyDigests(
+    digestEntries
+      .filter((entry) => shouldPublishDailyDigest(entry.digest))
+      .map((entry) => entry.log),
+  );
   const searchableEvents = buildPublishedEventEntries(dailyDigests, {
     includeFuture: false,
   });
