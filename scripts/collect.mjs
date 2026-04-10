@@ -99,6 +99,10 @@ function readXmlText(value) {
 async function readJson(filePath, fallbackValue) {
   try {
     const raw = await fs.readFile(filePath, "utf8");
+    if (raw.trim() === "") {
+      return fallbackValue;
+    }
+
     return JSON.parse(raw);
   } catch (error) {
     if (error.code === "ENOENT") {
@@ -906,6 +910,11 @@ function renderMarkdownSummary(dateKey, eventLog) {
   return lines.join("\n");
 }
 
+function shouldWriteDailySummary(eventLog) {
+  const digest = buildDailyDigest(eventLog);
+  return digest.uniqueEventCount > 0 || digest.futureUniqueCount > 0;
+}
+
 async function main() {
   await Promise.all([
     ensureDirectory(eventsDir),
@@ -1037,13 +1046,19 @@ async function main() {
   const allLogs = [...logs.filter((log) => log.date !== today), eventLog].sort(
     (left, right) => safeDate(left.date) - safeDate(right.date),
   );
-  const summaryWrites = allLogs.map((log) =>
-    fs.writeFile(
-      path.join(summaryDir, `${log.date}.md`),
+  const summaryWrites = allLogs.map(async (log) => {
+    const summaryFile = path.join(summaryDir, `${log.date}.md`);
+    if (!shouldWriteDailySummary(log)) {
+      await fs.rm(summaryFile, { force: true });
+      return;
+    }
+
+    await fs.writeFile(
+      summaryFile,
       renderMarkdownSummary(log.date, log),
       "utf8",
-    ),
-  );
+    );
+  });
 
   await Promise.all([
     fs.writeFile(eventFile, JSON.stringify(eventLog, null, 2), "utf8"),

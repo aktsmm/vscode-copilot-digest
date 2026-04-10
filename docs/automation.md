@@ -15,7 +15,7 @@
 ## 日次収集と通知
 
 - [collect-updates.yml](../.github/workflows/collect-updates.yml) は毎日 12:30 JST 目安で実行する。GitHub Actions の schedule は高負荷時に遅延しうる
-- Node.js 22 で `npm ci` と `npm run collect` を実行し、[data/events](../data/events) と [summaries/daily](../summaries/daily) を更新する
+- Node.js 22 で `npm ci` と `npm run collect` を実行し、[data/events](../data/events) を毎日更新する。[summaries/daily](../summaries/daily) は公開済み更新または未来日付項目がある日だけ生成する
 - 変更がなければ commit せず終了する
 - 変更があった場合は `github-actions[bot]` が `data/**` と `summaries/**` を commit / push する
 - collect の最後に [deploy-pages.yml](../.github/workflows/deploy-pages.yml) を dispatch して、push 起点 workflow の非連鎖を補う
@@ -25,6 +25,7 @@
 
 - Pages 用の HTML は [scripts/build-pages.mjs](../scripts/build-pages.mjs) で静的生成する
 - 生成対象はトップページ、日本語 / 英語の日次詳細、週間詳細、ハイライト一覧、日次アーカイブ一覧、週間アーカイブ一覧、検索ページ、raw データ導線を含む
+- 公開済み更新が 0 件の空日は Pages の日次詳細や日次アーカイブに含めず、最新公開日も直近の公開済み日次を基準にする
 - トップページは最新 6 件のハイライトを表示し、全件一覧は 50 件ごとにページ分割する
 - 日次・週間・ハイライト一覧のフィルタは source-only の簡素版で統一している
 - Pages build の最後に Pagefind インデックスも生成し、トップページの簡易検索と `search.html` の専用検索 UI が同じ静的インデックスを参照する

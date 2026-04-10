@@ -9,7 +9,7 @@ GitHub Copilot と VS Code 周辺の更新を毎日収集し、日次イベン�
 ## できること
 
 - RSS / Atom / HTML スナップショットから GitHub Copilot / VS Code 関連更新を収集する
-- 日次イベントを JSON と Markdown で保存する
+- 日次イベントを JSON で保存し、公開済み更新または未来日付項目がある日だけ Markdown を保存する
 - GitHub Pages 用に、日本語 / 英語のトップページ、日次詳細、週間詳細、ハイライト一覧、日次アーカイブ一覧、週間アーカイブ一覧、検索ページを静的生成する
 - 最新ハイライトをトップページでは 6 件表示し、全件一覧は 50 件単位でページ分割して公開する
 - 7 日分の記録から週間ドラフト、14 日分の記録から隔週ドラフトを生成する
@@ -51,6 +51,7 @@ GitHub Copilot と VS Code 周辺の更新を毎日収集し、日次イベン�
 - 周辺ニュースは 1 日あたり最大 3 件までに絞る
 - GitHub Copilot や VS Code の coding agent と関係が薄い記事は除外する
 - feed に未来日付の項目が見えた場合は、通常のハイライトには混ぜず、日次ページの警告付き別セクションで扱う
+- 公開済み更新が 0 件の空日は Pages の日次ページとして公開しない
 - 通知文面、日次 Markdown、Pages 表示で同じ日本語化ルールを使い、必要な対訳更新は GitHub Copilot Cloud Agent の PR フローで反映する
 - `要点` と `なぜ重要か / Why it matters` は、単なる release / preview ラベルの定型文に寄りすぎないよう、主要タイトルには個別の説明文を優先して使う
 - Pages では文書更新日とこのサイトに載った日を両方表示する
@@ -115,7 +116,7 @@ node scripts/notify-discord.mjs --date 2026-04-06 --window-days 5 --cadence-days
 
 - [data/events](data/events): 日次イベント JSON
 - [data/snapshots](data/snapshots): HTML スナップショット比較用テキスト
-- [summaries/daily](summaries/daily): 日次 Markdown
+- [summaries/daily](summaries/daily): 公開済み更新または未来日付項目がある日だけ生成する日次 Markdown
 - [drafts](drafts): 14 日ドラフト
 - [site](site): GitHub Pages 用の静的出力
 

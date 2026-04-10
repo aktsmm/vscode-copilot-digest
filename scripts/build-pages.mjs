@@ -136,8 +136,7 @@ function buildText(locale) {
       langSwitchLabel: "日本語",
       heroEyebrow: "GitHub Pages",
       lastUpdatedLabel: "Last updated",
-      heroTitle:
-        "Track GitHub Copilot and VS Code updates in a format you can actually read.",
+      heroTitle: "Track GitHub Copilot and VS Code updates without the noise.",
       heroCopy:
         "GitHub Actions collects GitHub Changelog, VS Code updates, and complementary sources every day, while GitHub Copilot Cloud Agent updates digest copy and translation mappings. Start with highlights, then drop into topic sections, the full list, or /en/ when you need more detail.",
       publishedCount: "Published daily digests",
@@ -145,7 +144,7 @@ function buildText(locale) {
       overallCount: "Tracked updates",
       overallCountDetail: "Deduplicated running total",
       latestDate: "Latest date",
-      latestDateDetail: "Most recent generated digest",
+      latestDateDetail: "Most recent published digest",
       latestRunCount: "Latest run new items",
       latestRunCountDetail: "Detected in the most recent collect run",
       howToReadTitle: "How to read this site",
@@ -283,7 +282,7 @@ function buildText(locale) {
     overallCount: "累計更新件数",
     overallCountDetail: "重複除去後の累計",
     latestDate: "最新日付",
-    latestDateDetail: "最後に生成された日次",
+    latestDateDetail: "最後に公開対象になった日次",
     latestRunCount: "直近新規件数",
     latestRunCountDetail: "最新 collect 実行の検知件数",
     howToReadTitle: "このサイトの見方",
@@ -1115,7 +1114,7 @@ function renderRangePage(digest, locale, text, options) {
 }
 
 function renderIndexPage(
-  { dailyDigests, weeklyDigests },
+  { dailyDigests, weeklyDigests, latestCollectDigest },
   locale,
   text,
   lastUpdatedAt,
@@ -1162,7 +1161,7 @@ function renderIndexPage(
         ${renderMetric(text.publishedCount, locale === "ja" ? `${dailyDigests.length}${escapeHtml(text.dayCountSuffix)}` : formatCount(dailyDigests.length, locale, "day", "days"), text.publishedCountDetail)}
         ${renderMetric(text.overallCount, locale === "ja" ? `${overallUnique}${escapeHtml(text.itemSuffix)}` : formatCount(overallUnique, locale, "item", "items"), text.overallCountDetail)}
         ${renderMetric(text.latestDate, latestDigest ? latestDigest.date : "N/A", text.latestDateDetail)}
-        ${renderMetric(text.latestRunCount, locale === "ja" ? (latestDigest ? `${latestDigest.latestRun.newEventsCount}${escapeHtml(text.itemSuffix)}` : `0${escapeHtml(text.itemSuffix)}`) : formatCount(latestDigest?.latestRun?.newEventsCount ?? 0, locale, "item", "items"), text.latestRunCountDetail)}
+        ${renderMetric(text.latestRunCount, locale === "ja" ? (latestCollectDigest ? `${latestCollectDigest.latestRun.newEventsCount}${escapeHtml(text.itemSuffix)}` : `0${escapeHtml(text.itemSuffix)}`) : formatCount(latestCollectDigest?.latestRun?.newEventsCount ?? 0, locale, "item", "items"), text.latestRunCountDetail)}
       </div>
     </section>
 
@@ -1852,6 +1851,7 @@ a { color: inherit; }
   border-radius: 32px;
   box-shadow: var(--shadow);
 }
+.hero > div { min-width: 0; }
 .hero-home {
   grid-template-columns: minmax(0, 1.72fr) minmax(300px, 0.78fr);
   gap: 14px;
@@ -1863,7 +1863,9 @@ a { color: inherit; }
   font-size: clamp(1.5rem, 2.4vw, 2.2rem);
   line-height: 1.1;
   max-width: none;
-  white-space: nowrap;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  text-wrap: balance;
   margin-bottom: 8px;
 }
 .hero-home .hero-copy {
@@ -2394,6 +2396,11 @@ async function readDailyLogs() {
 
   for (const fileName of files) {
     const raw = await fs.readFile(path.join(eventsDir, fileName), "utf8");
+    if (raw.trim() === "") {
+      console.warn(`Skipping empty event log: ${fileName}`);
+      continue;
+    }
+
     logs.push(JSON.parse(raw));
   }
 
@@ -2486,7 +2493,11 @@ async function main() {
     fs.writeFile(
       path.join(siteDir, "index.html"),
       renderIndexPage(
-        { dailyDigests, weeklyDigests },
+        {
+          dailyDigests,
+          weeklyDigests,
+          latestCollectDigest: digestEntries[0]?.digest ?? null,
+        },
         "ja",
         jaText,
         lastUpdatedAt,
@@ -2523,7 +2534,11 @@ async function main() {
     fs.writeFile(
       path.join(siteDir, "en", "index.html"),
       renderIndexPage(
-        { dailyDigests, weeklyDigests },
+        {
+          dailyDigests,
+          weeklyDigests,
+          latestCollectDigest: digestEntries[0]?.digest ?? null,
+        },
         "en",
         enText,
         lastUpdatedAt,
