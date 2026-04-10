@@ -168,7 +168,7 @@ const exactSummaryMappings = {
     en: "GitHub Mobile now supports a broader research-and-code flow with Copilot cloud agent beyond pull-request-only work, so progress can continue away from the desktop.",
   },
   "Ask Copilot in security assessments now available": {
-    ja: "organization admin や security manager が、secret risk assessment や Code Security risk assessment の結果から Copilot を直接開き、状況に応じた説明や次の対処案を得られるようになった。セキュリティ評価から remediation 判断までをその場で進めやすくする更新。",
+    ja: "組織管理者やセキュリティ管理者が、シークレット リスク評価や Code Security リスク評価の結果から Copilot を直接開き、状況に応じた説明や次の対応案を確認できるようになった。セキュリティ評価から対処判断までをその場で進めやすくする更新。",
     en: "Organization admins and security managers can now open Copilot directly from secret risk assessment or Code Security risk assessment results to get contextual explanations and guided next steps.",
   },
   "Copilot-reviewed pull request merge metrics now in the usage metrics API": {
@@ -236,7 +236,7 @@ const exactImportanceMappings = {
     en: "This helps reduce security backlog by letting agents handle remediation work that requires actual code changes, not just dependency bumps.",
   },
   "Ask Copilot in security assessments now available": {
-    ja: "セキュリティ評価画面からそのまま Copilot で状況理解と対処案の確認へ進めるので、調査と remediation の往復を減らしやすい更新です。",
+    ja: "セキュリティ評価画面からそのまま Copilot で状況理解と対処案の確認へ進めるので、調査と修正判断の往復を減らしやすい更新です。",
     en: "This reduces context switching by letting security teams move directly from assessment results into Copilot-guided investigation and next-step planning.",
   },
   "Copilot usage metrics now identify active and passive Copilot code review users":
@@ -682,7 +682,7 @@ function patternTitle(title) {
     ],
     [
       "Ask Copilot in security assessments now available",
-      "security assessment で Ask Copilot が利用可能になった",
+      "セキュリティ評価で Ask Copilot を直接開けるようになった",
     ],
   ]);
 
