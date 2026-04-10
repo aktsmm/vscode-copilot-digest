@@ -167,6 +167,10 @@ const exactSummaryMappings = {
     ja: "GitHub Mobile でも Copilot cloud agent で調査や実装を進めやすくなり、pull request 以外の作業もモバイルから継続できるようになった。席を離れていても cloud agent の流れを止めにくい。",
     en: "GitHub Mobile now supports a broader research-and-code flow with Copilot cloud agent beyond pull-request-only work, so progress can continue away from the desktop.",
   },
+  "Ask Copilot in security assessments now available": {
+    ja: "organization admin や security manager が、secret risk assessment や Code Security risk assessment の結果から Copilot を直接開き、状況に応じた説明や次の対処案を得られるようになった。セキュリティ評価から remediation 判断までをその場で進めやすくする更新。",
+    en: "Organization admins and security managers can now open Copilot directly from secret risk assessment or Code Security risk assessment results to get contextual explanations and guided next steps.",
+  },
   "Copilot-reviewed pull request merge metrics now in the usage metrics API": {
     ja: "Copilot usage metrics API に、Copilot が関与した pull request の merge metrics が追加された。レビュー済み PR の throughput や cycle time に続いて、agent 活用の成果を API 経由で追いやすくなる。",
     en: "The Copilot usage metrics API now includes merge metrics for Copilot-reviewed pull requests, extending the earlier throughput and cycle-time reporting for agent-assisted pull requests.",
@@ -230,6 +234,10 @@ const exactImportanceMappings = {
   "Dependabot alerts are now assignable to AI agents for remediation": {
     ja: "単なる依存更新では済まない脆弱性修正を agent に任せられるため、セキュリティ対応の滞留を減らしやすくなります。",
     en: "This helps reduce security backlog by letting agents handle remediation work that requires actual code changes, not just dependency bumps.",
+  },
+  "Ask Copilot in security assessments now available": {
+    ja: "セキュリティ評価画面からそのまま Copilot で状況理解と対処案の確認へ進めるので、調査と remediation の往復を減らしやすい更新です。",
+    en: "This reduces context switching by letting security teams move directly from assessment results into Copilot-guided investigation and next-step planning.",
   },
   "Copilot usage metrics now identify active and passive Copilot code review users":
     {
@@ -671,6 +679,10 @@ function patternTitle(title) {
     [
       "Dependabot alerts are now assignable to AI agents for remediation",
       "Dependabot アラートを AI エージェントに割り当てて修正できるようになった",
+    ],
+    [
+      "Ask Copilot in security assessments now available",
+      "security assessment で Ask Copilot が利用可能になった",
     ],
   ]);
 
