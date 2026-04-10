@@ -690,6 +690,13 @@ function patternTitle(title) {
     return exactMappings.get(normalized);
   }
 
+  if (
+    /ask copilot/i.test(normalized) &&
+    /security assessments?|risk assessment/i.test(normalized)
+  ) {
+    return "セキュリティ評価で Ask Copilot を直接開けるようになった";
+  }
+
   if (/deprecated/i.test(normalized)) {
     return replaceMonth(
       normalized
@@ -740,6 +747,12 @@ function summaryFromPatterns(event, locale = "ja") {
 
   if (exactSummaryMappings[title]?.[locale]) {
     return exactSummaryMappings[title][locale];
+  }
+
+  if (/ask copilot/i.test(text) && /security assessments?|risk assessment/i.test(text)) {
+    return locale === "ja"
+      ? "組織管理者やセキュリティ管理者が、シークレット リスク評価や Code Security リスク評価の結果から Copilot を直接開き、状況に応じた説明や次の対応案を確認できるようになった。セキュリティ評価から対処判断までをその場で進めやすくする更新。"
+      : "Organization admins and security managers can now open Copilot directly from secret risk assessment or Code Security risk assessment results to get contextual explanations and guided next steps.";
   }
 
   if (containsJapanese(title) || containsJapanese(event.summary)) {
@@ -1711,9 +1724,16 @@ export function importanceLabel(event) {
 
 export function importanceReason(event, locale = "ja") {
   const title = normalizeWhitespace(decodeHtmlEntities(event.title));
+  const text = `${title} ${event.summary}`.toLowerCase();
 
   if (exactImportanceMappings[title]?.[locale]) {
     return exactImportanceMappings[title][locale];
+  }
+
+  if (/ask copilot/i.test(text) && /security assessments?|risk assessment/i.test(text)) {
+    return locale === "ja"
+      ? "セキュリティ評価画面からそのまま Copilot で状況理解と対処案の確認へ進めるので、調査と修正判断の往復を減らしやすい更新です。"
+      : "This reduces context switching by letting security teams move directly from assessment results into Copilot-guided investigation and next-step planning.";
   }
 
   const label = importanceLabel(event);
