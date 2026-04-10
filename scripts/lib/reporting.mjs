@@ -749,7 +749,10 @@ function summaryFromPatterns(event, locale = "ja") {
     return exactSummaryMappings[title][locale];
   }
 
-  if (/ask copilot/i.test(text) && /security assessments?|risk assessment/i.test(text)) {
+  if (
+    /ask copilot/i.test(text) &&
+    /security assessments?|risk assessment/i.test(text)
+  ) {
     return locale === "ja"
       ? "組織管理者やセキュリティ管理者が、シークレット リスク評価や Code Security リスク評価の結果から Copilot を直接開き、状況に応じた説明や次の対応案を確認できるようになった。セキュリティ評価から対処判断までをその場で進めやすくする更新。"
       : "Organization admins and security managers can now open Copilot directly from secret risk assessment or Code Security risk assessment results to get contextual explanations and guided next steps.";
@@ -1730,7 +1733,10 @@ export function importanceReason(event, locale = "ja") {
     return exactImportanceMappings[title][locale];
   }
 
-  if (/ask copilot/i.test(text) && /security assessments?|risk assessment/i.test(text)) {
+  if (
+    /ask copilot/i.test(text) &&
+    /security assessments?|risk assessment/i.test(text)
+  ) {
     return locale === "ja"
       ? "セキュリティ評価画面からそのまま Copilot で状況理解と対処案の確認へ進めるので、調査と修正判断の往復を減らしやすい更新です。"
       : "This reduces context switching by letting security teams move directly from assessment results into Copilot-guided investigation and next-step planning.";
