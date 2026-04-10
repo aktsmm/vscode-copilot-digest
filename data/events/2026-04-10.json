@@ -1,10 +1,19 @@
 {
   "date": "2026-04-10",
-  "generatedAt": "2026-04-10T14:34:50.176Z",
+  "generatedAt": "2026-04-10T21:59:54.572Z",
   "latestRun": {
-    "generatedAt": "2026-04-10T14:34:50.176Z",
-    "newEventsCount": 0,
-    "newEventIds": [],
+    "generatedAt": "2026-04-10T21:59:54.572Z",
+    "newEventsCount": 8,
+    "newEventIds": [
+      "github-changelog:https://github.blog/changelog/2026-04-10-pausing-new-github-copilot-pro-trials",
+      "github-changelog:https://github.blog/changelog/2026-04-10-copilot-cli-activity-now-included-in-usage-metrics-totals-and-feature-breakdowns",
+      "github-changelog:https://github.blog/changelog/2026-04-10-copilot-cloud-agents-validation-tools-are-now-20-faster",
+      "github-changelog-copilot:https://github.blog/changelog/2026-04-10-copilot-usage-metrics-now-aggregate-copilot-cloud-agent-active-user-counts",
+      "github-changelog-copilot:https://github.blog/changelog/2026-04-10-pausing-new-github-copilot-pro-trials",
+      "github-changelog-copilot:https://github.blog/changelog/2026-04-10-copilot-cli-activity-now-included-in-usage-metrics-totals-and-feature-breakdowns",
+      "github-changelog-copilot:https://github.blog/changelog/2026-04-10-copilot-cloud-agents-validation-tools-are-now-20-faster",
+      "github-copilot-blog:https://github.blog/?p=95185"
+    ],
     "errorCount": 0
   },
   "editorialNote": "注記: この記録には当日公開分だけでなく、初回取り込みや未取得分の回収が含まれる可能性があります。最も古い公開日は 2025-12-10 です。",
@@ -24,6 +33,152 @@
       ],
       "isFutureDated": true,
       "score": 4
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-04-10-copilot-usage-metrics-now-aggregate-copilot-cloud-agent-active-user-counts",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-10T21:59:52.872Z",
+      "publishedAt": "2026-04-10T21:42:47.000Z",
+      "title": "Copilot usage metrics now aggregate Copilot cloud agent active user counts",
+      "url": "https://github.blog/changelog/2026-04-10-copilot-usage-metrics-now-aggregate-copilot-cloud-agent-active-user-counts",
+      "summary": "Note: We’ve recently renamed Copilot coding agent to Copilot cloud agent. We will be updating our data schema for all existing coding agent fields to reflect this change in the…\nThe post Copilot usage metrics now aggregate Copilot cloud agent active user counts appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "account management",
+        "copilot",
+        "enterprise management tools"
+      ],
+      "isFutureDated": false,
+      "score": 3
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-04-10-pausing-new-github-copilot-pro-trials",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-10T21:59:52.853Z",
+      "publishedAt": "2026-04-10T20:25:32.000Z",
+      "title": "Pausing new GitHub Copilot Pro trials",
+      "url": "https://github.blog/changelog/2026-04-10-pausing-new-github-copilot-pro-trials",
+      "summary": "As GitHub Copilot continues to grow, we’ve seen a significant rise in abuse of our free trial system. To protect the experience and integrity of the platform for legitimate developers,…\nThe post Pausing new GitHub Copilot Pro trials appeared first on The GitHub Blog.",
+      "categories": [
+        "Retired",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-04-10-pausing-new-github-copilot-pro-trials",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-10T21:59:52.872Z",
+      "publishedAt": "2026-04-10T20:25:32.000Z",
+      "title": "Pausing new GitHub Copilot Pro trials",
+      "url": "https://github.blog/changelog/2026-04-10-pausing-new-github-copilot-pro-trials",
+      "summary": "As GitHub Copilot continues to grow, we’ve seen a significant rise in abuse of our free trial system. To protect the experience and integrity of the platform for legitimate developers,…\nThe post Pausing new GitHub Copilot Pro trials appeared first on The GitHub Blog.",
+      "categories": [
+        "Retired",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-04-10-copilot-cli-activity-now-included-in-usage-metrics-totals-and-feature-breakdowns",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-10T21:59:52.853Z",
+      "publishedAt": "2026-04-10T20:03:28.000Z",
+      "title": "Copilot CLI activity now included in usage metrics totals and feature breakdowns",
+      "url": "https://github.blog/changelog/2026-04-10-copilot-cli-activity-now-included-in-usage-metrics-totals-and-feature-breakdowns",
+      "summary": "Previous CLI metrics releases added a standalone totals_by_cli section to the Copilot usage metrics API with session counts, request counts, and token usage. That section reported CLI activity separately from…\nThe post Copilot CLI activity now included in usage metrics totals and feature breakdowns appeared first on T...",
+      "categories": [
+        "Improvement",
+        "account management",
+        "copilot",
+        "enterprise management tools"
+      ],
+      "isFutureDated": false,
+      "score": 1
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-04-10-copilot-cli-activity-now-included-in-usage-metrics-totals-and-feature-breakdowns",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-10T21:59:52.872Z",
+      "publishedAt": "2026-04-10T20:03:28.000Z",
+      "title": "Copilot CLI activity now included in usage metrics totals and feature breakdowns",
+      "url": "https://github.blog/changelog/2026-04-10-copilot-cli-activity-now-included-in-usage-metrics-totals-and-feature-breakdowns",
+      "summary": "Previous CLI metrics releases added a standalone totals_by_cli section to the Copilot usage metrics API with session counts, request counts, and token usage. That section reported CLI activity separately from…\nThe post Copilot CLI activity now included in usage metrics totals and feature breakdowns appeared first on T...",
+      "categories": [
+        "Improvement",
+        "account management",
+        "copilot",
+        "enterprise management tools"
+      ],
+      "isFutureDated": false,
+      "score": 1
+    },
+    {
+      "eventId": "github-copilot-blog:https://github.blog/?p=95185",
+      "sourceId": "github-copilot-blog",
+      "sourceName": "GitHub Blog / GitHub Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-10T21:59:52.894Z",
+      "publishedAt": "2026-04-10T16:00:00.000Z",
+      "title": "GitHub Copilot CLI for Beginners: Getting started with GitHub Copilot CLI",
+      "url": "https://github.blog/ai-and-ml/github-copilot/github-copilot-cli-for-beginners-getting-started-with-github-copilot-cli/",
+      "summary": "GitHub for Beginners: Getting started with the GitHub Copilot CLI, a step-by-step tutorial.\nThe post GitHub Copilot CLI for Beginners: Getting started with GitHub Copilot CLI appeared first on The GitHub Blog.",
+      "categories": [
+        "AI & ML",
+        "Generative AI",
+        "GitHub Copilot",
+        "GitHub Education",
+        "GitHub Copilot CLI",
+        "GitHub Copilot CLI for Beginners"
+      ],
+      "isFutureDated": false,
+      "score": 1
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-04-10-copilot-cloud-agents-validation-tools-are-now-20-faster",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-10T21:59:52.853Z",
+      "publishedAt": "2026-04-10T12:19:17.000Z",
+      "title": "Copilot cloud agent&#8217;s validation tools are now 20% faster",
+      "url": "https://github.blog/changelog/2026-04-10-copilot-cloud-agents-validation-tools-are-now-20-faster",
+      "summary": "When Copilot cloud agent writes code, it automatically runs GitHub’s security and quality validation tools, including CodeQL, the GitHub Advisory Database, secret scanning, and Copilot code review. If any problems…\nThe post Copilot cloud agent’s validation tools are now 20% faster appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 2
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-04-10-copilot-cloud-agents-validation-tools-are-now-20-faster",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-10T21:59:52.872Z",
+      "publishedAt": "2026-04-10T12:19:17.000Z",
+      "title": "Copilot cloud agent&#8217;s validation tools are now 20% faster",
+      "url": "https://github.blog/changelog/2026-04-10-copilot-cloud-agents-validation-tools-are-now-20-faster",
+      "summary": "When Copilot cloud agent writes code, it automatically runs GitHub’s security and quality validation tools, including CodeQL, the GitHub Advisory Database, secret scanning, and Copilot code review. If any problems…\nThe post Copilot cloud agent’s validation tools are now 20% faster appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 2
     },
     {
       "eventId": "github-changelog:https://github.blog/changelog/2026-04-09-auto-draft",
