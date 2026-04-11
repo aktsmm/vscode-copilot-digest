@@ -792,6 +792,10 @@ function summaryFromPatterns(event, locale = "ja") {
     event.summary,
     locale === "ja" ? 220 : 260,
   );
+  const summaryLeadJa =
+    summaryLeadText && containsJapanese(summaryLeadText)
+      ? summaryLeadText
+      : "";
 
   if (version && vscodeReleaseSummaries[version]) {
     return vscodeReleaseSummaries[version][locale];
@@ -897,8 +901,8 @@ function summaryFromPatterns(event, locale = "ja") {
   if (event.kind === "vscode_release_note_section") {
     const sectionTitle = event.sectionTitle ?? title;
     if (locale === "ja") {
-      return summaryLeadText
-        ? `${sectionTitle} に関する release note 更新。${summaryLeadText}`
+      return summaryLeadJa
+        ? `${sectionTitle} に関する release note 更新。${summaryLeadJa}`
         : `${sectionTitle} に関する release note 更新。開発フローや agent 体験に関わる変更点を個別セクションとして拾っている。`;
     }
 
@@ -1092,23 +1096,23 @@ function summaryFromPatterns(event, locale = "ja") {
 
   if (/github copilot/i.test(text)) {
     return locale === "ja"
-      ? summaryLeadText
-        ? `GitHub Copilot 関連の更新。${summaryLeadText}`
+      ? summaryLeadJa
+        ? `GitHub Copilot 関連の更新。${summaryLeadJa}`
         : "GitHub Copilot 関連の更新。運用や導入判断に関わる変更点を原文で確認しておきたい。"
       : "A GitHub Copilot update that should be reviewed for its impact on usage and operations.";
   }
 
   if (/visual studio code|vs code/i.test(text)) {
     return locale === "ja"
-      ? summaryLeadText
-        ? `Visual Studio Code 関連の更新。${summaryLeadText}`
+      ? summaryLeadJa
+        ? `Visual Studio Code 関連の更新。${summaryLeadJa}`
         : "Visual Studio Code 関連の更新。日々の開発フローや agent 利用に効く変更点を確認しておきたい。"
       : "A Visual Studio Code update worth checking for its effect on day-to-day development workflows.";
   }
 
   return locale === "ja"
-    ? summaryLeadText
-      ? `英語ソースの更新。${summaryLeadText}`
+    ? summaryLeadJa
+      ? `英語ソースの更新。${summaryLeadJa}`
       : "英語ソースの更新。公開内容の変化や運用への影響を原文で確認しておきたい。"
     : trimmedEnglishSummary(
         cleanedSummary || "English-language update from a tracked source.",
