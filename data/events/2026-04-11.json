@@ -1,14 +1,10 @@
 {
   "date": "2026-04-11",
-  "generatedAt": "2026-04-11T00:37:46.420Z",
+  "generatedAt": "2026-04-11T06:35:23.433Z",
   "latestRun": {
-    "generatedAt": "2026-04-11T00:37:46.420Z",
-    "newEventsCount": 3,
-    "newEventIds": [
-      "github-changelog:https://github.blog/changelog/2026-04-10-enforcing-new-limits-and-retiring-opus-4-6-fast-from-copilot-pro",
-      "github-changelog:https://github.blog/changelog/2026-04-10-copilot-usage-metrics-now-aggregate-copilot-cloud-agent-active-user-counts",
-      "github-changelog-copilot:https://github.blog/changelog/2026-04-10-enforcing-new-limits-and-retiring-opus-4-6-fast-from-copilot-pro"
-    ],
+    "generatedAt": "2026-04-11T06:35:23.433Z",
+    "newEventsCount": 0,
+    "newEventIds": [],
     "errorCount": 0
   },
   "events": [
