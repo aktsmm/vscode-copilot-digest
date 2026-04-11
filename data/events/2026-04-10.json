@@ -16,7 +16,6 @@
     ],
     "errorCount": 0
   },
-  "editorialNote": "注記: この記録には当日公開分だけでなく、初回取り込みや未取得分の回収が含まれる可能性があります。最も古い公開日は 2025-12-10 です。",
   "events": [
     {
       "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_116",

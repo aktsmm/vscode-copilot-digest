@@ -40,6 +40,10 @@ const monthMap = {
 };
 
 const vscodeReleaseSummaries = {
+  1.115: {
+    ja: "VS Code Agents companion app の preview 追加に加え、browser tool のラベル改善と重複タブ抑制、background terminal への send_to_terminal、background terminal notifications、Edit Mode 撤去時期の明確化が入った。agent を長時間タスク込みで扱いやすくする release。",
+    en: "This release adds the VS Code Agents preview app, clearer browser tool labels with duplicate-tab suppression, send_to_terminal plus background terminal notifications, and a firmer Edit Mode removal timeline to make longer agent workflows more practical.",
+  },
   1.114: {
     ja: "chat 体験の整理が中心。画像カルーセルで動画もプレビューでき、最終回答だけをコピーするコマンドや、過去セッションにも使える /troubleshoot が入った。#codebase は常に semantic search となり、TypeScript 6.0 にも対応した。",
     en: "This release focuses on streamlining chat: video previews in the carousel, a Copy Final Response command, /troubleshoot support for previous sessions, a simplified semantic-only #codebase flow, and TypeScript 6.0 support.",
@@ -172,8 +176,8 @@ const exactSummaryMappings = {
     en: "Organization admins and security managers can now open Copilot directly from secret risk assessment or Code Security risk assessment results to get contextual explanations and guided next steps.",
   },
   "Copilot-reviewed pull request merge metrics now in the usage metrics API": {
-    ja: "Copilot usage metrics API に、Copilot が関与した pull request の merge metrics が追加された。レビュー済み PR の throughput や cycle time に続いて、agent 活用の成果を API 経由で追いやすくなる。",
-    en: "The Copilot usage metrics API now includes merge metrics for Copilot-reviewed pull requests, extending the earlier throughput and cycle-time reporting for agent-assisted pull requests.",
+    ja: "Copilot usage metrics API に、Copilot code review を受けて merge された pull request 数と、その pull request の merge までの median time を見る指標が追加された。enterprise / organization 単位で single-day と 28-day rolling の両方を比較できる。",
+    en: "The Copilot usage metrics API now includes metrics for how many pull requests were both reviewed by Copilot code review and merged, plus the median time-to-merge for those pull requests across both single-day and 28-day rolling reports.",
   },
   "GitHub Copilot in Visual Studio Code, March Releases": {
     ja: "VS Code の weekly stable 化後、v1.111 から v1.115 までの Copilot / agent 更新をまとめた changelog。Autopilot、browser / terminal tool 改善、customization など、この 1 か月の変化を横断して追える。",
@@ -203,6 +207,10 @@ const exactSummaryMappings = {
   "VS Code Release Notes 1.109 changed": {
     ja: "VS Code Release Notes 1.109 の固定ページ差分を検知した。過去 release note の追記や修正を追うための更新で、新機能追加そのものではない。",
     en: "A snapshot change was detected on the VS Code Release Notes 1.109 page, indicating edits to the published documentation rather than a newly shipped feature.",
+  },
+  "60 million Copilot code reviews and counting": {
+    ja: "Copilot code review が初期公開から 1 年で 10 倍成長し、GitHub 上の code review の 5 件に 1 件超を占めるまで広がったという報告。agentic architecture、継続評価、batch autofix などで signal と speed を両立させる設計も解説している。",
+    en: "A progress report on Copilot code review, which has grown 10x since launch to account for more than one in five code reviews on GitHub, alongside details on the agentic architecture, evaluation loop, and batch autofix work used to improve signal and speed.",
   },
 };
 
@@ -401,6 +409,14 @@ const exactImportanceMappings = {
     ja: "cloud agent をデスクトップや pull request 画面に縛らず使えるので、移動中や外出先でも作業継続しやすくなります。",
     en: "This matters because cloud-agent workflows are no longer tied as tightly to desktop or pull-request contexts, making mobile continuity much more practical.",
   },
+  "Visual Studio Code 1.115": {
+    ja: "browser と terminal の agent tool が長時間タスク前提で実用寄りになり、Agents app preview も含めて agent-native 開発を日常運用へ近づける release です。",
+    en: "This matters because browser and terminal agent tools become much more practical for long-running work, while the Agents app preview pushes VS Code further toward day-to-day agent-native development.",
+  },
+  "Copilot-reviewed pull request merge metrics now in the usage metrics API": {
+    ja: "Copilot が authoring だけでなく review から merge までにどう効いているかを測れるので、導入効果の可視化と自動レビュー定着の判断に直接使えます。",
+    en: "This matters because teams can now measure Copilot's effect beyond authoring and see whether automated reviews are influencing merge outcomes and adoption in practice.",
+  },
   "GitHub Copilot in Visual Studio Code, March Releases": {
     ja: "月次ではなく週次リリースへ移った後の変化をまとめて追えるので、VS Code Copilot の運用差分を短時間で把握しやすい更新です。",
     en: "This matters because it gives teams a consolidated view of the first wave of weekly VS Code Copilot changes, making rollout impact easier to assess.",
@@ -429,6 +445,10 @@ const exactImportanceMappings = {
   "VS Code Release Notes 1.109 changed": {
     ja: "過去 release note の記述修正でも、参照中の docs や比較メモの前提が変わることがあるため、アーカイブ監視として押さえておく価値があります。",
     en: "This matters because even edits to archived release notes can change the guidance or references that downstream notes and comparisons rely on.",
+  },
+  "60 million Copilot code reviews and counting": {
+    ja: "単なる件数報告ではなく、高信号レビューをどう評価し、agentic architecture で改善しているかまで分かるので、AI code review を運用へ載せるときの判断材料になります。",
+    en: "This matters because it goes beyond a usage milestone and shows how GitHub evaluates review quality and improves it through an agentic architecture, which is useful for teams operationalizing AI code review.",
   },
 };
 
@@ -697,6 +717,38 @@ function patternTitle(title) {
     return "セキュリティ評価で Ask Copilot を直接開けるようになった";
   }
 
+  if (/pausing new github copilot pro trials/i.test(normalized)) {
+    return "GitHub Copilot Pro の新規 trial を一時停止";
+  }
+
+  if (
+    /copilot usage metrics now aggregate copilot cloud agent active user counts/i.test(
+      normalized,
+    )
+  ) {
+    return "usage metrics で Copilot cloud agent のアクティブ利用者数を集計できるようになった";
+  }
+
+  if (
+    /copilot cli activity now included in usage metrics totals and feature breakdowns/i.test(
+      normalized,
+    )
+  ) {
+    return "usage metrics の合計値と機能別内訳に Copilot CLI 活動が含まれるようになった";
+  }
+
+  if (/github copilot cli for beginners/i.test(normalized)) {
+    return "GitHub Copilot CLI 入門";
+  }
+
+  if (
+    /copilot cloud agent.?s validation tools are now 20% faster/i.test(
+      normalized,
+    )
+  ) {
+    return "Copilot cloud agent の validation tools が 20% 高速化";
+  }
+
   if (/deprecated/i.test(normalized)) {
     return replaceMonth(
       normalized
@@ -756,6 +808,46 @@ function summaryFromPatterns(event, locale = "ja") {
     return locale === "ja"
       ? "組織管理者やセキュリティ管理者が、シークレット リスク評価や Code Security リスク評価の結果から Copilot を直接開き、状況に応じた説明や次の対応案を確認できるようになった。セキュリティ評価から対処判断までをその場で進めやすくする更新。"
       : "Organization admins and security managers can now open Copilot directly from secret risk assessment or Code Security risk assessment results to get contextual explanations and guided next steps.";
+  }
+
+  if (/pausing new github copilot pro trials/i.test(title)) {
+    return locale === "ja"
+      ? "GitHub Copilot Pro の新規 free trial を一時停止した。trial system の悪用増加に対応するためで、既存 trial は継続し、Copilot Free と有料 Copilot Pro も引き続き利用できる。保護策を整えた後に再開予定。"
+      : "GitHub has temporarily paused new Copilot Pro free trials because of rising abuse, while existing trials, Copilot Free, and paid Copilot Pro subscriptions continue unchanged until stronger safeguards are in place.";
+  }
+
+  if (/aggregate copilot cloud agent active user counts/i.test(title)) {
+    return locale === "ja"
+      ? "Copilot usage metrics API の enterprise / organization レポートに、Copilot cloud agent の daily / weekly / monthly active user count が追加された。1日と28日レポートの両方で、cloud agent の利用人数を集約値として追える。"
+      : "Enterprise and organization Copilot usage metrics reports now include aggregated daily, weekly, and monthly active-user counts for Copilot cloud agent across both 1-day and 28-day report windows.";
+  }
+
+  if (
+    /copilot cli activity now included in usage metrics totals and feature breakdowns/i.test(
+      title,
+    )
+  ) {
+    return locale === "ja"
+      ? "Copilot usage metrics API の top-level totals と feature 別 breakdown に Copilot CLI activity が統合された。これまで別集計だった CLI 利用が、single-day / 28-day の enterprise・organization・per-user レポートで他 surface と同列に見えるようになる。"
+      : "Copilot CLI activity is now folded into the usage metrics API's top-level totals and feature breakdowns, so single-day and 28-day reports no longer require separate stitching to compare CLI usage with other Copilot surfaces.";
+  }
+
+  if (
+    /github copilot cli for beginners: getting started with github copilot cli/i.test(
+      title,
+    )
+  ) {
+    return locale === "ja"
+      ? "GitHub Copilot CLI の入門記事。npm などでのインストール、GitHub account での login、folder permission の付与、最初の prompt 実行、/delegate による cloud agent 連携までを step-by-step で案内している。"
+      : "A step-by-step beginner guide to GitHub Copilot CLI that covers installation, login, folder permissions, first prompts, and delegating work to Copilot cloud agent from the terminal.";
+  }
+
+  if (
+    /copilot cloud agent.?s validation tools are now 20% faster/i.test(title)
+  ) {
+    return locale === "ja"
+      ? "Copilot cloud agent が自動実行する validation tools が直列から並列実行に変わり、CodeQL、Advisory Database、secret scanning、Copilot code review を維持したまま validation time が 20% 短縮された。"
+      : "Copilot cloud agent now runs its validation tools in parallel instead of sequentially, cutting validation time by 20% while keeping CodeQL, advisory, secret-scanning, and Copilot code review checks in place.";
   }
 
   if (containsJapanese(title) || containsJapanese(event.summary)) {
@@ -1535,35 +1627,7 @@ export function applyEditorialPolicy(events) {
 }
 
 export function buildEditorialNote(date, events) {
-  if (!date || (events ?? []).length === 0) {
-    return null;
-  }
-
-  const day = safeDate(date);
-  day.setHours(0, 0, 0, 0);
-
-  const oldestPublishedAt = (events ?? []).reduce((oldest, event) => {
-    const publishedAt = safeDate(event.publishedAt ?? event.detectedAt ?? date);
-    if (!oldest || publishedAt < oldest) {
-      return publishedAt;
-    }
-
-    return oldest;
-  }, null);
-
-  if (!oldestPublishedAt) {
-    return null;
-  }
-
-  oldestPublishedAt.setHours(0, 0, 0, 0);
-  const diffDays = Math.floor(
-    (day.getTime() - oldestPublishedAt.getTime()) / 86400000,
-  );
-  if (diffDays < 7) {
-    return null;
-  }
-
-  return `注記: この記録には当日公開分だけでなく、初回取り込みや未取得分の回収が含まれる可能性があります。最も古い公開日は ${toDateOnly(oldestPublishedAt)} です。`;
+  return null;
 }
 
 export function rankEvent(event) {
@@ -1742,6 +1806,46 @@ export function importanceReason(event, locale = "ja") {
       : "This reduces context switching by letting security teams move directly from assessment results into Copilot-guided investigation and next-step planning.";
   }
 
+  if (/pausing new github copilot pro trials/i.test(title)) {
+    return locale === "ja"
+      ? "新規 trial 導線が止まるので、評価導入や onboarding 手順、社内案内を trial 前提で組んでいたチームには直接影響します。"
+      : "This matters because any onboarding or evaluation flow that depended on starting new Copilot Pro trials now needs an immediate alternative.";
+  }
+
+  if (/aggregate copilot cloud agent active user counts/i.test(title)) {
+    return locale === "ja"
+      ? "cloud agent の利用人数を日次・週次・月次でまとめて追えるので、導入状況の可視化や rollout 効果の測定を user-level 集計なしで進めやすくなります。"
+      : "This matters because teams can now track cloud-agent adoption across daily, weekly, and monthly windows without building their own user-level aggregation pipeline.";
+  }
+
+  if (
+    /copilot cli activity now included in usage metrics totals and feature breakdowns/i.test(
+      title,
+    )
+  ) {
+    return locale === "ja"
+      ? "CLI 利用が合計値へ入ることで dashboard や閾値の前提が変わるため、IDE-only と見なしていた usage metrics の読み方を見直す必要があります。"
+      : "This matters because dashboards that treated top-level usage metrics as IDE-only will now shift, so reporting baselines and thresholds may need to be updated.";
+  }
+
+  if (
+    /github copilot cli for beginners: getting started with github copilot cli/i.test(
+      title,
+    )
+  ) {
+    return locale === "ja"
+      ? "CLI 導入を始めるメンバー向けの共通 onboarding 素材として使いやすく、terminal 中心の Copilot 運用を広げる入口になります。"
+      : "This matters as a practical onboarding asset for teams introducing Copilot CLI and expanding Copilot use into terminal-centered workflows.";
+  }
+
+  if (
+    /copilot cloud agent.?s validation tools are now 20% faster/i.test(title)
+  ) {
+    return locale === "ja"
+      ? "agent が review を返すまでの待ち時間を減らしつつ validation の幅は保てるので、cloud agent の実運用で感じる遅さを直接下げる更新です。"
+      : "This matters because it reduces one of the most visible sources of cloud-agent latency without narrowing the validation checks that protect quality and security.";
+  }
+
   const label = importanceLabel(event);
 
   if (label === "Retired") {
@@ -1799,8 +1903,7 @@ export function buildDailyDigest(eventLog) {
       !event.isFutureDated &&
       safeDate(event.publishedAt ?? event.detectedAt) <= reportDate,
   );
-  const editorialNote =
-    eventLog.editorialNote ?? buildEditorialNote(eventLog.date, rawEvents);
+  const editorialNote = null;
   const latestRunIds = new Set(eventLog.latestRun?.newEventIds ?? []);
   const uniqueEvents = dedupeEvents(rawEvents).sort(
     (left, right) =>

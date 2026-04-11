@@ -19,7 +19,6 @@
     ],
     "errorCount": 0
   },
-  "editorialNote": "注記: この記録には当日公開分だけでなく、初回取り込みや未取得分の回収が含まれる可能性があります。最も古い公開日は 2026-02-04 です。",
   "events": [
     {
       "eventId": "github-changelog:https://github.blog/changelog/2026-04-08-github-mobile-research-and-code-with-copilot-cloud-agent-anywhere",
@@ -31,11 +30,7 @@
       "title": "GitHub Mobile: Research and code with Copilot cloud agent anywhere",
       "url": "https://github.blog/changelog/2026-04-08-github-mobile-research-and-code-with-copilot-cloud-agent-anywhere",
       "summary": "Copilot cloud agent now supports more than pull request workflows on GitHub Mobile, so you can keep work moving even when you’re away from your desk. Ask Copilot to research…\nThe post GitHub Mobile: Research and code with Copilot cloud agent anywhere appeared first on The GitHub Blog.",
-      "categories": [
-        "Improvement",
-        "client apps",
-        "copilot"
-      ],
+      "categories": ["Improvement", "client apps", "copilot"],
       "isFutureDated": false,
       "score": 2
     },
@@ -49,10 +44,7 @@
       "title": "GitHub Copilot in Visual Studio Code, March Releases",
       "url": "https://github.blog/changelog/2026-04-08-github-copilot-in-visual-studio-code-march-releases",
       "summary": "VS Code moved to weekly stable releases. This changelog covers releases v1.111 through v1.115, the releases we shipped throughout March and early April 2026. The highlights include Autopilot for fully…\nThe post GitHub Copilot in Visual Studio Code, March Releases appeared first on The GitHub Blog.",
-      "categories": [
-        "Release",
-        "copilot"
-      ],
+      "categories": ["Release", "copilot"],
       "isFutureDated": false,
       "score": 5
     },
@@ -66,9 +58,7 @@
       "title": "VS Code Updates changed",
       "url": "https://code.visualstudio.com/updates/",
       "summary": "Detected 53 added lines on the monitored page.",
-      "categories": [
-        "snapshot"
-      ],
+      "categories": ["snapshot"],
       "diffSummary": {
         "addedLineCount": 53,
         "headings": [
@@ -126,11 +116,7 @@
       "title": "Visual Studio Code 1.115: Browser agent tools improvements",
       "url": "https://code.visualstudio.com/updates/v1_115",
       "summary": "Setting: \n \n \n workbench.browser.enableChatTools\n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders When an agent invokes the browser tool, the tool calls now have a more descriptive label and a link to go directly to the target browser tab. Old: New: The Run Playwright Code tool has improved support for long-running scripts. Scripts that take longer than five seconds to run (by default) now return a deferred...",
-      "categories": [
-        "release",
-        "section",
-        "Integrated browser"
-      ],
+      "categories": ["release", "section", "Integrated browser"],
       "sectionHeading": "Integrated browser",
       "sectionTitle": "Browser agent tools improvements",
       "score": 4
@@ -145,11 +131,7 @@
       "title": "Visual Studio Code 1.115: Send input to background terminals",
       "url": "https://code.visualstudio.com/updates/v1_115",
       "summary": "Previously, background terminals were read-only, with only get_terminal_output available. This was particularly limiting when a foreground terminal timed out and moved to the background, as the agent could no longer interact with it. With the new send_to_terminal tool, the agent can continue interacting with background terminals. For example, if an SSH session times out while waiting for a password prompt, the agent...",
-      "categories": [
-        "release",
-        "section",
-        "Terminal tools improvements"
-      ],
+      "categories": ["release", "section", "Terminal tools improvements"],
       "sectionHeading": "Terminal tools improvements",
       "sectionTitle": "Send input to background terminals",
       "score": 4
@@ -164,11 +146,7 @@
       "title": "Visual Studio Code 1.115: Background terminal notifications (Experimental)",
       "url": "https://code.visualstudio.com/updates/v1_115",
       "summary": "Setting: \n \n \n chat.tools.terminal.backgroundNotifications\n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders Previously, when a terminal command was running in the background, the agent had to manually call get_terminal_output to check on its status. There was no way to know when the command completed or needed input. With the new experimental \n \n \n chat.tools.terminal.backgroundNotifications\n \n \n \n \n \n \n \n O...",
-      "categories": [
-        "release",
-        "section",
-        "Terminal tools improvements"
-      ],
+      "categories": ["release", "section", "Terminal tools improvements"],
       "sectionHeading": "Terminal tools improvements",
       "sectionTitle": "Background terminal notifications (Experimental)",
       "score": 4
@@ -183,11 +161,7 @@
       "title": "Visual Studio Code 1.115: Upcoming deprecations",
       "url": "https://code.visualstudio.com/updates/v1_115",
       "summary": "Edit Mode is officially deprecated as of VS Code version 1.110. Users can temporarily re-enable Edit Mode via VS Code setting \n \n \n chat.editMode.hidden\n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders\n \n . This setting will remain supported through version 1.125. Beginning with version 1.125, Edit Mode will be fully removed and can no longer be enabled via settings.",
-      "categories": [
-        "release",
-        "section",
-        "Deprecated features and settings"
-      ],
+      "categories": ["release", "section", "Deprecated features and settings"],
       "sectionHeading": "Deprecated features and settings",
       "sectionTitle": "Upcoming deprecations",
       "score": 4
@@ -202,11 +176,7 @@
       "title": "Visual Studio Code 1.114: Preview videos in the image carousel",
       "url": "https://code.visualstudio.com/updates/v1_114",
       "summary": "Settings: \n \n \n imageCarousel.chat.enabled\n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders\n \n , \n \n \n imageCarousel.explorerContextMenu.enabled\n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders The image carousel, introduced in version 1.113, now also supports videos. You can play and navigate videos from chat attachments or the Explorer context menu. The viewer includes: Video playback with controls...",
-      "categories": [
-        "release",
-        "section",
-        "Chat experience"
-      ],
+      "categories": ["release", "section", "Chat experience"],
       "sectionHeading": "Chat experience",
       "score": 4
     },
@@ -220,11 +190,7 @@
       "title": "Visual Studio Code 1.114: Copy final response in chat",
       "url": "https://code.visualstudio.com/updates/v1_114",
       "summary": "The Chat view already has commands to copy the entire conversation or a specific response. However, that also includes the agent's thinking process and tool calls. For those cases where you only want to copy the final response, there is now a Copy Final Response command in the chat context menu that copies the last Markdown section of the agent's response, after all tool calls have run.",
-      "categories": [
-        "release",
-        "section",
-        "Chat experience"
-      ],
+      "categories": ["release", "section", "Chat experience"],
       "sectionHeading": "Chat experience",
       "score": 4
     },
@@ -238,11 +204,7 @@
       "title": "Visual Studio Code 1.114: Workspace search simplification",
       "url": "https://code.visualstudio.com/updates/v1_114",
       "summary": "The #codebase tool lets Copilot do a semantic search of your codebase. This can be especially useful for finding relevant code snippets in codebases with tens to hundreds of thousands of files. When the #codebase tool was first introduced, it was designed for Copilot's ask flow: you ask a question or request an edit and Copilot produces a result directly in its response. Now that almost all Copilot interactions are...",
-      "categories": [
-        "release",
-        "section",
-        "Chat experience"
-      ],
+      "categories": ["release", "section", "Chat experience"],
       "sectionHeading": "Chat experience",
       "score": 4
     },
@@ -256,11 +218,7 @@
       "title": "Visual Studio Code 1.114: Troubleshoot previous chat sessions (Preview)",
       "url": "https://code.visualstudio.com/updates/v1_114",
       "summary": "Settings: \n \n \n github.copilot.chat.agentDebugLog.enabled\n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders\n \n , \n \n \n github.copilot.chat.agentDebugLog.fileLogging.enabled\n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders The troubleshoot skill (invoked via /troubleshoot) helps with diagnosing chat issues by analyzing agent debug logs and surfacing insights into the agent's behavior. For example, to i...",
-      "categories": [
-        "release",
-        "section",
-        "Chat experience"
-      ],
+      "categories": ["release", "section", "Chat experience"],
       "sectionHeading": "Chat experience",
       "score": 4
     },
@@ -274,9 +232,7 @@
       "title": "Visual Studio Code 1.113",
       "url": "https://code.visualstudio.com/updates/v1_113",
       "summary": "Captured the current snapshot for Visual Studio Code 1.113.",
-      "categories": [
-        "snapshot"
-      ],
+      "categories": ["snapshot"],
       "headings": [
         "Visual Studio Code 1.113",
         "Agent experience",
@@ -303,15 +259,11 @@
       "title": "Visual Studio Code 1.113",
       "url": "https://code.visualstudio.com/updates/v1_113",
       "summary": "Detected 1 added lines on the monitored page.",
-      "categories": [
-        "snapshot"
-      ],
+      "categories": ["snapshot"],
       "diffSummary": {
         "addedLineCount": 1,
         "headings": [],
-        "additions": [
-          "1.115"
-        ]
+        "additions": ["1.115"]
       },
       "headings": [
         "Visual Studio Code 1.113",
@@ -339,9 +291,7 @@
       "title": "Visual Studio Code 1.112",
       "url": "https://code.visualstudio.com/updates/v1_112",
       "summary": "Captured the current snapshot for Visual Studio Code 1.112.",
-      "categories": [
-        "snapshot"
-      ],
+      "categories": ["snapshot"],
       "headings": [
         "Visual Studio Code 1.112",
         "Agent experience",
@@ -368,15 +318,11 @@
       "title": "Visual Studio Code 1.112",
       "url": "https://code.visualstudio.com/updates/v1_112",
       "summary": "Detected 1 added lines on the monitored page.",
-      "categories": [
-        "snapshot"
-      ],
+      "categories": ["snapshot"],
       "diffSummary": {
         "addedLineCount": 1,
         "headings": [],
-        "additions": [
-          "1.115"
-        ]
+        "additions": ["1.115"]
       },
       "headings": [
         "Visual Studio Code 1.112",
@@ -404,9 +350,7 @@
       "title": "Visual Studio Code 1.111",
       "url": "https://code.visualstudio.com/updates/v1_111",
       "summary": "Captured the current snapshot for Visual Studio Code 1.111.",
-      "categories": [
-        "snapshot"
-      ],
+      "categories": ["snapshot"],
       "headings": [
         "Visual Studio Code 1.111",
         "Autopilot and agent permissions",
@@ -433,15 +377,11 @@
       "title": "VS Code Release Notes 1.109 changed",
       "url": "https://code.visualstudio.com/updates/v1_109",
       "summary": "Detected 1 added lines on the monitored page.",
-      "categories": [
-        "snapshot"
-      ],
+      "categories": ["snapshot"],
       "diffSummary": {
         "addedLineCount": 1,
         "headings": [],
-        "additions": [
-          "1.115"
-        ]
+        "additions": ["1.115"]
       },
       "headings": [
         "January 2026 (version 1.109)",

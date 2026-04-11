@@ -73,6 +73,14 @@ function compactDateKey(dateKey) {
   return String(dateKey ?? "").replace(/-/g, "");
 }
 
+function toDateKey(value) {
+  const date = value instanceof Date ? value : parseDateKey(value);
+  const year = date.getUTCFullYear();
+  const month = String(date.getUTCMonth() + 1).padStart(2, "0");
+  const day = String(date.getUTCDate()).padStart(2, "0");
+  return `${year}-${month}-${day}`;
+}
+
 async function listEventLogDates() {
   const files = await fs.readdir(eventsDir);
   return files
@@ -118,6 +126,17 @@ function resolveWindowDates(availableDates, targetDate, windowDays) {
   return availableDates
     .filter((date) => date <= targetDate)
     .slice(-Math.max(windowDays, 1));
+}
+
+function resolveCalendarWindow(targetDate, windowDays) {
+  const endDate = parseDateKey(targetDate);
+  const startDate = new Date(endDate);
+  startDate.setUTCDate(startDate.getUTCDate() - (Math.max(windowDays, 1) - 1));
+
+  return {
+    startDate: toDateKey(startDate),
+    endDate: toDateKey(endDate),
+  };
 }
 
 function rankEvent(event) {
@@ -179,6 +198,32 @@ function buildPagesWeeklyDigestUrl(startDate, endDate) {
   }
 
   return `${baseUrl.replace(/\/$/, "")}/weeks/${compactDateKey(startDate)}-${compactDateKey(endDate)}.html`;
+}
+
+function buildRepoWeeklyDraftPath(startDate, endDate) {
+  return path.join(
+    workspaceRoot,
+    "drafts",
+    `weekly-${compactDateKey(startDate)}-${compactDateKey(endDate)}.md`,
+  );
+}
+
+function buildPagesWeeklyDigestPath(startDate, endDate) {
+  return path.join(
+    workspaceRoot,
+    "site",
+    "weeks",
+    `${compactDateKey(startDate)}-${compactDateKey(endDate)}.html`,
+  );
+}
+
+async function fileExists(filePath) {
+  try {
+    await fs.access(filePath);
+    return true;
+  } catch {
+    return false;
+  }
 }
 
 function dedupeEvents(events) {
@@ -265,7 +310,7 @@ function buildGroupedEventBlocks(uniqueEvents, options = {}) {
     });
 }
 
-function buildPayload(date, datedLogs, options = {}) {
+async function buildPayload(date, datedLogs, options = {}) {
   const isWeeklyMode = options.mode === "weekly";
   const collectedEvents = [];
   const perDateCounts = [];
@@ -293,13 +338,25 @@ function buildPayload(date, datedLogs, options = {}) {
     (left, right) => rankEvent(right) - rankEvent(left),
   );
 
-  const startDate = datedLogs[0]?.date ?? date;
-  const endDate = datedLogs[datedLogs.length - 1]?.date ?? date;
+  const range = isWeeklyMode
+    ? resolveCalendarWindow(date, options.windowDays)
+    : {
+        startDate: datedLogs[0]?.date ?? date,
+        endDate: datedLogs[datedLogs.length - 1]?.date ?? date,
+      };
   const summaryUrl = isWeeklyMode
-    ? buildRepoWeeklyDraftUrl(startDate, endDate)
+    ? (await fileExists(
+        buildRepoWeeklyDraftPath(range.startDate, range.endDate),
+      ))
+      ? buildRepoWeeklyDraftUrl(range.startDate, range.endDate)
+      : null
     : buildRepoSummaryUrl(date);
   const pagesUrl = isWeeklyMode
-    ? buildPagesWeeklyDigestUrl(startDate, endDate)
+    ? (await fileExists(
+        buildPagesWeeklyDigestPath(range.startDate, range.endDate),
+      ))
+      ? buildPagesWeeklyDigestUrl(range.startDate, range.endDate)
+      : null
     : buildPagesDigestUrl(date);
   const sourceCounts = new Map();
   for (const event of uniqueEvents) {
@@ -313,8 +370,8 @@ function buildPayload(date, datedLogs, options = {}) {
     .map(([sourceName, count]) => `${sourceName}: ${count}`)
     .join(" / ");
   const activeWindowLabel =
-    datedLogs.length > 1
-      ? `${datedLogs[0].date}〜${datedLogs[datedLogs.length - 1].date}`
+    datedLogs.length > 1 || isWeeklyMode
+      ? `${range.startDate}〜${range.endDate}`
       : date;
   const dailySummary = perDateCounts
     .filter((entry) => entry.count > 0)
@@ -357,10 +414,6 @@ function buildPayload(date, datedLogs, options = {}) {
 
   if (options.windowDays > 1 && !isWeeklyMode) {
     headerLines.push(`通知間隔: ${options.cadenceDays}日ごと`);
-  }
-
-  if (latestLog?.editorialNote) {
-    headerLines.push(latestLog.editorialNote);
   }
 
   if (dailySummary) {
@@ -512,7 +565,7 @@ async function main() {
     return;
   }
 
-  const payload = buildPayload(options.date, datedLogs, options);
+  const payload = await buildPayload(options.date, datedLogs, options);
   await postWebhook(payload, options.dryRun);
   console.log(
     options.forcePreview && totalNewEvents === 0

@@ -14,12 +14,12 @@
 
 ## 日次収集と通知
 
-- [collect-updates.yml](../.github/workflows/collect-updates.yml) は毎日 12:30 JST 目安で実行する。GitHub Actions の schedule は高負荷時に遅延しうる
+- [collect-updates.yml](../.github/workflows/collect-updates.yml) は毎日 06:30 / 14:30 / 22:30 JST 目安で実行する。GitHub Actions の schedule は高負荷時に遅延しうる
 - Node.js 22 で `npm ci` と `npm run collect` を実行し、[data/events](../data/events) を毎日更新する。[summaries/daily](../summaries/daily) は公開済み更新または未来日付項目がある日だけ生成する
 - 変更がなければ commit せず終了する
 - 変更があった場合は `github-actions[bot]` が `data/**` と `summaries/**` を commit / push する
 - collect の最後に [deploy-pages.yml](../.github/workflows/deploy-pages.yml) を dispatch して、push 起点 workflow の非連鎖を補う
-- Discord 通知は collect 自体は毎日走らせつつ、2026-04-06 を基準日に 5 日ごとに直近 5 日分をまとめて送る
+- [notify-weekly-discord.yml](../.github/workflows/notify-weekly-discord.yml) は毎週水曜 06:00 JST 目安で実行し、直近 7 日分の週間要約を Discord Webhook へ送る
 
 ## Pages 公開の仕組み
 
@@ -57,10 +57,11 @@
 
 ## Workflow 一覧
 
-- [collect-updates.yml](../.github/workflows/collect-updates.yml): 毎日 12:30 JST の収集と、5 日ごとの Discord まとめ通知
+- [collect-updates.yml](../.github/workflows/collect-updates.yml): 毎日 3 回の収集と event / summary 更新
 - [deploy-pages.yml](../.github/workflows/deploy-pages.yml): Pages 再生成と公開
 - [redeploy-pages-after-generated-pr-merge.yml](../.github/workflows/redeploy-pages-after-generated-pr-merge.yml): Copilot 生成 PR merge 後の Pages 再 dispatch
-- [build-weekly-draft.yml](../.github/workflows/build-weekly-draft.yml): 毎週土曜 12:30 JST の週間ドラフト生成
+- [notify-weekly-discord.yml](../.github/workflows/notify-weekly-discord.yml): 毎週水曜 06:00 JST の週間 Discord 要約通知
+- [build-weekly-draft.yml](../.github/workflows/build-weekly-draft.yml): 毎週金曜 06:00 JST の週間ドラフト生成
 - [build-biweekly-draft.yml](../.github/workflows/build-biweekly-draft.yml): 手動の隔週ドラフト生成
 - [publish-qiita.yml](../.github/workflows/publish-qiita.yml): Qiita 投稿
 - [test-discord-notification.yml](../.github/workflows/test-discord-notification.yml): Discord preview 通知の実送信テスト
@@ -98,9 +99,10 @@ GitHub hosted runner の Node 20 deprecation warning に合わせて主要 actio
 ## 手動テストの入口
 
 - `gh workflow run author-digest-pr.yml -f date_key=YYYY-MM-DD -f scope=full -f force_issue=true`
+- `gh workflow run notify-weekly-discord.yml -f date_key=YYYY-MM-DD`
 - `gh workflow run test-discord-notification.yml -f date_key=YYYY-MM-DD`
 - `gh workflow run deploy-pages.yml`
-- `node scripts/notify-discord.mjs --date YYYY-MM-DD --window-days 5 --cadence-days 5 --anchor-date 2026-04-06 --dry-run --force-preview`
+- `node scripts/notify-discord.mjs --mode weekly --date YYYY-MM-DD --window-days 7 --dry-run --force-preview`
 
 ## まず見るべき確認ポイント
 

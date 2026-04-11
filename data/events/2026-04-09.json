@@ -15,7 +15,6 @@
     ],
     "errorCount": 0
   },
-  "editorialNote": "注記: この記録には当日公開分だけでなく、初回取り込みや未取得分の回収が含まれる可能性があります。最も古い公開日は 2026-02-04 です。",
   "events": [
     {
       "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_116",
@@ -27,9 +26,7 @@
       "title": "Visual Studio Code 1.116",
       "url": "https://code.visualstudio.com/updates/v1_116",
       "summary": "Learn what's new in Visual Studio Code 1.116 (Insiders)\n Read the full article",
-      "categories": [
-        "release"
-      ],
+      "categories": ["release"],
       "isFutureDated": true,
       "score": 4
     },
@@ -43,10 +40,7 @@
       "title": "Ask Copilot in security assessments now available",
       "url": "https://github.blog/changelog/2026-04-09-ask-copilot-in-security-assessments-now-available",
       "summary": "Organization admins and security managers can now jump into a Copilot experience directly from secret risk assessment or Code Security risk assessment results to get contextual explanations and guided next…\nThe post Ask Copilot in security assessments now available appeared first on The GitHub Blog.",
-      "categories": [
-        "Improvement",
-        "application security"
-      ],
+      "categories": ["Improvement", "application security"],
       "isFutureDated": false,
       "score": 2
     },
@@ -98,11 +92,7 @@
       "title": "GitHub Mobile: Research and code with Copilot cloud agent anywhere",
       "url": "https://github.blog/changelog/2026-04-08-github-mobile-research-and-code-with-copilot-cloud-agent-anywhere",
       "summary": "Copilot cloud agent now supports more than pull request workflows on GitHub Mobile, so you can keep work moving even when you’re away from your desk. Ask Copilot to research…\nThe post GitHub Mobile: Research and code with Copilot cloud agent anywhere appeared first on The GitHub Blog.",
-      "categories": [
-        "Improvement",
-        "client apps",
-        "copilot"
-      ],
+      "categories": ["Improvement", "client apps", "copilot"],
       "isFutureDated": false,
       "score": 2
     },
@@ -116,10 +106,7 @@
       "title": "GitHub Copilot in Visual Studio Code, March Releases",
       "url": "https://github.blog/changelog/2026-04-08-github-copilot-in-visual-studio-code-march-releases",
       "summary": "VS Code moved to weekly stable releases. This changelog covers releases v1.111 through v1.115, the releases we shipped throughout March and early April 2026. The highlights include Autopilot for fully…\nThe post GitHub Copilot in Visual Studio Code, March Releases appeared first on The GitHub Blog.",
-      "categories": [
-        "Release",
-        "copilot"
-      ],
+      "categories": ["Release", "copilot"],
       "isFutureDated": false,
       "score": 5
     },
@@ -133,15 +120,11 @@
       "title": "VS Code Updates changed",
       "url": "https://code.visualstudio.com/updates/",
       "summary": "Detected 1 added lines on the monitored page.",
-      "categories": [
-        "snapshot"
-      ],
+      "categories": ["snapshot"],
       "diffSummary": {
         "addedLineCount": 1,
         "headings": [],
-        "additions": [
-          "Insiders"
-        ]
+        "additions": ["Insiders"]
       },
       "headings": [
         "Visual Studio Code 1.115",
@@ -169,15 +152,11 @@
       "title": "Visual Studio Code 1.113",
       "url": "https://code.visualstudio.com/updates/v1_113",
       "summary": "Detected 1 added lines on the monitored page.",
-      "categories": [
-        "snapshot"
-      ],
+      "categories": ["snapshot"],
       "diffSummary": {
         "addedLineCount": 1,
         "headings": [],
-        "additions": [
-          "Insiders"
-        ]
+        "additions": ["Insiders"]
       },
       "headings": [
         "Visual Studio Code 1.113",
@@ -205,15 +184,11 @@
       "title": "Visual Studio Code 1.112",
       "url": "https://code.visualstudio.com/updates/v1_112",
       "summary": "Detected 1 added lines on the monitored page.",
-      "categories": [
-        "snapshot"
-      ],
+      "categories": ["snapshot"],
       "diffSummary": {
         "addedLineCount": 1,
         "headings": [],
-        "additions": [
-          "Insiders"
-        ]
+        "additions": ["Insiders"]
       },
       "headings": [
         "Visual Studio Code 1.112",
@@ -241,15 +216,11 @@
       "title": "VS Code Release Notes 1.109 changed",
       "url": "https://code.visualstudio.com/updates/v1_109",
       "summary": "Detected 1 added lines on the monitored page.",
-      "categories": [
-        "snapshot"
-      ],
+      "categories": ["snapshot"],
       "diffSummary": {
         "addedLineCount": 1,
         "headings": [],
-        "additions": [
-          "Insiders"
-        ]
+        "additions": ["Insiders"]
       },
       "headings": [
         "January 2026 (version 1.109)",

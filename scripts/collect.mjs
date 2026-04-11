@@ -9,7 +9,6 @@ import { XMLParser } from "fast-xml-parser";
 import {
   applyEditorialPolicy,
   buildDailyDigest,
-  buildEditorialNote,
   importanceReason,
   localizedImportanceLabel,
   localizedSummary,
@@ -799,11 +798,6 @@ function renderMarkdownSummary(dateKey, eventLog) {
   }
   lines.push("");
 
-  if (digest.editorialNote) {
-    lines.push(`- ${digest.editorialNote}`);
-    lines.push("");
-  }
-
   if (digest.futureUniqueCount > 0) {
     lines.push("## 先行検知した未来日付の項目", "");
     lines.push(
@@ -1039,7 +1033,6 @@ async function main() {
     date: today,
     generatedAt: latestRun.generatedAt,
     latestRun,
-    editorialNote: buildEditorialNote(today, publishedEvents),
     events: filteredMergedEvents,
     errors,
   };

@@ -2410,10 +2410,13 @@ async function readDailyLogs() {
 async function copyRawFiles(date) {
   const eventSource = path.join(eventsDir, `${date}.json`);
   const summarySource = path.join(summariesDir, `${date}.md`);
+  const rawEvent = JSON.parse(await fs.readFile(eventSource, "utf8"));
+  delete rawEvent.editorialNote;
   await Promise.all([
-    fs.copyFile(
-      eventSource,
+    fs.writeFile(
       path.join(siteDir, "raw", "events", `${date}.json`),
+      JSON.stringify(rawEvent, null, 2),
+      "utf8",
     ),
     fs
       .copyFile(
