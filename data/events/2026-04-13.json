@@ -1,18 +1,50 @@
 {
   "date": "2026-04-13",
-  "generatedAt": "2026-04-13T15:02:11.093Z",
+  "generatedAt": "2026-04-13T22:07:14.515Z",
   "latestRun": {
-    "generatedAt": "2026-04-13T15:02:11.093Z",
-    "newEventsCount": 4,
+    "generatedAt": "2026-04-13T22:07:14.515Z",
+    "newEventsCount": 2,
     "newEventIds": [
-      "github-changelog:https://github.blog/changelog/2026-04-09-remote-control-cli-sessions-on-web-and-mobile-in-public-preview",
-      "github-changelog-copilot:https://github.blog/changelog/2026-04-09-remote-control-cli-sessions-on-web-and-mobile-in-public-preview",
-      "vscode-updates:494418141c7fb241c35f7c65444742f07c946087163401f371f1446c8fd066e9",
-      "vscode-release-notes-1-115:section:0e531be1aac99aa4aeb8914a178fcb0c429f3cf20a1d4ee06ecd3fc7a5a167fc"
+      "github-changelog:https://github.blog/changelog/2026-04-13-fix-merge-conflicts-in-three-clicks-with-copilot-cloud-agent",
+      "github-changelog-copilot:https://github.blog/changelog/2026-04-13-fix-merge-conflicts-in-three-clicks-with-copilot-cloud-agent"
     ],
     "errorCount": 0
   },
   "events": [
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-04-13-fix-merge-conflicts-in-three-clicks-with-copilot-cloud-agent",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-13T22:07:11.188Z",
+      "publishedAt": "2026-04-13T19:36:26.000Z",
+      "title": "Fix merge conflicts in three clicks with Copilot cloud agent",
+      "url": "https://github.blog/changelog/2026-04-13-fix-merge-conflicts-in-three-clicks-with-copilot-cloud-agent",
+      "summary": "You can now fix merge conflicts in three clicks with the new Fix with Copilot button on github.com, powered by Copilot cloud agent. Click the button, and a comment is…\nThe post Fix merge conflicts in three clicks with Copilot cloud agent appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 2
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-04-13-fix-merge-conflicts-in-three-clicks-with-copilot-cloud-agent",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-13T22:07:11.529Z",
+      "publishedAt": "2026-04-13T19:36:26.000Z",
+      "title": "Fix merge conflicts in three clicks with Copilot cloud agent",
+      "url": "https://github.blog/changelog/2026-04-13-fix-merge-conflicts-in-three-clicks-with-copilot-cloud-agent",
+      "summary": "You can now fix merge conflicts in three clicks with the new Fix with Copilot button on github.com, powered by Copilot cloud agent. Click the button, and a comment is…\nThe post Fix merge conflicts in three clicks with Copilot cloud agent appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 2
+    },
     {
       "eventId": "github-changelog:https://github.blog/changelog/2026-04-09-remote-control-cli-sessions-on-web-and-mobile-in-public-preview",
       "sourceId": "github-changelog",
