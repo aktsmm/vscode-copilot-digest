@@ -1,12 +1,115 @@
 {
   "date": "2026-04-13",
-  "generatedAt": "2026-04-13T07:24:27.911Z",
+  "generatedAt": "2026-04-13T15:02:11.093Z",
   "latestRun": {
-    "generatedAt": "2026-04-13T07:24:27.911Z",
-    "newEventsCount": 0,
-    "newEventIds": [],
+    "generatedAt": "2026-04-13T15:02:11.093Z",
+    "newEventsCount": 4,
+    "newEventIds": [
+      "github-changelog:https://github.blog/changelog/2026-04-09-remote-control-cli-sessions-on-web-and-mobile-in-public-preview",
+      "github-changelog-copilot:https://github.blog/changelog/2026-04-09-remote-control-cli-sessions-on-web-and-mobile-in-public-preview",
+      "vscode-updates:494418141c7fb241c35f7c65444742f07c946087163401f371f1446c8fd066e9",
+      "vscode-release-notes-1-115:section:0e531be1aac99aa4aeb8914a178fcb0c429f3cf20a1d4ee06ecd3fc7a5a167fc"
+    ],
     "errorCount": 0
   },
-  "events": [],
+  "events": [
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-04-09-remote-control-cli-sessions-on-web-and-mobile-in-public-preview",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-13T15:02:08.124Z",
+      "publishedAt": "2026-04-13T14:15:43.000Z",
+      "title": "Remote control CLI sessions on web and mobile in public preview",
+      "url": "https://github.blog/changelog/2026-04-13-remote-control-cli-sessions-on-web-and-mobile-in-public-preview",
+      "summary": "The Copilot CLI is no longer a purely local experience. Today we’re launching copilot --remote: With remote capabilities, you can now monitor and steer a running CLI session directly from…\nThe post Remote control CLI sessions on web and mobile in public preview appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 5
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-04-09-remote-control-cli-sessions-on-web-and-mobile-in-public-preview",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-13T15:02:08.461Z",
+      "publishedAt": "2026-04-13T14:15:43.000Z",
+      "title": "Remote control CLI sessions on web and mobile in public preview",
+      "url": "https://github.blog/changelog/2026-04-13-remote-control-cli-sessions-on-web-and-mobile-in-public-preview",
+      "summary": "The Copilot CLI is no longer a purely local experience. Today we’re launching copilot --remote: With remote capabilities, you can now monitor and steer a running CLI session directly from…\nThe post Remote control CLI sessions on web and mobile in public preview appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 5
+    },
+    {
+      "eventId": "vscode-updates:494418141c7fb241c35f7c65444742f07c946087163401f371f1446c8fd066e9",
+      "sourceId": "vscode-updates",
+      "sourceName": "VS Code Updates",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-04-13T15:02:09.155Z",
+      "publishedAt": "2026-04-08T00:00:00.000Z",
+      "title": "VS Code Updates changed",
+      "url": "https://code.visualstudio.com/updates/",
+      "summary": "Detected 6 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 6,
+        "headings": [
+          "GitHub Copilot",
+          "Bring your own key for Copilot Business and Enterprise"
+        ],
+        "additions": [
+          "BYOK for Business and Enterprise: bring your own language model key is now available for Copilot Business and Enterprise users.",
+          "H2: GitHub Copilot",
+          "H3: Bring your own key for Copilot Business and Enterprise",
+          "Bring your own language model key (BYOK) is now available for Copilot Business and Enterprise users. With BYOK, you can use your own API keys to access models from providers like OpenRouter, Ollama, Google, OpenAI, and more in chat.",
+          "To enable BYOK for your organization, an administrator must enable the Bring Your Own Language Model Key in VS Code policy in the Copilot policy settings on GitHub.com. After the policy is enabled, organization members can add models from built-in providers or install language model provider extensions.",
+          "GitHub Copilot"
+        ]
+      },
+      "headings": [
+        "Visual Studio Code 1.115",
+        "Visual Studio Code Agents (Preview)",
+        "Integrated browser",
+        "Browser agent tools improvements",
+        "Pinch-to-zoom in the integrated browser (macOS)",
+        "Terminal tools improvements",
+        "Send input to background terminals",
+        "Background terminal notifications (Experimental)",
+        "GitHub Copilot",
+        "Bring your own key for Copilot Business and Enterprise",
+        "Deprecated features and settings",
+        "New deprecations in this release"
+      ],
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-115:section:0e531be1aac99aa4aeb8914a178fcb0c429f3cf20a1d4ee06ecd3fc7a5a167fc",
+      "sourceId": "vscode-release-notes-1-115",
+      "sourceName": "VS Code Release Notes 1.115",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-04-13T15:02:10.773Z",
+      "publishedAt": "2026-04-08T00:00:00.000Z",
+      "title": "Visual Studio Code 1.115: Bring your own key for Copilot Business and Enterprise",
+      "url": "https://code.visualstudio.com/updates/v1_115",
+      "summary": "Bring your own language model key (BYOK) is now available for Copilot Business and Enterprise users. With BYOK, you can use your own API keys to access models from providers like OpenRouter, Ollama, Google, OpenAI, and more in chat. To enable BYOK for your organization, an administrator must enable the Bring Your Own Language Model Key in VS Code policy in the Copilot policy settings on GitHub.com. After the policy...",
+      "categories": [
+        "release",
+        "section",
+        "GitHub Copilot"
+      ],
+      "sectionHeading": "GitHub Copilot",
+      "sectionTitle": "Bring your own key for Copilot Business and Enterprise",
+      "score": 4
+    }
+  ],
   "errors": []
 }
