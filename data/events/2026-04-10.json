@@ -27,9 +27,7 @@
       "title": "Visual Studio Code 1.116",
       "url": "https://code.visualstudio.com/updates/v1_116",
       "summary": "Learn what's new in Visual Studio Code 1.116 (Insiders)\n Read the full article",
-      "categories": [
-        "release"
-      ],
+      "categories": ["release"],
       "isFutureDated": true,
       "score": 4
     },
@@ -62,10 +60,7 @@
       "title": "Pausing new GitHub Copilot Pro trials",
       "url": "https://github.blog/changelog/2026-04-10-pausing-new-github-copilot-pro-trials",
       "summary": "As GitHub Copilot continues to grow, we’ve seen a significant rise in abuse of our free trial system. To protect the experience and integrity of the platform for legitimate developers,…\nThe post Pausing new GitHub Copilot Pro trials appeared first on The GitHub Blog.",
-      "categories": [
-        "Retired",
-        "copilot"
-      ],
+      "categories": ["Retired", "copilot"],
       "isFutureDated": false,
       "score": 4
     },
@@ -79,10 +74,7 @@
       "title": "Pausing new GitHub Copilot Pro trials",
       "url": "https://github.blog/changelog/2026-04-10-pausing-new-github-copilot-pro-trials",
       "summary": "As GitHub Copilot continues to grow, we’ve seen a significant rise in abuse of our free trial system. To protect the experience and integrity of the platform for legitimate developers,…\nThe post Pausing new GitHub Copilot Pro trials appeared first on The GitHub Blog.",
-      "categories": [
-        "Retired",
-        "copilot"
-      ],
+      "categories": ["Retired", "copilot"],
       "isFutureDated": false,
       "score": 4
     },
@@ -155,10 +147,7 @@
       "title": "Copilot cloud agent&#8217;s validation tools are now 20% faster",
       "url": "https://github.blog/changelog/2026-04-10-copilot-cloud-agents-validation-tools-are-now-20-faster",
       "summary": "When Copilot cloud agent writes code, it automatically runs GitHub’s security and quality validation tools, including CodeQL, the GitHub Advisory Database, secret scanning, and Copilot code review. If any problems…\nThe post Copilot cloud agent’s validation tools are now 20% faster appeared first on The GitHub Blog.",
-      "categories": [
-        "Improvement",
-        "copilot"
-      ],
+      "categories": ["Improvement", "copilot"],
       "isFutureDated": false,
       "score": 2
     },
@@ -172,10 +161,7 @@
       "title": "Copilot cloud agent&#8217;s validation tools are now 20% faster",
       "url": "https://github.blog/changelog/2026-04-10-copilot-cloud-agents-validation-tools-are-now-20-faster",
       "summary": "When Copilot cloud agent writes code, it automatically runs GitHub’s security and quality validation tools, including CodeQL, the GitHub Advisory Database, secret scanning, and Copilot code review. If any problems…\nThe post Copilot cloud agent’s validation tools are now 20% faster appeared first on The GitHub Blog.",
-      "categories": [
-        "Improvement",
-        "copilot"
-      ],
+      "categories": ["Improvement", "copilot"],
       "isFutureDated": false,
       "score": 2
     },
@@ -189,10 +175,7 @@
       "title": "Ask Copilot in security assessments now available",
       "url": "https://github.blog/changelog/2026-04-09-ask-copilot-in-security-assessments-now-available",
       "summary": "Organization admins and security managers can now jump into a Copilot experience directly from secret risk assessment or Code Security risk assessment results to get contextual explanations and guided next…\nThe post Ask Copilot in security assessments now available appeared first on The GitHub Blog.",
-      "categories": [
-        "Improvement",
-        "application security"
-      ],
+      "categories": ["Improvement", "application security"],
       "isFutureDated": false,
       "score": 2
     },
@@ -244,11 +227,7 @@
       "title": "GitHub Mobile: Research and code with Copilot cloud agent anywhere",
       "url": "https://github.blog/changelog/2026-04-08-github-mobile-research-and-code-with-copilot-cloud-agent-anywhere",
       "summary": "Copilot cloud agent now supports more than pull request workflows on GitHub Mobile, so you can keep work moving even when you’re away from your desk. Ask Copilot to research…\nThe post GitHub Mobile: Research and code with Copilot cloud agent anywhere appeared first on The GitHub Blog.",
-      "categories": [
-        "Improvement",
-        "client apps",
-        "copilot"
-      ],
+      "categories": ["Improvement", "client apps", "copilot"],
       "isFutureDated": false,
       "score": 2
     },
@@ -262,11 +241,7 @@
       "title": "GitHub Mobile: Research and code with Copilot cloud agent anywhere",
       "url": "https://github.blog/changelog/2026-04-08-github-mobile-research-and-code-with-copilot-cloud-agent-anywhere",
       "summary": "Copilot cloud agent now supports more than pull request workflows on GitHub Mobile, so you can keep work moving even when you’re away from your desk. Ask Copilot to research…\nThe post GitHub Mobile: Research and code with Copilot cloud agent anywhere appeared first on The GitHub Blog.",
-      "categories": [
-        "Improvement",
-        "client apps",
-        "copilot"
-      ],
+      "categories": ["Improvement", "client apps", "copilot"],
       "isFutureDated": false,
       "score": 2
     },
@@ -280,9 +255,7 @@
       "title": "Visual Studio Code 1.115",
       "url": "https://code.visualstudio.com/updates/v1_115",
       "summary": "Learn what's new in Visual Studio Code 1.115\n Read the full article",
-      "categories": [
-        "release"
-      ],
+      "categories": ["release"],
       "isFutureDated": false,
       "score": 4
     },
@@ -296,10 +269,7 @@
       "title": "GitHub Copilot in Visual Studio Code, March Releases",
       "url": "https://github.blog/changelog/2026-04-08-github-copilot-in-visual-studio-code-march-releases",
       "summary": "VS Code moved to weekly stable releases. This changelog covers releases v1.111 through v1.115, the releases we shipped throughout March and early April 2026. The highlights include Autopilot for fully…\nThe post GitHub Copilot in Visual Studio Code, March Releases appeared first on The GitHub Blog.",
-      "categories": [
-        "Release",
-        "copilot"
-      ],
+      "categories": ["Release", "copilot"],
       "isFutureDated": false,
       "score": 5
     },
@@ -313,11 +283,7 @@
       "title": "Visual Studio Code 1.115: Browser agent tools improvements",
       "url": "https://code.visualstudio.com/updates/v1_115",
       "summary": "Setting: \n \n \n workbench.browser.enableChatTools\n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders When an agent invokes the browser tool, the tool calls now have a more descriptive label and a link to go directly to the target browser tab. Old: New: The Run Playwright Code tool has improved support for long-running scripts. Scripts that take longer than five seconds to run (by default) now return a deferred...",
-      "categories": [
-        "release",
-        "section",
-        "Integrated browser"
-      ],
+      "categories": ["release", "section", "Integrated browser"],
       "sectionHeading": "Integrated browser",
       "sectionTitle": "Browser agent tools improvements",
       "score": 4
@@ -332,11 +298,7 @@
       "title": "Visual Studio Code 1.115: Send input to background terminals",
       "url": "https://code.visualstudio.com/updates/v1_115",
       "summary": "Previously, background terminals were read-only, with only get_terminal_output available. This was particularly limiting when a foreground terminal timed out and moved to the background, as the agent could no longer interact with it. With the new send_to_terminal tool, the agent can continue interacting with background terminals. For example, if an SSH session times out while waiting for a password prompt, the agent...",
-      "categories": [
-        "release",
-        "section",
-        "Terminal tools improvements"
-      ],
+      "categories": ["release", "section", "Terminal tools improvements"],
       "sectionHeading": "Terminal tools improvements",
       "sectionTitle": "Send input to background terminals",
       "score": 4
@@ -351,11 +313,7 @@
       "title": "Visual Studio Code 1.115: Background terminal notifications (Experimental)",
       "url": "https://code.visualstudio.com/updates/v1_115",
       "summary": "Setting: \n \n \n chat.tools.terminal.backgroundNotifications\n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders Previously, when a terminal command was running in the background, the agent had to manually call get_terminal_output to check on its status. There was no way to know when the command completed or needed input. With the new experimental \n \n \n chat.tools.terminal.backgroundNotifications\n \n \n \n \n \n \n \n O...",
-      "categories": [
-        "release",
-        "section",
-        "Terminal tools improvements"
-      ],
+      "categories": ["release", "section", "Terminal tools improvements"],
       "sectionHeading": "Terminal tools improvements",
       "sectionTitle": "Background terminal notifications (Experimental)",
       "score": 4
@@ -370,11 +328,7 @@
       "title": "Visual Studio Code 1.115: Upcoming deprecations",
       "url": "https://code.visualstudio.com/updates/v1_115",
       "summary": "Edit Mode is officially deprecated as of VS Code version 1.110. Users can temporarily re-enable Edit Mode via VS Code setting \n \n \n chat.editMode.hidden\n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders\n \n . This setting will remain supported through version 1.125. Beginning with version 1.125, Edit Mode will be fully removed and can no longer be enabled via settings.",
-      "categories": [
-        "release",
-        "section",
-        "Deprecated features and settings"
-      ],
+      "categories": ["release", "section", "Deprecated features and settings"],
       "sectionHeading": "Deprecated features and settings",
       "sectionTitle": "Upcoming deprecations",
       "score": 4
@@ -389,11 +343,7 @@
       "title": "Copilot CLI now supports BYOK and local models",
       "url": "https://github.blog/changelog/2026-04-07-copilot-cli-now-supports-byok-and-local-models",
       "summary": "GitHub Copilot CLI now lets you connect your own model provider or run fully local models instead of using GitHub-hosted model routing. This means you can use the models and…\nThe post Copilot CLI now supports BYOK and local models appeared first on The GitHub Blog.",
-      "categories": [
-        "Release",
-        "client apps",
-        "copilot"
-      ],
+      "categories": ["Release", "client apps", "copilot"],
       "isFutureDated": false,
       "score": 4
     },
@@ -445,10 +395,7 @@
       "title": "Organization runner controls for Copilot cloud agent",
       "url": "https://github.blog/changelog/2026-04-03-organization-runner-controls-for-copilot-cloud-agent",
       "summary": "Each time Copilot cloud agent works on a task, it starts a new development environment powered by GitHub Actions. By default, this runs on a standard GitHub-hosted runner, but teams…\nThe post Organization runner controls for Copilot cloud agent appeared first on The GitHub Blog.",
-      "categories": [
-        "Release",
-        "copilot"
-      ],
+      "categories": ["Release", "copilot"],
       "isFutureDated": false,
       "score": 6
     },
@@ -462,10 +409,7 @@
       "title": "GPT-5.1 Codex, GPT-5.1-Codex-Max, and GPT-5.1-Codex-Mini deprecated",
       "url": "https://github.blog/changelog/2026-04-03-gpt-5-1-codex-gpt-5-1-codex-max-and-gpt-5-1-codex-mini-deprecated",
       "summary": "We have deprecated the following models across all GitHub Copilot experiences (including Copilot Chat, inline edits, ask and agent modes, and code completions) on April 1, 2026. Model Deprecation date…\nThe post GPT-5.1 Codex, GPT-5.1-Codex-Max, and GPT-5.1-Codex-Mini deprecated appeared first on The GitHub Blog.",
-      "categories": [
-        "Retired",
-        "copilot"
-      ],
+      "categories": ["Retired", "copilot"],
       "isFutureDated": false,
       "score": 5
     },
@@ -479,10 +423,7 @@
       "title": "Organization firewall settings for Copilot cloud agent",
       "url": "https://github.blog/changelog/2026-04-03-organization-firewall-settings-for-copilot-cloud-agent",
       "summary": "Copilot cloud agent includes a built-in agent firewall to control Copilot’s internet access and help protect against prompt injection and data exfiltration. Until now, the firewall was configured at the…\nThe post Organization firewall settings for Copilot cloud agent appeared first on The GitHub Blog.",
-      "categories": [
-        "Improvement",
-        "copilot"
-      ],
+      "categories": ["Improvement", "copilot"],
       "isFutureDated": false,
       "score": 3
     },
@@ -496,10 +437,7 @@
       "title": "Copilot cloud agent signs its commits",
       "url": "https://github.blog/changelog/2026-04-03-copilot-cloud-agent-signs-its-commits",
       "summary": "Copilot cloud agent now signs every commit it makes. Signed commits appear as Verified on GitHub, giving you confidence that the commit was genuinely made by the agent and hasn’t…\nThe post Copilot cloud agent signs its commits appeared first on The GitHub Blog.",
-      "categories": [
-        "Improvement",
-        "copilot"
-      ],
+      "categories": ["Improvement", "copilot"],
       "isFutureDated": false,
       "score": 2
     },
@@ -513,10 +451,7 @@
       "title": "Copilot SDK in public preview",
       "url": "https://github.blog/changelog/2026-04-02-copilot-sdk-in-public-preview",
       "summary": "The GitHub Copilot SDK is now available in public preview. This gives you the building blocks to embed Copilot’s agentic capabilities directly into your own applications, workflows, and platform services.…\nThe post Copilot SDK in public preview appeared first on The GitHub Blog.",
-      "categories": [
-        "Release",
-        "copilot"
-      ],
+      "categories": ["Release", "copilot"],
       "isFutureDated": false,
       "score": 7
     },
@@ -530,9 +465,7 @@
       "title": "Visual Studio Code 1.114",
       "url": "https://code.visualstudio.com/updates/v1_114",
       "summary": "Learn what's new in Visual Studio Code 1.114\n Read the full article",
-      "categories": [
-        "release"
-      ],
+      "categories": ["release"],
       "isFutureDated": false,
       "score": 4
     },
@@ -546,11 +479,7 @@
       "title": "Run multiple agents at once with /fleet in Copilot CLI",
       "url": "https://github.blog/ai-and-ml/github-copilot/run-multiple-agents-at-once-with-fleet-in-copilot-cli/",
       "summary": "/fleet lets Copilot CLI dispatch multiple agents in parallel. Learn how to write prompts that split work across files, declare dependencies, and avoid common pitfalls.\nThe post Run multiple agents at once with /fleet in Copilot CLI appeared first on The GitHub Blog.",
-      "categories": [
-        "AI & ML",
-        "GitHub Copilot",
-        "GitHub Copilot CLI"
-      ],
+      "categories": ["AI & ML", "GitHub Copilot", "GitHub Copilot CLI"],
       "isFutureDated": false,
       "score": 2
     },
@@ -564,9 +493,7 @@
       "title": "Visual Studio Code 1.114",
       "url": "https://code.visualstudio.com/updates/v1_114",
       "summary": "Captured the current snapshot for Visual Studio Code 1.114.",
-      "categories": [
-        "snapshot"
-      ],
+      "categories": ["snapshot"],
       "headings": [
         "Visual Studio Code 1.114",
         "Chat experience",
@@ -615,9 +542,7 @@
       "title": "Visual Studio Code 1.113",
       "url": "https://code.visualstudio.com/updates/v1_113",
       "summary": "Learn what's new in Visual Studio Code 1.113\n Read the full article",
-      "categories": [
-        "release"
-      ],
+      "categories": ["release"],
       "isFutureDated": false,
       "score": 4
     },
@@ -631,9 +556,7 @@
       "title": "Visual Studio Code 1.113",
       "url": "https://code.visualstudio.com/updates/v1_113",
       "summary": "Captured the current snapshot for Visual Studio Code 1.113.",
-      "categories": [
-        "snapshot"
-      ],
+      "categories": ["snapshot"],
       "headings": [
         "Visual Studio Code 1.113",
         "Agent experience",
@@ -702,9 +625,7 @@
       "title": "Visual Studio Code 1.112",
       "url": "https://code.visualstudio.com/updates/v1_112",
       "summary": "Learn what's new in Visual Studio Code 1.112\n Read the full article",
-      "categories": [
-        "release"
-      ],
+      "categories": ["release"],
       "isFutureDated": false,
       "score": 4
     },
@@ -718,9 +639,7 @@
       "title": "Visual Studio Code 1.112",
       "url": "https://code.visualstudio.com/updates/v1_112",
       "summary": "Captured the current snapshot for Visual Studio Code 1.112.",
-      "categories": [
-        "snapshot"
-      ],
+      "categories": ["snapshot"],
       "headings": [
         "Visual Studio Code 1.112",
         "Agent experience",
@@ -747,9 +666,7 @@
       "title": "How VS Code Builds with AI",
       "url": "https://code.visualstudio.com/blogs/2026/03/13/how-VS-Code-Builds-with-AI",
       "summary": "Learn how VS Code uses AI across its own development workflow with GitHub Copilot agent mode, automated testing, and AI-powered code review.\n Read the full article",
-      "categories": [
-        "blog"
-      ],
+      "categories": ["blog"],
       "isFutureDated": false,
       "score": 2
     },
@@ -809,9 +726,7 @@
       "title": "Visual Studio Code 1.111",
       "url": "https://code.visualstudio.com/updates/v1_111",
       "summary": "Learn what's new in Visual Studio Code 1.111\n Read the full article",
-      "categories": [
-        "release"
-      ],
+      "categories": ["release"],
       "isFutureDated": false,
       "score": 4
     },
@@ -846,9 +761,7 @@
       "title": "Making agents practical for real-world development",
       "url": "https://code.visualstudio.com/blogs/2026/03/05/making-agents-practical-for-real-world-development",
       "summary": "Explore agent orchestration, extensibility, and continuity in VS Code 1.110: lifecycle hooks, agent skills, session memory, and integrated browser tools.\n Read the full article",
-      "categories": [
-        "blog"
-      ],
+      "categories": ["blog"],
       "isFutureDated": false,
       "score": 1
     },
@@ -862,9 +775,7 @@
       "title": "February 2026 (version 1.110)",
       "url": "https://code.visualstudio.com/updates/v1_110",
       "summary": "What's new in the Visual Studio Code February 2026 Release (1.110).\n Read the full article",
-      "categories": [
-        "release"
-      ],
+      "categories": ["release"],
       "isFutureDated": false,
       "score": 4
     },
@@ -878,10 +789,7 @@
       "title": "Join or host a GitHub Copilot Dev Days event near you",
       "url": "https://github.blog/ai-and-ml/github-copilot/join-or-host-a-github-copilot-dev-days-event-near-you/",
       "summary": "GitHub Copilot Dev Days is a global series of hands-on, in-person, community-led events designed to help developers explore real-world, AI-assisted coding. \nThe post Join or host a GitHub Copilot Dev Days event near you appeared first on The GitHub Blog.",
-      "categories": [
-        "AI & ML",
-        "GitHub Copilot"
-      ],
+      "categories": ["AI & ML", "GitHub Copilot"],
       "isFutureDated": false,
       "score": 1
     },
@@ -914,9 +822,7 @@
       "title": "Building Long-Distance Next Edit Suggestions",
       "url": "https://code.visualstudio.com/blogs/2026/02/26/long-distance-nes",
       "summary": "Learn how we extended next edit suggestions to work across your entire file, reducing friction and improving productivity in GitHub Copilot.\n Read the full article",
-      "categories": [
-        "blog"
-      ],
+      "categories": ["blog"],
       "isFutureDated": false,
       "score": 1
     },
@@ -930,9 +836,7 @@
       "title": "Your Home for Multi-Agent Development",
       "url": "https://code.visualstudio.com/blogs/2026/02/05/multi-agent-development",
       "summary": "VS Code has become the unified interface for all your coding agents. Manage local, background, and cloud agents in one place, use Claude and Codex agents alongside Copilot, and benefit from open standards like MCP and Agent Skills.\n Read the full article",
-      "categories": [
-        "blog"
-      ],
+      "categories": ["blog"],
       "isFutureDated": false,
       "score": 2
     },
@@ -946,9 +850,7 @@
       "title": "January 2026 (version 1.109)",
       "url": "https://code.visualstudio.com/updates/v1_109",
       "summary": "Learn what is new in the Visual Studio Code January 2026 Release (1.109).\n Read the full article",
-      "categories": [
-        "release"
-      ],
+      "categories": ["release"],
       "isFutureDated": false,
       "score": 4
     },
@@ -962,9 +864,7 @@
       "title": "Giving Agents a Visual Voice: MCP Apps Support in VS Code",
       "url": "https://code.visualstudio.com/blogs/2026/01/26/mcp-apps-support",
       "summary": "VS Code now supports MCP Apps, enabling AI agents to display interactive UIs for richer developer workflows.\n Read the full article",
-      "categories": [
-        "blog"
-      ],
+      "categories": ["blog"],
       "isFutureDated": false,
       "score": 1
     },
@@ -978,9 +878,7 @@
       "title": "Building docfind: Fast Client-Side Search with Rust and WebAssembly",
       "url": "https://code.visualstudio.com/blogs/2026/01/15/docfind",
       "summary": "How we built docfind, a high-performance client-side search engine using Rust and WebAssembly, and how GitHub Copilot accelerated development.\n Read the full article",
-      "categories": [
-        "blog"
-      ],
+      "categories": ["blog"],
       "isFutureDated": false,
       "score": 1
     },
@@ -994,9 +892,7 @@
       "title": "December 2025 (version 1.108)",
       "url": "https://code.visualstudio.com/updates/v1_108",
       "summary": "Learn what is new in the Visual Studio Code December 2025 Release (1.108).\n Read the full article",
-      "categories": [
-        "release"
-      ],
+      "categories": ["release"],
       "isFutureDated": false,
       "score": 4
     },
@@ -1010,9 +906,7 @@
       "title": "November 2025 (version 1.107)",
       "url": "https://code.visualstudio.com/updates/v1_107",
       "summary": "What's new in the Visual Studio Code November 2025 Release (1.107).\n Read the full article",
-      "categories": [
-        "release"
-      ],
+      "categories": ["release"],
       "isFutureDated": false,
       "score": 4
     },
@@ -1045,11 +939,7 @@
       "title": "GitHub Copilot CLI、メインのAIモデルとは異なるAIモデルをセカンドオピニオンに使う「Rubber Duck」モード",
       "url": "https://www.publickey1.jp/blog/26/github_copilot_cliaiairubber_duck.html",
       "summary": "GitHubは、AIエージェントによるコーディングツール「GitHub Copilot CLI」の実験的新機能として、メインで利用するAIモデルとは異なるAIモデルをセカンドオピニオン役として使える「Rubber Duck」モードを発表しました。 GitHub Copilot CLIは、AnthropicのClaudeやOpenAIのGPT、GoogleのGeminiなどのAIモデルを用いたAIエージェントにより、コーディングの計画から実装、デバッグなどのさまざまな作業を自律……",
-      "categories": [
-        "機械学習・AI",
-        "開発ツール",
-        "github"
-      ],
+      "categories": ["機械学習・AI", "開発ツール", "github"],
       "isFutureDated": false,
       "score": 1
     }

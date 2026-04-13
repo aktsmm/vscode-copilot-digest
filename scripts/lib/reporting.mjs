@@ -793,9 +793,7 @@ function summaryFromPatterns(event, locale = "ja") {
     locale === "ja" ? 220 : 260,
   );
   const summaryLeadJa =
-    summaryLeadText && containsJapanese(summaryLeadText)
-      ? summaryLeadText
-      : "";
+    summaryLeadText && containsJapanese(summaryLeadText) ? summaryLeadText : "";
 
   if (version && vscodeReleaseSummaries[version]) {
     return vscodeReleaseSummaries[version][locale];
