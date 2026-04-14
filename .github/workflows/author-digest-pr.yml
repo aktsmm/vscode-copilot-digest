@@ -83,12 +83,44 @@ jobs:
               fs.readFileSync(path.join(eventsDir, selectedFile), 'utf8'),
             );
             const newEventsCount = Number(eventLog.latestRun?.newEventsCount ?? 0);
+            const summaryFile = path.join(
+              process.env.GITHUB_WORKSPACE,
+              'summaries',
+              'daily',
+              `${dateKey}.md`,
+            );
+            const genericFallbackMarkers = [
+              'GitHub Copilot 関連の更新。運用や導入判断に関わる変更点を原文で確認しておきたい。',
+              'Visual Studio Code 関連の更新。日々の開発フローや agent 利用に効く変更点を確認しておきたい。',
+              '英語ソースの更新。公開内容の変化や運用への影響を原文で確認しておきたい。',
+              '継続ウォッチ対象として押さえておきたい更新です。',
+            ];
+            const summaryText = fs.existsSync(summaryFile)
+              ? fs.readFileSync(summaryFile, 'utf8')
+              : '';
+            const fallbackMatches = genericFallbackMarkers.filter((marker) =>
+              summaryText.includes(marker),
+            );
+            const hasGenericFallback = fallbackMatches.length > 0;
+            const shouldAuthor = newEventsCount > 0 || forceIssue || hasGenericFallback;
 
-            if (newEventsCount === 0 && !forceIssue) {
+            if (!shouldAuthor) {
               core.info(`No new events in ${selectedFile}.`);
               core.setOutput('should_run', 'false');
               return;
             }
+
+            const triggerReasons = [];
+            if (newEventsCount > 0) {
+              triggerReasons.push(`最新 run で ${newEventsCount} 件の新規更新を検知`);
+            }
+            if (hasGenericFallback) {
+              triggerReasons.push(`日次 summary に定型 fallback が ${fallbackMatches.length} 件残存`);
+            }
+            if (forceIssue) {
+              triggerReasons.push('手動で force_issue=true を指定');
+            }
+            const triggerReason = triggerReasons.join(' / ');
 
             const scopeLabelMap = {
               daily: 'summaries/daily のみ',
@@ -113,6 +145,12 @@ jobs:
               `- 日次本文: \`summaries/daily/${dateKey}.md\``,
               '- 必要に応じて週次/隔週ドラフト: `drafts/**`',
               '- 必要に応じて対訳追加: `scripts/lib/reporting.mjs`',
+              '',
+              '### 起票理由',
+              `- ${triggerReason}`,
+              ...(hasGenericFallback
+                ? fallbackMatches.map((marker) => `- fallback: ${marker}`)
+                : []),
               '',
               '### やってほしいこと',
               `1. \`data/events/${dateKey}.json\` を読み、重要な更新を把握する`,

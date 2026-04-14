@@ -143,6 +143,10 @@ const exactSummaryMappings = {
     ja: "GitHub Copilot coding agent の最近の更新まとめ。branch や pull request をまたぐ開発フローと、agent の作業体験がどう広がったかを俯瞰できる。",
     en: "A roundup of recent GitHub Copilot coding agent changes, useful for understanding how branch, pull request, and agent workflows are expanding.",
   },
+  "Enforcing new limits and retiring Opus 4.6 Fast from Copilot Pro+": {
+    ja: "GitHub Copilot Pro+ で高い同時実行や集中的な利用が増えていることを受け、新しい利用制限を導入し、Opus 4.6 Fast を提供対象から外すと告知した。過度な利用を抑えつつ、正規利用者向けの安定運用を守るための変更。",
+    en: "GitHub is introducing new usage limits for Copilot Pro+ and retiring Opus 4.6 Fast after seeing more high-concurrency, high-intensity usage patterns, aiming to preserve a stable experience for legitimate users.",
+  },
   "Building Long-Distance Next Edit Suggestions": {
     ja: "離れた位置まで一度に編集提案する Long-Distance Next Edit Suggestions の実装解説。長距離編集候補を成立させるためのモデル設計と評価の工夫が主題。",
     en: "A technical deep dive into making Next Edit Suggestions work across larger distances in a file, covering the model and product changes needed for more ambitious edit predictions.",
@@ -371,6 +375,10 @@ const exactImportanceMappings = {
   "What's new with GitHub Copilot coding agent": {
     ja: "coding agent の更新点を横断して把握できるので、背景作業の自動化をどこまで任せられるかを見極める助けになります。",
     en: "This matters because it helps teams evaluate how much more background work can be delegated safely to the coding agent across the latest updates.",
+  },
+  "Enforcing new limits and retiring Opus 4.6 Fast from Copilot Pro+": {
+    ja: "Copilot Pro+ の高負荷な使い方やモデル選択の前提が変わるため、日常的に重い利用をしているユーザーや社内案内に直接影響します。",
+    en: "This matters because it changes the assumptions around heavy Copilot Pro+ usage and model availability, which directly affects power users and team guidance.",
   },
   "Building Long-Distance Next Edit Suggestions": {
     ja: "より長い編集候補を出すための技術背景が分かるので、Copilot 編集体験の限界や今後の伸び代を理解しやすくなります。",
@@ -687,6 +695,10 @@ function patternTitle(title) {
     [
       "What's new with GitHub Copilot coding agent",
       "GitHub Copilot coding agent の新機能まとめ",
+    ],
+    [
+      "Enforcing new limits and retiring Opus 4.6 Fast from Copilot Pro+",
+      "Copilot Pro+ に新しい利用制限を導入し、Opus 4.6 Fast を廃止",
     ],
     [
       "Copilot usage metrics now identify active and passive Copilot code review users",
