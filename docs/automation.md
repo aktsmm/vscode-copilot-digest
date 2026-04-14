@@ -37,7 +37,7 @@
 ## Copilot cloud agent の自動執筆レーン
 
 - [author-digest-pr.yml](../.github/workflows/author-digest-pr.yml) は collect 成功後に、対象日付とスコープを決めて執筆依頼 Issue を作成または更新する
-- `latestRun.newEventsCount` が 0 でも、日次 summary に generic fallback 文が残っている日は執筆依頼 Issue を起票して本文補正と `reporting.mjs` 更新を促す
+- `latestRun.newEventsCount` が 0 でも、日次 summary に generic fallback や低情報のカテゴリ要約が残っている日は執筆依頼 Issue を起票して本文補正と `reporting.mjs` 更新を促す
 - Issue 本文には、対象ファイル、文章ルール、変更許可範囲、PR タイトル規則、検証要件が埋め込まれる
 - workflow は GraphQL で Copilot actor を解決し、Issue assignment まで自動化する
 - Copilot cloud agent は、その Issue から日次本文、週間 / 隔週ドラフト、必要な対訳更新を含む PR を作成する

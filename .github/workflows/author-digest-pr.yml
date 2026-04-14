@@ -89,20 +89,28 @@ jobs:
               'daily',
               `${dateKey}.md`,
             );
-            const genericFallbackMarkers = [
+            const lowInformationSummaryMarkers = [
               'GitHub Copilot 関連の更新。運用や導入判断に関わる変更点を原文で確認しておきたい。',
               'Visual Studio Code 関連の更新。日々の開発フローや agent 利用に効く変更点を確認しておきたい。',
               '英語ソースの更新。公開内容の変化や運用への影響を原文で確認しておきたい。',
               '継続ウォッチ対象として押さえておきたい更新です。',
+              'Copilot CLI の agent 機能に関する更新。タスク自動化や agent ワークフローを CLI から扱う運用では確認しておきたい。',
+              'Copilot CLI への MCP 対応に関する更新。外部ツール・サービスの CLI 統合で接続パターンが変わる可能性がある。',
+              'Copilot CLI のセッション管理に関する更新。長時間の対話や複数の context を扱う運用では確認しておきたい。',
+              'Copilot CLI でのモデル選択や切り替えに関する更新。用途に応じたモデルの使い分けが変わる可能性がある。',
+              'Copilot CLI のインストール・セットアップに関する更新。初期導入やアップグレードパスに確認を。',
+              'Copilot CLI のコマンドや使用法に関する更新。ターミナルでの日々の使い方に関連する変更を含む可能性あり。',
+              'GitHub Copilot CLI の更新。CLI を実用している層はターミナル操作や自動化フローへの確認を。',
+              'GitHub Copilot code review 関連の更新。レビュー自動化や品質改善への影響を確認しておきたい。',
             ];
             const summaryText = fs.existsSync(summaryFile)
               ? fs.readFileSync(summaryFile, 'utf8')
               : '';
-            const fallbackMatches = genericFallbackMarkers.filter((marker) =>
+            const fallbackMatches = lowInformationSummaryMarkers.filter((marker) =>
               summaryText.includes(marker),
             );
-            const hasGenericFallback = fallbackMatches.length > 0;
-            const shouldAuthor = newEventsCount > 0 || forceIssue || hasGenericFallback;
+            const hasLowInformationSummary = fallbackMatches.length > 0;
+            const shouldAuthor = newEventsCount > 0 || forceIssue || hasLowInformationSummary;
 
             if (!shouldAuthor) {
               core.info(`No new events in ${selectedFile}.`);
@@ -114,8 +122,8 @@ jobs:
             if (newEventsCount > 0) {
               triggerReasons.push(`最新 run で ${newEventsCount} 件の新規更新を検知`);
             }
-            if (hasGenericFallback) {
-              triggerReasons.push(`日次 summary に定型 fallback が ${fallbackMatches.length} 件残存`);
+            if (hasLowInformationSummary) {
+              triggerReasons.push(`日次 summary に低情報 fallback が ${fallbackMatches.length} 件残存`);
             }
             if (forceIssue) {
               triggerReasons.push('手動で force_issue=true を指定');
@@ -148,7 +156,7 @@ jobs:
               '',
               '### 起票理由',
               `- ${triggerReason}`,
-              ...(hasGenericFallback
+              ...(hasLowInformationSummary
                 ? fallbackMatches.map((marker) => `- fallback: ${marker}`)
                 : []),
               '',

@@ -143,6 +143,14 @@ const exactSummaryMappings = {
     ja: "GitHub Copilot coding agent の最近の更新まとめ。branch や pull request をまたぐ開発フローと、agent の作業体験がどう広がったかを俯瞰できる。",
     en: "A roundup of recent GitHub Copilot coding agent changes, useful for understanding how branch, pull request, and agent workflows are expanding.",
   },
+  "Fix merge conflicts in three clicks with Copilot cloud agent": {
+    ja: "github.com の pull request 上で、新しい Fix with Copilot ボタンからマージ競合を 3 クリックで解消できるようになった。コメント送信後は Copilot cloud agent が競合解消、build と test の確認、push までをクラウド実行環境で処理する。",
+    en: "Pull requests on github.com can now resolve merge conflicts in three clicks through a new Fix with Copilot button, with Copilot cloud agent handling conflict resolution, build and test validation, and the push from its cloud environment.",
+  },
+  "Remote control CLI sessions on web and mobile in public preview": {
+    ja: "Copilot CLI の実行中セッションを Web とモバイルから遠隔操作できる `copilot --remote` が public preview になった。ローカル端末で走らせたまま、ブラウザーやモバイル側から進行確認や指示の継続ができるようにする更新。",
+    en: "`copilot --remote` is now in public preview, letting running Copilot CLI sessions be monitored and steered from the web or mobile while the local terminal continues the work.",
+  },
   "Enforcing new limits and retiring Opus 4.6 Fast from Copilot Pro+": {
     ja: "GitHub Copilot Pro+ で高い同時実行や集中的な利用が増えていることを受け、新しい利用制限を導入し、Opus 4.6 Fast を提供対象から外すと告知した。過度な利用を抑えつつ、正規利用者向けの安定運用を守るための変更。",
     en: "GitHub is introducing new usage limits for Copilot Pro+ and retiring Opus 4.6 Fast after seeing more high-concurrency, high-intensity usage patterns, aiming to preserve a stable experience for legitimate users.",
@@ -375,6 +383,14 @@ const exactImportanceMappings = {
   "What's new with GitHub Copilot coding agent": {
     ja: "coding agent の更新点を横断して把握できるので、背景作業の自動化をどこまで任せられるかを見極める助けになります。",
     en: "This matters because it helps teams evaluate how much more background work can be delegated safely to the coding agent across the latest updates.",
+  },
+  "Fix merge conflicts in three clicks with Copilot cloud agent": {
+    ja: "競合解消のためにローカルへ戻って手で直す回数を減らせるので、pull request 上で止まりやすい統合作業をそのまま前に進めやすくなります。",
+    en: "This matters because it reduces how often developers have to drop out of a pull request into local manual conflict resolution, keeping integration work moving inside the review flow.",
+  },
+  "Remote control CLI sessions on web and mobile in public preview": {
+    ja: "長時間の CLI 作業をデスクトップ前に張り付かず見守って差し込めるので、agent 的な terminal 運用を継続しやすくなります。",
+    en: "This matters because long-running CLI work can now be supervised and nudged away from the desktop, making terminal-centric agent workflows easier to sustain.",
   },
   "Enforcing new limits and retiring Opus 4.6 Fast from Copilot Pro+": {
     ja: "Copilot Pro+ の高負荷な使い方やモデル選択の前提が変わるため、日常的に重い利用をしているユーザーや社内案内に直接影響します。",
@@ -695,6 +711,14 @@ function patternTitle(title) {
     [
       "What's new with GitHub Copilot coding agent",
       "GitHub Copilot coding agent の新機能まとめ",
+    ],
+    [
+      "Fix merge conflicts in three clicks with Copilot cloud agent",
+      "Copilot cloud agent でマージ競合を 3 クリックで解消できるようになった",
+    ],
+    [
+      "Remote control CLI sessions on web and mobile in public preview",
+      "Web とモバイルから Copilot CLI セッションを遠隔操作できる機能が public preview になった",
     ],
     [
       "Enforcing new limits and retiring Opus 4.6 Fast from Copilot Pro+",
