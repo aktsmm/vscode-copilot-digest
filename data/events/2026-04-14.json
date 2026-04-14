@@ -1,0 +1,33 @@
+{
+  "date": "2026-04-14",
+  "generatedAt": "2026-04-14T07:05:16.405Z",
+  "latestRun": {
+    "generatedAt": "2026-04-14T07:05:16.405Z",
+    "newEventsCount": 1,
+    "newEventIds": [
+      "github-changelog:https://github.blog/changelog/2026-04-13-copilot-data-residency-in-us-eu-and-fedramp-compliance-now-available"
+    ],
+    "errorCount": 0
+  },
+  "events": [
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-04-13-copilot-data-residency-in-us-eu-and-fedramp-compliance-now-available",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-14T07:05:14.397Z",
+      "publishedAt": "2026-04-13T23:03:01.000Z",
+      "title": "Copilot data residency in US + EU and FedRAMP compliance now available",
+      "url": "https://github.blog/changelog/2026-04-13-copilot-data-residency-in-us-eu-and-fedramp-compliance-now-available",
+      "summary": "GitHub Copilot now supports data residency for US and EU regions, ensuring all inference processing and associated data stay within your designated geography. For US government customers, all model hosts…\nThe post Copilot data residency in US + EU and FedRAMP compliance now available appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot",
+        "platform governance"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    }
+  ],
+  "errors": []
+}
