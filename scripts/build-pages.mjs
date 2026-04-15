@@ -35,6 +35,16 @@ const sourceGroupOrder = ["github", "vscode", "platform", "other"];
 const HOME_HIGHLIGHT_LIMIT = 6;
 const HOME_ARCHIVE_LIMIT = 6;
 const HIGHLIGHTS_PAGE_SIZE = 50;
+const publishedFallbackPhrases = [
+  "GitHub Copilot 関連の更新。運用や導入判断に関わる変更点を原文で確認しておきたい。",
+  "Visual Studio Code 関連の更新。原文で確認しておきたい。",
+  "英語ソースの更新。公開内容の変化や運用への影響を原文で確認しておきたい。",
+  "に関する release note 更新。開発フローや agent 体験に関わる変更点を個別セクションとして拾っている。",
+  "新機能が実際の利用候補に入ったことを示す更新です。",
+  "既存ワークフローの制約や手間を減らす方向の更新です。",
+  "継続ウォッチ対象として押さえておきたい更新です。",
+  "試用段階を越えて、本番運用の候補として見やすくなった更新です。",
+];
 
 function toDateOnly(value) {
   const date = safeDate(value);
@@ -420,6 +430,53 @@ function renderTotalActionLabel(locale, count, unitLabel) {
 
 function highlightArchiveFileName(pageNumber) {
   return pageNumber <= 1 ? "highlights.html" : `highlights-${pageNumber}.html`;
+}
+
+async function listFilesRecursive(dirPath) {
+  const entries = await fs.readdir(dirPath, { withFileTypes: true });
+  const files = [];
+
+  for (const entry of entries) {
+    const entryPath = path.join(dirPath, entry.name);
+    if (entry.isDirectory()) {
+      files.push(...(await listFilesRecursive(entryPath)));
+      continue;
+    }
+
+    files.push(entryPath);
+  }
+
+  return files;
+}
+
+async function assertNoGenericFallbacksInPublishedOutput() {
+  const files = await listFilesRecursive(siteDir);
+  const targets = files.filter((filePath) => {
+    if (filePath.endsWith(".html")) {
+      return true;
+    }
+
+    return (
+      filePath.endsWith(".md") &&
+      filePath.includes(`${path.sep}raw${path.sep}summaries${path.sep}`)
+    );
+  });
+
+  const hits = [];
+  for (const filePath of targets) {
+    const text = await fs.readFile(filePath, "utf8");
+    for (const phrase of publishedFallbackPhrases) {
+      if (text.includes(phrase)) {
+        hits.push(`${path.relative(workspaceRoot, filePath)} -> ${phrase}`);
+      }
+    }
+  }
+
+  if (hits.length > 0) {
+    throw new Error(
+      `Low-information fallback copy detected in published output:\n${hits.join("\n")}`,
+    );
+  }
 }
 
 function renderPager(locale, currentPage, totalPages, hrefForPage) {
@@ -2802,6 +2859,8 @@ async function main() {
       ),
     ]);
   }
+
+  await assertNoGenericFallbacksInPublishedOutput();
 
   console.log(
     `Built GitHub Pages site with ${dailyDigests.length} daily page(s) and ${weeklyDigests.length} weekly page(s).`,

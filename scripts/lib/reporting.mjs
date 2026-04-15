@@ -211,10 +211,11 @@ const exactSummaryMappings = {
     ja: "browser tool の呼び出しラベルが分かりやすくなり、対象タブへ直接飛べるリンクも付いた。Run Playwright Code では長時間実行の deferred result も改善され、browser automation の追跡がしやすくなった。",
     en: "Browser tool calls now have clearer labels and direct links to the target tab, while Run Playwright Code has better deferred handling for long-running scripts.",
   },
-  "Visual Studio Code 1.115: Bring your own key for Copilot Business and Enterprise": {
-    ja: "Copilot Business / Enterprise で BYOK が使えるようになり、OpenRouter、Ollama、Google、OpenAI などのモデルを自前 API key で chat に接続できるようになった。組織で使うには GitHub.com 側の Copilot policy で Bring Your Own Language Model Key を有効化する必要がある。",
-    en: "BYOK is now available for Copilot Business and Enterprise in VS Code, letting organizations connect chat to models from providers such as OpenRouter, Ollama, Google, and OpenAI using their own API keys. Admins must enable the Bring Your Own Language Model Key policy in Copilot settings on GitHub.com.",
-  },
+  "Visual Studio Code 1.115: Bring your own key for Copilot Business and Enterprise":
+    {
+      ja: "Copilot Business / Enterprise で BYOK が使えるようになり、OpenRouter、Ollama、Google、OpenAI などのモデルを自前 API key で chat に接続できるようになった。組織で使うには GitHub.com 側の Copilot policy で Bring Your Own Language Model Key を有効化する必要がある。",
+      en: "BYOK is now available for Copilot Business and Enterprise in VS Code, letting organizations connect chat to models from providers such as OpenRouter, Ollama, Google, and OpenAI using their own API keys. Admins must enable the Bring Your Own Language Model Key policy in Copilot settings on GitHub.com.",
+    },
   "Visual Studio Code 1.115: Send input to background terminals": {
     ja: "新しい send_to_terminal tool により、background terminal に移ったプロセスにも agent が追加入力できるようになった。待機中に foreground から外れた SSH や長時間タスクでも対話を続けやすい。",
     en: "The new send_to_terminal tool lets agents keep interacting with background terminals, so SSH sessions and long-running tasks remain operable even after moving out of the foreground.",
@@ -400,10 +401,11 @@ const exactImportanceMappings = {
     ja: "競合解消のためにローカルへ戻って手で直す回数を減らせるので、pull request 上で止まりやすい統合作業をそのまま前に進めやすくなります。",
     en: "This matters because it reduces how often developers have to drop out of a pull request into local manual conflict resolution, keeping integration work moving inside the review flow.",
   },
-  "Visual Studio Code 1.115: Bring your own key for Copilot Business and Enterprise": {
-    ja: "GitHub 提供モデルだけに縛られず、自社のコスト方針やデータ統制に合わせてモデル接続先を選べるようになるので、Enterprise 導入判断に直結します。利用前に policy 有効化の運用整理は必要です。",
-    en: "This matters because Business and Enterprise teams can choose model providers that better match their cost, governance, or data-control requirements instead of relying only on GitHub-hosted defaults. Admin policy rollout still needs to be planned.",
-  },
+  "Visual Studio Code 1.115: Bring your own key for Copilot Business and Enterprise":
+    {
+      ja: "GitHub 提供モデルだけに縛られず、自社のコスト方針やデータ統制に合わせてモデル接続先を選べるようになるので、Enterprise 導入判断に直結します。利用前に policy 有効化の運用整理は必要です。",
+      en: "This matters because Business and Enterprise teams can choose model providers that better match their cost, governance, or data-control requirements instead of relying only on GitHub-hosted defaults. Admin policy rollout still needs to be planned.",
+    },
   "Model selection for Claude and Codex agents on github.com": {
     ja: "github.com 上で Claude / Codex agent ごとにモデルを選べるようになるため、タスク内容に応じた品質とコストの調整がしやすくなります。Business / Enterprise では管理ポリシーと repo 設定の両方を確認する必要があります。",
     en: "This matters because model choice can now be tuned per task on github.com when using Claude or Codex agents, improving control over quality and cost. Business and Enterprise teams also need both admin policy and repository settings aligned.",

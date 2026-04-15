@@ -4,6 +4,7 @@ on:
   workflow_run:
     workflows:
       - Collect updates
+      - Deploy GitHub Pages
     types:
       - completed
   workflow_dispatch:
@@ -33,7 +34,7 @@ permissions:
 
 jobs:
   author-request:
-    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
+    if: github.event_name == 'workflow_dispatch' || (github.event.workflow_run.name == 'Collect updates' && github.event.workflow_run.conclusion == 'success') || (github.event.workflow_run.name == 'Deploy GitHub Pages' && github.event.workflow_run.conclusion == 'failure')
     runs-on: ubuntu-latest
 
     steps:
@@ -62,16 +63,69 @@ jobs:
             const requestedDateKey = isManual ? (process.env.MANUAL_DATE_KEY || '').trim() : '';
             const requestedScope = (isManual ? process.env.MANUAL_SCOPE : 'full') || 'full';
             const forceIssue = isManual && process.env.FORCE_ISSUE === 'true';
+            const workflowName = context.eventName === 'workflow_run'
+              ? String(context.payload.workflow_run?.name || '')
+              : 'workflow_dispatch';
+            const workflowConclusion = context.eventName === 'workflow_run'
+              ? String(context.payload.workflow_run?.conclusion || '')
+              : 'manual';
 
             if (files.length === 0) {
               core.setOutput('should_run', 'false');
               return;
             }
 
+            const lowInformationSummaryMarkers = [
+              'GitHub Copilot 関連の更新。運用や導入判断に関わる変更点を原文で確認しておきたい。',
+              'Visual Studio Code 関連の更新。原文で確認しておきたい。',
+              '英語ソースの更新。公開内容の変化や運用への影響を原文で確認しておきたい。',
+              'に関する release note 更新。開発フローや agent 体験に関わる変更点を個別セクションとして拾っている。',
+              '新機能が実際の利用候補に入ったことを示す更新です。',
+              '既存ワークフローの制約や手間を減らす方向の更新です。',
+              '継続ウォッチ対象として押さえておきたい更新です。',
+              '試用段階を越えて、本番運用の候補として見やすくなった更新です。',
+              'Copilot CLI の agent 機能に関する更新。タスク自動化や agent ワークフローを CLI から扱う運用では確認しておきたい。',
+              'Copilot CLI への MCP 対応に関する更新。外部ツール・サービスの CLI 統合で接続パターンが変わる可能性がある。',
+              'Copilot CLI のセッション管理に関する更新。長時間の対話や複数の context を扱う運用では確認しておきたい。',
+              'Copilot CLI でのモデル選択や切り替えに関する更新。用途に応じたモデルの使い分けが変わる可能性がある。',
+              'Copilot CLI のインストール・セットアップに関する更新。初期導入やアップグレードパスに確認を。',
+              'Copilot CLI のコマンドや使用法に関する更新。ターミナルでの日々の使い方に関連する変更を含む可能性あり。',
+              'GitHub Copilot CLI の更新。CLI を実用している層はターミナル操作や自動化フローへの確認を。',
+              'GitHub Copilot code review 関連の更新。レビュー自動化や品質改善への影響を確認しておきたい。',
+            ];
+            const summariesDir = path.join(
+              process.env.GITHUB_WORKSPACE,
+              'summaries',
+              'daily',
+            );
+            const summaryCandidates = fs.existsSync(summariesDir)
+              ? fs.readdirSync(summariesDir)
+                  .filter((file) => /^\d{4}-\d{2}-\d{2}\.md$/.test(file))
+                  .sort()
+              : [];
+            const fallbackSummaryHits = summaryCandidates
+              .map((file) => {
+                const summaryText = fs.readFileSync(path.join(summariesDir, file), 'utf8');
+                const matches = lowInformationSummaryMarkers.filter((marker) =>
+                  summaryText.includes(marker),
+                );
+                return {
+                  file,
+                  dateKey: file.replace(/\.md$/, ''),
+                  matches,
+                };
+              })
+              .filter((entry) => entry.matches.length > 0);
+
             const latestFile = files[files.length - 1];
+            const fallbackTargetDateKey = fallbackSummaryHits.length > 0
+              ? fallbackSummaryHits[fallbackSummaryHits.length - 1].dateKey
+              : '';
             const selectedFile = requestedDateKey
               ? `${requestedDateKey}.json`
-              : latestFile;
+              : fallbackTargetDateKey
+                ? `${fallbackTargetDateKey}.json`
+                : latestFile;
 
             if (!files.includes(selectedFile)) {
               core.setFailed(`Event log not found: ${selectedFile}`);
@@ -83,47 +137,29 @@ jobs:
               fs.readFileSync(path.join(eventsDir, selectedFile), 'utf8'),
             );
             const newEventsCount = Number(eventLog.latestRun?.newEventsCount ?? 0);
-            const summaryFile = path.join(
-              process.env.GITHUB_WORKSPACE,
-              'summaries',
-              'daily',
-              `${dateKey}.md`,
-            );
-            const lowInformationSummaryMarkers = [
-              'GitHub Copilot 関連の更新。運用や導入判断に関わる変更点を原文で確認しておきたい。',
-              'Visual Studio Code 関連の更新。日々の開発フローや agent 利用に効く変更点を確認しておきたい。',
-              '英語ソースの更新。公開内容の変化や運用への影響を原文で確認しておきたい。',
-              '継続ウォッチ対象として押さえておきたい更新です。',
-              'Copilot CLI の agent 機能に関する更新。タスク自動化や agent ワークフローを CLI から扱う運用では確認しておきたい。',
-              'Copilot CLI への MCP 対応に関する更新。外部ツール・サービスの CLI 統合で接続パターンが変わる可能性がある。',
-              'Copilot CLI のセッション管理に関する更新。長時間の対話や複数の context を扱う運用では確認しておきたい。',
-              'Copilot CLI でのモデル選択や切り替えに関する更新。用途に応じたモデルの使い分けが変わる可能性がある。',
-              'Copilot CLI のインストール・セットアップに関する更新。初期導入やアップグレードパスに確認を。',
-              'Copilot CLI のコマンドや使用法に関する更新。ターミナルでの日々の使い方に関連する変更を含む可能性あり。',
-              'GitHub Copilot CLI の更新。CLI を実用している層はターミナル操作や自動化フローへの確認を。',
-              'GitHub Copilot code review 関連の更新。レビュー自動化や品質改善への影響を確認しておきたい。',
-            ];
-            const summaryText = fs.existsSync(summaryFile)
-              ? fs.readFileSync(summaryFile, 'utf8')
-              : '';
-            const fallbackMatches = lowInformationSummaryMarkers.filter((marker) =>
-              summaryText.includes(marker),
-            );
+            const fallbackEntry = fallbackSummaryHits.find((entry) => entry.dateKey === dateKey);
+            const fallbackMatches = fallbackEntry?.matches ?? [];
             const hasLowInformationSummary = fallbackMatches.length > 0;
             const shouldAuthor = newEventsCount > 0 || forceIssue || hasLowInformationSummary;
 
             if (!shouldAuthor) {
-              core.info(`No new events in ${selectedFile}.`);
+              core.info(`No new events or low-information fallback detected for ${selectedFile}.`);
               core.setOutput('should_run', 'false');
               return;
             }
 
             const triggerReasons = [];
+            if (context.eventName === 'workflow_run') {
+              triggerReasons.push(`起動元 workflow: ${workflowName} (${workflowConclusion})`);
+            }
             if (newEventsCount > 0) {
               triggerReasons.push(`最新 run で ${newEventsCount} 件の新規更新を検知`);
             }
             if (hasLowInformationSummary) {
               triggerReasons.push(`日次 summary に低情報 fallback が ${fallbackMatches.length} 件残存`);
+            }
+            if (!requestedDateKey && fallbackSummaryHits.length > 1) {
+              triggerReasons.push(`他にも ${fallbackSummaryHits.length - 1} 日分の fallback 残件あり`);
             }
             if (forceIssue) {
               triggerReasons.push('手動で force_issue=true を指定');
@@ -158,6 +194,14 @@ jobs:
               `- ${triggerReason}`,
               ...(hasLowInformationSummary
                 ? fallbackMatches.map((marker) => `- fallback: ${marker}`)
+                : []),
+              ...(fallbackSummaryHits.length > 1
+                ? [
+                    '- 他の fallback 残件:',
+                    ...fallbackSummaryHits
+                      .filter((entry) => entry.dateKey !== dateKey)
+                      .map((entry) => `  - ${entry.dateKey}: ${entry.matches.length} 件`),
+                  ]
                 : []),
               '',
               '### やってほしいこと',

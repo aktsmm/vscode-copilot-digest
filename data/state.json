@@ -79,9 +79,7 @@
         "https://code.visualstudio.com/updates/v1_108",
         "https://code.visualstudio.com/updates/v1_107"
       ],
-      "futureSeenIds": [
-        "https://code.visualstudio.com/updates/v1_116"
-      ],
+      "futureSeenIds": ["https://code.visualstudio.com/updates/v1_116"],
       "lastCheckedAt": "2026-04-15T09:43:28.778Z"
     },
     "vscode-updates": {

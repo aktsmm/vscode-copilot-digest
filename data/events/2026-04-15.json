@@ -23,10 +23,7 @@
       "title": "Model selection for Claude and Codex agents on github.com",
       "url": "https://github.blog/changelog/2026-04-14-model-selection-for-claude-and-codex-agents-on-github-com",
       "summary": "Model selection is now available for the Claude and Codex third-party coding agents on github.com. Just like Copilot cloud agent, you can now select a model when kicking off a…\nThe post Model selection for Claude and Codex agents on github.com appeared first on The GitHub Blog.",
-      "categories": [
-        "Improvement",
-        "copilot"
-      ],
+      "categories": ["Improvement", "copilot"],
       "isFutureDated": false,
       "score": 2
     },
@@ -40,10 +37,7 @@
       "title": "Model selection for Claude and Codex agents on github.com",
       "url": "https://github.blog/changelog/2026-04-14-model-selection-for-claude-and-codex-agents-on-github-com",
       "summary": "Model selection is now available for the Claude and Codex third-party coding agents on github.com. Just like Copilot cloud agent, you can now select a model when kicking off a…\nThe post Model selection for Claude and Codex agents on github.com appeared first on The GitHub Blog.",
-      "categories": [
-        "Improvement",
-        "copilot"
-      ],
+      "categories": ["Improvement", "copilot"],
       "isFutureDated": false,
       "score": 2
     },
@@ -57,11 +51,7 @@
       "title": "Copilot data residency in US + EU and FedRAMP compliance now available",
       "url": "https://github.blog/changelog/2026-04-13-copilot-data-residency-in-us-eu-and-fedramp-compliance-now-available",
       "summary": "GitHub Copilot now supports data residency for US and EU regions, ensuring all inference processing and associated data stay within your designated geography. For US government customers, all model hosts…\nThe post Copilot data residency in US + EU and FedRAMP compliance now available appeared first on The GitHub Blog.",
-      "categories": [
-        "Release",
-        "copilot",
-        "platform governance"
-      ],
+      "categories": ["Release", "copilot", "platform governance"],
       "isFutureDated": false,
       "score": 4
     },
@@ -75,11 +65,7 @@
       "title": "Copilot data residency in US + EU and FedRAMP compliance now available",
       "url": "https://github.blog/changelog/2026-04-13-copilot-data-residency-in-us-eu-and-fedramp-compliance-now-available",
       "summary": "GitHub Copilot now supports data residency for US and EU regions, ensuring all inference processing and associated data stay within your designated geography. For US government customers, all model hosts…\nThe post Copilot data residency in US + EU and FedRAMP compliance now available appeared first on The GitHub Blog.",
-      "categories": [
-        "Release",
-        "copilot",
-        "platform governance"
-      ],
+      "categories": ["Release", "copilot", "platform governance"],
       "isFutureDated": false,
       "score": 4
     }
