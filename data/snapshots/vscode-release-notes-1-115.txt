@@ -1,4 +1,4 @@
-Insiders
+1.116
 1.115
 1.114
 1.113
@@ -28,8 +28,6 @@ Integrated browser: several improvements to make working with the integrated bro
 Integrated browser: several improvements to make working with the integrated browser more seamless for agents.
 Terminal tools: new capabilities for agents to interact with background terminals.
 Terminal tools: new capabilities for agents to interact with background terminals.
-BYOK for Business and Enterprise: bring your own language model key is now available for Copilot Business and Enterprise users.
-BYOK for Business and Enterprise: bring your own language model key is now available for Copilot Business and Enterprise users.
 Happy Coding!
 H2: Visual Studio Code Agents (Preview)
 Visual Studio Code Agents is a new preview companion app that ships alongside VS Code Insiders, built for agent-native development.
@@ -95,10 +93,6 @@ With the new experimental
  Open in VS Code Insiders
  
  setting, the agent is automatically notified when a background terminal command finishes or requires user input. This also applies to foreground terminals that time out and are moved to the background. The agent can then take appropriate action, such as reviewing the output or providing input via the send_to_terminal tool.
-H2: GitHub Copilot
-H3: Bring your own key for Copilot Business and Enterprise
-Bring your own language model key (BYOK) is now available for Copilot Business and Enterprise users. With BYOK, you can use your own API keys to access models from providers like OpenRouter, Ollama, Google, OpenAI, and more in chat.
-To enable BYOK for your organization, an administrator must enable the Bring Your Own Language Model Key in VS Code policy in the Copilot policy settings on GitHub.com. After the policy is enabled, organization members can add models from built-in providers or install language model provider extensions.
 H2: Deprecated features and settings
 H3: New deprecations in this release
 None
@@ -150,7 +144,6 @@ If you'd like to read release notes for previous VS Code versions, go to Updates
 Visual Studio Code Agents (Preview)
 Integrated browser
 Terminal tools improvements
-GitHub Copilot
 Deprecated features and settings
 Notable fixes
 Thank you

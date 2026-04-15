@@ -1,18 +1,167 @@
 {
   "date": "2026-04-15",
-  "generatedAt": "2026-04-15T09:43:30.301Z",
+  "generatedAt": "2026-04-15T14:53:51.344Z",
   "latestRun": {
-    "generatedAt": "2026-04-15T09:43:30.301Z",
-    "newEventsCount": 4,
+    "generatedAt": "2026-04-15T14:53:51.344Z",
+    "newEventsCount": 9,
     "newEventIds": [
-      "github-changelog:https://github.blog/changelog/2026-04-14-model-selection-for-claude-and-codex-agents-on-github-com",
-      "github-changelog:https://github.blog/changelog/2026-04-13-copilot-data-residency-in-us-eu-and-fedramp-compliance-now-available",
-      "github-changelog-copilot:https://github.blog/changelog/2026-04-14-model-selection-for-claude-and-codex-agents-on-github-com",
-      "github-changelog-copilot:https://github.blog/changelog/2026-04-13-copilot-data-residency-in-us-eu-and-fedramp-compliance-now-available"
+      "vscode-updates:8218e7639b5bd3c3db1c861d06973318449da691567c78297ace0c23455140bd",
+      "vscode-release-notes-1-109:bee5469e42b19f937dfcc6a2f7d18f46cf7c06f570edb89ad5b111e10a2ef127",
+      "vscode-release-notes-1-116:section:31e05d4f580c2a06c0c594aee870e2396473aeb77eb78af8fec96b4b8cad73c8",
+      "vscode-release-notes-1-116:section:357deb10edcd47bc800660fd5ada392cdf5c454367fc001bc13084f83d247fae",
+      "vscode-release-notes-1-116:section:1d7833e57991b1a12f3650d2013e2bc1bea4d650e71d3f291eafa4509f45753d",
+      "vscode-release-notes-1-116:section:2a000e56684fd84bea747debe456eb6cb9930a76cde7b23ce95e7536da2a2425",
+      "vscode-release-notes-1-115:79571e1fd4685cbdf21e70cf43ea95e774472e774e4bc80968bc95959003fb71",
+      "vscode-release-notes-1-114:baff4a64051e20b9b3838b8d230d895b1c8ea4c6f66def36a1e664286484bb46",
+      "vscode-release-notes-1-113:c3043f219536346b76f4a2166b9d754c98ca36a0377a75dd8a00af37ae7cb6eb"
     ],
     "errorCount": 0
   },
   "events": [
+    {
+      "eventId": "vscode-updates:8218e7639b5bd3c3db1c861d06973318449da691567c78297ace0c23455140bd",
+      "sourceId": "vscode-updates",
+      "sourceName": "VS Code Updates",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-04-15T14:53:48.616Z",
+      "publishedAt": "2026-04-15T00:00:00.000Z",
+      "title": "VS Code Updates changed",
+      "url": "https://code.visualstudio.com/updates/",
+      "summary": "Detected 131 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 131,
+        "headings": [
+          "Visual Studio Code 1.116",
+          "Agent experience",
+          "Debug previous agent sessions",
+          "Configure thinking effort in Copilot CLI",
+          "Customizations welcome page",
+          "Tool confirmation carousel (Experimental)",
+          "Visual Studio Code Agents (Preview)",
+          "Terminal tools",
+          "Foreground terminal support for agent tools",
+          "Terminal input improvements",
+          "Background terminal notifications enabled by default",
+          "Chat UX",
+          "Accessibility",
+          "Agents app accessibility",
+          "Screen reader instructions for keyboard shortcuts search results",
+          "Integrated browser"
+        ],
+        "additions": [
+          "1.116",
+          "H1: Visual Studio Code 1.116",
+          "Release date: April 15, 2026",
+          "Welcome to the 1.116 release of Visual Studio Code. This release continues to make working with chat and agents more powerful and efficient. Here are some highlights of what's new:",
+          "Agent Debug Logs: view logs from previous agent sessions to understand and debug agent interactions.",
+          "Copilot CLI thinking effort: configure model thinking effort in Copilot CLI to balance response quality and latency.",
+          "Terminal agent tools: interact with any terminal session from your agent sessions.",
+          "GitHub Copilot built-in: start using AI without having to install the GitHub Copilot Chat extension.",
+          "H2: Agent experience",
+          "H3: Debug previous agent sessions",
+          "github.copilot.chat.agentDebugLog.fileLogging.enabled",
+          "The Agent Debug Log panel shows a chronological event log of agent interactions during a chat session, which is useful for understanding what happens when you send a prompt and to debug chat customizations.",
+          "You can now view the log for the current session as well as previous sessions, with logs persisted locally on disk. This enables you to review and debug past agent interactions even after the session has ended.",
+          "The setting to enable the Agent Debug Logs panel is now merged into the troubleshooting setting",
+          "Open in VS Code",
+          "Open in VS Code Insiders"
+        ]
+      },
+      "headings": [
+        "Visual Studio Code 1.116",
+        "Agent experience",
+        "Debug previous agent sessions",
+        "Configure thinking effort in Copilot CLI",
+        "Customizations welcome page",
+        "Tool confirmation carousel (Experimental)",
+        "Visual Studio Code Agents (Preview)",
+        "Terminal tools",
+        "Foreground terminal support for agent tools",
+        "Terminal input improvements",
+        "Background terminal notifications enabled by default",
+        "Chat UX"
+      ],
+      "score": 18
+    },
+    {
+      "eventId": "vscode-release-notes-1-116:section:31e05d4f580c2a06c0c594aee870e2396473aeb77eb78af8fec96b4b8cad73c8",
+      "sourceId": "vscode-release-notes-1-116",
+      "sourceName": "VS Code Release Notes 1.116",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-04-15T14:53:50.571Z",
+      "publishedAt": "2026-04-15T00:00:00.000Z",
+      "title": "Visual Studio Code 1.116: Debug previous agent sessions",
+      "url": "https://code.visualstudio.com/updates/v1_116",
+      "summary": "Setting: \n \n \n github.copilot.chat.agentDebugLog.fileLogging.enabled\n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders The Agent Debug Log panel shows a chronological event log of agent interactions during a chat session, which is useful for understanding what happens when you send a prompt and to debug chat customizations. You can now view the log for the current session as well as previous sessions, with lo...",
+      "categories": [
+        "release",
+        "section",
+        "Agent experience"
+      ],
+      "sectionHeading": "Agent experience",
+      "sectionTitle": "Debug previous agent sessions",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-116:section:357deb10edcd47bc800660fd5ada392cdf5c454367fc001bc13084f83d247fae",
+      "sourceId": "vscode-release-notes-1-116",
+      "sourceName": "VS Code Release Notes 1.116",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-04-15T14:53:50.571Z",
+      "publishedAt": "2026-04-15T00:00:00.000Z",
+      "title": "Visual Studio Code 1.116: Configure thinking effort in Copilot CLI",
+      "url": "https://code.visualstudio.com/updates/v1_116",
+      "summary": "Similar to local agent sessions, you can now configure the thinking effort for reasoning models in Copilot CLI sessions with the language model picker. Thinking effort controls how much reasoning the model applies to each request, which can help balance response quality and latency based on your needs. Choose a reasoning model in the picker and select the arrow to reveal the available effort levels. The available ef...",
+      "categories": [
+        "release",
+        "section",
+        "Agent experience"
+      ],
+      "sectionHeading": "Agent experience",
+      "sectionTitle": "Configure thinking effort in Copilot CLI",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-116:section:1d7833e57991b1a12f3650d2013e2bc1bea4d650e71d3f291eafa4509f45753d",
+      "sourceId": "vscode-release-notes-1-116",
+      "sourceName": "VS Code Release Notes 1.116",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-04-15T14:53:50.571Z",
+      "publishedAt": "2026-04-15T00:00:00.000Z",
+      "title": "Visual Studio Code 1.116: Customizations welcome page",
+      "url": "https://code.visualstudio.com/updates/v1_116",
+      "summary": "The Chat Customizations dialog, available via the Chat: Open Customizations command or the gear icon in the Chat view, now has a welcome page that gives you an overview of all your agent customizations. Creating customizations might be daunting at first, so you can now use the Customize Your Agent input on the welcome page to let VS Code draft customizations like agents, skills, and instructions based on a natural l...",
+      "categories": [
+        "release",
+        "section",
+        "Agent experience"
+      ],
+      "sectionHeading": "Agent experience",
+      "sectionTitle": "Customizations welcome page",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-116:section:2a000e56684fd84bea747debe456eb6cb9930a76cde7b23ce95e7536da2a2425",
+      "sourceId": "vscode-release-notes-1-116",
+      "sourceName": "VS Code Release Notes 1.116",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-04-15T14:53:50.571Z",
+      "publishedAt": "2026-04-15T00:00:00.000Z",
+      "title": "Visual Studio Code 1.116: Tool confirmation carousel (Experimental)",
+      "url": "https://code.visualstudio.com/updates/v1_116",
+      "summary": "Setting: \n \n \n chat.tools.confirmationCarousel.enabled\n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders To make approving or rejecting multiple tool calls more efficient, chat now shows a carousel control for tool confirmations. The carousel gives you a compact and navigable way to review and approve multiple tool calls in sequence without scrolling through the conversation. This feature is experimental and...",
+      "categories": [
+        "release",
+        "section",
+        "Agent experience"
+      ],
+      "sectionHeading": "Agent experience",
+      "sectionTitle": "Tool confirmation carousel (Experimental)",
+      "score": 4
+    },
     {
       "eventId": "github-changelog:https://github.blog/changelog/2026-04-14-model-selection-for-claude-and-codex-agents-on-github-com",
       "sourceId": "github-changelog",
@@ -23,7 +172,10 @@
       "title": "Model selection for Claude and Codex agents on github.com",
       "url": "https://github.blog/changelog/2026-04-14-model-selection-for-claude-and-codex-agents-on-github-com",
       "summary": "Model selection is now available for the Claude and Codex third-party coding agents on github.com. Just like Copilot cloud agent, you can now select a model when kicking off a…\nThe post Model selection for Claude and Codex agents on github.com appeared first on The GitHub Blog.",
-      "categories": ["Improvement", "copilot"],
+      "categories": [
+        "Improvement",
+        "copilot"
+      ],
       "isFutureDated": false,
       "score": 2
     },
@@ -37,7 +189,10 @@
       "title": "Model selection for Claude and Codex agents on github.com",
       "url": "https://github.blog/changelog/2026-04-14-model-selection-for-claude-and-codex-agents-on-github-com",
       "summary": "Model selection is now available for the Claude and Codex third-party coding agents on github.com. Just like Copilot cloud agent, you can now select a model when kicking off a…\nThe post Model selection for Claude and Codex agents on github.com appeared first on The GitHub Blog.",
-      "categories": ["Improvement", "copilot"],
+      "categories": [
+        "Improvement",
+        "copilot"
+      ],
       "isFutureDated": false,
       "score": 2
     },
@@ -51,7 +206,11 @@
       "title": "Copilot data residency in US + EU and FedRAMP compliance now available",
       "url": "https://github.blog/changelog/2026-04-13-copilot-data-residency-in-us-eu-and-fedramp-compliance-now-available",
       "summary": "GitHub Copilot now supports data residency for US and EU regions, ensuring all inference processing and associated data stay within your designated geography. For US government customers, all model hosts…\nThe post Copilot data residency in US + EU and FedRAMP compliance now available appeared first on The GitHub Blog.",
-      "categories": ["Release", "copilot", "platform governance"],
+      "categories": [
+        "Release",
+        "copilot",
+        "platform governance"
+      ],
       "isFutureDated": false,
       "score": 4
     },
@@ -65,9 +224,121 @@
       "title": "Copilot data residency in US + EU and FedRAMP compliance now available",
       "url": "https://github.blog/changelog/2026-04-13-copilot-data-residency-in-us-eu-and-fedramp-compliance-now-available",
       "summary": "GitHub Copilot now supports data residency for US and EU regions, ensuring all inference processing and associated data stay within your designated geography. For US government customers, all model hosts…\nThe post Copilot data residency in US + EU and FedRAMP compliance now available appeared first on The GitHub Blog.",
-      "categories": ["Release", "copilot", "platform governance"],
+      "categories": [
+        "Release",
+        "copilot",
+        "platform governance"
+      ],
       "isFutureDated": false,
       "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-114:baff4a64051e20b9b3838b8d230d895b1c8ea4c6f66def36a1e664286484bb46",
+      "sourceId": "vscode-release-notes-1-114",
+      "sourceName": "VS Code Release Notes 1.114",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-04-15T14:53:51.135Z",
+      "publishedAt": "2026-04-01T00:00:00.000Z",
+      "title": "Visual Studio Code 1.114",
+      "url": "https://code.visualstudio.com/updates/v1_114",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [],
+        "additions": [
+          "1.116"
+        ]
+      },
+      "headings": [
+        "Visual Studio Code 1.114",
+        "Chat experience",
+        "Preview videos in the image carousel",
+        "Copy final response in chat",
+        "Workspace search simplification",
+        "Troubleshoot previous chat sessions (Preview)",
+        "Languages",
+        "TypeScript 6.0",
+        "Python",
+        "Enterprise",
+        "Group policy to disable Claude agent",
+        "Contributions to extensions"
+      ],
+      "score": 2
+    },
+    {
+      "eventId": "vscode-release-notes-1-113:c3043f219536346b76f4a2166b9d754c98ca36a0377a75dd8a00af37ae7cb6eb",
+      "sourceId": "vscode-release-notes-1-113",
+      "sourceName": "VS Code Release Notes 1.113",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-04-15T14:53:51.342Z",
+      "publishedAt": "2026-03-25T00:00:00.000Z",
+      "title": "Visual Studio Code 1.113",
+      "url": "https://code.visualstudio.com/updates/v1_113",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [],
+        "additions": [
+          "1.116"
+        ]
+      },
+      "headings": [
+        "Visual Studio Code 1.113",
+        "Agent experience",
+        "MCP support in Copilot CLI & Claude agents",
+        "Forking sessions in Copilot CLI & Claude agents",
+        "Agent debug logs for Copilot CLI and Claude CLI sessions (Preview)",
+        "Claude session listing powered by SDK APIs",
+        "Nested subagents",
+        "Manage plugin marketplaces",
+        "URL handlers for plugin installation",
+        "Chat experience",
+        "Chat Customizations editor (Preview)",
+        "Configurable thinking effort in model picker"
+      ],
+      "score": 2
+    },
+    {
+      "eventId": "vscode-release-notes-1-109:bee5469e42b19f937dfcc6a2f7d18f46cf7c06f570edb89ad5b111e10a2ef127",
+      "sourceId": "vscode-release-notes-1-109",
+      "sourceName": "VS Code Release Notes 1.109",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-04-15T14:53:49.266Z",
+      "publishedAt": "2026-02-04T00:00:00.000Z",
+      "title": "VS Code Release Notes 1.109 changed",
+      "url": "https://code.visualstudio.com/updates/v1_109",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [],
+        "additions": [
+          "1.116"
+        ]
+      },
+      "headings": [
+        "January 2026 (version 1.109)",
+        "Upcoming events",
+        "Agent Sessions Day",
+        "Chat UX",
+        "Message steering and queueing (Experimental)",
+        "Anthropic models now show thinking tokens",
+        "Mermaid diagrams in chat responses",
+        "Ask Questions tool (Experimental)",
+        "Plan agent",
+        "Context window details",
+        "Inline chat UX revamp (Preview)",
+        "Model descriptions in the model picker"
+      ],
+      "score": 2
     }
   ],
   "errors": []

@@ -17,7 +17,7 @@
         "https://github.blog/changelog/2026-04-08-github-mobile-research-and-code-with-copilot-cloud-agent-anywhere"
       ],
       "futureSeenIds": [],
-      "lastCheckedAt": "2026-04-15T09:43:28.298Z"
+      "lastCheckedAt": "2026-04-15T14:53:47.977Z"
     },
     "github-changelog-copilot": {
       "seenIds": [
@@ -42,7 +42,7 @@
         "https://github.blog/changelog/2026-04-02-copilot-sdk-in-public-preview"
       ],
       "futureSeenIds": [],
-      "lastCheckedAt": "2026-04-15T09:43:28.312Z"
+      "lastCheckedAt": "2026-04-15T14:53:47.995Z"
     },
     "github-copilot-blog": {
       "seenIds": [
@@ -59,7 +59,7 @@
         "https://github.blog/?p=94179"
       ],
       "futureSeenIds": [],
-      "lastCheckedAt": "2026-04-15T09:43:28.752Z"
+      "lastCheckedAt": "2026-04-15T14:53:48.022Z"
     },
     "vscode-feed": {
       "seenIds": [
@@ -79,26 +79,28 @@
         "https://code.visualstudio.com/updates/v1_108",
         "https://code.visualstudio.com/updates/v1_107"
       ],
-      "futureSeenIds": ["https://code.visualstudio.com/updates/v1_116"],
-      "lastCheckedAt": "2026-04-15T09:43:28.778Z"
+      "futureSeenIds": [
+        "https://code.visualstudio.com/updates/v1_116"
+      ],
+      "lastCheckedAt": "2026-04-15T14:53:48.079Z"
     },
     "vscode-updates": {
-      "releasePublishedAt": "2026-04-07T15:00:00.000Z",
-      "releaseTitle": "Visual Studio Code 1.115",
-      "snapshotHash": "494418141c7fb241c35f7c65444742f07c946087163401f371f1446c8fd066e9",
-      "lastCheckedAt": "2026-04-15T09:43:29.372Z"
+      "releasePublishedAt": "2026-04-15T00:00:00.000Z",
+      "releaseTitle": "Visual Studio Code 1.116",
+      "snapshotHash": "8218e7639b5bd3c3db1c861d06973318449da691567c78297ace0c23455140bd",
+      "lastCheckedAt": "2026-04-15T14:53:48.617Z"
     },
     "vscode-release-notes-1-109": {
-      "releasePublishedAt": "2026-02-03T15:00:00.000Z",
+      "releasePublishedAt": "2026-02-04T00:00:00.000Z",
       "releaseTitle": "January 2026 (version 1.109)",
-      "snapshotHash": "3ec5027738a204ed9815dce3b31d3f7112c83702d7c2bad38f3fe8de038caccb",
-      "lastCheckedAt": "2026-04-15T09:43:29.480Z"
+      "snapshotHash": "bee5469e42b19f937dfcc6a2f7d18f46cf7c06f570edb89ad5b111e10a2ef127",
+      "lastCheckedAt": "2026-04-15T14:53:49.272Z"
     },
     "copilot-whats-new": {
-      "releasePublishedAt": "2026-04-15T09:43:29.971Z",
+      "releasePublishedAt": "2026-04-15T14:53:49.620Z",
       "releaseTitle": "Preview upcoming features for GitHub Copilot",
       "snapshotHash": "b420f1decd1c48516d66030e4292d9537371f69c4260aeb4b1a29975eb279571",
-      "lastCheckedAt": "2026-04-15T09:43:29.973Z"
+      "lastCheckedAt": "2026-04-15T14:53:49.620Z"
     },
     "publickey": {
       "seenIds": [
@@ -107,7 +109,7 @@
         "tag:www.publickey1.jp,2026://2.8527"
       ],
       "futureSeenIds": [],
-      "lastCheckedAt": "2026-04-15T09:43:30.088Z"
+      "lastCheckedAt": "2026-04-15T14:53:50.373Z"
     },
     "vscode-release-notes-1-115": {
       "sectionHashes": {
@@ -116,28 +118,40 @@
         "vscode-release-notes-1-115:Terminal tools improvements:Background terminal notifications (Experimental)": "c7a87901afd60c3f7cdb17fcd631757731e66091d203b223a0172bc421fab963",
         "vscode-release-notes-1-115:GitHub Copilot:Bring your own key for Copilot Business and Enterprise": "0e531be1aac99aa4aeb8914a178fcb0c429f3cf20a1d4ee06ecd3fc7a5a167fc"
       },
-      "releasePublishedAt": "2026-04-07T15:00:00.000Z",
+      "releasePublishedAt": "2026-04-08T00:00:00.000Z",
       "releaseTitle": "Visual Studio Code 1.115",
-      "snapshotHash": "494418141c7fb241c35f7c65444742f07c946087163401f371f1446c8fd066e9",
-      "lastCheckedAt": "2026-04-15T09:43:30.143Z"
+      "snapshotHash": "79571e1fd4685cbdf21e70cf43ea95e774472e774e4bc80968bc95959003fb71",
+      "lastCheckedAt": "2026-04-15T14:53:50.826Z"
     },
     "vscode-release-notes-1-114": {
-      "releasePublishedAt": "2026-03-31T15:00:00.000Z",
+      "releasePublishedAt": "2026-04-01T00:00:00.000Z",
       "releaseTitle": "Visual Studio Code 1.114",
-      "snapshotHash": "cb52fa54cfe4f8751cad22fabba8b98f7d2478ef36fc1472a47bddbc12c011e7",
-      "lastCheckedAt": "2026-04-15T09:43:30.192Z"
+      "snapshotHash": "baff4a64051e20b9b3838b8d230d895b1c8ea4c6f66def36a1e664286484bb46",
+      "lastCheckedAt": "2026-04-15T14:53:51.136Z"
     },
     "vscode-release-notes-1-113": {
-      "releasePublishedAt": "2026-03-24T15:00:00.000Z",
+      "releasePublishedAt": "2026-03-25T00:00:00.000Z",
       "releaseTitle": "Visual Studio Code 1.113",
-      "snapshotHash": "41c86f67518fa585ed33e5dfa8e6045269307755b565a2ecc5e2220218d6e521",
-      "lastCheckedAt": "2026-04-15T09:43:30.241Z"
+      "snapshotHash": "c3043f219536346b76f4a2166b9d754c98ca36a0377a75dd8a00af37ae7cb6eb",
+      "lastCheckedAt": "2026-04-15T14:53:51.343Z"
     },
     "vscode-release-notes-1-112": {
       "releasePublishedAt": "2026-03-17T15:00:00.000Z",
       "releaseTitle": "Visual Studio Code 1.112",
       "snapshotHash": "d1c83d8a6689e7c33981bf5d67eba1e9dcf7c520afa5835a6037c0ff4eb6c307",
       "lastCheckedAt": "2026-04-15T09:43:30.299Z"
+    },
+    "vscode-release-notes-1-116": {
+      "sectionHashes": {
+        "vscode-release-notes-1-116:Agent experience:Debug previous agent sessions": "31e05d4f580c2a06c0c594aee870e2396473aeb77eb78af8fec96b4b8cad73c8",
+        "vscode-release-notes-1-116:Agent experience:Configure thinking effort in Copilot CLI": "357deb10edcd47bc800660fd5ada392cdf5c454367fc001bc13084f83d247fae",
+        "vscode-release-notes-1-116:Agent experience:Customizations welcome page": "1d7833e57991b1a12f3650d2013e2bc1bea4d650e71d3f291eafa4509f45753d",
+        "vscode-release-notes-1-116:Agent experience:Tool confirmation carousel (Experimental)": "2a000e56684fd84bea747debe456eb6cb9930a76cde7b23ce95e7536da2a2425"
+      },
+      "releasePublishedAt": "2026-04-15T00:00:00.000Z",
+      "releaseTitle": "Visual Studio Code 1.116",
+      "snapshotHash": "8218e7639b5bd3c3db1c861d06973318449da691567c78297ace0c23455140bd",
+      "lastCheckedAt": "2026-04-15T14:53:50.571Z"
     }
   }
 }
