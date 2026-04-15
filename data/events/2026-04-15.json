@@ -1,12 +1,88 @@
 {
   "date": "2026-04-15",
-  "generatedAt": "2026-04-15T07:06:29.794Z",
+  "generatedAt": "2026-04-15T09:43:30.301Z",
   "latestRun": {
-    "generatedAt": "2026-04-15T07:06:29.794Z",
-    "newEventsCount": 0,
-    "newEventIds": [],
+    "generatedAt": "2026-04-15T09:43:30.301Z",
+    "newEventsCount": 4,
+    "newEventIds": [
+      "github-changelog:https://github.blog/changelog/2026-04-14-model-selection-for-claude-and-codex-agents-on-github-com",
+      "github-changelog:https://github.blog/changelog/2026-04-13-copilot-data-residency-in-us-eu-and-fedramp-compliance-now-available",
+      "github-changelog-copilot:https://github.blog/changelog/2026-04-14-model-selection-for-claude-and-codex-agents-on-github-com",
+      "github-changelog-copilot:https://github.blog/changelog/2026-04-13-copilot-data-residency-in-us-eu-and-fedramp-compliance-now-available"
+    ],
     "errorCount": 0
   },
-  "events": [],
+  "events": [
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-04-14-model-selection-for-claude-and-codex-agents-on-github-com",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-15T09:43:28.298Z",
+      "publishedAt": "2026-04-14T15:21:52.000Z",
+      "title": "Model selection for Claude and Codex agents on github.com",
+      "url": "https://github.blog/changelog/2026-04-14-model-selection-for-claude-and-codex-agents-on-github-com",
+      "summary": "Model selection is now available for the Claude and Codex third-party coding agents on github.com. Just like Copilot cloud agent, you can now select a model when kicking off a…\nThe post Model selection for Claude and Codex agents on github.com appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 2
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-04-14-model-selection-for-claude-and-codex-agents-on-github-com",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-15T09:43:28.312Z",
+      "publishedAt": "2026-04-14T15:21:52.000Z",
+      "title": "Model selection for Claude and Codex agents on github.com",
+      "url": "https://github.blog/changelog/2026-04-14-model-selection-for-claude-and-codex-agents-on-github-com",
+      "summary": "Model selection is now available for the Claude and Codex third-party coding agents on github.com. Just like Copilot cloud agent, you can now select a model when kicking off a…\nThe post Model selection for Claude and Codex agents on github.com appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 2
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-04-13-copilot-data-residency-in-us-eu-and-fedramp-compliance-now-available",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-15T09:43:28.298Z",
+      "publishedAt": "2026-04-13T23:03:01.000Z",
+      "title": "Copilot data residency in US + EU and FedRAMP compliance now available",
+      "url": "https://github.blog/changelog/2026-04-13-copilot-data-residency-in-us-eu-and-fedramp-compliance-now-available",
+      "summary": "GitHub Copilot now supports data residency for US and EU regions, ensuring all inference processing and associated data stay within your designated geography. For US government customers, all model hosts…\nThe post Copilot data residency in US + EU and FedRAMP compliance now available appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot",
+        "platform governance"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-04-13-copilot-data-residency-in-us-eu-and-fedramp-compliance-now-available",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-15T09:43:28.312Z",
+      "publishedAt": "2026-04-13T23:03:01.000Z",
+      "title": "Copilot data residency in US + EU and FedRAMP compliance now available",
+      "url": "https://github.blog/changelog/2026-04-13-copilot-data-residency-in-us-eu-and-fedramp-compliance-now-available",
+      "summary": "GitHub Copilot now supports data residency for US and EU regions, ensuring all inference processing and associated data stay within your designated geography. For US government customers, all model hosts…\nThe post Copilot data residency in US + EU and FedRAMP compliance now available appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot",
+        "platform governance"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    }
+  ],
   "errors": []
 }

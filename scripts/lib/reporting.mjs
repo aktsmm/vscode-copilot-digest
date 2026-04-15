@@ -147,6 +147,14 @@ const exactSummaryMappings = {
     ja: "github.com の pull request 上で、新しい Fix with Copilot ボタンからマージ競合を 3 クリックで解消できるようになった。コメント送信後は Copilot cloud agent が競合解消、build と test の確認、push までをクラウド実行環境で処理する。",
     en: "Pull requests on github.com can now resolve merge conflicts in three clicks through a new Fix with Copilot button, with Copilot cloud agent handling conflict resolution, build and test validation, and the push from its cloud environment.",
   },
+  "Model selection for Claude and Codex agents on github.com": {
+    ja: "github.com 上の Claude / Codex サードパーティ coding agent で、タスク開始時にモデルを選べるようになった。Claude では Anthropic 系、Codex では OpenAI 系の利用可能モデルから選択でき、最新モデルが順次使える。Business / Enterprise では管理者が対象 policy を有効化し、リポジトリ側でも Settings > Copilot > Cloud agent から agent を有効化する必要がある。",
+    en: "Model selection is now available when starting tasks with the Claude and Codex third-party coding agents on github.com, with Anthropic models for Claude and OpenAI models for Codex. Business and Enterprise users must have the relevant admin policy enabled, and the repository owner must also enable the agent in Copilot cloud-agent settings.",
+  },
+  "Copilot data residency in US + EU and FedRAMP compliance now available": {
+    ja: "GitHub Copilot が US / EU リージョンの data residency に対応し、推論処理と関連データを指定地域内に保持できるようになった。米国政府向けには FedRAMP Moderate 準拠のモデルホストと基盤も提供される。GA の Copilot 機能一式が対象で、利用時は管理者が Copilot settings で policy を明示的に有効化する必要があり、data-resident / FedRAMP リクエストには model multiplier が 10% 上乗せされる。",
+    en: "GitHub Copilot now supports US and EU data residency so inference processing and related data stay within the chosen geography, and US government customers also get FedRAMP Moderate compliant infrastructure. The generally available Copilot feature set is covered, admins must explicitly enable the policy, and data-resident or FedRAMP requests carry a 10% model-multiplier increase.",
+  },
   "Remote control CLI sessions on web and mobile in public preview": {
     ja: "Copilot CLI の実行中セッションを Web とモバイルから遠隔操作できる `copilot --remote` が public preview になった。ローカル端末で走らせたまま、ブラウザーやモバイル側から進行確認や指示の継続ができるようにする更新。",
     en: "`copilot --remote` is now in public preview, letting running Copilot CLI sessions be monitored and steered from the web or mobile while the local terminal continues the work.",
@@ -202,6 +210,10 @@ const exactSummaryMappings = {
   "Visual Studio Code 1.115: Browser agent tools improvements": {
     ja: "browser tool の呼び出しラベルが分かりやすくなり、対象タブへ直接飛べるリンクも付いた。Run Playwright Code では長時間実行の deferred result も改善され、browser automation の追跡がしやすくなった。",
     en: "Browser tool calls now have clearer labels and direct links to the target tab, while Run Playwright Code has better deferred handling for long-running scripts.",
+  },
+  "Visual Studio Code 1.115: Bring your own key for Copilot Business and Enterprise": {
+    ja: "Copilot Business / Enterprise で BYOK が使えるようになり、OpenRouter、Ollama、Google、OpenAI などのモデルを自前 API key で chat に接続できるようになった。組織で使うには GitHub.com 側の Copilot policy で Bring Your Own Language Model Key を有効化する必要がある。",
+    en: "BYOK is now available for Copilot Business and Enterprise in VS Code, letting organizations connect chat to models from providers such as OpenRouter, Ollama, Google, and OpenAI using their own API keys. Admins must enable the Bring Your Own Language Model Key policy in Copilot settings on GitHub.com.",
   },
   "Visual Studio Code 1.115: Send input to background terminals": {
     ja: "新しい send_to_terminal tool により、background terminal に移ったプロセスにも agent が追加入力できるようになった。待機中に foreground から外れた SSH や長時間タスクでも対話を続けやすい。",
@@ -387,6 +399,18 @@ const exactImportanceMappings = {
   "Fix merge conflicts in three clicks with Copilot cloud agent": {
     ja: "競合解消のためにローカルへ戻って手で直す回数を減らせるので、pull request 上で止まりやすい統合作業をそのまま前に進めやすくなります。",
     en: "This matters because it reduces how often developers have to drop out of a pull request into local manual conflict resolution, keeping integration work moving inside the review flow.",
+  },
+  "Visual Studio Code 1.115: Bring your own key for Copilot Business and Enterprise": {
+    ja: "GitHub 提供モデルだけに縛られず、自社のコスト方針やデータ統制に合わせてモデル接続先を選べるようになるので、Enterprise 導入判断に直結します。利用前に policy 有効化の運用整理は必要です。",
+    en: "This matters because Business and Enterprise teams can choose model providers that better match their cost, governance, or data-control requirements instead of relying only on GitHub-hosted defaults. Admin policy rollout still needs to be planned.",
+  },
+  "Model selection for Claude and Codex agents on github.com": {
+    ja: "github.com 上で Claude / Codex agent ごとにモデルを選べるようになるため、タスク内容に応じた品質とコストの調整がしやすくなります。Business / Enterprise では管理ポリシーと repo 設定の両方を確認する必要があります。",
+    en: "This matters because model choice can now be tuned per task on github.com when using Claude or Codex agents, improving control over quality and cost. Business and Enterprise teams also need both admin policy and repository settings aligned.",
+  },
+  "Copilot data residency in US + EU and FedRAMP compliance now available": {
+    ja: "データ所在やコンプライアンス要件で Copilot 導入を止めていた組織でも、US / EU と FedRAMP 前提で本番評価を進めやすくなる更新です。利用時は対象モデル制約と 10% のコスト増分も見ておく必要があります。",
+    en: "This is important for organizations blocked by data-sovereignty or compliance requirements because Copilot can now be evaluated under US or EU residency and FedRAMP constraints. The tradeoff is a restricted model set and a 10% higher model multiplier for those requests.",
   },
   "Remote control CLI sessions on web and mobile in public preview": {
     ja: "長時間の CLI 作業をデスクトップ前に張り付かず見守って差し込めるので、agent 的な terminal 運用を継続しやすくなります。",
@@ -715,6 +739,18 @@ function patternTitle(title) {
     [
       "Fix merge conflicts in three clicks with Copilot cloud agent",
       "Copilot cloud agent でマージ競合を 3 クリックで解消できるようになった",
+    ],
+    [
+      "Visual Studio Code 1.115: Bring your own key for Copilot Business and Enterprise",
+      "Copilot Business / Enterprise で BYOK が利用可能になった",
+    ],
+    [
+      "Model selection for Claude and Codex agents on github.com",
+      "github.com 上の Claude / Codex agent でモデル選択が可能になった",
+    ],
+    [
+      "Copilot data residency in US + EU and FedRAMP compliance now available",
+      "Copilot の US / EU データレジデンシーと FedRAMP 対応が利用可能になった",
     ],
     [
       "Remote control CLI sessions on web and mobile in public preview",
