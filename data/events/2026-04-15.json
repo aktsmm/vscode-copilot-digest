@@ -1,23 +1,69 @@
 {
   "date": "2026-04-15",
-  "generatedAt": "2026-04-15T14:53:51.344Z",
+  "generatedAt": "2026-04-15T22:07:34.320Z",
   "latestRun": {
-    "generatedAt": "2026-04-15T14:53:51.344Z",
-    "newEventsCount": 9,
+    "generatedAt": "2026-04-15T22:07:34.320Z",
+    "newEventsCount": 3,
     "newEventIds": [
-      "vscode-updates:8218e7639b5bd3c3db1c861d06973318449da691567c78297ace0c23455140bd",
-      "vscode-release-notes-1-109:bee5469e42b19f937dfcc6a2f7d18f46cf7c06f570edb89ad5b111e10a2ef127",
-      "vscode-release-notes-1-116:section:31e05d4f580c2a06c0c594aee870e2396473aeb77eb78af8fec96b4b8cad73c8",
-      "vscode-release-notes-1-116:section:357deb10edcd47bc800660fd5ada392cdf5c454367fc001bc13084f83d247fae",
-      "vscode-release-notes-1-116:section:1d7833e57991b1a12f3650d2013e2bc1bea4d650e71d3f291eafa4509f45753d",
-      "vscode-release-notes-1-116:section:2a000e56684fd84bea747debe456eb6cb9930a76cde7b23ce95e7536da2a2425",
-      "vscode-release-notes-1-115:79571e1fd4685cbdf21e70cf43ea95e774472e774e4bc80968bc95959003fb71",
-      "vscode-release-notes-1-114:baff4a64051e20b9b3838b8d230d895b1c8ea4c6f66def36a1e664286484bb46",
-      "vscode-release-notes-1-113:c3043f219536346b76f4a2166b9d754c98ca36a0377a75dd8a00af37ae7cb6eb"
+      "github-changelog:https://github.blog/changelog/2026-04-15-enable-copilot-cloud-agent-via-custom-properties",
+      "github-copilot-blog:https://github.blog/?p=95327",
+      "vscode-feed:https://code.visualstudio.com/updates/v1_116"
     ],
     "errorCount": 0
   },
   "events": [
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-04-15-enable-copilot-cloud-agent-via-custom-properties",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-15T22:07:31.570Z",
+      "publishedAt": "2026-04-15T18:30:28.000Z",
+      "title": "Enable Copilot cloud agent via custom properties",
+      "url": "https://github.blog/changelog/2026-04-15-enable-copilot-cloud-agent-via-custom-properties",
+      "summary": "You can now selectively enable GitHub Copilot cloud agent (CCA) access on a per-organization basis. Previously, enterprise admins and AI managers could only enable the agent everywhere, disable it everywhere,…\nThe post Enable Copilot cloud agent via custom properties appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "copilot",
+        "enterprise management tools"
+      ],
+      "isFutureDated": false,
+      "score": 3
+    },
+    {
+      "eventId": "github-copilot-blog:https://github.blog/?p=95327",
+      "sourceId": "github-copilot-blog",
+      "sourceName": "GitHub Blog / GitHub Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-15T22:07:32.082Z",
+      "publishedAt": "2026-04-15T17:00:00.000Z",
+      "title": "Build a personal organization command center with GitHub Copilot CLI",
+      "url": "https://github.blog/ai-and-ml/github-copilot/build-a-personal-organization-command-center-with-github-copilot-cli/",
+      "summary": "Learn about the productivity tool one GitHub engineer built, and how AI supported the development process.\nThe post Build a personal organization command center with GitHub Copilot CLI appeared first on The GitHub Blog.",
+      "categories": [
+        "AI & ML",
+        "GitHub Copilot",
+        "GitHub Copilot CLI"
+      ],
+      "isFutureDated": false,
+      "score": 2
+    },
+    {
+      "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_116",
+      "sourceId": "vscode-feed",
+      "sourceName": "VS Code Feed",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-15T22:07:32.119Z",
+      "publishedAt": "2026-04-15T17:00:00.000Z",
+      "title": "Visual Studio Code 1.116",
+      "url": "https://code.visualstudio.com/updates/v1_116",
+      "summary": "Learn what's new in Visual Studio Code 1.116\n Read the full article",
+      "categories": [
+        "release"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
     {
       "eventId": "vscode-updates:8218e7639b5bd3c3db1c861d06973318449da691567c78297ace0c23455140bd",
       "sourceId": "vscode-updates",
