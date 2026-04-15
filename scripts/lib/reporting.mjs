@@ -463,6 +463,10 @@ const exactImportanceMappings = {
     ja: "browser と terminal の agent tool が長時間タスク前提で実用寄りになり、Agents app preview も含めて agent-native 開発を日常運用へ近づける release です。",
     en: "This matters because browser and terminal agent tools become much more practical for long-running work, while the Agents app preview pushes VS Code further toward day-to-day agent-native development.",
   },
+  "Visual Studio Code 1.116": {
+    ja: "次期 VS Code のリリースを事前に把握できるので、Copilot や agent 体験に関わる変更点を計画的に確認しやすい更新です。",
+    en: "This matters because it lets teams preview the upcoming VS Code release and plan around changes to the Copilot and agent experience before the stable release lands.",
+  },
   "Copilot-reviewed pull request merge metrics now in the usage metrics API": {
     ja: "Copilot が authoring だけでなく review から merge までにどう効いているかを測れるので、導入効果の可視化と自動レビュー定着の判断に直接使えます。",
     en: "This matters because teams can now measure Copilot's effect beyond authoring and see whether automated reviews are influencing merge outcomes and adoption in practice.",
