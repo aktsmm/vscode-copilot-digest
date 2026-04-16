@@ -140,7 +140,7 @@ Administrators can now use a group policy to disable the Claude agent integratio
  Open in VS Code
  Open in VS Code Insiders
  
- setting is managed by the organization and users cannot enable the Claude agent.
+ This setting is managed at the organization level. Contact your administrator to change it.ORG setting is managed by the organization and users cannot enable the Claude agent.
 This policy is configured as a boolean with key Claude3PIntegration. Learn more about device management policies in the enterprise documentation.
 H2: Contributions to extensions
 H3: GitHub Pull Requests
@@ -170,7 +170,7 @@ Edit Mode is officially deprecated as of VS Code version 1.110. Users can tempor
  Open in VS Code
  Open in VS Code Insiders
  
- . This setting will remain supported through version 1.125. Beginning with version 1.125, Edit Mode will be fully removed and can no longer be enabled via settings.
+ This setting is managed at the organization level. Contact your administrator to change it.ORG. This setting will remain supported through version 1.125. Beginning with version 1.125, Edit Mode will be fully removed and can no longer be enabled via settings.
 H2: Notable fixes
 microsoft/vscode #303908 Fix VS Code shortcuts taking precedence over page shortcuts in Integrated Browser
 microsoft/vscode #299777 Fix "Add Element to Chat" not working while debugging is paused in the Integrated Browser

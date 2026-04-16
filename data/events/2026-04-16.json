@@ -1,11 +1,15 @@
 {
   "date": "2026-04-16",
-  "generatedAt": "2026-04-16T07:08:02.104Z",
+  "generatedAt": "2026-04-16T15:13:00.267Z",
   "latestRun": {
-    "generatedAt": "2026-04-16T07:08:02.104Z",
-    "newEventsCount": 1,
+    "generatedAt": "2026-04-16T15:13:00.267Z",
+    "newEventsCount": 5,
     "newEventIds": [
-      "github-changelog-copilot:https://github.blog/changelog/2026-04-15-enable-copilot-cloud-agent-via-custom-properties"
+      "vscode-updates:de3bd8b56cccce3b5279825bb083707156973ee9333fddb6de43192b3b3d7234",
+      "vscode-release-notes-1-109:432a941d0bca147486876d54d5dbe0ac83fdb0e8a2a2a99481ebae6b0da8856a",
+      "vscode-release-notes-1-115:f9fdc004e131dc68490816abdbe914601e14db8fc59b170984fbaeb883a82aca",
+      "vscode-release-notes-1-114:dbc72c7a05941d935b5b9fb2842719259365e842a12762dbd0144a77c33e36b2",
+      "vscode-release-notes-1-113:8b0b43dd5444154af661a44e1983586ec8fe7b0058593033704b715c5a45cf67"
     ],
     "errorCount": 0
   },
@@ -27,6 +31,153 @@
       ],
       "isFutureDated": false,
       "score": 3
+    },
+    {
+      "eventId": "vscode-updates:de3bd8b56cccce3b5279825bb083707156973ee9333fddb6de43192b3b3d7234",
+      "sourceId": "vscode-updates",
+      "sourceName": "VS Code Updates",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-04-16T15:12:59.057Z",
+      "publishedAt": "2026-04-15T00:00:00.000Z",
+      "title": "VS Code Updates changed",
+      "url": "https://code.visualstudio.com/updates/",
+      "summary": "Detected 2 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 2,
+        "headings": [],
+        "additions": [
+          "This setting is managed at the organization level. Contact your administrator to change it.ORG)",
+          "This setting is managed at the organization level. Contact your administrator to change it.ORG. This setting will remain supported through version 1.125. Beginning with version 1.125, Edit Mode will be fully removed and can no longer be enabled via settings."
+        ]
+      },
+      "headings": [
+        "Visual Studio Code 1.116",
+        "Agent experience",
+        "Debug previous agent sessions",
+        "Configure thinking effort in Copilot CLI",
+        "Customizations welcome page",
+        "Tool confirmation carousel (Experimental)",
+        "Visual Studio Code Agents (Preview)",
+        "Terminal tools",
+        "Foreground terminal support for agent tools",
+        "Terminal input improvements",
+        "Background terminal notifications enabled by default",
+        "Chat UX"
+      ],
+      "score": 2
+    },
+    {
+      "eventId": "vscode-release-notes-1-114:dbc72c7a05941d935b5b9fb2842719259365e842a12762dbd0144a77c33e36b2",
+      "sourceId": "vscode-release-notes-1-114",
+      "sourceName": "VS Code Release Notes 1.114",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-04-16T15:13:00.213Z",
+      "publishedAt": "2026-04-01T00:00:00.000Z",
+      "title": "Visual Studio Code 1.114",
+      "url": "https://code.visualstudio.com/updates/v1_114",
+      "summary": "Detected 2 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 2,
+        "headings": [],
+        "additions": [
+          "This setting is managed at the organization level. Contact your administrator to change it.ORG setting is managed by the organization and users cannot enable the Claude agent.",
+          "This setting is managed at the organization level. Contact your administrator to change it.ORG. This setting will remain supported through version 1.125. Beginning with version 1.125, Edit Mode will be fully removed and can no longer be enabled via settings."
+        ]
+      },
+      "headings": [
+        "Visual Studio Code 1.114",
+        "Chat experience",
+        "Preview videos in the image carousel",
+        "Copy final response in chat",
+        "Workspace search simplification",
+        "Troubleshoot previous chat sessions (Preview)",
+        "Languages",
+        "TypeScript 6.0",
+        "Python",
+        "Enterprise",
+        "Group policy to disable Claude agent",
+        "Contributions to extensions"
+      ],
+      "score": 2
+    },
+    {
+      "eventId": "vscode-release-notes-1-113:8b0b43dd5444154af661a44e1983586ec8fe7b0058593033704b715c5a45cf67",
+      "sourceId": "vscode-release-notes-1-113",
+      "sourceName": "VS Code Release Notes 1.113",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-04-16T15:13:00.266Z",
+      "publishedAt": "2026-03-25T00:00:00.000Z",
+      "title": "Visual Studio Code 1.113",
+      "url": "https://code.visualstudio.com/updates/v1_113",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [],
+        "additions": [
+          "This setting is managed at the organization level. Contact your administrator to change it.ORG. This setting will remain supported through version 1.125. Beginning with version 1.125, Edit Mode will be fully removed and can no longer be enabled via settings."
+        ]
+      },
+      "headings": [
+        "Visual Studio Code 1.113",
+        "Agent experience",
+        "MCP support in Copilot CLI & Claude agents",
+        "Forking sessions in Copilot CLI & Claude agents",
+        "Agent debug logs for Copilot CLI and Claude CLI sessions (Preview)",
+        "Claude session listing powered by SDK APIs",
+        "Nested subagents",
+        "Manage plugin marketplaces",
+        "URL handlers for plugin installation",
+        "Chat experience",
+        "Chat Customizations editor (Preview)",
+        "Configurable thinking effort in model picker"
+      ],
+      "score": 2
+    },
+    {
+      "eventId": "vscode-release-notes-1-109:432a941d0bca147486876d54d5dbe0ac83fdb0e8a2a2a99481ebae6b0da8856a",
+      "sourceId": "vscode-release-notes-1-109",
+      "sourceName": "VS Code Release Notes 1.109",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-04-16T15:12:59.182Z",
+      "publishedAt": "2026-02-04T00:00:00.000Z",
+      "title": "VS Code Release Notes 1.109 changed",
+      "url": "https://code.visualstudio.com/updates/v1_109",
+      "summary": "Detected 2 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 2,
+        "headings": [],
+        "additions": [
+          "This setting is managed at the organization level. Contact your administrator to change it.ORG",
+          "This setting is managed at the organization level. Contact your administrator to change it.ORG setting."
+        ]
+      },
+      "headings": [
+        "January 2026 (version 1.109)",
+        "Upcoming events",
+        "Agent Sessions Day",
+        "Chat UX",
+        "Message steering and queueing (Experimental)",
+        "Anthropic models now show thinking tokens",
+        "Mermaid diagrams in chat responses",
+        "Ask Questions tool (Experimental)",
+        "Plan agent",
+        "Context window details",
+        "Inline chat UX revamp (Preview)",
+        "Model descriptions in the model picker"
+      ],
+      "score": 2
     }
   ],
   "errors": []

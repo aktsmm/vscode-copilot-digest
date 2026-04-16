@@ -247,7 +247,7 @@ Ask an agent to open or interact with the browser (
  Open in VS Code
  Open in VS Code Insiders
  
- )
+ This setting is managed at the organization level. Contact your administrator to change it.ORG)
 H2: Languages
 H3: JS/TS Chat Features extension (Preview)
 Setting: 
@@ -315,7 +315,7 @@ Edit Mode is officially deprecated as of VS Code version 1.110. Users can tempor
  Open in VS Code
  Open in VS Code Insiders
  
- . This setting will remain supported through version 1.125. Beginning with version 1.125, Edit Mode will be fully removed and can no longer be enabled via settings.
+ This setting is managed at the organization level. Contact your administrator to change it.ORG. This setting will remain supported through version 1.125. Beginning with version 1.125, Edit Mode will be fully removed and can no longer be enabled via settings.
 H2: Thank you
 Contributions to our issue tracking:
 @gjsjohnmurray (John Murray)
