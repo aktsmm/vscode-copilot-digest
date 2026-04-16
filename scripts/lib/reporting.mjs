@@ -40,6 +40,10 @@ const monthMap = {
 };
 
 const vscodeReleaseSummaries = {
+  1.116: {
+    ja: "デバッグ体験と agent 操作性の強化が中心。前のセッションの agent debug log をディスクに保存して後から確認できるようになり、Copilot CLI での thinking effort 設定、Chat Customizations ウェルカムページ、tool 確認 carousel（Experimental）、GitHub Copilot の組み込み対応が入った。",
+    en: "This release focuses on debugging and agent operability: previous agent session logs can now be stored and reviewed, Copilot CLI gains thinking-effort controls, the Chat Customizations dialog gets a welcome page with AI-assisted drafting, a tool-confirmation carousel lands as experimental, and GitHub Copilot is now built in without a separate extension.",
+  },
   1.115: {
     ja: "VS Code Agents companion app の preview 追加に加え、browser tool のラベル改善と重複タブ抑制、background terminal への send_to_terminal、background terminal notifications、Edit Mode 撤去時期の明確化が入った。agent を長時間タスク込みで扱いやすくする release。",
     en: "This release adds the VS Code Agents preview app, clearer browser tool labels with duplicate-tab suppression, send_to_terminal plus background terminal notifications, and a firmer Edit Mode removal timeline to make longer agent workflows more practical.",
@@ -236,6 +240,30 @@ const exactSummaryMappings = {
   "60 million Copilot code reviews and counting": {
     ja: "Copilot code review が初期公開から 1 年で 10 倍成長し、GitHub 上の code review の 5 件に 1 件超を占めるまで広がったという報告。agentic architecture、継続評価、batch autofix などで signal と speed を両立させる設計も解説している。",
     en: "A progress report on Copilot code review, which has grown 10x since launch to account for more than one in five code reviews on GitHub, alongside details on the agentic architecture, evaluation loop, and batch autofix work used to improve signal and speed.",
+  },
+  "Enable Copilot cloud agent via custom properties": {
+    ja: "エンタープライズ管理者が Copilot cloud agent (CCA) を組織単位で選択的に有効化できるようになった。以前は全組織一括の有効化・無効化または組織側委任のみで、特定組織を選んで有効化する手段がなかった。カスタムプロパティを使った絞り込み設定か、新しい REST API エンドポイント（PUT / POST / DELETE）か、AI Controls ページから管理できる。カスタムプロパティによる設定は構成時点で一度だけ評価されるため、プロパティを後から変更しても自動では再評価されない点に注意が必要。",
+    en: "Enterprise admins can now selectively enable Copilot cloud agent (CCA) access per organization instead of only enabling or disabling it everywhere. You can target specific organizations individually or by matching organization custom properties, manage the policy through three new REST API endpoints (PUT, POST, DELETE), or use the AI Controls settings page. Note that custom-property evaluation happens once at configuration time and does not reapply automatically if properties are later changed.",
+  },
+  "Build a personal organization command center with GitHub Copilot CLI": {
+    ja: "GitHub のエンジニアが Copilot CLI を使って個人の作業を自動化するコマンドセンターを構築した事例。AI が開発プロセスをどう支援したかが主題で、CLI ベースのツール作りの参考になる。",
+    en: "A case study of a GitHub engineer using Copilot CLI to build a personal command center that automates routine tasks, showing how AI supported the development process end to end.",
+  },
+  "Visual Studio Code 1.116: Debug previous agent sessions": {
+    ja: "agent セッションのデバッグログがローカルのディスクに保存されるようになり、セッション終了後でも過去の agent 操作履歴を確認できるようになった。`github.copilot.chat.agentDebugLog.fileLogging.enabled` で有効化し、Agent Debug Log パネルから現在・過去のセッションログを参照できる。",
+    en: "Agent session debug logs are now saved to disk and can be reviewed after a session ends through the Agent Debug Log panel. Enable the feature via `github.copilot.chat.agentDebugLog.fileLogging.enabled` to inspect both current and historical agent interactions.",
+  },
+  "Visual Studio Code 1.116: Configure thinking effort in Copilot CLI": {
+    ja: "Copilot CLI でも reasoning model の thinking effort を言語モデルピッカーから設定できるようになった。ローカル agent セッションと同様に、応答品質とレイテンシのバランスをタスク単位で調整できる。reasoning model を選択してから矢印で利用可能な effort レベルを展開して設定する。",
+    en: "Copilot CLI sessions can now configure thinking effort for reasoning models through the language model picker, just like local agent sessions. Select a reasoning model, expand the arrow to reveal effort levels, and choose the level that best balances response quality and latency for the task.",
+  },
+  "Visual Studio Code 1.116: Customizations welcome page": {
+    ja: "Chat Customizations ダイアログにウェルカムページが追加された。すべての agent カスタマイズを一覧でき、「Customize Your Agent」入力欄に自然言語で要望を書くと VS Code が agent・スキル・instructions の下書きを生成してくれる。",
+    en: "The Chat Customizations dialog now has a welcome page that lists all agent customizations at a glance. A new Customize Your Agent prompt lets VS Code draft agents, skills, and instructions from a natural-language description.",
+  },
+  "Visual Studio Code 1.116: Tool confirmation carousel (Experimental)": {
+    ja: "複数の tool call を確認・承認するための carousel コントロールが追加された（Experimental）。`chat.tools.confirmationCarousel.enabled` で有効化でき、会話をスクロールせずにまとめて tool call を確認・承認できるため、tool の多い agent セッションでの操作効率が上がる。",
+    en: "An experimental tool-confirmation carousel (`chat.tools.confirmationCarousel.enabled`) lets you review and approve multiple tool calls in a compact, navigable control without scrolling through the conversation, making high-tool agent sessions easier to supervise.",
   },
 };
 
@@ -499,6 +527,34 @@ const exactImportanceMappings = {
   "60 million Copilot code reviews and counting": {
     ja: "単なる件数報告ではなく、高信号レビューをどう評価し、agentic architecture で改善しているかまで分かるので、AI code review を運用へ載せるときの判断材料になります。",
     en: "This matters because it goes beyond a usage milestone and shows how GitHub evaluates review quality and improves it through an agentic architecture, which is useful for teams operationalizing AI code review.",
+  },
+  "Enable Copilot cloud agent via custom properties": {
+    ja: "CCA を段階的に展開したい enterprise では、特定組織だけでパイロット導入を始め、効果を確認しながら順次拡大できるようになります。全組織一括展開はリスクが高い場合や、コスト・統制の観点で展開範囲を絞りたい場合に直接効く更新です。",
+    en: "This matters because enterprises can now pilot CCA with select organizations and expand access progressively instead of enabling it everywhere at once, which helps manage risk, cost, and governance as adoption grows.",
+  },
+  "Visual Studio Code 1.116": {
+    ja: "GitHub Copilot の組み込み対応、agent debug log の永続化、CLI での thinking effort 設定など、agent を日常運用で使い続けやすくする変更が揃った release です。",
+    en: "This matters because it brings a set of changes that make day-to-day agent use more sustainable, including built-in Copilot, persistent session debug logs, and thinking-effort controls in the CLI.",
+  },
+  "Visual Studio Code 1.116: Debug previous agent sessions": {
+    ja: "セッション終了後でも過去の agent 操作を後から追跡できるため、カスタマイズの品質確認や問題の再現なしでの診断がしやすくなります。",
+    en: "This matters because it allows post-session debugging without having to reproduce problems, making it easier to diagnose customization issues and agent behavior after the fact.",
+  },
+  "Visual Studio Code 1.116: Configure thinking effort in Copilot CLI": {
+    ja: "CLI でも reasoning model の思考量をタスクに応じて調整できるため、品質とレイテンシのトレードオフを局面ごとにコントロールしやすくなります。",
+    en: "This matters because thinking-effort control in the CLI lets you tune the quality-latency tradeoff per task rather than accepting a single fixed behavior for all CLI sessions.",
+  },
+  "Visual Studio Code 1.116: Customizations welcome page": {
+    ja: "カスタマイズの全体把握と下書き生成をひとつの画面で進められるため、agent instructions や skills の整備を始めやすくなります。初期設定の手間を下げることで、カスタマイズ機能の定着を後押しします。",
+    en: "This matters because it reduces the barrier to adopting agent customizations by letting teams see what they have and draft new customizations from natural language in one place.",
+  },
+  "Visual Studio Code 1.116: Tool confirmation carousel (Experimental)": {
+    ja: "tool call が多いセッションで承認作業の往復を減らせるため、agent の自動実行範囲を広げながらも監視コストを下げやすくなります。",
+    en: "This matters because it reduces the overhead of supervising tool-heavy agent sessions, making it more practical to expand agent autonomy while keeping human oversight in place.",
+  },
+  "Build a personal organization command center with GitHub Copilot CLI": {
+    ja: "Copilot CLI で実用的な生産性ツールを段階的に構築できることを示す事例で、自分のチームや業務に合わせた CLI ベースのツール作りを検討する材料になります。",
+    en: "This is a useful reference for teams evaluating whether Copilot CLI can power productivity tooling built around their specific workflows and organization structure.",
   },
 };
 
@@ -777,6 +833,14 @@ function patternTitle(title) {
     [
       "Ask Copilot in security assessments now available",
       "セキュリティ評価で Ask Copilot を直接開けるようになった",
+    ],
+    [
+      "Enable Copilot cloud agent via custom properties",
+      "カスタムプロパティで Copilot cloud agent を組織単位で有効化できるようになった",
+    ],
+    [
+      "Build a personal organization command center with GitHub Copilot CLI",
+      "Copilot CLI で個人用組織コマンドセンターを構築した事例",
     ],
   ]);
 
