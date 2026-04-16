@@ -1,3 +1,4 @@
+Insiders
 1.116
 1.115
 1.114
@@ -94,7 +95,8 @@ This feature is experimental and controlled by the
  Open in VS Code Insiders
  
  setting. It is enabled by default in VS Code Insiders and is gradually rolling out to Stable as we collect feedback.
-H3: Visual Studio Code Agents (Preview)
+H3: Visual Studio Code Agents (Insiders)
+Note: The Visual Studio Code Agents app is currently in preview and only available when installing VS Code Insiders.
 In the last release, we shared the Visual Studio Code Agents app, a new preview companion app that ships alongside VS Code Insiders and is built for agent-native development.
 Since introducing the app in 1.115, we've continued to iterate with features and fixes based on feedback, to deliver a great agent-first experience.
 Some of the latest updates include:
@@ -293,6 +295,55 @@ As before, if you prefer not to use AI features, you can disable them with the
  Open in VS Code Insiders
  
  setting.
+H2: Enterprise
+H3: Group policy to filter agent network access
+Administrators can now use group policies to control which network domains agent tools can access. When the 
+ 
+ 
+ chat.agent.networkFilter
+ 
+ 
+ 
+ 
+ 
+ Open in VS Code
+ Open in VS Code Insiders
+ 
+ This setting is managed at the organization level. Contact your administrator to change it.ORG setting is enabled via policy, network access from agent tools such as the fetch tool and the integrated browser is restricted according to the allowed and denied domain lists.
+chat.agent.allowedNetworkDomains
+ 
+ 
+ 
+ 
+ 
+ Open in VS Code
+ Open in VS Code Insiders
+ 
+ This setting is managed at the organization level. Contact your administrator to change it.ORG specifies which domains agent tools can access. Supports wildcards such as *.example.com.
+chat.agent.deniedNetworkDomains
+ 
+ 
+ 
+ 
+ 
+ Open in VS Code
+ Open in VS Code Insiders
+ 
+ This setting is managed at the organization level. Contact your administrator to change it.ORG specifies which domains are blocked. Denied domains take precedence over allowed domains.
+When the network filter is enabled and both lists are empty, all domains are blocked. When 
+ 
+ 
+ chat.agent.sandbox.enabled
+ 
+ 
+ 
+ 
+ 
+ Open in VS Code
+ Open in VS Code Insiders
+ 
+ This setting is managed at the organization level. Contact your administrator to change it.ORG is also enabled, the network domain rules additionally apply to the terminal sandbox.
+These policies are configured with keys ChatAgentNetworkFilter, ChatAgentAllowedNetworkDomains, and ChatAgentDeniedNetworkDomains. Learn more about enterprise policies in the documentation.
 H2: Contributions to extensions
 H3: GitHub Pull Requests
 There has been more progress on the GitHub Pull Requests extension, which enables you to work on, create, and manage pull requests and issues. New features include:
@@ -355,6 +406,7 @@ Accessibility
 Integrated browser
 Languages
 Engineering
+Enterprise
 Contributions to extensions
 Deprecated features and settings
 Thank you
