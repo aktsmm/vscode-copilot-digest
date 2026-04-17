@@ -265,6 +265,18 @@ const exactSummaryMappings = {
     ja: "複数の tool call を確認・承認するための carousel コントロールが追加された（Experimental）。`chat.tools.confirmationCarousel.enabled` で有効化でき、会話をスクロールせずにまとめて tool call を確認・承認できるため、tool の多い agent セッションでの操作効率が上がる。",
     en: "An experimental tool-confirmation carousel (`chat.tools.confirmationCarousel.enabled`) lets you review and approve multiple tool calls in a compact, navigable control without scrolling through the conversation, making high-tool agent sessions easier to supervise.",
   },
+  "Building an emoji list generator with the GitHub Copilot CLI": {
+    ja: "Copilot CLI の Plan モードと Autopilot モードを組み合わせ、Rubber Duck Thursdays ライブ配信中に絵文字リスト生成ツールを構築した事例。Claude Sonnet で計画を立て Claude Opus 4.7 で実装するマルチモデルワークフローと、`allow-all` tools flag や GitHub MCP server の活用手順が中心。",
+    en: "A live coding walkthrough from the Rubber Duck Thursdays stream showing how to build an emoji-list generator with Copilot CLI, using Plan mode (Claude Sonnet) to draft a plan.md and Autopilot mode (Claude Opus 4.7) to implement it, alongside the allow-all tools flag and GitHub MCP server.",
+  },
+  "Claude Opus 4.7 is generally available": {
+    ja: "Claude Opus 4.7 が GitHub Copilot で GA になった。マルチステップタスクの性能と agentic 実行の信頼性が向上しており、今後数週間で Copilot Pro+ 上の Opus 4.5 / 4.6 を段階的に置き換える予定。Pro+ / Business / Enterprise が対象で、Business / Enterprise では管理者が Copilot settings で policy を有効化する必要がある。4月30日まで 7.5× の premium multiplier が適用される。",
+    en: "Claude Opus 4.7 is rolling out in GitHub Copilot as a GA model, delivering stronger multi-step task performance and more reliable agentic execution. It will replace Opus 4.5 and 4.6 in the Pro+ model picker over the coming weeks. Available to Pro+, Business, and Enterprise; Business and Enterprise admins must enable the policy in Copilot settings. A 7.5× premium multiplier applies through April 30.",
+  },
+  "Manage agent skills with GitHub CLI": {
+    ja: "GitHub CLI に `gh skill` コマンドが追加され、agent skill の検索・インストール・管理・公開が一コマンドで行えるようになった。Agent Skills 仕様に準拠し、Copilot・Claude Code・Cursor・Codex・Gemini CLI など複数の agent host に対応。バージョン固定と git tree SHA による変更検出でサプライチェーンのリスクも考慮された設計。",
+    en: "The GitHub CLI now has a `gh skill` command that makes it easy to discover, install, manage, and publish agent skills from GitHub repositories. Skills conform to the open Agent Skills specification and work across multiple agent hosts including Copilot, Claude Code, Cursor, Codex, and Gemini CLI. Version pinning and content-addressed change detection are built in for supply-chain integrity.",
+  },
 };
 
 const exactImportanceMappings = {
@@ -555,6 +567,18 @@ const exactImportanceMappings = {
   "Build a personal organization command center with GitHub Copilot CLI": {
     ja: "Copilot CLI で実用的な生産性ツールを段階的に構築できることを示す事例で、自分のチームや業務に合わせた CLI ベースのツール作りを検討する材料になります。",
     en: "This is a useful reference for teams evaluating whether Copilot CLI can power productivity tooling built around their specific workflows and organization structure.",
+  },
+  "Building an emoji list generator with the GitHub Copilot CLI": {
+    ja: "Copilot CLI の Plan モード・Autopilot モード・マルチモデル切り替えを小規模ツール開発で実際に使った手順が確認できるので、ターミナル中心の開発フローへ CLI をどう取り入れるかを判断する具体的な材料になります。",
+    en: "This matters because it shows how Plan mode, Autopilot mode, and multi-model switching work together in a real small-tool build, giving teams a concrete reference for evaluating Copilot CLI in terminal-centric workflows.",
+  },
+  "Claude Opus 4.7 is generally available": {
+    ja: "Opus 4.5 / 4.6 が段階的に置き換わるため、モデル選択の前提や cost multiplier の設定を事前に確認しておく必要があります。Business / Enterprise では管理者の policy 有効化も必要で、4月30日までのプロモーション multiplier（7.5×）の影響も踏まえておくことが重要です。",
+    en: "This matters because Opus 4.5 and 4.6 are being phased out of Pro+, requiring teams to revisit model selections and cost assumptions. Business and Enterprise admins also need to enable the policy before users can access it, and the 7.5× premium multiplier through April 30 affects cost calculations.",
+  },
+  "Manage agent skills with GitHub CLI": {
+    ja: "複数の agent host で動く skills をコマンドひとつで管理できるため、チームで agent 設定を標準化するときの基盤になります。バージョン固定とコンテンツ検証が備わっており、skills の更新を安全に追う運用設計に使えます。",
+    en: "This matters because it gives teams a standard way to install and manage agent skills across multiple agent hosts from the CLI, with version pinning and content verification making it safer to update skills in shared environments.",
   },
 };
 
