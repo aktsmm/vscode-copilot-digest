@@ -1,12 +1,33 @@
 {
   "date": "2026-04-17",
-  "generatedAt": "2026-04-17T14:41:54.757Z",
+  "generatedAt": "2026-04-17T22:04:13.678Z",
   "latestRun": {
-    "generatedAt": "2026-04-17T14:41:54.757Z",
-    "newEventsCount": 0,
-    "newEventIds": [],
+    "generatedAt": "2026-04-17T22:04:13.678Z",
+    "newEventsCount": 1,
+    "newEventIds": [
+      "github-copilot-blog:https://github.blog/?p=95403"
+    ],
     "errorCount": 0
   },
-  "events": [],
+  "events": [
+    {
+      "eventId": "github-copilot-blog:https://github.blog/?p=95403",
+      "sourceId": "github-copilot-blog",
+      "sourceName": "GitHub Blog / GitHub Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-17T22:04:11.596Z",
+      "publishedAt": "2026-04-17T18:00:00.000Z",
+      "title": "Building an emoji list generator with the GitHub Copilot CLI",
+      "url": "https://github.blog/ai-and-ml/github-copilot/building-an-emoji-list-generator-with-the-github-copilot-cli/",
+      "summary": "See how we created an emoji list generator during the Rubber Duck Thursday stream.\nThe post Building an emoji list generator with the GitHub Copilot CLI appeared first on The GitHub Blog.",
+      "categories": [
+        "AI & ML",
+        "GitHub Copilot",
+        "GitHub Copilot CLI"
+      ],
+      "isFutureDated": false,
+      "score": 1
+    }
+  ],
   "errors": []
 }
