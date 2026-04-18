@@ -265,6 +265,22 @@ const exactSummaryMappings = {
     ja: "複数の tool call を確認・承認するための carousel コントロールが追加された（Experimental）。`chat.tools.confirmationCarousel.enabled` で有効化でき、会話をスクロールせずにまとめて tool call を確認・承認できるため、tool の多い agent セッションでの操作効率が上がる。",
     en: "An experimental tool-confirmation carousel (`chat.tools.confirmationCarousel.enabled`) lets you review and approve multiple tool calls in a compact, navigable control without scrolling through the conversation, making high-tool agent sessions easier to supervise.",
   },
+  "GitHub Copilot CLI now supports Copilot auto model selection": {
+    ja: "Copilot CLI での auto モデル選択が全プランで一般提供になった。auto を選ぶと Copilot がタスクに応じて最も効率的なモデルを自動選択する。個別にモデルを指定しなくても、用途に合った最適化が自動で適用される。",
+    en: "Auto model selection is now generally available in GitHub Copilot CLI for all Copilot plans. Choosing auto lets Copilot select the most efficient model per task automatically, with no manual model choice required.",
+  },
+  "Claude Opus 4.7 is generally available": {
+    ja: "Anthropic 最新の Claude Opus 4.7 が GitHub Copilot 上で一般提供になった。内部評価では多ステップタスクのパフォーマンスと agentic 実行の信頼性が向上している。",
+    en: "Claude Opus 4.7, Anthropic's latest Opus model, is now generally available on GitHub Copilot. Early testing shows stronger multi-step task performance and more reliable agentic execution.",
+  },
+  "Manage agent skills with GitHub CLI": {
+    ja: "GitHub CLI に `gh skill` コマンドが追加され、agent skill の検索・インストール・管理が CLI から直接できるようになった。GitHub Marketplace 経由の手動追加に加え、ターミナルから一連の skill 管理フローを完結できる。",
+    en: "The GitHub CLI now includes a `gh skill` command for discovering, installing, and managing agent skills directly from the terminal, complementing the existing GitHub Marketplace workflow.",
+  },
+  "Building an emoji list generator with the GitHub Copilot CLI": {
+    ja: "Copilot CLI を使って絵文字リストジェネレーターを作成する過程を紹介するブログ記事。Rubber Duck Thursday ストリームの内容をもとにした実例。",
+    en: "A walkthrough of building an emoji list generator using GitHub Copilot CLI, based on a Rubber Duck Thursday stream session.",
+  },
 };
 
 const exactImportanceMappings = {
@@ -556,6 +572,22 @@ const exactImportanceMappings = {
     ja: "Copilot CLI で実用的な生産性ツールを段階的に構築できることを示す事例で、自分のチームや業務に合わせた CLI ベースのツール作りを検討する材料になります。",
     en: "This is a useful reference for teams evaluating whether Copilot CLI can power productivity tooling built around their specific workflows and organization structure.",
   },
+  "GitHub Copilot CLI now supports Copilot auto model selection": {
+    ja: "全プランで使えるようになったため、モデルを手動で選ばなくても Copilot が自動でタスクに合ったモデルを選ぶ運用が選択肢に入る。モデル選択を個別管理していたチームは設定方針を見直す材料になります。",
+    en: "This is now available across all Copilot plans and removes the need to manually pick a model for CLI tasks. Teams currently managing model selection by hand now have auto as a viable low-maintenance default.",
+  },
+  "Claude Opus 4.7 is generally available": {
+    ja: "Claude Opus 4.7 が利用可能になるため、多ステップタスクや長時間の agentic 実行で使えるモデルの選択肢が広がります。Opus 系を業務で使っているチームは切り替えを検討する材料になります。",
+    en: "This expands model options for multi-step tasks and long agentic sessions. Teams already using Opus-family models in their workflows now have a direct upgrade path to evaluate.",
+  },
+  "Manage agent skills with GitHub CLI": {
+    ja: "agent skill の追加・管理を GUI を介さず CLI から完結できるようになるため、CI/CD スクリプトや開発環境セットアップへの組み込みがしやすくなります。",
+    en: "This makes agent skill management scriptable and CLI-native, which simplifies onboarding flows and CI/CD integration where GUI-based setup is impractical.",
+  },
+  "Building an emoji list generator with the GitHub Copilot CLI": {
+    ja: "小さなユーティリティを Copilot CLI で段階的に組み立てる実例として、CLI 活用の具体的な出発点になります。",
+    en: "This provides a concrete, low-stakes starting point for teams exploring what incremental CLI-based development with Copilot looks like in practice.",
+  },
 };
 
 function toDateOnly(value) {
@@ -841,6 +873,18 @@ function patternTitle(title) {
     [
       "Build a personal organization command center with GitHub Copilot CLI",
       "Copilot CLI で個人用組織コマンドセンターを構築した事例",
+    ],
+    [
+      "GitHub Copilot CLI now supports Copilot auto model selection",
+      "Copilot CLI の auto モデル選択が全プランで GA になった",
+    ],
+    [
+      "Manage agent skills with GitHub CLI",
+      "GitHub CLI で agent skill を管理できるようになった",
+    ],
+    [
+      "Building an emoji list generator with the GitHub Copilot CLI",
+      "Copilot CLI で絵文字リストジェネレーターを作る事例",
     ],
   ]);
 
