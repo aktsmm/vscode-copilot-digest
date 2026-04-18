@@ -1,11 +1,11 @@
 {
   "date": "2026-04-18",
-  "generatedAt": "2026-04-18T06:42:07.803Z",
+  "generatedAt": "2026-04-18T14:10:09.105Z",
   "latestRun": {
-    "generatedAt": "2026-04-18T06:42:07.803Z",
+    "generatedAt": "2026-04-18T14:10:09.105Z",
     "newEventsCount": 1,
     "newEventIds": [
-      "github-changelog:https://github.blog/changelog/2026-04-17-github-copilot-cli-now-supports-copilot-auto-model-selection"
+      "github-changelog-copilot:https://github.blog/changelog/2026-04-17-github-copilot-cli-now-supports-copilot-auto-model-selection"
     ],
     "errorCount": 0
   },
@@ -16,6 +16,23 @@
       "sourceName": "GitHub Changelog",
       "kind": "feed_entry",
       "detectedAt": "2026-04-18T06:42:05.873Z",
+      "publishedAt": "2026-04-17T22:32:41.000Z",
+      "title": "GitHub Copilot CLI now supports Copilot auto model selection",
+      "url": "https://github.blog/changelog/2026-04-17-github-copilot-cli-now-supports-copilot-auto-model-selection",
+      "summary": "Copilot auto model selection is now generally available in GitHub Copilot CLI for all Copilot plans. With auto, Copilot chooses the most efficient model on your behalf. How it works…\nThe post GitHub Copilot CLI now supports Copilot auto model selection appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-04-17-github-copilot-cli-now-supports-copilot-auto-model-selection",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-18T14:10:06.463Z",
       "publishedAt": "2026-04-17T22:32:41.000Z",
       "title": "GitHub Copilot CLI now supports Copilot auto model selection",
       "url": "https://github.blog/changelog/2026-04-17-github-copilot-cli-now-supports-copilot-auto-model-selection",
