@@ -1,12 +1,10 @@
 {
   "date": "2026-04-18",
-  "generatedAt": "2026-04-18T14:10:09.105Z",
+  "generatedAt": "2026-04-18T21:55:52.164Z",
   "latestRun": {
-    "generatedAt": "2026-04-18T14:10:09.105Z",
-    "newEventsCount": 1,
-    "newEventIds": [
-      "github-changelog-copilot:https://github.blog/changelog/2026-04-17-github-copilot-cli-now-supports-copilot-auto-model-selection"
-    ],
+    "generatedAt": "2026-04-18T21:55:52.164Z",
+    "newEventsCount": 0,
+    "newEventIds": [],
     "errorCount": 0
   },
   "events": [
