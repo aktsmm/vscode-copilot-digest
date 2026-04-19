@@ -10,7 +10,7 @@
 4. collect 成功後に [author-digest-pr.yml](../.github/workflows/author-digest-pr.yml) が Copilot 向け執筆依頼 Issue を作成または更新する
 5. Copilot cloud agent がその Issue を受けて PR を作成する
 6. [request-copilot-review.yml](../.github/workflows/request-copilot-review.yml)、[validate-generated-pr.yml](../.github/workflows/validate-generated-pr.yml)、[auto-merge-generated-pr.yml](../.github/workflows/auto-merge-generated-pr.yml) が PR を正規化・検証・自動 merge する
-7. 生成 PR が merge されたときは [redeploy-pages-after-generated-pr-merge.yml](../.github/workflows/redeploy-pages-after-generated-pr-merge.yml) が Pages を再 dispatch し、本文更新を live へ反映する
+7. 生成 PR が merge されたときは [redeploy-pages-after-generated-pr-merge.yml](../.github/workflows/redeploy-pages-after-generated-pr-merge.yml) が Pages を再 dispatch し、本文更新を live へ反映したうえで superseded な draft PR / digest-authoring issue を cleanup する
 
 ## 日次収集と通知
 
@@ -43,7 +43,7 @@
 - Copilot cloud agent は、その Issue から日次本文、週間 / 隔週ドラフト、必要な対訳更新を含む PR を作成する
 - 生成 PR は [request-copilot-review.yml](../.github/workflows/request-copilot-review.yml) が metadata を正規化し、[validate-generated-pr.yml](../.github/workflows/validate-generated-pr.yml) が allow-list と build を検証し、[auto-merge-generated-pr.yml](../.github/workflows/auto-merge-generated-pr.yml) が安全なものだけ merge する
 - Copilot 起点で `action_required` になった review / validate / auto-merge workflow は [rerun-blocked-copilot-workflows.yml](../.github/workflows/rerun-blocked-copilot-workflows.yml) が定期的に検出して 1 回だけ rerun する
-- Copilot 由来 PR が merge されたときは [redeploy-pages-after-generated-pr-merge.yml](../.github/workflows/redeploy-pages-after-generated-pr-merge.yml) が [deploy-pages.yml](../.github/workflows/deploy-pages.yml) を再 dispatch し、本文更新を live ページへ反映する
+- Copilot 由来 PR が merge されたときは [redeploy-pages-after-generated-pr-merge.yml](../.github/workflows/redeploy-pages-after-generated-pr-merge.yml) が [deploy-pages.yml](../.github/workflows/deploy-pages.yml) を再 dispatch し、本文更新を live ページへ反映した後に superseded な draft PR / digest-authoring issue を自動 cleanup する
 
 ## 完全自動ではない部分
 
@@ -60,7 +60,7 @@
 
 - [collect-updates.yml](../.github/workflows/collect-updates.yml): 毎日 3 回の収集と event / summary 更新
 - [deploy-pages.yml](../.github/workflows/deploy-pages.yml): Pages 再生成と公開
-- [redeploy-pages-after-generated-pr-merge.yml](../.github/workflows/redeploy-pages-after-generated-pr-merge.yml): Copilot 生成 PR merge 後の Pages 再 dispatch
+- [redeploy-pages-after-generated-pr-merge.yml](../.github/workflows/redeploy-pages-after-generated-pr-merge.yml): Copilot 生成 PR merge 後の Pages 再 dispatch と superseded な generated work の cleanup
 - [notify-weekly-discord.yml](../.github/workflows/notify-weekly-discord.yml): 毎週水曜 06:00 JST の週間 Discord 要約通知
 - [build-weekly-draft.yml](../.github/workflows/build-weekly-draft.yml): 毎週金曜 06:00 JST の週間ドラフト生成
 - [build-biweekly-draft.yml](../.github/workflows/build-biweekly-draft.yml): 手動の隔週ドラフト生成

@@ -30,7 +30,7 @@ GitHub Copilot と VS Code 周辺の更新を毎日収集し、日次イベン�
 4. collect 成功後に [author-digest-pr.yml](.github/workflows/author-digest-pr.yml) が Copilot 向け執筆依頼 Issue を作成または更新する
 5. Copilot cloud agent が Issue を受けて、日次本文・ドラフト・必要な対訳更新を含む PR を作成する
 6. [request-copilot-review.yml](.github/workflows/request-copilot-review.yml)、[validate-generated-pr.yml](.github/workflows/validate-generated-pr.yml)、[auto-merge-generated-pr.yml](.github/workflows/auto-merge-generated-pr.yml) が PR を正規化・検証・自動 merge する
-7. 生成 PR が merge されたときは [redeploy-pages-after-generated-pr-merge.yml](.github/workflows/redeploy-pages-after-generated-pr-merge.yml) が Pages を再度 dispatch し、本文更新を live へ反映する
+7. 生成 PR が merge されたときは [redeploy-pages-after-generated-pr-merge.yml](.github/workflows/redeploy-pages-after-generated-pr-merge.yml) が Pages を再度 dispatch し、本文更新を live へ反映したうえで superseded な draft PR / digest-authoring issue を cleanup する
 
 ## 監視対象
 
@@ -139,7 +139,7 @@ node scripts/notify-discord.mjs --mode weekly --date 2026-04-10 --window-days 7 
 - collect commit の直後に workflow dispatch で `deploy-pages.yml` を呼び出し、Pages を再生成する
 - 毎週金曜 06:00 JST を目安に `build-weekly-draft.yml` が直近 7 日分の週間ドラフトを更新する
 - 毎週水曜 06:00 JST を目安に `notify-weekly-discord.yml` が直近 7 日分の週間要約を Discord Webhook へ通知する
-- Copilot 由来の PR が merge されたときも `redeploy-pages-after-generated-pr-merge.yml` が `deploy-pages.yml` を再 dispatch する
+- Copilot 由来の PR が merge されたときも `redeploy-pages-after-generated-pr-merge.yml` が `deploy-pages.yml` を再 dispatch し、superseded な draft PR / digest-authoring issue を cleanup する
 
 ### Copilot Coding Agent による自動化
 

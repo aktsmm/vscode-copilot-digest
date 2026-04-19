@@ -8,6 +8,8 @@ on:
 permissions:
   actions: write
   contents: read
+  issues: write
+  pull-requests: write
 
 jobs:
   redeploy:
@@ -15,10 +17,72 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Dispatch Deploy GitHub Pages
+      - name: Dispatch Pages and clean superseded generated work
         uses: actions/github-script@v8
         with:
           script: |
+            const mergedPullNumber = context.payload.pull_request.number;
+            const sourceMarkerPattern = /Generated from `?data\/events\/(\d{4}-\d{2}-\d{2})\.json`?/;
+            const digestIssueTitlePattern = /^Digest authoring request: (\d{4}-\d{2}-\d{2})$/;
+
+            function extractDateKeys(text) {
+              return [...String(text || '').matchAll(/\b\d{4}-\d{2}-\d{2}\b/g)].map((match) => match[0]);
+            }
+
+            function inferGeneratedDateKey(pr) {
+              const bodyMatch = String(pr.body || '').match(sourceMarkerPattern);
+              if (bodyMatch) {
+                return bodyMatch[1];
+              }
+
+              const titleMatch = String(pr.title || '').match(/\b(\d{4}-\d{2}-\d{2})\b/);
+              if (titleMatch) {
+                return titleMatch[1];
+              }
+
+              const headMatch = String(pr.head?.ref || '').match(/\b(\d{4}-\d{2}-\d{2})\b/);
+              if (headMatch) {
+                return headMatch[1];
+              }
+
+              return null;
+            }
+
+            function isGeneratedPr(pr) {
+              const labels = new Set((pr.labels || []).map((label) => label.name));
+              return labels.has('auto-pr') || (pr.user?.login || '').includes('copilot');
+            }
+
+            const mergedPull = await github.rest.pulls.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: mergedPullNumber,
+            });
+            const mergedPr = mergedPull.data;
+
+            const changedFiles = await github.paginate(github.rest.pulls.listFiles, {
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: mergedPullNumber,
+              per_page: 100,
+            });
+
+            const coveredDates = new Set(
+              changedFiles
+                .map((file) => file.filename.match(/^summaries\/daily\/(\d{4}-\d{2}-\d{2})\.md$/))
+                .filter(Boolean)
+                .map((match) => match[1]),
+            );
+            for (const dateKey of extractDateKeys(mergedPr.title)) {
+              coveredDates.add(dateKey);
+            }
+            for (const dateKey of extractDateKeys(mergedPr.body)) {
+              coveredDates.add(dateKey);
+            }
+            const mergedDateKeys = [...coveredDates].sort();
+            const oldestCoveredDate = mergedDateKeys[0] || inferGeneratedDateKey(mergedPr);
+            const newestCoveredDate = mergedDateKeys[mergedDateKeys.length - 1] || inferGeneratedDateKey(mergedPr);
+
             await github.rest.actions.createWorkflowDispatch({
               owner: context.repo.owner,
               repo: context.repo.repo,
@@ -26,3 +90,99 @@ jobs:
               ref: 'main',
             });
             core.info(`Dispatched Deploy GitHub Pages after generated PR #${context.payload.pull_request.number} merged.`);
+
+            if (!newestCoveredDate) {
+              core.info('Could not infer covered digest dates from the merged PR; skipping stale generated work cleanup.');
+              return;
+            }
+
+            const openPulls = await github.paginate(github.rest.pulls.list, {
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              per_page: 100,
+            });
+
+            function shouldCloseSupersededDraft(pr) {
+              if (pr.number === mergedPullNumber) {
+                return false;
+              }
+              if (!isGeneratedPr(pr) || !pr.draft) {
+                return false;
+              }
+
+              const dateKey = inferGeneratedDateKey(pr);
+              return Boolean(dateKey && dateKey <= newestCoveredDate);
+            }
+
+            for (const stalePr of openPulls.filter(shouldCloseSupersededDraft)) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: stalePr.number,
+                body: `Closing as superseded by merged generated PR #${mergedPullNumber}. Current main already includes digest coverage through ${newestCoveredDate}.`,
+              });
+              await github.rest.pulls.update({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                pull_number: stalePr.number,
+                state: 'closed',
+              });
+              core.info(`Closed superseded draft PR #${stalePr.number}.`);
+            }
+
+            const survivingGeneratedPrDates = new Set(
+              openPulls
+                .filter((pr) => isGeneratedPr(pr) && pr.number !== mergedPullNumber && !shouldCloseSupersededDraft(pr))
+                .map((pr) => inferGeneratedDateKey(pr))
+                .filter(Boolean),
+            );
+
+            const openDigestIssues = await github.paginate(github.rest.issues.listForRepo, {
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: 'digest-authoring',
+              per_page: 100,
+            });
+
+            for (const issue of openDigestIssues) {
+              if (issue.pull_request) {
+                continue;
+              }
+
+              const match = String(issue.title || '').match(digestIssueTitlePattern);
+              if (!match) {
+                continue;
+              }
+
+              const issueDateKey = match[1];
+              const coveredByMergedPr = mergedDateKeys.includes(issueDateKey);
+              const supersededOlderIssue = Boolean(
+                oldestCoveredDate &&
+                issueDateKey < oldestCoveredDate &&
+                !survivingGeneratedPrDates.has(issueDateKey),
+              );
+
+              if (!coveredByMergedPr && !supersededOlderIssue) {
+                continue;
+              }
+
+              const reason = coveredByMergedPr
+                ? `Closing as resolved by merged generated PR #${mergedPullNumber}, which already updated the digest coverage for ${issueDateKey}.`
+                : `Closing as stale after merged generated PR #${mergedPullNumber}. Main has already advanced past ${issueDateKey}, and no surviving generated PR remains for that date.`;
+
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issue.number,
+                body: reason,
+              });
+              await github.rest.issues.update({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issue.number,
+                state: 'closed',
+              });
+              core.info(`Closed digest-authoring issue #${issue.number}.`);
+            }
