@@ -281,6 +281,10 @@ const exactSummaryMappings = {
     ja: "Copilot CLI を使って絵文字リストジェネレーターを作成する過程を紹介するブログ記事。Rubber Duck Thursday ストリームの内容をもとにした実例。",
     en: "A walkthrough of building an emoji list generator using GitHub Copilot CLI, based on a Rubber Duck Thursday stream session.",
   },
+  "Changes to GitHub Copilot plans for individuals": {
+    ja: "個人向け Copilot プランに複数の変更が加わった。Pro / Pro+ / Student への新規サインアップが停止（Copilot Free は引き続き開放）、Pro の利用上限が引き締められ Pro+ は 5 倍超の枠を維持、Pro から Opus モデルが撤去（Opus 4.7 は Pro+ に継続）。4 月分の請求は 4/20〜5/20 の間に GitHub サポートへ申請すれば払い戻し可能。",
+    en: "Multiple changes landed for individual Copilot plans: new signups are paused for Pro, Pro+, and Student (Copilot Free stays open); usage limits are tightened for Pro while Pro+ keeps 5x-plus capacity; Opus models are removed from Pro, with Opus 4.7 remaining on Pro+. Subscribers who cancel before May 20 can request a refund for April via GitHub Support.",
+  },
 };
 
 const exactImportanceMappings = {
@@ -588,6 +592,10 @@ const exactImportanceMappings = {
     ja: "小さなユーティリティを Copilot CLI で段階的に組み立てる実例として、CLI 活用の具体的な出発点になります。",
     en: "This provides a concrete, low-stakes starting point for teams exploring what incremental CLI-based development with Copilot looks like in practice.",
   },
+  "Changes to GitHub Copilot plans for individuals": {
+    ja: "個人 Copilot プランを利用しているユーザーや社内で案内しているチームは、新規登録停止・利用上限の変更・Opus モデル撤去の 3 点を確認する必要があります。キャンセル時の払い戻し期限（5/20 まで）もあわせて周知が必要です。",
+    en: "Any user or team managing individual Copilot subscriptions needs to account for the signup pause, tighter Pro limits, and Opus model removal. The April refund window (available through May 20 via GitHub Support) is also time-sensitive.",
+  },
 };
 
 function toDateOnly(value) {
@@ -885,6 +893,10 @@ function patternTitle(title) {
     [
       "Building an emoji list generator with the GitHub Copilot CLI",
       "Copilot CLI で絵文字リストジェネレーターを作る事例",
+    ],
+    [
+      "Changes to GitHub Copilot plans for individuals",
+      "個人向け GitHub Copilot プランの変更",
     ],
   ]);
 
