@@ -1,12 +1,32 @@
 {
   "date": "2026-04-20",
-  "generatedAt": "2026-04-20T15:03:37.162Z",
+  "generatedAt": "2026-04-20T22:06:40.693Z",
   "latestRun": {
-    "generatedAt": "2026-04-20T15:03:37.162Z",
-    "newEventsCount": 0,
-    "newEventIds": [],
+    "generatedAt": "2026-04-20T22:06:40.693Z",
+    "newEventsCount": 1,
+    "newEventIds": [
+      "github-changelog:https://github.blog/changelog/2026-04-20-changes-to-github-copilot-plans-for-individuals"
+    ],
     "errorCount": 0
   },
-  "events": [],
+  "events": [
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-04-20-changes-to-github-copilot-plans-for-individuals",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-20T22:06:38.536Z",
+      "publishedAt": "2026-04-20T17:49:03.000Z",
+      "title": "Changes to GitHub Copilot plans for individuals",
+      "url": "https://github.blog/changelog/2026-04-20-changes-to-github-copilot-plans-for-individuals",
+      "summary": "As shared in our recent blog post, we’re making the following changes to Copilot plans for individuals as part of our ongoing efforts to ensure service reliability and a sustainable…\nThe post Changes to GitHub Copilot plans for individuals appeared first on The GitHub Blog.",
+      "categories": [
+        "Retired",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    }
+  ],
   "errors": []
 }
