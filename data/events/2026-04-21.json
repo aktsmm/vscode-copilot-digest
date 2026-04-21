@@ -1,12 +1,10 @@
 {
   "date": "2026-04-21",
-  "generatedAt": "2026-04-21T07:09:44.820Z",
+  "generatedAt": "2026-04-21T14:57:23.629Z",
   "latestRun": {
-    "generatedAt": "2026-04-21T07:09:44.820Z",
-    "newEventsCount": 1,
-    "newEventIds": [
-      "github-changelog-copilot:https://github.blog/changelog/2026-04-20-changes-to-github-copilot-plans-for-individuals"
-    ],
+    "generatedAt": "2026-04-21T14:57:23.629Z",
+    "newEventsCount": 0,
+    "newEventIds": [],
     "errorCount": 0
   },
   "events": [
