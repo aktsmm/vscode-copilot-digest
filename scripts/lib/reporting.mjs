@@ -40,6 +40,10 @@ const monthMap = {
 };
 
 const vscodeReleaseSummaries = {
+  1.117: {
+    ja: "Copilot Business / Enterprise ユーザー向け BYOK 対応が入り、OpenRouter・Ollama・Google・OpenAI など自前 API key でモデルを chat に接続できるようになった。chat 応答の incremental rendering（Experimental）追加、Agent Sessions ビューでの最終更新順ソート、background terminal コマンドのシステム通知対応など、agent 体験全体を使いやすくする変更がまとまって入った。",
+    en: "This release brings BYOK for Copilot Business and Enterprise, letting organizations connect their own API keys for providers like OpenRouter, Ollama, Google, and OpenAI. It also adds experimental incremental rendering for chat responses, sort-by-recent-activity in Agent Sessions, and system notifications for background terminal commands, making agent workflows more practical day-to-day.",
+  },
   1.116: {
     ja: "デバッグ体験と agent 操作性の強化が中心。前のセッションの agent debug log をディスクに保存して後から確認できるようになり、Copilot CLI での thinking effort 設定、Chat Customizations ウェルカムページ、tool 確認 carousel（Experimental）、GitHub Copilot の組み込み対応が入った。",
     en: "This release focuses on debugging and agent operability: previous agent session logs can now be stored and reviewed, Copilot CLI gains thinking-effort controls, the Chat Customizations dialog gets a welcome page with AI-assisted drafting, a tool-confirmation carousel lands as experimental, and GitHub Copilot is now built in without a separate extension.",
@@ -208,8 +212,26 @@ const exactSummaryMappings = {
     en: "A changelog roundup for GitHub Copilot in VS Code covering the weekly stable releases from v1.111 through v1.115, including Autopilot, browser and terminal tool improvements, and broader agent workflow changes.",
   },
   "VS Code Updates changed": {
-    ja: "VS Code Updates のハブページが更新され、1.115 リリースと Agents app、browser / terminal tool 改善などの新しい見出しが追加された。公開導線の更新を追うための差分。",
-    en: "The VS Code Updates landing page changed to point at the 1.115 release and new sections such as the Agents app plus browser and terminal tool improvements.",
+    ja: "VS Code Updates のハブページが更新され、1.117 リリースと BYOK、chat response incremental rendering、Agent Sessions ソートなどの新しい見出しが追加された。公開導線の更新を追うための差分。",
+    en: "The VS Code Updates landing page changed to point at the 1.117 release with new sections such as BYOK support, incremental chat rendering, and agent session sorting.",
+  },
+  "Visual Studio Code 1.117: Incremental rendering of chat responses (Experimental)":
+    {
+      ja: "chat 応答をブロック単位でストリーミング描画する incremental rendering が experimental として追加された。トークン到着に合わせてブロックを順次表示するため、長い応答の体感待ち時間が短くなる。`chat.experimental.incrementalRendering.enabled` で有効化できる。",
+      en: "Experimental incremental rendering streams chat responses block-by-block as tokens arrive instead of using the default timer-based approach, reducing the perceived wait for longer responses. Enable it via `chat.experimental.incrementalRendering.enabled`.",
+    },
+  "Visual Studio Code 1.117: Sort agent sessions by recent activity": {
+    ja: "Agent Sessions ビューで、セッションを作成日または最終更新日の順に並べ替えられるようになった。セッション数が増えても直前の作業に素早く戻れる。",
+    en: "The Agent Sessions view can now sort sessions by when they were created or last updated, making it easier to return to recent work when sessions accumulate.",
+  },
+  "Visual Studio Code 1.117: System notifications for background terminal commands":
+    {
+      ja: "agent がバックグラウンドで長時間 terminal コマンドを実行しているとき、その状況がチャット応答にシステム通知として表示されるようになった。terminal に切り替えなくてもコマンドの進捗を把握できる。",
+      en: "Long-running background terminal commands now surface as system notifications in the chat response, so you can monitor their status without switching to the terminal view.",
+    },
+  "Visual Studio Code 1.117: Visual Studio Code Agents (Insiders)": {
+    ja: "VS Code Agents app（VS Code Insiders 同梱のプレビュー）が 1.115 から継続して進化。複数リポジトリにまたがる並列セッション、インライン diff レビュー、多段階コーディングタスクの反復などを agent ネイティブな環境でまとめて扱える companion app。",
+    en: "The VS Code Agents companion app shipped with VS Code Insiders continues to evolve since its 1.115 introduction, providing parallel sessions across repos, inline diff review, and iterative multi-step coding tasks in an agent-native environment.",
   },
   "Visual Studio Code 1.115: Browser agent tools improvements": {
     ja: "browser tool の呼び出しラベルが分かりやすくなり、対象タブへ直接飛べるリンクも付いた。Run Playwright Code では長時間実行の deferred result も改善され、browser automation の追跡がしやすくなった。",
@@ -556,6 +578,10 @@ const exactImportanceMappings = {
     ja: "GitHub Copilot の組み込み対応、agent debug log の永続化、CLI での thinking effort 設定など、agent を日常運用で使い続けやすくする変更が揃った release です。",
     en: "This matters because it brings a set of changes that make day-to-day agent use more sustainable, including built-in Copilot, persistent session debug logs, and thinking-effort controls in the CLI.",
   },
+  "Visual Studio Code 1.117": {
+    ja: "BYOK により Business / Enterprise チームがモデル接続先を自社要件に合わせて選べるようになり、incremental rendering・セッションソート・terminal 通知で日常の agent 操作感も直接改善される release です。",
+    en: "This matters because BYOK lets Business and Enterprise teams choose model providers that fit their governance and cost requirements, while incremental rendering, session sorting, and terminal notifications improve the day-to-day feel of agent work.",
+  },
   "Visual Studio Code 1.116: Debug previous agent sessions": {
     ja: "セッション終了後でも過去の agent 操作を後から追跡できるため、カスタマイズの品質確認や問題の再現なしでの診断がしやすくなります。",
     en: "This matters because it allows post-session debugging without having to reproduce problems, making it easier to diagnose customization issues and agent behavior after the fact.",
@@ -571,6 +597,24 @@ const exactImportanceMappings = {
   "Visual Studio Code 1.116: Tool confirmation carousel (Experimental)": {
     ja: "tool call が多いセッションで承認作業の往復を減らせるため、agent の自動実行範囲を広げながらも監視コストを下げやすくなります。",
     en: "This matters because it reduces the overhead of supervising tool-heavy agent sessions, making it more practical to expand agent autonomy while keeping human oversight in place.",
+  },
+  "Visual Studio Code 1.117: Incremental rendering of chat responses (Experimental)":
+    {
+      ja: "応答の体感速度が上がるため、長い回答を頻繁に扱う agent セッションでの使用感に直接効きます。",
+      en: "This directly improves the feel of chat-heavy agent sessions by reducing the perceived wait time for longer responses.",
+    },
+  "Visual Studio Code 1.117: Sort agent sessions by recent activity": {
+    ja: "セッションが増えた環境で目的のものへ戻りやすくなり、複数コンテキストを切り替える運用の摩擦を下げます。",
+    en: "This reduces friction when managing multiple sessions by making it easy to return to the most recently active context.",
+  },
+  "Visual Studio Code 1.117: System notifications for background terminal commands":
+    {
+      ja: "terminal に切り替えなくてもバックグラウンド処理の状況を把握できるため、agent に任せながら別作業を進めやすくなります。",
+      en: "This matters because background work can be monitored from the chat view without context-switching to the terminal, keeping agent-supervised workflows more fluid.",
+    },
+  "Visual Studio Code 1.117: Visual Studio Code Agents (Insiders)": {
+    ja: "並列セッションやインライン diff など agent ネイティブな体験の方向性を早めに確認でき、Insiders を使うチームの検証候補になります。",
+    en: "This is worth evaluating early if your team uses Insiders, because it shows the direction of agent-native VS Code workflows including parallel sessions and inline diff review.",
   },
   "Build a personal organization command center with GitHub Copilot CLI": {
     ja: "Copilot CLI で実用的な生産性ツールを段階的に構築できることを示す事例で、自分のチームや業務に合わせた CLI ベースのツール作りを検討する材料になります。",
