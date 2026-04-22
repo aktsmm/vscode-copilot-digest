@@ -233,6 +233,14 @@ const exactSummaryMappings = {
     ja: "VS Code Agents app（VS Code Insiders 同梱のプレビュー）が 1.115 から継続して進化。複数リポジトリにまたがる並列セッション、インライン diff レビュー、多段階コーディングタスクの反復などを agent ネイティブな環境でまとめて扱える companion app。",
     en: "The VS Code Agents companion app shipped with VS Code Insiders continues to evolve since its 1.115 introduction, providing parallel sessions across repos, inline diff review, and iterative multi-step coding tasks in an agent-native environment.",
   },
+  "Bring your own language model key in VS Code now available": {
+    ja: "Copilot Business / Enterprise ユーザーが VS Code で BYOK を利用できるようになった。OpenRouter・Ollama・Google・OpenAI などのプロバイダーへの自前 API key を VS Code chat でモデルとして接続できる。管理者は GitHub.com の Copilot ポリシー設定で Bring Your Own Language Model Key ポリシーを有効化し、組織内で使えるモデルプロバイダーを制御する。",
+    en: "BYOK is now available for Copilot Business and Enterprise in VS Code, letting teams connect their own API keys for providers such as OpenRouter, Ollama, Google, and OpenAI directly in VS Code chat. Administrators control which providers are available via the Bring Your Own Language Model Key policy in Copilot settings on GitHub.com.",
+  },
+  "C++ code intelligence for GitHub Copilot CLI in public preview": {
+    ja: "Microsoft C++ Language Server が Copilot CLI で public preview になった。Visual Studio や VS Code で使われているのと同じ IntelliSense エンジンを基盤としており、Copilot CLI での C++ コードインテリジェンスが強化される。",
+    en: "The Microsoft C++ Language Server is now in public preview for Copilot CLI. Powered by the same IntelliSense engine used in Visual Studio and VS Code, it brings richer C++ code intelligence to CLI-based development workflows.",
+  },
   "Visual Studio Code 1.115: Browser agent tools improvements": {
     ja: "browser tool の呼び出しラベルが分かりやすくなり、対象タブへ直接飛べるリンクも付いた。Run Playwright Code では長時間実行の deferred result も改善され、browser automation の追跡がしやすくなった。",
     en: "Browser tool calls now have clearer labels and direct links to the target tab, while Run Playwright Code has better deferred handling for long-running scripts.",
@@ -333,6 +341,14 @@ const exactImportanceMappings = {
   "Copilot CLI now supports BYOK and local models": {
     ja: "モデル選択を GitHub 提供ルーティングから切り離せるので、コスト、統制、データ所在の要件がある組織に直結します。",
     en: "This matters directly to organizations with cost, governance, or data residency requirements because model routing no longer has to stay GitHub-managed.",
+  },
+  "Bring your own language model key in VS Code now available": {
+    ja: "GitHub 提供モデルだけに縛られず、組織のコスト方針やデータ統制要件に合わせたモデルプロバイダーを選べるようになるため、Enterprise 導入判断に直結します。",
+    en: "This directly affects Enterprise adoption decisions because teams are no longer limited to GitHub-hosted models and can choose providers that match their cost or governance constraints.",
+  },
+  "C++ code intelligence for GitHub Copilot CLI in public preview": {
+    ja: "CLI 中心のフローで C++ 作業の補完・解析精度が上がるため、IDE に切り替えずに terminal から C++ プロジェクトを扱いやすくなります。",
+    en: "This improves C++ development in CLI-centric workflows by bringing the same IntelliSense quality available in VS Code and Visual Studio directly to the terminal.",
   },
   "Dependabot alerts are now assignable to AI agents for remediation": {
     ja: "単なる依存更新では済まない脆弱性修正を agent に任せられるため、セキュリティ対応の滞留を減らしやすくなります。",
@@ -941,6 +957,14 @@ function patternTitle(title) {
     [
       "Changes to GitHub Copilot plans for individuals",
       "個人向け GitHub Copilot プランの変更",
+    ],
+    [
+      "Bring your own language model key in VS Code now available",
+      "VS Code で BYOK（言語モデルキー持ち込み）が利用可能になった",
+    ],
+    [
+      "C++ code intelligence for GitHub Copilot CLI in public preview",
+      "GitHub Copilot CLI の C++ コードインテリジェンスが public preview になった",
     ],
   ]);
 
