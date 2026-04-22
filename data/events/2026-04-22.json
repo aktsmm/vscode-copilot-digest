@@ -1,23 +1,68 @@
 {
   "date": "2026-04-22",
-  "generatedAt": "2026-04-22T14:57:20.324Z",
+  "generatedAt": "2026-04-22T22:08:45.018Z",
   "latestRun": {
-    "generatedAt": "2026-04-22T14:57:20.324Z",
-    "newEventsCount": 9,
+    "generatedAt": "2026-04-22T22:08:45.018Z",
+    "newEventsCount": 4,
     "newEventIds": [
-      "vscode-updates:7b3c5be3e9361447e5e65e5b45eb1faa623f479121ffb2ae9778d61173d52263",
-      "vscode-release-notes-1-109:12faf7018d92476285596d71207932696c59faa8b2522054089c3ea6b7aa32ad",
-      "vscode-release-notes-1-117:section:ddd512b5cc910fc7195450e69d6f608b5483bf89b44c2678bb0938f04d721454",
-      "vscode-release-notes-1-117:section:7c5578e8d2d4a6701fbcc5ce73527ff2aff680544b5046606a56b973d77e4dd1",
-      "vscode-release-notes-1-117:section:ee1a6e0219e8f8b14ffc6e97f17886214e3e6aaaf3339e6752e45cbce389a1c7",
-      "vscode-release-notes-1-117:section:6eacd194ddca96ee513f63b3cad6a0b1ec87e708f5b7d295cd684878fbf0cea2",
-      "vscode-release-notes-1-116:15ca0ecc19a986fb62b6f14eaddaa2107aeca0c9e4d3cd4a32a60b5f46662dab",
-      "vscode-release-notes-1-115:554bccf8bfe08669acb2e069a903ddfcdb7ba44fb58c2fe07fb2684aa08d4118",
-      "vscode-release-notes-1-114:e0367f1e47ea2ebf25a877848021631539df5099b8f012c63a6f5bba6ed7db43"
+      "github-changelog:https://github.blog/changelog/2026-04-22-bring-your-own-language-model-key-in-vs-code-now-available",
+      "github-changelog:https://github.blog/changelog/2026-04-20-c-code-intelligence-for-github-copilot-cli-in-public-preview",
+      "vscode-feed:https://code.visualstudio.com/updates/v1_117",
+      "vscode-updates:b132e4f5b09b46d6fec46f736ef5fe76baac4485cac55d7a23bf3295e96c8bbd"
     ],
     "errorCount": 0
   },
   "events": [
+    {
+      "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_117",
+      "sourceId": "vscode-feed",
+      "sourceName": "VS Code Feed",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-22T22:08:42.633Z",
+      "publishedAt": "2026-04-22T17:00:00.000Z",
+      "title": "Visual Studio Code 1.117",
+      "url": "https://code.visualstudio.com/updates/v1_117",
+      "summary": "Learn what's new in Visual Studio Code 1.117\n Read the full article",
+      "categories": [
+        "release"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-04-22-bring-your-own-language-model-key-in-vs-code-now-available",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-22T22:08:42.089Z",
+      "publishedAt": "2026-04-22T16:38:20.000Z",
+      "title": "Bring your own language model key in VS Code now available",
+      "url": "https://github.blog/changelog/2026-04-22-bring-your-own-language-model-key-in-vs-code-now-available",
+      "summary": "Copilot Business and Enterprise users can now use bring your own language model key (BYOK) in Visual Studio Code. BYOK lets teams reuse their API keys to access models from…\nThe post Bring your own language model key in VS Code now available appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 2
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-04-20-c-code-intelligence-for-github-copilot-cli-in-public-preview",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-22T22:08:42.089Z",
+      "publishedAt": "2026-04-22T07:00:26.000Z",
+      "title": "C++ code intelligence for GitHub Copilot CLI in public preview",
+      "url": "https://github.blog/changelog/2026-04-22-c-code-intelligence-for-github-copilot-cli-in-public-preview",
+      "summary": "The Microsoft C++ Language Server is now available in public preview for the Copilot CLI. Powered by the same IntelliSense engine used in Visual Studio and VS Code, it extends…\nThe post C++ code intelligence for GitHub Copilot CLI in public preview appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 5
+    },
     {
       "eventId": "vscode-updates:7b3c5be3e9361447e5e65e5b45eb1faa623f479121ffb2ae9778d61173d52263",
       "sourceId": "vscode-updates",
@@ -156,6 +201,42 @@
       "sectionHeading": "Agent experience",
       "sectionTitle": "Visual Studio Code Agents (Insiders)",
       "score": 4
+    },
+    {
+      "eventId": "vscode-updates:b132e4f5b09b46d6fec46f736ef5fe76baac4485cac55d7a23bf3295e96c8bbd",
+      "sourceId": "vscode-updates",
+      "sourceName": "VS Code Updates",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-04-22T22:08:42.824Z",
+      "publishedAt": "2026-04-22T00:00:00.000Z",
+      "title": "VS Code Updates changed",
+      "url": "https://code.visualstudio.com/updates/",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [],
+        "additions": [
+          "By default, BYOK is enabled and administrators can disable it with the Bring Your Own Language Model Key policy in the Copilot policy settings on GitHub.com. This gives administrators control over which model providers are available to their organization while keeping developers in their existing workflow."
+        ]
+      },
+      "headings": [
+        "Visual Studio Code 1.117",
+        "Bring your own key for Copilot Business and Enterprise",
+        "Chat experience",
+        "Incremental rendering of chat responses (Experimental)",
+        "Sort agent sessions by recent activity",
+        "System notifications for background terminal commands",
+        "Agent experience",
+        "Visual Studio Code Agents (Insiders)",
+        "Terminal",
+        "Launch Copilot CLI with a custom terminal profile",
+        "Terminal title for agent CLIs",
+        "Languages"
+      ],
+      "score": 2
     },
     {
       "eventId": "vscode-release-notes-1-114:e0367f1e47ea2ebf25a877848021631539df5099b8f012c63a6f5bba6ed7db43",
