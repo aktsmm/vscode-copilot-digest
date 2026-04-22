@@ -1,12 +1,234 @@
 {
   "date": "2026-04-22",
-  "generatedAt": "2026-04-22T07:09:36.944Z",
+  "generatedAt": "2026-04-22T14:57:20.324Z",
   "latestRun": {
-    "generatedAt": "2026-04-22T07:09:36.944Z",
-    "newEventsCount": 0,
-    "newEventIds": [],
+    "generatedAt": "2026-04-22T14:57:20.324Z",
+    "newEventsCount": 9,
+    "newEventIds": [
+      "vscode-updates:7b3c5be3e9361447e5e65e5b45eb1faa623f479121ffb2ae9778d61173d52263",
+      "vscode-release-notes-1-109:12faf7018d92476285596d71207932696c59faa8b2522054089c3ea6b7aa32ad",
+      "vscode-release-notes-1-117:section:ddd512b5cc910fc7195450e69d6f608b5483bf89b44c2678bb0938f04d721454",
+      "vscode-release-notes-1-117:section:7c5578e8d2d4a6701fbcc5ce73527ff2aff680544b5046606a56b973d77e4dd1",
+      "vscode-release-notes-1-117:section:ee1a6e0219e8f8b14ffc6e97f17886214e3e6aaaf3339e6752e45cbce389a1c7",
+      "vscode-release-notes-1-117:section:6eacd194ddca96ee513f63b3cad6a0b1ec87e708f5b7d295cd684878fbf0cea2",
+      "vscode-release-notes-1-116:15ca0ecc19a986fb62b6f14eaddaa2107aeca0c9e4d3cd4a32a60b5f46662dab",
+      "vscode-release-notes-1-115:554bccf8bfe08669acb2e069a903ddfcdb7ba44fb58c2fe07fb2684aa08d4118",
+      "vscode-release-notes-1-114:e0367f1e47ea2ebf25a877848021631539df5099b8f012c63a6f5bba6ed7db43"
+    ],
     "errorCount": 0
   },
-  "events": [],
+  "events": [
+    {
+      "eventId": "vscode-updates:7b3c5be3e9361447e5e65e5b45eb1faa623f479121ffb2ae9778d61173d52263",
+      "sourceId": "vscode-updates",
+      "sourceName": "VS Code Updates",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-04-22T14:57:18.764Z",
+      "publishedAt": "2026-04-22T00:00:00.000Z",
+      "title": "VS Code Updates changed",
+      "url": "https://code.visualstudio.com/updates/",
+      "summary": "Detected 66 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 66,
+        "headings": [
+          "Visual Studio Code 1.117",
+          "Bring your own key for Copilot Business and Enterprise",
+          "Chat experience",
+          "Incremental rendering of chat responses (Experimental)",
+          "Sort agent sessions by recent activity",
+          "System notifications for background terminal commands",
+          "Agent experience",
+          "Terminal",
+          "Launch Copilot CLI with a custom terminal profile",
+          "Terminal title for agent CLIs",
+          "TypeScript 6.0.3"
+        ],
+        "additions": [
+          "1.117",
+          "H1: Visual Studio Code 1.117",
+          "Release date: April 22, 2026",
+          "Welcome to the 1.117 release of Visual Studio Code. This release adds new capabilities for Copilot Enterprise and Business users and further improves the agent experience in VS Code. Here are the highlights for this release:",
+          "BYOK for Business and Enterprise: Connect your own API keys for preferred or specialized models directly in VS Code chat.",
+          "Incremental chat rendering: Experience more fluid streaming of chat responses.",
+          "Terminal improvements: Launch Copilot CLI from any terminal profile.",
+          "H2: Bring your own key for Copilot Business and Enterprise",
+          "Teams often need specific models for compliance, performance, or cost reasons, but switching between tools to use them slows developers down. Bring your own language model key (BYOK) lets Copilot Business and Enterprise users connect their own API keys for providers like OpenRouter, Ollama, Google, OpenAI, and more, so they can use those models directly in VS Code chat.",
+          "To enable BYOK, an administrator enables the Bring Your Own Language Model Key policy in the Copilot policy settings on GitHub.com. This gives administrators control over which model providers are available to their organization while keeping developers in their existing workflow.",
+          "After the policy is enabled, organization members can add models from built-in providers or install language model provider extensions.",
+          "H2: Chat experience",
+          "H3: Incremental rendering of chat responses (Experimental)",
+          "Chat responses feel more fluid and natural with incremental rendering, which streams content block-by-block with optional animations as tokens arrive. Instead of the default timer-based rendering, this experimental approach renders each block as it becomes ready, reducing the perceived wait time for longer responses.",
+          "Configure incremental response rendering with the following settings:",
+          "chat.experimental.incrementalRendering.enabled"
+        ]
+      },
+      "headings": [
+        "Visual Studio Code 1.117",
+        "Bring your own key for Copilot Business and Enterprise",
+        "Chat experience",
+        "Incremental rendering of chat responses (Experimental)",
+        "Sort agent sessions by recent activity",
+        "System notifications for background terminal commands",
+        "Agent experience",
+        "Visual Studio Code Agents (Insiders)",
+        "Terminal",
+        "Launch Copilot CLI with a custom terminal profile",
+        "Terminal title for agent CLIs",
+        "Languages"
+      ],
+      "score": 13
+    },
+    {
+      "eventId": "vscode-release-notes-1-117:section:ddd512b5cc910fc7195450e69d6f608b5483bf89b44c2678bb0938f04d721454",
+      "sourceId": "vscode-release-notes-1-117",
+      "sourceName": "VS Code Release Notes 1.117",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-04-22T14:57:20.193Z",
+      "publishedAt": "2026-04-22T00:00:00.000Z",
+      "title": "Visual Studio Code 1.117: Incremental rendering of chat responses (Experimental)",
+      "url": "https://code.visualstudio.com/updates/v1_117",
+      "summary": "Chat responses feel more fluid and natural with incremental rendering, which streams content block-by-block with optional animations as tokens arrive. Instead of the default timer-based rendering, this experimental approach renders each block as it becomes ready, reducing the perceived wait time for longer responses. Configure incremental response rendering with the following settings: chat.experimental.incrementalR...",
+      "categories": [
+        "release",
+        "section",
+        "Chat experience"
+      ],
+      "sectionHeading": "Chat experience",
+      "sectionTitle": "Incremental rendering of chat responses (Experimental)",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-117:section:7c5578e8d2d4a6701fbcc5ce73527ff2aff680544b5046606a56b973d77e4dd1",
+      "sourceId": "vscode-release-notes-1-117",
+      "sourceName": "VS Code Release Notes 1.117",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-04-22T14:57:20.193Z",
+      "publishedAt": "2026-04-22T00:00:00.000Z",
+      "title": "Visual Studio Code 1.117: Sort agent sessions by recent activity",
+      "url": "https://code.visualstudio.com/updates/v1_117",
+      "summary": "When you accumulate many agent sessions, finding the right one can be difficult. The Agent Sessions view supports sorting sessions by when they were created or last updated, so you can quickly pick up where you left off.",
+      "categories": [
+        "release",
+        "section",
+        "Chat experience"
+      ],
+      "sectionHeading": "Chat experience",
+      "sectionTitle": "Sort agent sessions by recent activity",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-117:section:ee1a6e0219e8f8b14ffc6e97f17886214e3e6aaaf3339e6752e45cbce389a1c7",
+      "sourceId": "vscode-release-notes-1-117",
+      "sourceName": "VS Code Release Notes 1.117",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-04-22T14:57:20.193Z",
+      "publishedAt": "2026-04-22T00:00:00.000Z",
+      "title": "Visual Studio Code 1.117: System notifications for background terminal commands",
+      "url": "https://code.visualstudio.com/updates/v1_117",
+      "summary": "When an agent runs a long-running terminal command in the background, it can be easy to lose track of its progress. These commands now surface as System notifications in the chat response, so you can monitor their status without switching to the terminal.",
+      "categories": [
+        "release",
+        "section",
+        "Chat experience"
+      ],
+      "sectionHeading": "Chat experience",
+      "sectionTitle": "System notifications for background terminal commands",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-117:section:6eacd194ddca96ee513f63b3cad6a0b1ec87e708f5b7d295cd684878fbf0cea2",
+      "sourceId": "vscode-release-notes-1-117",
+      "sourceName": "VS Code Release Notes 1.117",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-04-22T14:57:20.193Z",
+      "publishedAt": "2026-04-22T00:00:00.000Z",
+      "title": "Visual Studio Code 1.117: Visual Studio Code Agents (Insiders)",
+      "url": "https://code.visualstudio.com/updates/v1_117",
+      "summary": "Note: The Visual Studio Code Agents app is currently in preview and only available when installing VS Code Insiders. The Visual Studio Code Agents app is a companion app that ships alongside VS Code Insiders, providing a focused, agent-native environment where you can run parallel sessions across repos, review diffs inline, and iterate on multi-step coding tasks. Introduced in 1.115, the app continues to evolve base...",
+      "categories": [
+        "release",
+        "section",
+        "Agent experience"
+      ],
+      "sectionHeading": "Agent experience",
+      "sectionTitle": "Visual Studio Code Agents (Insiders)",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-114:e0367f1e47ea2ebf25a877848021631539df5099b8f012c63a6f5bba6ed7db43",
+      "sourceId": "vscode-release-notes-1-114",
+      "sourceName": "VS Code Release Notes 1.114",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-04-22T14:57:20.323Z",
+      "publishedAt": "2026-04-01T00:00:00.000Z",
+      "title": "Visual Studio Code 1.114",
+      "url": "https://code.visualstudio.com/updates/v1_114",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [],
+        "additions": [
+          "1.117"
+        ]
+      },
+      "headings": [
+        "Visual Studio Code 1.114",
+        "Chat experience",
+        "Preview videos in the image carousel",
+        "Copy final response in chat",
+        "Workspace search simplification",
+        "Troubleshoot previous chat sessions (Preview)",
+        "Languages",
+        "TypeScript 6.0",
+        "Python",
+        "Enterprise",
+        "Group policy to disable Claude agent",
+        "Contributions to extensions"
+      ],
+      "score": 2
+    },
+    {
+      "eventId": "vscode-release-notes-1-109:12faf7018d92476285596d71207932696c59faa8b2522054089c3ea6b7aa32ad",
+      "sourceId": "vscode-release-notes-1-109",
+      "sourceName": "VS Code Release Notes 1.109",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-04-22T14:57:19.029Z",
+      "publishedAt": "2026-02-04T00:00:00.000Z",
+      "title": "VS Code Release Notes 1.109 changed",
+      "url": "https://code.visualstudio.com/updates/v1_109",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [],
+        "additions": [
+          "1.117"
+        ]
+      },
+      "headings": [
+        "January 2026 (version 1.109)",
+        "Upcoming events",
+        "Agent Sessions Day",
+        "Chat UX",
+        "Message steering and queueing (Experimental)",
+        "Anthropic models now show thinking tokens",
+        "Mermaid diagrams in chat responses",
+        "Ask Questions tool (Experimental)",
+        "Plan agent",
+        "Context window details",
+        "Inline chat UX revamp (Preview)",
+        "Model descriptions in the model picker"
+      ],
+      "score": 2
+    }
+  ],
   "errors": []
 }
