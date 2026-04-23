@@ -323,6 +323,30 @@ const exactSummaryMappings = {
     ja: "個人向け Copilot プランに複数の変更が加わった。Pro / Pro+ / Student への新規サインアップが停止（Copilot Free は引き続き開放）、Pro の利用上限が引き締められ Pro+ は 5 倍超の枠を維持、Pro から Opus モデルが撤去（Opus 4.7 は Pro+ に継続）。4 月分の請求は 4/20〜5/20 の間に GitHub サポートへ申請すれば払い戻し可能。",
     en: "Multiple changes landed for individual Copilot plans: new signups are paused for Pro, Pro+, and Student (Copilot Free stays open); usage limits are tightened for Pro while Pro+ keeps 5x-plus capacity; Opus models are removed from Pro, with Opus 4.7 remaining on Pro+. Subscribers who cancel before May 20 can request a refund for April via GitHub Support.",
   },
+  "Pausing new self-serve signups for GitHub Copilot Business": {
+    ja: "すべてのユーザーに安定した Copilot 体験を提供するための取り組みの一環として、GitHub Copilot Business の新規セルフサービスサインアップが一時停止された。既存のサブスクリプションは継続し、Enterprise 経由の購入は引き続き対応可能。",
+    en: "As part of ongoing efforts to ensure a reliable Copilot experience, new self-serve signups for GitHub Copilot Business are paused. Existing subscriptions continue unaffected, and purchasing through Enterprise channels remains available.",
+  },
+  "Copilot cloud agent fields added to usage metrics": {
+    ja: "Copilot coding agent から Copilot cloud agent へのリネームに伴い、usage metrics API のユーザーレベルレポートに `used_copilot_cloud_agent` フィールドが新たに追加された。既存の関連フィールドと同形式の boolean 値で、cloud agent の利用有無を API 経由で把握できるようになる。",
+    en: "Following the rename from Copilot coding agent to Copilot cloud agent, the Copilot usage metrics API now includes a new `used_copilot_cloud_agent` boolean field in user-level reports, mirroring the format of existing related fields.",
+  },
+  "View and manage agent sessions from issues and projects": {
+    ja: "Issues や Projects のページから Copilot cloud agent のセッションを直接確認・操作できるようになった。ページ上部に表示されるセッション pill から進行中の agent 作業の状況を把握し、workflow を離れずに操作を継続できる。",
+    en: "Cloud agent sessions can now be viewed and steered directly from issues and projects pages. A session pill appears at the top of the page, giving better visibility into agent activity without leaving your current workflow.",
+  },
+  "Copilot Chat improvements for pull requests": {
+    ja: "GitHub Copilot Chat が PR の diff やコードを扱うときにより豊富なコンテキストと新しい機能を提供するようになった。github.com の Copilot Chat から PR について質問することでこの機能を利用できる。",
+    en: "GitHub Copilot Chat now provides richer context and new capabilities when working with diffs and pull requests on github.com, accessible by asking questions about a pull request directly in Chat.",
+  },
+  "Better debugging with GitHub Copilot on the web": {
+    ja: "github.com の Copilot Chat がスタックトレースをより確実に認識し、エラーの根本原因を素早く特定できるようになった。スタックトレースを貼り付けると関連コードや変数のコンテキストを踏まえた回答が得られる。",
+    en: "GitHub Copilot Chat on github.com now more reliably recognizes stack traces and provides faster root-cause analysis, offering context-aware answers that reference related code and variables.",
+  },
+  "Upcoming change to Copilot usage metrics report download URLs": {
+    ja: "Copilot usage metrics レポートのダウンロード URL が Azure Front Door ドメインから GitHub 所有のカスタムドメインへ移行される。URL の安定性向上が目的で、既存の automation やスクリプトで旧 URL を使用している場合は移行後の更新が必要になる。",
+    en: "Download URLs for Copilot usage metrics reports are migrating from Azure Front Door domains to a stable GitHub-owned custom domain. Any existing automation or scripts that reference the old URLs will need to be updated.",
+  },
 };
 
 const exactImportanceMappings = {
@@ -672,6 +696,30 @@ const exactImportanceMappings = {
     ja: "Enterprise・組織の管理者が Copilot code review の active・passive ユーザー数を usage metrics API で集計できるようになり、コードレビュー機能の実際の採用状況を定量的に把握しやすくなる。",
     en: "This matters because enterprise and organization admins can now track aggregated active and passive Copilot code review user counts via the API, making it easier to quantify real adoption of the code review feature.",
   },
+  "Pausing new self-serve signups for GitHub Copilot Business": {
+    ja: "Copilot Business の新規セルフサービス登録ルートが変わるため、組織で Business プランの導入を検討または進めている場合は代替の購入経路を確認する必要があります。",
+    en: "This matters because the self-serve signup path for Copilot Business is now paused, so organizations planning to adopt Business plan seats need to check alternative purchasing routes.",
+  },
+  "Copilot cloud agent fields added to usage metrics": {
+    ja: "enterprise / organization 管理者が cloud agent の利用状況をユーザーレベルで API から確認できるようになるため、導入状況の把握や usage monitoring スクリプトへの組み込みがしやすくなります。",
+    en: "This matters because enterprise and organization admins can now track per-user cloud agent adoption via the API, making it easier to build usage monitoring pipelines without workarounds.",
+  },
+  "View and manage agent sessions from issues and projects": {
+    ja: "issue や project のビューのまま cloud agent の状況確認と操作ができるため、agent 作業中の context switch が減り、agent 管理の手間を軽減できます。",
+    en: "This reduces context switching by letting teams monitor and steer cloud agent sessions without leaving the issues or projects view they are already working in.",
+  },
+  "Copilot Chat improvements for pull requests": {
+    ja: "PR の diff やコードを Copilot Chat で直接問い合わせられるため、レビュー作業や変更内容の理解を効率化しやすくなります。",
+    en: "This improves PR review efficiency by letting you ask Copilot about diffs and code changes directly in Chat without leaving the pull request.",
+  },
+  "Better debugging with GitHub Copilot on the web": {
+    ja: "web 上でのデバッグ作業でスタックトレースから根本原因の特定までが速くなるため、エラー調査の効率が直接向上します。",
+    en: "This directly speeds up error investigation on the web by improving how reliably Copilot recognizes stack traces and links them to relevant code context.",
+  },
+  "Upcoming change to Copilot usage metrics report download URLs": {
+    ja: "usage metrics レポートをダウンロードする automation やスクリプトを持つ場合は、URL 変更後に動作しなくなる可能性があるため、移行時期を事前に確認して対応する必要があります。",
+    en: "This matters for any team with automation or scripts that download Copilot usage metrics reports, as the old URLs will stop working after migration and will need to be updated in advance.",
+  },
 };
 
 function toDateOnly(value) {
@@ -989,6 +1037,30 @@ function patternTitle(title) {
     [
       "Copilot code review user counts now aggregate in usage metrics API",
       "usage metrics API で Copilot コードレビューのユーザー数を集計できるようになった",
+    ],
+    [
+      "Pausing new self-serve signups for GitHub Copilot Business",
+      "GitHub Copilot Business の新規セルフサービスサインアップを一時停止",
+    ],
+    [
+      "Copilot cloud agent fields added to usage metrics",
+      "usage metrics API に Copilot cloud agent フィールドが追加された",
+    ],
+    [
+      "View and manage agent sessions from issues and projects",
+      "issue や project から cloud agent セッションを確認・操作できるようになった",
+    ],
+    [
+      "Copilot Chat improvements for pull requests",
+      "プルリクエストに関する Copilot Chat の機能強化",
+    ],
+    [
+      "Better debugging with GitHub Copilot on the web",
+      "web 上の GitHub Copilot でデバッグがしやすくなった",
+    ],
+    [
+      "Upcoming change to Copilot usage metrics report download URLs",
+      "Copilot usage metrics レポートのダウンロード URL が変更される予定",
     ],
   ]);
 
