@@ -1,17 +1,10 @@
 {
   "date": "2026-04-23",
-  "generatedAt": "2026-04-23T07:12:32.261Z",
+  "generatedAt": "2026-04-23T15:26:38.081Z",
   "latestRun": {
-    "generatedAt": "2026-04-23T07:12:32.261Z",
-    "newEventsCount": 6,
-    "newEventIds": [
-      "github-changelog:https://github.blog/changelog/2026-04-22-github-copilot-for-jira-our-latest-enhancements",
-      "github-changelog:https://github.blog/changelog/2026-04-22-copilot-code-review-user-counts-now-aggregate-in-usage-metrics-api",
-      "github-changelog-copilot:https://github.blog/changelog/2026-04-22-github-copilot-for-jira-our-latest-enhancements",
-      "github-changelog-copilot:https://github.blog/changelog/2026-04-22-copilot-code-review-user-counts-now-aggregate-in-usage-metrics-api",
-      "github-changelog-copilot:https://github.blog/changelog/2026-04-22-bring-your-own-language-model-key-in-vs-code-now-available",
-      "github-changelog-copilot:https://github.blog/changelog/2026-04-20-c-code-intelligence-for-github-copilot-cli-in-public-preview"
-    ],
+    "generatedAt": "2026-04-23T15:26:38.081Z",
+    "newEventsCount": 0,
+    "newEventIds": [],
     "errorCount": 0
   },
   "events": [
