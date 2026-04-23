@@ -241,6 +241,14 @@ const exactSummaryMappings = {
     ja: "Microsoft C++ Language Server が Copilot CLI で public preview になった。Visual Studio や VS Code で使われているのと同じ IntelliSense エンジンを基盤としており、Copilot CLI での C++ コードインテリジェンスが強化される。",
     en: "The Microsoft C++ Language Server is now in public preview for Copilot CLI. Powered by the same IntelliSense engine used in Visual Studio and VS Code, it brings richer C++ code intelligence to CLI-based development workflows.",
   },
+  "GitHub Copilot for Jira: Our latest enhancements": {
+    ja: "GitHub Copilot cloud agent の Jira 連携に継続的な改善が加わり、チームが統合の動作をより柔軟に制御・カスタマイズできるようになった。Jira を利用する開発チームが Copilot cloud agent の活用範囲を広げやすくなる。",
+    en: "GitHub Copilot cloud agent's Jira integration received continued enhancements, giving teams greater control and customizability over how the integration behaves in their Jira workflows.",
+  },
+  "Copilot code review user counts now aggregate in usage metrics API": {
+    ja: "Copilot code review の active ユーザー・passive ユーザーの識別に続き、usage metrics API の enterprise / organization レポートに集計値が追加された。コードレビュー機能の実際の利用者数を API 経由で把握できるようになる。",
+    en: "Following the launch of active and passive Copilot code review user identification, enterprise and organization usage reports in the Copilot usage metrics API now include aggregated active and passive user counts for code review.",
+  },
   "Visual Studio Code 1.115: Browser agent tools improvements": {
     ja: "browser tool の呼び出しラベルが分かりやすくなり、対象タブへ直接飛べるリンクも付いた。Run Playwright Code では長時間実行の deferred result も改善され、browser automation の追跡がしやすくなった。",
     en: "Browser tool calls now have clearer labels and direct links to the target tab, while Run Playwright Code has better deferred handling for long-running scripts.",
@@ -656,6 +664,14 @@ const exactImportanceMappings = {
     ja: "個人 Copilot プランを利用しているユーザーや社内で案内しているチームは、新規登録停止・利用上限の変更・Opus モデル撤去の 3 点を確認する必要があります。キャンセル時の払い戻し期限（5/20 まで）もあわせて周知が必要です。",
     en: "Any user or team managing individual Copilot subscriptions needs to account for the signup pause, tighter Pro limits, and Opus model removal. The April refund window (available through May 20 via GitHub Support) is also time-sensitive.",
   },
+  "GitHub Copilot for Jira: Our latest enhancements": {
+    ja: "Jira と GitHub を併用するチームにとって、Copilot cloud agent 連携の設定自由度が上がることは既存ワークフローへの組み込みコストを下げる。具体的な変更内容を原文で確認し、自チームの Jira 運用に適用できるか判断することを推奨。",
+    en: "This matters for teams using both Jira and GitHub because increased customizability in the Copilot cloud agent integration reduces the friction of fitting it into existing Jira workflows.",
+  },
+  "Copilot code review user counts now aggregate in usage metrics API": {
+    ja: "Enterprise・組織の管理者が Copilot code review の active・passive ユーザー数を usage metrics API で集計できるようになり、コードレビュー機能の実際の採用状況を定量的に把握しやすくなる。",
+    en: "This matters because enterprise and organization admins can now track aggregated active and passive Copilot code review user counts via the API, making it easier to quantify real adoption of the code review feature.",
+  },
 };
 
 function toDateOnly(value) {
@@ -965,6 +981,14 @@ function patternTitle(title) {
     [
       "C++ code intelligence for GitHub Copilot CLI in public preview",
       "GitHub Copilot CLI の C++ コードインテリジェンスが public preview になった",
+    ],
+    [
+      "GitHub Copilot for Jira: Our latest enhancements",
+      "Copilot for Jira の最新機能強化",
+    ],
+    [
+      "Copilot code review user counts now aggregate in usage metrics API",
+      "usage metrics API で Copilot コードレビューのユーザー数を集計できるようになった",
     ],
   ]);
 
