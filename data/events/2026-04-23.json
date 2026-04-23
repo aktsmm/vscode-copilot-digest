@@ -1,0 +1,128 @@
+{
+  "date": "2026-04-23",
+  "generatedAt": "2026-04-23T07:12:32.261Z",
+  "latestRun": {
+    "generatedAt": "2026-04-23T07:12:32.261Z",
+    "newEventsCount": 6,
+    "newEventIds": [
+      "github-changelog:https://github.blog/changelog/2026-04-22-github-copilot-for-jira-our-latest-enhancements",
+      "github-changelog:https://github.blog/changelog/2026-04-22-copilot-code-review-user-counts-now-aggregate-in-usage-metrics-api",
+      "github-changelog-copilot:https://github.blog/changelog/2026-04-22-github-copilot-for-jira-our-latest-enhancements",
+      "github-changelog-copilot:https://github.blog/changelog/2026-04-22-copilot-code-review-user-counts-now-aggregate-in-usage-metrics-api",
+      "github-changelog-copilot:https://github.blog/changelog/2026-04-22-bring-your-own-language-model-key-in-vs-code-now-available",
+      "github-changelog-copilot:https://github.blog/changelog/2026-04-20-c-code-intelligence-for-github-copilot-cli-in-public-preview"
+    ],
+    "errorCount": 0
+  },
+  "events": [
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-04-22-github-copilot-for-jira-our-latest-enhancements",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-23T07:12:30.441Z",
+      "publishedAt": "2026-04-23T00:10:10.000Z",
+      "title": "GitHub Copilot for Jira: Our latest enhancements",
+      "url": "https://github.blog/changelog/2026-04-22-github-copilot-for-jira-our-latest-enhancements",
+      "summary": "Since our last update, we’ve continued to invest in making the GitHub Copilot cloud agent for Jira integration more powerful and customizable. These improvements give teams greater control over how…\nThe post GitHub Copilot for Jira: Our latest enhancements appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "collaboration tools",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 2
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-04-22-github-copilot-for-jira-our-latest-enhancements",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-23T07:12:30.459Z",
+      "publishedAt": "2026-04-23T00:10:10.000Z",
+      "title": "GitHub Copilot for Jira: Our latest enhancements",
+      "url": "https://github.blog/changelog/2026-04-22-github-copilot-for-jira-our-latest-enhancements",
+      "summary": "Since our last update, we’ve continued to invest in making the GitHub Copilot cloud agent for Jira integration more powerful and customizable. These improvements give teams greater control over how…\nThe post GitHub Copilot for Jira: Our latest enhancements appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "collaboration tools",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 2
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-04-22-copilot-code-review-user-counts-now-aggregate-in-usage-metrics-api",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-23T07:12:30.441Z",
+      "publishedAt": "2026-04-22T23:25:34.000Z",
+      "title": "Copilot code review user counts now aggregate in usage metrics API",
+      "url": "https://github.blog/changelog/2026-04-22-copilot-code-review-user-counts-now-aggregate-in-usage-metrics-api",
+      "summary": "Following the launch of Copilot code review active and passive user identification, enterprise and organization usage reports in the Copilot usage metrics API now include aggregated active and passive user…\nThe post Copilot code review user counts now aggregate in usage metrics API appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "account management",
+        "copilot",
+        "enterprise management tools"
+      ],
+      "isFutureDated": false,
+      "score": 2
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-04-22-copilot-code-review-user-counts-now-aggregate-in-usage-metrics-api",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-23T07:12:30.459Z",
+      "publishedAt": "2026-04-22T23:25:34.000Z",
+      "title": "Copilot code review user counts now aggregate in usage metrics API",
+      "url": "https://github.blog/changelog/2026-04-22-copilot-code-review-user-counts-now-aggregate-in-usage-metrics-api",
+      "summary": "Following the launch of Copilot code review active and passive user identification, enterprise and organization usage reports in the Copilot usage metrics API now include aggregated active and passive user…\nThe post Copilot code review user counts now aggregate in usage metrics API appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "account management",
+        "copilot",
+        "enterprise management tools"
+      ],
+      "isFutureDated": false,
+      "score": 2
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-04-22-bring-your-own-language-model-key-in-vs-code-now-available",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-23T07:12:30.459Z",
+      "publishedAt": "2026-04-22T16:38:20.000Z",
+      "title": "Bring your own language model key in VS Code now available",
+      "url": "https://github.blog/changelog/2026-04-22-bring-your-own-language-model-key-in-vs-code-now-available",
+      "summary": "Copilot Business and Enterprise users can now use bring your own language model key (BYOK) in Visual Studio Code. BYOK lets teams reuse their API keys to access models from…\nThe post Bring your own language model key in VS Code now available appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 2
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-04-20-c-code-intelligence-for-github-copilot-cli-in-public-preview",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-23T07:12:30.459Z",
+      "publishedAt": "2026-04-22T07:00:26.000Z",
+      "title": "C++ code intelligence for GitHub Copilot CLI in public preview",
+      "url": "https://github.blog/changelog/2026-04-22-c-code-intelligence-for-github-copilot-cli-in-public-preview",
+      "summary": "The Microsoft C++ Language Server is now available in public preview for the Copilot CLI. Powered by the same IntelliSense engine used in Visual Studio and VS Code, it extends…\nThe post C++ code intelligence for GitHub Copilot CLI in public preview appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 5
+    }
+  ],
+  "errors": []
+}
