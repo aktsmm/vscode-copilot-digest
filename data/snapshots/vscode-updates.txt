@@ -1,3 +1,4 @@
+Insiders
 1.117
 1.116
 1.115
@@ -67,7 +68,7 @@ chat.experimental.incrementalRendering.buffering
  Open in VS Code
  Open in VS Code Insiders
  
- : Configure how content is buffered before rendering during incremental response rendering. Lower buffering levels render faster but may show incomplete sentences or partially-formed Markdown. Options: off, word, paragraph. Default: off.
+ : Configure how content is buffered before rendering during incremental response rendering. Lower buffering levels render faster but may show incomplete sentences or partially-formed Markdown. Options: off, word, paragraph. Default: word.
 H3: Sort agent sessions by recent activity
 When you accumulate many agent sessions, finding the right one can be difficult. The Agent Sessions view supports sorting sessions by when they were created or last updated, so you can quickly pick up where you left off.
 H3: System notifications for background terminal commands

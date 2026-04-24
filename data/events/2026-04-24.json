@@ -1,15 +1,36 @@
 {
   "date": "2026-04-24",
-  "generatedAt": "2026-04-24T07:14:38.522Z",
+  "generatedAt": "2026-04-24T14:53:52.332Z",
   "latestRun": {
-    "generatedAt": "2026-04-24T07:14:38.522Z",
-    "newEventsCount": 1,
+    "generatedAt": "2026-04-24T14:53:52.332Z",
+    "newEventsCount": 6,
     "newEventIds": [
-      "github-changelog:https://github.blog/changelog/2026-04-22-upcoming-change-to-copilot-usage-metrics-report-download-urls"
+      "vscode-feed:https://code.visualstudio.com/updates/v1_118",
+      "vscode-updates:f872cae861fe887bd69ec16b640e158814d8e9bfb078f7dbdd7f2d1ecf2829bc",
+      "vscode-release-notes-1-109:3d171a7feaaa4df9ef03d1f3eac79ef1b96e03cad251c6442fd3c8c5888d786c",
+      "vscode-release-notes-1-116:608ac5e8ef7692589f967fc1998ceb7d511d21668b1eb5d6144cc4c04ef0c992",
+      "vscode-release-notes-1-115:005c1ee4adbb96dc9336e249614d2eb0155093863cb1c5dc5b9405f38e83036b",
+      "vscode-release-notes-1-114:378a420c24bd1ce22a3db96735a0c18cc4eb1678366c663c5b1adaa4018e23d2"
     ],
     "errorCount": 0
   },
   "events": [
+    {
+      "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_118",
+      "sourceId": "vscode-feed",
+      "sourceName": "VS Code Feed",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-24T14:53:49.875Z",
+      "publishedAt": "2026-04-29T17:00:00.000Z",
+      "title": "Visual Studio Code 1.118",
+      "url": "https://code.visualstudio.com/updates/v1_118",
+      "summary": "Learn what's new in Visual Studio Code 1.118 (Insiders)\n Read the full article",
+      "categories": [
+        "release"
+      ],
+      "isFutureDated": true,
+      "score": 4
+    },
     {
       "eventId": "github-changelog:https://github.blog/changelog/2026-04-22-upcoming-change-to-copilot-usage-metrics-report-download-urls",
       "sourceId": "github-changelog",
@@ -27,6 +48,115 @@
       ],
       "isFutureDated": false,
       "score": 1
+    },
+    {
+      "eventId": "vscode-updates:f872cae861fe887bd69ec16b640e158814d8e9bfb078f7dbdd7f2d1ecf2829bc",
+      "sourceId": "vscode-updates",
+      "sourceName": "VS Code Updates",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-04-24T14:53:50.167Z",
+      "publishedAt": "2026-04-22T00:00:00.000Z",
+      "title": "VS Code Updates changed",
+      "url": "https://code.visualstudio.com/updates/",
+      "summary": "Detected 2 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 2,
+        "headings": [],
+        "additions": [
+          "Insiders",
+          ": Configure how content is buffered before rendering during incremental response rendering. Lower buffering levels render faster but may show incomplete sentences or partially-formed Markdown. Options: off, word, paragraph. Default: word."
+        ]
+      },
+      "headings": [
+        "Visual Studio Code 1.117",
+        "Bring your own key for Copilot Business and Enterprise",
+        "Chat experience",
+        "Incremental rendering of chat responses (Experimental)",
+        "Sort agent sessions by recent activity",
+        "System notifications for background terminal commands",
+        "Agent experience",
+        "Visual Studio Code Agents (Insiders)",
+        "Terminal",
+        "Launch Copilot CLI with a custom terminal profile",
+        "Terminal title for agent CLIs",
+        "Languages"
+      ],
+      "score": 2
+    },
+    {
+      "eventId": "vscode-release-notes-1-114:378a420c24bd1ce22a3db96735a0c18cc4eb1678366c663c5b1adaa4018e23d2",
+      "sourceId": "vscode-release-notes-1-114",
+      "sourceName": "VS Code Release Notes 1.114",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-04-24T14:53:52.331Z",
+      "publishedAt": "2026-04-01T00:00:00.000Z",
+      "title": "Visual Studio Code 1.114",
+      "url": "https://code.visualstudio.com/updates/v1_114",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [],
+        "additions": [
+          "Insiders"
+        ]
+      },
+      "headings": [
+        "Visual Studio Code 1.114",
+        "Chat experience",
+        "Preview videos in the image carousel",
+        "Copy final response in chat",
+        "Workspace search simplification",
+        "Troubleshoot previous chat sessions (Preview)",
+        "Languages",
+        "TypeScript 6.0",
+        "Python",
+        "Enterprise",
+        "Group policy to disable Claude agent",
+        "Contributions to extensions"
+      ],
+      "score": 2
+    },
+    {
+      "eventId": "vscode-release-notes-1-109:3d171a7feaaa4df9ef03d1f3eac79ef1b96e03cad251c6442fd3c8c5888d786c",
+      "sourceId": "vscode-release-notes-1-109",
+      "sourceName": "VS Code Release Notes 1.109",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-04-24T14:53:50.505Z",
+      "publishedAt": "2026-02-04T00:00:00.000Z",
+      "title": "VS Code Release Notes 1.109 changed",
+      "url": "https://code.visualstudio.com/updates/v1_109",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [],
+        "additions": [
+          "Insiders"
+        ]
+      },
+      "headings": [
+        "January 2026 (version 1.109)",
+        "Upcoming events",
+        "Agent Sessions Day",
+        "Chat UX",
+        "Message steering and queueing (Experimental)",
+        "Anthropic models now show thinking tokens",
+        "Mermaid diagrams in chat responses",
+        "Ask Questions tool (Experimental)",
+        "Plan agent",
+        "Context window details",
+        "Inline chat UX revamp (Preview)",
+        "Model descriptions in the model picker"
+      ],
+      "score": 2
     }
   ],
   "errors": []
