@@ -1,0 +1,33 @@
+{
+  "date": "2026-04-24",
+  "generatedAt": "2026-04-24T07:14:38.522Z",
+  "latestRun": {
+    "generatedAt": "2026-04-24T07:14:38.522Z",
+    "newEventsCount": 1,
+    "newEventIds": [
+      "github-changelog:https://github.blog/changelog/2026-04-22-upcoming-change-to-copilot-usage-metrics-report-download-urls"
+    ],
+    "errorCount": 0
+  },
+  "events": [
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-04-22-upcoming-change-to-copilot-usage-metrics-report-download-urls",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-24T07:14:36.359Z",
+      "publishedAt": "2026-04-22T23:25:50.000Z",
+      "title": "Upcoming change to Copilot usage metrics report download URLs",
+      "url": "https://github.blog/changelog/2026-04-22-upcoming-change-to-copilot-usage-metrics-report-download-urls",
+      "summary": "We are migrating the download URLs for Copilot usage metrics reports from Azure Front Door domains to a stable, GitHub-owned custom domain. This change will improve URL stability and make…\nThe post Upcoming change to Copilot usage metrics report download URLs appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "account management",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 1
+    }
+  ],
+  "errors": []
+}
