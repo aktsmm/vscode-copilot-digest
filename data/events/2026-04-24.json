@@ -1,16 +1,12 @@
 {
   "date": "2026-04-24",
-  "generatedAt": "2026-04-24T14:53:52.332Z",
+  "generatedAt": "2026-04-24T22:06:20.090Z",
   "latestRun": {
-    "generatedAt": "2026-04-24T14:53:52.332Z",
-    "newEventsCount": 6,
+    "generatedAt": "2026-04-24T22:06:20.090Z",
+    "newEventsCount": 2,
     "newEventIds": [
-      "vscode-feed:https://code.visualstudio.com/updates/v1_118",
-      "vscode-updates:f872cae861fe887bd69ec16b640e158814d8e9bfb078f7dbdd7f2d1ecf2829bc",
-      "vscode-release-notes-1-109:3d171a7feaaa4df9ef03d1f3eac79ef1b96e03cad251c6442fd3c8c5888d786c",
-      "vscode-release-notes-1-116:608ac5e8ef7692589f967fc1998ceb7d511d21668b1eb5d6144cc4c04ef0c992",
-      "vscode-release-notes-1-115:005c1ee4adbb96dc9336e249614d2eb0155093863cb1c5dc5b9405f38e83036b",
-      "vscode-release-notes-1-114:378a420c24bd1ce22a3db96735a0c18cc4eb1678366c663c5b1adaa4018e23d2"
+      "github-changelog:https://github.blog/changelog/2026-04-24-gpt-5-5-is-generally-available-for-github-copilot",
+      "github-changelog:https://github.blog/changelog/2026-04-23-inline-agent-mode-in-preview-and-more-in-github-copilot-for-jetbrains-ides"
     ],
     "errorCount": 0
   },
@@ -30,6 +26,40 @@
       ],
       "isFutureDated": true,
       "score": 4
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-04-24-gpt-5-5-is-generally-available-for-github-copilot",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-24T22:06:17.582Z",
+      "publishedAt": "2026-04-24T17:19:34.000Z",
+      "title": "GPT-5.5 is generally available for GitHub Copilot",
+      "url": "https://github.blog/changelog/2026-04-24-gpt-5-5-is-generally-available-for-github-copilot",
+      "summary": "GPT-5.5, OpenAI’s latest GPT model, is now rolling out on GitHub Copilot. In our early testing, GPT-5.5 delivers its strongest performance on complex, multi-step agentic coding task and resolves real-world…\nThe post GPT-5.5 is generally available for GitHub Copilot appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 5
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-04-23-inline-agent-mode-in-preview-and-more-in-github-copilot-for-jetbrains-ides",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-24T22:06:17.583Z",
+      "publishedAt": "2026-04-24T15:43:08.000Z",
+      "title": "Inline agent mode in preview and more in GitHub Copilot for JetBrains IDEs",
+      "url": "https://github.blog/changelog/2026-04-24-inline-agent-mode-in-preview-and-more-in-github-copilot-for-jetbrains-ides",
+      "summary": "This update introduces inline agent mode in preview, enhancements to Next Edit Suggestions, global auto approve, and more flexible controls for terminal commands and file edits. It also includes several…\nThe post Inline agent mode in preview and more in GitHub Copilot for JetBrains IDEs appeared first on The GitHub Bl...",
+      "categories": [
+        "Improvement",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 2
     },
     {
       "eventId": "github-changelog:https://github.blog/changelog/2026-04-22-upcoming-change-to-copilot-usage-metrics-report-download-urls",
