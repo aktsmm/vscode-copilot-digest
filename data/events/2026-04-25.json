@@ -1,15 +1,10 @@
 {
   "date": "2026-04-25",
-  "generatedAt": "2026-04-25T06:48:41.511Z",
+  "generatedAt": "2026-04-25T14:23:32.093Z",
   "latestRun": {
-    "generatedAt": "2026-04-25T06:48:41.511Z",
-    "newEventsCount": 4,
-    "newEventIds": [
-      "github-changelog:https://github.blog/changelog/2026-04-24-notice-about-upcoming-new-format-for-github-app-installation-tokens",
-      "github-changelog-copilot:https://github.blog/changelog/2026-04-24-notice-about-upcoming-new-format-for-github-app-installation-tokens",
-      "github-changelog-copilot:https://github.blog/changelog/2026-04-24-gpt-5-5-is-generally-available-for-github-copilot",
-      "github-changelog-copilot:https://github.blog/changelog/2026-04-23-inline-agent-mode-in-preview-and-more-in-github-copilot-for-jetbrains-ides"
-    ],
+    "generatedAt": "2026-04-25T14:23:32.093Z",
+    "newEventsCount": 0,
+    "newEventIds": [],
     "errorCount": 0
   },
   "events": [
