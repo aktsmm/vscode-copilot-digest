@@ -347,6 +347,18 @@ const exactSummaryMappings = {
     ja: "Copilot usage metrics レポートのダウンロード URL が Azure Front Door ドメインから GitHub 所有のカスタムドメインへ移行される。URL の安定性向上が目的で、既存の automation やスクリプトで旧 URL を使用している場合は移行後の更新が必要になる。",
     en: "Download URLs for Copilot usage metrics reports are migrating from Azure Front Door domains to a stable GitHub-owned custom domain. Any existing automation or scripts that reference the old URLs will need to be updated.",
   },
+  "GPT-5.5 is generally available for GitHub Copilot": {
+    ja: "OpenAI の最新モデル GPT-5.5 が GitHub Copilot に一般提供として段階的に展開を開始した。複数ステップの agentic コーディングタスクで特に強みを発揮するとされており、実際の問題を解決する性能が向上している。",
+    en: "GPT-5.5, OpenAI's latest model, is now rolling out as generally available on GitHub Copilot. Early testing shows its strongest performance on complex, multi-step agentic coding tasks.",
+  },
+  "Inline agent mode in preview and more in GitHub Copilot for JetBrains IDEs": {
+    ja: "JetBrains IDE 向け GitHub Copilot がアップデートされた。インライン agent モードがプレビューで追加されたほか、Next Edit Suggestions の強化、グローバル自動承認、ターミナルコマンドとファイル編集に関する柔軟な制御が含まれる。",
+    en: "GitHub Copilot for JetBrains IDEs now includes inline agent mode in preview, enhancements to Next Edit Suggestions, global auto approve, and more flexible controls for terminal commands and file edits.",
+  },
+  "Notice about upcoming new format for GitHub App installation tokens": {
+    ja: "2026年4月27日以降、段階的なロールアウトにより GitHub App インストールトークンのフォーマットが更新される。新フォーマットはパフォーマンスを向上させたものに変わり、新規に発行されるトークンから順次適用される。",
+    en: "Starting April 27, 2026, a staged rollout will update the format of newly issued GitHub App installation tokens to make them more performant.",
+  },
 };
 
 const exactImportanceMappings = {
@@ -719,6 +731,18 @@ const exactImportanceMappings = {
   "Upcoming change to Copilot usage metrics report download URLs": {
     ja: "usage metrics レポートをダウンロードする automation やスクリプトを持つ場合は、URL 変更後に動作しなくなる可能性があるため、移行時期を事前に確認して対応する必要があります。",
     en: "This matters for any team with automation or scripts that download Copilot usage metrics reports, as the old URLs will stop working after migration and will need to be updated in advance.",
+  },
+  "GPT-5.5 is generally available for GitHub Copilot": {
+    ja: "GPT-5.5 の GA により、多ステップの agentic タスクに特化した性能を持つモデルが本番運用の選択肢に加わった。Copilot で複雑なコーディングタスクを扱うチームは使用モデルの見直しを検討する材料になります。",
+    en: "This matters because GPT-5.5 is now available for production use on GitHub Copilot and offers improved performance on complex, multi-step agentic coding tasks, expanding the practical model options for teams.",
+  },
+  "Inline agent mode in preview and more in GitHub Copilot for JetBrains IDEs": {
+    ja: "JetBrains IDE を使うチームは、インライン agent mode を early preview として試して運用適合を判断するタイミングに入りました。Next Edit Suggestions の強化や自動承認の拡充も日常の編集フローを改善します。",
+    en: "This matters for JetBrains IDE users because inline agent mode is now in early preview and ready for validation, while improvements to Next Edit Suggestions and auto-approve reduce friction in everyday editing.",
+  },
+  "Notice about upcoming new format for GitHub App installation tokens": {
+    ja: "GitHub App のトークンをパターンマッチや正規表現で検証しているスクリプトや CI/CD は、4月27日以降の新フォーマットで動作しなくなる可能性があります。使用中の検証コードを事前に確認することを推奨します。",
+    en: "This matters for any integration that validates GitHub App installation tokens by format, such as regex checks in CI/CD pipelines, because the new token format may not match existing patterns after April 27.",
   },
 };
 
