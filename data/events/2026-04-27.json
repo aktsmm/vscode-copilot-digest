@@ -1,12 +1,126 @@
 {
   "date": "2026-04-27",
-  "generatedAt": "2026-04-27T15:23:38.815Z",
+  "generatedAt": "2026-04-27T22:12:35.118Z",
   "latestRun": {
-    "generatedAt": "2026-04-27T15:23:38.815Z",
-    "newEventsCount": 0,
-    "newEventIds": [],
+    "generatedAt": "2026-04-27T22:12:35.118Z",
+    "newEventsCount": 6,
+    "newEventIds": [
+      "github-changelog:https://github.blog/changelog/2026-04-23-copilot-student-gpt-5-3-codex-removal-from-model-picker",
+      "github-changelog:https://github.blog/changelog/2026-04-27-copilot-cloud-agent-starts-20-faster-with-actions-custom-images",
+      "github-changelog:https://github.blog/changelog/2026-04-27-github-copilot-code-review-will-start-consuming-github-actions-minutes-on-june-1-2026",
+      "github-changelog-copilot:https://github.blog/changelog/2026-04-23-copilot-student-gpt-5-3-codex-removal-from-model-picker",
+      "github-changelog-copilot:https://github.blog/changelog/2026-04-27-copilot-cloud-agent-starts-20-faster-with-actions-custom-images",
+      "github-changelog-copilot:https://github.blog/changelog/2026-04-27-github-copilot-code-review-will-start-consuming-github-actions-minutes-on-june-1-2026"
+    ],
     "errorCount": 0
   },
-  "events": [],
+  "events": [
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-04-23-copilot-student-gpt-5-3-codex-removal-from-model-picker",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-27T22:12:32.386Z",
+      "publishedAt": "2026-04-27T17:01:58.000Z",
+      "title": "Copilot Student GPT-5.3-Codex removal from model picker",
+      "url": "https://github.blog/changelog/2026-04-27-copilot-student-gpt-5-3-codex-removal-from-model-picker",
+      "summary": "Starting today, in our Copilot Student plan, we are removing GPT-5.3-Codex from the model picker. It remains available through auto model selection. Auto model selection is built to match each…\nThe post Copilot Student GPT-5.3-Codex removal from model picker appeared first on The GitHub Blog.",
+      "categories": [
+        "Retired",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-04-23-copilot-student-gpt-5-3-codex-removal-from-model-picker",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-27T22:12:32.717Z",
+      "publishedAt": "2026-04-27T17:01:58.000Z",
+      "title": "Copilot Student GPT-5.3-Codex removal from model picker",
+      "url": "https://github.blog/changelog/2026-04-27-copilot-student-gpt-5-3-codex-removal-from-model-picker",
+      "summary": "Starting today, in our Copilot Student plan, we are removing GPT-5.3-Codex from the model picker. It remains available through auto model selection. Auto model selection is built to match each…\nThe post Copilot Student GPT-5.3-Codex removal from model picker appeared first on The GitHub Blog.",
+      "categories": [
+        "Retired",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-04-27-copilot-cloud-agent-starts-20-faster-with-actions-custom-images",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-27T22:12:32.386Z",
+      "publishedAt": "2026-04-27T16:01:40.000Z",
+      "title": "Copilot cloud agent starts 20% faster with Actions custom images",
+      "url": "https://github.blog/changelog/2026-04-27-copilot-cloud-agent-starts-20-faster-with-actions-custom-images",
+      "summary": "Copilot cloud agent now starts up over 20% faster, thanks to optimized runner environments built with GitHub Actions custom images. When you assign an issue to Copilot, start a task…\nThe post Copilot cloud agent starts 20% faster with Actions custom images appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "actions",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 2
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-04-27-copilot-cloud-agent-starts-20-faster-with-actions-custom-images",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-27T22:12:32.717Z",
+      "publishedAt": "2026-04-27T16:01:40.000Z",
+      "title": "Copilot cloud agent starts 20% faster with Actions custom images",
+      "url": "https://github.blog/changelog/2026-04-27-copilot-cloud-agent-starts-20-faster-with-actions-custom-images",
+      "summary": "Copilot cloud agent now starts up over 20% faster, thanks to optimized runner environments built with GitHub Actions custom images. When you assign an issue to Copilot, start a task…\nThe post Copilot cloud agent starts 20% faster with Actions custom images appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "actions",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 2
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-04-27-github-copilot-code-review-will-start-consuming-github-actions-minutes-on-june-1-2026",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-27T22:12:32.386Z",
+      "publishedAt": "2026-04-27T15:59:24.000Z",
+      "title": "GitHub Copilot code review will start consuming GitHub Actions minutes on June 1, 2026",
+      "url": "https://github.blog/changelog/2026-04-27-github-copilot-code-review-will-start-consuming-github-actions-minutes-on-june-1-2026",
+      "summary": "Developers and engineering teams worldwide use GitHub Copilot for high-quality, agent-powered code reviews on every pull request. We understand that any change is significant to our customers, especially when it…\nThe post GitHub Copilot code review will start consuming GitHub Actions minutes on June 1, 2026 appeared f...",
+      "categories": [
+        "Release",
+        "actions",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 5
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-04-27-github-copilot-code-review-will-start-consuming-github-actions-minutes-on-june-1-2026",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-27T22:12:32.717Z",
+      "publishedAt": "2026-04-27T15:59:24.000Z",
+      "title": "GitHub Copilot code review will start consuming GitHub Actions minutes on June 1, 2026",
+      "url": "https://github.blog/changelog/2026-04-27-github-copilot-code-review-will-start-consuming-github-actions-minutes-on-june-1-2026",
+      "summary": "Developers and engineering teams worldwide use GitHub Copilot for high-quality, agent-powered code reviews on every pull request. We understand that any change is significant to our customers, especially when it…\nThe post GitHub Copilot code review will start consuming GitHub Actions minutes on June 1, 2026 appeared f...",
+      "categories": [
+        "Release",
+        "actions",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 5
+    }
+  ],
   "errors": []
 }
