@@ -359,6 +359,18 @@ const exactSummaryMappings = {
     ja: "2026年4月27日以降、段階的なロールアウトにより GitHub App インストールトークンのフォーマットが更新される。新フォーマットはパフォーマンスを向上させたものに変わり、新規に発行されるトークンから順次適用される。",
     en: "Starting April 27, 2026, a staged rollout will update the format of newly issued GitHub App installation tokens to make them more performant.",
   },
+  "Copilot Student GPT-5.3-Codex removal from model picker": {
+    ja: "Copilot Student プランで GPT-5.3-Codex がモデルピッカーから削除された。モデルは自動モデル選択経由では引き続き利用できる。手動でモデルを選択していたユーザーは自動選択に委ねる形に移行することになる。",
+    en: "GPT-5.3-Codex has been removed from the model picker in the Copilot Student plan. It remains available through auto model selection, which automatically picks the best model for each task.",
+  },
+  "Copilot cloud agent starts 20% faster with Actions custom images": {
+    ja: "GitHub Actions カスタムイメージで最適化されたランナー環境により、Copilot cloud agent の起動が20%以上高速化された。issue を Copilot に割り当ててからタスクが始まるまでの待機時間が短縮される。",
+    en: "Copilot cloud agent now starts over 20% faster through optimized runner environments built with GitHub Actions custom images, reducing the wait from issue assignment to task kickoff.",
+  },
+  "GitHub Copilot code review will start consuming GitHub Actions minutes on June 1, 2026": {
+    ja: "2026年6月1日から、GitHub Copilot code review が GitHub Actions の利用分数を消費するようになる。PR ごとに自動実行されるコードレビューが Actions のコストに反映されるため、利用量と予算の事前確認が必要。",
+    en: "Starting June 1, 2026, GitHub Copilot code review will consume GitHub Actions minutes. Automated code reviews on pull requests will count against Actions usage, so teams should review their budget and limits before the change takes effect.",
+  },
 };
 
 const exactImportanceMappings = {
@@ -743,6 +755,18 @@ const exactImportanceMappings = {
   "Notice about upcoming new format for GitHub App installation tokens": {
     ja: "GitHub App のトークンをパターンマッチや正規表現で検証しているスクリプトや CI/CD は、4月27日以降の新フォーマットで動作しなくなる可能性があります。使用中の検証コードを事前に確認することを推奨します。",
     en: "This matters for any integration that validates GitHub App installation tokens by format, such as regex checks in CI/CD pipelines, because the new token format may not match existing patterns after April 27.",
+  },
+  "Copilot Student GPT-5.3-Codex removal from model picker": {
+    ja: "Copilot Student プランを利用している学生ユーザーは、手動でモデルを選択できなくなるため設定の確認が必要です。自動モデル選択に移行すれば機能自体は引き続き使えるため、影響は限定的ですが Student プランを展開している組織は対応を案内しておくと安心です。",
+    en: "This matters for students relying on the Copilot Student plan because GPT-5.3-Codex will no longer appear in the model picker, requiring a shift to auto model selection. The impact is limited since auto selection continues to include the model, but teams managing Student plan rollouts should inform users of the change.",
+  },
+  "Copilot cloud agent starts 20% faster with Actions custom images": {
+    ja: "issue を割り当ててからタスクが開始されるまでの待機時間が20%以上短縮されるため、agent を頻繁に使うチームはフィードバックループが速くなる恩恵を受けやすくなります。",
+    en: "This directly reduces the feedback loop for teams that rely on Copilot cloud agent regularly, since tasks now start over 20% faster after issue assignment, making the agent workflow more responsive.",
+  },
+  "GitHub Copilot code review will start consuming GitHub Actions minutes on June 1, 2026": {
+    ja: "6月1日以降、PR ごとに自動実行される Copilot code review が Actions 分数を消費するため、現在の Actions 利用量と予算を事前に確認し、必要に応じて上限設定や使い方の見直しが必要です。",
+    en: "This matters because Copilot code review running on every pull request will start consuming Actions minutes from June 1, 2026. Teams should check current Actions usage and budgets now to avoid unexpected overages after the change takes effect.",
   },
 };
 
