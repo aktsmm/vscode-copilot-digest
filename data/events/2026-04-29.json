@@ -1,23 +1,32 @@
 {
   "date": "2026-04-29",
-  "generatedAt": "2026-04-29T15:33:13.340Z",
+  "generatedAt": "2026-04-29T22:29:00.947Z",
   "latestRun": {
-    "generatedAt": "2026-04-29T15:33:13.340Z",
-    "newEventsCount": 9,
+    "generatedAt": "2026-04-29T22:29:00.947Z",
+    "newEventsCount": 2,
     "newEventIds": [
-      "vscode-updates:6df4760f10740e2a379b8604f1ad5adca2ac7b6bc7d2770c5d59642b5af4af19",
-      "vscode-release-notes-1-109:efcf94573251b5c26c8926b381e12f816578afeb6a7fd20042703c9e5897aaff",
-      "vscode-release-notes-1-118:section:b5ce1da4ac70dd00bf0442b28c763f208ce140b2bcbb40f4ad70934dd4578440",
-      "vscode-release-notes-1-118:section:1448a8d9a5d025dd150fc2ce84cc2d9ffc0b6efc7e4af2c653159d9a6741bfcf",
-      "vscode-release-notes-1-118:section:d0148dd08c9580ca930da6198df9a4893ef4effd5d798620b91d230a880782bf",
-      "vscode-release-notes-1-118:section:7437835c50de7b4abe916c2541f0536135aaefa25e2dbbca0399934bbd733b27",
-      "vscode-release-notes-1-117:b90b43fb939fa6f138ca0669b158eae54e6989a44a175208831f2c6e4c70446f",
-      "vscode-release-notes-1-116:6cc6c94b45d698574d1953813b94269b290e5c3c7479342d175bad8ec59abdc8",
-      "vscode-release-notes-1-115:c359be6127f6499f466821fca7442bbe03d59af26bb09bf4d19142a767961e0b"
+      "vscode-feed:https://code.visualstudio.com/updates/v1_118",
+      "vscode-updates:5c83d164c56803f840c75942bfc08c8085d5cb22f4afcdd96d216657840970e0"
     ],
     "errorCount": 0
   },
   "events": [
+    {
+      "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_118",
+      "sourceId": "vscode-feed",
+      "sourceName": "VS Code Feed",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-29T22:28:59.188Z",
+      "publishedAt": "2026-04-29T17:00:00.000Z",
+      "title": "Visual Studio Code 1.118",
+      "url": "https://code.visualstudio.com/updates/v1_118",
+      "summary": "Learn what's new in Visual Studio Code 1.118\n Read the full article",
+      "categories": [
+        "release"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
     {
       "eventId": "vscode-updates:6df4760f10740e2a379b8604f1ad5adca2ac7b6bc7d2770c5d59642b5af4af19",
       "sourceId": "vscode-updates",
@@ -161,6 +170,46 @@
       "sectionHeading": "Agent experience",
       "sectionTitle": "Copilot added as a Git co-author by default",
       "score": 4
+    },
+    {
+      "eventId": "vscode-updates:5c83d164c56803f840c75942bfc08c8085d5cb22f4afcdd96d216657840970e0",
+      "sourceId": "vscode-updates",
+      "sourceName": "VS Code Updates",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-04-29T22:28:59.345Z",
+      "publishedAt": "2026-04-29T00:00:00.000Z",
+      "title": "VS Code Updates changed",
+      "url": "https://code.visualstudio.com/updates/",
+      "summary": "Detected 3 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 3,
+        "headings": [
+          "Workspace .mcp.json files and server deduplication"
+        ],
+        "additions": [
+          "H3: Workspace .mcp.json files and server deduplication",
+          "We've added support for workspace-level .mcp.json files to declare MCP servers, aligning with other tools such as the Copilot CLI.",
+          "Additionally, we've introduced behavior to deduplicate MCP servers that share the same name. By default, only the most-specific MCP server will be enabled, and enabling a server will disable other servers by the same name. You can control which MCP servers are enabled by searching @mcp @installed in the extensions view, or via the Chat: Open Customizations window."
+        ]
+      },
+      "headings": [
+        "Visual Studio Code 1.118",
+        "Agent experience",
+        "Visual Studio Code Agents (Insiders)",
+        "Remote control for Copilot CLI sessions (Experimental)",
+        "Synced session titles for Copilot CLI",
+        "Copilot added as a Git co-author by default",
+        "Codebase search and context",
+        "Semantic indexing of non-GitHub repositories rolled out to all users",
+        "GitHub text search across repos or orgs",
+        "Dedicated context for skills (Experimental)",
+        "Workspace .mcp.json files and server deduplication",
+        "Improving token efficiency"
+      ],
+      "score": 3
     },
     {
       "eventId": "vscode-release-notes-1-109:efcf94573251b5c26c8926b381e12f816578afeb6a7fd20042703c9e5897aaff",
