@@ -40,6 +40,10 @@ const monthMap = {
 };
 
 const vscodeReleaseSummaries = {
+  "1.118": {
+    ja: "agent 体験の拡張が主題の release。VS Code Agents companion app の進化（Insiders）、GitHub.com やモバイルから進行中の Copilot CLI セッションを遠隔操作できる Remote control（Experimental）、CLI セッションタイトルのサーフェス横断一元管理、Copilot の Git co-author 自動追加が入った。全ユーザーへの semantic indexing 展開と GitHub 横断テキスト検索、skills 専用コンテキスト（Experimental）も加わり、agent を継続運用しやすくする変更がまとまっている。",
+    en: "The headline is agent experience: the VS Code Agents companion app gains a title-bar entry point (Insiders), CLI sessions can be monitored and steered remotely from GitHub.com or mobile (Experimental), session titles now sync across all surfaces, and Copilot is added as a Git co-author by default. All users also get semantic indexing in non-GitHub repos and GitHub cross-repo text search.",
+  },
   1.117: {
     ja: "Copilot Business / Enterprise ユーザー向け BYOK 対応が入り、OpenRouter・Ollama・Google・OpenAI など自前 API key でモデルを chat に接続できるようになった。chat 応答の incremental rendering（Experimental）追加、Agent Sessions ビューでの最終更新順ソート、background terminal コマンドのシステム通知対応など、agent 体験全体を使いやすくする変更がまとまって入った。",
     en: "This release brings BYOK for Copilot Business and Enterprise, letting organizations connect their own API keys for providers like OpenRouter, Ollama, Google, and OpenAI. It also adds experimental incremental rendering for chat responses, sort-by-recent-activity in Agent Sessions, and system notifications for background terminal commands, making agent workflows more practical day-to-day.",
@@ -212,8 +216,8 @@ const exactSummaryMappings = {
     en: "A changelog roundup for GitHub Copilot in VS Code covering the weekly stable releases from v1.111 through v1.115, including Autopilot, browser and terminal tool improvements, and broader agent workflow changes.",
   },
   "VS Code Updates changed": {
-    ja: "VS Code Updates のハブページが更新され、1.117 リリースと BYOK、chat response incremental rendering、Agent Sessions ソートなどの新しい見出しが追加された。公開導線の更新を追うための差分。",
-    en: "The VS Code Updates landing page changed to point at the 1.117 release with new sections such as BYOK support, incremental chat rendering, and agent session sorting.",
+    ja: "VS Code Updates のハブページが更新され、1.118 リリースと agent 体験拡張（Visual Studio Code Agents、Remote control、Copilot co-author 自動追加）、コードベース検索強化などの新しい見出しが追加された。公開導線の更新を追うための差分。",
+    en: "The VS Code Updates landing page changed to point at the 1.118 release, with new sections covering agent experience, remote CLI session control, co-authoring defaults, and codebase search improvements.",
   },
   "Visual Studio Code 1.117: Incremental rendering of chat responses (Experimental)":
     {
@@ -370,6 +374,22 @@ const exactSummaryMappings = {
   "GitHub Copilot code review will start consuming GitHub Actions minutes on June 1, 2026": {
     ja: "2026年6月1日から、GitHub Copilot code review が GitHub Actions の利用分数を消費するようになる。PR ごとに自動実行されるコードレビューが Actions のコストに反映されるため、利用量と予算の事前確認が必要。",
     en: "Starting June 1, 2026, GitHub Copilot code review will consume GitHub Actions minutes. Automated code reviews on pull requests will count against Actions usage, so teams should review their budget and limits before the change takes effect.",
+  },
+  "Visual Studio Code 1.118: Visual Studio Code Agents (Insiders)": {
+    ja: "VS Code Insiders 同梱のプレビュー companion app として提供される Visual Studio Code Agents app が進化した。1.115 での初登場後も継続改善されており、1.118 ではタイトルバーから直接起動できるようになった。複数リポジトリにまたがる並列セッションや、マルチステップのコーディングタスクを agent ネイティブな環境で反復できる。専用ドキュメントも公開され、試し始めやすい段階になっている。",
+    en: "The VS Code Agents companion app shipped with VS Code Insiders continues to evolve since its 1.115 debut. In 1.118 it becomes discoverable directly from the Insiders title bar, supports parallel sessions across repos, and now has dedicated documentation to help you get started.",
+  },
+  "Visual Studio Code 1.118: Remote control for Copilot CLI sessions (Experimental)": {
+    ja: "github.copilot.chat.cli.remote.enabled で有効化できる実験的機能。デスクを離れているときでも GitHub.com やモバイルから進行中の Copilot CLI セッションを監視・操作できる。承認待ちや問い掛けで止まった agent を遠隔から再開できるため、長時間タスクが途中で停止するリスクを下げられる。",
+    en: "Enable via github.copilot.chat.cli.remote.enabled to monitor and steer ongoing Copilot CLI sessions from GitHub.com or mobile. Tasks that previously stalled when an agent needed approval while you were away can now be resumed remotely.",
+  },
+  "Visual Studio Code 1.118: Synced session titles for Copilot CLI": {
+    ja: "Copilot SDK のセッションタイトル API を正式な参照源として採用し、どの UI でリネームしてもチャットセッション一覧・エディタタブ・CLI 端末で同じタイトルが表示されるようになった。複数サーフェスを横断するセッション管理で識別が一元化される。",
+    en: "VS Code now adopts the Copilot SDK session title APIs as the source of truth, so renaming a session in any surface—sessions list, editor tab, or CLI terminal—updates all of them consistently.",
+  },
+  "Visual Studio Code 1.118: Copilot added as a Git co-author by default": {
+    ja: "chat・agent ワークフローで Copilot がファイルを変更した際、git.addAICoAuthor 設定により Copilot が co-author として commit に自動追記されるようになった。デフォルトで有効で、不要な場合は設定から変更できる。commit 履歴に AI 支援の痕跡を明示的に残す運用に切り替わる。",
+    en: "VS Code now enables Git AI co-authoring by default for chat and agent workflows. When Copilot changes files, it is automatically added as a co-author on the resulting commit. Change the behavior with git.addAICoAuthor.",
   },
 };
 
@@ -767,6 +787,26 @@ const exactImportanceMappings = {
   "GitHub Copilot code review will start consuming GitHub Actions minutes on June 1, 2026": {
     ja: "6月1日以降、PR ごとに自動実行される Copilot code review が Actions 分数を消費するため、現在の Actions 利用量と予算を事前に確認し、必要に応じて上限設定や使い方の見直しが必要です。",
     en: "This matters because Copilot code review running on every pull request will start consuming Actions minutes from June 1, 2026. Teams should check current Actions usage and budgets now to avoid unexpected overages after the change takes effect.",
+  },
+  "Visual Studio Code 1.118": {
+    ja: "agent 体験が幅広く前進した release。CLI の遠隔操作・co-author 自動追記・セッションタイトル一元化など、日常の agent 運用の実用性に直接効く変更が揃っています。",
+    en: "This release advances agent workflows broadly with remote CLI control, automatic co-authoring, and consistent session titles, all of which reduce daily friction rather than adding isolated features.",
+  },
+  "Visual Studio Code 1.118: Visual Studio Code Agents (Insiders)": {
+    ja: "agent ネイティブな並列作業環境が Insiders でさらに磨かれており、タイトルバーからの直接起動で試し始めやすくなった今が、将来の stable 体験を先行確認するタイミングです。",
+    en: "This is worth validating now because the Agents companion app is becoming more discoverable and polished in Insiders, showing the direction of agent-native VS Code before these workflows reach Stable.",
+  },
+  "Visual Studio Code 1.118: Remote control for Copilot CLI sessions (Experimental)": {
+    ja: "長時間の CLI タスクで承認待ちが発生しても、デスクを離れたまま GitHub.com やモバイルから再開できるため、agent を任せながら離席できる運用に近づきます。実験的機能なので early feedback を出す機会として見ておくとよいでしょう。",
+    en: "This matters because CLI sessions that stall on approvals can now be resumed remotely, making it practical to let agents run longer tasks without staying at your machine. Worth trying early to shape this experimental feature.",
+  },
+  "Visual Studio Code 1.118: Synced session titles for Copilot CLI": {
+    ja: "複数サーフェスを横断してセッションを管理する際のリネーム漏れや識別ずれが解消されるため、CLI と VS Code UI を行き来する運用でのセッション管理が整理されます。",
+    en: "This removes the session-naming inconsistency that occurred when renaming across surfaces, making it easier to manage sessions that span CLI and VS Code UI workflows.",
+  },
+  "Visual Studio Code 1.118: Copilot added as a Git co-author by default": {
+    ja: "AI 支援によるコード変更が commit 履歴に明示されるため、運用ポリシーや監査要件への影響を確認しておく価値があります。デフォルト有効なので、不要な組織や個人は git.addAICoAuthor 設定を確認してください。",
+    en: "This matters because AI-assisted changes are now recorded in commit history by default, which may affect auditing or attribution policies. Organizations or individuals who do not want co-author attribution should review git.addAICoAuthor.",
   },
 };
 
