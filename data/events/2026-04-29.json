@@ -1,12 +1,203 @@
 {
   "date": "2026-04-29",
-  "generatedAt": "2026-04-29T07:37:06.121Z",
+  "generatedAt": "2026-04-29T15:33:13.340Z",
   "latestRun": {
-    "generatedAt": "2026-04-29T07:37:06.121Z",
-    "newEventsCount": 0,
-    "newEventIds": [],
+    "generatedAt": "2026-04-29T15:33:13.340Z",
+    "newEventsCount": 9,
+    "newEventIds": [
+      "vscode-updates:6df4760f10740e2a379b8604f1ad5adca2ac7b6bc7d2770c5d59642b5af4af19",
+      "vscode-release-notes-1-109:efcf94573251b5c26c8926b381e12f816578afeb6a7fd20042703c9e5897aaff",
+      "vscode-release-notes-1-118:section:b5ce1da4ac70dd00bf0442b28c763f208ce140b2bcbb40f4ad70934dd4578440",
+      "vscode-release-notes-1-118:section:1448a8d9a5d025dd150fc2ce84cc2d9ffc0b6efc7e4af2c653159d9a6741bfcf",
+      "vscode-release-notes-1-118:section:d0148dd08c9580ca930da6198df9a4893ef4effd5d798620b91d230a880782bf",
+      "vscode-release-notes-1-118:section:7437835c50de7b4abe916c2541f0536135aaefa25e2dbbca0399934bbd733b27",
+      "vscode-release-notes-1-117:b90b43fb939fa6f138ca0669b158eae54e6989a44a175208831f2c6e4c70446f",
+      "vscode-release-notes-1-116:6cc6c94b45d698574d1953813b94269b290e5c3c7479342d175bad8ec59abdc8",
+      "vscode-release-notes-1-115:c359be6127f6499f466821fca7442bbe03d59af26bb09bf4d19142a767961e0b"
+    ],
     "errorCount": 0
   },
-  "events": [],
+  "events": [
+    {
+      "eventId": "vscode-updates:6df4760f10740e2a379b8604f1ad5adca2ac7b6bc7d2770c5d59642b5af4af19",
+      "sourceId": "vscode-updates",
+      "sourceName": "VS Code Updates",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-04-29T15:33:11.197Z",
+      "publishedAt": "2026-04-29T00:00:00.000Z",
+      "title": "VS Code Updates changed",
+      "url": "https://code.visualstudio.com/updates/",
+      "summary": "Detected 167 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 167,
+        "headings": [
+          "Visual Studio Code 1.118",
+          "Agent experience",
+          "Visual Studio Code Agents (Insiders)",
+          "Remote control for Copilot CLI sessions (Experimental)",
+          "Synced session titles for Copilot CLI",
+          "Copilot added as a Git co-author by default",
+          "Codebase search and context",
+          "Semantic indexing of non-GitHub repositories rolled out to all users",
+          "GitHub text search across repos or orgs",
+          "Dedicated context for skills (Experimental)",
+          "Improving token efficiency",
+          "Prompt caching efficiency",
+          "Tool search tool",
+          "New tools for search and execution",
+          "Chat performance and history",
+          "WebSockets supported for OpenAI models"
+        ],
+        "additions": [
+          "1.118",
+          "H1: Visual Studio Code 1.118",
+          "Release date: April 29, 2026",
+          "Welcome to the 1.118 release of Visual Studio Code. This release expands where you can work with Copilot agents and makes them more efficient. Here are the highlights for this release:",
+          "Remote control: Track and control your ongoing Copilot CLI sessions remotely from GitHub.com or mobile.",
+          "Codebase search: Find the code you need with semantic search in any workspace and text search across GitHub repos and orgs.",
+          "Dedicated context for skills: Isolate skill execution to keep your main chat focused and answers sharper.",
+          "Chat session insights: Turn your chat history into standup reports, tips, and answers about past work.",
+          "Enterprise control: Restrict AI feature access to organizations your admin trusts.",
+          "Improved token efficiency: Get more out of every request with lower token usage.",
+          "H2: Agent experience",
+          "H3: Visual Studio Code Agents (Insiders)",
+          "Note: The Visual Studio Code Agents app is currently in preview and only available when installing VS Code Insiders.",
+          "The Visual Studio Code Agents app is a companion app that ships alongside VS Code Insiders. It provides a focused, agent-native environment where you can run parallel sessions across repos and iterate on multi-step coding tasks. We first introduced the Agents app in 1.115 and continue to refine it based on user feedback.",
+          "In this release, you can discover the Agents app directly from the VS Code Insiders title bar, making it easy to jump into an agent-powered workflow. We also published dedicated Agents documentation to help you get started.",
+          "Recent feature highlights include:"
+        ]
+      },
+      "headings": [
+        "Visual Studio Code 1.118",
+        "Agent experience",
+        "Visual Studio Code Agents (Insiders)",
+        "Remote control for Copilot CLI sessions (Experimental)",
+        "Synced session titles for Copilot CLI",
+        "Copilot added as a Git co-author by default",
+        "Codebase search and context",
+        "Semantic indexing of non-GitHub repositories rolled out to all users",
+        "GitHub text search across repos or orgs",
+        "Dedicated context for skills (Experimental)",
+        "Improving token efficiency",
+        "Prompt caching efficiency"
+      ],
+      "score": 18
+    },
+    {
+      "eventId": "vscode-release-notes-1-118:section:b5ce1da4ac70dd00bf0442b28c763f208ce140b2bcbb40f4ad70934dd4578440",
+      "sourceId": "vscode-release-notes-1-118",
+      "sourceName": "VS Code Release Notes 1.118",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-04-29T15:33:12.551Z",
+      "publishedAt": "2026-04-29T00:00:00.000Z",
+      "title": "Visual Studio Code 1.118: Visual Studio Code Agents (Insiders)",
+      "url": "https://code.visualstudio.com/updates/v1_118",
+      "summary": "Note: The Visual Studio Code Agents app is currently in preview and only available when installing VS Code Insiders. The Visual Studio Code Agents app is a companion app that ships alongside VS Code Insiders. It provides a focused, agent-native environment where you can run parallel sessions across repos and iterate on multi-step coding tasks. We first introduced the Agents app in 1.115 and continue to refine it bas...",
+      "categories": [
+        "release",
+        "section",
+        "Agent experience"
+      ],
+      "sectionHeading": "Agent experience",
+      "sectionTitle": "Visual Studio Code Agents (Insiders)",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-118:section:1448a8d9a5d025dd150fc2ce84cc2d9ffc0b6efc7e4af2c653159d9a6741bfcf",
+      "sourceId": "vscode-release-notes-1-118",
+      "sourceName": "VS Code Release Notes 1.118",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-04-29T15:33:12.551Z",
+      "publishedAt": "2026-04-29T00:00:00.000Z",
+      "title": "Visual Studio Code 1.118: Remote control for Copilot CLI sessions (Experimental)",
+      "url": "https://code.visualstudio.com/updates/v1_118",
+      "summary": "Setting: \n \n \n github.copilot.chat.cli.remote.enabled\n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders Previously, to engage with a Copilot CLI session, you had to be at the machine where you started it. If the agent paused for an approval or hit a question while you were away from your desk, the work stalled until you returned. With remote control, you can monitor and steer your ongoing Copilot CLI sessions...",
+      "categories": [
+        "release",
+        "section",
+        "Agent experience"
+      ],
+      "sectionHeading": "Agent experience",
+      "sectionTitle": "Remote control for Copilot CLI sessions (Experimental)",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-118:section:d0148dd08c9580ca930da6198df9a4893ef4effd5d798620b91d230a880782bf",
+      "sourceId": "vscode-release-notes-1-118",
+      "sourceName": "VS Code Release Notes 1.118",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-04-29T15:33:12.551Z",
+      "publishedAt": "2026-04-29T00:00:00.000Z",
+      "title": "Visual Studio Code 1.118: Synced session titles for Copilot CLI",
+      "url": "https://code.visualstudio.com/updates/v1_118",
+      "summary": "The chat session title is used across different chat surfaces like the chat sessions list, the chat editor tab and header, and the Copilot CLI terminal interface to provide a consistent identifier for the session. Depending on where you renamed a Copilot CLI session, other chat surfaces could still show the old title. VS Code adopts the Copilot SDK session title APIs as the source of truth and routes the sessions li...",
+      "categories": [
+        "release",
+        "section",
+        "Agent experience"
+      ],
+      "sectionHeading": "Agent experience",
+      "sectionTitle": "Synced session titles for Copilot CLI",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-118:section:7437835c50de7b4abe916c2541f0536135aaefa25e2dbbca0399934bbd733b27",
+      "sourceId": "vscode-release-notes-1-118",
+      "sourceName": "VS Code Release Notes 1.118",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-04-29T15:33:12.551Z",
+      "publishedAt": "2026-04-29T00:00:00.000Z",
+      "title": "Visual Studio Code 1.118: Copilot added as a Git co-author by default",
+      "url": "https://code.visualstudio.com/updates/v1_118",
+      "summary": "VS Code now enables Git AI co-authoring by default for chat and agent workflows. When Copilot makes changes to your files, Copilot is automatically added as a co-author on that commit. You can change the default behavior using \n \n \n git.addAICoAuthor\n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders\n \n .",
+      "categories": [
+        "release",
+        "section",
+        "Agent experience"
+      ],
+      "sectionHeading": "Agent experience",
+      "sectionTitle": "Copilot added as a Git co-author by default",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-109:efcf94573251b5c26c8926b381e12f816578afeb6a7fd20042703c9e5897aaff",
+      "sourceId": "vscode-release-notes-1-109",
+      "sourceName": "VS Code Release Notes 1.109",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-04-29T15:33:11.556Z",
+      "publishedAt": "2026-02-04T00:00:00.000Z",
+      "title": "VS Code Release Notes 1.109 changed",
+      "url": "https://code.visualstudio.com/updates/v1_109",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [],
+        "additions": [
+          "1.118"
+        ]
+      },
+      "headings": [
+        "January 2026 (version 1.109)",
+        "Upcoming events",
+        "Agent Sessions Day",
+        "Chat UX",
+        "Message steering and queueing (Experimental)",
+        "Anthropic models now show thinking tokens",
+        "Mermaid diagrams in chat responses",
+        "Ask Questions tool (Experimental)",
+        "Plan agent",
+        "Context window details",
+        "Inline chat UX revamp (Preview)",
+        "Model descriptions in the model picker"
+      ],
+      "score": 2
+    }
+  ],
   "errors": []
 }

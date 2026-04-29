@@ -1,4 +1,4 @@
-Insiders
+1.118
 1.117
 1.116
 1.115
@@ -208,7 +208,7 @@ When searching in the Keyboard Shortcuts editor, the screen reader now announces
 H2: Integrated browser
 The integrated browser is now easier to access thanks to two new entry points:
 The View menu, under View > Browser
-The keyboard shortcut ⌥⌘/ (Windows, Linux Ctrl+Alt+/)
+The keyboard shortcut
 These actions open the integrated browser if no tabs are open, or let you quickly see and jump to existing tabs.
 These new entry points are in addition to the previously existing ones:
 The Browser: Open Integrated Browser command
