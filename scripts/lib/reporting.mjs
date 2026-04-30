@@ -391,6 +391,14 @@ const exactSummaryMappings = {
     ja: "chat・agent ワークフローで Copilot がファイルを変更した際、git.addAICoAuthor 設定により Copilot が co-author として commit に自動追記されるようになった。デフォルトで有効で、不要な場合は設定から変更できる。commit 履歴に AI 支援の痕跡を明示的に残す運用に切り替わる。",
     en: "VS Code now enables Git AI co-authoring by default for chat and agent workflows. When Copilot changes files, it is automatically added as a co-author on the resulting commit. Change the behavior with git.addAICoAuthor.",
   },
+  "GitHub Copilot in Visual Studio — April update": {
+    ja: "2026年4月の Visual Studio 更新は agentic ワークフローを中心に据えた内容。cloud agent セッションを IDE から直接起動できるようになり、カスタム agent にユーザーレベルのサポートが追加され、新しい Debugger agent が動作を検証する仕組みが新設された。",
+    en: "The April 2026 Visual Studio update centers on agentic workflows: cloud agent sessions now launch directly from the IDE, custom agents gain user-level support, and a new Debugger agent validates agent behavior.",
+  },
+  "GitHub Copilot CLI for Beginners: Interactive v. non-interactive mode": {
+    ja: "interactive モードと non-interactive モードの違いを解説する入門記事。ターミナルから対話的に使う場面と、スクリプトや CI に組み込む場面でモードを使い分ける基礎を押さえられる。",
+    en: "A beginner's guide explaining the difference between Copilot CLI's interactive and non-interactive modes, helping readers choose the right mode for terminal sessions versus scripted or CI workflows.",
+  },
 };
 
 const exactImportanceMappings = {
@@ -807,6 +815,14 @@ const exactImportanceMappings = {
   "Visual Studio Code 1.118: Copilot added as a Git co-author by default": {
     ja: "AI 支援によるコード変更が commit 履歴に明示されるため、運用ポリシーや監査要件への影響を確認しておく価値があります。デフォルト有効なので、不要な組織や個人は git.addAICoAuthor 設定を確認してください。",
     en: "This matters because AI-assisted changes are now recorded in commit history by default, which may affect auditing or attribution policies. Organizations or individuals who do not want co-author attribution should review git.addAICoAuthor.",
+  },
+  "GitHub Copilot in Visual Studio — April update": {
+    ja: "Visual Studio で Copilot を使う開発者は、IDE から cloud agent セッションを直接起動できるようになった点と、新しい Debugger agent による動作検証機能の追加を確認しておきたい。",
+    en: "This matters because Visual Studio developers can now launch cloud agent sessions directly from the IDE and validate agent behavior with the new Debugger agent, reducing the need to switch contexts.",
+  },
+  "GitHub Copilot CLI for Beginners: Interactive v. non-interactive mode": {
+    ja: "interactive / non-interactive の使い分けを理解しておくと、CI や自動化スクリプト内で CLI をより的確に組み込めるようになる。",
+    en: "Understanding the interactive and non-interactive mode distinction makes it easier to integrate Copilot CLI correctly into CI pipelines and automation scripts.",
   },
 };
 
