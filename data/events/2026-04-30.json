@@ -1,12 +1,165 @@
 {
   "date": "2026-04-30",
-  "generatedAt": "2026-04-30T15:29:58.006Z",
+  "generatedAt": "2026-04-30T22:15:17.695Z",
   "latestRun": {
-    "generatedAt": "2026-04-30T15:29:58.006Z",
-    "newEventsCount": 0,
-    "newEventIds": [],
+    "generatedAt": "2026-04-30T22:15:17.695Z",
+    "newEventsCount": 9,
+    "newEventIds": [
+      "github-changelog:https://github.blog/changelog/2026-04-28-github-copilot-in-visual-studio-april-update",
+      "github-changelog-copilot:https://github.blog/changelog/2026-04-28-github-copilot-in-visual-studio-april-update",
+      "github-copilot-blog:https://github.blog/?p=95654",
+      "vscode-feed:https://code.visualstudio.com/updates/v1_119",
+      "vscode-updates:f9371eb5261f1fbcfb8c499d3992b25747dd7f700381dce15ec138facc4b3c0c",
+      "vscode-release-notes-1-109:73ade6685b465c6f764708f1faa5bc3cc65cf6f91970bd1936675b83617cffab",
+      "vscode-release-notes-1-117:1095d261800c259d6447491afbe17b15e146d3baad5d89d1fb233322143ae8da",
+      "vscode-release-notes-1-116:2bde1b0f11fc87c5d4a90f4e62b6421f7bc8f27ecfa00283e13777a5f88c09dc",
+      "vscode-release-notes-1-115:06c786759387d90653fc642fa9d40900e84783eedd04fe5bb418e8096ed21634"
+    ],
     "errorCount": 0
   },
-  "events": [],
+  "events": [
+    {
+      "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_119",
+      "sourceId": "vscode-feed",
+      "sourceName": "VS Code Feed",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-30T22:15:15.351Z",
+      "publishedAt": "2026-05-06T17:00:00.000Z",
+      "title": "Visual Studio Code 1.119",
+      "url": "https://code.visualstudio.com/updates/v1_119",
+      "summary": "Learn what's new in Visual Studio Code 1.119 (Insiders)\n Read the full article",
+      "categories": [
+        "release"
+      ],
+      "isFutureDated": true,
+      "score": 4
+    },
+    {
+      "eventId": "github-copilot-blog:https://github.blog/?p=95654",
+      "sourceId": "github-copilot-blog",
+      "sourceName": "GitHub Blog / GitHub Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-30T22:15:15.321Z",
+      "publishedAt": "2026-04-30T16:09:02.000Z",
+      "title": "GitHub Copilot CLI for Beginners: Interactive v. non-interactive mode",
+      "url": "https://github.blog/ai-and-ml/github-copilot/github-copilot-cli-for-beginners-interactive-v-non-interactive-mode/",
+      "summary": "Learn the difference between CLI interactive v. non-interactive modes.\nThe post GitHub Copilot CLI for Beginners: Interactive v. non-interactive mode appeared first on The GitHub Blog.",
+      "categories": [
+        "AI & ML",
+        "Generative AI",
+        "GitHub Copilot",
+        "GitHub Copilot CLI",
+        "GitHub Copilot CLI for Beginners"
+      ],
+      "isFutureDated": false,
+      "score": 1
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-04-28-github-copilot-in-visual-studio-april-update",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-30T22:15:14.458Z",
+      "publishedAt": "2026-04-30T15:00:18.000Z",
+      "title": "GitHub Copilot in Visual Studio — April update",
+      "url": "https://github.blog/changelog/2026-04-30-github-copilot-in-visual-studio-april-update",
+      "summary": "The April 2026 update to Visual Studio centers on agentic workflows: cloud agent sessions launch directly from the IDE, custom agents gain user-level support, and a new Debugger agent validates…\nThe post GitHub Copilot in Visual Studio — April update appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 6
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-04-28-github-copilot-in-visual-studio-april-update",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-04-30T22:15:14.855Z",
+      "publishedAt": "2026-04-30T15:00:18.000Z",
+      "title": "GitHub Copilot in Visual Studio — April update",
+      "url": "https://github.blog/changelog/2026-04-30-github-copilot-in-visual-studio-april-update",
+      "summary": "The April 2026 update to Visual Studio centers on agentic workflows: cloud agent sessions launch directly from the IDE, custom agents gain user-level support, and a new Debugger agent validates…\nThe post GitHub Copilot in Visual Studio — April update appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 6
+    },
+    {
+      "eventId": "vscode-updates:f9371eb5261f1fbcfb8c499d3992b25747dd7f700381dce15ec138facc4b3c0c",
+      "sourceId": "vscode-updates",
+      "sourceName": "VS Code Updates",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-04-30T22:15:15.502Z",
+      "publishedAt": "2026-04-29T00:00:00.000Z",
+      "title": "VS Code Updates changed",
+      "url": "https://code.visualstudio.com/updates/",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [],
+        "additions": [
+          "Insiders"
+        ]
+      },
+      "headings": [
+        "Visual Studio Code 1.118",
+        "Agent experience",
+        "Visual Studio Code Agents (Insiders)",
+        "Remote control for Copilot CLI sessions (Experimental)",
+        "Synced session titles for Copilot CLI",
+        "Copilot added as a Git co-author by default",
+        "Codebase search and context",
+        "Semantic indexing of non-GitHub repositories rolled out to all users",
+        "GitHub text search across repos or orgs",
+        "Dedicated context for skills (Experimental)",
+        "Workspace .mcp.json files and server deduplication",
+        "Improving token efficiency"
+      ],
+      "score": 2
+    },
+    {
+      "eventId": "vscode-release-notes-1-109:73ade6685b465c6f764708f1faa5bc3cc65cf6f91970bd1936675b83617cffab",
+      "sourceId": "vscode-release-notes-1-109",
+      "sourceName": "VS Code Release Notes 1.109",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-04-30T22:15:15.881Z",
+      "publishedAt": "2026-02-04T00:00:00.000Z",
+      "title": "VS Code Release Notes 1.109 changed",
+      "url": "https://code.visualstudio.com/updates/v1_109",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [],
+        "additions": [
+          "Insiders"
+        ]
+      },
+      "headings": [
+        "January 2026 (version 1.109)",
+        "Upcoming events",
+        "Agent Sessions Day",
+        "Chat UX",
+        "Message steering and queueing (Experimental)",
+        "Anthropic models now show thinking tokens",
+        "Mermaid diagrams in chat responses",
+        "Ask Questions tool (Experimental)",
+        "Plan agent",
+        "Context window details",
+        "Inline chat UX revamp (Preview)",
+        "Model descriptions in the model picker"
+      ],
+      "score": 2
+    }
+  ],
   "errors": []
 }
