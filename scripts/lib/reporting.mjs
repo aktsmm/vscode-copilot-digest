@@ -363,6 +363,10 @@ const exactSummaryMappings = {
     ja: "2026年4月27日以降、段階的なロールアウトにより GitHub App インストールトークンのフォーマットが更新される。新フォーマットはパフォーマンスを向上させたものに変わり、新規に発行されるトークンから順次適用される。",
     en: "Starting April 27, 2026, a staged rollout will update the format of newly issued GitHub App installation tokens to make them more performant.",
   },
+  "Upcoming deprecation of GPT-5.2 and GPT-5.2-Codex": {
+    ja: "2026年6月1日に GPT-5.2 と GPT-5.2-Codex が GitHub Copilot の全体験（Chat・インライン編集・ask/agent モード・コード補完）から廃止される。Copilot Code Review での GPT-5.2-Codex は対象外。推奨移行先は GPT-5.2 → GPT-5.5、GPT-5.2-Codex → GPT-5.3-Codex。Enterprise 管理者はモデルポリシーで代替モデルへのアクセスを有効化する必要がある場合がある。",
+    en: "GPT-5.2 and GPT-5.2-Codex will be deprecated from all GitHub Copilot experiences on June 1, 2026, except GPT-5.2-Codex in Copilot Code Review. Suggested alternatives are GPT-5.5 for GPT-5.2 and GPT-5.3-Codex for GPT-5.2-Codex. Enterprise admins may need to enable the replacement models via model policies.",
+  },
   "Copilot Student GPT-5.3-Codex removal from model picker": {
     ja: "Copilot Student プランで GPT-5.3-Codex がモデルピッカーから削除された。モデルは自動モデル選択経由では引き続き利用できる。手動でモデルを選択していたユーザーは自動選択に委ねる形に移行することになる。",
     en: "GPT-5.3-Codex has been removed from the model picker in the Copilot Student plan. It remains available through auto model selection, which automatically picks the best model for each task.",
@@ -783,6 +787,10 @@ const exactImportanceMappings = {
   "Notice about upcoming new format for GitHub App installation tokens": {
     ja: "GitHub App のトークンをパターンマッチや正規表現で検証しているスクリプトや CI/CD は、4月27日以降の新フォーマットで動作しなくなる可能性があります。使用中の検証コードを事前に確認することを推奨します。",
     en: "This matters for any integration that validates GitHub App installation tokens by format, such as regex checks in CI/CD pipelines, because the new token format may not match existing patterns after April 27.",
+  },
+  "Upcoming deprecation of GPT-5.2 and GPT-5.2-Codex": {
+    ja: "6月1日までに GPT-5.2 または GPT-5.2-Codex を直接指定しているワークフローや統合は、代替モデルへの切り替えが必要です。Enterprise 管理者はモデルポリシーで代替モデルを有効化し、ユーザーが移行できる環境を整えておく必要があります。",
+    en: "Any workflow or integration explicitly targeting GPT-5.2 or GPT-5.2-Codex must be updated before June 1, 2026. Enterprise admins should verify that the suggested replacement models are enabled in model policies so users can migrate without disruption.",
   },
   "Copilot Student GPT-5.3-Codex removal from model picker": {
     ja: "Copilot Student プランを利用している学生ユーザーは、手動でモデルを選択できなくなるため設定の確認が必要です。自動モデル選択に移行すれば機能自体は引き続き使えるため、影響は限定的ですが Student プランを展開している組織は対応を案内しておくと安心です。",
