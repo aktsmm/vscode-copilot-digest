@@ -403,6 +403,10 @@ const exactSummaryMappings = {
     ja: "interactive モードと non-interactive モードの違いを解説する入門記事。ターミナルから対話的に使う場面と、スクリプトや CI に組み込む場面でモードを使い分ける基礎を押さえられる。",
     en: "A beginner's guide explaining the difference between Copilot CLI's interactive and non-interactive modes, helping readers choose the right mode for terminal sessions versus scripted or CI workflows.",
   },
+  "Secret scanning with GitHub MCP Server is now generally available": {
+    ja: "GitHub MCP（Model Context Protocol）Server に組み込まれた secret scanning 機能が一般提供になった。MCP 対応の AI coding agent や IDE（Copilot CLI・VS Code）からコミット前や PR 作成前に secret の漏洩を検出できる。GitHub Secret Protection が有効なリポジトリで利用でき、既存の push protection カスタマイズ設定もそのまま反映される。",
+    en: "Secret scanning in the GitHub MCP Server is now generally available. Developers using MCP-compatible AI agents or IDEs such as Copilot CLI and VS Code can scan for exposed secrets before committing or opening a pull request. It requires GitHub Secret Protection to be enabled and honors existing push protection customizations.",
+  },
 };
 
 const exactImportanceMappings = {
@@ -832,6 +836,10 @@ const exactImportanceMappings = {
     ja: "interactive / non-interactive の使い分けを理解しておくと、CI や自動化スクリプト内で CLI をより的確に組み込めるようになる。",
     en: "Understanding the interactive and non-interactive mode distinction makes it easier to integrate Copilot CLI correctly into CI pipelines and automation scripts.",
   },
+  "Secret scanning with GitHub MCP Server is now generally available": {
+    ja: "AI coding agent を使った開発フローでシークレット漏洩をコミット前に検出できるようになります。Copilot CLI や VS Code で MCP Server を利用している環境では、既存の push protection 設定が引き継がれる点も含め、有効化状況と運用ポリシーを確認しておくとよいでしょう。",
+    en: "This matters because secret scanning is now part of the AI coding agent workflow, letting teams catch exposed credentials before they are committed. Organizations already using push protection will see their existing customizations carry over automatically.",
+  },
 };
 
 function toDateOnly(value) {
@@ -1173,6 +1181,10 @@ function patternTitle(title) {
     [
       "Upcoming change to Copilot usage metrics report download URLs",
       "Copilot usage metrics レポートのダウンロード URL が変更される予定",
+    ],
+    [
+      "Secret scanning with GitHub MCP Server is now generally available",
+      "GitHub MCP Server の secret scanning が一般提供になった",
     ],
   ]);
 
