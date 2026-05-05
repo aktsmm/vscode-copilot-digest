@@ -1,12 +1,32 @@
 {
   "date": "2026-05-05",
-  "generatedAt": "2026-05-05T07:28:58.770Z",
+  "generatedAt": "2026-05-05T22:29:31.560Z",
   "latestRun": {
-    "generatedAt": "2026-05-05T07:28:58.770Z",
-    "newEventsCount": 0,
-    "newEventIds": [],
+    "generatedAt": "2026-05-05T22:29:31.560Z",
+    "newEventsCount": 1,
+    "newEventIds": [
+      "github-changelog:https://github.blog/changelog/2026-05-05-secret-scanning-with-github-mcp-server-is-now-generally-available"
+    ],
     "errorCount": 0
   },
-  "events": [],
+  "events": [
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-05-05-secret-scanning-with-github-mcp-server-is-now-generally-available",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-05-05T22:29:28.768Z",
+      "publishedAt": "2026-05-05T22:04:32.000Z",
+      "title": "Secret scanning with GitHub MCP Server is now generally available",
+      "url": "https://github.blog/changelog/2026-05-05-secret-scanning-with-github-mcp-server-is-now-generally-available",
+      "summary": "GitHub secret scanning in the GitHub MCP (Model Context Protocol) server is now generally available. When you use an MCP-compatible AI coding agent or IDE (like GitHub Copilot CLI or…\nThe post Secret scanning with GitHub MCP Server is now generally available appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "application security"
+      ],
+      "isFutureDated": false,
+      "score": 5
+    }
+  ],
   "errors": []
 }
