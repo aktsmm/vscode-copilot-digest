@@ -1,19 +1,73 @@
 {
   "date": "2026-05-06",
-  "generatedAt": "2026-05-06T15:41:13.003Z",
+  "generatedAt": "2026-05-06T22:11:58.649Z",
   "latestRun": {
-    "generatedAt": "2026-05-06T15:41:13.003Z",
-    "newEventsCount": 5,
+    "generatedAt": "2026-05-06T22:11:58.649Z",
+    "newEventsCount": 3,
     "newEventIds": [
-      "vscode-updates:6b3f443fe56bb03134adcea2cf93a0b84b2555c03451ce9ac7a768891a2a5d55",
-      "vscode-release-notes-1-119:section:367afffba3841e1b305520ff183cff8a55192d1d023e553a026287f759003950",
-      "vscode-release-notes-1-119:section:0d846e76ea41fc2fb5e8200ec8f5b9f215496df0358f49178b06d0935a05d064",
-      "vscode-release-notes-1-119:section:207d97d0230ceb4c2baaf0d46374520cd9bda85f70fc75d64fcda1453a98843b",
-      "vscode-release-notes-1-119:section:a8f9b7e2a79a15e012de9fa16f673529159b49c3a426730d3351643647dbe8a9"
+      "github-changelog:https://github.blog/changelog/2026-05-05-github-copilot-in-visual-studio-code-april-releases",
+      "github-copilot-blog:https://github.blog/?p=95757",
+      "vscode-feed:https://code.visualstudio.com/updates/v1_119"
     ],
     "errorCount": 0
   },
   "events": [
+    {
+      "eventId": "github-copilot-blog:https://github.blog/?p=95757",
+      "sourceId": "github-copilot-blog",
+      "sourceName": "GitHub Blog / GitHub Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-05-06T22:11:55.549Z",
+      "publishedAt": "2026-05-06T21:16:31.000Z",
+      "title": "Validating agentic behavior when “correct” isn’t deterministic",
+      "url": "https://github.blog/ai-and-ml/generative-ai/validating-agentic-behavior-when-correct-isnt-deterministic/",
+      "summary": "How to build the “Trust Layer” for Github Copilot Coding Agents without brittle scripts or black-box judgements by using dominatory analysis.\nThe post Validating agentic behavior when “correct” isn’t deterministic appeared first on The GitHub Blog.",
+      "categories": [
+        "AI & ML",
+        "Generative AI",
+        "GitHub Copilot",
+        "LLMs",
+        "Machine learning",
+        "AI agents",
+        "Dominator Analysis",
+        "GitHub Actions"
+      ],
+      "isFutureDated": false,
+      "score": 2
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-05-05-github-copilot-in-visual-studio-code-april-releases",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-05-06T22:11:55.185Z",
+      "publishedAt": "2026-05-06T17:55:26.000Z",
+      "title": "GitHub Copilot in Visual Studio Code, April releases",
+      "url": "https://github.blog/changelog/2026-05-06-github-copilot-in-visual-studio-code-april-releases",
+      "summary": "VS Code moved to weekly stable releases. This changelog covers releases v1.116 through v1.119, the releases we shipped throughout April and early May 2026. Copilot can now search by meaning…\nThe post GitHub Copilot in Visual Studio Code, April releases appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 5
+    },
+    {
+      "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_119",
+      "sourceId": "vscode-feed",
+      "sourceName": "VS Code Feed",
+      "kind": "feed_entry",
+      "detectedAt": "2026-05-06T22:11:55.580Z",
+      "publishedAt": "2026-05-06T17:00:00.000Z",
+      "title": "Visual Studio Code 1.119",
+      "url": "https://code.visualstudio.com/updates/v1_119",
+      "summary": "Learn what's new in Visual Studio Code 1.119\n Read the full article",
+      "categories": [
+        "release"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
     {
       "eventId": "vscode-updates:6b3f443fe56bb03134adcea2cf93a0b84b2555c03451ce9ac7a768891a2a5d55",
       "sourceId": "vscode-updates",
