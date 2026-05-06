@@ -40,6 +40,10 @@ const monthMap = {
 };
 
 const vscodeReleaseSummaries = {
+  "1.119": {
+    ja: "Changes ビューが Git 統合になり、terminal 経由の変更も含めて agent セッション中のファイル変更全体を把握しやすくなった。Copilot CLI にモデルバッジが追加され、使用モデルと multiplier を応答ごとに確認できる。新しい sandbox モードではファイルシステム隔離を維持しながら外部ネットワークアクセスも許可でき、オンライン通信が必要なタスクへの対応が広がった。ブラウザータブをチャットのコンテキストとして添付する機能や、model picker への実コスト表示なども加わった。",
+    en: "The Changes view in agent host sessions is now powered by Git, capturing all file changes including those from terminal commands. Copilot CLI adds model badges showing the model and multiplier used for each response. A new sandbox mode allows outbound network traffic while keeping filesystem isolation, expanding extension and task support. Additional highlights include browser-tab snapshots as chat context and actual model costs in the model picker.",
+  },
   "1.118": {
     ja: "agent 体験の拡張が主題の release。VS Code Agents companion app の進化（Insiders）、GitHub.com やモバイルから進行中の Copilot CLI セッションを遠隔操作できる Remote control（Experimental）、CLI セッションタイトルのサーフェス横断一元管理、Copilot の Git co-author 自動追加が入った。全ユーザーへの semantic indexing 展開と GitHub 横断テキスト検索、skills 専用コンテキスト（Experimental）も加わり、agent を継続運用しやすくする変更がまとまっている。",
     en: "The headline is agent experience: the VS Code Agents companion app gains a title-bar entry point (Insiders), CLI sessions can be monitored and steered remotely from GitHub.com or mobile (Experimental), session titles now sync across all surfaces, and Copilot is added as a Git co-author by default. All users also get semantic indexing in non-GitHub repos and GitHub cross-repo text search.",
@@ -216,8 +220,8 @@ const exactSummaryMappings = {
     en: "A changelog roundup for GitHub Copilot in VS Code covering the weekly stable releases from v1.111 through v1.115, including Autopilot, browser and terminal tool improvements, and broader agent workflow changes.",
   },
   "VS Code Updates changed": {
-    ja: "VS Code Updates のハブページが更新され、1.118 リリースと agent 体験拡張（Visual Studio Code Agents、Remote control、Copilot co-author 自動追加）、コードベース検索強化などの新しい見出しが追加された。公開導線の更新を追うための差分。",
-    en: "The VS Code Updates landing page changed to point at the 1.118 release, with new sections covering agent experience, remote CLI session control, co-authoring defaults, and codebase search improvements.",
+    ja: "VS Code の版一覧ページに 1.119 が追加された。次期 release notes の公開準備が始まったことを示す差分。ハブページで現在紹介している 1.118 の主な内容は agent 体験拡張（Visual Studio Code Agents、CLI 遠隔操作、Copilot co-author 自動追加）やコードベース検索強化など。",
+    en: "The VS Code Updates landing page now lists 1.119 in its version index, indicating the next release notes are being prepared. The currently featured 1.118 section covers agent experience improvements, remote CLI session control, co-author defaults, and codebase search enhancements.",
   },
   "Visual Studio Code 1.117: Incremental rendering of chat responses (Experimental)":
     {
@@ -276,8 +280,8 @@ const exactSummaryMappings = {
     en: "Edit Mode has been officially deprecated since 1.110, and the temporary `chat.editMode.hidden` escape hatch will stop working after 1.125, clarifying the removal timeline.",
   },
   "VS Code Release Notes 1.109 changed": {
-    ja: "VS Code Release Notes 1.109 の固定ページ差分を検知した。過去 release note の追記や修正を追うための更新で、新機能追加そのものではない。",
-    en: "A snapshot change was detected on the VS Code Release Notes 1.109 page, indicating edits to the published documentation rather than a newly shipped feature.",
+    ja: "VS Code Release Notes 1.109 ページのナビゲーションに 1.119 が追加された。サイト共通の版一覧ナビゲーション更新で、1.109 ページ自体の内容に変更はない。",
+    en: "The version navigation on the VS Code Release Notes 1.109 page now includes 1.119, reflecting a site-wide index update rather than changes to the 1.109 release content.",
   },
   "60 million Copilot code reviews and counting": {
     ja: "Copilot code review が初期公開から 1 年で 10 倍成長し、GitHub 上の code review の 5 件に 1 件超を占めるまで広がったという報告。agentic architecture、継続評価、batch autofix などで signal と speed を両立させる設計も解説している。",
@@ -807,6 +811,10 @@ const exactImportanceMappings = {
   "GitHub Copilot code review will start consuming GitHub Actions minutes on June 1, 2026": {
     ja: "6月1日以降、PR ごとに自動実行される Copilot code review が Actions 分数を消費するため、現在の Actions 利用量と予算を事前に確認し、必要に応じて上限設定や使い方の見直しが必要です。",
     en: "This matters because Copilot code review running on every pull request will start consuming Actions minutes from June 1, 2026. Teams should check current Actions usage and budgets now to avoid unexpected overages after the change takes effect.",
+  },
+  "Visual Studio Code 1.119": {
+    ja: "Changes ビューの Git 統合と CLI モデルバッジで agent 運用の可視性が上がり、新 sandbox モードでオンライン通信が必要なタスクへの対応も広がる release です。",
+    en: "This release improves agent visibility with Git-backed Changes tracking and CLI model badges, while the new sandbox mode expands support for tasks that need external network access.",
   },
   "Visual Studio Code 1.118": {
     ja: "agent 体験が幅広く前進した release。CLI の遠隔操作・co-author 自動追記・セッションタイトル一元化など、日常の agent 運用の実用性に直接効く変更が揃っています。",
