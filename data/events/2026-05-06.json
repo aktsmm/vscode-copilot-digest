@@ -1,19 +1,162 @@
 {
   "date": "2026-05-06",
-  "generatedAt": "2026-05-06T07:49:47.311Z",
+  "generatedAt": "2026-05-06T15:41:13.003Z",
   "latestRun": {
-    "generatedAt": "2026-05-06T07:49:47.311Z",
+    "generatedAt": "2026-05-06T15:41:13.003Z",
     "newEventsCount": 5,
     "newEventIds": [
-      "vscode-updates:b33597805464c0cfff36639e32b2bd7fe191dff843a8d46f7cdfa43e23cd82b6",
-      "vscode-release-notes-1-109:22059b339b33e6097d2646d63995456e0c91f872a0a2f22a6919337bf95adcc9",
-      "vscode-release-notes-1-117:f1b8a9dbb8d5e25e4a0c717c657adfbead3726987aa0815d7565ff21212b06c8",
-      "vscode-release-notes-1-116:970084da2505edccd694cb5c5ea53d58d3ffca1367a3e1f19675f2a8354c0b9f",
-      "vscode-release-notes-1-115:bfaefbf24a68b06d80161128a0f57e169ab80370af6e1851772d8adacbff9f08"
+      "vscode-updates:6b3f443fe56bb03134adcea2cf93a0b84b2555c03451ce9ac7a768891a2a5d55",
+      "vscode-release-notes-1-119:section:367afffba3841e1b305520ff183cff8a55192d1d023e553a026287f759003950",
+      "vscode-release-notes-1-119:section:0d846e76ea41fc2fb5e8200ec8f5b9f215496df0358f49178b06d0935a05d064",
+      "vscode-release-notes-1-119:section:207d97d0230ceb4c2baaf0d46374520cd9bda85f70fc75d64fcda1453a98843b",
+      "vscode-release-notes-1-119:section:a8f9b7e2a79a15e012de9fa16f673529159b49c3a426730d3351643647dbe8a9"
     ],
     "errorCount": 0
   },
   "events": [
+    {
+      "eventId": "vscode-updates:6b3f443fe56bb03134adcea2cf93a0b84b2555c03451ce9ac7a768891a2a5d55",
+      "sourceId": "vscode-updates",
+      "sourceName": "VS Code Updates",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-05-06T15:41:11.170Z",
+      "publishedAt": "2026-05-06T00:00:00.000Z",
+      "title": "VS Code Updates changed",
+      "url": "https://code.visualstudio.com/updates/",
+      "summary": "Detected 112 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 112,
+        "headings": [
+          "Visual Studio Code 1.119",
+          "Sharing browser tabs with agents",
+          "OpenTelemetry tracing for agent sessions",
+          "Chat experience",
+          "Show model details for Copilot CLI and Claude agent responses",
+          "Optimized token usage for managing todo lists (Experimental)",
+          "Usage-based billing updates",
+          "Trust and Security",
+          "Allow network access in agent sandboxes",
+          "Auto-approve writes to the temp folder for session-allowed commands",
+          "Languages",
+          "Swap current editor to Markdown preview",
+          "Reorganized Markdown settings",
+          "Finished migrating webviews to use CSS anchor positioning",
+          "Typechecking now uses TypeScript 7 for faster development iteration"
+        ],
+        "additions": [
+          "H1: Visual Studio Code 1.119",
+          "Release date: May 6, 2026",
+          "Welcome to the 1.119 release of Visual Studio Code. This release focuses on smoother agent interactions, enhanced observability, and more efficient trust and security controls.",
+          "Agent-browser interaction: Let agents discover and ask for integrated browser access.",
+          "Optimized token usage: Use a lightweight model to manage agent todo lists.",
+          "OpenTelemetry tracing: Monitor agent sessions with OpenTelemetry.",
+          "Trust and developer efficiency: Get less interrupted by requests for network access or temp folder writes.",
+          "Markdown preview: Quickly switch between Markdown source and preview.",
+          "H3: Sharing browser tabs with agents",
+          "When agents can access a live browser, they validate changes in real time and iterate faster. For web development, an agent can edit code, reload the page, and confirm the fix in a single turn. For design workflows, the agent can compare rendered output against your intent and refine layout or styling on the fly. Get started with using the integrated browser with agents in VS Code.",
+          "An agent does not automatically have access to the integrated browser. You need to explicitly share browser pages with the agent for it to interact with them. This helps keep sensitive data private.",
+          "In this release, we've added new ways to share browsers with an agent:",
+          "Browser tabs can now be explicitly attached to the chat via typical entry points such as suggested context, context picker, and drag-and-drop actions.",
+          "When a browser tab is attached, it enters a sharing state where the agent can read and interact with the page. Use the sharing button in the browser to stop sharing when you're done.",
+          "Agents now have information about how many browser tabs you have open and are not shared. They can request to share an open tab when they need to interact with a page, and you can approve or deny the request in a prompt.",
+          "When an agent tries to open a new tab on the same domain as an existing, unshared tab, a prompt appears to ask if you want to reuse the existing tab. This aims to encourage tab reuse and reduce clutter."
+        ]
+      },
+      "headings": [
+        "Visual Studio Code 1.119",
+        "Agent experience",
+        "Sharing browser tabs with agents",
+        "Visual Studio Code Agents (Insiders)",
+        "OpenTelemetry tracing for agent sessions",
+        "Chat experience",
+        "Show model details for Copilot CLI and Claude agent responses",
+        "Optimized token usage for managing todo lists (Experimental)",
+        "Usage-based billing updates",
+        "Trust and Security",
+        "Allow network access in agent sandboxes",
+        "Auto-approve writes to the temp folder for session-allowed commands"
+      ],
+      "score": 17
+    },
+    {
+      "eventId": "vscode-release-notes-1-119:section:367afffba3841e1b305520ff183cff8a55192d1d023e553a026287f759003950",
+      "sourceId": "vscode-release-notes-1-119",
+      "sourceName": "VS Code Release Notes 1.119",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-05-06T15:41:12.388Z",
+      "publishedAt": "2026-05-06T00:00:00.000Z",
+      "title": "Visual Studio Code 1.119: Sharing browser tabs with agents",
+      "url": "https://code.visualstudio.com/updates/v1_119",
+      "summary": "When agents can access a live browser, they validate changes in real time and iterate faster. For web development, an agent can edit code, reload the page, and confirm the fix in a single turn. For design workflows, the agent can compare rendered output against your intent and refine layout or styling on the fly. Get started with using the integrated browser with agents in VS Code. An agent does not automatically ha...",
+      "categories": [
+        "release",
+        "section",
+        "Agent experience"
+      ],
+      "sectionHeading": "Agent experience",
+      "sectionTitle": "Sharing browser tabs with agents",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-119:section:0d846e76ea41fc2fb5e8200ec8f5b9f215496df0358f49178b06d0935a05d064",
+      "sourceId": "vscode-release-notes-1-119",
+      "sourceName": "VS Code Release Notes 1.119",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-05-06T15:41:12.388Z",
+      "publishedAt": "2026-05-06T00:00:00.000Z",
+      "title": "Visual Studio Code 1.119: Visual Studio Code Agents (Insiders)",
+      "url": "https://code.visualstudio.com/updates/v1_119",
+      "summary": "Note: Visual Studio Code Agents is currently in preview and only available with VS Code Insiders. Visual Studio Code Agents is a companion experience that ships with VS Code Insiders. It provides a focused, agent-native environment where you can run parallel sessions across repos and iterate on multi-step coding tasks. We first introduced VS Code Agents in 1.115 and continue to refine it based on user feedback. Upda...",
+      "categories": [
+        "release",
+        "section",
+        "Agent experience"
+      ],
+      "sectionHeading": "Agent experience",
+      "sectionTitle": "Visual Studio Code Agents (Insiders)",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-119:section:207d97d0230ceb4c2baaf0d46374520cd9bda85f70fc75d64fcda1453a98843b",
+      "sourceId": "vscode-release-notes-1-119",
+      "sourceName": "VS Code Release Notes 1.119",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-05-06T15:41:12.388Z",
+      "publishedAt": "2026-05-06T00:00:00.000Z",
+      "title": "Visual Studio Code 1.119: OpenTelemetry tracing for agent sessions",
+      "url": "https://code.visualstudio.com/updates/v1_119",
+      "summary": "Settings: \n \n \n github.copilot.chat.otel.enabled\n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders\n \n , \n \n \n github.copilot.chat.otel.otlpEndpoint\n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders As agent sessions grow longer and more autonomous, understanding what the agent did, how long each step took, and where tokens were spent becomes essential for optimizing cost and debugging unexpected behavi...",
+      "categories": [
+        "release",
+        "section",
+        "Agent experience"
+      ],
+      "sectionHeading": "Agent experience",
+      "sectionTitle": "OpenTelemetry tracing for agent sessions",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-119:section:a8f9b7e2a79a15e012de9fa16f673529159b49c3a426730d3351643647dbe8a9",
+      "sourceId": "vscode-release-notes-1-119",
+      "sourceName": "VS Code Release Notes 1.119",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-05-06T15:41:12.388Z",
+      "publishedAt": "2026-05-06T00:00:00.000Z",
+      "title": "Visual Studio Code 1.119: Show model details for Copilot CLI and Claude agent responses",
+      "url": "https://code.visualstudio.com/updates/v1_119",
+      "summary": "Setting: \n \n \n github.copilot.chat.agent.modelDetails.enabled\n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders Knowing which model handled a response and how it counts against your usage helps you stay in control of cost and quality. Copilot CLI and Claude agent responses in the Chat view now show the model and its multiplier on each response. The badge appears live as each response completes, without needin...",
+      "categories": [
+        "release",
+        "section",
+        "Chat experience"
+      ],
+      "sectionHeading": "Chat experience",
+      "sectionTitle": "Show model details for Copilot CLI and Claude agent responses",
+      "score": 4
+    },
     {
       "eventId": "vscode-updates:b33597805464c0cfff36639e32b2bd7fe191dff843a8d46f7cdfa43e23cd82b6",
       "sourceId": "vscode-updates",
