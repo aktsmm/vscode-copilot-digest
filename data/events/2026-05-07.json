@@ -1,17 +1,32 @@
 {
   "date": "2026-05-07",
-  "generatedAt": "2026-05-07T08:01:13.958Z",
+  "generatedAt": "2026-05-07T15:42:46.034Z",
   "latestRun": {
-    "generatedAt": "2026-05-07T08:01:13.958Z",
-    "newEventsCount": 3,
+    "generatedAt": "2026-05-07T15:42:46.034Z",
+    "newEventsCount": 1,
     "newEventIds": [
-      "github-changelog:https://github.blog/changelog/2026-05-06-enterprise-managed-plugins-in-github-copilot-cli-are-now-in-public-preview",
-      "github-changelog-copilot:https://github.blog/changelog/2026-05-06-enterprise-managed-plugins-in-github-copilot-cli-are-now-in-public-preview",
-      "github-changelog-copilot:https://github.blog/changelog/2026-05-05-github-copilot-in-visual-studio-code-april-releases"
+      "github-changelog:https://github.blog/changelog/2026-05-07-rubber-duck-in-github-copilot-cli-now-supports-more-models"
     ],
     "errorCount": 0
   },
   "events": [
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-05-07-rubber-duck-in-github-copilot-cli-now-supports-more-models",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-05-07T15:42:41.202Z",
+      "publishedAt": "2026-05-07T14:49:28.000Z",
+      "title": "Rubber Duck in GitHub Copilot CLI now supports more models",
+      "url": "https://github.blog/changelog/2026-05-07-rubber-duck-in-github-copilot-cli-now-supports-more-models",
+      "summary": "Rubber Duck, the cross-family review agent in GitHub Copilot CLI, is now available using a Claude-powered critic agent when your session is using a GPT model. For sessions using Claude…\nThe post Rubber Duck in GitHub Copilot CLI now supports more models appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 2
+    },
     {
       "eventId": "github-changelog:https://github.blog/changelog/2026-05-06-enterprise-managed-plugins-in-github-copilot-cli-are-now-in-public-preview",
       "sourceId": "github-changelog",
