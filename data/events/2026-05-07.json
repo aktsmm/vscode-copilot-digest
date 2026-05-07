@@ -1,0 +1,72 @@
+{
+  "date": "2026-05-07",
+  "generatedAt": "2026-05-07T08:01:13.958Z",
+  "latestRun": {
+    "generatedAt": "2026-05-07T08:01:13.958Z",
+    "newEventsCount": 3,
+    "newEventIds": [
+      "github-changelog:https://github.blog/changelog/2026-05-06-enterprise-managed-plugins-in-github-copilot-cli-are-now-in-public-preview",
+      "github-changelog-copilot:https://github.blog/changelog/2026-05-06-enterprise-managed-plugins-in-github-copilot-cli-are-now-in-public-preview",
+      "github-changelog-copilot:https://github.blog/changelog/2026-05-05-github-copilot-in-visual-studio-code-april-releases"
+    ],
+    "errorCount": 0
+  },
+  "events": [
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-05-06-enterprise-managed-plugins-in-github-copilot-cli-are-now-in-public-preview",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-05-07T08:01:11.106Z",
+      "publishedAt": "2026-05-06T22:20:44.000Z",
+      "title": "Enterprise-managed plugins in GitHub Copilot CLI are now in public preview",
+      "url": "https://github.blog/changelog/2026-05-06-enterprise-managed-plugins-in-github-copilot-cli-are-now-in-public-preview",
+      "summary": "Enterprise administrators can now configure and distribute plugins to GitHub Copilot CLI users across their enterprise. Set baseline standards for your enterprise and make them available in every user’s Copilot…\nThe post Enterprise-managed plugins in GitHub Copilot CLI are now in public preview appeared first on The G...",
+      "categories": [
+        "Improvement",
+        "client apps",
+        "copilot",
+        "enterprise management tools"
+      ],
+      "isFutureDated": false,
+      "score": 2
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-05-06-enterprise-managed-plugins-in-github-copilot-cli-are-now-in-public-preview",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-05-07T08:01:11.380Z",
+      "publishedAt": "2026-05-06T22:20:44.000Z",
+      "title": "Enterprise-managed plugins in GitHub Copilot CLI are now in public preview",
+      "url": "https://github.blog/changelog/2026-05-06-enterprise-managed-plugins-in-github-copilot-cli-are-now-in-public-preview",
+      "summary": "Enterprise administrators can now configure and distribute plugins to GitHub Copilot CLI users across their enterprise. Set baseline standards for your enterprise and make them available in every user’s Copilot…\nThe post Enterprise-managed plugins in GitHub Copilot CLI are now in public preview appeared first on The G...",
+      "categories": [
+        "Improvement",
+        "client apps",
+        "copilot",
+        "enterprise management tools"
+      ],
+      "isFutureDated": false,
+      "score": 2
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-05-05-github-copilot-in-visual-studio-code-april-releases",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-05-07T08:01:11.380Z",
+      "publishedAt": "2026-05-06T17:55:26.000Z",
+      "title": "GitHub Copilot in Visual Studio Code, April releases",
+      "url": "https://github.blog/changelog/2026-05-06-github-copilot-in-visual-studio-code-april-releases",
+      "summary": "VS Code moved to weekly stable releases. This changelog covers releases v1.116 through v1.119, the releases we shipped throughout April and early May 2026. Copilot can now search by meaning…\nThe post GitHub Copilot in Visual Studio Code, April releases appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 5
+    }
+  ],
+  "errors": []
+}
