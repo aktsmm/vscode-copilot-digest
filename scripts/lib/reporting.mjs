@@ -411,6 +411,36 @@ const exactSummaryMappings = {
     ja: "GitHub MCP（Model Context Protocol）Server に組み込まれた secret scanning 機能が一般提供になった。MCP 対応の AI coding agent や IDE（Copilot CLI・VS Code）からコミット前や PR 作成前に secret の漏洩を検出できる。GitHub Secret Protection が有効なリポジトリで利用でき、既存の push protection カスタマイズ設定もそのまま反映される。",
     en: "Secret scanning in the GitHub MCP Server is now generally available. Developers using MCP-compatible AI agents or IDEs such as Copilot CLI and VS Code can scan for exposed secrets before committing or opening a pull request. It requires GitHub Secret Protection to be enabled and honors existing push protection customizations.",
   },
+  "Enterprise-managed plugins in GitHub Copilot CLI are now in public preview":
+    {
+      ja: "Enterprise 管理者が GitHub Copilot CLI 向け plugin を一括設定・配布できる機能が public preview になった。組織の標準 plugin 構成を定義し、利用者の CLI 環境へ共通適用しやすくする更新。",
+      en: "Enterprise-managed plugin configuration and distribution for GitHub Copilot CLI is now in public preview, allowing administrators to define and roll out baseline plugin standards across users.",
+    },
+  "GitHub Copilot in Visual Studio Code, April releases": {
+    ja: "VS Code の weekly stable への移行後に出た v1.116〜v1.119 の Copilot 変更をまとめた更新。意味検索の強化など、4月〜5月初旬に入った agent/CLI 体験の差分を一度に確認できる。",
+    en: "This roundup covers Copilot changes shipped in VS Code v1.116 through v1.119 after the move to weekly stable releases, including semantic search improvements and related agent/CLI updates from April to early May.",
+  },
+  "Validating agentic behavior when “correct” isn’t deterministic": {
+    ja: "agent の出力が一意に正解と決めにくい課題に対して、GitHub Copilot Applied Science が評価設計をどう進めているかを解説した記事。再現性と実運用評価の両立に向けた考え方を整理できる。",
+    en: "An Applied Science post on how to evaluate agent behavior when correctness is non-deterministic, outlining practical approaches to balancing reproducibility with real-world assessment.",
+  },
+  "Visual Studio Code 1.119: OpenTelemetry tracing for agent sessions": {
+    ja: "agent session の OpenTelemetry tracing が追加され、実行中の処理を観測基盤へ取り込みやすくなった。遅延や失敗の原因を運用側で追跡しやすくする変更。",
+    en: "OpenTelemetry tracing for agent sessions makes it easier to feed session execution telemetry into observability tooling and investigate latency or failure causes.",
+  },
+  "Visual Studio Code 1.119: Show model details for Copilot CLI and Claude agent responses":
+    {
+      ja: "Copilot CLI と Claude agent の応答ごとに利用モデル情報を表示できるようになった。生成結果の差分検証や運用時の説明責任を取りやすくする更新。",
+      en: "Model details are now surfaced on Copilot CLI and Claude agent responses, helping teams validate behavior differences and document model-level accountability.",
+    },
+  "Visual Studio Code 1.119: Sharing browser tabs with agents": {
+    ja: "ブラウザータブを agent へ共有してコンテキストとして渡せるようになった。仕様確認や調査ページを会話に直接添付し、往復作業を減らしやすくなる。",
+    en: "Browser tabs can now be shared with agents as context, reducing handoff friction when incorporating reference pages into agent conversations.",
+  },
+  "Visual Studio Code 1.119: Visual Studio Code Agents (Insiders)": {
+    ja: "Insiders 向け Visual Studio Code Agents 体験が更新され、複数セッション運用や agent 中心の開発フローを試しやすくなった。先行導入の検証対象として押さえたい変更。",
+    en: "The Visual Studio Code Agents experience in Insiders was updated, making it easier to evaluate multi-session and agent-centric workflows ahead of broader rollout.",
+  },
 };
 
 const exactImportanceMappings = {
@@ -848,6 +878,32 @@ const exactImportanceMappings = {
     ja: "AI coding agent を使った開発フローでシークレット漏洩をコミット前に検出できるようになります。Copilot CLI や VS Code で MCP Server を利用している環境では、既存の push protection 設定が引き継がれる点も含め、有効化状況と運用ポリシーを確認しておくとよいでしょう。",
     en: "This matters because secret scanning is now part of the AI coding agent workflow, letting teams catch exposed credentials before they are committed. Organizations already using push protection will see their existing customizations carry over automatically.",
   },
+  "Enterprise-managed plugins in GitHub Copilot CLI are now in public preview":
+    {
+      ja: "Copilot CLI の plugin 構成を Enterprise 管理者が標準化できるため、利用者ごとの設定差を減らしつつ、組織ポリシーに沿った CLI 運用へそろえやすくなります。",
+      en: "This is operationally important because enterprise admins can standardize Copilot CLI plugin setups and reduce per-user configuration drift.",
+    },
+  "GitHub Copilot in Visual Studio Code, April releases": {
+    ja: "weekly stable で積み上がった Copilot 変更をまとめて確認できるため、導入判断や運用ルールの更新を月次単位で見直しやすくなります。",
+    en: "This matters because teams can evaluate accumulated weekly Copilot changes in one pass and update rollout policies on a monthly cadence.",
+  },
+  "Validating agentic behavior when “correct” isn’t deterministic": {
+    ja: "正解が一意でない agent タスクの評価方法を具体化しており、検証基準や運用品質指標を整備する際の実務的な参考になります。",
+    en: "This offers practical guidance for defining quality signals when agent tasks do not have a single deterministic correct answer.",
+  },
+  "Visual Studio Code 1.119: OpenTelemetry tracing for agent sessions": {
+    ja: "agent session の動きを observability 基盤へ流せるため、遅延や失敗の切り分けを運用側で定量的に進めやすくなります。",
+    en: "This matters because teams can instrument agent-session behavior in observability pipelines and diagnose latency or failures with better evidence.",
+  },
+  "Visual Studio Code 1.119: Show model details for Copilot CLI and Claude agent responses":
+    {
+      ja: "応答ごとのモデル情報が可視化されるため、出力差分の検証やモデル選定ルールの説明責任を取りやすくなります。",
+      en: "This is important because model metadata on each response improves traceability for behavior comparisons and model-governance decisions.",
+    },
+  "Visual Studio Code 1.119: Sharing browser tabs with agents": {
+    ja: "参照中の Web ページを agent へ直接渡せるため、調査コンテキストの受け渡しミスを減らし、調査〜実装の往復を短縮しやすくなります。",
+    en: "This matters because directly sharing browser-tab context with agents reduces handoff errors and shortens the loop between research and implementation.",
+  },
 };
 
 function toDateOnly(value) {
@@ -1024,6 +1080,14 @@ function patternTitle(title) {
     [
       "GitHub Copilot in Visual Studio — March update",
       "GitHub Copilot in Visual Studio 2026年3月更新",
+    ],
+    [
+      "GitHub Copilot in Visual Studio Code, April releases",
+      "GitHub Copilot in Visual Studio Code 4月リリースまとめ",
+    ],
+    [
+      "Enterprise-managed plugins in GitHub Copilot CLI are now in public preview",
+      "GitHub Copilot CLI の enterprise 管理プラグインが public preview になった",
     ],
     ["How VS Code Builds with AI", "VS Code チームの AI 活用事例"],
     [
