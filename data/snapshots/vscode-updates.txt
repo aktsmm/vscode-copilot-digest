@@ -1,3 +1,4 @@
+Insiders
 1.119
 1.118
 1.117
@@ -343,6 +344,7 @@ Add 'hint' and 'info' search keywords to editor.hover.enabled PR #313491
 Add 'pane' search keyword to editor group settings PR #313490
 Add 'hint' and 'info' search keywords to editor.hover.enabled PR #313491
 Add 'pane' search keyword to editor group settings PR #313490
+@mizdra: Fix deadlock caused by import 'vscode' from modules loaded via require(esm) PR #285417
 Contributions to vscode-pull-request-github:
 @mohamedamara1 (Mohamed Amara): Display linked issue(s) from the PR Overview #5824 PR #6835
 We really appreciate people trying our new features as soon as they are ready, so check back here often and learn what's new.

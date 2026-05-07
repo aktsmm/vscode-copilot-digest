@@ -1,21 +1,83 @@
 {
   "date": "2026-05-07",
-  "generatedAt": "2026-05-07T15:42:46.034Z",
+  "generatedAt": "2026-05-07T22:32:51.415Z",
   "latestRun": {
-    "generatedAt": "2026-05-07T15:42:46.034Z",
-    "newEventsCount": 1,
+    "generatedAt": "2026-05-07T22:32:51.415Z",
+    "newEventsCount": 8,
     "newEventIds": [
-      "github-changelog:https://github.blog/changelog/2026-05-07-rubber-duck-in-github-copilot-cli-now-supports-more-models"
+      "github-changelog-copilot:https://github.blog/changelog/2026-05-07-rubber-duck-in-github-copilot-cli-now-supports-more-models",
+      "github-copilot-blog:https://github.blog/?p=95686",
+      "vscode-feed:https://code.visualstudio.com/updates/v1_120",
+      "vscode-updates:982da4f1804543ed4e982c4e8e6fe07c3f2845f0be93a48ced0455165ca7d36b",
+      "vscode-release-notes-1-109:20f0ee42cf3cb2f3e3b4b9b4220d5df550cc3e3e2cfb7c1e1b50bb14d5e5c182",
+      "vscode-release-notes-1-118:dee678e0d77b29356cd32d647465c216090f1f0fef8dfc4cc9942ab665108f39",
+      "vscode-release-notes-1-117:887ab520bcebc1dd17f4d285058707963c46aa5357e2443553b4a74fad74ef81",
+      "vscode-release-notes-1-116:ad2493f0a0ae4d5897728ee54b90e4e88166607c9cd264f577df67ea13bc41e8"
     ],
     "errorCount": 0
   },
   "events": [
+    {
+      "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_120",
+      "sourceId": "vscode-feed",
+      "sourceName": "VS Code Feed",
+      "kind": "feed_entry",
+      "detectedAt": "2026-05-07T22:32:49.969Z",
+      "publishedAt": "2026-05-13T17:00:00.000Z",
+      "title": "Visual Studio Code 1.120",
+      "url": "https://code.visualstudio.com/updates/v1_120",
+      "summary": "Learn what's new in Visual Studio Code 1.120 (Insiders)\n Read the full article",
+      "categories": [
+        "release"
+      ],
+      "isFutureDated": true,
+      "score": 4
+    },
+    {
+      "eventId": "github-copilot-blog:https://github.blog/?p=95686",
+      "sourceId": "github-copilot-blog",
+      "sourceName": "GitHub Blog / GitHub Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-05-07T22:32:49.928Z",
+      "publishedAt": "2026-05-07T19:00:00.000Z",
+      "title": "Agent pull requests are everywhere. Here&#8217;s how to review them.",
+      "url": "https://github.blog/ai-and-ml/generative-ai/agent-pull-requests-are-everywhere-heres-how-to-review-them/",
+      "summary": "A practical guide to reviewing agent-generated pull requests: what to look for, where issues hide, and how to catch technical debt before it ships.\nThe post Agent pull requests are everywhere. Here’s how to review them. appeared first on The GitHub Blog.",
+      "categories": [
+        "AI & ML",
+        "Generative AI",
+        "GitHub Copilot",
+        "AI agents",
+        "code review",
+        "pull requests",
+        "tech debt"
+      ],
+      "isFutureDated": false,
+      "score": 1
+    },
     {
       "eventId": "github-changelog:https://github.blog/changelog/2026-05-07-rubber-duck-in-github-copilot-cli-now-supports-more-models",
       "sourceId": "github-changelog",
       "sourceName": "GitHub Changelog",
       "kind": "feed_entry",
       "detectedAt": "2026-05-07T15:42:41.202Z",
+      "publishedAt": "2026-05-07T14:49:28.000Z",
+      "title": "Rubber Duck in GitHub Copilot CLI now supports more models",
+      "url": "https://github.blog/changelog/2026-05-07-rubber-duck-in-github-copilot-cli-now-supports-more-models",
+      "summary": "Rubber Duck, the cross-family review agent in GitHub Copilot CLI, is now available using a Claude-powered critic agent when your session is using a GPT model. For sessions using Claude…\nThe post Rubber Duck in GitHub Copilot CLI now supports more models appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 2
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-05-07-rubber-duck-in-github-copilot-cli-now-supports-more-models",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-05-07T22:32:49.909Z",
       "publishedAt": "2026-05-07T14:49:28.000Z",
       "title": "Rubber Duck in GitHub Copilot CLI now supports more models",
       "url": "https://github.blog/changelog/2026-05-07-rubber-duck-in-github-copilot-cli-now-supports-more-models",
@@ -81,6 +143,79 @@
       ],
       "isFutureDated": false,
       "score": 5
+    },
+    {
+      "eventId": "vscode-updates:982da4f1804543ed4e982c4e8e6fe07c3f2845f0be93a48ced0455165ca7d36b",
+      "sourceId": "vscode-updates",
+      "sourceName": "VS Code Updates",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-05-07T22:32:50.043Z",
+      "publishedAt": "2026-05-06T00:00:00.000Z",
+      "title": "VS Code Updates changed",
+      "url": "https://code.visualstudio.com/updates/",
+      "summary": "Detected 2 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 2,
+        "headings": [],
+        "additions": [
+          "Insiders",
+          "@mizdra: Fix deadlock caused by import 'vscode' from modules loaded via require(esm) PR #285417"
+        ]
+      },
+      "headings": [
+        "Visual Studio Code 1.119",
+        "Agent experience",
+        "Sharing browser tabs with agents",
+        "Visual Studio Code Agents (Insiders)",
+        "OpenTelemetry tracing for agent sessions",
+        "Chat experience",
+        "Show model details for Copilot CLI and Claude agent responses",
+        "Optimized token usage for managing todo lists (Experimental)",
+        "Usage-based billing updates",
+        "Trust and Security",
+        "Allow network access in agent sandboxes",
+        "Auto-approve writes to the temp folder for session-allowed commands"
+      ],
+      "score": 2
+    },
+    {
+      "eventId": "vscode-release-notes-1-109:20f0ee42cf3cb2f3e3b4b9b4220d5df550cc3e3e2cfb7c1e1b50bb14d5e5c182",
+      "sourceId": "vscode-release-notes-1-109",
+      "sourceName": "VS Code Release Notes 1.109",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-05-07T22:32:50.179Z",
+      "publishedAt": "2026-02-04T00:00:00.000Z",
+      "title": "VS Code Release Notes 1.109 changed",
+      "url": "https://code.visualstudio.com/updates/v1_109",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [],
+        "additions": [
+          "Insiders"
+        ]
+      },
+      "headings": [
+        "January 2026 (version 1.109)",
+        "Upcoming events",
+        "Agent Sessions Day",
+        "Chat UX",
+        "Message steering and queueing (Experimental)",
+        "Anthropic models now show thinking tokens",
+        "Mermaid diagrams in chat responses",
+        "Ask Questions tool (Experimental)",
+        "Plan agent",
+        "Context window details",
+        "Inline chat UX revamp (Preview)",
+        "Model descriptions in the model picker"
+      ],
+      "score": 2
     }
   ],
   "errors": []
