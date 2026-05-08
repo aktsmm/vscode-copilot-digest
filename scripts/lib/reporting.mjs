@@ -441,6 +441,26 @@ const exactSummaryMappings = {
     ja: "Insiders 向け Visual Studio Code Agents 体験が更新され、複数セッション運用や agent 中心の開発フローを試しやすくなった。先行導入の検証対象として押さえたい変更。",
     en: "The Visual Studio Code Agents experience in Insiders was updated, making it easier to evaluate multi-session and agent-centric workflows ahead of broader rollout.",
   },
+  "Upcoming deprecation of GPT-4.1": {
+    ja: "2026年6月1日に GPT-4.1 が GitHub Copilot の全体験（Chat・インライン編集・ask/agent モード・コード補完）から廃止される。代替モデルが示されているため、GPT-4.1 を直接指定しているワークフローや統合は事前の切り替えが必要。",
+    en: "GPT-4.1 will be deprecated from all GitHub Copilot experiences (Copilot Chat, inline edits, ask and agent modes, and code completions) on June 1, 2026. Workflows and integrations that explicitly target GPT-4.1 should migrate to the suggested alternative before that date.",
+  },
+  "Claude Sonnet 4 deprecated": {
+    ja: "Claude Sonnet 4 が 2026年5月6日に GitHub Copilot の全体験（Chat・インライン編集・ask/agent モード・コード補完）から廃止された。直接指定しているワークフローや統合は代替モデルへの切り替えが必要。",
+    en: "Claude Sonnet 4 was deprecated from all GitHub Copilot experiences (Copilot Chat, inline edits, ask and agent modes, and code completions) on May 6, 2026. Workflows and integrations that explicitly target it need to switch to an alternative model.",
+  },
+  "Improving token efficiency in GitHub Agentic Workflows": {
+    ja: "PR ごとに実行するエージェント型ワークフローは知らない間に API コストが積み上がりやすい。GitHub が自社の本番ワークフローを計測して非効率を特定し、エージェント自体に修正させた実践的な事例の解説。",
+    en: "Agentic workflows that run on every pull request can silently accumulate significant API costs. This post explains how GitHub instrumented its own production workflows, identified inefficiencies, and used agents to fix them.",
+  },
+  "Agent pull requests are everywhere. Here's how to review them.": {
+    ja: "エージェントが生成した PR をどうレビューするかの実践ガイド。見落とされがちな問題の発見箇所、技術的負債を出荷前に捕まえるための観点が整理されている。",
+    en: "A practical guide to reviewing agent-generated pull requests: what to look for, where issues hide, and how to catch technical debt before it ships.",
+  },
+  "Rubber Duck in GitHub Copilot CLI now supports more models": {
+    ja: "Copilot CLI の Rubber Duck（クロスファミリーレビューエージェント）が、GPT モデルセッションで Claude 系クリティックエージェントを使えるようになった。異なるモデル系列からセカンドオピニオンを得る運用の幅が広がった。",
+    en: "Rubber Duck, the cross-family review agent in Copilot CLI, now uses a Claude-powered critic when your session runs a GPT model, and vice versa. Second-opinion reviews across model families are now available in both directions.",
+  },
 };
 
 const exactImportanceMappings = {
@@ -904,6 +924,26 @@ const exactImportanceMappings = {
     ja: "参照中の Web ページを agent へ直接渡せるため、調査コンテキストの受け渡しミスを減らし、調査〜実装の往復を短縮しやすくなります。",
     en: "This matters because directly sharing browser-tab context with agents reduces handoff errors and shortens the loop between research and implementation.",
   },
+  "Upcoming deprecation of GPT-4.1": {
+    ja: "6月1日までに GPT-4.1 を直接指定しているワークフローや統合は代替モデルへの切り替えが必要です。Enterprise 管理者はモデルポリシーで代替モデルへのアクセスが有効になっているか確認しておく必要があります。",
+    en: "Any workflow or integration explicitly targeting GPT-4.1 must be updated before June 1, 2026. Enterprise admins should verify that the replacement model is enabled in model policies so users can migrate without disruption.",
+  },
+  "Claude Sonnet 4 deprecated": {
+    ja: "Claude Sonnet 4 はすでに廃止されているため、直接指定しているワークフローや統合は即時に代替モデルへの切り替えが必要です。Enterprise 管理者はモデルポリシーで代替モデルへのアクセスを確認してください。",
+    en: "Claude Sonnet 4 is already deprecated, so any workflow or integration explicitly targeting it must switch to an alternative model immediately. Enterprise admins should verify that the replacement model is enabled in model policies.",
+  },
+  "Improving token efficiency in GitHub Agentic Workflows": {
+    ja: "PR 連動型のエージェント運用をしているチームは、トークン使用量の計測手法とコスト削減アプローチを確認しておくと予算管理と最適化の参考になります。",
+    en: "Teams running agentic workflows on every pull request should review the measurement approach and optimization patterns here to manage token costs and improve efficiency.",
+  },
+  "Agent pull requests are everywhere. Here's how to review them.": {
+    ja: "AI エージェントが PR を生成する機会が増えている中で、何に注意しどこに問題が潜みやすいかを押さえておくことは、コード品質と技術的負債の管理に直結します。",
+    en: "As agent-generated pull requests become more common, knowing what to look for and where technical debt hides is directly relevant to maintaining code quality and keeping reviews effective.",
+  },
+  "Rubber Duck in GitHub Copilot CLI now supports more models": {
+    ja: "GPT と Claude の両系列を Rubber Duck で組み合わせられるようになり、モデル間の視点の違いをセカンドオピニオンとして活かしやすくなります。双方向で使えるため、セッションのモデルを問わず cross-family review が選択肢に入ります。",
+    en: "This expands Rubber Duck's usefulness because cross-family second opinions are now available regardless of which model family your session is using, making the review pattern practical in both GPT-centric and Claude-centric workflows.",
+  },
 };
 
 function toDateOnly(value) {
@@ -1257,6 +1297,26 @@ function patternTitle(title) {
     [
       "Secret scanning with GitHub MCP Server is now generally available",
       "GitHub MCP Server の secret scanning が一般提供になった",
+    ],
+    [
+      "Upcoming deprecation of GPT-4.1",
+      "GPT-4.1 の廃止予告",
+    ],
+    [
+      "Claude Sonnet 4 deprecated",
+      "Claude Sonnet 4 が廃止になった",
+    ],
+    [
+      "Improving token efficiency in GitHub Agentic Workflows",
+      "GitHub Agentic Workflows のトークン効率改善事例",
+    ],
+    [
+      "Agent pull requests are everywhere. Here's how to review them.",
+      "エージェント生成 PR のレビュー実践ガイド",
+    ],
+    [
+      "Rubber Duck in GitHub Copilot CLI now supports more models",
+      "Copilot CLI の Rubber Duck がより多くのモデルに対応",
     ],
   ]);
 
