@@ -1,0 +1,111 @@
+{
+  "date": "2026-05-08",
+  "generatedAt": "2026-05-08T07:01:39.320Z",
+  "latestRun": {
+    "generatedAt": "2026-05-08T07:01:39.320Z",
+    "newEventsCount": 5,
+    "newEventIds": [
+      "github-changelog:https://github.blog/changelog/2026-05-07-upcoming-deprecation-of-gpt-4-1",
+      "github-changelog:https://github.blog/changelog/2026-05-07-claude-sonnet-4-deprecated",
+      "github-changelog-copilot:https://github.blog/changelog/2026-05-07-upcoming-deprecation-of-gpt-4-1",
+      "github-changelog-copilot:https://github.blog/changelog/2026-05-07-claude-sonnet-4-deprecated",
+      "github-copilot-blog:https://github.blog/?p=95785"
+    ],
+    "errorCount": 0
+  },
+  "events": [
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-05-07-upcoming-deprecation-of-gpt-4-1",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-05-08T07:01:37.176Z",
+      "publishedAt": "2026-05-08T00:22:08.000Z",
+      "title": "Upcoming deprecation of GPT-4.1",
+      "url": "https://github.blog/changelog/2026-05-07-upcoming-deprecation-of-gpt-4-1",
+      "summary": "We will deprecate the following model across all GitHub Copilot experiences (including Copilot Chat, inline edits, ask and agent modes, and code completions) on 6/1/2026: Model Deprecation date Suggested alternative…\nThe post Upcoming deprecation of GPT-4.1 appeared first on The GitHub Blog.",
+      "categories": [
+        "Retired",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 5
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-05-07-upcoming-deprecation-of-gpt-4-1",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-05-08T07:01:37.402Z",
+      "publishedAt": "2026-05-08T00:22:08.000Z",
+      "title": "Upcoming deprecation of GPT-4.1",
+      "url": "https://github.blog/changelog/2026-05-07-upcoming-deprecation-of-gpt-4-1",
+      "summary": "We will deprecate the following model across all GitHub Copilot experiences (including Copilot Chat, inline edits, ask and agent modes, and code completions) on 6/1/2026: Model Deprecation date Suggested alternative…\nThe post Upcoming deprecation of GPT-4.1 appeared first on The GitHub Blog.",
+      "categories": [
+        "Retired",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 5
+    },
+    {
+      "eventId": "github-copilot-blog:https://github.blog/?p=95785",
+      "sourceId": "github-copilot-blog",
+      "sourceName": "GitHub Blog / GitHub Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-05-08T07:01:37.692Z",
+      "publishedAt": "2026-05-07T23:00:00.000Z",
+      "title": "Improving token efficiency in GitHub Agentic Workflows",
+      "url": "https://github.blog/ai-and-ml/github-copilot/improving-token-efficiency-in-github-agentic-workflows/",
+      "summary": "Agentic workflows that run on every pull request can quietly accumulate large API bills. Here's how we instrumented our own production workflows, found the inefficiencies, and built agents to fix them.\nThe post Improving token efficiency in GitHub Agentic Workflows appeared first on The GitHub Blog.",
+      "categories": [
+        "AI & ML",
+        "Automation",
+        "CI/CD",
+        "Enterprise software",
+        "Generative AI",
+        "GitHub Copilot",
+        "LLMs",
+        "Machine learning",
+        "agentic workflows"
+      ],
+      "isFutureDated": false,
+      "score": 1
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-05-07-claude-sonnet-4-deprecated",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-05-08T07:01:37.177Z",
+      "publishedAt": "2026-05-07T22:30:23.000Z",
+      "title": "Claude Sonnet 4 deprecated",
+      "url": "https://github.blog/changelog/2026-05-07-claude-sonnet-4-deprecated",
+      "summary": "We have deprecated the following model across all GitHub Copilot experiences (including Copilot Chat, inline edits, ask and agent modes, and code completions) on May 6, 2026. Model Deprecation date…\nThe post Claude Sonnet 4 deprecated appeared first on The GitHub Blog.",
+      "categories": [
+        "Retired",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 5
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-05-07-claude-sonnet-4-deprecated",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-05-08T07:01:37.402Z",
+      "publishedAt": "2026-05-07T22:30:23.000Z",
+      "title": "Claude Sonnet 4 deprecated",
+      "url": "https://github.blog/changelog/2026-05-07-claude-sonnet-4-deprecated",
+      "summary": "We have deprecated the following model across all GitHub Copilot experiences (including Copilot Chat, inline edits, ask and agent modes, and code completions) on May 6, 2026. Model Deprecation date…\nThe post Claude Sonnet 4 deprecated appeared first on The GitHub Blog.",
+      "categories": [
+        "Retired",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 5
+    }
+  ],
+  "errors": []
+}
