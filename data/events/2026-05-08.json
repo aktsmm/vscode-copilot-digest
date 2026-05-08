@@ -1,16 +1,10 @@
 {
   "date": "2026-05-08",
-  "generatedAt": "2026-05-08T07:01:39.320Z",
+  "generatedAt": "2026-05-08T15:07:50.307Z",
   "latestRun": {
-    "generatedAt": "2026-05-08T07:01:39.320Z",
-    "newEventsCount": 5,
-    "newEventIds": [
-      "github-changelog:https://github.blog/changelog/2026-05-07-upcoming-deprecation-of-gpt-4-1",
-      "github-changelog:https://github.blog/changelog/2026-05-07-claude-sonnet-4-deprecated",
-      "github-changelog-copilot:https://github.blog/changelog/2026-05-07-upcoming-deprecation-of-gpt-4-1",
-      "github-changelog-copilot:https://github.blog/changelog/2026-05-07-claude-sonnet-4-deprecated",
-      "github-copilot-blog:https://github.blog/?p=95785"
-    ],
+    "generatedAt": "2026-05-08T15:07:50.307Z",
+    "newEventsCount": 0,
+    "newEventIds": [],
     "errorCount": 0
   },
   "events": [
