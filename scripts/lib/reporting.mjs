@@ -1303,6 +1303,10 @@ function patternTitle(title) {
       "GPT-4.1 の廃止予告",
     ],
     [
+      "GitHub Copilot code review will start consuming GitHub Actions minutes on June 1, 2026",
+      "Copilot code review が 2026年6月1日から GitHub Actions の利用分数を消費するようになる",
+    ],
+    [
       "Claude Sonnet 4 deprecated",
       "Claude Sonnet 4 が廃止になった",
     ],
