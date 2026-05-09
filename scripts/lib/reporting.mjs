@@ -441,6 +441,38 @@ const exactSummaryMappings = {
     ja: "Insiders 向け Visual Studio Code Agents 体験が更新され、複数セッション運用や agent 中心の開発フローを試しやすくなった。先行導入の検証対象として押さえたい変更。",
     en: "The Visual Studio Code Agents experience in Insiders was updated, making it easier to evaluate multi-session and agent-centric workflows ahead of broader rollout.",
   },
+  "Upcoming deprecation of Grok Code Fast 1": {
+    ja: "2026年5月15日に Grok Code Fast 1 が GitHub Copilot の全体験（Chat・インライン編集・ask/agent モード・コード補完）から廃止される。モデルプロバイダー側の廃止に合わせた前倒し対応で、代替として GPT-5 mini または Claude Haiku 4.5 への移行が推奨される。Enterprise 管理者はモデルポリシーで代替モデルへのアクセスを有効化する必要がある場合がある。",
+    en: "Grok Code Fast 1 will be deprecated from all GitHub Copilot experiences on May 15, 2026, in line with the model provider's retirement date. Suggested alternatives are GPT-5 mini and Claude Haiku 4.5. Enterprise admins may need to enable replacement models via model policies.",
+  },
+  "Copilot code review comment types now in usage metrics API": {
+    ja: "Copilot usage metrics API の pull_requests フィールド下に copilot_suggestions_by_comment_type 配列が新設された。コメント種別（security・bug_risk など）ごとに Copilot が提案したコメント数と、開発者が適用したコメント数を把握できる。enterprise・organization 単位で single-day と 28-day rolling の両方に対応している。",
+    en: "The Copilot usage metrics API now includes a copilot_suggestions_by_comment_type array under pull_requests, breaking down code review suggestions by category such as security and bug_risk. For each type, you can see total suggestions posted and how many were applied, available at both enterprise and organization levels in single-day and 28-day rolling reports.",
+  },
+  "More flexible secrets and variables for Copilot cloud agent": {
+    ja: "Copilot cloud agent 専用の「Agents」シークレットと変数が追加された。従来はリポジトリの Actions 設定内 copilot 環境に個別設定が必要だったが、organization レベルでの一括設定とアクセス可能なリポジトリの選択が可能になった。MCP サーバー設定や内部 package registry のトークンなど、複数リポジトリで共有する設定を一元管理しやすくなる。",
+    en: "Copilot cloud agent now has its own dedicated Agents secrets and variables, separate from the existing Actions, Codespaces, and Dependabot types. You can now configure these at the organization level and share them across any or all repositories, removing the need to duplicate configuration across every repository.",
+  },
+  "Rubber Duck in GitHub Copilot CLI now supports more models": {
+    ja: "Copilot CLI の Rubber Duck が GPT セッションでも利用できるようになった。GPT オーケストレーターセッションでは Claude 系の Rubber Duck エージェントがセカンドオピニオンを提供し、Claude セッションでは GPT-5.5 が Rubber Duck モデルとして利用可能になった。`/experimental on` で有効化する。",
+    en: "Rubber Duck in Copilot CLI now pairs GPT orchestrator sessions with a Claude-powered critic agent and upgrades Claude sessions to use GPT-5.5 as the Rubber Duck reviewer. Enable it by running copilot and toggling /experimental on.",
+  },
+  "Agent pull requests are everywhere. Here's how to review them.": {
+    ja: "agent 生成 PR が急増する中、人間レビュアーが何に注目すべきかをまとめた実践ガイド。agent はコードを正しく完成させるが、インシデント履歴やチームの運用コンテキストを知らないため、表面上はきれいでも技術的負債が潜みやすい点を整理している。",
+    en: "A practical guide to reviewing agent-generated pull requests covering what to look for, where hidden debt accumulates, and how to apply the contextual judgment that agents lack, as AI-authored PRs account for more than one in five code reviews on GitHub.",
+  },
+  "Upcoming deprecation of GPT-4.1": {
+    ja: "2026年6月1日に GPT-4.1 が GitHub Copilot の全体験（Chat・インライン編集・ask/agent モード・コード補完）から廃止される。代替として GPT-5.5 への移行が推奨される。Enterprise 管理者はモデルポリシーで代替モデルへのアクセスを有効化する必要がある場合がある。",
+    en: "GPT-4.1 will be deprecated from all GitHub Copilot experiences on June 1, 2026. The suggested alternative is GPT-5.5. Enterprise admins may need to enable access to the replacement model via their Copilot model policies.",
+  },
+  "Improving token efficiency in GitHub Agentic Workflows": {
+    ja: "PR ごとに自動実行される agentic workflow のトークン使用量削減に向けた GitHub 自身の取り組みを解説した記事。API プロキシ経由の計測基盤の整備から、プロンプト圧縮・キャッシュ活用・ツール呼び出しの最適化まで、実運用で得られた知見が中心。",
+    en: "A GitHub engineering post on reducing token consumption in production agentic workflows that run automatically on every pull request, covering instrumentation via an API proxy and the concrete optimizations applied to YAML-specified workflows.",
+  },
+  "Claude Sonnet 4 deprecated": {
+    ja: "Claude Sonnet 4 が 2026年5月6日付けで GitHub Copilot の全体験（Chat・インライン編集・ask/agent モード・コード補完）から廃止された。代替として Claude Sonnet 4.6 への移行が推奨される。Enterprise 管理者はモデルポリシーで代替モデルへのアクセスを確認する必要がある。",
+    en: "Claude Sonnet 4 was deprecated from all GitHub Copilot experiences on May 6, 2026. The suggested alternative is Claude Sonnet 4.6. Enterprise admins should verify access to the replacement model in their Copilot model policies.",
+  },
 };
 
 const exactImportanceMappings = {
@@ -904,6 +936,38 @@ const exactImportanceMappings = {
     ja: "参照中の Web ページを agent へ直接渡せるため、調査コンテキストの受け渡しミスを減らし、調査〜実装の往復を短縮しやすくなります。",
     en: "This matters because directly sharing browser-tab context with agents reduces handoff errors and shortens the loop between research and implementation.",
   },
+  "Upcoming deprecation of Grok Code Fast 1": {
+    ja: "5月15日の廃止まで時間がないため、Grok Code Fast 1 を直接指定しているワークフローや統合は早急に代替モデルへの切り替えが必要です。Enterprise 管理者はモデルポリシーで代替モデルを有効化し、ユーザーが移行できる環境を整えておく必要があります。",
+    en: "This requires immediate attention because the deprecation date is May 15, 2026. Any workflow or integration explicitly targeting Grok Code Fast 1 must migrate to GPT-5 mini or Claude Haiku 4.5 before that date. Enterprise admins should verify replacement models are enabled in their model policies.",
+  },
+  "Copilot code review comment types now in usage metrics API": {
+    ja: "コードレビュー提案を種別ごとに把握できるようになるため、Copilot コードレビューがどのカテゴリで最も機能しているかを定量的に評価し、運用ルールや展開判断の根拠にしやすくなります。",
+    en: "This matters because teams can now measure not just how much Copilot code review is used, but which categories of feedback it provides most often and which suggestions developers actually adopt, enabling more evidence-based code review policy decisions.",
+  },
+  "More flexible secrets and variables for Copilot cloud agent": {
+    ja: "organization レベルでシークレットと変数を一元管理できるようになるため、複数リポジトリに Copilot cloud agent を展開する際の設定コストが大きく下がります。MCP サーバー設定や内部トークンを全リポジトリに一括配布しやすくなる更新です。",
+    en: "This matters because shared configuration such as internal package registry tokens or MCP server settings can now be managed once at the organization level instead of duplicated across every repository, significantly reducing the overhead of deploying Copilot cloud agent at scale.",
+  },
+  "Rubber Duck in GitHub Copilot CLI now supports more models": {
+    ja: "GPT セッションでも Claude セッションでも Rubber Duck が使えるようになるため、使用するモデルファミリーに関わらず cross-family のセカンドオピニオンを試せるようになります。Copilot CLI を日常利用しているチームは `/experimental on` を試す価値があります。",
+    en: "This expands Rubber Duck coverage to all session types, so teams using GPT or Claude orchestrators can both benefit from cross-family second-opinion review without switching models first. Worth enabling /experimental on if you use Copilot CLI regularly.",
+  },
+  "Agent pull requests are everywhere. Here's how to review them.": {
+    ja: "agent PR のレビューが業務の一部になりつつある中、コードが表面上きれいでも技術的負債が潜みやすいという特性と、人間が補うべき判断の種類を整理しており、チームのレビュー基準や訓練の参考になります。",
+    en: "As agent-authored PRs become routine, this is a useful reference for defining what reviewers should specifically look for and where human judgment remains irreplaceable, which can inform team review guidelines and training.",
+  },
+  "Upcoming deprecation of GPT-4.1": {
+    ja: "6月1日までに GPT-4.1 を直接指定しているワークフローや統合は代替モデルへの切り替えが必要です。Enterprise 管理者はモデルポリシーで GPT-5.5 を有効化し、ユーザーが移行できる環境を整えておく必要があります。",
+    en: "Any workflow or integration explicitly targeting GPT-4.1 must be updated before June 1, 2026. Enterprise admins should verify that GPT-5.5 is enabled in their model policies so users can migrate without disruption.",
+  },
+  "Improving token efficiency in GitHub Agentic Workflows": {
+    ja: "CI で自動実行される agentic workflow のコストが見えにくくなりやすい問題を、計測方法と最適化戦略で整理しており、agentic workflow を本番運用しているチームがコスト管理を進める参考になります。",
+    en: "This matters because it shows how to instrument and optimize token costs for production agentic workflows running automatically in CI, giving teams a practical model for reducing API spend without sacrificing workflow quality.",
+  },
+  "Claude Sonnet 4 deprecated": {
+    ja: "既に廃止済みのため、Claude Sonnet 4 を直接指定しているワークフローや統合は Claude Sonnet 4.6 への切り替えが必要です。Enterprise 管理者はモデルポリシーで代替モデルへのアクセスを確認してください。",
+    en: "This is already in effect, so any workflow or integration explicitly targeting Claude Sonnet 4 must be updated to Claude Sonnet 4.6. Enterprise admins should confirm the replacement model is enabled in their model policies.",
+  },
 };
 
 function toDateOnly(value) {
@@ -1257,6 +1321,38 @@ function patternTitle(title) {
     [
       "Secret scanning with GitHub MCP Server is now generally available",
       "GitHub MCP Server の secret scanning が一般提供になった",
+    ],
+    [
+      "Upcoming deprecation of Grok Code Fast 1",
+      "Grok Code Fast 1 の廃止予告（2026年5月15日）",
+    ],
+    [
+      "Copilot code review comment types now in usage metrics API",
+      "Copilot コードレビューのコメント種別が usage metrics API で確認できるようになった",
+    ],
+    [
+      "More flexible secrets and variables for Copilot cloud agent",
+      "Copilot cloud agent のシークレットと変数が組織・リポジトリ単位で柔軟に設定できるようになった",
+    ],
+    [
+      "Rubber Duck in GitHub Copilot CLI now supports more models",
+      "Copilot CLI の Rubber Duck がより多くのモデルに対応した",
+    ],
+    [
+      "Agent pull requests are everywhere. Here's how to review them.",
+      "agent 生成 PR のレビュー実践ガイド",
+    ],
+    [
+      "Upcoming deprecation of GPT-4.1",
+      "GPT-4.1 の廃止予告（2026年6月1日）",
+    ],
+    [
+      "Improving token efficiency in GitHub Agentic Workflows",
+      "GitHub Agentic Workflows のトークン効率改善の取り組み",
+    ],
+    [
+      "Claude Sonnet 4 deprecated",
+      "Claude Sonnet 4 が廃止された",
     ],
   ]);
 
