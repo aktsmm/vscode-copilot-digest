@@ -1,14 +1,10 @@
 {
   "date": "2026-05-09",
-  "generatedAt": "2026-05-09T07:22:10.427Z",
+  "generatedAt": "2026-05-09T14:34:31.883Z",
   "latestRun": {
-    "generatedAt": "2026-05-09T07:22:10.427Z",
-    "newEventsCount": 3,
-    "newEventIds": [
-      "github-changelog-copilot:https://github.blog/changelog/2026-05-08-upcoming-deprecation-of-grok-code-fast-1",
-      "github-changelog-copilot:https://github.blog/changelog/2026-05-08-copilot-code-review-comment-types-now-in-usage-metrics-api",
-      "github-changelog-copilot:https://github.blog/changelog/2026-05-08-more-flexible-secrets-and-variables-for-copilot-cloud-agent"
-    ],
+    "generatedAt": "2026-05-09T14:34:31.883Z",
+    "newEventsCount": 0,
+    "newEventIds": [],
     "errorCount": 0
   },
   "events": [
