@@ -1,12 +1,54 @@
 {
   "date": "2026-05-11",
-  "generatedAt": "2026-05-11T08:39:39.408Z",
+  "generatedAt": "2026-05-11T16:15:20.624Z",
   "latestRun": {
-    "generatedAt": "2026-05-11T08:39:39.408Z",
-    "newEventsCount": 0,
-    "newEventIds": [],
+    "generatedAt": "2026-05-11T16:15:20.624Z",
+    "newEventsCount": 4,
+    "newEventIds": [
+      "vscode-updates:891a51fe0b681317de410a2c5fa25f68f5eb787b60bea5f478dbeae05863a41f",
+      "vscode-release-notes-1-118:def536021eeedf444a1a2a3a2caf10b27817b134ee2b3334e499562ce590f021",
+      "vscode-release-notes-1-117:d617f956c41e3c3434b7d4b31832c657f30611fb53c304a9c9b8ec3b32845fb6",
+      "vscode-release-notes-1-116:12f16fab7c72e9f0d5331957590c6060209336be12df391d6c444d1edfcc1e7c"
+    ],
     "errorCount": 0
   },
-  "events": [],
+  "events": [
+    {
+      "eventId": "vscode-updates:891a51fe0b681317de410a2c5fa25f68f5eb787b60bea5f478dbeae05863a41f",
+      "sourceId": "vscode-updates",
+      "sourceName": "VS Code Updates",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-05-11T16:15:18.760Z",
+      "publishedAt": "2026-05-06T00:00:00.000Z",
+      "title": "VS Code Updates changed",
+      "url": "https://code.visualstudio.com/updates/",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [],
+        "additions": [
+          "Follow us on LinkedIn, X, Bluesky"
+        ]
+      },
+      "headings": [
+        "Visual Studio Code 1.119",
+        "Agent experience",
+        "Sharing browser tabs with agents",
+        "Visual Studio Code Agents (Insiders)",
+        "OpenTelemetry tracing for agent sessions",
+        "Chat experience",
+        "Show model details for Copilot CLI and Claude agent responses",
+        "Optimized token usage for managing todo lists (Experimental)",
+        "Usage-based billing updates",
+        "Trust and Security",
+        "Allow network access in agent sandboxes",
+        "Auto-approve writes to the temp folder for session-allowed commands"
+      ],
+      "score": 2
+    }
+  ],
   "errors": []
 }

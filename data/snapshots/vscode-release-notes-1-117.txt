@@ -22,7 +22,7 @@ April 2025
 March 2025
 View All Releases
 H1: Visual Studio Code 1.117
-Follow us on LinkedIn, X, Bluesky |
+Follow us on LinkedIn, X, Bluesky
 Release date: April 22, 2026
 Downloads: Windows: x64 Arm64 | Mac: Universal Intel silicon | Linux: deb rpm tarball Arm snap
 Welcome to the 1.117 release of Visual Studio Code. This release adds new capabilities for Copilot Enterprise and Business users and further improves the agent experience in VS Code. Here are the highlights for this release:

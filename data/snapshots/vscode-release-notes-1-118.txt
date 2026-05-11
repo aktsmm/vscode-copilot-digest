@@ -22,7 +22,7 @@ April 2025
 March 2025
 View All Releases
 H1: Visual Studio Code 1.118
-Follow us on LinkedIn, X, Bluesky |
+Follow us on LinkedIn, X, Bluesky
 Release date: April 29, 2026
 Downloads: Windows: x64 Arm64 | Mac: Universal Intel silicon | Linux: deb rpm tarball Arm snap
 Welcome to the 1.118 release of Visual Studio Code. This release expands where you can work with Copilot agents and makes them more efficient. Here are the highlights for this release:
