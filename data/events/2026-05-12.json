@@ -1,12 +1,36 @@
 {
   "date": "2026-05-12",
-  "generatedAt": "2026-05-12T08:06:28.844Z",
+  "generatedAt": "2026-05-12T16:02:00.639Z",
   "latestRun": {
-    "generatedAt": "2026-05-12T08:06:28.844Z",
-    "newEventsCount": 0,
-    "newEventIds": [],
+    "generatedAt": "2026-05-12T16:02:00.639Z",
+    "newEventsCount": 1,
+    "newEventIds": [
+      "github-copilot-blog:https://github.blog/?p=95693"
+    ],
     "errorCount": 0
   },
-  "events": [],
+  "events": [
+    {
+      "eventId": "github-copilot-blog:https://github.blog/?p=95693",
+      "sourceId": "github-copilot-blog",
+      "sourceName": "GitHub Blog / GitHub Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-05-12T16:01:57.774Z",
+      "publishedAt": "2026-05-12T15:00:00.000Z",
+      "title": "Dungeons &#038; Desktops: Building a procedurally generated roguelike with GitHub Copilot CLI",
+      "url": "https://github.blog/ai-and-ml/github-copilot/dungeons-desktops-building-a-procedurally-generated-roguelike-with-github-copilot-cli/",
+      "summary": "Learn how one Hubber used GitHub Copilot CLI to build an extension that turns any codebase into a unique, roguelike dungeon. \nThe post Dungeons & Desktops: Building a procedurally generated roguelike with GitHub Copilot CLI appeared first on The GitHub Blog.",
+      "categories": [
+        "AI & ML",
+        "Application development",
+        "Gaming",
+        "GitHub Copilot",
+        "gaming",
+        "GitHub Copilot CLI"
+      ],
+      "isFutureDated": false,
+      "score": 1
+    }
+  ],
   "errors": []
 }
