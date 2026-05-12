@@ -478,6 +478,14 @@ const exactSummaryMappings = {
     ja: "Claude Sonnet 4 が 2026年5月6日付けで GitHub Copilot の全体験（Chat・インライン編集・ask/agent モード・コード補完）から廃止された。代替として Claude Sonnet 4.6 への移行が推奨される。Enterprise 管理者はモデルポリシーで代替モデルへのアクセスを確認する必要がある。",
     en: "Claude Sonnet 4 was deprecated from all GitHub Copilot experiences on May 6, 2026. The suggested alternative is Claude Sonnet 4.6. Enterprise admins should verify access to the replacement model in their Copilot model policies.",
   },
+  "Copilot code review: Comment experience improvements": {
+    ja: "Copilot code review のコメントに High / Medium / Low の重大度ラベルが追加され、同じ指摘を自動グループ化するようになった。新しい PR エクスペリエンスに opt-in しているユーザー向け。大規模 PR でもレビューの優先付けと重複ノイズの抑制がしやすくなる。",
+    en: "Copilot code review comments now carry High, Medium, or Low severity labels and similar suggestions are automatically grouped together. Available to users opted into the new pull requests experience, these changes make it easier to prioritize feedback and reduce repetitive noise on larger pull requests.",
+  },
+  "April reports are now available to prepare for usage-based billing": {
+    ja: "4月分の使用レポートがダウンロード可能になった。AI credit 換算での Copilot 利用量を確認でき、6月1日から始まる従量課金移行の前にトップ消費者やモデル別利用傾向を把握できる。0x モデルの4月1日〜24日分は含まれず、4月24〜30日にデータ重複が生じる場合がある点に注意が必要。",
+    en: "April usage reports are now available for download, showing how April Copilot activity translates into AI credits before the June 1 billing transition. Use the report to identify top consumers, model usage patterns, and cost ranges, noting that 0x model activity before April 24 is excluded and some duplicate entries for April 24–30 may appear.",
+  },
 };
 
 const exactImportanceMappings = {
@@ -978,6 +986,14 @@ const exactImportanceMappings = {
     ja: "既に廃止済みのため、Claude Sonnet 4 を直接指定しているワークフローや統合は Claude Sonnet 4.6 への切り替えが必要です。Enterprise 管理者はモデルポリシーで代替モデルへのアクセスを確認してください。",
     en: "This is already in effect, so any workflow or integration explicitly targeting Claude Sonnet 4 must be updated to Claude Sonnet 4.6. Enterprise admins should confirm the replacement model is enabled in their model policies.",
   },
+  "Copilot code review: Comment experience improvements": {
+    ja: "重大度ラベルとグループ化で Copilot コメントの優先付けがしやすくなり、大規模 PR でのレビュー効率が向上します。新しい PR エクスペリエンスへの opt-in が前提なので、設定を確認しておくとよいでしょう。",
+    en: "This matters because severity labels and grouped suggestions let reviewers prioritize Copilot feedback more efficiently, especially on large pull requests. Requires opting into the new pull requests experience.",
+  },
+  "April reports are now available to prepare for usage-based billing": {
+    ja: "6月1日の従量課金移行前にコスト規模を把握できる唯一の公式データです。管理者はレポートを使って予算計画を立て、トップ消費者とモデル別利用傾向を事前に確認しておくことが推奨されます。",
+    en: "This is the most direct tool available before the June 1 billing transition to estimate actual costs and identify heavy users. Download the report now to plan budgets and understand your AI credit consumption patterns in advance.",
+  },
 };
 
 function toDateOnly(value) {
@@ -1368,6 +1384,14 @@ function patternTitle(title) {
     [
       "Claude Sonnet 4 deprecated",
       "Claude Sonnet 4 が廃止された",
+    ],
+    [
+      "Copilot code review: Comment experience improvements",
+      "Copilot code review のコメント体験が改善された",
+    ],
+    [
+      "April reports are now available to prepare for usage-based billing",
+      "4月分レポートが公開 — 従量課金移行の準備に",
     ],
   ]);
 
