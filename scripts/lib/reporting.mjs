@@ -159,6 +159,11 @@ const exactSummaryMappings = {
     ja: "GitHub Copilot coding agent の最近の更新まとめ。branch や pull request をまたぐ開発フローと、agent の作業体験がどう広がったかを俯瞰できる。",
     en: "A roundup of recent GitHub Copilot coding agent changes, useful for understanding how branch, pull request, and agent workflows are expanding.",
   },
+  "Dungeons & Desktops: Building a procedurally generated roguelike with GitHub Copilot CLI":
+    {
+      ja: "GitHub Copilot CLI を使い、任意のコードベースを手続き生成ローグライクのダンジョンに変換する拡張を作った実践記事。Copilot CLI を使った試作の進め方を具体例で確認できる。",
+      en: "A practical post showing how one engineer used GitHub Copilot CLI to build an extension that turns any codebase into a procedurally generated roguelike dungeon.",
+    },
   "Fix merge conflicts in three clicks with Copilot cloud agent": {
     ja: "github.com の pull request 上で、新しい Fix with Copilot ボタンからマージ競合を 3 クリックで解消できるようになった。コメント送信後は Copilot cloud agent が競合解消、build と test の確認、push までをクラウド実行環境で処理する。",
     en: "Pull requests on github.com can now resolve merge conflicts in three clicks through a new Fix with Copilot button, with Copilot cloud agent handling conflict resolution, build and test validation, and the push from its cloud environment.",
@@ -641,6 +646,11 @@ const exactImportanceMappings = {
     ja: "coding agent の更新点を横断して把握できるので、背景作業の自動化をどこまで任せられるかを見極める助けになります。",
     en: "This matters because it helps teams evaluate how much more background work can be delegated safely to the coding agent across the latest updates.",
   },
+  "Dungeons & Desktops: Building a procedurally generated roguelike with GitHub Copilot CLI":
+    {
+      ja: "Copilot CLI を使った試作フローの実例として、terminal 中心の開発でどこまで短時間に形にできるかを判断する材料になります。",
+      en: "This matters as a concrete example of how far terminal-first prototyping can be pushed with Copilot CLI in a real build.",
+    },
   "Fix merge conflicts in three clicks with Copilot cloud agent": {
     ja: "競合解消のためにローカルへ戻って手で直す回数を減らせるので、pull request 上で止まりやすい統合作業をそのまま前に進めやすくなります。",
     en: "This matters because it reduces how often developers have to drop out of a pull request into local manual conflict resolution, keeping integration work moving inside the review flow.",
@@ -989,6 +999,7 @@ function normalizeWhitespace(value) {
 function decodeHtmlEntities(value) {
   return String(value ?? "")
     .replace(/&#8217;|&#39;/g, "'")
+    .replace(/&#038;/g, "&")
     .replace(/&#8220;|&#8221;/g, '"')
     .replace(/&#8211;|&#8212;/g, "-")
     .replace(/&#8230;/g, "...")
@@ -1213,6 +1224,10 @@ function patternTitle(title) {
     [
       "What's new with GitHub Copilot coding agent",
       "GitHub Copilot coding agent の新機能まとめ",
+    ],
+    [
+      "Dungeons & Desktops: Building a procedurally generated roguelike with GitHub Copilot CLI",
+      "GitHub Copilot CLI で手続き生成ローグライク拡張を作る実践例",
     ],
     [
       "Fix merge conflicts in three clicks with Copilot cloud agent",
