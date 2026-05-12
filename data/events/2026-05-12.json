@@ -1,15 +1,87 @@
 {
   "date": "2026-05-12",
-  "generatedAt": "2026-05-12T16:02:00.639Z",
+  "generatedAt": "2026-05-12T22:38:46.219Z",
   "latestRun": {
-    "generatedAt": "2026-05-12T16:02:00.639Z",
-    "newEventsCount": 1,
+    "generatedAt": "2026-05-12T22:38:46.219Z",
+    "newEventsCount": 5,
     "newEventIds": [
-      "github-copilot-blog:https://github.blog/?p=95693"
+      "github-changelog:https://github.blog/changelog/2026-05-12-copilot-code-review-comment-experience-improvements",
+      "github-changelog:https://github.blog/changelog/2026-05-12-april-reports-are-now-available-to-prepare-for-usage-based-billing",
+      "github-changelog-copilot:https://github.blog/changelog/2026-05-12-copilot-code-review-comment-experience-improvements",
+      "github-changelog-copilot:https://github.blog/changelog/2026-05-12-april-reports-are-now-available-to-prepare-for-usage-based-billing",
+      "vscode-updates:8ad506e7530c582a83fbb6d5241c0b1d48619c103705d895910be491ab9dc77a"
     ],
     "errorCount": 0
   },
   "events": [
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-05-12-copilot-code-review-comment-experience-improvements",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-05-12T22:38:43.348Z",
+      "publishedAt": "2026-05-12T19:14:26.000Z",
+      "title": "Copilot code review: Comment experience improvements",
+      "url": "https://github.blog/changelog/2026-05-12-copilot-code-review-comment-experience-improvements",
+      "summary": "Copilot code review comments are now easier to scan and act on. Available to all users opted into the new pull requests experience, grouped suggestions, severity levels, and an updated…\nThe post Copilot code review: Comment experience improvements appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 1
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-05-12-copilot-code-review-comment-experience-improvements",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-05-12T22:38:43.683Z",
+      "publishedAt": "2026-05-12T19:14:26.000Z",
+      "title": "Copilot code review: Comment experience improvements",
+      "url": "https://github.blog/changelog/2026-05-12-copilot-code-review-comment-experience-improvements",
+      "summary": "Copilot code review comments are now easier to scan and act on. Available to all users opted into the new pull requests experience, grouped suggestions, severity levels, and an updated…\nThe post Copilot code review: Comment experience improvements appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 1
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-05-12-april-reports-are-now-available-to-prepare-for-usage-based-billing",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-05-12T22:38:43.348Z",
+      "publishedAt": "2026-05-12T19:01:57.000Z",
+      "title": "April reports are now available to prepare for usage-based billing",
+      "url": "https://github.blog/changelog/2026-05-12-april-reports-are-now-available-to-prepare-for-usage-based-billing",
+      "summary": "Starting today, you can download your usage report to see how April’s GitHub Copilot activity translates into AI credits. The new billing unit of AI credits is going live on…\nThe post April reports are now available to prepare for usage-based billing appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 1
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-05-12-april-reports-are-now-available-to-prepare-for-usage-based-billing",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-05-12T22:38:43.683Z",
+      "publishedAt": "2026-05-12T19:01:57.000Z",
+      "title": "April reports are now available to prepare for usage-based billing",
+      "url": "https://github.blog/changelog/2026-05-12-april-reports-are-now-available-to-prepare-for-usage-based-billing",
+      "summary": "Starting today, you can download your usage report to see how April’s GitHub Copilot activity translates into AI credits. The new billing unit of AI credits is going live on…\nThe post April reports are now available to prepare for usage-based billing appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 1
+    },
     {
       "eventId": "github-copilot-blog:https://github.blog/?p=95693",
       "sourceId": "github-copilot-blog",
@@ -30,6 +102,42 @@
       ],
       "isFutureDated": false,
       "score": 1
+    },
+    {
+      "eventId": "vscode-updates:8ad506e7530c582a83fbb6d5241c0b1d48619c103705d895910be491ab9dc77a",
+      "sourceId": "vscode-updates",
+      "sourceName": "VS Code Updates",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-05-12T22:38:44.187Z",
+      "publishedAt": "2026-05-06T00:00:00.000Z",
+      "title": "VS Code Updates changed",
+      "url": "https://code.visualstudio.com/updates/",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [],
+        "additions": [
+          "Update 1.119.1: The update addresses these security issues."
+        ]
+      },
+      "headings": [
+        "Visual Studio Code 1.119",
+        "Agent experience",
+        "Sharing browser tabs with agents",
+        "Visual Studio Code Agents (Insiders)",
+        "OpenTelemetry tracing for agent sessions",
+        "Chat experience",
+        "Show model details for Copilot CLI and Claude agent responses",
+        "Optimized token usage for managing todo lists (Experimental)",
+        "Usage-based billing updates",
+        "Trust and Security",
+        "Allow network access in agent sandboxes",
+        "Auto-approve writes to the temp folder for session-allowed commands"
+      ],
+      "score": 2
     }
   ],
   "errors": []

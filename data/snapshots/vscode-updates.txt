@@ -24,6 +24,7 @@ View All Releases
 H1: Visual Studio Code 1.119
 Follow us on LinkedIn, X, Bluesky
 Release date: May 6, 2026
+Update 1.119.1: The update addresses these security issues.
 Downloads: Windows: x64 Arm64 | Mac: Universal Intel silicon | Linux: deb rpm tarball Arm snap
 Welcome to the 1.119 release of Visual Studio Code. This release focuses on smoother agent interactions, enhanced observability, and more efficient trust and security controls.
 Agent-browser interaction: Let agents discover and ask for integrated browser access.
