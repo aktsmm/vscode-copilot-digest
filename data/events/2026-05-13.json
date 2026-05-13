@@ -1,20 +1,49 @@
 {
   "date": "2026-05-13",
-  "generatedAt": "2026-05-13T16:01:43.555Z",
+  "generatedAt": "2026-05-13T22:42:33.860Z",
   "latestRun": {
-    "generatedAt": "2026-05-13T16:01:43.555Z",
-    "newEventsCount": 6,
+    "generatedAt": "2026-05-13T22:42:33.860Z",
+    "newEventsCount": 2,
     "newEventIds": [
-      "vscode-updates:c8ae2fa58f7d43e2b3471c7e33edfd78be5621708d09e8ca1615bc8f8ae2dd7e",
-      "vscode-release-notes-1-120:section:dc4137b50bd9012c3ad78186c97be945e78a0af6d9efe5d00e896c587c0f68b8",
-      "vscode-release-notes-1-120:section:8334f9e430d20bb209a0a01a180f198f0393a319123c98d69ac93edd87dd345f",
-      "vscode-release-notes-1-120:section:f2a060392ea072efb099531d74cb886ace1d85b4ca9166167d4762624a9a0ec9",
-      "vscode-release-notes-1-120:section:20cad457f454ec86187362e4a21c624ab5290d23835510652d5b9568e9ff58de",
-      "vscode-release-notes-1-118:545947dbe91c923eafbe48fa5abc628a1e0df63c34ccaa5a2929f6d260624a67"
+      "github-changelog:https://github.blog/changelog/2026-05-07-start-copilot-cloud-agent-tasks-via-the-rest-api",
+      "vscode-feed:https://code.visualstudio.com/updates/v1_120"
     ],
     "errorCount": 0
   },
   "events": [
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-05-07-start-copilot-cloud-agent-tasks-via-the-rest-api",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-05-13T22:42:32.389Z",
+      "publishedAt": "2026-05-13T18:01:15.000Z",
+      "title": "Start Copilot cloud agent tasks via the REST API",
+      "url": "https://github.blog/changelog/2026-05-13-start-copilot-cloud-agent-tasks-via-the-rest-api",
+      "summary": "Copilot Business and Copilot Enterprise users can programmatically start Copilot cloud agent tasks with the new Agent tasks REST API, available in public preview. Copilot cloud agent works in the…\nThe post Start Copilot cloud agent tasks via the REST API appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 6
+    },
+    {
+      "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_120",
+      "sourceId": "vscode-feed",
+      "sourceName": "VS Code Feed",
+      "kind": "feed_entry",
+      "detectedAt": "2026-05-13T22:42:32.465Z",
+      "publishedAt": "2026-05-13T17:00:00.000Z",
+      "title": "Visual Studio Code 1.120",
+      "url": "https://code.visualstudio.com/updates/v1_120",
+      "summary": "Learn what's new in Visual Studio Code 1.120\n Read the full article",
+      "categories": [
+        "release"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
     {
       "eventId": "vscode-updates:c8ae2fa58f7d43e2b3471c7e33edfd78be5621708d09e8ca1615bc8f8ae2dd7e",
       "sourceId": "vscode-updates",
