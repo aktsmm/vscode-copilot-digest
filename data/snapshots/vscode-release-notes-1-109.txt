@@ -1,4 +1,4 @@
-Insiders
+1.120
 1.119
 1.118
 1.117
@@ -10,16 +10,6 @@ Insiders
 1.111
 February 2026
 January 2026
-December 2025
-November 2025
-October 2025
-September 2025
-August 2025
-July 2025
-June 2025
-May 2025
-April 2025
-March 2025
 View All Releases
 H1: January 2026 (version 1.109)
 Release date: February 4, 2026

@@ -1,0 +1,90 @@
+{
+  "date": "2026-05-13",
+  "generatedAt": "2026-05-13T08:14:11.305Z",
+  "latestRun": {
+    "generatedAt": "2026-05-13T08:14:11.305Z",
+    "newEventsCount": 4,
+    "newEventIds": [
+      "vscode-updates:0a142ecc5be7e1d1549b8002b97ece346a07a2aad378f8ec08e5c93fafa01592",
+      "vscode-release-notes-1-109:d89afad02e6701c5b8e14b02262f343d99ad466d5bd60db27a2b119090edfe9b",
+      "vscode-release-notes-1-117:279bf6120cba226c90954bc6814b77e934210a9c81cf635686d83235b8a01e1e",
+      "vscode-release-notes-1-116:969b65b1fa6a2efd1b13b6e30369ce542664611d9866bbbab764b81cccfd2524"
+    ],
+    "errorCount": 0
+  },
+  "events": [
+    {
+      "eventId": "vscode-updates:0a142ecc5be7e1d1549b8002b97ece346a07a2aad378f8ec08e5c93fafa01592",
+      "sourceId": "vscode-updates",
+      "sourceName": "VS Code Updates",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-05-13T08:14:09.928Z",
+      "publishedAt": "2026-05-06T00:00:00.000Z",
+      "title": "VS Code Updates changed",
+      "url": "https://code.visualstudio.com/updates/",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [],
+        "additions": [
+          "1.120"
+        ]
+      },
+      "headings": [
+        "Visual Studio Code 1.119",
+        "Agent experience",
+        "Sharing browser tabs with agents",
+        "Visual Studio Code Agents (Insiders)",
+        "OpenTelemetry tracing for agent sessions",
+        "Chat experience",
+        "Show model details for Copilot CLI and Claude agent responses",
+        "Optimized token usage for managing todo lists (Experimental)",
+        "Usage-based billing updates",
+        "Trust and Security",
+        "Allow network access in agent sandboxes",
+        "Auto-approve writes to the temp folder for session-allowed commands"
+      ],
+      "score": 2
+    },
+    {
+      "eventId": "vscode-release-notes-1-109:d89afad02e6701c5b8e14b02262f343d99ad466d5bd60db27a2b119090edfe9b",
+      "sourceId": "vscode-release-notes-1-109",
+      "sourceName": "VS Code Release Notes 1.109",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-05-13T08:14:10.091Z",
+      "publishedAt": "2026-02-04T00:00:00.000Z",
+      "title": "VS Code Release Notes 1.109 changed",
+      "url": "https://code.visualstudio.com/updates/v1_109",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [],
+        "additions": [
+          "1.120"
+        ]
+      },
+      "headings": [
+        "January 2026 (version 1.109)",
+        "Upcoming events",
+        "Agent Sessions Day",
+        "Chat UX",
+        "Message steering and queueing (Experimental)",
+        "Anthropic models now show thinking tokens",
+        "Mermaid diagrams in chat responses",
+        "Ask Questions tool (Experimental)",
+        "Plan agent",
+        "Context window details",
+        "Inline chat UX revamp (Preview)",
+        "Model descriptions in the model picker"
+      ],
+      "score": 2
+    }
+  ],
+  "errors": []
+}
