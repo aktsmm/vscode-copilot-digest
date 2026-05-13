@@ -51,7 +51,7 @@
         "https://github.blog/changelog/2026-04-08-github-mobile-research-and-code-with-copilot-cloud-agent-anywhere"
       ],
       "futureSeenIds": [],
-      "lastCheckedAt": "2026-05-13T08:14:09.781Z"
+      "lastCheckedAt": "2026-05-13T08:15:34.970Z"
     },
     "github-changelog-copilot": {
       "seenIds": [
@@ -109,7 +109,7 @@
         "https://github.blog/changelog/2026-04-02-copilot-sdk-in-public-preview"
       ],
       "futureSeenIds": [],
-      "lastCheckedAt": "2026-05-13T08:14:09.798Z"
+      "lastCheckedAt": "2026-05-13T08:15:35.017Z"
     },
     "github-copilot-blog": {
       "seenIds": [
@@ -133,7 +133,7 @@
         "https://github.blog/?p=94179"
       ],
       "futureSeenIds": [],
-      "lastCheckedAt": "2026-05-13T08:14:09.817Z"
+      "lastCheckedAt": "2026-05-13T08:15:35.089Z"
     },
     "vscode-feed": {
       "seenIds": [
@@ -160,25 +160,28 @@
       "futureSeenIds": [
         "https://code.visualstudio.com/updates/v1_120"
       ],
-      "lastCheckedAt": "2026-05-13T08:14:09.842Z"
+      "lastCheckedAt": "2026-05-13T08:15:35.092Z",
+      "lastError": "fetch failed"
     },
     "vscode-updates": {
       "releasePublishedAt": "2026-05-06T00:00:00.000Z",
       "releaseTitle": "Visual Studio Code 1.119",
       "snapshotHash": "0a142ecc5be7e1d1549b8002b97ece346a07a2aad378f8ec08e5c93fafa01592",
-      "lastCheckedAt": "2026-05-13T08:14:09.928Z"
+      "lastCheckedAt": "2026-05-13T08:15:35.095Z",
+      "lastError": "fetch failed"
     },
     "vscode-release-notes-1-109": {
       "releasePublishedAt": "2026-02-04T00:00:00.000Z",
       "releaseTitle": "January 2026 (version 1.109)",
       "snapshotHash": "d89afad02e6701c5b8e14b02262f343d99ad466d5bd60db27a2b119090edfe9b",
-      "lastCheckedAt": "2026-05-13T08:14:10.095Z"
+      "lastCheckedAt": "2026-05-13T08:15:35.097Z",
+      "lastError": "fetch failed"
     },
     "copilot-whats-new": {
-      "releasePublishedAt": "2026-05-13T08:14:10.398Z",
+      "releasePublishedAt": "2026-05-13T08:15:35.462Z",
       "releaseTitle": "Preview upcoming features for GitHub Copilot",
       "snapshotHash": "b420f1decd1c48516d66030e4292d9537371f69c4260aeb4b1a29975eb279571",
-      "lastCheckedAt": "2026-05-13T08:14:10.398Z"
+      "lastCheckedAt": "2026-05-13T08:15:35.463Z"
     },
     "publickey": {
       "seenIds": [
@@ -187,7 +190,8 @@
         "tag:www.publickey1.jp,2026://2.8527"
       ],
       "futureSeenIds": [],
-      "lastCheckedAt": "2026-05-13T08:14:11.010Z"
+      "lastCheckedAt": "2026-05-13T08:15:35.466Z",
+      "lastError": "fetch failed"
     },
     "vscode-release-notes-1-115": {
       "sectionHashes": {
