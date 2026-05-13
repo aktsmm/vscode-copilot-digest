@@ -40,6 +40,10 @@ const monthMap = {
 };
 
 const vscodeReleaseSummaries = {
+  "1.120": {
+    ja: "Claude agent が plan に対応し、各 plan step へ inline でフィードバックできるようになった。chat tool 出力圧縮、terminal の password / secret prompt 検知、agent host が優先 shell profile を尊重する変更など、agent の計画・実行・安全性まわりの改善がまとまった release。",
+    en: "Claude agent now supports planning and inline feedback on individual plan steps. The release also adds chat tool-output compression, password and secret prompt detection in agent terminal commands, and preferred shell-profile support in agent host terminals, improving agent planning, execution, and safety.",
+  },
   "1.119": {
     ja: "Changes ビューが Git 統合になり、terminal 経由の変更も含めて agent セッション中のファイル変更全体を把握しやすくなった。Copilot CLI にモデルバッジが追加され、使用モデルと multiplier を応答ごとに確認できる。新しい sandbox モードではファイルシステム隔離を維持しながら外部ネットワークアクセスも許可でき、オンライン通信が必要なタスクへの対応が広がった。ブラウザータブをチャットのコンテキストとして添付する機能や、model picker への実コスト表示なども加わった。",
     en: "The Changes view in agent host sessions is now powered by Git, capturing all file changes including those from terminal commands. Copilot CLI adds model badges showing the model and multiplier used for each response. A new sandbox mode allows outbound network traffic while keeping filesystem isolation, expanding extension and task support. Additional highlights include browser-tab snapshots as chat context and actual model costs in the model picker.",
@@ -224,10 +228,6 @@ const exactSummaryMappings = {
     ja: "VS Code の weekly stable 化後、v1.111 から v1.115 までの Copilot / agent 更新をまとめた changelog。Autopilot、browser / terminal tool 改善、customization など、この 1 か月の変化を横断して追える。",
     en: "A changelog roundup for GitHub Copilot in VS Code covering the weekly stable releases from v1.111 through v1.115, including Autopilot, browser and terminal tool improvements, and broader agent workflow changes.",
   },
-  "VS Code Updates changed": {
-    ja: "VS Code の版一覧ページに 1.119 が追加された。次期 release notes の公開準備が始まったことを示す差分。ハブページで現在紹介している 1.118 の主な内容は agent 体験拡張（Visual Studio Code Agents、CLI 遠隔操作、Copilot co-author 自動追加）やコードベース検索強化など。",
-    en: "The VS Code Updates landing page now lists 1.119 in its version index, indicating the next release notes are being prepared. The currently featured 1.118 section covers agent experience improvements, remote CLI session control, co-author defaults, and codebase search enhancements.",
-  },
   "Visual Studio Code 1.117: Incremental rendering of chat responses (Experimental)":
     {
       ja: "chat 応答をブロック単位でストリーミング描画する incremental rendering が experimental として追加された。トークン到着に合わせてブロックを順次表示するため、長い応答の体感待ち時間が短くなる。`chat.experimental.incrementalRendering.enabled` で有効化できる。",
@@ -283,10 +283,6 @@ const exactSummaryMappings = {
   "Visual Studio Code 1.115: Upcoming deprecations": {
     ja: "Edit Mode は 1.110 で正式 deprecated になっており、`chat.editMode.hidden` での一時再有効化も 1.125 までで終わる予定になった。旧 edit flow を使っている環境向けの撤去タイムライン整理。",
     en: "Edit Mode has been officially deprecated since 1.110, and the temporary `chat.editMode.hidden` escape hatch will stop working after 1.125, clarifying the removal timeline.",
-  },
-  "VS Code Release Notes 1.109 changed": {
-    ja: "VS Code Release Notes 1.109 ページのナビゲーションに 1.119 が追加された。サイト共通の版一覧ナビゲーション更新で、1.109 ページ自体の内容に変更はない。",
-    en: "The version navigation on the VS Code Release Notes 1.109 page now includes 1.119, reflecting a site-wide index update rather than changes to the 1.109 release content.",
   },
   "60 million Copilot code reviews and counting": {
     ja: "Copilot code review が初期公開から 1 年で 10 倍成長し、GitHub 上の code review の 5 件に 1 件超を占めるまで広がったという報告。agentic architecture、継続評価、batch autofix などで signal と speed を両立させる設計も解説している。",
@@ -725,6 +721,10 @@ const exactImportanceMappings = {
     ja: "browser と terminal の agent tool が長時間タスク前提で実用寄りになり、Agents app preview も含めて agent-native 開発を日常運用へ近づける release です。",
     en: "This matters because browser and terminal agent tools become much more practical for long-running work, while the Agents app preview pushes VS Code further toward day-to-day agent-native development.",
   },
+  "Visual Studio Code 1.120": {
+    ja: "Claude agent の plan 対応、tool 出力圧縮、terminal の secret prompt 検知で、agent の計画運用・token 管理・安全性の前提が変わるため、VS Code agent を日常利用するチームは設定確認とワークフロー見直しの対象になります。",
+    en: "This matters because Claude planning support, tool-output compression, and secret-prompt detection change the day-to-day defaults for agent planning, token usage, and terminal safety in VS Code workflows.",
+  },
   "Copilot-reviewed pull request merge metrics now in the usage metrics API": {
     ja: "Copilot が authoring だけでなく review から merge までにどう効いているかを測れるので、導入効果の可視化と自動レビュー定着の判断に直接使えます。",
     en: "This matters because teams can now measure Copilot's effect beyond authoring and see whether automated reviews are influencing merge outcomes and adoption in practice.",
@@ -1110,6 +1110,12 @@ function releaseVersionFromTitle(title) {
   return monthMatch?.[1] ?? null;
 }
 
+function versionIndexAdditionFromEvent(event) {
+  return normalizeArray(event.diffSummary?.additions ?? [])
+    .map((value) => normalizeWhitespace(value))
+    .find((value) => /^[0-9]+\.[0-9]+$/.test(value));
+}
+
 function trimmedEnglishSummary(summary) {
   return trimText(cleanupSummary(summary), 320);
 }
@@ -1476,6 +1482,7 @@ function summaryFromPatterns(event, locale = "ja") {
   const title = normalizeWhitespace(decodeHtmlEntities(event.title));
   const text = `${title} ${event.summary}`.toLowerCase();
   const version = releaseVersionFromTitle(title);
+  const addedVersion = versionIndexAdditionFromEvent(event);
   const cleanedSummary = cleanupSummary(event.summary);
   const summaryLeadText = summaryLead(
     event.summary,
@@ -1486,6 +1493,24 @@ function summaryFromPatterns(event, locale = "ja") {
 
   if (version && vscodeReleaseSummaries[version]) {
     return vscodeReleaseSummaries[version][locale];
+  }
+
+  if (title === "VS Code Updates changed" && addedVersion) {
+    if (vscodeReleaseSummaries[addedVersion]?.[locale]) {
+      return locale === "ja"
+        ? `VS Code の版一覧ページに ${addedVersion} が追加され、release notes への導線が公開された。${vscodeReleaseSummaries[addedVersion][locale]}`
+        : `The VS Code Updates landing page now lists ${addedVersion}, exposing the release notes entry point. ${vscodeReleaseSummaries[addedVersion][locale]}`;
+    }
+
+    return locale === "ja"
+      ? `VS Code の版一覧ページに ${addedVersion} が追加され、release notes への導線が公開された。`
+      : `The VS Code Updates landing page now lists ${addedVersion}, exposing the release notes entry point.`;
+  }
+
+  if (title === "VS Code Release Notes 1.109 changed" && addedVersion) {
+    return locale === "ja"
+      ? `VS Code Release Notes 1.109 ページのナビゲーションに ${addedVersion} が追加され、サイト共通の版一覧更新が過去ページにも反映された。${addedVersion} の公開導線が揃ったことを確認できるが、1.109 ページ自体の本文変更はない。`
+      : `The version navigation on the VS Code Release Notes 1.109 page now includes ${addedVersion}, showing that the site-wide index update has propagated to archived pages. It confirms the ${addedVersion} release entry point is live, but the body of the 1.109 notes has not changed.`;
   }
 
   if (exactSummaryMappings[title]?.[locale]) {
