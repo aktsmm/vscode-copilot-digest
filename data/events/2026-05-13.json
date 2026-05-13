@@ -1,18 +1,164 @@
 {
   "date": "2026-05-13",
-  "generatedAt": "2026-05-13T08:14:11.305Z",
+  "generatedAt": "2026-05-13T16:01:43.555Z",
   "latestRun": {
-    "generatedAt": "2026-05-13T08:14:11.305Z",
-    "newEventsCount": 4,
+    "generatedAt": "2026-05-13T16:01:43.555Z",
+    "newEventsCount": 6,
     "newEventIds": [
-      "vscode-updates:0a142ecc5be7e1d1549b8002b97ece346a07a2aad378f8ec08e5c93fafa01592",
-      "vscode-release-notes-1-109:d89afad02e6701c5b8e14b02262f343d99ad466d5bd60db27a2b119090edfe9b",
-      "vscode-release-notes-1-117:279bf6120cba226c90954bc6814b77e934210a9c81cf635686d83235b8a01e1e",
-      "vscode-release-notes-1-116:969b65b1fa6a2efd1b13b6e30369ce542664611d9866bbbab764b81cccfd2524"
+      "vscode-updates:c8ae2fa58f7d43e2b3471c7e33edfd78be5621708d09e8ca1615bc8f8ae2dd7e",
+      "vscode-release-notes-1-120:section:dc4137b50bd9012c3ad78186c97be945e78a0af6d9efe5d00e896c587c0f68b8",
+      "vscode-release-notes-1-120:section:8334f9e430d20bb209a0a01a180f198f0393a319123c98d69ac93edd87dd345f",
+      "vscode-release-notes-1-120:section:f2a060392ea072efb099531d74cb886ace1d85b4ca9166167d4762624a9a0ec9",
+      "vscode-release-notes-1-120:section:20cad457f454ec86187362e4a21c624ab5290d23835510652d5b9568e9ff58de",
+      "vscode-release-notes-1-118:545947dbe91c923eafbe48fa5abc628a1e0df63c34ccaa5a2929f6d260624a67"
     ],
     "errorCount": 0
   },
   "events": [
+    {
+      "eventId": "vscode-updates:c8ae2fa58f7d43e2b3471c7e33edfd78be5621708d09e8ca1615bc8f8ae2dd7e",
+      "sourceId": "vscode-updates",
+      "sourceName": "VS Code Updates",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-05-13T16:01:42.548Z",
+      "publishedAt": "2026-05-13T00:00:00.000Z",
+      "title": "VS Code Updates changed",
+      "url": "https://code.visualstudio.com/updates/",
+      "summary": "Detected 145 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 145,
+        "headings": [
+          "Visual Studio Code 1.120",
+          "Agents",
+          "Orchestrate tasks across projects with the Agents window (Preview)",
+          "Discover Copilot CLI plugins automatically",
+          "Language models",
+          "View BYOK model token usage",
+          "Configure thinking effort for BYOK reasoning models",
+          "Model picker organized by provider",
+          "Chat",
+          "Terminal tool output compression (Preview)",
+          "Risk assessment for terminal commands (Experimental)",
+          "Plan mode control for Claude and Copilot CLI",
+          "Languages",
+          "Markdown preview for diffs (Preview)",
+          "Markdown preview default changes",
+          "HTML id support for Markdown path completions and validation"
+        ],
+        "additions": [
+          "H1: Visual Studio Code 1.120",
+          "Release date: May 13, 2026",
+          "Welcome to the 1.120 release of Visual Studio Code. This release brings the Agents window to Stable, improves BYOK model visibility and control, and adds Markdown quality-of-life improvements and agent safety features. Here are the highlights for this release:",
+          "Agents window in Stable: Work in an agents-first way across all your projects with the new Agents window.",
+          "BYOK improvements: Track and optimize token usage and configure thinking effort for your BYOK models.",
+          "Markdown improvements: Review Markdown content instead of syntax with Markdown preview for diffs.",
+          "Command risk assessment: Assess the risk of terminal commands before they run.",
+          "Token optimization: Reduce context window usage by compressing large terminal output.",
+          "H2: Agents",
+          "H3: Orchestrate tasks across projects with the Agents window (Preview)",
+          "While VS Code is already used by millions of developers for agentic coding, its editor layout is primarily optimized for single-task, single-workspace workflows. To enable our users (and ourselves!) to work with multiple agents across multiple projects, we created a new type of window: Agents.",
+          "The new Agents window is a companion to the editor you already know: purpose-built for agent-driven development, with a dedicated space to explore, iterate on, and review tasks across multiple projects, and seamlessly switch between them. And because VS Code is built for developer choice and flexibility, the Agents window lets you pick your agent harness, run agents on remote machines, and configure the environment the way you want it - color themes, keybindings, and extensions included.",
+          "The Agents window has been available as part of VS Code Insiders in our past few releases, and with this release, it's now available as a preview in VS Code Stable.",
+          "You can open the Agents window in several ways, including the \"Open in Agents\" button in the VS Code title bar. To learn more about how it works and what you can do with it, visit the Agents window documentation.",
+          "If you've already been using the Agents window in Insiders, thank you! We've continued to act on your feedback, with the following improvements landing this week:",
+          "Preferences persist across new sessions: Your last choices in dropdowns like agent harness and isolation mode are retained when you create new sessions."
+        ]
+      },
+      "headings": [
+        "Visual Studio Code 1.120",
+        "Agents",
+        "Orchestrate tasks across projects with the Agents window (Preview)",
+        "Discover Copilot CLI plugins automatically",
+        "Language models",
+        "View BYOK model token usage",
+        "Configure thinking effort for BYOK reasoning models",
+        "Model picker organized by provider",
+        "Chat",
+        "Terminal tool output compression (Preview)",
+        "Risk assessment for terminal commands (Experimental)",
+        "Plan mode control for Claude and Copilot CLI"
+      ],
+      "score": 18
+    },
+    {
+      "eventId": "vscode-release-notes-1-120:section:dc4137b50bd9012c3ad78186c97be945e78a0af6d9efe5d00e896c587c0f68b8",
+      "sourceId": "vscode-release-notes-1-120",
+      "sourceName": "VS Code Release Notes 1.120",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-05-13T16:01:43.411Z",
+      "publishedAt": "2026-05-13T00:00:00.000Z",
+      "title": "Visual Studio Code 1.120: Orchestrate tasks across projects with the Agents window (Preview)",
+      "url": "https://code.visualstudio.com/updates/v1_120",
+      "summary": "While VS Code is already used by millions of developers for agentic coding, its editor layout is primarily optimized for single-task, single-workspace workflows. To enable our users (and ourselves!) to work with multiple agents across multiple projects, we created a new type of window: Agents. The new Agents window is a companion to the editor you already know: purpose-built for agent-driven development, with a dedi...",
+      "categories": [
+        "release",
+        "section",
+        "Agents"
+      ],
+      "sectionHeading": "Agents",
+      "sectionTitle": "Orchestrate tasks across projects with the Agents window (Preview)",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-120:section:8334f9e430d20bb209a0a01a180f198f0393a319123c98d69ac93edd87dd345f",
+      "sourceId": "vscode-release-notes-1-120",
+      "sourceName": "VS Code Release Notes 1.120",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-05-13T16:01:43.411Z",
+      "publishedAt": "2026-05-13T00:00:00.000Z",
+      "title": "Visual Studio Code 1.120: Discover Copilot CLI plugins automatically",
+      "url": "https://code.visualstudio.com/updates/v1_120",
+      "summary": "Agent plugins installed with the GitHub Copilot CLI are picked up automatically by VS Code, so a single copilot plugin install covers both surfaces. Previously, you had to install the same plugin separately in VS Code or add its path to \n \n \n chat.plugins.paths\n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders\n \n .",
+      "categories": [
+        "release",
+        "section",
+        "Agents"
+      ],
+      "sectionHeading": "Agents",
+      "sectionTitle": "Discover Copilot CLI plugins automatically",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-120:section:f2a060392ea072efb099531d74cb886ace1d85b4ca9166167d4762624a9a0ec9",
+      "sourceId": "vscode-release-notes-1-120",
+      "sourceName": "VS Code Release Notes 1.120",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-05-13T16:01:43.411Z",
+      "publishedAt": "2026-05-13T00:00:00.000Z",
+      "title": "Visual Studio Code 1.120: View BYOK model token usage",
+      "url": "https://code.visualstudio.com/updates/v1_120",
+      "summary": "Managing a model's context window is key to getting good results and controlling costs. The model can lose track of important details from the conversation, and token usage can increase costs. This release brings better visibility into token usage for BYOK models, so you can keep an eye on the context window. Previously, when chatting with a model you brought via your own API key (Anthropic, OpenAI, or other), the c...",
+      "categories": [
+        "release",
+        "section",
+        "Language models"
+      ],
+      "sectionHeading": "Language models",
+      "sectionTitle": "View BYOK model token usage",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-120:section:20cad457f454ec86187362e4a21c624ab5290d23835510652d5b9568e9ff58de",
+      "sourceId": "vscode-release-notes-1-120",
+      "sourceName": "VS Code Release Notes 1.120",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-05-13T16:01:43.411Z",
+      "publishedAt": "2026-05-13T00:00:00.000Z",
+      "title": "Visual Studio Code 1.120: Configure thinking effort for BYOK reasoning models",
+      "url": "https://code.visualstudio.com/updates/v1_120",
+      "summary": "Reasoning-capable language models allow you to configure their \"thinking effort\", which is a way to trade off between response quality and speed/cost. You can learn more in the thinking effort documentation. In this release, you can now configure the thinking effort for BYOK reasoning models directly from the model picker in the Chat view. The selected effort is forwarded to the model on every request, letting you t...",
+      "categories": [
+        "release",
+        "section",
+        "Language models"
+      ],
+      "sectionHeading": "Language models",
+      "sectionTitle": "Configure thinking effort for BYOK reasoning models",
+      "score": 4
+    },
     {
       "eventId": "vscode-updates:0a142ecc5be7e1d1549b8002b97ece346a07a2aad378f8ec08e5c93fafa01592",
       "sourceId": "vscode-updates",
