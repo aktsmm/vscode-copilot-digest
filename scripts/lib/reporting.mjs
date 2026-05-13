@@ -41,8 +41,8 @@ const monthMap = {
 
 const vscodeReleaseSummaries = {
   "1.120": {
-    ja: "Claude agent が plan に対応し、各 plan step へ inline でフィードバックできるようになった。chat tool 出力圧縮、terminal の password / secret prompt 検知、agent host が優先 shell profile を尊重する変更など、agent の計画・実行・安全性まわりの改善がまとまった release。",
-    en: "Claude agent now supports planning and inline feedback on individual plan steps. The release also adds chat tool-output compression, password and secret prompt detection in agent terminal commands, and preferred shell-profile support in agent host terminals, improving agent planning, execution, and safety.",
+    ja: "Agents ウィンドウが VS Code Stable にプレビュー公開され、複数プロジェクト・複数 agent の作業専用画面が使えるようになった。BYOK モデルへの token 使用量の可視化と thinking effort 設定、Copilot CLI plugin の自動検出も追加。terminal tool 出力圧縮、terminal コマンドのリスク評価、Claude と Copilot CLI への Plan mode 制御など、agent の実用性を高める変更がまとまった release。",
+    en: "The Agents window moves to Stable preview, providing a dedicated companion window for multi-project and multi-agent work. The release also adds BYOK model token usage visibility, thinking-effort controls for BYOK reasoning models, automatic discovery of Copilot CLI plugins in VS Code, terminal tool-output compression, terminal command risk assessment, and Plan mode control for Claude and Copilot CLI.",
   },
   "1.119": {
     ja: "Changes ビューが Git 統合になり、terminal 経由の変更も含めて agent セッション中のファイル変更全体を把握しやすくなった。Copilot CLI にモデルバッジが追加され、使用モデルと multiplier を応答ごとに確認できる。新しい sandbox モードではファイルシステム隔離を維持しながら外部ネットワークアクセスも許可でき、オンライン通信が必要なタスクへの対応が広がった。ブラウザータブをチャットのコンテキストとして添付する機能や、model picker への実コスト表示なども加わった。",
@@ -482,6 +482,24 @@ const exactSummaryMappings = {
     ja: "4月分の使用レポートがダウンロード可能になった。AI credit 換算での Copilot 利用量を確認でき、6月1日から始まる従量課金移行の前にトップ消費者やモデル別利用傾向を把握できる。0x モデルの4月1日〜24日分は含まれず、4月24〜30日にデータ重複が生じる場合がある点に注意が必要。",
     en: "April usage reports are now available for download, showing how April Copilot activity translates into AI credits before the June 1 billing transition. Use the report to identify top consumers, model usage patterns, and cost ranges, noting that 0x model activity before April 24 is excluded and some duplicate entries for April 24–30 may appear.",
   },
+  "Visual Studio Code 1.120: Orchestrate tasks across projects with the Agents window (Preview)":
+    {
+      ja: "Agents ウィンドウが VS Code Stable でプレビュー提供を開始した。複数プロジェクト・複数 agent を跨いだ作業に特化した専用コンパニオンウィンドウで、agent harness の選択・リモートマシンでの実行・カラーテーマやキーバインドをそのまま持ち込める。Insiders での先行提供を経て Stable に到達した。",
+      en: "The Agents window is now available as a preview in VS Code Stable. Purpose-built for multi-project and multi-agent work, it supports agent harness selection, remote machine execution, and carries over your color themes, keybindings, and extensions from the regular editor.",
+    },
+  "Visual Studio Code 1.120: Discover Copilot CLI plugins automatically": {
+    ja: "GitHub Copilot CLI でインストールした agent plugin が VS Code に自動的に検出されるようになった。以前は VS Code 側にも別途インストールするか `chat.plugins.paths` にパスを手動追加する必要があったが、CLI 側の install 一度で両サーフェスをカバーできる。",
+    en: "Agent plugins installed via the GitHub Copilot CLI are now automatically discovered in VS Code, so a single CLI install covers both surfaces. Previously, the same plugin had to be installed separately in VS Code or its path added to chat.plugins.paths.",
+  },
+  "Visual Studio Code 1.120: View BYOK model token usage": {
+    ja: "BYOK で接続したモデル（Anthropic、OpenAI など自前 API key 利用）のチャット中に token 使用量を確認できるようになった。以前はチャット終了後に API ダッシュボード側でしか把握できなかった使用量を VS Code 内で直接確認でき、コンテキスト管理とコスト把握がしやすくなる。",
+    en: "Token usage for BYOK models (such as those connected via Anthropic or OpenAI API keys) is now visible directly in VS Code chat. This allows context-window management and cost monitoring without leaving the editor.",
+  },
+  "Visual Studio Code 1.120: Configure thinking effort for BYOK reasoning models":
+    {
+      ja: "BYOK で接続した reasoning モデルの thinking effort を Chat ビューのモデルピッカーから直接設定できるようになった。すべてのリクエストに選択した effort が適用され、応答品質と速度・コストのトレードオフをモデル選択の場で調整できる。",
+      en: "Thinking effort for BYOK reasoning models can now be configured from the model picker in the Chat view. The selected effort level is forwarded on every request, letting you tune the quality-versus-speed-and-cost tradeoff without changing the model.",
+    },
 };
 
 const exactImportanceMappings = {
@@ -722,8 +740,8 @@ const exactImportanceMappings = {
     en: "This matters because browser and terminal agent tools become much more practical for long-running work, while the Agents app preview pushes VS Code further toward day-to-day agent-native development.",
   },
   "Visual Studio Code 1.120": {
-    ja: "Claude agent の plan 対応、tool 出力圧縮、terminal の secret prompt 検知で、agent の計画運用・token 管理・安全性の前提が変わるため、VS Code agent を日常利用するチームは設定確認とワークフロー見直しの対象になります。",
-    en: "This matters because Claude planning support, tool-output compression, and secret-prompt detection change the day-to-day defaults for agent planning, token usage, and terminal safety in VS Code workflows.",
+    ja: "Agents ウィンドウの Stable 提供開始、BYOK モデルの token 可視化と thinking effort 設定、CLI plugin 自動検出など、agent 開発の実用性と可視性を高める変更が揃っているため、VS Code agent を日常利用するチームは設定確認とワークフロー見直しの対象になります。",
+    en: "This release matters because it makes the Agents window available in Stable, improves visibility and control for BYOK model usage, and removes friction from plugin setup, all of which affect daily agent development workflows in VS Code.",
   },
   "Copilot-reviewed pull request merge metrics now in the usage metrics API": {
     ja: "Copilot が authoring だけでなく review から merge までにどう効いているかを測れるので、導入効果の可視化と自動レビュー定着の判断に直接使えます。",
@@ -994,6 +1012,24 @@ const exactImportanceMappings = {
     ja: "6月1日の従量課金移行前にコスト規模を把握できる唯一の公式データです。管理者はレポートを使って予算計画を立て、トップ消費者とモデル別利用傾向を事前に確認しておくことが推奨されます。",
     en: "This is the most direct tool available before the June 1 billing transition to estimate actual costs and identify heavy users. Download the report now to plan budgets and understand your AI credit consumption patterns in advance.",
   },
+  "Visual Studio Code 1.120: Orchestrate tasks across projects with the Agents window (Preview)":
+    {
+      ja: "Stable でプレビュー提供が始まったため Insiders なしで Agents ウィンドウを試せるようになった。複数プロジェクトを並行して進めるチームは早期評価を始めるタイミングです。",
+      en: "The Agents window is now available without Insiders, so teams managing work across multiple projects can begin evaluating it in Stable before it reaches general availability.",
+    },
+  "Visual Studio Code 1.120: Discover Copilot CLI plugins automatically": {
+    ja: "CLI と VS Code で agent plugin を別々に管理する手間がなくなるため、両サーフェスで plugin を活用しているチームの設定コストを直接下げられます。",
+    en: "This eliminates duplicate plugin setup for teams using agent plugins across both Copilot CLI and VS Code, reducing configuration overhead without changing the plugin itself.",
+  },
+  "Visual Studio Code 1.120: View BYOK model token usage": {
+    ja: "BYOK モデルの token 消費を chat 中にリアルタイムで確認できるため、コンテキスト超過やコスト増加に気づく前に対処しやすくなります。BYOK を本番利用しているチームには直接効く更新です。",
+    en: "This matters for teams using BYOK models in production because token usage is now visible in chat, letting you catch context-window saturation or unexpected cost growth early enough to act.",
+  },
+  "Visual Studio Code 1.120: Configure thinking effort for BYOK reasoning models":
+    {
+      ja: "BYOK reasoning モデルの思考量をタスクに応じて調整できるため、高品質が必要な場面とコスト・応答速度を優先する場面を同一モデルで使い分けやすくなります。",
+      en: "This matters because it lets teams tune thinking effort per session for BYOK reasoning models, making it practical to balance response quality against speed and cost without switching models.",
+    },
 };
 
 function toDateOnly(value) {
