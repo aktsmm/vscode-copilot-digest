@@ -1,11 +1,16 @@
 {
   "date": "2026-05-13",
-  "generatedAt": "2026-05-13T08:15:35.467Z",
+  "generatedAt": "2026-05-13T08:14:11.305Z",
   "latestRun": {
-    "generatedAt": "2026-05-13T08:15:35.467Z",
-    "newEventsCount": 0,
-    "newEventIds": [],
-    "errorCount": 4
+    "generatedAt": "2026-05-13T08:14:11.305Z",
+    "newEventsCount": 4,
+    "newEventIds": [
+      "vscode-updates:0a142ecc5be7e1d1549b8002b97ece346a07a2aad378f8ec08e5c93fafa01592",
+      "vscode-release-notes-1-109:d89afad02e6701c5b8e14b02262f343d99ad466d5bd60db27a2b119090edfe9b",
+      "vscode-release-notes-1-117:279bf6120cba226c90954bc6814b77e934210a9c81cf635686d83235b8a01e1e",
+      "vscode-release-notes-1-116:969b65b1fa6a2efd1b13b6e30369ce542664611d9866bbbab764b81cccfd2524"
+    ],
+    "errorCount": 0
   },
   "events": [
     {
@@ -81,22 +86,5 @@
       "score": 2
     }
   ],
-  "errors": [
-    {
-      "sourceId": "vscode-feed",
-      "message": "fetch failed"
-    },
-    {
-      "sourceId": "vscode-updates",
-      "message": "fetch failed"
-    },
-    {
-      "sourceId": "vscode-release-notes-1-109",
-      "message": "fetch failed"
-    },
-    {
-      "sourceId": "publickey",
-      "message": "fetch failed"
-    }
-  ]
+  "errors": []
 }
