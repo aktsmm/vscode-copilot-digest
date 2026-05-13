@@ -500,6 +500,10 @@ const exactSummaryMappings = {
       ja: "BYOK で接続した reasoning モデルの thinking effort を Chat ビューのモデルピッカーから直接設定できるようになった。すべてのリクエストに選択した effort が適用され、応答品質と速度・コストのトレードオフをモデル選択の場で調整できる。",
       en: "Thinking effort for BYOK reasoning models can now be configured from the model picker in the Chat view. The selected effort level is forwarded on every request, letting you tune the quality-versus-speed-and-cost tradeoff without changing the model.",
     },
+  "Start Copilot cloud agent tasks via the REST API": {
+    ja: "Copilot Business / Enterprise ユーザーが REST API から Copilot cloud agent のタスクをプログラム的に開始できるようになった。新しい Agent tasks REST API が public preview で提供され、CI/CD パイプラインや社内ツールから cloud agent を呼び出すフローを組み込みやすくなる。",
+    en: "Copilot Business and Copilot Enterprise users can now programmatically start Copilot cloud agent tasks via the new Agent tasks REST API, available in public preview. This makes it straightforward to trigger cloud-agent work from CI/CD pipelines and internal tooling without a manual issue assignment step.",
+  },
 };
 
 const exactImportanceMappings = {
@@ -1012,6 +1016,10 @@ const exactImportanceMappings = {
     ja: "6月1日の従量課金移行前にコスト規模を把握できる唯一の公式データです。管理者はレポートを使って予算計画を立て、トップ消費者とモデル別利用傾向を事前に確認しておくことが推奨されます。",
     en: "This is the most direct tool available before the June 1 billing transition to estimate actual costs and identify heavy users. Download the report now to plan budgets and understand your AI credit consumption patterns in advance.",
   },
+  "Start Copilot cloud agent tasks via the REST API": {
+    ja: "REST API 経由で cloud agent の起動を自動化できるため、CI/CD や社内ツールから直接タスクを渡す運用がしやすくなります。public preview での早期評価を進めておくと、本格採用への準備が整えやすくなります。",
+    en: "This matters because it enables programmatic cloud-agent task creation from CI/CD pipelines and internal tooling, which is a prerequisite for scaling agent-driven automation beyond manual issue-based workflows.",
+  },
   "Visual Studio Code 1.120: Orchestrate tasks across projects with the Agents window (Preview)":
     {
       ja: "Stable でプレビュー提供が始まったため Insiders なしで Agents ウィンドウを試せるようになった。複数プロジェクトを並行して進めるチームは早期評価を始めるタイミングです。",
@@ -1434,6 +1442,10 @@ function patternTitle(title) {
     [
       "April reports are now available to prepare for usage-based billing",
       "4月分レポートが公開 — 従量課金移行の準備に",
+    ],
+    [
+      "Start Copilot cloud agent tasks via the REST API",
+      "Copilot cloud agent のタスクを REST API から開始できるようになった",
     ],
   ]);
 
