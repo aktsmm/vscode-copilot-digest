@@ -504,6 +504,10 @@ const exactSummaryMappings = {
     ja: "Copilot Business / Enterprise ユーザーが REST API から Copilot cloud agent のタスクをプログラム的に開始できるようになった。新しい Agent tasks REST API が public preview で提供され、CI/CD パイプラインや社内ツールから cloud agent を呼び出すフローを組み込みやすくなる。",
     en: "Copilot Business and Copilot Enterprise users can now programmatically start Copilot cloud agent tasks via the new Agent tasks REST API, available in public preview. This makes it straightforward to trigger cloud-agent work from CI/CD pipelines and internal tooling without a manual issue assignment step.",
   },
+  "Copilot cloud agent supports auto model selection": {
+    ja: "Copilot cloud agent でモデルピッカーの Auto を選ぶと、システム健全性とモデル可用性に応じて最適なモデルが自動選択されるようになった。モデルを固定しなくてもタスクを進めやすくなる。",
+    en: "Copilot cloud agent now supports auto model selection in the model picker. Choosing Auto lets Copilot select the best available model based on system health and model availability, reducing the need to pin one manually.",
+  },
 };
 
 const exactImportanceMappings = {
@@ -1020,6 +1024,10 @@ const exactImportanceMappings = {
     ja: "REST API 経由で cloud agent の起動を自動化できるため、CI/CD や社内ツールから直接タスクを渡す運用がしやすくなります。public preview での早期評価を進めておくと、本格採用への準備が整えやすくなります。",
     en: "This matters because it enables programmatic cloud-agent task creation from CI/CD pipelines and internal tooling, which is a prerequisite for scaling agent-driven automation beyond manual issue-based workflows.",
   },
+  "Copilot cloud agent supports auto model selection": {
+    ja: "モデル固定なしで cloud agent の実行を進めやすくなるため、モデル選定や可用性を毎回手で判断する負荷を減らせます。",
+    en: "This matters because teams can rely less on manual model pinning and reduce operational overhead when availability or system health conditions change.",
+  },
   "Visual Studio Code 1.120: Orchestrate tasks across projects with the Agents window (Preview)":
     {
       ja: "Stable でプレビュー提供が始まったため Insiders なしで Agents ウィンドウを試せるようになった。複数プロジェクトを並行して進めるチームは早期評価を始めるタイミングです。",
@@ -1446,6 +1454,10 @@ function patternTitle(title) {
     [
       "Start Copilot cloud agent tasks via the REST API",
       "Copilot cloud agent のタスクを REST API から開始できるようになった",
+    ],
+    [
+      "Copilot cloud agent supports auto model selection",
+      "Copilot cloud agent が自動モデル選択に対応",
     ],
   ]);
 
