@@ -1,0 +1,32 @@
+{
+  "date": "2026-05-14",
+  "generatedAt": "2026-05-14T08:05:43.945Z",
+  "latestRun": {
+    "generatedAt": "2026-05-14T08:05:43.945Z",
+    "newEventsCount": 1,
+    "newEventIds": [
+      "github-changelog-copilot:https://github.blog/changelog/2026-05-07-start-copilot-cloud-agent-tasks-via-the-rest-api"
+    ],
+    "errorCount": 0
+  },
+  "events": [
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-05-07-start-copilot-cloud-agent-tasks-via-the-rest-api",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-05-14T08:05:41.894Z",
+      "publishedAt": "2026-05-13T18:01:15.000Z",
+      "title": "Start Copilot cloud agent tasks via the REST API",
+      "url": "https://github.blog/changelog/2026-05-13-start-copilot-cloud-agent-tasks-via-the-rest-api",
+      "summary": "Copilot Business and Copilot Enterprise users can programmatically start Copilot cloud agent tasks with the new Agent tasks REST API, available in public preview. Copilot cloud agent works in the…\nThe post Start Copilot cloud agent tasks via the REST API appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 6
+    }
+  ],
+  "errors": []
+}
