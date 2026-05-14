@@ -1,15 +1,69 @@
 {
   "date": "2026-05-14",
-  "generatedAt": "2026-05-14T08:05:43.945Z",
+  "generatedAt": "2026-05-14T15:41:46.857Z",
   "latestRun": {
-    "generatedAt": "2026-05-14T08:05:43.945Z",
-    "newEventsCount": 1,
+    "generatedAt": "2026-05-14T15:41:46.857Z",
+    "newEventsCount": 5,
     "newEventIds": [
-      "github-changelog-copilot:https://github.blog/changelog/2026-05-07-start-copilot-cloud-agent-tasks-via-the-rest-api"
+      "github-changelog:https://github.blog/changelog/2026-05-14-copilot-cloud-agent-supports-auto-model-selection",
+      "github-changelog-copilot:https://github.blog/changelog/2026-05-14-copilot-cloud-agent-supports-auto-model-selection",
+      "vscode-feed:https://code.visualstudio.com/updates/v1_121",
+      "vscode-updates:99942345e4611f83243c2590318d1e0c65c2c45ced251a565df2c6ba5dfc8949",
+      "vscode-release-notes-1-109:c9ee09e741deb9b3d9c4aa7a5c40ab918bb63176dd72f792440c6f737e78e0d3"
     ],
     "errorCount": 0
   },
   "events": [
+    {
+      "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_121",
+      "sourceId": "vscode-feed",
+      "sourceName": "VS Code Feed",
+      "kind": "feed_entry",
+      "detectedAt": "2026-05-14T15:41:44.931Z",
+      "publishedAt": "2026-05-20T17:00:00.000Z",
+      "title": "Visual Studio Code 1.121",
+      "url": "https://code.visualstudio.com/updates/v1_121",
+      "summary": "Learn what's new in Visual Studio Code 1.121 (Insiders)\n Read the full article",
+      "categories": [
+        "release"
+      ],
+      "isFutureDated": true,
+      "score": 4
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-05-14-copilot-cloud-agent-supports-auto-model-selection",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-05-14T15:41:44.340Z",
+      "publishedAt": "2026-05-14T12:59:59.000Z",
+      "title": "Copilot cloud agent supports auto model selection",
+      "url": "https://github.blog/changelog/2026-05-14-copilot-cloud-agent-supports-auto-model-selection",
+      "summary": "Copilot cloud agent now supports Copilot auto model selection. When you select Auto in the model picker, Copilot intelligently selects the best available model based on system health and model…\nThe post Copilot cloud agent supports auto model selection appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 2
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-05-14-copilot-cloud-agent-supports-auto-model-selection",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-05-14T15:41:44.574Z",
+      "publishedAt": "2026-05-14T12:59:59.000Z",
+      "title": "Copilot cloud agent supports auto model selection",
+      "url": "https://github.blog/changelog/2026-05-14-copilot-cloud-agent-supports-auto-model-selection",
+      "summary": "Copilot cloud agent now supports Copilot auto model selection. When you select Auto in the model picker, Copilot intelligently selects the best available model based on system health and model…\nThe post Copilot cloud agent supports auto model selection appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 2
+    },
     {
       "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-05-07-start-copilot-cloud-agent-tasks-via-the-rest-api",
       "sourceId": "github-changelog-copilot",
@@ -26,6 +80,78 @@
       ],
       "isFutureDated": false,
       "score": 6
+    },
+    {
+      "eventId": "vscode-updates:99942345e4611f83243c2590318d1e0c65c2c45ced251a565df2c6ba5dfc8949",
+      "sourceId": "vscode-updates",
+      "sourceName": "VS Code Updates",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-05-14T15:41:45.242Z",
+      "publishedAt": "2026-05-13T00:00:00.000Z",
+      "title": "VS Code Updates changed",
+      "url": "https://code.visualstudio.com/updates/",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [],
+        "additions": [
+          "Insiders"
+        ]
+      },
+      "headings": [
+        "Visual Studio Code 1.120",
+        "Agents",
+        "Orchestrate tasks across projects with the Agents window (Preview)",
+        "Discover Copilot CLI plugins automatically",
+        "Language models",
+        "View BYOK model token usage",
+        "Configure thinking effort for BYOK reasoning models",
+        "Model picker organized by provider",
+        "Chat",
+        "Terminal tool output compression (Preview)",
+        "Risk assessment for terminal commands (Experimental)",
+        "Plan mode control for Claude and Copilot CLI"
+      ],
+      "score": 2
+    },
+    {
+      "eventId": "vscode-release-notes-1-109:c9ee09e741deb9b3d9c4aa7a5c40ab918bb63176dd72f792440c6f737e78e0d3",
+      "sourceId": "vscode-release-notes-1-109",
+      "sourceName": "VS Code Release Notes 1.109",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-05-14T15:41:45.615Z",
+      "publishedAt": "2026-02-04T00:00:00.000Z",
+      "title": "VS Code Release Notes 1.109 changed",
+      "url": "https://code.visualstudio.com/updates/v1_109",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [],
+        "additions": [
+          "Insiders"
+        ]
+      },
+      "headings": [
+        "January 2026 (version 1.109)",
+        "Upcoming events",
+        "Agent Sessions Day",
+        "Chat UX",
+        "Message steering and queueing (Experimental)",
+        "Anthropic models now show thinking tokens",
+        "Mermaid diagrams in chat responses",
+        "Ask Questions tool (Experimental)",
+        "Plan agent",
+        "Context window details",
+        "Inline chat UX revamp (Preview)",
+        "Model descriptions in the model picker"
+      ],
+      "score": 2
     }
   ],
   "errors": []
