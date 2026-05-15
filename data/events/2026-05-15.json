@@ -1,23 +1,57 @@
 {
   "date": "2026-05-15",
-  "generatedAt": "2026-05-15T08:19:11.336Z",
+  "generatedAt": "2026-05-15T15:36:38.692Z",
   "latestRun": {
-    "generatedAt": "2026-05-15T08:19:11.336Z",
-    "newEventsCount": 3,
+    "generatedAt": "2026-05-15T15:36:38.692Z",
+    "newEventsCount": 2,
     "newEventIds": [
-      "github-changelog:https://github.blog/changelog/2026-05-14-team-level-copilot-usage-metrics-now-available-via-api",
-      "github-changelog-copilot:https://github.blog/changelog/2026-05-13-github-copilot-app-is-now-available-in-technical-preview",
-      "github-changelog-copilot:https://github.blog/changelog/2026-05-13-introducing-copilot-cli-agent-and-unified-sessions-view-in-github-copilot-for-jetbrains-ides"
+      "github-changelog-copilot:https://github.blog/changelog/2026-05-14-team-level-copilot-usage-metrics-now-available-via-api",
+      "vscode-feed:https://code.visualstudio.com/blogs/2026/05/15/agent-harnesses-github-copilot-vscode"
     ],
     "errorCount": 0
   },
   "events": [
+    {
+      "eventId": "vscode-feed:https://code.visualstudio.com/blogs/2026/05/15/agent-harnesses-github-copilot-vscode",
+      "sourceId": "vscode-feed",
+      "sourceName": "VS Code Feed",
+      "kind": "feed_entry",
+      "detectedAt": "2026-05-15T15:36:37.300Z",
+      "publishedAt": "2026-05-15T00:00:00.000Z",
+      "title": "The Coding Harness Behind GitHub Copilot in VS Code",
+      "url": "https://code.visualstudio.com/blogs/2026/05/15/agent-harnesses-github-copilot-vscode",
+      "summary": "Learn why the coding harness around GitHub Copilot in VS Code matters as models, tools, agents, and providers evolve.\n Read the full article",
+      "categories": [
+        "blog"
+      ],
+      "isFutureDated": false,
+      "score": 2
+    },
     {
       "eventId": "github-changelog:https://github.blog/changelog/2026-05-14-team-level-copilot-usage-metrics-now-available-via-api",
       "sourceId": "github-changelog",
       "sourceName": "GitHub Changelog",
       "kind": "feed_entry",
       "detectedAt": "2026-05-15T08:19:08.688Z",
+      "publishedAt": "2026-05-14T23:06:25.000Z",
+      "title": "Team-level Copilot usage metrics now available via API",
+      "url": "https://github.blog/changelog/2026-05-14-team-level-copilot-usage-metrics-now-available-via-api",
+      "summary": "The Copilot usage metrics API now exposes a new user-teams report that maps each Copilot-licensed user to the teams they belong to. By joining the user-teams report with the existing…\nThe post Team-level Copilot usage metrics now available via API appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "account management",
+        "copilot",
+        "enterprise management tools"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-05-14-team-level-copilot-usage-metrics-now-available-via-api",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-05-15T15:36:37.264Z",
       "publishedAt": "2026-05-14T23:06:25.000Z",
       "title": "Team-level Copilot usage metrics now available via API",
       "url": "https://github.blog/changelog/2026-05-14-team-level-copilot-usage-metrics-now-available-via-api",
