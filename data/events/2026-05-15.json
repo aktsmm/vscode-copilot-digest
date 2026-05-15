@@ -1,16 +1,70 @@
 {
   "date": "2026-05-15",
-  "generatedAt": "2026-05-15T15:36:38.692Z",
+  "generatedAt": "2026-05-15T22:28:27.077Z",
   "latestRun": {
-    "generatedAt": "2026-05-15T15:36:38.692Z",
-    "newEventsCount": 2,
+    "generatedAt": "2026-05-15T22:28:27.077Z",
+    "newEventsCount": 3,
     "newEventIds": [
-      "github-changelog-copilot:https://github.blog/changelog/2026-05-14-team-level-copilot-usage-metrics-now-available-via-api",
-      "vscode-feed:https://code.visualstudio.com/blogs/2026/05/15/agent-harnesses-github-copilot-vscode"
+      "github-changelog:https://github.blog/changelog/2026-05-15-grok-code-fast-1-deprecated",
+      "github-changelog:https://github.blog/changelog/2026-05-15-copilot-memory-supports-user-preferences-for-pro-pro-users",
+      "github-copilot-blog:https://github.blog/?p=96092"
     ],
     "errorCount": 0
   },
   "events": [
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-05-15-grok-code-fast-1-deprecated",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-05-15T22:28:25.624Z",
+      "publishedAt": "2026-05-15T17:58:15.000Z",
+      "title": "Grok Code Fast 1 deprecated",
+      "url": "https://github.blog/changelog/2026-05-15-grok-code-fast-1-deprecated",
+      "summary": "We have deprecated Grok Code Fast 1 across all GitHub Copilot experiences (including Copilot Chat, inline edits, ask and agent modes, and code completions) today, May 15, 2026. Model Deprecation…\nThe post Grok Code Fast 1 deprecated appeared first on The GitHub Blog.",
+      "categories": [
+        "Retired",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 5
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-05-15-copilot-memory-supports-user-preferences-for-pro-pro-users",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-05-15T22:28:25.624Z",
+      "publishedAt": "2026-05-15T17:14:17.000Z",
+      "title": "Copilot Memory supports user preferences for Pro, Pro+ users",
+      "url": "https://github.blog/changelog/2026-05-15-copilot-memory-supports-user-preferences-for-pro-pro-users",
+      "summary": "Copilot Memory now supports user-level preferences in early access for Copilot Pro and Copilot Pro+ users. Copilot can now store stated or inferred personal preferences about how you like to…\nThe post Copilot Memory supports user preferences for Pro, Pro+ users appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 1
+    },
+    {
+      "eventId": "github-copilot-blog:https://github.blog/?p=96092",
+      "sourceId": "github-copilot-blog",
+      "sourceName": "GitHub Blog / GitHub Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-05-15T22:28:25.648Z",
+      "publishedAt": "2026-05-15T16:00:00.000Z",
+      "title": "Building a general-purpose accessibility agent—and what we learned in the process",
+      "url": "https://github.blog/ai-and-ml/github-copilot/building-a-general-purpose-accessibility-agent-and-what-we-learned-in-the-process/",
+      "summary": "Learn about the experimental general-purpose accessibility agent that GitHub is piloting.\nThe post Building a general-purpose accessibility agent—and what we learned in the process appeared first on The GitHub Blog.",
+      "categories": [
+        "AI & ML",
+        "Generative AI",
+        "GitHub Copilot",
+        "accessibility"
+      ],
+      "isFutureDated": false,
+      "score": 1
+    },
     {
       "eventId": "vscode-feed:https://code.visualstudio.com/blogs/2026/05/15/agent-harnesses-github-copilot-vscode",
       "sourceId": "vscode-feed",
