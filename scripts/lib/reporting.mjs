@@ -504,6 +504,22 @@ const exactSummaryMappings = {
     ja: "Copilot Business / Enterprise ユーザーが REST API から Copilot cloud agent のタスクをプログラム的に開始できるようになった。新しい Agent tasks REST API が public preview で提供され、CI/CD パイプラインや社内ツールから cloud agent を呼び出すフローを組み込みやすくなる。",
     en: "Copilot Business and Copilot Enterprise users can now programmatically start Copilot cloud agent tasks via the new Agent tasks REST API, available in public preview. This makes it straightforward to trigger cloud-agent work from CI/CD pipelines and internal tooling without a manual issue assignment step.",
   },
+  "Team-level Copilot usage metrics now available via API": {
+    ja: "Copilot usage metrics API に user-teams レポートが追加され、各ユーザーが所属するチームと既存のユーザー別利用レポートを結合することで、組織・enterprise 内の任意チーム単位で Copilot の利用状況を把握できるようになった。active users・completions・chats・言語別・IDE 別・機能別・モデル別の内訳もチームレベルで参照できる。5 名未満のチームは除外される点と、複数チームに所属するユーザーの利用量が各チームで重複集計される点に注意が必要。",
+    en: "The Copilot usage metrics API now exposes a user-teams report that maps each licensed user to their teams. By joining it with the existing per-user usage report, enterprise admins and org owners can produce team-level breakdowns of active users, completions, chats, and usage by language, IDE, feature, and model. Teams with fewer than five seats are excluded, and multi-team users are counted in each team's aggregate.",
+  },
+  "GitHub Copilot app is now available in technical preview": {
+    ja: "GitHub Copilot app が technical preview として公開された。GitHub ネイティブのデスクトップ体験で、issue・pull request・プロンプトをセッションの出発点として使い、ブランチやファイルを独立した空間で管理しながら agentic な開発を進められる。セッションの一時停止・再開・並列作業・繰り返し自動化に対応し、Agent Merge で review コメント対応・failing checks 修正・merge までをまとめて任せられる。Copilot Pro / Pro+ は早期アクセスを申請でき、Business / Enterprise はロールアウトに合わせて順次利用可能になる。利用には組織・enterprise の管理者が previews と Copilot CLI を policy で有効化する必要がある。",
+    en: "The GitHub Copilot app is now in technical preview as a GitHub-native desktop experience. Sessions start from issues, pull requests, prompts, or previous sessions. Each session has its own branch, files, and conversation, supporting pause, resume, parallel tasks, and repeatable automations. Agent Merge can address review comments, fix failing checks, and merge when conditions are met. Pro and Pro+ users can sign up for early access; Business and Enterprise access rolls out through the week with admin policy requirements for previews and Copilot CLI.",
+  },
+  "Introducing Copilot CLI agent and unified sessions view in GitHub Copilot for JetBrains IDEs": {
+    ja: "JetBrains IDE 向け GitHub Copilot がアップデートされ、Copilot CLI agent が public preview として利用できるようになった。IDE から local で動作する Copilot CLI agent にタスクを委譲でき、worktree 分離と workspace 分離の 2 モードで変更の適用範囲を選べる。また、実行中・キュー待ちのセッションを一覧できる unified sessions view が追加された。ask question tool・グローバル `.agent.md` 対応・GHES サインイン対応も含まれる。Copilot Business / Enterprise のユーザーは管理者が Editor preview features ポリシーを有効化する必要がある。",
+    en: "GitHub Copilot for JetBrains IDEs now includes the Copilot CLI agent in public preview, letting you delegate tasks to a locally running CLI agent directly from the IDE. Two isolation modes control how changes are applied: worktree isolation runs changes in a separate Git worktree, while workspace isolation applies them directly. A unified sessions view shows live status for running and queued sessions. The update also adds an ask question tool, global `.agent.md` support, and GHES sign-in. Copilot Business and Enterprise users require the Editor preview features policy to be enabled by an admin.",
+  },
+  "Copilot cloud agent supports auto model selection": {
+    ja: "Copilot cloud agent でも auto モデル選択が利用できるようになった。モデルピッカーで Auto を選ぶと、システムの健全性とモデル性能をもとに最適なモデルが自動選択される。通常のモデル multiplier から 10% 割引が適用され、週次のレート制限の影響も受けない。",
+    en: "Copilot cloud agent now supports auto model selection. Selecting Auto in the model picker lets Copilot choose the best available model based on system health and performance, with a 10% discount on the normal model multiplier and no impact from weekly rate limits.",
+  },
 };
 
 const exactImportanceMappings = {
@@ -1038,6 +1054,22 @@ const exactImportanceMappings = {
       ja: "BYOK reasoning モデルの思考量をタスクに応じて調整できるため、高品質が必要な場面とコスト・応答速度を優先する場面を同一モデルで使い分けやすくなります。",
       en: "This matters because it lets teams tune thinking effort per session for BYOK reasoning models, making it practical to balance response quality against speed and cost without switching models.",
     },
+  "Team-level Copilot usage metrics now available via API": {
+    ja: "Enterprise 管理者や organization オーナーが任意チーム単位で Copilot 利用状況を把握できるようになるため、チームごとの採用状況の可視化や展開計画への精度向上に直接効く更新です。5 名未満の除外ルールや重複集計の制約を踏まえてレポートを設計する必要があります。",
+    en: "This matters because enterprise admins and organization owners can now slice Copilot adoption and usage data by team, which improves rollout planning and enablement targeting. Note that teams with fewer than five seats are excluded and multi-team members are double-counted in aggregates.",
+  },
+  "GitHub Copilot app is now available in technical preview": {
+    ja: "GitHub ネイティブな agentic 開発専用のデスクトップ体験が technical preview として利用可能になり、IDE を別途開かずに GitHub 上の作業から直接 agent セッションを始められるようになります。Pro / Pro+ はすぐ早期アクセス申請でき、Business / Enterprise はロールアウトに合わせて対象になります。管理者は policy 設定（previews と Copilot CLI の有効化）を事前に確認しておくとよいでしょう。",
+    en: "This matters because it introduces a GitHub-native agentic development surface where work starts from existing GitHub context without opening a separate IDE. Pro and Pro+ users can apply for early access now, while Business and Enterprise users should have admins verify preview and Copilot CLI policies before access rolls out.",
+  },
+  "Introducing Copilot CLI agent and unified sessions view in GitHub Copilot for JetBrains IDEs": {
+    ja: "JetBrains IDE を使うチームは、IDE を離れずに CLI agent へタスクを委譲できるようになり、worktree 分離で現在のブランチを汚さない形で agent に作業させられます。Business / Enterprise ユーザーは管理者が Editor preview features ポリシーを有効化する必要があります。",
+    en: "This matters for JetBrains IDE users because tasks can now be delegated to a locally running CLI agent without leaving the IDE, and worktree isolation keeps agent changes separate until you choose to review them. Business and Enterprise users require their admin to enable the Editor preview features policy.",
+  },
+  "Copilot cloud agent supports auto model selection": {
+    ja: "cloud agent でも auto 選択を使えるようになるため、タスクに応じた最適モデルを手動で選ばなくても済み、かつコスト面でも 10% 割引と週次レート制限の影響回避が得られます。auto 選択へ移行するだけで運用効率とコスト管理の両方を改善できます。",
+    en: "This matters because auto model selection in cloud agent removes the need to manually pick a model for each task while also providing a 10% multiplier discount and freedom from weekly rate limits, improving both operational efficiency and cost management.",
+  },
 };
 
 function toDateOnly(value) {
@@ -1446,6 +1478,22 @@ function patternTitle(title) {
     [
       "Start Copilot cloud agent tasks via the REST API",
       "Copilot cloud agent のタスクを REST API から開始できるようになった",
+    ],
+    [
+      "Team-level Copilot usage metrics now available via API",
+      "チームレベルの Copilot 使用状況メトリクスが API で利用可能になった",
+    ],
+    [
+      "GitHub Copilot app is now available in technical preview",
+      "GitHub Copilot app が technical preview で利用可能になった",
+    ],
+    [
+      "Introducing Copilot CLI agent and unified sessions view in GitHub Copilot for JetBrains IDEs",
+      "JetBrains IDE で Copilot CLI agent と統合セッションビューが利用可能になった",
+    ],
+    [
+      "Copilot cloud agent supports auto model selection",
+      "Copilot cloud agent が auto モデル選択に対応した",
     ],
   ]);
 
