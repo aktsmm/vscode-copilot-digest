@@ -1,0 +1,50 @@
+{
+  "date": "2026-05-16",
+  "generatedAt": "2026-05-16T07:29:26.400Z",
+  "latestRun": {
+    "generatedAt": "2026-05-16T07:29:26.400Z",
+    "newEventsCount": 2,
+    "newEventIds": [
+      "github-changelog-copilot:https://github.blog/changelog/2026-05-15-grok-code-fast-1-deprecated",
+      "github-changelog-copilot:https://github.blog/changelog/2026-05-15-copilot-memory-supports-user-preferences-for-pro-pro-users"
+    ],
+    "errorCount": 0
+  },
+  "events": [
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-05-15-grok-code-fast-1-deprecated",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-05-16T07:29:23.623Z",
+      "publishedAt": "2026-05-15T17:58:15.000Z",
+      "title": "Grok Code Fast 1 deprecated",
+      "url": "https://github.blog/changelog/2026-05-15-grok-code-fast-1-deprecated",
+      "summary": "We have deprecated Grok Code Fast 1 across all GitHub Copilot experiences (including Copilot Chat, inline edits, ask and agent modes, and code completions) today, May 15, 2026. Model Deprecation…\nThe post Grok Code Fast 1 deprecated appeared first on The GitHub Blog.",
+      "categories": [
+        "Retired",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 5
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-05-15-copilot-memory-supports-user-preferences-for-pro-pro-users",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-05-16T07:29:23.623Z",
+      "publishedAt": "2026-05-15T17:14:17.000Z",
+      "title": "Copilot Memory supports user preferences for Pro, Pro+ users",
+      "url": "https://github.blog/changelog/2026-05-15-copilot-memory-supports-user-preferences-for-pro-pro-users",
+      "summary": "Copilot Memory now supports user-level preferences in early access for Copilot Pro and Copilot Pro+ users. Copilot can now store stated or inferred personal preferences about how you like to…\nThe post Copilot Memory supports user preferences for Pro, Pro+ users appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 1
+    }
+  ],
+  "errors": []
+}
