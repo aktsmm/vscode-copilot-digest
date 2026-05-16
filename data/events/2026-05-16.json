@@ -1,13 +1,10 @@
 {
   "date": "2026-05-16",
-  "generatedAt": "2026-05-16T07:29:26.400Z",
+  "generatedAt": "2026-05-16T14:40:08.100Z",
   "latestRun": {
-    "generatedAt": "2026-05-16T07:29:26.400Z",
-    "newEventsCount": 2,
-    "newEventIds": [
-      "github-changelog-copilot:https://github.blog/changelog/2026-05-15-grok-code-fast-1-deprecated",
-      "github-changelog-copilot:https://github.blog/changelog/2026-05-15-copilot-memory-supports-user-preferences-for-pro-pro-users"
-    ],
+    "generatedAt": "2026-05-16T14:40:08.100Z",
+    "newEventsCount": 0,
+    "newEventIds": [],
     "errorCount": 0
   },
   "events": [
