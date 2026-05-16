@@ -123,6 +123,31 @@ const exactSummaryMappings = {
     ja: "Copilot CLI に experimental な Rubber Duck が入り、別モデル系列からセカンドオピニオンを受けられるようになった。計画直後や複雑な実装後、テスト前の見落とし検出に効く。",
     en: "Copilot CLI now has an experimental Rubber Duck reviewer that asks a model from a different family to critique plans and implementations at high-value checkpoints, helping catch blind spots before they compound.",
   },
+  "GitHub Copilot app is now available in technical preview": {
+    ja: "GitHub Copilot app の technical preview が始まった。issue・pull request・過去セッションなど GitHub 上の作業コンテキストから agentic development を開始し、セッションごとに branch・ファイル・会話を分離しながら、レビュー・検証・pull request 作成までを 1 つのデスクトップ体験で進められる。Business / Enterprise では preview 有効化と Copilot CLI policy が前提。",
+    en: "The GitHub Copilot app enters technical preview as a GitHub-native desktop experience that starts from issues, pull requests, prompts, or previous sessions, keeps each session isolated with its own branch and files, and carries work through review, validation, and pull request creation. Business and Enterprise access depends on previews being enabled and Copilot CLI being allowed by policy.",
+  },
+  "Copilot cloud agent supports auto model selection": {
+    ja: "Copilot cloud agent が Auto モデル選択に対応した。model picker で Auto を選ぶと、Copilot が system health と model performance を見て最適な利用可能モデルを選び、通常の model multiplier から 10% 割引され、週次 rate limit の対象外になる。",
+    en: "Copilot cloud agent now supports Auto model selection. When Auto is chosen in the model picker, Copilot selects the best available model based on system health and model performance, applies a 10% discount to the normal model multiplier, and excludes the request from weekly rate limits.",
+  },
+  "Team-level Copilot usage metrics now available via API": {
+    ja: "Copilot usage metrics API に user-teams レポートが追加され、Copilot ライセンスユーザーと所属 team の対応を NDJSON で取得できるようになった。既存の per-user usage report と `user_id` と `day` で結合すると、active users・completions・chat・Copilot CLI・code review・Copilot cloud agent を team 単位で集計できる。",
+    en: "The Copilot usage metrics API now provides a user-teams report that maps each Copilot-licensed user to their teams in NDJSON form. Joined with the existing per-user usage report on user_id and day, it enables team-level aggregation for active users, completions, chat, Copilot CLI, code review, and Copilot cloud agent activity.",
+  },
+  "Grok Code Fast 1 deprecated": {
+    ja: "Grok Code Fast 1 が 2026-05-15 付けで GitHub Copilot の全体験から廃止された。Copilot Chat、inline edits、ask / agent modes、code completions で利用できなくなり、代替として GPT-5 mini または Claude Haiku 4.5 が案内されている。Enterprise 管理者は model policy で代替モデルを有効化する必要がある場合がある。",
+    en: "Grok Code Fast 1 was deprecated across all GitHub Copilot experiences on 2026-05-15, including Copilot Chat, inline edits, ask and agent modes, and code completions. Suggested alternatives are GPT-5 mini and Claude Haiku 4.5, and Enterprise admins may need to enable those models in policy.",
+  },
+  "Copilot Memory supports user preferences for Pro, Pro+ users": {
+    ja: "Copilot Memory が Copilot Pro / Pro+ 向け early access でユーザー単位の好みを記憶できるようになった。commit style、pull request の構成、コミュニケーションのトーンなどを repository をまたいで Copilot が引き継げる。個人の Copilot Memory settings で確認・削除できる。",
+    en: "Copilot Memory now supports user-level preferences in early access for Copilot Pro and Pro+ users. Copilot can remember things like commit style, pull request structure, and communication tone across repositories, and those memories can be reviewed or deleted in personal Copilot Memory settings.",
+  },
+  "Introducing Copilot CLI agent and unified sessions view in GitHub Copilot for JetBrains IDEs":
+    {
+      ja: "GitHub Copilot for JetBrains IDEs に Copilot CLI agent と統合 sessions view が追加された。running / queued session の live status を 1 か所で確認でき、ask・edit・agent を同じ会話の中で切り替えながら進められる。",
+      en: "GitHub Copilot for JetBrains IDEs now includes the Copilot CLI agent and a unified sessions view. It shows live status for running and queued sessions in one place and supports switching between ask, edit, and agent within the same conversation.",
+    },
   "Agent-driven development in Copilot Applied Science": {
     ja: "Copilot Applied Science チームが、評価データ分析の toil を減らすために agent-first なリポジトリと運用を整えた事例。/plan を軸にした計画、継続的な refactor と docs、process で agent を支える考え方が中心。",
     en: "A Copilot Applied Science case study on building an agent-first repository to automate benchmark-analysis toil, emphasizing planning with /plan, continuous refactoring and documentation, and process guardrails over blaming agents.",
@@ -168,6 +193,15 @@ const exactSummaryMappings = {
       ja: "GitHub Copilot CLI を使い、任意のコードベースを手続き生成ローグライクのダンジョンに変換する拡張を作った実践記事。Copilot CLI を使った試作の進め方を具体例で確認できる。",
       en: "A practical post showing how one engineer used GitHub Copilot CLI to build an extension that turns any codebase into a procedurally generated roguelike dungeon.",
     },
+  "Building a general-purpose accessibility agent—and what we learned in the process":
+    {
+      ja: "GitHub が試行中の汎用アクセシビリティ agent の設計と学びを公開した。Copilot CLI / VS Code での質問対応と front-end 変更に対する単純なアクセシビリティ問題の自動修正を狙い、レビュー用と実装用の sub-agent、直列実行、テンプレート化、複雑コードや高リスク UI でのエスカレーションを使い分けている。",
+      en: "GitHub shared how its experimental general-purpose accessibility agent is designed. The system combines Copilot CLI and VS Code support for accessibility questions with automated remediation of simpler front-end issues, using reviewer and implementer sub-agents, linear execution, templated handoffs, and escalation for complex or high-risk UI work.",
+    },
+  "The Coding Harness Behind GitHub Copilot in VS Code": {
+    ja: "VS Code チームが、GitHub Copilot を editor・tool・model の間で仲介する coding harness の役割を解説した。system instructions、会話履歴、開いているファイル、project 構造、tool 結果などのコンテキスト収集、セッションごとの tool 権限管理、tool 実行と結果の再投入を担い、custom agent や拡張機能とも組み合わせている。",
+    en: "The VS Code team explained the coding harness that sits between GitHub Copilot, the editor, and available tools. It assembles context, controls per-session tool permissions, executes tool calls, and feeds results back into the interaction loop, while also supporting custom agents and extensions.",
+  },
   "Fix merge conflicts in three clicks with Copilot cloud agent": {
     ja: "github.com の pull request 上で、新しい Fix with Copilot ボタンからマージ競合を 3 クリックで解消できるようになった。コメント送信後は Copilot cloud agent が競合解消、build と test の確認、push までをクラウド実行環境で処理する。",
     en: "Pull requests on github.com can now resolve merge conflicts in three clicks through a new Fix with Copilot button, with Copilot cloud agent handling conflict resolution, build and test validation, and the push from its cloud environment.",
@@ -730,6 +764,14 @@ const exactImportanceMappings = {
     ja: "Student プランでも auto selection の選択肢が広がるので、教育・学習用途で触れられるモデル体験が増えます。",
     en: "This matters because it broadens the auto-model experience available to Student users, which affects what learners can access by default.",
   },
+  "GitHub Copilot app is now available in technical preview": {
+    ja: "GitHub を起点にしたデスクトップの agent 作業導線が増えるため、CLI や VS Code 以外でも session 単位に branch・レビュー・検証をまとめたいチームの評価対象になります。Business / Enterprise では preview と Copilot CLI policy を事前に有効化する必要があります。",
+    en: "This matters because it adds a GitHub-native desktop entry point for agent workflows, expanding evaluation beyond the CLI and VS Code. Business and Enterprise teams also need to enable previews and the Copilot CLI policy before they can try it.",
+  },
+  "Copilot cloud agent supports auto model selection": {
+    ja: "モデル選定の手間を減らしつつコストを抑えられるため、Copilot cloud agent を日常運用するチームは既定設定の見直し候補です。週次 rate limit を気にしていた運用にも直接効きます。",
+    en: "This matters because it reduces manual model-picking overhead while lowering effective cost, making Auto a strong default candidate for teams using Copilot cloud agent regularly. It is also operationally relevant for workflows that were constrained by weekly rate limits.",
+  },
   "マイクロソフト、Claude CodeやGitHub Copilotに「このアプリをデプロイせよ」と指示すればAIが最適なインフラ構成やサービスでデプロイしてくれる「Azure Skills Plugin」公開":
     {
       ja: "AI agent にクラウド構成判断まで任せる方向を示していて、開発支援から運用自動化へ広がる流れの確認材料になります。",
@@ -750,6 +792,10 @@ const exactImportanceMappings = {
   "Copilot-reviewed pull request merge metrics now in the usage metrics API": {
     ja: "Copilot が authoring だけでなく review から merge までにどう効いているかを測れるので、導入効果の可視化と自動レビュー定着の判断に直接使えます。",
     en: "This matters because teams can now measure Copilot's effect beyond authoring and see whether automated reviews are influencing merge outcomes and adoption in practice.",
+  },
+  "Team-level Copilot usage metrics now available via API": {
+    ja: "team 別の adoption や enablement ギャップを API だけで把握できるため、Enterprise / organization の展開判断と対象チームの絞り込みがしやすくなります。小規模 team 除外や複数 team 所属の二重計上には注意が必要です。",
+    en: "This matters because it allows team-by-team adoption analysis from the API alone, which helps enterprise and organization owners target rollout and enablement efforts. Teams should also account for small-team exclusion and double counting when users belong to multiple teams.",
   },
   "GitHub Copilot in Visual Studio Code, March Releases": {
     ja: "月次ではなく週次リリースへ移った後の変化をまとめて追えるので、VS Code Copilot の運用差分を短時間で把握しやすい更新です。",
@@ -834,6 +880,19 @@ const exactImportanceMappings = {
     ja: "Copilot CLI で実用的な生産性ツールを段階的に構築できることを示す事例で、自分のチームや業務に合わせた CLI ベースのツール作りを検討する材料になります。",
     en: "This is a useful reference for teams evaluating whether Copilot CLI can power productivity tooling built around their specific workflows and organization structure.",
   },
+  "Grok Code Fast 1 deprecated": {
+    ja: "既に廃止済みのため、Grok Code Fast 1 を直接指定しているワークフローや統合はすぐに GPT-5 mini または Claude Haiku 4.5 へ切り替える必要があります。Enterprise では代替モデルが policy で許可されているかを先に確認しないと移行が止まります。",
+    en: "This is already in effect, so any workflow or integration explicitly targeting Grok Code Fast 1 must switch immediately to GPT-5 mini or Claude Haiku 4.5. Enterprise teams should first confirm those replacement models are allowed by policy so migration does not stall.",
+  },
+  "Copilot Memory supports user preferences for Pro, Pro+ users": {
+    ja: "repository ごとに同じ指示を繰り返す手間を減らせるため、個人利用の Copilot 体験が変わります。共有 repository の他ユーザー設定には影響しないので、導入時は個人設定の有効化状況を確認すればよい更新です。",
+    en: "This matters because it reduces the need to repeat the same personal guidance in every repository, changing the day-to-day experience for individual Copilot users. It is scoped to personal settings, so rollout mainly depends on whether each user enables the feature.",
+  },
+  "Introducing Copilot CLI agent and unified sessions view in GitHub Copilot for JetBrains IDEs":
+    {
+      ja: "JetBrains IDE を使うチームが CLI 側の agent 作業を IDE から監視・再開しやすくなるため、CLI と IDE をまたぐ運用の摩擦を下げられます。running / queued session を 1 画面で見たい運用に直接効く更新です。",
+      en: "This matters because JetBrains users can supervise and resume CLI-driven agent work directly from the IDE, reducing friction between terminal and IDE workflows. It is especially useful for teams that need a single view of running and queued sessions.",
+    },
   "GitHub Copilot CLI now supports Copilot auto model selection": {
     ja: "全プランで使えるようになったため、モデルを手動で選ばなくても Copilot が自動でタスクに合ったモデルを選ぶ運用が選択肢に入る。モデル選択を個別管理していたチームは設定方針を見直す材料になります。",
     en: "This is now available across all Copilot plans and removes the need to manually pick a model for CLI tasks. Teams currently managing model selection by hand now have auto as a viable low-maintenance default.",
@@ -857,6 +916,15 @@ const exactImportanceMappings = {
   "GitHub Copilot for Jira: Our latest enhancements": {
     ja: "Jira と GitHub を併用するチームにとって、Copilot cloud agent 連携の設定自由度が上がることは既存ワークフローへの組み込みコストを下げる。具体的な変更内容を原文で確認し、自チームの Jira 運用に適用できるか判断することを推奨。",
     en: "This matters for teams using both Jira and GitHub because increased customizability in the Copilot cloud agent integration reduces the friction of fitting it into existing Jira workflows.",
+  },
+  "Building a general-purpose accessibility agent—and what we learned in the process":
+    {
+      ja: "アクセシビリティ agent を本番運用する際に、何を自動化し何を人に戻すかの設計指針になります。既存の監査履歴や structured data を agent の教材に使う考え方も他チームが流用しやすい点です。",
+      en: "This matters because it provides a concrete design pattern for deciding what accessibility work to automate and what to escalate to humans. The reuse of prior audit history and structured data is also a transferable lesson for other specialized agents.",
+    },
+  "The Coding Harness Behind GitHub Copilot in VS Code": {
+    ja: "agent の品質はモデルだけでなく harness 設計に左右されることが分かるため、VS Code 拡張や custom agent を運用するチームが権限設計・コンテキスト収集・監査性を見直す材料になります。",
+    en: "This matters because it shows that agent quality depends heavily on harness design, not just the underlying model. Teams running VS Code extensions or custom agents can use it to rethink permissions, context assembly, and auditability.",
   },
   "Copilot code review user counts now aggregate in usage metrics API": {
     ja: "Enterprise・組織の管理者が Copilot code review の active・passive ユーザー数を usage metrics API で集計できるようになり、コードレビュー機能の実際の採用状況を定量的に把握しやすくなる。",
@@ -1402,6 +1470,38 @@ function patternTitle(title) {
     [
       "Secret scanning with GitHub MCP Server is now generally available",
       "GitHub MCP Server の secret scanning が一般提供になった",
+    ],
+    [
+      "GitHub Copilot app is now available in technical preview",
+      "GitHub Copilot app が technical preview で利用可能になった",
+    ],
+    [
+      "Copilot cloud agent supports auto model selection",
+      "Copilot cloud agent が Auto モデル選択に対応した",
+    ],
+    [
+      "Team-level Copilot usage metrics now available via API",
+      "Copilot のチーム別 usage metrics を API で取得できるようになった",
+    ],
+    [
+      "Grok Code Fast 1 deprecated",
+      "Grok Code Fast 1 が廃止された",
+    ],
+    [
+      "Copilot Memory supports user preferences for Pro, Pro+ users",
+      "Copilot Memory が Pro / Pro+ の個人設定に対応した",
+    ],
+    [
+      "Introducing Copilot CLI agent and unified sessions view in GitHub Copilot for JetBrains IDEs",
+      "JetBrains IDEs で Copilot CLI agent と統合 sessions view が利用可能になった",
+    ],
+    [
+      "Building a general-purpose accessibility agent—and what we learned in the process",
+      "GitHub が汎用アクセシビリティ agent の試行と学びを公開",
+    ],
+    [
+      "The Coding Harness Behind GitHub Copilot in VS Code",
+      "VS Code の GitHub Copilot を支える coding harness の解説",
     ],
     [
       "Upcoming deprecation of Grok Code Fast 1",
