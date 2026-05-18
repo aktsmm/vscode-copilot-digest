@@ -1,0 +1,32 @@
+{
+  "date": "2026-05-18",
+  "generatedAt": "2026-05-18T08:55:09.488Z",
+  "latestRun": {
+    "generatedAt": "2026-05-18T08:55:09.488Z",
+    "newEventsCount": 1,
+    "newEventIds": [
+      "github-changelog:https://github.blog/changelog/2026-05-17-gpt-5-3-codex-is-now-the-base-model-for-copilot-business-and-enterprise"
+    ],
+    "errorCount": 0
+  },
+  "events": [
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-05-17-gpt-5-3-codex-is-now-the-base-model-for-copilot-business-and-enterprise",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-05-18T08:55:06.819Z",
+      "publishedAt": "2026-05-18T04:01:11.000Z",
+      "title": "GPT-5.3-Codex is now the base model for Copilot Business and Enterprise",
+      "url": "https://github.blog/changelog/2026-05-17-gpt-5-3-codex-is-now-the-base-model-for-copilot-business-and-enterprise",
+      "summary": "As announced on March 18, 2026, GPT-5.3-Codex is now the base model for all Copilot Business and Copilot Enterprise organizations, replacing GPT-4.1. The base model is used when your organization…\nThe post GPT-5.3-Codex is now the base model for Copilot Business and Enterprise appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 5
+    }
+  ],
+  "errors": []
+}
