@@ -1,16 +1,76 @@
 {
   "date": "2026-05-18",
-  "generatedAt": "2026-05-18T16:39:00.577Z",
+  "generatedAt": "2026-05-18T22:31:05.374Z",
   "latestRun": {
-    "generatedAt": "2026-05-18T16:39:00.577Z",
-    "newEventsCount": 2,
+    "generatedAt": "2026-05-18T22:31:05.374Z",
+    "newEventsCount": 5,
     "newEventIds": [
-      "github-changelog:https://github.blog/changelog/2026-05-18-copilot-spaces-api-now-generally-available",
-      "github-changelog-copilot:https://github.blog/changelog/2026-05-17-gpt-5-3-codex-is-now-the-base-model-for-copilot-business-and-enterprise"
+      "github-changelog:https://github.blog/changelog/2026-05-18-ask-questions-in-context-with-copilot-on-web",
+      "github-changelog:https://github.blog/changelog/2026-05-18-audit-repository-copilot-cloud-agent-configuration-via-the-rest-api",
+      "github-changelog:https://github.blog/changelog/2026-05-05-remote-control-for-copilot-cli-sessions-now-generally-available-on-mobile-web-and-vs-code",
+      "github-changelog-copilot:https://github.blog/changelog/2026-05-18-copilot-spaces-api-now-generally-available",
+      "github-copilot-blog:https://github.blog/?p=95877"
     ],
     "errorCount": 0
   },
   "events": [
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-05-18-ask-questions-in-context-with-copilot-on-web",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-05-18T22:31:03.656Z",
+      "publishedAt": "2026-05-18T21:11:24.000Z",
+      "title": "Ask questions in context with Copilot on web",
+      "url": "https://github.blog/changelog/2026-05-18-ask-questions-in-context-with-copilot-on-web",
+      "summary": "Copilot chat on the web now opens on the page you are viewing. This helps you get fast answers to your questions with reduced context switching. What’s changed When you…\nThe post Ask questions in context with Copilot on web appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
+    {
+      "eventId": "github-copilot-blog:https://github.blog/?p=95877",
+      "sourceId": "github-copilot-blog",
+      "sourceName": "GitHub Blog / GitHub Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-05-18T22:31:03.694Z",
+      "publishedAt": "2026-05-18T16:54:53.000Z",
+      "title": "Take your local GitHub sessions anywhere",
+      "url": "https://github.blog/news-insights/product-news/take-your-local-github-sessions-anywhere/",
+      "summary": "Kick off work in VS Code or the CLI, finish it from your phone. Remote control for GitHub Copilot sessions is now generally available on github.com and GitHub Mobile. \nThe post Take your local GitHub sessions anywhere appeared first on The GitHub Blog.",
+      "categories": [
+        "AI & ML",
+        "GitHub Copilot",
+        "News & insights",
+        "Product",
+        "agentic AI",
+        "CLI",
+        "GitHub Mobile",
+        "VS Code"
+      ],
+      "isFutureDated": false,
+      "score": 1
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-05-18-audit-repository-copilot-cloud-agent-configuration-via-the-rest-api",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-05-18T22:31:03.656Z",
+      "publishedAt": "2026-05-18T16:43:19.000Z",
+      "title": "Audit repository Copilot cloud agent configuration via the REST API",
+      "url": "https://github.blog/changelog/2026-05-18-audit-repository-copilot-cloud-agent-configuration-via-the-rest-api",
+      "summary": "You can now programmatically audit a repository’s Copilot cloud agent configuration with the new Get Copilot cloud agent configuration for a repository REST API, available in public preview. The new…\nThe post Audit repository Copilot cloud agent configuration via the REST API appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 6
+    },
     {
       "eventId": "github-changelog:https://github.blog/changelog/2026-05-18-copilot-spaces-api-now-generally-available",
       "sourceId": "github-changelog",
@@ -23,6 +83,41 @@
       "summary": "Copilot Spaces API is now generally available The GitHub Copilot Spaces API is now generally available. You can programmatically create, read, update, and delete Spaces directly from your own applications,…\nThe post Copilot Spaces API now generally available appeared first on The GitHub Blog.",
       "categories": [
         "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-05-18-copilot-spaces-api-now-generally-available",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-05-18T22:31:03.673Z",
+      "publishedAt": "2026-05-18T16:07:12.000Z",
+      "title": "Copilot Spaces API now generally available",
+      "url": "https://github.blog/changelog/2026-05-18-copilot-spaces-api-now-generally-available",
+      "summary": "Copilot Spaces API is now generally available The GitHub Copilot Spaces API is now generally available. You can programmatically create, read, update, and delete Spaces directly from your own applications,…\nThe post Copilot Spaces API now generally available appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-05-05-remote-control-for-copilot-cli-sessions-now-generally-available-on-mobile-web-and-vs-code",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-05-18T22:31:03.656Z",
+      "publishedAt": "2026-05-18T13:00:16.000Z",
+      "title": "Remote control for Copilot CLI sessions now generally available on mobile, web, and VS Code",
+      "url": "https://github.blog/changelog/2026-05-18-remote-control-for-copilot-cli-sessions-now-generally-available-on-mobile-web-and-vs-code",
+      "summary": "Remote control for Copilot CLI sessions is now generally available on GitHub Mobile and github.com, so you can start work in your terminal and keep it moving from anywhere. With…\nThe post Remote control for Copilot CLI sessions now generally available on mobile, web, and VS Code appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "client apps",
         "copilot"
       ],
       "isFutureDated": false,

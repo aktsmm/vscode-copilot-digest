@@ -3,7 +3,10 @@
   "sources": {
     "github-changelog": {
       "seenIds": [
+        "https://github.blog/changelog/2026-05-18-ask-questions-in-context-with-copilot-on-web",
+        "https://github.blog/changelog/2026-05-18-audit-repository-copilot-cloud-agent-configuration-via-the-rest-api",
         "https://github.blog/changelog/2026-05-18-copilot-spaces-api-now-generally-available",
+        "https://github.blog/changelog/2026-05-05-remote-control-for-copilot-cli-sessions-now-generally-available-on-mobile-web-and-vs-code",
         "https://github.blog/changelog/2026-05-17-gpt-5-3-codex-is-now-the-base-model-for-copilot-business-and-enterprise",
         "https://github.blog/changelog/2026-05-15-grok-code-fast-1-deprecated",
         "https://github.blog/changelog/2026-05-15-copilot-memory-supports-user-preferences-for-pro-pro-users",
@@ -60,10 +63,11 @@
         "https://github.blog/changelog/2026-04-08-github-mobile-research-and-code-with-copilot-cloud-agent-anywhere"
       ],
       "futureSeenIds": [],
-      "lastCheckedAt": "2026-05-18T16:38:59.093Z"
+      "lastCheckedAt": "2026-05-18T22:31:03.656Z"
     },
     "github-changelog-copilot": {
       "seenIds": [
+        "https://github.blog/changelog/2026-05-18-copilot-spaces-api-now-generally-available",
         "https://github.blog/changelog/2026-05-17-gpt-5-3-codex-is-now-the-base-model-for-copilot-business-and-enterprise",
         "https://github.blog/changelog/2026-05-15-grok-code-fast-1-deprecated",
         "https://github.blog/changelog/2026-05-15-copilot-memory-supports-user-preferences-for-pro-pro-users",
@@ -126,10 +130,11 @@
         "https://github.blog/changelog/2026-04-02-copilot-sdk-in-public-preview"
       ],
       "futureSeenIds": [],
-      "lastCheckedAt": "2026-05-18T16:38:59.108Z"
+      "lastCheckedAt": "2026-05-18T22:31:03.673Z"
     },
     "github-copilot-blog": {
       "seenIds": [
+        "https://github.blog/?p=95877",
         "https://github.blog/?p=96092",
         "https://github.blog/?p=95693",
         "https://github.blog/?p=95785",
@@ -151,7 +156,7 @@
         "https://github.blog/?p=94179"
       ],
       "futureSeenIds": [],
-      "lastCheckedAt": "2026-05-18T16:38:59.120Z"
+      "lastCheckedAt": "2026-05-18T22:31:03.694Z"
     },
     "vscode-feed": {
       "seenIds": [
@@ -180,25 +185,25 @@
       "futureSeenIds": [
         "https://code.visualstudio.com/updates/v1_121"
       ],
-      "lastCheckedAt": "2026-05-18T16:38:59.144Z"
+      "lastCheckedAt": "2026-05-18T22:31:03.740Z"
     },
     "vscode-updates": {
       "releasePublishedAt": "2026-05-13T00:00:00.000Z",
       "releaseTitle": "Visual Studio Code 1.120",
       "snapshotHash": "99942345e4611f83243c2590318d1e0c65c2c45ced251a565df2c6ba5dfc8949",
-      "lastCheckedAt": "2026-05-18T16:38:59.213Z"
+      "lastCheckedAt": "2026-05-18T22:31:03.831Z"
     },
     "vscode-release-notes-1-109": {
       "releasePublishedAt": "2026-02-04T00:00:00.000Z",
       "releaseTitle": "January 2026 (version 1.109)",
       "snapshotHash": "c9ee09e741deb9b3d9c4aa7a5c40ab918bb63176dd72f792440c6f737e78e0d3",
-      "lastCheckedAt": "2026-05-18T16:38:59.340Z"
+      "lastCheckedAt": "2026-05-18T22:31:03.975Z"
     },
     "copilot-whats-new": {
-      "releasePublishedAt": "2026-05-18T16:38:59.619Z",
+      "releasePublishedAt": "2026-05-18T22:31:04.244Z",
       "releaseTitle": "Preview upcoming features for GitHub Copilot",
       "snapshotHash": "b420f1decd1c48516d66030e4292d9537371f69c4260aeb4b1a29975eb279571",
-      "lastCheckedAt": "2026-05-18T16:38:59.619Z"
+      "lastCheckedAt": "2026-05-18T22:31:04.244Z"
     },
     "publickey": {
       "seenIds": [
@@ -207,7 +212,7 @@
         "tag:www.publickey1.jp,2026://2.8527"
       ],
       "futureSeenIds": [],
-      "lastCheckedAt": "2026-05-18T16:39:00.230Z"
+      "lastCheckedAt": "2026-05-18T22:31:05.012Z"
     },
     "vscode-release-notes-1-115": {
       "sectionHashes": {
@@ -261,7 +266,7 @@
       "releasePublishedAt": "2026-04-22T00:00:00.000Z",
       "releaseTitle": "Visual Studio Code 1.117",
       "snapshotHash": "a003bc6c1550955e1b631fb644a083ed904dce90b797cf56e64970995685040a",
-      "lastCheckedAt": "2026-05-18T16:39:00.576Z"
+      "lastCheckedAt": "2026-05-18T22:31:05.373Z"
     },
     "vscode-release-notes-1-118": {
       "sectionHashes": {
@@ -273,7 +278,7 @@
       "releasePublishedAt": "2026-04-29T00:00:00.000Z",
       "releaseTitle": "Visual Studio Code 1.118",
       "snapshotHash": "3d1733d6f90950d4883c71ae9cc1cb2e1efd7072083e225815ebea22146eea47",
-      "lastCheckedAt": "2026-05-18T16:39:00.430Z"
+      "lastCheckedAt": "2026-05-18T22:31:05.304Z"
     },
     "vscode-release-notes-1-119": {
       "sectionHashes": {
@@ -285,7 +290,7 @@
       "releasePublishedAt": "2026-05-06T00:00:00.000Z",
       "releaseTitle": "Visual Studio Code 1.119",
       "snapshotHash": "236b507c698d18fed225e90240fc6ecc983e0dc5da43241da9f25858472ceb8d",
-      "lastCheckedAt": "2026-05-18T16:39:00.340Z"
+      "lastCheckedAt": "2026-05-18T22:31:05.211Z"
     },
     "vscode-release-notes-1-120": {
       "sectionHashes": {
@@ -297,7 +302,7 @@
       "releasePublishedAt": "2026-05-13T00:00:00.000Z",
       "releaseTitle": "Visual Studio Code 1.120",
       "snapshotHash": "99942345e4611f83243c2590318d1e0c65c2c45ced251a565df2c6ba5dfc8949",
-      "lastCheckedAt": "2026-05-18T16:39:00.273Z"
+      "lastCheckedAt": "2026-05-18T22:31:05.065Z"
     }
   }
 }
