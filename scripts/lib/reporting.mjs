@@ -500,6 +500,35 @@ const exactSummaryMappings = {
       ja: "BYOK で接続した reasoning モデルの thinking effort を Chat ビューのモデルピッカーから直接設定できるようになった。すべてのリクエストに選択した effort が適用され、応答品質と速度・コストのトレードオフをモデル選択の場で調整できる。",
       en: "Thinking effort for BYOK reasoning models can now be configured from the model picker in the Chat view. The selected effort level is forwarded on every request, letting you tune the quality-versus-speed-and-cost tradeoff without changing the model.",
     },
+  "GitHub Copilot app is now available in technical preview": {
+    ja: "GitHub Copilot app の technical preview が公開された。GitHub ネイティブのデスクトップ体験で、手元の作業から agentic development を始め、分離した実行環境で進められる。",
+    en: "The GitHub Copilot app entered technical preview as a GitHub-native desktop experience for starting agentic development from current work in an isolated environment.",
+  },
+  "Copilot cloud agent supports auto model selection": {
+    ja: "Copilot cloud agent が Auto モデル選択に対応した。モデルピッカーで Auto を選ぶと、システム状態とモデル性能を踏まえて利用可能な最適モデルが自動選択される。",
+    en: "Copilot cloud agent now supports Auto model selection, choosing the best available model based on system health and model capability when Auto is selected.",
+  },
+  "Team-level Copilot usage metrics now available via API": {
+    ja: "Copilot usage metrics API に user-teams レポートが追加された。既存の利用レポートと突合することで、チーム単位の採用状況や利用傾向を把握しやすくなる。",
+    en: "The Copilot usage metrics API now includes a user-teams report, enabling team-level adoption and usage analysis when joined with existing usage reports.",
+  },
+  "Copilot Memory supports user preferences for Pro, Pro+ users": {
+    ja: "Copilot Memory が Pro / Pro+ 向け early access でユーザー設定の好みに対応した。会話内で示した文体や進め方の好みを継続反映しやすくなる。",
+    en: "Copilot Memory now supports user-level preferences in early access for Pro and Pro+ users, helping preserve preferred style and workflow guidance across conversations.",
+  },
+  "Building a general-purpose accessibility agent—and what we learned in the process":
+    {
+      ja: "GitHub が試験運用している汎用アクセシビリティ agent の取り組みと学びをまとめた記事。実運用での改善ループを回すための設計と検証の観点が共有されている。",
+      en: "A GitHub blog post describing lessons from piloting a general-purpose accessibility agent, including design and evaluation considerations for iterative real-world improvements.",
+    },
+  "The Coding Harness Behind GitHub Copilot in VS Code": {
+    ja: "VS Code 上の GitHub Copilot を支える coding harness の設計を解説する記事。モデル・ツール・agent・プロバイダーが変化しても品質を保つ実装上の要点を確認できる。",
+    en: "A VS Code engineering post about the coding harness behind GitHub Copilot, outlining how quality is maintained as models, tools, agents, and providers evolve.",
+  },
+  "GPT-5.3-Codex is now the base model for Copilot Business and Enterprise": {
+    ja: "Copilot Business / Enterprise の既定モデルが GPT-4.1 から GPT-5.3-Codex に切り替わった。組織でモデルを明示選択していない利用では応答挙動の前提が変わる。",
+    en: "GPT-5.3-Codex is now the default model for Copilot Business and Enterprise, replacing GPT-4.1 when organizations do not explicitly select another model.",
+  },
   "Start Copilot cloud agent tasks via the REST API": {
     ja: "Copilot Business / Enterprise ユーザーが REST API から Copilot cloud agent のタスクをプログラム的に開始できるようになった。新しい Agent tasks REST API が public preview で提供され、CI/CD パイプラインや社内ツールから cloud agent を呼び出すフローを組み込みやすくなる。",
     en: "Copilot Business and Copilot Enterprise users can now programmatically start Copilot cloud agent tasks via the new Agent tasks REST API, available in public preview. This makes it straightforward to trigger cloud-agent work from CI/CD pipelines and internal tooling without a manual issue assignment step.",
@@ -582,6 +611,40 @@ const exactImportanceMappings = {
       ja: "CLI 利用の実態をユーザー単位で追えるので、定着状況、教育対象、コスト配分の見直しに使いやすい更新です。",
       en: "This gives organizations a clearer basis for rollout planning, enablement, and cost attribution by exposing who is actually using Copilot CLI and how heavily.",
     },
+  "GitHub Copilot app is now available in technical preview": {
+    ja: "GitHub ネイティブなデスクトップ体験を早期検証できるため、導入前に既存開発フローとの適合を見極めやすくなります。",
+    en: "This enables early evaluation of a GitHub-native desktop workflow before broader rollout decisions are made.",
+  },
+  "Copilot cloud agent supports auto model selection": {
+    ja: "モデル選択を Auto に委ねる運用が可能になり、可用性と品質のバランスを取りつつモデル運用負荷を下げやすくなる更新です。",
+    en: "This reduces model-management overhead by allowing Auto routing while balancing availability and output quality.",
+  },
+  "Introducing Copilot CLI agent and unified sessions view in GitHub Copilot for JetBrains IDEs":
+    {
+      ja: "JetBrains でも Copilot CLI agent と統合セッション管理が使えるようになり、IDE 間で agent 運用をそろえやすくなります。",
+      en: "This brings Copilot CLI agent workflows and unified session management into JetBrains IDEs, improving cross-IDE operational consistency.",
+    },
+  "Team-level Copilot usage metrics now available via API": {
+    ja: "チーム単位で Copilot 利用状況を分析できるため、配布方針や有効化施策を組織運用に合わせて見直しやすくなります。",
+    en: "This improves organizational governance by enabling team-level Copilot adoption and usage analysis through the API.",
+  },
+  "Copilot Memory supports user preferences for Pro, Pro+ users": {
+    ja: "ユーザーごとの好みが継続反映されるため、応答品質の安定化とプロンプト運用の見直しに直接影響します。",
+    en: "This affects prompt operations directly because user preferences can persist and shape response consistency over time.",
+  },
+  "Building a general-purpose accessibility agent—and what we learned in the process":
+    {
+      ja: "アクセシビリティ改善を継続運用するための agent 設計知見であり、社内の評価基準や改善ループ設計の参考になります。",
+      en: "This offers practical lessons for building ongoing accessibility-improvement loops with agents, useful for internal evaluation and iteration practices.",
+    },
+  "The Coding Harness Behind GitHub Copilot in VS Code": {
+    ja: "モデルやツールが更新されても開発体験を維持する実装方針を示しており、長期運用時の品質管理に関わる内容です。",
+    en: "This matters for long-term operations because it explains how VS Code preserves coding quality as model and tool ecosystems change.",
+  },
+  "GPT-5.3-Codex is now the base model for Copilot Business and Enterprise": {
+    ja: "組織既定モデルの切り替えは日常の生成結果に直結するため、評価基準と社内ガイドの前提見直しが必要です。",
+    en: "A default model switch impacts daily outputs immediately, so evaluation baselines and internal guidance may need to be updated.",
+  },
   "GitHub Copilot in Visual Studio — March update": {
     ja: "Visual Studio 側でも custom agents や診断支援が広がっていて、IDE ごとの agent 体験差を埋める流れとして重要です。",
     en: "This matters because it broadens serious agent and diagnostic workflows in Visual Studio, reducing the capability gap across GitHub Copilot surfaces.",
