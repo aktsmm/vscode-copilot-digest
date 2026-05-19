@@ -1,15 +1,12 @@
 {
   "date": "2026-05-19",
-  "generatedAt": "2026-05-19T08:41:13.818Z",
+  "generatedAt": "2026-05-19T16:37:22.296Z",
   "latestRun": {
-    "generatedAt": "2026-05-19T08:41:13.818Z",
-    "newEventsCount": 5,
+    "generatedAt": "2026-05-19T16:37:22.296Z",
+    "newEventsCount": 2,
     "newEventIds": [
-      "github-changelog:https://github.blog/changelog/2026-05-18-one-click-fixes-for-failing-actions-with-copilot-cloud-agent",
-      "github-changelog:https://github.blog/changelog/2026-05-18-copilot-cloud-agent-fast-cost-efficient-models-for-simple-tasks",
-      "github-changelog-copilot:https://github.blog/changelog/2026-05-18-ask-questions-in-context-with-copilot-on-web",
-      "github-changelog-copilot:https://github.blog/changelog/2026-05-18-audit-repository-copilot-cloud-agent-configuration-via-the-rest-api",
-      "github-changelog-copilot:https://github.blog/changelog/2026-05-05-remote-control-for-copilot-cli-sessions-now-generally-available-on-mobile-web-and-vs-code"
+      "github-changelog-copilot:https://github.blog/changelog/2026-05-18-one-click-fixes-for-failing-actions-with-copilot-cloud-agent",
+      "github-changelog-copilot:https://github.blog/changelog/2026-05-18-copilot-cloud-agent-fast-cost-efficient-models-for-simple-tasks"
     ],
     "errorCount": 0
   },
@@ -32,11 +29,45 @@
       "score": 2
     },
     {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-05-18-one-click-fixes-for-failing-actions-with-copilot-cloud-agent",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-05-19T16:37:20.662Z",
+      "publishedAt": "2026-05-18T22:29:27.000Z",
+      "title": "One-click fixes for failing Actions with Copilot cloud agent",
+      "url": "https://github.blog/changelog/2026-05-18-one-click-fixes-for-failing-actions-with-copilot-cloud-agent",
+      "summary": "When a GitHub Actions job fails, Copilot Business and Copilot Enterprise subscribers can now ask Copilot cloud agent to fix it in one click. Click the Fix with Copilot button…\nThe post One-click fixes for failing Actions with Copilot cloud agent appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 2
+    },
+    {
       "eventId": "github-changelog:https://github.blog/changelog/2026-05-18-copilot-cloud-agent-fast-cost-efficient-models-for-simple-tasks",
       "sourceId": "github-changelog",
       "sourceName": "GitHub Changelog",
       "kind": "feed_entry",
       "detectedAt": "2026-05-19T08:41:11.046Z",
+      "publishedAt": "2026-05-18T21:15:35.000Z",
+      "title": "Copilot cloud agent: Fast, cost-efficient models for simple tasks",
+      "url": "https://github.blog/changelog/2026-05-18-copilot-cloud-agent-fast-cost-efficient-models-for-simple-tasks",
+      "summary": "When you delegate a task to Copilot cloud agent, you can pick the model it uses to do its work. Today, we’re expanding the list of supported models to include…\nThe post Copilot cloud agent: Fast, cost-efficient models for simple tasks appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 6
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-05-18-copilot-cloud-agent-fast-cost-efficient-models-for-simple-tasks",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-05-19T16:37:20.663Z",
       "publishedAt": "2026-05-18T21:15:35.000Z",
       "title": "Copilot cloud agent: Fast, cost-efficient models for simple tasks",
       "url": "https://github.blog/changelog/2026-05-18-copilot-cloud-agent-fast-cost-efficient-models-for-simple-tasks",
