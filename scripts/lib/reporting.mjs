@@ -533,6 +533,40 @@ const exactSummaryMappings = {
     ja: "Copilot Business / Enterprise ユーザーが REST API から Copilot cloud agent のタスクをプログラム的に開始できるようになった。新しい Agent tasks REST API が public preview で提供され、CI/CD パイプラインや社内ツールから cloud agent を呼び出すフローを組み込みやすくなる。",
     en: "Copilot Business and Copilot Enterprise users can now programmatically start Copilot cloud agent tasks via the new Agent tasks REST API, available in public preview. This makes it straightforward to trigger cloud-agent work from CI/CD pipelines and internal tooling without a manual issue assignment step.",
   },
+  "Introducing Copilot CLI agent and unified sessions view in GitHub Copilot for JetBrains IDEs":
+    {
+      ja: "JetBrains IDE 向け GitHub Copilot に Copilot CLI agent と統合セッションビューが追加された。CLI agent を JetBrains の chat から直接使えるようになり、CLI・IDE のセッションを統合ビューで一覧できるため、複数の agent 作業を IDE 内で把握しやすくなる。",
+      en: "GitHub Copilot for JetBrains IDEs now includes Copilot CLI agent support and a unified sessions view, enabling CLI agent workflows directly from the IDE and providing a single view of both CLI and IDE sessions.",
+    },
+  "Grok Code Fast 1 deprecated": {
+    ja: "Grok Code Fast 1 が 2026年5月15日に GitHub Copilot の全体験（Chat・インライン編集・ask/agent モード・コード補完）から廃止された。代替として GPT-5 mini または Claude Haiku 4.5 への移行が推奨される。Enterprise 管理者はモデルポリシーで代替モデルへのアクセスを確認する必要がある。",
+    en: "Grok Code Fast 1 was deprecated from all GitHub Copilot experiences on May 15, 2026, in line with the model provider's retirement. Suggested alternatives are GPT-5 mini and Claude Haiku 4.5. Enterprise admins should verify access to replacement models in their Copilot model policies.",
+  },
+  "Copilot Spaces API now generally available": {
+    ja: "Copilot Spaces の REST API が一般提供になった。プログラム的に Spaces を作成・管理でき、チームの知識共有や AI へのコンテキスト提供の仕組みを API から自動化しやすくなる。",
+    en: "The Copilot Spaces REST API is now generally available, enabling programmatic creation and management of Spaces to automate knowledge sharing and context provisioning for teams.",
+  },
+  "Ask questions in context with Copilot on web": {
+    ja: "GitHub.com の Copilot chat が、開いているページ（PR、issue、コードなど）を自動でコンテキストとして認識するようになった。チャットを開いた時点で現在のページが文脈として読み込まれ、コンテキスト切り替えの手間を減らして素早く質問できる。",
+    en: "Copilot chat on github.com now opens pre-loaded with context from the page you are currently viewing—such as a pull request, issue, or code file—so questions land in context without extra setup.",
+  },
+  "Audit repository Copilot cloud agent configuration via the REST API": {
+    ja: "リポジトリの Copilot cloud agent 設定を REST API でプログラム的に取得できるようになった（public preview）。新しい「Get Copilot cloud agent configuration for a repository」エンドポイントにより、複数リポジトリの設定状況を一括監査しやすくなる。",
+    en: "A new REST API endpoint in public preview lets you programmatically retrieve a repository's Copilot cloud agent configuration, enabling automated configuration audits across large numbers of repositories.",
+  },
+  "Remote control for Copilot CLI sessions now generally available on mobile, web, and VS Code":
+    {
+      ja: "Copilot CLI セッションのリモート操作が GitHub Mobile と github.com で一般提供になった。ターミナルで始めた作業を、場所を問わずモバイルや web からモニタリング・操作できる。VS Code からの操作も可能になり、長時間タスクを離れたままでも止めずに進めやすくなった。",
+      en: "Remote control for Copilot CLI sessions is now generally available on GitHub Mobile, github.com, and VS Code, letting you monitor and steer terminal-started work from anywhere without staying at your desk.",
+    },
+  "One-click fixes for failing Actions with Copilot cloud agent": {
+    ja: "GitHub Actions ジョブが失敗したとき、Copilot Business / Enterprise ユーザーが「Fix with Copilot」ボタン一回で cloud agent に修正を依頼できるようになった。ジョブ失敗から修正 PR 作成までを、ターミナルや issue への手動切り替えなしに完結できる。",
+    en: "Copilot Business and Enterprise subscribers can now ask Copilot cloud agent to fix a failing GitHub Actions job with a single click on the Fix with Copilot button, completing the path from failure to fix pull request without leaving the Actions UI.",
+  },
+  "Copilot cloud agent: Fast, cost-efficient models for simple tasks": {
+    ja: "Copilot cloud agent にタスクを委任するとき、利用するモデルをユーザーが選択できるようになった。新たに高速・低コストモデルがサポートモデルに加わり、シンプルなタスクにコスト効率の良いモデルを選ぶことができる。",
+    en: "When delegating tasks to Copilot cloud agent, you can now choose which model it uses. New fast, cost-efficient models have been added to the supported list, so simpler tasks no longer require the most capable or expensive model.",
+  },
 };
 
 const exactImportanceMappings = {
@@ -1101,6 +1135,44 @@ const exactImportanceMappings = {
       ja: "BYOK reasoning モデルの思考量をタスクに応じて調整できるため、高品質が必要な場面とコスト・応答速度を優先する場面を同一モデルで使い分けやすくなります。",
       en: "This matters because it lets teams tune thinking effort per session for BYOK reasoning models, making it practical to balance response quality against speed and cost without switching models.",
     },
+  "One-click fixes for failing Actions with Copilot cloud agent": {
+    ja: "Actions の失敗から修正 PR の作成まで、ターミナルや issue 画面に切り替えずワンクリックで cloud agent に任せられるようになります。CI 修正の対応速度を上げたいチームに直接効く更新です。",
+    en: "This directly speeds up CI remediation by letting Copilot cloud agent handle the full path from failure detection to fix pull request in one click, without leaving the Actions UI.",
+  },
+  "Copilot cloud agent: Fast, cost-efficient models for simple tasks": {
+    ja: "シンプルなタスクに低コストモデルを選ぶことで、cloud agent の利用コストをタスクの複雑度に合わせて最適化できます。費用対効果を高めながら agent 活用の幅を広げやすくなります。",
+    en: "This makes it practical to optimize cloud agent costs by matching model capability to task complexity, expanding agent use cases without defaulting to expensive models.",
+  },
+  "Ask questions in context with Copilot on web": {
+    ja: "PR レビューや issue 調査の際に、現在のページがコンテキストとして自動読み込みされるため、切り替え作業なく即座に Copilot に質問できます。github.com 上の作業フローへの組み込みがしやすくなります。",
+    en: "This reduces friction in PR review and issue investigation workflows on github.com by automatically loading the current page as Copilot context, so questions land without extra setup.",
+  },
+  "Audit repository Copilot cloud agent configuration via the REST API": {
+    ja: "多数のリポジトリで CCA 設定の一貫性を確認したい場合や、設定変更を CI/CD で管理したい場合に API を使えるようになります。public preview なので早期に試して自チームの監査フローに合うか確認しやすいタイミングです。",
+    en: "This is directly useful for teams managing Copilot cloud agent across many repositories, as configuration audits can now be automated via the API. Early testing during public preview helps determine whether this fits compliance and governance workflows.",
+  },
+  "Remote control for Copilot CLI sessions now generally available on mobile, web, and VS Code":
+    {
+      ja: "GA になったことで本番運用の選択肢として評価しやすくなりました。長時間の CLI タスクで承認待ちが生じても、離席したままモバイルや web から再開できるため、agent を使い続けやすくなります。",
+      en: "GA status makes this a viable production option. Long CLI tasks that previously stalled waiting for approval can now be resumed remotely, removing a key barrier to sustained agent-driven terminal workflows.",
+    },
+  "Copilot Spaces API now generally available": {
+    ja: "GA により Copilot Spaces の知識共有・コンテキスト提供を API で自動化できる段階に入りました。チームの情報管理やオンボーディングを Spaces ベースで設計したい場合は本格導入を検討できます。",
+    en: "GA makes it practical to automate Spaces-based knowledge sharing and context provisioning with the API. Teams building information management or onboarding workflows around Spaces can now plan a production integration.",
+  },
+  "Introducing Copilot CLI agent and unified sessions view in GitHub Copilot for JetBrains IDEs":
+    {
+      ja: "JetBrains でも Copilot CLI agent と統合セッション管理が使えるようになり、IDE 間で agent 運用をそろえやすくなります。VS Code 中心の agent 運用と JetBrains ユーザーの環境を統一する足がかりになります。",
+      en: "This brings Copilot CLI agent workflows and unified session management into JetBrains IDEs, improving cross-IDE operational consistency and reducing the gap between VS Code and JetBrains agent experiences.",
+    },
+  "Grok Code Fast 1 deprecated": {
+    ja: "既に廃止済みのため、Grok Code Fast 1 を直接指定しているワークフローや統合は GPT-5 mini または Claude Haiku 4.5 への切り替えが必要です。Enterprise 管理者はモデルポリシーで代替モデルへのアクセスを確認してください。",
+    en: "This is already in effect, so any workflow or integration explicitly targeting Grok Code Fast 1 must migrate to GPT-5 mini or Claude Haiku 4.5. Enterprise admins should confirm replacement models are enabled in their Copilot model policies.",
+  },
+  "Take your local GitHub sessions anywhere": {
+    ja: "Copilot CLI セッションのリモート操作 GA に合わせた解説記事として、ターミナルで始めた作業をモバイルや web から継続する運用シナリオを把握できます。GA になったことで本番運用の検討材料として活用しやすくなります。",
+    en: "This blog post accompanies the remote control GA and helps teams understand practical scenarios for continuing terminal-started work from mobile or web, which is now a production-ready capability.",
+  },
 };
 
 function toDateOnly(value) {
