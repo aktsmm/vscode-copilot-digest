@@ -1,16 +1,86 @@
 {
   "date": "2026-05-19",
-  "generatedAt": "2026-05-19T16:37:22.296Z",
+  "generatedAt": "2026-05-19T22:42:16.447Z",
   "latestRun": {
-    "generatedAt": "2026-05-19T16:37:22.296Z",
-    "newEventsCount": 2,
+    "generatedAt": "2026-05-19T22:42:16.447Z",
+    "newEventsCount": 4,
     "newEventIds": [
-      "github-changelog-copilot:https://github.blog/changelog/2026-05-18-one-click-fixes-for-failing-actions-with-copilot-cloud-agent",
-      "github-changelog-copilot:https://github.blog/changelog/2026-05-18-copilot-cloud-agent-fast-cost-efficient-models-for-simple-tasks"
+      "github-changelog:https://github.blog/changelog/2026-05-19-easily-apply-copilot-code-review-feedback-with-copilot-cloud-agent",
+      "github-changelog:https://github.blog/changelog/2026-05-19-gemini-3-5-flash-is-generally-available-for-github-copilot",
+      "github-changelog-copilot:https://github.blog/changelog/2026-05-19-easily-apply-copilot-code-review-feedback-with-copilot-cloud-agent",
+      "github-changelog-copilot:https://github.blog/changelog/2026-05-19-gemini-3-5-flash-is-generally-available-for-github-copilot"
     ],
     "errorCount": 0
   },
   "events": [
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-05-19-easily-apply-copilot-code-review-feedback-with-copilot-cloud-agent",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-05-19T22:42:13.836Z",
+      "publishedAt": "2026-05-19T22:28:17.000Z",
+      "title": "Easily apply Copilot code review feedback with Copilot cloud agent",
+      "url": "https://github.blog/changelog/2026-05-19-easily-apply-copilot-code-review-feedback-with-copilot-cloud-agent",
+      "summary": "Copilot code review’s previous Implement suggestion button has now been renamed to Fix with Copilot and updated to support a UI dialog for more control over how suggestions are applied.…\nThe post Easily apply Copilot code review feedback with Copilot cloud agent appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 2
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-05-19-easily-apply-copilot-code-review-feedback-with-copilot-cloud-agent",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-05-19T22:42:14.109Z",
+      "publishedAt": "2026-05-19T22:28:17.000Z",
+      "title": "Easily apply Copilot code review feedback with Copilot cloud agent",
+      "url": "https://github.blog/changelog/2026-05-19-easily-apply-copilot-code-review-feedback-with-copilot-cloud-agent",
+      "summary": "Copilot code review’s previous Implement suggestion button has now been renamed to Fix with Copilot and updated to support a UI dialog for more control over how suggestions are applied.…\nThe post Easily apply Copilot code review feedback with Copilot cloud agent appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 2
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-05-19-gemini-3-5-flash-is-generally-available-for-github-copilot",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-05-19T22:42:13.836Z",
+      "publishedAt": "2026-05-19T17:56:38.000Z",
+      "title": "Gemini 3.5 Flash is generally available for GitHub Copilot",
+      "url": "https://github.blog/changelog/2026-05-19-gemini-3-5-flash-is-generally-available-for-github-copilot",
+      "summary": "Gemini 3.5 Flash, Google’s latest Flash-tier model, is now rolling out on GitHub Copilot. In our early testing, Gemini 3.5 Flash delivers near-Pro coding quality at Flash-tier speed and cost…\nThe post Gemini 3.5 Flash is generally available for GitHub Copilot appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-05-19-gemini-3-5-flash-is-generally-available-for-github-copilot",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-05-19T22:42:14.109Z",
+      "publishedAt": "2026-05-19T17:56:38.000Z",
+      "title": "Gemini 3.5 Flash is generally available for GitHub Copilot",
+      "url": "https://github.blog/changelog/2026-05-19-gemini-3-5-flash-is-generally-available-for-github-copilot",
+      "summary": "Gemini 3.5 Flash, Google’s latest Flash-tier model, is now rolling out on GitHub Copilot. In our early testing, Gemini 3.5 Flash delivers near-Pro coding quality at Flash-tier speed and cost…\nThe post Gemini 3.5 Flash is generally available for GitHub Copilot appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
     {
       "eventId": "github-changelog:https://github.blog/changelog/2026-05-18-one-click-fixes-for-failing-actions-with-copilot-cloud-agent",
       "sourceId": "github-changelog",
