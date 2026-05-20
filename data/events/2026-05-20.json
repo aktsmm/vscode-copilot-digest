@@ -1,12 +1,241 @@
 {
   "date": "2026-05-20",
-  "generatedAt": "2026-05-20T08:38:31.588Z",
+  "generatedAt": "2026-05-20T16:35:01.697Z",
   "latestRun": {
-    "generatedAt": "2026-05-20T08:38:31.588Z",
-    "newEventsCount": 0,
-    "newEventIds": [],
+    "generatedAt": "2026-05-20T16:35:01.697Z",
+    "newEventsCount": 11,
+    "newEventIds": [
+      "github-changelog:https://github.blog/changelog/2026-05-20-semantic-issue-search-in-copilot-chat",
+      "github-changelog-copilot:https://github.blog/changelog/2026-05-20-semantic-issue-search-in-copilot-chat",
+      "vscode-updates:8577bfec8408e38f0be864793c4f2e89b8c11ab34a617db65945f8ff5ab0efca",
+      "vscode-release-notes-1-109:ebf95eb16f8d4e25fc641acf9b6382f8228c6af3e00f579ca2e82c2d0f35af5e",
+      "vscode-release-notes-1-121:section:0ec66f5689ad9ca60f7cebacfe13fe7aab203b5a50e9c6c45c3433fcf617e862",
+      "vscode-release-notes-1-121:section:14eef781fb941b53c1ca9b29c2722031bb6629819139f37a3edd14d44ec3eae0",
+      "vscode-release-notes-1-121:section:93fb6835195629f29a70a9ca8d9897e1f32087327847d3d6c83a22348b874d8f",
+      "vscode-release-notes-1-121:section:47a75aaeb064c36e7d4d3299c9cd3a558e16a9424eef5ee3561aa1e0eea8f76e",
+      "vscode-release-notes-1-120:3b1508b08ff56a507b5bd6b9cd82b1cfa5d9bf88c7439135274caf88351e2923",
+      "vscode-release-notes-1-119:5a49e9ff846493c83b4f5eae3e721bbe5dae6bd701133b8ab670eb177b041a23",
+      "vscode-release-notes-1-118:2019f2286394f047bd591de39368086806dcceaa5ded3b862f0ae5d62c7071bf"
+    ],
     "errorCount": 0
   },
-  "events": [],
+  "events": [
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-05-20-semantic-issue-search-in-copilot-chat",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-05-20T16:34:58.884Z",
+      "publishedAt": "2026-05-20T14:07:27.000Z",
+      "title": "Semantic issue search in Copilot Chat",
+      "url": "https://github.blog/changelog/2026-05-20-semantic-issue-search-in-copilot-chat",
+      "summary": "You can use natural language in GitHub Copilot Chat on web to quickly find, group, and analyze issues, with context-aware results powered by a new semantic issues index. What’s new…\nThe post Semantic issue search in Copilot Chat appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot",
+        "projects &amp; issues"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-05-20-semantic-issue-search-in-copilot-chat",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-05-20T16:34:59.118Z",
+      "publishedAt": "2026-05-20T14:07:27.000Z",
+      "title": "Semantic issue search in Copilot Chat",
+      "url": "https://github.blog/changelog/2026-05-20-semantic-issue-search-in-copilot-chat",
+      "summary": "You can use natural language in GitHub Copilot Chat on web to quickly find, group, and analyze issues, with context-aware results powered by a new semantic issues index. What’s new…\nThe post Semantic issue search in Copilot Chat appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot",
+        "projects &amp; issues"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
+    {
+      "eventId": "vscode-updates:8577bfec8408e38f0be864793c4f2e89b8c11ab34a617db65945f8ff5ab0efca",
+      "sourceId": "vscode-updates",
+      "sourceName": "VS Code Updates",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-05-20T16:34:59.476Z",
+      "publishedAt": "2026-05-20T00:00:00.000Z",
+      "title": "VS Code Updates changed",
+      "url": "https://code.visualstudio.com/updates/",
+      "summary": "Detected 117 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 117,
+        "headings": [
+          "Visual Studio Code 1.121",
+          "Agents Window (Preview)",
+          "Remote agents (Preview)",
+          "Agents observability with OpenTelemetry and Grafana",
+          "Claude agent Auto permission mode (Preview)",
+          "Language Models",
+          "Configure utility models",
+          "Custom Endpoint provider for BYOK (Insiders)",
+          "Integrated Browser",
+          "Quickly open HTML files in the Integrated Browser",
+          "Improved experience for adding elements to chat",
+          "Terminal",
+          "Agent-aware terminal commands",
+          "Running in background indicator for terminal tools",
+          "Cleanup of background agent terminals",
+          "Broader compression for terminal tool output"
+        ],
+        "additions": [
+          "1.121",
+          "H1: Visual Studio Code 1.121",
+          "Release date: May 20, 2026",
+          "Welcome to the 1.121 release of Visual Studio Code. This release adds built-in Mermaid and HTML previews, streamlines terminal tool behavior for agents, and lets you run agent sessions on remote machines.",
+          "Remote agents: Monitor and control agent sessions on a remote machine from the Agents window.",
+          "Model configurability: Configure which models handle lightweight tasks like generating commit messages, titles, and more.",
+          "Mermaid diagram preview: Render Mermaid diagrams directly in the Markdown preview and notebooks.",
+          "HTML file preview: Preview local HTML files in the Integrated Browser without installing an extension.",
+          "Terminal tool optimizations: Consume less resources and tokens with more output compression and background terminal cleanup.",
+          "H3: Agents Window (Preview)",
+          "We continue improvement to the Agents window, which is the agent-driven companion window brought as a preview to VS Code Stable in our last release.",
+          "You can open the Agents window in several ways, including the Open in Agents button in the VS Code title bar. To learn more about how it works and what you can do with it, visit the Agents window documentation.",
+          "Your feedback continues to be a great help in shaping Agents. If you've already been using it and providing feedback, thank you! Please continue to file issues on GitHub or browse existing issues.",
+          "We're also continuing to work on the broader extension story in the Agents window, including what extension enablement unlocks and how various extensions should behave in this environment. Whether you'd like to ideate on new scenarios that take advantage of running agents across projects, or share feedback on how your existing extension behaves in the Agents window, we'd love to collaborate with you through GitHub issues.",
+          "H3: Remote agents (Preview)",
+          "The Agents window has experimental support for running agent sessions on a remote machine that you own and can connect to via SSH or dev tunnels. Learn more about remote agent sessions in our documentation."
+        ]
+      },
+      "headings": [
+        "Visual Studio Code 1.121",
+        "Agents",
+        "Agents Window (Preview)",
+        "Remote agents (Preview)",
+        "Agents observability with OpenTelemetry and Grafana",
+        "Claude agent Auto permission mode (Preview)",
+        "Language Models",
+        "Configure utility models",
+        "Custom Endpoint provider for BYOK (Insiders)",
+        "Integrated Browser",
+        "Quickly open HTML files in the Integrated Browser",
+        "Improved experience for adding elements to chat"
+      ],
+      "score": 18
+    },
+    {
+      "eventId": "vscode-release-notes-1-121:section:0ec66f5689ad9ca60f7cebacfe13fe7aab203b5a50e9c6c45c3433fcf617e862",
+      "sourceId": "vscode-release-notes-1-121",
+      "sourceName": "VS Code Release Notes 1.121",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-05-20T16:35:00.920Z",
+      "publishedAt": "2026-05-20T00:00:00.000Z",
+      "title": "Visual Studio Code 1.121: Agents Window (Preview)",
+      "url": "https://code.visualstudio.com/updates/v1_121",
+      "summary": "We continue improvement to the Agents window, which is the agent-driven companion window brought as a preview to VS Code Stable in our last release. You can open the Agents window in several ways, including the Open in Agents button in the VS Code title bar. To learn more about how it works and what you can do with it, visit the Agents window documentation. Your feedback continues to be a great help in shaping Agent...",
+      "categories": [
+        "release",
+        "section",
+        "Agents"
+      ],
+      "sectionHeading": "Agents",
+      "sectionTitle": "Agents Window (Preview)",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-121:section:14eef781fb941b53c1ca9b29c2722031bb6629819139f37a3edd14d44ec3eae0",
+      "sourceId": "vscode-release-notes-1-121",
+      "sourceName": "VS Code Release Notes 1.121",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-05-20T16:35:00.920Z",
+      "publishedAt": "2026-05-20T00:00:00.000Z",
+      "title": "Visual Studio Code 1.121: Remote agents (Preview)",
+      "url": "https://code.visualstudio.com/updates/v1_121",
+      "summary": "The Agents window has experimental support for running agent sessions on a remote machine that you own and can connect to via SSH or dev tunnels. Learn more about remote agent sessions in our documentation. You can connect the Agents window to a remote machine in two ways: SSH: pick from your existing ~/.ssh/config entries, or type a user@host. Dev Tunnels: pick from tunnels you've already created by running code tu...",
+      "categories": [
+        "release",
+        "section",
+        "Agents"
+      ],
+      "sectionHeading": "Agents",
+      "sectionTitle": "Remote agents (Preview)",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-121:section:93fb6835195629f29a70a9ca8d9897e1f32087327847d3d6c83a22348b874d8f",
+      "sourceId": "vscode-release-notes-1-121",
+      "sourceName": "VS Code Release Notes 1.121",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-05-20T16:35:00.920Z",
+      "publishedAt": "2026-05-20T00:00:00.000Z",
+      "title": "Visual Studio Code 1.121: Agents observability with OpenTelemetry and Grafana",
+      "url": "https://code.visualstudio.com/updates/v1_121",
+      "summary": "In collaboration with the Azure Managed Grafana team, there is now a prebuilt Azure Managed Grafana dashboard for the OpenTelemetry signals that agents in VS Code emit. Point VS Code at an OTel Collector that forwards to Azure Application Insights, then import the Azure Managed Grafana dashboard to visualize agent operations, token usage, chat sessions, tool calls, and per-model response time and time to first token...",
+      "categories": [
+        "release",
+        "section",
+        "Agents"
+      ],
+      "sectionHeading": "Agents",
+      "sectionTitle": "Agents observability with OpenTelemetry and Grafana",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-121:section:47a75aaeb064c36e7d4d3299c9cd3a558e16a9424eef5ee3561aa1e0eea8f76e",
+      "sourceId": "vscode-release-notes-1-121",
+      "sourceName": "VS Code Release Notes 1.121",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-05-20T16:35:00.920Z",
+      "publishedAt": "2026-05-20T00:00:00.000Z",
+      "title": "Visual Studio Code 1.121: Claude agent Auto permission mode (Preview)",
+      "url": "https://code.visualstudio.com/updates/v1_121",
+      "summary": "Setting: \n \n \n github.copilot.chat.claudeAgent.allowAutoPermissions\n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders The Claude Agent now supports Auto mode, which lets Claude execute without permission prompts. A separate classifier request reviews actions before they run, blocking anything that escalates beyond your request, targets unrecognized infrastructure, or appears driven by hostile content Claude r...",
+      "categories": [
+        "release",
+        "section",
+        "Agents"
+      ],
+      "sectionHeading": "Agents",
+      "sectionTitle": "Claude agent Auto permission mode (Preview)",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-109:ebf95eb16f8d4e25fc641acf9b6382f8228c6af3e00f579ca2e82c2d0f35af5e",
+      "sourceId": "vscode-release-notes-1-109",
+      "sourceName": "VS Code Release Notes 1.109",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-05-20T16:34:59.933Z",
+      "publishedAt": "2026-02-04T00:00:00.000Z",
+      "title": "VS Code Release Notes 1.109 changed",
+      "url": "https://code.visualstudio.com/updates/v1_109",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [],
+        "additions": [
+          "1.121"
+        ]
+      },
+      "headings": [
+        "January 2026 (version 1.109)",
+        "Upcoming events",
+        "Agent Sessions Day",
+        "Chat UX",
+        "Message steering and queueing (Experimental)",
+        "Anthropic models now show thinking tokens",
+        "Mermaid diagrams in chat responses",
+        "Ask Questions tool (Experimental)",
+        "Plan agent",
+        "Context window details",
+        "Inline chat UX revamp (Preview)",
+        "Model descriptions in the model picker"
+      ],
+      "score": 2
+    }
+  ],
   "errors": []
 }
