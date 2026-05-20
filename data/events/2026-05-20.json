@@ -1,25 +1,86 @@
 {
   "date": "2026-05-20",
-  "generatedAt": "2026-05-20T16:35:01.697Z",
+  "generatedAt": "2026-05-20T22:49:30.902Z",
   "latestRun": {
-    "generatedAt": "2026-05-20T16:35:01.697Z",
-    "newEventsCount": 11,
+    "generatedAt": "2026-05-20T22:49:30.902Z",
+    "newEventsCount": 5,
     "newEventIds": [
-      "github-changelog:https://github.blog/changelog/2026-05-20-semantic-issue-search-in-copilot-chat",
-      "github-changelog-copilot:https://github.blog/changelog/2026-05-20-semantic-issue-search-in-copilot-chat",
-      "vscode-updates:8577bfec8408e38f0be864793c4f2e89b8c11ab34a617db65945f8ff5ab0efca",
-      "vscode-release-notes-1-109:ebf95eb16f8d4e25fc641acf9b6382f8228c6af3e00f579ca2e82c2d0f35af5e",
-      "vscode-release-notes-1-121:section:0ec66f5689ad9ca60f7cebacfe13fe7aab203b5a50e9c6c45c3433fcf617e862",
-      "vscode-release-notes-1-121:section:14eef781fb941b53c1ca9b29c2722031bb6629819139f37a3edd14d44ec3eae0",
-      "vscode-release-notes-1-121:section:93fb6835195629f29a70a9ca8d9897e1f32087327847d3d6c83a22348b874d8f",
-      "vscode-release-notes-1-121:section:47a75aaeb064c36e7d4d3299c9cd3a558e16a9424eef5ee3561aa1e0eea8f76e",
-      "vscode-release-notes-1-120:3b1508b08ff56a507b5bd6b9cd82b1cfa5d9bf88c7439135274caf88351e2923",
-      "vscode-release-notes-1-119:5a49e9ff846493c83b4f5eae3e721bbe5dae6bd701133b8ab670eb177b041a23",
-      "vscode-release-notes-1-118:2019f2286394f047bd591de39368086806dcceaa5ded3b862f0ae5d62c7071bf"
+      "github-changelog:https://github.blog/changelog/2026-05-20-updates-to-available-models-in-copilot-on-web",
+      "github-changelog:https://github.blog/changelog/2026-05-20-auto-model-selection-now-routes-based-on-your-task-in-vs-code",
+      "github-changelog-copilot:https://github.blog/changelog/2026-05-20-auto-model-selection-now-routes-based-on-your-task-in-vs-code",
+      "vscode-feed:https://code.visualstudio.com/updates/v1_121",
+      "vscode-updates:5c83f9b33b62ca38814aee70d029800473ac68bc13018c8b99394aab5fade24f"
     ],
     "errorCount": 0
   },
   "events": [
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-05-20-updates-to-available-models-in-copilot-on-web",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-05-20T22:49:29.320Z",
+      "publishedAt": "2026-05-20T17:11:42.000Z",
+      "title": "Updates to available models in Copilot on web",
+      "url": "https://github.blog/changelog/2026-05-20-updates-to-available-models-in-copilot-on-web",
+      "summary": "We have updated our available model selection for Copilot Chat on the web to deliver more consistent, high-quality responses. What’s changed While model choice is valuable, we are limiting the…\nThe post Updates to available models in Copilot on web appeared first on The GitHub Blog.",
+      "categories": [
+        "Retired",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
+    {
+      "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_121",
+      "sourceId": "vscode-feed",
+      "sourceName": "VS Code Feed",
+      "kind": "feed_entry",
+      "detectedAt": "2026-05-20T22:49:29.364Z",
+      "publishedAt": "2026-05-20T17:00:00.000Z",
+      "title": "Visual Studio Code 1.121",
+      "url": "https://code.visualstudio.com/updates/v1_121",
+      "summary": "Learn what's new in Visual Studio Code 1.121\n Read the full article",
+      "categories": [
+        "release"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-05-20-auto-model-selection-now-routes-based-on-your-task-in-vs-code",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-05-20T22:49:29.320Z",
+      "publishedAt": "2026-05-20T15:24:40.000Z",
+      "title": "Auto model selection now routes based on your task in VS Code",
+      "url": "https://github.blog/changelog/2026-05-20-auto-model-selection-now-routes-based-on-your-task-in-vs-code",
+      "summary": "GitHub Copilot auto model selection now routes to the best model for your task, using utilization and model health metrics for a high quality, reliable, and token-efficient experience. How it…\nThe post Auto model selection now routes based on your task in VS Code appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 1
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-05-20-auto-model-selection-now-routes-based-on-your-task-in-vs-code",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-05-20T22:49:29.333Z",
+      "publishedAt": "2026-05-20T15:24:40.000Z",
+      "title": "Auto model selection now routes based on your task in VS Code",
+      "url": "https://github.blog/changelog/2026-05-20-auto-model-selection-now-routes-based-on-your-task-in-vs-code",
+      "summary": "GitHub Copilot auto model selection now routes to the best model for your task, using utilization and model health metrics for a high quality, reliable, and token-efficient experience. How it…\nThe post Auto model selection now routes based on your task in VS Code appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 1
+    },
     {
       "eventId": "github-changelog:https://github.blog/changelog/2026-05-20-semantic-issue-search-in-copilot-chat",
       "sourceId": "github-changelog",
@@ -198,6 +259,54 @@
       ],
       "sectionHeading": "Agents",
       "sectionTitle": "Claude agent Auto permission mode (Preview)",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-updates:5c83f9b33b62ca38814aee70d029800473ac68bc13018c8b99394aab5fade24f",
+      "sourceId": "vscode-updates",
+      "sourceName": "VS Code Updates",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-05-20T22:49:29.453Z",
+      "publishedAt": "2026-05-20T00:00:00.000Z",
+      "title": "VS Code Updates changed",
+      "url": "https://code.visualstudio.com/updates/",
+      "summary": "Detected 10 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 10,
+        "headings": [
+          "Editor",
+          "Quick suggestions default setting change"
+        ],
+        "additions": [
+          "H2: Editor",
+          "H3: Quick suggestions default setting change",
+          "Copilot's inline suggestions always align with the selection of the suggest control. This is very useful, as you can quickly press Tab twice to accept both the suggestion and the ghost text from Copilot.",
+          "However, we've found that as you start to type, in many cases the suggest control pops up and selects the very first (alphabetical) available global symbol that starts with the typed character. This is rarely the text you'd actually type and it also results in Copilot giving you suggestions with that, incorrect, prefix, thus making the experience more noisy.",
+          "We've decided to change the default setting for quick suggestions (",
+          "editor.quickSuggestions",
+          "Open in VS Code",
+          "Open in VS Code Insiders",
+          "). If an inline completion provider is available (such as Copilot), then typing letters in the editor no longer automatically triggers the suggest control. In all other cases, the suggest control pops up as before. You can revert to the old behavior by configuring:",
+          "Editor"
+        ]
+      },
+      "headings": [
+        "Visual Studio Code 1.121",
+        "Agents",
+        "Agents Window (Preview)",
+        "Remote agents (Preview)",
+        "Agents observability with OpenTelemetry and Grafana",
+        "Claude agent Auto permission mode (Preview)",
+        "Language Models",
+        "Configure utility models",
+        "Custom Endpoint provider for BYOK (Insiders)",
+        "Integrated Browser",
+        "Quickly open HTML files in the Integrated Browser",
+        "Improved experience for adding elements to chat"
+      ],
       "score": 4
     },
     {
