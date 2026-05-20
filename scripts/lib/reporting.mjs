@@ -40,6 +40,10 @@ const monthMap = {
 };
 
 const vscodeReleaseSummaries = {
+  "1.121": {
+    ja: "Agents Window の改善と remote agents（Preview）が入り、SSH / dev tunnel 先でも agent セッションを扱えるようになった。OpenTelemetry と Azure Managed Grafana による observability、Claude agent の Auto permission mode（Preview）、utility model 設定や terminal tool 最適化も含み、agent 運用の実行環境・可観測性・操作性を広げる release。",
+    en: "This release expands agent operations with an improved Agents Window, preview remote-agent sessions over SSH and dev tunnels, OpenTelemetry plus Azure Managed Grafana observability, Claude agent Auto permission mode (Preview), utility-model configuration, and terminal-tool optimizations.",
+  },
   "1.120": {
     ja: "Agents ウィンドウが VS Code Stable にプレビュー公開され、複数プロジェクト・複数 agent の作業専用画面が使えるようになった。BYOK モデルへの token 使用量の可視化と thinking effort 設定、Copilot CLI plugin の自動検出も追加。terminal tool 出力圧縮、terminal コマンドのリスク評価、Claude と Copilot CLI への Plan mode 制御など、agent の実用性を高める変更がまとまった release。",
     en: "The Agents window moves to Stable preview, providing a dedicated companion window for multi-project and multi-agent work. The release also adds BYOK model token usage visibility, thinking-effort controls for BYOK reasoning models, automatic discovery of Copilot CLI plugins in VS Code, terminal tool-output compression, terminal command risk assessment, and Plan mode control for Claude and Copilot CLI.",
@@ -529,6 +533,10 @@ const exactSummaryMappings = {
     ja: "Copilot Business / Enterprise の既定モデルが GPT-4.1 から GPT-5.3-Codex に切り替わった。組織でモデルを明示選択していない利用では応答挙動の前提が変わる。",
     en: "GPT-5.3-Codex is now the default model for Copilot Business and Enterprise, replacing GPT-4.1 when organizations do not explicitly select another model.",
   },
+  "Gemini 3.5 Flash is generally available for GitHub Copilot": {
+    ja: "Gemini 3.5 Flash が GitHub Copilot で一般提供になった。高速・低コスト帯のモデル選択肢として正式運用に組み込みやすくなり、日常タスクでのモデル使い分けを再設計しやすい。",
+    en: "Gemini 3.5 Flash is now generally available in GitHub Copilot, making it easier to treat it as a production option in the fast, cost-efficient model tier.",
+  },
   "Start Copilot cloud agent tasks via the REST API": {
     ja: "Copilot Business / Enterprise ユーザーが REST API から Copilot cloud agent のタスクをプログラム的に開始できるようになった。新しい Agent tasks REST API が public preview で提供され、CI/CD パイプラインや社内ツールから cloud agent を呼び出すフローを組み込みやすくなる。",
     en: "Copilot Business and Copilot Enterprise users can now programmatically start Copilot cloud agent tasks via the new Agent tasks REST API, available in public preview. This makes it straightforward to trigger cloud-agent work from CI/CD pipelines and internal tooling without a manual issue assignment step.",
@@ -566,6 +574,27 @@ const exactSummaryMappings = {
   "Copilot cloud agent: Fast, cost-efficient models for simple tasks": {
     ja: "Copilot cloud agent にタスクを委任するとき、利用するモデルをユーザーが選択できるようになった。新たに高速・低コストモデルがサポートモデルに加わり、シンプルなタスクにコスト効率の良いモデルを選ぶことができる。",
     en: "When delegating tasks to Copilot cloud agent, you can now choose which model it uses. New fast, cost-efficient models have been added to the supported list, so simpler tasks no longer require the most capable or expensive model.",
+  },
+  "Semantic issue search in Copilot Chat": {
+    ja: "GitHub.com の Copilot Chat で semantic issue search が使えるようになった。自然言語で issue を横断検索・分類し、文脈を保ったまま絞り込みや整理を進めやすくなる。",
+    en: "Copilot Chat on github.com now supports semantic issue search, allowing natural-language issue discovery, grouping, and analysis with context-aware results.",
+  },
+  "Visual Studio Code 1.121: Agents Window (Preview)": {
+    ja: "Agents Window のプレビューが継続改善され、VS Code 本体から開いて agent セッションを管理しやすくなった。複数タスクを並行で回す運用時に、専用ウィンドウで状態把握しやすい。",
+    en: "The Agents Window preview continues to improve, making it easier to open from VS Code and manage multiple agent sessions from a dedicated view.",
+  },
+  "Visual Studio Code 1.121: Remote agents (Preview)": {
+    ja: "Agents Window から SSH や dev tunnel 先のリモート環境で agent セッションを実行できる preview が追加された。手元以外の計算資源を使った作業を同じ UI で扱えるようになる。",
+    en: "A new preview enables running agent sessions on remote machines via SSH or dev tunnels from the Agents Window, unifying local and remote execution in one UI.",
+  },
+  "Visual Studio Code 1.121: Agents observability with OpenTelemetry and Grafana":
+    {
+      ja: "VS Code agent の OpenTelemetry シグナルを Azure Managed Grafana ダッシュボードで可視化できるようになった。token 使用量や tool call などの運用メトリクスを継続監視しやすくなる。",
+      en: "VS Code agents now provide observability through OpenTelemetry signals and an Azure Managed Grafana dashboard for tracking operations, token usage, and tool activity.",
+    },
+  "Visual Studio Code 1.121: Claude agent Auto permission mode (Preview)": {
+    ja: "Claude agent に Auto permission mode の preview が追加され、許可ダイアログを毎回挟まずに実行を進められるようになった。自動実行前に分類器で危険操作を判定する仕組みも導入されている。",
+    en: "Claude agent now has a preview Auto permission mode that can run without per-action prompts while using a classifier to block risky actions before execution.",
   },
 };
 
@@ -678,6 +707,10 @@ const exactImportanceMappings = {
   "GPT-5.3-Codex is now the base model for Copilot Business and Enterprise": {
     ja: "組織既定モデルの切り替えは日常の生成結果に直結するため、評価基準と社内ガイドの前提見直しが必要です。",
     en: "A default model switch impacts daily outputs immediately, so evaluation baselines and internal guidance may need to be updated.",
+  },
+  "Gemini 3.5 Flash is generally available for GitHub Copilot": {
+    ja: "GA になったことで、モデル候補として本番運用に組み込みやすくなりました。速度とコストを重視するタスクでの標準候補として評価しやすくなります。",
+    en: "GA status makes Gemini 3.5 Flash a practical production candidate, especially for tasks where speed and cost efficiency matter.",
   },
   "GitHub Copilot in Visual Studio — March update": {
     ja: "Visual Studio 側でも custom agents や診断支援が広がっていて、IDE ごとの agent 体験差を埋める流れとして重要です。",
@@ -843,6 +876,10 @@ const exactImportanceMappings = {
   "Visual Studio Code 1.120": {
     ja: "Agents ウィンドウの Stable 提供開始、BYOK モデルの token 可視化と thinking effort 設定、CLI plugin 自動検出など、agent 開発の実用性と可視性を高める変更が揃っているため、VS Code agent を日常利用するチームは設定確認とワークフロー見直しの対象になります。",
     en: "This release matters because it makes the Agents window available in Stable, improves visibility and control for BYOK model usage, and removes friction from plugin setup, all of which affect daily agent development workflows in VS Code.",
+  },
+  "Visual Studio Code 1.121": {
+    ja: "remote agents、可観測性、permission 自動化など、agent を継続運用するための要素がまとまって強化されている release です。ローカル前提の運用から監視付きの分散実行へ移行するかを検討する節目になります。",
+    en: "This release is important because remote execution, observability, and permission automation all improve together, making it a practical checkpoint for moving from local-only to monitored distributed agent workflows.",
   },
   "Copilot-reviewed pull request merge metrics now in the usage metrics API": {
     ja: "Copilot が authoring だけでなく review から merge までにどう効いているかを測れるので、導入効果の可視化と自動レビュー定着の判断に直接使えます。",
@@ -1142,6 +1179,31 @@ const exactImportanceMappings = {
   "Copilot cloud agent: Fast, cost-efficient models for simple tasks": {
     ja: "シンプルなタスクに低コストモデルを選ぶことで、cloud agent の利用コストをタスクの複雑度に合わせて最適化できます。費用対効果を高めながら agent 活用の幅を広げやすくなります。",
     en: "This makes it practical to optimize cloud agent costs by matching model capability to task complexity, expanding agent use cases without defaulting to expensive models.",
+  },
+  "Easily apply Copilot code review feedback with Copilot cloud agent": {
+    ja: "レビュー指摘の反映を cloud agent に対話的に任せやすくなり、修正作業の往復を短縮できます。レビュー対応のスループット改善に直結する更新です。",
+    en: "This improves review throughput by making it easier to delegate and control how cloud agent applies code-review feedback.",
+  },
+  "Semantic issue search in Copilot Chat": {
+    ja: "issue 探索を自然言語で進められるため、トリアージや優先度整理の初動を短縮しやすい更新です。大量 issue の分類作業を chat 内で完結しやすくなります。",
+    en: "This can shorten triage and prioritization by enabling natural-language issue discovery and grouping directly in chat.",
+  },
+  "Visual Studio Code 1.121: Agents Window (Preview)": {
+    ja: "専用ウィンドウで複数 agent セッションを見渡しやすくなるため、並行タスク時の状況把握と切り替えコストを下げやすい更新です。",
+    en: "This reduces session-management overhead by making multi-agent activity easier to monitor and switch between in a dedicated window.",
+  },
+  "Visual Studio Code 1.121: Remote agents (Preview)": {
+    ja: "手元環境に依存しない agent 実行の選択肢が増えるため、重い作業や検証をリモート計算資源に逃がす運用を試しやすくなります。",
+    en: "This expands operational options by letting teams test agent workflows on remote compute instead of only local machines.",
+  },
+  "Visual Studio Code 1.121: Agents observability with OpenTelemetry and Grafana":
+    {
+      ja: "agent 実行の可観測性が整うことで、token 消費や応答遅延の監視を運用指標として扱いやすくなります。本番導入時の監査・改善ループに直結します。",
+      en: "This is important for production operations because it adds measurable telemetry for agent performance, token usage, and reliability tuning.",
+    },
+  "Visual Studio Code 1.121: Claude agent Auto permission mode (Preview)": {
+    ja: "許可プロンプト待ちを減らしつつ危険操作を分類器で抑止する設計のため、自動化速度と安全性の両立を検証する価値があります。",
+    en: "This is operationally significant because it tests a balance between faster automation and guardrails through classifier-based risk checks.",
   },
   "Ask questions in context with Copilot on web": {
     ja: "PR レビューや issue 調査の際に、現在のページがコンテキストとして自動読み込みされるため、切り替え作業なく即座に Copilot に質問できます。github.com 上の作業フローへの組み込みがしやすくなります。",
