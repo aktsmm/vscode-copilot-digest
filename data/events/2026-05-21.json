@@ -1,17 +1,36 @@
 {
   "date": "2026-05-21",
-  "generatedAt": "2026-05-21T08:44:13.045Z",
+  "generatedAt": "2026-05-21T16:24:59.626Z",
   "latestRun": {
-    "generatedAt": "2026-05-21T08:44:13.045Z",
-    "newEventsCount": 3,
+    "generatedAt": "2026-05-21T16:24:59.626Z",
+    "newEventsCount": 6,
     "newEventIds": [
-      "github-changelog:https://github.blog/changelog/2026-05-20-copilot-usage-metrics-reports-now-use-github-owned-download-urls",
-      "github-changelog-copilot:https://github.blog/changelog/2026-05-20-copilot-usage-metrics-reports-now-use-github-owned-download-urls",
-      "github-changelog-copilot:https://github.blog/changelog/2026-05-20-updates-to-available-models-in-copilot-on-web"
+      "vscode-feed:https://code.visualstudio.com/updates/v1_122",
+      "vscode-updates:4e1b4b64d23abd8a0572dfb4ab4b101e2cd7453546fdc23358a6018b820cb993",
+      "vscode-release-notes-1-109:efc0cea6584d2244d651e05ea3738cf636ec7e910e99979ee7eb97ef700a6147",
+      "vscode-release-notes-1-120:c1a1aa5f73ede530791a7046987db1f660233c40fb1a19447be1cfba89b09467",
+      "vscode-release-notes-1-119:e9a23ba2fd082e984bec01f30afbcc34a0e5a1a91d799c54b7b9bca7b00069ea",
+      "vscode-release-notes-1-118:5ca0de1470add602fb4f059ec120bf1ea6e0fe9767237ee889fb255344c488f4"
     ],
     "errorCount": 0
   },
   "events": [
+    {
+      "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_122",
+      "sourceId": "vscode-feed",
+      "sourceName": "VS Code Feed",
+      "kind": "feed_entry",
+      "detectedAt": "2026-05-21T16:24:57.038Z",
+      "publishedAt": "2026-05-27T17:00:00.000Z",
+      "title": "Visual Studio Code 1.122",
+      "url": "https://code.visualstudio.com/updates/v1_122",
+      "summary": "Learn what's new in Visual Studio Code 1.122 (Insiders)\n Read the full article",
+      "categories": [
+        "release"
+      ],
+      "isFutureDated": true,
+      "score": 4
+    },
     {
       "eventId": "github-changelog:https://github.blog/changelog/2026-05-20-copilot-usage-metrics-reports-now-use-github-owned-download-urls",
       "sourceId": "github-changelog",
@@ -64,6 +83,78 @@
       ],
       "isFutureDated": false,
       "score": 4
+    },
+    {
+      "eventId": "vscode-updates:4e1b4b64d23abd8a0572dfb4ab4b101e2cd7453546fdc23358a6018b820cb993",
+      "sourceId": "vscode-updates",
+      "sourceName": "VS Code Updates",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-05-21T16:24:57.306Z",
+      "publishedAt": "2026-05-20T00:00:00.000Z",
+      "title": "VS Code Updates changed",
+      "url": "https://code.visualstudio.com/updates/",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [],
+        "additions": [
+          "Insiders"
+        ]
+      },
+      "headings": [
+        "Visual Studio Code 1.121",
+        "Agents",
+        "Agents Window (Preview)",
+        "Remote agents (Preview)",
+        "Agents observability with OpenTelemetry and Grafana",
+        "Claude agent Auto permission mode (Preview)",
+        "Language Models",
+        "Configure utility models",
+        "Custom Endpoint provider for BYOK (Insiders)",
+        "Integrated Browser",
+        "Quickly open HTML files in the Integrated Browser",
+        "Improved experience for adding elements to chat"
+      ],
+      "score": 2
+    },
+    {
+      "eventId": "vscode-release-notes-1-109:efc0cea6584d2244d651e05ea3738cf636ec7e910e99979ee7eb97ef700a6147",
+      "sourceId": "vscode-release-notes-1-109",
+      "sourceName": "VS Code Release Notes 1.109",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-05-21T16:24:57.791Z",
+      "publishedAt": "2026-02-04T00:00:00.000Z",
+      "title": "VS Code Release Notes 1.109 changed",
+      "url": "https://code.visualstudio.com/updates/v1_109",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [],
+        "additions": [
+          "Insiders"
+        ]
+      },
+      "headings": [
+        "January 2026 (version 1.109)",
+        "Upcoming events",
+        "Agent Sessions Day",
+        "Chat UX",
+        "Message steering and queueing (Experimental)",
+        "Anthropic models now show thinking tokens",
+        "Mermaid diagrams in chat responses",
+        "Ask Questions tool (Experimental)",
+        "Plan agent",
+        "Context window details",
+        "Inline chat UX revamp (Preview)",
+        "Model descriptions in the model picker"
+      ],
+      "score": 2
     }
   ],
   "errors": []

@@ -1,3 +1,4 @@
+Insiders
 1.121
 1.120
 1.119
@@ -252,22 +253,6 @@ Contributions to vscode:
 @thernstig (Tobias Hernstig): fix: replace typescript.tsdk.desc with new js/ts.tsdk.path PR #315268
 @thirteenflt (yutingsun): change vsc promptD PR #316733
 @yavanosta (Dmitry Guketlev): Make appearedInsideViewport in InlineCompletionsModel reactive (#_289944) PR #289946
-H2: Thank you
-Contributions to our issue tracking:
-@gjsjohnmurray (John Murray)
-@RedCMD (RedCMD)
-@IllusionMH (Andrii Dieiev)
-@albertosantini (Alberto Santini)
-Contributions to vscode:
-@ba-work (Brock Alberry): outputMonitor: fix two false-positive families pausing the agent loop PR #315485
-@guomaggie: Return final answer text when snippet hydration errors PR #316094
-@kevin-m-kent: Experiment with terminal output deltas for repeated polls PR #315543
-@NikolaRHristov (Nikola Hristov): fix: restore protected modifier on relayCreationTimeoutMs in test helper PR #316049
-@SebTardif (Sebastien Tardif): Fix listener leak: move onDidChangeConfiguration out of onDidProgressStep callback PR #314636
-@SimonSiefke (Simon Siefke): fix: memory leak in lifeCycleMainService PR #315891
-@thernstig (Tobias Hernstig): fix: replace typescript.tsdk.desc with new js/ts.tsdk.path PR #315268
-@thirteenflt (yutingsun): change vsc promptD PR #316733
-@yavanosta (Dmitry Guketlev): Make appearedInsideViewport in InlineCompletionsModel reactive (#_289944) PR #289946
 We really appreciate people trying our new features as soon as they are ready, so check back here often and learn what's new.
 If you'd like to read release notes for previous VS Code versions, go to Updates on code.visualstudio.com.
 Agents
@@ -277,5 +262,4 @@ Terminal
 Editor
 Languages
 Deprecated features and settings
-Thank you
 Thank you
