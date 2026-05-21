@@ -40,6 +40,10 @@ const monthMap = {
 };
 
 const vscodeReleaseSummaries = {
+  "1.121": {
+    ja: "agent 体験の継続強化が主題の release。Agents ウィンドウの継続改善に加え、リモートマシン上での agent セッション実行（Experimental）、OpenTelemetry と Azure Managed Grafana による agent observability、Claude agent の Auto 権限モードプレビューが含まれる。",
+    en: "This release continues to strengthen the agent experience with further Agents window improvements, experimental remote-machine agent session execution, OpenTelemetry and Azure Managed Grafana agent observability, and a Claude agent Auto permission mode in preview.",
+  },
   "1.120": {
     ja: "Agents ウィンドウが VS Code Stable にプレビュー公開され、複数プロジェクト・複数 agent の作業専用画面が使えるようになった。BYOK モデルへの token 使用量の可視化と thinking effort 設定、Copilot CLI plugin の自動検出も追加。terminal tool 出力圧縮、terminal コマンドのリスク評価、Claude と Copilot CLI への Plan mode 制御など、agent の実用性を高める変更がまとまった release。",
     en: "The Agents window moves to Stable preview, providing a dedicated companion window for multi-project and multi-agent work. The release also adds BYOK model token usage visibility, thinking-effort controls for BYOK reasoning models, automatic discovery of Copilot CLI plugins in VS Code, terminal tool-output compression, terminal command risk assessment, and Plan mode control for Claude and Copilot CLI.",
@@ -566,6 +570,46 @@ const exactSummaryMappings = {
   "Copilot cloud agent: Fast, cost-efficient models for simple tasks": {
     ja: "Copilot cloud agent にタスクを委任するとき、利用するモデルをユーザーが選択できるようになった。新たに高速・低コストモデルがサポートモデルに加わり、シンプルなタスクにコスト効率の良いモデルを選ぶことができる。",
     en: "When delegating tasks to Copilot cloud agent, you can now choose which model it uses. New fast, cost-efficient models have been added to the supported list, so simpler tasks no longer require the most capable or expensive model.",
+  },
+  "Gemini 3.5 Flash is generally available for GitHub Copilot": {
+    ja: "Google の最新 Flash ティアモデル Gemini 3.5 Flash が GitHub Copilot で一般提供になった。Flash ティアの速度とコストで Pro 品質に近いコーディング性能を発揮するとされており、Copilot のモデル選択肢が広がる。",
+    en: "Gemini 3.5 Flash, Google's latest Flash-tier model, is now generally available on GitHub Copilot, delivering near-Pro coding quality at Flash-tier speed and cost.",
+  },
+  "Easily apply Copilot code review feedback with Copilot cloud agent": {
+    ja: "Copilot code review の「Implement suggestion」ボタンが「Fix with Copilot」へ改名され、提案の適用方法をより細かく制御できる UI ダイアログが追加された。cloud agent を使ってコードレビューのフィードバックをより簡単に適用できるようになった。",
+    en: "The Implement suggestion button in Copilot code review is now Fix with Copilot and opens a UI dialog with more control over how suggestions are applied using the cloud agent.",
+  },
+  "Auto model selection now routes based on your task in VS Code": {
+    ja: "VS Code の GitHub Copilot 自動モデル選択が、タスクの種類と負荷状況に基づいて最適モデルへルーティングするようになった。モデルを手動で選ばなくても、作業内容に応じた最適なモデルが自動で使われる。",
+    en: "GitHub Copilot auto model selection in VS Code now routes to the best model based on task type and system utilization, removing the need to manually switch models for different workloads.",
+  },
+  "Semantic issue search in Copilot Chat": {
+    ja: "GitHub Copilot Chat on web で自然言語を使って issue の検索・グループ化・分析ができるようになった。意味的な検索により、キーワード一致に依存せず関連 issue を素早く見つけられる。",
+    en: "Natural language semantic issue search is now available in GitHub Copilot Chat on the web, making it easy to find, group, and analyze related issues without relying on exact keyword matches.",
+  },
+  "Visual Studio Code 1.121: Agents Window (Preview)": {
+    ja: "Agents ウィンドウの継続改善が入った。複数プロジェクト・複数 agent 向けの companion ウィンドウとして安定性・操作性の向上が続いている。",
+    en: "The Agents window for multi-project and multi-agent workflows received continued stability and usability improvements.",
+  },
+  "Visual Studio Code 1.121: Remote agents (Preview)": {
+    ja: "Agents ウィンドウがリモートマシン上での agent セッション実行に実験的に対応した。ローカルの VS Code からリモートホストの agent を操作できるようになる。",
+    en: "The Agents window now has experimental support for running agent sessions on a remote machine, letting you operate remote agents directly from your local VS Code.",
+  },
+  "Visual Studio Code 1.121: Agents observability with OpenTelemetry and Grafana": {
+    ja: "Azure Managed Grafana との連携により、agent セッションの OpenTelemetry トレースを可視化するプリビルドダッシュボードが追加された。agent 実行の observability を monitoring インフラへ統合しやすくなる。",
+    en: "In collaboration with Azure Managed Grafana, a prebuilt dashboard for visualizing agent session OpenTelemetry traces is now available, making it easier to integrate agent observability into existing monitoring infrastructure.",
+  },
+  "Visual Studio Code 1.121: Claude agent Auto permission mode (Preview)": {
+    ja: "Claude agent に Auto 権限モードがプレビューで追加された。Auto モードでは tool 使用の承認を自動化でき、介入なしで長時間の agent タスクを進めやすくなる。",
+    en: "Claude agent now has an Auto permission mode in preview. With Auto enabled, the agent can use tools without per-action approval, making it practical to run longer tasks without interruption.",
+  },
+  "Copilot usage metrics reports now use GitHub-owned download URLs": {
+    ja: "Copilot usage metrics レポートのダウンロード URL が Azure Front Door ドメインから GitHub 所有のカスタムドメインへの移行が完了した。URL の安定性向上を目的とした変更で、既存の automation やスクリプトで旧 URL を参照している場合は新 URL への切り替えが必要になる。",
+    en: "Download URLs for Copilot usage metrics reports have completed migration from Azure Front Door domains to a stable, GitHub-owned custom domain. Any existing automation or scripts referencing the old URLs must be updated to avoid breakage.",
+  },
+  "Updates to available models in Copilot on web": {
+    ja: "Web 上の Copilot Chat で利用できるモデル選択肢が更新された。より一貫した高品質な応答を提供するためにモデルの選択肢を絞り込んだ変更で、従来手動でモデルを選んでいた場合は選択肢が変わる可能性がある。",
+    en: "The available model selection for Copilot Chat on the web has been updated to focus on delivering more consistent, high-quality responses. The choice of models has been narrowed, so manual model selections may no longer reflect the same options.",
   },
 };
 
@@ -1172,6 +1216,38 @@ const exactImportanceMappings = {
   "Take your local GitHub sessions anywhere": {
     ja: "Copilot CLI セッションのリモート操作 GA に合わせた解説記事として、ターミナルで始めた作業をモバイルや web から継続する運用シナリオを把握できます。GA になったことで本番運用の検討材料として活用しやすくなります。",
     en: "This blog post accompanies the remote control GA and helps teams understand practical scenarios for continuing terminal-started work from mobile or web, which is now a production-ready capability.",
+  },
+  "Copilot usage metrics reports now use GitHub-owned download URLs": {
+    ja: "usage metrics レポートをダウンロードする automation やスクリプトを持つ場合は、移行完了により旧 URL が動作しなくなっている可能性があるため、早急に新 URL への切り替えが必要です。",
+    en: "This requires immediate attention for any team with automation or scripts that download Copilot usage metrics reports, as the old Azure Front Door URLs will no longer work now that the migration is complete.",
+  },
+  "Updates to available models in Copilot on web": {
+    ja: "Web 上の Copilot Chat で特定モデルを手動指定して利用していた場合、選択肢の変更により以前と同じモデルが選べなくなる可能性があります。利用中のモデル設定を確認し、必要に応じて代替モデルへ移行してください。",
+    en: "This matters for teams that rely on specific model selection in Copilot Chat on the web, because the narrowed model list may no longer include previously available choices. Review your model usage and update any documentation or guidance that references specific web models.",
+  },
+  "Gemini 3.5 Flash is generally available for GitHub Copilot": {
+    ja: "GA により本番運用の選択肢になった。Pro 品質に近い性能を Flash コストで使えるため、コストと品質のバランスを求めるチームはモデル選択の見直し材料になります。",
+    en: "GA makes Gemini 3.5 Flash a viable production option, offering near-Pro coding performance at Flash-tier cost for teams seeking a better cost-quality balance.",
+  },
+  "Easily apply Copilot code review feedback with Copilot cloud agent": {
+    ja: "code review のフィードバック適用フローが改善されたため、Copilot code review を日常的に使っているチームはフィードバック消化の効率を上げやすくなります。",
+    en: "This improves the code review feedback loop directly for teams processing Copilot review suggestions daily, by adding finer control over how suggestions are applied.",
+  },
+  "Auto model selection now routes based on your task in VS Code": {
+    ja: "モデルを明示的に選ばなくてもタスク内容に最適なモデルが使われるようになるため、Copilot を幅広い作業に使うチームは応答品質の底上げが期待できます。",
+    en: "This benefits teams using Copilot across diverse task types because model routing now accounts for task type rather than just system load, improving output quality without extra model management.",
+  },
+  "Semantic issue search in Copilot Chat": {
+    ja: "issue の調査や整理に自然言語検索が使えるようになるため、大量の issue を抱えるリポジトリで関連 issue の発見やトリアージがしやすくなります。",
+    en: "This speeds up issue triage and investigation by surfacing related issues through natural language queries, which is especially useful in repositories where exact keyword search often misses context.",
+  },
+  "Visual Studio Code 1.121": {
+    ja: "agent セッションのリモート実行と observability の強化が入り、分散型・長時間 agent ワークフローの運用基盤が整ってきた release です。Claude agent の Auto 権限モードも Business / Enterprise チームの評価候補になります。",
+    en: "This matters because remote agent execution and observability tooling advance the foundation for distributed and long-running agent workflows, while the Claude agent Auto permission mode is worth evaluating for Business and Enterprise teams.",
+  },
+  "Visual Studio Code 1.121: Agents observability with OpenTelemetry and Grafana": {
+    ja: "agent 実行の observability を既存の monitoring インフラへ統合しやすくなるため、長時間タスクや分散型 agent の監視体制を整えたいチームに直接効く更新です。",
+    en: "This is directly useful for teams building observability for long-running or distributed agent workflows, as the prebuilt Grafana dashboard reduces the time needed to instrument agent session tracing.",
   },
 };
 
