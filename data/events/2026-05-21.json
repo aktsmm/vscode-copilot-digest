@@ -1,0 +1,70 @@
+{
+  "date": "2026-05-21",
+  "generatedAt": "2026-05-21T08:44:13.045Z",
+  "latestRun": {
+    "generatedAt": "2026-05-21T08:44:13.045Z",
+    "newEventsCount": 3,
+    "newEventIds": [
+      "github-changelog:https://github.blog/changelog/2026-05-20-copilot-usage-metrics-reports-now-use-github-owned-download-urls",
+      "github-changelog-copilot:https://github.blog/changelog/2026-05-20-copilot-usage-metrics-reports-now-use-github-owned-download-urls",
+      "github-changelog-copilot:https://github.blog/changelog/2026-05-20-updates-to-available-models-in-copilot-on-web"
+    ],
+    "errorCount": 0
+  },
+  "events": [
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-05-20-copilot-usage-metrics-reports-now-use-github-owned-download-urls",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-05-21T08:44:10.095Z",
+      "publishedAt": "2026-05-20T23:58:35.000Z",
+      "title": "Copilot usage metrics reports now use GitHub-owned download URLs",
+      "url": "https://github.blog/changelog/2026-05-20-copilot-usage-metrics-reports-now-use-github-owned-download-urls",
+      "summary": "As previously announced, the download URLs for Copilot usage metrics reports have migrated from Azure Front Door domains to a stable, GitHub-owned custom domain. This change improves URL stability and…\nThe post Copilot usage metrics reports now use GitHub-owned download URLs appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "account management",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 1
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-05-20-copilot-usage-metrics-reports-now-use-github-owned-download-urls",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-05-21T08:44:10.355Z",
+      "publishedAt": "2026-05-20T23:58:35.000Z",
+      "title": "Copilot usage metrics reports now use GitHub-owned download URLs",
+      "url": "https://github.blog/changelog/2026-05-20-copilot-usage-metrics-reports-now-use-github-owned-download-urls",
+      "summary": "As previously announced, the download URLs for Copilot usage metrics reports have migrated from Azure Front Door domains to a stable, GitHub-owned custom domain. This change improves URL stability and…\nThe post Copilot usage metrics reports now use GitHub-owned download URLs appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "account management",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 1
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-05-20-updates-to-available-models-in-copilot-on-web",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-05-21T08:44:10.355Z",
+      "publishedAt": "2026-05-20T17:11:42.000Z",
+      "title": "Updates to available models in Copilot on web",
+      "url": "https://github.blog/changelog/2026-05-20-updates-to-available-models-in-copilot-on-web",
+      "summary": "We have updated our available model selection for Copilot Chat on the web to deliver more consistent, high-quality responses. What’s changed While model choice is valuable, we are limiting the…\nThe post Updates to available models in Copilot on web appeared first on The GitHub Blog.",
+      "categories": [
+        "Retired",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    }
+  ],
+  "errors": []
+}
