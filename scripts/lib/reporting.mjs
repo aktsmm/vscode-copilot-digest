@@ -611,6 +611,10 @@ const exactSummaryMappings = {
     ja: "Web 上の Copilot Chat で利用できるモデル選択肢が更新された。より一貫した高品質な応答を提供するためにモデルの選択肢を絞り込んだ変更で、従来手動でモデルを選んでいた場合は選択肢が変わる可能性がある。",
     en: "The available model selection for Copilot Chat on the web has been updated to focus on delivering more consistent, high-quality responses. The choice of models has been narrowed, so manual model selections may no longer reflect the same options.",
   },
+  "GitHub Copilot for Eclipse is open source": {
+    ja: "GitHub Copilot for Eclipse のコードが MIT ライセンスで公開され、オープンソースとして GitHub 上で参照できるようになった。Eclipse 向け拡張の実装を確認しながら導入や拡張方針を判断しやすくなる。",
+    en: "GitHub Copilot for Eclipse is now open source under the MIT license, with source code published on GitHub for direct inspection. Teams can review implementation details before deciding rollout or customization plans.",
+  },
 };
 
 const exactImportanceMappings = {
@@ -1225,6 +1229,10 @@ const exactImportanceMappings = {
     ja: "Web 上の Copilot Chat で特定モデルを手動指定して利用していた場合、選択肢の変更により以前と同じモデルが選べなくなる可能性があります。利用中のモデル設定を確認し、必要に応じて代替モデルへ移行してください。",
     en: "This matters for teams that rely on specific model selection in Copilot Chat on the web, because the narrowed model list may no longer include previously available choices. Review your model usage and update any documentation or guidance that references specific web models.",
   },
+  "GitHub Copilot for Eclipse is open source": {
+    ja: "オープンソース化で実装や変更履歴を直接確認できるため、Eclipse を使うチームが導入前検証や拡張可否の判断を進めやすくなります。",
+    en: "Open sourcing enables direct inspection of implementation and change history, making it easier for Eclipse teams to validate adoption and extension feasibility.",
+  },
   "Gemini 3.5 Flash is generally available for GitHub Copilot": {
     ja: "GA により本番運用の選択肢になった。Pro 品質に近い性能を Flash コストで使えるため、コストと品質のバランスを求めるチームはモデル選択の見直し材料になります。",
     en: "GA makes Gemini 3.5 Flash a viable production option, offering near-Pro coding performance at Flash-tier cost for teams seeking a better cost-quality balance.",
@@ -1400,6 +1408,10 @@ function patternTitle(title) {
   }
 
   const exactMappings = new Map([
+    [
+      "GitHub Copilot for Eclipse is open source",
+      "GitHub Copilot for Eclipse がオープンソース化された",
+    ],
     ["Copilot SDK in public preview", "Copilot SDK が public preview になった"],
     [
       "Copilot usage metrics now includes per-user GitHub Copilot CLI activity in organization reports",
