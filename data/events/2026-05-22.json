@@ -1,13 +1,10 @@
 {
   "date": "2026-05-22",
-  "generatedAt": "2026-05-22T08:34:28.280Z",
+  "generatedAt": "2026-05-22T16:01:34.874Z",
   "latestRun": {
-    "generatedAt": "2026-05-22T08:34:28.280Z",
-    "newEventsCount": 2,
-    "newEventIds": [
-      "github-changelog:https://github.blog/changelog/2026-05-19-github-copilot-for-eclipse-is-open-source",
-      "github-changelog-copilot:https://github.blog/changelog/2026-05-19-github-copilot-for-eclipse-is-open-source"
-    ],
+    "generatedAt": "2026-05-22T16:01:34.874Z",
+    "newEventsCount": 0,
+    "newEventIds": [],
     "errorCount": 0
   },
   "events": [
