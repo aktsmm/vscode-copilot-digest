@@ -1,13 +1,35 @@
 {
   "date": "2026-05-22",
-  "generatedAt": "2026-05-22T16:01:34.874Z",
+  "generatedAt": "2026-05-22T22:32:44.452Z",
   "latestRun": {
-    "generatedAt": "2026-05-22T16:01:34.874Z",
-    "newEventsCount": 0,
-    "newEventIds": [],
+    "generatedAt": "2026-05-22T22:32:44.452Z",
+    "newEventsCount": 1,
+    "newEventIds": [
+      "github-copilot-blog:https://github.blog/?p=96262"
+    ],
     "errorCount": 0
   },
   "events": [
+    {
+      "eventId": "github-copilot-blog:https://github.blog/?p=96262",
+      "sourceId": "github-copilot-blog",
+      "sourceName": "GitHub Blog / GitHub Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-05-22T22:32:42.115Z",
+      "publishedAt": "2026-05-22T16:10:21.000Z",
+      "title": "GitHub recognized as a Leader in the Gartner® Magic Quadrant™ for Enterprise AI Coding Agents for the third year in a row",
+      "url": "https://github.blog/ai-and-ml/github-copilot/github-recognized-as-a-leader-in-the-gartner-magic-quadrant-for-enterprise-ai-coding-agents-for-the-third-year-in-a-row/",
+      "summary": "We are committed to empowering every developer by building an open, secure, and AI-powered platform that defines the future of software development.\nThe post GitHub recognized as a Leader in the Gartner® Magic Quadrant™ for Enterprise AI Coding Agents for the third year in a row appeared first on The GitHub Blog.",
+      "categories": [
+        "AI & ML",
+        "Enterprise software",
+        "GitHub Copilot",
+        "AI coding tools",
+        "Gartner Magic Quadrant"
+      ],
+      "isFutureDated": false,
+      "score": 2
+    },
     {
       "eventId": "github-changelog:https://github.blog/changelog/2026-05-19-github-copilot-for-eclipse-is-open-source",
       "sourceId": "github-changelog",
