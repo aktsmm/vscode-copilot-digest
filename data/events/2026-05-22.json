@@ -1,13 +1,11 @@
 {
   "date": "2026-05-22",
-  "generatedAt": "2026-05-22T22:32:44.452Z",
+  "generatedAt": "2026-05-22T22:34:02.545Z",
   "latestRun": {
-    "generatedAt": "2026-05-22T22:32:44.452Z",
-    "newEventsCount": 1,
-    "newEventIds": [
-      "github-copilot-blog:https://github.blog/?p=96262"
-    ],
-    "errorCount": 0
+    "generatedAt": "2026-05-22T22:34:02.545Z",
+    "newEventsCount": 0,
+    "newEventIds": [],
+    "errorCount": 4
   },
   "events": [
     {
@@ -65,5 +63,22 @@
       "score": 4
     }
   ],
-  "errors": []
+  "errors": [
+    {
+      "sourceId": "vscode-feed",
+      "message": "fetch failed"
+    },
+    {
+      "sourceId": "vscode-updates",
+      "message": "fetch failed"
+    },
+    {
+      "sourceId": "vscode-release-notes-1-109",
+      "message": "fetch failed"
+    },
+    {
+      "sourceId": "publickey",
+      "message": "fetch failed"
+    }
+  ]
 }
