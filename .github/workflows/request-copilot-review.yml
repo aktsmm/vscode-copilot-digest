@@ -104,6 +104,57 @@ jobs:
               const linkedIssue = authoringIssues.find((issue) =>
                 !issue.pull_request && issue.title === `Digest authoring request: ${dateKey}`,
               );
+              const openPulls = await github.paginate(github.rest.pulls.list, {
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                state: 'open',
+                per_page: 100,
+              });
+              const duplicateCandidates = openPulls
+                .filter((candidate) => {
+                  const isGenerated = /copilot/i.test(candidate.user?.login || '') || (candidate.labels || []).some((label) => label.name === 'auto-pr');
+                  const matchesDate =
+                    (candidate.title || '').includes(dateKey) ||
+                    (candidate.head?.ref || '').includes(dateKey) ||
+                    String(candidate.body || '').includes(`Generated from data/events/${dateKey}.json`);
+                  return isGenerated && matchesDate;
+                })
+                .sort((left, right) => Date.parse(right.created_at || 0) - Date.parse(left.created_at || 0));
+              const canonicalPr = duplicateCandidates[0];
+
+              if (canonicalPr && canonicalPr.number !== issueNumber) {
+                await github.rest.issues.createComment({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: issueNumber,
+                  body: `Closing this stale generated PR in favor of #${canonicalPr.number} for ${dateKey}.`,
+                });
+                await github.rest.pulls.update({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  pull_number: issueNumber,
+                  state: 'closed',
+                });
+                core.info(`Closed stale generated PR #${issueNumber}; canonical PR is #${canonicalPr.number}.`);
+                return;
+              }
+
+              for (const duplicate of duplicateCandidates.slice(1)) {
+                await github.rest.issues.createComment({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: duplicate.number,
+                  body: `Closing this stale generated PR in favor of #${canonicalPr.number} for ${dateKey}.`,
+                });
+                await github.rest.pulls.update({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  pull_number: duplicate.number,
+                  state: 'closed',
+                });
+                core.info(`Closed stale generated PR #${duplicate.number}; canonical PR is #${canonicalPr.number}.`);
+              }
+
               const expectedTitle = buildExpectedTitle(dateKey, files);
               const expectedMarkerLine = `Generated from data/events/${dateKey}.json`;
               let nextBody = pr.body || '';

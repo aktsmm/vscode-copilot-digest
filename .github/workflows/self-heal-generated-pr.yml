@@ -208,4 +208,16 @@ jobs:
               body,
             });
 
+            try {
+              await github.rest.pulls.requestReviewers({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                pull_number: prNumber,
+                reviewers: ['copilot'],
+              });
+              core.info(`Re-requested Copilot review for PR #${prNumber} after self-heal feedback.`);
+            } catch (error) {
+              core.warning(`Could not re-request Copilot reviewer for PR #${prNumber}: ${error.message}`);
+            }
+
             core.info(`Posted self-heal feedback on PR #${prNumber} (attempt ${feedbackComments.length + 1}).`);
