@@ -61,8 +61,17 @@ jobs:
             });
             const feedbackComments = comments.filter((c) => (c.body || '').includes(marker));
 
+            const alreadyGaveUp = feedbackComments.some((c) =>
+              (c.body || '').includes('手動で確認してください'),
+            );
+
+            if (alreadyGaveUp) {
+              core.info(`PR #${prNumber} already escalated to human review. Skipping.`);
+              return;
+            }
+
             if (feedbackComments.length >= maxFeedbackAttempts) {
-              core.info(`PR #${prNumber} already has ${feedbackComments.length} self-heal attempts. Labelling for human review.`);
+              core.info(`PR #${prNumber} already has ${feedbackComments.length} self-heal attempts. Closing PR and labelling for human review.`);
               await github.rest.issues.addLabels({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
@@ -73,8 +82,39 @@ jobs:
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 issue_number: prNumber,
-                body: `${marker}\n\n自動修正を ${maxFeedbackAttempts} 回試みましたが、validate が通りません。手動で確認してください。`,
+                body: `${marker}\n\n自動修正を ${maxFeedbackAttempts} 回試みましたが、validate が通りません。PR を close します。手動で確認してください。`,
               });
+              await github.rest.pulls.update({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                pull_number: prNumber,
+                state: 'closed',
+              });
+
+              // Find and label the linked digest-authoring Issue so it doesn't stay silently stuck
+              const dateKeyMatch = (pr.title || '').match(/(\d{4}-\d{2}-\d{2})/);
+              if (dateKeyMatch) {
+                const issueTitle = `Digest authoring request: ${dateKeyMatch[1]}`;
+                const openIssues = await github.paginate(github.rest.issues.listForRepo, {
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  state: 'open',
+                  labels: 'digest-authoring',
+                  per_page: 100,
+                });
+                const linkedIssue = openIssues.find((issue) => issue.title === issueTitle);
+                if (linkedIssue) {
+                  await github.rest.issues.addLabels({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    issue_number: linkedIssue.number,
+                    labels: ['needs-human-review'],
+                  });
+                  core.info(`Labelled linked Issue #${linkedIssue.number} for human review.`);
+                }
+              }
+
+              core.info(`Closed unfixable PR #${prNumber}.`);
               return;
             }
 

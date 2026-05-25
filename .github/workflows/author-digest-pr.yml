@@ -508,9 +508,14 @@ jobs:
               const normalizedTitle = /^docs: update digest \d{4}-\d{2}-\d{2}(?: \+ drafts)?(?: \+ reporting)?$/.test(livePr.title || '')
                 ? livePr.title
                 : prTitleRule;
-              const normalizedBody = String(livePr.body || '').includes(sourceMarker)
-                ? String(livePr.body || '')
-                : `${sourceMarker}\n\n${String(livePr.body || '').trim()}`.trim();
+              const closingRef = `Closes #${issueNumber}`;
+              let normalizedBody = String(livePr.body || '');
+              if (!normalizedBody.includes(sourceMarker)) {
+                normalizedBody = `${sourceMarker}\n\n${normalizedBody.trim()}`.trim();
+              }
+              if (!normalizedBody.includes(closingRef)) {
+                normalizedBody = `${normalizedBody}\n\n${closingRef}`;
+              }
 
               if (normalizedTitle !== livePr.title || normalizedBody !== String(livePr.body || '')) {
                 await github.rest.pulls.update({
