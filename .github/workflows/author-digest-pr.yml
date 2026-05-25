@@ -171,6 +171,8 @@ jobs:
 
             if (!shouldAuthor) {
               core.info(`No new events or low-information fallback detected for ${selectedFile}.`);
+              core.setOutput('date_key', dateKey);
+              core.setOutput('issue_title', `Digest authoring request: ${dateKey}`);
               core.setOutput('should_run', 'false');
               return;
             }
@@ -282,6 +284,67 @@ jobs:
             core.setOutput('issue_title', `Digest authoring request: ${dateKey}`);
             core.setOutput('issue_body', body);
             core.setOutput('allow_automation_resume', allowAutomationResume ? 'true' : 'false');
+
+      - name: Close stale authoring issue when no work remains
+        if: steps.target.outputs.should_run != 'true' && steps.target.outputs.issue_title != ''
+        uses: actions/github-script@v8
+        with:
+          github-token: ${{ secrets.COPILOT_ASSIGN_TOKEN }}
+          script: |
+            const title = process.env.ISSUE_TITLE;
+            const dateKey = process.env.DATE_KEY;
+            const issues = await github.paginate(github.rest.issues.listForRepo, {
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: 'digest-authoring',
+              per_page: 100,
+            });
+            const existing = issues.find((issue) => issue.title === title);
+
+            if (!existing) {
+              core.info(`No open digest-authoring issue found for ${title}.`);
+              return;
+            }
+
+            const openPulls = dateKey
+              ? await github.paginate(github.rest.pulls.list, {
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  state: 'open',
+                  per_page: 100,
+                })
+              : [];
+            const existingGeneratedPr = openPulls.find((pull) =>
+              /copilot/i.test(pull.user?.login || '') && (
+                (pull.title || '').includes(dateKey) ||
+                (pull.head?.ref || '').includes(dateKey) ||
+                String(pull.body || '').includes(`Generated from data/events/${dateKey}.json`) ||
+                String(pull.body || '').includes(`#${existing.number}`)
+              ),
+            );
+
+            if (existingGeneratedPr) {
+              core.info(`Keeping issue #${existing.number} open because PR #${existingGeneratedPr.number} is still in progress.`);
+              return;
+            }
+
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: existing.number,
+              body: 'No new events, low-information fallback, or Pages build failure remain for this date. Closing this stale digest-authoring issue automatically.',
+            });
+            await github.rest.issues.update({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: existing.number,
+              state: 'closed',
+            });
+            core.info(`Closed stale digest-authoring issue #${existing.number}.`);
+        env:
+          ISSUE_TITLE: ${{ steps.target.outputs.issue_title }}
+          DATE_KEY: ${{ steps.target.outputs.date_key }}
 
       - name: Create or update authoring issue
         id: create_or_update_authoring_issue

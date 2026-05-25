@@ -154,9 +154,9 @@ function buildText(locale) {
       overallCount: "Tracked updates",
       overallCountDetail: "Deduplicated running total",
       latestDate: "Latest date",
-      latestDateDetail: "Most recent published digest",
+      latestDateDetail: "Most recent published digest. This stays on the last published day when the latest collect run detects 0 new items.",
       latestRunCount: "Latest run new items",
-      latestRunCountDetail: "Detected in the most recent collect run",
+      latestRunCountDetail: "Detected in the most recent collect run. When this is 0, the latest published date may remain unchanged.",
       howToReadTitle: "How to read this site",
       howToReadBody1:
         "Start with the highlight cards to see the changes most likely to matter. Drop into topic sections or the full update list only when you need more detail.",
@@ -292,9 +292,9 @@ function buildText(locale) {
     overallCount: "累計更新件数",
     overallCountDetail: "重複除去後の累計",
     latestDate: "最新日付",
-    latestDateDetail: "最後に公開対象になった日次",
+    latestDateDetail: "最後に公開対象になった日次。最新 collect が 0 件なら、この日付は据え置きになります。",
     latestRunCount: "直近新規件数",
-    latestRunCountDetail: "最新 collect 実行の検知件数",
+    latestRunCountDetail: "最新 collect 実行の検知件数。0 件なら公開日付は前回公開日のままです。",
     howToReadTitle: "このサイトの見方",
     howToReadBody1:
       "まずはハイライトで重要な更新だけを把握し、必要ならテーマ別まとめと全件リストへ降りていく構成です。",

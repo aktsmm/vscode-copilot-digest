@@ -157,6 +157,8 @@ node scripts/notify-discord.mjs --mode weekly --date 2026-04-10 --window-days 7 
 - 生成 PR は `summaries/daily/**`、`drafts/**`、`scripts/lib/reporting.mjs` 以外を変更しない限り auto-merge される
 - `needs-human-review` ラベルがある PR は自動 merge から除外される
 - Pages 再生成は commit や squash merge の直後に別途 dispatch で呼び出す（push 起点の workflow が自動連鎖しないため）
+- 最新 collect が 0 件なら、トップページの「最新日付」は前回公開された日次のまま据え置きになる。これは反映漏れではなく、新規公開対象が無かったことを示す
+- 新規イベントも Pages build failure も low-information fallback も無い日に stale な `digest-authoring` Issue が残っていた場合、`author-digest-pr.yml` が自動で close してキューを整理する
 - まれに live の Pages 配信が stale で、日本語 / 英語のどちらか片方だけ古い文面を返すことがある。その場合は repo 上の `site/**` と raw summary を先に確認し、必要なら `deploy-pages.yml` を手動 dispatch して再確認する
 
 ### 詳細は設計資産を参照
