@@ -167,6 +167,7 @@ jobs:
             const fallbackMatches = fallbackEntry?.matches ?? [];
             const hasLowInformationSummary = fallbackMatches.length > 0;
             const shouldAuthor = newEventsCount > 0 || forceIssue || hasLowInformationSummary || hasPagesBuildFailure;
+            const allowAutomationResume = isManual || hasPagesBuildFailure;
 
             if (!shouldAuthor) {
               core.info(`No new events or low-information fallback detected for ${selectedFile}.`);
@@ -280,6 +281,7 @@ jobs:
             core.setOutput('pr_title_rule', prTitleRule);
             core.setOutput('issue_title', `Digest authoring request: ${dateKey}`);
             core.setOutput('issue_body', body);
+            core.setOutput('allow_automation_resume', allowAutomationResume ? 'true' : 'false');
 
       - name: Create or update authoring issue
         id: create_or_update_authoring_issue
@@ -294,6 +296,7 @@ jobs:
             const body = process.env.ISSUE_BODY;
             const labels = ['copilot', 'digest-authoring', 'auto-pr'];
             const copilotLogins = new Set(['Copilot', 'copilot-swe-agent']);
+            const allowAutomationResume = process.env.ALLOW_AUTOMATION_RESUME === 'true';
             const dateKeyMatch = title.match(/(\d{4}-\d{2}-\d{2})/);
             const dateKey = dateKeyMatch ? dateKeyMatch[1] : '';
             const assignmentInstructions = [
@@ -340,9 +343,29 @@ jobs:
               issue_number: issueNumber,
             });
             const currentLabels = new Set((currentIssue.data.labels ?? []).map((label) => label.name));
-            const isHumanReviewBlocked = currentLabels.has('needs-human-review');
+            const openPulls = dateKey
+              ? await github.paginate(github.rest.pulls.list, {
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  state: 'open',
+                  per_page: 100,
+                })
+              : [];
+            const existingGeneratedPr = openPulls.find((pull) =>
+              /copilot/i.test(pull.user?.login || '') && (
+                (pull.title || '').includes(dateKey) ||
+                (pull.head?.ref || '').includes(dateKey) ||
+                String(pull.body || '').includes(`Generated from data/events/${dateKey}.json`) ||
+                String(pull.body || '').includes(`#${issueNumber}`)
+              ),
+            );
+            const canResumeAutomation =
+              currentLabels.has('needs-human-review') &&
+              allowAutomationResume &&
+              !existingGeneratedPr;
+            const isHumanReviewBlocked = currentLabels.has('needs-human-review') && !canResumeAutomation;
 
-            if (!createdNewIssue) {
+            if (!createdNewIssue || canResumeAutomation) {
               await github.rest.issues.setLabels({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
@@ -384,22 +407,6 @@ jobs:
                 const issueId = currentIssue.data.node_id;
                 const repositoryId = assignmentContext.repository.id;
                 const existingAssignees = currentIssue.data.assignees ?? [];
-                const openPulls = dateKey
-                  ? await github.paginate(github.rest.pulls.list, {
-                      owner: context.repo.owner,
-                      repo: context.repo.repo,
-                      state: 'open',
-                      per_page: 100,
-                    })
-                  : [];
-                const existingGeneratedPr = openPulls.find((pull) =>
-                  /copilot/i.test(pull.user?.login || '') && (
-                    (pull.title || '').includes(dateKey) ||
-                    (pull.head?.ref || '').includes(dateKey) ||
-                    String(pull.body || '').includes(`Generated from data/events/${dateKey}.json`) ||
-                    String(pull.body || '').includes(`#${issueNumber}`)
-                  ),
-                );
                 const copilotActor = (assignmentContext.repository.suggestedActors?.nodes ?? []).find(
                   (actor) => copilotLogins.has(actor.login) && actor.id,
                 );
@@ -468,6 +475,8 @@ jobs:
               'Copilot への assignment を workflow から試行しました。',
               assignmentStatus === 'assigned'
                 ? '- 自動 assignment: 成功'
+                : assignmentStatus === 'reassigned' && canResumeAutomation
+                  ? '- 自動 assignment: needs-human-review を解除して再開'
                 : assignmentStatus === 'reassigned'
                   ? '- 自動 assignment: 再開のため再実行'
                 : assignmentStatus === 'already-assigned'
@@ -507,6 +516,7 @@ jobs:
         env:
           ISSUE_TITLE: ${{ steps.target.outputs.issue_title }}
           ISSUE_BODY: ${{ steps.target.outputs.issue_body }}
+          ALLOW_AUTOMATION_RESUME: ${{ steps.target.outputs.allow_automation_resume }}
 
       - name: Shepherd generated PR
         if: steps.target.outputs.should_run == 'true' && steps.create_or_update_authoring_issue.outputs.automation_state == 'active'
