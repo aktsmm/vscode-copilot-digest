@@ -23,6 +23,7 @@ jobs:
         with:
           script: |
             const marker = '<!-- self-heal-feedback -->';
+            const issueMarker = '<!-- self-heal-issue-escalation -->';
             const maxFeedbackAttempts = 3;
             const pullRequests = context.payload.workflow_run.pull_requests || [];
 
@@ -110,6 +111,34 @@ jobs:
                     issue_number: linkedIssue.number,
                     labels: ['needs-human-review'],
                   });
+                  const issueComments = await github.paginate(github.rest.issues.listComments, {
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    issue_number: linkedIssue.number,
+                    per_page: 100,
+                  });
+                  const issueBody = [
+                    issueMarker,
+                    `Generated PR #${prNumber} was closed after ${maxFeedbackAttempts} failed self-heal attempts.`,
+                    '- `needs-human-review` was added automatically.',
+                    '- Remove the label only after the underlying content or policy failure is fixed.',
+                  ].join('\n');
+                  const existingIssueComment = issueComments.find((comment) => comment.body?.includes(issueMarker));
+                  if (existingIssueComment) {
+                    await github.rest.issues.updateComment({
+                      owner: context.repo.owner,
+                      repo: context.repo.repo,
+                      comment_id: existingIssueComment.id,
+                      body: issueBody,
+                    });
+                  } else {
+                    await github.rest.issues.createComment({
+                      owner: context.repo.owner,
+                      repo: context.repo.repo,
+                      issue_number: linkedIssue.number,
+                      body: issueBody,
+                    });
+                  }
                   core.info(`Labelled linked Issue #${linkedIssue.number} for human review.`);
                 }
               }
