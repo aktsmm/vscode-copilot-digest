@@ -40,7 +40,7 @@ const monthMap = {
 };
 
 const vscodeReleaseSummaries = {
-  "1.121": {
+  1.121: {
     ja: "agent 体験の継続強化が主題の release。Agents ウィンドウの継続改善に加え、リモートマシン上での agent セッション実行（Experimental）、OpenTelemetry と Azure Managed Grafana による agent observability、Claude agent の Auto 権限モードプレビューが含まれる。",
     en: "This release continues to strengthen the agent experience with further Agents window improvements, experimental remote-machine agent session execution, OpenTelemetry and Azure Managed Grafana agent observability, and a Claude agent Auto permission mode in preview.",
   },
@@ -48,11 +48,11 @@ const vscodeReleaseSummaries = {
     ja: "Agents ウィンドウが VS Code Stable にプレビュー公開され、複数プロジェクト・複数 agent の作業専用画面が使えるようになった。BYOK モデルへの token 使用量の可視化と thinking effort 設定、Copilot CLI plugin の自動検出も追加。terminal tool 出力圧縮、terminal コマンドのリスク評価、Claude と Copilot CLI への Plan mode 制御など、agent の実用性を高める変更がまとまった release。",
     en: "The Agents window moves to Stable preview, providing a dedicated companion window for multi-project and multi-agent work. The release also adds BYOK model token usage visibility, thinking-effort controls for BYOK reasoning models, automatic discovery of Copilot CLI plugins in VS Code, terminal tool-output compression, terminal command risk assessment, and Plan mode control for Claude and Copilot CLI.",
   },
-  "1.119": {
+  1.119: {
     ja: "Changes ビューが Git 統合になり、terminal 経由の変更も含めて agent セッション中のファイル変更全体を把握しやすくなった。Copilot CLI にモデルバッジが追加され、使用モデルと multiplier を応答ごとに確認できる。新しい sandbox モードではファイルシステム隔離を維持しながら外部ネットワークアクセスも許可でき、オンライン通信が必要なタスクへの対応が広がった。ブラウザータブをチャットのコンテキストとして添付する機能や、model picker への実コスト表示なども加わった。",
     en: "The Changes view in agent host sessions is now powered by Git, capturing all file changes including those from terminal commands. Copilot CLI adds model badges showing the model and multiplier used for each response. A new sandbox mode allows outbound network traffic while keeping filesystem isolation, expanding extension and task support. Additional highlights include browser-tab snapshots as chat context and actual model costs in the model picker.",
   },
-  "1.118": {
+  1.118: {
     ja: "agent 体験の拡張が主題の release。VS Code Agents companion app の進化（Insiders）、GitHub.com やモバイルから進行中の Copilot CLI セッションを遠隔操作できる Remote control（Experimental）、CLI セッションタイトルのサーフェス横断一元管理、Copilot の Git co-author 自動追加が入った。全ユーザーへの semantic indexing 展開と GitHub 横断テキスト検索、skills 専用コンテキスト（Experimental）も加わり、agent を継続運用しやすくする変更がまとまっている。",
     en: "The headline is agent experience: the VS Code Agents companion app gains a title-bar entry point (Insiders), CLI sessions can be monitored and steered remotely from GitHub.com or mobile (Experimental), session titles now sync across all surfaces, and Copilot is added as a Git co-author by default. All users also get semantic indexing in non-GitHub repos and GitHub cross-repo text search.",
   },
@@ -176,6 +176,11 @@ const exactSummaryMappings = {
     ja: "github.com の pull request 上で、新しい Fix with Copilot ボタンからマージ競合を 3 クリックで解消できるようになった。コメント送信後は Copilot cloud agent が競合解消、build と test の確認、push までをクラウド実行環境で処理する。",
     en: "Pull requests on github.com can now resolve merge conflicts in three clicks through a new Fix with Copilot button, with Copilot cloud agent handling conflict resolution, build and test validation, and the push from its cloud environment.",
   },
+  "GitHub recognized as a Leader in the Gartner® Magic Quadrant™ for Enterprise AI Coding Agents for the third year in a row":
+    {
+      ja: "GitHub は 2026 年の Gartner Magic Quadrant for Enterprise AI Coding Agents で 3 年連続の Leader と位置付けられ、実行力では 12 ベンダー中で最上位とされた。GitHub は複数モデル対応、issue から code review・pull request・Actions までをまたぐ agentic workflow、ガバナンスとセキュリティ統制を強みとして挙げている。",
+      en: "GitHub says it was named a Leader for the third consecutive year in Gartner's 2026 Magic Quadrant for Enterprise AI Coding Agents and ranked highest in ability to execute among the 12 evaluated vendors. The post highlights GitHub's multi-model support, agentic workflows spanning issues through code review, pull requests, and Actions, plus governance and security controls as key differentiators.",
+    },
   "Model selection for Claude and Codex agents on github.com": {
     ja: "github.com 上の Claude / Codex サードパーティ coding agent で、タスク開始時にモデルを選べるようになった。Claude では Anthropic 系、Codex では OpenAI 系の利用可能モデルから選択でき、最新モデルが順次使える。Business / Enterprise では管理者が対象 policy を有効化し、リポジトリ側でも Settings > Copilot > Cloud agent から agent を有効化する必要がある。",
     en: "Model selection is now available when starting tasks with the Claude and Codex third-party coding agents on github.com, with Anthropic models for Claude and OpenAI models for Codex. Business and Enterprise users must have the relevant admin policy enabled, and the repository owner must also enable the agent in Copilot cloud-agent settings.",
@@ -364,10 +369,11 @@ const exactSummaryMappings = {
     ja: "OpenAI の最新モデル GPT-5.5 が GitHub Copilot に一般提供として段階的に展開を開始した。複数ステップの agentic コーディングタスクで特に強みを発揮するとされており、実際の問題を解決する性能が向上している。",
     en: "GPT-5.5, OpenAI's latest model, is now rolling out as generally available on GitHub Copilot. Early testing shows its strongest performance on complex, multi-step agentic coding tasks.",
   },
-  "Inline agent mode in preview and more in GitHub Copilot for JetBrains IDEs": {
-    ja: "JetBrains IDE 向け GitHub Copilot がアップデートされた。インライン agent モードがプレビューで追加されたほか、Next Edit Suggestions の強化、グローバル自動承認、ターミナルコマンドとファイル編集に関する柔軟な制御が含まれる。",
-    en: "GitHub Copilot for JetBrains IDEs now includes inline agent mode in preview, enhancements to Next Edit Suggestions, global auto approve, and more flexible controls for terminal commands and file edits.",
-  },
+  "Inline agent mode in preview and more in GitHub Copilot for JetBrains IDEs":
+    {
+      ja: "JetBrains IDE 向け GitHub Copilot がアップデートされた。インライン agent モードがプレビューで追加されたほか、Next Edit Suggestions の強化、グローバル自動承認、ターミナルコマンドとファイル編集に関する柔軟な制御が含まれる。",
+      en: "GitHub Copilot for JetBrains IDEs now includes inline agent mode in preview, enhancements to Next Edit Suggestions, global auto approve, and more flexible controls for terminal commands and file edits.",
+    },
   "Notice about upcoming new format for GitHub App installation tokens": {
     ja: "2026年4月27日以降、段階的なロールアウトにより GitHub App インストールトークンのフォーマットが更新される。新フォーマットはパフォーマンスを向上させたものに変わり、新規に発行されるトークンから順次適用される。",
     en: "Starting April 27, 2026, a staged rollout will update the format of newly issued GitHub App installation tokens to make them more performant.",
@@ -384,18 +390,20 @@ const exactSummaryMappings = {
     ja: "GitHub Actions カスタムイメージで最適化されたランナー環境により、Copilot cloud agent の起動が20%以上高速化された。issue を Copilot に割り当ててからタスクが始まるまでの待機時間が短縮される。",
     en: "Copilot cloud agent now starts over 20% faster through optimized runner environments built with GitHub Actions custom images, reducing the wait from issue assignment to task kickoff.",
   },
-  "GitHub Copilot code review will start consuming GitHub Actions minutes on June 1, 2026": {
-    ja: "2026年6月1日から、GitHub Copilot code review が GitHub Actions の利用分数を消費するようになる。PR ごとに自動実行されるコードレビューが Actions のコストに反映されるため、利用量と予算の事前確認が必要。",
-    en: "Starting June 1, 2026, GitHub Copilot code review will consume GitHub Actions minutes. Automated code reviews on pull requests will count against Actions usage, so teams should review their budget and limits before the change takes effect.",
-  },
+  "GitHub Copilot code review will start consuming GitHub Actions minutes on June 1, 2026":
+    {
+      ja: "2026年6月1日から、GitHub Copilot code review が GitHub Actions の利用分数を消費するようになる。PR ごとに自動実行されるコードレビューが Actions のコストに反映されるため、利用量と予算の事前確認が必要。",
+      en: "Starting June 1, 2026, GitHub Copilot code review will consume GitHub Actions minutes. Automated code reviews on pull requests will count against Actions usage, so teams should review their budget and limits before the change takes effect.",
+    },
   "Visual Studio Code 1.118: Visual Studio Code Agents (Insiders)": {
     ja: "VS Code Insiders 同梱のプレビュー companion app として提供される Visual Studio Code Agents app が進化した。1.115 での初登場後も継続改善されており、1.118 ではタイトルバーから直接起動できるようになった。複数リポジトリにまたがる並列セッションや、マルチステップのコーディングタスクを agent ネイティブな環境で反復できる。専用ドキュメントも公開され、試し始めやすい段階になっている。",
     en: "The VS Code Agents companion app shipped with VS Code Insiders continues to evolve since its 1.115 debut. In 1.118 it becomes discoverable directly from the Insiders title bar, supports parallel sessions across repos, and now has dedicated documentation to help you get started.",
   },
-  "Visual Studio Code 1.118: Remote control for Copilot CLI sessions (Experimental)": {
-    ja: "github.copilot.chat.cli.remote.enabled で有効化できる実験的機能。デスクを離れているときでも GitHub.com やモバイルから進行中の Copilot CLI セッションを監視・操作できる。承認待ちや問い掛けで止まった agent を遠隔から再開できるため、長時間タスクが途中で停止するリスクを下げられる。",
-    en: "Enable via github.copilot.chat.cli.remote.enabled to monitor and steer ongoing Copilot CLI sessions from GitHub.com or mobile. Tasks that previously stalled when an agent needed approval while you were away can now be resumed remotely.",
-  },
+  "Visual Studio Code 1.118: Remote control for Copilot CLI sessions (Experimental)":
+    {
+      ja: "github.copilot.chat.cli.remote.enabled で有効化できる実験的機能。デスクを離れているときでも GitHub.com やモバイルから進行中の Copilot CLI セッションを監視・操作できる。承認待ちや問い掛けで止まった agent を遠隔から再開できるため、長時間タスクが途中で停止するリスクを下げられる。",
+      en: "Enable via github.copilot.chat.cli.remote.enabled to monitor and steer ongoing Copilot CLI sessions from GitHub.com or mobile. Tasks that previously stalled when an agent needed approval while you were away can now be resumed remotely.",
+    },
   "Visual Studio Code 1.118: Synced session titles for Copilot CLI": {
     ja: "Copilot SDK のセッションタイトル API を正式な参照源として採用し、どの UI でリネームしてもチャットセッション一覧・エディタタブ・CLI 端末で同じタイトルが表示されるようになった。複数サーフェスを横断するセッション管理で識別が一元化される。",
     en: "VS Code now adopts the Copilot SDK session title APIs as the source of truth, so renaming a session in any surface—sessions list, editor tab, or CLI terminal—updates all of them consistently.",
@@ -595,10 +603,11 @@ const exactSummaryMappings = {
     ja: "Agents ウィンドウがリモートマシン上での agent セッション実行に実験的に対応した。ローカルの VS Code からリモートホストの agent を操作できるようになる。",
     en: "The Agents window now has experimental support for running agent sessions on a remote machine, letting you operate remote agents directly from your local VS Code.",
   },
-  "Visual Studio Code 1.121: Agents observability with OpenTelemetry and Grafana": {
-    ja: "Azure Managed Grafana との連携により、agent セッションの OpenTelemetry トレースを可視化するプリビルドダッシュボードが追加された。agent 実行の observability を monitoring インフラへ統合しやすくなる。",
-    en: "In collaboration with Azure Managed Grafana, a prebuilt dashboard for visualizing agent session OpenTelemetry traces is now available, making it easier to integrate agent observability into existing monitoring infrastructure.",
-  },
+  "Visual Studio Code 1.121: Agents observability with OpenTelemetry and Grafana":
+    {
+      ja: "Azure Managed Grafana との連携により、agent セッションの OpenTelemetry トレースを可視化するプリビルドダッシュボードが追加された。agent 実行の observability を monitoring インフラへ統合しやすくなる。",
+      en: "In collaboration with Azure Managed Grafana, a prebuilt dashboard for visualizing agent session OpenTelemetry traces is now available, making it easier to integrate agent observability into existing monitoring infrastructure.",
+    },
   "Visual Studio Code 1.121: Claude agent Auto permission mode (Preview)": {
     ja: "Claude agent に Auto 権限モードがプレビューで追加された。Auto モードでは tool 使用の承認を自動化でき、介入なしで長時間の agent タスクを進めやすくなる。",
     en: "Claude agent now has an Auto permission mode in preview. With Auto enabled, the agent can use tools without per-action approval, making it practical to run longer tasks without interruption.",
@@ -1035,10 +1044,11 @@ const exactImportanceMappings = {
     ja: "GPT-5.5 の GA により、多ステップの agentic タスクに特化した性能を持つモデルが本番運用の選択肢に加わった。Copilot で複雑なコーディングタスクを扱うチームは使用モデルの見直しを検討する材料になります。",
     en: "This matters because GPT-5.5 is now available for production use on GitHub Copilot and offers improved performance on complex, multi-step agentic coding tasks, expanding the practical model options for teams.",
   },
-  "Inline agent mode in preview and more in GitHub Copilot for JetBrains IDEs": {
-    ja: "JetBrains IDE を使うチームは、インライン agent mode を early preview として試して運用適合を判断するタイミングに入りました。Next Edit Suggestions の強化や自動承認の拡充も日常の編集フローを改善します。",
-    en: "This matters for JetBrains IDE users because inline agent mode is now in early preview and ready for validation, while improvements to Next Edit Suggestions and auto-approve reduce friction in everyday editing.",
-  },
+  "Inline agent mode in preview and more in GitHub Copilot for JetBrains IDEs":
+    {
+      ja: "JetBrains IDE を使うチームは、インライン agent mode を early preview として試して運用適合を判断するタイミングに入りました。Next Edit Suggestions の強化や自動承認の拡充も日常の編集フローを改善します。",
+      en: "This matters for JetBrains IDE users because inline agent mode is now in early preview and ready for validation, while improvements to Next Edit Suggestions and auto-approve reduce friction in everyday editing.",
+    },
   "Notice about upcoming new format for GitHub App installation tokens": {
     ja: "GitHub App のトークンをパターンマッチや正規表現で検証しているスクリプトや CI/CD は、4月27日以降の新フォーマットで動作しなくなる可能性があります。使用中の検証コードを事前に確認することを推奨します。",
     en: "This matters for any integration that validates GitHub App installation tokens by format, such as regex checks in CI/CD pipelines, because the new token format may not match existing patterns after April 27.",
@@ -1055,10 +1065,11 @@ const exactImportanceMappings = {
     ja: "issue を割り当ててからタスクが開始されるまでの待機時間が20%以上短縮されるため、agent を頻繁に使うチームはフィードバックループが速くなる恩恵を受けやすくなります。",
     en: "This directly reduces the feedback loop for teams that rely on Copilot cloud agent regularly, since tasks now start over 20% faster after issue assignment, making the agent workflow more responsive.",
   },
-  "GitHub Copilot code review will start consuming GitHub Actions minutes on June 1, 2026": {
-    ja: "6月1日以降、PR ごとに自動実行される Copilot code review が Actions 分数を消費するため、現在の Actions 利用量と予算を事前に確認し、必要に応じて上限設定や使い方の見直しが必要です。",
-    en: "This matters because Copilot code review running on every pull request will start consuming Actions minutes from June 1, 2026. Teams should check current Actions usage and budgets now to avoid unexpected overages after the change takes effect.",
-  },
+  "GitHub Copilot code review will start consuming GitHub Actions minutes on June 1, 2026":
+    {
+      ja: "6月1日以降、PR ごとに自動実行される Copilot code review が Actions 分数を消費するため、現在の Actions 利用量と予算を事前に確認し、必要に応じて上限設定や使い方の見直しが必要です。",
+      en: "This matters because Copilot code review running on every pull request will start consuming Actions minutes from June 1, 2026. Teams should check current Actions usage and budgets now to avoid unexpected overages after the change takes effect.",
+    },
   "Visual Studio Code 1.119": {
     ja: "Changes ビューの Git 統合と CLI モデルバッジで agent 運用の可視性が上がり、新 sandbox モードでオンライン通信が必要なタスクへの対応も広がる release です。",
     en: "This release improves agent visibility with Git-backed Changes tracking and CLI model badges, while the new sandbox mode expands support for tasks that need external network access.",
@@ -1071,10 +1082,11 @@ const exactImportanceMappings = {
     ja: "agent ネイティブな並列作業環境が Insiders でさらに磨かれており、タイトルバーからの直接起動で試し始めやすくなった今が、将来の stable 体験を先行確認するタイミングです。",
     en: "This is worth validating now because the Agents companion app is becoming more discoverable and polished in Insiders, showing the direction of agent-native VS Code before these workflows reach Stable.",
   },
-  "Visual Studio Code 1.118: Remote control for Copilot CLI sessions (Experimental)": {
-    ja: "長時間の CLI タスクで承認待ちが発生しても、デスクを離れたまま GitHub.com やモバイルから再開できるため、agent を任せながら離席できる運用に近づきます。実験的機能なので early feedback を出す機会として見ておくとよいでしょう。",
-    en: "This matters because CLI sessions that stall on approvals can now be resumed remotely, making it practical to let agents run longer tasks without staying at your machine. Worth trying early to shape this experimental feature.",
-  },
+  "Visual Studio Code 1.118: Remote control for Copilot CLI sessions (Experimental)":
+    {
+      ja: "長時間の CLI タスクで承認待ちが発生しても、デスクを離れたまま GitHub.com やモバイルから再開できるため、agent を任せながら離席できる運用に近づきます。実験的機能なので early feedback を出す機会として見ておくとよいでしょう。",
+      en: "This matters because CLI sessions that stall on approvals can now be resumed remotely, making it practical to let agents run longer tasks without staying at your machine. Worth trying early to shape this experimental feature.",
+    },
   "Visual Studio Code 1.118: Synced session titles for Copilot CLI": {
     ja: "複数サーフェスを横断してセッションを管理する際のリネーム漏れや識別ずれが解消されるため、CLI と VS Code UI を行き来する運用でのセッション管理が整理されます。",
     en: "This removes the session-naming inconsistency that occurred when renaming across surfaces, making it easier to manage sessions that span CLI and VS Code UI workflows.",
@@ -1253,10 +1265,11 @@ const exactImportanceMappings = {
     ja: "agent セッションのリモート実行と observability の強化が入り、分散型・長時間 agent ワークフローの運用基盤が整ってきた release です。Claude agent の Auto 権限モードも Business / Enterprise チームの評価候補になります。",
     en: "This matters because remote agent execution and observability tooling advance the foundation for distributed and long-running agent workflows, while the Claude agent Auto permission mode is worth evaluating for Business and Enterprise teams.",
   },
-  "Visual Studio Code 1.121: Agents observability with OpenTelemetry and Grafana": {
-    ja: "agent 実行の observability を既存の monitoring インフラへ統合しやすくなるため、長時間タスクや分散型 agent の監視体制を整えたいチームに直接効く更新です。",
-    en: "This is directly useful for teams building observability for long-running or distributed agent workflows, as the prebuilt Grafana dashboard reduces the time needed to instrument agent session tracing.",
-  },
+  "Visual Studio Code 1.121: Agents observability with OpenTelemetry and Grafana":
+    {
+      ja: "agent 実行の observability を既存の monitoring インフラへ統合しやすくなるため、長時間タスクや分散型 agent の監視体制を整えたいチームに直接効く更新です。",
+      en: "This is directly useful for teams building observability for long-running or distributed agent workflows, as the prebuilt Grafana dashboard reduces the time needed to instrument agent session tracing.",
+    },
 };
 
 function toDateOnly(value) {
@@ -1646,18 +1659,12 @@ function patternTitle(title) {
       "Agent pull requests are everywhere. Here's how to review them.",
       "agent 生成 PR のレビュー実践ガイド",
     ],
-    [
-      "Upcoming deprecation of GPT-4.1",
-      "GPT-4.1 の廃止予告（2026年6月1日）",
-    ],
+    ["Upcoming deprecation of GPT-4.1", "GPT-4.1 の廃止予告（2026年6月1日）"],
     [
       "Improving token efficiency in GitHub Agentic Workflows",
       "GitHub Agentic Workflows のトークン効率改善の取り組み",
     ],
-    [
-      "Claude Sonnet 4 deprecated",
-      "Claude Sonnet 4 が廃止された",
-    ],
+    ["Claude Sonnet 4 deprecated", "Claude Sonnet 4 が廃止された"],
     [
       "Copilot code review: Comment experience improvements",
       "Copilot code review のコメント体験が改善された",
