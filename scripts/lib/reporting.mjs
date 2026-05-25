@@ -647,6 +647,10 @@ const exactImportanceMappings = {
     ja: "複雑な実装や計画の初期判断で別モデルの視点を差し込めるため、手戻りの大きい見落としを減らしやすい更新です。",
     en: "This can reduce expensive downstream rework by bringing a second model's perspective into planning and complex implementation checkpoints.",
   },
+  "GitHub recognized as a Leader in the Gartner® Magic Quadrant™ for Enterprise AI Coding Agents for the third year in a row": {
+    ja: "GitHub Copilot の市場評価だけでなく、複数モデル対応や issue から review・Actions までをまたぐ agentic workflow がエンタープライズ訴求の軸になっていることを確認できる更新です。",
+    en: "This matters because it shows GitHub is framing multi-model support and agentic workflows spanning issues, review, and Actions as core enterprise differentiators, not just coding assistance.",
+  },
   "Copilot CLI now supports BYOK and local models": {
     ja: "モデル選択を GitHub 提供ルーティングから切り離せるので、コスト、統制、データ所在の要件がある組織に直結します。",
     en: "This matters directly to organizations with cost, governance, or data residency requirements because model routing no longer has to stay GitHub-managed.",
