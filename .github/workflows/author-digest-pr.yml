@@ -69,6 +69,32 @@ jobs:
             const workflowConclusion = context.eventName === 'workflow_run'
               ? String(context.payload.workflow_run?.conclusion || '')
               : 'manual';
+            const workflowRunId = context.eventName === 'workflow_run'
+              ? Number(context.payload.workflow_run?.id || 0)
+              : 0;
+            let failedStepNames = [];
+            let hasPagesBuildFailure = false;
+
+            if (
+              context.eventName === 'workflow_run' &&
+              workflowName === 'Deploy GitHub Pages' &&
+              workflowConclusion === 'failure' &&
+              workflowRunId > 0
+            ) {
+              const jobs = await github.paginate(github.rest.actions.listJobsForWorkflowRun, {
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                run_id: workflowRunId,
+                per_page: 100,
+              });
+
+              failedStepNames = jobs.flatMap((job) =>
+                (job.steps || [])
+                  .filter((step) => step.conclusion === 'failure')
+                  .map((step) => step.name),
+              );
+              hasPagesBuildFailure = failedStepNames.includes('Build Pages site');
+            }
 
             if (files.length === 0) {
               core.setOutput('should_run', 'false');
@@ -140,7 +166,7 @@ jobs:
             const fallbackEntry = fallbackSummaryHits.find((entry) => entry.dateKey === dateKey);
             const fallbackMatches = fallbackEntry?.matches ?? [];
             const hasLowInformationSummary = fallbackMatches.length > 0;
-            const shouldAuthor = newEventsCount > 0 || forceIssue || hasLowInformationSummary;
+            const shouldAuthor = newEventsCount > 0 || forceIssue || hasLowInformationSummary || hasPagesBuildFailure;
 
             if (!shouldAuthor) {
               core.info(`No new events or low-information fallback detected for ${selectedFile}.`);
@@ -151,6 +177,9 @@ jobs:
             const triggerReasons = [];
             if (context.eventName === 'workflow_run') {
               triggerReasons.push(`起動元 workflow: ${workflowName} (${workflowConclusion})`);
+            }
+            if (hasPagesBuildFailure) {
+              triggerReasons.push('Deploy GitHub Pages の Build Pages site が失敗');
             }
             if (newEventsCount > 0) {
               triggerReasons.push(`最新 run で ${newEventsCount} 件の新規更新を検知`);
@@ -192,6 +221,12 @@ jobs:
               '',
               '### 起票理由',
               `- ${triggerReason}`,
+              ...(hasPagesBuildFailure
+                ? [
+                    `- failed steps: ${failedStepNames.join(', ') || 'Build Pages site'}`,
+                    `- failed run: ${context.payload.workflow_run?.html_url || 'n/a'}`,
+                  ]
+                : []),
               ...(hasLowInformationSummary
                 ? fallbackMatches.map((marker) => `- fallback: ${marker}`)
                 : []),
@@ -209,6 +244,9 @@ jobs:
               `2. \`summaries/daily/${dateKey}.md\` の \`注目トピック\` と \`テーマ別まとめ\` を更新する`,
               '3. 今週分・隔週分のドラフト対象期間に含まれる場合は、`drafts/**` の要点または本文を更新する',
               '4. `reporting.mjs` に未登録のタイトルや要約パターンが必要なら追加する',
+              ...(hasPagesBuildFailure
+                ? ['4.5. `npm run build:pages` を再現し、Pages build failure の原因を解消する']
+                : []),
               '5. 変更を 1 つの PR として作成する',
               '',
               '### 文章ルール',
