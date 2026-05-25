@@ -299,93 +299,101 @@ jobs:
               repo: context.repo.repo,
               issue_number: issueNumber,
             });
+            const currentLabels = new Set((currentIssue.data.labels ?? []).map((label) => label.name));
+            const isHumanReviewBlocked = currentLabels.has('needs-human-review');
 
             if (!createdNewIssue) {
               await github.rest.issues.setLabels({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 issue_number: issueNumber,
-                labels,
+                labels: isHumanReviewBlocked ? [...labels, 'needs-human-review'] : labels,
               });
             }
 
-            try {
-              const assignmentContext = await github.graphql(
-                `query($owner: String!, $repo: String!) {
-                  repository(owner: $owner, name: $repo) {
-                    id
-                    suggestedActors(capabilities: [CAN_BE_ASSIGNED], first: 20) {
-                      nodes {
-                        login
-                        __typename
-                        ... on Bot {
-                          id
-                        }
-                        ... on User {
-                          id
-                        }
-                      }
-                    }
-                  }
-                }`,
-                {
-                  owner: context.repo.owner,
-                  repo: context.repo.repo,
-                },
-              );
-
-              const issueId = currentIssue.data.node_id;
-              const repositoryId = assignmentContext.repository.id;
-              const existingAssignees = currentIssue.data.assignees ?? [];
-              const copilotActor = (assignmentContext.repository.suggestedActors?.nodes ?? []).find(
-                (actor) => copilotLogins.has(actor.login) && actor.id,
-              );
-
-              if (!issueId || !repositoryId || !copilotActor?.id) {
-                assignmentStatus = 'manual-required';
-                assignmentDetail = 'Copilot actor ID を取得できませんでした。';
-                core.warning('Could not resolve the Copilot actor ID for automatic issue assignment.');
-              } else if (existingAssignees.some((assignee) => copilotLogins.has(assignee.login))) {
-                assignmentStatus = 'already-assigned';
-                assignmentDetail = 'Issue にはすでに Copilot が割り当てられています。';
-              } else if (!existingAssignees.some((assignee) => copilotLogins.has(assignee.login))) {
-                await github.graphql(
-                  `mutation($assignableId: ID!, $actorIds: [ID!]!, $targetRepositoryId: ID!, $customInstructions: String!) {
-                    replaceActorsForAssignable(input: {
-                      assignableId: $assignableId,
-                      actorIds: $actorIds,
-                      agentAssignment: {
-                        targetRepositoryId: $targetRepositoryId,
-                        baseRef: "main",
-                        customInstructions: $customInstructions,
-                      }
-                    }) {
-                      assignable {
-                        ... on Issue {
-                          id
-                          assignees(first: 10) {
-                            nodes {
-                              login
-                            }
+            if (isHumanReviewBlocked) {
+              assignmentStatus = 'blocked-human-review';
+              assignmentDetail = 'Issue に needs-human-review が付いているため、自動 assignment と shepherd を停止しました。ラベルを外すと再度自動化できます。';
+              core.info('Skipping automatic Copilot assignment because the issue is blocked for human review.');
+            } else {
+              try {
+                const assignmentContext = await github.graphql(
+                  `query($owner: String!, $repo: String!) {
+                    repository(owner: $owner, name: $repo) {
+                      id
+                      suggestedActors(capabilities: [CAN_BE_ASSIGNED], first: 20) {
+                        nodes {
+                          login
+                          __typename
+                          ... on Bot {
+                            id
+                          }
+                          ... on User {
+                            id
                           }
                         }
                       }
                     }
                   }`,
                   {
-                    assignableId: issueId,
-                    actorIds: [copilotActor.id],
-                    targetRepositoryId: repositoryId,
-                    customInstructions: assignmentInstructions,
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
                   },
                 );
-                assignmentStatus = 'assigned';
-                assignmentDetail = 'Workflow から Copilot assignment を実行しました。';
+
+                const issueId = currentIssue.data.node_id;
+                const repositoryId = assignmentContext.repository.id;
+                const existingAssignees = currentIssue.data.assignees ?? [];
+                const copilotActor = (assignmentContext.repository.suggestedActors?.nodes ?? []).find(
+                  (actor) => copilotLogins.has(actor.login) && actor.id,
+                );
+
+                if (!issueId || !repositoryId || !copilotActor?.id) {
+                  assignmentStatus = 'manual-required';
+                  assignmentDetail = 'Copilot actor ID を取得できませんでした。';
+                  core.warning('Could not resolve the Copilot actor ID for automatic issue assignment.');
+                } else if (existingAssignees.some((assignee) => copilotLogins.has(assignee.login))) {
+                  assignmentStatus = 'already-assigned';
+                  assignmentDetail = 'Issue にはすでに Copilot が割り当てられています。';
+                } else if (!existingAssignees.some((assignee) => copilotLogins.has(assignee.login))) {
+                  await github.graphql(
+                    `mutation($assignableId: ID!, $actorIds: [ID!]!, $targetRepositoryId: ID!, $customInstructions: String!) {
+                      replaceActorsForAssignable(input: {
+                        assignableId: $assignableId,
+                        actorIds: $actorIds,
+                        agentAssignment: {
+                          targetRepositoryId: $targetRepositoryId,
+                          baseRef: "main",
+                          customInstructions: $customInstructions,
+                        }
+                      }) {
+                        assignable {
+                          ... on Issue {
+                            id
+                            assignees(first: 10) {
+                              nodes {
+                                login
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }`,
+                    {
+                      assignableId: issueId,
+                      actorIds: [copilotActor.id],
+                      targetRepositoryId: repositoryId,
+                      customInstructions: assignmentInstructions,
+                    },
+                  );
+                  assignmentStatus = 'assigned';
+                  assignmentDetail = 'Workflow から Copilot assignment を実行しました。';
+                }
+              } catch (error) {
+                assignmentStatus = 'manual-required';
+                assignmentDetail = error.message;
+                core.warning(`Failed to assign the issue to Copilot via GraphQL: ${error.message}`);
               }
-            } catch (error) {
-              assignmentStatus = 'manual-required';
-              assignmentDetail = error.message;
-              core.warning(`Failed to assign the issue to Copilot via GraphQL: ${error.message}`);
             }
 
             const comments = await github.paginate(github.rest.issues.listComments, {
@@ -402,6 +410,8 @@ jobs:
                 ? '- 自動 assignment: 成功'
                 : assignmentStatus === 'already-assigned'
                   ? '- 自動 assignment: 既に割り当て済み'
+                  : assignmentStatus === 'blocked-human-review'
+                    ? '- 自動 assignment: 停止（needs-human-review が付いています）'
                   : '- 自動 assignment: 失敗。手動フォールバックを使ってください。',
               assignmentDetail ? `- 詳細: ${assignmentDetail}` : null,
               '- 追加の task 指示は assignment 時の agentAssignment に渡します。',
@@ -431,12 +441,13 @@ jobs:
             }
 
             core.setOutput('issue_number', String(issueNumber));
+            core.setOutput('automation_state', isHumanReviewBlocked ? 'blocked-human-review' : 'active');
         env:
           ISSUE_TITLE: ${{ steps.target.outputs.issue_title }}
           ISSUE_BODY: ${{ steps.target.outputs.issue_body }}
 
       - name: Shepherd generated PR
-        if: steps.target.outputs.should_run == 'true'
+        if: steps.target.outputs.should_run == 'true' && steps.create_or_update_authoring_issue.outputs.automation_state == 'active'
         uses: actions/github-script@v8
         env:
           DATE_KEY: ${{ steps.target.outputs.date_key }}
