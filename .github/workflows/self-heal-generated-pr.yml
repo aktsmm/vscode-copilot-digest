@@ -187,10 +187,22 @@ jobs:
               );
             }
 
-            if (failedSteps.includes('Validate collect command') || failedSteps.includes('Validate Pages build')) {
+            if (failedSteps.includes('Validate collect command')) {
               feedbackLines.push(
-                '### ビルドエラー',
-                '- `npm run collect` と `npm run build:pages` が通る状態にしてください',
+                '### collect エラー',
+                '- `npm run collect` が通るように、入力 JSON と生成 summary の整合を直してください',
+                '- 破損した JSON、欠けた必須フィールド、想定外の schema 変更を入れないでください',
+                '',
+              );
+            }
+
+            if (failedSteps.includes('Validate Pages build')) {
+              feedbackLines.push(
+                '### Pages build エラー',
+                '- `npm run build:pages` が通るように修正してください',
+                '- 公開 HTML に low-information fallback copy を残さないでください',
+                '- `summaries/daily/*.md` と `drafts/*.md` の generic な仮置き文言を、対象更新に即した具体的な運用影響へ書き換えてください',
+                '- build-pages.mjs は published output 内の generic fallback を検出すると失敗します',
                 '',
               );
             }
