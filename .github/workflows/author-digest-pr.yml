@@ -256,6 +256,8 @@ jobs:
             const body = process.env.ISSUE_BODY;
             const labels = ['copilot', 'digest-authoring', 'auto-pr'];
             const copilotLogins = new Set(['Copilot', 'copilot-swe-agent']);
+            const dateKeyMatch = title.match(/(\d{4}-\d{2}-\d{2})/);
+            const dateKey = dateKeyMatch ? dateKeyMatch[1] : '';
             const assignmentInstructions = [
               'PR タイトルと本文は Issue のルールに合わせてください。',
               '不確実な場合は needs-human-review を付けて停止してください。',
@@ -344,6 +346,22 @@ jobs:
                 const issueId = currentIssue.data.node_id;
                 const repositoryId = assignmentContext.repository.id;
                 const existingAssignees = currentIssue.data.assignees ?? [];
+                const openPulls = dateKey
+                  ? await github.paginate(github.rest.pulls.list, {
+                      owner: context.repo.owner,
+                      repo: context.repo.repo,
+                      state: 'open',
+                      per_page: 100,
+                    })
+                  : [];
+                const existingGeneratedPr = openPulls.find((pull) =>
+                  /copilot/i.test(pull.user?.login || '') && (
+                    (pull.title || '').includes(dateKey) ||
+                    (pull.head?.ref || '').includes(dateKey) ||
+                    String(pull.body || '').includes(`Generated from data/events/${dateKey}.json`) ||
+                    String(pull.body || '').includes(`#${issueNumber}`)
+                  ),
+                );
                 const copilotActor = (assignmentContext.repository.suggestedActors?.nodes ?? []).find(
                   (actor) => copilotLogins.has(actor.login) && actor.id,
                 );
@@ -352,10 +370,10 @@ jobs:
                   assignmentStatus = 'manual-required';
                   assignmentDetail = 'Copilot actor ID を取得できませんでした。';
                   core.warning('Could not resolve the Copilot actor ID for automatic issue assignment.');
-                } else if (existingAssignees.some((assignee) => copilotLogins.has(assignee.login))) {
+                } else if (existingAssignees.some((assignee) => copilotLogins.has(assignee.login)) && existingGeneratedPr) {
                   assignmentStatus = 'already-assigned';
-                  assignmentDetail = 'Issue にはすでに Copilot が割り当てられています。';
-                } else if (!existingAssignees.some((assignee) => copilotLogins.has(assignee.login))) {
+                  assignmentDetail = `Issue にはすでに Copilot が割り当てられており、PR #${existingGeneratedPr.number} が進行中です。`;
+                } else {
                   await github.graphql(
                     `mutation($assignableId: ID!, $actorIds: [ID!]!, $targetRepositoryId: ID!, $customInstructions: String!) {
                       replaceActorsForAssignable(input: {
@@ -386,8 +404,12 @@ jobs:
                       customInstructions: assignmentInstructions,
                     },
                   );
-                  assignmentStatus = 'assigned';
-                  assignmentDetail = 'Workflow から Copilot assignment を実行しました。';
+                  assignmentStatus = existingAssignees.some((assignee) => copilotLogins.has(assignee.login))
+                    ? 'reassigned'
+                    : 'assigned';
+                  assignmentDetail = existingAssignees.some((assignee) => copilotLogins.has(assignee.login))
+                    ? '既存 assignment を再実行して Copilot の作業を再開しました。'
+                    : 'Workflow から Copilot assignment を実行しました。';
                 }
               } catch (error) {
                 assignmentStatus = 'manual-required';
@@ -408,6 +430,8 @@ jobs:
               'Copilot への assignment を workflow から試行しました。',
               assignmentStatus === 'assigned'
                 ? '- 自動 assignment: 成功'
+                : assignmentStatus === 'reassigned'
+                  ? '- 自動 assignment: 再開のため再実行'
                 : assignmentStatus === 'already-assigned'
                   ? '- 自動 assignment: 既に割り当て済み'
                   : assignmentStatus === 'blocked-human-review'
