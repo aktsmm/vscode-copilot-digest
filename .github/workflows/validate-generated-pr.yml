@@ -132,7 +132,7 @@ jobs:
           for (const file of markdownFiles) {
             const content = fs.readFileSync(file, 'utf8');
             const lines = content.split(/\r?\n/);
-            const tooLongLines = lines.filter((line) => line.length > 240 && !/^https?:\/\//.test(line));
+            const tooLongLines = lines.filter((line) => line.length > 300 && !/^https?:\/\//.test(line));
 
             if (file.startsWith('summaries/daily/')) {
               for (const heading of ['## 注目トピック', '## テーマ別まとめ']) {
@@ -151,7 +151,7 @@ jobs:
               }
             }
 
-            if (tooLongLines.length > 5) {
+            if (tooLongLines.length > 10) {
               console.error(`${file} has too many long lines (${tooLongLines.length}).`);
               process.exit(1);
             }

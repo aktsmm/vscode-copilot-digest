@@ -1,0 +1,171 @@
+name: Self-heal generated PR
+
+on:
+  workflow_run:
+    workflows:
+      - Validate generated PR
+    types:
+      - completed
+
+permissions:
+  contents: read
+  issues: write
+  pull-requests: write
+
+jobs:
+  self-heal:
+    if: github.event.workflow_run.conclusion == 'failure'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Post fix-it feedback on the failed PR
+        uses: actions/github-script@v8
+        with:
+          script: |
+            const marker = '<!-- self-heal-feedback -->';
+            const maxFeedbackAttempts = 3;
+            const pullRequests = context.payload.workflow_run.pull_requests || [];
+
+            if (pullRequests.length === 0) {
+              core.info('No pull request associated with this workflow run.');
+              return;
+            }
+
+            const prNumber = pullRequests[0].number;
+            const pull = await github.rest.pulls.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: prNumber,
+            });
+            const pr = pull.data;
+
+            if (pr.state !== 'open') {
+              core.info(`PR #${prNumber} is not open. Skipping self-heal.`);
+              return;
+            }
+
+            const isCopilotPr =
+              /copilot/i.test(pr.user?.login || '') ||
+              (pr.labels || []).some((label) => label.name === 'auto-pr');
+
+            if (!isCopilotPr) {
+              core.info(`PR #${prNumber} is not a Copilot-generated PR. Skipping.`);
+              return;
+            }
+
+            const comments = await github.paginate(github.rest.issues.listComments, {
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: prNumber,
+              per_page: 100,
+            });
+            const feedbackComments = comments.filter((c) => (c.body || '').includes(marker));
+
+            if (feedbackComments.length >= maxFeedbackAttempts) {
+              core.info(`PR #${prNumber} already has ${feedbackComments.length} self-heal attempts. Labelling for human review.`);
+              await github.rest.issues.addLabels({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: prNumber,
+                labels: ['needs-human-review'],
+              });
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: prNumber,
+                body: `${marker}\n\n自動修正を ${maxFeedbackAttempts} 回試みましたが、validate が通りません。手動で確認してください。`,
+              });
+              return;
+            }
+
+            const runId = context.payload.workflow_run.id;
+            const jobs = await github.rest.actions.listJobsForWorkflowRun({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              run_id: runId,
+              per_page: 30,
+            });
+
+            const failedSteps = [];
+            for (const job of jobs.data.jobs) {
+              for (const step of (job.steps || [])) {
+                if (step.conclusion === 'failure') {
+                  failedSteps.push(step.name);
+                }
+              }
+            }
+
+            const failedStepNames = failedSteps.length > 0
+              ? failedSteps.join(', ')
+              : 'unknown step';
+
+            const feedbackLines = [
+              marker,
+              '',
+              `## Validate generated PR が失敗しました（自動フィードバック #${feedbackComments.length + 1}）`,
+              '',
+              `失敗ステップ: **${failedStepNames}**`,
+              '',
+              '以下のルールに従って修正し、再度 push してください:',
+              '',
+            ];
+
+            if (failedSteps.includes('Validate Markdown structure')) {
+              feedbackLines.push(
+                '### Markdown 構造エラー',
+                '- `summaries/daily/*.md` には `## 注目トピック` と `## テーマ別まとめ` の見出しが必須です',
+                '- `drafts/*.md` には `## 今回の要点` または `## 今週の要点` の見出しが必須です',
+                '- 1 行は 300 文字以内に収めてください（URL のみの行を除く）。長い場合は文を分割してください',
+                '- 「絶対」「必ず成功」「革命的」「最強」「衝撃」「完全無欠」「間違いなく」などの誇張表現は使わないでください',
+                '',
+              );
+            }
+
+            if (failedSteps.includes('Validate changed paths')) {
+              feedbackLines.push(
+                '### パス制約エラー',
+                '- 変更可能なファイルは `summaries/daily/**`, `drafts/**`, `scripts/lib/reporting.mjs` のみです',
+                '- それ以外のファイルを変更している場合は revert してください',
+                '',
+              );
+            }
+
+            if (failedSteps.includes('Validate PR metadata')) {
+              feedbackLines.push(
+                '### PR メタデータエラー',
+                '- PR タイトルは `docs: update digest YYYY-MM-DD` 形式にしてください',
+                '- PR 本文に `Generated from data/events/YYYY-MM-DD.json` を含めてください',
+                '',
+              );
+            }
+
+            if (failedSteps.includes('Validate reporting mappings')) {
+              feedbackLines.push(
+                '### reporting.mjs エラー',
+                '- `exactMappings` にキーの重複がないか確認してください',
+                '',
+              );
+            }
+
+            if (failedSteps.includes('Validate collect command') || failedSteps.includes('Validate Pages build')) {
+              feedbackLines.push(
+                '### ビルドエラー',
+                '- `npm run collect` と `npm run build:pages` が通る状態にしてください',
+                '',
+              );
+            }
+
+            feedbackLines.push(
+              `[Validate workflow run](${context.payload.workflow_run.html_url})`,
+            );
+
+            const body = feedbackLines.join('\n');
+
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: prNumber,
+              body,
+            });
+
+            core.info(`Posted self-heal feedback on PR #${prNumber} (attempt ${feedbackComments.length + 1}).`);
