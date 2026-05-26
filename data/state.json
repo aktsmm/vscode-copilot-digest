@@ -72,7 +72,7 @@
         "https://github.blog/changelog/2026-04-08-github-mobile-research-and-code-with-copilot-cloud-agent-anywhere"
       ],
       "futureSeenIds": [],
-      "lastCheckedAt": "2026-05-25T22:53:45.307Z"
+      "lastCheckedAt": "2026-05-26T08:46:51.950Z"
     },
     "github-changelog-copilot": {
       "seenIds": [
@@ -151,7 +151,7 @@
         "https://github.blog/changelog/2026-04-02-copilot-sdk-in-public-preview"
       ],
       "futureSeenIds": [],
-      "lastCheckedAt": "2026-05-25T22:53:45.319Z"
+      "lastCheckedAt": "2026-05-26T08:46:51.970Z"
     },
     "github-copilot-blog": {
       "seenIds": [
@@ -178,7 +178,7 @@
         "https://github.blog/?p=94179"
       ],
       "futureSeenIds": [],
-      "lastCheckedAt": "2026-05-25T22:53:45.333Z"
+      "lastCheckedAt": "2026-05-26T08:46:51.997Z"
     },
     "vscode-feed": {
       "seenIds": [
@@ -208,25 +208,25 @@
       "futureSeenIds": [
         "https://code.visualstudio.com/updates/v1_122"
       ],
-      "lastCheckedAt": "2026-05-25T22:53:45.352Z"
+      "lastCheckedAt": "2026-05-26T08:46:52.023Z"
     },
     "vscode-updates": {
-      "releasePublishedAt": "2026-05-19T15:00:00.000Z",
+      "releasePublishedAt": "2026-05-20T00:00:00.000Z",
       "releaseTitle": "Visual Studio Code 1.121",
       "snapshotHash": "4e1b4b64d23abd8a0572dfb4ab4b101e2cd7453546fdc23358a6018b820cb993",
-      "lastCheckedAt": "2026-05-25T22:53:45.932Z"
+      "lastCheckedAt": "2026-05-26T08:46:52.258Z"
     },
     "vscode-release-notes-1-109": {
-      "releasePublishedAt": "2026-02-03T15:00:00.000Z",
+      "releasePublishedAt": "2026-02-04T00:00:00.000Z",
       "releaseTitle": "January 2026 (version 1.109)",
       "snapshotHash": "efc0cea6584d2244d651e05ea3738cf636ec7e910e99979ee7eb97ef700a6147",
-      "lastCheckedAt": "2026-05-25T22:53:46.991Z"
+      "lastCheckedAt": "2026-05-26T08:46:52.592Z"
     },
     "copilot-whats-new": {
-      "releasePublishedAt": "2026-05-25T22:53:47.462Z",
+      "releasePublishedAt": "2026-05-26T08:46:53.120Z",
       "releaseTitle": "Preview upcoming features for GitHub Copilot",
       "snapshotHash": "b420f1decd1c48516d66030e4292d9537371f69c4260aeb4b1a29975eb279571",
-      "lastCheckedAt": "2026-05-25T22:53:47.463Z"
+      "lastCheckedAt": "2026-05-26T08:46:53.121Z"
     },
     "publickey": {
       "seenIds": [
@@ -235,7 +235,7 @@
         "tag:www.publickey1.jp,2026://2.8527"
       ],
       "futureSeenIds": [],
-      "lastCheckedAt": "2026-05-25T22:53:47.567Z"
+      "lastCheckedAt": "2026-05-26T08:46:53.562Z"
     },
     "vscode-release-notes-1-115": {
       "sectionHashes": {
@@ -298,10 +298,10 @@
         "vscode-release-notes-1-118:Agent experience:Synced session titles for Copilot CLI": "d0148dd08c9580ca930da6198df9a4893ef4effd5d798620b91d230a880782bf",
         "vscode-release-notes-1-118:Agent experience:Copilot added as a Git co-author by default": "7437835c50de7b4abe916c2541f0536135aaefa25e2dbbca0399934bbd733b27"
       },
-      "releasePublishedAt": "2026-04-28T15:00:00.000Z",
+      "releasePublishedAt": "2026-04-29T00:00:00.000Z",
       "releaseTitle": "Visual Studio Code 1.118",
       "snapshotHash": "5ca0de1470add602fb4f059ec120bf1ea6e0fe9767237ee889fb255344c488f4",
-      "lastCheckedAt": "2026-05-25T22:53:48.265Z"
+      "lastCheckedAt": "2026-05-26T08:46:54.472Z"
     },
     "vscode-release-notes-1-119": {
       "sectionHashes": {
@@ -310,10 +310,10 @@
         "vscode-release-notes-1-119:Agent experience:OpenTelemetry tracing for agent sessions": "207d97d0230ceb4c2baaf0d46374520cd9bda85f70fc75d64fcda1453a98843b",
         "vscode-release-notes-1-119:Chat experience:Show model details for Copilot CLI and Claude agent responses": "a8f9b7e2a79a15e012de9fa16f673529159b49c3a426730d3351643647dbe8a9"
       },
-      "releasePublishedAt": "2026-05-05T15:00:00.000Z",
+      "releasePublishedAt": "2026-05-06T00:00:00.000Z",
       "releaseTitle": "Visual Studio Code 1.119",
       "snapshotHash": "e9a23ba2fd082e984bec01f30afbcc34a0e5a1a91d799c54b7b9bca7b00069ea",
-      "lastCheckedAt": "2026-05-25T22:53:48.217Z"
+      "lastCheckedAt": "2026-05-26T08:46:54.215Z"
     },
     "vscode-release-notes-1-120": {
       "sectionHashes": {
@@ -322,10 +322,10 @@
         "vscode-release-notes-1-120:Language models:View BYOK model token usage": "f2a060392ea072efb099531d74cb886ace1d85b4ca9166167d4762624a9a0ec9",
         "vscode-release-notes-1-120:Language models:Configure thinking effort for BYOK reasoning models": "20cad457f454ec86187362e4a21c624ab5290d23835510652d5b9568e9ff58de"
       },
-      "releasePublishedAt": "2026-05-12T15:00:00.000Z",
+      "releasePublishedAt": "2026-05-13T00:00:00.000Z",
       "releaseTitle": "Visual Studio Code 1.120",
       "snapshotHash": "c1a1aa5f73ede530791a7046987db1f660233c40fb1a19447be1cfba89b09467",
-      "lastCheckedAt": "2026-05-25T22:53:48.176Z"
+      "lastCheckedAt": "2026-05-26T08:46:53.979Z"
     },
     "vscode-release-notes-1-121": {
       "sectionHashes": {
@@ -334,10 +334,10 @@
         "vscode-release-notes-1-121:Agents:Agents observability with OpenTelemetry and Grafana": "93fb6835195629f29a70a9ca8d9897e1f32087327847d3d6c83a22348b874d8f",
         "vscode-release-notes-1-121:Agents:Claude agent Auto permission mode (Preview)": "47a75aaeb064c36e7d4d3299c9cd3a558e16a9424eef5ee3561aa1e0eea8f76e"
       },
-      "releasePublishedAt": "2026-05-19T15:00:00.000Z",
+      "releasePublishedAt": "2026-05-20T00:00:00.000Z",
       "releaseTitle": "Visual Studio Code 1.121",
       "snapshotHash": "4e1b4b64d23abd8a0572dfb4ab4b101e2cd7453546fdc23358a6018b820cb993",
-      "lastCheckedAt": "2026-05-25T22:53:47.629Z"
+      "lastCheckedAt": "2026-05-26T08:46:53.605Z"
     }
   }
 }
