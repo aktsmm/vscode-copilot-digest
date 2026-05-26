@@ -1,12 +1,88 @@
 {
   "date": "2026-05-26",
-  "generatedAt": "2026-05-26T16:56:27.354Z",
+  "generatedAt": "2026-05-26T22:45:29.769Z",
   "latestRun": {
-    "generatedAt": "2026-05-26T16:56:27.354Z",
-    "newEventsCount": 0,
-    "newEventIds": [],
+    "generatedAt": "2026-05-26T22:45:29.769Z",
+    "newEventsCount": 4,
+    "newEventIds": [
+      "github-changelog:https://github.blog/changelog/2026-05-26-copilot-memory-has-more-controls-for-deletion-scope-and-the-copilot-cli",
+      "github-changelog:https://github.blog/changelog/2026-05-26-target-copilot-models-to-organizations-with-model-rules",
+      "github-changelog-copilot:https://github.blog/changelog/2026-05-26-copilot-memory-has-more-controls-for-deletion-scope-and-the-copilot-cli",
+      "github-changelog-copilot:https://github.blog/changelog/2026-05-26-target-copilot-models-to-organizations-with-model-rules"
+    ],
     "errorCount": 0
   },
-  "events": [],
+  "events": [
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-05-26-copilot-memory-has-more-controls-for-deletion-scope-and-the-copilot-cli",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-05-26T22:45:27.582Z",
+      "publishedAt": "2026-05-26T21:05:28.000Z",
+      "title": "Copilot Memory has more controls for deletion, scope, and the Copilot CLI",
+      "url": "https://github.blog/changelog/2026-05-26-copilot-memory-has-more-controls-for-deletion-scope-and-the-copilot-cli",
+      "summary": "Copilot Memory now includes improved memory deletion, adds a repository-level off switch, and brings further memory controls into the Copilot CLI. Copilot Memory is in public preview and available to…\nThe post Copilot Memory has more controls for deletion, scope, and the Copilot CLI appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 2
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-05-26-copilot-memory-has-more-controls-for-deletion-scope-and-the-copilot-cli",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-05-26T22:45:27.918Z",
+      "publishedAt": "2026-05-26T21:05:28.000Z",
+      "title": "Copilot Memory has more controls for deletion, scope, and the Copilot CLI",
+      "url": "https://github.blog/changelog/2026-05-26-copilot-memory-has-more-controls-for-deletion-scope-and-the-copilot-cli",
+      "summary": "Copilot Memory now includes improved memory deletion, adds a repository-level off switch, and brings further memory controls into the Copilot CLI. Copilot Memory is in public preview and available to…\nThe post Copilot Memory has more controls for deletion, scope, and the Copilot CLI appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 2
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-05-26-target-copilot-models-to-organizations-with-model-rules",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-05-26T22:45:27.582Z",
+      "publishedAt": "2026-05-26T19:47:22.000Z",
+      "title": "Target Copilot models to organizations with model rules",
+      "url": "https://github.blog/changelog/2026-05-26-target-copilot-models-to-organizations-with-model-rules",
+      "summary": "Enterprise owners now have granular control over which GitHub Copilot models are available to each organization. With targeted model rules, you can allow specific models for specific organizations instead of…\nThe post Target Copilot models to organizations with model rules appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "copilot",
+        "enterprise management tools"
+      ],
+      "isFutureDated": false,
+      "score": 2
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-05-26-target-copilot-models-to-organizations-with-model-rules",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-05-26T22:45:27.918Z",
+      "publishedAt": "2026-05-26T19:47:22.000Z",
+      "title": "Target Copilot models to organizations with model rules",
+      "url": "https://github.blog/changelog/2026-05-26-target-copilot-models-to-organizations-with-model-rules",
+      "summary": "Enterprise owners now have granular control over which GitHub Copilot models are available to each organization. With targeted model rules, you can allow specific models for specific organizations instead of…\nThe post Target Copilot models to organizations with model rules appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "copilot",
+        "enterprise management tools"
+      ],
+      "isFutureDated": false,
+      "score": 2
+    }
+  ],
   "errors": []
 }
