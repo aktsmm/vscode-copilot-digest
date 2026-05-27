@@ -1,12 +1,108 @@
 {
   "date": "2026-05-27",
-  "generatedAt": "2026-05-27T16:48:28.772Z",
+  "generatedAt": "2026-05-27T22:54:30.189Z",
   "latestRun": {
-    "generatedAt": "2026-05-27T16:48:28.772Z",
-    "newEventsCount": 0,
-    "newEventIds": [],
+    "generatedAt": "2026-05-27T22:54:30.189Z",
+    "newEventsCount": 3,
+    "newEventIds": [
+      "vscode-feed:https://code.visualstudio.com/updates/v1_122",
+      "vscode-updates:1d8eda9b68f6a0d4848ea9f15304ca501466fc8ade851822c9d6150574c3843a",
+      "vscode-release-notes-1-122:1d8eda9b68f6a0d4848ea9f15304ca501466fc8ade851822c9d6150574c3843a"
+    ],
     "errorCount": 0
   },
-  "events": [],
+  "events": [
+    {
+      "eventId": "vscode-release-notes-1-122:1d8eda9b68f6a0d4848ea9f15304ca501466fc8ade851822c9d6150574c3843a",
+      "sourceId": "vscode-release-notes-1-122",
+      "sourceName": "VS Code Release Notes 1.122",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-05-27T22:54:29.465Z",
+      "publishedAt": "2026-05-27T22:54:29.465Z",
+      "title": "Visual Studio Code 1.122",
+      "url": "https://code.visualstudio.com/updates/v1_122",
+      "summary": "Captured the current snapshot for Visual Studio Code 1.122.",
+      "categories": [
+        "snapshot"
+      ],
+      "headings": [
+        "Visual Studio Code 1.122",
+        "May 23, 2026",
+        "May 22, 2026",
+        "May 21, 2026",
+        "May 20, 2026",
+        "May 19, 2026"
+      ],
+      "score": 8
+    },
+    {
+      "eventId": "vscode-updates:1d8eda9b68f6a0d4848ea9f15304ca501466fc8ade851822c9d6150574c3843a",
+      "sourceId": "vscode-updates",
+      "sourceName": "VS Code Updates",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-05-27T22:54:28.070Z",
+      "publishedAt": "2026-05-27T22:54:28.061Z",
+      "title": "VS Code Updates changed",
+      "url": "https://code.visualstudio.com/updates/",
+      "summary": "Detected 34 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 34,
+        "headings": [
+          "Visual Studio Code 1.122",
+          "May 23, 2026",
+          "May 22, 2026",
+          "May 21, 2026",
+          "May 20, 2026",
+          "May 19, 2026"
+        ],
+        "additions": [
+          "H1: Visual Studio Code 1.122",
+          "Last updated: May 23, 2026",
+          "Welcome to the 1.122 release of Visual Studio Code.",
+          "H2: May 23, 2026",
+          "Add \"Add Screenshot to Chat\" action in the integrated browser to capture and attach a screenshot of the current page to a chat message. #318065",
+          "H2: May 22, 2026",
+          "Hover tooltips in the Agents window sessions list show the full session title and folder path. #317858",
+          "Preserve the gallery field when installing an MCP server via the vscode:mcp/install protocol URL, ensuring servers from registries retain their metadata for update checks and enablement. #293481",
+          "MCP OAuth supports specifying a custom clientId in the oauth section of mcp.json, enabling servers that don't support Dynamic Client Registration. Client secrets are stored securely in the OS secret store. #257415",
+          "H2: May 21, 2026",
+          "Bring Your Own Key (BYOK) models now work in air-gapped scenarios without GitHub authentication. #317428",
+          "Local agent host is now enabled by default in Insiders builds. #317667",
+          "\"Sort imports\" and \"Remove unused imports\" actions no longer appear when tsgo is active, since tsgo handles these operations differently. #317656",
+          "The reasoning effort picker now shows a valid level instead of 'undefined' for model families that don't specify an explicit default. #317622",
+          "H2: May 20, 2026",
+          "New \"Search only in changed files\" toggle in the search panel restricts results to files with uncommitted source control changes. #314790"
+        ]
+      },
+      "headings": [
+        "Visual Studio Code 1.122",
+        "May 23, 2026",
+        "May 22, 2026",
+        "May 21, 2026",
+        "May 20, 2026",
+        "May 19, 2026"
+      ],
+      "score": 8
+    },
+    {
+      "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_122",
+      "sourceId": "vscode-feed",
+      "sourceName": "VS Code Feed",
+      "kind": "feed_entry",
+      "detectedAt": "2026-05-27T22:54:27.809Z",
+      "publishedAt": "2026-05-27T17:00:00.000Z",
+      "title": "Visual Studio Code 1.122",
+      "url": "https://code.visualstudio.com/updates/v1_122",
+      "summary": "Learn what's new in Visual Studio Code 1.122 (Insiders)\n Read the full article",
+      "categories": [
+        "release"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    }
+  ],
   "errors": []
 }
