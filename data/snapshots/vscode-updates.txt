@@ -1,4 +1,4 @@
-Insiders
+1.122
 1.121
 1.120
 1.119
@@ -15,58 +15,223 @@ January 2026
 View All Releases
 H1: Visual Studio Code 1.122
 Follow us on LinkedIn, X, Bluesky
-Last updated: May 23, 2026
-Welcome to the 1.122 release of Visual Studio Code.
+Release date: May 28, 2026
+Downloads: Windows: x64 Arm64 | Mac: Universal Intel silicon | Linux: deb rpm tarball Arm snap
+Welcome to the 1.122 release of Visual Studio Code. This release further enhances the agent experience and makes BYOK more flexible, while adding new capabilities for testing web apps across different devices.
+Air-gapped BYOK: Use your own language models, even when you're not connected.
+Air-gapped BYOK: Use your own language models, even when you're not connected.
+Browser device emulation: Test your website's responsiveness across different devices directly in the integrated browser.
+Browser device emulation: Test your website's responsiveness across different devices directly in the integrated browser.
+Rich issue reporting: Create rich VS Code issue reports, including screenshots and video recordings.
+Rich issue reporting: Create rich VS Code issue reports, including screenshots and video recordings.
 Happy Coding!
-H2: May 23, 2026
-Add "Add Screenshot to Chat" action in the integrated browser to capture and attach a screenshot of the current page to a chat message. #318065
-H2: May 22, 2026
-Hover tooltips in the Agents window sessions list show the full session title and folder path. #317858
-Hover tooltips in the Agents window sessions list show the full session title and folder path. #317858
-Preserve the gallery field when installing an MCP server via the vscode:mcp/install protocol URL, ensuring servers from registries retain their metadata for update checks and enablement. #293481
-Preserve the gallery field when installing an MCP server via the vscode:mcp/install protocol URL, ensuring servers from registries retain their metadata for update checks and enablement. #293481
-MCP OAuth supports specifying a custom clientId in the oauth section of mcp.json, enabling servers that don't support Dynamic Client Registration. Client secrets are stored securely in the OS secret store. #257415
-MCP OAuth supports specifying a custom clientId in the oauth section of mcp.json, enabling servers that don't support Dynamic Client Registration. Client secrets are stored securely in the OS secret store. #257415
-H2: May 21, 2026
-Bring Your Own Key (BYOK) models now work in air-gapped scenarios without GitHub authentication. #317428
-Bring Your Own Key (BYOK) models now work in air-gapped scenarios without GitHub authentication. #317428
-Local agent host is now enabled by default in Insiders builds. #317667
-Local agent host is now enabled by default in Insiders builds. #317667
-"Sort imports" and "Remove unused imports" actions no longer appear when tsgo is active, since tsgo handles these operations differently. #317656
-"Sort imports" and "Remove unused imports" actions no longer appear when tsgo is active, since tsgo handles these operations differently. #317656
-The reasoning effort picker now shows a valid level instead of 'undefined' for model families that don't specify an explicit default. #317622
-The reasoning effort picker now shows a valid level instead of 'undefined' for model families that don't specify an explicit default. #317622
-H2: May 20, 2026
-New "Search only in changed files" toggle in the search panel restricts results to files with uncommitted source control changes. #314790
-New "Search only in changed files" toggle in the search panel restricts results to files with uncommitted source control changes. #314790
-Language Models editor shows granular actions for provider groups, such as Update API Key, Add Model, Go to config file, Rename, and Delete. #317419
-Language Models editor shows granular actions for provider groups, such as Update API Key, Add Model, Go to config file, Rename, and Delete. #317419
-Terminal commands running in chat show dot/ASCII loading animations. #317416
-Terminal commands running in chat show dot/ASCII loading animations. #317416
-New issue reporter wizard lets you create high-quality issues directly from VS Code, including screenshots and video recordings. Enable it with issueReporter.wizard.enabled. #317577
-New issue reporter wizard lets you create high-quality issues directly from VS Code, including screenshots and video recordings. Enable it with issueReporter.wizard.enabled. #317577
-Mermaid diagrams use a theme derived from the current VS Code color theme, and diagrams opened in a new editor show the full content. #317617, #317244
-Mermaid diagrams use a theme derived from the current VS Code color theme, and diagrams opened in a new editor show the full content. #317617, #317244
-GitHub Enterprise sign-in onboarding uses an inline form with real-time validation instead of a modal dialog. #317205
-GitHub Enterprise sign-in onboarding uses an inline form with real-time validation instead of a modal dialog. #317205
-Commands using sudo -S to pipe passwords via stdin are no longer auto-cancelled in auto-approve mode. #317594
-Commands using sudo -S to pipe passwords via stdin are no longer auto-cancelled in auto-approve mode. #317594
-Fixed editor labels for remote agent changed files that were showing internal URIs instead of user-facing paths. #316812
-Fixed editor labels for remote agent changed files that were showing internal URIs instead of user-facing paths. #316812
-H2: May 19, 2026
-Agents can now trigger tasks on remote machines. #312052
-Agents can now trigger tasks on remote machines. #312052
-Source control state in the Agents window now refreshes automatically after the agent commits, syncs, or performs other git operations. #317317
-Source control state in the Agents window now refreshes automatically after the agent commits, syncs, or performs other git operations. #317317
-Use /models in the chat input to open the model picker. #317060
-Use /models in the chat input to open the model picker. #317060
-Mermaid C4 diagrams with inline data-URI images now render correctly in chat and Markdown preview. #317235
-Mermaid C4 diagrams with inline data-URI images now render correctly in chat and Markdown preview. #317235
-Screen readers now announce the problem message when opening the error peek widget with F8. #316835
-Screen readers now announce the problem message when opening the error peek widget with F8. #316835
+H2: Agents
+H3: Agents Window (Preview)
+The Agents window is a dedicated companion window optimized for exploring, iterating on, and reviewing agent sessions across projects, harnesses, and machines. We keep improving it and the updates for this release include:
+Session hover details: Hover over a session in the session list to see its details at a glance. The hover shows the session title with an icon indicating the harness used, along with the project, worktree, and files changed.
+Session hover details: Hover over a session in the session list to see its details at a glance. The hover shows the session title with an icon indicating the harness used, along with the project, worktree, and files changed.
+Local VS Code harness (Insiders only): We're continuing to iterate on the ability to use the local harness in the Agents window, such as improvements to the custom agent picker. The availability of the local harness is an early, experimental feature available only in VS Code Insiders. To try it out, you can enable the 
+ 
+ 
+ sessions.chat.localAgent.enabled
+ 
+ 
+ 
+ 
+ 
+ Open in VS Code
+ Open in VS Code Insiders
+ 
+ setting in Insiders.
+Local VS Code harness (Insiders only): We're continuing to iterate on the ability to use the local harness in the Agents window, such as improvements to the custom agent picker. The availability of the local harness is an early, experimental feature available only in VS Code Insiders. To try it out, you can enable the 
+ 
+ 
+ sessions.chat.localAgent.enabled
+ 
+ 
+ 
+ 
+ 
+ Open in VS Code
+ Open in VS Code Insiders
+ 
+ setting in Insiders.
+You can open the Agents window in several ways, including the Open in Agents button in the VS Code title bar. To learn more about how it works and what you can do with it, visit the Agents window documentation. You can also check out our new VS Code Insiders podcast episode about how the Agents window fits into agent-first development workflows.
+Your feedback continues to be a great help in shaping Agents. If you've already been using it and providing feedback, thank you! Please continue to file issues on GitHub or browse existing issues.
+H3: Richer OpenTelemetry signals for agents
+Local agent sessions now emit a canonical github.copilot.* attribute namespace to OpenTelemetry, matching the GitHub Copilot CLI OpenTelemetry conventions. New signals add repository context, agent type, structured tool parameters, and hook outcomes to each session.
+For the full attribute reference, see Monitor agent usage with OpenTelemetry.
+H3: Sandboxing
+Setting: 
+ 
+ 
+ chat.agent.sandbox.enabled
+ 
+ 
+ 
+ 
+ 
+ Open in VS Code
+ Open in VS Code Insiders
+ 
+ This setting is managed at the organization level. Contact your administrator to change it.ORG
+Previously, when you ran commands with Bypass Approvals or Autopilot mode, they were first attempted in the sandbox. If the command failed with a non-zero exit code, it was automatically retried outside the sandbox. Since approvals were bypassed anyway, this did not provide a meaningful safety benefit and could make the behavior harder to reason about.
+Based on feedback from Insiders users, terminal sandboxing now only applies when you use Default Approvals, where it provides a clearer balance between safety and usefulness.
+H2: Language Models
+H3: Use BYOK without a GitHub sign in
+Previously, using your own language model API key in VS Code required signing in to GitHub. Now, Bring Your Own Key (BYOK) works without signing in, so you can use chat, tools, and MCP servers in air-gapped or restricted environments where GitHub sign-in isn't possible. This also enables fully offline workflows with local models like Ollama.
+To get started, run Manage Language Models from the Command Palette and add a provider such as Anthropic, Azure, Gemini, OpenAI, Ollama, OpenRouter, or a custom endpoint. Once at least one BYOK model is configured, the Chat view becomes available and sign-in prompts are suppressed.
+Built-in tools and any configured MCP servers continue to work. Requests go directly to your provider.
+Note: Inline suggestions and next edit suggestions (NES) still require a GitHub sign-in. BYOK powers chat, tools, and MCP servers only.
+Settings: 
+ 
+ 
+ chat.utilityModel
+ 
+ 
+ 
+ 
+ 
+ Open in VS Code
+ Open in VS Code Insiders
+ 
+ , 
+ 
+ 
+ chat.utilitySmallModel
+ 
+ 
+ 
+ 
+ 
+ Open in VS Code
+ Open in VS Code Insiders
+A few flows in VS Code, such as chat title generation, commit message generation, and feedback, use a smaller utility model that normally comes from your Copilot subscription. When you use BYOK while signed out, the default utility models are unreachable, so a notification in the chat input prompts you to point them at one of your BYOK models.
+You have two options:
+Select Configure to open settings and pick a BYOK model for 
+ 
+ 
+ chat.utilityModel
+ 
+ 
+ 
+ 
+ 
+ Open in VS Code
+ Open in VS Code Insiders
+ 
+ and 
+ 
+ 
+ chat.utilitySmallModel
+ 
+ 
+ 
+ 
+ 
+ Open in VS Code
+ Open in VS Code Insiders
+ 
+ . This unlocks the full set of AI features using your own language model.
+Select Configure to open settings and pick a BYOK model for 
+ 
+ 
+ chat.utilityModel
+ 
+ 
+ 
+ 
+ 
+ Open in VS Code
+ Open in VS Code Insiders
+ 
+ and 
+ 
+ 
+ chat.utilitySmallModel
+ 
+ 
+ 
+ 
+ 
+ Open in VS Code
+ Open in VS Code Insiders
+ 
+ . This unlocks the full set of AI features using your own language model.
+Dismiss the notification if you only need to use chat. The utility-driven features remain inactive until you configure a model.
+Dismiss the notification if you only need to use chat. The utility-driven features remain inactive until you configure a model.
+The notification hides automatically once you configure both utility settings, sign in to GitHub, or remove all BYOK models.
+H3: Custom Endpoint provider in Stable
+The Custom Endpoint provider lets you connect models that implement Chat Completions, Responses, or Messages APIs, so you can use chat with your own endpoint and API key. You can use it to connect to self-hosted, enterprise, or other compatible AI endpoints.
+The Custom Endpoint provider is now available in VS Code Stable.
+To learn how to set it up, see Add a custom endpoint model.
+H3: Manage models in Agents window
+You can now run the command Chat: Manage Language Models directly from the Agents window to configure the language models you want to use while working there.
+This works with local sessions, and you can use BYOK models through the same flow. Model configuration is shared with the editor window, so changes you make in either place are reflected in both.
+H3: Granular BYOK provider group actions in Manage Language Models
+Managing BYOK providers often means making small updates, such as rotating an API key or renaming a provider group without opening and editing the full JSON configuration by hand.
+In the Language Model editor, supported provider groups now expose targeted actions based on the provider schema: Update API Key, Add Model, Rename Group, and Delete. This makes common provider maintenance tasks faster while keeping you in the same flow.
+H2: Remote Development
+The Remote Development extensions, allow you to use a Dev Container, remote machine via SSH or Remote Tunnels, or the Windows Subsystem for Linux (WSL) as a full-featured development environment.
+Highlights include:
+EOL for 32-bit ARM Linux hosts
+You can learn more about these features in the Remote Development release notes.
+H2: Integrated browser
+H3: Emulate devices
+The integrated browser now includes out-of-the-box support for device emulation including screen sizes, mobile / touch emulation, custom user-agents, and more. This is especially useful for web development and debugging, allowing you to quickly test your website's responsiveness and behavior across different devices directly from VS Code without needing to switch to a separate browser or use external tools.
+To get started from a browser tab, select the Show Emulation Toolbar command from the overflow menu.
+Agents can also trigger device emulation via Playwright code, for example to catch mobile responsiveness issues:
+H3: Add browser screenshot as chat context
+The new Add Screenshot to Chat feature lets you attach a screenshot of the current browser viewport to the chat as context. This is especially useful for UI-related tasks, such as debugging a layout issue.
+H2: Editor Experience
+H3: Improved issue reporting flow
+Setting: 
+ 
+ 
+ issueReporter.wizard.enabled
+ 
+ 
+ 
+ 
+ 
+ Open in VS Code
+ Open in VS Code Insiders
+To help us better understand and fix any problems you might run into in VS Code, we've improved the issue reporting flow with a new issue reporting wizard. The wizard guides you through creating high quality issues directly from VS Code, including adding relevant details, screenshots, and video recordings.
+Enable the 
+ 
+ 
+ issueReporter.wizard.enabled
+ 
+ 
+ 
+ 
+ 
+ Open in VS Code
+ Open in VS Code Insiders
+ 
+ setting to opt in to the new issue reporter.
+H2: Deprecated features and settings
+H3: New deprecations in this release
+H3: Upcoming deprecations
+H2: Notable fixes
+H2: Thank you
+Contributions to our issue tracking:
+@gjsjohnmurray (John Murray)
+@RedCMD (RedCMD)
+@IllusionMH (Andrii Dieiev)
+@albertosantini (Alberto Santini)
+Contributions to vscode:
+@aaronpowell (Aaron Powell): Add marketplace ref support for plugin marketplaces PR #317901
+@oded-ist (Oded S): Fix read_cell_output incorrectly reporting all outputs as too large PR #318148
+@PenguinDOOM (Penguin): Fix BYOK invalid stateful marker retries PR #317292
+@SLdragon (rentu): feat: add languageDiagnosticsService option for nes/inline completion provider PR #317678
 We really appreciate people trying our new features as soon as they are ready, so check back here often and learn what's new.
-May 23, 2026
-May 22, 2026
-May 21, 2026
-May 20, 2026
-May 19, 2026
+If you'd like to read release notes for previous VS Code versions, go to Updates on code.visualstudio.com.
+Agents
+Language Models
+Remote Development
+Integrated browser
+Editor Experience
+Deprecated features and settings
+Notable fixes
+Thank you

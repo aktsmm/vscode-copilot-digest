@@ -1,0 +1,203 @@
+{
+  "date": "2026-05-28",
+  "generatedAt": "2026-05-28T08:56:25.776Z",
+  "latestRun": {
+    "generatedAt": "2026-05-28T08:56:25.776Z",
+    "newEventsCount": 9,
+    "newEventIds": [
+      "vscode-updates:c9209d70bf61db69559af6b2936ac81bc6a4bcc49e2e78aaa6474fb393a2d455",
+      "vscode-release-notes-1-109:c24e558fe5200a4b69a8caec329facbb8352a53ae4fa151423761be153dd0e41",
+      "vscode-release-notes-1-122:section:c8da286760376bf5ba246eac1f0730e8d3924afd386c615297f3f0852b835dd1",
+      "vscode-release-notes-1-122:section:3222381d62525f026ec8061064994cc5a8a3f6bd885e345ad869ac167b7b0038",
+      "vscode-release-notes-1-122:section:db8f94e3fab616f38fa586f89205fcb31b2c5eaf86b4181b49ef80cbec50ddf3",
+      "vscode-release-notes-1-122:section:ae01cfe2d50fe30de44a191770aa48950ab18b743a5beb518ca6aeec754f7f97",
+      "vscode-release-notes-1-121:2c0a6764043912b7077241524e4fd77323984ad7c8d11ee4de4b57cbeaa5b810",
+      "vscode-release-notes-1-120:6be2aa94074dda8f087bb050b47c7f7bc0e5ec561584deef4e9be9b578f58a46",
+      "vscode-release-notes-1-119:338809fa97784ed24f1e90836d3d7d451c8628230ed87e304e79576973650e74"
+    ],
+    "errorCount": 0
+  },
+  "events": [
+    {
+      "eventId": "vscode-updates:c9209d70bf61db69559af6b2936ac81bc6a4bcc49e2e78aaa6474fb393a2d455",
+      "sourceId": "vscode-updates",
+      "sourceName": "VS Code Updates",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-05-28T08:56:24.228Z",
+      "publishedAt": "2026-05-28T00:00:00.000Z",
+      "title": "VS Code Updates changed",
+      "url": "https://code.visualstudio.com/updates/",
+      "summary": "Detected 96 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 96,
+        "headings": [
+          "Agents",
+          "Agents Window (Preview)",
+          "Richer OpenTelemetry signals for agents",
+          "Sandboxing",
+          "Language Models",
+          "Use BYOK without a GitHub sign in",
+          "Custom Endpoint provider in Stable",
+          "Manage models in Agents window",
+          "Granular BYOK provider group actions in Manage Language Models",
+          "Remote Development",
+          "Integrated browser",
+          "Emulate devices",
+          "Add browser screenshot as chat context",
+          "Editor Experience",
+          "Improved issue reporting flow",
+          "Deprecated features and settings"
+        ],
+        "additions": [
+          "1.122",
+          "Release date: May 28, 2026",
+          "Downloads: Windows: x64 Arm64 | Mac: Universal Intel silicon | Linux: deb rpm tarball Arm snap",
+          "Welcome to the 1.122 release of Visual Studio Code. This release further enhances the agent experience and makes BYOK more flexible, while adding new capabilities for testing web apps across different devices.",
+          "Air-gapped BYOK: Use your own language models, even when you're not connected.",
+          "Browser device emulation: Test your website's responsiveness across different devices directly in the integrated browser.",
+          "Rich issue reporting: Create rich VS Code issue reports, including screenshots and video recordings.",
+          "H2: Agents",
+          "H3: Agents Window (Preview)",
+          "The Agents window is a dedicated companion window optimized for exploring, iterating on, and reviewing agent sessions across projects, harnesses, and machines. We keep improving it and the updates for this release include:",
+          "Session hover details: Hover over a session in the session list to see its details at a glance. The hover shows the session title with an icon indicating the harness used, along with the project, worktree, and files changed.",
+          "Local VS Code harness (Insiders only): We're continuing to iterate on the ability to use the local harness in the Agents window, such as improvements to the custom agent picker. The availability of the local harness is an early, experimental feature available only in VS Code Insiders. To try it out, you can enable the",
+          "sessions.chat.localAgent.enabled",
+          "Open in VS Code",
+          "Open in VS Code Insiders",
+          "setting in Insiders."
+        ]
+      },
+      "headings": [
+        "Visual Studio Code 1.122",
+        "Agents",
+        "Agents Window (Preview)",
+        "Richer OpenTelemetry signals for agents",
+        "Sandboxing",
+        "Language Models",
+        "Use BYOK without a GitHub sign in",
+        "Custom Endpoint provider in Stable",
+        "Manage models in Agents window",
+        "Granular BYOK provider group actions in Manage Language Models",
+        "Remote Development",
+        "Integrated browser"
+      ],
+      "score": 18
+    },
+    {
+      "eventId": "vscode-release-notes-1-122:section:c8da286760376bf5ba246eac1f0730e8d3924afd386c615297f3f0852b835dd1",
+      "sourceId": "vscode-release-notes-1-122",
+      "sourceName": "VS Code Release Notes 1.122",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-05-28T08:56:25.537Z",
+      "publishedAt": "2026-05-28T00:00:00.000Z",
+      "title": "Visual Studio Code 1.122: Agents Window (Preview)",
+      "url": "https://code.visualstudio.com/updates/v1_122",
+      "summary": "The Agents window is a dedicated companion window optimized for exploring, iterating on, and reviewing agent sessions across projects, harnesses, and machines. We keep improving it and the updates for this release include: Session hover details: Hover over a session in the session list to see its details at a glance. The hover shows the session title with an icon indicating the harness used, along with the project,...",
+      "categories": [
+        "release",
+        "section",
+        "Agents"
+      ],
+      "sectionHeading": "Agents",
+      "sectionTitle": "Agents Window (Preview)",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-122:section:3222381d62525f026ec8061064994cc5a8a3f6bd885e345ad869ac167b7b0038",
+      "sourceId": "vscode-release-notes-1-122",
+      "sourceName": "VS Code Release Notes 1.122",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-05-28T08:56:25.537Z",
+      "publishedAt": "2026-05-28T00:00:00.000Z",
+      "title": "Visual Studio Code 1.122: Richer OpenTelemetry signals for agents",
+      "url": "https://code.visualstudio.com/updates/v1_122",
+      "summary": "Local agent sessions now emit a canonical github.copilot.* attribute namespace to OpenTelemetry, matching the GitHub Copilot CLI OpenTelemetry conventions. New signals add repository context, agent type, structured tool parameters, and hook outcomes to each session. For the full attribute reference, see Monitor agent usage with OpenTelemetry.",
+      "categories": [
+        "release",
+        "section",
+        "Agents"
+      ],
+      "sectionHeading": "Agents",
+      "sectionTitle": "Richer OpenTelemetry signals for agents",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-122:section:db8f94e3fab616f38fa586f89205fcb31b2c5eaf86b4181b49ef80cbec50ddf3",
+      "sourceId": "vscode-release-notes-1-122",
+      "sourceName": "VS Code Release Notes 1.122",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-05-28T08:56:25.537Z",
+      "publishedAt": "2026-05-28T00:00:00.000Z",
+      "title": "Visual Studio Code 1.122: Sandboxing",
+      "url": "https://code.visualstudio.com/updates/v1_122",
+      "summary": "Setting: \n \n \n chat.agent.sandbox.enabled\n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders\n \n This setting is managed at the organization level. Contact your administrator to change it.ORG Previously, when you ran commands with Bypass Approvals or Autopilot mode, they were first attempted in the sandbox. If the command failed with a non-zero exit code, it was automatically retried outside the sandbox. Since...",
+      "categories": [
+        "release",
+        "section",
+        "Agents"
+      ],
+      "sectionHeading": "Agents",
+      "sectionTitle": "Sandboxing",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-122:section:ae01cfe2d50fe30de44a191770aa48950ab18b743a5beb518ca6aeec754f7f97",
+      "sourceId": "vscode-release-notes-1-122",
+      "sourceName": "VS Code Release Notes 1.122",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-05-28T08:56:25.537Z",
+      "publishedAt": "2026-05-28T00:00:00.000Z",
+      "title": "Visual Studio Code 1.122: Use BYOK without a GitHub sign in",
+      "url": "https://code.visualstudio.com/updates/v1_122",
+      "summary": "Previously, using your own language model API key in VS Code required signing in to GitHub. Now, Bring Your Own Key (BYOK) works without signing in, so you can use chat, tools, and MCP servers in air-gapped or restricted environments where GitHub sign-in isn't possible. This also enables fully offline workflows with local models like Ollama. To get started, run Manage Language Models from the Command Palette and add...",
+      "categories": [
+        "release",
+        "section",
+        "Language Models"
+      ],
+      "sectionHeading": "Language Models",
+      "sectionTitle": "Use BYOK without a GitHub sign in",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-109:c24e558fe5200a4b69a8caec329facbb8352a53ae4fa151423761be153dd0e41",
+      "sourceId": "vscode-release-notes-1-109",
+      "sourceName": "VS Code Release Notes 1.109",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-05-28T08:56:24.391Z",
+      "publishedAt": "2026-02-04T00:00:00.000Z",
+      "title": "VS Code Release Notes 1.109 changed",
+      "url": "https://code.visualstudio.com/updates/v1_109",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [],
+        "additions": [
+          "1.122"
+        ]
+      },
+      "headings": [
+        "January 2026 (version 1.109)",
+        "Upcoming events",
+        "Agent Sessions Day",
+        "Chat UX",
+        "Message steering and queueing (Experimental)",
+        "Anthropic models now show thinking tokens",
+        "Mermaid diagrams in chat responses",
+        "Ask Questions tool (Experimental)",
+        "Plan agent",
+        "Context window details",
+        "Inline chat UX revamp (Preview)",
+        "Model descriptions in the model picker"
+      ],
+      "score": 2
+    }
+  ],
+  "errors": []
+}
