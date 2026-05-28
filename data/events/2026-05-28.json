@@ -1,20 +1,10 @@
 {
   "date": "2026-05-28",
-  "generatedAt": "2026-05-28T08:56:25.776Z",
+  "generatedAt": "2026-05-28T17:06:54.089Z",
   "latestRun": {
-    "generatedAt": "2026-05-28T08:56:25.776Z",
-    "newEventsCount": 9,
-    "newEventIds": [
-      "vscode-updates:c9209d70bf61db69559af6b2936ac81bc6a4bcc49e2e78aaa6474fb393a2d455",
-      "vscode-release-notes-1-109:c24e558fe5200a4b69a8caec329facbb8352a53ae4fa151423761be153dd0e41",
-      "vscode-release-notes-1-122:section:c8da286760376bf5ba246eac1f0730e8d3924afd386c615297f3f0852b835dd1",
-      "vscode-release-notes-1-122:section:3222381d62525f026ec8061064994cc5a8a3f6bd885e345ad869ac167b7b0038",
-      "vscode-release-notes-1-122:section:db8f94e3fab616f38fa586f89205fcb31b2c5eaf86b4181b49ef80cbec50ddf3",
-      "vscode-release-notes-1-122:section:ae01cfe2d50fe30de44a191770aa48950ab18b743a5beb518ca6aeec754f7f97",
-      "vscode-release-notes-1-121:2c0a6764043912b7077241524e4fd77323984ad7c8d11ee4de4b57cbeaa5b810",
-      "vscode-release-notes-1-120:6be2aa94074dda8f087bb050b47c7f7bc0e5ec561584deef4e9be9b578f58a46",
-      "vscode-release-notes-1-119:338809fa97784ed24f1e90836d3d7d451c8628230ed87e304e79576973650e74"
-    ],
+    "generatedAt": "2026-05-28T17:06:54.089Z",
+    "newEventsCount": 0,
+    "newEventIds": [],
     "errorCount": 0
   },
   "events": [
