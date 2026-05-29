@@ -1,12 +1,109 @@
 {
   "date": "2026-05-29",
-  "generatedAt": "2026-05-29T08:53:55.544Z",
+  "generatedAt": "2026-05-29T16:56:41.725Z",
   "latestRun": {
-    "generatedAt": "2026-05-29T08:53:55.544Z",
-    "newEventsCount": 0,
-    "newEventIds": [],
+    "generatedAt": "2026-05-29T16:56:41.725Z",
+    "newEventsCount": 6,
+    "newEventIds": [
+      "vscode-feed:https://code.visualstudio.com/updates/v1_123",
+      "vscode-updates:51fe16c97745518d138b1a681505d170f7e98ae7e7217e802b4bafdb1022ab54",
+      "vscode-release-notes-1-109:0af748a11d1e08dd29517f8569eeeec9a6f10d230fff3d238f1d5670964d2af6",
+      "vscode-release-notes-1-121:eafb6273056bb0b1966df0b5bce86ae55238fe545dd18a0e5c51c0e4356b32b1",
+      "vscode-release-notes-1-120:ff7137afb80e6724cba5edcfff8afafc21f67a6068c93429a498f461194457da",
+      "vscode-release-notes-1-119:d17a1449a3f19443cfde6fb525d018e9e596b60bc329cda27cad3a67849851b6"
+    ],
     "errorCount": 0
   },
-  "events": [],
+  "events": [
+    {
+      "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_123",
+      "sourceId": "vscode-feed",
+      "sourceName": "VS Code Feed",
+      "kind": "feed_entry",
+      "detectedAt": "2026-05-29T16:56:39.448Z",
+      "publishedAt": "2026-06-03T17:00:00.000Z",
+      "title": "Visual Studio Code 1.123",
+      "url": "https://code.visualstudio.com/updates/v1_123",
+      "summary": "Learn what's new in Visual Studio Code 1.123 (Insiders)\n Read the full article",
+      "categories": [
+        "release"
+      ],
+      "isFutureDated": true,
+      "score": 4
+    },
+    {
+      "eventId": "vscode-updates:51fe16c97745518d138b1a681505d170f7e98ae7e7217e802b4bafdb1022ab54",
+      "sourceId": "vscode-updates",
+      "sourceName": "VS Code Updates",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-05-29T16:56:39.788Z",
+      "publishedAt": "2026-05-28T00:00:00.000Z",
+      "title": "VS Code Updates changed",
+      "url": "https://code.visualstudio.com/updates/",
+      "summary": "Detected 2 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 2,
+        "headings": [],
+        "additions": [
+          "Insiders",
+          "Update 1.122.1: The update addresses these issues."
+        ]
+      },
+      "headings": [
+        "Visual Studio Code 1.122",
+        "Agents",
+        "Agents Window (Preview)",
+        "Richer OpenTelemetry signals for agents",
+        "Sandboxing",
+        "Language Models",
+        "Use BYOK without a GitHub sign in",
+        "Custom Endpoint provider in Stable",
+        "Manage models in Agents window",
+        "Granular BYOK provider group actions in Manage Language Models",
+        "Remote Development",
+        "Integrated browser"
+      ],
+      "score": 2
+    },
+    {
+      "eventId": "vscode-release-notes-1-109:0af748a11d1e08dd29517f8569eeeec9a6f10d230fff3d238f1d5670964d2af6",
+      "sourceId": "vscode-release-notes-1-109",
+      "sourceName": "VS Code Release Notes 1.109",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-05-29T16:56:39.899Z",
+      "publishedAt": "2026-02-04T00:00:00.000Z",
+      "title": "VS Code Release Notes 1.109 changed",
+      "url": "https://code.visualstudio.com/updates/v1_109",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [],
+        "additions": [
+          "Insiders"
+        ]
+      },
+      "headings": [
+        "January 2026 (version 1.109)",
+        "Upcoming events",
+        "Agent Sessions Day",
+        "Chat UX",
+        "Message steering and queueing (Experimental)",
+        "Anthropic models now show thinking tokens",
+        "Mermaid diagrams in chat responses",
+        "Ask Questions tool (Experimental)",
+        "Plan agent",
+        "Context window details",
+        "Inline chat UX revamp (Preview)",
+        "Model descriptions in the model picker"
+      ],
+      "score": 2
+    }
+  ],
   "errors": []
 }

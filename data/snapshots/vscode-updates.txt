@@ -1,3 +1,4 @@
+Insiders
 1.122
 1.121
 1.120
@@ -16,6 +17,7 @@ View All Releases
 H1: Visual Studio Code 1.122
 Follow us on LinkedIn, X, Bluesky
 Release date: May 28, 2026
+Update 1.122.1: The update addresses these issues.
 Downloads: Windows: x64 Arm64 | Mac: Universal Intel silicon | Linux: deb rpm tarball Arm snap
 Welcome to the 1.122 release of Visual Studio Code. This release further enhances the agent experience and makes BYOK more flexible, while adding new capabilities for testing web apps across different devices.
 Air-gapped BYOK: Use your own language models, even when you're not connected.
