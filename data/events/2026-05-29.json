@@ -1,16 +1,12 @@
 {
   "date": "2026-05-29",
-  "generatedAt": "2026-05-29T16:56:41.725Z",
+  "generatedAt": "2026-05-29T22:47:10.500Z",
   "latestRun": {
-    "generatedAt": "2026-05-29T16:56:41.725Z",
-    "newEventsCount": 6,
+    "generatedAt": "2026-05-29T22:47:10.500Z",
+    "newEventsCount": 2,
     "newEventIds": [
-      "vscode-feed:https://code.visualstudio.com/updates/v1_123",
-      "vscode-updates:51fe16c97745518d138b1a681505d170f7e98ae7e7217e802b4bafdb1022ab54",
-      "vscode-release-notes-1-109:0af748a11d1e08dd29517f8569eeeec9a6f10d230fff3d238f1d5670964d2af6",
-      "vscode-release-notes-1-121:eafb6273056bb0b1966df0b5bce86ae55238fe545dd18a0e5c51c0e4356b32b1",
-      "vscode-release-notes-1-120:ff7137afb80e6724cba5edcfff8afafc21f67a6068c93429a498f461194457da",
-      "vscode-release-notes-1-119:d17a1449a3f19443cfde6fb525d018e9e596b60bc329cda27cad3a67849851b6"
+      "github-changelog:https://github.blog/changelog/2026-05-29-copilot-usage-metrics-api-adds-cohorts-for-ai-adoption",
+      "github-changelog-copilot:https://github.blog/changelog/2026-05-29-copilot-usage-metrics-api-adds-cohorts-for-ai-adoption"
     ],
     "errorCount": 0
   },
@@ -30,6 +26,44 @@
       ],
       "isFutureDated": true,
       "score": 4
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-05-29-copilot-usage-metrics-api-adds-cohorts-for-ai-adoption",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-05-29T22:47:08.735Z",
+      "publishedAt": "2026-05-29T21:03:00.000Z",
+      "title": "Copilot usage metrics API adds cohorts for AI adoption",
+      "url": "https://github.blog/changelog/2026-05-29-copilot-usage-metrics-api-adds-cohorts-for-ai-adoption",
+      "summary": "To help you tell a deeper Copilot adoption story—not just who is active, but how they’re using Copilot—the Copilot usage metrics API now classifies each engaged user into an AI…\nThe post Copilot usage metrics API adds cohorts for AI adoption appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "account management",
+        "copilot",
+        "enterprise management tools"
+      ],
+      "isFutureDated": false,
+      "score": 2
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-05-29-copilot-usage-metrics-api-adds-cohorts-for-ai-adoption",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-05-29T22:47:09.037Z",
+      "publishedAt": "2026-05-29T21:03:00.000Z",
+      "title": "Copilot usage metrics API adds cohorts for AI adoption",
+      "url": "https://github.blog/changelog/2026-05-29-copilot-usage-metrics-api-adds-cohorts-for-ai-adoption",
+      "summary": "To help you tell a deeper Copilot adoption story—not just who is active, but how they’re using Copilot—the Copilot usage metrics API now classifies each engaged user into an AI…\nThe post Copilot usage metrics API adds cohorts for AI adoption appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "account management",
+        "copilot",
+        "enterprise management tools"
+      ],
+      "isFutureDated": false,
+      "score": 2
     },
     {
       "eventId": "vscode-updates:51fe16c97745518d138b1a681505d170f7e98ae7e7217e802b4bafdb1022ab54",
