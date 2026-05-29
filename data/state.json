@@ -75,7 +75,7 @@
         "https://github.blog/changelog/2026-04-08-github-mobile-research-and-code-with-copilot-cloud-agent-anywhere"
       ],
       "futureSeenIds": [],
-      "lastCheckedAt": "2026-05-28T22:50:39.375Z"
+      "lastCheckedAt": "2026-05-29T08:53:53.716Z"
     },
     "github-changelog-copilot": {
       "seenIds": [
@@ -157,7 +157,7 @@
         "https://github.blog/changelog/2026-04-02-copilot-sdk-in-public-preview"
       ],
       "futureSeenIds": [],
-      "lastCheckedAt": "2026-05-28T22:50:39.665Z"
+      "lastCheckedAt": "2026-05-29T08:53:53.994Z"
     },
     "github-copilot-blog": {
       "seenIds": [
@@ -184,7 +184,7 @@
         "https://github.blog/?p=94179"
       ],
       "futureSeenIds": [],
-      "lastCheckedAt": "2026-05-28T22:50:39.689Z"
+      "lastCheckedAt": "2026-05-29T08:53:54.016Z"
     },
     "vscode-feed": {
       "seenIds": [
@@ -213,25 +213,25 @@
         "https://code.visualstudio.com/updates/v1_107"
       ],
       "futureSeenIds": [],
-      "lastCheckedAt": "2026-05-28T22:50:39.962Z"
+      "lastCheckedAt": "2026-05-29T08:53:54.044Z"
     },
     "vscode-updates": {
       "releasePublishedAt": "2026-05-28T00:00:00.000Z",
       "releaseTitle": "Visual Studio Code 1.122",
       "snapshotHash": "c9209d70bf61db69559af6b2936ac81bc6a4bcc49e2e78aaa6474fb393a2d455",
-      "lastCheckedAt": "2026-05-28T22:50:40.321Z"
+      "lastCheckedAt": "2026-05-29T08:53:54.153Z"
     },
     "vscode-release-notes-1-109": {
       "releasePublishedAt": "2026-02-04T00:00:00.000Z",
       "releaseTitle": "January 2026 (version 1.109)",
       "snapshotHash": "c24e558fe5200a4b69a8caec329facbb8352a53ae4fa151423761be153dd0e41",
-      "lastCheckedAt": "2026-05-28T22:50:40.478Z"
+      "lastCheckedAt": "2026-05-29T08:53:54.308Z"
     },
     "copilot-whats-new": {
-      "releasePublishedAt": "2026-05-28T22:50:40.980Z",
+      "releasePublishedAt": "2026-05-29T08:53:54.598Z",
       "releaseTitle": "Preview upcoming features for GitHub Copilot",
       "snapshotHash": "b420f1decd1c48516d66030e4292d9537371f69c4260aeb4b1a29975eb279571",
-      "lastCheckedAt": "2026-05-28T22:50:40.980Z"
+      "lastCheckedAt": "2026-05-29T08:53:54.598Z"
     },
     "publickey": {
       "seenIds": [
@@ -240,7 +240,7 @@
         "tag:www.publickey1.jp,2026://2.8527"
       ],
       "futureSeenIds": [],
-      "lastCheckedAt": "2026-05-28T22:50:41.581Z"
+      "lastCheckedAt": "2026-05-29T08:53:55.205Z"
     },
     "vscode-release-notes-1-115": {
       "sectionHashes": {
@@ -318,7 +318,7 @@
       "releasePublishedAt": "2026-05-06T00:00:00.000Z",
       "releaseTitle": "Visual Studio Code 1.119",
       "snapshotHash": "338809fa97784ed24f1e90836d3d7d451c8628230ed87e304e79576973650e74",
-      "lastCheckedAt": "2026-05-28T22:50:42.786Z"
+      "lastCheckedAt": "2026-05-29T08:53:55.543Z"
     },
     "vscode-release-notes-1-120": {
       "sectionHashes": {
@@ -330,7 +330,7 @@
       "releasePublishedAt": "2026-05-13T00:00:00.000Z",
       "releaseTitle": "Visual Studio Code 1.120",
       "snapshotHash": "6be2aa94074dda8f087bb050b47c7f7bc0e5ec561584deef4e9be9b578f58a46",
-      "lastCheckedAt": "2026-05-28T22:50:42.424Z"
+      "lastCheckedAt": "2026-05-29T08:53:55.449Z"
     },
     "vscode-release-notes-1-121": {
       "sectionHashes": {
@@ -342,13 +342,13 @@
       "releasePublishedAt": "2026-05-20T00:00:00.000Z",
       "releaseTitle": "Visual Studio Code 1.121",
       "snapshotHash": "2c0a6764043912b7077241524e4fd77323984ad7c8d11ee4de4b57cbeaa5b810",
-      "lastCheckedAt": "2026-05-28T22:50:42.012Z"
+      "lastCheckedAt": "2026-05-29T08:53:55.289Z"
     },
     "vscode-release-notes-1-122": {
       "releasePublishedAt": "2026-05-28T00:00:00.000Z",
       "releaseTitle": "Visual Studio Code 1.122",
       "snapshotHash": "c9209d70bf61db69559af6b2936ac81bc6a4bcc49e2e78aaa6474fb393a2d455",
-      "lastCheckedAt": "2026-05-28T22:50:41.936Z",
+      "lastCheckedAt": "2026-05-29T08:53:55.258Z",
       "sectionHashes": {
         "vscode-release-notes-1-122:Agents:Agents Window (Preview)": "c8da286760376bf5ba246eac1f0730e8d3924afd386c615297f3f0852b835dd1",
         "vscode-release-notes-1-122:Agents:Richer OpenTelemetry signals for agents": "3222381d62525f026ec8061064994cc5a8a3f6bd885e345ad869ac167b7b0038",
