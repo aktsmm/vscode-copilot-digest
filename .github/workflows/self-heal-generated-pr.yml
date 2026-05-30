@@ -193,7 +193,8 @@ jobs:
             if (failedSteps.includes('Validate changed paths')) {
               feedbackLines.push(
                 '### パス制約エラー',
-                '- 変更可能なファイルは `summaries/daily/**`, `drafts/**`, `scripts/lib/reporting.mjs` のみです',
+                '- 通常の変更可能ファイルは `summaries/daily/**`, `drafts/**`, `scripts/lib/reporting.mjs` のみです',
+                '- Pages build repair の場合だけ、PR タイトルを `docs: update digest YYYY-MM-DD + pages` にし、本文に `Pages build repair for run <run_id>` を含めると `scripts/build-pages.mjs` も変更できます',
                 '- それ以外のファイルを変更している場合は revert してください',
                 '',
               );

@@ -36,8 +36,9 @@ jobs:
             });
             let pr = pull.data;
             const labels = new Set((pr.labels || []).map((label) => label.name));
-            const titlePattern = /^docs: update digest \d{4}-\d{2}-\d{2}(?: \+ drafts)?(?: \+ reporting)?$/;
+            const titlePattern = /^docs: update digest \d{4}-\d{2}-\d{2}(?: \+ (?:drafts|reporting|pages)){0,3}$/;
             const bodyPattern = /Generated from `?data\/events\/\d{4}-\d{2}-\d{2}\.json`?/;
+            const pagesRepairPattern = /Pages build repair for run \d+/;
             const summaryDatePattern = /^summaries\/daily\/(\d{4}-\d{2}-\d{2})\.md$/;
 
             function isCopilotDraftPlan(currentPr) {
@@ -151,9 +152,15 @@ jobs:
               return;
             }
 
+            const isPagesBuildRepair = /\+ pages$/.test(pr.title || '') && pagesRepairPattern.test(pr.body || '');
             const blocked = files
               .map((file) => file.filename)
-              .filter((file) => !/^summaries\/daily\//.test(file) && !/^drafts\//.test(file) && file !== 'scripts/lib/reporting.mjs');
+              .filter((file) =>
+                !/^summaries\/daily\//.test(file) &&
+                !/^drafts\//.test(file) &&
+                file !== 'scripts/lib/reporting.mjs' &&
+                !(isPagesBuildRepair && file === 'scripts/build-pages.mjs')
+              );
 
             const hasInferableSource =
               bodyPattern.test(pr.body || '') ||

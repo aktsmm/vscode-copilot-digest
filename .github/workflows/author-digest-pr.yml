@@ -204,7 +204,12 @@ jobs:
               full: 'summaries/daily と drafts 全体と reporting.mjs',
             };
             const requestedScopeLabel = scopeLabelMap[requestedScope] ?? scopeLabelMap.full;
-            const prTitleRule = `docs: update digest ${dateKey}`;
+            const prTitleRule = hasPagesBuildFailure
+              ? `docs: update digest ${dateKey} + pages`
+              : `docs: update digest ${dateKey}`;
+            const pagesRepairMarker = hasPagesBuildFailure
+              ? `Pages build repair for run ${workflowRunId}`
+              : '';
 
             const highlights = (eventLog.events ?? [])
               .slice(0, 5)
@@ -263,6 +268,10 @@ jobs:
               '### 制約',
               '- `data/**` の生データは変更しない',
               '- 許可された変更対象以外は触らない',
+              '- 通常の変更対象は `summaries/daily/**`, `drafts/**`, `scripts/lib/reporting.mjs` のみ',
+              ...(hasPagesBuildFailure
+                ? ['- Pages build repair の場合だけ `scripts/build-pages.mjs` も変更可']
+                : []),
               '- `npm run collect` と `npm run build:pages` が通る状態を維持する',
               '- 不確実な場合は `needs-human-review` を明記して PR を作る',
               '',
@@ -272,6 +281,9 @@ jobs:
               '### PR ルール',
               `- PR タイトルは \`${prTitleRule}\` を基本形にする`,
               `- PR 本文には \`Generated from data/events/${dateKey}.json\` を含める`,
+              ...(hasPagesBuildFailure
+                ? [`- \`scripts/build-pages.mjs\` を変更する場合、PR 本文に \`${pagesRepairMarker}\` を含める`]
+                : []),
               '- 根拠が弱い場合や許可外変更が必要な場合は `needs-human-review` を付けて止める',
               '',
               '### 直近の候補',

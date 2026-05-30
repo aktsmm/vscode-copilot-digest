@@ -512,7 +512,9 @@ async function assertGeneratedA11yBasics() {
         hits.push(`${relativePath} -> missing search input label`);
       }
 
-      if (!/<p class="search-status" role="status" aria-live="polite"/.test(text)) {
+      if (
+        !/<p class="search-status" role="status" aria-live="polite"/.test(text)
+      ) {
         hits.push(`${relativePath} -> missing search live status`);
       }
     }

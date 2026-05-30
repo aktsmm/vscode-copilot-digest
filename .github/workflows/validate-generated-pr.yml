@@ -67,7 +67,13 @@ jobs:
         run: |
           node <<'NODE'
           const changed = (process.env.CHANGED_FILES || '').split(/\r?\n/).filter(Boolean);
+          const title = process.env.PR_TITLE || '';
+          const body = process.env.PR_BODY || '';
+          const isPagesBuildRepair = /\+ pages$/.test(title) && /Pages build repair for run \d+/.test(body);
           const allowed = [/^summaries\/daily\//, /^drafts\//, /^scripts\/lib\/reporting\.mjs$/];
+          if (isPagesBuildRepair) {
+            allowed.push(/^scripts\/build-pages\.mjs$/);
+          }
           const blocked = changed.filter((file) => !allowed.some((pattern) => pattern.test(file)));
           if (blocked.length > 0) {
             console.error('Generated PR changed files outside the allow-list:');
@@ -86,11 +92,13 @@ jobs:
           const title = process.env.PR_TITLE || '';
           const body = process.env.PR_BODY || '';
           const changed = (process.env.CHANGED_FILES || '').split(/\r?\n/).filter(Boolean);
-          const titlePattern = /^docs: update digest \d{4}-\d{2}-\d{2}(?: \+ drafts)?(?: \+ reporting)?$/;
+          const titlePattern = /^docs: update digest \d{4}-\d{2}-\d{2}(?: \+ (?:drafts|reporting|pages)){0,3}$/;
           const authoringRequestTitlePattern = /^Digest authoring request: \d{4}-\d{2}-\d{2}$/;
           const copilotWipTitlePattern = /^\[WIP\] .*?(?:\d{4}-\d{2}-\d{2}|[A-Z][a-z]+ \d{1,2}, \d{4})$/;
           const bodyPattern = /Generated from `?data\/events\/\d{4}-\d{2}-\d{2}\.json`?/;
+          const pagesRepairPattern = /Pages build repair for run \d+/;
           const summaryDatePattern = /^summaries\/daily\/(\d{4}-\d{2}-\d{2})\.md$/;
+          const changesBuildPages = changed.includes('scripts/build-pages.mjs');
           const hasInferableSource =
             bodyPattern.test(body) ||
             changed.some((file) => summaryDatePattern.test(file)) ||
@@ -106,6 +114,11 @@ jobs:
 
           if (!hasInferableSource && !isPendingNormalization) {
             console.error('PR metadata is missing an inferable source date from the body marker, changed daily summary file, or normalized title.');
+            process.exit(1);
+          }
+
+          if (changesBuildPages && (!/\+ pages$/.test(title) || !pagesRepairPattern.test(body))) {
+            console.error('PRs that change scripts/build-pages.mjs must use the + pages title suffix and include the Pages build repair marker in the body.');
             process.exit(1);
           }
           NODE
