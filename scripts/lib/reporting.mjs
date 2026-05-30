@@ -52,6 +52,10 @@ const vscodeReleaseSummaries = {
     ja: "Changes ビューが Git 統合になり、terminal 経由の変更も含めて agent セッション中のファイル変更全体を把握しやすくなった。Copilot CLI にモデルバッジが追加され、使用モデルと multiplier を応答ごとに確認できる。新しい sandbox モードではファイルシステム隔離を維持しながら外部ネットワークアクセスも許可でき、オンライン通信が必要なタスクへの対応が広がった。ブラウザータブをチャットのコンテキストとして添付する機能や、model picker への実コスト表示なども加わった。",
     en: "The Changes view in agent host sessions is now powered by Git, capturing all file changes including those from terminal commands. Copilot CLI adds model badges showing the model and multiplier used for each response. A new sandbox mode allows outbound network traffic while keeping filesystem isolation, expanding extension and task support. Additional highlights include browser-tab snapshots as chat context and actual model costs in the model picker.",
   },
+  1.122: {
+    ja: "agent 体験と BYOK 運用をさらに広げる release。Agents ウィンドウの hover details や local harness 改善、agent session の OpenTelemetry 属性、sandboxing の再試行挙動変更に加え、GitHub sign-in なしの BYOK と integrated browser の device emulation が入った。",
+    en: "This release expands agent workflows and BYOK operations with Agents window hover details and local-harness improvements, OpenTelemetry attributes for agent sessions, updated sandbox retry behavior, BYOK without GitHub sign-in, and integrated-browser device emulation.",
+  },
   1.118: {
     ja: "agent 体験の拡張が主題の release。VS Code Agents companion app の進化（Insiders）、GitHub.com やモバイルから進行中の Copilot CLI セッションを遠隔操作できる Remote control（Experimental）、CLI セッションタイトルのサーフェス横断一元管理、Copilot の Git co-author 自動追加が入った。全ユーザーへの semantic indexing 展開と GitHub 横断テキスト検索、skills 専用コンテキスト（Experimental）も加わり、agent を継続運用しやすくする変更がまとまっている。",
     en: "The headline is agent experience: the VS Code Agents companion app gains a title-bar entry point (Insiders), CLI sessions can be monitored and steered remotely from GitHub.com or mobile (Experimental), session titles now sync across all surfaces, and Copilot is added as a Git co-author by default. All users also get semantic indexing in non-GitHub repos and GitHub cross-repo text search.",
@@ -612,6 +616,34 @@ const exactSummaryMappings = {
     ja: "Claude agent に Auto 権限モードがプレビューで追加された。Auto モードでは tool 使用の承認を自動化でき、介入なしで長時間の agent タスクを進めやすくなる。",
     en: "Claude agent now has an Auto permission mode in preview. With Auto enabled, the agent can use tools without per-action approval, making it practical to run longer tasks without interruption.",
   },
+  "Visual Studio Code 1.122: Agents Window (Preview)": {
+    ja: "Agents ウィンドウで session list の hover details が追加され、harness、project、worktree、変更ファイルを一目で確認できるようになった。Insiders では local VS Code harness の custom agent picker も継続改善されている。",
+    en: "The Agents window now shows richer session hover details, including harness, project, worktree, and changed files. Insiders also continues to improve the local VS Code harness and custom agent picker.",
+  },
+  "Visual Studio Code 1.122: Richer OpenTelemetry signals for agents": {
+    ja: "local agent session が `github.copilot.*` の OpenTelemetry 属性 namespace を出すようになり、repository context、agent type、tool parameters、hook outcomes まで trace に載せられるようになった。Copilot CLI と近い形式で agent usage を監視しやすくなる。",
+    en: "Local agent sessions now emit a `github.copilot.*` OpenTelemetry attribute namespace with repository context, agent type, structured tool parameters, and hook outcomes, aligning more closely with Copilot CLI telemetry conventions.",
+  },
+  "Visual Studio Code 1.122: Sandboxing": {
+    ja: "Bypass Approvals や Autopilot mode の command 実行で、sandbox 失敗時に自動で sandbox 外へ再試行する挙動が変わった。組織管理の sandbox 設定を前提に、agent 実行の失敗時 recovery と安全境界を見直す必要がある。",
+    en: "Command execution in Bypass Approvals or Autopilot mode changed how it handles failures after an initial sandbox attempt. Teams should revisit recovery expectations and safety boundaries around organization-managed sandbox settings.",
+  },
+  "Visual Studio Code 1.122: Use BYOK without a GitHub sign in": {
+    ja: "VS Code の BYOK が GitHub sign-in なしで使えるようになり、GitHub へ接続できない air-gapped / restricted environment でも chat、tools、MCP servers、Ollama などの local model を組み合わせやすくなった。",
+    en: "BYOK in VS Code can now be used without GitHub sign-in, making it easier to combine chat, tools, MCP servers, and local models such as Ollama in air-gapped or restricted environments.",
+  },
+  "Claude Opus 4.8 is generally available for GitHub Copilot": {
+    ja: "Anthropic の Opus 4.8 が GitHub Copilot で一般提供になった。コード理解と生成の改善が案内されており、より高い推論力を使うタスクでモデル選択の候補に入れやすくなる。",
+    en: "Anthropic's Opus 4.8 is now generally available in GitHub Copilot, with GitHub highlighting improvements in code understanding and generation for tasks that benefit from a stronger reasoning model.",
+  },
+  "Copilot usage metrics API adds cohorts for AI adoption": {
+    ja: "Copilot usage metrics API が engaged user を AI adoption cohort に分類できるようになった。単なる active user 数だけでなく、どの使われ方が広がっているかを enterprise / organization の定着分析で追いやすくなる。",
+    en: "The Copilot usage metrics API now classifies engaged users into AI adoption cohorts, helping enterprise and organization reports tell not just who is active, but how Copilot usage is spreading.",
+  },
+  "Target Copilot models to organizations with model rules": {
+    ja: "enterprise model rules で、特定の Copilot model を利用できる organization を対象指定できるようになった。組織ごとの rollout、モデル統制、コスト管理を同じ enterprise 配下で分けやすくなる。",
+    en: "Enterprise model rules can now target specific organizations, letting admins roll out Copilot models, governance, and cost controls differently across organizations under the same enterprise.",
+  },
   "Copilot usage metrics reports now use GitHub-owned download URLs": {
     ja: "Copilot usage metrics レポートのダウンロード URL が Azure Front Door ドメインから GitHub 所有のカスタムドメインへの移行が完了した。URL の安定性向上を目的とした変更で、既存の automation やスクリプトで旧 URL を参照している場合は新 URL への切り替えが必要になる。",
     en: "Download URLs for Copilot usage metrics reports have completed migration from Azure Front Door domains to a stable, GitHub-owned custom domain. Any existing automation or scripts referencing the old URLs must be updated to avoid breakage.",
@@ -670,6 +702,42 @@ const exactImportanceMappings = {
   "Ask Copilot in security assessments now available": {
     ja: "セキュリティ評価画面からそのまま Copilot で状況理解と対処案の確認へ進めるので、調査と修正判断の往復を減らしやすい更新です。",
     en: "This reduces context switching by letting security teams move directly from assessment results into Copilot-guided investigation and next-step planning.",
+  },
+  "Visual Studio Code 1.122": {
+    ja: "agent 運用、BYOK、browser testing の複数面に効く release なので、開発環境と統制要件の両方で確認したい更新です。",
+    en: "This release matters across agent operations, BYOK, and browser testing, so it should be checked against both developer workflows and governance requirements.",
+  },
+  "Visual Studio Code 1.117": {
+    ja: "BYOK、chat 応答描画、Agent Sessions、background terminal 通知がまとまっており、agent を日常運用へ寄せる上で確認したい release です。",
+    en: "This release is worth checking for day-to-day agent operations because it combines BYOK, chat rendering, Agent Sessions, and background terminal notifications.",
+  },
+  "Visual Studio Code 1.122: Agents Window (Preview)": {
+    ja: "複数 session の状態確認が速くなり、agent 作業の review や引き継ぎで迷子になりにくくなります。",
+    en: "This makes multi-session agent work easier to review and hand off because the session context is visible before opening it.",
+  },
+  "Visual Studio Code 1.122: Richer OpenTelemetry signals for agents": {
+    ja: "agent 実行を既存の telemetry 基盤へ載せやすくなり、tool 実行や hook 結果まで含めた運用監視に近づきます。",
+    en: "This moves agent execution closer to normal operational monitoring by exposing tool activity and hook outcomes in telemetry.",
+  },
+  "Visual Studio Code 1.122: Sandboxing": {
+    ja: "sandbox 失敗時の再試行前提が変わるため、Autopilot や Bypass Approvals を使う組織は安全境界と失敗復旧の期待値を見直す必要があります。",
+    en: "This matters for organizations using Autopilot or Bypass Approvals because sandbox failure and retry expectations may change.",
+  },
+  "Visual Studio Code 1.122: Use BYOK without a GitHub sign in": {
+    ja: "GitHub sign-in できない制約環境でも BYOK / local model を使いやすくなり、閉域や検証環境での Copilot 導入判断に直結します。",
+    en: "This directly affects Copilot adoption in restricted environments because BYOK and local models no longer depend on GitHub sign-in.",
+  },
+  "Claude Opus 4.8 is generally available for GitHub Copilot": {
+    ja: "GA になったことで preview 前提の注意を外しやすくなり、高難度の設計・実装タスクで使うモデル候補として検討しやすくなります。",
+    en: "General availability makes Opus 4.8 easier to consider for higher-difficulty design and implementation tasks without treating it as a preview-only option.",
+  },
+  "Copilot usage metrics API adds cohorts for AI adoption": {
+    ja: "active user 数だけでは見えない採用段階を cohort として追えるため、展開施策や enablement の打ち手を絞り込みやすくなります。",
+    en: "This helps teams tune rollout and enablement work because adoption cohorts reveal more than active-user counts alone.",
+  },
+  "Target Copilot models to organizations with model rules": {
+    ja: "enterprise 配下の組織ごとにモデル展開を分けられるため、先行導入、制限付き展開、コスト統制を同じ policy 運用で扱いやすくなります。",
+    en: "This makes staged rollout, restricted access, and cost governance easier to manage through model rules across organizations.",
   },
   "Copilot usage metrics now identify active and passive Copilot code review users":
     {
