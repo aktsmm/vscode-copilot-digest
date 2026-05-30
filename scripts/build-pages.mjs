@@ -242,6 +242,10 @@ function buildText(locale) {
       filterSourceLabel: "Source",
       filterTopicLabel: "Topic",
       filterStatusLabel: "Filter status",
+      filterClearedStatus: "Filters cleared. Showing all updates.",
+      shareCopied: "Link copied to clipboard.",
+      shareCopyFailed: "Could not copy the link.",
+      externalLinkSuffix: "opens in a new window",
       itemSuffix: " items",
       sourceGroupNames: {
         github: "GitHub official",
@@ -382,6 +386,10 @@ function buildText(locale) {
     filterSourceLabel: "ソース",
     filterTopicLabel: "テーマ",
     filterStatusLabel: "フィルター状態",
+    filterClearedStatus: "フィルターをクリアしました。すべての更新を表示しています。",
+    shareCopied: "リンクをコピーしました。",
+    shareCopyFailed: "リンクをコピーできませんでした。",
+    externalLinkSuffix: "新しいウィンドウで開きます",
     itemSuffix: "件",
     sourceGroupNames: {
       github: "GitHub 公式",
@@ -509,32 +517,75 @@ async function assertGeneratedA11yBasics() {
       hits.push(`${relativePath} -> missing primary nav label`);
     }
 
+    if (!/<button class="lang-toggle" type="button"[^>]*aria-pressed="(?:true|false)"/.test(text)) {
+      hits.push(`${relativePath} -> missing language toggle state`);
+    }
+
+    if (!/<span class="sr-only" role="status" aria-live="polite" aria-atomic="true" data-share-feedback><\/span>/.test(text)) {
+      hits.push(`${relativePath} -> missing share feedback live region`);
+    }
+
+    if (/target="_blank" rel="noopener"/.test(text) && !/target="_blank" rel="noopener" aria-label="[^"]+\([^)]*(?:new window|新しいウィンドウ)[^)]*\)"/.test(text)) {
+      hits.push(`${relativePath} -> missing external-link accessibility label`);
+    }
+
     if (text.includes("data-search-root")) {
       if (!/<input class="search-input"[^>]*aria-label="[^"]+"/.test(text)) {
         hits.push(`${relativePath} -> missing search input label`);
       }
 
       if (
-        !/<p class="search-status" role="status" aria-live="polite" aria-atomic="true"/.test(text)
+        !/<p class="search-status" role="status" aria-live="polite" aria-atomic="true"/.test(
+          text,
+        )
       ) {
         hits.push(`${relativePath} -> missing search live status`);
       }
     }
 
-    if (/<section class="section-block filter-block [^"]*" data-filter-root>/.test(text)) {
-      if (!/<p class="sr-only" role="status" aria-live="polite" aria-atomic="true" data-filter-status>/.test(text)) {
+    if (
+      /<section class="section-block filter-block [^"]*" data-filter-root>/.test(
+        text,
+      )
+    ) {
+      if (!/<fieldset class="filter-row" aria-label="[^"]+">/.test(text)) {
+        hits.push(`${relativePath} -> missing filter fieldset label`);
+      }
+
+      if (!/<div class="filter-chip-row" role="group" aria-label="[^"]+">/.test(text)) {
+        hits.push(`${relativePath} -> missing filter chip group label`);
+      }
+
+      if (
+        !/<p class="sr-only" role="status" aria-live="polite" aria-atomic="true" data-filter-status>/.test(
+          text,
+        )
+      ) {
         hits.push(`${relativePath} -> missing filter live status`);
       }
     }
   }
 
-  const css = await fs.readFile(path.join(siteDir, "assets", "styles.css"), "utf8");
+  const css = await fs.readFile(
+    path.join(siteDir, "assets", "styles.css"),
+    "utf8",
+  );
   if (!css.includes(".sr-only")) {
     hits.push("site/assets/styles.css -> missing sr-only utility");
   }
 
-  if (!css.includes(".latest-highlights-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }")) {
-    hits.push("site/assets/styles.css -> missing responsive latest highlight grid");
+  if (
+    !css.includes(
+      ".latest-highlights-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }",
+    )
+  ) {
+    hits.push(
+      "site/assets/styles.css -> missing responsive latest highlight grid",
+    );
+  }
+
+  if (!css.includes("text-overflow: ellipsis;")) {
+    hits.push("site/assets/styles.css -> missing filter chip overflow guard");
   }
 
   if (hits.length > 0) {
@@ -673,9 +724,9 @@ function renderFilterBar(text, options = {}) {
   const rows = [];
   if (showSource) {
     rows.push(`
-      <div class="filter-row">
-        ${showAxisLabels ? `<span class="filter-label">${escapeHtml(text.filterSourceLabel)}</span>` : ""}
-        <div class="filter-chip-row">${sourceGroupOrder
+      <fieldset class="filter-row" aria-label="${escapeHtml(text.filterSourceLabel)}">
+        ${showAxisLabels ? `<legend class="filter-label">${escapeHtml(text.filterSourceLabel)}</legend>` : ""}
+        <div class="filter-chip-row" role="group" aria-label="${escapeHtml(text.filterSourceLabel)}">${sourceGroupOrder
           .map((group) =>
             renderFilterChip(
               "source",
@@ -685,14 +736,14 @@ function renderFilterBar(text, options = {}) {
             ),
           )
           .join("")}</div>
-      </div>`);
+      </fieldset>`);
   }
 
   if (showTopic) {
     rows.push(`
-      <div class="filter-row">
-        ${showAxisLabels ? `<span class="filter-label">${escapeHtml(text.filterTopicLabel)}</span>` : ""}
-        <div class="filter-chip-row">${topicOrder
+      <fieldset class="filter-row" aria-label="${escapeHtml(text.filterTopicLabel)}">
+        ${showAxisLabels ? `<legend class="filter-label">${escapeHtml(text.filterTopicLabel)}</legend>` : ""}
+        <div class="filter-chip-row" role="group" aria-label="${escapeHtml(text.filterTopicLabel)}">${topicOrder
           .map((topic) =>
             renderFilterChip(
               "topic",
@@ -700,8 +751,8 @@ function renderFilterBar(text, options = {}) {
               text.topicFilterTags[topic] ?? topic,
             ),
           )
-          .join("")}</div>
-      </div>`);
+            .join("")}</div>
+          </fieldset>`);
   }
 
   return `<section class="section-block filter-block ${escapeHtml(extraClass)}" data-filter-root>
@@ -734,10 +785,14 @@ function renderEventCard(event, locale, text, options = {}) {
   const isExternal =
     event.url && !event.url.startsWith("./") && !event.url.startsWith("../");
   const linkAttrs = isExternal ? ` target="_blank" rel="noopener"` : "";
+  const titleText = localizedTitle(event, locale);
+  const linkLabel = isExternal
+    ? ` aria-label="${escapeHtml(`${titleText} (${text.externalLinkSuffix})`)}"`
+    : "";
 
   return `<article class="${cardClass}" data-filter-card data-source-group="${escapeHtml(group)}" data-topic="${escapeHtml(topic)}">
     ${renderBadges(event, locale, text)}
-    <h3${anchorId ? ` id="${escapeHtml(anchorId)}"` : ""}><a href="${escapeHtml(event.url)}"${linkAttrs}>${escapeHtml(localizedTitle(event, locale))}${isExternal ? ' <span class="ext-icon" aria-hidden="true">&#8599;</span>' : ""}</a></h3>
+    <h3${anchorId ? ` id="${escapeHtml(anchorId)}"` : ""}><a href="${escapeHtml(event.url)}"${linkAttrs}${linkLabel}>${escapeHtml(titleText)}${isExternal ? ' <span class="ext-icon" aria-hidden="true">&#8599;</span>' : ""}</a></h3>
     ${rawTitle ? `<p class="original-title">${escapeHtml(text.originalTitleLabel)}: ${escapeHtml(rawTitle)}</p>` : ""}
     ${renderDateMeta(event, locale, text)}
     ${renderSourceMeta(event, locale, text)}
@@ -931,6 +986,10 @@ function renderEventStreamItem(event, locale, text) {
   const isExternal =
     event.url && !event.url.startsWith("./") && !event.url.startsWith("../");
   const linkAttrs = isExternal ? ` target="_blank" rel="noopener"` : "";
+  const titleText = localizedTitle(event, locale);
+  const linkLabel = isExternal
+    ? ` aria-label="${escapeHtml(`${titleText} (${text.externalLinkSuffix})`)}"`
+    : "";
 
   return `<article class="stream-item" data-filter-card data-source-group="${escapeHtml(group)}" data-topic="${escapeHtml(topic)}">
     <div class="stream-item-head">
@@ -938,7 +997,7 @@ function renderEventStreamItem(event, locale, text) {
       <div class="stream-item-meta">${renderDateMeta(event, locale, text)}${renderSourceMeta(event, locale, text)}</div>
     </div>
     <div class="stream-item-body">
-      <h3><a href="${escapeHtml(event.url)}"${linkAttrs}>${escapeHtml(localizedTitle(event, locale))}${isExternal ? ' <span class="ext-icon" aria-hidden="true">&#8599;</span>' : ""}</a></h3>
+      <h3><a href="${escapeHtml(event.url)}"${linkAttrs}${linkLabel}>${escapeHtml(titleText)}${isExternal ? ' <span class="ext-icon" aria-hidden="true">&#8599;</span>' : ""}</a></h3>
       ${rawTitle ? `<p class="original-title">${escapeHtml(text.originalTitleLabel)}: ${escapeHtml(rawTitle)}</p>` : ""}
       <p>${escapeHtml(trimText(localizedSummary(event, locale), 520))}</p>
       <p class="why-it-matters"><strong>${escapeHtml(text.whyLabel)}:</strong> ${escapeHtml(importanceReason(event, locale))}</p>
@@ -1710,7 +1769,7 @@ function renderLayout({
           <a href="${escapeHtml(weeklyHref)}">${escapeHtml(text.weeklyNav)}</a>
           <a href="${escapeHtml(searchHref)}">${escapeHtml(text.searchNav)}</a>
           <a href="https://github.com/aktsmm/vscode-copilot-digest">${escapeHtml(text.repositoryNav)}</a>
-          <button class="lang-toggle" data-href="${escapeHtml(langSwitchHref)}" aria-label="${escapeHtml(locale === "ja" ? "Switch to English" : "日本語に切り替え")}">
+          <button class="lang-toggle" type="button" data-href="${escapeHtml(langSwitchHref)}" aria-label="${escapeHtml(locale === "ja" ? "Switch to English" : "日本語に切り替え")}" aria-pressed="${locale === "en" ? "true" : "false"}">
             <span class="lang-toggle-track">
               <span class="lang-toggle-option${locale === "ja" ? " active" : ""}">JA</span>
               <span class="lang-toggle-option${locale === "en" ? " active" : ""}">EN</span>
@@ -1735,10 +1794,11 @@ function renderLayout({
           <a class="share-btn share-hatena" data-share="hatena" href="#" aria-label="${escapeHtml(locale === "ja" ? "はてなブックマーク" : "Hatena Bookmark")}" title="${escapeHtml(locale === "ja" ? "はてなブックマーク" : "Hatena")}">
             <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M20.47 0C22.42 0 24 1.58 24 3.53v16.94c0 1.95-1.58 3.53-3.53 3.53H3.53C1.58 24 0 22.42 0 20.47V3.53C0 1.58 1.58 0 3.53 0h16.94zM8.8 17.57c0-.8-.65-1.44-1.44-1.44-.8 0-1.44.65-1.44 1.44 0 .8.65 1.44 1.44 1.44.8 0 1.44-.65 1.44-1.44zM8.55 5H6.12v8.14h2.26c1.57 0 2.39-.22 3.07-.84.67-.6 1.02-1.49 1.02-2.58 0-1.14-.37-2.02-1.1-2.63-.72-.6-1.56-.87-2.82-.87zm8.3 4.4c-1.64 0-2.98 1.34-2.98 2.98s1.34 2.98 2.98 2.98 2.98-1.34 2.98-2.98-1.34-2.98-2.98-2.98z"/></svg>
           </a>
-          <button class="share-btn share-copy" data-share="copy" aria-label="${escapeHtml(locale === "ja" ? "リンクをコピー" : "Copy link")}" title="${escapeHtml(locale === "ja" ? "リンクをコピー" : "Copy link")}">
+          <button class="share-btn share-copy" type="button" data-share="copy" aria-label="${escapeHtml(locale === "ja" ? "リンクをコピー" : "Copy link")}" title="${escapeHtml(locale === "ja" ? "リンクをコピー" : "Copy link")}">
             <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
           </button>
         </div>
+        <span class="sr-only" role="status" aria-live="polite" aria-atomic="true" data-share-feedback></span>
       </footer>
     </div>
     <script>
@@ -1758,6 +1818,12 @@ function renderLayout({
           if(dest)window.location.replace(dest);
         }
       }
+      var shareFeedback=document.querySelector('[data-share-feedback]');
+      function announceShareFeedback(message){
+        if(!shareFeedback)return;
+        shareFeedback.textContent='';
+        setTimeout(function(){shareFeedback.textContent=message;},10);
+      }
       document.querySelectorAll('[data-share]').forEach(function(btn){
         btn.addEventListener('click',function(e){
           e.preventDefault();
@@ -1771,7 +1837,10 @@ function renderLayout({
           else if(kind==='copy'){
             navigator.clipboard.writeText(window.location.href).then(function(){
               btn.classList.add('copied');
+              announceShareFeedback('${escapeHtml(text.shareCopied)}');
               setTimeout(function(){btn.classList.remove('copied');},1500);
+            }).catch(function(){
+              announceShareFeedback('${escapeHtml(text.shareCopyFailed)}');
             });
           }
         });
@@ -1887,6 +1956,7 @@ function renderLayout({
           state.source.clear();
           state.topic.clear();
           refresh();
+          if(status)status.textContent='${escapeHtml(text.filterClearedStatus)}';
         });
       }
       syncStateFromUrl();
@@ -2120,10 +2190,17 @@ h1 { margin: 0 0 16px; font-size: clamp(1.5rem, 2.4vw, 2.2rem); line-height: 1.1
 }
 .filter-stack { display: grid; gap: 12px; }
 .filter-row { display: grid; gap: 10px; }
+.filter-row {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  min-inline-size: 0;
+}
 .filter-label { color: var(--muted); font-size: 0.9rem; font-weight: 700; }
-.filter-block--home .filter-label,
-.filter-block--compact .filter-label { display: none; }
+.filter-block--home .filter-label:not(.sr-only),
+.filter-block--compact .filter-label:not(.sr-only) { display: none; }
 .filter-chip-row { display: flex; flex-wrap: wrap; gap: 10px; }
+.filter-chip-row { max-width: 100%; }
 .search-panel { padding: 24px; }
 .pagefind-shell {
   --pf-text: var(--text);
@@ -2227,6 +2304,11 @@ h1 { margin: 0 0 16px; font-size: clamp(1.5rem, 2.4vw, 2.2rem); line-height: 1.1
   font: inherit;
   cursor: pointer;
   transition: transform 0.15s, border-color 0.15s, box-shadow 0.15s;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  min-width: 0;
 }
 .filter-chip.active {
   border-color: currentColor;
