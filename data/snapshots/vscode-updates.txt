@@ -169,7 +169,19 @@ The Custom Endpoint provider is now available in VS Code Stable.
 To learn how to set it up, see Add a custom endpoint model.
 H3: Manage models in Agents window
 You can now run the command Chat: Manage Language Models directly from the Agents window to configure the language models you want to use while working there.
-This works with local sessions, and you can use BYOK models through the same flow. Model configuration is shared with the editor window, so changes you make in either place are reflected in both.
+To use BYOK models, you must use the Local agent provider which is enabled in VS Code Insiders with 
+ 
+ 
+ sessions.chat.localAgent.enabled
+ 
+ 
+ 
+ 
+ 
+ Open in VS Code
+ Open in VS Code Insiders
+ 
+ . Model configuration is shared with the editor window, so changes you make in either place are reflected in both.
 H3: Granular BYOK provider group actions in Manage Language Models
 Managing BYOK providers often means making small updates, such as rotating an API key or renaming a provider group without opening and editing the full JSON configuration by hand.
 In the Language Model editor, supported provider groups now expose targeted actions based on the provider schema: Update API Key, Add Model, Rename Group, and Delete. This makes common provider maintenance tasks faster while keeping you in the same flow.

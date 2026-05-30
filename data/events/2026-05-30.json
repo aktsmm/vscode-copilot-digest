@@ -1,0 +1,55 @@
+{
+  "date": "2026-05-30",
+  "generatedAt": "2026-05-30T07:59:27.659Z",
+  "latestRun": {
+    "generatedAt": "2026-05-30T07:59:27.659Z",
+    "newEventsCount": 1,
+    "newEventIds": [
+      "vscode-updates:8ca22e0a6e057f8cb50ec7e72cc53800ab06aed5c3cfdb2654844915c8e641f5"
+    ],
+    "errorCount": 0
+  },
+  "events": [
+    {
+      "eventId": "vscode-updates:8ca22e0a6e057f8cb50ec7e72cc53800ab06aed5c3cfdb2654844915c8e641f5",
+      "sourceId": "vscode-updates",
+      "sourceName": "VS Code Updates",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-05-30T07:59:25.791Z",
+      "publishedAt": "2026-05-28T00:00:00.000Z",
+      "title": "VS Code Updates changed",
+      "url": "https://code.visualstudio.com/updates/",
+      "summary": "Detected 5 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 5,
+        "headings": [],
+        "additions": [
+          "To use BYOK models, you must use the Local agent provider which is enabled in VS Code Insiders with",
+          "sessions.chat.localAgent.enabled",
+          "Open in VS Code",
+          "Open in VS Code Insiders",
+          ". Model configuration is shared with the editor window, so changes you make in either place are reflected in both."
+        ]
+      },
+      "headings": [
+        "Visual Studio Code 1.122",
+        "Agents",
+        "Agents Window (Preview)",
+        "Richer OpenTelemetry signals for agents",
+        "Sandboxing",
+        "Language Models",
+        "Use BYOK without a GitHub sign in",
+        "Custom Endpoint provider in Stable",
+        "Manage models in Agents window",
+        "Granular BYOK provider group actions in Manage Language Models",
+        "Remote Development",
+        "Integrated browser"
+      ],
+      "score": 2
+    }
+  ],
+  "errors": []
+}
