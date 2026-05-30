@@ -3,4 +3,5 @@ node_modules/
 .env.*
 site/
 .playwright-mcp/
+.github/skills/**/.skill-meta.json
 

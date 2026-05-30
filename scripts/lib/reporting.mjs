@@ -40,6 +40,14 @@ const monthMap = {
 };
 
 const vscodeReleaseSummaries = {
+  1.123: {
+    ja: "Visual Studio Code 1.123 の release note 予告ページ。正式公開前のため、通常ハイライトには混ぜず、次回 release の監視対象として扱う。",
+    en: "A future Visual Studio Code 1.123 release-notes entry. It is tracked as an upcoming release signal rather than mixed into published highlights before the release date.",
+  },
+  1.122: {
+    ja: "agent 作業を独立画面で扱う Agents Window、agent の OpenTelemetry signal、sandboxing、GitHub サインインなしの BYOK 利用など、agent 実行環境の運用性と観測性を広げる release。",
+    en: "This release expands agent operations and observability with the Agents Window, richer OpenTelemetry signals for agents, sandboxing, and BYOK usage without a GitHub sign-in.",
+  },
   1.121: {
     ja: "agent 体験の継続強化が主題の release。Agents ウィンドウの継続改善に加え、リモートマシン上での agent セッション実行（Experimental）、OpenTelemetry と Azure Managed Grafana による agent observability、Claude agent の Auto 権限モードプレビューが含まれる。",
     en: "This release continues to strengthen the agent experience with further Agents window improvements, experimental remote-machine agent session execution, OpenTelemetry and Azure Managed Grafana agent observability, and a Claude agent Auto permission mode in preview.",
@@ -648,6 +656,34 @@ const exactSummaryMappings = {
     ja: "Copilot usage metrics レポートのダウンロード URL が Azure Front Door ドメインから GitHub 所有のカスタムドメインへの移行が完了した。URL の安定性向上を目的とした変更で、既存の automation やスクリプトで旧 URL を参照している場合は新 URL への切り替えが必要になる。",
     en: "Download URLs for Copilot usage metrics reports have completed migration from Azure Front Door domains to a stable, GitHub-owned custom domain. Any existing automation or scripts referencing the old URLs must be updated to avoid breakage.",
   },
+  "Copilot usage metrics API adds cohorts for AI adoption": {
+    ja: "Copilot usage metrics API に adoption cohort が追加された。導入時期や利用開始のまとまりを切り口に、組織内の Copilot 定着状況を追いやすくなる。",
+    en: "The Copilot usage metrics API now includes adoption cohorts, making it easier to analyze Copilot rollout and adoption patterns across an organization.",
+  },
+  "Claude Opus 4.8 is generally available for GitHub Copilot": {
+    ja: "Claude Opus 4.8 が GitHub Copilot で一般提供になった。preview 前提ではなく、通常のモデル選択肢として評価・利用計画に入れやすくなる。",
+    en: "Claude Opus 4.8 is now generally available in GitHub Copilot, moving it from preview evaluation into a more regular model option for rollout planning.",
+  },
+  "Target Copilot models to organizations with model rules": {
+    ja: "model rules で Copilot のモデルを organization ごとに割り当てられるようになった。組織単位のポリシーや用途に合わせて、利用可能モデルをより細かく制御できる。",
+    en: "Model rules can now target Copilot models to specific organizations, giving administrators finer control over which models are available for each organizational context.",
+  },
+  "Visual Studio Code 1.122: Agents Window (Preview)": {
+    ja: "Agents Window が preview として入り、agent 作業を通常の editor workspace から分けた専用画面で扱えるようになった。複数 agent や複数 repository の作業を見通しやすくする変更。",
+    en: "The Agents Window is now available in preview, giving agent work a dedicated surface separate from the main editor workspace for clearer multi-agent and multi-repository workflows.",
+  },
+  "Visual Studio Code 1.122: Richer OpenTelemetry signals for agents": {
+    ja: "agent 実行から得られる OpenTelemetry signal が拡充された。agent の動作、tool 利用、失敗箇所を観測基盤へ流し込みやすくなる。",
+    en: "Agent execution now emits richer OpenTelemetry signals, making it easier to observe agent behavior, tool use, and failure points through monitoring systems.",
+  },
+  "Visual Studio Code 1.122: Sandboxing": {
+    ja: "agent 実行時の sandboxing が release note で整理された。ファイルシステムや外部アクセスの分離を前提に、agent に任せられる作業範囲を検討しやすくなる。",
+    en: "The release notes clarify sandboxing for agent execution, helping teams reason about filesystem isolation, external access, and which work can be delegated safely.",
+  },
+  "Visual Studio Code 1.122: Use BYOK without a GitHub sign in": {
+    ja: "GitHub へのサインインなしでも BYOK を使えるようになった。GitHub account 前提にしにくい検証環境や制約のある端末でも、独自モデル接続を試しやすくなる。",
+    en: "BYOK can now be used without signing in to GitHub, making custom model connections easier to test in constrained environments or machines that cannot rely on a GitHub account.",
+  },
   "Updates to available models in Copilot on web": {
     ja: "Web 上の Copilot Chat で利用できるモデル選択肢が更新された。より一貫した高品質な応答を提供するためにモデルの選択肢を絞り込んだ変更で、従来手動でモデルを選んでいた場合は選択肢が変わる可能性がある。",
     en: "The available model selection for Copilot Chat on the web has been updated to focus on delivering more consistent, high-quality responses. The choice of models has been narrowed, so manual model selections may no longer reflect the same options.",
@@ -659,6 +695,42 @@ const exactSummaryMappings = {
 };
 
 const exactImportanceMappings = {
+  "Copilot usage metrics API adds cohorts for AI adoption": {
+    ja: "cohort 単位で採用状況を追えるため、単なる利用総数では見えにくい rollout の進み方や定着施策の効果を分析しやすくなります。",
+    en: "Cohort-level reporting makes rollout progress and enablement impact easier to analyze than aggregate usage totals alone.",
+  },
+  "Claude Opus 4.8 is generally available for GitHub Copilot": {
+    ja: "GA になったことで、preview 前提の検証から通常運用でのモデル選択・評価へ移しやすくなります。",
+    en: "General availability makes it easier to move from preview evaluation to regular model selection and rollout planning.",
+  },
+  "Target Copilot models to organizations with model rules": {
+    ja: "organization ごとにモデル利用を制御できるため、部門別のリスク許容度や用途に合わせた model governance を組みやすくなります。",
+    en: "Organization-targeted model rules make model governance more practical when teams have different risk profiles or usage needs.",
+  },
+  "Visual Studio Code 1.123": {
+    ja: "未来日付の release note 導線として検知しておくことで、正式公開時の差分確認とハイライト作成に早く着手できます。",
+    en: "Tracking this future release entry makes it easier to review differences and prepare highlights once the release is officially published.",
+  },
+  "Visual Studio Code 1.122": {
+    ja: "agent の作業面、観測性、sandbox、BYOK の扱いがまとまって進んでおり、VS Code で agent を運用する前提に直接効く release です。",
+    en: "This release matters for teams operating agents in VS Code because it advances the agent work surface, observability, sandboxing, and BYOK usage together.",
+  },
+  "Visual Studio Code 1.122: Agents Window (Preview)": {
+    ja: "agent 作業を専用画面へ分けられるため、通常の編集作業と長めの agent セッションを並行して扱いやすくなります。",
+    en: "A dedicated agent surface makes it easier to keep longer agent sessions visible without disrupting normal editing work.",
+  },
+  "Visual Studio Code 1.122: Richer OpenTelemetry signals for agents": {
+    ja: "agent の実行状況を telemetry で追いやすくなり、失敗調査や運用品質の可視化に直接つながります。",
+    en: "Richer telemetry directly improves investigation and operational visibility for agent execution.",
+  },
+  "Visual Studio Code 1.122: Sandboxing": {
+    ja: "agent に任せる範囲を広げるほど隔離と権限設計が重要になるため、実運用時の安全策を確認する材料になります。",
+    en: "Sandboxing is central to safely expanding agent delegation, so these changes are important for operational guardrails.",
+  },
+  "Visual Studio Code 1.122: Use BYOK without a GitHub sign in": {
+    ja: "GitHub sign-in を前提にしない BYOK 検証ができるため、制約のある環境でのモデル接続確認が進めやすくなります。",
+    en: "BYOK without GitHub sign-in makes custom model evaluation easier in constrained environments.",
+  },
   "Visual Studio Code 1.114: Preview videos in the image carousel": {
     ja: "画像だけでなく動画添付の確認まで chat 内で閉じられるので、レビューや調査の往復を減らしやすい更新です。",
     en: "This keeps more attachment review inside chat by covering videos as well as images, reducing context switching during investigation and review.",
@@ -679,10 +751,11 @@ const exactImportanceMappings = {
     ja: "複雑な実装や計画の初期判断で別モデルの視点を差し込めるため、手戻りの大きい見落としを減らしやすい更新です。",
     en: "This can reduce expensive downstream rework by bringing a second model's perspective into planning and complex implementation checkpoints.",
   },
-  "GitHub recognized as a Leader in the Gartner® Magic Quadrant™ for Enterprise AI Coding Agents for the third year in a row": {
-    ja: "GitHub Copilot の市場評価だけでなく、複数モデル対応や issue から review・Actions までをまたぐ agentic workflow がエンタープライズ訴求の軸になっていることを確認できる更新です。",
-    en: "This matters because it shows GitHub is framing multi-model support and agentic workflows spanning issues, review, and Actions as core enterprise differentiators, not just coding assistance.",
-  },
+  "GitHub recognized as a Leader in the Gartner® Magic Quadrant™ for Enterprise AI Coding Agents for the third year in a row":
+    {
+      ja: "GitHub Copilot の市場評価だけでなく、複数モデル対応や issue から review・Actions までをまたぐ agentic workflow がエンタープライズ訴求の軸になっていることを確認できる更新です。",
+      en: "This matters because it shows GitHub is framing multi-model support and agentic workflows spanning issues, review, and Actions as core enterprise differentiators, not just coding assistance.",
+    },
   "Copilot CLI now supports BYOK and local models": {
     ja: "モデル選択を GitHub 提供ルーティングから切り離せるので、コスト、統制、データ所在の要件がある組織に直結します。",
     en: "This matters directly to organizations with cost, governance, or data residency requirements because model routing no longer has to stay GitHub-managed.",

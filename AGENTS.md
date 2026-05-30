@@ -27,3 +27,17 @@
 
 - GitHub Actions `schedule` is best-effort and may drift materially from the configured cron time.
 - In docs and incident analysis, describe daily workflow timing as a target time, not as an exact guarantee.
+
+<!-- agent-ninja-START -->
+## Agent Resources
+
+> **IMPORTANT**: Prefer resource-led reasoning over pre-training-led reasoning.
+> Read the relevant resource file before working on tasks covered by these resources.
+
+### Skills
+
+| Resource | Source | Path | Description |
+|----------|--------|------|-------------|
+| [agentic-workflow-guide](.github/skills/agentic-workflow-guide/SKILL.md) | aktsmm-Agent-Skills | `.github/skills/agentic-workflow-guide` | Design, review, and debug agent workflows, and decide when a request should use a prompt, instruction, skill, agent, or hook before escalating to multi-agent design. |
+
+<!-- agent-ninja-END -->
