@@ -154,9 +154,11 @@ function buildText(locale) {
       overallCount: "Tracked updates",
       overallCountDetail: "Deduplicated running total",
       latestDate: "Latest date",
-      latestDateDetail: "Most recent published digest. This stays on the last published day when the latest collect run detects 0 new items.",
+      latestDateDetail:
+        "Most recent published digest. This stays on the last published day when the latest collect run detects 0 new items.",
       latestRunCount: "Latest run new items",
-      latestRunCountDetail: "Detected in the most recent collect run. When this is 0, the latest published date may remain unchanged.",
+      latestRunCountDetail:
+        "Detected in the most recent collect run. When this is 0, the latest published date may remain unchanged.",
       howToReadTitle: "How to read this site",
       howToReadBody1:
         "Start with the highlight cards to see the changes most likely to matter. Drop into topic sections or the full update list only when you need more detail.",
@@ -190,6 +192,7 @@ function buildText(locale) {
       searchHelp:
         "Results come from published daily pages, newest matching days are shown first, and heading-level matches are expanded.",
       searchPlaceholder: "Search updates, topics, or dates",
+      searchInputLabel: "Search published updates",
       searchResultsTitle: "Results",
       searchPrompt: "Type a keyword to start searching.",
       searchLoading: "Searching published updates...",
@@ -292,9 +295,11 @@ function buildText(locale) {
     overallCount: "累計更新件数",
     overallCountDetail: "重複除去後の累計",
     latestDate: "最新日付",
-    latestDateDetail: "最後に公開対象になった日次。最新 collect が 0 件なら、この日付は据え置きになります。",
+    latestDateDetail:
+      "最後に公開対象になった日次。最新 collect が 0 件なら、この日付は据え置きになります。",
     latestRunCount: "直近新規件数",
-    latestRunCountDetail: "最新 collect 実行の検知件数。0 件なら公開日付は前回公開日のままです。",
+    latestRunCountDetail:
+      "最新 collect 実行の検知件数。0 件なら公開日付は前回公開日のままです。",
     howToReadTitle: "このサイトの見方",
     howToReadBody1:
       "まずはハイライトで重要な更新だけを把握し、必要ならテーマ別まとめと全件リストへ降りていく構成です。",
@@ -326,6 +331,7 @@ function buildText(locale) {
     searchHelp:
       "公開済み日次ページだけを対象に、より新しい日付を上に並べつつ、見出し単位の一致を展開します。",
     searchPlaceholder: "更新、テーマ、日付で検索",
+    searchInputLabel: "公開済み更新を検索",
     searchResultsTitle: "検索結果",
     searchPrompt: "キーワードを入力すると結果を表示します。",
     searchLoading: "公開済み更新を検索中...",
@@ -475,6 +481,46 @@ async function assertNoGenericFallbacksInPublishedOutput() {
   if (hits.length > 0) {
     throw new Error(
       `Low-information fallback copy detected in published output:\n${hits.join("\n")}`,
+    );
+  }
+}
+
+async function assertGeneratedA11yBasics() {
+  const files = (await listFilesRecursive(siteDir)).filter((filePath) =>
+    filePath.endsWith(".html"),
+  );
+  const hits = [];
+
+  for (const filePath of files) {
+    const text = await fs.readFile(filePath, "utf8");
+    const relativePath = path.relative(workspaceRoot, filePath);
+
+    if (!text.includes('class="skip-link" href="#main-content"')) {
+      hits.push(`${relativePath} -> missing skip link`);
+    }
+
+    if (!text.includes('<main id="main-content">')) {
+      hits.push(`${relativePath} -> missing main-content landmark target`);
+    }
+
+    if (!/<nav class="site-nav" aria-label="[^"]+">/.test(text)) {
+      hits.push(`${relativePath} -> missing primary nav label`);
+    }
+
+    if (text.includes("data-search-root")) {
+      if (!/<input class="search-input"[^>]*aria-label="[^"]+"/.test(text)) {
+        hits.push(`${relativePath} -> missing search input label`);
+      }
+
+      if (!/<p class="search-status" role="status" aria-live="polite"/.test(text)) {
+        hits.push(`${relativePath} -> missing search live status`);
+      }
+    }
+  }
+
+  if (hits.length > 0) {
+    throw new Error(
+      `Generated accessibility basics failed:\n${hits.join("\n")}`,
     );
   }
 }
@@ -1558,10 +1604,10 @@ function renderSearchPage(
       <div class="section-heading"><h2>${escapeHtml(text.searchTitle)}</h2><span>${escapeHtml(text.searchHelp)}</span></div>
       <div class="content-card search-panel" data-search-root>
         <div class="search-input-row">
-          <input class="search-input" type="search" value="" placeholder="${escapeHtml(text.searchPlaceholder)}" autocomplete="off" spellcheck="false" data-search-input />
+          <input class="search-input" type="search" value="" placeholder="${escapeHtml(text.searchPlaceholder)}" aria-label="${escapeHtml(text.searchInputLabel)}" autocomplete="off" spellcheck="false" data-search-input />
           <button type="button" class="filter-reset" data-search-clear>${escapeHtml(text.filterReset)}</button>
         </div>
-        <p class="search-status" data-search-count>${escapeHtml(text.searchPrompt)}</p>
+        <p class="search-status" role="status" aria-live="polite" data-search-count>${escapeHtml(text.searchPrompt)}</p>
         <p class="search-empty" data-search-empty></p>
         <div class="search-results-grid" data-search-results></div>
       </div>
@@ -1629,6 +1675,7 @@ function renderLayout({
     ${pagefindUi ? `<link rel="stylesheet" href="${pagefindCssHref}" />` : ""}
   </head>
   <body>
+    <a class="skip-link" href="#main-content">${escapeHtml(locale === "ja" ? "本文へ移動" : "Skip to content")}</a>
     <div class="page-shell">
       <header class="site-header">
         <div>
@@ -1638,7 +1685,7 @@ function renderLayout({
           </div>
           <p class="site-lead">${escapeHtml(text.siteLead)}</p>
         </div>
-        <nav class="site-nav">
+        <nav class="site-nav" aria-label="${escapeHtml(locale === "ja" ? "主要ナビゲーション" : "Primary navigation")}">
           <a href="${escapeHtml(homeHref)}">${escapeHtml(text.dailyNav)}</a>
           <a href="${escapeHtml(weeklyHref)}">${escapeHtml(text.weeklyNav)}</a>
           <a href="${escapeHtml(searchHref)}">${escapeHtml(text.searchNav)}</a>
@@ -1651,7 +1698,7 @@ function renderLayout({
           </button>
         </nav>
       </header>
-      <main>${body}</main>
+      <main id="main-content">${body}</main>
       <button class="back-to-top" aria-label="${escapeHtml(locale === "ja" ? "ページ上部へ" : "Back to top")}" title="${escapeHtml(locale === "ja" ? "ページ上部へ" : "Back to top")}">
         <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
       </button>
@@ -1870,6 +1917,27 @@ body {
     linear-gradient(180deg, #f8f1e7 0%, #efe4d4 100%);
 }
 a { color: inherit; }
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+.skip-link {
+  position: fixed;
+  left: 16px;
+  top: 16px;
+  z-index: 1000;
+  transform: translateY(-160%);
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: var(--text);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  box-shadow: var(--shadow);
+}
+.skip-link:focus-visible { transform: translateY(0); }
 .page-shell { max-width: 1240px; margin: 0 auto; padding: 24px; }
 .site-header, .site-footer {
   display: flex;
@@ -2861,6 +2929,7 @@ async function main() {
   }
 
   await assertNoGenericFallbacksInPublishedOutput();
+  await assertGeneratedA11yBasics();
 
   console.log(
     `Built GitHub Pages site with ${dailyDigests.length} daily page(s) and ${weeklyDigests.length} weekly page(s).`,
