@@ -241,6 +241,7 @@ function buildText(locale) {
       filterReset: "Clear",
       filterSourceLabel: "Source",
       filterTopicLabel: "Topic",
+      filterStatusLabel: "Filter status",
       itemSuffix: " items",
       sourceGroupNames: {
         github: "GitHub official",
@@ -380,6 +381,7 @@ function buildText(locale) {
     filterReset: "クリア",
     filterSourceLabel: "ソース",
     filterTopicLabel: "テーマ",
+    filterStatusLabel: "フィルター状態",
     itemSuffix: "件",
     sourceGroupNames: {
       github: "GitHub 公式",
@@ -513,11 +515,26 @@ async function assertGeneratedA11yBasics() {
       }
 
       if (
-        !/<p class="search-status" role="status" aria-live="polite"/.test(text)
+        !/<p class="search-status" role="status" aria-live="polite" aria-atomic="true"/.test(text)
       ) {
         hits.push(`${relativePath} -> missing search live status`);
       }
     }
+
+    if (/<section class="section-block filter-block [^"]*" data-filter-root>/.test(text)) {
+      if (!/<p class="sr-only" role="status" aria-live="polite" aria-atomic="true" data-filter-status>/.test(text)) {
+        hits.push(`${relativePath} -> missing filter live status`);
+      }
+    }
+  }
+
+  const css = await fs.readFile(path.join(siteDir, "assets", "styles.css"), "utf8");
+  if (!css.includes(".sr-only")) {
+    hits.push("site/assets/styles.css -> missing sr-only utility");
+  }
+
+  if (!css.includes(".latest-highlights-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }")) {
+    hits.push("site/assets/styles.css -> missing responsive latest highlight grid");
   }
 
   if (hits.length > 0) {
@@ -692,6 +709,7 @@ function renderFilterBar(text, options = {}) {
     <div class="filter-stack">
       ${rows.join("")}
     </div>
+    <p class="sr-only" role="status" aria-live="polite" aria-atomic="true" data-filter-status>${escapeHtml(text.filterStatusLabel)}</p>
   </section>`;
 }
 
@@ -1609,7 +1627,7 @@ function renderSearchPage(
           <input class="search-input" type="search" value="" placeholder="${escapeHtml(text.searchPlaceholder)}" aria-label="${escapeHtml(text.searchInputLabel)}" autocomplete="off" spellcheck="false" data-search-input />
           <button type="button" class="filter-reset" data-search-clear>${escapeHtml(text.filterReset)}</button>
         </div>
-        <p class="search-status" role="status" aria-live="polite" data-search-count>${escapeHtml(text.searchPrompt)}</p>
+        <p class="search-status" role="status" aria-live="polite" aria-atomic="true" data-search-count>${escapeHtml(text.searchPrompt)}</p>
         <p class="search-empty" data-search-empty></p>
         <div class="search-results-grid" data-search-results></div>
       </div>
@@ -1764,6 +1782,7 @@ function renderLayout({
       if(!root)return;
       var cards=[].slice.call(document.querySelectorAll('[data-filter-card]'));
       var reset=root.querySelector('[data-filter-reset]');
+      var status=root.querySelector('[data-filter-status]');
       var latestRoot=document.querySelector('[data-latest-highlights]');
       var latestDefault=latestRoot?latestRoot.querySelector('[data-highlight-group="all"]'):null;
       var latestPanels=latestRoot?[].slice.call(latestRoot.querySelectorAll('[data-highlight-source-section]')):[];
@@ -1799,6 +1818,14 @@ function renderLayout({
           var topicMatch=state.topic.size===0||state.topic.has(topicValue);
           card.classList.toggle('is-hidden',!(sourceMatch&&topicMatch));
         });
+      }
+      function visibleCardCount(){
+        return cards.filter(function(card){return !card.classList.contains('is-hidden');}).length;
+      }
+      function syncFilterStatus(){
+        if(!status)return;
+        var count=visibleCardCount();
+        status.textContent='${locale === "ja" ? "フィルターを更新しました。表示中: " : "Filters updated. Showing "}'+count+'${locale === "ja" ? "件。" : " items."}';
       }
       function syncLatestHighlights(){
         if(!latestRoot)return;
@@ -1843,6 +1870,7 @@ function renderLayout({
         syncLatestHighlights();
         applyFilters();
         syncLatestHighlights();
+        syncFilterStatus();
         syncUrl();
       }
       root.querySelectorAll('[data-filter-kind]').forEach(function(btn){
@@ -1866,6 +1894,7 @@ function renderLayout({
       syncLatestHighlights();
       applyFilters();
       syncLatestHighlights();
+      syncFilterStatus();
     })();
     (function(){
       var btn=document.querySelector('.back-to-top');
@@ -1940,6 +1969,17 @@ input:focus-visible {
   box-shadow: var(--shadow);
 }
 .skip-link:focus-visible { transform: translateY(0); }
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
 .page-shell { max-width: 1240px; margin: 0 auto; padding: 24px; }
 .site-header, .site-footer {
   display: flex;
@@ -2117,6 +2157,11 @@ h1 { margin: 0 0 16px; font-size: clamp(1.5rem, 2.4vw, 2.2rem); line-height: 1.1
 .pagefind-shell pagefind-summary {
   margin: 12px 0 16px;
 }
+.pagefind-shell input::placeholder,
+.pagefind-shell pagefind-searchbox::part(input)::placeholder {
+  color: #3f342d;
+  opacity: 0.78;
+}
 .search-input-row {
   display: flex;
   gap: 12px;
@@ -2185,10 +2230,16 @@ h1 { margin: 0 0 16px; font-size: clamp(1.5rem, 2.4vw, 2.2rem); line-height: 1.1
 }
 .filter-chip.active {
   border-color: currentColor;
-  box-shadow: inset 0 0 0 1px currentColor;
+  box-shadow: inset 0 0 0 2px currentColor;
   transform: translateY(-1px);
+  background: rgba(15, 118, 110, 0.12);
 }
-.filter-reset:disabled { cursor: default; opacity: 0.45; }
+.filter-reset:disabled {
+  cursor: not-allowed;
+  opacity: 0.62;
+  border-color: var(--line);
+  background: rgba(255, 255, 255, 0.36);
+}
 .section-heading {
   display: flex;
   justify-content: space-between;
@@ -2480,8 +2531,8 @@ h1 { margin: 0 0 16px; font-size: clamp(1.5rem, 2.4vw, 2.2rem); line-height: 1.1
   .hero, .page-grid { grid-template-columns: 1fr; }
   .archive-stream-item { grid-template-columns: 1fr; }
   .archive-stream-link { justify-content: flex-start; }
-}
   .latest-highlights-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
 @media (max-width: 720px) {
   .page-shell { padding: 16px; }
   .site-header { padding: 14px 16px; align-items: flex-start; flex-direction: column; }
