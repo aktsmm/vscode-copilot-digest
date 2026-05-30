@@ -36,7 +36,7 @@
 - [scripts/build-weekly.mjs](../scripts/build-weekly.mjs): 7 日 draft 生成
 - [scripts/build-biweekly.mjs](../scripts/build-biweekly.mjs): 14 日 draft 生成
 - [scripts/build-pages.mjs](../scripts/build-pages.mjs): Pages 用静的サイト生成
-- [scripts/notify-discord.mjs](../scripts/notify-discord.mjs): Discord 通知本文の生成と送信
+- [scripts/notify-discord.mjs](../scripts/notify-discord.mjs): Discord 通知 payload の生成と送信。概要は本文、主な更新は embed カードで表現する
 - [scripts/publish-qiita.mjs](../scripts/publish-qiita.mjs): Qiita 投稿
 - [search-architecture.md](search-architecture.md): Pagefind を使った検索 UI / index 設計
 

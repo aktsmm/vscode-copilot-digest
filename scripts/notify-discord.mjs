@@ -2,7 +2,6 @@ import fs from "node:fs/promises";
 import path from "node:path";
 
 import {
-  localizedDigestMention,
   localizedImportanceLabel,
   localizedSummary,
   localizedTitle,
@@ -12,6 +11,20 @@ import {
 const workspaceRoot = process.cwd();
 const eventsDir = path.join(workspaceRoot, "data", "events");
 const DISCORD_CONTENT_LIMIT = 1900;
+const DISCORD_SUMMARY_LIMIT = 520;
+const DISCORD_WEEKLY_SUMMARY_LIMIT = 620;
+const DISCORD_DAILY_EVENT_LIMIT = 4;
+const DISCORD_WINDOW_EVENT_LIMIT = 4;
+const DISCORD_WEEKLY_EVENT_LIMIT = 6;
+const DISCORD_EMBED_LIMIT = 10;
+const DISCORD_EMBED_TOTAL_TEXT_LIMIT = 6000;
+const DISCORD_EMBED_TITLE_LIMIT = 256;
+const DISCORD_EMBED_DESCRIPTION_LIMIT = 900;
+const DISCORD_EMBED_FIELD_VALUE_LIMIT = 1024;
+
+const discordColorByScore = [
+  0x6b7280, 0x6b7280, 0x84cc16, 0xf59e0b, 0xea580c, 0xdc2626,
+];
 
 function parseArgs(argv) {
   const options = {
@@ -147,13 +160,157 @@ function rankEvent(event) {
 
 function trimLine(value, maxLength = 180) {
   const normalized = String(value ?? "")
+    .replace(/\.{3,}/g, "…")
     .replace(/\s+/g, " ")
     .trim();
   if (normalized.length <= maxLength) {
     return normalized;
   }
 
-  return `${normalized.slice(0, maxLength - 1).trimEnd()}...`;
+  const sentence = normalized.slice(0, maxLength + 1);
+  const sentenceBreak = Math.max(
+    sentence.lastIndexOf("。"),
+    sentence.lastIndexOf(".") > 0 ? sentence.lastIndexOf(".") : -1,
+    sentence.lastIndexOf("！"),
+    sentence.lastIndexOf("!"),
+    sentence.lastIndexOf("？"),
+    sentence.lastIndexOf("?"),
+  );
+  if (sentenceBreak >= Math.floor(maxLength * 0.55)) {
+    return sentence.slice(0, sentenceBreak + 1).trimEnd();
+  }
+
+  const fallback = normalized.slice(0, maxLength - 1);
+  const wordBreak = Math.max(
+    fallback.lastIndexOf(" "),
+    fallback.lastIndexOf("、"),
+    fallback.lastIndexOf(","),
+  );
+  const trimmed =
+    wordBreak >= Math.floor(maxLength * 0.6)
+      ? fallback.slice(0, wordBreak)
+      : fallback;
+
+  return `${trimmed.trimEnd()}…`;
+}
+
+function sanitizeDiscordContent(value) {
+  return String(value ?? "").replace(/\.{3,}/g, "…");
+}
+
+function wrapReadableText(value, maxLineLength = 180) {
+  const normalized = sanitizeDiscordContent(value).replace(/\s+/g, " ").trim();
+  const lines = [];
+  let remaining = normalized;
+
+  while (remaining.length > maxLineLength) {
+    const window = remaining.slice(0, maxLineLength + 1);
+    const sentenceBreak = Math.max(
+      window.lastIndexOf("。"),
+      window.lastIndexOf("！"),
+      window.lastIndexOf("!"),
+      window.lastIndexOf("？"),
+      window.lastIndexOf("?"),
+    );
+    const softBreak = Math.max(
+      window.lastIndexOf("、"),
+      window.lastIndexOf(","),
+      window.lastIndexOf(" "),
+    );
+    const breakIndex =
+      sentenceBreak >= Math.floor(maxLineLength * 0.45)
+        ? sentenceBreak + 1
+        : softBreak >= Math.floor(maxLineLength * 0.55)
+          ? softBreak + 1
+          : maxLineLength;
+
+    lines.push(remaining.slice(0, breakIndex).trim());
+    remaining = remaining.slice(breakIndex).trim();
+  }
+
+  if (remaining) {
+    lines.push(remaining);
+  }
+
+  return lines;
+}
+
+function assertReadableDiscordPayload(payload) {
+  const content = String(payload.content ?? "");
+  if (content.length > DISCORD_CONTENT_LIMIT) {
+    throw new Error(
+      `Discord payload exceeds ${DISCORD_CONTENT_LIMIT} characters: ${content.length}`,
+    );
+  }
+
+  if (/\.\.\./.test(content)) {
+    throw new Error(
+      "Discord payload contains ASCII ellipsis; use readable truncation.",
+    );
+  }
+
+  const longLines = content
+    .split("\n")
+    .filter(
+      (line) =>
+        line.length > 240 &&
+        !/^\s*(リンク|Pages|週間Pages|日次サマリー|週間ドラフト):\s+https?:\/\//.test(
+          line,
+        ),
+    );
+  if (longLines.length > 0) {
+    throw new Error(
+      `Discord payload contains ${longLines.length} overlong non-URL line(s).`,
+    );
+  }
+
+  const embeds = payload.embeds ?? [];
+  if (embeds.length > DISCORD_EMBED_LIMIT) {
+    throw new Error(`Discord payload has too many embeds: ${embeds.length}`);
+  }
+
+  const embedTextLength = embeds.reduce((total, embed) => {
+    const fieldLength = (embed.fields ?? []).reduce(
+      (fieldTotal, field) =>
+        fieldTotal +
+        String(field.name ?? "").length +
+        String(field.value ?? "").length,
+      0,
+    );
+    return (
+      total +
+      String(embed.title ?? "").length +
+      String(embed.description ?? "").length +
+      String(embed.footer?.text ?? "").length +
+      fieldLength
+    );
+  }, 0);
+
+  if (embedTextLength > DISCORD_EMBED_TOTAL_TEXT_LIMIT) {
+    throw new Error(
+      `Discord embeds exceed ${DISCORD_EMBED_TOTAL_TEXT_LIMIT} text characters: ${embedTextLength}`,
+    );
+  }
+
+  for (const embed of embeds) {
+    if (String(embed.title ?? "").length > DISCORD_EMBED_TITLE_LIMIT) {
+      throw new Error("Discord embed title exceeds limit.");
+    }
+
+    if (
+      String(embed.description ?? "").length > DISCORD_EMBED_DESCRIPTION_LIMIT
+    ) {
+      throw new Error(
+        "Discord embed description exceeds local readability limit.",
+      );
+    }
+
+    for (const field of embed.fields ?? []) {
+      if (String(field.value ?? "").length > DISCORD_EMBED_FIELD_VALUE_LIMIT) {
+        throw new Error("Discord embed field value exceeds limit.");
+      }
+    }
+  }
 }
 
 function buildRepoSummaryUrl(date) {
@@ -257,57 +414,75 @@ function joinLines(lines) {
   return lines.join("\n");
 }
 
-function buildEventBlock(event, options = {}) {
+function discordColorForEvent(event) {
+  const score = Number(event.score ?? 1);
+  if (!Number.isFinite(score)) {
+    return discordColorByScore[1];
+  }
+
+  return discordColorByScore[Math.min(Math.max(score, 0), 5)];
+}
+
+function buildEventEmbed(event, options = {}) {
   const mode = options.mode ?? "daily";
-  const title =
-    mode === "weekly"
-      ? localizedDigestMention(event, "ja", 110)
-      : localizedTitle(event);
+  const titleLimit = DISCORD_EMBED_TITLE_LIMIT - 16;
+  const summaryLimit = mode === "weekly" ? 520 : 460;
+  const title = localizedTitle(event);
   const summary = localizedSummary(event);
-  const block = [
-    `- [${localizedImportanceLabel(event)}] ${trimLine(title, mode === "weekly" ? 110 : 120)}`,
-    `  ${trimLine(summary, mode === "weekly" ? 150 : 120)}`,
-    `  ${event.url}`,
+  const fields = [
+    {
+      name: "重要度",
+      value: localizedImportanceLabel(event),
+      inline: true,
+    },
+    {
+      name: "ソース",
+      value: trimLine(event.sourceNames.join(" / "), 220),
+      inline: true,
+    },
   ];
 
   if (options.includeDates && event.dateKeys?.length > 0) {
-    block.splice(2, 0, `  日付: ${event.dateKeys.join(", ")}`);
+    fields.push({
+      name: "日付",
+      value: event.dateKeys.join(" / "),
+      inline: false,
+    });
   }
 
-  if (event.sourceNames.length > 1) {
-    block.push(`  ソース: ${event.sourceNames.join(", ")}`);
-  }
-
-  return block;
+  return {
+    title: `[${localizedImportanceLabel(event)}] ${trimLine(title, titleLimit)}`,
+    url: event.url,
+    description: trimLine(summary, summaryLimit),
+    color: discordColorForEvent(event),
+    fields,
+    footer: {
+      text:
+        event.kind === "html_snapshot_change"
+          ? "固定ページ差分"
+          : "更新フィード",
+    },
+  };
 }
 
-function buildGroupedEventBlocks(uniqueEvents, options = {}) {
+function selectDiscordEvents(uniqueEvents, options = {}) {
   const maxEvents = options.maxEvents ?? 5;
   const maxPerDate = options.maxPerDate ?? Number.POSITIVE_INFINITY;
-  const grouped = new Map();
+  const selected = [];
+  const perDateCounts = new Map();
 
   for (const event of uniqueEvents.slice(0, maxEvents)) {
     const dateKey = event.dateKeys?.at(-1) ?? event.dateKey;
-    if (!grouped.has(dateKey)) {
-      grouped.set(dateKey, []);
+    const currentCount = perDateCounts.get(dateKey) ?? 0;
+    if (currentCount >= maxPerDate) {
+      continue;
     }
-    grouped.get(dateKey).push(event);
+
+    perDateCounts.set(dateKey, currentCount + 1);
+    selected.push(event);
   }
 
-  return [...grouped.entries()]
-    .sort(([left], [right]) => right.localeCompare(left))
-    .map(([dateKey, events]) => {
-      const block = [`【${dateKey}】`];
-
-      for (const [index, event] of events.slice(0, maxPerDate).entries()) {
-        if (index > 0) {
-          block.push("");
-        }
-        block.push(...buildEventBlock(event, options));
-      }
-
-      return block;
-    });
+  return selected;
 }
 
 async function buildPayload(date, datedLogs, options = {}) {
@@ -342,7 +517,7 @@ async function buildPayload(date, datedLogs, options = {}) {
     ? resolveCalendarWindow(date, options.windowDays)
     : {
         startDate: datedLogs[0]?.date ?? date,
-        endDate: datedLogs[datedLogs.length - 1]?.date ?? date,
+      endDate: datedLogs[datedLogs.length - 1]?.date ?? date,
       };
   const summaryUrl = isWeeklyMode
     ? (await fileExists(
@@ -379,29 +554,41 @@ async function buildPayload(date, datedLogs, options = {}) {
     .join(" / ");
   const latestLog = datedLogs[datedLogs.length - 1]?.eventLog;
   const aggregateSummary = summarizeEventSet(uniqueEvents, "ja", {
-    maxLength: isWeeklyMode ? 1000 : 520,
-    maxHighlights: isWeeklyMode ? 6 : 4,
+    maxLength: isWeeklyMode
+      ? DISCORD_WEEKLY_SUMMARY_LIMIT
+      : DISCORD_SUMMARY_LIMIT,
+    maxHighlights: isWeeklyMode ? 4 : 3,
   });
 
   const headerLines = [
-    isWeeklyMode
-      ? options.forcePreview && uniqueEvents.length === 0
-        ? `GitHub Copilot / VS Code の週次 preview として更新候補を表示します。`
-        : `GitHub Copilot / VS Code の週次まとめを送ります。`
-      : options.windowDays > 1
+    `**${
+      isWeeklyMode
         ? options.forcePreview && uniqueEvents.length === 0
-          ? `GitHub Copilot / VS Code 監視の ${options.windowDays}日分 preview として更新候補を表示します。`
-          : `GitHub Copilot / VS Code 監視で直近${options.windowDays}日分の新着 ${uniqueEvents.length} 件をまとめました。`
-        : options.forcePreview && uniqueEvents.length === 0
-          ? `GitHub Copilot / VS Code 監視の preview として ${uniqueEvents.length} 件の更新候補を表示します。`
-          : `GitHub Copilot / VS Code 監視で ${uniqueEvents.length} 件の新着を検知しました。`,
+          ? `GitHub Copilot / VS Code 週次 preview`
+          : `GitHub Copilot / VS Code 週次まとめ`
+        : options.windowDays > 1
+          ? options.forcePreview && uniqueEvents.length === 0
+            ? `GitHub Copilot / VS Code ${options.windowDays}日分 preview`
+            : `GitHub Copilot / VS Code 直近${options.windowDays}日分まとめ`
+          : options.forcePreview && uniqueEvents.length === 0
+            ? `GitHub Copilot / VS Code preview`
+            : `GitHub Copilot / VS Code 新着通知`
+    }**`,
     options.windowDays > 1 || isWeeklyMode
       ? `対象期間: ${activeWindowLabel}`
       : `日付: ${date}`,
+    `件数: ${uniqueEvents.length}件`,
   ];
 
   if (aggregateSummary && uniqueEvents.length > 0) {
-    headerLines.push(`要約: ${aggregateSummary}`);
+    headerLines.push(
+      "",
+      "**要約**",
+      ...wrapReadableText(
+        trimLine(aggregateSummary, isWeeklyMode ? 620 : 460),
+        180,
+      ),
+    );
   }
 
   if (options.forcePreview && uniqueEvents.length === 0) {
@@ -418,12 +605,14 @@ async function buildPayload(date, datedLogs, options = {}) {
 
   if (dailySummary) {
     headerLines.push(
-      `${isWeeklyMode ? "日別内訳" : "日別件数"}: ${dailySummary}`,
+      "",
+      `**${isWeeklyMode ? "日別内訳" : "日別件数"}**`,
+      dailySummary,
     );
   }
 
   if (sourceSummary) {
-    headerLines.push(`内訳: ${sourceSummary}`);
+    headerLines.push("", "**ソース内訳**", sourceSummary);
   }
 
   const footerLines = [];
@@ -437,35 +626,31 @@ async function buildPayload(date, datedLogs, options = {}) {
     footerLines.push(`${isWeeklyMode ? "週間Pages" : "Pages"}: ${pagesUrl}`);
   }
 
-  const eventBlocks =
+  const selectedEvents =
     options.windowDays > 1 || isWeeklyMode
-      ? buildGroupedEventBlocks(uniqueEvents, {
-          mode: isWeeklyMode ? "weekly" : "daily",
-          maxEvents: isWeeklyMode ? 10 : 5,
+      ? selectDiscordEvents(uniqueEvents, {
+          maxEvents: isWeeklyMode
+            ? DISCORD_WEEKLY_EVENT_LIMIT
+            : DISCORD_WINDOW_EVENT_LIMIT,
           maxPerDate: isWeeklyMode ? 2 : 5,
         })
-      : uniqueEvents
-          .slice(0, 5)
-          .map((event) =>
-            buildEventBlock(event, { includeDates: false, mode: "daily" }),
-          );
+      : uniqueEvents.slice(0, DISCORD_DAILY_EVENT_LIMIT);
 
-  let lines = [...headerLines];
-  if (eventBlocks.length > 0) {
-    lines.push("");
+  const omittedEventCount = Math.max(
+    0,
+    uniqueEvents.length - selectedEvents.length,
+  );
+  const lines = [...headerLines];
+  if (selectedEvents.length > 0) {
+    lines.push(
+      "",
+      `**主な更新**`,
+      `${selectedEvents.length}件をカードで表示します。`,
+    );
   }
 
-  for (const block of eventBlocks) {
-    const nextLines =
-      lines.at(-1) === "" ? [...lines, ...block] : [...lines, "", ...block];
-    const candidateLines =
-      footerLines.length > 0 ? [...nextLines, "", ...footerLines] : nextLines;
-
-    if (joinLines(candidateLines).length > DISCORD_CONTENT_LIMIT) {
-      break;
-    }
-
-    lines = nextLines;
+  if (omittedEventCount > 0) {
+    lines.push(`※ 残り${omittedEventCount}件はリンク先で確認してください。`);
   }
 
   if (footerLines.length > 0) {
@@ -474,6 +659,13 @@ async function buildPayload(date, datedLogs, options = {}) {
     }
     lines.push(...footerLines);
   }
+
+  const embeds = selectedEvents.map((event) =>
+    buildEventEmbed(event, {
+      includeDates: options.windowDays > 1 || isWeeklyMode,
+      mode: isWeeklyMode ? "weekly" : "daily",
+    }),
+  );
 
   let content = joinLines(lines);
   if (content.length > DISCORD_CONTENT_LIMIT) {
@@ -485,7 +677,7 @@ async function buildPayload(date, datedLogs, options = {}) {
     content = footer ? [prefix, footer].filter(Boolean).join("\n\n") : prefix;
   }
 
-  return { content };
+  return { content: sanitizeDiscordContent(content), embeds };
 }
 
 async function postWebhook(payload, dryRun) {
@@ -566,6 +758,7 @@ async function main() {
   }
 
   const payload = await buildPayload(options.date, datedLogs, options);
+  assertReadableDiscordPayload(payload);
   await postWebhook(payload, options.dryRun);
   console.log(
     options.forcePreview && totalNewEvents === 0

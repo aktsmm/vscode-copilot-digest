@@ -61,7 +61,7 @@
 - [collect-updates.yml](../.github/workflows/collect-updates.yml): 毎日 3 回の収集と event / summary 更新
 - [deploy-pages.yml](../.github/workflows/deploy-pages.yml): Pages 再生成と公開
 - [redeploy-pages-after-generated-pr-merge.yml](../.github/workflows/redeploy-pages-after-generated-pr-merge.yml): Copilot 生成 PR merge 後の Pages 再 dispatch と superseded な generated work の cleanup
-- [notify-weekly-discord.yml](../.github/workflows/notify-weekly-discord.yml): 毎週水曜 06:00 JST の週間 Discord 要約通知
+- [notify-weekly-discord.yml](../.github/workflows/notify-weekly-discord.yml): 毎週水曜 06:00 JST の週間 Discord 要約通知。本文は短い概要に留め、主な更新は embed カードで表示する
 - [build-weekly-draft.yml](../.github/workflows/build-weekly-draft.yml): 毎週金曜 06:00 JST の週間ドラフト生成
 - [build-biweekly-draft.yml](../.github/workflows/build-biweekly-draft.yml): 手動の隔週ドラフト生成
 - [publish-qiita.yml](../.github/workflows/publish-qiita.yml): Qiita 投稿
@@ -104,6 +104,7 @@ GitHub hosted runner の Node 20 deprecation warning に合わせて主要 actio
 - `gh workflow run test-discord-notification.yml -f date_key=YYYY-MM-DD`
 - `gh workflow run deploy-pages.yml`
 - `node scripts/notify-discord.mjs --mode weekly --date YYYY-MM-DD --window-days 7 --dry-run --force-preview`
+	- dry-run JSON の `content` と `embeds` を確認する。読みやすさ guard が文字数超過、ASCII `...`、長すぎる非 URL 行を検出する。
 
 ## まず見るべき確認ポイント
 

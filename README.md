@@ -112,6 +112,8 @@ Discord 通知 preview:
 node scripts/notify-discord.mjs --mode weekly --date 2026-04-10 --window-days 7 --dry-run --force-preview
 ```
 
+Discord 通知は短い概要を本文に置き、主な更新は embed カードとして出力する。`--dry-run` では JSON payload を確認できる。
+
 ## 生成物
 
 - [data/events](data/events): 日次イベント JSON
@@ -126,7 +128,7 @@ node scripts/notify-discord.mjs --mode weekly --date 2026-04-10 --window-days 7 
 - [scripts/build-pages.mjs](scripts/build-pages.mjs): トップページ、日次・週間詳細、ハイライト一覧、日次・週間アーカイブ一覧、検索ページを含む Pages 用静的サイト生成
 - [scripts/build-biweekly.mjs](scripts/build-biweekly.mjs): 14 日ドラフト生成
 - [scripts/build-weekly.mjs](scripts/build-weekly.mjs): 7 日ドラフト生成
-- [scripts/notify-discord.mjs](scripts/notify-discord.mjs): Discord 通知と preview 出力。workflow では weekly mode と 7 日 window で、直近 1 週間分をまとめて投稿する設定で使う
+- [scripts/notify-discord.mjs](scripts/notify-discord.mjs): Discord 通知と preview 出力。workflow では weekly mode と 7 日 window で、短い概要と更新カードを投稿する設定で使う
 - [scripts/publish-qiita.mjs](scripts/publish-qiita.mjs): Qiita API への新規投稿 / 更新
 - [scripts/lib/reporting.mjs](scripts/lib/reporting.mjs): 分類、重複除去、日本語化、注記生成の共通ロジック
 
