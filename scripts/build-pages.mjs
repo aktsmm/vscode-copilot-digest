@@ -386,7 +386,8 @@ function buildText(locale) {
     filterSourceLabel: "ソース",
     filterTopicLabel: "テーマ",
     filterStatusLabel: "フィルター状態",
-    filterClearedStatus: "フィルターをクリアしました。すべての更新を表示しています。",
+    filterClearedStatus:
+      "フィルターをクリアしました。すべての更新を表示しています。",
     shareCopied: "リンクをコピーしました。",
     shareCopyFailed: "リンクをコピーできませんでした。",
     externalLinkSuffix: "新しいウィンドウで開きます",
@@ -517,15 +518,28 @@ async function assertGeneratedA11yBasics() {
       hits.push(`${relativePath} -> missing primary nav label`);
     }
 
-    if (!/<button class="lang-toggle" type="button"[^>]*aria-pressed="(?:true|false)"/.test(text)) {
+    if (
+      !/<button class="lang-toggle" type="button"[^>]*aria-pressed="(?:true|false)"/.test(
+        text,
+      )
+    ) {
       hits.push(`${relativePath} -> missing language toggle state`);
     }
 
-    if (!/<span class="sr-only" role="status" aria-live="polite" aria-atomic="true" data-share-feedback><\/span>/.test(text)) {
+    if (
+      !/<span class="sr-only" role="status" aria-live="polite" aria-atomic="true" data-share-feedback><\/span>/.test(
+        text,
+      )
+    ) {
       hits.push(`${relativePath} -> missing share feedback live region`);
     }
 
-    if (/target="_blank" rel="noopener"/.test(text) && !/target="_blank" rel="noopener" aria-label="[^"]+\([^)]*(?:new window|新しいウィンドウ)[^)]*\)"/.test(text)) {
+    if (
+      /target="_blank" rel="noopener"/.test(text) &&
+      !/target="_blank" rel="noopener" aria-label="[^"]+\([^)]*(?:new window|新しいウィンドウ)[^)]*\)"/.test(
+        text,
+      )
+    ) {
       hits.push(`${relativePath} -> missing external-link accessibility label`);
     }
 
@@ -552,7 +566,11 @@ async function assertGeneratedA11yBasics() {
         hits.push(`${relativePath} -> missing filter fieldset label`);
       }
 
-      if (!/<div class="filter-chip-row" role="group" aria-label="[^"]+">/.test(text)) {
+      if (
+        !/<div class="filter-chip-row" role="group" aria-label="[^"]+">/.test(
+          text,
+        )
+      ) {
         hits.push(`${relativePath} -> missing filter chip group label`);
       }
 
@@ -751,7 +769,7 @@ function renderFilterBar(text, options = {}) {
               text.topicFilterTags[topic] ?? topic,
             ),
           )
-            .join("")}</div>
+          .join("")}</div>
           </fieldset>`);
   }
 
