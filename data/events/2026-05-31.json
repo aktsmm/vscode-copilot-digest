@@ -1,12 +1,29 @@
 {
   "date": "2026-05-31",
-  "generatedAt": "2026-05-31T22:30:43.224Z",
+  "generatedAt": "2026-05-31T22:32:15.279Z",
   "latestRun": {
-    "generatedAt": "2026-05-31T22:30:43.224Z",
+    "generatedAt": "2026-05-31T22:32:15.279Z",
     "newEventsCount": 0,
     "newEventIds": [],
-    "errorCount": 0
+    "errorCount": 4
   },
   "events": [],
-  "errors": []
+  "errors": [
+    {
+      "sourceId": "vscode-feed",
+      "message": "fetch failed"
+    },
+    {
+      "sourceId": "vscode-updates",
+      "message": "fetch failed"
+    },
+    {
+      "sourceId": "vscode-release-notes-1-109",
+      "message": "fetch failed"
+    },
+    {
+      "sourceId": "publickey",
+      "message": "fetch failed"
+    }
+  ]
 }
