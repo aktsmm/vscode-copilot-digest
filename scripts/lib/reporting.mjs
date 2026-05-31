@@ -664,6 +664,11 @@ const exactSummaryMappings = {
     ja: "Claude Opus 4.8 が GitHub Copilot で一般提供になった。preview 前提ではなく、通常のモデル選択肢として評価・利用計画に入れやすくなる。",
     en: "Claude Opus 4.8 is now generally available in GitHub Copilot, moving it from preview evaluation into a more regular model option for rollout planning.",
   },
+  "Copilot Memory has more controls for deletion, scope, and the Copilot CLI":
+    {
+      ja: "Copilot Memory で削除操作が改善され、repository 単位のオフスイッチと Copilot CLI からの追加制御が使えるようになった。メモリの保持範囲と削除手順を、日常の CLI 運用に合わせて調整しやすくなる。",
+      en: "Copilot Memory now improves deletion actions, adds a repository-level off switch, and brings additional controls into Copilot CLI, making it easier to tune retention scope and deletion workflows in CLI-heavy operations.",
+    },
   "Target Copilot models to organizations with model rules": {
     ja: "model rules で Copilot のモデルを organization ごとに割り当てられるようになった。組織単位のポリシーや用途に合わせて、利用可能モデルをより細かく制御できる。",
     en: "Model rules can now target Copilot models to specific organizations, giving administrators finer control over which models are available for each organizational context.",
@@ -703,6 +708,11 @@ const exactImportanceMappings = {
     ja: "GA になったことで、preview 前提の検証から通常運用でのモデル選択・評価へ移しやすくなります。",
     en: "General availability makes it easier to move from preview evaluation to regular model selection and rollout planning.",
   },
+  "Copilot Memory has more controls for deletion, scope, and the Copilot CLI":
+    {
+      ja: "repository 単位のオフスイッチと CLI からのメモリ制御が加わることで、削除手順や保持範囲を監査・プライバシー要件に沿って統一しやすくなります。",
+      en: "Repository-level off controls and CLI memory management make it easier to align retention scope and deletion procedures with audit and privacy requirements.",
+    },
   "Target Copilot models to organizations with model rules": {
     ja: "organization ごとにモデル利用を制御できるため、部門別のリスク許容度や用途に合わせた model governance を組みやすくなります。",
     en: "Organization-targeted model rules make model governance more practical when teams have different risk profiles or usage needs.",
@@ -1578,6 +1588,10 @@ function patternTitle(title) {
     [
       "Copilot cloud agent signs its commits",
       "Copilot cloud agent が commit 署名に対応した",
+    ],
+    [
+      "Copilot Memory has more controls for deletion, scope, and the Copilot CLI",
+      "Copilot Memory の削除・適用範囲・CLI 制御が拡充",
     ],
     [
       "Organization runner controls for Copilot cloud agent",
