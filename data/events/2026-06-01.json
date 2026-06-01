@@ -1,0 +1,108 @@
+{
+  "date": "2026-06-01",
+  "generatedAt": "2026-06-01T10:35:09.483Z",
+  "latestRun": {
+    "generatedAt": "2026-06-01T10:35:09.483Z",
+    "newEventsCount": 3,
+    "newEventIds": [
+      "vscode-updates:d4dfb0231c39057edefa58ea5d77899b272da7c3d043c47623b66656e3496180",
+      "vscode-release-notes-1-122:section:76b77667df1ff6824a217720f72c8ff3c2eba3810044e109f6865bb06cdae828",
+      "vscode-release-notes-1-122:section:745ab2c2753f4280f75e1513135cb3facb9502048b4b5dc5e61495f2138d8021"
+    ],
+    "errorCount": 0
+  },
+  "events": [
+    {
+      "eventId": "vscode-updates:d4dfb0231c39057edefa58ea5d77899b272da7c3d043c47623b66656e3496180",
+      "sourceId": "vscode-updates",
+      "sourceName": "VS Code Updates",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-06-01T10:35:06.790Z",
+      "publishedAt": "2026-05-28T00:00:00.000Z",
+      "title": "VS Code Updates changed",
+      "url": "https://code.visualstudio.com/updates/",
+      "summary": "Detected 13 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 13,
+        "headings": [
+          "GitHub Copilot moves to usage based billing",
+          "Updated Copilot status dashboard",
+          "Model costs in the model picker",
+          "1M context window for Anthropic and OpenAI models"
+        ],
+        "additions": [
+          "Larger context windows: Support for 1M context windows for Anthropic and OpenAI models.",
+          "H2: GitHub Copilot moves to usage based billing",
+          "GitHub Copilot has moved to usage-based billing.",
+          "Under the new model, each interaction consumes AI credits, which are calculated based on token (input, output, and cached) cost and on the model used. Complex interactions and more capable models consume more credits, while lightweight models and simpler tasks use fewer. Learn more about how you can optimize your usage.",
+          "H3: Updated Copilot status dashboard",
+          "The Copilot status dashboard now reflects usage-based billing. You can view your AI credits consumption, so you can monitor your usage at a glance.",
+          "H3: Model costs in the model picker",
+          "The model picker now displays cost information to help you make informed model choices. Different models have different costs per token type, so choosing the right model for your task can help extend your usage.",
+          "You can view all available models, their capabilities, context sizes, and billing details in the Language Models editor. Open it from the model picker by selecting ⚙️, or run the Chat: Manage Language Models command from the Command Palette.",
+          "H3: 1M context window for Anthropic and OpenAI models",
+          "VS Code now supports 1 million token context windows for compatible Anthropic and OpenAI models. This expanded context window enables you to work with significantly larger codebases and longer conversations without losing important context. The expanded context window is available when using supported models, such as Claude Opus 4.7 and GPT-5.5.",
+          "Note: Larger context windows may consume more tokens per interaction, which increases AI credits usage under usage-based billing.",
+          "GitHub Copilot moves to usage based billing"
+        ]
+      },
+      "headings": [
+        "Visual Studio Code 1.122",
+        "GitHub Copilot moves to usage based billing",
+        "Updated Copilot status dashboard",
+        "Model costs in the model picker",
+        "Agents",
+        "Agents Window (Preview)",
+        "Richer OpenTelemetry signals for agents",
+        "Sandboxing",
+        "Language Models",
+        "1M context window for Anthropic and OpenAI models",
+        "Use BYOK without a GitHub sign in",
+        "Custom Endpoint provider in Stable"
+      ],
+      "score": 6
+    },
+    {
+      "eventId": "vscode-release-notes-1-122:section:76b77667df1ff6824a217720f72c8ff3c2eba3810044e109f6865bb06cdae828",
+      "sourceId": "vscode-release-notes-1-122",
+      "sourceName": "VS Code Release Notes 1.122",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-06-01T10:35:08.246Z",
+      "publishedAt": "2026-05-28T00:00:00.000Z",
+      "title": "Visual Studio Code 1.122: Updated Copilot status dashboard",
+      "url": "https://code.visualstudio.com/updates/v1_122",
+      "summary": "The Copilot status dashboard now reflects usage-based billing. You can view your AI credits consumption, so you can monitor your usage at a glance.",
+      "categories": [
+        "release",
+        "section",
+        "GitHub Copilot moves to usage based billing"
+      ],
+      "sectionHeading": "GitHub Copilot moves to usage based billing",
+      "sectionTitle": "Updated Copilot status dashboard",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-122:section:745ab2c2753f4280f75e1513135cb3facb9502048b4b5dc5e61495f2138d8021",
+      "sourceId": "vscode-release-notes-1-122",
+      "sourceName": "VS Code Release Notes 1.122",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-06-01T10:35:08.246Z",
+      "publishedAt": "2026-05-28T00:00:00.000Z",
+      "title": "Visual Studio Code 1.122: Model costs in the model picker",
+      "url": "https://code.visualstudio.com/updates/v1_122",
+      "summary": "The model picker now displays cost information to help you make informed model choices. Different models have different costs per token type, so choosing the right model for your task can help extend your usage. You can view all available models, their capabilities, context sizes, and billing details in the Language Models editor. Open it from the model picker by selecting ⚙️, or run the Chat: Manage Language Models...",
+      "categories": [
+        "release",
+        "section",
+        "GitHub Copilot moves to usage based billing"
+      ],
+      "sectionHeading": "GitHub Copilot moves to usage based billing",
+      "sectionTitle": "Model costs in the model picker",
+      "score": 4
+    }
+  ],
+  "errors": []
+}
