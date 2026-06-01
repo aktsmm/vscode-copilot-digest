@@ -249,6 +249,7 @@ Contributions to our issue tracking:
 @albertosantini (Alberto Santini)
 Contributions to vscode:
 @aaronpowell (Aaron Powell): Add marketplace ref support for plugin marketplaces PR #317901
+@dgercho (David Gerschcovsky): Enable to filter search within changed files of source tree PR #314790
 @oded-ist (Oded S): Fix read_cell_output incorrectly reporting all outputs as too large PR #318148
 @PenguinDOOM (Penguin): Fix BYOK invalid stateful marker retries PR #317292
 @SLdragon (rentu): feat: add languageDiagnosticsService option for nes/inline completion provider PR #317678

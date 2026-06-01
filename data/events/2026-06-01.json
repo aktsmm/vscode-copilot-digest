@@ -1,17 +1,51 @@
 {
   "date": "2026-06-01",
-  "generatedAt": "2026-06-01T10:35:09.483Z",
+  "generatedAt": "2026-06-01T19:08:00.336Z",
   "latestRun": {
-    "generatedAt": "2026-06-01T10:35:09.483Z",
+    "generatedAt": "2026-06-01T19:08:00.336Z",
     "newEventsCount": 3,
     "newEventIds": [
-      "vscode-updates:d4dfb0231c39057edefa58ea5d77899b272da7c3d043c47623b66656e3496180",
-      "vscode-release-notes-1-122:section:76b77667df1ff6824a217720f72c8ff3c2eba3810044e109f6865bb06cdae828",
-      "vscode-release-notes-1-122:section:745ab2c2753f4280f75e1513135cb3facb9502048b4b5dc5e61495f2138d8021"
+      "github-changelog:https://github.blog/changelog/2026-06-01-evaluation-models-in-auto-for-individual-plans",
+      "github-changelog:https://github.blog/changelog/2026-05-29-updates-to-github-copilot-billing-and-plans",
+      "vscode-updates:452439ecb13593a70ec2838bd58758046d39c49cb22e6694e821f6685e9c1456"
     ],
     "errorCount": 0
   },
   "events": [
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-06-01-evaluation-models-in-auto-for-individual-plans",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-06-01T19:07:58.656Z",
+      "publishedAt": "2026-06-01T16:18:17.000Z",
+      "title": "Evaluation models in auto for individual plans",
+      "url": "https://github.blog/changelog/2026-06-01-evaluation-models-in-auto-for-individual-plans",
+      "summary": "GitHub Copilot offers access to evaluation models for individual non-enterprise users, and these models may be served in Copilot auto model selection. To disable use of evaluation models through Copilot…\nThe post Evaluation models in auto for individual plans appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-05-29-updates-to-github-copilot-billing-and-plans",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-06-01T19:07:58.656Z",
+      "publishedAt": "2026-05-29T23:09:26.000Z",
+      "title": "Updates to GitHub Copilot billing and plans",
+      "url": "https://github.blog/changelog/2026-05-29-updates-to-github-copilot-billing-and-plans",
+      "summary": "As announced in our recent blog post, usage-based billing for GitHub Copilot is now live for all users and Copilot code review consumes GitHub Actions minutes, in addition to GitHub…\nThe post Updates to GitHub Copilot billing and plans appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
     {
       "eventId": "vscode-updates:d4dfb0231c39057edefa58ea5d77899b272da7c3d043c47623b66656e3496180",
       "sourceId": "vscode-updates",
@@ -102,6 +136,42 @@
       "sectionHeading": "GitHub Copilot moves to usage based billing",
       "sectionTitle": "Model costs in the model picker",
       "score": 4
+    },
+    {
+      "eventId": "vscode-updates:452439ecb13593a70ec2838bd58758046d39c49cb22e6694e821f6685e9c1456",
+      "sourceId": "vscode-updates",
+      "sourceName": "VS Code Updates",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-06-01T19:07:58.786Z",
+      "publishedAt": "2026-05-28T00:00:00.000Z",
+      "title": "VS Code Updates changed",
+      "url": "https://code.visualstudio.com/updates/",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [],
+        "additions": [
+          "@dgercho (David Gerschcovsky): Enable to filter search within changed files of source tree PR #314790"
+        ]
+      },
+      "headings": [
+        "Visual Studio Code 1.122",
+        "GitHub Copilot moves to usage based billing",
+        "Updated Copilot status dashboard",
+        "Model costs in the model picker",
+        "Agents",
+        "Agents Window (Preview)",
+        "Richer OpenTelemetry signals for agents",
+        "Sandboxing",
+        "Language Models",
+        "1M context window for Anthropic and OpenAI models",
+        "Use BYOK without a GitHub sign in",
+        "Custom Endpoint provider in Stable"
+      ],
+      "score": 2
     }
   ],
   "errors": []
