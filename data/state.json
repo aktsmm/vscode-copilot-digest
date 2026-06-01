@@ -78,10 +78,12 @@
         "https://github.blog/changelog/2026-04-08-github-mobile-research-and-code-with-copilot-cloud-agent-anywhere"
       ],
       "futureSeenIds": [],
-      "lastCheckedAt": "2026-06-01T19:07:58.656Z"
+      "lastCheckedAt": "2026-06-01T23:12:18.313Z"
     },
     "github-changelog-copilot": {
       "seenIds": [
+        "https://github.blog/changelog/2026-06-01-evaluation-models-in-auto-for-individual-plans",
+        "https://github.blog/changelog/2026-05-29-updates-to-github-copilot-billing-and-plans",
         "https://github.blog/changelog/2026-05-29-copilot-usage-metrics-api-adds-cohorts-for-ai-adoption",
         "https://github.blog/changelog/2026-05-28-claude-opus-4-8-is-generally-available-for-github-copilot",
         "https://github.blog/changelog/2026-05-26-copilot-memory-has-more-controls-for-deletion-scope-and-the-copilot-cli",
@@ -161,7 +163,7 @@
         "https://github.blog/changelog/2026-04-02-copilot-sdk-in-public-preview"
       ],
       "futureSeenIds": [],
-      "lastCheckedAt": "2026-06-01T19:07:58.674Z"
+      "lastCheckedAt": "2026-06-01T23:12:18.332Z"
     },
     "github-copilot-blog": {
       "seenIds": [
@@ -188,7 +190,7 @@
         "https://github.blog/?p=94179"
       ],
       "futureSeenIds": [],
-      "lastCheckedAt": "2026-06-01T19:07:58.696Z"
+      "lastCheckedAt": "2026-06-01T23:12:18.356Z"
     },
     "vscode-feed": {
       "seenIds": [
@@ -219,25 +221,25 @@
       "futureSeenIds": [
         "https://code.visualstudio.com/updates/v1_123"
       ],
-      "lastCheckedAt": "2026-06-01T19:07:58.731Z"
+      "lastCheckedAt": "2026-06-01T23:12:18.390Z"
     },
     "vscode-updates": {
       "releasePublishedAt": "2026-05-28T00:00:00.000Z",
       "releaseTitle": "Visual Studio Code 1.122",
       "snapshotHash": "452439ecb13593a70ec2838bd58758046d39c49cb22e6694e821f6685e9c1456",
-      "lastCheckedAt": "2026-06-01T19:07:58.789Z"
+      "lastCheckedAt": "2026-06-01T23:12:18.754Z"
     },
     "vscode-release-notes-1-109": {
       "releasePublishedAt": "2026-02-04T00:00:00.000Z",
       "releaseTitle": "January 2026 (version 1.109)",
       "snapshotHash": "0af748a11d1e08dd29517f8569eeeec9a6f10d230fff3d238f1d5670964d2af6",
-      "lastCheckedAt": "2026-06-01T19:07:58.942Z"
+      "lastCheckedAt": "2026-06-01T23:12:18.892Z"
     },
     "copilot-whats-new": {
-      "releasePublishedAt": "2026-06-01T19:07:59.229Z",
+      "releasePublishedAt": "2026-06-01T23:12:19.160Z",
       "releaseTitle": "Preview upcoming features for GitHub Copilot",
       "snapshotHash": "b420f1decd1c48516d66030e4292d9537371f69c4260aeb4b1a29975eb279571",
-      "lastCheckedAt": "2026-06-01T19:07:59.229Z"
+      "lastCheckedAt": "2026-06-01T23:12:19.160Z"
     },
     "publickey": {
       "seenIds": [
@@ -246,7 +248,7 @@
         "tag:www.publickey1.jp,2026://2.8527"
       ],
       "futureSeenIds": [],
-      "lastCheckedAt": "2026-06-01T19:08:00.098Z"
+      "lastCheckedAt": "2026-06-01T23:12:20.009Z"
     },
     "vscode-release-notes-1-115": {
       "sectionHashes": {
@@ -324,7 +326,7 @@
       "releasePublishedAt": "2026-05-06T00:00:00.000Z",
       "releaseTitle": "Visual Studio Code 1.119",
       "snapshotHash": "d17a1449a3f19443cfde6fb525d018e9e596b60bc329cda27cad3a67849851b6",
-      "lastCheckedAt": "2026-06-01T19:08:00.334Z"
+      "lastCheckedAt": "2026-06-01T23:12:20.728Z"
     },
     "vscode-release-notes-1-120": {
       "sectionHashes": {
@@ -336,7 +338,7 @@
       "releasePublishedAt": "2026-05-13T00:00:00.000Z",
       "releaseTitle": "Visual Studio Code 1.120",
       "snapshotHash": "ff7137afb80e6724cba5edcfff8afafc21f67a6068c93429a498f461194457da",
-      "lastCheckedAt": "2026-06-01T19:08:00.255Z"
+      "lastCheckedAt": "2026-06-01T23:12:20.654Z"
     },
     "vscode-release-notes-1-121": {
       "sectionHashes": {
@@ -348,13 +350,13 @@
       "releasePublishedAt": "2026-05-20T00:00:00.000Z",
       "releaseTitle": "Visual Studio Code 1.121",
       "snapshotHash": "eafb6273056bb0b1966df0b5bce86ae55238fe545dd18a0e5c51c0e4356b32b1",
-      "lastCheckedAt": "2026-06-01T19:08:00.174Z"
+      "lastCheckedAt": "2026-06-01T23:12:20.181Z"
     },
     "vscode-release-notes-1-122": {
       "releasePublishedAt": "2026-05-28T00:00:00.000Z",
       "releaseTitle": "Visual Studio Code 1.122",
       "snapshotHash": "452439ecb13593a70ec2838bd58758046d39c49cb22e6694e821f6685e9c1456",
-      "lastCheckedAt": "2026-06-01T19:08:00.137Z",
+      "lastCheckedAt": "2026-06-01T23:12:20.043Z",
       "sectionHashes": {
         "vscode-release-notes-1-122:GitHub Copilot moves to usage based billing:Updated Copilot status dashboard": "76b77667df1ff6824a217720f72c8ff3c2eba3810044e109f6865bb06cdae828",
         "vscode-release-notes-1-122:GitHub Copilot moves to usage based billing:Model costs in the model picker": "745ab2c2753f4280f75e1513135cb3facb9502048b4b5dc5e61495f2138d8021",

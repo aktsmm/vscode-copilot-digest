@@ -1,13 +1,12 @@
 {
   "date": "2026-06-01",
-  "generatedAt": "2026-06-01T19:08:00.336Z",
+  "generatedAt": "2026-06-01T23:12:20.730Z",
   "latestRun": {
-    "generatedAt": "2026-06-01T19:08:00.336Z",
-    "newEventsCount": 3,
+    "generatedAt": "2026-06-01T23:12:20.730Z",
+    "newEventsCount": 2,
     "newEventIds": [
-      "github-changelog:https://github.blog/changelog/2026-06-01-evaluation-models-in-auto-for-individual-plans",
-      "github-changelog:https://github.blog/changelog/2026-05-29-updates-to-github-copilot-billing-and-plans",
-      "vscode-updates:452439ecb13593a70ec2838bd58758046d39c49cb22e6694e821f6685e9c1456"
+      "github-changelog-copilot:https://github.blog/changelog/2026-06-01-evaluation-models-in-auto-for-individual-plans",
+      "github-changelog-copilot:https://github.blog/changelog/2026-05-29-updates-to-github-copilot-billing-and-plans"
     ],
     "errorCount": 0
   },
@@ -30,11 +29,45 @@
       "score": 4
     },
     {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-06-01-evaluation-models-in-auto-for-individual-plans",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-06-01T23:12:18.332Z",
+      "publishedAt": "2026-06-01T16:18:17.000Z",
+      "title": "Evaluation models in auto for individual plans",
+      "url": "https://github.blog/changelog/2026-06-01-evaluation-models-in-auto-for-individual-plans",
+      "summary": "GitHub Copilot offers access to evaluation models for individual non-enterprise users, and these models may be served in Copilot auto model selection. To disable use of evaluation models through Copilot…\nThe post Evaluation models in auto for individual plans appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
+    {
       "eventId": "github-changelog:https://github.blog/changelog/2026-05-29-updates-to-github-copilot-billing-and-plans",
       "sourceId": "github-changelog",
       "sourceName": "GitHub Changelog",
       "kind": "feed_entry",
       "detectedAt": "2026-06-01T19:07:58.656Z",
+      "publishedAt": "2026-05-29T23:09:26.000Z",
+      "title": "Updates to GitHub Copilot billing and plans",
+      "url": "https://github.blog/changelog/2026-05-29-updates-to-github-copilot-billing-and-plans",
+      "summary": "As announced in our recent blog post, usage-based billing for GitHub Copilot is now live for all users and Copilot code review consumes GitHub Actions minutes, in addition to GitHub…\nThe post Updates to GitHub Copilot billing and plans appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-05-29-updates-to-github-copilot-billing-and-plans",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-06-01T23:12:18.332Z",
       "publishedAt": "2026-05-29T23:09:26.000Z",
       "title": "Updates to GitHub Copilot billing and plans",
       "url": "https://github.blog/changelog/2026-05-29-updates-to-github-copilot-billing-and-plans",
