@@ -3,6 +3,16 @@
   "sources": {
     "github-changelog": {
       "seenIds": [
+        "https://github.blog/changelog/2026-07-01-expanded-technical-preview-availability-for-the-github-copilot-app",
+        "https://github.blog/changelog/2026-07-01-copilot-sdk-is-now-generally-available",
+        "https://github.blog/changelog/2026-07-01-copilot-cli-improved-ui-rubber-duck-prompt-scheduling-and-voice-input",
+        "https://github.blog/changelog/2026-07-01-cloud-and-local-sandboxes-for-github-copilot-now-in-public-preview",
+        "https://github.blog/changelog/2026-07-01-github-copilot-code-review-for-azure-repos-is-now-in-technical-preview",
+        "https://github.blog/changelog/2026-07-01-shape-copilot-code-review-around-your-team",
+        "https://github.blog/changelog/2026-07-01-extend-github-with-agent-apps",
+        "https://github.blog/changelog/2026-05-28-introducing-copilot-cli-and-agentic-capabilities-enhancements-in-jetbrains-ides",
+        "https://github.blog/changelog/2026-05-28-gemini-models-in-copilot-cli-cloud-agent-and-the-copilot-app",
+        "https://github.blog/changelog/2026-06-29-github-copilot-in-eclipse-byok-skills-and-chat-updates",
         "https://github.blog/changelog/2026-06-01-evaluation-models-in-auto-for-individual-plans",
         "https://github.blog/changelog/2026-05-29-updates-to-github-copilot-billing-and-plans",
         "https://github.blog/changelog/2026-05-29-copilot-usage-metrics-api-adds-cohorts-for-ai-adoption",
@@ -78,10 +88,20 @@
         "https://github.blog/changelog/2026-04-08-github-mobile-research-and-code-with-copilot-cloud-agent-anywhere"
       ],
       "futureSeenIds": [],
-      "lastCheckedAt": "2026-06-02T09:43:59.832Z"
+      "lastCheckedAt": "2026-06-02T17:52:09.046Z"
     },
     "github-changelog-copilot": {
       "seenIds": [
+        "https://github.blog/changelog/2026-07-01-expanded-technical-preview-availability-for-the-github-copilot-app",
+        "https://github.blog/changelog/2026-07-01-copilot-sdk-is-now-generally-available",
+        "https://github.blog/changelog/2026-07-01-copilot-cli-improved-ui-rubber-duck-prompt-scheduling-and-voice-input",
+        "https://github.blog/changelog/2026-07-01-cloud-and-local-sandboxes-for-github-copilot-now-in-public-preview",
+        "https://github.blog/changelog/2026-07-01-github-copilot-code-review-for-azure-repos-is-now-in-technical-preview",
+        "https://github.blog/changelog/2026-07-01-shape-copilot-code-review-around-your-team",
+        "https://github.blog/changelog/2026-07-01-extend-github-with-agent-apps",
+        "https://github.blog/changelog/2026-05-28-introducing-copilot-cli-and-agentic-capabilities-enhancements-in-jetbrains-ides",
+        "https://github.blog/changelog/2026-05-28-gemini-models-in-copilot-cli-cloud-agent-and-the-copilot-app",
+        "https://github.blog/changelog/2026-06-29-github-copilot-in-eclipse-byok-skills-and-chat-updates",
         "https://github.blog/changelog/2026-06-01-evaluation-models-in-auto-for-individual-plans",
         "https://github.blog/changelog/2026-05-29-updates-to-github-copilot-billing-and-plans",
         "https://github.blog/changelog/2026-05-29-copilot-usage-metrics-api-adds-cohorts-for-ai-adoption",
@@ -163,7 +183,7 @@
         "https://github.blog/changelog/2026-04-02-copilot-sdk-in-public-preview"
       ],
       "futureSeenIds": [],
-      "lastCheckedAt": "2026-06-02T09:44:00.131Z"
+      "lastCheckedAt": "2026-06-02T17:52:09.344Z"
     },
     "github-copilot-blog": {
       "seenIds": [
@@ -190,7 +210,7 @@
         "https://github.blog/?p=94179"
       ],
       "futureSeenIds": [],
-      "lastCheckedAt": "2026-06-02T09:44:00.172Z"
+      "lastCheckedAt": "2026-06-02T17:52:09.369Z"
     },
     "vscode-feed": {
       "seenIds": [
@@ -221,25 +241,25 @@
       "futureSeenIds": [
         "https://code.visualstudio.com/updates/v1_123"
       ],
-      "lastCheckedAt": "2026-06-02T09:44:00.208Z"
+      "lastCheckedAt": "2026-06-02T17:52:09.396Z"
     },
     "vscode-updates": {
       "releasePublishedAt": "2026-05-28T00:00:00.000Z",
       "releaseTitle": "Visual Studio Code 1.122",
       "snapshotHash": "452439ecb13593a70ec2838bd58758046d39c49cb22e6694e821f6685e9c1456",
-      "lastCheckedAt": "2026-06-02T09:44:00.409Z"
+      "lastCheckedAt": "2026-06-02T17:52:09.559Z"
     },
     "vscode-release-notes-1-109": {
       "releasePublishedAt": "2026-02-04T00:00:00.000Z",
       "releaseTitle": "January 2026 (version 1.109)",
       "snapshotHash": "0af748a11d1e08dd29517f8569eeeec9a6f10d230fff3d238f1d5670964d2af6",
-      "lastCheckedAt": "2026-06-02T09:44:00.732Z"
+      "lastCheckedAt": "2026-06-02T17:52:10.077Z"
     },
     "copilot-whats-new": {
-      "releasePublishedAt": "2026-06-02T09:44:01.139Z",
+      "releasePublishedAt": "2026-06-02T17:52:10.532Z",
       "releaseTitle": "Preview upcoming features for GitHub Copilot",
       "snapshotHash": "b420f1decd1c48516d66030e4292d9537371f69c4260aeb4b1a29975eb279571",
-      "lastCheckedAt": "2026-06-02T09:44:01.139Z"
+      "lastCheckedAt": "2026-06-02T17:52:10.532Z"
     },
     "publickey": {
       "seenIds": [
@@ -248,7 +268,7 @@
         "tag:www.publickey1.jp,2026://2.8527"
       ],
       "futureSeenIds": [],
-      "lastCheckedAt": "2026-06-02T09:44:01.760Z"
+      "lastCheckedAt": "2026-06-02T17:52:11.045Z"
     },
     "vscode-release-notes-1-115": {
       "sectionHashes": {
@@ -326,7 +346,7 @@
       "releasePublishedAt": "2026-05-06T00:00:00.000Z",
       "releaseTitle": "Visual Studio Code 1.119",
       "snapshotHash": "d17a1449a3f19443cfde6fb525d018e9e596b60bc329cda27cad3a67849851b6",
-      "lastCheckedAt": "2026-06-02T09:44:02.450Z"
+      "lastCheckedAt": "2026-06-02T17:52:11.843Z"
     },
     "vscode-release-notes-1-120": {
       "sectionHashes": {
@@ -338,7 +358,7 @@
       "releasePublishedAt": "2026-05-13T00:00:00.000Z",
       "releaseTitle": "Visual Studio Code 1.120",
       "snapshotHash": "ff7137afb80e6724cba5edcfff8afafc21f67a6068c93429a498f461194457da",
-      "lastCheckedAt": "2026-06-02T09:44:02.263Z"
+      "lastCheckedAt": "2026-06-02T17:52:11.381Z"
     },
     "vscode-release-notes-1-121": {
       "sectionHashes": {
@@ -350,13 +370,13 @@
       "releasePublishedAt": "2026-05-20T00:00:00.000Z",
       "releaseTitle": "Visual Studio Code 1.121",
       "snapshotHash": "eafb6273056bb0b1966df0b5bce86ae55238fe545dd18a0e5c51c0e4356b32b1",
-      "lastCheckedAt": "2026-06-02T09:44:01.982Z"
+      "lastCheckedAt": "2026-06-02T17:52:11.116Z"
     },
     "vscode-release-notes-1-122": {
       "releasePublishedAt": "2026-05-28T00:00:00.000Z",
       "releaseTitle": "Visual Studio Code 1.122",
       "snapshotHash": "452439ecb13593a70ec2838bd58758046d39c49cb22e6694e821f6685e9c1456",
-      "lastCheckedAt": "2026-06-02T09:44:01.803Z",
+      "lastCheckedAt": "2026-06-02T17:52:11.078Z",
       "sectionHashes": {
         "vscode-release-notes-1-122:GitHub Copilot moves to usage based billing:Updated Copilot status dashboard": "76b77667df1ff6824a217720f72c8ff3c2eba3810044e109f6865bb06cdae828",
         "vscode-release-notes-1-122:GitHub Copilot moves to usage based billing:Model costs in the model picker": "745ab2c2753f4280f75e1513135cb3facb9502048b4b5dc5e61495f2138d8021",
