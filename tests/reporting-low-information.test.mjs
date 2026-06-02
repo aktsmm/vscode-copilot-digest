@@ -86,10 +86,10 @@ for (const event of unknownSamples) {
   assertNoLowInformationFallback(importanceReason(event), event.title);
 }
 
-for (const file of [
-  "data/events/2026-05-26.json",
-  "data/events/2026-06-01.json",
-]) {
+for (const file of fs
+  .readdirSync("data/events")
+  .filter((name) => /^\d{4}-\d{2}-\d{2}\.json$/.test(name))
+  .map((name) => `data/events/${name}`)) {
   const eventLog = JSON.parse(fs.readFileSync(file, "utf8"));
   const digest = buildDailyDigest(eventLog);
   const generatedText = [
@@ -104,6 +104,13 @@ for (const file of [
   ].join("\n");
 
   assertNoLowInformationFallback(generatedText, file);
+}
+
+for (const file of fs
+  .readdirSync("summaries/daily")
+  .filter((name) => /^\d{4}-\d{2}-\d{2}\.md$/.test(name))
+  .map((name) => `summaries/daily/${name}`)) {
+  assertNoLowInformationFallback(fs.readFileSync(file, "utf8"), file);
 }
 
 function assertNoLowInformationFallback(text, context) {

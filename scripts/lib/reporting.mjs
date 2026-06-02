@@ -2174,38 +2174,45 @@ function summaryFromPatterns(event, locale = "ja") {
   }
 
   if (/copilot cli/i.test(text)) {
+    const cliFallback = (topic) =>
+      summaryLeadJa
+        ? `${topic}。${summaryLeadJa}`
+        : summaryLeadEnJa
+          ? `${topic}。${summaryLeadEnJa}`
+          : `${topic}。${localizedTitle(event)} を CLI 運用への影響候補として追跡している。`;
+
     if (/agent/i.test(text)) {
       return locale === "ja"
-        ? "Copilot CLI の agent 機能に関する更新。タスク自動化や agent ワークフローを CLI から扱う運用では確認しておきたい。"
+        ? cliFallback("Copilot CLI の agent 機能に関する更新")
         : "An update about Copilot CLI agent capabilities, useful for those building agentic workflows from the terminal.";
     }
     if (/mcp/i.test(text)) {
       return locale === "ja"
-        ? "Copilot CLI への MCP 対応に関する更新。外部ツール・サービスの CLI 統合で接続パターンが変わる可能性がある。"
+        ? cliFallback("Copilot CLI への MCP 対応に関する更新")
         : "An update covering MCP integration for Copilot CLI, which may affect how external tools and services connect to CLI workflows.";
     }
     if (/session/i.test(text)) {
       return locale === "ja"
-        ? "Copilot CLI のセッション管理に関する更新。長時間の対話や複数の context を扱う運用では確認しておきたい。"
+        ? cliFallback("Copilot CLI のセッション管理に関する更新")
         : "An update about session management in Copilot CLI, worth reviewing if you work with long-running or context-heavy interactions.";
     }
     if (/model/i.test(text)) {
       return locale === "ja"
-        ? "Copilot CLI でのモデル選択や切り替えに関する更新。用途に応じたモデルの使い分けが変わる可能性がある。"
+        ? cliFallback("Copilot CLI でのモデル選択や切り替えに関する更新")
         : "An update about model selection or switching in Copilot CLI, which may change how you choose models for different tasks.";
     }
     if (/install|setup|upgrade/i.test(text)) {
       return locale === "ja"
-        ? "Copilot CLI のインストール・セットアップに関する更新。初期導入やアップグレードパスに確認を。"
+        ? cliFallback("Copilot CLI のインストール・セットアップに関する更新")
         : "An update about installing or setting up Copilot CLI, worth checking if you are onboarding or upgrading.";
     }
     if (/command/i.test(text)) {
       return locale === "ja"
-        ? "Copilot CLI のコマンドや使用法に関する更新。ターミナルでの日々の使い方に関連する変更を含む可能性あり。"
+        ? cliFallback("Copilot CLI のコマンドや使用法に関する更新")
         : "An update about Copilot CLI commands and usage patterns, worth reviewing for day-to-day terminal workflows.";
     }
     return locale === "ja"
-      ? "GitHub Copilot CLI の更新。CLI を実用している層はターミナル操作や自動化フローへの確認を。"
+      ? cliFallback("GitHub Copilot CLI の更新")
       : "An update about GitHub Copilot CLI capabilities and workflows for terminal-heavy usage.";
   }
 
