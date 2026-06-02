@@ -87,6 +87,12 @@ Pages 生成:
 npm run build:pages
 ```
 
+低情報 fallback guard:
+
+```bash
+npm test
+```
+
 隔週ドラフト生成:
 
 ```bash

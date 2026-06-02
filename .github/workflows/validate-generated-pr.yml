@@ -126,6 +126,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Validate low-information fallback guard
+        run: npm test
+
       - name: Validate collect command
         run: npm run collect
 

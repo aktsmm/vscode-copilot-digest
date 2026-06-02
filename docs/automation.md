@@ -38,6 +38,7 @@
 
 - [author-digest-pr.yml](../.github/workflows/author-digest-pr.yml) は collect 成功後に、対象日付とスコープを決めて執筆依頼 Issue を作成または更新する
 - `latestRun.newEventsCount` が 0 でも、日次 summary に generic fallback や低情報のカテゴリ要約が残っている日は執筆依頼 Issue を起票して本文補正と `reporting.mjs` 更新を促す
+- 低情報 fallback の検出 marker は [scripts/lib/reporting.mjs](../scripts/lib/reporting.mjs) の `lowInformationFallbackMarkers` を SSOT とし、Pages build と authoring workflow の両方から参照する。marker を増減した場合は `npm test` で同期と未知タイトル fallback を確認する
 - Issue 本文には、対象ファイル、文章ルール、変更許可範囲、PR タイトル規則、検証要件が埋め込まれる
 - workflow は GraphQL で Copilot actor を解決し、Issue assignment まで自動化する
 - Copilot cloud agent は、その Issue から日次本文、週間 / 隔週ドラフト、必要な対訳更新を含む PR を作成する
@@ -104,7 +105,7 @@ GitHub hosted runner の Node 20 deprecation warning に合わせて主要 actio
 - `gh workflow run test-discord-notification.yml -f date_key=YYYY-MM-DD`
 - `gh workflow run deploy-pages.yml`
 - `node scripts/notify-discord.mjs --mode weekly --date YYYY-MM-DD --window-days 7 --dry-run --force-preview`
-	- dry-run JSON の `content` と `embeds` を確認する。読みやすさ guard が文字数超過、ASCII `...`、長すぎる非 URL 行を検出する。
+  - dry-run JSON の `content` と `embeds` を確認する。読みやすさ guard が文字数超過、ASCII `...`、長すぎる非 URL 行を検出する。
 
 ## まず見るべき確認ポイント
 

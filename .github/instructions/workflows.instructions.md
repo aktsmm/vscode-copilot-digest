@@ -1,4 +1,5 @@
 ---
+description: "GitHub Actions workflow 変更時の検証、生成データ、安全なスケジュール表現のルール"
 applyTo: ".github/workflows/**/*.yml"
 ---
 

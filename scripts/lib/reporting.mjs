@@ -39,6 +39,25 @@ const monthMap = {
   December: "12月",
 };
 
+export const lowInformationFallbackMarkers = [
+  "GitHub Copilot 関連の更新。運用や導入判断に関わる変更点を原文で確認しておきたい。",
+  "Visual Studio Code 関連の更新。原文で確認しておきたい。",
+  "英語ソースの更新。公開内容の変化や運用への影響を原文で確認しておきたい。",
+  "に関する release note 更新。開発フローや agent 体験に関わる変更点を個別セクションとして拾っている。",
+  "新機能が実際の利用候補に入ったことを示す更新です。",
+  "既存ワークフローの制約や手間を減らす方向の更新です。",
+  "継続ウォッチ対象として押さえておきたい更新です。",
+  "試用段階を越えて、本番運用の候補として見やすくなった更新です。",
+  "Copilot CLI の agent 機能に関する更新。タスク自動化や agent ワークフローを CLI から扱う運用では確認しておきたい。",
+  "Copilot CLI への MCP 対応に関する更新。外部ツール・サービスの CLI 統合で接続パターンが変わる可能性がある。",
+  "Copilot CLI のセッション管理に関する更新。長時間の対話や複数の context を扱う運用では確認しておきたい。",
+  "Copilot CLI でのモデル選択や切り替えに関する更新。用途に応じたモデルの使い分けが変わる可能性がある。",
+  "Copilot CLI のインストール・セットアップに関する更新。初期導入やアップグレードパスに確認を。",
+  "Copilot CLI のコマンドや使用法に関する更新。ターミナルでの日々の使い方に関連する変更を含む可能性あり。",
+  "GitHub Copilot CLI の更新。CLI を実用している層はターミナル操作や自動化フローへの確認を。",
+  "GitHub Copilot code review 関連の更新。レビュー自動化や品質改善への影響を確認しておきたい。",
+];
+
 const vscodeReleaseSummaries = {
   1.123: {
     ja: "Visual Studio Code 1.123 の release note 予告ページ。正式公開前のため、通常ハイライトには混ぜず、次回 release の監視対象として扱う。",
@@ -624,34 +643,6 @@ const exactSummaryMappings = {
     ja: "Claude agent に Auto 権限モードがプレビューで追加された。Auto モードでは tool 使用の承認を自動化でき、介入なしで長時間の agent タスクを進めやすくなる。",
     en: "Claude agent now has an Auto permission mode in preview. With Auto enabled, the agent can use tools without per-action approval, making it practical to run longer tasks without interruption.",
   },
-  "Visual Studio Code 1.122: Agents Window (Preview)": {
-    ja: "Agents ウィンドウで session list の hover details が追加され、harness、project、worktree、変更ファイルを一目で確認できるようになった。Insiders では local VS Code harness の custom agent picker も継続改善されている。",
-    en: "The Agents window now shows richer session hover details, including harness, project, worktree, and changed files. Insiders also continues to improve the local VS Code harness and custom agent picker.",
-  },
-  "Visual Studio Code 1.122: Richer OpenTelemetry signals for agents": {
-    ja: "local agent session が `github.copilot.*` の OpenTelemetry 属性 namespace を出すようになり、repository context、agent type、tool parameters、hook outcomes まで trace に載せられるようになった。Copilot CLI と近い形式で agent usage を監視しやすくなる。",
-    en: "Local agent sessions now emit a `github.copilot.*` OpenTelemetry attribute namespace with repository context, agent type, structured tool parameters, and hook outcomes, aligning more closely with Copilot CLI telemetry conventions.",
-  },
-  "Visual Studio Code 1.122: Sandboxing": {
-    ja: "Bypass Approvals や Autopilot mode の command 実行で、sandbox 失敗時に自動で sandbox 外へ再試行する挙動が変わった。組織管理の sandbox 設定を前提に、agent 実行の失敗時 recovery と安全境界を見直す必要がある。",
-    en: "Command execution in Bypass Approvals or Autopilot mode changed how it handles failures after an initial sandbox attempt. Teams should revisit recovery expectations and safety boundaries around organization-managed sandbox settings.",
-  },
-  "Visual Studio Code 1.122: Use BYOK without a GitHub sign in": {
-    ja: "VS Code の BYOK が GitHub sign-in なしで使えるようになり、GitHub へ接続できない air-gapped / restricted environment でも chat、tools、MCP servers、Ollama などの local model を組み合わせやすくなった。",
-    en: "BYOK in VS Code can now be used without GitHub sign-in, making it easier to combine chat, tools, MCP servers, and local models such as Ollama in air-gapped or restricted environments.",
-  },
-  "Claude Opus 4.8 is generally available for GitHub Copilot": {
-    ja: "Anthropic の Opus 4.8 が GitHub Copilot で一般提供になった。コード理解と生成の改善が案内されており、より高い推論力を使うタスクでモデル選択の候補に入れやすくなる。",
-    en: "Anthropic's Opus 4.8 is now generally available in GitHub Copilot, with GitHub highlighting improvements in code understanding and generation for tasks that benefit from a stronger reasoning model.",
-  },
-  "Copilot usage metrics API adds cohorts for AI adoption": {
-    ja: "Copilot usage metrics API が engaged user を AI adoption cohort に分類できるようになった。単なる active user 数だけでなく、どの使われ方が広がっているかを enterprise / organization の定着分析で追いやすくなる。",
-    en: "The Copilot usage metrics API now classifies engaged users into AI adoption cohorts, helping enterprise and organization reports tell not just who is active, but how Copilot usage is spreading.",
-  },
-  "Target Copilot models to organizations with model rules": {
-    ja: "enterprise model rules で、特定の Copilot model を利用できる organization を対象指定できるようになった。組織ごとの rollout、モデル統制、コスト管理を同じ enterprise 配下で分けやすくなる。",
-    en: "Enterprise model rules can now target specific organizations, letting admins roll out Copilot models, governance, and cost controls differently across organizations under the same enterprise.",
-  },
   "Copilot usage metrics reports now use GitHub-owned download URLs": {
     ja: "Copilot usage metrics レポートのダウンロード URL が Azure Front Door ドメインから GitHub 所有のカスタムドメインへの移行が完了した。URL の安定性向上を目的とした変更で、既存の automation やスクリプトで旧 URL を参照している場合は新 URL への切り替えが必要になる。",
     en: "Download URLs for Copilot usage metrics reports have completed migration from Azure Front Door domains to a stable, GitHub-owned custom domain. Any existing automation or scripts referencing the old URLs must be updated to avoid breakage.",
@@ -660,6 +651,18 @@ const exactSummaryMappings = {
     ja: "Copilot usage metrics API に adoption cohort が追加された。導入時期や利用開始のまとまりを切り口に、組織内の Copilot 定着状況を追いやすくなる。",
     en: "The Copilot usage metrics API now includes adoption cohorts, making it easier to analyze Copilot rollout and adoption patterns across an organization.",
   },
+  "Evaluation models in auto for individual plans": {
+    ja: "個人向けの非 Enterprise プランで、Copilot の Auto model selection に evaluation model が含まれるようになった。Auto を使う場合、応答に使われるモデル候補の前提を確認しておきたい更新。",
+    en: "Evaluation models can now be served through Copilot auto model selection for individual non-enterprise users, making the model-routing assumptions behind Auto worth checking.",
+  },
+  "Updates to GitHub Copilot billing and plans": {
+    ja: "GitHub Copilot の従量課金が全ユーザー向けに有効化され、Copilot code review も GitHub Actions minutes を消費するようになった。利用量とレビュー自動化のコスト前提を見直す必要がある。",
+    en: "Usage-based billing for GitHub Copilot is now live for all users, and Copilot code review consumes GitHub Actions minutes, making usage and review-automation costs worth reviewing.",
+  },
+  "Copilot Memory has more controls for deletion, scope, and the Copilot CLI": {
+    ja: "Copilot Memory で memory 削除の制御が改善され、repository 単位の無効化と Copilot CLI からの追加制御が入った。記憶させる範囲と消し方を運用ポリシーに合わせやすくなる。",
+    en: "Copilot Memory now adds improved deletion controls, a repository-level off switch, and more controls in Copilot CLI, making memory scope and cleanup easier to align with policy.",
+  },
   "Claude Opus 4.8 is generally available for GitHub Copilot": {
     ja: "Claude Opus 4.8 が GitHub Copilot で一般提供になった。preview 前提ではなく、通常のモデル選択肢として評価・利用計画に入れやすくなる。",
     en: "Claude Opus 4.8 is now generally available in GitHub Copilot, moving it from preview evaluation into a more regular model option for rollout planning.",
@@ -667,6 +670,14 @@ const exactSummaryMappings = {
   "Target Copilot models to organizations with model rules": {
     ja: "model rules で Copilot のモデルを organization ごとに割り当てられるようになった。組織単位のポリシーや用途に合わせて、利用可能モデルをより細かく制御できる。",
     en: "Model rules can now target Copilot models to specific organizations, giving administrators finer control over which models are available for each organizational context.",
+  },
+  "Visual Studio Code 1.122: Updated Copilot status dashboard": {
+    ja: "Copilot status dashboard が usage-based billing に対応し、AI credits の消費状況を確認できるようになった。Copilot 利用量を日常的に監視しやすくなる。",
+    en: "The Copilot status dashboard now reflects usage-based billing and shows AI credits consumption, making day-to-day Copilot usage monitoring easier.",
+  },
+  "Visual Studio Code 1.122: Model costs in the model picker": {
+    ja: "VS Code の model picker に cost information が表示されるようになった。モデルごとの token cost、capability、context size を見ながら、用途に合うモデルを選びやすくなる。",
+    en: "The VS Code model picker now shows cost information, helping users compare token costs, capabilities, and context sizes before choosing a model.",
   },
   "Visual Studio Code 1.122: Agents Window (Preview)": {
     ja: "Agents Window が preview として入り、agent 作業を通常の editor workspace から分けた専用画面で扱えるようになった。複数 agent や複数 repository の作業を見通しやすくする変更。",
@@ -695,41 +706,9 @@ const exactSummaryMappings = {
 };
 
 const exactImportanceMappings = {
-  "Copilot usage metrics API adds cohorts for AI adoption": {
-    ja: "cohort 単位で採用状況を追えるため、単なる利用総数では見えにくい rollout の進み方や定着施策の効果を分析しやすくなります。",
-    en: "Cohort-level reporting makes rollout progress and enablement impact easier to analyze than aggregate usage totals alone.",
-  },
-  "Claude Opus 4.8 is generally available for GitHub Copilot": {
-    ja: "GA になったことで、preview 前提の検証から通常運用でのモデル選択・評価へ移しやすくなります。",
-    en: "General availability makes it easier to move from preview evaluation to regular model selection and rollout planning.",
-  },
-  "Target Copilot models to organizations with model rules": {
-    ja: "organization ごとにモデル利用を制御できるため、部門別のリスク許容度や用途に合わせた model governance を組みやすくなります。",
-    en: "Organization-targeted model rules make model governance more practical when teams have different risk profiles or usage needs.",
-  },
   "Visual Studio Code 1.123": {
     ja: "未来日付の release note 導線として検知しておくことで、正式公開時の差分確認とハイライト作成に早く着手できます。",
     en: "Tracking this future release entry makes it easier to review differences and prepare highlights once the release is officially published.",
-  },
-  "Visual Studio Code 1.122": {
-    ja: "agent の作業面、観測性、sandbox、BYOK の扱いがまとまって進んでおり、VS Code で agent を運用する前提に直接効く release です。",
-    en: "This release matters for teams operating agents in VS Code because it advances the agent work surface, observability, sandboxing, and BYOK usage together.",
-  },
-  "Visual Studio Code 1.122: Agents Window (Preview)": {
-    ja: "agent 作業を専用画面へ分けられるため、通常の編集作業と長めの agent セッションを並行して扱いやすくなります。",
-    en: "A dedicated agent surface makes it easier to keep longer agent sessions visible without disrupting normal editing work.",
-  },
-  "Visual Studio Code 1.122: Richer OpenTelemetry signals for agents": {
-    ja: "agent の実行状況を telemetry で追いやすくなり、失敗調査や運用品質の可視化に直接つながります。",
-    en: "Richer telemetry directly improves investigation and operational visibility for agent execution.",
-  },
-  "Visual Studio Code 1.122: Sandboxing": {
-    ja: "agent に任せる範囲を広げるほど隔離と権限設計が重要になるため、実運用時の安全策を確認する材料になります。",
-    en: "Sandboxing is central to safely expanding agent delegation, so these changes are important for operational guardrails.",
-  },
-  "Visual Studio Code 1.122: Use BYOK without a GitHub sign in": {
-    ja: "GitHub sign-in を前提にしない BYOK 検証ができるため、制約のある環境でのモデル接続確認が進めやすくなります。",
-    en: "BYOK without GitHub sign-in makes custom model evaluation easier in constrained environments.",
   },
   "Visual Studio Code 1.114: Preview videos in the image carousel": {
     ja: "画像だけでなく動画添付の確認まで chat 内で閉じられるので、レビューや調査の往復を減らしやすい更新です。",
@@ -780,10 +759,6 @@ const exactImportanceMappings = {
     ja: "agent 運用、BYOK、browser testing の複数面に効く release なので、開発環境と統制要件の両方で確認したい更新です。",
     en: "This release matters across agent operations, BYOK, and browser testing, so it should be checked against both developer workflows and governance requirements.",
   },
-  "Visual Studio Code 1.117": {
-    ja: "BYOK、chat 応答描画、Agent Sessions、background terminal 通知がまとまっており、agent を日常運用へ寄せる上で確認したい release です。",
-    en: "This release is worth checking for day-to-day agent operations because it combines BYOK, chat rendering, Agent Sessions, and background terminal notifications.",
-  },
   "Visual Studio Code 1.122: Agents Window (Preview)": {
     ja: "複数 session の状態確認が速くなり、agent 作業の review や引き継ぎで迷子になりにくくなります。",
     en: "This makes multi-session agent work easier to review and hand off because the session context is visible before opening it.",
@@ -808,9 +783,29 @@ const exactImportanceMappings = {
     ja: "active user 数だけでは見えない採用段階を cohort として追えるため、展開施策や enablement の打ち手を絞り込みやすくなります。",
     en: "This helps teams tune rollout and enablement work because adoption cohorts reveal more than active-user counts alone.",
   },
+  "Evaluation models in auto for individual plans": {
+    ja: "Auto model selection の候補に evaluation model が入るため、個人利用でもモデル選定の透明性と無効化方針を確認しておきたい更新です。",
+    en: "Because evaluation models can enter Auto routing for individual plans, users should review model-selection transparency and their disablement options.",
+  },
+  "Updates to GitHub Copilot billing and plans": {
+    ja: "従量課金と Actions minutes 消費の前提が変わるため、Copilot code review を含む自動化の利用量と予算影響を早めに確認する必要があります。",
+    en: "This changes billing and Actions-minute assumptions, so teams should review usage and budget impact for Copilot automation including code review.",
+  },
+  "Copilot Memory has more controls for deletion, scope, and the Copilot CLI": {
+    ja: "memory の削除、repository 単位の無効化、CLI からの制御を整理できるため、情報保持ポリシーに合わせた Copilot Memory 運用を設計しやすくなります。",
+    en: "Deletion, repository-level disablement, and CLI controls make it easier to align Copilot Memory with information-retention policy.",
+  },
   "Target Copilot models to organizations with model rules": {
     ja: "enterprise 配下の組織ごとにモデル展開を分けられるため、先行導入、制限付き展開、コスト統制を同じ policy 運用で扱いやすくなります。",
     en: "This makes staged rollout, restricted access, and cost governance easier to manage through model rules across organizations.",
+  },
+  "Visual Studio Code 1.122: Updated Copilot status dashboard": {
+    ja: "AI credits 消費を status dashboard で見られるため、従量課金移行後の利用量監視と説明がしやすくなります。",
+    en: "AI credits visibility in the status dashboard makes usage monitoring and explanation easier after the move to usage-based billing.",
+  },
+  "Visual Studio Code 1.122: Model costs in the model picker": {
+    ja: "モデル選択時に cost information を見られるため、品質、context size、コストのバランスを利用者自身が判断しやすくなります。",
+    en: "Cost information in the model picker helps users balance quality, context size, and cost at selection time.",
   },
   "Copilot usage metrics now identify active and passive Copilot code review users":
     {
@@ -855,11 +850,6 @@ const exactImportanceMappings = {
     ja: "モデル選択を Auto に委ねる運用が可能になり、可用性と品質のバランスを取りつつモデル運用負荷を下げやすくなる更新です。",
     en: "This reduces model-management overhead by allowing Auto routing while balancing availability and output quality.",
   },
-  "Introducing Copilot CLI agent and unified sessions view in GitHub Copilot for JetBrains IDEs":
-    {
-      ja: "JetBrains でも Copilot CLI agent と統合セッション管理が使えるようになり、IDE 間で agent 運用をそろえやすくなります。",
-      en: "This brings Copilot CLI agent workflows and unified session management into JetBrains IDEs, improving cross-IDE operational consistency.",
-    },
   "Team-level Copilot usage metrics now available via API": {
     ja: "チーム単位で Copilot 利用状況を分析できるため、配布方針や有効化施策を組織運用に合わせて見直しやすくなります。",
     en: "This improves organizational governance by enabling team-level Copilot adoption and usage analysis through the API.",
@@ -953,10 +943,6 @@ const exactImportanceMappings = {
   "The era of “AI as text” is over. Execution is the new interface.": {
     ja: "AI を実行主体として扱う設計思想を整理していて、SDK や tool integration をどう位置づけるかの理解に効きます。",
     en: "This matters because it gives a sharper conceptual model for treating AI as an execution layer, which influences how teams evaluate SDKs and tool integrations.",
-  },
-  "60 million Copilot code reviews and counting": {
-    ja: "code review の利用規模がどこまで来ているかの指標で、レビュー自動化を導入判断する際の材料になります。",
-    en: "This is useful as an adoption signal for teams deciding how seriously to treat AI-assisted code review in their own engineering process.",
   },
   "Join or host a GitHub Copilot Dev Days event near you": {
     ja: "単なる告知ではなく、学習機会や社内展開の場を増やせるので、enablement の観点で意味があります。",
@@ -1512,6 +1498,15 @@ function summaryLead(summary, maxLength = 220) {
   return trimText(lead, maxLength);
 }
 
+function englishLeadForJapanese(summary, maxLength = 240) {
+  const lead = summaryLead(summary, maxLength);
+  if (!lead || containsJapanese(lead)) {
+    return "";
+  }
+
+  return `英語 summary では「${lead}」と説明されている。`;
+}
+
 function joinedHeadings(event, limit = 3) {
   return normalizeArray([
     ...(event.diffSummary?.headings ?? []),
@@ -1913,6 +1908,7 @@ function summaryFromPatterns(event, locale = "ja") {
   );
   const summaryLeadJa =
     summaryLeadText && containsJapanese(summaryLeadText) ? summaryLeadText : "";
+  const summaryLeadEnJa = englishLeadForJapanese(event.summary, 260);
 
   if (version && vscodeReleaseSummaries[version]) {
     return vscodeReleaseSummaries[version][locale];
@@ -2038,7 +2034,9 @@ function summaryFromPatterns(event, locale = "ja") {
     if (locale === "ja") {
       return summaryLeadJa
         ? `${sectionTitle} に関する release note 更新。${summaryLeadJa}`
-        : `${sectionTitle} に関する release note 更新。開発フローや agent 体験に関わる変更点を個別セクションとして拾っている。`;
+        : summaryLeadEnJa
+          ? `${sectionTitle} に関する release note 更新。${summaryLeadEnJa}`
+          : `${sectionTitle} に関する release note 更新。該当 section の内容を個別に追跡している。`;
     }
 
     return summaryLeadText
@@ -2219,7 +2217,11 @@ function summaryFromPatterns(event, locale = "ja") {
 
   if (/code review/i.test(text)) {
     return locale === "ja"
-      ? "GitHub Copilot code review 関連の更新。レビュー自動化や品質改善への影響を確認しておきたい。"
+      ? summaryLeadJa
+        ? `GitHub Copilot code review 関連の更新。${summaryLeadJa}`
+        : summaryLeadEnJa
+          ? `GitHub Copilot code review 関連の更新。${summaryLeadEnJa}`
+          : `GitHub Copilot code review 関連の更新。${localizedTitle(event)} によるレビュー運用への影響を追跡している。`
       : "An update related to GitHub Copilot code review and its impact on review automation and quality workflows.";
   }
 
@@ -2233,7 +2235,9 @@ function summaryFromPatterns(event, locale = "ja") {
     return locale === "ja"
       ? summaryLeadJa
         ? `GitHub Copilot 関連の更新。${summaryLeadJa}`
-        : "GitHub Copilot 関連の更新。運用や導入判断に関わる変更点を原文で確認しておきたい。"
+        : summaryLeadEnJa
+          ? `GitHub Copilot 関連の更新。${summaryLeadEnJa}`
+          : `GitHub Copilot 関連の更新。${localizedTitle(event)} を運用影響の候補として追跡している。`
       : "A GitHub Copilot update that should be reviewed for its impact on usage and operations.";
   }
 
@@ -2248,7 +2252,9 @@ function summaryFromPatterns(event, locale = "ja") {
   return locale === "ja"
     ? summaryLeadJa
       ? `英語ソースの更新。${summaryLeadJa}`
-      : "英語ソースの更新。公開内容の変化や運用への影響を原文で確認しておきたい。"
+      : summaryLeadEnJa
+        ? `英語ソースの更新。${summaryLeadEnJa}`
+        : `英語ソースの更新。${localizedTitle(event)} を継続監視対象として記録している。`
     : trimmedEnglishSummary(
         cleanedSummary || "English-language update from a tracked source.",
       );
@@ -2986,34 +2992,35 @@ export function importanceReason(event, locale = "ja") {
   }
 
   const label = importanceLabel(event);
+  const displayTitle = trimText(localizedTitle(event, locale), 84);
 
   if (label === "Retired") {
     return locale === "ja"
-      ? "既存の設定や利用モデルの見直しが必要になりやすい更新です。"
+      ? `「${displayTitle}」の廃止・移行に関わるため、既存の設定や利用モデルへの影響を確認したい更新です。`
       : "This update is likely to require changes to existing model choices or workflows.";
   }
 
   if (label === "GA") {
     return locale === "ja"
-      ? "試用段階を越えて、本番運用の候補として見やすくなった更新です。"
+      ? `「${displayTitle}」が GA として扱える段階になったため、本番運用や社内案内の候補に入れやすくなります。`
       : "This feature has moved beyond preview and is now easier to treat as production-ready.";
   }
 
   if (label === "Release") {
     return locale === "ja"
-      ? "新機能が実際の利用候補に入ったことを示す更新です。"
+      ? `「${displayTitle}」がリリースされたため、対象プランや設定で利用・影響確認を進めやすくなります。`
       : "This indicates newly shipped capabilities that may be ready for immediate evaluation.";
   }
 
   if (label === "Preview") {
     return locale === "ja"
-      ? "早めに検証して運用適合を判断しやすい更新です。"
+      ? `「${displayTitle}」を早期検証できるため、正式利用前に運用適合や制約を確認しやすくなります。`
       : "This is worth validating early so you can decide whether it fits your workflow.";
   }
 
   if (label === "Improvement") {
     return locale === "ja"
-      ? "既存ワークフローの制約や手間を減らす方向の更新です。"
+      ? `「${displayTitle}」により、既存ワークフローの制約や手間を減らせるか確認したい更新です。`
       : "This tends to reduce friction or constraints in an existing workflow.";
   }
 

@@ -54,6 +54,7 @@ jobs:
           script: |
             const fs = require('fs');
             const path = require('path');
+            const { pathToFileURL } = require('url');
 
             const eventsDir = path.join(process.env.GITHUB_WORKSPACE, 'data', 'events');
             const files = fs.readdirSync(eventsDir)
@@ -101,24 +102,19 @@ jobs:
               return;
             }
 
-            const lowInformationSummaryMarkers = [
-              'GitHub Copilot 関連の更新。運用や導入判断に関わる変更点を原文で確認しておきたい。',
-              'Visual Studio Code 関連の更新。原文で確認しておきたい。',
-              '英語ソースの更新。公開内容の変化や運用への影響を原文で確認しておきたい。',
-              'に関する release note 更新。開発フローや agent 体験に関わる変更点を個別セクションとして拾っている。',
-              '新機能が実際の利用候補に入ったことを示す更新です。',
-              '既存ワークフローの制約や手間を減らす方向の更新です。',
-              '継続ウォッチ対象として押さえておきたい更新です。',
-              '試用段階を越えて、本番運用の候補として見やすくなった更新です。',
-              'Copilot CLI の agent 機能に関する更新。タスク自動化や agent ワークフローを CLI から扱う運用では確認しておきたい。',
-              'Copilot CLI への MCP 対応に関する更新。外部ツール・サービスの CLI 統合で接続パターンが変わる可能性がある。',
-              'Copilot CLI のセッション管理に関する更新。長時間の対話や複数の context を扱う運用では確認しておきたい。',
-              'Copilot CLI でのモデル選択や切り替えに関する更新。用途に応じたモデルの使い分けが変わる可能性がある。',
-              'Copilot CLI のインストール・セットアップに関する更新。初期導入やアップグレードパスに確認を。',
-              'Copilot CLI のコマンドや使用法に関する更新。ターミナルでの日々の使い方に関連する変更を含む可能性あり。',
-              'GitHub Copilot CLI の更新。CLI を実用している層はターミナル操作や自動化フローへの確認を。',
-              'GitHub Copilot code review 関連の更新。レビュー自動化や品質改善への影響を確認しておきたい。',
-            ];
+            const reportingModulePath = path.join(
+              process.env.GITHUB_WORKSPACE,
+              'scripts',
+              'lib',
+              'reporting.mjs',
+            );
+            const { lowInformationFallbackMarkers } = await import(
+              pathToFileURL(reportingModulePath).href
+            );
+            if (!Array.isArray(lowInformationFallbackMarkers) || lowInformationFallbackMarkers.length === 0) {
+              core.setFailed('lowInformationFallbackMarkers must be a non-empty array exported from scripts/lib/reporting.mjs');
+              return;
+            }
             const summariesDir = path.join(
               process.env.GITHUB_WORKSPACE,
               'summaries',
@@ -132,7 +128,7 @@ jobs:
             const fallbackSummaryHits = summaryCandidates
               .map((file) => {
                 const summaryText = fs.readFileSync(path.join(summariesDir, file), 'utf8');
-                const matches = lowInformationSummaryMarkers.filter((marker) =>
+                const matches = lowInformationFallbackMarkers.filter((marker) =>
                   summaryText.includes(marker),
                 );
                 return {

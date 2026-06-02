@@ -12,6 +12,7 @@ import {
   importanceReason,
   localizedImportanceLabel,
   localizedDigestMention,
+  lowInformationFallbackMarkers,
   localizedSummary,
   localizedTitle,
   originalTitle,
@@ -35,16 +36,6 @@ const sourceGroupOrder = ["github", "vscode", "platform", "other"];
 const HOME_HIGHLIGHT_LIMIT = 6;
 const HOME_ARCHIVE_LIMIT = 6;
 const HIGHLIGHTS_PAGE_SIZE = 50;
-const publishedFallbackPhrases = [
-  "GitHub Copilot 関連の更新。運用や導入判断に関わる変更点を原文で確認しておきたい。",
-  "Visual Studio Code 関連の更新。原文で確認しておきたい。",
-  "英語ソースの更新。公開内容の変化や運用への影響を原文で確認しておきたい。",
-  "に関する release note 更新。開発フローや agent 体験に関わる変更点を個別セクションとして拾っている。",
-  "新機能が実際の利用候補に入ったことを示す更新です。",
-  "既存ワークフローの制約や手間を減らす方向の更新です。",
-  "継続ウォッチ対象として押さえておきたい更新です。",
-  "試用段階を越えて、本番運用の候補として見やすくなった更新です。",
-];
 
 function toDateOnly(value) {
   const date = safeDate(value);
@@ -482,7 +473,7 @@ async function assertNoGenericFallbacksInPublishedOutput() {
   const hits = [];
   for (const filePath of targets) {
     const text = await fs.readFile(filePath, "utf8");
-    for (const phrase of publishedFallbackPhrases) {
+    for (const phrase of lowInformationFallbackMarkers) {
       if (text.includes(phrase)) {
         hits.push(`${path.relative(workspaceRoot, filePath)} -> ${phrase}`);
       }
