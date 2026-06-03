@@ -1,25 +1,10 @@
 {
   "date": "2026-06-03",
-  "generatedAt": "2026-06-03T18:07:40.791Z",
+  "generatedAt": "2026-06-03T23:16:05.938Z",
   "latestRun": {
-    "generatedAt": "2026-06-03T18:07:40.791Z",
-    "newEventsCount": 14,
-    "newEventIds": [
-      "github-changelog:https://github.blog/changelog/2026-05-28-github-copilot-in-visual-studio-code-may-releases",
-      "github-changelog-copilot:https://github.blog/changelog/2026-05-28-github-copilot-in-visual-studio-code-may-releases",
-      "github-changelog-copilot:https://github.blog/changelog/2026-06-02-gpt-4-1-deprecated",
-      "vscode-feed:https://code.visualstudio.com/updates/v1_123",
-      "vscode-updates:33da81fb1ea2abd01061dbe5576f7b0cfb719f517654ce75b42127edab178699",
-      "vscode-release-notes-1-109:275845d0fb15079cc6a98cfb8c233f78339421bdab6fa353212550aafeb7bdb6",
-      "publickey:tag:www.publickey1.jp,2026://2.8595",
-      "vscode-release-notes-1-123:section:4d37dd903eba60cfbfb419f90050d0a5fca0aa2ed811da9fd9e83c5a6c8a2260",
-      "vscode-release-notes-1-123:section:6c848f33afe2c8e7a3467f79bfdbaadb75f2c364b92e7e24a87f0b3d64dec63a",
-      "vscode-release-notes-1-123:section:47681d49ef4810ad7eaed5a3995d425ebba03ad0d8a56937064ff7603f5877a5",
-      "vscode-release-notes-1-123:section:47675e2466f066f5107f981ac36ed73df1bb840f322730659512947a0e223582",
-      "vscode-release-notes-1-122:ab3bbca55d476bd0ddbbbe248510fcbcfdc6ae10f46f292776f6e9775fbda22d",
-      "vscode-release-notes-1-121:50d477a4cfaae8626f02df751f26d207c351549d6c25b244558d72aa026fba80",
-      "vscode-release-notes-1-120:3a8982e41dcedfa173873adc135c3ee9b26f8e4b62a66375a2fa934628065755"
-    ],
+    "generatedAt": "2026-06-03T23:16:05.938Z",
+    "newEventsCount": 0,
+    "newEventIds": [],
     "errorCount": 0
   },
   "events": [
