@@ -1,0 +1,32 @@
+{
+  "date": "2026-06-03",
+  "generatedAt": "2026-06-03T10:14:40.073Z",
+  "latestRun": {
+    "generatedAt": "2026-06-03T10:14:40.073Z",
+    "newEventsCount": 1,
+    "newEventIds": [
+      "github-changelog:https://github.blog/changelog/2026-06-02-gpt-4-1-deprecated"
+    ],
+    "errorCount": 0
+  },
+  "events": [
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-06-02-gpt-4-1-deprecated",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-06-03T10:14:38.501Z",
+      "publishedAt": "2026-06-02T23:58:52.000Z",
+      "title": "GPT-4.1 deprecated",
+      "url": "https://github.blog/changelog/2026-06-02-gpt-4-1-deprecated",
+      "summary": "We have deprecated GPT-4.1 across all GitHub Copilot experiences (including Copilot Chat, inline edits, ask and agent modes, and code completions), June 1, 2026. Model Deprecation date Suggested alternative GPT-4.1…\nThe post GPT-4.1 deprecated appeared first on The GitHub Blog.",
+      "categories": [
+        "Retired",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 5
+    }
+  ],
+  "errors": []
+}
