@@ -3031,6 +3031,12 @@ export function importanceReason(event, locale = "ja") {
       : "This tends to reduce friction or constraints in an existing workflow.";
   }
 
+  if (label === "Update") {
+    return locale === "ja"
+      ? `「${displayTitle}」に関する更新として、運用への影響有無を確認しておきたい内容です。`
+      : "This is a general update worth checking for operational impact.";
+  }
+
   if (label === "Snapshot") {
     return locale === "ja"
       ? "固定ページの追記や差し替えを拾うための更新です。"
