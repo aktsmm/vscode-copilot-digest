@@ -1,15 +1,216 @@
 {
   "date": "2026-06-03",
-  "generatedAt": "2026-06-03T10:14:40.073Z",
+  "generatedAt": "2026-06-03T18:07:40.791Z",
   "latestRun": {
-    "generatedAt": "2026-06-03T10:14:40.073Z",
-    "newEventsCount": 1,
+    "generatedAt": "2026-06-03T18:07:40.791Z",
+    "newEventsCount": 14,
     "newEventIds": [
-      "github-changelog:https://github.blog/changelog/2026-06-02-gpt-4-1-deprecated"
+      "github-changelog:https://github.blog/changelog/2026-05-28-github-copilot-in-visual-studio-code-may-releases",
+      "github-changelog-copilot:https://github.blog/changelog/2026-05-28-github-copilot-in-visual-studio-code-may-releases",
+      "github-changelog-copilot:https://github.blog/changelog/2026-06-02-gpt-4-1-deprecated",
+      "vscode-feed:https://code.visualstudio.com/updates/v1_123",
+      "vscode-updates:33da81fb1ea2abd01061dbe5576f7b0cfb719f517654ce75b42127edab178699",
+      "vscode-release-notes-1-109:275845d0fb15079cc6a98cfb8c233f78339421bdab6fa353212550aafeb7bdb6",
+      "publickey:tag:www.publickey1.jp,2026://2.8595",
+      "vscode-release-notes-1-123:section:4d37dd903eba60cfbfb419f90050d0a5fca0aa2ed811da9fd9e83c5a6c8a2260",
+      "vscode-release-notes-1-123:section:6c848f33afe2c8e7a3467f79bfdbaadb75f2c364b92e7e24a87f0b3d64dec63a",
+      "vscode-release-notes-1-123:section:47681d49ef4810ad7eaed5a3995d425ebba03ad0d8a56937064ff7603f5877a5",
+      "vscode-release-notes-1-123:section:47675e2466f066f5107f981ac36ed73df1bb840f322730659512947a0e223582",
+      "vscode-release-notes-1-122:ab3bbca55d476bd0ddbbbe248510fcbcfdc6ae10f46f292776f6e9775fbda22d",
+      "vscode-release-notes-1-121:50d477a4cfaae8626f02df751f26d207c351549d6c25b244558d72aa026fba80",
+      "vscode-release-notes-1-120:3a8982e41dcedfa173873adc135c3ee9b26f8e4b62a66375a2fa934628065755"
     ],
     "errorCount": 0
   },
   "events": [
+    {
+      "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_123",
+      "sourceId": "vscode-feed",
+      "sourceName": "VS Code Feed",
+      "kind": "feed_entry",
+      "detectedAt": "2026-06-03T18:07:38.627Z",
+      "publishedAt": "2026-06-03T17:00:00.000Z",
+      "title": "Visual Studio Code 1.123",
+      "url": "https://code.visualstudio.com/updates/v1_123",
+      "summary": "Learn what's new in Visual Studio Code 1.123\n Read the full article",
+      "categories": [
+        "release"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-05-28-github-copilot-in-visual-studio-code-may-releases",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-06-03T18:07:37.855Z",
+      "publishedAt": "2026-06-03T13:30:58.000Z",
+      "title": "GitHub Copilot in Visual Studio Code, May releases",
+      "url": "https://github.blog/changelog/2026-06-03-github-copilot-in-visual-studio-code-may-releases",
+      "summary": "VS Code continues with weekly stable releases. This changelog covers releases v1.120 through v1.123, the releases we shipped throughout May and early June 2026. In May, we made the Agents…\nThe post GitHub Copilot in Visual Studio Code, May releases appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 6
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-05-28-github-copilot-in-visual-studio-code-may-releases",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-06-03T18:07:38.238Z",
+      "publishedAt": "2026-06-03T13:30:58.000Z",
+      "title": "GitHub Copilot in Visual Studio Code, May releases",
+      "url": "https://github.blog/changelog/2026-06-03-github-copilot-in-visual-studio-code-may-releases",
+      "summary": "VS Code continues with weekly stable releases. This changelog covers releases v1.120 through v1.123, the releases we shipped throughout May and early June 2026. In May, we made the Agents…\nThe post GitHub Copilot in Visual Studio Code, May releases appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 6
+    },
+    {
+      "eventId": "vscode-updates:33da81fb1ea2abd01061dbe5576f7b0cfb719f517654ce75b42127edab178699",
+      "sourceId": "vscode-updates",
+      "sourceName": "VS Code Updates",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-06-03T18:07:38.862Z",
+      "publishedAt": "2026-06-03T00:00:00.000Z",
+      "title": "VS Code Updates changed",
+      "url": "https://code.visualstudio.com/updates/",
+      "summary": "Detected 67 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 67,
+        "headings": [
+          "Visual Studio Code 1.123",
+          "Session sync and chronicle",
+          "Retry network-dependent commands in the sandbox",
+          "Agents window (Preview)",
+          "Research agent (Preview)",
+          "Integrated Browser",
+          "Favorite pages",
+          "More ways to capture screenshots",
+          "Editor Experience",
+          "Delayed extension auto-updates"
+        ],
+        "additions": [
+          "1.123",
+          "H1: Visual Studio Code 1.123",
+          "Release date: June 3, 2026",
+          "Welcome to the 1.123 release of Visual Studio Code. This release improves how you work with agents and the integrated browser.",
+          "Session sync: Automatically sync your chat sessions across machines and search your coding history.",
+          "Agents window: Open multiple agent sessions side-by-side to compare or review work in parallel.",
+          "Research agent: Run deep research on a topic and get a thorough, well-cited Markdown report.",
+          "Integrated browser updates: Favorite pages for quick access and more options to capture browser screenshots.",
+          "Make sure to join VS Code Live at Build 2026 on June 3!",
+          "H3: Session sync and chronicle",
+          "chat.sessionSync.enabled",
+          "Your chat sessions now sync automatically to your GitHub account, giving you a personal, searchable history of your work across machines and workspaces.",
+          "Each session captures the conversation, the files you touched, repository context (repo, branch, timestamps), and any pull requests, issues, or commits referenced along the way.",
+          "With the new chronicle commands (/chronicle) in chat, you can put that history to work:",
+          "Ask natural-language questions about past sessions",
+          "Generate standup reports"
+        ]
+      },
+      "headings": [
+        "Visual Studio Code 1.123",
+        "Agents",
+        "Session sync and chronicle",
+        "Retry network-dependent commands in the sandbox",
+        "Agents window (Preview)",
+        "Research agent (Preview)",
+        "Integrated Browser",
+        "Favorite pages",
+        "More ways to capture screenshots",
+        "Editor Experience",
+        "Delayed extension auto-updates",
+        "Thank you"
+      ],
+      "score": 12
+    },
+    {
+      "eventId": "vscode-release-notes-1-123:section:4d37dd903eba60cfbfb419f90050d0a5fca0aa2ed811da9fd9e83c5a6c8a2260",
+      "sourceId": "vscode-release-notes-1-123",
+      "sourceName": "VS Code Release Notes 1.123",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-06-03T18:07:40.377Z",
+      "publishedAt": "2026-06-03T00:00:00.000Z",
+      "title": "Visual Studio Code 1.123: Session sync and chronicle",
+      "url": "https://code.visualstudio.com/updates/v1_123",
+      "summary": "Setting: \n \n \n chat.sessionSync.enabled\n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders\n \n This setting is managed at the organization level. Contact your administrator to change it.ORG Your chat sessions now sync automatically to your GitHub account, giving you a personal, searchable history of your work across machines and workspaces. Each session captures the conversation, the files you touched, reposito...",
+      "categories": [
+        "release",
+        "section",
+        "Agents"
+      ],
+      "sectionHeading": "Agents",
+      "sectionTitle": "Session sync and chronicle",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-123:section:6c848f33afe2c8e7a3467f79bfdbaadb75f2c364b92e7e24a87f0b3d64dec63a",
+      "sourceId": "vscode-release-notes-1-123",
+      "sourceName": "VS Code Release Notes 1.123",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-06-03T18:07:40.377Z",
+      "publishedAt": "2026-06-03T00:00:00.000Z",
+      "title": "Visual Studio Code 1.123: Retry network-dependent commands in the sandbox",
+      "url": "https://code.visualstudio.com/updates/v1_123",
+      "summary": "Setting: \n \n \n chat.agent.sandbox.retryWithAllowNetworkRequests\n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders When a terminal command that is run by a local agent requires access to domains that are not configured as allowed domains, the command is automatically retried inside the sandbox with unrestricted network access. After that, if it still fails, it falls back to unsandboxed execution. This allows n...",
+      "categories": [
+        "release",
+        "section",
+        "Agents"
+      ],
+      "sectionHeading": "Agents",
+      "sectionTitle": "Retry network-dependent commands in the sandbox",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-123:section:47681d49ef4810ad7eaed5a3995d425ebba03ad0d8a56937064ff7603f5877a5",
+      "sourceId": "vscode-release-notes-1-123",
+      "sourceName": "VS Code Release Notes 1.123",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-06-03T18:07:40.377Z",
+      "publishedAt": "2026-06-03T00:00:00.000Z",
+      "title": "Visual Studio Code 1.123: Agents window (Preview)",
+      "url": "https://code.visualstudio.com/updates/v1_123",
+      "summary": "The Agents window is a dedicated companion window optimized for exploring, iterating on, and reviewing agent sessions across projects and machines. This release, we focused on letting you work with multiple sessions side by side. You can now have more than one session open at the same time in the Agents window. In addition to the active session, open another session next to it by: Selecting Open to the Side in the c...",
+      "categories": [
+        "release",
+        "section",
+        "Agents"
+      ],
+      "sectionHeading": "Agents",
+      "sectionTitle": "Agents window (Preview)",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-123:section:47675e2466f066f5107f981ac36ed73df1bb840f322730659512947a0e223582",
+      "sourceId": "vscode-release-notes-1-123",
+      "sourceName": "VS Code Release Notes 1.123",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-06-03T18:07:40.377Z",
+      "publishedAt": "2026-06-03T00:00:00.000Z",
+      "title": "Visual Studio Code 1.123: Research agent (Preview)",
+      "url": "https://code.visualstudio.com/updates/v1_123",
+      "summary": "Note: The research agent is currently in preview and available only in Copilot CLI (local) sessions in Insiders. When you need to understand unfamiliar code, compare approaches, or learn how a library or API works, a quick chat answer isn't always enough. The research agent runs deep research on a topic and produces a thorough, well-cited Markdown report by gathering and synthesizing information from your codebase,...",
+      "categories": [
+        "release",
+        "section",
+        "Agents"
+      ],
+      "sectionHeading": "Agents",
+      "sectionTitle": "Research agent (Preview)",
+      "score": 4
+    },
     {
       "eventId": "github-changelog:https://github.blog/changelog/2026-06-02-gpt-4-1-deprecated",
       "sourceId": "github-changelog",
@@ -26,6 +227,80 @@
       ],
       "isFutureDated": false,
       "score": 5
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-06-02-gpt-4-1-deprecated",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-06-03T18:07:38.239Z",
+      "publishedAt": "2026-06-02T23:58:52.000Z",
+      "title": "GPT-4.1 deprecated",
+      "url": "https://github.blog/changelog/2026-06-02-gpt-4-1-deprecated",
+      "summary": "We have deprecated GPT-4.1 across all GitHub Copilot experiences (including Copilot Chat, inline edits, ask and agent modes, and code completions), June 1, 2026. Model Deprecation date Suggested alternative GPT-4.1…\nThe post GPT-4.1 deprecated appeared first on The GitHub Blog.",
+      "categories": [
+        "Retired",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 5
+    },
+    {
+      "eventId": "vscode-release-notes-1-109:275845d0fb15079cc6a98cfb8c233f78339421bdab6fa353212550aafeb7bdb6",
+      "sourceId": "vscode-release-notes-1-109",
+      "sourceName": "VS Code Release Notes 1.109",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-06-03T18:07:39.230Z",
+      "publishedAt": "2026-02-04T00:00:00.000Z",
+      "title": "VS Code Release Notes 1.109 changed",
+      "url": "https://code.visualstudio.com/updates/v1_109",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [],
+        "additions": [
+          "1.123"
+        ]
+      },
+      "headings": [
+        "January 2026 (version 1.109)",
+        "Upcoming events",
+        "Agent Sessions Day",
+        "Chat UX",
+        "Message steering and queueing (Experimental)",
+        "Anthropic models now show thinking tokens",
+        "Mermaid diagrams in chat responses",
+        "Ask Questions tool (Experimental)",
+        "Plan agent",
+        "Context window details",
+        "Inline chat UX revamp (Preview)",
+        "Model descriptions in the model picker"
+      ],
+      "score": 2
+    },
+    {
+      "eventId": "publickey:tag:www.publickey1.jp,2026://2.8595",
+      "sourceId": "publickey",
+      "sourceName": "Publickey",
+      "kind": "feed_entry",
+      "detectedAt": "2026-06-03T18:07:40.328Z",
+      "publishedAt": "2026-06-03T14:27:13.000Z",
+      "title": "マイクロソフト、AIエージェントにWindowsアプリ開発の知識を与える「Windows Development Skills」を一般提供開始",
+      "url": "https://www.publickey1.jp/blog/26/aiwindowswindows_development_skills.html",
+      "summary": "マイクロソフトは日本時間6月3日未明に開幕した年次イベント「Microsoft Build 2026」で、AIエージェントにWindowsアプリ開発のライフサイクル全体に関する知識を与える「Windows Development Skills」の一般提供を開始したと発表しました。 プラグインの形式になっており、AIエージェントにインストールをして利用を開始します。 Windows Development Skillsを用いることで、GitHub Copilot、Claude ……",
+      "categories": [
+        ".NET",
+        "Windows",
+        "プログラミング言語",
+        "機械学習・AI",
+        "開発ツール",
+        "microsoft"
+      ],
+      "isFutureDated": false,
+      "score": 1
     }
   ],
   "errors": []
