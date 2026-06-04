@@ -1,12 +1,32 @@
 {
   "date": "2026-06-04",
-  "generatedAt": "2026-06-04T09:06:26.916Z",
+  "generatedAt": "2026-06-04T16:32:31.956Z",
   "latestRun": {
-    "generatedAt": "2026-06-04T09:06:26.916Z",
-    "newEventsCount": 0,
-    "newEventIds": [],
+    "generatedAt": "2026-06-04T16:32:31.956Z",
+    "newEventsCount": 1,
+    "newEventIds": [
+      "github-changelog:https://github.blog/changelog/2026-06-02-github-copilot-in-visual-studio-may-update"
+    ],
     "errorCount": 0
   },
-  "events": [],
+  "events": [
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-06-02-github-copilot-in-visual-studio-may-update",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-06-04T16:32:30.647Z",
+      "publishedAt": "2026-06-04T15:35:58.000Z",
+      "title": "GitHub Copilot in Visual Studio — May update",
+      "url": "https://github.blog/changelog/2026-06-04-github-copilot-in-visual-studio-may-update",
+      "summary": "May 2026 brought sharper tooling for planning, reviewing, and managing your work with GitHub Copilot in Visual Studio 2026. Highlights Here’s what’s new for all GitHub Copilot users in Visual…\nThe post GitHub Copilot in Visual Studio — May update appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    }
+  ],
   "errors": []
 }
