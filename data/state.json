@@ -3,7 +3,11 @@
   "sources": {
     "github-changelog": {
       "seenIds": [
+        "https://github.blog/changelog/2026-06-04-fix-with-copilot-for-failing-actions-now-in-pro-pro-and-max",
+        "https://github.blog/changelog/2026-06-04-agent-tasks-rest-api-now-available-for-copilot-pro-pro-and-max",
+        "https://github.blog/changelog/2026-06-04-larger-context-windows-and-configurable-reasoning-levels-for-github-copilot",
         "https://github.blog/changelog/2026-06-02-github-copilot-in-visual-studio-may-update",
+        "https://github.blog/changelog/2026-06-04-copilot-chat-brings-richer-context-to-pull-requests",
         "https://github.blog/changelog/2026-05-28-github-copilot-in-visual-studio-code-may-releases",
         "https://github.blog/changelog/2026-06-02-gpt-4-1-deprecated",
         "https://github.blog/changelog/2026-07-01-expanded-technical-preview-availability-for-the-github-copilot-app",
@@ -91,10 +95,11 @@
         "https://github.blog/changelog/2026-04-08-github-mobile-research-and-code-with-copilot-cloud-agent-anywhere"
       ],
       "futureSeenIds": [],
-      "lastCheckedAt": "2026-06-04T16:32:30.648Z"
+      "lastCheckedAt": "2026-06-04T22:50:58.131Z"
     },
     "github-changelog-copilot": {
       "seenIds": [
+        "https://github.blog/changelog/2026-06-02-github-copilot-in-visual-studio-may-update",
         "https://github.blog/changelog/2026-05-28-github-copilot-in-visual-studio-code-may-releases",
         "https://github.blog/changelog/2026-06-02-gpt-4-1-deprecated",
         "https://github.blog/changelog/2026-07-01-expanded-technical-preview-availability-for-the-github-copilot-app",
@@ -188,7 +193,7 @@
         "https://github.blog/changelog/2026-04-02-copilot-sdk-in-public-preview"
       ],
       "futureSeenIds": [],
-      "lastCheckedAt": "2026-06-04T16:32:30.664Z"
+      "lastCheckedAt": "2026-06-04T22:50:58.145Z"
     },
     "github-copilot-blog": {
       "seenIds": [
@@ -215,7 +220,7 @@
         "https://github.blog/?p=94179"
       ],
       "futureSeenIds": [],
-      "lastCheckedAt": "2026-06-04T16:32:30.678Z"
+      "lastCheckedAt": "2026-06-04T22:50:58.609Z"
     },
     "vscode-feed": {
       "seenIds": [
@@ -244,26 +249,28 @@
         "https://code.visualstudio.com/updates/v1_108",
         "https://code.visualstudio.com/updates/v1_107"
       ],
-      "futureSeenIds": [],
-      "lastCheckedAt": "2026-06-04T16:32:30.696Z"
+      "futureSeenIds": [
+        "https://code.visualstudio.com/updates/v1_124"
+      ],
+      "lastCheckedAt": "2026-06-04T22:50:58.629Z"
     },
     "vscode-updates": {
       "releasePublishedAt": "2026-06-03T00:00:00.000Z",
       "releaseTitle": "Visual Studio Code 1.123",
-      "snapshotHash": "33da81fb1ea2abd01061dbe5576f7b0cfb719f517654ce75b42127edab178699",
-      "lastCheckedAt": "2026-06-04T16:32:30.752Z"
+      "snapshotHash": "03793f39b15a32bff6041763a3e057833623398e0a74c78b3e7963c9b02bc1ed",
+      "lastCheckedAt": "2026-06-04T22:50:58.799Z"
     },
     "vscode-release-notes-1-109": {
       "releasePublishedAt": "2026-02-04T00:00:00.000Z",
       "releaseTitle": "January 2026 (version 1.109)",
-      "snapshotHash": "275845d0fb15079cc6a98cfb8c233f78339421bdab6fa353212550aafeb7bdb6",
-      "lastCheckedAt": "2026-06-04T16:32:30.885Z"
+      "snapshotHash": "e9b8609bd3cc5a18d477556fab835ea4a1c3ecdebe8d82e3a5af89a5b4c436fd",
+      "lastCheckedAt": "2026-06-04T22:50:58.891Z"
     },
     "copilot-whats-new": {
-      "releasePublishedAt": "2026-06-04T16:32:31.203Z",
+      "releasePublishedAt": "2026-06-04T22:50:59.119Z",
       "releaseTitle": "Preview upcoming features for GitHub Copilot",
       "snapshotHash": "b420f1decd1c48516d66030e4292d9537371f69c4260aeb4b1a29975eb279571",
-      "lastCheckedAt": "2026-06-04T16:32:31.203Z"
+      "lastCheckedAt": "2026-06-04T22:50:59.120Z"
     },
     "publickey": {
       "seenIds": [
@@ -274,7 +281,7 @@
         "tag:www.publickey1.jp,2026://2.8527"
       ],
       "futureSeenIds": [],
-      "lastCheckedAt": "2026-06-04T16:32:31.859Z"
+      "lastCheckedAt": "2026-06-04T22:50:59.573Z"
     },
     "vscode-release-notes-1-115": {
       "sectionHashes": {
@@ -363,8 +370,8 @@
       },
       "releasePublishedAt": "2026-05-13T00:00:00.000Z",
       "releaseTitle": "Visual Studio Code 1.120",
-      "snapshotHash": "3a8982e41dcedfa173873adc135c3ee9b26f8e4b62a66375a2fa934628065755",
-      "lastCheckedAt": "2026-06-04T16:32:31.955Z"
+      "snapshotHash": "7224e5f0aea707cc23c21778ae5955b89dcc13353022fde1011c472e50082372",
+      "lastCheckedAt": "2026-06-04T22:50:59.905Z"
     },
     "vscode-release-notes-1-121": {
       "sectionHashes": {
@@ -375,14 +382,14 @@
       },
       "releasePublishedAt": "2026-05-20T00:00:00.000Z",
       "releaseTitle": "Visual Studio Code 1.121",
-      "snapshotHash": "50d477a4cfaae8626f02df751f26d207c351549d6c25b244558d72aa026fba80",
-      "lastCheckedAt": "2026-06-04T16:32:31.938Z"
+      "snapshotHash": "1c4c34a11507cbcbe21736bff4b6674e40051267e760c875d7935916824dc108",
+      "lastCheckedAt": "2026-06-04T22:50:59.818Z"
     },
     "vscode-release-notes-1-122": {
       "releasePublishedAt": "2026-05-28T00:00:00.000Z",
       "releaseTitle": "Visual Studio Code 1.122",
-      "snapshotHash": "ab3bbca55d476bd0ddbbbe248510fcbcfdc6ae10f46f292776f6e9775fbda22d",
-      "lastCheckedAt": "2026-06-04T16:32:31.900Z",
+      "snapshotHash": "1b49e55710c9c015c0efc374e5c134ee35450d75fabd2eb6f85da8466d6b37b7",
+      "lastCheckedAt": "2026-06-04T22:50:59.794Z",
       "sectionHashes": {
         "vscode-release-notes-1-122:GitHub Copilot moves to usage based billing:Updated Copilot status dashboard": "76b77667df1ff6824a217720f72c8ff3c2eba3810044e109f6865bb06cdae828",
         "vscode-release-notes-1-122:GitHub Copilot moves to usage based billing:Model costs in the model picker": "745ab2c2753f4280f75e1513135cb3facb9502048b4b5dc5e61495f2138d8021",
@@ -399,8 +406,8 @@
       },
       "releasePublishedAt": "2026-06-03T00:00:00.000Z",
       "releaseTitle": "Visual Studio Code 1.123",
-      "snapshotHash": "33da81fb1ea2abd01061dbe5576f7b0cfb719f517654ce75b42127edab178699",
-      "lastCheckedAt": "2026-06-04T16:32:31.883Z"
+      "snapshotHash": "03793f39b15a32bff6041763a3e057833623398e0a74c78b3e7963c9b02bc1ed",
+      "lastCheckedAt": "2026-06-04T22:50:59.600Z"
     }
   }
 }
