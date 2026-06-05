@@ -1,15 +1,34 @@
 {
   "date": "2026-06-05",
-  "generatedAt": "2026-06-05T16:12:19.261Z",
+  "generatedAt": "2026-06-05T22:39:06.485Z",
   "latestRun": {
-    "generatedAt": "2026-06-05T16:12:19.261Z",
+    "generatedAt": "2026-06-05T22:39:06.485Z",
     "newEventsCount": 1,
     "newEventIds": [
-      "vscode-updates:b36d696b650dd7e73ec27b6441ffa78650fa614c9c36f9a2896c1a3a3b894263"
+      "github-changelog:https://github.blog/changelog/2026-06-05-enterprise-managed-plugins-in-vs-code-in-public-preview"
     ],
     "errorCount": 0
   },
   "events": [
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-06-05-enterprise-managed-plugins-in-vs-code-in-public-preview",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-06-05T22:39:04.979Z",
+      "publishedAt": "2026-06-05T21:01:48.000Z",
+      "title": "Enterprise-managed plugins in VS Code in public preview",
+      "url": "https://github.blog/changelog/2026-06-05-enterprise-managed-plugins-in-vs-code-in-public-preview",
+      "summary": "Last month we launched a public preview with Copilot CLI that allows enterprise administrators the ability to configure and distribute plugins to GitHub Copilot CLI users across their enterprise. VS…\nThe post Enterprise-managed plugins in VS Code in public preview appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "client apps",
+        "copilot",
+        "enterprise management tools"
+      ],
+      "isFutureDated": false,
+      "score": 2
+    },
     {
       "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-06-04-fix-with-copilot-for-failing-actions-now-in-pro-pro-and-max",
       "sourceId": "github-changelog-copilot",
