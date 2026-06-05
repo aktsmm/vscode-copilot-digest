@@ -1,0 +1,86 @@
+{
+  "date": "2026-06-05",
+  "generatedAt": "2026-06-05T08:54:10.653Z",
+  "latestRun": {
+    "generatedAt": "2026-06-05T08:54:10.653Z",
+    "newEventsCount": 4,
+    "newEventIds": [
+      "github-changelog-copilot:https://github.blog/changelog/2026-06-04-fix-with-copilot-for-failing-actions-now-in-pro-pro-and-max",
+      "github-changelog-copilot:https://github.blog/changelog/2026-06-04-agent-tasks-rest-api-now-available-for-copilot-pro-pro-and-max",
+      "github-changelog-copilot:https://github.blog/changelog/2026-06-04-larger-context-windows-and-configurable-reasoning-levels-for-github-copilot",
+      "github-changelog-copilot:https://github.blog/changelog/2026-06-04-copilot-chat-brings-richer-context-to-pull-requests"
+    ],
+    "errorCount": 0
+  },
+  "events": [
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-06-04-fix-with-copilot-for-failing-actions-now-in-pro-pro-and-max",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-06-05T08:54:07.863Z",
+      "publishedAt": "2026-06-04T20:46:11.000Z",
+      "title": "Fix with Copilot for failing Actions now in Pro, Pro+, and Max",
+      "url": "https://github.blog/changelog/2026-06-04-fix-with-copilot-for-failing-actions-now-in-pro-pro-and-max",
+      "summary": "When a GitHub Actions job fails, Copilot Pro, Pro+, and Max subscribers can now ask Copilot cloud agent to fix it in one click. Click the Fix with Copilot button…\nThe post Fix with Copilot for failing Actions now in Pro, Pro+, and Max appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 2
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-06-04-agent-tasks-rest-api-now-available-for-copilot-pro-pro-and-max",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-06-05T08:54:07.863Z",
+      "publishedAt": "2026-06-04T20:42:10.000Z",
+      "title": "Agent tasks REST API now available for Copilot Pro, Pro+, and Max",
+      "url": "https://github.blog/changelog/2026-06-04-agent-tasks-rest-api-now-available-for-copilot-pro-pro-and-max",
+      "summary": "Copilot Pro, Pro+, and Max users can now programmatically start and track Copilot cloud agent tasks with the Agent tasks REST API, available in public preview. Copilot cloud agent works…\nThe post Agent tasks REST API now available for Copilot Pro, Pro+, and Max appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 6
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-06-04-larger-context-windows-and-configurable-reasoning-levels-for-github-copilot",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-06-05T08:54:07.863Z",
+      "publishedAt": "2026-06-04T18:45:04.000Z",
+      "title": "Larger context windows and configurable reasoning levels for GitHub Copilot",
+      "url": "https://github.blog/changelog/2026-06-04-larger-context-windows-and-configurable-reasoning-levels-for-github-copilot",
+      "summary": "GitHub Copilot now supports larger context windows and configurable reasoning levels to help you tackle deeper, more complex work. Leverage one-million-token context windows A one-million-token context window means users can…\nThe post Larger context windows and configurable reasoning levels for GitHub Copilot appeared...",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-06-04-copilot-chat-brings-richer-context-to-pull-requests",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-06-05T08:54:07.863Z",
+      "publishedAt": "2026-06-04T14:40:05.000Z",
+      "title": "Copilot Chat brings richer context to pull requests",
+      "url": "https://github.blog/changelog/2026-06-04-copilot-chat-brings-richer-context-to-pull-requests",
+      "summary": "GitHub Copilot Chat now provides richer context and new capabilities when you’re working with diffs and pull requests on github.com. This feature was previously in public preview and is now…\nThe post Copilot Chat brings richer context to pull requests appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 5
+    }
+  ],
+  "errors": []
+}
