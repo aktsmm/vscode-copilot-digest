@@ -1,14 +1,11 @@
 {
   "date": "2026-06-05",
-  "generatedAt": "2026-06-05T08:54:10.653Z",
+  "generatedAt": "2026-06-05T16:12:19.261Z",
   "latestRun": {
-    "generatedAt": "2026-06-05T08:54:10.653Z",
-    "newEventsCount": 4,
+    "generatedAt": "2026-06-05T16:12:19.261Z",
+    "newEventsCount": 1,
     "newEventIds": [
-      "github-changelog-copilot:https://github.blog/changelog/2026-06-04-fix-with-copilot-for-failing-actions-now-in-pro-pro-and-max",
-      "github-changelog-copilot:https://github.blog/changelog/2026-06-04-agent-tasks-rest-api-now-available-for-copilot-pro-pro-and-max",
-      "github-changelog-copilot:https://github.blog/changelog/2026-06-04-larger-context-windows-and-configurable-reasoning-levels-for-github-copilot",
-      "github-changelog-copilot:https://github.blog/changelog/2026-06-04-copilot-chat-brings-richer-context-to-pull-requests"
+      "vscode-updates:b36d696b650dd7e73ec27b6441ffa78650fa614c9c36f9a2896c1a3a3b894263"
     ],
     "errorCount": 0
   },
@@ -80,6 +77,42 @@
       ],
       "isFutureDated": false,
       "score": 5
+    },
+    {
+      "eventId": "vscode-updates:b36d696b650dd7e73ec27b6441ffa78650fa614c9c36f9a2896c1a3a3b894263",
+      "sourceId": "vscode-updates",
+      "sourceName": "VS Code Updates",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-06-05T16:12:17.714Z",
+      "publishedAt": "2026-06-03T00:00:00.000Z",
+      "title": "VS Code Updates changed",
+      "url": "https://code.visualstudio.com/updates/",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [],
+        "additions": [
+          "Make sure to rewatch VS Code Live at Build 2026!"
+        ]
+      },
+      "headings": [
+        "Visual Studio Code 1.123",
+        "Agents",
+        "Session sync and chronicle",
+        "Retry network-dependent commands in the sandbox",
+        "Agents window (Preview)",
+        "Research agent (Preview)",
+        "Language Models",
+        "1M context window for Anthropic and OpenAI models",
+        "Integrated Browser",
+        "Favorite pages",
+        "More ways to capture screenshots",
+        "Editor Experience"
+      ],
+      "score": 2
     }
   ],
   "errors": []

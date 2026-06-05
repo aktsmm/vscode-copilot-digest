@@ -25,7 +25,7 @@ Session sync: Automatically sync your chat sessions across machines and search y
 Agents window: Open multiple agent sessions side-by-side to compare or review work in parallel.
 Research agent: Run deep research on a topic and get a thorough, well-cited Markdown report.
 Integrated browser updates: Favorite pages for quick access and more options to capture browser screenshots.
-Make sure to join VS Code Live at Build 2026 on June 3!
+Make sure to rewatch VS Code Live at Build 2026!
 Happy Coding!
 H2: Agents
 H3: Session sync and chronicle
