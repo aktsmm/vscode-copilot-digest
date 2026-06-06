@@ -1,14 +1,10 @@
 {
   "date": "2026-06-06",
-  "generatedAt": "2026-06-06T08:04:31.308Z",
+  "generatedAt": "2026-06-06T14:57:26.320Z",
   "latestRun": {
-    "generatedAt": "2026-06-06T08:04:31.308Z",
-    "newEventsCount": 3,
-    "newEventIds": [
-      "github-changelog:https://github.blog/changelog/2026-06-05-gpt-5-2-and-gpt-5-2-codex-deprecated",
-      "github-changelog-copilot:https://github.blog/changelog/2026-06-05-gpt-5-2-and-gpt-5-2-codex-deprecated",
-      "github-changelog-copilot:https://github.blog/changelog/2026-06-05-enterprise-managed-plugins-in-vs-code-in-public-preview"
-    ],
+    "generatedAt": "2026-06-06T14:57:26.320Z",
+    "newEventsCount": 0,
+    "newEventIds": [],
     "errorCount": 0
   },
   "events": [

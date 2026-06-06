@@ -97,7 +97,7 @@
         "https://github.blog/changelog/2026-04-08-github-mobile-research-and-code-with-copilot-cloud-agent-anywhere"
       ],
       "futureSeenIds": [],
-      "lastCheckedAt": "2026-06-06T08:04:28.438Z"
+      "lastCheckedAt": "2026-06-06T14:57:24.643Z"
     },
     "github-changelog-copilot": {
       "seenIds": [
@@ -201,7 +201,7 @@
         "https://github.blog/changelog/2026-04-02-copilot-sdk-in-public-preview"
       ],
       "futureSeenIds": [],
-      "lastCheckedAt": "2026-06-06T08:04:28.680Z"
+      "lastCheckedAt": "2026-06-06T14:57:24.878Z"
     },
     "github-copilot-blog": {
       "seenIds": [
@@ -228,7 +228,7 @@
         "https://github.blog/?p=94179"
       ],
       "futureSeenIds": [],
-      "lastCheckedAt": "2026-06-06T08:04:28.726Z"
+      "lastCheckedAt": "2026-06-06T14:57:24.900Z"
     },
     "vscode-feed": {
       "seenIds": [
@@ -260,25 +260,25 @@
       "futureSeenIds": [
         "https://code.visualstudio.com/updates/v1_124"
       ],
-      "lastCheckedAt": "2026-06-06T08:04:28.888Z"
+      "lastCheckedAt": "2026-06-06T14:57:24.928Z"
     },
     "vscode-updates": {
       "releasePublishedAt": "2026-06-03T00:00:00.000Z",
       "releaseTitle": "Visual Studio Code 1.123",
       "snapshotHash": "b36d696b650dd7e73ec27b6441ffa78650fa614c9c36f9a2896c1a3a3b894263",
-      "lastCheckedAt": "2026-06-06T08:04:29.053Z"
+      "lastCheckedAt": "2026-06-06T14:57:24.998Z"
     },
     "vscode-release-notes-1-109": {
       "releasePublishedAt": "2026-02-04T00:00:00.000Z",
       "releaseTitle": "January 2026 (version 1.109)",
       "snapshotHash": "e9b8609bd3cc5a18d477556fab835ea4a1c3ecdebe8d82e3a5af89a5b4c436fd",
-      "lastCheckedAt": "2026-06-06T08:04:29.155Z"
+      "lastCheckedAt": "2026-06-06T14:57:25.249Z"
     },
     "copilot-whats-new": {
-      "releasePublishedAt": "2026-06-06T08:04:29.660Z",
+      "releasePublishedAt": "2026-06-06T14:57:25.516Z",
       "releaseTitle": "Preview upcoming features for GitHub Copilot",
       "snapshotHash": "b420f1decd1c48516d66030e4292d9537371f69c4260aeb4b1a29975eb279571",
-      "lastCheckedAt": "2026-06-06T08:04:29.661Z"
+      "lastCheckedAt": "2026-06-06T14:57:25.517Z"
     },
     "publickey": {
       "seenIds": [
@@ -289,7 +289,7 @@
         "tag:www.publickey1.jp,2026://2.8527"
       ],
       "futureSeenIds": [],
-      "lastCheckedAt": "2026-06-06T08:04:30.356Z"
+      "lastCheckedAt": "2026-06-06T14:57:26.139Z"
     },
     "vscode-release-notes-1-115": {
       "sectionHashes": {
@@ -379,7 +379,7 @@
       "releasePublishedAt": "2026-05-13T00:00:00.000Z",
       "releaseTitle": "Visual Studio Code 1.120",
       "snapshotHash": "7224e5f0aea707cc23c21778ae5955b89dcc13353022fde1011c472e50082372",
-      "lastCheckedAt": "2026-06-06T08:04:31.307Z"
+      "lastCheckedAt": "2026-06-06T14:57:26.319Z"
     },
     "vscode-release-notes-1-121": {
       "sectionHashes": {
@@ -391,13 +391,13 @@
       "releasePublishedAt": "2026-05-20T00:00:00.000Z",
       "releaseTitle": "Visual Studio Code 1.121",
       "snapshotHash": "1c4c34a11507cbcbe21736bff4b6674e40051267e760c875d7935916824dc108",
-      "lastCheckedAt": "2026-06-06T08:04:30.747Z"
+      "lastCheckedAt": "2026-06-06T14:57:26.226Z"
     },
     "vscode-release-notes-1-122": {
       "releasePublishedAt": "2026-05-28T00:00:00.000Z",
       "releaseTitle": "Visual Studio Code 1.122",
       "snapshotHash": "1b49e55710c9c015c0efc374e5c134ee35450d75fabd2eb6f85da8466d6b37b7",
-      "lastCheckedAt": "2026-06-06T08:04:30.563Z",
+      "lastCheckedAt": "2026-06-06T14:57:26.200Z",
       "sectionHashes": {
         "vscode-release-notes-1-122:GitHub Copilot moves to usage based billing:Updated Copilot status dashboard": "76b77667df1ff6824a217720f72c8ff3c2eba3810044e109f6865bb06cdae828",
         "vscode-release-notes-1-122:GitHub Copilot moves to usage based billing:Model costs in the model picker": "745ab2c2753f4280f75e1513135cb3facb9502048b4b5dc5e61495f2138d8021",
@@ -415,7 +415,7 @@
       "releasePublishedAt": "2026-06-03T00:00:00.000Z",
       "releaseTitle": "Visual Studio Code 1.123",
       "snapshotHash": "b36d696b650dd7e73ec27b6441ffa78650fa614c9c36f9a2896c1a3a3b894263",
-      "lastCheckedAt": "2026-06-06T08:04:30.384Z"
+      "lastCheckedAt": "2026-06-06T14:57:26.176Z"
     }
   }
 }
