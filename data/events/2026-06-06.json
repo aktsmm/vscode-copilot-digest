@@ -1,0 +1,70 @@
+{
+  "date": "2026-06-06",
+  "generatedAt": "2026-06-06T08:04:31.308Z",
+  "latestRun": {
+    "generatedAt": "2026-06-06T08:04:31.308Z",
+    "newEventsCount": 3,
+    "newEventIds": [
+      "github-changelog:https://github.blog/changelog/2026-06-05-gpt-5-2-and-gpt-5-2-codex-deprecated",
+      "github-changelog-copilot:https://github.blog/changelog/2026-06-05-gpt-5-2-and-gpt-5-2-codex-deprecated",
+      "github-changelog-copilot:https://github.blog/changelog/2026-06-05-enterprise-managed-plugins-in-vs-code-in-public-preview"
+    ],
+    "errorCount": 0
+  },
+  "events": [
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-06-05-gpt-5-2-and-gpt-5-2-codex-deprecated",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-06-06T08:04:28.438Z",
+      "publishedAt": "2026-06-05T22:32:00.000Z",
+      "title": "GPT-5.2 and GPT-5.2-Codex deprecated",
+      "url": "https://github.blog/changelog/2026-06-05-gpt-5-2-and-gpt-5-2-codex-deprecated",
+      "summary": "As of today, June 5, 2026, we have deprecated the following models across most GitHub Copilot experiences (including Copilot Chat, inline edits, ask and agent modes, and code completions). Note…\nThe post GPT-5.2 and GPT-5.2-Codex deprecated appeared first on The GitHub Blog.",
+      "categories": [
+        "Retired",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 5
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-06-05-gpt-5-2-and-gpt-5-2-codex-deprecated",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-06-06T08:04:28.680Z",
+      "publishedAt": "2026-06-05T22:32:00.000Z",
+      "title": "GPT-5.2 and GPT-5.2-Codex deprecated",
+      "url": "https://github.blog/changelog/2026-06-05-gpt-5-2-and-gpt-5-2-codex-deprecated",
+      "summary": "As of today, June 5, 2026, we have deprecated the following models across most GitHub Copilot experiences (including Copilot Chat, inline edits, ask and agent modes, and code completions). Note…\nThe post GPT-5.2 and GPT-5.2-Codex deprecated appeared first on The GitHub Blog.",
+      "categories": [
+        "Retired",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 5
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-06-05-enterprise-managed-plugins-in-vs-code-in-public-preview",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-06-06T08:04:28.680Z",
+      "publishedAt": "2026-06-05T21:01:48.000Z",
+      "title": "Enterprise-managed plugins in VS Code in public preview",
+      "url": "https://github.blog/changelog/2026-06-05-enterprise-managed-plugins-in-vs-code-in-public-preview",
+      "summary": "Last month we launched a public preview with Copilot CLI that allows enterprise administrators the ability to configure and distribute plugins to GitHub Copilot CLI users across their enterprise. VS…\nThe post Enterprise-managed plugins in VS Code in public preview appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "client apps",
+        "copilot",
+        "enterprise management tools"
+      ],
+      "isFutureDated": false,
+      "score": 2
+    }
+  ],
+  "errors": []
+}
