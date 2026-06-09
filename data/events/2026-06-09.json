@@ -1,16 +1,52 @@
 {
   "date": "2026-06-09",
-  "generatedAt": "2026-06-09T16:17:47.760Z",
+  "generatedAt": "2026-06-09T22:55:31.194Z",
   "latestRun": {
-    "generatedAt": "2026-06-09T16:17:47.760Z",
-    "newEventsCount": 2,
+    "generatedAt": "2026-06-09T22:55:31.194Z",
+    "newEventsCount": 4,
     "newEventIds": [
-      "github-changelog:https://github.blog/changelog/2026-06-09-security-validation-for-third-party-coding-agents",
-      "github-copilot-blog:https://github.blog/?p=96276"
+      "github-changelog:https://github.blog/changelog/2026-06-09-auto-draft",
+      "github-changelog-copilot:https://github.blog/changelog/2026-06-09-auto-draft",
+      "github-changelog-copilot:https://github.blog/changelog/2026-06-09-security-validation-for-third-party-coding-agents",
+      "vscode-updates:5acc1b83d2296f018af74f8bab7210bc14d4b57838278df2aee036c90dfdee91"
     ],
     "errorCount": 0
   },
   "events": [
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-06-09-auto-draft",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-06-09T22:55:28.036Z",
+      "publishedAt": "2026-06-09T17:39:26.000Z",
+      "title": "Claude Fable 5 is generally available for GitHub Copilot",
+      "url": "https://github.blog/changelog/2026-06-09-claude-fable-5-is-generally-available-for-github-copilot",
+      "summary": "Claude Fable 5 from Anthropic is now available in GitHub Copilot, the first model in Anthropic’s Mythos class, designed for long-horizon, autonomous coding and knowledge-work tasks. Unlike other Claude models…\nThe post Claude Fable 5 is generally available for GitHub Copilot appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-06-09-auto-draft",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-06-09T22:55:28.395Z",
+      "publishedAt": "2026-06-09T17:39:26.000Z",
+      "title": "Claude Fable 5 is generally available for GitHub Copilot",
+      "url": "https://github.blog/changelog/2026-06-09-claude-fable-5-is-generally-available-for-github-copilot",
+      "summary": "Claude Fable 5 from Anthropic is now available in GitHub Copilot, the first model in Anthropic’s Mythos class, designed for long-horizon, autonomous coding and knowledge-work tasks. Unlike other Claude models…\nThe post Claude Fable 5 is generally available for GitHub Copilot appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
     {
       "eventId": "github-copilot-blog:https://github.blog/?p=96276",
       "sourceId": "github-copilot-blog",
@@ -46,6 +82,60 @@
       ],
       "isFutureDated": false,
       "score": 1
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-06-09-security-validation-for-third-party-coding-agents",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-06-09T22:55:28.395Z",
+      "publishedAt": "2026-06-09T07:12:54.000Z",
+      "title": "Security validation for third-party coding agents",
+      "url": "https://github.blog/changelog/2026-06-09-security-validation-for-third-party-coding-agents",
+      "summary": "Security validation for third-party coding agents is now generally available. GitHub supports third-party coding agents (including Claude and OpenAI Codex) that work directly within your repositories to implement features, fix…\nThe post Security validation for third-party coding agents appeared first on The GitHub Blo...",
+      "categories": [
+        "Improvement",
+        "application security",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 1
+    },
+    {
+      "eventId": "vscode-updates:5acc1b83d2296f018af74f8bab7210bc14d4b57838278df2aee036c90dfdee91",
+      "sourceId": "vscode-updates",
+      "sourceName": "VS Code Updates",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-06-09T22:55:29.001Z",
+      "publishedAt": "2026-06-03T00:00:00.000Z",
+      "title": "VS Code Updates changed",
+      "url": "https://code.visualstudio.com/updates/",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [],
+        "additions": [
+          "Update 1.123.1: The update addresses these security issues."
+        ]
+      },
+      "headings": [
+        "Visual Studio Code 1.123",
+        "Agents",
+        "Session sync and chronicle",
+        "Retry network-dependent commands in the sandbox",
+        "Agents window (Preview)",
+        "Research agent (Preview)",
+        "Language Models",
+        "1M context window for Anthropic and OpenAI models",
+        "Integrated Browser",
+        "Favorite pages",
+        "More ways to capture screenshots",
+        "Editor Experience"
+      ],
+      "score": 2
     }
   ],
   "errors": []
