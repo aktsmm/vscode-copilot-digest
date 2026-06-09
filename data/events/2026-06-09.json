@@ -1,12 +1,52 @@
 {
   "date": "2026-06-09",
-  "generatedAt": "2026-06-09T08:43:43.016Z",
+  "generatedAt": "2026-06-09T16:17:47.760Z",
   "latestRun": {
-    "generatedAt": "2026-06-09T08:43:43.016Z",
-    "newEventsCount": 0,
-    "newEventIds": [],
+    "generatedAt": "2026-06-09T16:17:47.760Z",
+    "newEventsCount": 2,
+    "newEventIds": [
+      "github-changelog:https://github.blog/changelog/2026-06-09-security-validation-for-third-party-coding-agents",
+      "github-copilot-blog:https://github.blog/?p=96276"
+    ],
     "errorCount": 0
   },
-  "events": [],
+  "events": [
+    {
+      "eventId": "github-copilot-blog:https://github.blog/?p=96276",
+      "sourceId": "github-copilot-blog",
+      "sourceName": "GitHub Blog / GitHub Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-06-09T16:17:44.671Z",
+      "publishedAt": "2026-06-09T16:00:00.000Z",
+      "title": "From one-off prompts to workflows: How to use custom agents in GitHub Copilot CLI",
+      "url": "https://github.blog/ai-and-ml/github-copilot/from-one-off-prompts-to-workflows-how-to-use-custom-agents-in-github-copilot-cli/",
+      "summary": "Custom agents let GitHub Copilot CLI understand your stack and team workflows, turning one-off terminal prompts into repeatable, reviewable processes.\nThe post From one-off prompts to workflows: How to use custom agents in GitHub Copilot CLI appeared first on The GitHub Blog.",
+      "categories": [
+        "AI & ML",
+        "GitHub Copilot",
+        "GitHub Copilot CLI"
+      ],
+      "isFutureDated": false,
+      "score": 2
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-06-09-security-validation-for-third-party-coding-agents",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-06-09T16:17:44.316Z",
+      "publishedAt": "2026-06-09T07:12:54.000Z",
+      "title": "Security validation for third-party coding agents",
+      "url": "https://github.blog/changelog/2026-06-09-security-validation-for-third-party-coding-agents",
+      "summary": "Security validation for third-party coding agents is now generally available. GitHub supports third-party coding agents (including Claude and OpenAI Codex) that work directly within your repositories to implement features, fix…\nThe post Security validation for third-party coding agents appeared first on The GitHub Blo...",
+      "categories": [
+        "Improvement",
+        "application security",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 1
+    }
+  ],
   "errors": []
 }
