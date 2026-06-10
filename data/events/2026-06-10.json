@@ -1,0 +1,51 @@
+{
+  "date": "2026-06-10",
+  "generatedAt": "2026-06-10T09:02:25.274Z",
+  "latestRun": {
+    "generatedAt": "2026-06-10T09:02:25.274Z",
+    "newEventsCount": 1,
+    "newEventIds": [
+      "vscode-updates:38954bf933f5ebb2497dec66eadff5d4209cfd500990b5fbe64b8f83f9d2d950"
+    ],
+    "errorCount": 0
+  },
+  "events": [
+    {
+      "eventId": "vscode-updates:38954bf933f5ebb2497dec66eadff5d4209cfd500990b5fbe64b8f83f9d2d950",
+      "sourceId": "vscode-updates",
+      "sourceName": "VS Code Updates",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-06-10T09:02:23.808Z",
+      "publishedAt": "2026-06-03T00:00:00.000Z",
+      "title": "VS Code Updates changed",
+      "url": "https://code.visualstudio.com/updates/",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [],
+        "additions": [
+          "Update 1.123.2: The update addresses these issues."
+        ]
+      },
+      "headings": [
+        "Visual Studio Code 1.123",
+        "Agents",
+        "Session sync and chronicle",
+        "Retry network-dependent commands in the sandbox",
+        "Agents window (Preview)",
+        "Research agent (Preview)",
+        "Language Models",
+        "1M context window for Anthropic and OpenAI models",
+        "Integrated Browser",
+        "Favorite pages",
+        "More ways to capture screenshots",
+        "Editor Experience"
+      ],
+      "score": 2
+    }
+  ],
+  "errors": []
+}
