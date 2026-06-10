@@ -1,23 +1,13 @@
 {
   "date": "2026-06-10",
-  "generatedAt": "2026-06-10T16:47:09.835Z",
+  "generatedAt": "2026-06-10T23:04:00.672Z",
   "latestRun": {
-    "generatedAt": "2026-06-10T16:47:09.835Z",
-    "newEventsCount": 13,
+    "generatedAt": "2026-06-10T23:04:00.672Z",
+    "newEventsCount": 3,
     "newEventIds": [
-      "github-changelog:https://github.blog/changelog/2026-06-10-dedicated-security-review-command-now-available-in-copilot-cli",
-      "github-changelog-copilot:https://github.blog/changelog/2026-06-10-dedicated-security-review-command-now-available-in-copilot-cli",
-      "github-copilot-blog:https://github.blog/?p=96610",
-      "vscode-feed:https://code.visualstudio.com/updates/v1_125",
-      "vscode-updates:f87f809348aad417c827c7949e20d036444520fe97327dcd7f2dcf127ab19990",
-      "vscode-release-notes-1-109:b54146fcfb127d8ad01ad54f6ab812a204733daa33d976e75ca2dfed6a8b145e",
-      "vscode-release-notes-1-124:section:4872daf4ada118d8ec3175dc5a1af312b5b0cb3d1bc912bf7ba6543e466730aa",
-      "vscode-release-notes-1-124:section:2845fb594a09138a98ba6da740045231db8666e6ce4a52d0a7a40a4e1e2c2211",
-      "vscode-release-notes-1-124:section:3ad89ebaaa1d67ac0245ed14a70a2ce3394bcaa7d8bbf908b9d4dd87bbb7f9df",
-      "vscode-release-notes-1-124:section:95cd9779221fb0fa2124a23deb4101c2c7505255536f71323feb0063f3a8abe5",
-      "vscode-release-notes-1-123:5a7470d7dff332a533e829219b11d5261360fd8dfb4ad7da027fe5d2931fd151",
-      "vscode-release-notes-1-122:bbc479219d202e955463dc6a3209728fd1378bace590afcde31a3e1677971738",
-      "vscode-release-notes-1-121:85b7a87dd3ccc719feb33ea78e1b2a29202c4a97f426ad03ee5cfead03c6935d"
+      "github-changelog:https://github.blog/changelog/2026-06-10-copilot-chat-now-sees-your-agent-sessions",
+      "github-changelog-copilot:https://github.blog/changelog/2026-06-10-copilot-chat-now-sees-your-agent-sessions",
+      "vscode-feed:https://code.visualstudio.com/updates/v1_124"
     ],
     "errorCount": 0
   },
@@ -36,6 +26,56 @@
         "release"
       ],
       "isFutureDated": true,
+      "score": 4
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-06-10-copilot-chat-now-sees-your-agent-sessions",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-06-10T23:03:58.813Z",
+      "publishedAt": "2026-06-10T20:46:17.000Z",
+      "title": "Copilot Chat now sees your agent sessions",
+      "url": "https://github.blog/changelog/2026-06-10-copilot-chat-now-sees-your-agent-sessions",
+      "summary": "We’ve improved the handoff experience between Copilot Chat and Copilot cloud agent on the web. We’ve also enabled new functionality which allows you to search and query past agent sessions…\nThe post Copilot Chat now sees your agent sessions appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 5
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-06-10-copilot-chat-now-sees-your-agent-sessions",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-06-10T23:03:59.126Z",
+      "publishedAt": "2026-06-10T20:46:17.000Z",
+      "title": "Copilot Chat now sees your agent sessions",
+      "url": "https://github.blog/changelog/2026-06-10-copilot-chat-now-sees-your-agent-sessions",
+      "summary": "We’ve improved the handoff experience between Copilot Chat and Copilot cloud agent on the web. We’ve also enabled new functionality which allows you to search and query past agent sessions…\nThe post Copilot Chat now sees your agent sessions appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 5
+    },
+    {
+      "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_124",
+      "sourceId": "vscode-feed",
+      "sourceName": "VS Code Feed",
+      "kind": "feed_entry",
+      "detectedAt": "2026-06-10T23:03:59.173Z",
+      "publishedAt": "2026-06-10T17:00:00.000Z",
+      "title": "Visual Studio Code 1.124",
+      "url": "https://code.visualstudio.com/updates/v1_124",
+      "summary": "Learn what is new in Visual Studio Code 1.124\n Read the full article",
+      "categories": [
+        "release"
+      ],
+      "isFutureDated": false,
       "score": 4
     },
     {
