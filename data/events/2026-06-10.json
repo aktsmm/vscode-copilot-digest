@@ -1,15 +1,243 @@
 {
   "date": "2026-06-10",
-  "generatedAt": "2026-06-10T09:02:25.274Z",
+  "generatedAt": "2026-06-10T16:47:09.835Z",
   "latestRun": {
-    "generatedAt": "2026-06-10T09:02:25.274Z",
-    "newEventsCount": 1,
+    "generatedAt": "2026-06-10T16:47:09.835Z",
+    "newEventsCount": 13,
     "newEventIds": [
-      "vscode-updates:38954bf933f5ebb2497dec66eadff5d4209cfd500990b5fbe64b8f83f9d2d950"
+      "github-changelog:https://github.blog/changelog/2026-06-10-dedicated-security-review-command-now-available-in-copilot-cli",
+      "github-changelog-copilot:https://github.blog/changelog/2026-06-10-dedicated-security-review-command-now-available-in-copilot-cli",
+      "github-copilot-blog:https://github.blog/?p=96610",
+      "vscode-feed:https://code.visualstudio.com/updates/v1_125",
+      "vscode-updates:f87f809348aad417c827c7949e20d036444520fe97327dcd7f2dcf127ab19990",
+      "vscode-release-notes-1-109:b54146fcfb127d8ad01ad54f6ab812a204733daa33d976e75ca2dfed6a8b145e",
+      "vscode-release-notes-1-124:section:4872daf4ada118d8ec3175dc5a1af312b5b0cb3d1bc912bf7ba6543e466730aa",
+      "vscode-release-notes-1-124:section:2845fb594a09138a98ba6da740045231db8666e6ce4a52d0a7a40a4e1e2c2211",
+      "vscode-release-notes-1-124:section:3ad89ebaaa1d67ac0245ed14a70a2ce3394bcaa7d8bbf908b9d4dd87bbb7f9df",
+      "vscode-release-notes-1-124:section:95cd9779221fb0fa2124a23deb4101c2c7505255536f71323feb0063f3a8abe5",
+      "vscode-release-notes-1-123:5a7470d7dff332a533e829219b11d5261360fd8dfb4ad7da027fe5d2931fd151",
+      "vscode-release-notes-1-122:bbc479219d202e955463dc6a3209728fd1378bace590afcde31a3e1677971738",
+      "vscode-release-notes-1-121:85b7a87dd3ccc719feb33ea78e1b2a29202c4a97f426ad03ee5cfead03c6935d"
     ],
     "errorCount": 0
   },
   "events": [
+    {
+      "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_125",
+      "sourceId": "vscode-feed",
+      "sourceName": "VS Code Feed",
+      "kind": "feed_entry",
+      "detectedAt": "2026-06-10T16:47:07.936Z",
+      "publishedAt": "2026-06-17T17:00:00.000Z",
+      "title": "Visual Studio Code 1.125",
+      "url": "https://code.visualstudio.com/updates/v1_125",
+      "summary": "Learn what's new in Visual Studio Code 1.125 (Insiders)\n Read the full article",
+      "categories": [
+        "release"
+      ],
+      "isFutureDated": true,
+      "score": 4
+    },
+    {
+      "eventId": "github-copilot-blog:https://github.blog/?p=96610",
+      "sourceId": "github-copilot-blog",
+      "sourceName": "GitHub Blog / GitHub Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-06-10T16:47:07.620Z",
+      "publishedAt": "2026-06-10T16:00:00.000Z",
+      "title": "Give GitHub Copilot CLI real code intelligence with language servers",
+      "url": "https://github.blog/ai-and-ml/github-copilot/give-github-copilot-cli-real-code-intelligence-with-language-servers/",
+      "summary": "Install and configure LSP servers for GitHub Copilot CLI, replacing brute-force grep/decompile with real code intelligence. \nThe post Give GitHub Copilot CLI real code intelligence with language servers appeared first on The GitHub Blog.",
+      "categories": [
+        "AI & ML",
+        "GitHub Copilot",
+        "GitHub Copilot CLI"
+      ],
+      "isFutureDated": false,
+      "score": 1
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-06-10-dedicated-security-review-command-now-available-in-copilot-cli",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-06-10T16:47:06.925Z",
+      "publishedAt": "2026-06-10T11:44:41.000Z",
+      "title": "Dedicated security review command now available in Copilot CLI",
+      "url": "https://github.blog/changelog/2026-06-10-dedicated-security-review-command-now-available-in-copilot-cli",
+      "summary": "You can now run a security review on your code changes directly from GitHub Copilot CLI. The new /security-review slash command is shipping as an experimental feature in public preview,…\nThe post Dedicated security review command now available in Copilot CLI appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "application security",
+        "client apps",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 2
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-06-10-dedicated-security-review-command-now-available-in-copilot-cli",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-06-10T16:47:07.241Z",
+      "publishedAt": "2026-06-10T11:44:41.000Z",
+      "title": "Dedicated security review command now available in Copilot CLI",
+      "url": "https://github.blog/changelog/2026-06-10-dedicated-security-review-command-now-available-in-copilot-cli",
+      "summary": "You can now run a security review on your code changes directly from GitHub Copilot CLI. The new /security-review slash command is shipping as an experimental feature in public preview,…\nThe post Dedicated security review command now available in Copilot CLI appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "application security",
+        "client apps",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 2
+    },
+    {
+      "eventId": "vscode-updates:f87f809348aad417c827c7949e20d036444520fe97327dcd7f2dcf127ab19990",
+      "sourceId": "vscode-updates",
+      "sourceName": "VS Code Updates",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-06-10T16:47:08.229Z",
+      "publishedAt": "2026-06-10T00:00:00.000Z",
+      "title": "VS Code Updates changed",
+      "url": "https://code.visualstudio.com/updates/",
+      "summary": "Detected 103 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 103,
+        "headings": [
+          "Visual Studio Code 1.124",
+          "Agents window (Preview)",
+          "Background send for new sessions",
+          "Navigate between sessions",
+          "Restore sessions on reload",
+          "Close all sessions",
+          "Single-file diff in the Changes view (Preview)",
+          "Widen the editor with the side bar chevron",
+          "Autopilot (Preview)",
+          "Autopilot is enabled by default",
+          "Advanced Autopilot",
+          "Create folder when opening folder from simple file dialog",
+          "Integrated Browser",
+          "Enterprise",
+          "Enterprise-managed Copilot plugin policies (Experimental)",
+          "Deprecated features and settings"
+        ],
+        "additions": [
+          "1.124",
+          "H1: Visual Studio Code 1.124",
+          "Release date: June 10, 2026",
+          "Welcome to the 1.124 release of Visual Studio Code. This release makes it faster to work across agent sessions and gives agents more autonomy to finish your tasks.",
+          "Autopilot: Autopilot, enabled by default, is now smarter to determine when a task is truly done.",
+          "Background sessions: Quickly send a request in the background and keep composing the next session.",
+          "Session navigation: Search, jump, and step through agent sessions with the keyboard.",
+          "Browser history: Revisit and search pages you've already opened in the integrated browser.",
+          "H2: Agents window (Preview)",
+          "The Agents window is a dedicated companion window optimized for exploring, iterating on, and reviewing agent sessions across projects and machines. This release focuses on making it faster to move between sessions and on preserving your context across reloads.",
+          "H3: Background send for new sessions",
+          "Previously, starting a new session meant waiting for it to load before you could compose the next one. You can now send a request in the background instead: press Alt+Enter (or hold Alt and select Send) in the new session view.",
+          "The view resets immediately and keeps its state, such as the selected model and context, clearing only the query text, so you can keep queuing up requests. Each started session appears in the sessions list once it commits.",
+          "Sending a prompt with Enter still navigates into the new session as before.",
+          "H3: Navigate between sessions",
+          "When you work across many agent sessions, being able to find and switch between them quickly matters. This release adds several keyboard-driven ways to move through your sessions, from a searchable picker to back and forward navigation and direct jumps by position."
+        ]
+      },
+      "headings": [
+        "Visual Studio Code 1.124",
+        "Agents window (Preview)",
+        "Background send for new sessions",
+        "Navigate between sessions",
+        "Restore sessions on reload",
+        "Close all sessions",
+        "Single-file diff in the Changes view (Preview)",
+        "Widen the editor with the side bar chevron",
+        "Autopilot (Preview)",
+        "Autopilot is enabled by default",
+        "Advanced Autopilot",
+        "Editor Experience"
+      ],
+      "score": 18
+    },
+    {
+      "eventId": "vscode-release-notes-1-124:section:4872daf4ada118d8ec3175dc5a1af312b5b0cb3d1bc912bf7ba6543e466730aa",
+      "sourceId": "vscode-release-notes-1-124",
+      "sourceName": "VS Code Release Notes 1.124",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-06-10T16:47:09.749Z",
+      "publishedAt": "2026-06-10T00:00:00.000Z",
+      "title": "Visual Studio Code 1.124: Background send for new sessions",
+      "url": "https://code.visualstudio.com/updates/v1_124",
+      "summary": "Previously, starting a new session meant waiting for it to load before you could compose the next one. You can now send a request in the background instead: press Alt+Enter (or hold Alt and select Send) in the new session view. The view resets immediately and keeps its state, such as the selected model and context, clearing only the query text, so you can keep queuing up requests. Each started session appears in the...",
+      "categories": [
+        "release",
+        "section",
+        "Agents window (Preview)"
+      ],
+      "sectionHeading": "Agents window (Preview)",
+      "sectionTitle": "Background send for new sessions",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-124:section:2845fb594a09138a98ba6da740045231db8666e6ce4a52d0a7a40a4e1e2c2211",
+      "sourceId": "vscode-release-notes-1-124",
+      "sourceName": "VS Code Release Notes 1.124",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-06-10T16:47:09.749Z",
+      "publishedAt": "2026-06-10T00:00:00.000Z",
+      "title": "Visual Studio Code 1.124: Navigate between sessions",
+      "url": "https://code.visualstudio.com/updates/v1_124",
+      "summary": "When you work across many agent sessions, being able to find and switch between them quickly matters. This release adds several keyboard-driven ways to move through your sessions, from a searchable picker to back and forward navigation and direct jumps by position. Sessions picker: Press Ctrl+R (Cmd+R on macOS) to open a Quick Pick that lists your sessions in two groups, recently opened and other sessions, with the...",
+      "categories": [
+        "release",
+        "section",
+        "Agents window (Preview)"
+      ],
+      "sectionHeading": "Agents window (Preview)",
+      "sectionTitle": "Navigate between sessions",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-124:section:3ad89ebaaa1d67ac0245ed14a70a2ce3394bcaa7d8bbf908b9d4dd87bbb7f9df",
+      "sourceId": "vscode-release-notes-1-124",
+      "sourceName": "VS Code Release Notes 1.124",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-06-10T16:47:09.749Z",
+      "publishedAt": "2026-06-10T00:00:00.000Z",
+      "title": "Visual Studio Code 1.124: Restore sessions on reload",
+      "url": "https://code.visualstudio.com/updates/v1_124",
+      "summary": "Reloading or reopening the Agents window no longer loses your layout. The previously visible sessions and their state are restored automatically, so you land back where you left off. This includes: The visible sessions grid: which sessions were open, their left-to-right order, the active session, and any sticky or pinned sessions. Per-session layout, including auxiliary bar visibility, the active view container, and...",
+      "categories": [
+        "release",
+        "section",
+        "Agents window (Preview)"
+      ],
+      "sectionHeading": "Agents window (Preview)",
+      "sectionTitle": "Restore sessions on reload",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-124:section:95cd9779221fb0fa2124a23deb4101c2c7505255536f71323feb0063f3a8abe5",
+      "sourceId": "vscode-release-notes-1-124",
+      "sourceName": "VS Code Release Notes 1.124",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-06-10T16:47:09.749Z",
+      "publishedAt": "2026-06-10T00:00:00.000Z",
+      "title": "Visual Studio Code 1.124: Close all sessions",
+      "url": "https://code.visualstudio.com/updates/v1_124",
+      "summary": "Similar to editor's Close All... commands, you can now close all your sessions in one step with the new Close All Sessions command. This is especially useful when you have many sessions open and want to quickly switch to a new session without having to close each session individually. Use the keyboard shortcut Ctrl+K Ctrl+W (Cmd+K Cmd+W on macOS) while a session has focus, or access the command from the Command Pale...",
+      "categories": [
+        "release",
+        "section",
+        "Agents window (Preview)"
+      ],
+      "sectionHeading": "Agents window (Preview)",
+      "sectionTitle": "Close all sessions",
+      "score": 4
+    },
     {
       "eventId": "vscode-updates:38954bf933f5ebb2497dec66eadff5d4209cfd500990b5fbe64b8f83f9d2d950",
       "sourceId": "vscode-updates",
@@ -43,6 +271,42 @@
         "Favorite pages",
         "More ways to capture screenshots",
         "Editor Experience"
+      ],
+      "score": 2
+    },
+    {
+      "eventId": "vscode-release-notes-1-109:b54146fcfb127d8ad01ad54f6ab812a204733daa33d976e75ca2dfed6a8b145e",
+      "sourceId": "vscode-release-notes-1-109",
+      "sourceName": "VS Code Release Notes 1.109",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-06-10T16:47:08.727Z",
+      "publishedAt": "2026-02-04T00:00:00.000Z",
+      "title": "VS Code Release Notes 1.109 changed",
+      "url": "https://code.visualstudio.com/updates/v1_109",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [],
+        "additions": [
+          "1.124"
+        ]
+      },
+      "headings": [
+        "January 2026 (version 1.109)",
+        "Upcoming events",
+        "Agent Sessions Day",
+        "Chat UX",
+        "Message steering and queueing (Experimental)",
+        "Anthropic models now show thinking tokens",
+        "Mermaid diagrams in chat responses",
+        "Ask Questions tool (Experimental)",
+        "Plan agent",
+        "Context window details",
+        "Inline chat UX revamp (Preview)",
+        "Model descriptions in the model picker"
       ],
       "score": 2
     }
