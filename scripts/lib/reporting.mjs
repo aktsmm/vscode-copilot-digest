@@ -3038,8 +3038,8 @@ export function importanceReason(event, locale = "ja") {
   }
 
   return locale === "ja"
-    ? "継続ウォッチ対象として押さえておきたい更新です。"
-    : "This is a useful update to keep on your watch list.";
+    ? `「${displayTitle}」の公開内容を追跡し、Copilot / VS Code 周辺の運用・説明材料として影響を確認したい更新です。`
+    : `This update is worth tracking because "${displayTitle}" may affect how Copilot or VS Code capabilities are explained or operated.`;
 }
 
 export function buildDailyDigest(eventLog) {
