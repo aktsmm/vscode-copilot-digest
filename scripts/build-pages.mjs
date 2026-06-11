@@ -1439,7 +1439,10 @@ function renderIndexPage(
 }
 
 function renderPagefindComponentSetupScript() {
-  return `const rootPath = window.location.pathname.replace(/(?:en\\/)?index\\.html$/, "");
+  return `const pathName = window.location.pathname;
+const rootPath = pathName.endsWith("/en/")
+  ? pathName.slice(0, -3)
+  : pathName.replace(/(?:en\\/)?index\\.html$/, "");
 const basePath = /\\/$/.test(rootPath) ? rootPath : rootPath + "/";
 document.querySelectorAll("pagefind-config").forEach((config) => {
   config.setAttribute("bundle-path", basePath + "pagefind/");

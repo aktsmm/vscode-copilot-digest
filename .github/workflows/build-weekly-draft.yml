@@ -31,7 +31,9 @@ jobs:
         run: npm ci
 
       - name: Build weekly draft
-        run: node scripts/build-weekly.mjs --days "${{ inputs.days || '7' }}"
+        env:
+          SUMMARY_DAYS: ${{ inputs.days || '7' }}
+        run: node scripts/build-weekly.mjs --days "$SUMMARY_DAYS"
 
       - name: Commit changes
         run: |

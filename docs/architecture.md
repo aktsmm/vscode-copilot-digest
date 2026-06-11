@@ -79,7 +79,7 @@
 `build-weekly.mjs` と `build-biweekly.mjs` は次を行います。
 
 1. 指定期間のイベントを集める
-2. GitHub Copilot、VS Code、GitHub Platform、周辺ニュースに分類する
+2. GitHub Copilot、VS Code、周辺ニュースに分類する
 3. 重要度が高い項目を要点へ出す
 4. 公開前に人間が編集しやすい Markdown を [drafts](../drafts) に出力する
 

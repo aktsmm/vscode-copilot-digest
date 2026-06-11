@@ -26,6 +26,49 @@ function toDateOnly(date) {
   return `${year}-${month}-${day}`;
 }
 
+function parsePositiveInteger(value, optionName) {
+  const text = String(value ?? "").trim();
+  if (!/^[1-9]\d*$/.test(text)) {
+    throw new Error(`${optionName} must be a positive integer.`);
+  }
+
+  const number = Number(text);
+  if (!Number.isSafeInteger(number) || number > 31) {
+    throw new Error(`${optionName} must be between 1 and 31.`);
+  }
+
+  return number;
+}
+
+function parseDateKeyOption(value, optionName) {
+  const text = String(value ?? "").trim();
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(text)) {
+    throw new Error(`${optionName} must use YYYY-MM-DD.`);
+  }
+
+  const date = new Date(`${text}T00:00:00Z`);
+  if (Number.isNaN(date.getTime()) || date.toISOString().slice(0, 10) !== text) {
+    throw new Error(`${optionName} must be a valid calendar date.`);
+  }
+
+  return text;
+}
+
+function resolveDraftOutputPath(value) {
+  const normalizedInput = String(value ?? "").replace(/\\/g, "/");
+  if (!/^drafts\/[^/]+\.md$/.test(normalizedInput)) {
+    throw new Error("--output must match drafts/<file>.md.");
+  }
+
+  const resolved = path.resolve(workspaceRoot, value);
+  const relative = path.relative(draftsDir, resolved);
+  if (relative.startsWith("..") || path.isAbsolute(relative)) {
+    throw new Error("--output must stay inside drafts/.");
+  }
+
+  return resolved;
+}
+
 function parseArgs(argv) {
   const options = {
     days: 7,
@@ -37,25 +80,25 @@ function parseArgs(argv) {
   for (let index = 0; index < argv.length; index += 1) {
     const argument = argv[index];
     if (argument === "--days") {
-      options.days = Number(argv[index + 1]);
+      options.days = parsePositiveInteger(argv[index + 1], "--days");
       index += 1;
       continue;
     }
 
     if (argument === "--from") {
-      options.from = argv[index + 1];
+      options.from = parseDateKeyOption(argv[index + 1], "--from");
       index += 1;
       continue;
     }
 
     if (argument === "--to") {
-      options.to = argv[index + 1];
+      options.to = parseDateKeyOption(argv[index + 1], "--to");
       index += 1;
       continue;
     }
 
     if (argument === "--output") {
-      options.output = argv[index + 1];
+      options.output = resolveDraftOutputPath(argv[index + 1]);
       index += 1;
     }
   }
@@ -74,6 +117,10 @@ function computeRange(options) {
     startDate.setDate(startDate.getDate() - (options.days - 1));
   }
   startDate.setHours(0, 0, 0, 0);
+
+  if (startDate > endDate) {
+    throw new Error("--from must be on or before --to.");
+  }
 
   return { startDate, endDate };
 }

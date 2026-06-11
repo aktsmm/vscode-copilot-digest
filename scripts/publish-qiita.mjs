@@ -4,6 +4,7 @@ import path from "node:path";
 import matter from "gray-matter";
 
 const workspaceRoot = process.cwd();
+const draftsDir = path.join(workspaceRoot, "drafts");
 
 function normalizeTags(tags) {
   if (!Array.isArray(tags)) {
@@ -29,7 +30,6 @@ function normalizeTags(tags) {
 }
 
 async function findLatestDraft() {
-  const draftsDir = path.join(workspaceRoot, "drafts");
   const entries = await fs.readdir(draftsDir, { withFileTypes: true });
   const files = entries
     .filter((entry) => entry.isFile() && entry.name.endsWith(".md"))
@@ -49,15 +49,30 @@ async function findLatestDraft() {
   return stats[0].filePath;
 }
 
+function resolveTargetDraftPath(inputPath) {
+  const normalizedInput = String(inputPath ?? "").replace(/\\/g, "/");
+  if (!/^drafts\/[^/]+\.md$/.test(normalizedInput)) {
+    throw new Error("Draft path must match drafts/<file>.md.");
+  }
+
+  const resolved = path.resolve(workspaceRoot, inputPath);
+  const relative = path.relative(draftsDir, resolved);
+  if (relative.startsWith("..") || path.isAbsolute(relative)) {
+    throw new Error("Draft path must stay inside drafts/.");
+  }
+
+  return resolved;
+}
+
 async function main() {
+  const targetFile = process.argv[2]
+    ? resolveTargetDraftPath(process.argv[2])
+    : await findLatestDraft();
+
   const token = process.env.QIITA_ACCESS_TOKEN;
   if (!token) {
     throw new Error("QIITA_ACCESS_TOKEN is not set.");
   }
-
-  const targetFile = process.argv[2]
-    ? path.resolve(workspaceRoot, process.argv[2])
-    : await findLatestDraft();
 
   const raw = await fs.readFile(targetFile, "utf8");
   const parsed = matter(raw);

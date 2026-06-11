@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import assert from "node:assert/strict";
+import { spawnSync } from "node:child_process";
 
 import {
   buildDailyDigest,
@@ -38,6 +39,11 @@ assert.doesNotMatch(
   /const\s+publishedFallbackPhrases\s*=\s*\[/,
   "build-pages must not define a separate fallback marker list",
 );
+assert.match(
+  buildPagesSource,
+  /pathName\.endsWith\("\/en\/"\)/,
+  "build-pages must resolve Pagefind assets correctly for /en/ directory URLs",
+);
 
 const authorWorkflowSource = fs.readFileSync(
   ".github/workflows/author-digest-pr.yml",
@@ -55,8 +61,50 @@ assert.doesNotMatch(
 );
 
 const reportingSource = fs.readFileSync("scripts/lib/reporting.mjs", "utf8");
+assertNoDuplicateObjectKeys(reportingSource, "vscodeReleaseSummaries");
 assertNoDuplicateObjectKeys(reportingSource, "exactSummaryMappings");
 assertNoDuplicateObjectKeys(reportingSource, "exactImportanceMappings");
+
+assertCliFails(
+  ["scripts/build-weekly.mjs", "--days", "abc", "--output", "drafts/tmp-invalid-weekly.md"],
+  "--days",
+);
+assertCliFails(
+  ["scripts/build-biweekly.mjs", "--days", "0", "--output", "drafts/tmp-invalid-biweekly.md"],
+  "--days",
+);
+assertCliFails(
+  ["scripts/build-weekly.mjs", "--from", "2026-02-31", "--output", "drafts/tmp-invalid-weekly.md"],
+  "--from",
+);
+assertCliFails(
+  ["scripts/build-biweekly.mjs", "--days", "14", "--output", "README.md"],
+  "--output",
+);
+assertCliFails(
+  ["scripts/build-weekly.mjs", "--from", "2026-06-10", "--to", "2026-06-04", "--output", "drafts/tmp-invalid-weekly.md"],
+  "--from",
+);
+assertCliFails(
+  ["scripts/notify-discord.mjs", "--date", "2026-99-99", "--dry-run"],
+  "--date",
+);
+assertCliFails(["scripts/publish-qiita.mjs", "README.md"], "drafts/");
+
+const publishQiitaWorkflowSource = fs.readFileSync(
+  ".github/workflows/publish-qiita.yml",
+  "utf8",
+);
+assert.doesNotMatch(
+  publishQiitaWorkflowSource,
+  /node scripts\/publish-qiita\.mjs "\$\{\{ inputs\.file \}\}"/,
+  "publish-qiita workflow must not pass inputs.file directly in shell commands",
+);
+assert.doesNotMatch(
+  publishQiitaWorkflowSource,
+  /git add "\$\{\{ inputs\.file \}\}"/,
+  "publish-qiita workflow must not git-add inputs.file directly",
+);
 
 const unknownSamples = [
   {
@@ -131,8 +179,8 @@ function assertNoDuplicateObjectKeys(source, objectName) {
   assert.ok(match, `${objectName} block must exist`);
 
   const keys = Array.from(
-    match[1].matchAll(/^  "([^"]+)":/gm),
-    (entry) => entry[1],
+    match[1].matchAll(/^  (?:(?:"([^"]+)")|([0-9]+(?:\.[0-9]+)?)):/gm),
+    (entry) => entry[1] ?? entry[2],
   );
   const duplicates = [
     ...new Set(keys.filter((key, index) => keys.indexOf(key) !== index)),
@@ -141,5 +189,18 @@ function assertNoDuplicateObjectKeys(source, objectName) {
     duplicates,
     [],
     `${objectName} must not contain duplicate keys`,
+  );
+}
+
+function assertCliFails(args, expectedText) {
+  const result = spawnSync(process.execPath, args, {
+    cwd: process.cwd(),
+    encoding: "utf8",
+  });
+  assert.notEqual(result.status, 0, `${args.join(" ")} must fail`);
+  assert.match(
+    `${result.stdout}\n${result.stderr}`,
+    new RegExp(expectedText.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")),
+    `${args.join(" ")} must mention ${expectedText}`,
   );
 }

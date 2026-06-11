@@ -29,7 +29,9 @@ jobs:
         run: npm ci
 
       - name: Build draft
-        run: node scripts/build-biweekly.mjs --days "${{ inputs.days }}"
+        env:
+          SUMMARY_DAYS: ${{ inputs.days }}
+        run: node scripts/build-biweekly.mjs --days "$SUMMARY_DAYS"
 
       - name: Commit changes
         run: |

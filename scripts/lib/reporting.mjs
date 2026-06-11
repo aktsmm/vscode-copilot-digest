@@ -63,10 +63,6 @@ const vscodeReleaseSummaries = {
     ja: "Visual Studio Code 1.123 の release note 予告ページ。正式公開前のため、通常ハイライトには混ぜず、次回 release の監視対象として扱う。",
     en: "A future Visual Studio Code 1.123 release-notes entry. It is tracked as an upcoming release signal rather than mixed into published highlights before the release date.",
   },
-  1.122: {
-    ja: "agent 作業を独立画面で扱う Agents Window、agent の OpenTelemetry signal、sandboxing、GitHub サインインなしの BYOK 利用など、agent 実行環境の運用性と観測性を広げる release。",
-    en: "This release expands agent operations and observability with the Agents Window, richer OpenTelemetry signals for agents, sandboxing, and BYOK usage without a GitHub sign-in.",
-  },
   1.121: {
     ja: "agent 体験の継続強化が主題の release。Agents ウィンドウの継続改善に加え、リモートマシン上での agent セッション実行（Experimental）、OpenTelemetry と Azure Managed Grafana による agent observability、Claude agent の Auto 権限モードプレビューが含まれる。",
     en: "This release continues to strengthen the agent experience with further Agents window improvements, experimental remote-machine agent session execution, OpenTelemetry and Azure Managed Grafana agent observability, and a Claude agent Auto permission mode in preview.",

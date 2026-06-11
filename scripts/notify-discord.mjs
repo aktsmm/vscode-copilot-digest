@@ -40,7 +40,7 @@ function parseArgs(argv) {
   for (let index = 0; index < argv.length; index += 1) {
     const argument = argv[index];
     if (argument === "--date") {
-      options.date = argv[index + 1];
+      options.date = parseDateKeyOption(argv[index + 1], "--date");
       index += 1;
       continue;
     }
@@ -56,19 +56,19 @@ function parseArgs(argv) {
     }
 
     if (argument === "--window-days") {
-      options.windowDays = Number.parseInt(argv[index + 1] ?? "1", 10);
+      options.windowDays = parsePositiveInteger(argv[index + 1], "--window-days");
       index += 1;
       continue;
     }
 
     if (argument === "--cadence-days") {
-      options.cadenceDays = Number.parseInt(argv[index + 1] ?? "1", 10);
+      options.cadenceDays = parsePositiveInteger(argv[index + 1], "--cadence-days");
       index += 1;
       continue;
     }
 
     if (argument === "--anchor-date") {
-      options.anchorDate = argv[index + 1] ?? null;
+      options.anchorDate = parseDateKeyOption(argv[index + 1], "--anchor-date");
       index += 1;
       continue;
     }
@@ -80,6 +80,34 @@ function parseArgs(argv) {
   }
 
   return options;
+}
+
+function parsePositiveInteger(value, optionName) {
+  const text = String(value ?? "").trim();
+  if (!/^[1-9]\d*$/.test(text)) {
+    throw new Error(`${optionName} must be a positive integer.`);
+  }
+
+  const number = Number(text);
+  if (!Number.isSafeInteger(number) || number > 31) {
+    throw new Error(`${optionName} must be between 1 and 31.`);
+  }
+
+  return number;
+}
+
+function parseDateKeyOption(value, optionName) {
+  const text = String(value ?? "").trim();
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(text)) {
+    throw new Error(`${optionName} must use YYYY-MM-DD.`);
+  }
+
+  const date = new Date(`${text}T00:00:00Z`);
+  if (Number.isNaN(date.getTime()) || toDateKey(date) !== text) {
+    throw new Error(`${optionName} must be a valid calendar date.`);
+  }
+
+  return text;
 }
 
 function compactDateKey(dateKey) {
