@@ -1,12 +1,51 @@
 {
   "date": "2026-06-11",
-  "generatedAt": "2026-06-11T09:47:56.990Z",
+  "generatedAt": "2026-06-11T17:05:35.169Z",
   "latestRun": {
-    "generatedAt": "2026-06-11T09:47:56.990Z",
-    "newEventsCount": 0,
-    "newEventIds": [],
+    "generatedAt": "2026-06-11T17:05:35.169Z",
+    "newEventsCount": 2,
+    "newEventIds": [
+      "github-changelog:https://github.blog/changelog/2026-06-10-github-agentic-workflows-are-now-in-public-preview",
+      "github-changelog:https://github.blog/changelog/2026-06-10-agentic-workflows-no-longer-need-a-personal-access-token"
+    ],
     "errorCount": 0
   },
-  "events": [],
+  "events": [
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-06-10-github-agentic-workflows-are-now-in-public-preview",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-06-11T17:05:33.525Z",
+      "publishedAt": "2026-06-11T16:00:35.000Z",
+      "title": "GitHub Agentic Workflows is now in public preview",
+      "url": "https://github.blog/changelog/2026-06-11-github-agentic-workflows-is-now-in-public-preview",
+      "summary": "GitHub Agentic Workflows is now in public preview. With agentic workflows, you can automate reasoning-based tasks like issue triage, CI failure analysis, and documentation updates by leveraging coding agents inside…\nThe post GitHub Agentic Workflows is now in public preview appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "actions",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 5
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-06-10-agentic-workflows-no-longer-need-a-personal-access-token",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-06-11T17:05:33.525Z",
+      "publishedAt": "2026-06-11T15:55:49.000Z",
+      "title": "Agentic workflows no longer need a personal access token",
+      "url": "https://github.blog/changelog/2026-06-11-agentic-workflows-no-longer-need-a-personal-access-token",
+      "summary": "You can now use GitHub Agentic Workflows with GitHub Actions’s built-in GITHUB_TOKEN. This means that you no longer need to create and store a personal access token (PAT), eliminating the…\nThe post Agentic workflows no longer need a personal access token appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    }
+  ],
   "errors": []
 }
