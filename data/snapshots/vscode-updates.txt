@@ -19,6 +19,8 @@ View All Releases
 H1: Visual Studio Code 1.124
 Follow us on LinkedIn, X, Bluesky
 Release date: June 10, 2026
+Update 1.124.1: The update addresses these issues.
+Update 1.124.2: The update addresses these issues.
 Downloads: Windows: x64 Arm64 | Mac: Universal Intel silicon | Linux: deb rpm tarball Arm snap
 Welcome to the 1.124 release of Visual Studio Code. This release makes it faster to work across agent sessions and gives agents more autonomy to finish your tasks.
 Autopilot: Autopilot, enabled by default, is now smarter to determine when a task is truly done.
@@ -276,11 +278,30 @@ debug: Log errors when loading stored breakpoints/watch expressions (#_319805) P
 editor: Cache getComputedStyle result in shadowCaretRangeFromPoint (#_319803) PR #319804
 @KirtiRamchandani (Kirtikumar Anandrao Ramchandani): fix: surface missing Git LFS git errors PR #319973
 @maruthang (Maruthan G): fix(explorer): guard file-explorer scroll handler against transient tree-map desync (#_188365) PR #310833
-@mohanrajvenkatesan23-04 (Mohanraj Venkatesan): html-language-features: include JSDoc summary and tags in
-Support
-Privacy
-Manage Cookies
-Terms of Use
-License
-Your Privacy Choices
-Consumer Health Privacy
+@mohanrajvenkatesan23-04 (Mohanraj Venkatesan): html-language-features: include JSDoc summary and tags in <script> hover PR #312585
+@mohityadav8 (Mohit Yadav): fix(docs): correct grammar and typo issues in documentation PR #317718
+@mutl3y: fix(terminal): catch ENOPRO in getCwdResource when file:// provider absent in VS Code web PR #317780
+@sgoedecke (Sean Goedecke): Fix auto mode fallback for empty model providers PR #316174
+@SimonSiefke (Simon Siefke)
+
+fix: process leaks in extensionHostConnection PR #319223
+fix: memory leak in pane composite bar PR #282589
+fix: memory leak in pty host service PR #287025
+fix: process leaks in extensionHostConnection PR #319223
+fix: memory leak in pane composite bar PR #282589
+fix: memory leak in pty host service PR #287025
+@tbogoodnews (Taylor Blair): Fix BYOK response success turn telemetry PR #319637
+@vivekjm (Vivek JM): Disable Copy Breadcrumbs Path without symbols PR #318042
+@yogeshwaran-c (Yogeshwaran C): Remove disabled toggle from the tab order PR #319693
+Contributions to vscode-extension-samples:
+@fhwvtqdc2q-svg (Lloouujjiinn): Replace deprecated typescript.tsc.autoDetect setting PR #1287
+Contributions to vscode-pull-request-github:
+@Malix-Labs (Malix - Alix Brunet): feat: contributes.yamlValidation PR #8761
+We really appreciate people trying our new features as soon as they are ready, so check back here often and learn what's new.
+If you'd like to read release notes for previous VS Code versions, go to Updates on code.visualstudio.com.
+Agents window (Preview)
+Autopilot (Preview)
+Editor Experience
+Enterprise
+Deprecated features and settings
+Thank you

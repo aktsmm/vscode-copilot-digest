@@ -1,0 +1,66 @@
+{
+  "date": "2026-06-12",
+  "generatedAt": "2026-06-12T09:39:43.448Z",
+  "latestRun": {
+    "generatedAt": "2026-06-12T09:39:43.448Z",
+    "newEventsCount": 1,
+    "newEventIds": [
+      "vscode-updates:8f6895e19f971bcbad2f37a928c7341fc349f8db4c68dbbb9cbf7eb10949b7d1"
+    ],
+    "errorCount": 0
+  },
+  "events": [
+    {
+      "eventId": "vscode-updates:8f6895e19f971bcbad2f37a928c7341fc349f8db4c68dbbb9cbf7eb10949b7d1",
+      "sourceId": "vscode-updates",
+      "sourceName": "VS Code Updates",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-06-12T09:39:42.151Z",
+      "publishedAt": "2026-06-10T00:00:00.000Z",
+      "title": "VS Code Updates changed",
+      "url": "https://code.visualstudio.com/updates/",
+      "summary": "Detected 25 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 25,
+        "headings": [],
+        "additions": [
+          "Update 1.124.1: The update addresses these issues.",
+          "Update 1.124.2: The update addresses these issues.",
+          "@mohanrajvenkatesan23-04 (Mohanraj Venkatesan): html-language-features: include JSDoc summary and tags in <script> hover PR #312585",
+          "@mohityadav8 (Mohit Yadav): fix(docs): correct grammar and typo issues in documentation PR #317718",
+          "@mutl3y: fix(terminal): catch ENOPRO in getCwdResource when file:// provider absent in VS Code web PR #317780",
+          "@sgoedecke (Sean Goedecke): Fix auto mode fallback for empty model providers PR #316174",
+          "@SimonSiefke (Simon Siefke)",
+          "fix: process leaks in extensionHostConnection PR #319223",
+          "fix: memory leak in pane composite bar PR #282589",
+          "fix: memory leak in pty host service PR #287025",
+          "@tbogoodnews (Taylor Blair): Fix BYOK response success turn telemetry PR #319637",
+          "@vivekjm (Vivek JM): Disable Copy Breadcrumbs Path without symbols PR #318042",
+          "@yogeshwaran-c (Yogeshwaran C): Remove disabled toggle from the tab order PR #319693",
+          "Contributions to vscode-extension-samples:",
+          "@fhwvtqdc2q-svg (Lloouujjiinn): Replace deprecated typescript.tsc.autoDetect setting PR #1287",
+          "Contributions to vscode-pull-request-github:"
+        ]
+      },
+      "headings": [
+        "Visual Studio Code 1.124",
+        "Agents window (Preview)",
+        "Background send for new sessions",
+        "Navigate between sessions",
+        "Restore sessions on reload",
+        "Close all sessions",
+        "Single-file diff in the Changes view (Preview)",
+        "Widen the editor with the side bar chevron",
+        "Autopilot (Preview)",
+        "Autopilot is enabled by default",
+        "Advanced Autopilot",
+        "Editor Experience"
+      ],
+      "score": 2
+    }
+  ],
+  "errors": []
+}
