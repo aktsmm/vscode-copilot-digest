@@ -217,6 +217,19 @@ jobs:
               );
             }
 
+            if (failedSteps.includes('Validate low-information fallback guard')) {
+              feedbackLines.push(
+                '### low-information fallback ガードエラー',
+                '- このステップは `npm test` です。`data/events/*.json` と `summaries/daily/*.md` に低情報 fallback 文言が残っていると失敗します',
+                '- 失敗ログに `<file> contains low-information fallback copy` と出ます。その `<file>` が原因のイベント源です',
+                '- `data/**` は読み取り専用です。生データは編集しないでください',
+                '- 該当タイトルの具体要約を `scripts/lib/reporting.mjs` の `exactSummaryMappings` / `exactImportanceMappings`（VS Code release note は `vscodeReleaseSummaries`）へ追加して fallback を解消してください',
+                '- 追加する要約には対象更新の「何が変わったか」と「運用上なぜ気にするか」を含め、元ソースにない数値や固有名詞を足さないでください',
+                '- 修正後に `npm test` がローカルで通ることを確認してから push してください',
+                '',
+              );
+            }
+
             if (failedSteps.includes('Validate collect command')) {
               feedbackLines.push(
                 '### collect エラー',

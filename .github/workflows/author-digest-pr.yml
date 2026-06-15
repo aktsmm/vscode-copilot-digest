@@ -247,7 +247,7 @@ jobs:
               `1. \`data/events/${dateKey}.json\` を読み、重要な更新を把握する`,
               `2. \`summaries/daily/${dateKey}.md\` の \`注目トピック\` と \`テーマ別まとめ\` を更新する`,
               '3. 今週分・隔週分のドラフト対象期間に含まれる場合は、`drafts/**` の要点または本文を更新する',
-              '4. `reporting.mjs` に未登録のタイトルや要約パターンが必要なら追加する',
+              '4. `reporting.mjs` に未登録のタイトルや要約パターンがあれば追加する。低情報 fallback が残る場合は、該当タイトルの具体要約を `exactSummaryMappings` / `exactImportanceMappings`（VS Code release note は `vscodeReleaseSummaries`）へ追加して解消する。`data/**` は編集しない',
               ...(hasPagesBuildFailure
                 ? ['4.5. `npm run build:pages` を再現し、Pages build failure の原因を解消する']
                 : []),
@@ -268,7 +268,7 @@ jobs:
               ...(hasPagesBuildFailure
                 ? ['- Pages build repair の場合だけ `scripts/build-pages.mjs` も変更可']
                 : []),
-              '- `npm run collect` と `npm run build:pages` が通る状態を維持する',
+              '- `npm test`（low-information fallback ガード）, `npm run collect`, `npm run build:pages` が通る状態を維持する',
               '- 不確実な場合は `needs-human-review` を明記して PR を作る',
               '',
               '### 依頼スコープ',
