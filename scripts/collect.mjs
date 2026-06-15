@@ -13,6 +13,7 @@ import {
   localizedImportanceLabel,
   localizedSummary,
   localizedTitle,
+  lowInformationFallbackMarkers,
   originalTitle,
   summarizeEventSet,
 } from "./lib/reporting.mjs";
@@ -1063,6 +1064,48 @@ async function main() {
   console.log(`Latest run metadata written to ${eventFile}.`);
   if (errors.length > 0) {
     console.warn(`Encountered ${errors.length} error(s).`);
+  }
+
+  reportLowInformationFallbacks(allLogs);
+}
+
+function reportLowInformationFallbacks(allLogs) {
+  const fallbackReport = allLogs
+    .map((log) => {
+      const digest = buildDailyDigest(log);
+      const generatedText = [
+        summarizeEventSet(digest.uniqueEvents, "ja", {
+          maxLength: 960,
+          maxHighlights: 5,
+        }),
+        ...digest.uniqueEvents.flatMap((event) => [
+          localizedSummary(event),
+          importanceReason(event),
+        ]),
+      ].join("\n");
+      const markers = lowInformationFallbackMarkers.filter((marker) =>
+        generatedText.includes(marker),
+      );
+      return { date: log.date, markers };
+    })
+    .filter((entry) => entry.markers.length > 0);
+
+  if (fallbackReport.length === 0) {
+    return;
+  }
+
+  const totalMarkers = fallbackReport.reduce(
+    (sum, entry) => sum + entry.markers.length,
+    0,
+  );
+  console.warn(
+    `Low-information fallback copy detected in ${fallbackReport.length} day(s) (${totalMarkers} marker hit(s)). ` +
+      "Add a specific summary for the offending titles to scripts/lib/reporting.mjs " +
+      "(exactSummaryMappings / exactImportanceMappings / vscodeReleaseSummaries) so the npm test fallback guard stays green. " +
+      "Do not edit data/** to resolve this.",
+  );
+  for (const entry of fallbackReport) {
+    console.warn(`- ${entry.date}: ${entry.markers.length} fallback marker(s)`);
   }
 }
 
