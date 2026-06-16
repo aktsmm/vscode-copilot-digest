@@ -1,12 +1,35 @@
 {
   "date": "2026-06-16",
-  "generatedAt": "2026-06-16T18:16:06.436Z",
+  "generatedAt": "2026-06-16T22:59:30.729Z",
   "latestRun": {
-    "generatedAt": "2026-06-16T18:16:06.436Z",
-    "newEventsCount": 0,
-    "newEventIds": [],
+    "generatedAt": "2026-06-16T22:59:30.729Z",
+    "newEventsCount": 1,
+    "newEventIds": [
+      "github-copilot-blog:https://github.blog/?p=96793"
+    ],
     "errorCount": 0
   },
-  "events": [],
+  "events": [
+    {
+      "eventId": "github-copilot-blog:https://github.blog/?p=96793",
+      "sourceId": "github-copilot-blog",
+      "sourceName": "GitHub Blog / GitHub Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-06-16T22:59:28.762Z",
+      "publishedAt": "2026-06-16T20:58:54.000Z",
+      "title": "What are git worktrees, and why should I use them?",
+      "url": "https://github.blog/ai-and-ml/github-copilot/what-are-git-worktrees-and-why-should-i-use-them/",
+      "summary": "Git worktrees have been around since 2015, but it wasn't until recently they became popular. Learn what they are, how to use them, and why you might.\nThe post What are git worktrees, and why should I use them? appeared first on The GitHub Blog.",
+      "categories": [
+        "AI & ML",
+        "Git",
+        "GitHub Copilot",
+        "git worktrees",
+        "GitHub Copilot app"
+      ],
+      "isFutureDated": false,
+      "score": 0
+    }
+  ],
   "errors": []
 }
