@@ -1,12 +1,360 @@
 {
   "date": "2026-06-17",
-  "generatedAt": "2026-06-17T10:11:10.211Z",
+  "generatedAt": "2026-06-17T16:45:52.692Z",
   "latestRun": {
-    "generatedAt": "2026-06-17T10:11:10.211Z",
-    "newEventsCount": 0,
-    "newEventIds": [],
+    "generatedAt": "2026-06-17T16:45:52.692Z",
+    "newEventsCount": 17,
+    "newEventIds": [
+      "github-changelog:https://github.blog/changelog/2026-06-17-auto-mode-in-copilot-chat-available-for-all-users",
+      "github-changelog:https://github.blog/changelog/2026-06-17-agent-finder-for-github-copilot-now-available",
+      "github-changelog:https://github.blog/changelog/2026-06-17-github-copilot-app-generally-available",
+      "github-changelog-copilot:https://github.blog/changelog/2026-06-17-auto-mode-in-copilot-chat-available-for-all-users",
+      "github-changelog-copilot:https://github.blog/changelog/2026-06-17-agent-finder-for-github-copilot-now-available",
+      "github-changelog-copilot:https://github.blog/changelog/2026-06-17-github-copilot-app-generally-available",
+      "vscode-feed:https://code.visualstudio.com/blogs/2026/06/17/improving-token-efficiency-in-github-copilot",
+      "vscode-updates:c9b62fbd7e46b97a3c1c230a821d8ad8bfa57fe000bd18ff6473a625a64acc83",
+      "vscode-release-notes-1-109:196314cc6d16e1a6efa0b815c2936d10eedd296b753bf46d3e885e320e237443",
+      "copilot-whats-new:657e51e47a08c8d0f0927e3564f5bdf9156332ec3e16a1aec81b1fc23117c200",
+      "vscode-release-notes-1-125:section:cb52b89d1252e795a0299c79088ccdb23fe320bb9aeff2065bf759bbfcf15d5a",
+      "vscode-release-notes-1-125:section:993eae0f84830a5a3b4a2d5b3f9470547785bf918c5aeb6458729514defa6b25",
+      "vscode-release-notes-1-125:section:c09082007d37f7809944a1063930b5eb360317a8a5349ab36b868fd05828bb8f",
+      "vscode-release-notes-1-125:section:c3e9836afdaa21a16d4da4879267f0b2771605330cbfb8dd300bf5c918e62665",
+      "vscode-release-notes-1-124:ef2697fe826dc88eec5156b8496dded31f386a516881eaf0b0abd26855d0106a",
+      "vscode-release-notes-1-123:d34fd59749535fc4c10eb36c3946dc277aa2f79cbe0f8b440b29ca54af093ba9",
+      "vscode-release-notes-1-122:20dcf4d8f9b02a8d5a4668caddf4f813761cd85519283f2af8f1e91c9758d111"
+    ],
     "errorCount": 0
   },
-  "events": [],
+  "events": [
+    {
+      "eventId": "copilot-whats-new:657e51e47a08c8d0f0927e3564f5bdf9156332ec3e16a1aec81b1fc23117c200",
+      "sourceId": "copilot-whats-new",
+      "sourceName": "GitHub Copilot What's New",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-06-17T16:45:52.219Z",
+      "publishedAt": "2026-06-17T16:45:52.219Z",
+      "title": "GitHub Copilot What's New changed",
+      "url": "https://github.com/features/copilot/whats-new",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [],
+        "additions": [
+          "Desktop App"
+        ]
+      },
+      "headings": [
+        "Preview upcoming features for GitHub Copilot",
+        "Agentic power, now in your terminal. Build, debug, deploy with Github Copilot coding agent without leaving your terminal.",
+        "Prompt, perfected",
+        "Tailor-made answers, defined by you",
+        "Getting started with GitHub Copilot",
+        "Stay updated on GitHub and AI",
+        "See how GitHub Copilot powers up VS Code"
+      ],
+      "score": 2
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-06-17-auto-mode-in-copilot-chat-available-for-all-users",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-06-17T16:45:50.749Z",
+      "publishedAt": "2026-06-17T16:24:33.000Z",
+      "title": "Auto mode in Copilot Chat available for all users",
+      "url": "https://github.blog/changelog/2026-06-17-auto-mode-in-copilot-chat-available-for-all-users",
+      "summary": "GitHub Copilot auto model selection is now generally available in Copilot Chat on github.com and the GitHub mobile app for all Copilot plans. With auto, Copilot chooses a model on…\nThe post Auto mode in Copilot Chat available for all users appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-06-17-auto-mode-in-copilot-chat-available-for-all-users",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-06-17T16:45:51.279Z",
+      "publishedAt": "2026-06-17T16:24:33.000Z",
+      "title": "Auto mode in Copilot Chat available for all users",
+      "url": "https://github.blog/changelog/2026-06-17-auto-mode-in-copilot-chat-available-for-all-users",
+      "summary": "GitHub Copilot auto model selection is now generally available in Copilot Chat on github.com and the GitHub mobile app for all Copilot plans. With auto, Copilot chooses a model on…\nThe post Auto mode in Copilot Chat available for all users appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-06-17-agent-finder-for-github-copilot-now-available",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-06-17T16:45:50.749Z",
+      "publishedAt": "2026-06-17T16:21:56.000Z",
+      "title": "Agent finder for GitHub Copilot now available",
+      "url": "https://github.blog/changelog/2026-06-17-agent-finder-for-github-copilot-now-available",
+      "summary": "GitHub agent finder is now available. Instead of hand-wiring which MCP servers, skills, canvases, agents, and tools each agent should use—and filling your context window in the process—GitHub Copilot can…\nThe post Agent finder for GitHub Copilot now available appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 5
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-06-17-agent-finder-for-github-copilot-now-available",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-06-17T16:45:51.279Z",
+      "publishedAt": "2026-06-17T16:21:56.000Z",
+      "title": "Agent finder for GitHub Copilot now available",
+      "url": "https://github.blog/changelog/2026-06-17-agent-finder-for-github-copilot-now-available",
+      "summary": "GitHub agent finder is now available. Instead of hand-wiring which MCP servers, skills, canvases, agents, and tools each agent should use—and filling your context window in the process—GitHub Copilot can…\nThe post Agent finder for GitHub Copilot now available appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 5
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-06-17-github-copilot-app-generally-available",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-06-17T16:45:50.749Z",
+      "publishedAt": "2026-06-17T13:00:33.000Z",
+      "title": "GitHub Copilot app generally available",
+      "url": "https://github.blog/changelog/2026-06-17-github-copilot-app-generally-available",
+      "summary": "The GitHub Copilot app is now generally available for macOS, Windows, and Linux. It’s the desktop home for agent-driven development, built natively on GitHub. Download the GitHub Copilot app to…\nThe post GitHub Copilot app generally available appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 5
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-06-17-github-copilot-app-generally-available",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-06-17T16:45:51.279Z",
+      "publishedAt": "2026-06-17T13:00:33.000Z",
+      "title": "GitHub Copilot app generally available",
+      "url": "https://github.blog/changelog/2026-06-17-github-copilot-app-generally-available",
+      "summary": "The GitHub Copilot app is now generally available for macOS, Windows, and Linux. It’s the desktop home for agent-driven development, built natively on GitHub. Download the GitHub Copilot app to…\nThe post GitHub Copilot app generally available appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 5
+    },
+    {
+      "eventId": "vscode-feed:https://code.visualstudio.com/blogs/2026/06/17/improving-token-efficiency-in-github-copilot",
+      "sourceId": "vscode-feed",
+      "sourceName": "VS Code Feed",
+      "kind": "feed_entry",
+      "detectedAt": "2026-06-17T16:45:51.316Z",
+      "publishedAt": "2026-06-17T00:00:00.000Z",
+      "title": "Improving token efficiency in GitHub Copilot",
+      "url": "https://code.visualstudio.com/blogs/2026/06/17/improving-token-efficiency-in-github-copilot",
+      "summary": "Learn how we're improving token efficiency in GitHub Copilot to reduce costs and latency for users.\n Read the full article",
+      "categories": [
+        "blog"
+      ],
+      "isFutureDated": false,
+      "score": 1
+    },
+    {
+      "eventId": "vscode-updates:c9b62fbd7e46b97a3c1c230a821d8ad8bfa57fe000bd18ff6473a625a64acc83",
+      "sourceId": "vscode-updates",
+      "sourceName": "VS Code Updates",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-06-17T16:45:51.612Z",
+      "publishedAt": "2026-06-17T00:00:00.000Z",
+      "title": "VS Code Updates changed",
+      "url": "https://code.visualstudio.com/updates/",
+      "summary": "Detected 71 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 71,
+        "headings": [
+          "Visual Studio Code 1.125",
+          "Agents",
+          "View your additional spend usage in VS Code",
+          "Language Models",
+          "Install model providers from the Language Models editor",
+          "Integrated Browser",
+          "Web search from address bar",
+          "Browse over remote connections (Preview)",
+          "Better agentic interaction with forwarded ports",
+          "Editor Experience",
+          "Extension auto-update setting",
+          "Configurable extension auto-update delay",
+          "Extension Authoring",
+          "Language Server Protocol",
+          "Enterprise",
+          "Native MDM delivery for managed Copilot settings"
+        ],
+        "additions": [
+          "1.125",
+          "H1: Visual Studio Code 1.125",
+          "Release date: June 17, 2026",
+          "Welcome to the 1.125 release of Visual Studio Code. This release brings a smarter integrated browser, more control over extension updates, and stronger enterprise management for Copilot.",
+          "Install model providers: Discover and install extra models via the Marketplace.",
+          "Integrated browser: Search the web and securely browse over remote connections without leaving VS Code.",
+          "Configurable auto-update delay: Choose how long VS Code waits before installing extension updates.",
+          "Copilot policies: Deliver managed Copilot settings through your existing device management tooling.",
+          "H2: Agents",
+          "H3: View your additional spend usage in VS Code",
+          "To make sure you stay ahead of overage charges, the Copilot status dashboard now shows the percentage of your additional Copilot budget that you've consumed, so you can adjust your usage before you hit your configured limit.",
+          "You can view detailed usage and manage your additional spend in the Copilot settings.",
+          "H2: Language Models",
+          "H3: Install model providers from the Language Models editor",
+          "Beyond Bring Your Own Key (BYOK) models, extensions can contribute their own model providers. Previously, to find such an extension, you needed to know the right tag (language-models) to search for in the Extensions view.",
+          "Now the Language Models editor has an Install Model Providers button that opens the Extensions view filtered to extensions that contribute model providers, making it easier to discover and install them. After you install a provider, its models appear in the model picker alongside any others you have configured."
+        ]
+      },
+      "headings": [
+        "Visual Studio Code 1.125",
+        "Agents",
+        "View your additional spend usage in VS Code",
+        "Language Models",
+        "Install model providers from the Language Models editor",
+        "Integrated Browser",
+        "Web search from address bar",
+        "Browse over remote connections (Preview)",
+        "Better agentic interaction with forwarded ports",
+        "Editor Experience",
+        "Extension auto-update setting",
+        "Configurable extension auto-update delay"
+      ],
+      "score": 18
+    },
+    {
+      "eventId": "vscode-release-notes-1-125:section:cb52b89d1252e795a0299c79088ccdb23fe320bb9aeff2065bf759bbfcf15d5a",
+      "sourceId": "vscode-release-notes-1-125",
+      "sourceName": "VS Code Release Notes 1.125",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-06-17T16:45:52.561Z",
+      "publishedAt": "2026-06-17T00:00:00.000Z",
+      "title": "Visual Studio Code 1.125: View your additional spend usage in VS Code",
+      "url": "https://code.visualstudio.com/updates/v1_125",
+      "summary": "To make sure you stay ahead of overage charges, the Copilot status dashboard now shows the percentage of your additional Copilot budget that you've consumed, so you can adjust your usage before you hit your configured limit. You can view detailed usage and manage your additional spend in the Copilot settings.",
+      "categories": [
+        "release",
+        "section",
+        "Agents"
+      ],
+      "sectionHeading": "Agents",
+      "sectionTitle": "View your additional spend usage in VS Code",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-125:section:993eae0f84830a5a3b4a2d5b3f9470547785bf918c5aeb6458729514defa6b25",
+      "sourceId": "vscode-release-notes-1-125",
+      "sourceName": "VS Code Release Notes 1.125",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-06-17T16:45:52.561Z",
+      "publishedAt": "2026-06-17T00:00:00.000Z",
+      "title": "Visual Studio Code 1.125: Install model providers from the Language Models editor",
+      "url": "https://code.visualstudio.com/updates/v1_125",
+      "summary": "Beyond Bring Your Own Key (BYOK) models, extensions can contribute their own model providers. Previously, to find such an extension, you needed to know the right tag (language-models) to search for in the Extensions view. Now the Language Models editor has an Install Model Providers button that opens the Extensions view filtered to extensions that contribute model providers, making it easier to discover and install...",
+      "categories": [
+        "release",
+        "section",
+        "Language Models"
+      ],
+      "sectionHeading": "Language Models",
+      "sectionTitle": "Install model providers from the Language Models editor",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-125:section:c09082007d37f7809944a1063930b5eb360317a8a5349ab36b868fd05828bb8f",
+      "sourceId": "vscode-release-notes-1-125",
+      "sourceName": "VS Code Release Notes 1.125",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-06-17T16:45:52.561Z",
+      "publishedAt": "2026-06-17T00:00:00.000Z",
+      "title": "Visual Studio Code 1.125: Better agentic interaction with forwarded ports",
+      "url": "https://code.visualstudio.com/updates/v1_125",
+      "summary": "If you have forwarded a port in a remote workspace, previously agents could have difficulty opening the browser due to a potentially different port number. Now, if an agent requests a port that has been forwarded (and the remote proxy is not enabled), the URL is rewritten and the agent is notified of the change.",
+      "categories": [
+        "release",
+        "section",
+        "Integrated Browser"
+      ],
+      "sectionHeading": "Integrated Browser",
+      "sectionTitle": "Better agentic interaction with forwarded ports",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-125:section:c3e9836afdaa21a16d4da4879267f0b2771605330cbfb8dd300bf5c918e62665",
+      "sourceId": "vscode-release-notes-1-125",
+      "sourceName": "VS Code Release Notes 1.125",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-06-17T16:45:52.561Z",
+      "publishedAt": "2026-06-17T00:00:00.000Z",
+      "title": "Visual Studio Code 1.125: Extension auto-update setting",
+      "url": "https://code.visualstudio.com/updates/v1_125",
+      "summary": "Setting: \n \n \n extensions.autoUpdate\n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders\n \n This setting is managed at the organization level. Contact your administrator to change it.ORG You can enable or disable automatic extension updates with the \n \n \n extensions.autoUpdate\n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders\n \n This setting is managed at the organization level. Contact your administrato...",
+      "categories": [
+        "release",
+        "section",
+        "Editor Experience"
+      ],
+      "sectionHeading": "Editor Experience",
+      "sectionTitle": "Extension auto-update setting",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-109:196314cc6d16e1a6efa0b815c2936d10eedd296b753bf46d3e885e320e237443",
+      "sourceId": "vscode-release-notes-1-109",
+      "sourceName": "VS Code Release Notes 1.109",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-06-17T16:45:51.903Z",
+      "publishedAt": "2026-02-04T00:00:00.000Z",
+      "title": "VS Code Release Notes 1.109 changed",
+      "url": "https://code.visualstudio.com/updates/v1_109",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [],
+        "additions": [
+          "1.125"
+        ]
+      },
+      "headings": [
+        "January 2026 (version 1.109)",
+        "Upcoming events",
+        "Agent Sessions Day",
+        "Chat UX",
+        "Message steering and queueing (Experimental)",
+        "Anthropic models now show thinking tokens",
+        "Mermaid diagrams in chat responses",
+        "Ask Questions tool (Experimental)",
+        "Plan agent",
+        "Context window details",
+        "Inline chat UX revamp (Preview)",
+        "Model descriptions in the model picker"
+      ],
+      "score": 2
+    }
+  ],
   "errors": []
 }

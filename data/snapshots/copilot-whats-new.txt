@@ -1,3 +1,4 @@
+Desktop App
 Copilot in VS Code
 Agents on GitHub
 Copilot CLI
