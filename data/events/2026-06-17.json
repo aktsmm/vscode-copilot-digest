@@ -1,31 +1,71 @@
 {
   "date": "2026-06-17",
-  "generatedAt": "2026-06-17T16:45:52.692Z",
+  "generatedAt": "2026-06-17T22:54:56.971Z",
   "latestRun": {
-    "generatedAt": "2026-06-17T16:45:52.692Z",
-    "newEventsCount": 17,
+    "generatedAt": "2026-06-17T22:54:56.971Z",
+    "newEventsCount": 5,
     "newEventIds": [
-      "github-changelog:https://github.blog/changelog/2026-06-17-auto-mode-in-copilot-chat-available-for-all-users",
-      "github-changelog:https://github.blog/changelog/2026-06-17-agent-finder-for-github-copilot-now-available",
-      "github-changelog:https://github.blog/changelog/2026-06-17-github-copilot-app-generally-available",
-      "github-changelog-copilot:https://github.blog/changelog/2026-06-17-auto-mode-in-copilot-chat-available-for-all-users",
-      "github-changelog-copilot:https://github.blog/changelog/2026-06-17-agent-finder-for-github-copilot-now-available",
-      "github-changelog-copilot:https://github.blog/changelog/2026-06-17-github-copilot-app-generally-available",
-      "vscode-feed:https://code.visualstudio.com/blogs/2026/06/17/improving-token-efficiency-in-github-copilot",
-      "vscode-updates:c9b62fbd7e46b97a3c1c230a821d8ad8bfa57fe000bd18ff6473a625a64acc83",
-      "vscode-release-notes-1-109:196314cc6d16e1a6efa0b815c2936d10eedd296b753bf46d3e885e320e237443",
-      "copilot-whats-new:657e51e47a08c8d0f0927e3564f5bdf9156332ec3e16a1aec81b1fc23117c200",
-      "vscode-release-notes-1-125:section:cb52b89d1252e795a0299c79088ccdb23fe320bb9aeff2065bf759bbfcf15d5a",
-      "vscode-release-notes-1-125:section:993eae0f84830a5a3b4a2d5b3f9470547785bf918c5aeb6458729514defa6b25",
-      "vscode-release-notes-1-125:section:c09082007d37f7809944a1063930b5eb360317a8a5349ab36b868fd05828bb8f",
-      "vscode-release-notes-1-125:section:c3e9836afdaa21a16d4da4879267f0b2771605330cbfb8dd300bf5c918e62665",
-      "vscode-release-notes-1-124:ef2697fe826dc88eec5156b8496dded31f386a516881eaf0b0abd26855d0106a",
-      "vscode-release-notes-1-123:d34fd59749535fc4c10eb36c3946dc277aa2f79cbe0f8b440b29ca54af093ba9",
-      "vscode-release-notes-1-122:20dcf4d8f9b02a8d5a4668caddf4f813761cd85519283f2af8f1e91c9758d111"
+      "github-changelog:https://github.blog/changelog/2026-06-17-enterprise-managed-settings-now-support-bypass-permission-controls",
+      "github-changelog:https://github.blog/changelog/2026-06-15-copilot-individual-plan-sign-ups-are-reopening",
+      "github-copilot-blog:https://github.blog/?p=96832",
+      "vscode-feed:https://code.visualstudio.com/updates/v1_125",
+      "vscode-release-notes-1-123:22cc0b776359169d29ea199ade198e43385c12898ada34701272f240f3cf753b"
     ],
     "errorCount": 0
   },
   "events": [
+    {
+      "eventId": "github-copilot-blog:https://github.blog/?p=96832",
+      "sourceId": "github-copilot-blog",
+      "sourceName": "GitHub Blog / GitHub Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-06-17T22:54:55.201Z",
+      "publishedAt": "2026-06-17T19:41:46.000Z",
+      "title": "Getting more from each token: How Copilot improves context handling and model routing",
+      "url": "https://github.blog/ai-and-ml/github-copilot/getting-more-from-each-token-how-copilot-improves-context-handling-and-model-routing/",
+      "summary": "How GitHub Copilot is making more of each session go toward useful work, so your credits go further.\nThe post Getting more from each token: How Copilot improves context handling and model routing appeared first on The GitHub Blog.",
+      "categories": [
+        "AI & ML",
+        "GitHub Copilot"
+      ],
+      "isFutureDated": false,
+      "score": 1
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-06-17-enterprise-managed-settings-now-support-bypass-permission-controls",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-06-17T22:54:55.162Z",
+      "publishedAt": "2026-06-17T17:13:47.000Z",
+      "title": "Enterprise-managed settings now support bypass permission controls",
+      "url": "https://github.blog/changelog/2026-06-17-enterprise-managed-settings-now-support-bypass-permission-controls",
+      "summary": "We’re adding our first governance capability to the enterprise-managed settings configuration. Enterprise administrators can now set disableBypassPermissionsMode to \"disable\" in the enterprise-managed settings.json to prevent GitHub Copilot CLI and VS…\nThe post Enterprise-managed settings now support bypass permission...",
+      "categories": [
+        "Improvement",
+        "client apps",
+        "copilot",
+        "enterprise management tools"
+      ],
+      "isFutureDated": false,
+      "score": 1
+    },
+    {
+      "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_125",
+      "sourceId": "vscode-feed",
+      "sourceName": "VS Code Feed",
+      "kind": "feed_entry",
+      "detectedAt": "2026-06-17T22:54:55.231Z",
+      "publishedAt": "2026-06-17T17:00:00.000Z",
+      "title": "Visual Studio Code 1.125",
+      "url": "https://code.visualstudio.com/updates/v1_125",
+      "summary": "Learn what's new in Visual Studio Code 1.125\n Read the full article",
+      "categories": [
+        "release"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
     {
       "eventId": "copilot-whats-new:657e51e47a08c8d0f0927e3564f5bdf9156332ec3e16a1aec81b1fc23117c200",
       "sourceId": "copilot-whats-new",
@@ -124,6 +164,23 @@
       ],
       "isFutureDated": false,
       "score": 5
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-06-15-copilot-individual-plan-sign-ups-are-reopening",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-06-17T22:54:55.163Z",
+      "publishedAt": "2026-06-17T14:10:00.000Z",
+      "title": "Copilot individual plan sign-ups are reopening",
+      "url": "https://github.blog/changelog/2026-06-17-copilot-individual-plan-sign-ups-are-reopening",
+      "summary": "We’re reopening sign-ups for GitHub Copilot Student, Pro, Pro+, and Max plans gradually over the next couple of weeks for new subscribers. If you’ve been waiting to get started with…\nThe post Copilot individual plan sign-ups are reopening appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 4
     },
     {
       "eventId": "github-changelog:https://github.blog/changelog/2026-06-17-github-copilot-app-generally-available",
