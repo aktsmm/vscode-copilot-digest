@@ -1,0 +1,70 @@
+{
+  "date": "2026-06-18",
+  "generatedAt": "2026-06-18T09:49:32.285Z",
+  "latestRun": {
+    "generatedAt": "2026-06-18T09:49:32.285Z",
+    "newEventsCount": 3,
+    "newEventIds": [
+      "github-changelog-copilot:https://github.blog/changelog/2026-06-18-generated-release-notes-credit-you-for-copilot-pull-requests",
+      "github-changelog-copilot:https://github.blog/changelog/2026-06-17-enterprise-managed-settings-now-support-bypass-permission-controls",
+      "github-changelog-copilot:https://github.blog/changelog/2026-06-15-copilot-individual-plan-sign-ups-are-reopening"
+    ],
+    "errorCount": 0
+  },
+  "events": [
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-06-18-generated-release-notes-credit-you-for-copilot-pull-requests",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-06-18T09:49:30.995Z",
+      "publishedAt": "2026-06-18T09:30:02.000Z",
+      "title": "Generated release notes credit you for Copilot pull requests",
+      "url": "https://github.blog/changelog/2026-06-18-generated-release-notes-credit-you-for-copilot-pull-requests",
+      "summary": "When you generate release notes for a new release, the generated notes include a list of pull requests merged since the last release. For more information about automatically generating release…\nThe post Generated release notes credit you for Copilot pull requests appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 2
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-06-17-enterprise-managed-settings-now-support-bypass-permission-controls",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-06-18T09:49:30.995Z",
+      "publishedAt": "2026-06-17T17:13:47.000Z",
+      "title": "Enterprise-managed settings now support bypass permission controls",
+      "url": "https://github.blog/changelog/2026-06-17-enterprise-managed-settings-now-support-bypass-permission-controls",
+      "summary": "We’re adding our first governance capability to the enterprise-managed settings configuration. Enterprise administrators can now set disableBypassPermissionsMode to \"disable\" in the enterprise-managed settings.json to prevent GitHub Copilot CLI and VS…\nThe post Enterprise-managed settings now support bypass permission...",
+      "categories": [
+        "Improvement",
+        "client apps",
+        "copilot",
+        "enterprise management tools"
+      ],
+      "isFutureDated": false,
+      "score": 1
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-06-15-copilot-individual-plan-sign-ups-are-reopening",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-06-18T09:49:30.995Z",
+      "publishedAt": "2026-06-17T14:10:00.000Z",
+      "title": "Copilot individual plan sign-ups are reopening",
+      "url": "https://github.blog/changelog/2026-06-17-copilot-individual-plan-sign-ups-are-reopening",
+      "summary": "We’re reopening sign-ups for GitHub Copilot Student, Pro, Pro+, and Max plans gradually over the next couple of weeks for new subscribers. If you’ve been waiting to get started with…\nThe post Copilot individual plan sign-ups are reopening appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    }
+  ],
+  "errors": []
+}
