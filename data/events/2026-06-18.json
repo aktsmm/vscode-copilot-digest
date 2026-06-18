@@ -1,17 +1,38 @@
 {
   "date": "2026-06-18",
-  "generatedAt": "2026-06-18T09:49:32.285Z",
+  "generatedAt": "2026-06-18T16:44:51.621Z",
   "latestRun": {
-    "generatedAt": "2026-06-18T09:49:32.285Z",
-    "newEventsCount": 3,
+    "generatedAt": "2026-06-18T16:44:51.621Z",
+    "newEventsCount": 8,
     "newEventIds": [
-      "github-changelog-copilot:https://github.blog/changelog/2026-06-18-generated-release-notes-credit-you-for-copilot-pull-requests",
-      "github-changelog-copilot:https://github.blog/changelog/2026-06-17-enterprise-managed-settings-now-support-bypass-permission-controls",
-      "github-changelog-copilot:https://github.blog/changelog/2026-06-15-copilot-individual-plan-sign-ups-are-reopening"
+      "github-changelog:https://github.blog/changelog/2026-06-18-generated-release-notes-credit-you-for-copilot-pull-requests",
+      "vscode-feed:https://code.visualstudio.com/blogs/2026/06/18/byok-vscode",
+      "vscode-feed:https://code.visualstudio.com/updates/v1_126",
+      "vscode-updates:f34efed0dd1194a4339a0d4b97387fefbe6581b6d8c8323d9e7406a5f9d99434",
+      "vscode-release-notes-1-109:0c0bf23eaacc7a732ab6e132a16ef817954fd095c70f657fb15a9f8d1d222926",
+      "vscode-release-notes-1-124:ad0e5c5c1e5056da7b5ad0f16a4b6b3005db42de0abd282d359c0ac617c19ae9",
+      "vscode-release-notes-1-123:bf4ceeb14d8126f23b8c0dd40ac89292392dd90e4f0663e685584ea3648c3b30",
+      "vscode-release-notes-1-122:fa974f635e9f3dc8245d131f7beabedd8745b561d6659422f1801065a1dc4876"
     ],
     "errorCount": 0
   },
   "events": [
+    {
+      "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_126",
+      "sourceId": "vscode-feed",
+      "sourceName": "VS Code Feed",
+      "kind": "feed_entry",
+      "detectedAt": "2026-06-18T16:44:48.782Z",
+      "publishedAt": "2026-06-24T17:00:00.000Z",
+      "title": "Visual Studio Code 1.126",
+      "url": "https://code.visualstudio.com/updates/v1_126",
+      "summary": "Learn what's new in Visual Studio Code 1.126 (Insiders)\n Read the full article",
+      "categories": [
+        "release"
+      ],
+      "isFutureDated": true,
+      "score": 4
+    },
     {
       "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-06-18-generated-release-notes-credit-you-for-copilot-pull-requests",
       "sourceId": "github-changelog-copilot",
@@ -28,6 +49,39 @@
       ],
       "isFutureDated": false,
       "score": 2
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-06-18-generated-release-notes-credit-you-for-copilot-pull-requests",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-06-18T16:44:47.743Z",
+      "publishedAt": "2026-06-18T09:30:02.000Z",
+      "title": "Generated release notes credit you for Copilot pull requests",
+      "url": "https://github.blog/changelog/2026-06-18-generated-release-notes-credit-you-for-copilot-pull-requests",
+      "summary": "When you generate release notes for a new release, the generated notes include a list of pull requests merged since the last release. For more information about automatically generating release…\nThe post Generated release notes credit you for Copilot pull requests appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 2
+    },
+    {
+      "eventId": "vscode-feed:https://code.visualstudio.com/blogs/2026/06/18/byok-vscode",
+      "sourceId": "vscode-feed",
+      "sourceName": "VS Code Feed",
+      "kind": "feed_entry",
+      "detectedAt": "2026-06-18T16:44:48.782Z",
+      "publishedAt": "2026-06-18T00:00:00.000Z",
+      "title": "Use your own language model key in VS Code",
+      "url": "https://code.visualstudio.com/blogs/2026/06/18/byok-vscode",
+      "summary": "Learn how to use bring your own key (BYOK) in VS Code to add models from providers like Azure, Anthropic, Gemini, OpenAI, Huggingface, OpenRouter, or use a local model with Ollama, Foundry Local, and more.\n Read the full article",
+      "categories": [
+        "blog"
+      ],
+      "isFutureDated": false,
+      "score": 0
     },
     {
       "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-06-17-enterprise-managed-settings-now-support-bypass-permission-controls",
@@ -64,6 +118,78 @@
       ],
       "isFutureDated": false,
       "score": 4
+    },
+    {
+      "eventId": "vscode-updates:f34efed0dd1194a4339a0d4b97387fefbe6581b6d8c8323d9e7406a5f9d99434",
+      "sourceId": "vscode-updates",
+      "sourceName": "VS Code Updates",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-06-18T16:44:48.970Z",
+      "publishedAt": "2026-06-17T00:00:00.000Z",
+      "title": "VS Code Updates changed",
+      "url": "https://code.visualstudio.com/updates/",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [],
+        "additions": [
+          "Insiders"
+        ]
+      },
+      "headings": [
+        "Visual Studio Code 1.125",
+        "Agents",
+        "View your additional spend usage in VS Code",
+        "Language Models",
+        "Install model providers from the Language Models editor",
+        "Integrated Browser",
+        "Web search from address bar",
+        "Browse over remote connections (Preview)",
+        "Better agentic interaction with forwarded ports",
+        "Editor Experience",
+        "Extension auto-update setting",
+        "Configurable extension auto-update delay"
+      ],
+      "score": 2
+    },
+    {
+      "eventId": "vscode-release-notes-1-109:0c0bf23eaacc7a732ab6e132a16ef817954fd095c70f657fb15a9f8d1d222926",
+      "sourceId": "vscode-release-notes-1-109",
+      "sourceName": "VS Code Release Notes 1.109",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-06-18T16:44:49.951Z",
+      "publishedAt": "2026-02-04T00:00:00.000Z",
+      "title": "VS Code Release Notes 1.109 changed",
+      "url": "https://code.visualstudio.com/updates/v1_109",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [],
+        "additions": [
+          "Insiders"
+        ]
+      },
+      "headings": [
+        "January 2026 (version 1.109)",
+        "Upcoming events",
+        "Agent Sessions Day",
+        "Chat UX",
+        "Message steering and queueing (Experimental)",
+        "Anthropic models now show thinking tokens",
+        "Mermaid diagrams in chat responses",
+        "Ask Questions tool (Experimental)",
+        "Plan agent",
+        "Context window details",
+        "Inline chat UX revamp (Preview)",
+        "Model descriptions in the model picker"
+      ],
+      "score": 2
     }
   ],
   "errors": []
