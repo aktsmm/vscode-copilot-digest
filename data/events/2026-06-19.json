@@ -1,19 +1,54 @@
 {
   "date": "2026-06-19",
-  "generatedAt": "2026-06-19T16:17:30.539Z",
+  "generatedAt": "2026-06-19T22:28:56.268Z",
   "latestRun": {
-    "generatedAt": "2026-06-19T16:17:30.539Z",
-    "newEventsCount": 5,
+    "generatedAt": "2026-06-19T22:28:56.268Z",
+    "newEventsCount": 2,
     "newEventIds": [
-      "github-changelog-copilot:https://github.blog/changelog/2026-06-18-upcoming-deprecation-of-opus-4-6-fast",
-      "github-changelog-copilot:https://github.blog/changelog/2026-06-17-copilot-cli-supports-enterprise-bring-your-own-key-byok-models",
-      "github-copilot-blog:https://github.blog/?p=96857",
-      "vscode-feed:https://code.visualstudio.com/blogs/2026/06/19/what-50000-runs-taught-us",
-      "vscode-updates:f308b00fb19e61b8727cb504b6a5ec9ba1b7028f558b358399f3cbf0455b6b08"
+      "github-changelog:https://github.blog/changelog/2026-06-19-ai-credits-consumed-per-user-now-in-the-copilot-usage-metrics-api",
+      "github-changelog-copilot:https://github.blog/changelog/2026-06-19-ai-credits-consumed-per-user-now-in-the-copilot-usage-metrics-api"
     ],
     "errorCount": 0
   },
   "events": [
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-06-19-ai-credits-consumed-per-user-now-in-the-copilot-usage-metrics-api",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-06-19T22:28:52.977Z",
+      "publishedAt": "2026-06-19T16:23:29.000Z",
+      "title": "AI credits consumed per user now in the Copilot usage metrics API",
+      "url": "https://github.blog/changelog/2026-06-19-ai-credits-consumed-per-user-now-in-the-copilot-usage-metrics-api",
+      "summary": "The Copilot usage metrics API now reports how many AI credits each user consumed per day, derived from the same AI credits consumption data used in the usage-based billing API.…\nThe post AI credits consumed per user now in the Copilot usage metrics API appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "account management",
+        "copilot",
+        "enterprise management tools"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-06-19-ai-credits-consumed-per-user-now-in-the-copilot-usage-metrics-api",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-06-19T22:28:53.397Z",
+      "publishedAt": "2026-06-19T16:23:29.000Z",
+      "title": "AI credits consumed per user now in the Copilot usage metrics API",
+      "url": "https://github.blog/changelog/2026-06-19-ai-credits-consumed-per-user-now-in-the-copilot-usage-metrics-api",
+      "summary": "The Copilot usage metrics API now reports how many AI credits each user consumed per day, derived from the same AI credits consumption data used in the usage-based billing API.…\nThe post AI credits consumed per user now in the Copilot usage metrics API appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "account management",
+        "copilot",
+        "enterprise management tools"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
     {
       "eventId": "github-copilot-blog:https://github.blog/?p=96857",
       "sourceId": "github-copilot-blog",
