@@ -20,6 +20,7 @@ View All Releases
 H1: Visual Studio Code 1.125
 Follow us on LinkedIn, X, Bluesky
 Release date: June 17, 2026
+Update 1.125.1: The update addresses these issues.
 Downloads: Windows: x64 Arm64 | Mac: Universal Intel silicon | Linux: deb rpm tarball Arm snap
 Welcome to the 1.125 release of Visual Studio Code. This release brings a smarter integrated browser, more control over extension updates, and stronger enterprise management for Copilot.
 Install model providers: Discover and install extra models via the Marketplace.

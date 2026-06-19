@@ -1,24 +1,77 @@
 {
   "date": "2026-06-19",
-  "generatedAt": "2026-06-19T09:56:20.579Z",
+  "generatedAt": "2026-06-19T16:17:30.539Z",
   "latestRun": {
-    "generatedAt": "2026-06-19T09:56:20.579Z",
-    "newEventsCount": 4,
+    "generatedAt": "2026-06-19T16:17:30.539Z",
+    "newEventsCount": 5,
     "newEventIds": [
-      "github-changelog:https://github.blog/changelog/2026-06-18-upcoming-deprecation-of-opus-4-6-fast",
-      "github-changelog-copilot:https://github.blog/changelog/2026-06-18-mai-code-1-flash-available-on-more-copilot-surfaces",
-      "github-changelog-copilot:https://github.blog/changelog/2026-06-18-copilot-code-review-agents-md-support-and-ui-improvements",
-      "github-changelog-copilot:https://github.blog/changelog/2026-06-18-copilot-authored-pull-requests-now-included-in-author-searches"
+      "github-changelog-copilot:https://github.blog/changelog/2026-06-18-upcoming-deprecation-of-opus-4-6-fast",
+      "github-changelog-copilot:https://github.blog/changelog/2026-06-17-copilot-cli-supports-enterprise-bring-your-own-key-byok-models",
+      "github-copilot-blog:https://github.blog/?p=96857",
+      "vscode-feed:https://code.visualstudio.com/blogs/2026/06/19/what-50000-runs-taught-us",
+      "vscode-updates:f308b00fb19e61b8727cb504b6a5ec9ba1b7028f558b358399f3cbf0455b6b08"
     ],
     "errorCount": 0
   },
   "events": [
+    {
+      "eventId": "github-copilot-blog:https://github.blog/?p=96857",
+      "sourceId": "github-copilot-blog",
+      "sourceName": "GitHub Blog / GitHub Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-06-19T16:17:29.019Z",
+      "publishedAt": "2026-06-19T16:00:00.000Z",
+      "title": "How we built an internal data analytics agent",
+      "url": "https://github.blog/ai-and-ml/github-copilot/how-we-built-an-internal-data-analytics-agent/",
+      "summary": "Qubot, our internal Copilot-powered analytics agent, allows any GitHub employee to ask questions about our data in plain language. Here's what we learned as we built it.\nThe post How we built an internal data analytics agent appeared first on The GitHub Blog.",
+      "categories": [
+        "AI & ML",
+        "GitHub Copilot",
+        "AI agents",
+        "GitHub Copilot CLI"
+      ],
+      "isFutureDated": false,
+      "score": 2
+    },
+    {
+      "eventId": "vscode-feed:https://code.visualstudio.com/blogs/2026/06/19/what-50000-runs-taught-us",
+      "sourceId": "vscode-feed",
+      "sourceName": "VS Code Feed",
+      "kind": "feed_entry",
+      "detectedAt": "2026-06-19T16:17:29.046Z",
+      "publishedAt": "2026-06-19T00:00:00.000Z",
+      "title": "What 50,000 Runs of a 5-Line Eval Taught Us",
+      "url": "https://code.visualstudio.com/blogs/2026/06/19/what-50000-runs-taught-us",
+      "summary": "How AI coding models calibrate effort, token cost, and tool use on even the simplest task, and what that means for model selection and cost.\n Read the full article",
+      "categories": [
+        "blog"
+      ],
+      "isFutureDated": false,
+      "score": 0
+    },
     {
       "eventId": "github-changelog:https://github.blog/changelog/2026-06-18-upcoming-deprecation-of-opus-4-6-fast",
       "sourceId": "github-changelog",
       "sourceName": "GitHub Changelog",
       "kind": "feed_entry",
       "detectedAt": "2026-06-19T09:56:18.158Z",
+      "publishedAt": "2026-06-18T23:58:34.000Z",
+      "title": "Upcoming deprecation of Opus 4.6 (fast)",
+      "url": "https://github.blog/changelog/2026-06-18-upcoming-deprecation-of-opus-4-6-fast",
+      "summary": "We will deprecate Opus 4.6 (fast) across all GitHub Copilot experiences (including Copilot Chat, inline edits, ask and agent modes, and code completions), on June 29th, 2026: Model Deprecation date…\nThe post Upcoming deprecation of Opus 4.6 (fast) appeared first on The GitHub Blog.",
+      "categories": [
+        "Retired",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 5
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-06-18-upcoming-deprecation-of-opus-4-6-fast",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-06-19T16:17:29.004Z",
       "publishedAt": "2026-06-18T23:58:34.000Z",
       "title": "Upcoming deprecation of Opus 4.6 (fast)",
       "url": "https://github.blog/changelog/2026-06-18-upcoming-deprecation-of-opus-4-6-fast",
@@ -81,6 +134,60 @@
         "copilot"
       ],
       "isFutureDated": false,
+      "score": 2
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-06-17-copilot-cli-supports-enterprise-bring-your-own-key-byok-models",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-06-19T16:17:29.004Z",
+      "publishedAt": "2026-06-17T14:07:54.000Z",
+      "title": "Copilot CLI supports enterprise bring your own key (BYOK) models",
+      "url": "https://github.blog/changelog/2026-06-17-copilot-cli-supports-enterprise-bring-your-own-key-byok-models",
+      "summary": "Models from external providers configured by enterprise admins are now available in the /model picker in Copilot CLI, giving enterprise developers more flexibility and allowing enterprise admins to more easily…\nThe post Copilot CLI supports enterprise bring your own key (BYOK) models appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "client apps",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
+    {
+      "eventId": "vscode-updates:f308b00fb19e61b8727cb504b6a5ec9ba1b7028f558b358399f3cbf0455b6b08",
+      "sourceId": "vscode-updates",
+      "sourceName": "VS Code Updates",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-06-19T16:17:29.138Z",
+      "publishedAt": "2026-06-17T00:00:00.000Z",
+      "title": "VS Code Updates changed",
+      "url": "https://code.visualstudio.com/updates/",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [],
+        "additions": [
+          "Update 1.125.1: The update addresses these issues."
+        ]
+      },
+      "headings": [
+        "Visual Studio Code 1.125",
+        "Agents",
+        "View your additional spend usage in VS Code",
+        "Language Models",
+        "Install model providers from the Language Models editor",
+        "Integrated Browser",
+        "Web search from address bar",
+        "Browse over remote connections (Preview)",
+        "Better agentic interaction with forwarded ports",
+        "Editor Experience",
+        "Extension auto-update setting",
+        "Configurable extension auto-update delay"
+      ],
       "score": 2
     }
   ],
