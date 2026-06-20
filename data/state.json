@@ -117,7 +117,7 @@
         "https://github.blog/changelog/2026-04-08-github-mobile-research-and-code-with-copilot-cloud-agent-anywhere"
       ],
       "futureSeenIds": [],
-      "lastCheckedAt": "2026-06-20T08:29:48.871Z"
+      "lastCheckedAt": "2026-06-20T15:21:45.252Z"
     },
     "github-changelog-copilot": {
       "seenIds": [
@@ -242,7 +242,7 @@
         "https://github.blog/changelog/2026-04-02-copilot-sdk-in-public-preview"
       ],
       "futureSeenIds": [],
-      "lastCheckedAt": "2026-06-20T08:29:49.462Z"
+      "lastCheckedAt": "2026-06-20T15:21:45.592Z"
     },
     "github-copilot-blog": {
       "seenIds": [
@@ -276,7 +276,7 @@
         "https://github.blog/?p=94179"
       ],
       "futureSeenIds": [],
-      "lastCheckedAt": "2026-06-20T08:29:49.478Z"
+      "lastCheckedAt": "2026-06-20T15:21:45.618Z"
     },
     "vscode-feed": {
       "seenIds": [
@@ -313,25 +313,25 @@
       "futureSeenIds": [
         "https://code.visualstudio.com/updates/v1_126"
       ],
-      "lastCheckedAt": "2026-06-20T08:29:49.497Z"
+      "lastCheckedAt": "2026-06-20T15:21:45.655Z"
     },
     "vscode-updates": {
       "releasePublishedAt": "2026-06-17T00:00:00.000Z",
       "releaseTitle": "Visual Studio Code 1.125",
       "snapshotHash": "f308b00fb19e61b8727cb504b6a5ec9ba1b7028f558b358399f3cbf0455b6b08",
-      "lastCheckedAt": "2026-06-20T08:29:49.571Z"
+      "lastCheckedAt": "2026-06-20T15:21:45.927Z"
     },
     "vscode-release-notes-1-109": {
       "releasePublishedAt": "2026-02-04T00:00:00.000Z",
       "releaseTitle": "January 2026 (version 1.109)",
       "snapshotHash": "0c0bf23eaacc7a732ab6e132a16ef817954fd095c70f657fb15a9f8d1d222926",
-      "lastCheckedAt": "2026-06-20T08:29:49.715Z"
+      "lastCheckedAt": "2026-06-20T15:21:46.014Z"
     },
     "copilot-whats-new": {
-      "releasePublishedAt": "2026-06-20T08:29:49.985Z",
+      "releasePublishedAt": "2026-06-20T15:21:46.496Z",
       "releaseTitle": "Preview upcoming features for GitHub Copilot",
       "snapshotHash": "657e51e47a08c8d0f0927e3564f5bdf9156332ec3e16a1aec81b1fc23117c200",
-      "lastCheckedAt": "2026-06-20T08:29:49.985Z"
+      "lastCheckedAt": "2026-06-20T15:21:46.497Z"
     },
     "publickey": {
       "seenIds": [
@@ -342,7 +342,7 @@
         "tag:www.publickey1.jp,2026://2.8527"
       ],
       "futureSeenIds": [],
-      "lastCheckedAt": "2026-06-20T08:29:50.768Z"
+      "lastCheckedAt": "2026-06-20T15:21:46.875Z"
     },
     "vscode-release-notes-1-115": {
       "sectionHashes": {
@@ -450,7 +450,7 @@
       "releasePublishedAt": "2026-05-28T00:00:00.000Z",
       "releaseTitle": "Visual Studio Code 1.122",
       "snapshotHash": "fa974f635e9f3dc8245d131f7beabedd8745b561d6659422f1801065a1dc4876",
-      "lastCheckedAt": "2026-06-20T08:29:50.976Z",
+      "lastCheckedAt": "2026-06-20T15:21:47.836Z",
       "sectionHashes": {
         "vscode-release-notes-1-122:GitHub Copilot moves to usage based billing:Updated Copilot status dashboard": "76b77667df1ff6824a217720f72c8ff3c2eba3810044e109f6865bb06cdae828",
         "vscode-release-notes-1-122:GitHub Copilot moves to usage based billing:Model costs in the model picker": "745ab2c2753f4280f75e1513135cb3facb9502048b4b5dc5e61495f2138d8021",
@@ -468,7 +468,7 @@
       "releasePublishedAt": "2026-06-03T00:00:00.000Z",
       "releaseTitle": "Visual Studio Code 1.123",
       "snapshotHash": "bf4ceeb14d8126f23b8c0dd40ac89292392dd90e4f0663e685584ea3648c3b30",
-      "lastCheckedAt": "2026-06-20T08:29:50.922Z"
+      "lastCheckedAt": "2026-06-20T15:21:47.485Z"
     },
     "vscode-release-notes-1-124": {
       "sectionHashes": {
@@ -480,7 +480,7 @@
       "releasePublishedAt": "2026-06-10T00:00:00.000Z",
       "releaseTitle": "Visual Studio Code 1.124",
       "snapshotHash": "ad0e5c5c1e5056da7b5ad0f16a4b6b3005db42de0abd282d359c0ac617c19ae9",
-      "lastCheckedAt": "2026-06-20T08:29:50.865Z"
+      "lastCheckedAt": "2026-06-20T15:21:47.168Z"
     },
     "vscode-release-notes-1-125": {
       "sectionHashes": {
@@ -492,7 +492,7 @@
       "releasePublishedAt": "2026-06-17T00:00:00.000Z",
       "releaseTitle": "Visual Studio Code 1.125",
       "snapshotHash": "f308b00fb19e61b8727cb504b6a5ec9ba1b7028f558b358399f3cbf0455b6b08",
-      "lastCheckedAt": "2026-06-20T08:29:50.798Z"
+      "lastCheckedAt": "2026-06-20T15:21:46.914Z"
     }
   }
 }
