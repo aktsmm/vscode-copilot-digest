@@ -1,15 +1,105 @@
 {
   "date": "2026-06-22",
-  "generatedAt": "2026-06-22T11:09:20.684Z",
+  "generatedAt": "2026-06-22T18:03:09.297Z",
   "latestRun": {
-    "generatedAt": "2026-06-22T11:09:20.684Z",
-    "newEventsCount": 1,
+    "generatedAt": "2026-06-22T18:03:09.297Z",
+    "newEventsCount": 3,
     "newEventIds": [
-      "copilot-whats-new:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      "github-changelog:https://github.blog/changelog/2026-06-19-new-features-and-claude-as-agent-provider-preview-in-jetbrains-ides",
+      "github-changelog-copilot:https://github.blog/changelog/2026-06-19-new-features-and-claude-as-agent-provider-preview-in-jetbrains-ides",
+      "copilot-whats-new:657e51e47a08c8d0f0927e3564f5bdf9156332ec3e16a1aec81b1fc23117c200"
     ],
     "errorCount": 0
   },
   "events": [
+    {
+      "eventId": "copilot-whats-new:657e51e47a08c8d0f0927e3564f5bdf9156332ec3e16a1aec81b1fc23117c200",
+      "sourceId": "copilot-whats-new",
+      "sourceName": "GitHub Copilot What's New",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-06-22T18:03:07.923Z",
+      "publishedAt": "2026-06-22T18:03:07.923Z",
+      "title": "GitHub Copilot What's New changed",
+      "url": "https://github.com/features/copilot/whats-new",
+      "summary": "Detected 24 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 24,
+        "headings": [
+          "Preview upcoming features for GitHub Copilot",
+          "Agentic power, now in your terminal. Build, debug, deploy with Github Copilot coding agent without leaving your terminal.",
+          "Prompt, perfected",
+          "Tailor-made answers, defined by you",
+          "Getting started with GitHub Copilot",
+          "Stay updated on GitHub and AI",
+          "See how GitHub Copilot powers up VS Code"
+        ],
+        "additions": [
+          "Desktop App",
+          "Copilot in VS Code",
+          "Agents on GitHub",
+          "Copilot CLI",
+          "For Business",
+          "Tutorials",
+          "Plans & Pricing",
+          "H1: Preview upcoming features for GitHub Copilot",
+          "Discover AI-powered updates designed to supercharge your productivity and  streamline your workflow.",
+          "H2: Agentic power, now in your terminal. Build, debug, deploy with Github Copilot coding agent without leaving your terminal.",
+          "Agentic power, now in your terminal. Build, debug, deploy with Github Copilot coding agent without leaving your terminal.",
+          "Edit, debug, and refactor code locally. Edit files, run commands, and iterate without ever leaving your local environment.",
+          "Jumpstart your projects. Ask Copilot CLI to map the structure, install dependencies, and explain how everything connects.",
+          "Put GitHub context to work and extend with MCP. Copilot CLI includes GitHub MCP by default—extend it with more servers for extra context.",
+          "H3: Prompt, perfected",
+          "Save and reuse prompt files to get faster, more consistent responses from GitHub Copilot."
+        ]
+      },
+      "headings": [
+        "Preview upcoming features for GitHub Copilot",
+        "Agentic power, now in your terminal. Build, debug, deploy with Github Copilot coding agent without leaving your terminal.",
+        "Prompt, perfected",
+        "Tailor-made answers, defined by you",
+        "Getting started with GitHub Copilot",
+        "Stay updated on GitHub and AI",
+        "See how GitHub Copilot powers up VS Code"
+      ],
+      "score": 9
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-06-19-new-features-and-claude-as-agent-provider-preview-in-jetbrains-ides",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-06-22T18:03:06.514Z",
+      "publishedAt": "2026-06-22T15:34:00.000Z",
+      "title": "New features and Claude as agent provider preview in JetBrains IDEs",
+      "url": "https://github.blog/changelog/2026-06-22-new-features-and-claude-as-agent-provider-preview-in-jetbrains-ides",
+      "summary": "This update adds support for organization and enterprise agents from GitHub, lets you queue and steer messages in Copilot CLI sessions, introduces a new agent debug logs summary view, and…\nThe post New features and Claude as agent provider preview in JetBrains IDEs appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-06-19-new-features-and-claude-as-agent-provider-preview-in-jetbrains-ides",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-06-22T18:03:07.055Z",
+      "publishedAt": "2026-06-22T15:34:00.000Z",
+      "title": "New features and Claude as agent provider preview in JetBrains IDEs",
+      "url": "https://github.blog/changelog/2026-06-22-new-features-and-claude-as-agent-provider-preview-in-jetbrains-ides",
+      "summary": "This update adds support for organization and enterprise agents from GitHub, lets you queue and steer messages in Copilot CLI sessions, introduces a new agent debug logs summary view, and…\nThe post New features and Claude as agent provider preview in JetBrains IDEs appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3
+    },
     {
       "eventId": "copilot-whats-new:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "sourceId": "copilot-whats-new",
