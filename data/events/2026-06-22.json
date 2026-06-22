@@ -1,0 +1,36 @@
+{
+  "date": "2026-06-22",
+  "generatedAt": "2026-06-22T11:09:20.684Z",
+  "latestRun": {
+    "generatedAt": "2026-06-22T11:09:20.684Z",
+    "newEventsCount": 1,
+    "newEventIds": [
+      "copilot-whats-new:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    ],
+    "errorCount": 0
+  },
+  "events": [
+    {
+      "eventId": "copilot-whats-new:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sourceId": "copilot-whats-new",
+      "sourceName": "GitHub Copilot What's New",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-06-22T11:09:19.695Z",
+      "publishedAt": "2026-06-22T11:09:19.694Z",
+      "title": "GitHub Copilot What's New changed",
+      "url": "https://github.com/features/copilot/whats-new",
+      "summary": "Detected 0 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 0,
+        "headings": [],
+        "additions": []
+      },
+      "headings": [],
+      "score": 2
+    }
+  ],
+  "errors": []
+}

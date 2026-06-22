@@ -1,24 +1,0 @@
-Desktop App
-Copilot in VS Code
-Agents on GitHub
-Copilot CLI
-For Business
-Tutorials
-Plans & Pricing
-H1: Preview upcoming features for GitHub Copilot
-Discover AI-powered updates designed to supercharge your productivity and  streamline your workflow.
-H2: Agentic power, now in your terminal. Build, debug, deploy with Github Copilot coding agent without leaving your terminal.
-Agentic power, now in your terminal. Build, debug, deploy with Github Copilot coding agent without leaving your terminal.
-Edit, debug, and refactor code locally. Edit files, run commands, and iterate without ever leaving your local environment.
-Jumpstart your projects. Ask Copilot CLI to map the structure, install dependencies, and explain how everything connects.
-Put GitHub context to work and extend with MCP. Copilot CLI includes GitHub MCP by default—extend it with more servers for extra context.
-H3: Prompt, perfected
-Save and reuse prompt files to get faster, more consistent responses from GitHub Copilot.
-H3: Tailor-made answers, defined by you
-Specify custom instructions to personalize chat responses in VS Code and Visual Studio based on your preferred tools, organizational knowledge, and coding best practices.
-H3: Getting started with GitHub Copilot
-Explore these tips and tricks to start building quickly with your AI-pair programmer using VS Code.
-H3: Stay updated on GitHub and AI
-Check out the GitHub Blog for tips, technical guides, best practices, and more.
-H3: See how GitHub Copilot powers up VS Code
-Get a quick overview of the features for GitHub Copilot in Visual Studio Code.
