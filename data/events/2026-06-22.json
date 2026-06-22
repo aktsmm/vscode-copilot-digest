@@ -1,14 +1,10 @@
 {
   "date": "2026-06-22",
-  "generatedAt": "2026-06-22T18:03:09.297Z",
+  "generatedAt": "2026-06-22T22:59:02.237Z",
   "latestRun": {
-    "generatedAt": "2026-06-22T18:03:09.297Z",
-    "newEventsCount": 3,
-    "newEventIds": [
-      "github-changelog:https://github.blog/changelog/2026-06-19-new-features-and-claude-as-agent-provider-preview-in-jetbrains-ides",
-      "github-changelog-copilot:https://github.blog/changelog/2026-06-19-new-features-and-claude-as-agent-provider-preview-in-jetbrains-ides",
-      "copilot-whats-new:657e51e47a08c8d0f0927e3564f5bdf9156332ec3e16a1aec81b1fc23117c200"
-    ],
+    "generatedAt": "2026-06-22T22:59:02.237Z",
+    "newEventsCount": 0,
+    "newEventIds": [],
     "errorCount": 0
   },
   "events": [
