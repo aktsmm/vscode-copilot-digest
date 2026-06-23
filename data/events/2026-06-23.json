@@ -1,15 +1,54 @@
 {
   "date": "2026-06-23",
-  "generatedAt": "2026-06-23T16:09:25.617Z",
+  "generatedAt": "2026-06-23T22:43:37.707Z",
   "latestRun": {
-    "generatedAt": "2026-06-23T16:09:25.617Z",
-    "newEventsCount": 1,
+    "generatedAt": "2026-06-23T22:43:37.707Z",
+    "newEventsCount": 4,
     "newEventIds": [
-      "github-copilot-blog:https://github.blog/?p=96931"
+      "github-changelog:https://github.blog/changelog/2026-06-23-copilot-cli-new-terminal-interface-is-generally-available",
+      "github-changelog:https://github.blog/changelog/2026-06-23-github-copilot-app-support-for-byok",
+      "github-changelog-copilot:https://github.blog/changelog/2026-06-23-copilot-cli-new-terminal-interface-is-generally-available",
+      "github-changelog-copilot:https://github.blog/changelog/2026-06-23-github-copilot-app-support-for-byok"
     ],
     "errorCount": 0
   },
   "events": [
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-06-23-copilot-cli-new-terminal-interface-is-generally-available",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-06-23T22:43:34.151Z",
+      "publishedAt": "2026-06-23T16:35:45.000Z",
+      "title": "Copilot CLI: New terminal interface is generally available",
+      "url": "https://github.blog/changelog/2026-06-23-copilot-cli-new-terminal-interface-is-generally-available",
+      "summary": "The redesigned terminal interface for GitHub Copilot CLI that we previewed at Microsoft Build 2026 is now generally available. You get a tabbed layout for working with GitHub directly from…\nThe post Copilot CLI: New terminal interface is generally available appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "client apps",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-06-23-copilot-cli-new-terminal-interface-is-generally-available",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-06-23T22:43:34.814Z",
+      "publishedAt": "2026-06-23T16:35:45.000Z",
+      "title": "Copilot CLI: New terminal interface is generally available",
+      "url": "https://github.blog/changelog/2026-06-23-copilot-cli-new-terminal-interface-is-generally-available",
+      "summary": "The redesigned terminal interface for GitHub Copilot CLI that we previewed at Microsoft Build 2026 is now generally available. You get a tabbed layout for working with GitHub directly from…\nThe post Copilot CLI: New terminal interface is generally available appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "client apps",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
     {
       "eventId": "github-copilot-blog:https://github.blog/?p=96931",
       "sourceId": "github-copilot-blog",
@@ -31,6 +70,40 @@
       ],
       "isFutureDated": false,
       "score": 0
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-06-23-github-copilot-app-support-for-byok",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-06-23T22:43:34.152Z",
+      "publishedAt": "2026-06-23T08:00:02.000Z",
+      "title": "GitHub Copilot app support for BYOK",
+      "url": "https://github.blog/changelog/2026-06-23-github-copilot-app-support-for-byok",
+      "summary": "The GitHub Copilot app now supports bring your own key (BYOK), so you can run agent sessions against your own model providers, including OpenAI, Azure OpenAI, Microsoft Foundry, Anthropic, LM…\nThe post GitHub Copilot app support for BYOK appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 6
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-06-23-github-copilot-app-support-for-byok",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-06-23T22:43:34.814Z",
+      "publishedAt": "2026-06-23T08:00:02.000Z",
+      "title": "GitHub Copilot app support for BYOK",
+      "url": "https://github.blog/changelog/2026-06-23-github-copilot-app-support-for-byok",
+      "summary": "The GitHub Copilot app now supports bring your own key (BYOK), so you can run agent sessions against your own model providers, including OpenAI, Azure OpenAI, Microsoft Foundry, Anthropic, LM…\nThe post GitHub Copilot app support for BYOK appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 6
     }
   ],
   "errors": []
