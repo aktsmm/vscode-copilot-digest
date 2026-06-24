@@ -1,20 +1,13 @@
 {
   "date": "2026-06-24",
-  "generatedAt": "2026-06-24T15:41:54.715Z",
+  "generatedAt": "2026-06-24T22:43:39.619Z",
   "latestRun": {
-    "generatedAt": "2026-06-24T15:41:54.715Z",
-    "newEventsCount": 10,
+    "generatedAt": "2026-06-24T22:43:39.619Z",
+    "newEventsCount": 3,
     "newEventIds": [
-      "vscode-feed:https://code.visualstudio.com/updates/v1_127",
-      "vscode-updates:63686550681d09d6a4406e648bc03a3a94234d3499194c0fbae33d7bf5f59a18",
-      "vscode-release-notes-1-109:8f1f93a349a4dc228b48cbe4b3fc083e47464f4ebac866d23509d41174a3f514",
-      "vscode-release-notes-1-126:section:34fc25a6d6bdfdddb88112e5e3669b7351b6c911c9619a8ed8827940e67b3363",
-      "vscode-release-notes-1-126:section:c17f5cb62e632d796ac6bdc46829927e34d6c40dfa152989a1edd41e3a5d04a8",
-      "vscode-release-notes-1-126:section:abfa88cdfb5e39939ab54126fd8a8c4a81cc24a31a90f3e9d1b9b2305003c351",
-      "vscode-release-notes-1-126:section:0c589a04d25c7f40349f742551adc7f75a8d11e5986c8a6a4cd3004bb78df405",
-      "vscode-release-notes-1-125:0e99ebd74fbebe3986eb7a5ea3e8aed7ef3c4ca74f2b43e22e7771e1bd7da437",
-      "vscode-release-notes-1-124:2d06d08b9c6da14ab137a1a4c0b4d9da48d09f4ff677c44137aedee753b2ac0b",
-      "vscode-release-notes-1-123:8b48eaf232b56475b85da0c0c55feace143f941cc7e33c3ab716542b65f23564"
+      "github-changelog:https://github.blog/changelog/2026-06-24-changes-to-model-selection-for-free-and-student-plans",
+      "github-changelog-copilot:https://github.blog/changelog/2026-06-24-changes-to-model-selection-for-free-and-student-plans",
+      "vscode-feed:https://code.visualstudio.com/updates/v1_126"
     ],
     "errorCount": 0
   },
@@ -34,6 +27,56 @@
       ],
       "isFutureDated": true,
       "score": 4
+    },
+    {
+      "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_126",
+      "sourceId": "vscode-feed",
+      "sourceName": "VS Code Feed",
+      "kind": "feed_entry",
+      "detectedAt": "2026-06-24T22:43:37.535Z",
+      "publishedAt": "2026-06-24T17:00:00.000Z",
+      "title": "Visual Studio Code 1.126",
+      "url": "https://code.visualstudio.com/updates/v1_126",
+      "summary": "Learn what is new in Visual Studio Code 1.126\n Read the full article",
+      "categories": [
+        "release"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-06-24-changes-to-model-selection-for-free-and-student-plans",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-06-24T22:43:37.445Z",
+      "publishedAt": "2026-06-24T16:28:36.000Z",
+      "title": "Changes to model selection for Free and Student plans",
+      "url": "https://github.blog/changelog/2026-06-24-changes-to-model-selection-for-free-and-student-plans",
+      "summary": "Copilot Free and Student plans will now use Copilot auto model selection as the default and only model selection experience. Auto dynamically selects the best model for each task, removing…\nThe post Changes to model selection for Free and Student plans appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 1
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-06-24-changes-to-model-selection-for-free-and-student-plans",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-06-24T22:43:37.472Z",
+      "publishedAt": "2026-06-24T16:28:36.000Z",
+      "title": "Changes to model selection for Free and Student plans",
+      "url": "https://github.blog/changelog/2026-06-24-changes-to-model-selection-for-free-and-student-plans",
+      "summary": "Copilot Free and Student plans will now use Copilot auto model selection as the default and only model selection experience. Auto dynamically selects the best model for each task, removing…\nThe post Changes to model selection for Free and Student plans appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 1
     },
     {
       "eventId": "vscode-updates:63686550681d09d6a4406e648bc03a3a94234d3499194c0fbae33d7bf5f59a18",
