@@ -1,4 +1,5 @@
 Insiders
+1.126
 1.125
 1.124
 1.123
@@ -358,8 +359,6 @@ Setting:
  
  Open in VS Code
  Open in VS Code Insiders
- 
- This setting is managed at the organization level. Contact your administrator to change it.ORG
 Edit mode is now hidden by default from the agent dropdown in chat. Using agents provides a superset of edit mode capabilities and produces better results for code editing tasks.
 If your organization has disabled agent mode, edit mode remains visible in the agent dropdown. You can also manually restore edit mode by disabling the 
  
@@ -373,7 +372,7 @@ If your organization has disabled agent mode, edit mode remains visible in the a
  Open in VS Code
  Open in VS Code Insiders
  
- This setting is managed at the organization level. Contact your administrator to change it.ORG setting.
+ setting.
 H2: Agent Session Management
 Delegate, monitor, and switch without losing focus. You can now run multiple agent sessions in parallel across local, background, and cloud environments, all from a single unified view. Jump between sessions, track progress at a glance, and let agents work independently while you stay productive.
 H3: Switching and delegating between agent types

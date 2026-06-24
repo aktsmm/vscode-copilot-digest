@@ -1,12 +1,220 @@
 {
   "date": "2026-06-24",
-  "generatedAt": "2026-06-24T08:36:59.235Z",
+  "generatedAt": "2026-06-24T15:41:54.715Z",
   "latestRun": {
-    "generatedAt": "2026-06-24T08:36:59.235Z",
-    "newEventsCount": 0,
-    "newEventIds": [],
+    "generatedAt": "2026-06-24T15:41:54.715Z",
+    "newEventsCount": 10,
+    "newEventIds": [
+      "vscode-feed:https://code.visualstudio.com/updates/v1_127",
+      "vscode-updates:63686550681d09d6a4406e648bc03a3a94234d3499194c0fbae33d7bf5f59a18",
+      "vscode-release-notes-1-109:8f1f93a349a4dc228b48cbe4b3fc083e47464f4ebac866d23509d41174a3f514",
+      "vscode-release-notes-1-126:section:34fc25a6d6bdfdddb88112e5e3669b7351b6c911c9619a8ed8827940e67b3363",
+      "vscode-release-notes-1-126:section:c17f5cb62e632d796ac6bdc46829927e34d6c40dfa152989a1edd41e3a5d04a8",
+      "vscode-release-notes-1-126:section:abfa88cdfb5e39939ab54126fd8a8c4a81cc24a31a90f3e9d1b9b2305003c351",
+      "vscode-release-notes-1-126:section:0c589a04d25c7f40349f742551adc7f75a8d11e5986c8a6a4cd3004bb78df405",
+      "vscode-release-notes-1-125:0e99ebd74fbebe3986eb7a5ea3e8aed7ef3c4ca74f2b43e22e7771e1bd7da437",
+      "vscode-release-notes-1-124:2d06d08b9c6da14ab137a1a4c0b4d9da48d09f4ff677c44137aedee753b2ac0b",
+      "vscode-release-notes-1-123:8b48eaf232b56475b85da0c0c55feace143f941cc7e33c3ab716542b65f23564"
+    ],
     "errorCount": 0
   },
-  "events": [],
+  "events": [
+    {
+      "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_127",
+      "sourceId": "vscode-feed",
+      "sourceName": "VS Code Feed",
+      "kind": "feed_entry",
+      "detectedAt": "2026-06-24T15:41:51.306Z",
+      "publishedAt": "2026-07-01T17:00:00.000Z",
+      "title": "Visual Studio Code 1.127",
+      "url": "https://code.visualstudio.com/updates/v1_127",
+      "summary": "Learn what's new in Visual Studio Code 1.127 (Insiders)\n Read the full article",
+      "categories": [
+        "release"
+      ],
+      "isFutureDated": true,
+      "score": 4
+    },
+    {
+      "eventId": "vscode-updates:63686550681d09d6a4406e648bc03a3a94234d3499194c0fbae33d7bf5f59a18",
+      "sourceId": "vscode-updates",
+      "sourceName": "VS Code Updates",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-06-24T15:41:51.600Z",
+      "publishedAt": "2026-06-24T00:00:00.000Z",
+      "title": "VS Code Updates changed",
+      "url": "https://code.visualstudio.com/updates/",
+      "summary": "Detected 65 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 65,
+        "headings": [
+          "Visual Studio Code 1.126",
+          "Cost management",
+          "Session-level cost information",
+          "Language models",
+          "Unified model customization picker",
+          "Simplified model hover",
+          "Agents window (Preview)",
+          "Multiple chats in an agent host Copilot session",
+          "Agentic code feedback with agent host harnesses",
+          "Editor experience",
+          "Open new folders in Restricted Mode",
+          "Removed trust parent from the Workspace Trust editor",
+          "Website",
+          "VS Code blog",
+          "VS Code documentation"
+        ],
+        "additions": [
+          "1.126",
+          "H1: Visual Studio Code 1.126",
+          "Release date: June 24, 2026",
+          "Welcome to the 1.126 release of Visual Studio Code. This release brings clearer cost transparency, simpler model tuning, and safer browsing of unfamiliar code.",
+          "Session-level cost: See the total cost of a chat session to spot expensive conversations.",
+          "Multiple chats per session: Run several chats side by side in one agent host Copilot session.",
+          "Workspace trust: Browse new folders safely in restricted mode.",
+          "H2: Cost management",
+          "H3: Session-level cost information",
+          "You can now see the cost for an entire chat session, not just for individual turns. This gives you better transparency into which sessions consume the most credits, making it easier to spot expensive conversations and manage your usage over time.",
+          "H2: Language models",
+          "H3: Unified model customization picker",
+          "To simplify language model configuration, we have combined the context size and reasoning (thinking) effort controls into a single model customization picker. From one place, you can adjust both settings when tuning a model, instead of working with two separate dropdowns.",
+          "H3: Simplified model hover",
+          "We cleaned up the model hover to make it easier to scan. It now shows a concise one-word descriptor of the model's capabilities and includes deep link buttons that take you directly to the relevant configuration.",
+          "H2: Agents window (Preview)"
+        ]
+      },
+      "headings": [
+        "Visual Studio Code 1.126",
+        "Cost management",
+        "Session-level cost information",
+        "Language models",
+        "Unified model customization picker",
+        "Simplified model hover",
+        "Agents window (Preview)",
+        "Multiple chats in an agent host Copilot session",
+        "Agentic code feedback with agent host harnesses",
+        "Editor experience",
+        "Open new folders in Restricted Mode",
+        "Removed trust parent from the Workspace Trust editor"
+      ],
+      "score": 17
+    },
+    {
+      "eventId": "vscode-release-notes-1-126:section:34fc25a6d6bdfdddb88112e5e3669b7351b6c911c9619a8ed8827940e67b3363",
+      "sourceId": "vscode-release-notes-1-126",
+      "sourceName": "VS Code Release Notes 1.126",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-06-24T15:41:53.176Z",
+      "publishedAt": "2026-06-24T00:00:00.000Z",
+      "title": "Visual Studio Code 1.126: Session-level cost information",
+      "url": "https://code.visualstudio.com/updates/v1_126",
+      "summary": "You can now see the cost for an entire chat session, not just for individual turns. This gives you better transparency into which sessions consume the most credits, making it easier to spot expensive conversations and manage your usage over time.",
+      "categories": [
+        "release",
+        "section",
+        "Cost management"
+      ],
+      "sectionHeading": "Cost management",
+      "sectionTitle": "Session-level cost information",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-126:section:c17f5cb62e632d796ac6bdc46829927e34d6c40dfa152989a1edd41e3a5d04a8",
+      "sourceId": "vscode-release-notes-1-126",
+      "sourceName": "VS Code Release Notes 1.126",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-06-24T15:41:53.176Z",
+      "publishedAt": "2026-06-24T00:00:00.000Z",
+      "title": "Visual Studio Code 1.126: Multiple chats in an agent host Copilot session",
+      "url": "https://code.visualstudio.com/updates/v1_126",
+      "summary": "The Agents window lets you run and manage multiple agent sessions side by side. In this release, a Copilot session started from an agent host can hold several chats at once. Because the chats share the same session and working context, you can keep more than one conversation going in the same workspace at the same time. Say your primary chat is busy implementing a feature. Instead of waiting or interrupting it, sele...",
+      "categories": [
+        "release",
+        "section",
+        "Agents window (Preview)"
+      ],
+      "sectionHeading": "Agents window (Preview)",
+      "sectionTitle": "Multiple chats in an agent host Copilot session",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-126:section:abfa88cdfb5e39939ab54126fd8a8c4a81cc24a31a90f3e9d1b9b2305003c351",
+      "sourceId": "vscode-release-notes-1-126",
+      "sourceName": "VS Code Release Notes 1.126",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-06-24T15:41:53.176Z",
+      "publishedAt": "2026-06-24T00:00:00.000Z",
+      "title": "Visual Studio Code 1.126: Agentic code feedback with agent host harnesses",
+      "url": "https://code.visualstudio.com/updates/v1_126",
+      "summary": "In the Agents window, comments you leave on generated code are now stored on the agent host, so the agent can interact with your feedback by using server-side tools such as listComments and resolveComments. This works even when you disconnect the client, since the comments live on the server rather than in your local session. The agent can also create the comments for you by using the addComment tool. When you run a...",
+      "categories": [
+        "release",
+        "section",
+        "Agents window (Preview)"
+      ],
+      "sectionHeading": "Agents window (Preview)",
+      "sectionTitle": "Agentic code feedback with agent host harnesses",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-126:section:0c589a04d25c7f40349f742551adc7f75a8d11e5986c8a6a4cd3004bb78df405",
+      "sourceId": "vscode-release-notes-1-126",
+      "sourceName": "VS Code Release Notes 1.126",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-06-24T15:41:53.176Z",
+      "publishedAt": "2026-06-24T00:00:00.000Z",
+      "title": "Visual Studio Code 1.126: Open new folders in Restricted Mode",
+      "url": "https://code.visualstudio.com/updates/v1_126",
+      "summary": "Setting: \n \n \n security.workspace.trust.startupPrompt\n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders Workspace Trust lets you decide whether your project folders can automatically run code, which adds a layer of security when you work with unfamiliar code. Previously, opening a new folder immediately interrupted you with a dialog asking whether to trust the folder before you could look at its contents. Now...",
+      "categories": [
+        "release",
+        "section",
+        "Editor experience"
+      ],
+      "sectionHeading": "Editor experience",
+      "sectionTitle": "Open new folders in Restricted Mode",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-109:8f1f93a349a4dc228b48cbe4b3fc083e47464f4ebac866d23509d41174a3f514",
+      "sourceId": "vscode-release-notes-1-109",
+      "sourceName": "VS Code Release Notes 1.109",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-06-24T15:41:51.955Z",
+      "publishedAt": "2026-02-04T00:00:00.000Z",
+      "title": "VS Code Release Notes 1.109 changed",
+      "url": "https://code.visualstudio.com/updates/v1_109",
+      "summary": "Detected 2 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 2,
+        "headings": [],
+        "additions": [
+          "1.126",
+          "setting."
+        ]
+      },
+      "headings": [
+        "January 2026 (version 1.109)",
+        "Upcoming events",
+        "Agent Sessions Day",
+        "Chat UX",
+        "Message steering and queueing (Experimental)",
+        "Anthropic models now show thinking tokens",
+        "Mermaid diagrams in chat responses",
+        "Ask Questions tool (Experimental)",
+        "Plan agent",
+        "Context window details",
+        "Inline chat UX revamp (Preview)",
+        "Model descriptions in the model picker"
+      ],
+      "score": 2
+    }
+  ],
   "errors": []
 }
