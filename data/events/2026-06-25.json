@@ -1,18 +1,11 @@
 {
   "date": "2026-06-25",
-  "generatedAt": "2026-06-25T22:54:00.481Z",
+  "generatedAt": "2026-06-25T22:57:00.106Z",
   "latestRun": {
-    "generatedAt": "2026-06-25T22:54:00.481Z",
-    "newEventsCount": 6,
-    "newEventIds": [
-      "github-changelog:https://github.blog/changelog/2026-06-25-copilot-code-review-analysis-depth-and-efficiency-updates",
-      "github-changelog:https://github.blog/changelog/2026-06-25-enterprise-managed-settings-now-support-strictknownmarketplaces-in-vs-code-and-the-cli",
-      "github-changelog:https://github.blog/changelog/2026-06-24-github-copilot-for-jira-is-now-generally-available",
-      "github-changelog-copilot:https://github.blog/changelog/2026-06-25-copilot-code-review-analysis-depth-and-efficiency-updates",
-      "github-changelog-copilot:https://github.blog/changelog/2026-06-25-enterprise-managed-settings-now-support-strictknownmarketplaces-in-vs-code-and-the-cli",
-      "github-changelog-copilot:https://github.blog/changelog/2026-06-24-github-copilot-for-jira-is-now-generally-available"
-    ],
-    "errorCount": 0
+    "generatedAt": "2026-06-25T22:57:00.106Z",
+    "newEventsCount": 0,
+    "newEventIds": [],
+    "errorCount": 4
   },
   "events": [
     {
@@ -124,5 +117,22 @@
       "score": 2
     }
   ],
-  "errors": []
+  "errors": [
+    {
+      "sourceId": "vscode-feed",
+      "message": "fetch failed"
+    },
+    {
+      "sourceId": "vscode-updates",
+      "message": "fetch failed"
+    },
+    {
+      "sourceId": "vscode-release-notes-1-109",
+      "message": "fetch failed"
+    },
+    {
+      "sourceId": "publickey",
+      "message": "fetch failed"
+    }
+  ]
 }
