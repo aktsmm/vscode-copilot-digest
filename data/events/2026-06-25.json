@@ -1,12 +1,128 @@
 {
   "date": "2026-06-25",
-  "generatedAt": "2026-06-25T16:02:13.820Z",
+  "generatedAt": "2026-06-25T22:54:00.481Z",
   "latestRun": {
-    "generatedAt": "2026-06-25T16:02:13.820Z",
-    "newEventsCount": 0,
-    "newEventIds": [],
+    "generatedAt": "2026-06-25T22:54:00.481Z",
+    "newEventsCount": 6,
+    "newEventIds": [
+      "github-changelog:https://github.blog/changelog/2026-06-25-copilot-code-review-analysis-depth-and-efficiency-updates",
+      "github-changelog:https://github.blog/changelog/2026-06-25-enterprise-managed-settings-now-support-strictknownmarketplaces-in-vs-code-and-the-cli",
+      "github-changelog:https://github.blog/changelog/2026-06-24-github-copilot-for-jira-is-now-generally-available",
+      "github-changelog-copilot:https://github.blog/changelog/2026-06-25-copilot-code-review-analysis-depth-and-efficiency-updates",
+      "github-changelog-copilot:https://github.blog/changelog/2026-06-25-enterprise-managed-settings-now-support-strictknownmarketplaces-in-vs-code-and-the-cli",
+      "github-changelog-copilot:https://github.blog/changelog/2026-06-24-github-copilot-for-jira-is-now-generally-available"
+    ],
     "errorCount": 0
   },
-  "events": [],
+  "events": [
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-06-25-copilot-code-review-analysis-depth-and-efficiency-updates",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-06-25T22:53:56.881Z",
+      "publishedAt": "2026-06-25T21:41:18.000Z",
+      "title": "Copilot code review: Analysis depth and efficiency updates",
+      "url": "https://github.blog/changelog/2026-06-25-copilot-code-review-analysis-depth-and-efficiency-updates",
+      "summary": "Copilot code review now uses the built-in file exploration tools available in the Copilot CLI and SDK, significantly improving review cost efficiency with no change to your existing workflow. If…\nThe post Copilot code review: Analysis depth and efficiency updates appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 2
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-06-25-copilot-code-review-analysis-depth-and-efficiency-updates",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-06-25T22:53:57.244Z",
+      "publishedAt": "2026-06-25T21:41:18.000Z",
+      "title": "Copilot code review: Analysis depth and efficiency updates",
+      "url": "https://github.blog/changelog/2026-06-25-copilot-code-review-analysis-depth-and-efficiency-updates",
+      "summary": "Copilot code review now uses the built-in file exploration tools available in the Copilot CLI and SDK, significantly improving review cost efficiency with no change to your existing workflow. If…\nThe post Copilot code review: Analysis depth and efficiency updates appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 2
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-06-25-enterprise-managed-settings-now-support-strictknownmarketplaces-in-vs-code-and-the-cli",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-06-25T22:53:56.882Z",
+      "publishedAt": "2026-06-25T21:30:42.000Z",
+      "title": "Enterprise-managed settings now support strictKnownMarketplaces in VS Code and GitHub Copilot CLI",
+      "url": "https://github.blog/changelog/2026-06-25-enterprise-managed-settings-now-support-strictknownmarketplaces-in-vs-code-and-the-cli",
+      "summary": "Enterprises can now control which plugins their users can install in GitHub Copilot CLI and VS Code. This setting is now available in public preview. Add strictKnownMarketplaces to your enterprise-managed…\nThe post Enterprise-managed settings now support strictKnownMarketplaces in VS Code and GitHub Copilot CLI appear...",
+      "categories": [
+        "Improvement",
+        "client apps",
+        "copilot",
+        "enterprise management tools"
+      ],
+      "isFutureDated": false,
+      "score": 2
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-06-25-enterprise-managed-settings-now-support-strictknownmarketplaces-in-vs-code-and-the-cli",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-06-25T22:53:57.244Z",
+      "publishedAt": "2026-06-25T21:30:42.000Z",
+      "title": "Enterprise-managed settings now support strictKnownMarketplaces in VS Code and GitHub Copilot CLI",
+      "url": "https://github.blog/changelog/2026-06-25-enterprise-managed-settings-now-support-strictknownmarketplaces-in-vs-code-and-the-cli",
+      "summary": "Enterprises can now control which plugins their users can install in GitHub Copilot CLI and VS Code. This setting is now available in public preview. Add strictKnownMarketplaces to your enterprise-managed…\nThe post Enterprise-managed settings now support strictKnownMarketplaces in VS Code and GitHub Copilot CLI appear...",
+      "categories": [
+        "Improvement",
+        "client apps",
+        "copilot",
+        "enterprise management tools"
+      ],
+      "isFutureDated": false,
+      "score": 2
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-06-24-github-copilot-for-jira-is-now-generally-available",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-06-25T22:53:56.882Z",
+      "publishedAt": "2026-06-25T15:18:46.000Z",
+      "title": "GitHub Copilot for Jira is now generally available",
+      "url": "https://github.blog/changelog/2026-06-25-github-copilot-for-jira-is-now-generally-available",
+      "summary": "GitHub Copilot for Jira is now generally available. Since launching the public preview in March 2026, we have shipped a series of enhancements based on your feedback, including model selection,…\nThe post GitHub Copilot for Jira is now generally available appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "collaboration tools",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 2
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-06-24-github-copilot-for-jira-is-now-generally-available",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-06-25T22:53:57.244Z",
+      "publishedAt": "2026-06-25T15:18:46.000Z",
+      "title": "GitHub Copilot for Jira is now generally available",
+      "url": "https://github.blog/changelog/2026-06-25-github-copilot-for-jira-is-now-generally-available",
+      "summary": "GitHub Copilot for Jira is now generally available. Since launching the public preview in March 2026, we have shipped a series of enhancements based on your feedback, including model selection,…\nThe post GitHub Copilot for Jira is now generally available appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "collaboration tools",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 2
+    }
+  ],
   "errors": []
 }
