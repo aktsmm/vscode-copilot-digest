@@ -1,15 +1,75 @@
 {
   "date": "2026-06-26",
-  "generatedAt": "2026-06-26T15:39:23.476Z",
+  "generatedAt": "2026-06-26T22:41:12.540Z",
   "latestRun": {
-    "generatedAt": "2026-06-26T15:39:23.476Z",
-    "newEventsCount": 1,
+    "generatedAt": "2026-06-26T22:41:12.540Z",
+    "newEventsCount": 8,
     "newEventIds": [
-      "github-changelog:https://github.blog/changelog/2026-06-26-github-desktop-3-6-worktrees-and-deeper-copilot-integration"
+      "github-changelog:https://github.blog/changelog/2026-06-26-track-total-merges-by-adoption-phase-in-enterprise-and-organization-reports",
+      "github-changelog:https://github.blog/changelog/2026-06-26-mai-code-1-flash-for-copilot-business-and-copilot-enterprise",
+      "github-changelog-copilot:https://github.blog/changelog/2026-06-26-mai-code-1-flash-for-copilot-business-and-copilot-enterprise",
+      "vscode-feed:https://code.visualstudio.com/blogs/2026/06/26/iterating-faster-with-ts-7",
+      "vscode-updates:4721956829f17d4c3d0ac949cc6b97d18f77402a50faa591b2d16af8d19e2fbf",
+      "vscode-release-notes-1-125:01774b86ddc08b8718ad364bcb90657ff68507ae8e77f508d2de204607efa1b0",
+      "vscode-release-notes-1-124:90440f1e618f0bb875e19050184f987473d4f2bce7145cab6aefe9d0f8a0c458",
+      "vscode-release-notes-1-123:939c39a2de8a7b70be73fbf2f33e57fc5d283bd36f34608d6449c89458c9230a"
     ],
     "errorCount": 0
   },
   "events": [
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-06-26-track-total-merges-by-adoption-phase-in-enterprise-and-organization-reports",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-06-26T22:41:10.065Z",
+      "publishedAt": "2026-06-26T20:55:03.000Z",
+      "title": "Track total merges by adoption phase in enterprise and organization reports",
+      "url": "https://github.blog/changelog/2026-06-26-track-total-merges-by-adoption-phase-in-enterprise-and-organization-reports",
+      "summary": "Building on the AI adoption phase cohorts added to the Copilot usage metrics API, organization and enterprise reports now report the total number of pull requests merged by each adoption…\nThe post Track total merges by adoption phase in enterprise and organization reports appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "account management",
+        "copilot",
+        "enterprise management tools"
+      ],
+      "isFutureDated": false,
+      "score": 2
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-06-26-mai-code-1-flash-for-copilot-business-and-copilot-enterprise",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-06-26T22:41:10.065Z",
+      "publishedAt": "2026-06-26T16:35:06.000Z",
+      "title": "MAI-Code-1-Flash for Copilot Business and Copilot Enterprise",
+      "url": "https://github.blog/changelog/2026-06-26-mai-code-1-flash-for-copilot-business-and-copilot-enterprise",
+      "summary": "MAI-Code-1-Flash, Microsoft AI’s in-house coding model, is now generally available for GitHub Copilot Business and Copilot Enterprise, building on its recent expansion across Copilot surfaces. Purpose-built for coding and optimized…\nThe post MAI-Code-1-Flash for Copilot Business and Copilot Enterprise appeared first o...",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-06-26-mai-code-1-flash-for-copilot-business-and-copilot-enterprise",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-06-26T22:41:10.075Z",
+      "publishedAt": "2026-06-26T16:35:06.000Z",
+      "title": "MAI-Code-1-Flash for Copilot Business and Copilot Enterprise",
+      "url": "https://github.blog/changelog/2026-06-26-mai-code-1-flash-for-copilot-business-and-copilot-enterprise",
+      "summary": "MAI-Code-1-Flash, Microsoft AI’s in-house coding model, is now generally available for GitHub Copilot Business and Copilot Enterprise, building on its recent expansion across Copilot surfaces. Purpose-built for coding and optimized…\nThe post MAI-Code-1-Flash for Copilot Business and Copilot Enterprise appeared first o...",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
     {
       "eventId": "github-changelog:https://github.blog/changelog/2026-06-26-github-desktop-3-6-worktrees-and-deeper-copilot-integration",
       "sourceId": "github-changelog",
@@ -28,6 +88,22 @@
       "score": 4
     },
     {
+      "eventId": "vscode-feed:https://code.visualstudio.com/blogs/2026/06/26/iterating-faster-with-ts-7",
+      "sourceId": "vscode-feed",
+      "sourceName": "VS Code Feed",
+      "kind": "feed_entry",
+      "detectedAt": "2026-06-26T22:41:10.108Z",
+      "publishedAt": "2026-06-26T00:00:00.000Z",
+      "title": "Iterating faster with TypeScript 7",
+      "url": "https://code.visualstudio.com/blogs/2026/06/26/iterating-faster-with-ts-7",
+      "summary": "How the VS Code and TypeScript teams collaborated to adopt TypeScript 7 and speed up VS Code development\n Read the full article",
+      "categories": [
+        "blog"
+      ],
+      "isFutureDated": false,
+      "score": 0
+    },
+    {
       "eventId": "github-copilot-blog:https://github.blog/?p=97041",
       "sourceId": "github-copilot-blog",
       "sourceName": "GitHub Blog / GitHub Copilot",
@@ -44,6 +120,43 @@
         "benchmarking"
       ],
       "isFutureDated": false,
+      "score": 2
+    },
+    {
+      "eventId": "vscode-updates:4721956829f17d4c3d0ac949cc6b97d18f77402a50faa591b2d16af8d19e2fbf",
+      "sourceId": "vscode-updates",
+      "sourceName": "VS Code Updates",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-06-26T22:41:10.465Z",
+      "publishedAt": "2026-06-24T00:00:00.000Z",
+      "title": "VS Code Updates changed",
+      "url": "https://code.visualstudio.com/updates/",
+      "summary": "Detected 2 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 2,
+        "headings": [],
+        "additions": [
+          "VS Code is rolling out gradually to all users. Use Check for Updates in VS Code to get the latest version immediately.",
+          "To try new features as soon as possible, download the nightly Insiders build, which includes the latest updates as soon as they are available."
+        ]
+      },
+      "headings": [
+        "Visual Studio Code 1.126",
+        "Cost management",
+        "Session-level cost information",
+        "Language models",
+        "Unified model customization picker",
+        "Simplified model hover",
+        "Agents window (Preview)",
+        "Multiple chats in an agent host Copilot session",
+        "Agentic code feedback with agent host harnesses",
+        "Editor experience",
+        "Open new folders in Restricted Mode",
+        "Removed trust parent from the Workspace Trust editor"
+      ],
       "score": 2
     }
   ],

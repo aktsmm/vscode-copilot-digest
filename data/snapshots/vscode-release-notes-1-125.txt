@@ -33,6 +33,8 @@ Configurable auto-update delay: Choose how long VS Code waits before installing 
 Copilot policies: Deliver managed Copilot settings through your existing device management tooling.
 Copilot policies: Deliver managed Copilot settings through your existing device management tooling.
 Happy Coding!
+VS Code is rolling out gradually to all users. Use Check for Updates in VS Code to get the latest version immediately.
+To try new features as soon as possible, download the nightly Insiders build, which includes the latest updates as soon as they are available.
 H2: Agents
 H3: View your additional spend usage in VS Code
 To make sure you stay ahead of overage charges, the Copilot status dashboard now shows the percentage of your additional Copilot budget that you've consumed, so you can adjust your usage before you hit your configured limit.

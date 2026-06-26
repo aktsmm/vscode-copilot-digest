@@ -30,6 +30,8 @@ Multiple chats per session: Run several chats side by side in one agent host Cop
 Workspace trust: Browse new folders safely in restricted mode.
 Workspace trust: Browse new folders safely in restricted mode.
 Happy Coding!
+VS Code is rolling out gradually to all users. Use Check for Updates in VS Code to get the latest version immediately.
+To try new features as soon as possible, download the nightly Insiders build, which includes the latest updates as soon as they are available.
 H2: Cost management
 H3: Session-level cost information
 You can now see the cost for an entire chat session, not just for individual turns. This gives you better transparency into which sessions consume the most credits, making it easier to spot expensive conversations and manage your usage over time.

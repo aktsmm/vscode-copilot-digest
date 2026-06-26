@@ -34,6 +34,8 @@ Session navigation: Search, jump, and step through agent sessions with the keybo
 Browser history: Revisit and search pages you've already opened in the integrated browser.
 Browser history: Revisit and search pages you've already opened in the integrated browser.
 Happy Coding!
+VS Code is rolling out gradually to all users. Use Check for Updates in VS Code to get the latest version immediately.
+To try new features as soon as possible, download the nightly Insiders build, which includes the latest updates as soon as they are available.
 H2: Agents window (Preview)
 The Agents window is a dedicated companion window optimized for exploring, iterating on, and reviewing agent sessions across projects and machines. This release focuses on making it faster to move between sessions and on preserving your context across reloads.
 H3: Background send for new sessions
