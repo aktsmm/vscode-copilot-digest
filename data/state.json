@@ -124,7 +124,7 @@
         "https://github.blog/changelog/2026-04-08-github-mobile-research-and-code-with-copilot-cloud-agent-anywhere"
       ],
       "futureSeenIds": [],
-      "lastCheckedAt": "2026-06-25T22:53:56.882Z"
+      "lastCheckedAt": "2026-06-26T08:36:59.753Z"
     },
     "github-changelog-copilot": {
       "seenIds": [
@@ -256,10 +256,11 @@
         "https://github.blog/changelog/2026-04-02-copilot-sdk-in-public-preview"
       ],
       "futureSeenIds": [],
-      "lastCheckedAt": "2026-06-25T22:53:57.244Z"
+      "lastCheckedAt": "2026-06-26T08:36:59.764Z"
     },
     "github-copilot-blog": {
       "seenIds": [
+        "https://github.blog/?p=97041",
         "https://github.blog/?p=96931",
         "https://github.blog/?p=96857",
         "https://github.blog/?p=96832",
@@ -291,7 +292,7 @@
         "https://github.blog/?p=94179"
       ],
       "futureSeenIds": [],
-      "lastCheckedAt": "2026-06-25T22:53:57.267Z"
+      "lastCheckedAt": "2026-06-26T08:36:59.779Z"
     },
     "vscode-feed": {
       "seenIds": [
@@ -329,25 +330,25 @@
       "futureSeenIds": [
         "https://code.visualstudio.com/updates/v1_127"
       ],
-      "lastCheckedAt": "2026-06-25T22:53:57.565Z"
+      "lastCheckedAt": "2026-06-26T08:36:59.797Z"
     },
     "vscode-updates": {
       "releasePublishedAt": "2026-06-24T00:00:00.000Z",
       "releaseTitle": "Visual Studio Code 1.126",
       "snapshotHash": "63686550681d09d6a4406e648bc03a3a94234d3499194c0fbae33d7bf5f59a18",
-      "lastCheckedAt": "2026-06-25T22:53:57.865Z"
+      "lastCheckedAt": "2026-06-26T08:37:00.132Z"
     },
     "vscode-release-notes-1-109": {
       "releasePublishedAt": "2026-02-04T00:00:00.000Z",
       "releaseTitle": "January 2026 (version 1.109)",
       "snapshotHash": "8f1f93a349a4dc228b48cbe4b3fc083e47464f4ebac866d23509d41174a3f514",
-      "lastCheckedAt": "2026-06-25T22:53:58.337Z"
+      "lastCheckedAt": "2026-06-26T08:37:00.783Z"
     },
     "copilot-whats-new": {
-      "releasePublishedAt": "2026-06-25T22:53:58.789Z",
+      "releasePublishedAt": "2026-06-26T08:37:01.062Z",
       "releaseTitle": "Preview upcoming features for GitHub Copilot",
       "snapshotHash": "657e51e47a08c8d0f0927e3564f5bdf9156332ec3e16a1aec81b1fc23117c200",
-      "lastCheckedAt": "2026-06-25T22:53:58.790Z"
+      "lastCheckedAt": "2026-06-26T08:37:01.063Z"
     },
     "publickey": {
       "seenIds": [
@@ -358,7 +359,7 @@
         "tag:www.publickey1.jp,2026://2.8527"
       ],
       "futureSeenIds": [],
-      "lastCheckedAt": "2026-06-25T22:53:59.323Z"
+      "lastCheckedAt": "2026-06-26T08:37:01.894Z"
     },
     "vscode-release-notes-1-115": {
       "sectionHashes": {
@@ -484,7 +485,7 @@
       "releasePublishedAt": "2026-06-03T00:00:00.000Z",
       "releaseTitle": "Visual Studio Code 1.123",
       "snapshotHash": "8b48eaf232b56475b85da0c0c55feace143f941cc7e33c3ab716542b65f23564",
-      "lastCheckedAt": "2026-06-25T22:54:00.480Z"
+      "lastCheckedAt": "2026-06-26T08:37:04.284Z"
     },
     "vscode-release-notes-1-124": {
       "sectionHashes": {
@@ -496,7 +497,7 @@
       "releasePublishedAt": "2026-06-10T00:00:00.000Z",
       "releaseTitle": "Visual Studio Code 1.124",
       "snapshotHash": "2d06d08b9c6da14ab137a1a4c0b4d9da48d09f4ff677c44137aedee753b2ac0b",
-      "lastCheckedAt": "2026-06-25T22:54:00.090Z"
+      "lastCheckedAt": "2026-06-26T08:37:03.658Z"
     },
     "vscode-release-notes-1-125": {
       "sectionHashes": {
@@ -508,7 +509,7 @@
       "releasePublishedAt": "2026-06-17T00:00:00.000Z",
       "releaseTitle": "Visual Studio Code 1.125",
       "snapshotHash": "0e99ebd74fbebe3986eb7a5ea3e8aed7ef3c4ca74f2b43e22e7771e1bd7da437",
-      "lastCheckedAt": "2026-06-25T22:53:59.808Z"
+      "lastCheckedAt": "2026-06-26T08:37:01.941Z"
     },
     "vscode-release-notes-1-126": {
       "sectionHashes": {
@@ -520,7 +521,7 @@
       "releasePublishedAt": "2026-06-24T00:00:00.000Z",
       "releaseTitle": "Visual Studio Code 1.126",
       "snapshotHash": "63686550681d09d6a4406e648bc03a3a94234d3499194c0fbae33d7bf5f59a18",
-      "lastCheckedAt": "2026-06-25T22:53:59.356Z"
+      "lastCheckedAt": "2026-06-26T08:37:01.929Z"
     }
   }
 }
