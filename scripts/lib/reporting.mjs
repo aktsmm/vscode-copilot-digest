@@ -260,6 +260,10 @@ const exactSummaryMappings = {
     ja: "Copilot usage metrics API に、Copilot code review を受けて merge された pull request 数と、その pull request の merge までの median time を見る指標が追加された。enterprise / organization 単位で single-day と 28-day rolling の両方を比較できる。",
     en: "The Copilot usage metrics API now includes metrics for how many pull requests were both reviewed by Copilot code review and merged, plus the median time-to-merge for those pull requests across both single-day and 28-day rolling reports.",
   },
+  "Track total merges by adoption phase in enterprise and organization reports": {
+    ja: "Copilot usage metrics API で先に追加された adoption phase cohort を使い、enterprise / organization レポートで各 adoption phase ごとの merged pull request 総数を確認できるようになった。導入段階ごとの成果を merge 件数で見比べやすくなる。",
+    en: "Enterprise and organization reports now break out total merged pull requests by adoption phase, building on the adoption phase cohorts previously added to the Copilot usage metrics API.",
+  },
   "GitHub Copilot in Visual Studio Code, March Releases": {
     ja: "VS Code の weekly stable 化後、v1.111 から v1.115 までの Copilot / agent 更新をまとめた changelog。Autopilot、browser / terminal tool 改善、customization など、この 1 か月の変化を横断して追える。",
     en: "A changelog roundup for GitHub Copilot in VS Code covering the weekly stable releases from v1.111 through v1.115, including Autopilot, browser and terminal tool improvements, and broader agent workflow changes.",
@@ -778,6 +782,10 @@ const exactImportanceMappings = {
   "Copilot usage metrics API adds cohorts for AI adoption": {
     ja: "active user 数だけでは見えない採用段階を cohort として追えるため、展開施策や enablement の打ち手を絞り込みやすくなります。",
     en: "This helps teams tune rollout and enablement work because adoption cohorts reveal more than active-user counts alone.",
+  },
+  "Track total merges by adoption phase in enterprise and organization reports": {
+    ja: "adoption phase ごとの merged pull request 数まで見えるため、利用定着が実際の開発成果に結び付いているかを管理者が確認しやすくなります。",
+    en: "This helps admins see whether adoption progress is translating into merged pull-request output, not just seat activation or raw usage.",
   },
   "Evaluation models in auto for individual plans": {
     ja: "Auto model selection の候補に evaluation model が入るため、個人利用でもモデル選定の透明性と無効化方針を確認しておきたい更新です。",
