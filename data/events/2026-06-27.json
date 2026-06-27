@@ -1,12 +1,10 @@
 {
   "date": "2026-06-27",
-  "generatedAt": "2026-06-27T08:07:24.643Z",
+  "generatedAt": "2026-06-27T15:01:44.916Z",
   "latestRun": {
-    "generatedAt": "2026-06-27T08:07:24.643Z",
-    "newEventsCount": 1,
-    "newEventIds": [
-      "github-changelog-copilot:https://github.blog/changelog/2026-06-26-track-total-merges-by-adoption-phase-in-enterprise-and-organization-reports"
-    ],
+    "generatedAt": "2026-06-27T15:01:44.916Z",
+    "newEventsCount": 0,
+    "newEventIds": [],
     "errorCount": 0
   },
   "events": [
