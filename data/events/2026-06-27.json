@@ -1,0 +1,34 @@
+{
+  "date": "2026-06-27",
+  "generatedAt": "2026-06-27T08:07:24.643Z",
+  "latestRun": {
+    "generatedAt": "2026-06-27T08:07:24.643Z",
+    "newEventsCount": 1,
+    "newEventIds": [
+      "github-changelog-copilot:https://github.blog/changelog/2026-06-26-track-total-merges-by-adoption-phase-in-enterprise-and-organization-reports"
+    ],
+    "errorCount": 0
+  },
+  "events": [
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-06-26-track-total-merges-by-adoption-phase-in-enterprise-and-organization-reports",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-06-27T08:07:20.693Z",
+      "publishedAt": "2026-06-26T20:55:03.000Z",
+      "title": "Track total merges by adoption phase in enterprise and organization reports",
+      "url": "https://github.blog/changelog/2026-06-26-track-total-merges-by-adoption-phase-in-enterprise-and-organization-reports",
+      "summary": "Building on the AI adoption phase cohorts added to the Copilot usage metrics API, organization and enterprise reports now report the total number of pull requests merged by each adoption…\nThe post Track total merges by adoption phase in enterprise and organization reports appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "account management",
+        "copilot",
+        "enterprise management tools"
+      ],
+      "isFutureDated": false,
+      "score": 2
+    }
+  ],
+  "errors": []
+}
