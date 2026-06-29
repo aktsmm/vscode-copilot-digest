@@ -1,10 +1,10 @@
 {
   "date": "2026-06-29",
-  "generatedAt": "2026-06-29T13:36:57.020Z",
+  "generatedAt": "2026-06-29T14:54:02.429Z",
   "latestRun": {
-    "generatedAt": "2026-06-29T13:36:57.020Z",
-    "newEventsCount": 1,
-    "newEventIds": ["docs-github-cloud-agent:integrate-cloud-agent-with-teams"],
+    "generatedAt": "2026-06-29T14:54:02.429Z",
+    "newEventsCount": 0,
+    "newEventIds": [],
     "errorCount": 0
   },
   "events": [
@@ -18,7 +18,11 @@
       "title": "Integrating Copilot cloud agent with Teams (public preview)",
       "url": "https://docs.github.com/en/copilot/how-tos/use-copilot-agents/cloud-agent/integrate-cloud-agent-with-teams",
       "summary": "GitHub Docs added a how-to for integrating Copilot cloud agent with Microsoft Teams. The feature is currently in public preview and lets you assign tasks to the cloud agent and follow its progress from within Teams. Manually recorded because this update landed only in GitHub Docs and was not announced in the GitHub Changelog or blog feeds.",
-      "categories": ["Docs", "cloud agent", "copilot"],
+      "categories": [
+        "Docs",
+        "cloud agent",
+        "copilot"
+      ],
       "isFutureDated": false,
       "score": 5
     }
