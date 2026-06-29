@@ -75,5 +75,23 @@
       "cloud agent",
       "copilot"
     ]
+  },
+  {
+    "id": "docs-github-copilot",
+    "name": "GitHub Docs / Copilot",
+    "kind": "html_snapshot",
+    "url": "https://docs.github.com/en/copilot",
+    "rootSelector": "main",
+    "contentSelector": "h1, h2, h3, p, li",
+    "maxDiffLines": 24
+  },
+  {
+    "id": "docs-github-cloud-agent",
+    "name": "GitHub Docs / Cloud agent",
+    "kind": "html_snapshot",
+    "url": "https://docs.github.com/en/copilot/how-tos/use-copilot-agents/cloud-agent",
+    "rootSelector": "main",
+    "contentSelector": "h1, h2, h3, p, li",
+    "maxDiffLines": 24
   }
 ]

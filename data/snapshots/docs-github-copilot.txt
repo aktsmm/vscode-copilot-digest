@@ -1,0 +1,12 @@
+H1: GitHub Copilot documentation
+You can use GitHub Copilot to enhance your productivity and assist as you work on code.
+H2: Articles
+H3: About agent apps
+H3: About agent management
+H3: About agent skills
+H3: About billing for GitHub Copilot in organizations and enterprises
+H3: About cloud and local sandboxes for GitHub Copilot
+H3: About Copilot auto model selection
+H3: About Copilot automations
+H3: About Copilot integrations
+H3: About custom agents
