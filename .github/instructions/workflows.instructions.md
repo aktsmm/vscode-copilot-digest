@@ -18,6 +18,10 @@ applyTo: ".github/workflows/**/*.yml"
 - If `data/state.json` or generated JSON / Markdown files are edited or conflict-resolved, verify they remain valid before pushing.
 - A broken generated state file can stop scheduled and manual workflows even when the workflow code itself is correct.
 
+## Runtime Guards vs Tests
+
+- The daily collect workflow does not run `npm test`; only the PR-validation workflow does. Invariants that must hold during scheduled runs (e.g. an html_snapshot source going blind on a DOM change) belong as runtime guards in `scripts/collect.mjs`, not only as static tests.
+
 ## Schedule Interpretation
 
 - GitHub Actions cron timing is approximate. Expect delays under load.

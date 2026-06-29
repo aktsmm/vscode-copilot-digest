@@ -11,6 +11,7 @@
 
 - Treat `data/state.json`, `data/events/*.json`, and generated summaries as workflow inputs, not disposable artifacts.
 - After manually editing them or resolving merge/rebase conflicts in them, validate that they still parse and rerun `npm run collect` before pushing.
+- `npm run collect` regenerates `data/events/*.json` from sources and drops manually added events (e.g. a doc-only update recorded by hand). After a re-collect, re-add any manual events and confirm they render before pushing.
 - If `npm run collect` is only a validation step, restore generated `data/**` and `summaries/**` diffs before committing unless those outputs are the intended change.
 
 ### Generated Pages Guardrails
