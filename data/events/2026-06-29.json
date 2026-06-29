@@ -20,10 +20,7 @@
       "title": "Claude Opus 4.8 (fast mode) is now in preview for GitHub Copilot",
       "url": "https://github.blog/changelog/2026-06-29-claude-opus-4-8-fast-mode-is-now-in-preview-for-github-copilot",
       "summary": "Claude Opus 4.8 (fast mode) is now rolling out in preview on GitHub Copilot. Fast mode delivers significantly faster output token speeds while maintaining the same intelligence as Claude Opus…\nThe post Claude Opus 4.8 (fast mode) is now in preview for GitHub Copilot appeared first on The GitHub Blog.",
-      "categories": [
-        "Release",
-        "copilot"
-      ],
+      "categories": ["Release", "copilot"],
       "isFutureDated": false,
       "score": 4
     },
