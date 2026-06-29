@@ -27,9 +27,10 @@
 - 生成対象はトップページ、日本語 / 英語の日次詳細、週間詳細、ハイライト一覧、日次アーカイブ一覧、週間アーカイブ一覧、検索ページ、raw データ導線を含む
 - 公開済み更新が 0 件の空日は Pages の日次詳細や日次アーカイブに含めず、最新公開日も直近の公開済み日次を基準にする
 - トップページは最新 6 件のハイライトを表示し、全件一覧は 50 件ごとにページ分割する
-- 日次・週間・ハイライト一覧のフィルタは source-only の簡素版で統一している
+- 日次・週間・ハイライト一覧は source / topic / importance フィルタと並び替えを持ち、選択状態を URL query に同期する
 - Pages build の最後に Pagefind インデックスも生成し、トップページの簡易検索と `search.html` の専用検索 UI が同じ静的インデックスを参照する
-- 検索対象は `data-pagefind-body` を持つ公開ページだけで、現状は日次・週間の詳細本文が主対象になる
+- 検索対象は `data-pagefind-body` を持つ公開ページだけで、日次・週間の詳細本文とハイライト一覧本文を対象にする
+- 専用検索ページは source / topic facet、URL 同期、軽い query expansion、結果重複除去を持つ
 - 検索 UI / index の詳細設計は [search-architecture.md](search-architecture.md) を参照する
 - Pages のヘッダーに出す `最終更新` は最新の Pages 再生成時刻を表示する
 - まれに live の Pages 配信が stale で、日本語 / 英語のどちらか片方だけ古い HTML を返すことがある。その場合は `site/**` と live ページを見比べ、必要なら [deploy-pages.yml](../.github/workflows/deploy-pages.yml) を手動 dispatch して再確認する
@@ -106,6 +107,11 @@ GitHub hosted runner の Node 20 deprecation warning に合わせて主要 actio
 - `gh workflow run deploy-pages.yml`
 - `node scripts/notify-discord.mjs --mode weekly --date YYYY-MM-DD --window-days 7 --dry-run --force-preview`
   - dry-run JSON の `content` と `embeds` を確認する。読みやすさ guard が文字数超過、ASCII `...`、長すぎる非 URL 行を検出する。
+  - 通知本文には Pages URL と検索 URL を出し、先頭 embed は要約、各イベント embed には該当日次 Pages への field を出す。
+  - `--include-og` を付けると各イベント URL の `og:image` を短い timeout で取得し、取得できた場合だけ thumbnail に載せる。取得失敗時も通知生成は継続する。
+  - `--thread-id` または `--thread-name` は opt-in の Discord thread 投稿用。dry-run では実送信せず、実 webhook 送信時だけ query parameter として使う。
+- `npm test`
+  - Pages / Discord UX guard では、生成済み `site` の検索 facet、フィルタ、Pagefind 対象、Discord dry-run payload を確認する。検索や Pages UI を変えた後は、先に `npm run build:pages` で `site` を更新してから実行する。
 
 ## まず見るべき確認ポイント
 

@@ -33,6 +33,7 @@ const topicOrder = [
   "周辺ニュース",
 ];
 const sourceGroupOrder = ["github", "vscode", "platform", "other"];
+const sortOrder = ["default", "newest", "oldest", "importance"];
 const HOME_HIGHLIGHT_LIMIT = 6;
 const HOME_ARCHIVE_LIMIT = 6;
 const HIGHLIGHTS_PAGE_SIZE = 50;
@@ -121,6 +122,21 @@ function sourceGroupMeta(group, text) {
     short: text.sourceGroupShort[group] ?? group,
     tag: text.sourceGroupTags[group] ?? `#${group}`,
   };
+}
+
+function importanceFilterValue(event) {
+  return (
+    localizedImportanceLabel(event, "en")
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-|-$/g, "") || "update"
+  );
+}
+
+function sortDateValue(event) {
+  return safeDate(
+    event.publishedAt ?? event.updatedAt ?? event.dateKey ?? event.date,
+  ).getTime();
 }
 
 function buildText(locale) {
@@ -232,8 +248,14 @@ function buildText(locale) {
       filterReset: "Clear",
       filterSourceLabel: "Source",
       filterTopicLabel: "Topic",
+      filterImportanceLabel: "Importance",
       filterStatusLabel: "Filter status",
       filterClearedStatus: "Filters cleared. Showing all updates.",
+      sortTitle: "Sort",
+      sortDefault: "Default",
+      sortNewest: "Newest",
+      sortOldest: "Oldest",
+      sortImportance: "Importance",
       shareCopied: "Link copied to clipboard.",
       shareCopyFailed: "Could not copy the link.",
       externalLinkSuffix: "opens in a new window",
@@ -376,9 +398,15 @@ function buildText(locale) {
     filterReset: "クリア",
     filterSourceLabel: "ソース",
     filterTopicLabel: "テーマ",
+    filterImportanceLabel: "重要度",
     filterStatusLabel: "フィルター状態",
     filterClearedStatus:
       "フィルターをクリアしました。すべての更新を表示しています。",
+    sortTitle: "並び順",
+    sortDefault: "標準",
+    sortNewest: "新しい順",
+    sortOldest: "古い順",
+    sortImportance: "重要度順",
     shareCopied: "リンクをコピーしました。",
     shareCopyFailed: "リンクをコピーできませんでした。",
     externalLinkSuffix: "新しいウィンドウで開きます",
@@ -718,15 +746,34 @@ function renderFilterAxes(events) {
   return {
     showSource: new Set(events.map((event) => sourceGroup(event))).size > 1,
     showTopic: new Set(events.map((event) => classifyEvent(event))).size > 1,
+    showImportance:
+      new Set(events.map((event) => importanceFilterValue(event))).size > 1,
   };
+}
+
+function renderImportanceOptions(events, locale) {
+  const options = new Map();
+  for (const event of events) {
+    const value = importanceFilterValue(event);
+    if (!options.has(value)) {
+      options.set(value, localizedImportanceLabel(event, locale));
+    }
+  }
+
+  return [...options.entries()].sort(([left], [right]) =>
+    left.localeCompare(right),
+  );
 }
 
 function renderFilterBar(text, options = {}) {
   const showSource = options.showSource ?? true;
   const showTopic = options.showTopic ?? true;
+  const showImportance = options.showImportance ?? false;
+  const showSort = options.showSort ?? false;
+  const importanceOptions = options.importanceOptions ?? [];
   const showAxisLabels = options.showAxisLabels ?? true;
   const extraClass = options.extraClass ?? "";
-  if (!showSource && !showTopic) {
+  if (!showSource && !showTopic && !showImportance && !showSort) {
     return "";
   }
 
@@ -764,12 +811,77 @@ function renderFilterBar(text, options = {}) {
           </fieldset>`);
   }
 
+  if (showImportance && importanceOptions.length > 0) {
+    rows.push(`
+      <fieldset class="filter-row" aria-label="${escapeHtml(text.filterImportanceLabel)}">
+        ${showAxisLabels ? `<legend class="filter-label">${escapeHtml(text.filterImportanceLabel)}</legend>` : ""}
+        <div class="filter-chip-row" role="group" aria-label="${escapeHtml(text.filterImportanceLabel)}">${importanceOptions
+          .map(([value, label]) => renderFilterChip("importance", value, label))
+          .join("")}</div>
+      </fieldset>`);
+  }
+
+  if (showSort) {
+    const sortLabels = {
+      default: text.sortDefault,
+      newest: text.sortNewest,
+      oldest: text.sortOldest,
+      importance: text.sortImportance,
+    };
+    rows.push(`
+      <fieldset class="filter-row" aria-label="${escapeHtml(text.sortTitle)}">
+        ${showAxisLabels ? `<legend class="filter-label">${escapeHtml(text.sortTitle)}</legend>` : ""}
+        <div class="filter-chip-row" role="group" aria-label="${escapeHtml(text.sortTitle)}">${sortOrder
+          .map((sort) =>
+            renderFilterChip("sort", sort, sortLabels[sort] ?? sort),
+          )
+          .join("")}</div>
+      </fieldset>`);
+  }
+
   return `<section class="section-block filter-block ${escapeHtml(extraClass)}" data-filter-root>
     <div class="section-heading"><h2>${escapeHtml(text.filterTitle)}</h2><button type="button" class="filter-reset" data-filter-reset>${escapeHtml(text.filterReset)}</button></div>
     <div class="filter-stack">
       ${rows.join("")}
     </div>
     <p class="sr-only" role="status" aria-live="polite" aria-atomic="true" data-filter-status>${escapeHtml(text.filterStatusLabel)}</p>
+  </section>`;
+}
+
+function renderSearchFacetBar(text, events) {
+  const sourceValues = new Set(events.map((event) => sourceGroup(event)));
+  const topicValues = new Set(events.map((event) => classifyEvent(event)));
+  return `<section class="section-block filter-block filter-block--compact" data-search-filters>
+    <div class="section-heading"><h2>${escapeHtml(text.filterTitle)}</h2><button type="button" class="filter-reset" data-search-filter-reset>${escapeHtml(text.filterReset)}</button></div>
+    <div class="filter-stack">
+      <fieldset class="filter-row" aria-label="${escapeHtml(text.filterSourceLabel)}">
+        <legend class="filter-label">${escapeHtml(text.filterSourceLabel)}</legend>
+        <div class="filter-chip-row" role="group" aria-label="${escapeHtml(text.filterSourceLabel)}">${sourceGroupOrder
+          .filter((group) => sourceValues.has(group))
+          .map((group) =>
+            renderFilterChip(
+              "source",
+              group,
+              sourceGroupMeta(group, text).tag,
+              `source-badge--${group}`,
+            ),
+          )
+          .join("")}</div>
+      </fieldset>
+      <fieldset class="filter-row" aria-label="${escapeHtml(text.filterTopicLabel)}">
+        <legend class="filter-label">${escapeHtml(text.filterTopicLabel)}</legend>
+        <div class="filter-chip-row" role="group" aria-label="${escapeHtml(text.filterTopicLabel)}">${topicOrder
+          .filter((topic) => topicValues.has(topic))
+          .map((topic) =>
+            renderFilterChip(
+              "topic",
+              topic,
+              text.topicFilterTags[topic] ?? topic,
+            ),
+          )
+          .join("")}</div>
+      </fieldset>
+    </div>
   </section>`;
 }
 
@@ -782,6 +894,7 @@ function renderEventCard(event, locale, text, options = {}) {
   const summaryMaxLength = options.compact ? 210 : 340;
   const group = sourceGroup(event);
   const topic = classifyEvent(event);
+  const importance = importanceFilterValue(event);
   const anchorId = options.anchorId ?? null;
   const whyText = importanceReason(event, locale);
   const why = options.includeWhy
@@ -799,7 +912,7 @@ function renderEventCard(event, locale, text, options = {}) {
     ? ` aria-label="${escapeHtml(`${titleText} (${text.externalLinkSuffix})`)}"`
     : "";
 
-  return `<article class="${cardClass}" data-filter-card data-source-group="${escapeHtml(group)}" data-topic="${escapeHtml(topic)}">
+  return `<article class="${cardClass}" data-filter-card data-source-group="${escapeHtml(group)}" data-topic="${escapeHtml(topic)}" data-importance="${escapeHtml(importance)}" data-sort-date="${escapeHtml(String(sortDateValue(event)))}" data-sort-score="${escapeHtml(String(rankEvent(event)))}">
     ${renderBadges(event, locale, text)}
     <h3${anchorId ? ` id="${escapeHtml(anchorId)}"` : ""}><a href="${escapeHtml(event.url)}"${linkAttrs}${linkLabel}>${escapeHtml(titleText)}${isExternal ? ' <span class="ext-icon" aria-hidden="true">&#8599;</span>' : ""}</a></h3>
     ${rawTitle ? `<p class="original-title">${escapeHtml(text.originalTitleLabel)}: ${escapeHtml(rawTitle)}</p>` : ""}
@@ -992,6 +1105,7 @@ function renderEventStreamItem(event, locale, text) {
   const rawTitle = locale === "ja" ? originalTitle(event) : null;
   const group = sourceGroup(event);
   const topic = classifyEvent(event);
+  const importance = importanceFilterValue(event);
   const isExternal =
     event.url && !event.url.startsWith("./") && !event.url.startsWith("../");
   const linkAttrs = isExternal ? ` target="_blank" rel="noopener"` : "";
@@ -1000,7 +1114,7 @@ function renderEventStreamItem(event, locale, text) {
     ? ` aria-label="${escapeHtml(`${titleText} (${text.externalLinkSuffix})`)}"`
     : "";
 
-  return `<article class="stream-item" data-filter-card data-source-group="${escapeHtml(group)}" data-topic="${escapeHtml(topic)}">
+  return `<article class="stream-item" data-filter-card data-source-group="${escapeHtml(group)}" data-topic="${escapeHtml(topic)}" data-importance="${escapeHtml(importance)}" data-sort-date="${escapeHtml(String(sortDateValue(event)))}" data-sort-score="${escapeHtml(String(rankEvent(event)))}">
     <div class="stream-item-head">
       ${renderBadges(event, locale, text)}
       <div class="stream-item-meta">${renderDateMeta(event, locale, text)}${renderSourceMeta(event, locale, text)}</div>
@@ -1091,11 +1205,11 @@ function renderHighlightsArchivePage(
 
     ${pager}
 
-    ${renderFilterBar(text, { showSource: filterAxes.showSource, showTopic: false, showAxisLabels: false, extraClass: "filter-block--compact" })}
+    ${renderFilterBar(text, { showSource: true, showTopic: true, showImportance: true, showSort: true, importanceOptions: renderImportanceOptions(pageEvents, locale), showAxisLabels: true, extraClass: "filter-block--compact" })}
 
-    <section class="section-block">
+    <section class="section-block" data-pagefind-body>
       ${renderSectionHeading(locale === "ja" ? "ハイライト一覧" : "All highlights", locale === "ja" ? `${visibleCount} / 全${events.length}${text.itemSuffix}` : `${visibleCount} / ${itemCount}`)}
-      <div class="stream-list">${pageEvents.map((event) => renderEventStreamItem(event, locale, text)).join("")}</div>
+      <div class="stream-list" data-sort-list>${pageEvents.map((event) => renderEventStreamItem(event, locale, text)).join("")}</div>
     </section>
 
     ${pager}
@@ -1265,7 +1379,7 @@ function renderRangePage(digest, locale, text, options) {
 
     ${options.kind === "day" ? renderFutureSection(digest.futureEvents, locale, text) : ""}
 
-  ${renderFilterBar(text, { showSource: filterAxes.showSource, showTopic: false, showAxisLabels: false, extraClass: "filter-block--compact" })}
+  ${renderFilterBar(text, { showSource: true, showTopic: true, showImportance: true, showSort: true, importanceOptions: renderImportanceOptions(digest.uniqueEvents, locale), showAxisLabels: true, extraClass: "filter-block--compact" })}
 
     <section class="section-block">
       <div class="section-heading"><h2>${escapeHtml(text.highlightsTitle)}</h2><span>${escapeHtml(itemCount(digest.highlights.length))}</span></div>
@@ -1286,7 +1400,7 @@ function renderRangePage(digest, locale, text, options) {
 
     <section class="section-block" data-pagefind-body>
       <div class="section-heading"><h2>${escapeHtml(text.fullListTitle)}</h2><span>${escapeHtml(itemCount(digest.uniqueEventCount))}</span></div>
-      <div class="update-list">${digest.uniqueEvents.map((event) => renderEventCard(event, locale, text, { includeWhy: true, anchorId: eventAnchorId(event) })).join("")}</div>
+      <div class="update-list" data-sort-list>${digest.uniqueEvents.map((event) => renderEventCard(event, locale, text, { includeWhy: true, anchorId: eventAnchorId(event) })).join("")}</div>
     </section>
   `;
 
@@ -1430,7 +1544,7 @@ function renderIndexPage(
     lastUpdatedAt,
     relativePrefix,
     homeHref: links.home,
-    weeklyHref: `${links.home}#weekly-archive`,
+    weeklyHref: links.weeklyArchive,
     langSwitchHref: links.langSwitch,
     pagefindUi: true,
     extraScript: renderPagefindComponentSetupScript(),
@@ -1456,9 +1570,11 @@ function renderSearchPageScript(text, locale) {
   for (const event of text.searchEntries ?? []) {
     const title = localizedTitle(event, locale);
     searchMetadata[`${event.digestDate}\t${title}`] = {
+      sourceGroup: sourceGroup(event),
       sourceClass: `source-badge--${sourceGroup(event)}`,
       sourceShort: sourceGroupMeta(sourceGroup(event), text).short,
       sourceLabel: sourceGroupMeta(sourceGroup(event), text).label,
+      topic: classifyEvent(event),
       topicLabel: text.topicNames[classifyEvent(event)] ?? classifyEvent(event),
       importanceLabel: localizedImportanceLabel(event, locale),
     };
@@ -1482,6 +1598,9 @@ const clearButton = root.querySelector("[data-search-clear]");
 const countNode = root.querySelector("[data-search-count]");
 const resultsNode = root.querySelector("[data-search-results]");
 const emptyNode = root.querySelector("[data-search-empty]");
+const filtersRoot = document.querySelector("[data-search-filters]");
+const filterReset = filtersRoot ? filtersRoot.querySelector("[data-search-filter-reset]") : null;
+const facetState = { source: new Set(), topic: new Set() };
 const rootPath = window.location.pathname.replace(/(?:en\\/)?search\\.html$/, "");
 const basePath = /\\/$/.test(rootPath) ? rootPath : rootPath + "/";
 const pagefind = await import(basePath + "pagefind/pagefind.js");
@@ -1511,6 +1630,41 @@ function resultLabel(count) {
 
 function lookupMeta(row) {
   return metadataIndex[(row.digestDate || "") + "\t" + row.title] || null;
+}
+
+function readList(value) {
+  if (!value) return [];
+  return value.split(",").map((item) => decodeURIComponent(item).trim()).filter(Boolean);
+}
+
+function syncFacetStateFromUrl() {
+  const params = new URLSearchParams(window.location.search);
+  facetState.source = new Set(readList(params.get("sources")));
+  facetState.topic = new Set(readList(params.get("topics")));
+}
+
+function syncFacetButtons() {
+  if (!filtersRoot) return;
+  filtersRoot.querySelectorAll("[data-filter-kind]").forEach((button) => {
+    const kind = button.getAttribute("data-filter-kind");
+    const value = button.getAttribute("data-filter-value");
+    const active = facetState[kind].has(value);
+    button.classList.toggle("active", active);
+    button.setAttribute("aria-pressed", active ? "true" : "false");
+  });
+  if (filterReset) {
+    filterReset.disabled = facetState.source.size === 0 && facetState.topic.size === 0;
+  }
+}
+
+function rowMatchesFacets(row) {
+  const meta = lookupMeta(row);
+  if (!meta && (facetState.source.size > 0 || facetState.topic.size > 0)) {
+    return false;
+  }
+  const sourceMatch = facetState.source.size === 0 || facetState.source.has(meta.sourceGroup);
+  const topicMatch = facetState.topic.size === 0 || facetState.topic.has(meta.topic);
+  return sourceMatch && topicMatch;
 }
 
 function renderRow(row) {
@@ -1555,6 +1709,10 @@ function updateUrl(query) {
   } else {
     url.searchParams.delete("q");
   }
+  if (facetState.source.size > 0) url.searchParams.set("sources", Array.from(facetState.source).join(","));
+  else url.searchParams.delete("sources");
+  if (facetState.topic.size > 0) url.searchParams.set("topics", Array.from(facetState.topic).join(","));
+  else url.searchParams.delete("topics");
   window.history.replaceState({}, "", url);
 }
 
@@ -1574,8 +1732,37 @@ function applyResults(rows, rawQuery) {
   resultsNode.innerHTML = rows.map(renderRow).join("");
 }
 
+function dedupeRows(rows) {
+  const seen = new Set();
+  const deduped = [];
+  for (const row of rows) {
+    const key = (row.url || "") + "\t" + (row.title || "");
+    if (seen.has(key)) continue;
+    seen.add(key);
+    deduped.push(row);
+  }
+  return deduped;
+}
+
+function normalizeSearchQuery(query) {
+  const raw = String(query ?? "").trim();
+  const lower = raw.toLowerCase();
+  const additions = [];
+  if (/\bgh\s*copilot\b|githubcopilot|copilot/.test(lower) && !/github copilot/.test(lower)) {
+    additions.push("GitHub Copilot");
+  }
+  if (/\bvscode\b|vs code|visual studio code/.test(lower) && !/vs code/.test(lower)) {
+    additions.push("VS Code");
+  }
+  if (/\bcli\b/.test(lower) && !/copilot cli/.test(lower)) {
+    additions.push("Copilot CLI");
+  }
+  return [raw, ...additions].filter(Boolean).join(" ");
+}
+
 async function runSearch() {
   const rawQuery = String(input.value ?? "").trim();
+  const searchQuery = normalizeSearchQuery(rawQuery);
   updateUrl(rawQuery);
   if (!rawQuery) {
     setIdle();
@@ -1583,14 +1770,14 @@ async function runSearch() {
   }
 
   setLoading();
-  const search = await pagefind.search(rawQuery);
+  const search = await pagefind.search(searchQuery);
   const loaded = await Promise.all(
     search.results.slice(0, 24).map((result, index) =>
       result.data().then((data) => ({ data, rank: index })),
     ),
   );
 
-  const rows = loaded
+  const sortedRows = loaded
     .flatMap(({ data, rank }) => {
       const digestDate = extractDigestDate(
         data.meta?.title || data.raw_url || data.url || data.content,
@@ -1619,12 +1806,13 @@ async function runSearch() {
         subIndex: 0,
       }];
     })
+    .filter(rowMatchesFacets)
     .sort((left, right) =>
       right.digestDate.localeCompare(left.digestDate) ||
       left.rank - right.rank ||
       left.subIndex - right.subIndex,
-    )
-    .slice(0, 40);
+    );
+  const rows = dedupeRows(sortedRows).slice(0, 40);
 
   applyResults(rows, rawQuery);
 }
@@ -1634,7 +1822,7 @@ function scheduleSearch() {
   window.clearTimeout(timer);
   const nextValue = String(input.value ?? "").trim();
   if (nextValue) {
-    pagefind.preload(nextValue);
+    pagefind.preload(normalizeSearchQuery(nextValue));
   }
   timer = window.setTimeout(runSearch, 180);
 }
@@ -1651,8 +1839,30 @@ clearButton.addEventListener("click", () => {
   input.focus();
   runSearch();
 });
+if (filtersRoot) {
+  filtersRoot.querySelectorAll("[data-filter-kind]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const kind = button.getAttribute("data-filter-kind");
+      const value = button.getAttribute("data-filter-value");
+      if (facetState[kind].has(value)) facetState[kind].delete(value);
+      else facetState[kind].add(value);
+      syncFacetButtons();
+      runSearch();
+    });
+  });
+}
+if (filterReset) {
+  filterReset.addEventListener("click", () => {
+    facetState.source.clear();
+    facetState.topic.clear();
+    syncFacetButtons();
+    runSearch();
+  });
+}
 
 const initial = new URLSearchParams(window.location.search).get("q") || "";
+syncFacetStateFromUrl();
+syncFacetButtons();
 input.value = initial;
 if (initial) {
   await runSearch();
@@ -1690,6 +1900,8 @@ function renderSearchPage(
         ${renderMetric(text.latestDate, latestDigestDate || "N/A", text.latestDateDetail)}
       </div>
     </section>
+
+    ${renderSearchFacetBar(text, searchEntries)}
 
     <section class="section-block">
       <div class="section-heading"><h2>${escapeHtml(text.searchTitle)}</h2><span>${escapeHtml(text.searchHelp)}</span></div>
@@ -1869,7 +2081,7 @@ function renderLayout({
       var latestPanels=latestRoot?[].slice.call(latestRoot.querySelectorAll('[data-highlight-source-section]')):[];
       var latestCount=latestRoot?latestRoot.querySelector('[data-latest-count]'):null;
       var latestEmpty=latestRoot?latestRoot.querySelector('[data-latest-empty]'):null;
-      var state={source:new Set(),topic:new Set()};
+      var state={source:new Set(),topic:new Set(),importance:new Set(),sort:'default'};
       function readList(value){
         if(!value)return [];
         return value.split(',').map(function(item){return decodeURIComponent(item).trim();}).filter(Boolean);
@@ -1878,26 +2090,45 @@ function renderLayout({
         var params=new URLSearchParams(window.location.search);
         state.source=new Set(readList(params.get('sources')));
         state.topic=new Set(readList(params.get('topics')));
+        state.importance=new Set(readList(params.get('importance')));
+        state.sort=params.get('sort')||'default';
       }
       function syncButtons(){
         root.querySelectorAll('[data-filter-kind]').forEach(function(btn){
           var kind=btn.getAttribute('data-filter-kind');
           var value=btn.getAttribute('data-filter-value');
-          var active=state[kind].has(value);
+          var active=kind==='sort'?state.sort===value:state[kind].has(value);
           btn.classList.toggle('active',active);
           btn.setAttribute('aria-pressed',active?'true':'false');
         });
         if(reset){
-          reset.disabled=state.source.size===0&&state.topic.size===0;
+          reset.disabled=state.source.size===0&&state.topic.size===0&&state.importance.size===0&&state.sort==='default';
         }
       }
       function applyFilters(){
         cards.forEach(function(card){
           var sourceValue=card.getAttribute('data-source-group');
           var topicValue=card.getAttribute('data-topic');
+          var importanceValue=card.getAttribute('data-importance');
           var sourceMatch=state.source.size===0||state.source.has(sourceValue);
           var topicMatch=state.topic.size===0||state.topic.has(topicValue);
-          card.classList.toggle('is-hidden',!(sourceMatch&&topicMatch));
+          var importanceMatch=state.importance.size===0||state.importance.has(importanceValue);
+          card.classList.toggle('is-hidden',!(sourceMatch&&topicMatch&&importanceMatch));
+        });
+      }
+      function sortLists(){
+        document.querySelectorAll('[data-sort-list]').forEach(function(list){
+          var items=[].slice.call(list.querySelectorAll('[data-filter-card]'));
+          if(state.sort==='default'){
+            items.sort(function(left,right){return Number(left.getAttribute('data-original-index')||0)-Number(right.getAttribute('data-original-index')||0);});
+          }else if(state.sort==='newest'){
+            items.sort(function(left,right){return Number(right.getAttribute('data-sort-date')||0)-Number(left.getAttribute('data-sort-date')||0);});
+          }else if(state.sort==='oldest'){
+            items.sort(function(left,right){return Number(left.getAttribute('data-sort-date')||0)-Number(right.getAttribute('data-sort-date')||0);});
+          }else if(state.sort==='importance'){
+            items.sort(function(left,right){return Number(right.getAttribute('data-sort-score')||0)-Number(left.getAttribute('data-sort-score')||0);});
+          }
+          items.forEach(function(item){list.appendChild(item);});
         });
       }
       function visibleCardCount(){
@@ -1944,12 +2175,17 @@ function renderLayout({
         else url.searchParams.delete('sources');
         if(state.topic.size>0)url.searchParams.set('topics',Array.from(state.topic).join(','));
         else url.searchParams.delete('topics');
+        if(state.importance.size>0)url.searchParams.set('importance',Array.from(state.importance).join(','));
+        else url.searchParams.delete('importance');
+        if(state.sort&&state.sort!=='default')url.searchParams.set('sort',state.sort);
+        else url.searchParams.delete('sort');
         window.history.replaceState({},'',url);
       }
       function refresh(){
         syncButtons();
         syncLatestHighlights();
         applyFilters();
+        sortLists();
         syncLatestHighlights();
         syncFilterStatus();
         syncUrl();
@@ -1958,7 +2194,8 @@ function renderLayout({
         btn.addEventListener('click',function(){
           var kind=btn.getAttribute('data-filter-kind');
           var value=btn.getAttribute('data-filter-value');
-          if(state[kind].has(value))state[kind].delete(value);
+          if(kind==='sort')state.sort=value;
+          else if(state[kind].has(value))state[kind].delete(value);
           else state[kind].add(value);
           refresh();
         });
@@ -1967,14 +2204,22 @@ function renderLayout({
         reset.addEventListener('click',function(){
           state.source.clear();
           state.topic.clear();
+          state.importance.clear();
+          state.sort='default';
           refresh();
           if(status)status.textContent='${escapeHtml(text.filterClearedStatus)}';
         });
       }
+      document.querySelectorAll('[data-sort-list]').forEach(function(list){
+        [].slice.call(list.querySelectorAll('[data-filter-card]')).forEach(function(item,index){
+          item.setAttribute('data-original-index',String(index));
+        });
+      });
       syncStateFromUrl();
       syncButtons();
       syncLatestHighlights();
       applyFilters();
+      sortLists();
       syncLatestHighlights();
       syncFilterStatus();
     })();
@@ -2800,7 +3045,7 @@ async function main() {
         ".",
         {
           home: "./index.html",
-          weekly: "./index.html#weekly-archive",
+          weekly: "./weeks/index.html",
           langSwitch: "./en/search.html",
         },
       ),
@@ -2841,7 +3086,7 @@ async function main() {
         "..",
         {
           home: "./index.html",
-          weekly: "./index.html#weekly-archive",
+          weekly: "./weeks/index.html",
           langSwitch: "../search.html",
         },
       ),
@@ -3015,7 +3260,7 @@ async function main() {
           lastUpdatedAt,
           relativePrefix: "..",
           homeHref: "../index.html",
-          weeklyHref: "../index.html#weekly-archive",
+          weeklyHref: "../weeks/index.html",
           langSwitchHref: `../en/days/${digest.date}.html`,
           rawJsonPath: `../raw/events/${digest.date}.json`,
           rawSummaryPath: `../raw/summaries/${digest.date}.md`,
@@ -3031,7 +3276,7 @@ async function main() {
           lastUpdatedAt,
           relativePrefix: "../..",
           homeHref: "../index.html",
-          weeklyHref: "../index.html#weekly-archive",
+          weeklyHref: "../weeks/index.html",
           langSwitchHref: `../../days/${digest.date}.html`,
           rawJsonPath: `../../raw/events/${digest.date}.json`,
           rawSummaryPath: `../../raw/summaries/${digest.date}.md`,
@@ -3053,7 +3298,7 @@ async function main() {
           lastUpdatedAt,
           relativePrefix: "..",
           homeHref: "../index.html",
-          weeklyHref: "../index.html#weekly-archive",
+          weeklyHref: "./index.html",
           langSwitchHref: `../en/weeks/${digest.key}.html`,
         }),
         "utf8",
@@ -3067,7 +3312,7 @@ async function main() {
           lastUpdatedAt,
           relativePrefix: "../..",
           homeHref: "../index.html",
-          weeklyHref: "../index.html#weekly-archive",
+          weeklyHref: "./index.html",
           langSwitchHref: `../../weeks/${digest.key}.html`,
         }),
         "utf8",

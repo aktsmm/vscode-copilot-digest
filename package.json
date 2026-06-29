@@ -9,7 +9,7 @@
     "weekly": "node scripts/build-weekly.mjs",
     "notify:discord": "node scripts/notify-discord.mjs",
     "build:pages": "node scripts/build-pages.mjs && pagefind --site site --output-subdir pagefind",
-    "test": "node tests/reporting-low-information.test.mjs && node tests/sources.test.mjs"
+    "test": "node tests/reporting-low-information.test.mjs && node tests/sources.test.mjs && node tests/pages-discord-ux.test.mjs"
   },
   "dependencies": {
     "cheerio": "^1.0.0",

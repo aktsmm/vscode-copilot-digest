@@ -23,8 +23,9 @@
 
 - 日次詳細ページ
 - 週間詳細ページ
+- ハイライト一覧ページ
 - 検索対象は `data-pagefind-body` 属性を持つ本文コンテナのみ
-- トップページ、ハイライト一覧、日次アーカイブ一覧、週間アーカイブ一覧は現状 index 対象に含めない
+- トップページ、日次アーカイブ一覧、週間アーカイブ一覧は現状 index 対象に含めない
 
 この制約により、検索結果は「公開向けに意味づけされた本文」へ寄せられ、カード一覧や補助 UI の断片が index を汚さないようにしています。
 
@@ -42,7 +43,10 @@
 - [site/search.html](../site/search.html) を専用 UI として生成する
 - `pagefind.js` を直接読み込み、クエリ URL 同期、preload、結果整形を自前で制御する
 - 結果には digest 日付、source group、topic、importance を補足表示する
+- source group と topic の facet を持ち、クエリと facet を URL に同期する
+- `GitHub Copilot`、`VS Code`、`Copilot CLI` などの表記ゆれは client-side query expansion で補助する
 - Pagefind の sub results を展開し、見出し単位の一致を優先して見せる
+- ハイライト一覧と詳細ページの重複 hit は、結果表示時に URL + title で軽く重複除去する
 
 ## build-pages.mjs の役割
 
@@ -52,7 +56,7 @@
 2. 検索用 metadata を付加する
 3. トップページの component search 用スクリプトを埋め込む
 4. 専用検索ページの検索 UI と整形ロジックを埋め込む
-5. `data-pagefind-body` を詳細ページ本文へ付与する
+5. `data-pagefind-body` を詳細ページ本文とハイライト一覧本文へ付与する
 
 ## 検索結果に載せる情報
 
@@ -63,6 +67,7 @@
 - topic
 - importance label
 - 日次ページへの導線
+- source / topic facet 用の内部値
 
 この metadata は [scripts/lib/reporting.mjs](../scripts/lib/reporting.mjs) の分類ロジックに依存しています。
 
@@ -74,8 +79,8 @@
 
 ## 制約と既知の注意点
 
-- 日本語は stemming 非対応なので、表記ゆれ吸収には限界がある
-- index 対象は詳細ページ本文だけなので、トップページのカード文言だけではヒットしないことがある
+- 日本語は stemming 非対応なので、query expansion で補助しても表記ゆれ吸収には限界がある
+- index 対象は詳細ページ本文とハイライト一覧本文だけなので、トップページのカード文言だけではヒットしないことがある
 - Pagefind index は `npm run build:pages` を回さないと更新されない
 - live の GitHub Pages 配信が stale の場合、HTML と index の更新タイミングがずれて見えることがある
 
@@ -88,6 +93,6 @@
 
 ## 今後の拡張候補
 
-- ハイライト一覧やアーカイブ一覧も検索対象に含めるかの再検討
-- source group 以外の facet 的な絞り込み導線の追加
-- 日本語の表記ゆれ対策として query 正規化を build-time / client-side のどちらで持つかの整理
+- 日次 / 週次アーカイブ一覧も検索対象に含めるかの再検討
+- Pagefind の native filter / sort を使うか、現状の表示層 facet を維持するかの再検討
+- 日本語の表記ゆれ対策を増やす場合の synonym 管理場所の整理

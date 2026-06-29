@@ -9,6 +9,19 @@ on:
         description: Target end date (YYYY-MM-DD). Leave blank to use the latest daily event log.
         required: false
         type: string
+      include_og:
+        description: Include OG image thumbnails when available.
+        required: false
+        default: false
+        type: boolean
+      thread_id:
+        description: Optional Discord thread ID for manual dispatch.
+        required: false
+        type: string
+      thread_name:
+        description: Optional Discord thread name for manual dispatch.
+        required: false
+        type: string
 
 permissions:
   contents: read
@@ -53,4 +66,18 @@ jobs:
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
           DATE_KEY: ${{ steps.target.outputs.date_key }}
-        run: node scripts/notify-discord.mjs --mode weekly --date "$DATE_KEY" --window-days 7
+          INCLUDE_OG: ${{ inputs.include_og }}
+          THREAD_ID: ${{ inputs.thread_id }}
+          THREAD_NAME: ${{ inputs.thread_name }}
+        run: |
+          args=(--mode weekly --date "$DATE_KEY" --window-days 7)
+          if [ "$INCLUDE_OG" = "true" ]; then
+            args+=(--include-og)
+          fi
+          if [ -n "$THREAD_ID" ]; then
+            args+=(--thread-id "$THREAD_ID")
+          fi
+          if [ -n "$THREAD_NAME" ]; then
+            args+=(--thread-name "$THREAD_NAME")
+          fi
+          node scripts/notify-discord.mjs "${args[@]}"

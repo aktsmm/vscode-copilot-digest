@@ -1,6 +1,8 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 
+import * as cheerio from "cheerio";
+
 import {
   localizedImportanceLabel,
   localizedSummary,
@@ -21,6 +23,7 @@ const DISCORD_EMBED_TOTAL_TEXT_LIMIT = 6000;
 const DISCORD_EMBED_TITLE_LIMIT = 256;
 const DISCORD_EMBED_DESCRIPTION_LIMIT = 900;
 const DISCORD_EMBED_FIELD_VALUE_LIMIT = 1024;
+const OG_FETCH_TIMEOUT_MS = 2500;
 
 const discordColorByScore = [
   0x6b7280, 0x6b7280, 0x84cc16, 0xf59e0b, 0xea580c, 0xdc2626,
@@ -34,6 +37,9 @@ function parseArgs(argv) {
     windowDays: 1,
     cadenceDays: 1,
     anchorDate: null,
+    includeOg: false,
+    threadId: null,
+    threadName: null,
     mode: "daily",
   };
 
@@ -55,14 +61,37 @@ function parseArgs(argv) {
       continue;
     }
 
+    if (argument === "--include-og") {
+      options.includeOg = true;
+      continue;
+    }
+
+    if (argument === "--thread-id") {
+      options.threadId = String(argv[index + 1] ?? "").trim() || null;
+      index += 1;
+      continue;
+    }
+
+    if (argument === "--thread-name") {
+      options.threadName = String(argv[index + 1] ?? "").trim() || null;
+      index += 1;
+      continue;
+    }
+
     if (argument === "--window-days") {
-      options.windowDays = parsePositiveInteger(argv[index + 1], "--window-days");
+      options.windowDays = parsePositiveInteger(
+        argv[index + 1],
+        "--window-days",
+      );
       index += 1;
       continue;
     }
 
     if (argument === "--cadence-days") {
-      options.cadenceDays = parsePositiveInteger(argv[index + 1], "--cadence-days");
+      options.cadenceDays = parsePositiveInteger(
+        argv[index + 1],
+        "--cadence-days",
+      );
       index += 1;
       continue;
     }
@@ -385,6 +414,77 @@ function buildPagesWeeklyDigestUrl(startDate, endDate) {
   return `${baseUrl.replace(/\/$/, "")}/weeks/${compactDateKey(startDate)}-${compactDateKey(endDate)}.html`;
 }
 
+function buildPagesSearchUrl(query) {
+  const baseUrl =
+    process.env.PAGES_BASE_URL ||
+    "https://aktsmm.github.io/vscode-copilot-digest";
+  const url = new URL(`${baseUrl.replace(/\/$/, "")}/search.html`);
+  if (query) {
+    url.searchParams.set("q", trimLine(query, 80));
+  }
+
+  return url.toString();
+}
+
+function buildEventPagesUrl(event) {
+  const date = event.dateKeys?.at(-1) ?? event.dateKey;
+  return date ? buildPagesDigestUrl(date) : null;
+}
+
+async function fetchOgMetadata(url) {
+  if (!url || !/^https?:\/\//.test(url)) {
+    return null;
+  }
+
+  try {
+    const response = await fetch(url, {
+      signal: AbortSignal.timeout(OG_FETCH_TIMEOUT_MS),
+      headers: {
+        "User-Agent": "vscode-copilot-digest/0.1 Discord preview metadata",
+      },
+    });
+    if (!response.ok) {
+      return null;
+    }
+
+    const html = await response.text();
+    const $ = cheerio.load(html);
+    const image = $('meta[property="og:image"]').attr("content") || null;
+    if (!image) {
+      return null;
+    }
+
+    return { image: new URL(image, url).toString() };
+  } catch {
+    return null;
+  }
+}
+
+function buildSummaryEmbed(summary, options = {}) {
+  if (!summary) {
+    return null;
+  }
+
+  return {
+    title: options.title ?? "要約",
+    url: options.url ?? undefined,
+    description: trimLine(summary, options.maxLength ?? 620),
+    color: 0x0f766e,
+    fields: options.searchUrl
+      ? [
+          {
+            name: "検索",
+            value: options.searchUrl,
+            inline: false,
+          },
+        ]
+      : [],
+    footer: {
+      text: options.footer ?? "Pages で詳細を確認できます",
+    },
+  };
+}
+
 function buildRepoWeeklyDraftPath(startDate, endDate) {
   return path.join(
     workspaceRoot,
@@ -451,12 +551,13 @@ function discordColorForEvent(event) {
   return discordColorByScore[Math.min(Math.max(score, 0), 5)];
 }
 
-function buildEventEmbed(event, options = {}) {
+async function buildEventEmbed(event, options = {}) {
   const mode = options.mode ?? "daily";
   const titleLimit = DISCORD_EMBED_TITLE_LIMIT - 16;
   const summaryLimit = mode === "weekly" ? 520 : 460;
   const title = localizedTitle(event);
   const summary = localizedSummary(event);
+  const pagesUrl = options.pagesUrl ?? buildEventPagesUrl(event);
   const fields = [
     {
       name: "重要度",
@@ -478,12 +579,23 @@ function buildEventEmbed(event, options = {}) {
     });
   }
 
+  if (pagesUrl) {
+    fields.push({
+      name: "Pages",
+      value: pagesUrl,
+      inline: false,
+    });
+  }
+
+  const og = options.includeOg ? await fetchOgMetadata(event.url) : null;
+
   return {
     title: `[${localizedImportanceLabel(event)}] ${trimLine(title, titleLimit)}`,
     url: event.url,
     description: trimLine(summary, summaryLimit),
     color: discordColorForEvent(event),
     fields,
+    ...(og?.image ? { thumbnail: { url: og.image } } : {}),
     footer: {
       text:
         event.kind === "html_snapshot_change"
@@ -545,7 +657,7 @@ async function buildPayload(date, datedLogs, options = {}) {
     ? resolveCalendarWindow(date, options.windowDays)
     : {
         startDate: datedLogs[0]?.date ?? date,
-      endDate: datedLogs[datedLogs.length - 1]?.date ?? date,
+        endDate: datedLogs[datedLogs.length - 1]?.date ?? date,
       };
   const summaryUrl = isWeeklyMode
     ? (await fileExists(
@@ -555,12 +667,13 @@ async function buildPayload(date, datedLogs, options = {}) {
       : null
     : buildRepoSummaryUrl(date);
   const pagesUrl = isWeeklyMode
-    ? (await fileExists(
-        buildPagesWeeklyDigestPath(range.startDate, range.endDate),
-      ))
-      ? buildPagesWeeklyDigestUrl(range.startDate, range.endDate)
-      : null
+    ? buildPagesWeeklyDigestUrl(range.startDate, range.endDate)
     : buildPagesDigestUrl(date);
+  const searchUrl = buildPagesSearchUrl(
+    uniqueEvents[0]
+      ? localizedTitle(uniqueEvents[0])
+      : "GitHub Copilot VS Code",
+  );
   const sourceCounts = new Map();
   for (const event of uniqueEvents) {
     sourceCounts.set(
@@ -654,6 +767,10 @@ async function buildPayload(date, datedLogs, options = {}) {
     footerLines.push(`${isWeeklyMode ? "週間Pages" : "Pages"}: ${pagesUrl}`);
   }
 
+  if (searchUrl) {
+    footerLines.push(`検索: ${searchUrl}`);
+  }
+
   const selectedEvents =
     options.windowDays > 1 || isWeeklyMode
       ? selectDiscordEvents(uniqueEvents, {
@@ -688,12 +805,25 @@ async function buildPayload(date, datedLogs, options = {}) {
     lines.push(...footerLines);
   }
 
-  const embeds = selectedEvents.map((event) =>
-    buildEventEmbed(event, {
-      includeDates: options.windowDays > 1 || isWeeklyMode,
-      mode: isWeeklyMode ? "weekly" : "daily",
-    }),
+  const eventEmbeds = await Promise.all(
+    selectedEvents.map((event) =>
+      buildEventEmbed(event, {
+        includeDates: options.windowDays > 1 || isWeeklyMode,
+        includeOg: options.includeOg,
+        mode: isWeeklyMode ? "weekly" : "daily",
+      }),
+    ),
   );
+  const summaryEmbed = buildSummaryEmbed(aggregateSummary, {
+    title: isWeeklyMode ? "週次要約" : "要約",
+    url: pagesUrl,
+    searchUrl,
+    maxLength: isWeeklyMode ? 620 : 520,
+    footer: isWeeklyMode
+      ? "週間 Pages と検索で詳細を確認できます"
+      : "Pages と検索で詳細を確認できます",
+  });
+  const embeds = [summaryEmbed, ...eventEmbeds].filter(Boolean);
 
   let content = joinLines(lines);
   if (content.length > DISCORD_CONTENT_LIMIT) {
@@ -708,7 +838,19 @@ async function buildPayload(date, datedLogs, options = {}) {
   return { content: sanitizeDiscordContent(content), embeds };
 }
 
-async function postWebhook(payload, dryRun) {
+function resolveWebhookUrl(webhookUrl, options = {}) {
+  const url = new URL(webhookUrl);
+  if (options.threadId) {
+    url.searchParams.set("thread_id", options.threadId);
+  }
+  if (options.threadName) {
+    url.searchParams.set("thread_name", options.threadName);
+  }
+
+  return url.toString();
+}
+
+async function postWebhook(payload, dryRun, options = {}) {
   if (dryRun) {
     console.log(JSON.stringify(payload, null, 2));
     return;
@@ -722,7 +864,7 @@ async function postWebhook(payload, dryRun) {
     return;
   }
 
-  const response = await fetch(webhookUrl, {
+  const response = await fetch(resolveWebhookUrl(webhookUrl, options), {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -787,7 +929,7 @@ async function main() {
 
   const payload = await buildPayload(options.date, datedLogs, options);
   assertReadableDiscordPayload(payload);
-  await postWebhook(payload, options.dryRun);
+  await postWebhook(payload, options.dryRun, options);
   console.log(
     options.forcePreview && totalNewEvents === 0
       ? `Prepared Discord preview payload for ${options.date}.`
