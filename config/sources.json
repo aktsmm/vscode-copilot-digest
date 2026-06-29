@@ -93,5 +93,32 @@
     "rootSelector": "main",
     "contentSelector": "h1, h2, h3, p, li",
     "maxDiffLines": 24
+  },
+  {
+    "id": "docs-github-copilot-howtos",
+    "name": "GitHub Docs / Copilot how-tos",
+    "kind": "html_snapshot",
+    "url": "https://docs.github.com/en/copilot/how-tos",
+    "rootSelector": "main",
+    "contentSelector": "h1, h2, h3, p, li",
+    "maxDiffLines": 24
+  },
+  {
+    "id": "docs-github-copilot-concepts",
+    "name": "GitHub Docs / Copilot concepts",
+    "kind": "html_snapshot",
+    "url": "https://docs.github.com/en/copilot/concepts",
+    "rootSelector": "main",
+    "contentSelector": "h1, h2, h3, p, li",
+    "maxDiffLines": 24
+  },
+  {
+    "id": "docs-github-copilot-reference",
+    "name": "GitHub Docs / Copilot reference",
+    "kind": "html_snapshot",
+    "url": "https://docs.github.com/en/copilot/reference",
+    "rootSelector": "main",
+    "contentSelector": "h1, h2, h3, p, li",
+    "maxDiffLines": 24
   }
 ]

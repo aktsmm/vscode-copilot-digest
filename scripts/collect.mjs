@@ -223,7 +223,8 @@ function matchesKeywords(source, entry) {
 function buildHtmlSnapshot(source, html) {
   const $ = cheerio.load(html);
   const root = $(source.rootSelector ?? "main").first();
-  const target = root.length > 0 ? root : $("body").first();
+  const rootMatched = root.length > 0;
+  const target = rootMatched ? root : $("body").first();
 
   target.find("script, style, noscript, svg, img, video, iframe").remove();
 
@@ -258,6 +259,7 @@ function buildHtmlSnapshot(source, html) {
   return {
     normalizedText,
     headings,
+    rootMatched,
   };
 }
 
@@ -587,7 +589,25 @@ async function collectFeedSource(source, sourceState) {
 
 async function collectHtmlSnapshotSource(source, sourceState) {
   const html = await fetchText(source.url);
-  const { normalizedText, headings } = buildHtmlSnapshot(source, html);
+  const { normalizedText, headings, rootMatched } = buildHtmlSnapshot(
+    source,
+    html,
+  );
+  // Guard against a "blind" extraction poisoning the baseline. If the page's
+  // DOM changed so rootSelector no longer matches, or contentSelector yields no
+  // text, we must not overwrite the last-good snapshot/hash: doing so would
+  // silently stop change detection (or fire a spurious whole-page diff). Throw
+  // instead so the dispatcher records an error and preserves the prior state.
+  if (!rootMatched) {
+    throw new Error(
+      `html_snapshot rootSelector "${source.rootSelector ?? "main"}" matched no elements for ${source.url}`,
+    );
+  }
+  if (!normalizedText.trim()) {
+    throw new Error(
+      `html_snapshot contentSelector "${source.contentSelector ?? "(default)"}" extracted no content for ${source.url}`,
+    );
+  }
   const { releaseTitle, publishedAt, sections } = extractVsCodeReleaseSections(
     source,
     html,

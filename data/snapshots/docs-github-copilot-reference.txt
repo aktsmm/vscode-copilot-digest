@@ -1,0 +1,43 @@
+GitHub Copilot/
+Reference
+H1: Reference for GitHub Copilot
+Find information to apply to your work with GitHub Copilot.
+GitHub Copilot Chat cheat sheet
+Copilot customization cheat sheet
+AI models for GitHub CopilotSupported AI models in GitHub CopilotAI model comparisonHosting of models for GitHub Copilot
+Supported AI models in GitHub Copilot
+AI model comparison
+Hosting of models for GitHub Copilot
+Copilot feature matrix
+Keyboard shortcuts for GitHub Copilot in the IDE
+Copilot CLI referenceGitHub Copilot CLI command referenceGitHub Copilot CLI plugin referenceGitHub Copilot CLI programmatic referenceCopilot CLI ACP serverGitHub Copilot CLI configuration directory
+GitHub Copilot CLI command reference
+GitHub Copilot CLI plugin reference
+GitHub Copilot CLI programmatic reference
+Copilot CLI ACP server
+GitHub Copilot CLI configuration directory
+Custom agents configuration
+Support for different types of custom instructions
+GitHub Copilot hooks reference
+Feature availability when GitHub Copilot policies conflict in organizations
+Supported surfaces for GitHub Copilot policies
+Copilot allowlist reference
+MCP allowlist enforcement
+Metrics data properties for GitHub Copilot
+GitHub Copilot billingModels and pricing for GitHub CopilotGitHub Copilot billing cycleGitHub Copilot seat assignmentMaking changes to your GitHub Copilot licenseGitHub Copilot billing through AzureGitHub Copilot request-based billing for annual plan subscribers (legacy)
+Models and pricing for GitHub Copilot
+GitHub Copilot billing cycle
+GitHub Copilot seat assignment
+Making changes to your GitHub Copilot license
+GitHub Copilot billing through Azure
+GitHub Copilot request-based billing for annual plan subscribers (legacy)
+Audit log events for agents
+Available filters for agent sessions
+Files excluded from GitHub Copilot code review
+GitHub Copilot usage metricsData available in Copilot usage metricsInterpreting usage and adoption metrics for GitHub CopilotReconciling Copilot usage metrics across dashboards, APIs, and reportsLines of Code metricsTeam-level Copilot usage metricsExample schema for Copilot usage metrics
+Data available in Copilot usage metrics
+Interpreting usage and adoption metrics for GitHub Copilot
+Reconciling Copilot usage metrics across dashboards, APIs, and reports
+Lines of Code metrics
+Team-level Copilot usage metrics
+Example schema for Copilot usage metrics

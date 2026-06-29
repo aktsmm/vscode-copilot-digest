@@ -16,6 +16,7 @@
 
 - RSS / Atom は新着検知に強い
 - HTML スナップショット比較は既存ページの追記検知に強い
+- GitHub Docs のように RSS が無いソースは、カテゴリ index ページ（例: `/en/copilot/how-tos`、`/concepts`、`/reference`）のスナップショットを監視し、Changelog や blog に出ない doc-only 更新も拾う。ルート index は server-side で全記事を列挙しないため、カテゴリ index を併用する
 - 記録を JSON と Markdown の両方で残すと、人も機械も扱いやすい
 - GitHub Pages を静的生成にすると、収集ロジック、本文更新、公開ロジックを分離できる
 - Copilot cloud agent の自動執筆を Issue / PR フローに閉じ込めることで、変更範囲と検証条件を workflow 側で制御しやすい
@@ -73,6 +74,8 @@
 3. GitHub Copilot や VS Code の coding agent と関係が薄い周辺記事は除外する
 4. feed に未来日付の項目が見えた場合は、収集自体は行うが通常のハイライトには混ぜず、警告セクションで扱う
 5. 生データは SSOT として扱い、Pages や draft のために直接書き換えない
+
+html_snapshot ソースの安全策: ページの DOM 変化で `rootSelector` が一致しない、または `contentSelector` が本文を 1 件も拾えない場合、collect は空・全文化したスナップショットで baseline を上書きせず、その回をソース単位のエラーとして記録し前回状態を保ちます。これによりセレクタ破損時の「無言の検知停止」や全文 false diff を防ぎます。`config/sources.json` の必須項目とコミット済みスナップショットの非空チェックは [tests/sources.test.mjs](../tests/sources.test.mjs) が検証します。
 
 ## draft 生成フロー
 
