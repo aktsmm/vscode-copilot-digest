@@ -59,6 +59,26 @@ assert.doesNotMatch(
   /const\s+lowInformationSummaryMarkers\s*=\s*\[/,
   "author-digest-pr workflow must not define a separate fallback marker list",
 );
+assert.match(
+  authorWorkflowSource,
+  /低情報 fallback を解消する場合も `data\/\*\*` は変更せず/,
+  "author-digest-pr workflow must tell Copilot to fix low-information fallback via reporting mappings",
+);
+
+const selfHealWorkflowSource = fs.readFileSync(
+  ".github/workflows/self-heal-generated-pr.yml",
+  "utf8",
+);
+assert.match(
+  selfHealWorkflowSource,
+  /Validate low-information fallback guard/,
+  "self-heal workflow must have dedicated low-information fallback feedback",
+);
+assert.match(
+  selfHealWorkflowSource,
+  /`data\/\*\*` は生データなので変更しないでください/,
+  "self-heal fallback feedback must keep data files read-only",
+);
 
 const reportingSource = fs.readFileSync("scripts/lib/reporting.mjs", "utf8");
 assertNoDuplicateObjectKeys(reportingSource, "vscodeReleaseSummaries");
@@ -66,15 +86,33 @@ assertNoDuplicateObjectKeys(reportingSource, "exactSummaryMappings");
 assertNoDuplicateObjectKeys(reportingSource, "exactImportanceMappings");
 
 assertCliFails(
-  ["scripts/build-weekly.mjs", "--days", "abc", "--output", "drafts/tmp-invalid-weekly.md"],
+  [
+    "scripts/build-weekly.mjs",
+    "--days",
+    "abc",
+    "--output",
+    "drafts/tmp-invalid-weekly.md",
+  ],
   "--days",
 );
 assertCliFails(
-  ["scripts/build-biweekly.mjs", "--days", "0", "--output", "drafts/tmp-invalid-biweekly.md"],
+  [
+    "scripts/build-biweekly.mjs",
+    "--days",
+    "0",
+    "--output",
+    "drafts/tmp-invalid-biweekly.md",
+  ],
   "--days",
 );
 assertCliFails(
-  ["scripts/build-weekly.mjs", "--from", "2026-02-31", "--output", "drafts/tmp-invalid-weekly.md"],
+  [
+    "scripts/build-weekly.mjs",
+    "--from",
+    "2026-02-31",
+    "--output",
+    "drafts/tmp-invalid-weekly.md",
+  ],
   "--from",
 );
 assertCliFails(
@@ -82,7 +120,15 @@ assertCliFails(
   "--output",
 );
 assertCliFails(
-  ["scripts/build-weekly.mjs", "--from", "2026-06-10", "--to", "2026-06-04", "--output", "drafts/tmp-invalid-weekly.md"],
+  [
+    "scripts/build-weekly.mjs",
+    "--from",
+    "2026-06-10",
+    "--to",
+    "2026-06-04",
+    "--output",
+    "drafts/tmp-invalid-weekly.md",
+  ],
   "--from",
 );
 assertCliFails(

@@ -209,6 +209,17 @@ jobs:
               );
             }
 
+            if (failedSteps.includes('Validate low-information fallback guard')) {
+              feedbackLines.push(
+                '### low-information fallback guard エラー',
+                '- `npm test` の出力にある `contains low-information fallback copy` の対象日付とファイルを確認してください',
+                '- `data/**` は生データなので変更しないでください',
+                '- `scripts/lib/reporting.mjs` の `exactSummaryMappings` / `exactImportanceMappings` / `vscodeReleaseSummaries` に、対象タイトルの具体的な要約や重要度理由を追加して解消してください',
+                '- 修正後は `npm test` を再実行し、fallback copy が公開 output に残っていないことを確認してください',
+                '',
+              );
+            }
+
             if (failedSteps.includes('Validate reporting mappings')) {
               feedbackLines.push(
                 '### reporting.mjs エラー',

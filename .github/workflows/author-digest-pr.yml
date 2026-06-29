@@ -248,6 +248,9 @@ jobs:
               `2. \`summaries/daily/${dateKey}.md\` の \`注目トピック\` と \`テーマ別まとめ\` を更新する`,
               '3. 今週分・隔週分のドラフト対象期間に含まれる場合は、`drafts/**` の要点または本文を更新する',
               '4. `reporting.mjs` に未登録のタイトルや要約パターンが必要なら追加する',
+              ...(hasLowInformationSummary
+                ? ['4.1. 低情報 fallback を解消する場合も `data/**` は変更せず、`scripts/lib/reporting.mjs` の具体マッピングで直す']
+                : []),
               ...(hasPagesBuildFailure
                 ? ['4.5. `npm run build:pages` を再現し、Pages build failure の原因を解消する']
                 : []),

@@ -12,7 +12,11 @@ assert.match(
   /href="\.\/weeks\/index\.html">週間ダイジェスト/,
   "home Weekly nav must point to the weekly archive",
 );
-assert.doesNotMatch(indexHtml, /href="undefined"/, "home nav must not render undefined links");
+assert.doesNotMatch(
+  indexHtml,
+  /href="undefined"/,
+  "home nav must not render undefined links",
+);
 
 const searchHtml = readSiteFile("search.html");
 assert.match(
