@@ -5,3 +5,9 @@ site/
 .playwright-mcp/
 .github/skills/**/.skill-meta.json
 
+# Auto-synced agent skills (skill-ninja). Ignore by default; track intentional
+# skills explicitly with `git add -f`. agentic-workflow-guide is already tracked.
+.github/skills/
+!.github/skills/agentic-workflow-guide/
+!.github/skills/agentic-workflow-guide/**
+
