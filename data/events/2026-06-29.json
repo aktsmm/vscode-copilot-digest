@@ -1,12 +1,46 @@
 {
   "date": "2026-06-29",
-  "generatedAt": "2026-06-29T16:44:57.513Z",
+  "generatedAt": "2026-06-29T18:06:18.466Z",
   "latestRun": {
-    "generatedAt": "2026-06-29T16:44:57.513Z",
-    "newEventsCount": 0,
-    "newEventIds": [],
+    "generatedAt": "2026-06-29T18:06:18.466Z",
+    "newEventsCount": 1,
+    "newEventIds": [
+      "github-changelog:https://github.blog/changelog/2026-06-29-claude-opus-4-8-fast-mode-is-now-in-preview-for-github-copilot"
+    ],
     "errorCount": 0
   },
-  "events": [],
+  "events": [
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-06-29-claude-opus-4-8-fast-mode-is-now-in-preview-for-github-copilot",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-06-29T18:06:09.995Z",
+      "publishedAt": "2026-06-29T16:47:16.000Z",
+      "title": "Claude Opus 4.8 (fast mode) is now in preview for GitHub Copilot",
+      "url": "https://github.blog/changelog/2026-06-29-claude-opus-4-8-fast-mode-is-now-in-preview-for-github-copilot",
+      "summary": "Claude Opus 4.8 (fast mode) is now rolling out in preview on GitHub Copilot. Fast mode delivers significantly faster output token speeds while maintaining the same intelligence as Claude Opus…\nThe post Claude Opus 4.8 (fast mode) is now in preview for GitHub Copilot appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
+    {
+      "eventId": "docs-github-cloud-agent:integrate-cloud-agent-with-teams",
+      "sourceId": "docs-github-cloud-agent",
+      "sourceName": "GitHub Docs / Cloud agent",
+      "kind": "feed_entry",
+      "detectedAt": "2026-06-29T13:36:57.020Z",
+      "publishedAt": "2026-06-29T00:00:00.000Z",
+      "title": "Integrating Copilot cloud agent with Teams (public preview)",
+      "url": "https://docs.github.com/en/copilot/how-tos/use-copilot-agents/cloud-agent/integrate-cloud-agent-with-teams",
+      "summary": "GitHub Docs added a how-to for integrating Copilot cloud agent with Microsoft Teams. The feature is currently in public preview and lets you assign tasks to the cloud agent and follow its progress from within Teams. Manually recorded because this update landed only in GitHub Docs and was not announced in the GitHub Changelog or blog feeds.",
+      "categories": ["Docs", "cloud agent", "copilot"],
+      "isFutureDated": false,
+      "score": 5
+    }
+  ],
   "errors": []
 }
