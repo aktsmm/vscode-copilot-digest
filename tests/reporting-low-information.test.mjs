@@ -178,6 +178,46 @@ const unknownSamples = [
 for (const event of unknownSamples) {
   assertNoLowInformationFallback(localizedSummary(event), event.title);
   assertNoLowInformationFallback(importanceReason(event), event.title);
+  assertNoEnglishSummaryFallback(localizedSummary(event), event.title);
+}
+assert.doesNotMatch(
+  summarizeEventSet(unknownSamples, "ja", { maxHighlights: 3 }),
+  /英語 summary では/,
+  "aggregate Japanese summaries must not use English-summary fallback as highlights",
+);
+
+const mappedCodeReviewEvent = {
+  title: "Copilot code review: AGENTS.md support and UI improvements",
+  summary:
+    "Copilot code review now supports repository-level AGENTS.md files, and it’s easier to request a review from Copilot on draft pull requests with the Request button.",
+  categories: ["Improvement", "copilot"],
+};
+assert.doesNotMatch(
+  localizedSummary(mappedCodeReviewEvent),
+  /英語 summary では/,
+  "mapped Copilot code review event must render as a real Japanese summary",
+);
+assert.doesNotMatch(
+  importanceReason(mappedCodeReviewEvent),
+  /英語 summary では/,
+  "mapped Copilot code review event importance must render as Japanese copy",
+);
+
+const highExposureMappedEvents = [
+  "Upcoming deprecation of Opus 4.6 (fast)",
+  "Agent finder for GitHub Copilot now available",
+  "GitHub Copilot app generally available",
+  "Copilot-authored pull requests now included in author searches",
+  "GitHub Agentic Workflows is now in public preview",
+  "Enterprise-managed settings now support bypass permission controls",
+  "Enterprise-managed settings now support strictKnownMarketplaces in VS Code and GitHub Copilot CLI",
+  "MAI-Code-1-Flash for Copilot Business and Copilot Enterprise",
+  "GitHub Desktop 3.6: Worktrees and deeper Copilot integration",
+].map((title) => ({ title, summary: title, categories: ["copilot"] }));
+
+for (const event of highExposureMappedEvents) {
+  assertNoGenericJapaneseFallback(localizedSummary(event), event.title);
+  assertNoGenericJapaneseFallback(importanceReason(event), event.title);
 }
 
 for (const file of fs
@@ -198,6 +238,7 @@ for (const file of fs
   ].join("\n");
 
   assertNoLowInformationFallback(generatedText, file);
+  assertNoEnglishSummaryFallback(generatedText, file);
 }
 
 for (const file of fs
@@ -205,6 +246,19 @@ for (const file of fs
   .filter((name) => /^\d{4}-\d{2}-\d{2}\.md$/.test(name))
   .map((name) => `summaries/daily/${name}`)) {
   assertNoLowInformationFallback(fs.readFileSync(file, "utf8"), file);
+}
+
+for (const file of fs
+  .readdirSync("drafts")
+  .filter((name) => /^(?:weekly|biweekly)-\d{8}-\d{8}\.md$/.test(name))
+  .map((name) => `drafts/${name}`)) {
+  const content = fs.readFileSync(file, "utf8");
+  assertNoEnglishSummaryFallback(content, file);
+  assert.doesNotMatch(
+    content,
+    /CLI 利用や自動化フローへの影響候補/,
+    `${file} contains generic Copilot CLI fallback copy`,
+  );
 }
 
 function assertNoLowInformationFallback(text, context) {
@@ -215,6 +269,22 @@ function assertNoLowInformationFallback(text, context) {
     hits,
     [],
     `${context} contains low-information fallback copy`,
+  );
+}
+
+function assertNoEnglishSummaryFallback(text, context) {
+  assert.doesNotMatch(
+    String(text),
+    /英語 summary では/,
+    `${context} contains English-summary fallback copy`,
+  );
+}
+
+function assertNoGenericJapaneseFallback(text, context) {
+  assert.doesNotMatch(
+    String(text),
+    /追跡対象ソースの更新|利用状況、管理、開発フローへの影響候補|CLI 利用や自動化フローへの影響候補/,
+    `${context} contains generic Japanese fallback copy`,
   );
 }
 

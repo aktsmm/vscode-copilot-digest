@@ -144,4 +144,45 @@ assert.ok(
   "event embeds must include digest Pages links",
 );
 
+const japaneseSurfaceDryRun = spawnSync(
+  process.execPath,
+  [
+    "scripts/notify-discord.mjs",
+    "--mode",
+    "weekly",
+    "--date",
+    "2026-06-19",
+    "--window-days",
+    "7",
+    "--dry-run",
+    "--force-preview",
+  ],
+  { cwd: process.cwd(), encoding: "utf8" },
+);
+assert.equal(japaneseSurfaceDryRun.status, 0, japaneseSurfaceDryRun.stderr);
+const japanesePayload = parseDryRunPayload(japaneseSurfaceDryRun.stdout);
+const japanesePayloadText = JSON.stringify(japanesePayload);
+assert.doesNotMatch(
+  japanesePayloadText,
+  /英語 summary では/,
+  "Discord payload must not expose English-summary fallback copy",
+);
+assert.doesNotMatch(
+  japanesePayloadText,
+  /\[機能更新\] Copilot code review: AGENTS\.md support and UI improvements/,
+  "Discord payload must use the Japanese title for the Copilot code review AGENTS.md update",
+);
+assert.match(
+  japanesePayloadText,
+  /Copilot code review が AGENTS\.md と draft PR からのレビュー依頼に対応した/,
+  "Discord payload must include the localized Copilot code review title",
+);
+
 console.log("pages-discord-ux.test.mjs: OK");
+
+function parseDryRunPayload(stdout) {
+  const start = stdout.indexOf("{\n");
+  const end = stdout.lastIndexOf("\n}");
+  assert.ok(start >= 0 && end > start, "dry-run must print JSON payload");
+  return JSON.parse(stdout.slice(start, end + 2));
+}

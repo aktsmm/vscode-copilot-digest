@@ -31,6 +31,9 @@ jobs:
       - name: Collect updates
         run: npm run collect
 
+      - name: Validate collected output
+        run: npm test
+
       - name: Commit changes
         run: |
           if git diff --quiet; then

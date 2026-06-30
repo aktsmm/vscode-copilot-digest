@@ -260,10 +260,11 @@ const exactSummaryMappings = {
     ja: "Copilot usage metrics API に、Copilot code review を受けて merge された pull request 数と、その pull request の merge までの median time を見る指標が追加された。enterprise / organization 単位で single-day と 28-day rolling の両方を比較できる。",
     en: "The Copilot usage metrics API now includes metrics for how many pull requests were both reviewed by Copilot code review and merged, plus the median time-to-merge for those pull requests across both single-day and 28-day rolling reports.",
   },
-  "Track total merges by adoption phase in enterprise and organization reports": {
-    ja: "Copilot usage metrics API で先に追加された adoption phase cohort を使い、enterprise / organization レポートで各 adoption phase ごとの merged pull request 総数を確認できるようになった。導入段階ごとの成果を merge 件数で見比べやすくなる。",
-    en: "Enterprise and organization reports now break out total merged pull requests by adoption phase, building on the adoption phase cohorts previously added to the Copilot usage metrics API.",
-  },
+  "Track total merges by adoption phase in enterprise and organization reports":
+    {
+      ja: "Copilot usage metrics API で先に追加された adoption phase cohort を使い、enterprise / organization レポートで各 adoption phase ごとの merged pull request 総数を確認できるようになった。導入段階ごとの成果を merge 件数で見比べやすくなる。",
+      en: "Enterprise and organization reports now break out total merged pull requests by adoption phase, building on the adoption phase cohorts previously added to the Copilot usage metrics API.",
+    },
   "GitHub Copilot in Visual Studio Code, March Releases": {
     ja: "VS Code の weekly stable 化後、v1.111 から v1.115 までの Copilot / agent 更新をまとめた changelog。Autopilot、browser / terminal tool 改善、customization など、この 1 か月の変化を横断して追える。",
     en: "A changelog roundup for GitHub Copilot in VS Code covering the weekly stable releases from v1.111 through v1.115, including Autopilot, browser and terminal tool improvements, and broader agent workflow changes.",
@@ -417,6 +418,42 @@ const exactSummaryMappings = {
     ja: "Copilot Student プランで GPT-5.3-Codex がモデルピッカーから削除された。モデルは自動モデル選択経由では引き続き利用できる。手動でモデルを選択していたユーザーは自動選択に委ねる形に移行することになる。",
     en: "GPT-5.3-Codex has been removed from the model picker in the Copilot Student plan. It remains available through auto model selection, which automatically picks the best model for each task.",
   },
+  "Upcoming deprecation of Opus 4.6 (fast)": {
+    ja: "2026年6月29日に、Opus 4.6 (fast) が GitHub Copilot の各体験（Chat、inline edits、ask / agent modes、code completions）から廃止される予定。該当モデルを明示指定しているユーザーや組織は、代替モデルへの移行を確認する必要がある。",
+    en: "Opus 4.6 (fast) will be deprecated across GitHub Copilot experiences on June 29, 2026, including Chat, inline edits, ask and agent modes, and code completions.",
+  },
+  "Agent finder for GitHub Copilot now available": {
+    ja: "GitHub Copilot の Agent finder が利用可能になった。MCP server、skills、canvases、agents、tools を手動で選んで context を膨らませる代わりに、Copilot が作業に必要な agent 関連リソースを見つけやすくする更新。",
+    en: "GitHub Copilot now includes Agent finder, helping Copilot discover relevant MCP servers, skills, canvases, agents, and tools instead of requiring users to wire them into context manually.",
+  },
+  "GitHub Copilot app generally available": {
+    ja: "GitHub Copilot app が macOS、Windows、Linux 向けに一般提供になった。GitHub 上の agent-driven development をデスクトップで扱うためのネイティブアプリとして位置付けられる。",
+    en: "The GitHub Copilot app is now generally available for macOS, Windows, and Linux as a native desktop home for agent-driven development built on GitHub.",
+  },
+  "Copilot-authored pull requests now included in author searches": {
+    ja: "`author:` を使った pull request 検索で、Copilot cloud agent がユーザーの代わりに作成した pull request も検索結果に含まれるようになった。`author:@me` でも自分の依頼で作成された agent PR を見つけやすくなる。",
+    en: "Pull request searches using `author:` now include pull requests opened by Copilot cloud agent on the user's behalf, including `author:@me` searches.",
+  },
+  "GitHub Agentic Workflows is now in public preview": {
+    ja: "GitHub Agentic Workflows が public preview になった。issue triage、CI failure analysis、documentation updates など、推論を含むタスクを coding agents と workflow として自動化できるようにする更新。",
+    en: "GitHub Agentic Workflows is now in public preview, enabling reasoning-based task automation such as issue triage, CI failure analysis, and documentation updates with coding agents.",
+  },
+  "Enterprise-managed settings now support bypass permission controls": {
+    ja: "enterprise-managed settings に bypass permission control が追加された。Enterprise 管理者は `disableBypassPermissionsMode` を使い、GitHub Copilot CLI や VS Code 側で権限確認を回避する設定を抑止できる。",
+    en: "Enterprise-managed settings now support bypass permission controls through `disableBypassPermissionsMode`, allowing enterprise admins to prevent permission bypass behavior in Copilot CLI and VS Code.",
+  },
+  "Enterprise-managed settings now support strictKnownMarketplaces in VS Code and GitHub Copilot CLI": {
+    ja: "Enterprise 管理者が、VS Code と GitHub Copilot CLI でユーザーがインストールできる plugin / marketplace を制御できるようになった。`strictKnownMarketplaces` により、組織で許可した marketplace だけを使わせる運用に近づく。",
+    en: "Enterprise-managed settings now support strictKnownMarketplaces for VS Code and GitHub Copilot CLI, letting enterprises control which plugin marketplaces users can install from.",
+  },
+  "MAI-Code-1-Flash for Copilot Business and Copilot Enterprise": {
+    ja: "Microsoft AI の社内コードモデル MAI-Code-1-Flash が GitHub Copilot Business と Copilot Enterprise で一般提供になった。追加サーフェスへの展開に続き、法人向けプランでも利用候補に入る。",
+    en: "MAI-Code-1-Flash, Microsoft AI's in-house coding model, is now generally available for GitHub Copilot Business and Copilot Enterprise.",
+  },
+  "GitHub Desktop 3.6: Worktrees and deeper Copilot integration": {
+    ja: "GitHub Desktop 3.6 で Git worktree 対応が入り、commit authoring や merge conflict resolution でも GitHub Copilot 連携が深まった。日常の Git 操作を Desktop 内で進めやすくする更新。",
+    en: "GitHub Desktop 3.6 adds Git worktree support and deeper GitHub Copilot integration for commit authoring and merge conflict resolution.",
+  },
   "Copilot cloud agent starts 20% faster with Actions custom images": {
     ja: "GitHub Actions カスタムイメージで最適化されたランナー環境により、Copilot cloud agent の起動が20%以上高速化された。issue を Copilot に割り当ててからタスクが始まるまでの待機時間が短縮される。",
     en: "Copilot cloud agent now starts over 20% faster through optimized runner environments built with GitHub Actions custom images, reducing the wait from issue assignment to task kickoff.",
@@ -492,6 +529,26 @@ const exactSummaryMappings = {
   "Copilot code review comment types now in usage metrics API": {
     ja: "Copilot usage metrics API の pull_requests フィールド下に copilot_suggestions_by_comment_type 配列が新設された。コメント種別（security・bug_risk など）ごとに Copilot が提案したコメント数と、開発者が適用したコメント数を把握できる。enterprise・organization 単位で single-day と 28-day rolling の両方に対応している。",
     en: "The Copilot usage metrics API now includes a copilot_suggestions_by_comment_type array under pull_requests, breaking down code review suggestions by category such as security and bug_risk. For each type, you can see total suggestions posted and how many were applied, available at both enterprise and organization levels in single-day and 28-day rolling reports.",
+  },
+  "Copilot code review: AGENTS.md support and UI improvements": {
+    ja: "Copilot code review がリポジトリ直下の AGENTS.md を参照できるようになり、レビュー時にプロジェクト固有の手順や規約を反映しやすくなった。さらに draft pull request でも Request ボタンから Copilot レビューを依頼しやすくなった。",
+    en: "Copilot code review can now use repository-level AGENTS.md files, making it easier to apply project-specific instructions during review. It is also easier to request a Copilot review on draft pull requests through the Request button.",
+  },
+  "MAI-Code-1-Flash available on more Copilot surfaces": {
+    ja: "Microsoft 製の小型コードモデル MAI-Code-1-Flash が、GitHub Copilot の追加サーフェスで利用可能になった。モデル選択や自動ルーティングの選択肢が広がる更新。",
+    en: "Microsoft's small coding model MAI-Code-1-Flash is now available across additional GitHub Copilot surfaces, expanding the set of model options available in Copilot workflows.",
+  },
+  "AI credits consumed per user now in the Copilot usage metrics API": {
+    ja: "Copilot usage metrics API で、ユーザーごとの1日あたり AI credits 消費量を確認できるようになった。従量課金 API と同じ消費データに基づき、利用量やコストの把握をユーザー単位で進めやすくなる。",
+    en: "The Copilot usage metrics API now reports each user's daily AI credit consumption using the same consumption data as the usage-based billing API, improving per-user usage and cost visibility.",
+  },
+  "Copilot individual plan sign-ups are reopening": {
+    ja: "GitHub Copilot Student、Pro、Pro+、Max の新規申し込み受付が、今後数週間かけて段階的に再開される。個人向け Copilot プランへ新規加入しやすい状態へ戻る更新。",
+    en: "Sign-ups for GitHub Copilot Student, Pro, Pro+, and Max plans are reopening gradually over the next couple of weeks for new subscribers.",
+  },
+  "GitHub Copilot CLI for Beginners: Overview of common slash commands": {
+    ja: "GitHub Copilot CLI の slash command 入門記事。ターミナル上の AI agent を操作するための基本コマンドを整理し、CLI 利用を始める人が操作パターンを把握しやすくしている。",
+    en: "A beginner guide to common GitHub Copilot CLI slash commands for controlling the terminal AI agent.",
   },
   "More flexible secrets and variables for Copilot cloud agent": {
     ja: "Copilot cloud agent 専用の「Agents」シークレットと変数が追加された。従来はリポジトリの Actions 設定内 copilot 環境に個別設定が必要だったが、organization レベルでの一括設定とアクセス可能なリポジトリの選択が可能になった。MCP サーバー設定や内部 package registry のトークンなど、複数リポジトリで共有する設定を一元管理しやすくなる。",
@@ -783,10 +840,11 @@ const exactImportanceMappings = {
     ja: "active user 数だけでは見えない採用段階を cohort として追えるため、展開施策や enablement の打ち手を絞り込みやすくなります。",
     en: "This helps teams tune rollout and enablement work because adoption cohorts reveal more than active-user counts alone.",
   },
-  "Track total merges by adoption phase in enterprise and organization reports": {
-    ja: "adoption phase ごとの merged pull request 数まで見えるため、利用定着が実際の開発成果に結び付いているかを管理者が確認しやすくなります。",
-    en: "This helps admins see whether adoption progress is translating into merged pull-request output, not just seat activation or raw usage.",
-  },
+  "Track total merges by adoption phase in enterprise and organization reports":
+    {
+      ja: "adoption phase ごとの merged pull request 数まで見えるため、利用定着が実際の開発成果に結び付いているかを管理者が確認しやすくなります。",
+      en: "This helps admins see whether adoption progress is translating into merged pull-request output, not just seat activation or raw usage.",
+    },
   "Evaluation models in auto for individual plans": {
     ja: "Auto model selection の候補に evaluation model が入るため、個人利用でもモデル選定の透明性と無効化方針を確認しておきたい更新です。",
     en: "Because evaluation models can enter Auto routing for individual plans, users should review model-selection transparency and their disablement options.",
@@ -1196,6 +1254,42 @@ const exactImportanceMappings = {
     ja: "Copilot Student プランを利用している学生ユーザーは、手動でモデルを選択できなくなるため設定の確認が必要です。自動モデル選択に移行すれば機能自体は引き続き使えるため、影響は限定的ですが Student プランを展開している組織は対応を案内しておくと安心です。",
     en: "This matters for students relying on the Copilot Student plan because GPT-5.3-Codex will no longer appear in the model picker, requiring a shift to auto model selection. The impact is limited since auto selection continues to include the model, but teams managing Student plan rollouts should inform users of the change.",
   },
+  "Upcoming deprecation of Opus 4.6 (fast)": {
+    ja: "廃止日が2026年6月29日と近いため、Opus 4.6 (fast) を明示指定しているユーザーや組織は、代替モデルへの切り替えとモデルポリシーの確認を早めに進める必要があります。",
+    en: "This needs prompt attention because the deprecation date is June 29, 2026. Users and organizations explicitly selecting Opus 4.6 (fast) should move to replacement models and verify model policies.",
+  },
+  "Agent finder for GitHub Copilot now available": {
+    ja: "agent 関連リソースを手動で context に詰め込む負担を減らせるため、MCP server や skills を多用するチームほど agent 設定と context 管理が楽になります。",
+    en: "This matters because it reduces manual context wiring for teams that use MCP servers, skills, tools, and agents heavily, making agent setup and context management easier.",
+  },
+  "GitHub Copilot app generally available": {
+    ja: "agent-driven development のデスクトップ入口が GA になったため、ブラウザーだけでなく専用アプリを前提にした日常運用を検討しやすくなります。",
+    en: "This matters because the desktop entry point for agent-driven development is now generally available, making it easier to evaluate workflows built around the dedicated app rather than only the browser.",
+  },
+  "Copilot-authored pull requests now included in author searches": {
+    ja: "Copilot cloud agent が作成した PR を通常の author 検索で追えるようになるため、自分が依頼した agent 作業の棚卸しやレビュー漏れ確認がしやすくなります。",
+    en: "This matters because pull requests created by Copilot cloud agent are now discoverable through normal author searches, making it easier to track and review agent work opened on your behalf.",
+  },
+  "GitHub Agentic Workflows is now in public preview": {
+    ja: "issue triage や CI failure analysis などの運用タスクを agentic workflow として定義できるため、単発の agent 実行から再利用可能な自動化へ進める候補になります。",
+    en: "This matters because teams can move from one-off agent prompts toward reusable agentic workflows for tasks such as issue triage and CI failure analysis.",
+  },
+  "Enterprise-managed settings now support bypass permission controls": {
+    ja: "CLI や VS Code での権限 bypass を enterprise 側から抑止できるため、agent / CLI 利用時の安全統制を組織ポリシーとして揃えやすくなります。",
+    en: "This matters because enterprises can enforce safer permission behavior for Copilot CLI and VS Code from central policy instead of relying on individual user settings.",
+  },
+  "Enterprise-managed settings now support strictKnownMarketplaces in VS Code and GitHub Copilot CLI": {
+    ja: "利用可能な plugin / marketplace を enterprise 側で制御できるため、Copilot CLI や VS Code の拡張経路を管理し、許可済みソースに寄せた運用がしやすくなります。",
+    en: "This matters because enterprises can govern plugin and marketplace sources for Copilot CLI and VS Code, reducing the risk of unmanaged extension sources.",
+  },
+  "MAI-Code-1-Flash for Copilot Business and Copilot Enterprise": {
+    ja: "法人向け Copilot プランでも MAI-Code-1-Flash を利用候補にできるようになり、コストや応答速度を重視する開発タスクでモデル選択の幅が広がります。",
+    en: "This matters because Business and Enterprise customers can now evaluate MAI-Code-1-Flash for coding tasks where latency or cost profile matters.",
+  },
+  "GitHub Desktop 3.6: Worktrees and deeper Copilot integration": {
+    ja: "worktree、commit 作成、merge conflict 解消が GitHub Desktop 内で扱いやすくなり、CLI に慣れていない開発者でも Copilot 支援を日常の Git 操作へ取り込みやすくなります。",
+    en: "This matters because GitHub Desktop users get worktree support plus Copilot help for commits and merge conflicts, bringing AI assistance into everyday Git flows.",
+  },
   "Copilot cloud agent starts 20% faster with Actions custom images": {
     ja: "issue を割り当ててからタスクが開始されるまでの待機時間が20%以上短縮されるため、agent を頻繁に使うチームはフィードバックループが速くなる恩恵を受けやすくなります。",
     en: "This directly reduces the feedback loop for teams that rely on Copilot cloud agent regularly, since tasks now start over 20% faster after issue assignment, making the agent workflow more responsive.",
@@ -1275,6 +1369,10 @@ const exactImportanceMappings = {
   "Copilot code review comment types now in usage metrics API": {
     ja: "コードレビュー提案を種別ごとに把握できるようになるため、Copilot コードレビューがどのカテゴリで最も機能しているかを定量的に評価し、運用ルールや展開判断の根拠にしやすくなります。",
     en: "This matters because teams can now measure not just how much Copilot code review is used, but which categories of feedback it provides most often and which suggestions developers actually adopt, enabling more evidence-based code review policy decisions.",
+  },
+  "Copilot code review: AGENTS.md support and UI improvements": {
+    ja: "リポジトリ単位の AGENTS.md をレビューに効かせられるため、Copilot code review をチームの規約や agent 向け運用ルールに沿わせやすくなる更新です。draft PR からの依頼導線改善も、早い段階でレビューを回す運用に効きます。",
+    en: "This matters because repository-level AGENTS.md support lets teams align Copilot code review with project-specific conventions and agent instructions. The draft PR request flow also makes it easier to involve Copilot earlier in review.",
   },
   "More flexible secrets and variables for Copilot cloud agent": {
     ja: "organization レベルでシークレットと変数を一元管理できるようになるため、複数リポジトリに Copilot cloud agent を展開する際の設定コストが大きく下がります。MCP サーバー設定や内部トークンを全リポジトリに一括配布しやすくなる更新です。",
@@ -1502,15 +1600,6 @@ function summaryLead(summary, maxLength = 220) {
   return trimText(lead, maxLength);
 }
 
-function englishLeadForJapanese(summary, maxLength = 240) {
-  const lead = summaryLead(summary, maxLength);
-  if (!lead || containsJapanese(lead)) {
-    return "";
-  }
-
-  return `英語 summary では「${lead}」と説明されている。`;
-}
-
 function joinedHeadings(event, limit = 3) {
   return normalizeArray([
     ...(event.diffSummary?.headings ?? []),
@@ -1702,6 +1791,62 @@ function patternTitle(title) {
     [
       "Copilot usage metrics now identify active and passive Copilot code review users",
       "usage metrics で Copilot code review のアクティブ・パッシブ利用者を識別できるようになった",
+    ],
+    [
+      "Upcoming deprecation of Opus 4.6 (fast)",
+      "Opus 4.6 (fast) が GitHub Copilot から廃止予定",
+    ],
+    [
+      "Agent finder for GitHub Copilot now available",
+      "GitHub Copilot の Agent finder が利用可能になった",
+    ],
+    [
+      "GitHub Copilot app generally available",
+      "GitHub Copilot app が一般提供になった",
+    ],
+    [
+      "Copilot-authored pull requests now included in author searches",
+      "Copilot 作成 PR が author 検索に含まれるようになった",
+    ],
+    [
+      "GitHub Agentic Workflows is now in public preview",
+      "GitHub Agentic Workflows が public preview になった",
+    ],
+    [
+      "Enterprise-managed settings now support bypass permission controls",
+      "enterprise-managed settings で bypass permission を制御できるようになった",
+    ],
+    [
+      "Enterprise-managed settings now support strictKnownMarketplaces in VS Code and GitHub Copilot CLI",
+      "enterprise-managed settings で marketplace 制御が可能になった",
+    ],
+    [
+      "MAI-Code-1-Flash for Copilot Business and Copilot Enterprise",
+      "MAI-Code-1-Flash が Copilot Business / Enterprise で GA になった",
+    ],
+    [
+      "GitHub Desktop 3.6: Worktrees and deeper Copilot integration",
+      "GitHub Desktop 3.6 で worktree と Copilot 連携が強化された",
+    ],
+    [
+      "MAI-Code-1-Flash available on more Copilot surfaces",
+      "MAI-Code-1-Flash が GitHub Copilot の追加サーフェスで利用可能になった",
+    ],
+    [
+      "AI credits consumed per user now in the Copilot usage metrics API",
+      "Copilot usage metrics API でユーザー別 AI credits 消費量を確認できるようになった",
+    ],
+    [
+      "Copilot code review: AGENTS.md support and UI improvements",
+      "Copilot code review が AGENTS.md と draft PR からのレビュー依頼に対応した",
+    ],
+    [
+      "Copilot individual plan sign-ups are reopening",
+      "Copilot 個人向けプランの新規申し込み受付が再開される",
+    ],
+    [
+      "GitHub Copilot CLI for Beginners: Overview of common slash commands",
+      "GitHub Copilot CLI の slash command 入門",
     ],
     [
       "Copilot CLI now supports BYOK and local models",
@@ -1912,7 +2057,6 @@ function summaryFromPatterns(event, locale = "ja") {
   );
   const summaryLeadJa =
     summaryLeadText && containsJapanese(summaryLeadText) ? summaryLeadText : "";
-  const summaryLeadEnJa = englishLeadForJapanese(event.summary, 260);
 
   if (version && vscodeReleaseSummaries[version]) {
     return vscodeReleaseSummaries[version][locale];
@@ -2038,9 +2182,7 @@ function summaryFromPatterns(event, locale = "ja") {
     if (locale === "ja") {
       return summaryLeadJa
         ? `${sectionTitle} に関する release note 更新。${summaryLeadJa}`
-        : summaryLeadEnJa
-          ? `${sectionTitle} に関する release note 更新。${summaryLeadEnJa}`
-          : `${sectionTitle} に関する release note 更新。該当 section の内容を個別に追跡している。`;
+        : `${sectionTitle} に関する release note 更新。該当 section の内容を個別に追跡している。`;
     }
 
     return summaryLeadText
@@ -2178,45 +2320,64 @@ function summaryFromPatterns(event, locale = "ja") {
   }
 
   if (/copilot cli/i.test(text)) {
-    const cliFallback = (topic) =>
+    const cliFallback = (topic, fallback) =>
       summaryLeadJa
         ? `${topic}。${summaryLeadJa}`
-        : summaryLeadEnJa
-          ? `${topic}。${summaryLeadEnJa}`
-          : `${topic}。${localizedTitle(event)} を CLI 運用への影響候補として追跡している。`;
+        : `${topic}。${fallback}`;
 
     if (/agent/i.test(text)) {
       return locale === "ja"
-        ? cliFallback("Copilot CLI の agent 機能に関する更新")
+        ? cliFallback(
+            "Copilot CLI の agent 機能に関する更新",
+            "custom agent、organization agent、message queueing など、CLI 上で agent 作業を継続・反復しやすくする変更を確認しておきたい。",
+          )
         : "An update about Copilot CLI agent capabilities, useful for those building agentic workflows from the terminal.";
     }
     if (/mcp/i.test(text)) {
       return locale === "ja"
-        ? cliFallback("Copilot CLI への MCP 対応に関する更新")
+        ? cliFallback(
+            "Copilot CLI への MCP 対応に関する更新",
+            "外部ツールや社内サービスを CLI から呼び出す構成に関わるため、MCP server の設定と権限範囲を確認しておきたい。",
+          )
         : "An update covering MCP integration for Copilot CLI, which may affect how external tools and services connect to CLI workflows.";
     }
     if (/session/i.test(text)) {
       return locale === "ja"
-        ? cliFallback("Copilot CLI のセッション管理に関する更新")
+        ? cliFallback(
+            "Copilot CLI のセッション管理に関する更新",
+            "長時間タスクや複数 context の切り替えで、セッション継続・復元・操作性がどう変わるか確認しておきたい。",
+          )
         : "An update about session management in Copilot CLI, worth reviewing if you work with long-running or context-heavy interactions.";
     }
     if (/model/i.test(text)) {
       return locale === "ja"
-        ? cliFallback("Copilot CLI でのモデル選択や切り替えに関する更新")
+        ? cliFallback(
+            "Copilot CLI でのモデル選択や切り替えに関する更新",
+            "用途ごとのモデル選択、auto selection、BYOK / local model 利用に関わるため、CLI で使うモデル方針を見直す材料になる。",
+          )
         : "An update about model selection or switching in Copilot CLI, which may change how you choose models for different tasks.";
     }
     if (/install|setup|upgrade/i.test(text)) {
       return locale === "ja"
-        ? cliFallback("Copilot CLI のインストール・セットアップに関する更新")
+        ? cliFallback(
+            "Copilot CLI のインストール・セットアップに関する更新",
+            "初期導入、アップグレード、LSP server などの周辺設定に影響するため、チームのセットアップ手順と前提条件を確認しておきたい。",
+          )
         : "An update about installing or setting up Copilot CLI, worth checking if you are onboarding or upgrading.";
     }
     if (/command/i.test(text)) {
       return locale === "ja"
-        ? cliFallback("Copilot CLI のコマンドや使用法に関する更新")
+        ? cliFallback(
+            "Copilot CLI のコマンドや使用法に関する更新",
+            "slash command、設定コマンド、security review など日常操作の入口が変わる可能性があるため、利用手順を確認しておきたい。",
+          )
         : "An update about Copilot CLI commands and usage patterns, worth reviewing for day-to-day terminal workflows.";
     }
     return locale === "ja"
-      ? cliFallback("GitHub Copilot CLI の更新")
+      ? cliFallback(
+          "GitHub Copilot CLI の更新",
+          "ターミナルでの agent 作業、設定、ガバナンス、レビュー補助に関わる変更として、CLI 運用への影響を確認しておきたい。",
+        )
       : "An update about GitHub Copilot CLI capabilities and workflows for terminal-heavy usage.";
   }
 
@@ -2230,9 +2391,7 @@ function summaryFromPatterns(event, locale = "ja") {
     return locale === "ja"
       ? summaryLeadJa
         ? `GitHub Copilot code review 関連の更新。${summaryLeadJa}`
-        : summaryLeadEnJa
-          ? `GitHub Copilot code review 関連の更新。${summaryLeadEnJa}`
-          : `GitHub Copilot code review 関連の更新。${localizedTitle(event)} によるレビュー運用への影響を追跡している。`
+        : "GitHub Copilot code review のレビュー依頼やコメント処理に関する更新。チームのレビュー運用に影響する可能性がある。"
       : "An update related to GitHub Copilot code review and its impact on review automation and quality workflows.";
   }
 
@@ -2246,9 +2405,7 @@ function summaryFromPatterns(event, locale = "ja") {
     return locale === "ja"
       ? summaryLeadJa
         ? `GitHub Copilot 関連の更新。${summaryLeadJa}`
-        : summaryLeadEnJa
-          ? `GitHub Copilot 関連の更新。${summaryLeadEnJa}`
-          : `GitHub Copilot 関連の更新。${localizedTitle(event)} を運用影響の候補として追跡している。`
+        : "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
       : "A GitHub Copilot update that should be reviewed for its impact on usage and operations.";
   }
 
@@ -2262,10 +2419,8 @@ function summaryFromPatterns(event, locale = "ja") {
 
   return locale === "ja"
     ? summaryLeadJa
-      ? `英語ソースの更新。${summaryLeadJa}`
-      : summaryLeadEnJa
-        ? `英語ソースの更新。${summaryLeadEnJa}`
-        : `英語ソースの更新。${localizedTitle(event)} を継続監視対象として記録している。`
+      ? `追跡対象ソースの更新。${summaryLeadJa}`
+      : "追跡対象ソースの更新。公開内容の変化や運用への影響を継続監視対象として記録している。"
     : trimmedEnglishSummary(
         cleanedSummary || "English-language update from a tracked source.",
       );
@@ -2363,6 +2518,7 @@ function stripGenericJapaneseSummary(summary) {
       .replace(/^英語ソースの更新。/, "")
       .replace(/^Visual Studio Code 関連の更新。/, "")
       .replace(/^GitHub Copilot 関連の更新。/, "")
+      .replace(/英語 summary では「[^」]+」と説明されている。?/g, "")
       .replace(/^VS Code チームによる AI 活用や実装改善の解説記事。/, "")
       .replace(
         /^詳細は原文を確認しつつ、日々の開発フローに効くかを見ておきたい。/,
@@ -2480,7 +2636,11 @@ export function summarizeEventSet(events, locale = "ja", options = {}) {
       ordered
         .slice(0, maxHighlights)
         .map((event) =>
-          localizedDigestMention(event, locale, locale === "ja" ? 78 : 72),
+          localizedDigestMention(
+            event,
+            locale,
+            locale === "ja" ? 78 : 72,
+          ).replace(/[。!！?？]+$/u, ""),
         ),
     ),
   ];
