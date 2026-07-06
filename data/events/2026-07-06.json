@@ -1,45 +1,31 @@
 {
   "date": "2026-07-06",
-  "generatedAt": "2026-07-06T15:57:50.750Z",
+  "generatedAt": "2026-07-06T16:36:42.643Z",
   "latestRun": {
-    "generatedAt": "2026-07-06T15:57:50.750Z",
-    "newEventsCount": 31,
+    "generatedAt": "2026-07-06T16:36:42.643Z",
+    "newEventsCount": 1,
     "newEventIds": [
-      "github-changelog:https://github.blog/changelog/2026-07-02-improved-accuracy-and-coverage-in-copilot-usage-metrics-reports",
-      "github-changelog:https://github.blog/changelog/2026-07-02-upcoming-deprecation-of-gemini-2-5-pro-and-gemini-3-flash",
-      "github-changelog:https://github.blog/changelog/2026-07-02-copilot-cli-no-longer-needs-a-personal-access-token-in-github-actions",
-      "github-changelog:https://github.blog/changelog/2026-07-02-copilot-agent-session-streaming-is-now-in-public-preview",
-      "github-changelog:https://github.blog/changelog/2026-06-26-cost-centers-now-support-included-usage-caps",
-      "github-changelog:https://github.blog/changelog/2026-07-01-enterprises-can-default-to-auto-model-selection",
-      "github-changelog:https://github.blog/changelog/2026-07-01-enterprise-managed-settings-json-is-generally-available",
-      "github-changelog-copilot:https://github.blog/changelog/2026-07-02-improved-accuracy-and-coverage-in-copilot-usage-metrics-reports",
-      "github-changelog-copilot:https://github.blog/changelog/2026-07-02-upcoming-deprecation-of-gemini-2-5-pro-and-gemini-3-flash",
-      "github-changelog-copilot:https://github.blog/changelog/2026-07-02-copilot-cli-no-longer-needs-a-personal-access-token-in-github-actions",
-      "github-changelog-copilot:https://github.blog/changelog/2026-07-02-copilot-agent-session-streaming-is-now-in-public-preview",
-      "github-changelog-copilot:https://github.blog/changelog/2026-06-26-cost-centers-now-support-included-usage-caps",
-      "github-changelog-copilot:https://github.blog/changelog/2026-07-01-enterprises-can-default-to-auto-model-selection",
-      "github-changelog-copilot:https://github.blog/changelog/2026-07-01-enterprise-managed-settings-json-is-generally-available",
-      "github-changelog-copilot:https://github.blog/changelog/2026-07-01-new-c-language-server-config-skill-for-copilot-cli",
-      "github-changelog-copilot:https://github.blog/changelog/2026-06-30-kimi-k2-7-is-now-available-in-github-copilot",
-      "github-changelog-copilot:https://github.blog/changelog/2026-07-01-copilot-vision-is-generally-available",
-      "vscode-feed:https://code.visualstudio.com/updates/v1_127",
-      "vscode-feed:https://code.visualstudio.com/updates/v1_128",
-      "vscode-updates:e3936afee3329c633d163dace28b7980488dee3f2e1018a8db33df49d7e4da79",
-      "vscode-release-notes-1-109:6e9479c7b18321fbc0aa1056a2dd83a35f591bbd764ba14efa48504f7780b2d0",
-      "docs-github-copilot-howtos:8182bbf979908171d8ce26772156c5f88c26aca971ce71bb25a4f1cbdee5c4e4",
-      "docs-github-copilot-concepts:c55c1dd3522a2054bd58e5f98ac2066f5d9fd87e5f2d026f060ffd68bae2b15a",
-      "docs-github-copilot-reference:2690a160ae3e0269883c3d301b461ce0693ee2f6b5a93d4fb0f911a14cc716b2",
-      "vscode-release-notes-1-127:section:75ba89537931f5eb2c9ba1495cd59b1cb50f1b5885eb9c2287e305fa4f20c3a0",
-      "vscode-release-notes-1-127:section:7cb66d11c20c4057ef0c569f1e0dc7b971f8f3c223ed7310322407b6fbd2e6cd",
-      "vscode-release-notes-1-127:section:6951a9b5d8af691519c98021d7c22129943550014eade27b1b39ac829b47e913",
-      "vscode-release-notes-1-127:section:f2c7621dcbff6d509b3de38ce17b0639654b1b7185d96456e17b0b178a0e8ad4",
-      "vscode-release-notes-1-126:1d2f894c8fafcce60168663408b9db44fcae4a3a68365b0589cb28d6af8c1c1d",
-      "vscode-release-notes-1-125:d0c368014f8b16457cd158ec29a4cb0e5cdfe6aef04a6b23d36a8886a9cd1c11",
-      "vscode-release-notes-1-124:a8f0a68f6415375cb714d5dcdb92fdb294a8674458bbacb61e864f0935098d04"
+      "vscode-feed:https://code.visualstudio.com/blogs/2026/07/06/optimizing-vscode-coding-harness-model-providers"
     ],
     "errorCount": 0
   },
   "events": [
+    {
+      "eventId": "vscode-feed:https://code.visualstudio.com/blogs/2026/07/06/optimizing-vscode-coding-harness-model-providers",
+      "sourceId": "vscode-feed",
+      "sourceName": "VS Code Feed",
+      "kind": "feed_entry",
+      "detectedAt": "2026-07-06T16:36:40.076Z",
+      "publishedAt": "2026-07-06T00:00:00.000Z",
+      "title": "How Prompt Tuning Improved GPT-5.5 in VS Code",
+      "url": "https://code.visualstudio.com/blogs/2026/07/06/optimizing-vscode-coding-harness-model-providers",
+      "summary": "See how VS Code and OpenAI tested GPT-5.5 system prompt changes in a two-week experiment, cutting tool calls and tail-end token usage while speeding up edits.\n Read the full article",
+      "categories": [
+        "blog"
+      ],
+      "isFutureDated": false,
+      "score": 0
+    },
     {
       "eventId": "github-changelog:https://github.blog/changelog/2026-07-02-improved-accuracy-and-coverage-in-copilot-usage-metrics-reports",
       "sourceId": "github-changelog",
