@@ -32,7 +32,7 @@ jobs:
         run: npm run collect
 
       - name: Validate collected output
-        run: npm test
+        run: npm run test:data
 
       - name: Commit changes
         run: |

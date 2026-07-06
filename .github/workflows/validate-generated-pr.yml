@@ -127,13 +127,16 @@ jobs:
         run: npm ci
 
       - name: Validate low-information fallback guard
-        run: npm test
+        run: npm run test:data
 
       - name: Validate collect command
         run: npm run collect
 
       - name: Validate Pages build
         run: npm run build:pages
+
+      - name: Validate Pages/Discord UX
+        run: npm run test:pages
 
       - name: Validate Markdown structure
         env:
