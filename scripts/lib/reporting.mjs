@@ -442,10 +442,11 @@ const exactSummaryMappings = {
     ja: "enterprise-managed settings に bypass permission control が追加された。Enterprise 管理者は `disableBypassPermissionsMode` を使い、GitHub Copilot CLI や VS Code 側で権限確認を回避する設定を抑止できる。",
     en: "Enterprise-managed settings now support bypass permission controls through `disableBypassPermissionsMode`, allowing enterprise admins to prevent permission bypass behavior in Copilot CLI and VS Code.",
   },
-  "Enterprise-managed settings now support strictKnownMarketplaces in VS Code and GitHub Copilot CLI": {
-    ja: "Enterprise 管理者が、VS Code と GitHub Copilot CLI でユーザーがインストールできる plugin / marketplace を制御できるようになった。`strictKnownMarketplaces` により、組織で許可した marketplace だけを使わせる運用に近づく。",
-    en: "Enterprise-managed settings now support strictKnownMarketplaces for VS Code and GitHub Copilot CLI, letting enterprises control which plugin marketplaces users can install from.",
-  },
+  "Enterprise-managed settings now support strictKnownMarketplaces in VS Code and GitHub Copilot CLI":
+    {
+      ja: "Enterprise 管理者が、VS Code と GitHub Copilot CLI でユーザーがインストールできる plugin / marketplace を制御できるようになった。`strictKnownMarketplaces` により、組織で許可した marketplace だけを使わせる運用に近づく。",
+      en: "Enterprise-managed settings now support strictKnownMarketplaces for VS Code and GitHub Copilot CLI, letting enterprises control which plugin marketplaces users can install from.",
+    },
   "MAI-Code-1-Flash for Copilot Business and Copilot Enterprise": {
     ja: "Microsoft AI の社内コードモデル MAI-Code-1-Flash が GitHub Copilot Business と Copilot Enterprise で一般提供になった。追加サーフェスへの展開に続き、法人向けプランでも利用候補に入る。",
     en: "MAI-Code-1-Flash, Microsoft AI's in-house coding model, is now generally available for GitHub Copilot Business and Copilot Enterprise.",
@@ -1278,10 +1279,11 @@ const exactImportanceMappings = {
     ja: "CLI や VS Code での権限 bypass を enterprise 側から抑止できるため、agent / CLI 利用時の安全統制を組織ポリシーとして揃えやすくなります。",
     en: "This matters because enterprises can enforce safer permission behavior for Copilot CLI and VS Code from central policy instead of relying on individual user settings.",
   },
-  "Enterprise-managed settings now support strictKnownMarketplaces in VS Code and GitHub Copilot CLI": {
-    ja: "利用可能な plugin / marketplace を enterprise 側で制御できるため、Copilot CLI や VS Code の拡張経路を管理し、許可済みソースに寄せた運用がしやすくなります。",
-    en: "This matters because enterprises can govern plugin and marketplace sources for Copilot CLI and VS Code, reducing the risk of unmanaged extension sources.",
-  },
+  "Enterprise-managed settings now support strictKnownMarketplaces in VS Code and GitHub Copilot CLI":
+    {
+      ja: "利用可能な plugin / marketplace を enterprise 側で制御できるため、Copilot CLI や VS Code の拡張経路を管理し、許可済みソースに寄せた運用がしやすくなります。",
+      en: "This matters because enterprises can govern plugin and marketplace sources for Copilot CLI and VS Code, reducing the risk of unmanaged extension sources.",
+    },
   "MAI-Code-1-Flash for Copilot Business and Copilot Enterprise": {
     ja: "法人向け Copilot プランでも MAI-Code-1-Flash を利用候補にできるようになり、コストや応答速度を重視する開発タスクでモデル選択の幅が広がります。",
     en: "This matters because Business and Enterprise customers can now evaluate MAI-Code-1-Flash for coding tasks where latency or cost profile matters.",
@@ -2321,9 +2323,7 @@ function summaryFromPatterns(event, locale = "ja") {
 
   if (/copilot cli/i.test(text)) {
     const cliFallback = (topic, fallback) =>
-      summaryLeadJa
-        ? `${topic}。${summaryLeadJa}`
-        : `${topic}。${fallback}`;
+      summaryLeadJa ? `${topic}。${summaryLeadJa}` : `${topic}。${fallback}`;
 
     if (/agent/i.test(text)) {
       return locale === "ja"
