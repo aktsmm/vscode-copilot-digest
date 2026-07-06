@@ -2,42 +2,42 @@ GitHub Copilot/
 Reference
 H1: Reference for GitHub Copilot
 Find information to apply to your work with GitHub Copilot.
-GitHub Copilot Chat cheat sheet
-Copilot customization cheat sheet
-AI models for GitHub CopilotSupported AI models in GitHub CopilotAI model comparisonHosting of models for GitHub Copilot
-Supported AI models in GitHub Copilot
-AI model comparison
-Hosting of models for GitHub Copilot
-Copilot feature matrix
-Keyboard shortcuts for GitHub Copilot in the IDE
-Copilot CLI referenceGitHub Copilot CLI command referenceGitHub Copilot CLI plugin referenceGitHub Copilot CLI programmatic referenceCopilot CLI ACP serverGitHub Copilot CLI configuration directory
-GitHub Copilot CLI command reference
-GitHub Copilot CLI plugin reference
-GitHub Copilot CLI programmatic reference
-Copilot CLI ACP server
-GitHub Copilot CLI configuration directory
-Custom agents configuration
-Support for different types of custom instructions
-GitHub Copilot hooks reference
-Feature availability when GitHub Copilot policies conflict in organizations
-Supported surfaces for GitHub Copilot policies
-Copilot allowlist reference
-MCP allowlist enforcement
-Metrics data properties for GitHub Copilot
-GitHub Copilot billingModels and pricing for GitHub CopilotGitHub Copilot billing cycleGitHub Copilot seat assignmentMaking changes to your GitHub Copilot licenseGitHub Copilot billing through AzureGitHub Copilot request-based billing for annual plan subscribers (legacy)
-Models and pricing for GitHub Copilot
-GitHub Copilot billing cycle
-GitHub Copilot seat assignment
-Making changes to your GitHub Copilot license
-GitHub Copilot billing through Azure
-GitHub Copilot request-based billing for annual plan subscribers (legacy)
-Audit log events for agents
-Available filters for agent sessions
-Files excluded from GitHub Copilot code review
-GitHub Copilot usage metricsData available in Copilot usage metricsInterpreting usage and adoption metrics for GitHub CopilotReconciling Copilot usage metrics across dashboards, APIs, and reportsLines of Code metricsTeam-level Copilot usage metricsExample schema for Copilot usage metrics
-Data available in Copilot usage metrics
-Interpreting usage and adoption metrics for GitHub Copilot
-Reconciling Copilot usage metrics across dashboards, APIs, and reports
-Lines of Code metrics
-Team-level Copilot usage metrics
-Example schema for Copilot usage metrics
+GitHub Copilot Chat cheat sheet, 1 of 19
+Copilot customization cheat sheet, 2 of 19
+AI models for GitHub Copilot, 3 of 19Supported AI models in GitHub Copilot, 1 of 3AI model comparison, 2 of 3Hosting of models for GitHub Copilot, 3 of 3
+Supported AI models in GitHub Copilot, 1 of 3
+AI model comparison, 2 of 3
+Hosting of models for GitHub Copilot, 3 of 3
+Copilot feature matrix, 4 of 19
+Keyboard shortcuts for GitHub Copilot in the IDE, 5 of 19
+Copilot CLI reference, 6 of 19GitHub Copilot CLI command reference, 1 of 5GitHub Copilot CLI plugin reference, 2 of 5GitHub Copilot CLI programmatic reference, 3 of 5Copilot CLI ACP server, 4 of 5GitHub Copilot CLI configuration directory, 5 of 5
+GitHub Copilot CLI command reference, 1 of 5
+GitHub Copilot CLI plugin reference, 2 of 5
+GitHub Copilot CLI programmatic reference, 3 of 5
+Copilot CLI ACP server, 4 of 5
+GitHub Copilot CLI configuration directory, 5 of 5
+Custom agents configuration, 7 of 19
+Support for different types of custom instructions, 8 of 19
+GitHub Copilot hooks reference, 9 of 19
+Feature availability when GitHub Copilot policies conflict in organizations, 10 of 19
+Supported surfaces for GitHub Copilot policies, 11 of 19
+Copilot allowlist reference, 12 of 19
+MCP allowlist enforcement, 13 of 19
+Metrics data properties for GitHub Copilot, 14 of 19
+GitHub Copilot billing, 15 of 19Models and pricing for GitHub Copilot, 1 of 6GitHub Copilot billing cycle, 2 of 6GitHub Copilot seat assignment, 3 of 6Making changes to your GitHub Copilot license, 4 of 6GitHub Copilot billing through Azure, 5 of 6GitHub Copilot request-based billing for annual plan subscribers (legacy), 6 of 6
+Models and pricing for GitHub Copilot, 1 of 6
+GitHub Copilot billing cycle, 2 of 6
+GitHub Copilot seat assignment, 3 of 6
+Making changes to your GitHub Copilot license, 4 of 6
+GitHub Copilot billing through Azure, 5 of 6
+GitHub Copilot request-based billing for annual plan subscribers (legacy), 6 of 6
+Audit log events for agents, 16 of 19
+Available filters for agent sessions, 17 of 19
+Files excluded from GitHub Copilot code review, 18 of 19
+GitHub Copilot usage metrics, 19 of 19Data available in Copilot usage metrics, 1 of 6Interpreting usage and adoption metrics for GitHub Copilot, 2 of 6Reconciling Copilot usage metrics across dashboards, APIs, and reports, 3 of 6Lines of Code metrics, 4 of 6Team-level Copilot usage metrics, 5 of 6Example schema for Copilot usage metrics, 6 of 6
+Data available in Copilot usage metrics, 1 of 6
+Interpreting usage and adoption metrics for GitHub Copilot, 2 of 6
+Reconciling Copilot usage metrics across dashboards, APIs, and reports, 3 of 6
+Lines of Code metrics, 4 of 6
+Team-level Copilot usage metrics, 5 of 6
+Example schema for Copilot usage metrics, 6 of 6

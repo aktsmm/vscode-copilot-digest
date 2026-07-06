@@ -1,4 +1,5 @@
 Insiders
+1.127
 1.126
 1.125
 1.124
@@ -43,6 +44,7 @@ We cleaned up the model hover to make it easier to scan. It now shows a concise 
 H2: Agents window (Preview)
 The Agents window is a dedicated companion window optimized for exploring, iterating on, and reviewing agent sessions across projects and machines.
 H3: Multiple chats in an agent host Copilot session
+Applies to: Copilot sessions running on an agent host.
 The Agents window lets you run and manage multiple agent sessions side by side. In this release, a Copilot session started from an agent host can hold several chats at once. Because the chats share the same session and working context, you can keep more than one conversation going in the same workspace at the same time.
 Say your primary chat is busy implementing a feature. Instead of waiting or interrupting it, select New Chat (+) in the session toolbar to open a second chat in the same session, then use it to review the changes so far, draft tests, or write the documentation. Both run at once, and each chat keeps its own conversation. You can switch between tabs and pick up right where you left off.
 Chats are persisted and restored across a window reload. Step away and come back to every conversation in the session, not just the first one.
@@ -85,6 +87,10 @@ This changes the default value of the
 H3: Removed trust parent from the Workspace Trust editor
 The Workspace Trust editor previously showed a Trust Parent button next to the Trust button. Because it looked just like Trust but trusted the entire parent folder, it was easy to select by mistake and trust more folders than you intended.
 To reduce that risk, the Trust Parent button is removed. You can still trust a parent folder by adding its path to the Trusted Folders & Workspaces list in the Workspace Trust editor.
+H2: Engineering
+H3: Agent Host Protocol (AHP)
+As part of rearchitecting how agent sessions work in VS Code, we are adopting the Agent Host Protocol (AHP). AHP lets us connect and render the same agent session from multiple clients and VS Code windows at the same time.
+This unlocks scenarios like seeing the same session in both a regular VS Code window and the Agents window. The work is ongoing, but you can already try it out in VS Code Insiders and we would welcome your feedback.
 H2: Website
 H3: VS Code blog
 As the team has been writing more and more blog posts, in quick succession, we realized that our blogs section could use some love. Previously, when you open the blog section, you were directly taken to the last blog post, leaving previous posts often overlooked. We have now added a blog landing page that highlights the several recent posts.
@@ -94,7 +100,9 @@ We've restructured our documentation table of contents to make it more scannable
 Previously, the documentation for supported languages and specific extensions was individually listed in the table of contents. We have now moved them under "Languages and Runtimes" and "Extension Docs" respectively, so you can find all the information you need in one place.
 Let us know what you think of the new structure by submitting feedback in the microsoft/vscode-docs repository.
 H2: Deprecated features and settings
-None.
+H3: Edit mode
+We have deprecated the built-in Edit mode, and removed the chat.editMode.hidden setting. We recommend using Agent mode instead, which covers the same editing scenarios while also being able to run tasks and tools on your behalf. Alternatively, you can create a custom agent to mimic the Edit mode experience.
+Users who have Agent mode disabled (chat.agent.enabled) by policy will still see the legacy Edit mode.
 H2: Thank you
 Contributions to vscode:
 @bikeshgyawali (Bikesh): Add missing unit test coverage for prefixedUuid in uuid.ts PR #322146
@@ -125,6 +133,7 @@ Cost management
 Language models
 Agents window (Preview)
 Editor experience
+Engineering
 Website
 Deprecated features and settings
 Thank you

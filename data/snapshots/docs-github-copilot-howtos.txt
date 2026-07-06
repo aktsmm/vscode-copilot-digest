@@ -2,149 +2,151 @@ GitHub Copilot/
 How-tos
 H1: How-tos for GitHub Copilot
 Learn how to use GitHub Copilot.
-GitHub Copilot on GitHubSet up CopilotChat with CopilotCustomize CopilotCopilot for GitHub tasksUse Copilot agents
-Set up Copilot
-Chat with Copilot
-Customize Copilot
-Copilot for GitHub tasks
-Use Copilot agents
-Setting up GitHub CopilotSetting up GitHub Copilot for yourselfInstalling the GitHub Copilot extension in your environment
-Setting up GitHub Copilot for yourself
-Installing the GitHub Copilot extension in your environment
-Get suggestions from GitHub CopilotGetting code suggestions in your IDE with GitHub CopilotFinding public code that matches GitHub Copilot suggestions
-Getting code suggestions in your IDE with GitHub Copilot
-Finding public code that matches GitHub Copilot suggestions
-GitHub Copilot ChatGetting started with prompts for GitHub Copilot Chat in your IDEAsking GitHub Copilot questions in your IDEAsking GitHub Copilot questions in Windows Terminal
-Getting started with prompts for GitHub Copilot Chat in your IDE
-Asking GitHub Copilot questions in your IDE
-Asking GitHub Copilot questions in Windows Terminal
-GitHub Copilot CLIGetting started with GitHub Copilot CLIBest practices for GitHub Copilot CLISetting up GitHub Copilot CLIUse GitHub Copilot CLIAutomate with GitHub Copilot CLICustomize GitHub Copilot CLIAdministering Copilot CLI for your enterpriseAutomating tasks with Copilot CLI and GitHub ActionsQuickstart for automating with GitHub Copilot CLIRunning GitHub Copilot CLI programmaticallyScheduling prompts in GitHub Copilot CLIAbout agent skillsAbout GitHub Copilot pluginsAbout GitHub Copilot CLIAbout custom agentsAbout remote control of GitHub Copilot CLI sessionsAllowing GitHub Copilot CLI to work autonomouslyCanceling a GitHub Copilot CLI operation and rolling back changesAbout GitHub Copilot CLI session dataComparing GitHub Copilot CLI customization featuresManaging context in GitHub Copilot CLILoading tools on demand with tool searchRunning tasks in parallel with the /fleet commandUsing LSP servers with GitHub Copilot CLIResearching with GitHub Copilot CLIAbout the rubber duck agentCopilot CLI ACP serverGitHub Copilot CLI command referenceGitHub Copilot CLI plugin referenceGitHub Copilot CLI programmatic referenceGitHub Copilot hooks referenceApplication card: GitHub Copilot AgentsUsing hooks with Copilot CLI for predictable, policy-compliant executionAdding custom instructions for GitHub Copilot CLIAdding MCP servers for GitHub Copilot CLIAdding agent skills for GitHub Copilot CLICreating and using custom agents for GitHub Copilot CLIOverview of customizing GitHub Copilot CLICreating a plugin for GitHub Copilot CLIFinding and installing plugins for GitHub Copilot CLICreating a plugin marketplace for GitHub Copilot CLIUsing your own LLM models in GitHub Copilot CLIUsing hooks with GitHub Copilot CLIAdding LSP servers for GitHub Copilot CLIAuthenticating GitHub Copilot CLIConfiguring GitHub Copilot CLIInstalling GitHub Copilot CLITroubleshooting GitHub Copilot CLI authenticationRequesting a code review with GitHub Copilot CLIAllowing and denying tool useUse voice input with Copilot CLIUsing GitHub Copilot CLI session dataConnecting GitHub Copilot CLI to VS CodeDelegating tasks to CopilotBrowsing issues, pull requests, and gists from GitHub Copilot CLIInvoking custom agentsManaging pull requests with the /pr commandUsing GitHub Copilot CLIRolling back changes made during a GitHub Copilot CLI sessionSpeeding up task completion with the /fleet commandSteering agents in GitHub Copilot CLISteering a GitHub Copilot CLI session from another device
-Getting started with GitHub Copilot CLI
-Best practices for GitHub Copilot CLI
-Setting up GitHub Copilot CLI
-Use GitHub Copilot CLI
-Automate with GitHub Copilot CLI
-Customize GitHub Copilot CLI
-Administering Copilot CLI for your enterprise
-Automating tasks with Copilot CLI and GitHub Actions
-Quickstart for automating with GitHub Copilot CLI
-Running GitHub Copilot CLI programmatically
-Scheduling prompts in GitHub Copilot CLI
-About agent skills
-About GitHub Copilot plugins
-About GitHub Copilot CLI
-About custom agents
-About remote control of GitHub Copilot CLI sessions
-Allowing GitHub Copilot CLI to work autonomously
-Canceling a GitHub Copilot CLI operation and rolling back changes
-About GitHub Copilot CLI session data
-Comparing GitHub Copilot CLI customization features
-Managing context in GitHub Copilot CLI
-Loading tools on demand with tool search
-Running tasks in parallel with the /fleet command
-Using LSP servers with GitHub Copilot CLI
-Researching with GitHub Copilot CLI
-About the rubber duck agent
-Copilot CLI ACP server
-GitHub Copilot CLI command reference
-GitHub Copilot CLI plugin reference
-GitHub Copilot CLI programmatic reference
-GitHub Copilot hooks reference
-Application card: GitHub Copilot Agents
-Using hooks with Copilot CLI for predictable, policy-compliant execution
-Adding custom instructions for GitHub Copilot CLI
-Adding MCP servers for GitHub Copilot CLI
-Adding agent skills for GitHub Copilot CLI
-Creating and using custom agents for GitHub Copilot CLI
-Overview of customizing GitHub Copilot CLI
-Creating a plugin for GitHub Copilot CLI
-Finding and installing plugins for GitHub Copilot CLI
-Creating a plugin marketplace for GitHub Copilot CLI
-Using your own LLM models in GitHub Copilot CLI
-Using hooks with GitHub Copilot CLI
-Adding LSP servers for GitHub Copilot CLI
-Authenticating GitHub Copilot CLI
-Configuring GitHub Copilot CLI
-Installing GitHub Copilot CLI
-Troubleshooting GitHub Copilot CLI authentication
-Requesting a code review with GitHub Copilot CLI
-Allowing and denying tool use
-Use voice input with Copilot CLI
-Using GitHub Copilot CLI session data
-Connecting GitHub Copilot CLI to VS Code
-Delegating tasks to Copilot
-Browsing issues, pull requests, and gists from GitHub Copilot CLI
-Invoking custom agents
-Managing pull requests with the /pr command
-Using GitHub Copilot CLI
-Rolling back changes made during a GitHub Copilot CLI session
-Speeding up task completion with the /fleet command
-Steering agents in GitHub Copilot CLI
-Steering a GitHub Copilot CLI session from another device
-Cloud and local sandboxes for GitHub CopilotEnabling or disabling cloud sandboxes for your organizationConfiguring local sandbox settings
-Enabling or disabling cloud sandboxes for your organization
-Configuring local sandbox settings
-GitHub Copilot appGetting started with the GitHub Copilot appCustomizing the GitHub Copilot appWorking with agent sessions in the GitHub Copilot appWorking with canvas extensions in the GitHub Copilot appManaging issues and pull requests with the GitHub Copilot appUsing automations in the GitHub Copilot appUsing your own LLM models in the GitHub Copilot appUsing deep links to open the GitHub Copilot app
-Getting started with the GitHub Copilot app
-Customizing the GitHub Copilot app
-Working with agent sessions in the GitHub Copilot app
-Working with canvas extensions in the GitHub Copilot app
-Managing issues and pull requests with the GitHub Copilot app
-Using automations in the GitHub Copilot app
-Using your own LLM models in the GitHub Copilot app
-Using deep links to open the GitHub Copilot app
-Copilot SDKAuthenticationFeaturesBuild your first Copilot-powered appUse hooksIntegrationsObservabilitySet up Copilot SDKTroubleshooting
-Authentication
-Features
-Build your first Copilot-powered app
-Use hooks
-Integrations
-Observability
-Set up Copilot SDK
-Troubleshooting
-GitHub Agentic WorkflowsYour first agentic workflowCreating GitHub Agentic Workflows
-Your first agentic workflow
-Creating GitHub Agentic Workflows
-Use GitHub Copilot agentsGitHub Copilot cloud agentCode reviewManaging Copilot Memory
-GitHub Copilot cloud agent
-Code review
-Managing Copilot Memory
-AI models for GitHub CopilotChanging the AI model for GitHub Copilot ChatChanging the AI model for GitHub Copilot inline suggestions
-Changing the AI model for GitHub Copilot Chat
-Changing the AI model for GitHub Copilot inline suggestions
-Provide context to GitHub CopilotGitHub Copilot SpacesUsing Model Context Protocol in your IDE
-GitHub Copilot Spaces
-Using Model Context Protocol in your IDE
-Configure custom instructions for GitHub CopilotAdding repository custom instructions for GitHub Copilot in your IDE
-Adding repository custom instructions for GitHub Copilot in your IDE
-Configure and audit content exclusionExcluding content from GitHub CopilotReviewing changes to content exclusions for GitHub Copilot
-Excluding content from GitHub Copilot
-Reviewing changes to content exclusions for GitHub Copilot
-Use GitHub Copilot for common tasksUsing the GitHub CLI Copilot extension
-Using the GitHub CLI Copilot extension
-Configure personal settingsConfiguring network settings for GitHub CopilotConfiguring GitHub Copilot in your environmentUsing GitHub Copilot with an account on GHE.com
-Configuring network settings for GitHub Copilot
-Configuring GitHub Copilot in your environment
-Using GitHub Copilot with an account on GHE.com
-Manage and monitor spending for GitHub CopilotMonitoring your GitHub AI Credits usageManaging your company's spending on GitHub Copilot
-Monitoring your GitHub AI Credits usage
-Managing your company's spending on GitHub Copilot
-Manage your GitHub Copilot accountGetting started with a GitHub Copilot planViewing and changing your GitHub Copilot planDisabling GitHub Copilot FreeManaging GitHub Copilot policies as an individual subscriber
-Getting started with a GitHub Copilot plan
-Viewing and changing your GitHub Copilot plan
-Disabling GitHub Copilot Free
-Managing GitHub Copilot policies as an individual subscriber
-Administer GitHub Copilot for your teamManaging GitHub Copilot in your organizationManaging GitHub Copilot in your enterpriseManaging MCP usage in your companyDownloading a GitHub Copilot activity report for your organization or enterpriseViewing the Copilot usage metrics dashboardViewing the code generation dashboard
-Managing GitHub Copilot in your organization
-Managing GitHub Copilot in your enterprise
-Managing MCP usage in your company
-Downloading a GitHub Copilot activity report for your organization or enterprise
-Viewing the Copilot usage metrics dashboard
-Viewing the code generation dashboard
-Troubleshoot GitHub CopilotTroubleshooting common issues with GitHub CopilotViewing logs for GitHub Copilot in your environmentTroubleshooting firewall settings for GitHub CopilotTroubleshooting network errors for GitHub CopilotTroubleshooting common issues with GitHub SparkTroubleshooting slow responses from GitHub Copilot
-Troubleshooting common issues with GitHub Copilot
-Viewing logs for GitHub Copilot in your environment
-Troubleshooting firewall settings for GitHub Copilot
-Troubleshooting network errors for GitHub Copilot
-Troubleshooting common issues with GitHub Spark
-Troubleshooting slow responses from GitHub Copilot
+GitHub Copilot on GitHub, 1 of 20Set up Copilot, 1 of 5Chat with Copilot, 2 of 5Customize Copilot, 3 of 5Copilot for GitHub tasks, 4 of 5Use Copilot agents, 5 of 5
+Set up Copilot, 1 of 5
+Chat with Copilot, 2 of 5
+Customize Copilot, 3 of 5
+Copilot for GitHub tasks, 4 of 5
+Use Copilot agents, 5 of 5
+Setting up GitHub Copilot, 2 of 20Setting up GitHub Copilot for yourself, 1 of 2Installing the GitHub Copilot extension in your environment, 2 of 2
+Setting up GitHub Copilot for yourself, 1 of 2
+Installing the GitHub Copilot extension in your environment, 2 of 2
+Get suggestions from GitHub Copilot, 3 of 20Getting code suggestions in your IDE with GitHub Copilot, 1 of 2Finding public code that matches GitHub Copilot suggestions, 2 of 2
+Getting code suggestions in your IDE with GitHub Copilot, 1 of 2
+Finding public code that matches GitHub Copilot suggestions, 2 of 2
+GitHub Copilot Chat, 4 of 20Getting started with prompts for GitHub Copilot Chat in your IDE, 1 of 3Asking GitHub Copilot questions in your IDE, 2 of 3Asking GitHub Copilot questions in Windows Terminal, 3 of 3
+Getting started with prompts for GitHub Copilot Chat in your IDE, 1 of 3
+Asking GitHub Copilot questions in your IDE, 2 of 3
+Asking GitHub Copilot questions in Windows Terminal, 3 of 3
+GitHub Copilot CLI, 5 of 20Getting started with GitHub Copilot CLI, 1 of 64Best practices for GitHub Copilot CLI, 2 of 64Setting up GitHub Copilot CLI, 3 of 64Use GitHub Copilot CLI, 4 of 64Automate with GitHub Copilot CLI, 5 of 64Customize GitHub Copilot CLI, 6 of 64Administering Copilot CLI for your enterprise, 7 of 64Using Copilot CLI in GitHub Actions with GITHUB_TOKEN, 8 of 64Automating tasks with Copilot CLI and GitHub Actions, 9 of 64Quickstart for automating with GitHub Copilot CLI, 10 of 64Running GitHub Copilot CLI programmatically, 11 of 64Scheduling prompts in GitHub Copilot CLI, 12 of 64About agent skills, 13 of 64About GitHub Copilot plugins, 14 of 64About GitHub Copilot CLI, 15 of 64About custom agents, 16 of 64About remote control of GitHub Copilot CLI sessions, 17 of 64Allowing GitHub Copilot CLI to work autonomously, 18 of 64Canceling a GitHub Copilot CLI operation and rolling back changes, 19 of 64About GitHub Copilot CLI session data, 20 of 64Comparing GitHub Copilot CLI customization features, 21 of 64Managing context in GitHub Copilot CLI, 22 of 64Loading tools on demand with tool search, 23 of 64Running tasks in parallel with the /fleet command, 24 of 64Using LSP servers with GitHub Copilot CLI, 25 of 64Researching with GitHub Copilot CLI, 26 of 64About the rubber duck agent, 27 of 64Copilot CLI ACP server, 28 of 64GitHub Copilot CLI command reference, 29 of 64GitHub Copilot CLI plugin reference, 30 of 64GitHub Copilot CLI programmatic reference, 31 of 64GitHub Copilot hooks reference, 32 of 64Application card: GitHub Copilot Agents, 33 of 64Using hooks with Copilot CLI for predictable, policy-compliant execution, 34 of 64Adding custom instructions for GitHub Copilot CLI, 35 of 64Adding MCP servers for GitHub Copilot CLI, 36 of 64Adding agent skills for GitHub Copilot CLI, 37 of 64Creating and using custom agents for GitHub Copilot CLI, 38 of 64Overview of customizing GitHub Copilot CLI, 39 of 64Creating a plugin for GitHub Copilot CLI, 40 of 64Finding and installing plugins for GitHub Copilot CLI, 41 of 64Creating a plugin marketplace for GitHub Copilot CLI, 42 of 64Using your own LLM models in GitHub Copilot CLI, 43 of 64Using hooks with GitHub Copilot CLI, 44 of 64Adding LSP servers for GitHub Copilot CLI, 45 of 64Authenticating GitHub Copilot CLI, 46 of 64Configuring GitHub Copilot CLI, 47 of 64Installing GitHub Copilot CLI, 48 of 64Troubleshooting GitHub Copilot CLI authentication, 49 of 64Requesting a code review with GitHub Copilot CLI, 50 of 64Allowing and denying tool use, 51 of 64Use voice input with Copilot CLI, 52 of 64Using GitHub Copilot CLI session data, 53 of 64Connecting GitHub Copilot CLI to VS Code, 54 of 64Delegating tasks to Copilot, 55 of 64Browsing issues, pull requests, and gists from GitHub Copilot CLI, 56 of 64Invoking custom agents, 57 of 64Managing pull requests with the /pr command, 58 of 64Using GitHub Copilot CLI, 59 of 64Rolling back changes made during a GitHub Copilot CLI session, 60 of 64Speeding up task completion with the /fleet command, 61 of 64Steering agents in GitHub Copilot CLI, 62 of 64Steering a GitHub Copilot CLI session from another device, 63 of 64Setting an AI credit session limit in GitHub Copilot CLI, 64 of 64
+Getting started with GitHub Copilot CLI, 1 of 64
+Best practices for GitHub Copilot CLI, 2 of 64
+Setting up GitHub Copilot CLI, 3 of 64
+Use GitHub Copilot CLI, 4 of 64
+Automate with GitHub Copilot CLI, 5 of 64
+Customize GitHub Copilot CLI, 6 of 64
+Administering Copilot CLI for your enterprise, 7 of 64
+Using Copilot CLI in GitHub Actions with GITHUB_TOKEN, 8 of 64
+Automating tasks with Copilot CLI and GitHub Actions, 9 of 64
+Quickstart for automating with GitHub Copilot CLI, 10 of 64
+Running GitHub Copilot CLI programmatically, 11 of 64
+Scheduling prompts in GitHub Copilot CLI, 12 of 64
+About agent skills, 13 of 64
+About GitHub Copilot plugins, 14 of 64
+About GitHub Copilot CLI, 15 of 64
+About custom agents, 16 of 64
+About remote control of GitHub Copilot CLI sessions, 17 of 64
+Allowing GitHub Copilot CLI to work autonomously, 18 of 64
+Canceling a GitHub Copilot CLI operation and rolling back changes, 19 of 64
+About GitHub Copilot CLI session data, 20 of 64
+Comparing GitHub Copilot CLI customization features, 21 of 64
+Managing context in GitHub Copilot CLI, 22 of 64
+Loading tools on demand with tool search, 23 of 64
+Running tasks in parallel with the /fleet command, 24 of 64
+Using LSP servers with GitHub Copilot CLI, 25 of 64
+Researching with GitHub Copilot CLI, 26 of 64
+About the rubber duck agent, 27 of 64
+Copilot CLI ACP server, 28 of 64
+GitHub Copilot CLI command reference, 29 of 64
+GitHub Copilot CLI plugin reference, 30 of 64
+GitHub Copilot CLI programmatic reference, 31 of 64
+GitHub Copilot hooks reference, 32 of 64
+Application card: GitHub Copilot Agents, 33 of 64
+Using hooks with Copilot CLI for predictable, policy-compliant execution, 34 of 64
+Adding custom instructions for GitHub Copilot CLI, 35 of 64
+Adding MCP servers for GitHub Copilot CLI, 36 of 64
+Adding agent skills for GitHub Copilot CLI, 37 of 64
+Creating and using custom agents for GitHub Copilot CLI, 38 of 64
+Overview of customizing GitHub Copilot CLI, 39 of 64
+Creating a plugin for GitHub Copilot CLI, 40 of 64
+Finding and installing plugins for GitHub Copilot CLI, 41 of 64
+Creating a plugin marketplace for GitHub Copilot CLI, 42 of 64
+Using your own LLM models in GitHub Copilot CLI, 43 of 64
+Using hooks with GitHub Copilot CLI, 44 of 64
+Adding LSP servers for GitHub Copilot CLI, 45 of 64
+Authenticating GitHub Copilot CLI, 46 of 64
+Configuring GitHub Copilot CLI, 47 of 64
+Installing GitHub Copilot CLI, 48 of 64
+Troubleshooting GitHub Copilot CLI authentication, 49 of 64
+Requesting a code review with GitHub Copilot CLI, 50 of 64
+Allowing and denying tool use, 51 of 64
+Use voice input with Copilot CLI, 52 of 64
+Using GitHub Copilot CLI session data, 53 of 64
+Connecting GitHub Copilot CLI to VS Code, 54 of 64
+Delegating tasks to Copilot, 55 of 64
+Browsing issues, pull requests, and gists from GitHub Copilot CLI, 56 of 64
+Invoking custom agents, 57 of 64
+Managing pull requests with the /pr command, 58 of 64
+Using GitHub Copilot CLI, 59 of 64
+Rolling back changes made during a GitHub Copilot CLI session, 60 of 64
+Speeding up task completion with the /fleet command, 61 of 64
+Steering agents in GitHub Copilot CLI, 62 of 64
+Steering a GitHub Copilot CLI session from another device, 63 of 64
+Setting an AI credit session limit in GitHub Copilot CLI, 64 of 64
+Cloud and local sandboxes for GitHub Copilot, 6 of 20Enabling or disabling cloud sandboxes for your organization, 1 of 2Configuring local sandbox settings, 2 of 2
+Enabling or disabling cloud sandboxes for your organization, 1 of 2
+Configuring local sandbox settings, 2 of 2
+GitHub Copilot app, 7 of 20Getting started with the GitHub Copilot app, 1 of 8Customizing the GitHub Copilot app, 2 of 8Working with agent sessions in the GitHub Copilot app, 3 of 8Working with canvas extensions in the GitHub Copilot app, 4 of 8Managing issues and pull requests with the GitHub Copilot app, 5 of 8Using automations in the GitHub Copilot app, 6 of 8Using your own LLM models in the GitHub Copilot app, 7 of 8Using deep links to open the GitHub Copilot app, 8 of 8
+Getting started with the GitHub Copilot app, 1 of 8
+Customizing the GitHub Copilot app, 2 of 8
+Working with agent sessions in the GitHub Copilot app, 3 of 8
+Working with canvas extensions in the GitHub Copilot app, 4 of 8
+Managing issues and pull requests with the GitHub Copilot app, 5 of 8
+Using automations in the GitHub Copilot app, 6 of 8
+Using your own LLM models in the GitHub Copilot app, 7 of 8
+Using deep links to open the GitHub Copilot app, 8 of 8
+Copilot SDK, 8 of 20Authentication, 1 of 8Features, 2 of 8Build your first Copilot-powered app, 3 of 8Use hooks, 4 of 8Integrations, 5 of 8Observability, 6 of 8Set up Copilot SDK, 7 of 8Troubleshooting, 8 of 8
+Authentication, 1 of 8
+Features, 2 of 8
+Build your first Copilot-powered app, 3 of 8
+Use hooks, 4 of 8
+Integrations, 5 of 8
+Observability, 6 of 8
+Set up Copilot SDK, 7 of 8
+Troubleshooting, 8 of 8
+GitHub Agentic Workflows, 9 of 20Your first agentic workflow, 1 of 2Creating GitHub Agentic Workflows, 2 of 2
+Your first agentic workflow, 1 of 2
+Creating GitHub Agentic Workflows, 2 of 2
+Use GitHub Copilot agents, 10 of 20GitHub Copilot cloud agent, 1 of 3Code review, 2 of 3Managing Copilot Memory, 3 of 3
+GitHub Copilot cloud agent, 1 of 3
+Code review, 2 of 3
+Managing Copilot Memory, 3 of 3
+AI models for GitHub Copilot, 11 of 20Changing the AI model for GitHub Copilot Chat, 1 of 2Changing the AI model for GitHub Copilot inline suggestions, 2 of 2
+Changing the AI model for GitHub Copilot Chat, 1 of 2
+Changing the AI model for GitHub Copilot inline suggestions, 2 of 2
+Provide context to GitHub Copilot, 12 of 20GitHub Copilot Spaces, 1 of 2Using Model Context Protocol in your IDE, 2 of 2
+GitHub Copilot Spaces, 1 of 2
+Using Model Context Protocol in your IDE, 2 of 2
+Configure custom instructions for GitHub Copilot, 13 of 20Adding repository custom instructions for GitHub Copilot in your IDE, 1 of 1
+Adding repository custom instructions for GitHub Copilot in your IDE, 1 of 1
+Configure and audit content exclusion, 14 of 20Excluding content from GitHub Copilot, 1 of 2Reviewing changes to content exclusions for GitHub Copilot, 2 of 2
+Excluding content from GitHub Copilot, 1 of 2
+Reviewing changes to content exclusions for GitHub Copilot, 2 of 2
+Use GitHub Copilot for common tasks, 15 of 20Using the GitHub CLI Copilot extension, 1 of 1
+Using the GitHub CLI Copilot extension, 1 of 1
+Configure personal settings, 16 of 20Configuring network settings for GitHub Copilot, 1 of 3Configuring GitHub Copilot in your environment, 2 of 3Using GitHub Copilot with an account on GHE.com, 3 of 3
+Configuring network settings for GitHub Copilot, 1 of 3
+Configuring GitHub Copilot in your environment, 2 of 3
+Using GitHub Copilot with an account on GHE.com, 3 of 3
+Manage and monitor spending for GitHub Copilot, 17 of 20Monitoring your GitHub AI Credits usage, 1 of 2Managing your company's spending on GitHub Copilot, 2 of 2
+Monitoring your GitHub AI Credits usage, 1 of 2
+Managing your company's spending on GitHub Copilot, 2 of 2
+Manage your GitHub Copilot account, 18 of 20Getting started with a GitHub Copilot plan, 1 of 4Viewing and changing your GitHub Copilot plan, 2 of 4Disabling GitHub Copilot Free, 3 of 4Managing GitHub Copilot policies as an individual subscriber, 4 of 4
+Getting started with a GitHub Copilot plan, 1 of 4
+Viewing and changing your GitHub Copilot plan, 2 of 4
+Disabling GitHub Copilot Free, 3 of 4
+Managing GitHub Copilot policies as an individual subscriber, 4 of 4
+Administer GitHub Copilot for your team, 19 of 20Managing GitHub Copilot in your organization, 1 of 6Managing GitHub Copilot in your enterprise, 2 of 6Managing MCP usage in your company, 3 of 6Downloading a GitHub Copilot activity report for your organization or enterprise, 4 of 6Viewing the Copilot usage metrics dashboard, 5 of 6Viewing the code generation dashboard, 6 of 6
+Managing GitHub Copilot in your organization, 1 of 6
+Managing GitHub Copilot in your enterprise, 2 of 6
+Managing MCP usage in your company, 3 of 6
+Downloading a GitHub Copilot activity report for your organization or enterprise, 4 of 6
+Viewing the Copilot usage metrics dashboard, 5 of 6
+Viewing the code generation dashboard, 6 of 6
+Troubleshoot GitHub Copilot, 20 of 20Troubleshooting common issues with GitHub Copilot, 1 of 6Viewing logs for GitHub Copilot in your environment, 2 of 6Troubleshooting firewall settings for GitHub Copilot, 3 of 6Troubleshooting network errors for GitHub Copilot, 4 of 6Troubleshooting common issues with GitHub Spark, 5 of 6Troubleshooting slow responses from GitHub Copilot, 6 of 6
+Troubleshooting common issues with GitHub Copilot, 1 of 6
+Viewing logs for GitHub Copilot in your environment, 2 of 6
+Troubleshooting firewall settings for GitHub Copilot, 3 of 6
+Troubleshooting network errors for GitHub Copilot, 4 of 6
+Troubleshooting common issues with GitHub Spark, 5 of 6
+Troubleshooting slow responses from GitHub Copilot, 6 of 6
