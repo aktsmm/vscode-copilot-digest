@@ -1,12 +1,10 @@
 {
   "date": "2026-07-06",
-  "generatedAt": "2026-07-06T16:36:42.643Z",
+  "generatedAt": "2026-07-06T22:43:15.638Z",
   "latestRun": {
-    "generatedAt": "2026-07-06T16:36:42.643Z",
-    "newEventsCount": 1,
-    "newEventIds": [
-      "vscode-feed:https://code.visualstudio.com/blogs/2026/07/06/optimizing-vscode-coding-harness-model-providers"
-    ],
+    "generatedAt": "2026-07-06T22:43:15.638Z",
+    "newEventsCount": 0,
+    "newEventIds": [],
     "errorCount": 0
   },
   "events": [
