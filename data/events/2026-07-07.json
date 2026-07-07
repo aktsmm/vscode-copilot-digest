@@ -1,20 +1,53 @@
 {
   "date": "2026-07-07",
-  "generatedAt": "2026-07-07T16:01:49.680Z",
+  "generatedAt": "2026-07-07T22:35:24.328Z",
   "latestRun": {
-    "generatedAt": "2026-07-07T16:01:49.680Z",
-    "newEventsCount": 6,
+    "generatedAt": "2026-07-07T22:35:24.328Z",
+    "newEventsCount": 3,
     "newEventIds": [
-      "github-changelog:https://github.blog/changelog/2026-07-06-github-copilot-app-available-to-all",
-      "github-changelog:https://github.blog/changelog/2026-07-07-copilot-billing-preview-app-will-be-retired-on-august-3",
-      "github-changelog-copilot:https://github.blog/changelog/2026-07-06-github-copilot-app-available-to-all",
-      "github-changelog-copilot:https://github.blog/changelog/2026-07-07-copilot-billing-preview-app-will-be-retired-on-august-3",
-      "publickey:tag:www.publickey1.jp,2026://2.8623",
-      "docs-github-copilot-howtos:57e733f56762ad9fb490d4e8d759fda40f3c59ef43bd04663307b80721b7cdcd"
+      "github-changelog:https://github.blog/changelog/2026-07-07-per-user-budgets-for-cost-centers-in-the-billing-ui",
+      "github-changelog-copilot:https://github.blog/changelog/2026-07-07-per-user-budgets-for-cost-centers-in-the-billing-ui",
+      "docs-github-copilot-howtos:8182bbf979908171d8ce26772156c5f88c26aca971ce71bb25a4f1cbdee5c4e4"
     ],
     "errorCount": 0
   },
   "events": [
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-07-07-per-user-budgets-for-cost-centers-in-the-billing-ui",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-07-07T22:35:18.660Z",
+      "publishedAt": "2026-07-07T17:09:29.000Z",
+      "title": "Per-user budgets for cost centers in the billing UI",
+      "url": "https://github.blog/changelog/2026-07-07-per-user-budgets-for-cost-centers-in-the-billing-ui",
+      "summary": "Enterprise admins can now create cost center user-level budgets directly in the billing UI where you manage cost centers and budgets. This feature is available for GitHub Enterprise Cloud. This…\nThe post Per-user budgets for cost centers in the billing UI appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "copilot",
+        "enterprise management tools"
+      ],
+      "isFutureDated": false,
+      "score": 0
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-07-07-per-user-budgets-for-cost-centers-in-the-billing-ui",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-07-07T22:35:19.106Z",
+      "publishedAt": "2026-07-07T17:09:29.000Z",
+      "title": "Per-user budgets for cost centers in the billing UI",
+      "url": "https://github.blog/changelog/2026-07-07-per-user-budgets-for-cost-centers-in-the-billing-ui",
+      "summary": "Enterprise admins can now create cost center user-level budgets directly in the billing UI where you manage cost centers and budgets. This feature is available for GitHub Enterprise Cloud. This…\nThe post Per-user budgets for cost centers in the billing UI appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "copilot",
+        "enterprise management tools"
+      ],
+      "isFutureDated": false,
+      "score": 0
+    },
     {
       "eventId": "github-changelog:https://github.blog/changelog/2026-07-06-github-copilot-app-available-to-all",
       "sourceId": "github-changelog",
@@ -84,6 +117,54 @@
       ],
       "isFutureDated": false,
       "score": 4
+    },
+    {
+      "eventId": "docs-github-copilot-howtos:8182bbf979908171d8ce26772156c5f88c26aca971ce71bb25a4f1cbdee5c4e4",
+      "sourceId": "docs-github-copilot-howtos",
+      "sourceName": "GitHub Docs / Copilot how-tos",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-07-07T22:35:20.584Z",
+      "publishedAt": "2026-07-07T22:35:20.576Z",
+      "title": "GitHub Docs / Copilot how-tos changed",
+      "url": "https://docs.github.com/en/copilot/how-tos",
+      "summary": "Detected 65 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 65,
+        "headings": [],
+        "additions": [
+          "GitHub Copilot CLI, 5 of 20Getting started with GitHub Copilot CLI, 1 of 64Best practices for GitHub Copilot CLI, 2 of 64Setting up GitHub Copilot CLI, 3 of 64Use GitHub Copilot CLI, 4 of 64Automate with GitHub Copilot CLI, 5 of 64Customize GitHub Copilot CLI, 6 of 64Administering Copilot CLI for your enterprise, 7 of 64Using Copilot CLI in GitHub Actions with GITHUB_TOKEN, 8 of 64Automating tasks with Copilot CLI and GitHub Actions, 9 of 64Quickstart for automating with GitHub Copilot CLI, 10 of 64Running GitHub Copilot CLI programmatically, 11 of 64Scheduling prompts in GitHub Copilot CLI, 12 of 64About agent skills, 13 of 64About GitHub Copilot plugins, 14 of 64About GitHub Copilot CLI, 15 of 64About custom agents, 16 of 64About remote control of GitHub Copilot CLI sessions, 17 of 64Allowing GitHub Copilot CLI to work autonomously, 18 of 64Canceling a GitHub Copilot CLI operation and rolling back changes, 19 of 64About GitHub Copilot CLI session data, 20 of 64Comparing GitHub Copilot CLI customization features, 21 of 64Managing context in GitHub Copilot CLI, 22 of 64Loading tools on demand with tool search, 23 of 64Running tasks in parallel with the /fleet command, 24 of 64Using LSP servers with GitHub Copilot CLI, 25 of 64Researching with GitHub Copilot CLI, 26 of 64About the rubber duck agent, 27 of 64Copilot CLI ACP server, 28 of 64GitHub Copilot CLI command reference, 29 of 64GitHub Copilot CLI plugin reference, 30 of 64GitHub Copilot CLI programmatic reference, 31 of 64GitHub Copilot hooks reference, 32 of 64Application card: GitHub Copilot Agents, 33 of 64Using hooks with Copilot CLI for predictable, policy-compliant execution, 34 of 64Adding custom instructions for GitHub Copilot CLI, 35 of 64Adding MCP servers for GitHub Copilot CLI, 36 of 64Adding agent skills for GitHub Copilot CLI, 37 of 64Creating and using custom agents for GitHub Copilot CLI, 38 of 64Overview of customizing GitHub Copilot CLI, 39 of 64Creating a plugin for GitHub Copilot CLI, 40 of 64Finding and installing plugins for GitHub Copilot CLI, 41 of 64Creating a plugin marketplace for GitHub Copilot CLI, 42 of 64Using your own LLM models in GitHub Copilot CLI, 43 of 64Using hooks with GitHub Copilot CLI, 44 of 64Adding LSP servers for GitHub Copilot CLI, 45 of 64Authenticating GitHub Copilot CLI, 46 of 64Configuring GitHub Copilot CLI, 47 of 64Installing GitHub Copilot CLI, 48 of 64Troubleshooting GitHub Copilot CLI authentication, 49 of 64Requesting a code review with GitHub Copilot CLI, 50 of 64Allowing and denying tool use, 51 of 64Use voice input with Copilot CLI, 52 of 64Using GitHub Copilot CLI session data, 53 of 64Connecting GitHub Copilot CLI to VS Code, 54 of 64Delegating tasks to Copilot, 55 of 64Browsing issues, pull requests, and gists from GitHub Copilot CLI, 56 of 64Invoking custom agents, 57 of 64Managing pull requests with the /pr command, 58 of 64Using GitHub Copilot CLI, 59 of 64Rolling back changes made during a GitHub Copilot CLI session, 60 of 64Speeding up task completion with the /fleet command, 61 of 64Steering agents in GitHub Copilot CLI, 62 of 64Steering a GitHub Copilot CLI session from another device, 63 of 64Setting an AI credit session limit in GitHub Copilot CLI, 64 of 64",
+          "Getting started with GitHub Copilot CLI, 1 of 64",
+          "Best practices for GitHub Copilot CLI, 2 of 64",
+          "Setting up GitHub Copilot CLI, 3 of 64",
+          "Use GitHub Copilot CLI, 4 of 64",
+          "Automate with GitHub Copilot CLI, 5 of 64",
+          "Customize GitHub Copilot CLI, 6 of 64",
+          "Administering Copilot CLI for your enterprise, 7 of 64",
+          "Using Copilot CLI in GitHub Actions with GITHUB_TOKEN, 8 of 64",
+          "Automating tasks with Copilot CLI and GitHub Actions, 9 of 64",
+          "Quickstart for automating with GitHub Copilot CLI, 10 of 64",
+          "Running GitHub Copilot CLI programmatically, 11 of 64",
+          "Scheduling prompts in GitHub Copilot CLI, 12 of 64",
+          "About agent skills, 13 of 64",
+          "About GitHub Copilot plugins, 14 of 64",
+          "About GitHub Copilot CLI, 15 of 64",
+          "About custom agents, 16 of 64",
+          "About remote control of GitHub Copilot CLI sessions, 17 of 64",
+          "Allowing GitHub Copilot CLI to work autonomously, 18 of 64",
+          "Canceling a GitHub Copilot CLI operation and rolling back changes, 19 of 64",
+          "About GitHub Copilot CLI session data, 20 of 64",
+          "Comparing GitHub Copilot CLI customization features, 21 of 64",
+          "Managing context in GitHub Copilot CLI, 22 of 64",
+          "Loading tools on demand with tool search, 23 of 64"
+        ]
+      },
+      "headings": [
+        "How-tos for GitHub Copilot"
+      ],
+      "score": 2
     },
     {
       "eventId": "docs-github-copilot-howtos:57e733f56762ad9fb490d4e8d759fda40f3c59ef43bd04663307b80721b7cdcd",
