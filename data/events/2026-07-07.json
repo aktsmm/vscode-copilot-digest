@@ -1,12 +1,156 @@
 {
   "date": "2026-07-07",
-  "generatedAt": "2026-07-07T08:47:10.526Z",
+  "generatedAt": "2026-07-07T16:01:49.680Z",
   "latestRun": {
-    "generatedAt": "2026-07-07T08:47:10.526Z",
-    "newEventsCount": 0,
-    "newEventIds": [],
+    "generatedAt": "2026-07-07T16:01:49.680Z",
+    "newEventsCount": 6,
+    "newEventIds": [
+      "github-changelog:https://github.blog/changelog/2026-07-06-github-copilot-app-available-to-all",
+      "github-changelog:https://github.blog/changelog/2026-07-07-copilot-billing-preview-app-will-be-retired-on-august-3",
+      "github-changelog-copilot:https://github.blog/changelog/2026-07-06-github-copilot-app-available-to-all",
+      "github-changelog-copilot:https://github.blog/changelog/2026-07-07-copilot-billing-preview-app-will-be-retired-on-august-3",
+      "publickey:tag:www.publickey1.jp,2026://2.8623",
+      "docs-github-copilot-howtos:57e733f56762ad9fb490d4e8d759fda40f3c59ef43bd04663307b80721b7cdcd"
+    ],
     "errorCount": 0
   },
-  "events": [],
+  "events": [
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-07-06-github-copilot-app-available-to-all",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-07-07T16:01:45.257Z",
+      "publishedAt": "2026-07-07T15:10:14.000Z",
+      "title": "GitHub Copilot app available to all",
+      "url": "https://github.blog/changelog/2026-07-07-github-copilot-app-available-to-all",
+      "summary": "The GitHub Copilot app is now available on every Copilot plan. Sign in with your GitHub account to start agent-driven development from your desktop. Available on macOS, Windows, and Linux…\nThe post GitHub Copilot app available to all appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 5
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-07-06-github-copilot-app-available-to-all",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-07-07T16:01:45.798Z",
+      "publishedAt": "2026-07-07T15:10:14.000Z",
+      "title": "GitHub Copilot app available to all",
+      "url": "https://github.blog/changelog/2026-07-07-github-copilot-app-available-to-all",
+      "summary": "The GitHub Copilot app is now available on every Copilot plan. Sign in with your GitHub account to start agent-driven development from your desktop. Available on macOS, Windows, and Linux…\nThe post GitHub Copilot app available to all appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 5
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-07-07-copilot-billing-preview-app-will-be-retired-on-august-3",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-07-07T16:01:45.257Z",
+      "publishedAt": "2026-07-07T14:51:13.000Z",
+      "title": "Copilot Billing Preview app will be retired on August 3",
+      "url": "https://github.blog/changelog/2026-07-07-copilot-billing-preview-app-will-be-retired-on-august-3",
+      "summary": "The Copilot Billing Preview app will be retired on August 3, 2026. If you use it to review your GitHub Copilot spend, you can get even greater visibility directly in…\nThe post Copilot Billing Preview app will be retired on August 3 appeared first on The GitHub Blog.",
+      "categories": [
+        "Retired",
+        "copilot",
+        "enterprise management tools"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-07-07-copilot-billing-preview-app-will-be-retired-on-august-3",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-07-07T16:01:45.799Z",
+      "publishedAt": "2026-07-07T14:51:13.000Z",
+      "title": "Copilot Billing Preview app will be retired on August 3",
+      "url": "https://github.blog/changelog/2026-07-07-copilot-billing-preview-app-will-be-retired-on-august-3",
+      "summary": "The Copilot Billing Preview app will be retired on August 3, 2026. If you use it to review your GitHub Copilot spend, you can get even greater visibility directly in…\nThe post Copilot Billing Preview app will be retired on August 3 appeared first on The GitHub Blog.",
+      "categories": [
+        "Retired",
+        "copilot",
+        "enterprise management tools"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
+    {
+      "eventId": "docs-github-copilot-howtos:57e733f56762ad9fb490d4e8d759fda40f3c59ef43bd04663307b80721b7cdcd",
+      "sourceId": "docs-github-copilot-howtos",
+      "sourceName": "GitHub Docs / Copilot how-tos",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-07-07T16:01:48.704Z",
+      "publishedAt": "2026-07-07T16:01:48.697Z",
+      "title": "GitHub Docs / Copilot how-tos changed",
+      "url": "https://docs.github.com/en/copilot/how-tos",
+      "summary": "Detected 66 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 66,
+        "headings": [],
+        "additions": [
+          "GitHub Copilot CLI, 5 of 20Getting started with GitHub Copilot CLI, 1 of 65Best practices for GitHub Copilot CLI, 2 of 65Setting up GitHub Copilot CLI, 3 of 65Use GitHub Copilot CLI, 4 of 65Automate with GitHub Copilot CLI, 5 of 65Customize GitHub Copilot CLI, 6 of 65Administering Copilot CLI for your enterprise, 7 of 65Using Copilot CLI in GitHub Actions with GITHUB_TOKEN, 8 of 65Automating tasks with Copilot CLI and GitHub Actions, 9 of 65Quickstart for automating with GitHub Copilot CLI, 10 of 65Running GitHub Copilot CLI programmatically, 11 of 65Scheduling prompts in GitHub Copilot CLI, 12 of 65About agent skills, 13 of 65About GitHub Copilot plugins, 14 of 65About GitHub Copilot CLI, 15 of 65About custom agents, 16 of 65About remote control of GitHub Copilot CLI sessions, 17 of 65Allowing GitHub Copilot CLI to work autonomously, 18 of 65Canceling a GitHub Copilot CLI operation and rolling back changes, 19 of 65About GitHub Copilot CLI session data, 20 of 65Comparing GitHub Copilot CLI customization features, 21 of 65Managing context in GitHub Copilot CLI, 22 of 65Loading tools on demand with tool search, 23 of 65Running tasks in parallel with the /fleet command, 24 of 65Using LSP servers with GitHub Copilot CLI, 25 of 65Researching with GitHub Copilot CLI, 26 of 65About the rubber duck agent, 27 of 65Copilot CLI ACP server, 28 of 65GitHub Copilot CLI command reference, 29 of 65GitHub Copilot CLI plugin reference, 30 of 65GitHub Copilot CLI programmatic reference, 31 of 65GitHub Copilot hooks reference, 32 of 65Application card: GitHub Copilot Agents, 33 of 65Using hooks with Copilot CLI for predictable, policy-compliant execution, 34 of 65Adding custom instructions for GitHub Copilot CLI, 35 of 65Adding MCP servers for GitHub Copilot CLI, 36 of 65Adding agent skills for GitHub Copilot CLI, 37 of 65Creating and using custom agents for GitHub Copilot CLI, 38 of 65Changing settings with the /settings command, 39 of 65Overview of customizing GitHub Copilot CLI, 40 of 65Creating a plugin for GitHub Copilot CLI, 41 of 65Finding and installing plugins for GitHub Copilot CLI, 42 of 65Creating a plugin marketplace for GitHub Copilot CLI, 43 of 65Using your own LLM models in GitHub Copilot CLI, 44 of 65Using hooks with GitHub Copilot CLI, 45 of 65Adding LSP servers for GitHub Copilot CLI, 46 of 65Authenticating GitHub Copilot CLI, 47 of 65Configuring GitHub Copilot CLI, 48 of 65Installing GitHub Copilot CLI, 49 of 65Troubleshooting GitHub Copilot CLI authentication, 50 of 65Requesting a code review with GitHub Copilot CLI, 51 of 65Allowing and denying tool use, 52 of 65Use voice input with Copilot CLI, 53 of 65Using GitHub Copilot CLI session data, 54 of 65Connecting GitHub Copilot CLI to VS Code, 55 of 65Delegating tasks to Copilot, 56 of 65Browsing issues, pull requests, and gists from GitHub Copilot CLI, 57 of 65Invoking custom agents, 58 of 65Managing pull requests with the /pr command, 59 of 65Using GitHub Copilot CLI, 60 of 65Rolling back changes made during a GitHub Copilot CLI session, 61 of 65Speeding up task completion with the /fleet command, 62 of 65Steering agents in GitHub Copilot CLI, 63 of 65Steering a GitHub Copilot CLI session from another device, 64 of 65Setting an AI credit session limit in GitHub Copilot CLI, 65 of 65",
+          "Getting started with GitHub Copilot CLI, 1 of 65",
+          "Best practices for GitHub Copilot CLI, 2 of 65",
+          "Setting up GitHub Copilot CLI, 3 of 65",
+          "Use GitHub Copilot CLI, 4 of 65",
+          "Automate with GitHub Copilot CLI, 5 of 65",
+          "Customize GitHub Copilot CLI, 6 of 65",
+          "Administering Copilot CLI for your enterprise, 7 of 65",
+          "Using Copilot CLI in GitHub Actions with GITHUB_TOKEN, 8 of 65",
+          "Automating tasks with Copilot CLI and GitHub Actions, 9 of 65",
+          "Quickstart for automating with GitHub Copilot CLI, 10 of 65",
+          "Running GitHub Copilot CLI programmatically, 11 of 65",
+          "Scheduling prompts in GitHub Copilot CLI, 12 of 65",
+          "About agent skills, 13 of 65",
+          "About GitHub Copilot plugins, 14 of 65",
+          "About GitHub Copilot CLI, 15 of 65",
+          "About custom agents, 16 of 65",
+          "About remote control of GitHub Copilot CLI sessions, 17 of 65",
+          "Allowing GitHub Copilot CLI to work autonomously, 18 of 65",
+          "Canceling a GitHub Copilot CLI operation and rolling back changes, 19 of 65",
+          "About GitHub Copilot CLI session data, 20 of 65",
+          "Comparing GitHub Copilot CLI customization features, 21 of 65",
+          "Managing context in GitHub Copilot CLI, 22 of 65",
+          "Loading tools on demand with tool search, 23 of 65"
+        ]
+      },
+      "headings": [
+        "How-tos for GitHub Copilot"
+      ],
+      "score": 2
+    },
+    {
+      "eventId": "publickey:tag:www.publickey1.jp,2026://2.8623",
+      "sourceId": "publickey",
+      "sourceName": "Publickey",
+      "kind": "feed_entry",
+      "detectedAt": "2026-07-07T16:01:47.975Z",
+      "publishedAt": "2026-07-07T14:57:51.000Z",
+      "title": "Visual Studio Code、従量課金制になったGitHub Copilotの消費トークン数を表示可能に",
+      "url": "https://www.publickey1.jp/blog/26/visual_studio_codegithub_copilot.html",
+      "summary": "マイクロソフトはVisual Studio Codeの新機能として、GitHub Copilotで消費した生成AIのトークン数などを表示できるようにしました。 GitHub Copilotは今年（2026年）6月から、生成AIを利用したチャットやAIエージェントを利用した場合、消費したトークン数に応じて料金が発生する従量課金制に移行しています。 そのため、ユーザーは、いつのまにか使用料金が予算を超過しないように注意して利用しなければならなくなりました。 Visual Stud……",
+      "categories": [
+        "機械学習・AI",
+        "開発ツール",
+        "visualstudio"
+      ],
+      "isFutureDated": false,
+      "score": 2
+    }
+  ],
   "errors": []
 }
