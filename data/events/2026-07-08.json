@@ -1,45 +1,39 @@
 {
   "date": "2026-07-08",
-  "generatedAt": "2026-07-08T07:43:11.030Z",
+  "generatedAt": "2026-07-08T15:41:38.271Z",
   "latestRun": {
-    "generatedAt": "2026-07-08T07:43:11.030Z",
-    "newEventsCount": 7,
+    "generatedAt": "2026-07-08T15:41:38.271Z",
+    "newEventsCount": 10,
     "newEventIds": [
-      "github-changelog:https://github.blog/changelog/2026-07-07-add-review-cycles-and-time-to-adoption-phases-in-the-usage-api",
-      "github-changelog:https://github.blog/changelog/2026-07-07-kimi-k2-7-now-available-for-copilot-business-and-enterprise",
-      "github-changelog-copilot:https://github.blog/changelog/2026-07-07-add-review-cycles-and-time-to-adoption-phases-in-the-usage-api",
-      "github-changelog-copilot:https://github.blog/changelog/2026-07-07-kimi-k2-7-now-available-for-copilot-business-and-enterprise",
-      "vscode-updates:3a92c737decd061cdee8797f38464c4d94a74323f5d285b7e39088e4cbf050d7",
-      "docs-github-copilot-howtos:7552681be372214cd4f7504396a106195929894cbde3d4e88ace35ef6969ecf7",
-      "vscode-release-notes-1-128:3a92c737decd061cdee8797f38464c4d94a74323f5d285b7e39088e4cbf050d7"
+      "vscode-feed:https://code.visualstudio.com/updates/v1_129",
+      "vscode-updates:afbfb52cfe95da7b74fe7c71aaf6c4e12b641ab8d41f02f1e68eb5d75f0177cb",
+      "vscode-release-notes-1-109:e71bc6d8663527c7fe6524f315a9372466689d208e78cf066c8ad3a9cf314adb",
+      "vscode-release-notes-1-128:section:0b85c4efc16a816cc01b83b09ccdfa86b918ee01032bb0ca75eb629d744a34e2",
+      "vscode-release-notes-1-128:section:ac91d307c0b80ec7c5f7c445e77599dca049a12200a7edb75c7e69a522c77c0c",
+      "vscode-release-notes-1-128:section:ccf87c81b0751d13a97f007b26d3f9046c751263074a10ff89d7287a703e3808",
+      "vscode-release-notes-1-128:section:5dc8e0cec8f30afe79b9ebf56cd8372b5fe09cbffbaecc33d426610dbbadb08a",
+      "vscode-release-notes-1-127:a580ff45e18dfbe55c6fad7430f37c93764529039b4ae6e28927f4cadb63b62e",
+      "vscode-release-notes-1-126:e57c3452136c0af3cfff08bc27b54e44b3bc1b3edbe14d7437cd00883a80ecca",
+      "vscode-release-notes-1-125:19349574b5dee1c85c9e28dc2aa3417d88aa9be913d50cb9476155b23235d65e"
     ],
     "errorCount": 0
   },
   "events": [
     {
-      "eventId": "vscode-release-notes-1-128:3a92c737decd061cdee8797f38464c4d94a74323f5d285b7e39088e4cbf050d7",
-      "sourceId": "vscode-release-notes-1-128",
-      "sourceName": "VS Code Release Notes 1.128",
-      "kind": "html_snapshot_change",
-      "detectedAt": "2026-07-08T07:43:10.192Z",
-      "publishedAt": "2026-07-08T07:43:10.192Z",
-      "title": "Visual Studio Code 1.128 (Insiders)",
-      "url": "https://code.visualstudio.com/updates/v1_128",
-      "summary": "Captured the current snapshot for Visual Studio Code 1.128 (Insiders).",
+      "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_129",
+      "sourceId": "vscode-feed",
+      "sourceName": "VS Code Feed",
+      "kind": "feed_entry",
+      "detectedAt": "2026-07-08T15:41:31.171Z",
+      "publishedAt": "2026-07-08T17:00:00.000Z",
+      "title": "Visual Studio Code 1.129 (Insiders)",
+      "url": "https://code.visualstudio.com/updates/v1_129",
+      "summary": "Learn what's new in Visual Studio Code 1.129 (Insiders)\n Read the full article",
       "categories": [
-        "snapshot"
+        "release"
       ],
-      "headings": [
-        "Visual Studio Code 1.128 (Insiders)",
-        "July 5, 2026",
-        "July 4, 2026",
-        "July 2, 2026",
-        "July 1, 2026",
-        "June 30, 2026",
-        "June 29, 2026",
-        "June 26, 2026"
-      ],
-      "score": 10
+      "isFutureDated": true,
+      "score": 4
     },
     {
       "eventId": "vscode-updates:3a92c737decd061cdee8797f38464c4d94a74323f5d285b7e39088e4cbf050d7",
@@ -168,6 +162,186 @@
       ],
       "isFutureDated": false,
       "score": 4
+    },
+    {
+      "eventId": "vscode-updates:afbfb52cfe95da7b74fe7c71aaf6c4e12b641ab8d41f02f1e68eb5d75f0177cb",
+      "sourceId": "vscode-updates",
+      "sourceName": "VS Code Updates",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-07-08T15:41:31.471Z",
+      "publishedAt": "2026-07-08T00:00:00.000Z",
+      "title": "VS Code Updates changed",
+      "url": "https://code.visualstudio.com/updates/",
+      "summary": "Detected 109 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 109,
+        "headings": [
+          "Visual Studio Code 1.128",
+          "Agents",
+          "Multiple chats in a session now supports Claude agent",
+          "Chat without a selected workspace in the Agents window",
+          "Read-only subagent chats in the Agents window (Preview)",
+          "Keyboard shortcuts for chats in the Agents window",
+          "Chat",
+          "Copilot Vision is now generally available",
+          "BYOK models in agent host Copilot sessions (Experimental)",
+          "Configure sampling parameters for custom endpoint models",
+          "Configure the default utility model for BYOK",
+          "Deep links to a specific chat",
+          "Editor Experience",
+          "Configurable placement of integrated browser tabs",
+          "OS-level keyboard shortcuts",
+          "Enterprise"
+        ],
+        "additions": [
+          "1.128",
+          "H1: Visual Studio Code 1.128",
+          "Follow us on LinkedIn, X, Bluesky",
+          "Release date: July 8, 2026",
+          "Downloads: Windows: x64 Arm64 | Mac: Universal Intel silicon | Linux: deb rpm tarball Arm snap",
+          "Welcome to the 1.128 release of Visual Studio Code. This release brings richer multi-chat agent sessions, generally available image support in Chat, and OS-level keyboard shortcuts.",
+          "Multi-chat agent sessions: Run several related chats in one Claude session to compare approaches and work in parallel.",
+          "Quick chats: Ask a question in the Agents window without opening a workspace first.",
+          "Copilot Vision: Attach images and PDFs to Chat by pasting, dragging, or dropping them, now generally available.",
+          "Browser tab placement: Choose where integrated browser tabs open: the active group, a dedicated side group, or a separate window.",
+          "OS-level keyboard shortcuts: Trigger VS Code commands with keybindings that work even when VS Code isn't focused.",
+          "VS Code is rolling out gradually to all users. Use Check for Updates in VS Code to get the latest version immediately.",
+          "To try new features as soon as possible, download the nightly Insiders build, which includes the latest updates as soon as they are available.",
+          "H2: Agents",
+          "H3: Multiple chats in a session now supports Claude agent",
+          "Claude agent-host sessions in the Agents window provide agentic coding capabilities powered by Anthropic's Claude Agent SDK directly in VS Code. Multiple chats keep related conversation threads in one session instead of spreading them across separate top-level sessions."
+        ]
+      },
+      "headings": [
+        "Visual Studio Code 1.128",
+        "Agents",
+        "Multiple chats in a session now supports Claude agent",
+        "Chat without a selected workspace in the Agents window",
+        "Read-only subagent chats in the Agents window (Preview)",
+        "Keyboard shortcuts for chats in the Agents window",
+        "Chat",
+        "Copilot Vision is now generally available",
+        "BYOK models in agent host Copilot sessions (Experimental)",
+        "Configure sampling parameters for custom endpoint models",
+        "Configure the default utility model for BYOK",
+        "Deep links to a specific chat"
+      ],
+      "score": 18
+    },
+    {
+      "eventId": "vscode-release-notes-1-128:section:0b85c4efc16a816cc01b83b09ccdfa86b918ee01032bb0ca75eb629d744a34e2",
+      "sourceId": "vscode-release-notes-1-128",
+      "sourceName": "VS Code Release Notes 1.128",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-07-08T15:41:37.293Z",
+      "publishedAt": "2026-07-08T00:00:00.000Z",
+      "title": "Visual Studio Code 1.128: Multiple chats in a session now supports Claude agent",
+      "url": "https://code.visualstudio.com/updates/v1_128",
+      "summary": "Claude agent-host sessions in the Agents window provide agentic coding capabilities powered by Anthropic's Claude Agent SDK directly in VS Code. Multiple chats keep related conversation threads in one session instead of spreading them across separate top-level sessions. Single-chat Claude sessions remain a focused way to work with the agent. With multiple chats, a session can contain related chats, so you can compar...",
+      "categories": [
+        "release",
+        "section",
+        "Agents"
+      ],
+      "sectionHeading": "Agents",
+      "sectionTitle": "Multiple chats in a session now supports Claude agent",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-128:section:ac91d307c0b80ec7c5f7c445e77599dca049a12200a7edb75c7e69a522c77c0c",
+      "sourceId": "vscode-release-notes-1-128",
+      "sourceName": "VS Code Release Notes 1.128",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-07-08T15:41:37.293Z",
+      "publishedAt": "2026-07-08T00:00:00.000Z",
+      "title": "Visual Studio Code 1.128: Chat without a selected workspace in the Agents window",
+      "url": "https://code.visualstudio.com/updates/v1_128",
+      "summary": "The Agents window gives you a dedicated place to create, resume, and manage agent sessions. For project work, those sessions keep the chat, files, and changes together with the workspace. For questions not tied to a folder, you can now start a chat in the Agents window without selecting a workspace. These chats appear in the Chats section and open focused and ready for input. Start a quick chat with or the plus butt...",
+      "categories": [
+        "release",
+        "section",
+        "Agents"
+      ],
+      "sectionHeading": "Agents",
+      "sectionTitle": "Chat without a selected workspace in the Agents window",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-128:section:ccf87c81b0751d13a97f007b26d3f9046c751263074a10ff89d7287a703e3808",
+      "sourceId": "vscode-release-notes-1-128",
+      "sourceName": "VS Code Release Notes 1.128",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-07-08T15:41:37.293Z",
+      "publishedAt": "2026-07-08T00:00:00.000Z",
+      "title": "Visual Studio Code 1.128: Read-only subagent chats in the Agents window (Preview)",
+      "url": "https://code.visualstudio.com/updates/v1_128",
+      "summary": "When an agent delegates work to subagents, you can follow each worker's progress without interrupting or steering it from the main conversation. The Agents window provides a dedicated space for agent-driven workflows across projects, with chat and sessions as the primary interface. When a session spawns subagents, their transcripts appear as read-only peer chats. Subagent chats are hidden from the tab strip until yo...",
+      "categories": [
+        "release",
+        "section",
+        "Agents"
+      ],
+      "sectionHeading": "Agents",
+      "sectionTitle": "Read-only subagent chats in the Agents window (Preview)",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-128:section:5dc8e0cec8f30afe79b9ebf56cd8372b5fe09cbffbaecc33d426610dbbadb08a",
+      "sourceId": "vscode-release-notes-1-128",
+      "sourceName": "VS Code Release Notes 1.128",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-07-08T15:41:37.293Z",
+      "publishedAt": "2026-07-08T00:00:00.000Z",
+      "title": "Visual Studio Code 1.128: Keyboard shortcuts for chats in the Agents window",
+      "url": "https://code.visualstudio.com/updates/v1_128",
+      "summary": "The Agents window supports multi-chat sessions, where one agent session can contain multiple related chats. Keyboard-driven chat navigation helps you move between chats and manage chat tabs without leaving the keyboard. Create a chat with . Reopen the last closed chat with . Go to the next or previous chat with and . Quickly switch between open chats with and . Close the active chat tab with . Delete the active non-...",
+      "categories": [
+        "release",
+        "section",
+        "Agents"
+      ],
+      "sectionHeading": "Agents",
+      "sectionTitle": "Keyboard shortcuts for chats in the Agents window",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-109:e71bc6d8663527c7fe6524f315a9372466689d208e78cf066c8ad3a9cf314adb",
+      "sourceId": "vscode-release-notes-1-109",
+      "sourceName": "VS Code Release Notes 1.109",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-07-08T15:41:31.977Z",
+      "publishedAt": "2026-02-04T00:00:00.000Z",
+      "title": "VS Code Release Notes 1.109 changed",
+      "url": "https://code.visualstudio.com/updates/v1_109",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [],
+        "additions": [
+          "1.128"
+        ]
+      },
+      "headings": [
+        "January 2026 (version 1.109)",
+        "Upcoming events",
+        "Agent Sessions Day",
+        "Chat UX",
+        "Message steering and queueing (Experimental)",
+        "Anthropic models now show thinking tokens",
+        "Mermaid diagrams in chat responses",
+        "Ask Questions tool (Experimental)",
+        "Plan agent",
+        "Context window details",
+        "Inline chat UX revamp (Preview)",
+        "Model descriptions in the model picker"
+      ],
+      "score": 2
     },
     {
       "eventId": "docs-github-copilot-howtos:7552681be372214cd4f7504396a106195929894cbde3d4e88ace35ef6969ecf7",
