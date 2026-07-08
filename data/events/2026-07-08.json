@@ -1,0 +1,222 @@
+{
+  "date": "2026-07-08",
+  "generatedAt": "2026-07-08T07:43:11.030Z",
+  "latestRun": {
+    "generatedAt": "2026-07-08T07:43:11.030Z",
+    "newEventsCount": 7,
+    "newEventIds": [
+      "github-changelog:https://github.blog/changelog/2026-07-07-add-review-cycles-and-time-to-adoption-phases-in-the-usage-api",
+      "github-changelog:https://github.blog/changelog/2026-07-07-kimi-k2-7-now-available-for-copilot-business-and-enterprise",
+      "github-changelog-copilot:https://github.blog/changelog/2026-07-07-add-review-cycles-and-time-to-adoption-phases-in-the-usage-api",
+      "github-changelog-copilot:https://github.blog/changelog/2026-07-07-kimi-k2-7-now-available-for-copilot-business-and-enterprise",
+      "vscode-updates:3a92c737decd061cdee8797f38464c4d94a74323f5d285b7e39088e4cbf050d7",
+      "docs-github-copilot-howtos:7552681be372214cd4f7504396a106195929894cbde3d4e88ace35ef6969ecf7",
+      "vscode-release-notes-1-128:3a92c737decd061cdee8797f38464c4d94a74323f5d285b7e39088e4cbf050d7"
+    ],
+    "errorCount": 0
+  },
+  "events": [
+    {
+      "eventId": "vscode-release-notes-1-128:3a92c737decd061cdee8797f38464c4d94a74323f5d285b7e39088e4cbf050d7",
+      "sourceId": "vscode-release-notes-1-128",
+      "sourceName": "VS Code Release Notes 1.128",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-07-08T07:43:10.192Z",
+      "publishedAt": "2026-07-08T07:43:10.192Z",
+      "title": "Visual Studio Code 1.128 (Insiders)",
+      "url": "https://code.visualstudio.com/updates/v1_128",
+      "summary": "Captured the current snapshot for Visual Studio Code 1.128 (Insiders).",
+      "categories": [
+        "snapshot"
+      ],
+      "headings": [
+        "Visual Studio Code 1.128 (Insiders)",
+        "July 5, 2026",
+        "July 4, 2026",
+        "July 2, 2026",
+        "July 1, 2026",
+        "June 30, 2026",
+        "June 29, 2026",
+        "June 26, 2026"
+      ],
+      "score": 10
+    },
+    {
+      "eventId": "vscode-updates:3a92c737decd061cdee8797f38464c4d94a74323f5d285b7e39088e4cbf050d7",
+      "sourceId": "vscode-updates",
+      "sourceName": "VS Code Updates",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-07-08T07:43:06.628Z",
+      "publishedAt": "2026-07-08T07:43:06.622Z",
+      "title": "VS Code Updates changed",
+      "url": "https://code.visualstudio.com/updates/",
+      "summary": "Detected 35 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 35,
+        "headings": [
+          "Visual Studio Code 1.128 (Insiders)",
+          "July 5, 2026",
+          "July 4, 2026",
+          "July 2, 2026",
+          "July 1, 2026",
+          "June 30, 2026",
+          "June 29, 2026",
+          "June 26, 2026"
+        ],
+        "additions": [
+          "H1: Visual Studio Code 1.128 (Insiders)",
+          "Follow us on LinkedIn, X, Bluesky | Follow Insiders Changelog on X or Bluesky",
+          "Last updated: July 6, 2026",
+          "Welcome to the 1.128 Insiders release of Visual Studio Code.",
+          "These release notes cover the Insiders build of VS Code and continue to evolve as new features are added.",
+          "You can still track our progress in the Commit log and our list of Closed issues.",
+          "H2: July 5, 2026",
+          "Add support for marking files as reviewed or unreviewed in Agent mode. #324393",
+          "H2: July 4, 2026",
+          "Add support for line range syntax in Quick Open so you can jump to a specific line or range when opening a file. #324321",
+          "Add support for Multi-Chat in the Claude harness. #322776",
+          "Improve linkification in agent responses so links render correctly in chat and agent output. #315183",
+          "H2: July 2, 2026",
+          "Add support for the Claude agent to access the integrated browser DOM and tools during chat. #322883",
+          "Add support for uninstalling tool-contributing extensions directly from the Tools section of the Agent Customizations window. #323509",
+          "Filter the extension marketplace list in the Tools section of Chat Customizations to only show extensions that contribute tools. #323510"
+        ]
+      },
+      "headings": [
+        "Visual Studio Code 1.128 (Insiders)",
+        "July 5, 2026",
+        "July 4, 2026",
+        "July 2, 2026",
+        "July 1, 2026",
+        "June 30, 2026",
+        "June 29, 2026",
+        "June 26, 2026"
+      ],
+      "score": 10
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-07-07-add-review-cycles-and-time-to-adoption-phases-in-the-usage-api",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-07-08T07:43:05.193Z",
+      "publishedAt": "2026-07-08T04:53:01.000Z",
+      "title": "Add review cycles and time to adoption phases in the usage API",
+      "url": "https://github.blog/changelog/2026-07-07-add-review-cycles-and-time-to-adoption-phases-in-the-usage-api",
+      "summary": "The Copilot usage metrics API now reports two additional code-review velocity metrics for each AI adoption phase, extending the adoption phase cohorts fields available in the enterprise and organization reports.…\nThe post Add review cycles and time to adoption phases in the usage API appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "account management",
+        "copilot",
+        "enterprise management tools"
+      ],
+      "isFutureDated": false,
+      "score": 2
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-07-07-add-review-cycles-and-time-to-adoption-phases-in-the-usage-api",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-07-08T07:43:05.699Z",
+      "publishedAt": "2026-07-08T04:53:01.000Z",
+      "title": "Add review cycles and time to adoption phases in the usage API",
+      "url": "https://github.blog/changelog/2026-07-07-add-review-cycles-and-time-to-adoption-phases-in-the-usage-api",
+      "summary": "The Copilot usage metrics API now reports two additional code-review velocity metrics for each AI adoption phase, extending the adoption phase cohorts fields available in the enterprise and organization reports.…\nThe post Add review cycles and time to adoption phases in the usage API appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "account management",
+        "copilot",
+        "enterprise management tools"
+      ],
+      "isFutureDated": false,
+      "score": 2
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-07-07-kimi-k2-7-now-available-for-copilot-business-and-enterprise",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-07-08T07:43:05.193Z",
+      "publishedAt": "2026-07-08T00:05:35.000Z",
+      "title": "Kimi K2.7 now available for Copilot Business and Enterprise",
+      "url": "https://github.blog/changelog/2026-07-07-kimi-k2-7-now-available-for-copilot-business-and-enterprise",
+      "summary": "On July 1, 2026, we announced Kimi K2.7 would be available to Copilot Pro, Pro+, and Max plans. The model is now additionally available on Copilot Business and Copilot Enterprise…\nThe post Kimi K2.7 now available for Copilot Business and Enterprise appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-07-07-kimi-k2-7-now-available-for-copilot-business-and-enterprise",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-07-08T07:43:05.699Z",
+      "publishedAt": "2026-07-08T00:05:35.000Z",
+      "title": "Kimi K2.7 now available for Copilot Business and Enterprise",
+      "url": "https://github.blog/changelog/2026-07-07-kimi-k2-7-now-available-for-copilot-business-and-enterprise",
+      "summary": "On July 1, 2026, we announced Kimi K2.7 would be available to Copilot Pro, Pro+, and Max plans. The model is now additionally available on Copilot Business and Copilot Enterprise…\nThe post Kimi K2.7 now available for Copilot Business and Enterprise appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
+    {
+      "eventId": "docs-github-copilot-howtos:7552681be372214cd4f7504396a106195929894cbde3d4e88ace35ef6969ecf7",
+      "sourceId": "docs-github-copilot-howtos",
+      "sourceName": "GitHub Docs / Copilot how-tos",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-07-08T07:43:08.669Z",
+      "publishedAt": "2026-07-08T07:43:08.666Z",
+      "title": "GitHub Docs / Copilot how-tos changed",
+      "url": "https://docs.github.com/en/copilot/how-tos",
+      "summary": "Detected 67 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 67,
+        "headings": [],
+        "additions": [
+          "GitHub Copilot CLI, 5 of 20Getting started with GitHub Copilot CLI, 1 of 66Best practices for GitHub Copilot CLI, 2 of 66Setting up GitHub Copilot CLI, 3 of 66Use GitHub Copilot CLI, 4 of 66Automate with GitHub Copilot CLI, 5 of 66Customize GitHub Copilot CLI, 6 of 66Administering Copilot CLI for your enterprise, 7 of 66Using Copilot CLI in GitHub Actions with GITHUB_TOKEN, 8 of 66Automating tasks with Copilot CLI and GitHub Actions, 9 of 66Quickstart for automating with GitHub Copilot CLI, 10 of 66Running GitHub Copilot CLI programmatically, 11 of 66Scheduling prompts in GitHub Copilot CLI, 12 of 66About agent skills, 13 of 66About GitHub Copilot plugins, 14 of 66About GitHub Copilot CLI, 15 of 66About custom agents, 16 of 66About remote control of GitHub Copilot CLI sessions, 17 of 66Allowing GitHub Copilot CLI to work autonomously, 18 of 66Canceling a GitHub Copilot CLI operation and rolling back changes, 19 of 66About GitHub Copilot CLI session data, 20 of 66Comparing GitHub Copilot CLI customization features, 21 of 66Managing context in GitHub Copilot CLI, 22 of 66Loading tools on demand with tool search, 23 of 66Running tasks in parallel with the /fleet command, 24 of 66Using LSP servers with GitHub Copilot CLI, 25 of 66Researching with GitHub Copilot CLI, 26 of 66About the rubber duck agent, 27 of 66About extensions for GitHub Copilot CLI, 28 of 66Copilot CLI ACP server, 29 of 66GitHub Copilot CLI command reference, 30 of 66GitHub Copilot CLI plugin reference, 31 of 66GitHub Copilot CLI programmatic reference, 32 of 66GitHub Copilot hooks reference, 33 of 66Application card: GitHub Copilot Agents, 34 of 66Using hooks with Copilot CLI for predictable, policy-compliant execution, 35 of 66Adding custom instructions for GitHub Copilot CLI, 36 of 66Adding MCP servers for GitHub Copilot CLI, 37 of 66Adding agent skills for GitHub Copilot CLI, 38 of 66Creating and using custom agents for GitHub Copilot CLI, 39 of 66Changing settings with the /settings command, 40 of 66Overview of customizing GitHub Copilot CLI, 41 of 66Creating a plugin for GitHub Copilot CLI, 42 of 66Finding and installing plugins for GitHub Copilot CLI, 43 of 66Creating a plugin marketplace for GitHub Copilot CLI, 44 of 66Using your own LLM models in GitHub Copilot CLI, 45 of 66Using hooks with GitHub Copilot CLI, 46 of 66Adding LSP servers for GitHub Copilot CLI, 47 of 66Authenticating GitHub Copilot CLI, 48 of 66Configuring GitHub Copilot CLI, 49 of 66Installing GitHub Copilot CLI, 50 of 66Troubleshooting GitHub Copilot CLI authentication, 51 of 66Requesting a code review with GitHub Copilot CLI, 52 of 66Allowing and denying tool use, 53 of 66Use voice input with Copilot CLI, 54 of 66Using GitHub Copilot CLI session data, 55 of 66Connecting GitHub Copilot CLI to VS Code, 56 of 66Delegating tasks to Copilot, 57 of 66Browsing issues, pull requests, and gists from GitHub Copilot CLI, 58 of 66Invoking custom agents, 59 of 66Managing pull requests with the /pr command, 60 of 66Using GitHub Copilot CLI, 61 of 66Rolling back changes made during a GitHub Copilot CLI session, 62 of 66Speeding up task completion with the /fleet command, 63 of 66Steering agents in GitHub Copilot CLI, 64 of 66Steering a GitHub Copilot CLI session from another device, 65 of 66Setting an AI credit session limit in GitHub Copilot CLI, 66 of 66",
+          "Getting started with GitHub Copilot CLI, 1 of 66",
+          "Best practices for GitHub Copilot CLI, 2 of 66",
+          "Setting up GitHub Copilot CLI, 3 of 66",
+          "Use GitHub Copilot CLI, 4 of 66",
+          "Automate with GitHub Copilot CLI, 5 of 66",
+          "Customize GitHub Copilot CLI, 6 of 66",
+          "Administering Copilot CLI for your enterprise, 7 of 66",
+          "Using Copilot CLI in GitHub Actions with GITHUB_TOKEN, 8 of 66",
+          "Automating tasks with Copilot CLI and GitHub Actions, 9 of 66",
+          "Quickstart for automating with GitHub Copilot CLI, 10 of 66",
+          "Running GitHub Copilot CLI programmatically, 11 of 66",
+          "Scheduling prompts in GitHub Copilot CLI, 12 of 66",
+          "About agent skills, 13 of 66",
+          "About GitHub Copilot plugins, 14 of 66",
+          "About GitHub Copilot CLI, 15 of 66",
+          "About custom agents, 16 of 66",
+          "About remote control of GitHub Copilot CLI sessions, 17 of 66",
+          "Allowing GitHub Copilot CLI to work autonomously, 18 of 66",
+          "Canceling a GitHub Copilot CLI operation and rolling back changes, 19 of 66",
+          "About GitHub Copilot CLI session data, 20 of 66",
+          "Comparing GitHub Copilot CLI customization features, 21 of 66",
+          "Managing context in GitHub Copilot CLI, 22 of 66",
+          "Loading tools on demand with tool search, 23 of 66"
+        ]
+      },
+      "headings": [
+        "How-tos for GitHub Copilot"
+      ],
+      "score": 2
+    }
+  ],
+  "errors": []
+}
