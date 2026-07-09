@@ -1,22 +1,35 @@
 {
   "date": "2026-07-09",
-  "generatedAt": "2026-07-09T08:49:33.250Z",
+  "generatedAt": "2026-07-09T16:11:53.295Z",
   "latestRun": {
-    "generatedAt": "2026-07-09T08:49:33.250Z",
-    "newEventsCount": 8,
+    "generatedAt": "2026-07-09T16:11:53.295Z",
+    "newEventsCount": 4,
     "newEventIds": [
-      "github-changelog-copilot:https://github.blog/changelog/2026-07-08-enterprise-managed-opentelemetry-export-for-vs-code-and-cli",
-      "github-changelog-copilot:https://github.blog/changelog/2026-07-08-deploy-managed-copilot-settings-via-mdm-in-vs-code-and-cli",
-      "github-changelog-copilot:https://github.blog/changelog/2026-07-08-github-copilot-in-visual-studio-code-june-2026-releases",
-      "github-changelog-copilot:https://github.blog/changelog/2026-07-07-codex-as-agent-provider-and-agentic-enhancements-in-jetbrains-ides",
-      "docs-github-cloud-agent:8c6f89525eff016bddeeaf0ab98906bb9c6a54e37ea3699dd47bd8e64bc35c7b",
-      "docs-github-copilot-howtos:3c0742686cb1997c7e5c12bbfc35ec127f80b8d0ca8f7fc2458c661fea10cae2",
-      "docs-github-copilot-concepts:9b34b80438f7ef835a7065d358b989a9ccf4f447a11f738ad50e44220bd7cf9c",
-      "docs-github-copilot-reference:ba5055e48eaf4c7894d7154c372236f45fe9276012a380ef3dab9308de378dbf"
+      "github-changelog:https://github.blog/changelog/2026-07-09-ask-copilot-for-a-repository-overview",
+      "docs-github-cloud-agent:89ba2f781f5c27b543db6d320c7fe895831f888c35c1eb2f6af2baddf718af21",
+      "docs-github-copilot-howtos:7552681be372214cd4f7504396a106195929894cbde3d4e88ace35ef6969ecf7",
+      "docs-github-copilot-concepts:c55c1dd3522a2054bd58e5f98ac2066f5d9fd87e5f2d026f060ffd68bae2b15a"
     ],
-    "errorCount": 0
+    "errorCount": 1
   },
   "events": [
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-07-09-ask-copilot-for-a-repository-overview",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-07-09T16:11:30.935Z",
+      "publishedAt": "2026-07-09T14:25:33.000Z",
+      "title": "Ask Copilot for a repository overview",
+      "url": "https://github.blog/changelog/2026-07-09-ask-copilot-for-a-repository-overview",
+      "summary": "You can now ask GitHub Copilot for a high-level overview of any repository you’re exploring for the first time. When you visit the home page of a repository you haven’t…\nThe post Ask Copilot for a repository overview appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
     {
       "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-07-08-enterprise-managed-opentelemetry-export-for-vs-code-and-cli",
       "sourceId": "github-changelog-copilot",
@@ -90,57 +103,12 @@
       "score": 2
     },
     {
-      "eventId": "docs-github-copilot-reference:ba5055e48eaf4c7894d7154c372236f45fe9276012a380ef3dab9308de378dbf",
-      "sourceId": "docs-github-copilot-reference",
-      "sourceName": "GitHub Docs / Copilot reference",
-      "kind": "html_snapshot_change",
-      "detectedAt": "2026-07-09T08:49:29.563Z",
-      "publishedAt": "2026-07-09T08:49:29.562Z",
-      "title": "GitHub Docs / Copilot reference changed",
-      "url": "https://docs.github.com/en/copilot/reference",
-      "summary": "Detected 21 added lines on the monitored page.",
-      "categories": [
-        "snapshot"
-      ],
-      "diffSummary": {
-        "addedLineCount": 21,
-        "headings": [],
-        "additions": [
-          "GitHub Copilot",
-          "GitHub Copilot Chat cheat sheet, 1 of 20",
-          "Copilot customization cheat sheet, 2 of 20",
-          "AI models for GitHub Copilot, 3 of 20Supported AI models in GitHub Copilot, 1 of 3AI model comparison, 2 of 3Hosting of models for GitHub Copilot, 3 of 3",
-          "Copilot feature matrix, 4 of 20",
-          "Keyboard shortcuts for GitHub Copilot in the IDE, 5 of 20",
-          "Copilot CLI reference, 6 of 20GitHub Copilot CLI command reference, 1 of 5GitHub Copilot CLI plugin reference, 2 of 5GitHub Copilot CLI programmatic reference, 3 of 5Copilot CLI ACP server, 4 of 5GitHub Copilot CLI configuration directory, 5 of 5",
-          "Custom agents configuration, 7 of 20",
-          "Support for different types of custom instructions, 8 of 20",
-          "GitHub Copilot hooks reference, 9 of 20",
-          "Feature availability when GitHub Copilot policies conflict in organizations, 10 of 20",
-          "Supported surfaces for GitHub Copilot policies, 11 of 20",
-          "Enterprise managed settings reference, 12 of 20",
-          "Copilot allowlist reference, 13 of 20",
-          "MCP allowlist enforcement, 14 of 20",
-          "Metrics data properties for GitHub Copilot, 15 of 20",
-          "GitHub Copilot billing, 16 of 20Models and pricing for GitHub Copilot, 1 of 6GitHub Copilot billing cycle, 2 of 6GitHub Copilot seat assignment, 3 of 6Making changes to your GitHub Copilot license, 4 of 6GitHub Copilot billing through Azure, 5 of 6GitHub Copilot request-based billing for annual plan subscribers (legacy), 6 of 6",
-          "Audit log events for agents, 17 of 20",
-          "Available filters for agent sessions, 18 of 20",
-          "Files excluded from GitHub Copilot code review, 19 of 20",
-          "GitHub Copilot usage metrics, 20 of 20Data available in Copilot usage metrics, 1 of 6Interpreting usage and adoption metrics for GitHub Copilot, 2 of 6Reconciling Copilot usage metrics across dashboards, APIs, and reports, 3 of 6Lines of Code metrics, 4 of 6Team-level Copilot usage metrics, 5 of 6Example schema for Copilot usage metrics, 6 of 6"
-        ]
-      },
-      "headings": [
-        "Reference for GitHub Copilot"
-      ],
-      "score": 2
-    },
-    {
-      "eventId": "docs-github-copilot-concepts:9b34b80438f7ef835a7065d358b989a9ccf4f447a11f738ad50e44220bd7cf9c",
+      "eventId": "docs-github-copilot-concepts:c55c1dd3522a2054bd58e5f98ac2066f5d9fd87e5f2d026f060ffd68bae2b15a",
       "sourceId": "docs-github-copilot-concepts",
       "sourceName": "GitHub Docs / Copilot concepts",
       "kind": "html_snapshot_change",
-      "detectedAt": "2026-07-09T08:49:28.190Z",
-      "publishedAt": "2026-07-09T08:49:28.190Z",
+      "detectedAt": "2026-07-09T16:11:51.090Z",
+      "publishedAt": "2026-07-09T16:11:51.090Z",
       "title": "GitHub Docs / Copilot concepts changed",
       "url": "https://docs.github.com/en/copilot/concepts",
       "summary": "Detected 1 added lines on the monitored page.",
@@ -151,7 +119,7 @@
         "addedLineCount": 1,
         "headings": [],
         "additions": [
-          "GitHub Copilot"
+          "GitHub Copilot/"
         ]
       },
       "headings": [
@@ -160,12 +128,12 @@
       "score": 2
     },
     {
-      "eventId": "docs-github-copilot-howtos:3c0742686cb1997c7e5c12bbfc35ec127f80b8d0ca8f7fc2458c661fea10cae2",
+      "eventId": "docs-github-copilot-howtos:7552681be372214cd4f7504396a106195929894cbde3d4e88ace35ef6969ecf7",
       "sourceId": "docs-github-copilot-howtos",
       "sourceName": "GitHub Docs / Copilot how-tos",
       "kind": "html_snapshot_change",
-      "detectedAt": "2026-07-09T08:49:27.471Z",
-      "publishedAt": "2026-07-09T08:49:27.471Z",
+      "detectedAt": "2026-07-09T16:11:51.041Z",
+      "publishedAt": "2026-07-09T16:11:51.040Z",
       "title": "GitHub Docs / Copilot how-tos changed",
       "url": "https://docs.github.com/en/copilot/how-tos",
       "summary": "Detected 1 added lines on the monitored page.",
@@ -176,14 +144,57 @@
         "addedLineCount": 1,
         "headings": [],
         "additions": [
-          "GitHub Copilot"
+          "GitHub Copilot/"
         ]
       },
       "headings": [
         "How-tos for GitHub Copilot"
       ],
       "score": 2
+    },
+    {
+      "eventId": "docs-github-cloud-agent:89ba2f781f5c27b543db6d320c7fe895831f888c35c1eb2f6af2baddf718af21",
+      "sourceId": "docs-github-cloud-agent",
+      "sourceName": "GitHub Docs / Cloud agent",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-07-09T16:11:50.976Z",
+      "publishedAt": "2026-07-09T16:11:50.975Z",
+      "title": "GitHub Docs / Cloud agent changed",
+      "url": "https://docs.github.com/en/copilot/how-tos/use-copilot-agents/cloud-agent",
+      "summary": "Detected 3 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 3,
+        "headings": [],
+        "additions": [
+          "GitHub Copilot/",
+          "How-tos/",
+          "Use Copilot agents/"
+        ]
+      },
+      "headings": [
+        "GitHub Copilot cloud agent",
+        "Starting GitHub Copilot sessions",
+        "Creating automations with Copilot cloud agent",
+        "Changing the AI model for GitHub Copilot cloud agent",
+        "Configuring settings for GitHub Copilot cloud agent",
+        "Creating custom agents for Copilot cloud agent in your IDE",
+        "Using Copilot cloud agent on GitHub",
+        "Using Copilot cloud agent on GitHub Mobile",
+        "Using agent apps",
+        "Using Copilot cloud agent in your IDE",
+        "Using Copilot cloud agent via the API",
+        "Using Copilot cloud agent from the GitHub CLI"
+      ],
+      "score": 2
     }
   ],
-  "errors": []
+  "errors": [
+    {
+      "sourceId": "copilot-whats-new",
+      "message": "Failed to fetch https://github.com/features/copilot/whats-new: 504 Gateway Time-out"
+    }
+  ]
 }
