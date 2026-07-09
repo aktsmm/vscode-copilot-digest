@@ -1,4 +1,4 @@
-GitHub Copilot/
+GitHub Copilot
 How-tos
 H1: How-tos for GitHub Copilot
 Learn how to use GitHub Copilot.

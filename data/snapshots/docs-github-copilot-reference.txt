@@ -1,40 +1,41 @@
-GitHub Copilot/
+GitHub Copilot
 Reference
 H1: Reference for GitHub Copilot
 Find information to apply to your work with GitHub Copilot.
-GitHub Copilot Chat cheat sheet, 1 of 19
-Copilot customization cheat sheet, 2 of 19
-AI models for GitHub Copilot, 3 of 19Supported AI models in GitHub Copilot, 1 of 3AI model comparison, 2 of 3Hosting of models for GitHub Copilot, 3 of 3
+GitHub Copilot Chat cheat sheet, 1 of 20
+Copilot customization cheat sheet, 2 of 20
+AI models for GitHub Copilot, 3 of 20Supported AI models in GitHub Copilot, 1 of 3AI model comparison, 2 of 3Hosting of models for GitHub Copilot, 3 of 3
 Supported AI models in GitHub Copilot, 1 of 3
 AI model comparison, 2 of 3
 Hosting of models for GitHub Copilot, 3 of 3
-Copilot feature matrix, 4 of 19
-Keyboard shortcuts for GitHub Copilot in the IDE, 5 of 19
-Copilot CLI reference, 6 of 19GitHub Copilot CLI command reference, 1 of 5GitHub Copilot CLI plugin reference, 2 of 5GitHub Copilot CLI programmatic reference, 3 of 5Copilot CLI ACP server, 4 of 5GitHub Copilot CLI configuration directory, 5 of 5
+Copilot feature matrix, 4 of 20
+Keyboard shortcuts for GitHub Copilot in the IDE, 5 of 20
+Copilot CLI reference, 6 of 20GitHub Copilot CLI command reference, 1 of 5GitHub Copilot CLI plugin reference, 2 of 5GitHub Copilot CLI programmatic reference, 3 of 5Copilot CLI ACP server, 4 of 5GitHub Copilot CLI configuration directory, 5 of 5
 GitHub Copilot CLI command reference, 1 of 5
 GitHub Copilot CLI plugin reference, 2 of 5
 GitHub Copilot CLI programmatic reference, 3 of 5
 Copilot CLI ACP server, 4 of 5
 GitHub Copilot CLI configuration directory, 5 of 5
-Custom agents configuration, 7 of 19
-Support for different types of custom instructions, 8 of 19
-GitHub Copilot hooks reference, 9 of 19
-Feature availability when GitHub Copilot policies conflict in organizations, 10 of 19
-Supported surfaces for GitHub Copilot policies, 11 of 19
-Copilot allowlist reference, 12 of 19
-MCP allowlist enforcement, 13 of 19
-Metrics data properties for GitHub Copilot, 14 of 19
-GitHub Copilot billing, 15 of 19Models and pricing for GitHub Copilot, 1 of 6GitHub Copilot billing cycle, 2 of 6GitHub Copilot seat assignment, 3 of 6Making changes to your GitHub Copilot license, 4 of 6GitHub Copilot billing through Azure, 5 of 6GitHub Copilot request-based billing for annual plan subscribers (legacy), 6 of 6
+Custom agents configuration, 7 of 20
+Support for different types of custom instructions, 8 of 20
+GitHub Copilot hooks reference, 9 of 20
+Feature availability when GitHub Copilot policies conflict in organizations, 10 of 20
+Supported surfaces for GitHub Copilot policies, 11 of 20
+Enterprise managed settings reference, 12 of 20
+Copilot allowlist reference, 13 of 20
+MCP allowlist enforcement, 14 of 20
+Metrics data properties for GitHub Copilot, 15 of 20
+GitHub Copilot billing, 16 of 20Models and pricing for GitHub Copilot, 1 of 6GitHub Copilot billing cycle, 2 of 6GitHub Copilot seat assignment, 3 of 6Making changes to your GitHub Copilot license, 4 of 6GitHub Copilot billing through Azure, 5 of 6GitHub Copilot request-based billing for annual plan subscribers (legacy), 6 of 6
 Models and pricing for GitHub Copilot, 1 of 6
 GitHub Copilot billing cycle, 2 of 6
 GitHub Copilot seat assignment, 3 of 6
 Making changes to your GitHub Copilot license, 4 of 6
 GitHub Copilot billing through Azure, 5 of 6
 GitHub Copilot request-based billing for annual plan subscribers (legacy), 6 of 6
-Audit log events for agents, 16 of 19
-Available filters for agent sessions, 17 of 19
-Files excluded from GitHub Copilot code review, 18 of 19
-GitHub Copilot usage metrics, 19 of 19Data available in Copilot usage metrics, 1 of 6Interpreting usage and adoption metrics for GitHub Copilot, 2 of 6Reconciling Copilot usage metrics across dashboards, APIs, and reports, 3 of 6Lines of Code metrics, 4 of 6Team-level Copilot usage metrics, 5 of 6Example schema for Copilot usage metrics, 6 of 6
+Audit log events for agents, 17 of 20
+Available filters for agent sessions, 18 of 20
+Files excluded from GitHub Copilot code review, 19 of 20
+GitHub Copilot usage metrics, 20 of 20Data available in Copilot usage metrics, 1 of 6Interpreting usage and adoption metrics for GitHub Copilot, 2 of 6Reconciling Copilot usage metrics across dashboards, APIs, and reports, 3 of 6Lines of Code metrics, 4 of 6Team-level Copilot usage metrics, 5 of 6Example schema for Copilot usage metrics, 6 of 6
 Data available in Copilot usage metrics, 1 of 6
 Interpreting usage and adoption metrics for GitHub Copilot, 2 of 6
 Reconciling Copilot usage metrics across dashboards, APIs, and reports, 3 of 6
