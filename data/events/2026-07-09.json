@@ -1,24 +1,77 @@
 {
   "date": "2026-07-09",
-  "generatedAt": "2026-07-09T16:11:53.295Z",
+  "generatedAt": "2026-07-09T22:47:05.424Z",
   "latestRun": {
-    "generatedAt": "2026-07-09T16:11:53.295Z",
-    "newEventsCount": 4,
+    "generatedAt": "2026-07-09T22:47:05.424Z",
+    "newEventsCount": 6,
     "newEventIds": [
-      "github-changelog:https://github.blog/changelog/2026-07-09-ask-copilot-for-a-repository-overview",
-      "docs-github-cloud-agent:89ba2f781f5c27b543db6d320c7fe895831f888c35c1eb2f6af2baddf718af21",
-      "docs-github-copilot-howtos:7552681be372214cd4f7504396a106195929894cbde3d4e88ace35ef6969ecf7",
-      "docs-github-copilot-concepts:c55c1dd3522a2054bd58e5f98ac2066f5d9fd87e5f2d026f060ffd68bae2b15a"
+      "github-changelog:https://github.blog/changelog/2026-07-09-openais-gpt-5-6-sol-terra-and-luna-are-now-available-in-github-copilot",
+      "github-changelog-copilot:https://github.blog/changelog/2026-07-09-openais-gpt-5-6-sol-terra-and-luna-are-now-available-in-github-copilot",
+      "github-changelog-copilot:https://github.blog/changelog/2026-07-09-ask-copilot-for-a-repository-overview",
+      "docs-github-cloud-agent:8c6f89525eff016bddeeaf0ab98906bb9c6a54e37ea3699dd47bd8e64bc35c7b",
+      "docs-github-copilot-howtos:3c0742686cb1997c7e5c12bbfc35ec127f80b8d0ca8f7fc2458c661fea10cae2",
+      "docs-github-copilot-concepts:9b34b80438f7ef835a7065d358b989a9ccf4f447a11f738ad50e44220bd7cf9c"
     ],
-    "errorCount": 1
+    "errorCount": 0
   },
   "events": [
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-07-09-openais-gpt-5-6-sol-terra-and-luna-are-now-available-in-github-copilot",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-07-09T22:46:59.920Z",
+      "publishedAt": "2026-07-09T16:41:29.000Z",
+      "title": "OpenAI&#8217;s GPT-5.6 Sol, Terra, and Luna are now available in GitHub Copilot",
+      "url": "https://github.blog/changelog/2026-07-09-openais-gpt-5-6-sol-terra-and-luna-are-now-available-in-github-copilot",
+      "summary": "OpenAI’s GPT-5.6 family is now rolling out in GitHub Copilot. GPT-5.6 comes in three variants, Sol, Terra, and Luna, so you can match the model to the job, whether that’s…\nThe post OpenAI’s GPT-5.6 Sol, Terra, and Luna are now available in GitHub Copilot appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-07-09-openais-gpt-5-6-sol-terra-and-luna-are-now-available-in-github-copilot",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-07-09T22:46:59.953Z",
+      "publishedAt": "2026-07-09T16:41:29.000Z",
+      "title": "OpenAI&#8217;s GPT-5.6 Sol, Terra, and Luna are now available in GitHub Copilot",
+      "url": "https://github.blog/changelog/2026-07-09-openais-gpt-5-6-sol-terra-and-luna-are-now-available-in-github-copilot",
+      "summary": "OpenAI’s GPT-5.6 family is now rolling out in GitHub Copilot. GPT-5.6 comes in three variants, Sol, Terra, and Luna, so you can match the model to the job, whether that’s…\nThe post OpenAI’s GPT-5.6 Sol, Terra, and Luna are now available in GitHub Copilot appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
     {
       "eventId": "github-changelog:https://github.blog/changelog/2026-07-09-ask-copilot-for-a-repository-overview",
       "sourceId": "github-changelog",
       "sourceName": "GitHub Changelog",
       "kind": "feed_entry",
       "detectedAt": "2026-07-09T16:11:30.935Z",
+      "publishedAt": "2026-07-09T14:25:33.000Z",
+      "title": "Ask Copilot for a repository overview",
+      "url": "https://github.blog/changelog/2026-07-09-ask-copilot-for-a-repository-overview",
+      "summary": "You can now ask GitHub Copilot for a high-level overview of any repository you’re exploring for the first time. When you visit the home page of a repository you haven’t…\nThe post Ask Copilot for a repository overview appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-07-09-ask-copilot-for-a-repository-overview",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-07-09T22:46:59.953Z",
       "publishedAt": "2026-07-09T14:25:33.000Z",
       "title": "Ask Copilot for a repository overview",
       "url": "https://github.blog/changelog/2026-07-09-ask-copilot-for-a-repository-overview",
@@ -103,12 +156,12 @@
       "score": 2
     },
     {
-      "eventId": "docs-github-copilot-concepts:c55c1dd3522a2054bd58e5f98ac2066f5d9fd87e5f2d026f060ffd68bae2b15a",
+      "eventId": "docs-github-copilot-concepts:9b34b80438f7ef835a7065d358b989a9ccf4f447a11f738ad50e44220bd7cf9c",
       "sourceId": "docs-github-copilot-concepts",
       "sourceName": "GitHub Docs / Copilot concepts",
       "kind": "html_snapshot_change",
-      "detectedAt": "2026-07-09T16:11:51.090Z",
-      "publishedAt": "2026-07-09T16:11:51.090Z",
+      "detectedAt": "2026-07-09T22:47:04.074Z",
+      "publishedAt": "2026-07-09T22:47:04.074Z",
       "title": "GitHub Docs / Copilot concepts changed",
       "url": "https://docs.github.com/en/copilot/concepts",
       "summary": "Detected 1 added lines on the monitored page.",
@@ -119,7 +172,7 @@
         "addedLineCount": 1,
         "headings": [],
         "additions": [
-          "GitHub Copilot/"
+          "GitHub Copilot"
         ]
       },
       "headings": [
@@ -128,12 +181,12 @@
       "score": 2
     },
     {
-      "eventId": "docs-github-copilot-howtos:7552681be372214cd4f7504396a106195929894cbde3d4e88ace35ef6969ecf7",
+      "eventId": "docs-github-copilot-howtos:3c0742686cb1997c7e5c12bbfc35ec127f80b8d0ca8f7fc2458c661fea10cae2",
       "sourceId": "docs-github-copilot-howtos",
       "sourceName": "GitHub Docs / Copilot how-tos",
       "kind": "html_snapshot_change",
-      "detectedAt": "2026-07-09T16:11:51.041Z",
-      "publishedAt": "2026-07-09T16:11:51.040Z",
+      "detectedAt": "2026-07-09T22:47:04.013Z",
+      "publishedAt": "2026-07-09T22:47:04.013Z",
       "title": "GitHub Docs / Copilot how-tos changed",
       "url": "https://docs.github.com/en/copilot/how-tos",
       "summary": "Detected 1 added lines on the monitored page.",
@@ -144,7 +197,7 @@
         "addedLineCount": 1,
         "headings": [],
         "additions": [
-          "GitHub Copilot/"
+          "GitHub Copilot"
         ]
       },
       "headings": [
@@ -153,12 +206,12 @@
       "score": 2
     },
     {
-      "eventId": "docs-github-cloud-agent:89ba2f781f5c27b543db6d320c7fe895831f888c35c1eb2f6af2baddf718af21",
+      "eventId": "docs-github-cloud-agent:8c6f89525eff016bddeeaf0ab98906bb9c6a54e37ea3699dd47bd8e64bc35c7b",
       "sourceId": "docs-github-cloud-agent",
       "sourceName": "GitHub Docs / Cloud agent",
       "kind": "html_snapshot_change",
-      "detectedAt": "2026-07-09T16:11:50.976Z",
-      "publishedAt": "2026-07-09T16:11:50.975Z",
+      "detectedAt": "2026-07-09T22:47:03.935Z",
+      "publishedAt": "2026-07-09T22:47:03.934Z",
       "title": "GitHub Docs / Cloud agent changed",
       "url": "https://docs.github.com/en/copilot/how-tos/use-copilot-agents/cloud-agent",
       "summary": "Detected 3 added lines on the monitored page.",
@@ -169,9 +222,9 @@
         "addedLineCount": 3,
         "headings": [],
         "additions": [
-          "GitHub Copilot/",
-          "How-tos/",
-          "Use Copilot agents/"
+          "GitHub Copilot",
+          "How-tos",
+          "Use Copilot agents"
         ]
       },
       "headings": [
@@ -191,10 +244,5 @@
       "score": 2
     }
   ],
-  "errors": [
-    {
-      "sourceId": "copilot-whats-new",
-      "message": "Failed to fetch https://github.com/features/copilot/whats-new: 504 Gateway Time-out"
-    }
-  ]
+  "errors": []
 }

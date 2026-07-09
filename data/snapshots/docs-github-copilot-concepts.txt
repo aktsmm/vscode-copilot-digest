@@ -1,4 +1,4 @@
-GitHub Copilot/
+GitHub Copilot
 Concepts
 H1: Concepts for GitHub Copilot
 Learn the core concepts that you'll need to understand GitHub Copilot.
