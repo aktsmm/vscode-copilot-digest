@@ -1,15 +1,41 @@
 {
   "date": "2026-07-10",
-  "generatedAt": "2026-07-10T15:55:28.696Z",
+  "generatedAt": "2026-07-10T22:30:48.497Z",
   "latestRun": {
-    "generatedAt": "2026-07-10T15:55:28.696Z",
-    "newEventsCount": 1,
+    "generatedAt": "2026-07-10T22:30:48.497Z",
+    "newEventsCount": 4,
     "newEventIds": [
-      "github-changelog:https://github.blog/changelog/2026-07-08-github-mobile-improved-filters-and-sorting-for-copilot-sessions"
+      "github-copilot-blog:https://github.blog/?p=97467",
+      "vscode-updates:078672f7950a0ef1335041d135b02a89b4990affcaaa42a9221c22cc8f985d3c",
+      "vscode-release-notes-1-128:section:099a03f02f2884b489a1e5335378acbe6a2c5db89a7b1691c9ea543c7908a80f",
+      "vscode-release-notes-1-128:section:91b2730ad34abd068d4769845e462ad22175e1c30c7b110dbff482425b4f976a"
     ],
     "errorCount": 0
   },
   "events": [
+    {
+      "eventId": "github-copilot-blog:https://github.blog/?p=97467",
+      "sourceId": "github-copilot-blog",
+      "sourceName": "GitHub Blog / GitHub Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-07-10T22:30:40.186Z",
+      "publishedAt": "2026-07-10T15:57:47.000Z",
+      "title": "Better tools made Copilot code review worse. Here&#8217;s how we actually improved it.",
+      "url": "https://github.blog/ai-and-ml/github-copilot/better-tools-made-copilot-code-review-worse-heres-how-we-actually-improved-it/",
+      "summary": "How migrating Copilot code review to shared Unix-style code exploration tools reduced review cost by reshaping agent workflows around pull request evidence.\nThe post Better tools made Copilot code review worse. Here’s how we actually improved it. appeared first on The GitHub Blog.",
+      "categories": [
+        "AI & ML",
+        "Architecture & optimization",
+        "Engineering",
+        "GitHub Copilot",
+        "LLMs",
+        "agentic workflows",
+        "developer tools",
+        "GitHub Copilot code review"
+      ],
+      "isFutureDated": false,
+      "score": 2
+    },
     {
       "eventId": "github-changelog:https://github.blog/changelog/2026-07-08-github-mobile-improved-filters-and-sorting-for-copilot-sessions",
       "sourceId": "github-changelog",
@@ -26,6 +52,95 @@
       ],
       "isFutureDated": false,
       "score": 1
+    },
+    {
+      "eventId": "vscode-updates:078672f7950a0ef1335041d135b02a89b4990affcaaa42a9221c22cc8f985d3c",
+      "sourceId": "vscode-updates",
+      "sourceName": "VS Code Updates",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-07-10T22:30:41.314Z",
+      "publishedAt": "2026-07-08T00:00:00.000Z",
+      "title": "VS Code Updates changed",
+      "url": "https://code.visualstudio.com/updates/",
+      "summary": "Detected 19 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 19,
+        "headings": [],
+        "additions": [
+          "This experience is available when using the Claude agent via the agent host. Ensure the agent host is enabled and can be selected for the Claude agent (via the harness picker) with",
+          "chat.agentHost.enabled",
+          "Open in VS Code",
+          "Open in VS Code Insiders",
+          "This setting is managed at the organization level. Contact your administrator to change it.ORG and",
+          "chat.agents.claude.preferAgentHost",
+          ".",
+          "For questions not tied to a folder, you can now start a chat in the Agents window without selecting a workspace. These chats appear in the Chats section and open focused and ready for input. Start a quick chat with ⌘K ⌘N (Windows, Linux cmd+K cmd+N) or the plus button on the Chats section header.",
+          "Chats without a workspace are supported only by agent host sessions, so this experience is available when the agent host is enabled (and selected via the harness picker) with",
+          "This experience is available when using Copilot via the agent host. Ensure the agent host is enabled (and selected via the harness picker) with",
+          "This setting is managed at the organization level. Contact your administrator to change it.ORG.",
+          "Create a chat with ⌘T (Windows, Linux cmd+T).",
+          "Reopen the last closed chat with ⇧⌘T (Windows, Linux Shift+cmd+T).",
+          "Go to the next or previous chat with ⇧⌘] (Windows, Linux Shift+cmd+]) and ⇧⌘[ (Windows, Linux Shift+cmd+[).",
+          "Quickly switch between open chats with ⌃Tab (Windows, Linux Ctrl+Tab) and ⌃⇧Tab (Windows, Linux Ctrl+Shift+Tab).",
+          "Close the active chat tab with ⌘W (Windows, Linux cmd+W)."
+        ]
+      },
+      "headings": [
+        "Visual Studio Code 1.128",
+        "Agents",
+        "Multiple chats in a session now supports Claude agent",
+        "Chat without a selected workspace in the Agents window",
+        "Read-only subagent chats in the Agents window (Preview)",
+        "Keyboard shortcuts for chats in the Agents window",
+        "Chat",
+        "Copilot Vision is now generally available",
+        "BYOK models in agent host Copilot sessions (Experimental)",
+        "Configure sampling parameters for custom endpoint models",
+        "Configure the default utility model for BYOK",
+        "Deep links to a specific chat"
+      ],
+      "score": 2
+    },
+    {
+      "eventId": "vscode-release-notes-1-128:section:099a03f02f2884b489a1e5335378acbe6a2c5db89a7b1691c9ea543c7908a80f",
+      "sourceId": "vscode-release-notes-1-128",
+      "sourceName": "VS Code Release Notes 1.128",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-07-10T22:30:46.050Z",
+      "publishedAt": "2026-07-08T00:00:00.000Z",
+      "title": "Visual Studio Code 1.128: Chat without a selected workspace in the Agents window",
+      "url": "https://code.visualstudio.com/updates/v1_128",
+      "summary": "The Agents window gives you a dedicated place to create, resume, and manage agent sessions. For project work, those sessions keep the chat, files, and changes together with the workspace. For questions not tied to a folder, you can now start a chat in the Agents window without selecting a workspace. These chats appear in the Chats section and open focused and ready for input. Start a quick chat with ⌘K ⌘N (Windows,...",
+      "categories": [
+        "release",
+        "section",
+        "Agents"
+      ],
+      "sectionHeading": "Agents",
+      "sectionTitle": "Chat without a selected workspace in the Agents window",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-128:section:91b2730ad34abd068d4769845e462ad22175e1c30c7b110dbff482425b4f976a",
+      "sourceId": "vscode-release-notes-1-128",
+      "sourceName": "VS Code Release Notes 1.128",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-07-10T22:30:46.050Z",
+      "publishedAt": "2026-07-08T00:00:00.000Z",
+      "title": "Visual Studio Code 1.128: Keyboard shortcuts for chats in the Agents window",
+      "url": "https://code.visualstudio.com/updates/v1_128",
+      "summary": "The Agents window supports multi-chat sessions, where one agent session can contain multiple related chats. Keyboard-driven chat navigation helps you move between chats and manage chat tabs without leaving the keyboard. Create a chat with ⌘T (Windows, Linux cmd+T). Reopen the last closed chat with ⇧⌘T (Windows, Linux Shift+cmd+T). Go to the next or previous chat with ⇧⌘] (Windows, Linux Shift+cmd+]) and ⇧⌘[ (Windows...",
+      "categories": [
+        "release",
+        "section",
+        "Agents"
+      ],
+      "sectionHeading": "Agents",
+      "sectionTitle": "Keyboard shortcuts for chats in the Agents window",
+      "score": 4
     }
   ],
   "errors": []
