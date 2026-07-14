@@ -1,5 +1,3 @@
-GitHub Copilot
-Reference
 H1: Reference for GitHub Copilot
 Find information to apply to your work with GitHub Copilot.
 GitHub Copilot Chat cheat sheet, 1 of 20

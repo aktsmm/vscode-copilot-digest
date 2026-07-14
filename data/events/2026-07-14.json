@@ -1,14 +1,13 @@
 {
   "date": "2026-07-14",
-  "generatedAt": "2026-07-14T15:08:13.381Z",
+  "generatedAt": "2026-07-14T22:27:32.756Z",
   "latestRun": {
-    "generatedAt": "2026-07-14T15:08:13.381Z",
-    "newEventsCount": 4,
+    "generatedAt": "2026-07-14T22:27:32.756Z",
+    "newEventsCount": 3,
     "newEventIds": [
-      "github-changelog:https://github.blog/changelog/2026-07-14-security-reviews-now-available-in-the-github-copilot-app",
-      "github-changelog:https://github.blog/changelog/2026-07-10-agentic-autofix-for-code-scanning-alerts-in-public-preview",
-      "github-changelog-copilot:https://github.blog/changelog/2026-07-14-security-reviews-now-available-in-the-github-copilot-app",
-      "github-changelog-copilot:https://github.blog/changelog/2026-07-10-agentic-autofix-for-code-scanning-alerts-in-public-preview"
+      "vscode-updates:67236e23699b1f7e9273229cb266caaddb52291a33262f18db6e6b2e4b6a0ffe",
+      "docs-github-copilot-concepts:2ff954cb549d4f0408acb3e34a2b31c6018d600b69b9e1a725e4b264f146cb94",
+      "docs-github-copilot-reference:7b3c27351b60243aa6c7e8a5661e279174720010ead60c38f2bcd14a33681c99"
     ],
     "errorCount": 0
   },
@@ -84,6 +83,88 @@
       ],
       "isFutureDated": false,
       "score": 5
+    },
+    {
+      "eventId": "vscode-updates:67236e23699b1f7e9273229cb266caaddb52291a33262f18db6e6b2e4b6a0ffe",
+      "sourceId": "vscode-updates",
+      "sourceName": "VS Code Updates",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-07-14T22:27:28.701Z",
+      "publishedAt": "2026-07-08T00:00:00.000Z",
+      "title": "VS Code Updates changed",
+      "url": "https://code.visualstudio.com/updates/",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [],
+        "additions": [
+          "Update 1.128.1: The update addresses these security issues."
+        ]
+      },
+      "headings": [
+        "Visual Studio Code 1.128",
+        "Agents",
+        "Multiple chats in a session now supports Claude agent",
+        "Chat without a selected workspace in the Agents window",
+        "Read-only subagent chats in the Agents window (Preview)",
+        "Keyboard shortcuts for chats in the Agents window",
+        "Chat",
+        "Copilot Vision is now generally available",
+        "BYOK models in agent host Copilot sessions (Experimental)",
+        "Configure sampling parameters for custom endpoint models",
+        "Configure the default utility model for BYOK",
+        "Deep links to a specific chat"
+      ],
+      "score": 2
+    },
+    {
+      "eventId": "docs-github-copilot-reference:7b3c27351b60243aa6c7e8a5661e279174720010ead60c38f2bcd14a33681c99",
+      "sourceId": "docs-github-copilot-reference",
+      "sourceName": "GitHub Docs / Copilot reference",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-07-14T22:27:31.933Z",
+      "publishedAt": "2026-07-14T22:27:31.933Z",
+      "title": "GitHub Docs / Copilot reference changed",
+      "url": "https://docs.github.com/en/copilot/reference",
+      "summary": "Detected 0 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 0,
+        "headings": [],
+        "additions": []
+      },
+      "headings": [
+        "Reference for GitHub Copilot"
+      ],
+      "score": 2
+    },
+    {
+      "eventId": "docs-github-copilot-concepts:2ff954cb549d4f0408acb3e34a2b31c6018d600b69b9e1a725e4b264f146cb94",
+      "sourceId": "docs-github-copilot-concepts",
+      "sourceName": "GitHub Docs / Copilot concepts",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-07-14T22:27:31.107Z",
+      "publishedAt": "2026-07-14T22:27:31.107Z",
+      "title": "GitHub Docs / Copilot concepts changed",
+      "url": "https://docs.github.com/en/copilot/concepts",
+      "summary": "Detected 0 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 0,
+        "headings": [],
+        "additions": []
+      },
+      "headings": [
+        "Concepts for GitHub Copilot"
+      ],
+      "score": 2
     },
     {
       "eventId": "docs-github-copilot-concepts:62dff3e6a3cab0d13aa5f94f2312d3322dd6c826fda12de25e46c8a710e69c1e",

@@ -23,6 +23,7 @@ View All Releases
 H1: Visual Studio Code 1.128
 Follow us on LinkedIn, X, Bluesky
 Release date: July 8, 2026
+Update 1.128.1: The update addresses these security issues.
 Downloads: Windows: x64 Arm64 | Mac: Universal Intel silicon | Linux: deb rpm tarball Arm snap
 Welcome to the 1.128 release of Visual Studio Code. This release brings richer multi-chat agent sessions, generally available image support in Chat, and OS-level keyboard shortcuts.
 Multi-chat agent sessions: Run several related chats in one Claude session to compare approaches and work in parallel.
