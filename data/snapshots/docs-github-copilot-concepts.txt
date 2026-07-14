@@ -47,11 +47,12 @@ Content exclusion for GitHub Copilot, 4 of 4
 Concepts for AI tools, 9 of 17Choosing the right AI tool for your task, 1 of 2About Copilot integrations, 2 of 2
 Choosing the right AI tool for your task, 1 of 2
 About Copilot integrations, 2 of 2
-Models for GitHub Copilot, 10 of 17Utility models, 1 of 4About Copilot auto model selection, 2 of 4FedRAMP-compliant models for GitHub Copilot, 3 of 4Base and long-term support (LTS) models, 4 of 4
-Utility models, 1 of 4
-About Copilot auto model selection, 2 of 4
-FedRAMP-compliant models for GitHub Copilot, 3 of 4
-Base and long-term support (LTS) models, 4 of 4
+Models for GitHub Copilot, 10 of 17Bring your own key for GitHub Copilot, 1 of 5Utility models, 2 of 5About Copilot auto model selection, 3 of 5FedRAMP-compliant models for GitHub Copilot, 4 of 5Base and long-term support (LTS) models, 5 of 5
+Bring your own key for GitHub Copilot, 1 of 5
+Utility models, 2 of 5
+About Copilot auto model selection, 3 of 5
+FedRAMP-compliant models for GitHub Copilot, 4 of 5
+Base and long-term support (LTS) models, 5 of 5
 Usage limits for GitHub Copilot, 11 of 17
 GitHub Copilot billing, 12 of 17Usage-based billing for individuals, 1 of 5Usage-based billing for organizations and enterprises, 2 of 5Budgets for usage-based billing, 3 of 5About individual GitHub Copilot plans and benefits, 4 of 5About billing for GitHub Copilot in organizations and enterprises, 5 of 5
 Usage-based billing for individuals, 1 of 5
