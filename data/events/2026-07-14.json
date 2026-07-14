@@ -1,15 +1,90 @@
 {
   "date": "2026-07-14",
-  "generatedAt": "2026-07-14T07:22:37.800Z",
+  "generatedAt": "2026-07-14T15:08:13.381Z",
   "latestRun": {
-    "generatedAt": "2026-07-14T07:22:37.800Z",
-    "newEventsCount": 1,
+    "generatedAt": "2026-07-14T15:08:13.381Z",
+    "newEventsCount": 4,
     "newEventIds": [
-      "docs-github-copilot-concepts:62dff3e6a3cab0d13aa5f94f2312d3322dd6c826fda12de25e46c8a710e69c1e"
+      "github-changelog:https://github.blog/changelog/2026-07-14-security-reviews-now-available-in-the-github-copilot-app",
+      "github-changelog:https://github.blog/changelog/2026-07-10-agentic-autofix-for-code-scanning-alerts-in-public-preview",
+      "github-changelog-copilot:https://github.blog/changelog/2026-07-14-security-reviews-now-available-in-the-github-copilot-app",
+      "github-changelog-copilot:https://github.blog/changelog/2026-07-10-agentic-autofix-for-code-scanning-alerts-in-public-preview"
     ],
     "errorCount": 0
   },
   "events": [
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-07-14-security-reviews-now-available-in-the-github-copilot-app",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-07-14T15:08:03.675Z",
+      "publishedAt": "2026-07-14T12:54:12.000Z",
+      "title": "Security reviews now available in the GitHub Copilot app",
+      "url": "https://github.blog/changelog/2026-07-14-security-reviews-now-available-in-the-github-copilot-app",
+      "summary": "You can now run a security review on your in-flight code changes directly from the GitHub Copilot app. The /security-review slash command is shipping in public preview, bringing the same…\nThe post Security reviews now available in the GitHub Copilot app appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "application security",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 2
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-07-14-security-reviews-now-available-in-the-github-copilot-app",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-07-14T15:08:04.288Z",
+      "publishedAt": "2026-07-14T12:54:12.000Z",
+      "title": "Security reviews now available in the GitHub Copilot app",
+      "url": "https://github.blog/changelog/2026-07-14-security-reviews-now-available-in-the-github-copilot-app",
+      "summary": "You can now run a security review on your in-flight code changes directly from the GitHub Copilot app. The /security-review slash command is shipping in public preview, bringing the same…\nThe post Security reviews now available in the GitHub Copilot app appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "application security",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 2
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-07-10-agentic-autofix-for-code-scanning-alerts-in-public-preview",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-07-14T15:08:03.675Z",
+      "publishedAt": "2026-07-10T15:49:21.000Z",
+      "title": "Agentic autofix for code scanning alerts in public preview",
+      "url": "https://github.blog/changelog/2026-07-10-agentic-autofix-for-code-scanning-alerts-in-public-preview",
+      "summary": "Agentic autofix is now in public preview for code scanning alerts. It remediates alerts by working across your codebase the way a developer would: it explores relevant files, proposes a…\nThe post Agentic autofix for code scanning alerts in public preview appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "application security",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 5
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-07-10-agentic-autofix-for-code-scanning-alerts-in-public-preview",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-07-14T15:08:04.288Z",
+      "publishedAt": "2026-07-10T15:49:21.000Z",
+      "title": "Agentic autofix for code scanning alerts in public preview",
+      "url": "https://github.blog/changelog/2026-07-10-agentic-autofix-for-code-scanning-alerts-in-public-preview",
+      "summary": "Agentic autofix is now in public preview for code scanning alerts. It remediates alerts by working across your codebase the way a developer would: it explores relevant files, proposes a…\nThe post Agentic autofix for code scanning alerts in public preview appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "application security",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 5
+    },
     {
       "eventId": "docs-github-copilot-concepts:62dff3e6a3cab0d13aa5f94f2312d3322dd6c826fda12de25e46c8a710e69c1e",
       "sourceId": "docs-github-copilot-concepts",
