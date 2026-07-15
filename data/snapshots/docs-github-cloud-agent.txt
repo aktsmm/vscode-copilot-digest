@@ -1,7 +1,3 @@
-GitHub Copilot
-How-tos
-Use Copilot agents
-Cloud agent
 H1: GitHub Copilot cloud agent
 Find out how Copilot can research a repository, plan and make code changes, and create pull requests for you to review.
 These articles provide how-to information for using Copilot cloud agent. For an overview of Copilot cloud agent, see the articles under Concepts for GitHub Copilot cloud agent.

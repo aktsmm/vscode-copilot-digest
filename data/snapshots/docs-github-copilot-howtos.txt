@@ -1,5 +1,3 @@
-GitHub Copilot
-How-tos
 H1: How-tos for GitHub Copilot
 Learn how to use GitHub Copilot.
 GitHub Copilot on GitHub, 1 of 20Set up Copilot, 1 of 5Chat with Copilot, 2 of 5Customize Copilot, 3 of 5Copilot for GitHub tasks, 4 of 5Use Copilot agents, 5 of 5
