@@ -1,17 +1,10 @@
 {
   "date": "2026-07-15",
-  "generatedAt": "2026-07-15T07:26:18.836Z",
+  "generatedAt": "2026-07-15T15:07:31.752Z",
   "latestRun": {
-    "generatedAt": "2026-07-15T07:26:18.836Z",
-    "newEventsCount": 6,
-    "newEventIds": [
-      "github-changelog:https://github.blog/changelog/2026-07-14-github-copilot-in-visual-studio-june-update",
-      "github-changelog:https://github.blog/changelog/2026-07-14-github-copilot-for-jetbrains-expands-byok-capabilities",
-      "github-changelog-copilot:https://github.blog/changelog/2026-07-14-github-copilot-in-visual-studio-june-update",
-      "github-changelog-copilot:https://github.blog/changelog/2026-07-14-github-copilot-for-jetbrains-expands-byok-capabilities",
-      "docs-github-cloud-agent:9786b9d7903b3002b56e3911ad66b63a4475c9d59a7d94263bb7045b0ba6f307",
-      "docs-github-copilot-howtos:466601577c731022b0dce1272ea1798f8b74507f11c0570d021c451ac4726d8c"
-    ],
+    "generatedAt": "2026-07-15T15:07:31.752Z",
+    "newEventsCount": 0,
+    "newEventIds": [],
     "errorCount": 0
   },
   "events": [
