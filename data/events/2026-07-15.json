@@ -1,13 +1,40 @@
 {
   "date": "2026-07-15",
-  "generatedAt": "2026-07-15T15:07:31.752Z",
+  "generatedAt": "2026-07-15T22:26:57.512Z",
   "latestRun": {
-    "generatedAt": "2026-07-15T15:07:31.752Z",
-    "newEventsCount": 0,
-    "newEventIds": [],
+    "generatedAt": "2026-07-15T22:26:57.512Z",
+    "newEventsCount": 10,
+    "newEventIds": [
+      "vscode-feed:https://code.visualstudio.com/updates/v1_130",
+      "vscode-updates:12e5d3ddd7d770505d99ac4e50ae491eb36917845bd7b8bed71235596af8dbd0",
+      "vscode-release-notes-1-109:c56e945c8c94c4551cd6d04d7dc41dc112a573e7e4e8b2d5ee5a4ebc50310784",
+      "vscode-release-notes-1-129:section:11b8fccdf7316cbc384f7e8b312c0becb9aeab6a58c9b5efe4faad8d17bbc84c",
+      "vscode-release-notes-1-129:section:93e345fde0cd258b59227b09a0753cfeca8140e67c5eab8fbf06f40b9fb77ab0",
+      "vscode-release-notes-1-129:section:e3bb305336b58cf4f642f5ca105c7a087e851214cc582256b017fa0b82fa513f",
+      "vscode-release-notes-1-129:section:18776dc3952f2d2da38645f99ea1b7350f2a58c2714a5e64da2b1e1d56f8483a",
+      "vscode-release-notes-1-128:a108877f04220b343748f7aa2582df966681bcd1b0ff93143a09202b3c0492fc",
+      "vscode-release-notes-1-127:a7a5ba48e06853c0cb1499a2e9721ae8ac9240a2cbd044962960019823e4dde0",
+      "vscode-release-notes-1-126:b36801294891162c295b20d1526d478bbc1928228515068cc1e2a28129f21a8b"
+    ],
     "errorCount": 0
   },
   "events": [
+    {
+      "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_130",
+      "sourceId": "vscode-feed",
+      "sourceName": "VS Code Feed",
+      "kind": "feed_entry",
+      "detectedAt": "2026-07-15T22:26:54.457Z",
+      "publishedAt": "2026-07-22T17:00:00.000Z",
+      "title": "Visual Studio Code 1.130 (Insiders)",
+      "url": "https://code.visualstudio.com/updates/v1_130",
+      "summary": "Learn what's new in Visual Studio Code 1.130 (Insiders)\n Read the full article",
+      "categories": [
+        "release"
+      ],
+      "isFutureDated": true,
+      "score": 4
+    },
     {
       "eventId": "github-changelog:https://github.blog/changelog/2026-07-14-github-copilot-in-visual-studio-june-update",
       "sourceId": "github-changelog",
@@ -43,6 +70,150 @@
       "score": 4
     },
     {
+      "eventId": "vscode-updates:12e5d3ddd7d770505d99ac4e50ae491eb36917845bd7b8bed71235596af8dbd0",
+      "sourceId": "vscode-updates",
+      "sourceName": "VS Code Updates",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-07-15T22:26:54.782Z",
+      "publishedAt": "2026-07-15T00:00:00.000Z",
+      "title": "VS Code Updates changed",
+      "url": "https://code.visualstudio.com/updates/",
+      "summary": "Detected 85 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 85,
+        "headings": [
+          "Visual Studio Code 1.129",
+          "The agent host",
+          "New editor panel in the Agents window (Experimental)",
+          "Session-management tools for Agent Host sessions",
+          "Agents window improvements",
+          "Chat",
+          "Run commands with ! prefix",
+          "BYOK models with the Copilot agent harness",
+          "Migrate prompt files to skills (Experimental)",
+          "Editor experience",
+          "Reopen an editor from the editor toolbar",
+          "Modern UI preview (Experimental)",
+          "Authentication",
+          "GitHub Enterprise support for Copilot in the agent host",
+          "Proposed APIs",
+          "Configure custom editors for diff and merge editors"
+        ],
+        "additions": [
+          "1.129",
+          "H1: Visual Studio Code 1.129",
+          "Release date: July 15, 2026",
+          "Welcome to the 1.129 release of Visual Studio Code. This release brings a dedicated agent host, a new editor panel in the Agents window, running commands with !, and a preview of the modern UI.",
+          "The agent host: Run agent sessions in a dedicated process and connect to them from multiple windows.",
+          "New editor panel in the Agents window (Experimental): Review agent-generated files and diffs in a docked editor.",
+          "Run commands with ! prefix: Run terminal commands directly from chat prompts.",
+          "Modern UI preview (Experimental): Get a first look at the updated VS Code workbench appearance.",
+          "H3: The agent host",
+          "We're rearchitecting how agent sessions work in VS Code around the agent host - a dedicated process that runs agent harnesses such as Copilot, Claude, and Codex, based on the Agent Host Protocol (AHP). Because a session lives in its own process, the same session can be connected to and rendered from multiple VS Code windows at once. The agent host's Copilot agent is powered by the Copilot SDK, which means that its behavior and functionality is aligned with the Copilot CLI, the standalone GitHub Copilot app, and other Copilot products.",
+          "We're actively developing the agent host and starting to roll it out to users in both the editor window and the Agents window. To opt in, enable",
+          "This setting is managed at the organization level. Contact your administrator to change it.ORG and then pick an agent host harness from the harness dropdown. The screenshot below shows how to select the Copilot harness on the agent host in the editor window:",
+          "As we continue to invest in the agent host, some new features in these release notes may only be available when an agent runs on it. Those features link back to this section and, where relevant, note any additional settings that enable them (for example,",
+          "to enable the Claude agent on the agent host).",
+          "H3: New editor panel in the Agents window (Experimental)",
+          "The Agents window shows your conversation with an agent next to a detail area for the files and changes it produces. This release introduces a redesigned editor panel that brings the editor and the detail area together into one docked pane with a shared tab bar, so reviewing an agent's work feels like working in the main editor instead of switching between separate panels."
+        ]
+      },
+      "headings": [
+        "Visual Studio Code 1.129",
+        "Agents",
+        "The agent host",
+        "New editor panel in the Agents window (Experimental)",
+        "Session-management tools for Agent Host sessions",
+        "Agents window improvements",
+        "Chat",
+        "Run commands with ! prefix",
+        "BYOK models with the Copilot agent harness",
+        "Migrate prompt files to skills (Experimental)",
+        "Editor experience",
+        "Reopen an editor from the editor toolbar"
+      ],
+      "score": 18
+    },
+    {
+      "eventId": "vscode-release-notes-1-129:section:11b8fccdf7316cbc384f7e8b312c0becb9aeab6a58c9b5efe4faad8d17bbc84c",
+      "sourceId": "vscode-release-notes-1-129",
+      "sourceName": "VS Code Release Notes 1.129",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-07-15T22:26:56.749Z",
+      "publishedAt": "2026-07-15T00:00:00.000Z",
+      "title": "Visual Studio Code 1.129: The agent host",
+      "url": "https://code.visualstudio.com/updates/v1_129",
+      "summary": "We're rearchitecting how agent sessions work in VS Code around the agent host - a dedicated process that runs agent harnesses such as Copilot, Claude, and Codex, based on the Agent Host Protocol (AHP). Because a session lives in its own process, the same session can be connected to and rendered from multiple VS Code windows at once. The agent host's Copilot agent is powered by the Copilot SDK, which means that its b...",
+      "categories": [
+        "release",
+        "section",
+        "Agents"
+      ],
+      "sectionHeading": "Agents",
+      "sectionTitle": "The agent host",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-129:section:93e345fde0cd258b59227b09a0753cfeca8140e67c5eab8fbf06f40b9fb77ab0",
+      "sourceId": "vscode-release-notes-1-129",
+      "sourceName": "VS Code Release Notes 1.129",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-07-15T22:26:56.749Z",
+      "publishedAt": "2026-07-15T00:00:00.000Z",
+      "title": "Visual Studio Code 1.129: New editor panel in the Agents window (Experimental)",
+      "url": "https://code.visualstudio.com/updates/v1_129",
+      "summary": "The Agents window shows your conversation with an agent next to a detail area for the files and changes it produces. This release introduces a redesigned editor panel that brings the editor and the detail area together into one docked pane with a shared tab bar, so reviewing an agent's work feels like working in the main editor instead of switching between separate panels. With the new editor panel, you can: Open fi...",
+      "categories": [
+        "release",
+        "section",
+        "Agents"
+      ],
+      "sectionHeading": "Agents",
+      "sectionTitle": "New editor panel in the Agents window (Experimental)",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-129:section:e3bb305336b58cf4f642f5ca105c7a087e851214cc582256b017fa0b82fa513f",
+      "sourceId": "vscode-release-notes-1-129",
+      "sourceName": "VS Code Release Notes 1.129",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-07-15T22:26:56.749Z",
+      "publishedAt": "2026-07-15T00:00:00.000Z",
+      "title": "Visual Studio Code 1.129: Session-management tools for Agent Host sessions",
+      "url": "https://code.visualstudio.com/updates/v1_129",
+      "summary": "Agents running on the agent host (Copilot, Claude, and Codex) now have access to a suite of session-management tools, so an agent can enumerate, create, observe, and act on other sessions and chats without you needing to switch away from your current conversation. With these tools, an agent can: List your sessions with their status, workspace, and changes, so it can find the right one to act on. Archived sessions ar...",
+      "categories": [
+        "release",
+        "section",
+        "Agents"
+      ],
+      "sectionHeading": "Agents",
+      "sectionTitle": "Session-management tools for Agent Host sessions",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-129:section:18776dc3952f2d2da38645f99ea1b7350f2a58c2714a5e64da2b1e1d56f8483a",
+      "sourceId": "vscode-release-notes-1-129",
+      "sourceName": "VS Code Release Notes 1.129",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-07-15T22:26:56.749Z",
+      "publishedAt": "2026-07-15T00:00:00.000Z",
+      "title": "Visual Studio Code 1.129: Agents window improvements",
+      "url": "https://code.visualstudio.com/updates/v1_129",
+      "summary": "This release includes several smaller improvements to the Agents window new-session flow: Remembered new-session defaults: the new-session picker remembers your last agent mode and approvals choices and uses them as the defaults the next time you create a session, so you don't have to reselect the same options for every task. Worktree checkbox: instead of choosing between folder and worktree isolation from a dropdow...",
+      "categories": [
+        "release",
+        "section",
+        "Agents"
+      ],
+      "sectionHeading": "Agents",
+      "sectionTitle": "Agents window improvements",
+      "score": 4
+    },
+    {
       "eventId": "github-changelog:https://github.blog/changelog/2026-07-14-github-copilot-for-jetbrains-expands-byok-capabilities",
       "sourceId": "github-changelog",
       "sourceName": "GitHub Changelog",
@@ -75,6 +246,42 @@
       ],
       "isFutureDated": false,
       "score": 1
+    },
+    {
+      "eventId": "vscode-release-notes-1-109:c56e945c8c94c4551cd6d04d7dc41dc112a573e7e4e8b2d5ee5a4ebc50310784",
+      "sourceId": "vscode-release-notes-1-109",
+      "sourceName": "VS Code Release Notes 1.109",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-07-15T22:26:55.339Z",
+      "publishedAt": "2026-02-04T00:00:00.000Z",
+      "title": "VS Code Release Notes 1.109 changed",
+      "url": "https://code.visualstudio.com/updates/v1_109",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [],
+        "additions": [
+          "1.129"
+        ]
+      },
+      "headings": [
+        "January 2026 (version 1.109)",
+        "Upcoming events",
+        "Agent Sessions Day",
+        "Chat UX",
+        "Message steering and queueing (Experimental)",
+        "Anthropic models now show thinking tokens",
+        "Mermaid diagrams in chat responses",
+        "Ask Questions tool (Experimental)",
+        "Plan agent",
+        "Context window details",
+        "Inline chat UX revamp (Preview)",
+        "Model descriptions in the model picker"
+      ],
+      "score": 2
     },
     {
       "eventId": "docs-github-copilot-howtos:466601577c731022b0dce1272ea1798f8b74507f11c0570d021c451ac4726d8c",
