@@ -1,13 +1,50 @@
 {
   "date": "2026-07-17",
-  "generatedAt": "2026-07-17T14:57:30.506Z",
+  "generatedAt": "2026-07-17T22:11:06.502Z",
   "latestRun": {
-    "generatedAt": "2026-07-17T14:57:30.506Z",
-    "newEventsCount": 0,
-    "newEventIds": [],
+    "generatedAt": "2026-07-17T22:11:06.502Z",
+    "newEventsCount": 2,
+    "newEventIds": [
+      "github-changelog:https://github.blog/changelog/2026-07-17-copilot-code-review-customization-and-configurability-improvements",
+      "github-changelog:https://github.blog/changelog/2026-07-17-github-mobile-fix-pull-request-comments-with-copilot-cloud-agent"
+    ],
     "errorCount": 0
   },
   "events": [
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-07-17-copilot-code-review-customization-and-configurability-improvements",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-07-17T22:10:56.008Z",
+      "publishedAt": "2026-07-17T21:08:30.000Z",
+      "title": "Copilot code review: Customization and configurability improvements",
+      "url": "https://github.blog/changelog/2026-07-17-copilot-code-review-customization-and-configurability-improvements",
+      "summary": "Copilot code review now utilizes a firewall, custom setup steps, and independent runner configurations. It now reads custom instructions from the head branch to allow for easy testing and validation…\nThe post Copilot code review: Customization and configurability improvements appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 1
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-07-17-github-mobile-fix-pull-request-comments-with-copilot-cloud-agent",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-07-17T22:10:56.008Z",
+      "publishedAt": "2026-07-17T19:47:45.000Z",
+      "title": "GitHub Mobile: Fix pull request comments with Copilot cloud agent",
+      "url": "https://github.blog/changelog/2026-07-17-github-mobile-fix-pull-request-comments-with-copilot-cloud-agent",
+      "summary": "You can now select Fix with Copilot directly from Copilot code review pull request comments in GitHub Mobile. The button is available both on the pull request’s main view and…\nThe post GitHub Mobile: Fix pull request comments with Copilot cloud agent appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "client apps"
+      ],
+      "isFutureDated": false,
+      "score": 2
+    },
     {
       "eventId": "vscode-updates:6f5cd55f48b845cac4bc18f945215afff6d2c80baac7b8f70d8718dff96fef6a",
       "sourceId": "vscode-updates",
