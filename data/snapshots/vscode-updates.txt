@@ -40,6 +40,7 @@ To try new features as soon as possible, download the nightly Insiders build, wh
 H2: Agents
 H3: The agent host
 We're rearchitecting how agent sessions work in VS Code around the agent host - a dedicated process that runs agent harnesses such as Copilot, Claude, and Codex, based on the Agent Host Protocol (AHP). Because a session lives in its own process, the same session can be connected to and rendered from multiple VS Code windows at once. The agent host's Copilot agent is powered by the Copilot SDK, which means that its behavior and functionality is aligned with the Copilot CLI, the standalone GitHub Copilot app, and other Copilot products.
+Learn more about the VS Code Agent Host architecture.
 We're actively developing the agent host and starting to roll it out to users in both the editor window and the Agents window. To opt in, enable 
  
  
