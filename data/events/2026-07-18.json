@@ -1,17 +1,10 @@
 {
   "date": "2026-07-18",
-  "generatedAt": "2026-07-18T07:12:30.495Z",
+  "generatedAt": "2026-07-18T14:34:20.566Z",
   "latestRun": {
-    "generatedAt": "2026-07-18T07:12:30.495Z",
-    "newEventsCount": 6,
-    "newEventIds": [
-      "github-changelog:https://github.blog/changelog/2026-07-17-repository-level-github-copilot-usage-metrics-generally-available",
-      "github-changelog:https://github.blog/changelog/2026-07-17-github-copilot-app-now-available-in-the-usage-metrics-api",
-      "github-changelog-copilot:https://github.blog/changelog/2026-07-17-repository-level-github-copilot-usage-metrics-generally-available",
-      "github-changelog-copilot:https://github.blog/changelog/2026-07-17-github-copilot-app-now-available-in-the-usage-metrics-api",
-      "github-changelog-copilot:https://github.blog/changelog/2026-07-17-copilot-code-review-customization-and-configurability-improvements",
-      "vscode-updates:5b22d2e778779dc77e6d1f683440164efad10a110ad4d4596fb9dc104c9adc63"
-    ],
+    "generatedAt": "2026-07-18T14:34:20.566Z",
+    "newEventsCount": 0,
+    "newEventIds": [],
     "errorCount": 0
   },
   "events": [
