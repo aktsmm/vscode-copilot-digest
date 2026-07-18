@@ -24,6 +24,7 @@ View All Releases
 H1: Visual Studio Code 1.129
 Follow us on LinkedIn, X, Bluesky
 Release date: July 15, 2026
+Update 1.129.1: The update addresses these issues.
 Downloads: Windows: x64 Arm64 | Mac: Universal Intel silicon | Linux: deb rpm tarball Arm snap
 Welcome to the 1.129 release of Visual Studio Code. This release brings a dedicated agent host, a new editor panel in the Agents window, running commands with !, and a preview of the modern UI.
 The agent host: Run agent sessions in a dedicated process and connect to them from multiple windows.
