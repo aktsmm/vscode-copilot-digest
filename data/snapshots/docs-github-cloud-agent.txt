@@ -2,40 +2,59 @@ H1: GitHub Copilot cloud agent
 Find out how Copilot can research a repository, plan and make code changes, and create pull requests for you to review.
 These articles provide how-to information for using Copilot cloud agent. For an overview of Copilot cloud agent, see the articles under Concepts for GitHub Copilot cloud agent.
 H2: Starting GitHub Copilot sessions
+Starting GitHub Copilot sessions
 Choose your preferred way to start Copilot cloud agent sessions.
 H2: Creating automations with Copilot cloud agent
+Creating automations with Copilot cloud agent
 Create and manage automations to run Copilot cloud agent on a schedule or in response to events.
 H2: Changing the AI model for GitHub Copilot cloud agent
+Changing the AI model for GitHub Copilot cloud agent
 In supported entrypoints, when starting a task with Copilot cloud agent, you can select the model used.
 H2: Configuring settings for GitHub Copilot cloud agent
+Configuring settings for GitHub Copilot cloud agent
 Learn how to configure settings for Copilot cloud agent
 H2: Creating custom agents for Copilot cloud agent in your IDE
+Creating custom agents for Copilot cloud agent in your IDE
 You can create specialized agents with tailored expertise for specific development tasks.
 H2: Using Copilot cloud agent on GitHub
+Using Copilot cloud agent on GitHub
 Start Copilot cloud agent sessions directly on GitHub, then iterate on the results without leaving your browser.
 H2: Using Copilot cloud agent on GitHub Mobile
+Using Copilot cloud agent on GitHub Mobile
 Start and track Copilot cloud agent sessions from the GitHub Mobile app.
 H2: Using agent apps
+Using agent apps
 Start a partner-built agent from an issue, a pull request comment, or the Agents UI on GitHub.
 H2: Using Copilot cloud agent in your IDE
+Using Copilot cloud agent in your IDE
 Start and track Copilot cloud agent sessions from Visual Studio Code, JetBrains IDEs, Eclipse, and Visual Studio.
 H2: Using Copilot cloud agent via the API
+Using Copilot cloud agent via the API
 You can start and manage Copilot cloud agent tasks programmatically using the REST API.
 H2: Using Copilot cloud agent from the GitHub CLI
+Using Copilot cloud agent from the GitHub CLI
 Start and track Copilot cloud agent sessions from the GitHub CLI.
 H2: Using Copilot cloud agent via the GitHub MCP Server
+Using Copilot cloud agent via the GitHub MCP Server
 Start Copilot cloud agent sessions from any IDE or agentic tool that supports Model Context Protocol (MCP).
 H2: Integrating Copilot cloud agent with Jira
+Integrating Copilot cloud agent with Jira
 You can use the GitHub integration in Jira to provide context and open pull requests, all from within your Jira workspace.
 H2: Integrating Copilot cloud agent with Slack
+Integrating Copilot cloud agent with Slack
 Provide context to the Copilot cloud agent and open pull requests, all from within your Slack workspace.
 H2: Integrating Copilot cloud agent with Teams
+Integrating Copilot cloud agent with Teams
 You can use the GitHub integration in Teams to provide context and open pull requests all from within your Teams channels.
 H2: Integrating Copilot cloud agent with Linear
+Integrating Copilot cloud agent with Linear
 Use the Copilot integration in Linear to provide context and open pull requests, all from within your Linear workspace.
 H2: Integrating Copilot cloud agent with Azure Boards
+Integrating Copilot cloud agent with Azure Boards
 Use the Copilot integration in Azure Boards to send work items directly to Copilot cloud agent and generate pull requests, all from within your Azure DevOps workspace.
 H2: Using Copilot cloud agent from Raycast
+Using Copilot cloud agent from Raycast
 Start and track Copilot cloud agent sessions from the Raycast launcher.
 H2: Troubleshooting GitHub Copilot cloud agent
+Troubleshooting GitHub Copilot cloud agent
 Learn how to resolve problems that may occur when you assign tasks to Copilot.

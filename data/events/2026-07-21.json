@@ -1,13 +1,10 @@
 {
   "date": "2026-07-21",
-  "generatedAt": "2026-07-21T07:44:00.148Z",
+  "generatedAt": "2026-07-21T15:22:00.038Z",
   "latestRun": {
-    "generatedAt": "2026-07-21T07:44:00.148Z",
-    "newEventsCount": 2,
-    "newEventIds": [
-      "docs-github-copilot-howtos:0694fe851da86383204102ca77d30b3294bd09ef4f50b937c6cd3b1178d900cd",
-      "vscode-release-notes-1-128:c9eadcfbaf2988950fa85f5704703a6717e9f22c97675c263942bfbfc61fe5ba"
-    ],
+    "generatedAt": "2026-07-21T15:22:00.038Z",
+    "newEventsCount": 0,
+    "newEventIds": [],
     "errorCount": 0
   },
   "events": [
