@@ -1,6 +1,8 @@
 import fs from "node:fs";
 import assert from "node:assert/strict";
 
+import { normalizeSnapshotLine } from "../scripts/lib/snapshot-text.mjs";
+
 const sources = JSON.parse(fs.readFileSync("config/sources.json", "utf8"));
 
 assert.ok(Array.isArray(sources), "sources.json must be an array");
@@ -62,6 +64,19 @@ for (const source of sources) {
       source.contentSelector.trim().length > 0,
       `html_snapshot contentSelector must not be blank (id=${source.id})`,
     );
+    if (source.stripOrdinalNavigation !== undefined) {
+      assert.equal(
+        typeof source.stripOrdinalNavigation,
+        "boolean",
+        `stripOrdinalNavigation must be boolean (id=${source.id})`,
+      );
+    }
+    if (source.snapshotVersion !== undefined) {
+      assert.ok(
+        Number.isSafeInteger(source.snapshotVersion) && source.snapshotVersion > 0,
+        `snapshotVersion must be a positive integer (id=${source.id})`,
+      );
+    }
 
     // Guard against a "blind" source: if collect ever stores an empty or
     // near-empty snapshot (e.g. the page's DOM changed and rootSelector /
@@ -80,6 +95,47 @@ for (const source of sources) {
     }
   }
 }
+
+const docsSources = sources.filter((source) =>
+  source.id.startsWith("docs-github-"),
+);
+for (const source of docsSources) {
+  assert.equal(
+    source.stripOrdinalNavigation,
+    true,
+    `${source.id} must normalize ordinal navigation labels`,
+  );
+  assert.equal(
+    source.snapshotVersion,
+    2,
+    `${source.id} must reset its snapshot baseline for selector version 2`,
+  );
+  assert.match(
+    source.contentSelector,
+    /\[data-testid="table-of-contents"\] a/,
+    `${source.id} must capture individual table-of-contents links rather than list containers`,
+  );
+  assert.doesNotMatch(
+    source.contentSelector,
+    /\bli\b/,
+    `${source.id} must not capture nested list containers`,
+  );
+}
+
+assert.equal(
+  normalizeSnapshotLine("Build your first Copilot-powered app, 1 of 8", {
+    stripOrdinalNavigation: true,
+  }),
+  "Build your first Copilot-powered app",
+  "ordinal navigation suffixes must be removed before snapshot diffing",
+);
+assert.equal(
+  normalizeSnapshotLine("Use Copilot agents", {
+    stripOrdinalNavigation: true,
+  }),
+  "Use Copilot agents",
+  "non-ordinal navigation labels must remain available for meaningful diffing",
+);
 
 console.log(
   `sources.test.mjs: OK (${sources.length} sources, ${ids.size} unique ids)`,

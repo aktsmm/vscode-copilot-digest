@@ -82,7 +82,9 @@
     "kind": "html_snapshot",
     "url": "https://docs.github.com/en/copilot",
     "rootSelector": "main",
-    "contentSelector": "h1, h2, h3, p, li",
+    "contentSelector": "h1, h2, h3, p, [data-testid=\"table-of-contents\"] a",
+    "stripOrdinalNavigation": true,
+    "snapshotVersion": 2,
     "maxDiffLines": 24
   },
   {
@@ -91,7 +93,9 @@
     "kind": "html_snapshot",
     "url": "https://docs.github.com/en/copilot/how-tos/use-copilot-agents/cloud-agent",
     "rootSelector": "main",
-    "contentSelector": "h1, h2, h3, p, li",
+    "contentSelector": "h1, h2, h3, p, [data-testid=\"table-of-contents\"] a",
+    "stripOrdinalNavigation": true,
+    "snapshotVersion": 2,
     "maxDiffLines": 24
   },
   {
@@ -100,7 +104,9 @@
     "kind": "html_snapshot",
     "url": "https://docs.github.com/en/copilot/how-tos",
     "rootSelector": "main",
-    "contentSelector": "h1, h2, h3, p, li",
+    "contentSelector": "h1, h2, h3, p, [data-testid=\"table-of-contents\"] a",
+    "stripOrdinalNavigation": true,
+    "snapshotVersion": 2,
     "maxDiffLines": 24
   },
   {
@@ -109,7 +115,9 @@
     "kind": "html_snapshot",
     "url": "https://docs.github.com/en/copilot/concepts",
     "rootSelector": "main",
-    "contentSelector": "h1, h2, h3, p, li",
+    "contentSelector": "h1, h2, h3, p, [data-testid=\"table-of-contents\"] a",
+    "stripOrdinalNavigation": true,
+    "snapshotVersion": 2,
     "maxDiffLines": 24
   },
   {
@@ -118,7 +126,9 @@
     "kind": "html_snapshot",
     "url": "https://docs.github.com/en/copilot/reference",
     "rootSelector": "main",
-    "contentSelector": "h1, h2, h3, p, li",
+    "contentSelector": "h1, h2, h3, p, [data-testid=\"table-of-contents\"] a",
+    "stripOrdinalNavigation": true,
+    "snapshotVersion": 2,
     "maxDiffLines": 24
   }
 ]

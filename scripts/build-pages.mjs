@@ -223,9 +223,9 @@ function buildText(locale) {
       latestDate: "Latest date",
       latestDateDetail:
         "Most recent published digest. This stays on the last published day when the latest collect run detects 0 new items.",
-      latestRunCount: "Latest run new items",
+      latestRunCount: "Latest reader-facing items",
       latestRunCountDetail:
-        "Detected in the most recent collect run. When this is 0, the latest published date may remain unchanged.",
+        "Items eligible for reader-facing pages from the most recent collect run. Audit-only changes are not counted.",
       howToReadTitle: "How to read this site",
       howToReadBody1:
         "Start with the highlight cards to see the changes most likely to matter. Drop into topic sections or the full update list only when you need more detail.",
@@ -375,9 +375,9 @@ function buildText(locale) {
     latestDate: "最新日付",
     latestDateDetail:
       "最後に公開対象になった日次。最新 collect が 0 件なら、この日付は据え置きになります。",
-    latestRunCount: "直近新規件数",
+    latestRunCount: "直近読者向け新規",
     latestRunCountDetail:
-      "最新 collect 実行の検知件数。0 件なら公開日付は前回公開日のままです。",
+      "最新 collect 実行で読者向けに掲載する新規件数。監査専用の差分は含みません。",
     howToReadTitle: "このサイトの見方",
     howToReadBody1:
       "まずはハイライトで重要な更新だけを把握し、必要ならテーマ別まとめと全件リストへ降りていく構成です。",
@@ -958,9 +958,15 @@ function renderEventCard(event, locale, text, options = {}) {
   const importance = importanceFilterValue(event);
   const anchorId = options.anchorId ?? null;
   const whyText = importanceReason(event, locale);
+  const summaryText = options.compact
+    ? cardDescription(event, locale)
+    : trimText(localizedSummary(event, locale), summaryMaxLength);
+  const compactWhy = completeSentencePreview(whyText, locale, 1);
   const why = options.includeWhy
     ? options.compact
-      ? `<p class="mini-why">${escapeHtml(trimText(whyText, locale === "ja" ? 78 : 96))}</p>`
+      ? compactWhy
+        ? `<p class="mini-why">${escapeHtml(compactWhy)}</p>`
+        : ""
       : `<p class="why-it-matters"><strong>${escapeHtml(text.whyLabel)}:</strong> ${escapeHtml(whyText)}</p>`
     : "";
   const cardClass = options.compact ? "mini-highlight" : "update-card";
@@ -979,7 +985,7 @@ function renderEventCard(event, locale, text, options = {}) {
     ${rawTitle ? `<p class="original-title">${escapeHtml(text.originalTitleLabel)}: ${escapeHtml(rawTitle)}</p>` : ""}
     ${renderDateMeta(event, locale, text)}
     ${renderSourceMeta(event, locale, text)}
-    <p>${escapeHtml(trimText(localizedSummary(event, locale), summaryMaxLength))}</p>
+    <p${options.compact ? ' class="mini-summary"' : ""}>${escapeHtml(summaryText)}</p>
     ${why}
   </article>`;
 }
@@ -1561,7 +1567,7 @@ function renderIndexPage(
         ${renderMetric(text.publishedCount, locale === "ja" ? `${dailyDigests.length}${escapeHtml(text.dayCountSuffix)}` : formatCount(dailyDigests.length, locale, "day", "days"), text.publishedCountDetail)}
         ${renderMetric(text.overallCount, locale === "ja" ? `${overallUnique}${escapeHtml(text.itemSuffix)}` : formatCount(overallUnique, locale, "item", "items"), text.overallCountDetail)}
         ${renderMetric(text.latestDate, latestDigest ? latestDigest.date : "N/A", text.latestDateDetail)}
-        ${renderMetric(text.latestRunCount, locale === "ja" ? (latestCollectDigest ? `${latestCollectDigest.latestRun.newEventsCount}${escapeHtml(text.itemSuffix)}` : `0${escapeHtml(text.itemSuffix)}`) : formatCount(latestCollectDigest?.latestRun?.newEventsCount ?? 0, locale, "item", "items"), text.latestRunCountDetail)}
+        ${renderMetric(text.latestRunCount, locale === "ja" ? (latestCollectDigest ? `${latestCollectDigest.freshReaderCount ?? 0}${escapeHtml(text.itemSuffix)}` : `0${escapeHtml(text.itemSuffix)}`) : formatCount(latestCollectDigest?.freshReaderCount ?? 0, locale, "item", "items"), text.latestRunCountDetail)}
       </div>
     </section>
 

@@ -17,6 +17,21 @@ assert.doesNotMatch(
   /href="undefined"/,
   "home nav must not render undefined links",
 );
+assert.match(
+  indexHtml,
+  /直近読者向け新規/,
+  "Japanese home metrics must distinguish reader-facing new items from raw detections",
+);
+assert.match(
+  indexHtml,
+  /直近読者向け新規<\/span><strong class="metric-value">0件<\/strong>/,
+  "Japanese home metrics must show zero when the latest run contains only audit-only changes",
+);
+assert.match(
+  readSiteFile("en/index.html"),
+  /Latest reader-facing items/,
+  "English home metrics must distinguish reader-facing new items from raw detections",
+);
 
 const searchHtml = readSiteFile("search.html");
 assert.match(
@@ -127,6 +142,67 @@ assert.match(
   /data-filter-kind="importance"/,
   "highlight archive must expose importance filters",
 );
+
+const latestHighlightCards = Array.from(
+  indexHtml.matchAll(/<article class="mini-highlight"[\s\S]*?<\/article>/g),
+  (match) => match[0],
+);
+assert.ok(
+  latestHighlightCards.length > 0,
+  "home page must render latest highlight cards",
+);
+for (const card of latestHighlightCards) {
+  const summary = card.match(/<p class="mini-summary">([^<]+)<\/p>/);
+  assert.ok(summary, "latest highlight cards must include an explanation");
+  assert.match(
+    summary[1],
+    /[。！？]$/,
+    "Japanese latest highlight explanations must end at a sentence boundary",
+  );
+  assert.doesNotMatch(
+    summary[1],
+    /\.\.\.|…/,
+    "Japanese latest highlight explanations must not contain ellipsis truncation",
+  );
+  const why = card.match(/<p class="mini-why">([^<]+)<\/p>/);
+  if (why) {
+    assert.match(
+      why[1],
+      /[。！？]$/,
+      "Japanese latest highlight importance text must end at a sentence boundary",
+    );
+    assert.doesNotMatch(
+      why[1],
+      /\.\.\.|…/,
+      "Japanese latest highlight importance text must not contain ellipsis truncation",
+    );
+  }
+}
+
+const englishLatestHighlightCards = Array.from(
+  readSiteFile("en/index.html").matchAll(
+    /<article class="mini-highlight"[\s\S]*?<\/article>/g,
+  ),
+  (match) => match[0],
+);
+assert.ok(
+  englishLatestHighlightCards.length > 0,
+  "English home page must render latest highlight cards",
+);
+for (const card of englishLatestHighlightCards) {
+  const summary = card.match(/<p class="mini-summary">([^<]+)<\/p>/);
+  assert.ok(summary, "English latest highlight cards must include an explanation");
+  assert.match(
+    summary[1],
+    /[.!?]$/,
+    "English latest highlight explanations must end at a sentence boundary",
+  );
+  assert.doesNotMatch(
+    summary[1],
+    /\.\.\.|…/,
+    "English latest highlight explanations must not contain ellipsis truncation",
+  );
+}
 
 const homeDigestCards = Array.from(
   indexHtml.matchAll(/<article class="digest-card">([\s\S]*?)<\/article>/g),

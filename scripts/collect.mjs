@@ -16,6 +16,7 @@ import {
   originalTitle,
   summarizeEventSet,
 } from "./lib/reporting.mjs";
+import { normalizeSnapshotLine } from "./lib/snapshot-text.mjs";
 
 const workspaceRoot = process.cwd();
 const configFile = path.join(workspaceRoot, "config", "sources.json");
@@ -234,7 +235,10 @@ function buildHtmlSnapshot(source, html) {
     .find(source.contentSelector ?? "h1, h2, h3, p, li")
     .each((_, element) => {
       const tag = String(element.tagName ?? "").toLowerCase();
-      const text = normalizeWhitespace($(element).text());
+      const text = normalizeSnapshotLine(
+        normalizeWhitespace($(element).text()),
+        source,
+      );
       if (!text) {
         return;
       }
@@ -634,9 +638,14 @@ async function collectHtmlSnapshotSource(source, sourceState) {
   const shouldEmitSnapshotEvent = !(
     source.trackSections && sections.length > 0
   );
+  const snapshotVersionChanged =
+    Boolean(sourceState.snapshotHash) &&
+    source.snapshotVersion !== undefined &&
+    sourceState.snapshotVersion !== source.snapshotVersion;
 
   if (
     shouldEmitSnapshotEvent &&
+    !snapshotVersionChanged &&
     !sourceState.snapshotHash &&
     source.emitOnInitialSnapshot
   ) {
@@ -662,6 +671,7 @@ async function collectHtmlSnapshotSource(source, sourceState) {
     });
   } else if (
     shouldEmitSnapshotEvent &&
+    !snapshotVersionChanged &&
     sourceState.snapshotHash &&
     sourceState.snapshotHash !== snapshotHash
   ) {
@@ -744,6 +754,7 @@ async function collectHtmlSnapshotSource(source, sourceState) {
       releasePublishedAt: basePublishedAt,
       releaseTitle: headingTitle,
       snapshotHash,
+      snapshotVersion: source.snapshotVersion ?? sourceState.snapshotVersion,
       lastCheckedAt: new Date().toISOString(),
     },
   };
