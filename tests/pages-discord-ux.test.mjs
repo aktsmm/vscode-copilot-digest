@@ -128,51 +128,87 @@ assert.match(
   "highlight archive must expose importance filters",
 );
 
-const weeklyHomeCards = Array.from(
+const homeDigestCards = Array.from(
   indexHtml.matchAll(/<article class="digest-card">([\s\S]*?)<\/article>/g),
   (match) => match[1],
-).slice(0, 6);
-assert.equal(
-  weeklyHomeCards.length,
-  6,
-  "home page must render the configured weekly digest card count",
 );
-for (const card of weeklyHomeCards) {
+assert.equal(
+  homeDigestCards.length,
+  12,
+  "home page must render weekly and daily digest cards",
+);
+for (const card of homeDigestCards) {
   assert.match(
     card,
     /digest-card-focus/,
-    "weekly digest cards must show one compact focus",
+    "home digest cards must show one compact focus",
   );
   assert.doesNotMatch(
     card,
     /<ul>|件の更新を反映。内訳は/,
-    "weekly digest cards must not repeat aggregate summaries or bullet lists",
+    "home digest cards must not repeat aggregate summaries or bullet lists",
+  );
+  const summary = card.match(/<p class="digest-card-summary">([^<]+)<\/p>/);
+  assert.ok(summary, "Japanese home digest cards must include an explanation");
+  assert.match(
+    summary[1],
+    /[。！？]$/,
+    "Japanese home card explanations must end at a sentence boundary",
+  );
+  assert.doesNotMatch(
+    summary[1],
+    /\.\.\.|…/,
+    "Japanese home card explanations must not contain ellipsis truncation",
   );
 }
 
-const englishWeeklyHomeCards = Array.from(
+const englishHomeDigestCards = Array.from(
   readSiteFile("en/index.html").matchAll(
     /<article class="digest-card">([\s\S]*?)<\/article>/g,
   ),
   (match) => match[1],
-).slice(0, 6);
-assert.equal(
-  englishWeeklyHomeCards.length,
-  6,
-  "English home page must render the configured weekly digest card count",
 );
-for (const card of englishWeeklyHomeCards) {
+assert.equal(
+  englishHomeDigestCards.length,
+  12,
+  "English home page must render weekly and daily digest cards",
+);
+for (const card of englishHomeDigestCards) {
   assert.match(
     card,
     /digest-card-focus/,
-    "English weekly digest cards must show one compact focus",
+    "English home digest cards must show one compact focus",
   );
   assert.doesNotMatch(
     card,
     /<ul>|Reflects \d+ published updates\./,
-    "English weekly digest cards must not repeat aggregate summaries or bullet lists",
+    "English home digest cards must not repeat aggregate summaries or bullet lists",
+  );
+  const summary = card.match(/<p class="digest-card-summary">([^<]+)<\/p>/);
+  assert.ok(summary, "English home digest cards must include an explanation");
+  assert.match(
+    summary[1],
+    /[.!?]$/,
+    "English home card explanations must end at a sentence boundary",
+  );
+  assert.doesNotMatch(
+    summary[1],
+    /\.\.\.|…/,
+    "English home card explanations must not contain ellipsis truncation",
   );
 }
+const opusCardSummary = readSiteFile("en/index.html").match(
+  /<p class="digest-card-summary">(Opus 4\.6 \(fast\) will be deprecated across GitHub Copilot experiences[^<]*)<\/p>/,
+);
+assert.ok(
+  opusCardSummary,
+  "English card summaries must preserve version numbers at the sentence start",
+);
+assert.doesNotMatch(
+  opusCardSummary[1],
+  /\.\.\.|…/,
+  "English card summaries must not cut the sentence with an ellipsis",
+);
 
 const weeklyArchiveHtml = readSiteFile("weeks/index.html");
 assert.match(
@@ -185,6 +221,28 @@ assert.doesNotMatch(
   /<div class="archive-stream-body">[\s\S]*?<ul>/,
   "weekly archive cards must not repeat focus items as a second list",
 );
+const weeklyArchiveSummaries = Array.from(
+  weeklyArchiveHtml.matchAll(
+    /<div class="archive-stream-body">[\s\S]*?<p class="archive-stream-focus">[^<]+<\/p>\s*<p>([^<]+)<\/p>/g,
+  ),
+  (match) => match[1],
+);
+assert.ok(
+  weeklyArchiveSummaries.length > 0,
+  "weekly archive cards must include a complete explanatory sentence",
+);
+for (const summary of weeklyArchiveSummaries) {
+  assert.match(
+    summary,
+    /[。！？]$/,
+    "weekly archive explanations must end at a Japanese sentence boundary",
+  );
+  assert.doesNotMatch(
+    summary,
+    /\.\.\.|…/,
+    "weekly archive explanations must not contain ellipsis truncation",
+  );
+}
 
 const weeklyDryRun = spawnSync(
   process.execPath,

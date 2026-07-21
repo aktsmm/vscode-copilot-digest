@@ -76,6 +76,63 @@ function trimText(value, maxLength = 180) {
   return `${normalized.slice(0, maxLength - 1).trimEnd()}...`;
 }
 
+function completeSentencePreview(value, locale, maxSentences = 2) {
+  const normalized = String(value ?? "")
+    .replace(/\s+/g, " ")
+    .trim();
+  if (!normalized) {
+    return "";
+  }
+
+  const sentences = [];
+  let sentenceStart = 0;
+  for (let index = 0; index < normalized.length; index += 1) {
+    const character = normalized[index];
+    const previousCharacter = normalized[index - 1] ?? "";
+    const nextCharacter = normalized[index + 1] ?? "";
+    const isJapaneseTerminator = locale === "ja" && /[。！？]/.test(character);
+    const isEnglishTerminator =
+      locale !== "ja" &&
+      /[.!?]/.test(character) &&
+      !(
+        character === "." &&
+        (previousCharacter === "." || nextCharacter === ".")
+      ) &&
+      /\s|^$/.test(nextCharacter);
+
+    if (!isJapaneseTerminator && !isEnglishTerminator) {
+      continue;
+    }
+
+    const sentence = normalized.slice(sentenceStart, index + 1).trim();
+    if (sentence) {
+      sentences.push(sentence);
+    }
+    sentenceStart = index + 1;
+    while (/\s/.test(normalized[sentenceStart] ?? "")) {
+      sentenceStart += 1;
+    }
+
+    if (sentences.length === maxSentences) {
+      break;
+    }
+  }
+
+  return sentences.join(" ");
+}
+
+function cardDescription(event, locale) {
+  const summary = completeSentencePreview(
+    localizedSummary(event, locale),
+    locale,
+  );
+  if (summary) {
+    return summary;
+  }
+
+  return completeSentencePreview(importanceReason(event, locale), locale);
+}
+
 function formatDate(value, locale = "ja") {
   return safeDate(value).toLocaleDateString(
     locale === "ja" ? "ja-JP" : "en-US",
@@ -1098,13 +1155,11 @@ function renderArchiveCard(digest, locale, text, href, kind) {
   const displayEvents = digest.readerEvents ?? digest.uniqueEvents;
   const focusEvent = digest.highlights[0] ?? displayEvents[0] ?? null;
   const focusTitle = focusEvent
-    ? trimText(localizedTitle(focusEvent, locale), locale === "ja" ? 76 : 92)
+    ? localizedTitle(focusEvent, locale)
     : locale === "ja"
       ? "主な更新を確認する"
       : "Review the main update";
-  const focusSummary = focusEvent
-    ? trimText(localizedSummary(focusEvent, locale), locale === "ja" ? 94 : 116)
-    : "";
+  const focusSummary = focusEvent ? cardDescription(focusEvent, locale) : "";
   const itemCount =
     locale === "ja"
       ? `${digest.readerEventCount ?? displayEvents.length}${escapeHtml(text.itemSuffix)}`
@@ -1166,16 +1221,11 @@ function renderDigestStreamItem(digest, locale, text, href, kind) {
         );
   const focusEvent = digest.highlights[0] ?? displayEvents[0] ?? null;
   const focusTitle = focusEvent
-    ? trimText(localizedTitle(focusEvent, locale), locale === "ja" ? 110 : 130)
+    ? localizedTitle(focusEvent, locale)
     : locale === "ja"
       ? "主な更新を確認する"
       : "Review the main update";
-  const focusSummary = focusEvent
-    ? trimText(
-        localizedSummary(focusEvent, locale),
-        locale === "ja" ? 180 : 220,
-      )
-    : "";
+  const focusSummary = focusEvent ? cardDescription(focusEvent, locale) : "";
 
   return `<article class="archive-stream-item">
     <div class="archive-stream-side">
@@ -2877,24 +2927,18 @@ h1 { margin: 0 0 16px; font-size: clamp(1.5rem, 2.4vw, 2.2rem); line-height: 1.1
   font-size: 0.8rem;
   font-weight: 700;
 }
-.digest-card-focus,
-.digest-card-summary {
-  display: -webkit-box;
-  overflow: hidden;
-  -webkit-box-orient: vertical;
-}
 .digest-card-focus {
   margin: 5px 0 0;
   color: var(--text);
   font-weight: 700;
   line-height: 1.5;
-  -webkit-line-clamp: 2;
+  overflow-wrap: anywhere;
 }
 .digest-card-summary {
   margin: 8px 0 0;
   color: var(--muted);
   line-height: 1.6;
-  -webkit-line-clamp: 3;
+  overflow-wrap: anywhere;
 }
 .archive-stream-focus {
   color: var(--text) !important;
