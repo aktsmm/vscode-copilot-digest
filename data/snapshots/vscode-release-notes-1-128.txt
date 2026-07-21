@@ -72,7 +72,7 @@ This experience is available when using the Claude agent via the agent host. Ens
  .
 H3: Chat without a selected workspace in the Agents window
 The Agents window gives you a dedicated place to create, resume, and manage agent sessions. For project work, those sessions keep the chat, files, and changes together with the workspace.
-For questions not tied to a folder, you can now start a chat in the Agents window without selecting a workspace. These chats appear in the Chats section and open focused and ready for input. Start a quick chat with ⌘K ⌘N (Windows, Linux cmd+K cmd+N) or the plus button on the Chats section header.
+For questions not tied to a folder, you can now start a chat in the Agents window without selecting a workspace. These chats appear in the Chats section and open focused and ready for input. Start a quick chat with or the plus button on the Chats section header.
 Because a quick chat is workspace-less, it does not show the workspace-specific Changes or Files side pane. Quick chats are restored with your other sessions after reload and remain separate from workspace sessions.
 Chats without a workspace are supported only by agent host sessions, so this experience is available when the agent host is enabled (and selected via the harness picker) with 
  
@@ -118,13 +118,13 @@ This experience is available when using Copilot via the agent host. Ensure the a
  This setting is managed at the organization level. Contact your administrator to change it.ORG.
 H3: Keyboard shortcuts for chats in the Agents window
 The Agents window supports multi-chat sessions, where one agent session can contain multiple related chats. Keyboard-driven chat navigation helps you move between chats and manage chat tabs without leaving the keyboard.
-Create a chat with ⌘T (Windows, Linux cmd+T).
-Reopen the last closed chat with ⇧⌘T (Windows, Linux Shift+cmd+T).
-Go to the next or previous chat with ⇧⌘] (Windows, Linux Shift+cmd+]) and ⇧⌘[ (Windows, Linux Shift+cmd+[).
-Quickly switch between open chats with ⌃Tab (Windows, Linux Ctrl+Tab) and ⌃⇧Tab (Windows, Linux Ctrl+Shift+Tab).
-Close the active chat tab with ⌘W (Windows, Linux cmd+W).
-Delete the active non-main chat with ⌘Backspace (Windows, Linux cmd+Backspace).
-Open a searchable picker for open and closed chats with ⇧⌘O (Windows, Linux Shift+cmd+O).
+Create a chat with .
+Reopen the last closed chat with .
+Go to the next or previous chat with and .
+Quickly switch between open chats with and .
+Close the active chat tab with .
+Delete the active non-main chat with .
+Open a searchable picker for open and closed chats with .
 These shortcuts are scoped to the Agents window and fall back to the existing session-level behavior when there is no chat-specific action to perform.
 H2: Chat
 H3: Copilot Vision is now generally available

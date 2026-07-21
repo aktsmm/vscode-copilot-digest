@@ -95,10 +95,10 @@ Managing issues and pull requests with the GitHub Copilot app, 5 of 8
 Using automations in the GitHub Copilot app, 6 of 8
 Using your own LLM models in the GitHub Copilot app, 7 of 8
 Using deep links to open the GitHub Copilot app, 8 of 8
-Copilot SDK, 8 of 20Authentication, 1 of 8Features, 2 of 8Build your first Copilot-powered app, 3 of 8Use hooks, 4 of 8Integrations, 5 of 8Observability, 6 of 8Set up Copilot SDK, 7 of 8Troubleshooting, 8 of 8
-Authentication, 1 of 8
-Features, 2 of 8
-Build your first Copilot-powered app, 3 of 8
+Copilot SDK, 8 of 20Build your first Copilot-powered app, 1 of 8Authentication, 2 of 8Features, 3 of 8Use hooks, 4 of 8Integrations, 5 of 8Observability, 6 of 8Set up Copilot SDK, 7 of 8Troubleshooting, 8 of 8
+Build your first Copilot-powered app, 1 of 8
+Authentication, 2 of 8
+Features, 3 of 8
 Use hooks, 4 of 8
 Integrations, 5 of 8
 Observability, 6 of 8

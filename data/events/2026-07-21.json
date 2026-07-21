@@ -1,0 +1,44 @@
+{
+  "date": "2026-07-21",
+  "generatedAt": "2026-07-21T07:44:00.148Z",
+  "latestRun": {
+    "generatedAt": "2026-07-21T07:44:00.148Z",
+    "newEventsCount": 2,
+    "newEventIds": [
+      "docs-github-copilot-howtos:0694fe851da86383204102ca77d30b3294bd09ef4f50b937c6cd3b1178d900cd",
+      "vscode-release-notes-1-128:c9eadcfbaf2988950fa85f5704703a6717e9f22c97675c263942bfbfc61fe5ba"
+    ],
+    "errorCount": 0
+  },
+  "events": [
+    {
+      "eventId": "docs-github-copilot-howtos:0694fe851da86383204102ca77d30b3294bd09ef4f50b937c6cd3b1178d900cd",
+      "sourceId": "docs-github-copilot-howtos",
+      "sourceName": "GitHub Docs / Copilot how-tos",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-07-21T07:43:56.927Z",
+      "publishedAt": "2026-07-21T07:43:56.926Z",
+      "title": "GitHub Docs / Copilot how-tos changed",
+      "url": "https://docs.github.com/en/copilot/how-tos",
+      "summary": "Detected 4 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 4,
+        "headings": [],
+        "additions": [
+          "Copilot SDK, 8 of 20Build your first Copilot-powered app, 1 of 8Authentication, 2 of 8Features, 3 of 8Use hooks, 4 of 8Integrations, 5 of 8Observability, 6 of 8Set up Copilot SDK, 7 of 8Troubleshooting, 8 of 8",
+          "Build your first Copilot-powered app, 1 of 8",
+          "Authentication, 2 of 8",
+          "Features, 3 of 8"
+        ]
+      },
+      "headings": [
+        "How-tos for GitHub Copilot"
+      ],
+      "score": 2
+    }
+  ],
+  "errors": []
+}
