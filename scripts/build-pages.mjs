@@ -1096,11 +1096,15 @@ function renderArchiveCard(digest, locale, text, href, kind) {
       ? `${digest.startDate} - ${digest.endDate}`
       : `${digest.date}`;
   const displayEvents = digest.readerEvents ?? digest.uniqueEvents;
-  const topItems = digest.highlights.slice(0, 3);
-  const digestSummary = summarizeEventSet(displayEvents, locale, {
-    maxLength: 620,
-    maxHighlights: 3,
-  });
+  const focusEvent = digest.highlights[0] ?? displayEvents[0] ?? null;
+  const focusTitle = focusEvent
+    ? trimText(localizedTitle(focusEvent, locale), locale === "ja" ? 76 : 92)
+    : locale === "ja"
+      ? "主な更新を確認する"
+      : "Review the main update";
+  const focusSummary = focusEvent
+    ? trimText(localizedSummary(focusEvent, locale), locale === "ja" ? 94 : 116)
+    : "";
   const itemCount =
     locale === "ja"
       ? `${digest.readerEventCount ?? displayEvents.length}${escapeHtml(text.itemSuffix)}`
@@ -1114,8 +1118,9 @@ function renderArchiveCard(digest, locale, text, href, kind) {
   return `<article class="digest-card">
     <div class="digest-card-head"><p>${escapeHtml(rangeLabel)}</p><span>${itemCount}</span></div>
     <h3><a href="${escapeHtml(href)}">${escapeHtml(title)}</a></h3>
-    <p>${escapeHtml(digestSummary)}</p>
-    <ul>${topItems.map((event) => `<li>${escapeHtml(localizedDigestMention(event, locale, locale === "ja" ? 120 : 96))}</li>`).join("")}</ul>
+    <p class="digest-card-focus-label">${escapeHtml(locale === "ja" ? "今週の焦点" : "Focus")}</p>
+    <p class="digest-card-focus">${escapeHtml(focusTitle)}</p>
+    ${focusSummary ? `<p class="digest-card-summary">${escapeHtml(focusSummary)}</p>` : ""}
   </article>`;
 }
 
@@ -1159,11 +1164,18 @@ function renderDigestStreamItem(digest, locale, text, href, kind) {
           "item",
           "items",
         );
-  const topItems = digest.highlights.slice(0, 3);
-  const digestSummary = summarizeEventSet(displayEvents, locale, {
-    maxLength: 720,
-    maxHighlights: 3,
-  });
+  const focusEvent = digest.highlights[0] ?? displayEvents[0] ?? null;
+  const focusTitle = focusEvent
+    ? trimText(localizedTitle(focusEvent, locale), locale === "ja" ? 110 : 130)
+    : locale === "ja"
+      ? "主な更新を確認する"
+      : "Review the main update";
+  const focusSummary = focusEvent
+    ? trimText(
+        localizedSummary(focusEvent, locale),
+        locale === "ja" ? 180 : 220,
+      )
+    : "";
 
   return `<article class="archive-stream-item">
     <div class="archive-stream-side">
@@ -1172,8 +1184,8 @@ function renderDigestStreamItem(digest, locale, text, href, kind) {
     </div>
     <div class="archive-stream-body">
       <h3><a href="${escapeHtml(href)}">${escapeHtml(rangeLabel)}</a></h3>
-      <p>${escapeHtml(digestSummary)}</p>
-      <ul>${topItems.map((event) => `<li>${escapeHtml(localizedDigestMention(event, locale, locale === "ja" ? 148 : 120))}</li>`).join("")}</ul>
+      <p class="archive-stream-focus">${escapeHtml(locale === "ja" ? "主な更新" : "Focus")}: ${escapeHtml(focusTitle)}</p>
+      ${focusSummary ? `<p>${escapeHtml(focusSummary)}</p>` : ""}
     </div>
     <div class="archive-stream-link">${renderSectionAction(href, locale === "ja" ? "開く" : "Open")}</div>
   </article>`;
@@ -2853,8 +2865,41 @@ h1 { margin: 0 0 16px; font-size: clamp(1.5rem, 2.4vw, 2.2rem); line-height: 1.1
 }
 .topic-list li a { flex: 1; text-decoration: none; }
 .data-links { display: flex; gap: 14px; margin-top: 18px; flex-wrap: wrap; }
-.digest-card ul { margin: 14px 0 0; padding-left: 18px; color: var(--muted); }
+.digest-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 192px;
+}
 .digest-card-head { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+.digest-card-focus-label {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+.digest-card-focus,
+.digest-card-summary {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+}
+.digest-card-focus {
+  margin: 5px 0 0;
+  color: var(--text);
+  font-weight: 700;
+  line-height: 1.5;
+  -webkit-line-clamp: 2;
+}
+.digest-card-summary {
+  margin: 8px 0 0;
+  color: var(--muted);
+  line-height: 1.6;
+  -webkit-line-clamp: 3;
+}
+.archive-stream-focus {
+  color: var(--text) !important;
+  font-weight: 700;
+}
 .empty-state, .empty-card p { color: var(--muted); }
 .source-highlight-panel + .source-highlight-panel { margin-top: 18px; }
 .latest-highlights-empty { margin: 12px 0 0; color: var(--muted); }

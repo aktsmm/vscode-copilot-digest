@@ -128,6 +128,64 @@ assert.match(
   "highlight archive must expose importance filters",
 );
 
+const weeklyHomeCards = Array.from(
+  indexHtml.matchAll(/<article class="digest-card">([\s\S]*?)<\/article>/g),
+  (match) => match[1],
+).slice(0, 6);
+assert.equal(
+  weeklyHomeCards.length,
+  6,
+  "home page must render the configured weekly digest card count",
+);
+for (const card of weeklyHomeCards) {
+  assert.match(
+    card,
+    /digest-card-focus/,
+    "weekly digest cards must show one compact focus",
+  );
+  assert.doesNotMatch(
+    card,
+    /<ul>|件の更新を反映。内訳は/,
+    "weekly digest cards must not repeat aggregate summaries or bullet lists",
+  );
+}
+
+const englishWeeklyHomeCards = Array.from(
+  readSiteFile("en/index.html").matchAll(
+    /<article class="digest-card">([\s\S]*?)<\/article>/g,
+  ),
+  (match) => match[1],
+).slice(0, 6);
+assert.equal(
+  englishWeeklyHomeCards.length,
+  6,
+  "English home page must render the configured weekly digest card count",
+);
+for (const card of englishWeeklyHomeCards) {
+  assert.match(
+    card,
+    /digest-card-focus/,
+    "English weekly digest cards must show one compact focus",
+  );
+  assert.doesNotMatch(
+    card,
+    /<ul>|Reflects \d+ published updates\./,
+    "English weekly digest cards must not repeat aggregate summaries or bullet lists",
+  );
+}
+
+const weeklyArchiveHtml = readSiteFile("weeks/index.html");
+assert.match(
+  weeklyArchiveHtml,
+  /archive-stream-focus/,
+  "weekly archive cards must show a single focus",
+);
+assert.doesNotMatch(
+  weeklyArchiveHtml,
+  /<div class="archive-stream-body">[\s\S]*?<ul>/,
+  "weekly archive cards must not repeat focus items as a second list",
+);
+
 const weeklyDryRun = spawnSync(
   process.execPath,
   [
