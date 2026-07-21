@@ -23,6 +23,7 @@ const stateFile = path.join(workspaceRoot, "data", "state.json");
 const eventsDir = path.join(workspaceRoot, "data", "events");
 const snapshotsDir = path.join(workspaceRoot, "data", "snapshots");
 const summaryDir = path.join(workspaceRoot, "summaries", "daily");
+const renderExistingSummariesOnly = process.argv.includes("--render-existing");
 
 const xmlParser = new XMLParser({
   ignoreAttributes: false,
@@ -929,6 +930,24 @@ function shouldWriteDailySummary(eventLog) {
   return digest.uniqueEventCount > 0 || digest.futureUniqueCount > 0;
 }
 
+async function writeDailySummaries(logs) {
+  await Promise.all(
+    logs.map(async (log) => {
+      const summaryFile = path.join(summaryDir, `${log.date}.md`);
+      if (!shouldWriteDailySummary(log)) {
+        await fs.rm(summaryFile, { force: true });
+        return;
+      }
+
+      await fs.writeFile(
+        summaryFile,
+        renderMarkdownSummary(log.date, log),
+        "utf8",
+      );
+    }),
+  );
+}
+
 async function main() {
   await Promise.all([
     ensureDirectory(eventsDir),
@@ -936,11 +955,20 @@ async function main() {
     ensureDirectory(summaryDir),
   ]);
 
+  const logs = await readExistingEventLogs();
+  // Rebuild published summaries without contacting configured sources.
+  if (renderExistingSummariesOnly) {
+    await writeDailySummaries(logs);
+    console.log(
+      `Rendered ${logs.length} daily summary file(s) from existing events.`,
+    );
+    return;
+  }
+
   const [configuredSources, state] = await Promise.all([
     readJson(configFile, []),
     readJson(stateFile, { version: 1, sources: {} }),
   ]);
-  const logs = await readExistingEventLogs();
 
   const sources = [...configuredSources];
   const vscodeUpdatesSource = configuredSources.find(
@@ -1059,24 +1087,11 @@ async function main() {
   const allLogs = [...logs.filter((log) => log.date !== today), eventLog].sort(
     (left, right) => safeDate(left.date) - safeDate(right.date),
   );
-  const summaryWrites = allLogs.map(async (log) => {
-    const summaryFile = path.join(summaryDir, `${log.date}.md`);
-    if (!shouldWriteDailySummary(log)) {
-      await fs.rm(summaryFile, { force: true });
-      return;
-    }
-
-    await fs.writeFile(
-      summaryFile,
-      renderMarkdownSummary(log.date, log),
-      "utf8",
-    );
-  });
 
   await Promise.all([
     fs.writeFile(eventFile, JSON.stringify(eventLog, null, 2), "utf8"),
     fs.writeFile(stateFile, JSON.stringify(nextState, null, 2), "utf8"),
-    ...summaryWrites,
+    writeDailySummaries(allLogs),
   ]);
 
   console.log(`Collected ${events.length} new event(s).`);

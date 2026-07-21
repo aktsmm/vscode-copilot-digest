@@ -6,9 +6,12 @@ import {
   buildDailyDigest,
   importanceReason,
   localizedSummary,
+  localizedTitle,
   lowInformationFallbackMarkers,
+  originalTitle,
   summarizeEventSet,
 } from "../scripts/lib/reporting.mjs";
+import { editorialOverrides } from "../scripts/lib/editorial-overrides.mjs";
 
 assert.ok(
   Array.isArray(lowInformationFallbackMarkers),
@@ -84,6 +87,19 @@ const reportingSource = fs.readFileSync("scripts/lib/reporting.mjs", "utf8");
 assertNoDuplicateObjectKeys(reportingSource, "vscodeReleaseSummaries");
 assertNoDuplicateObjectKeys(reportingSource, "exactSummaryMappings");
 assertNoDuplicateObjectKeys(reportingSource, "exactImportanceMappings");
+
+const packageJson = JSON.parse(fs.readFileSync("package.json", "utf8"));
+assert.equal(
+  packageJson.scripts["render:summaries"],
+  "node scripts/collect.mjs --render-existing",
+  "package must expose the offline summary renderer",
+);
+const collectSource = fs.readFileSync("scripts/collect.mjs", "utf8");
+assert.match(
+  collectSource,
+  /if \(renderExistingSummariesOnly\) \{\s*await writeDailySummaries\(logs\);[\s\S]*?return;/,
+  "offline summary renderer must return before source collection",
+);
 
 assertCliFails(
   [
@@ -175,10 +191,28 @@ const unknownSamples = [
   },
 ];
 
+const utcBoundaryDigest = buildDailyDigest({
+  date: "2026-07-20",
+  events: [
+    {
+      title: "UTC boundary sample",
+      sourceId: "github-changelog-copilot",
+      sourceName: "GitHub Changelog / Copilot",
+      summary: "A published GitHub Copilot update.",
+      publishedAt: "2026-07-20T18:24:14.000Z",
+      isFutureDated: false,
+    },
+  ],
+});
+assert.equal(
+  utcBoundaryDigest.uniqueEventCount,
+  1,
+  "an event published late on the digest date in UTC must remain in that daily digest",
+);
+
 for (const event of unknownSamples) {
-  assertNoLowInformationFallback(localizedSummary(event), event.title);
+  assertLowInformationFallback(localizedSummary(event), event.title);
   assertNoLowInformationFallback(importanceReason(event), event.title);
-  assertNoEnglishSummaryFallback(localizedSummary(event), event.title);
 }
 assert.doesNotMatch(
   summarizeEventSet(unknownSamples, "ja", { maxHighlights: 3 }),
@@ -201,6 +235,70 @@ assert.doesNotMatch(
   importanceReason(mappedCodeReviewEvent),
   /英語 summary では/,
   "mapped Copilot code review event importance must render as Japanese copy",
+);
+
+for (const [title, override] of Object.entries(editorialOverrides)) {
+  const event = { title, summary: "" };
+  assert.match(
+    override.jaTitle,
+    /[ぁ-んァ-ヶ一-龠]/,
+    `${title} must include a Japanese title`,
+  );
+  assert.match(
+    override.jaSummary,
+    /[ぁ-んァ-ヶ一-龠]/,
+    `${title} must include a Japanese summary`,
+  );
+  assert.match(
+    override.jaWhy,
+    /[ぁ-んァ-ヶ一-龠]/,
+    `${title} must include a Japanese importance reason`,
+  );
+  assert.equal(
+    localizedTitle(event),
+    override.jaTitle,
+    `${title} must have a Japanese title`,
+  );
+  assert.equal(
+    originalTitle(event),
+    title,
+    `${title} must retain its original English title`,
+  );
+  assert.equal(
+    localizedTitle(event, "en"),
+    title,
+    `${title} must remain unchanged in English`,
+  );
+}
+
+const billingOverrideSamples = [
+  {
+    title: "AI credit pools for cost centers in the billing UI",
+    summary:
+      "You can now manage a cost center's AI credit pool directly in the billing UI where you create and edit cost centers. Previously, you could only manage this through another route.",
+    englishText: "You can now manage a cost center's AI credit pool",
+  },
+  {
+    title: "Copilot users can now see AI credits used per billing cycle",
+    summary:
+      "Copilot Business and Copilot Enterprise users can now see how many AI credits they've used this billing cycle, even without an individual budget.",
+    englishText: "Copilot Business and Copilot Enterprise users",
+  },
+];
+
+for (const event of billingOverrideSamples) {
+  const override = editorialOverrides[event.title];
+  assert.equal(localizedSummary(event), override.jaSummary);
+  assert.equal(importanceReason(event), override.jaWhy);
+  assert.match(localizedSummary(event, "en"), new RegExp(event.englishText));
+}
+assert.equal(
+  localizedTitle({
+    title: "AI\u00a0credit pools for cost centers in the billing UI",
+    summary: "",
+  }),
+  editorialOverrides["AI credit pools for cost centers in the billing UI"].jaTitle,
+  "editorial title lookup must normalize non-breaking spaces",
 );
 
 const highExposureMappedEvents = [
@@ -269,6 +367,16 @@ function assertNoLowInformationFallback(text, context) {
     hits,
     [],
     `${context} contains low-information fallback copy`,
+  );
+}
+
+function assertLowInformationFallback(text, context) {
+  const hits = lowInformationFallbackMarkers.filter((marker) =>
+    String(text).includes(marker),
+  );
+  assert.ok(
+    hits.length > 0,
+    `${context} must be detected as low-information until it receives an editorial mapping`,
   );
 }
 

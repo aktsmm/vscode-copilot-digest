@@ -83,6 +83,29 @@ assert.match(
   "detail cards must include sort score metadata",
 );
 
+const july20JapaneseHtml = readSiteFile("days/2026-07-20.html");
+assert.match(
+  july20JapaneseHtml,
+  /請求 UI で cost center の AI credit pool を直接管理可能に/,
+  "Japanese day page must show the localized billing title",
+);
+assert.match(
+  july20JapaneseHtml,
+  /原題: AI credit pools for cost centers in the billing UI/,
+  "Japanese day page must retain the original English title",
+);
+const july20EnglishHtml = readSiteFile("en/days/2026-07-20.html");
+assert.match(
+  july20EnglishHtml,
+  /AI credit pools for cost centers in the billing UI/,
+  "English day page must retain the original title",
+);
+assert.match(
+  july20EnglishHtml,
+  /You can now manage a cost center/,
+  "English day page must retain the source summary",
+);
+
 const highlightsHtml = readSiteFile("highlights.html");
 assert.match(
   highlightsHtml,

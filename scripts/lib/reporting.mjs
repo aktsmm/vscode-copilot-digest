@@ -1,3 +1,5 @@
+import { editorialOverrides } from "./editorial-overrides.mjs";
+
 export function safeDate(value) {
   const date = new Date(value ?? Date.now());
   if (Number.isNaN(date.getTime())) {
@@ -56,6 +58,22 @@ export const lowInformationFallbackMarkers = [
   "Copilot CLI のコマンドや使用法に関する更新。ターミナルでの日々の使い方に関連する変更を含む可能性あり。",
   "GitHub Copilot CLI の更新。CLI を実用している層はターミナル操作や自動化フローへの確認を。",
   "GitHub Copilot code review 関連の更新。レビュー自動化や品質改善への影響を確認しておきたい。",
+  "Copilot CLI の agent 機能に関する更新。custom agent、organization agent、message queueing など、CLI 上で agent 作業を継続・反復しやすくする変更を確認しておきたい。",
+  "Copilot CLI への MCP 対応に関する更新。外部ツールや社内サービスを CLI から呼び出す構成に関わるため、MCP server の設定と権限範囲を確認しておきたい。",
+  "Copilot CLI のセッション管理に関する更新。長時間タスクや複数 context の切り替えで、セッション継続・復元・操作性がどう変わるか確認しておきたい。",
+  "Copilot CLI でのモデル選択や切り替えに関する更新。用途ごとのモデル選択、auto selection、BYOK / local model 利用に関わるため、CLI で使うモデル方針を見直す材料になる。",
+  "Copilot CLI のインストール・セットアップに関する更新。初期導入、アップグレード、LSP server などの周辺設定に影響するため、チームのセットアップ手順と前提条件を確認しておきたい。",
+  "Copilot CLI のコマンドや使用法に関する更新。slash command、設定コマンド、security review など日常操作の入口が変わる可能性があるため、利用手順を確認しておきたい。",
+  "GitHub Copilot CLI の更新。ターミナルでの agent 作業、設定、ガバナンス、レビュー補助に関わる変更として、CLI 運用への影響を確認しておきたい。",
+  "GitHub Copilot code review のレビュー依頼やコメント処理に関する更新。チームのレビュー運用に影響する可能性がある。",
+  "Visual Studio 側の GitHub Copilot 更新。IDE 連携や agent 拡張の強化点を押さえたい。",
+  "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。",
+  "Visual Studio Code 関連の更新。日々の開発フローや agent 利用に効く変更点を確認しておきたい。",
+  "に関する release note 更新。該当 section の内容を個別に追跡している。",
+  "Visual Studio Code のリリース。Copilot、agent、エディタ、ワークベンチ周辺の変更点をまとめて確認できる。",
+  "VS Code チームによる AI 活用や実装改善の解説記事。運用の考え方や設計の背景を押さえる材料になる。",
+  "GitHub Actions の定期アップデート。runner、セキュリティ、運用面の変更点をまとめて押さえるための更新。",
+  "追跡対象ソースの更新。公開内容の変化や運用への影響を継続監視対象として記録している。",
 ];
 
 const vscodeReleaseSummaries = {
@@ -1518,6 +1536,7 @@ function toDateOnly(value) {
 function normalizeWhitespace(value) {
   return String(value ?? "")
     .replace(/\r/g, "")
+    .replace(/\u00a0/g, " ")
     .replace(/[ \t]+/g, " ")
     .replace(/\n{3,}/g, "\n\n")
     .trim();
@@ -2436,6 +2455,10 @@ export function localizedTitle(event, locale = "ja") {
     return title;
   }
 
+  if (editorialOverrides[title]?.jaTitle) {
+    return editorialOverrides[title].jaTitle;
+  }
+
   if (containsJapanese(title)) {
     return title;
   }
@@ -2450,6 +2473,11 @@ export function localizedTitle(event, locale = "ja") {
 export function localizedSummary(event, locale = "ja") {
   const summary = cleanupSummary(event.summary);
   const title = normalizeWhitespace(decodeHtmlEntities(event.title));
+  const editorialOverride = editorialOverrides[title];
+
+  if (locale === "ja" && editorialOverride?.jaSummary) {
+    return trimText(editorialOverride.jaSummary, 360);
+  }
 
   if (exactSummaryMappings[title]?.[locale]) {
     return trimText(
@@ -2459,7 +2487,7 @@ export function localizedSummary(event, locale = "ja") {
   }
 
   if (locale === "en" && !containsJapanese(summary)) {
-    return trimText(summaryFromPatterns({ ...event, summary }, "en"), 320);
+    return trimText(summary, 320);
   }
 
   if (containsJapanese(summary)) {
@@ -3108,6 +3136,11 @@ export function importanceLabel(event) {
 export function importanceReason(event, locale = "ja") {
   const title = normalizeWhitespace(decodeHtmlEntities(event.title));
   const text = `${title} ${event.summary}`.toLowerCase();
+  const editorialOverride = editorialOverrides[title];
+
+  if (locale === "ja" && editorialOverride?.jaWhy) {
+    return editorialOverride.jaWhy;
+  }
 
   if (exactImportanceMappings[title]?.[locale]) {
     return exactImportanceMappings[title][locale];
@@ -3208,7 +3241,7 @@ export function importanceReason(event, locale = "ja") {
 
 export function buildDailyDigest(eventLog) {
   const reportDate = safeDate(eventLog.date ?? Date.now());
-  reportDate.setHours(23, 59, 59, 999);
+  reportDate.setUTCHours(23, 59, 59, 999);
   const allEvents = applyEditorialPolicy(eventLog.events ?? []);
   const futureEvents = allEvents.filter(
     (event) =>

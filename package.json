@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "collect": "node scripts/collect.mjs",
+    "render:summaries": "node scripts/collect.mjs --render-existing",
     "biweekly": "node scripts/build-biweekly.mjs",
     "weekly": "node scripts/build-weekly.mjs",
     "notify:discord": "node scripts/notify-discord.mjs",
