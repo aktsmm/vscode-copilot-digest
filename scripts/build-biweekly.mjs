@@ -6,12 +6,11 @@ import {
   classifyEvent as classifyEventShared,
   dedupeEvents,
   importanceReason,
-  localizedImportanceLabel,
+  isHighlightEligible,
   localizedSummary,
   localizedTitle,
-  originalTitle,
-  rankEvent as rankEventShared,
   safeDate as safeDateShared,
+  selectEditorialHighlights,
   summarizeEventSet,
 } from "./lib/reporting.mjs";
 
@@ -55,7 +54,10 @@ function parseDateKeyOption(value, optionName) {
   }
 
   const date = new Date(`${text}T00:00:00Z`);
-  if (Number.isNaN(date.getTime()) || date.toISOString().slice(0, 10) !== text) {
+  if (
+    Number.isNaN(date.getTime()) ||
+    date.toISOString().slice(0, 10) !== text
+  ) {
     throw new Error(`${optionName} must be a valid calendar date.`);
   }
 
@@ -151,10 +153,6 @@ function classifyEvent(event) {
   return topic;
 }
 
-function rankEvent(event) {
-  return rankEventShared(event);
-}
-
 function renderFrontmatter(range) {
   return [
     "---",
@@ -177,12 +175,11 @@ function renderFrontmatter(range) {
 
 function renderHighlights(events) {
   if (events.length === 0) {
-    return "- 今回の期間では新しい更新は記録されませんでした。";
+    return "- 今回は読者向けの主要更新を選びませんでした。詳細な監視記録は日次ページとrawデータに残しています。";
   }
 
   return events
     .slice()
-    .sort((left, right) => rankEvent(right) - rankEvent(left))
     .slice(0, 5)
     .map((event) => `- ${localizedTitle(event)}: ${localizedSummary(event)}`)
     .join("\n");
@@ -195,33 +192,20 @@ function renderEventSection(events) {
 
   return events
     .slice()
-    .sort(
-      (left, right) => safeDate(right.publishedAt) - safeDate(left.publishedAt),
-    )
     .map((event) => {
       const lines = [
         `### ${localizedTitle(event)}`,
         "",
-        `- 文書更新日: ${toDateOnly(safeDate(event.publishedAt))}`,
-        `- このサイトに載った日: ${toDateOnly(safeDate(event.detectedAt ?? event.publishedAt))}`,
-        `- ソース: ${event.sourceName}`,
-        `- URL: ${event.url}`,
-        `- ラベル: ${localizedImportanceLabel(event)}`,
-        `- 要点: ${localizedSummary(event)}`,
+        localizedSummary(event),
+        "",
         `- なぜ重要か: ${importanceReason(event)}`,
+        `- 原典: ${event.url}`,
       ];
 
-      const rawTitle = originalTitle(event);
-      if (rawTitle) {
-        lines.push(`- 原題: ${rawTitle}`);
-      }
-
-      if (event.categories?.length) {
-        lines.push(`- 種別: ${event.categories.join(", ")}`);
-      }
-
-      if (event.diffSummary?.headings?.length) {
-        lines.push(`- 差分メモ: ${event.diffSummary.headings.join(" / ")}`);
+      if (event.relatedEventCount > 1) {
+        lines.push(
+          `- 関連更新: 同じ原典から ${event.relatedEventCount} 件をまとめています。`,
+        );
       }
 
       return `${lines.join("\n")}\n`;
@@ -271,7 +255,7 @@ async function main() {
     )
     .map((log) => log.editorialNote)
     .filter(Boolean);
-  const events = dedupeEvents(
+  const collectedEvents = dedupeEvents(
     applyEditorialPolicy(
       logs
         .flatMap((log) => log.events ?? [])
@@ -279,11 +263,8 @@ async function main() {
           isWithinRange(event.publishedAt ?? event.detectedAt, range),
         ),
     ),
-  ).sort(
-    (left, right) =>
-      safeDate(right.publishedAt) - safeDate(left.publishedAt) ||
-      rankEvent(right) - rankEvent(left),
   );
+  const events = selectEditorialHighlights(collectedEvents, 5);
 
   const grouped = {
     "GitHub Copilot": [],
@@ -312,8 +293,8 @@ async function main() {
     "",
     summarizeEventSet(events, "ja", {
       topicResolver: classifyEvent,
-      maxLength: 1280,
-      maxHighlights: 6,
+      maxLength: 720,
+      maxHighlights: 5,
     }),
     "",
     "## 今回の要点",

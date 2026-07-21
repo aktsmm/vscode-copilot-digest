@@ -105,6 +105,12 @@ npm run biweekly
 npm run weekly
 ```
 
+既存の週次・隔週ドラフトを再生成（手入力済みの所感欄はスキップ）:
+
+```bash
+npm run render:drafts
+```
+
 任意の日数でドラフト生成:
 
 ```bash

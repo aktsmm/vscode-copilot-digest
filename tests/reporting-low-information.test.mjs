@@ -4,11 +4,16 @@ import { spawnSync } from "node:child_process";
 
 import {
   buildDailyDigest,
+  editorialQuality,
   importanceReason,
+  isHighlightEligible,
+  isReaderEvent,
   localizedSummary,
   localizedTitle,
   lowInformationFallbackMarkers,
   originalTitle,
+  rankEvent,
+  selectEditorialHighlights,
   summarizeEventSet,
 } from "../scripts/lib/reporting.mjs";
 import { editorialOverrides } from "../scripts/lib/editorial-overrides.mjs";
@@ -57,6 +62,16 @@ assert.match(
   /lowInformationFallbackMarkers/,
   "author-digest-pr workflow must use the reporting marker SSOT",
 );
+assert.match(
+  authorWorkflowSource,
+  /buildDailyDigest, lowInformationFallbackMarkers/,
+  "author-digest-pr workflow must use the shared reader-facing digest classifier",
+);
+assert.match(
+  authorWorkflowSource,
+  /digest\.freshReaderCount/,
+  "author-digest-pr workflow must ignore audit-only new events",
+);
 assert.doesNotMatch(
   authorWorkflowSource,
   /const\s+lowInformationSummaryMarkers\s*=\s*\[/,
@@ -87,6 +102,11 @@ const reportingSource = fs.readFileSync("scripts/lib/reporting.mjs", "utf8");
 assertNoDuplicateObjectKeys(reportingSource, "vscodeReleaseSummaries");
 assertNoDuplicateObjectKeys(reportingSource, "exactSummaryMappings");
 assertNoDuplicateObjectKeys(reportingSource, "exactImportanceMappings");
+
+const genericSnapshotMarkers = [
+  "監視対象ページで差分を検知",
+  "固定ページの追記や差し替えを拾うための更新です。",
+];
 
 const packageJson = JSON.parse(fs.readFileSync("package.json", "utf8"));
 assert.equal(
@@ -210,6 +230,188 @@ assert.equal(
   "an event published late on the digest date in UTC must remain in that daily digest",
 );
 
+const ordinalNavigationSnapshot = {
+  kind: "html_snapshot_change",
+  sourceId: "docs-github-copilot-howtos",
+  diffSummary: {
+    additions: [
+      "Copilot SDK, 8 of 20Build your first Copilot-powered app, 1 of 8Authentication, 2 of 8",
+      "Build your first Copilot-powered app, 1 of 8",
+      "Authentication, 2 of 8",
+      "Features, 3 of 8",
+    ],
+  },
+};
+assert.equal(
+  editorialQuality(ordinalNavigationSnapshot),
+  "audit-only",
+  "ordinal Docs navigation changes must be audit-only",
+);
+assert.equal(
+  isReaderEvent(ordinalNavigationSnapshot),
+  false,
+  "ordinal Docs navigation changes must not be reader events",
+);
+assert.equal(
+  isHighlightEligible(ordinalNavigationSnapshot),
+  false,
+  "ordinal Docs navigation changes must not be highlight candidates",
+);
+
+const docsBreadcrumbSnapshot = {
+  kind: "html_snapshot_change",
+  sourceId: "docs-github-cloud-agent",
+  diffSummary: {
+    additions: ["GitHub Copilot", "How-tos", "Use Copilot agents"],
+  },
+};
+assert.equal(
+  editorialQuality(docsBreadcrumbSnapshot),
+  "audit-only",
+  "Docs breadcrumb-only changes must be audit-only",
+);
+assert.equal(isReaderEvent(docsBreadcrumbSnapshot), false);
+
+const substantiveSnapshot = {
+  kind: "html_snapshot_change",
+  sourceId: "vscode-updates",
+  diffSummary: {
+    additions: ["Update 1.128.1: The update addresses these security issues."],
+  },
+};
+assert.equal(
+  editorialQuality(substantiveSnapshot),
+  "medium",
+  "snapshot changes with a concrete addition must remain reader-visible",
+);
+assert.equal(isReaderEvent(substantiveSnapshot), true);
+assert.equal(isHighlightEligible(substantiveSnapshot), false);
+assert.equal(
+  localizedSummary(substantiveSnapshot),
+  "VS Code 1.128.1 のセキュリティ修正を含む更新案内が追加された。",
+  "concrete snapshot additions must render as factual reader copy",
+);
+assert.doesNotMatch(
+  localizedSummary(substantiveSnapshot),
+  /監視対象ページで差分を検知/,
+  "concrete snapshot additions must not use generic monitoring copy",
+);
+
+const insidersAnnouncement = {
+  kind: "feed_entry",
+  title: "Visual Studio Code 1.130 (Insiders)",
+  summary:
+    "Learn what's new in Visual Studio Code 1.130 (Insiders) Read the full article",
+};
+assert.equal(
+  editorialQuality(insidersAnnouncement),
+  "medium",
+  "bare Insiders release announcements must stay out of weekly and Discord highlights",
+);
+assert.equal(isReaderEvent(insidersAnnouncement), true);
+assert.equal(isHighlightEligible(insidersAnnouncement), false);
+
+const verboseReleaseSnapshot = {
+  kind: "html_snapshot_change",
+  score: 18,
+  diffSummary: {
+    headings: ["A concrete release heading"],
+    additions: [
+      "A concrete release update with enough text to be reader-facing.",
+      "Another concrete release update.",
+      "A third concrete release update.",
+    ],
+  },
+};
+assert.equal(editorialQuality(verboseReleaseSnapshot), "high");
+assert.equal(
+  rankEvent(verboseReleaseSnapshot),
+  3,
+  "high-quality snapshots must not inherit an unbounded heading-count score",
+);
+assert.equal(
+  rankEvent({ categories: ["Release"], score: 4 }),
+  6,
+  "substantive releases must outrank high-quality snapshots by default",
+);
+
+const qualityDigest = buildDailyDigest({
+  date: "2026-07-21",
+  latestRun: {
+    newEventIds: ["audit", "release"],
+  },
+  events: [
+    {
+      ...ordinalNavigationSnapshot,
+      eventId: "audit",
+      title: "Docs navigation changed",
+      sourceName: "GitHub Docs / Copilot how-tos",
+      summary: "Detected navigation changes.",
+      publishedAt: "2026-07-21T07:43:56.000Z",
+      detectedAt: "2026-07-21T07:43:56.000Z",
+      categories: ["snapshot"],
+    },
+    {
+      eventId: "release",
+      title: "Concrete release",
+      sourceId: "github-changelog-copilot",
+      sourceName: "GitHub Changelog / Copilot",
+      summary: "A concrete GitHub Copilot release.",
+      publishedAt: "2026-07-21T07:43:56.000Z",
+      detectedAt: "2026-07-21T07:43:56.000Z",
+      categories: ["Release", "copilot"],
+    },
+  ],
+});
+assert.equal(qualityDigest.uniqueEventCount, 2);
+assert.equal(qualityDigest.readerEventCount, 1);
+assert.equal(qualityDigest.auditEventCount, 1);
+assert.equal(qualityDigest.freshReaderCount, 1);
+assert.deepEqual(
+  qualityDigest.highlights.map((event) => event.eventId),
+  ["release"],
+  "audit-only snapshots must not displace substantive daily highlights",
+);
+
+const clusteredHighlights = selectEditorialHighlights(
+  [
+    {
+      eventId: "section-one",
+      title: "Release section one",
+      url: "https://example.test/release",
+      publishedAt: "2026-07-21T00:00:00.000Z",
+      categories: ["Release"],
+    },
+    {
+      eventId: "section-two",
+      title: "Release section two",
+      url: "https://example.test/release",
+      publishedAt: "2026-07-21T00:00:00.000Z",
+      categories: ["Release"],
+    },
+    {
+      eventId: "different-release",
+      title: "Different release",
+      url: "https://example.test/different-release",
+      publishedAt: "2026-07-21T00:00:00.000Z",
+      categories: ["Release"],
+    },
+  ],
+  3,
+);
+assert.equal(
+  clusteredHighlights.length,
+  2,
+  "highlights must collapse multiple sections from the same source URL",
+);
+assert.equal(
+  clusteredHighlights.find(
+    (event) => event.url === "https://example.test/release",
+  )?.relatedEventCount,
+  2,
+  "clustered highlights must retain the related section count",
+);
+
 for (const event of unknownSamples) {
   assertLowInformationFallback(localizedSummary(event), event.title);
   assertNoLowInformationFallback(importanceReason(event), event.title);
@@ -297,7 +499,8 @@ assert.equal(
     title: "AI\u00a0credit pools for cost centers in the billing UI",
     summary: "",
   }),
-  editorialOverrides["AI credit pools for cost centers in the billing UI"].jaTitle,
+  editorialOverrides["AI credit pools for cost centers in the billing UI"]
+    .jaTitle,
   "editorial title lookup must normalize non-breaking spaces",
 );
 
@@ -325,11 +528,11 @@ for (const file of fs
   const eventLog = JSON.parse(fs.readFileSync(file, "utf8"));
   const digest = buildDailyDigest(eventLog);
   const generatedText = [
-    summarizeEventSet(digest.uniqueEvents, "ja", {
+    summarizeEventSet(digest.readerEvents, "ja", {
       maxLength: 960,
       maxHighlights: 5,
     }),
-    ...digest.uniqueEvents.flatMap((event) => [
+    ...digest.readerEvents.flatMap((event) => [
       localizedSummary(event),
       importanceReason(event),
     ]),
@@ -337,13 +540,16 @@ for (const file of fs
 
   assertNoLowInformationFallback(generatedText, file);
   assertNoEnglishSummaryFallback(generatedText, file);
+  assertNoGenericSnapshotCopy(generatedText, file);
 }
 
 for (const file of fs
   .readdirSync("summaries/daily")
   .filter((name) => /^\d{4}-\d{2}-\d{2}\.md$/.test(name))
   .map((name) => `summaries/daily/${name}`)) {
-  assertNoLowInformationFallback(fs.readFileSync(file, "utf8"), file);
+  const content = fs.readFileSync(file, "utf8");
+  assertNoLowInformationFallback(content, file);
+  assertNoGenericSnapshotCopy(content, file);
 }
 
 for (const file of fs
@@ -352,6 +558,7 @@ for (const file of fs
   .map((name) => `drafts/${name}`)) {
   const content = fs.readFileSync(file, "utf8");
   assertNoEnglishSummaryFallback(content, file);
+  assertNoGenericSnapshotCopy(content, file);
   assert.doesNotMatch(
     content,
     /CLI 利用や自動化フローへの影響候補/,
@@ -385,6 +592,17 @@ function assertNoEnglishSummaryFallback(text, context) {
     String(text),
     /英語 summary では/,
     `${context} contains English-summary fallback copy`,
+  );
+}
+
+function assertNoGenericSnapshotCopy(text, context) {
+  const hits = genericSnapshotMarkers.filter((marker) =>
+    String(text).includes(marker),
+  );
+  assert.deepEqual(
+    hits,
+    [],
+    `${context} contains generic snapshot copy`,
   );
 }
 

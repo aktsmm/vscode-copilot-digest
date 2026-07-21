@@ -105,6 +105,16 @@ assert.match(
   /You can now manage a cost center/,
   "English day page must retain the source summary",
 );
+assert.equal(
+  fs.existsSync("site/days/2026-07-21.html"),
+  false,
+  "audit-only snapshot days must not publish an empty reader-facing page",
+);
+assert.equal(
+  fs.existsSync("site/raw/events/2026-07-21.json"),
+  true,
+  "audit-only snapshot events must remain available as raw audit data",
+);
 
 const highlightsHtml = readSiteFile("highlights.html");
 assert.match(
@@ -149,10 +159,13 @@ assert.ok(
   payload.content.includes("検索:"),
   "Discord content must include a search landing URL",
 );
-assert.equal(
-  payload.embeds[0]?.title,
-  "週次要約",
-  "first embed must be the weekly summary",
+assert.ok(
+  payload.embeds.length <= 3,
+  "weekly Discord payload must contain at most three event cards",
+);
+assert.ok(
+  payload.embeds.every((embed) => embed.title !== "週次要約"),
+  "weekly Discord payload must not duplicate the textual summary in an embed",
 );
 assert.ok(
   payload.embeds.some((embed) =>
@@ -195,10 +208,37 @@ assert.doesNotMatch(
   /\[機能更新\] Copilot code review: AGENTS\.md support and UI improvements/,
   "Discord payload must use the Japanese title for the Copilot code review AGENTS.md update",
 );
-assert.match(
-  japanesePayloadText,
-  /Copilot code review が AGENTS\.md と draft PR からのレビュー依頼に対応した/,
-  "Discord payload must include the localized Copilot code review title",
+assert.ok(
+  japanesePayload.embeds.length <= 3,
+  "weekly payload must select no more than three reader-facing updates",
+);
+
+const qualityPayloadRun = spawnSync(
+  process.execPath,
+  [
+    "scripts/notify-discord.mjs",
+    "--mode",
+    "weekly",
+    "--date",
+    "2026-07-21",
+    "--window-days",
+    "7",
+    "--dry-run",
+    "--force-preview",
+  ],
+  { cwd: process.cwd(), encoding: "utf8" },
+);
+assert.equal(qualityPayloadRun.status, 0, qualityPayloadRun.stderr);
+const qualityPayload = parseDryRunPayload(qualityPayloadRun.stdout);
+assert.ok(
+  qualityPayload.embeds.length <= 3,
+  "quality-filtered weekly payload must remain within the three-card limit",
+);
+const qualityPayloadText = JSON.stringify(qualityPayload);
+assert.doesNotMatch(
+  qualityPayloadText,
+  /GitHub Docs \/ Copilot how-tos changed|監視対象ページで差分を検知|Visual Studio Code 1\.130（Insiders）リリース/,
+  "audit-only changes and future-dated Insiders releases must not be sent to Discord",
 );
 
 console.log("pages-discord-ux.test.mjs: OK");

@@ -6,6 +6,7 @@
   "scripts": {
     "collect": "node scripts/collect.mjs",
     "render:summaries": "node scripts/collect.mjs --render-existing",
+    "render:drafts": "node scripts/render-drafts.mjs",
     "biweekly": "node scripts/build-biweekly.mjs",
     "weekly": "node scripts/build-weekly.mjs",
     "notify:discord": "node scripts/notify-discord.mjs",

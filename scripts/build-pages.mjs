@@ -10,6 +10,8 @@ import {
   eventKey,
   dedupeEvents,
   importanceReason,
+  isHighlightEligible,
+  isReaderEvent,
   localizedImportanceLabel,
   localizedDigestMention,
   lowInformationFallbackMarkers,
@@ -18,6 +20,7 @@ import {
   originalTitle,
   rankEvent,
   safeDate,
+  selectEditorialHighlights,
   sourceGroup,
   summarizeEventSet,
 } from "./lib/reporting.mjs";
@@ -701,9 +704,10 @@ function buildPublishedEventEntries(dailyDigests, options = {}) {
   const seen = new Set();
 
   for (const digest of dailyDigests) {
+    const readerEvents = digest.readerEvents ?? digest.uniqueEvents ?? [];
     const events = includeFuture
-      ? [...digest.uniqueEvents, ...(digest.futureEvents ?? [])]
-      : digest.uniqueEvents;
+      ? [...readerEvents, ...(digest.futureEvents ?? []).filter(isReaderEvent)]
+      : readerEvents;
 
     for (const event of events) {
       const key = eventKey(event);
@@ -984,14 +988,17 @@ function buildRangeDigest(logs, range) {
       }),
   );
 
-  const uniqueEvents = dedupeEvents(rawEvents).sort(
+  const rawUniqueEvents = dedupeEvents(rawEvents).sort(
     (left, right) =>
       safeDate(right.publishedAt) - safeDate(left.publishedAt) ||
       rankEvent(right) - rankEvent(left),
   );
+  const readerEvents = rawUniqueEvents.filter(isReaderEvent);
+  const weeklyEvents = readerEvents.filter(isHighlightEligible);
+  const uniqueEvents = selectEditorialHighlights(weeklyEvents, 3);
 
   const sourceBreakdown = new Map();
-  for (const event of rawEvents) {
+  for (const event of uniqueEvents) {
     const sourceName = event.sourceName ?? "Unknown";
     if (!sourceBreakdown.has(sourceName)) {
       sourceBreakdown.set(sourceName, new Set());
@@ -1025,6 +1032,10 @@ function buildRangeDigest(logs, range) {
     startDate: toDateOnly(startDate),
     endDate: toDateOnly(endDate),
     editorialNotes,
+    rawEventCount: rawUniqueEvents.length,
+    readerEventCount: uniqueEvents.length,
+    mediumEventCount: readerEvents.length - uniqueEvents.length,
+    auditEventCount: rawUniqueEvents.length - readerEvents.length,
     uniqueEventCount: uniqueEvents.length,
     sourceBreakdown: [...sourceBreakdown.entries()]
       .map(([name, keys]) => ({ name, count: keys.size }))
@@ -1032,8 +1043,9 @@ function buildRangeDigest(logs, range) {
         (left, right) =>
           right.count - left.count || left.name.localeCompare(right.name, "ja"),
       ),
-    highlights: uniqueEvents.slice(0, 6),
+    highlights: uniqueEvents,
     uniqueEvents,
+    readerEvents: uniqueEvents,
     topics: topicOrder.map((topic) => ({
       name: topic,
       count: topicMap.get(topic).length,
@@ -1083,15 +1095,21 @@ function renderArchiveCard(digest, locale, text, href, kind) {
     kind === "week"
       ? `${digest.startDate} - ${digest.endDate}`
       : `${digest.date}`;
+  const displayEvents = digest.readerEvents ?? digest.uniqueEvents;
   const topItems = digest.highlights.slice(0, 3);
-  const digestSummary = summarizeEventSet(digest.uniqueEvents, locale, {
-    maxLength: 880,
-    maxHighlights: 5,
+  const digestSummary = summarizeEventSet(displayEvents, locale, {
+    maxLength: 620,
+    maxHighlights: 3,
   });
   const itemCount =
     locale === "ja"
-      ? `${digest.uniqueEventCount}${escapeHtml(text.itemSuffix)}`
-      : formatCount(digest.uniqueEventCount, locale, "item", "items");
+      ? `${digest.readerEventCount ?? displayEvents.length}${escapeHtml(text.itemSuffix)}`
+      : formatCount(
+          digest.readerEventCount ?? displayEvents.length,
+          locale,
+          "item",
+          "items",
+        );
 
   return `<article class="digest-card">
     <div class="digest-card-head"><p>${escapeHtml(rangeLabel)}</p><span>${itemCount}</span></div>
@@ -1131,14 +1149,20 @@ function renderEventStreamItem(event, locale, text) {
 function renderDigestStreamItem(digest, locale, text, href, kind) {
   const rangeLabel =
     kind === "week" ? `${digest.startDate} - ${digest.endDate}` : digest.date;
+  const displayEvents = digest.readerEvents ?? digest.uniqueEvents;
   const itemCount =
     locale === "ja"
-      ? `${digest.uniqueEventCount}${text.itemSuffix}`
-      : formatCount(digest.uniqueEventCount, locale, "item", "items");
+      ? `${digest.readerEventCount ?? displayEvents.length}${text.itemSuffix}`
+      : formatCount(
+          digest.readerEventCount ?? displayEvents.length,
+          locale,
+          "item",
+          "items",
+        );
   const topItems = digest.highlights.slice(0, 3);
-  const digestSummary = summarizeEventSet(digest.uniqueEvents, locale, {
-    maxLength: 1120,
-    maxHighlights: 5,
+  const digestSummary = summarizeEventSet(displayEvents, locale, {
+    maxLength: 720,
+    maxHighlights: 3,
   });
 
   return `<article class="archive-stream-item">
@@ -1260,7 +1284,7 @@ function renderDigestArchivePage(
         ? `${digests[0].startDate} - ${digests[0].endDate}`
         : "N/A";
   const totalItems = digests.reduce(
-    (sum, digest) => sum + digest.uniqueEventCount,
+    (sum, digest) => sum + (digest.readerEventCount ?? digest.uniqueEventCount),
     0,
   );
   const body = `
@@ -1317,18 +1341,22 @@ function renderRangePage(digest, locale, text, options) {
     locale === "ja"
       ? `${count}${text.itemSuffix}`
       : formatCount(count, locale, "item", "items");
-  const filterAxes = renderFilterAxes(digest.uniqueEvents);
+  const displayEvents = digest.readerEvents ?? digest.uniqueEvents;
+  const displayEventCount = digest.readerEventCount ?? displayEvents.length;
+  const filterAxes = renderFilterAxes(displayEvents);
   const metrics =
     options.kind === "day"
       ? [
           renderMetric(
             text.trackedUpdates,
-            itemCount(digest.uniqueEventCount),
+            itemCount(displayEventCount),
             text.trackedUpdatesDetail,
           ),
           renderMetric(
             text.latestRunMetric,
-            itemCount(digest.latestRun.newEventsCount),
+            itemCount(
+              digest.freshReaderCount ?? digest.latestRun.newEventsCount,
+            ),
             text.latestRunMetricDetail,
           ),
           renderMetric(
@@ -1350,7 +1378,7 @@ function renderRangePage(digest, locale, text, options) {
           ),
           renderMetric(
             text.trackedUpdates,
-            itemCount(digest.uniqueEventCount),
+            itemCount(displayEventCount),
             text.trackedUpdatesDetail,
           ),
           renderMetric(
@@ -1379,12 +1407,16 @@ function renderRangePage(digest, locale, text, options) {
 
     ${options.kind === "day" ? renderFutureSection(digest.futureEvents, locale, text) : ""}
 
-  ${renderFilterBar(text, { showSource: true, showTopic: true, showImportance: true, showSort: true, importanceOptions: renderImportanceOptions(digest.uniqueEvents, locale), showAxisLabels: true, extraClass: "filter-block--compact" })}
+  ${renderFilterBar(text, { showSource: true, showTopic: true, showImportance: true, showSort: true, importanceOptions: renderImportanceOptions(displayEvents, locale), showAxisLabels: true, extraClass: "filter-block--compact" })}
 
-    <section class="section-block">
+    ${
+      digest.highlights.length > 0
+        ? `<section class="section-block">
       <div class="section-heading"><h2>${escapeHtml(text.highlightsTitle)}</h2><span>${escapeHtml(itemCount(digest.highlights.length))}</span></div>
       <div class="highlight-grid">${digest.highlights.map((event) => renderEventCard(event, locale, text, { includeWhy: true })).join("")}</div>
-    </section>
+    </section>`
+        : ""
+    }
 
     <section class="section-block page-grid">
       <div>
@@ -1399,8 +1431,8 @@ function renderRangePage(digest, locale, text, options) {
     </section>
 
     <section class="section-block" data-pagefind-body>
-      <div class="section-heading"><h2>${escapeHtml(text.fullListTitle)}</h2><span>${escapeHtml(itemCount(digest.uniqueEventCount))}</span></div>
-      <div class="update-list" data-sort-list>${digest.uniqueEvents.map((event) => renderEventCard(event, locale, text, { includeWhy: true, anchorId: eventAnchorId(event) })).join("")}</div>
+      <div class="section-heading"><h2>${escapeHtml(text.fullListTitle)}</h2><span>${escapeHtml(itemCount(displayEventCount))}</span></div>
+      <div class="update-list" data-sort-list>${displayEvents.map((event) => renderEventCard(event, locale, text, { includeWhy: true, anchorId: eventAnchorId(event) })).join("")}</div>
     </section>
   `;
 
@@ -1428,7 +1460,8 @@ function renderIndexPage(
 ) {
   const latestDigest = dailyDigests[0];
   const overallUnique = dailyDigests.reduce(
-    (total, digest) => total + digest.uniqueEventCount,
+    (total, digest) =>
+      total + (digest.readerEventCount ?? digest.uniqueEventCount),
     0,
   );
   const searchHref = links.home.replace(/index\.html$/, "search.html");
@@ -2956,7 +2989,7 @@ async function copyRawFiles(date) {
 }
 
 function shouldPublishDailyDigest(digest) {
-  return (digest?.uniqueEventCount ?? 0) > 0;
+  return (digest?.readerEventCount ?? digest?.uniqueEventCount ?? 0) > 0;
 }
 
 async function main() {
@@ -2993,6 +3026,10 @@ async function main() {
     fs.mkdir(path.join(siteDir, "raw", "summaries"), { recursive: true }),
     fs.mkdir(path.join(siteDir, "assets"), { recursive: true }),
   ]);
+
+  await Promise.all(
+    digestEntries.map(({ digest }) => copyRawFiles(digest.date)),
+  );
 
   await fs.writeFile(
     path.join(siteDir, "assets", "styles.css"),
@@ -3283,7 +3320,6 @@ async function main() {
         }),
         "utf8",
       ),
-      copyRawFiles(digest.date),
     ]);
   }
 

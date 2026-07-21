@@ -806,15 +806,18 @@ function renderMarkdownSummary(dateKey, eventLog) {
   ];
 
   lines.push("## 概況", "");
-  lines.push(`- 直近 run の新規件数: ${digest.latestRun.newEventsCount}`);
-  lines.push(`- 重複除去後の更新件数: ${digest.uniqueEventCount}`);
+  lines.push(`- 直近 run の読者向け新規件数: ${digest.freshReaderCount}`);
+  lines.push(`- 読者向け更新件数: ${digest.readerEventCount}`);
+  if (digest.auditEventCount > 0) {
+    lines.push(`- 監査専用差分: ${digest.auditEventCount}`);
+  }
   lines.push(`- 未来日付の予告件数: ${digest.futureUniqueCount}`);
   lines.push(`- 収集対象イベント数: ${digest.rawEventCount}`);
   lines.push(`- 更新を拾ったソース数: ${digest.sourceBreakdown.length}`);
   lines.push(`- 取得エラー数: ${digest.errorCount}`);
-  if (digest.uniqueEventCount > 0) {
+  if (digest.readerEventCount > 0) {
     lines.push(
-      `- 公開済み更新サマリー: ${summarizeEventSet(digest.uniqueEvents, "ja", { maxLength: 960, maxHighlights: 5 })}`,
+      `- 公開済み更新サマリー: ${summarizeEventSet(digest.readerEvents, "ja", { maxLength: 720, maxHighlights: 3 })}`,
     );
   }
   lines.push("");
@@ -838,8 +841,11 @@ function renderMarkdownSummary(dateKey, eventLog) {
     }
   }
 
-  if (digest.uniqueEventCount === 0) {
-    lines.push("この日の公開済み更新はありませんでした。", "");
+  if (digest.readerEventCount === 0) {
+    lines.push(
+      "この日の読者向け更新はありませんでした。raw JSON には監査用の検知結果を残しています。",
+      "",
+    );
   } else {
     lines.push("## 注目トピック", "");
     for (const [index, event] of digest.highlights.entries()) {
@@ -927,7 +933,7 @@ function renderMarkdownSummary(dateKey, eventLog) {
 
 function shouldWriteDailySummary(eventLog) {
   const digest = buildDailyDigest(eventLog);
-  return digest.uniqueEventCount > 0 || digest.futureUniqueCount > 0;
+  return digest.readerEventCount > 0 || digest.futureUniqueCount > 0;
 }
 
 async function writeDailySummaries(logs) {

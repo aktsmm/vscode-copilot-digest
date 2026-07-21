@@ -4,20 +4,19 @@ import path from "node:path";
 import * as cheerio from "cheerio";
 
 import {
+  rankEvent,
+  selectEditorialHighlights,
   localizedImportanceLabel,
   localizedSummary,
   localizedTitle,
-  summarizeEventSet,
 } from "./lib/reporting.mjs";
 
 const workspaceRoot = process.cwd();
 const eventsDir = path.join(workspaceRoot, "data", "events");
 const DISCORD_CONTENT_LIMIT = 1900;
-const DISCORD_SUMMARY_LIMIT = 520;
-const DISCORD_WEEKLY_SUMMARY_LIMIT = 620;
-const DISCORD_DAILY_EVENT_LIMIT = 4;
-const DISCORD_WINDOW_EVENT_LIMIT = 4;
-const DISCORD_WEEKLY_EVENT_LIMIT = 6;
+const DISCORD_DAILY_EVENT_LIMIT = 3;
+const DISCORD_WINDOW_EVENT_LIMIT = 3;
+const DISCORD_WEEKLY_EVENT_LIMIT = 3;
 const DISCORD_EMBED_LIMIT = 10;
 const DISCORD_EMBED_TOTAL_TEXT_LIMIT = 6000;
 const DISCORD_EMBED_TITLE_LIMIT = 256;
@@ -209,12 +208,6 @@ function resolveCalendarWindow(targetDate, windowDays) {
   };
 }
 
-function rankEvent(event) {
-  return (
-    Number(event.score ?? 0) + (event.kind === "html_snapshot_change" ? 2 : 0)
-  );
-}
-
 function trimLine(value, maxLength = 180) {
   const normalized = String(value ?? "")
     .replace(/\.{3,}/g, "…")
@@ -253,43 +246,6 @@ function trimLine(value, maxLength = 180) {
 
 function sanitizeDiscordContent(value) {
   return String(value ?? "").replace(/\.{3,}/g, "…");
-}
-
-function wrapReadableText(value, maxLineLength = 180) {
-  const normalized = sanitizeDiscordContent(value).replace(/\s+/g, " ").trim();
-  const lines = [];
-  let remaining = normalized;
-
-  while (remaining.length > maxLineLength) {
-    const window = remaining.slice(0, maxLineLength + 1);
-    const sentenceBreak = Math.max(
-      window.lastIndexOf("。"),
-      window.lastIndexOf("！"),
-      window.lastIndexOf("!"),
-      window.lastIndexOf("？"),
-      window.lastIndexOf("?"),
-    );
-    const softBreak = Math.max(
-      window.lastIndexOf("、"),
-      window.lastIndexOf(","),
-      window.lastIndexOf(" "),
-    );
-    const breakIndex =
-      sentenceBreak >= Math.floor(maxLineLength * 0.45)
-        ? sentenceBreak + 1
-        : softBreak >= Math.floor(maxLineLength * 0.55)
-          ? softBreak + 1
-          : maxLineLength;
-
-    lines.push(remaining.slice(0, breakIndex).trim());
-    remaining = remaining.slice(breakIndex).trim();
-  }
-
-  if (remaining) {
-    lines.push(remaining);
-  }
-
-  return lines;
 }
 
 function assertReadableDiscordPayload(payload) {
@@ -460,31 +416,6 @@ async function fetchOgMetadata(url) {
   }
 }
 
-function buildSummaryEmbed(summary, options = {}) {
-  if (!summary) {
-    return null;
-  }
-
-  return {
-    title: options.title ?? "要約",
-    url: options.url ?? undefined,
-    description: trimLine(summary, options.maxLength ?? 620),
-    color: 0x0f766e,
-    fields: options.searchUrl
-      ? [
-          {
-            name: "検索",
-            value: options.searchUrl,
-            inline: false,
-          },
-        ]
-      : [],
-    footer: {
-      text: options.footer ?? "Pages で詳細を確認できます",
-    },
-  };
-}
-
 function buildRepoWeeklyDraftPath(startDate, endDate) {
   return path.join(
     workspaceRoot,
@@ -554,7 +485,7 @@ function discordColorForEvent(event) {
 async function buildEventEmbed(event, options = {}) {
   const mode = options.mode ?? "daily";
   const titleLimit = DISCORD_EMBED_TITLE_LIMIT - 16;
-  const summaryLimit = mode === "weekly" ? 520 : 460;
+  const summaryLimit = mode === "weekly" ? 360 : 320;
   const title = localizedTitle(event);
   const summary = localizedSummary(event);
   const pagesUrl = options.pagesUrl ?? buildEventPagesUrl(event);
@@ -607,22 +538,7 @@ async function buildEventEmbed(event, options = {}) {
 
 function selectDiscordEvents(uniqueEvents, options = {}) {
   const maxEvents = options.maxEvents ?? 5;
-  const maxPerDate = options.maxPerDate ?? Number.POSITIVE_INFINITY;
-  const selected = [];
-  const perDateCounts = new Map();
-
-  for (const event of uniqueEvents.slice(0, maxEvents)) {
-    const dateKey = event.dateKeys?.at(-1) ?? event.dateKey;
-    const currentCount = perDateCounts.get(dateKey) ?? 0;
-    if (currentCount >= maxPerDate) {
-      continue;
-    }
-
-    perDateCounts.set(dateKey, currentCount + 1);
-    selected.push(event);
-  }
-
-  return selected;
+  return selectEditorialHighlights(uniqueEvents, maxEvents);
 }
 
 async function buildPayload(date, datedLogs, options = {}) {
@@ -642,6 +558,7 @@ async function buildPayload(date, datedLogs, options = {}) {
             latestRun.newEventIds.includes(event.eventId),
           );
     const rankedEvents = candidateEvents
+      .filter((event) => !event.isFutureDated)
       .map((event) => ({ ...event, dateKey: entryDate }))
       .sort((left, right) => rankEvent(right) - rankEvent(left));
 
@@ -669,37 +586,26 @@ async function buildPayload(date, datedLogs, options = {}) {
   const pagesUrl = isWeeklyMode
     ? buildPagesWeeklyDigestUrl(range.startDate, range.endDate)
     : buildPagesDigestUrl(date);
-  const searchUrl = buildPagesSearchUrl(
-    uniqueEvents[0]
-      ? localizedTitle(uniqueEvents[0])
-      : "GitHub Copilot VS Code",
-  );
-  const sourceCounts = new Map();
-  for (const event of uniqueEvents) {
-    sourceCounts.set(
-      event.sourceName,
-      (sourceCounts.get(event.sourceName) ?? 0) + 1,
-    );
-  }
-
-  const sourceSummary = [...sourceCounts.entries()]
-    .map(([sourceName, count]) => `${sourceName}: ${count}`)
-    .join(" / ");
   const activeWindowLabel =
     datedLogs.length > 1 || isWeeklyMode
       ? `${range.startDate}〜${range.endDate}`
       : date;
-  const dailySummary = perDateCounts
-    .filter((entry) => entry.count > 0)
-    .map((entry) => `${entry.date}: ${entry.count}件`)
-    .join(" / ");
-  const latestLog = datedLogs[datedLogs.length - 1]?.eventLog;
-  const aggregateSummary = summarizeEventSet(uniqueEvents, "ja", {
-    maxLength: isWeeklyMode
-      ? DISCORD_WEEKLY_SUMMARY_LIMIT
-      : DISCORD_SUMMARY_LIMIT,
-    maxHighlights: isWeeklyMode ? 4 : 3,
+  const selectedEvents = selectDiscordEvents(uniqueEvents, {
+    maxEvents: isWeeklyMode
+      ? DISCORD_WEEKLY_EVENT_LIMIT
+      : options.windowDays > 1
+        ? DISCORD_WINDOW_EVENT_LIMIT
+        : DISCORD_DAILY_EVENT_LIMIT,
   });
+  const notificationCandidateCount = selectEditorialHighlights(
+    uniqueEvents,
+    Number.MAX_SAFE_INTEGER,
+  ).length;
+  const omittedEventCount = Math.max(
+    0,
+    notificationCandidateCount - selectedEvents.length,
+  );
+  const searchUrl = buildPagesSearchUrl("GitHub Copilot VS Code");
 
   const headerLines = [
     `**${
@@ -718,19 +624,8 @@ async function buildPayload(date, datedLogs, options = {}) {
     options.windowDays > 1 || isWeeklyMode
       ? `対象期間: ${activeWindowLabel}`
       : `日付: ${date}`,
-    `件数: ${uniqueEvents.length}件`,
+    `主な更新: ${notificationCandidateCount}件`,
   ];
-
-  if (aggregateSummary && uniqueEvents.length > 0) {
-    headerLines.push(
-      "",
-      "**要約**",
-      ...wrapReadableText(
-        trimLine(aggregateSummary, isWeeklyMode ? 620 : 460),
-        180,
-      ),
-    );
-  }
 
   if (options.forcePreview && uniqueEvents.length === 0) {
     headerLines.push(
@@ -738,22 +633,6 @@ async function buildPayload(date, datedLogs, options = {}) {
         ? "注記: これは通知 preview です。対象期間に新着がないため、既存イベントから代表項目を表示しています。"
         : "注記: これは通知 preview です。直近 run に新着がないため、その日の既存イベントから代表項目を表示しています。",
     );
-  }
-
-  if (options.windowDays > 1 && !isWeeklyMode) {
-    headerLines.push(`通知間隔: ${options.cadenceDays}日ごと`);
-  }
-
-  if (dailySummary) {
-    headerLines.push(
-      "",
-      `**${isWeeklyMode ? "日別内訳" : "日別件数"}**`,
-      dailySummary,
-    );
-  }
-
-  if (sourceSummary) {
-    headerLines.push("", "**ソース内訳**", sourceSummary);
   }
 
   const footerLines = [];
@@ -771,31 +650,9 @@ async function buildPayload(date, datedLogs, options = {}) {
     footerLines.push(`検索: ${searchUrl}`);
   }
 
-  const selectedEvents =
-    options.windowDays > 1 || isWeeklyMode
-      ? selectDiscordEvents(uniqueEvents, {
-          maxEvents: isWeeklyMode
-            ? DISCORD_WEEKLY_EVENT_LIMIT
-            : DISCORD_WINDOW_EVENT_LIMIT,
-          maxPerDate: isWeeklyMode ? 2 : 5,
-        })
-      : uniqueEvents.slice(0, DISCORD_DAILY_EVENT_LIMIT);
-
-  const omittedEventCount = Math.max(
-    0,
-    uniqueEvents.length - selectedEvents.length,
-  );
   const lines = [...headerLines];
-  if (selectedEvents.length > 0) {
-    lines.push(
-      "",
-      `**主な更新**`,
-      `${selectedEvents.length}件をカードで表示します。`,
-    );
-  }
-
   if (omittedEventCount > 0) {
-    lines.push(`※ 残り${omittedEventCount}件はリンク先で確認してください。`);
+    lines.push(`※ 残り${omittedEventCount}件は Pages で確認してください。`);
   }
 
   if (footerLines.length > 0) {
@@ -814,16 +671,7 @@ async function buildPayload(date, datedLogs, options = {}) {
       }),
     ),
   );
-  const summaryEmbed = buildSummaryEmbed(aggregateSummary, {
-    title: isWeeklyMode ? "週次要約" : "要約",
-    url: pagesUrl,
-    searchUrl,
-    maxLength: isWeeklyMode ? 620 : 520,
-    footer: isWeeklyMode
-      ? "週間 Pages と検索で詳細を確認できます"
-      : "Pages と検索で詳細を確認できます",
-  });
-  const embeds = [summaryEmbed, ...eventEmbeds].filter(Boolean);
+  const embeds = eventEmbeds;
 
   let content = joinLines(lines);
   if (content.length > DISCORD_CONTENT_LIMIT) {
@@ -835,7 +683,11 @@ async function buildPayload(date, datedLogs, options = {}) {
     content = footer ? [prefix, footer].filter(Boolean).join("\n\n") : prefix;
   }
 
-  return { content: sanitizeDiscordContent(content), embeds };
+  return {
+    content: sanitizeDiscordContent(content),
+    embeds,
+    notificationCandidateCount,
+  };
 }
 
 function resolveWebhookUrl(webhookUrl, options = {}) {
@@ -928,12 +780,20 @@ async function main() {
   }
 
   const payload = await buildPayload(options.date, datedLogs, options);
+  if (payload.notificationCandidateCount === 0) {
+    console.log(
+      `No reader-facing updates across the last ${windowDates.length} day(s) ending on ${options.date}. Skipping Discord notification.`,
+    );
+    return;
+  }
+  const notificationCandidateCount = payload.notificationCandidateCount;
+  delete payload.notificationCandidateCount;
   assertReadableDiscordPayload(payload);
   await postWebhook(payload, options.dryRun, options);
   console.log(
     options.forcePreview && totalNewEvents === 0
       ? `Prepared Discord preview payload for ${options.date}.`
-      : `Prepared Discord notification for ${totalNewEvents} new event(s) across ${windowDates.length} day(s).`,
+      : `Prepared Discord notification for ${notificationCandidateCount} reader-facing update(s) from ${totalNewEvents} detected event(s) across ${windowDates.length} day(s).`,
   );
 }
 

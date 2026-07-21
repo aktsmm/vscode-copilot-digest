@@ -2186,16 +2186,33 @@ function summaryFromPatterns(event, locale = "ja") {
   }
 
   if (event.kind === "html_snapshot_change") {
-    const headings = joinedHeadings(event);
+    const additions = meaningfulSnapshotAdditions(event);
+    const quality = editorialQuality(event);
     if (locale === "ja") {
-      return headings.length > 0
-        ? `監視対象ページで差分を検知し、${headings.join("、")} などの見出しが追加または更新された。固定ページ側の公開導線や注目トピックの変化をまとめて追える。`
-        : "監視対象ページで差分を検知した。固定ページ側の公開導線や注目トピックの変化をまとめて追える。";
+      if (quality === "audit-only") {
+        return "監査用のナビゲーションまたは見出し差分を検知した。読者向けハイライトには含めていない。";
+      }
+
+      const updateMatch = additions[0]?.match(/^Update\s+([0-9.]+):\s*(.+)$/i);
+      if (updateMatch && /security issues/i.test(updateMatch[2])) {
+        return `VS Code ${updateMatch[1]} のセキュリティ修正を含む更新案内が追加された。`;
+      }
+
+      if (updateMatch) {
+        return `VS Code ${updateMatch[1]} の更新案内が追加された。`;
+      }
+
+      const sample = additions.slice(0, 3).map((addition) => `「${addition}」`);
+      const countText =
+        additions.length > sample.length ? `など${additions.length}件の` : "の";
+      return `${event.sourceName ?? "監視対象ページ"} に ${sample.join("、")} ${countText} 更新が追加された。`;
     }
 
-    return headings.length > 0
-      ? `A monitored page changed and now highlights headings such as ${headings.join(", ")}, making it easier to spot shifts in the published entry points and featured topics.`
-      : "A monitored page changed, signaling an update in the published entry points or featured topics for this source.";
+    if (quality === "audit-only") {
+      return "A navigation-only or heading-only change was detected and kept out of reader-facing highlights.";
+    }
+
+    return `The monitored page added ${additions.slice(0, 3).join(", ")}${additions.length > 3 ? ` and ${additions.length - 3} more item(s)` : ""}.`;
   }
 
   if (event.kind === "vscode_release_note_section") {
@@ -2974,11 +2991,137 @@ export function buildEditorialNote(date, events) {
   return null;
 }
 
+function isOrdinalNavigationLine(value) {
+  return /,\s*\d+\s+of\s+\d+\s*$/i.test(normalizeWhitespace(value));
+}
+
+function isConcatenatedOrdinalNavigationLine(value) {
+  const matches = normalizeWhitespace(value).match(/,\s*\d+\s+of\s+\d+/gi);
+  return (matches?.length ?? 0) >= 2;
+}
+
+function meaningfulSnapshotAdditions(event) {
+  return normalizeArray(event.diffSummary?.additions ?? [])
+    .map((addition) => normalizeWhitespace(addition))
+    .filter(
+      (addition) =>
+        addition &&
+        !isOrdinalNavigationLine(addition) &&
+        !isConcatenatedOrdinalNavigationLine(addition) &&
+        !/^\d+(?:\.\d+){1,3}$/.test(addition),
+    );
+}
+
+function isDocsNavigationLabel(value) {
+  return /^(?:GitHub Copilot|How-tos|Use Copilot agents|Concepts|Reference)$/i.test(
+    normalizeWhitespace(value),
+  );
+}
+
+export function editorialQuality(event) {
+  const title = normalizeWhitespace(decodeHtmlEntities(event.title));
+
+  if (
+    event.kind === "feed_entry" &&
+    /^Visual Studio Code [0-9.]+ \(Insiders\)$/i.test(title) &&
+    /^Learn what's new in Visual Studio Code/i.test(
+      normalizeWhitespace(event.summary),
+    )
+  ) {
+    return "medium";
+  }
+
+  if (event.kind !== "html_snapshot_change") {
+    return "high";
+  }
+
+  const additions = meaningfulSnapshotAdditions(event);
+
+  if (additions.length === 0) {
+    return "audit-only";
+  }
+
+  if (
+    String(event.sourceId ?? "").startsWith("docs-github-") &&
+    additions.every(isDocsNavigationLabel)
+  ) {
+    return "audit-only";
+  }
+
+  if (additions.length >= 3 || (event.diffSummary?.headings?.length ?? 0) > 0) {
+    return "high";
+  }
+
+  return "medium";
+}
+
+export function isReaderEvent(event) {
+  return editorialQuality(event) !== "audit-only";
+}
+
+export function isHighlightEligible(event) {
+  return editorialQuality(event) === "high";
+}
+
+function compareEditorialEvents(left, right) {
+  return (
+    rankEvent(right) - rankEvent(left) ||
+    safeDate(right.publishedAt) - safeDate(left.publishedAt) ||
+    String(left.title ?? "").localeCompare(String(right.title ?? ""))
+  );
+}
+
+export function clusterReaderEvents(events) {
+  const clusters = new Map();
+
+  for (const event of (events ?? []).filter(isReaderEvent)) {
+    const key = event.url || eventKey(event);
+    const existing = clusters.get(key);
+    if (!existing) {
+      clusters.set(key, { ...event, relatedEventCount: 1 });
+      continue;
+    }
+
+    const representative =
+      compareEditorialEvents(event, existing) < 0 ? event : existing;
+    clusters.set(key, {
+      ...representative,
+      relatedEventCount: Number(existing.relatedEventCount ?? 1) + 1,
+      sourceNames: normalizeArray([
+        ...(existing.sourceNames ?? [existing.sourceName]),
+        ...(event.sourceNames ?? [event.sourceName]),
+      ]),
+      dateKeys: normalizeArray([
+        ...(existing.dateKeys ?? []),
+        ...(event.dateKeys ?? []),
+      ]).sort(),
+    });
+  }
+
+  return [...clusters.values()].sort(compareEditorialEvents);
+}
+
+export function selectEditorialHighlights(events, limit = 3) {
+  return clusterReaderEvents((events ?? []).filter(isHighlightEligible)).slice(
+    0,
+    limit,
+  );
+}
+
 export function rankEvent(event) {
   const categories = (event.categories ?? []).map((category) =>
     String(category).toLowerCase(),
   );
   let score = Number(event.score ?? 0);
+
+  if (event.kind === "html_snapshot_change") {
+    const quality = editorialQuality(event);
+    if (quality === "audit-only") {
+      return -100;
+    }
+
+    return Math.min(score, quality === "high" ? 3 : 0);
+  }
 
   if (categories.includes("retired")) {
     score += 3;
@@ -2986,10 +3129,6 @@ export function rankEvent(event) {
 
   if (categories.includes("release")) {
     score += 2;
-  }
-
-  if (event.kind === "html_snapshot_change") {
-    score += 1;
   }
 
   return score;
@@ -3229,6 +3368,14 @@ export function importanceReason(event, locale = "ja") {
   }
 
   if (label === "Snapshot") {
+    const additions = meaningfulSnapshotAdditions(event);
+    const quality = editorialQuality(event);
+    if (quality !== "audit-only" && additions.length > 0) {
+      return locale === "ja"
+        ? `「${trimText(additions[0], 84)}」${additions.length > 1 ? `など${additions.length}件の` : "の"}追加内容から、利用中の手順や設定に関わる変更かを原典で確認できます。`
+        : `The newly added "${trimText(additions[0], 84)}" item${additions.length > 1 ? ` and ${additions.length - 1} related item(s)` : ""} is worth checking against existing procedures or settings.`;
+    }
+
     return locale === "ja"
       ? "固定ページの追記や差し替えを拾うための更新です。"
       : "This reflects a detected change on a tracked static page.";
@@ -3267,6 +3414,14 @@ export function buildDailyDigest(eventLog) {
       rankEvent(right) - rankEvent(left) ||
       safeDate(right.publishedAt) - safeDate(left.publishedAt),
   );
+  const readerEvents = uniqueEvents.filter(isReaderEvent);
+  const auditEvents = uniqueEvents.filter((event) => !isReaderEvent(event));
+  const freshReaderEvents = freshUniqueEvents.filter(isReaderEvent);
+  const freshHighlights = selectEditorialHighlights(freshReaderEvents, 3);
+  const highlights =
+    freshHighlights.length > 0
+      ? freshHighlights
+      : selectEditorialHighlights(readerEvents, 3);
   const futureUniqueEvents = dedupeEvents(futureEvents).sort(
     (left, right) =>
       safeDate(left.publishedAt) - safeDate(right.publishedAt) ||
@@ -3274,7 +3429,7 @@ export function buildDailyDigest(eventLog) {
   );
 
   const sourceBreakdown = new Map();
-  for (const event of rawEvents) {
+  for (const event of readerEvents) {
     const sourceName = event.sourceName ?? "Unknown";
     if (!sourceBreakdown.has(sourceName)) {
       sourceBreakdown.set(sourceName, new Set());
@@ -3290,7 +3445,7 @@ export function buildDailyDigest(eventLog) {
     "周辺ニュース",
   ];
   const topicMap = new Map(topicOrder.map((topic) => [topic, []]));
-  for (const event of uniqueEvents) {
+  for (const event of readerEvents) {
     topicMap.get(classifyEvent(event)).push(event);
   }
 
@@ -3306,14 +3461,16 @@ export function buildDailyDigest(eventLog) {
     editorialNote,
     rawEventCount: rawEvents.length,
     uniqueEventCount: uniqueEvents.length,
+    readerEventCount: readerEvents.length,
+    auditEventCount: auditEvents.length,
     freshUniqueCount: freshUniqueEvents.length,
+    freshReaderCount: freshReaderEvents.length,
     futureUniqueCount: futureUniqueEvents.length,
-    highlights: (freshUniqueEvents.length > 0
-      ? freshUniqueEvents
-      : uniqueEvents
-    ).slice(0, 5),
+    highlights,
     futureEvents: futureUniqueEvents.slice(0, 5),
     uniqueEvents,
+    readerEvents,
+    auditEvents,
     sourceBreakdown: [...sourceBreakdown.entries()]
       .map(([name, keys]) => ({ name, count: keys.size }))
       .sort(
