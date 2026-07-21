@@ -73,7 +73,8 @@ for (const source of sources) {
     }
     if (source.snapshotVersion !== undefined) {
       assert.ok(
-        Number.isSafeInteger(source.snapshotVersion) && source.snapshotVersion > 0,
+        Number.isSafeInteger(source.snapshotVersion) &&
+          source.snapshotVersion > 0,
         `snapshotVersion must be a positive integer (id=${source.id})`,
       );
     }

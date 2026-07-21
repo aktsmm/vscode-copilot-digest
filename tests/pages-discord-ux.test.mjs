@@ -191,7 +191,10 @@ assert.ok(
 );
 for (const card of englishLatestHighlightCards) {
   const summary = card.match(/<p class="mini-summary">([^<]+)<\/p>/);
-  assert.ok(summary, "English latest highlight cards must include an explanation");
+  assert.ok(
+    summary,
+    "English latest highlight cards must include an explanation",
+  );
   assert.match(
     summary[1],
     /[.!?]$/,

@@ -599,11 +599,7 @@ function assertNoGenericSnapshotCopy(text, context) {
   const hits = genericSnapshotMarkers.filter((marker) =>
     String(text).includes(marker),
   );
-  assert.deepEqual(
-    hits,
-    [],
-    `${context} contains generic snapshot copy`,
-  );
+  assert.deepEqual(hits, [], `${context} contains generic snapshot copy`);
 }
 
 function assertNoGenericJapaneseFallback(text, context) {
