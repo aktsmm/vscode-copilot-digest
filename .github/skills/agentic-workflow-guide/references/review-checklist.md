@@ -40,6 +40,7 @@ Minimum items to verify:
 - [ ] Are related files (references, scripts) simple and minimal? (DRY)
 - [ ] Are deterministic steps offloaded to scripts / IR / hooks instead of LLM loops? (Deterministic Offload)
 - [ ] Are frontmatter fields checked against the current file-type support matrix, not just repo-local convention? (Frontmatter Hygiene)
+- [ ] Are sub-review / sub-agent findings (file sizes, line ranges, duplication claims, missing sections) verified against the actual code by grep / read before being acted on? (Sub-Review Verification)
 ```
 
 ---
@@ -127,6 +128,8 @@ Minimum items to verify:
 - [ ] Are repo-local authoring rules consistent with the current platform support matrix?
 - [ ] If local rules and platform-supported keys conflict, is that drift called out explicitly before bulk edits?
 - [ ] Is there a mechanical scan for both missing and unsupported keys?
+- [ ] For `.prompt.md`, is `tools:` omitted unless the prompt deliberately needs an allowlisted tool set?
+- [ ] If a prompt references an agent, does it avoid overriding that agent's tools accidentally?
 ```
 
 ### Primitive Fit Check
@@ -163,6 +166,8 @@ LLM / agent に任せている処理のうち、決定論的に書ける部分�
       → Replace with a script gate that fails fast on mismatch
 - [ ] Are rules that can be enforced by hook / pre-commit / CI being delegated to an agent at runtime?
       → Move enforcement to a hook (see references/hooks-guide.md)
+- [ ] Does a deterministic state change rebuild or duplicate an existing scheduler / service / config without inspecting ownership and current settings?
+      → Read current state, mutate only the required field through a direct API/CLI, then read back authoritative live state
 ```
 
 **Rationale:** Agent-only loops scale poorly: each step costs tokens, latency, and a chance to hallucinate.
@@ -176,6 +181,7 @@ Deterministic offload (script + IR + hook) keeps the agent focused on judgment, 
 - [ ] Is the same information defined in multiple places?
 - [ ] Is configuration/context centrally managed?
 - [ ] Is there a mechanism to reflect updates across the entire system?
+- [ ] When a current schedule or config changes, are executable policy, prerequisites, tests, and current docs synchronized without rewriting historical evidence or stable analytics keys?
 - [ ] Are central rules (AGENTS.md, shared config) propagated to each worker `.agent.md`?
 - [ ] When a central rule is added/changed, are all referencing files updated simultaneously?
 - [ ] Do customization files keep file-type-appropriate frontmatter, without missing required fields or using unsupported properties?
@@ -226,6 +232,7 @@ Deterministic offload (script + IR + hook) keeps the agent focused on judgment, 
 - [ ] Is validation performed at each step?
 - [ ] Are conditions for proceeding clearly defined?
 - [ ] Is handling for validation failures defined?
+- [ ] If `0 new items` is a valid outcome, is that state shown separately from the latest published artifact date so normal no-op runs do not look stale?
 
 ## DRY (Don't Repeat Yourself)
 
@@ -244,6 +251,8 @@ Deterministic offload (script + IR + hook) keeps the agent focused on judgment, 
 - [ ] Is it safe to retry?
 - [ ] Does executing the same operation multiple times produce the same result?
 - [ ] Are side effects being managed?
+- [ ] For Issue/PR-driven automation, does retry logic reuse existing queue artifacts instead of spawning duplicates?
+- [ ] Are stale blocker labels and stale request Issues cleaned up or safely resumed under explicit conditions when no open PR remains?
 ```
 
 ### Scale & Safety Check
@@ -266,6 +275,8 @@ Deterministic offload (script + IR + hook) keeps the agent focused on judgment, 
 - [ ] Is error handling missing anywhere?
 - [ ] Is there handling for unexpected errors?
 - [ ] Are recovery procedures defined?
+- [ ] For asynchronous or eventually consistent operations, does the workflow distinguish **request accepted** from **operation completed**?
+- [ ] If completion is blocked by platform retention, locks, quotas, or pending background operations, is the state reported as `blocked` / `waiting` with the next check condition instead of `done`?
 
 ## Resource Cleanup
 

@@ -27,6 +27,8 @@ Do not start with multi-agent by default.
 
 If the ask does not require an **Agent**, stop and use the simpler primitive.
 
+> この primitive 選択表が SSOT。skill-creator-plus / skill-finder などの判定表は「そのスキルを使うべきか」の即時ゲートとして扱い、基準がずれたらここに合わせる。
+
 Selection details: [references/customization-decision.md](references/customization-decision.md)
 
 ## When to Use
@@ -83,6 +85,7 @@ Pattern details: [references/workflow-patterns/overview.md](references/workflow-
 - 汎用的な workflow 設計原則は、この SKILL と `references/` を SSOT にする。
 - repo local の `.instructions.md` には workspace 固有の差分だけを残す。差分が無い generic instruction は merge back して削除候補にする。
 - IR は原則 in-memory で扱う。validator、script、deterministic handoff が必要な場合だけ中間 file を materialize し、不要になったら片付ける。
+- scheduler / service / config など決定論的な state mutation は、AI/UI loop ではなく direct script / API で現状確認 -> 最小変更 -> live read-back まで行う。LLM は scope と整合対象の判断に限定する。
 
 ## Escalation Rules
 
@@ -126,72 +129,24 @@ Lightweight inputs such as greetings, short Q&A, and numeric-only replies should
 - [ ] Primitive choice is simpler than agent if possible
 - [ ] Placement is appropriate and always-loaded entry files stay thin
 - [ ] New additions are proposed only after delete / merge / split / move options are checked
-- [ ] Repo-local design instructions keep workspace-specific delta only; generic guidance lives in this skill or its references
-- [ ] Frontmatter review validates file-type-specific supported and unsupported properties, not just missing fields
-- [ ] `copilot-instructions.md` and `AGENTS.md` keep distinct always-on roles and do not duplicate intake / routing / catalog content
-- [ ] always-loaded entries do not combine strong directive wording with catalogs or reference inventories
-- [ ] findings distinguish runtime-affected entry issues from review-only asset issues
 - [ ] Single responsibility per agent is preserved
 - [ ] Errors can be detected and stopped early
 - [ ] Results are verifiable at each step
-- [ ] lightweight conversational inputs are not unnecessarily forced into task intake
-- [ ] Context can be compacted or split before adding more orchestration
-- [ ] catalogs and workflow maps are separated from always-loaded entry files
-- [ ] Deterministic parts are offloaded to scripts / IR / hooks (not LLM loops)
-- [ ] File-based IR is introduced only when deterministic handoff requires it, and cleanup is defined
+- [ ] Deterministic parts are offloaded to scripts / IR / hooks, and state changes are confirmed by reading authoritative live state back (not LLM/UI loops)
 
 Full checklist: [references/review-checklist.md](references/review-checklist.md)
 
 ## Reference Map
 
-| Topic                  | Reference                                                                                                                                  |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| Primitive decision     | [references/customization-decision.md](references/customization-decision.md)                                                               |
-| Design principles      | [references/design-principles.md](references/design-principles.md)                                                                         |
-| Workflow patterns      | [references/workflow-patterns/overview.md](references/workflow-patterns/overview.md)                                                       |
-| Splitting criteria     | [references/splitting-criteria.md](references/splitting-criteria.md)                                                                       |
-| Review checklist       | [references/review-checklist.md](references/review-checklist.md)                                                                           |
-| Prompt template        | [references/prompt-template.md](references/prompt-template.md)                                                                             |
-| Context management     | [references/context-engineering.md](references/context-engineering.md)                                                                     |
-| Agent guide / template | [references/agent-guide.md](references/agent-guide.md), [references/agent-template.md](references/agent-template.md)                       |
-| Handoffs / placement   | [references/handoffs-guide.md](references/handoffs-guide.md), [references/vscode-agent-placement.md](references/vscode-agent-placement.md) |
-| Hooks                  | [references/hooks-guide.md](references/hooks-guide.md)                                                                                     |
-| Evaluation             | [references/agent-evaluation.md](references/agent-evaluation.md)                                                                           |
-| External links         | [references/external-resources.md](references/external-resources.md)                                                                       |
-
-## External References
-
-Keep a small curated set here for first-hop reading. The longer link list stays in [references/external-resources.md](references/external-resources.md).
-
-- GitHub Docs: [Chat in IDE](https://docs.github.com/en/copilot/how-tos/chat-with-copilot/chat-in-ide)
-- VS Code Docs: [Custom Agents](https://code.visualstudio.com/docs/copilot/customization/custom-agents)
-- GitHub Docs: [Create custom agents](https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/create-custom-agents)
-- Anthropic: [Building Effective Agents](https://www.anthropic.com/engineering/building-effective-agents)
-- Anthropic: [Effective Context Engineering](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents)
-- Anthropic: [Writing Tools for Agents](https://www.anthropic.com/engineering/writing-tools-for-agents)
+Core references: [primitive decision](references/customization-decision.md), [design principles](references/design-principles.md), [workflow patterns](references/workflow-patterns/overview.md), [splitting criteria](references/splitting-criteria.md), [review checklist](references/review-checklist.md), and [context management](references/context-engineering.md).
 
 ## agent Quick Fix
 
-**Problem:** Orchestrator says "I'll delegate" but does work directly.
-
-**Solution:** Use MUST/MANDATORY language. See [agent-guide.md](references/agent-guide.md).
-
-```yaml
-## MANDATORY: Sub-agent Delegation
-You MUST use agent for each file. Do NOT read files directly.
-```
+When an orchestrator promises delegation but works directly, make the delegation requirement explicit and verifiable. See [agent-guide.md](references/agent-guide.md).
 
 ## Tools Reference
 
-→ **[references/agent-template.md](references/agent-template.md)**
-
-| Purpose   | VS Code Copilot         | Claude Code |
-| --------- | ----------------------- | ----------- |
-| Shell     | `execute/runInTerminal` | `Bash`      |
-| Read      | `read/readFile`         | `Read`      |
-| Edit      | `edit/editFiles`        | `Write`     |
-| Subagent  | `agent`                 | `Task`      |
-| Web fetch | `web/fetch`             | (MCP)       |
+Use [references/agent-template.md](references/agent-template.md) for tool mapping and stable agent scaffold details.
 
 ## Done Criteria
 
@@ -203,3 +158,5 @@ You MUST use agent for each file. Do NOT read files directly.
 - [ ] Always-on instruction boundaries and DRY / SSOT risks are explicitly reviewed when `copilot-instructions.md` or `AGENTS.md` are in scope
 - [ ] New agent / workflow assets are registered in the appropriate catalog or docs when needed
 - [ ] `AGENTS.md` is updated only when shared guardrails or entry behavior need to change
+- [ ] Long-running or ad-hoc terminals/tasks started during the workflow are closed, or remaining terminals are explicitly reported with a reason
+- [ ] Async operations are verified by live state before being called complete; if blocked by retention/locks/background platform work, the blocker and next check condition are explicit

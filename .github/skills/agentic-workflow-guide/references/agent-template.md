@@ -107,8 +107,11 @@ name: my-agent
 ```yaml
 ---
 description: <description> # Required: Brief description of the prompt
+# agent: <agent-name> # Optional: Bind to a specific agent
 ---
 ```
+
+Do not add `tools:` to `.prompt.md` by default. Prompt-level `tools:` is an allowlist that overrides the selected or referenced agent's tools for that prompt run. Use it only when losing unrelated built-in, extension, web, or MCP tools is intentional.
 
 ### ⚠️ Deprecated Fields
 
@@ -197,14 +200,6 @@ description: Daily report generator
 ---
 description: デイリーレポート自動生成（業務ログから1日分のレポートを作成）
 agent: report-generator
-tools:
-  [
-    "read/readFile",
-    "edit/editFiles",
-    "search/fileSearch",
-    "search/textSearch",
-    "workiq/*",
-  ]
 ---
 ```
 
@@ -212,17 +207,17 @@ tools:
 
 | Pattern         | Description               | Example                |
 | --------------- | ------------------------- | ---------------------- |
-| `category/tool` | Specific tool             | `read/readFile`        |
+| `category/tool` | Specific tool             | `web/fetch`            |
 | `category/*`    | All tools in category     | `workiq/*`             |
 | MCP tools       | External MCP server tools | `workiq/*`, `github/*` |
 
 **Common Tool Categories:**
 
-| Category | Tools                                     |
+| Category | Preferred alias or category               |
 | -------- | ----------------------------------------- |
-| `read`   | `readFile`                                |
-| `edit`   | `editFiles`                               |
-| `search` | `fileSearch`, `textSearch`                |
+| `read`   | File reading                              |
+| `edit`   | File editing                              |
+| `search` | File and text search                      |
 | `workiq` | M365 integration (email, calendar, files) |
 
 ---
@@ -360,8 +355,7 @@ Each agent should include these sections:
 ---
 name: example-agent
 description: Brief description of what this agent does
-# VS Code Copilot tools (adjust for Claude Code: Read, Edit, Search)
-tools: ["readFile", "editFiles", "textSearch"]
+tools: [read, edit, search]
 ---
 
 # Example Agent
@@ -473,7 +467,8 @@ For long-running tasks, maintain visibility:
 ---
 name: orchestrator
 description: Coordinates workflow and delegates to specialist agents
-tools: ["runSubagent", "readFile", "textSearch", "todos"]
+# Omit tools for orchestrators unless a hard allowlist is intentional.
+# Parent tool allowlists become ceilings for worker agents.
 ---
 ```
 
@@ -507,7 +502,7 @@ Built-in tools for custom agents. Tool names differ by platform:
 | `#createFile`    | Create new file                          | `#edit`        |
 | `#textSearch`    | Search text in files                     | `#search`      |
 | `#fileSearch`    | Search files by glob pattern             | `#search`      |
-| `#runSubagent`   | Spawn sub-agent with isolated context    | -              |
+| `#tool:agent`    | Spawn sub-agent with isolated context    | -              |
 | `#web/fetch`     | Fetch web page content                   | `#web`         |
 | `#todos`         | Task list management                     | -              |
 | `#codebase`      | Search codebase for context              | -              |
@@ -530,15 +525,15 @@ Built-in tools for custom agents. Tool names differ by platform:
 
 ### Cross-Platform Mapping
 
-| Purpose         | VS Code Copilot            | Claude Code      |
-| --------------- | -------------------------- | ---------------- |
-| Shell execution | `runInTerminal`            | `Bash`           |
-| Read file       | `readFile`                 | `Read`           |
-| Edit file       | `editFiles`                | `Write`/`Edit`   |
-| Search          | `textSearch`, `fileSearch` | `Search`, `Grep` |
-| Subagent        | `runSubagent`              | `Task`           |
-| Web fetch       | `web/fetch`                | (MCP)            |
-| Todo list       | `todos`                    | `TodoWrite`      |
+| Purpose         | VS Code Copilot | Claude Code      |
+| --------------- | --------------- | ---------------- |
+| Shell execution | `execute`       | `Bash`           |
+| Read file       | `read`          | `Read`           |
+| Edit file       | `edit`          | `Write`/`Edit`   |
+| Search          | `search`        | `Search`, `Grep` |
+| Subagent        | `agent`         | `Task`           |
+| Web fetch       | `web/fetch`     | (MCP)            |
+| Todo list       | `todo`          | `TodoWrite`      |
 
 ### Tool Definition Examples
 
@@ -548,7 +543,8 @@ Built-in tools for custom agents. Tool names differ by platform:
 ---
 name: orchestrator
 description: Coordinates workflow and delegates to specialist agents
-tools: ["runSubagent", "readFile", "textSearch", "todos"]
+# Omit tools for orchestrators unless a hard allowlist is intentional.
+# Parent tool allowlists become ceilings for worker agents.
 ---
 ```
 
@@ -564,7 +560,7 @@ tools: ["Task", "Read", "Search", "TodoWrite"]
 
 ### Tool Reference Syntax
 
-- **VS Code Copilot**: Use `#tool:<tool-name>` in prompts (e.g., `#tool:runSubagent`)
+- **VS Code Copilot**: Use `#tool:<tool-name>` in prompts (e.g., `#tool:agent`)
 - **Claude Code**: Reference tools directly by name
 
 ### MCP Server Tools
@@ -592,8 +588,7 @@ Handoffs enable guided sequential workflows between agents with suggested next s
 ---
 name: Planner
 description: Generate an implementation plan
-# VS Code Copilot tools
-tools: ["textSearch", "web/fetch", "readFile"]
+tools: [search, web, read]
 handoffs:
   - label: Start Implementation
     agent: implementation
