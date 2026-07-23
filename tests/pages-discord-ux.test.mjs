@@ -9,6 +9,11 @@ function readSiteFile(relativePath) {
 const indexHtml = readSiteFile("index.html");
 assert.match(
   indexHtml,
+  /<nav class="demo-nav" aria-label="関連デモ">[\s\S]*?<a href="https:\/\/aktsmm\.github\.io\/azure-ops-pulse-demo\/#\/overview">Azure Ops Pulse<\/a>[\s\S]*?<a href="https:\/\/aktsmm\.github\.io\/m365-message-center-dashboard\/">M365 Message Center Dashboard<\/a>[\s\S]*?<a href="https:\/\/aktsmm\.github\.io\/m365-copilot-update-digest\/">M365 Copilot Update Digest<\/a>[\s\S]*?<a href="https:\/\/aktsmm\.github\.io\/daily-dev-byte\/">Daily Dev Byte<\/a>[\s\S]*?<span class="demo-nav-current" aria-current="page">VS Code Copilot Digest<\/span>[\s\S]*?<\/nav>/,
+  "home page must expose links to the related demos and mark the current demo",
+);
+assert.match(
+  indexHtml,
   /href="\.\/weeks\/index\.html">週間ダイジェスト/,
   "home Weekly nav must point to the weekly archive",
 );
@@ -34,6 +39,11 @@ assert.match(
 );
 
 const searchHtml = readSiteFile("search.html");
+assert.match(
+  searchHtml,
+  /<nav class="demo-nav" aria-label="関連デモ">/,
+  "filterable search page must retain the cross-demo navigation",
+);
 assert.match(
   searchHtml,
   /data-search-filters/,
@@ -67,6 +77,11 @@ const latestDay = fs
   .at(-1);
 assert.ok(latestDay, "generated daily detail page must exist");
 const dayHtml = readSiteFile(`days/${latestDay}`);
+assert.match(
+  dayHtml,
+  /<nav class="demo-nav" aria-label="関連デモ">/,
+  "paginated daily detail pages must retain the cross-demo navigation",
+);
 assert.match(
   dayHtml,
   /href="\.\.\/weeks\/index\.html">週間ダイジェスト/,

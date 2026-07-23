@@ -598,6 +598,14 @@ async function assertGeneratedA11yBasics() {
     }
 
     if (
+      !/<nav class="demo-nav" aria-label="[^"]+">[\s\S]*?<a href="https:\/\/aktsmm\.github\.io\/azure-ops-pulse-demo\/#\/overview">[\s\S]*?<a href="https:\/\/aktsmm\.github\.io\/m365-message-center-dashboard\/">[\s\S]*?<a href="https:\/\/aktsmm\.github\.io\/m365-copilot-update-digest\/">[\s\S]*?<a href="https:\/\/aktsmm\.github\.io\/daily-dev-byte\/">[\s\S]*?<span class="demo-nav-current" aria-current="page">VS Code Copilot Digest<\/span>[\s\S]*?<\/nav>/.test(
+        text,
+      )
+    ) {
+      hits.push(`${relativePath} -> missing cross-demo navigation`);
+    }
+
+    if (
       !/<button class="lang-toggle" type="button"[^>]*aria-pressed="(?:true|false)"/.test(
         text,
       )
@@ -2089,18 +2097,28 @@ function renderLayout({
           </div>
           <p class="site-lead">${escapeHtml(text.siteLead)}</p>
         </div>
-        <nav class="site-nav" aria-label="${escapeHtml(locale === "ja" ? "主要ナビゲーション" : "Primary navigation")}">
-          <a href="${escapeHtml(homeHref)}">${escapeHtml(text.dailyNav)}</a>
-          <a href="${escapeHtml(weeklyHref)}">${escapeHtml(text.weeklyNav)}</a>
-          <a href="${escapeHtml(searchHref)}">${escapeHtml(text.searchNav)}</a>
-          <a href="https://github.com/aktsmm/vscode-copilot-digest">${escapeHtml(text.repositoryNav)}</a>
-          <button class="lang-toggle" type="button" data-href="${escapeHtml(langSwitchHref)}" aria-label="${escapeHtml(locale === "ja" ? "Switch to English" : "日本語に切り替え")}" aria-pressed="${locale === "en" ? "true" : "false"}">
-            <span class="lang-toggle-track">
-              <span class="lang-toggle-option${locale === "ja" ? " active" : ""}">JA</span>
-              <span class="lang-toggle-option${locale === "en" ? " active" : ""}">EN</span>
-            </span>
-          </button>
-        </nav>
+        <div class="site-navigation">
+          <nav class="site-nav" aria-label="${escapeHtml(locale === "ja" ? "主要ナビゲーション" : "Primary navigation")}">
+            <a href="${escapeHtml(homeHref)}">${escapeHtml(text.dailyNav)}</a>
+            <a href="${escapeHtml(weeklyHref)}">${escapeHtml(text.weeklyNav)}</a>
+            <a href="${escapeHtml(searchHref)}">${escapeHtml(text.searchNav)}</a>
+            <a href="https://github.com/aktsmm/vscode-copilot-digest">${escapeHtml(text.repositoryNav)}</a>
+            <button class="lang-toggle" type="button" data-href="${escapeHtml(langSwitchHref)}" aria-label="${escapeHtml(locale === "ja" ? "Switch to English" : "日本語に切り替え")}" aria-pressed="${locale === "en" ? "true" : "false"}">
+              <span class="lang-toggle-track">
+                <span class="lang-toggle-option${locale === "ja" ? " active" : ""}">JA</span>
+                <span class="lang-toggle-option${locale === "en" ? " active" : ""}">EN</span>
+              </span>
+            </button>
+          </nav>
+          <nav class="demo-nav" aria-label="${escapeHtml(locale === "ja" ? "関連デモ" : "Related demos")}">
+            <span class="demo-nav-label">${escapeHtml(locale === "ja" ? "関連デモ" : "Related demos")}</span>
+            <a href="https://aktsmm.github.io/azure-ops-pulse-demo/#/overview">Azure Ops Pulse</a>
+            <a href="https://aktsmm.github.io/m365-message-center-dashboard/">M365 Message Center Dashboard</a>
+            <a href="https://aktsmm.github.io/m365-copilot-update-digest/">M365 Copilot Update Digest</a>
+            <a href="https://aktsmm.github.io/daily-dev-byte/">Daily Dev Byte</a>
+            <span class="demo-nav-current" aria-current="page">VS Code Copilot Digest</span>
+          </nav>
+        </div>
       </header>
       <main id="main-content">${body}</main>
       <button class="back-to-top" aria-label="${escapeHtml(locale === "ja" ? "ページ上部へ" : "Back to top")}" title="${escapeHtml(locale === "ja" ? "ページ上部へ" : "Back to top")}">
@@ -2434,8 +2452,17 @@ input:focus-visible {
 .site-lead { margin: 4px 0 0; color: var(--muted); font-size: 0.9rem; }
 .site-updated-inline { color: var(--muted); font-size: 0.8rem; }
 .site-updated { margin: 8px 0 0; color: var(--muted); font-size: 0.85rem; }
+.site-navigation { display: grid; gap: 10px; justify-items: end; }
 .site-nav { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
 .site-nav a, .data-links a { text-decoration: none; color: var(--muted); }
+.demo-nav {
+  display: flex; gap: 8px 12px; flex-wrap: wrap; justify-content: flex-end; align-items: center;
+  padding-top: 10px; border-top: 1px solid var(--line); font-size: 0.78rem;
+}
+.demo-nav-label { color: var(--muted); font-weight: 700; }
+.demo-nav a { color: var(--muted); text-decoration: none; }
+.demo-nav a:hover { color: var(--accent); text-decoration: underline; }
+.demo-nav-current { color: var(--accent); font-weight: 700; }
 .hero {
   display: grid;
   grid-template-columns: 1.4fr 1fr;
@@ -3003,6 +3030,8 @@ h1 { margin: 0 0 16px; font-size: clamp(1.5rem, 2.4vw, 2.2rem); line-height: 1.1
 @media (max-width: 720px) {
   .page-shell { padding: 16px; }
   .site-header { padding: 14px 16px; align-items: flex-start; flex-direction: column; }
+  .site-navigation { width: 100%; justify-items: start; }
+  .demo-nav { justify-content: flex-start; }
   .site-brand-row { align-items: flex-start; gap: 6px 10px; }
   .hero { padding: 24px; }
   .hero-home h1 { max-width: none; }
