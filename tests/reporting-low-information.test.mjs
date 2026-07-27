@@ -10,8 +10,10 @@ import {
   isReaderEvent,
   localizedSummary,
   localizedTitle,
+  lowInformationFallbacksForEvent,
   lowInformationFallbackMarkers,
   originalTitle,
+  partitionLowInformationEvents,
   rankEvent,
   selectEditorialHighlights,
   summarizeEventSet,
@@ -64,6 +66,16 @@ assert.match(
 );
 assert.match(
   authorWorkflowSource,
+  /hasKnownCollectFailure/,
+  "author-digest-pr workflow must classify known collect failures",
+);
+assert.match(
+  authorWorkflowSource,
+  /Collect updates repair for run/,
+  "author-digest-pr workflow must create a traceable collect repair request",
+);
+assert.match(
+  authorWorkflowSource,
   /buildDailyDigest, lowInformationFallbackMarkers/,
   "author-digest-pr workflow must use the shared reader-facing digest classifier",
 );
@@ -97,6 +109,41 @@ assert.match(
   /`data\/\*\*` は生データなので変更しないでください/,
   "self-heal fallback feedback must keep data files read-only",
 );
+assert.match(
+  selfHealWorkflowSource,
+  /Collect updates repair の検証エラー/,
+  "self-heal workflow must preserve collect repair safety boundaries",
+);
+
+const requestReviewWorkflowSource = fs.readFileSync(
+  ".github/workflows/request-copilot-review.yml",
+  "utf8",
+);
+assert.match(
+  requestReviewWorkflowSource,
+  /Preserving bounded collect repair metadata/,
+  "metadata normalization must preserve collect repair PR titles",
+);
+
+const validateGeneratedPrWorkflowSource = fs.readFileSync(
+  ".github/workflows/validate-generated-pr.yml",
+  "utf8",
+);
+assert.match(
+  validateGeneratedPrWorkflowSource,
+  /Collect updates repair for run/,
+  "generated PR validation must recognize the bounded repair marker",
+);
+
+const autoMergeWorkflowSource = fs.readFileSync(
+  ".github/workflows/auto-merge-generated-pr.yml",
+  "utf8",
+);
+assert.match(
+  autoMergeWorkflowSource,
+  /requires human review before merge/,
+  "collect repairs must never be auto-merged",
+);
 
 const reportingSource = fs.readFileSync("scripts/lib/reporting.mjs", "utf8");
 assertNoDuplicateObjectKeys(reportingSource, "vscodeReleaseSummaries");
@@ -119,6 +166,16 @@ assert.match(
   collectSource,
   /if \(renderExistingSummariesOnly\) \{\s*await writeDailySummaries\(logs\);[\s\S]*?return;/,
   "offline summary renderer must return before source collection",
+);
+assert.match(
+  collectSource,
+  /partitionLowInformationEvents\(editorialEvents\)/,
+  "collector must remove low-information reader events before persistence",
+);
+assert.match(
+  collectSource,
+  /skippedLowInformationEvents/,
+  "collector must leave an auditable record of excluded events",
 );
 
 assertCliFails(
@@ -416,6 +473,37 @@ for (const event of unknownSamples) {
   assertLowInformationFallback(localizedSummary(event), event.title);
   assertNoLowInformationFallback(importanceReason(event), event.title);
 }
+const lowInformationEvent = unknownSamples[0];
+const concreteEvent = {
+  title: "Copilot code review: AGENTS.md support and UI improvements",
+  summary:
+    "Copilot code review now supports repository-level AGENTS.md files, and it’s easier to request a review from Copilot on draft pull requests with the Request button.",
+  categories: ["Improvement", "copilot"],
+};
+const auditOnlyLowInformationEvent = {
+  ...lowInformationEvent,
+  kind: "html_snapshot_change",
+  diffSummary: {},
+};
+assert.ok(
+  lowInformationFallbacksForEvent(lowInformationEvent).length > 0,
+  "unknown reader-facing events must expose their fallback markers",
+);
+const lowInformationPartition = partitionLowInformationEvents([
+  lowInformationEvent,
+  concreteEvent,
+  auditOnlyLowInformationEvent,
+]);
+assert.deepEqual(
+  lowInformationPartition.acceptedEvents,
+  [concreteEvent, auditOnlyLowInformationEvent],
+  "low-information reader events must not be persisted while audit-only evidence is retained",
+);
+assert.equal(
+  lowInformationPartition.rejectedEvents.length,
+  1,
+  "low-information reader events must be recorded as rejected",
+);
 assert.doesNotMatch(
   summarizeEventSet(unknownSamples, "ja", { maxHighlights: 3 }),
   /英語 summary では/,

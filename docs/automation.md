@@ -16,6 +16,7 @@
 
 - [collect-updates.yml](../.github/workflows/collect-updates.yml) は毎日 06:30 / 14:30 / 22:30 JST 目安で実行する。GitHub Actions の schedule は高負荷時に遅延しうる
 - Node.js 22 で `npm ci` と `npm run collect` を実行し、[data/events](../data/events) を毎日更新する。[summaries/daily](../summaries/daily) は公開済み更新または未来日付項目がある日だけ生成する
+- 収集結果が reader-facing の低情報 fallback になる場合は、collector が保存前に除外し、`latestRun.skippedLowInformationEvents` に根拠を記録する。低情報 guard 自体は残るため、公開カードには定型文を出さない
 - 変更がなければ commit せず終了する
 - 変更があった場合は `github-actions[bot]` が `data/**` と `summaries/**` を commit / push する
 - collect の最後に [deploy-pages.yml](../.github/workflows/deploy-pages.yml) を dispatch して、push 起点 workflow の非連鎖を補う
@@ -57,6 +58,8 @@
 - `needs-human-review` が付いた PR は意図的に自動 merge しない
 - Cloud agent の `Require approval for workflow runs` が ON でも、Copilot 由来の blocked run は定期 workflow が検出して 1 回だけ rerun して先へ進める
 - それでも PR が出ない場合は、Issue 右サイドバーで Copilot assignee が付いているかと GitHub 側キューを確認する
+- `Collect updates` が `Collect updates` または `Validate collected output` で失敗すると、`author-digest-pr.yml` が既存の Copilot assignment 経路で traceable な `Collect updates repair` Issue / PR を作る。許可範囲は collector、reporting、source selector、関連テストに限定し、`data/**` と低情報 guard は変更不可。修復 PR は必ず `needs-human-review` とし、main へ自動 merge しない
+- Collect failure が上記以外の step の場合も Issue は残すが、Copilot の自動修復は開始せず `needs-human-review` へエスカレーションする。これにより未分類の失敗を成功扱いにしない
 
 ## Workflow 一覧
 

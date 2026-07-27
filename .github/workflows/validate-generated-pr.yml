@@ -98,9 +98,18 @@ jobs:
             process.exit(0);
           }
           const isPagesBuildRepair = /\+ pages$/.test(title) && /Pages build repair for run \d+/.test(body);
+          const isCollectUpdatesRepair = /Collect updates repair for run \d+/.test(body);
           const allowed = [/^summaries\/daily\//, /^drafts\//, /^scripts\/lib\/reporting\.mjs$/];
           if (isPagesBuildRepair) {
             allowed.push(/^scripts\/build-pages\.mjs$/);
+          }
+          if (isCollectUpdatesRepair) {
+            allowed.push(
+              /^scripts\/collect\.mjs$/,
+              /^config\/sources\.json$/,
+              /^tests\/reporting-low-information\.test\.mjs$/,
+              /^tests\/sources\.test\.mjs$/,
+            );
           }
           const blocked = changed.filter((file) => !allowed.some((pattern) => pattern.test(file)));
           if (blocked.length > 0) {
@@ -130,12 +139,15 @@ jobs:
           const copilotWipTitlePattern = /^\[WIP\] .*?(?:\d{4}-\d{2}-\d{2}|[A-Z][a-z]+ \d{1,2}, \d{4})$/;
           const bodyPattern = /Generated from `?data\/events\/\d{4}-\d{2}-\d{2}\.json`?/;
           const pagesRepairPattern = /Pages build repair for run \d+/;
+          const collectRepairPattern = /Collect updates repair for run \d+/;
           const summaryDatePattern = /^summaries\/daily\/(\d{4}-\d{2}-\d{2})\.md$/;
           const changesBuildPages = changed.includes('scripts/build-pages.mjs');
+          const isCollectUpdatesRepair = collectRepairPattern.test(body);
           const hasInferableSource =
             bodyPattern.test(body) ||
             changed.some((file) => summaryDatePattern.test(file)) ||
-            titlePattern.test(title);
+            titlePattern.test(title) ||
+            isCollectUpdatesRepair;
           const isPendingNormalization =
             authoringRequestTitlePattern.test(title) ||
             copilotWipTitlePattern.test(title);
@@ -152,6 +164,10 @@ jobs:
 
           if (changesBuildPages && (!/\+ pages$/.test(title) || !pagesRepairPattern.test(body))) {
             console.error('PRs that change scripts/build-pages.mjs must use the + pages title suffix and include the Pages build repair marker in the body.');
+            process.exit(1);
+          }
+          if (isCollectUpdatesRepair && title !== 'fix: repair collect updates') {
+            console.error('Collect updates repair PRs must use the title: fix: repair collect updates.');
             process.exit(1);
           }
           NODE

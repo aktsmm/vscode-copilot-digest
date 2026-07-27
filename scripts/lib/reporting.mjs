@@ -2519,6 +2519,34 @@ export function localizedSummary(event, locale = "ja") {
   );
 }
 
+export function lowInformationFallbacksForEvent(event) {
+  const renderedFields = [
+    localizedSummary(event),
+    importanceReason(event),
+  ];
+
+  return lowInformationFallbackMarkers.filter((marker) =>
+    renderedFields.some((field) => field.includes(marker)),
+  );
+}
+
+export function partitionLowInformationEvents(events) {
+  const acceptedEvents = [];
+  const rejectedEvents = [];
+
+  for (const event of events ?? []) {
+    const fallbackMarkers = lowInformationFallbacksForEvent(event);
+    if (isReaderEvent(event) && fallbackMarkers.length > 0) {
+      rejectedEvents.push({ event, fallbackMarkers });
+      continue;
+    }
+
+    acceptedEvents.push(event);
+  }
+
+  return { acceptedEvents, rejectedEvents };
+}
+
 function digestTopicLabel(topic, locale = "ja") {
   const labels = {
     ja: {

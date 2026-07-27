@@ -179,6 +179,18 @@ jobs:
               '',
             ];
 
+            const isCollectUpdatesRepair = /Collect updates repair for run \d+/.test(pr.body || '');
+            if (isCollectUpdatesRepair) {
+              feedbackLines.push(
+                '### Collect updates repair の検証エラー',
+                '- `data/**` を変更せず、低情報 fallback guard を削除または弱めないでください',
+                '- 許可される修復範囲は `scripts/collect.mjs`, `scripts/lib/reporting.mjs`, `config/sources.json`, 関連テストです',
+                '- `npm run collect`、`npm run test:data`、`npm run build:pages` を再現し、既知の collector / data-quality failure だけを修正してください',
+                '- この種の PR は意図的に auto-merge されず、人による review が必要です',
+                '',
+              );
+            }
+
             if (failedSteps.includes('Validate Markdown structure')) {
               feedbackLines.push(
                 '### Markdown 構造エラー',

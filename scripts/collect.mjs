@@ -14,6 +14,7 @@ import {
   localizedSummary,
   localizedTitle,
   originalTitle,
+  partitionLowInformationEvents,
   summarizeEventSet,
 } from "./lib/reporting.mjs";
 import { normalizeSnapshotLine } from "./lib/snapshot-text.mjs";
@@ -1080,8 +1081,24 @@ async function main() {
     (left, right) => safeDate(right.publishedAt) - safeDate(left.publishedAt),
   );
   const collectionTime = new Date();
-  const filteredMergedEvents = applyEditorialPolicy(normalizedMergedEvents);
-  const publishedEvents = filteredMergedEvents.filter(
+  const editorialEvents = applyEditorialPolicy(normalizedMergedEvents);
+  const { acceptedEvents, rejectedEvents } =
+    partitionLowInformationEvents(editorialEvents);
+  const acceptedEventIds = new Set(
+    acceptedEvents.map((event) => event.eventId),
+  );
+  const acceptedNewEvents = events.filter((event) =>
+    acceptedEventIds.has(event.eventId),
+  );
+  const skippedLowInformationEvents = rejectedEvents.map(
+    ({ event, fallbackMarkers }) => ({
+      eventId: event.eventId,
+      sourceId: event.sourceId,
+      title: event.title,
+      fallbackMarkers,
+    }),
+  );
+  const publishedEvents = acceptedEvents.filter(
     (event) =>
       !event.isFutureDated &&
       safeDate(event.publishedAt ?? event.detectedAt) <= collectionTime,
@@ -1089,16 +1106,16 @@ async function main() {
 
   const latestRun = {
     generatedAt: new Date().toISOString(),
-    newEventsCount: events.length,
-    newEventIds: events.map((event) => event.eventId),
+    newEventsCount: acceptedNewEvents.length,
+    newEventIds: acceptedNewEvents.map((event) => event.eventId),
     errorCount: errors.length,
+    skippedLowInformationEvents,
   };
-
   const eventLog = {
     date: today,
     generatedAt: latestRun.generatedAt,
     latestRun,
-    events: filteredMergedEvents,
+    events: acceptedEvents,
     errors,
   };
   const allLogs = [...logs.filter((log) => log.date !== today), eventLog].sort(
@@ -1113,6 +1130,11 @@ async function main() {
 
   console.log(`Collected ${events.length} new event(s).`);
   console.log(`Latest run metadata written to ${eventFile}.`);
+  if (skippedLowInformationEvents.length > 0) {
+    console.warn(
+      `Excluded ${skippedLowInformationEvents.length} low-information event(s) before persistence.`,
+    );
+  }
   if (errors.length > 0) {
     console.warn(`Encountered ${errors.length} error(s).`);
   }

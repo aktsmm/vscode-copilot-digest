@@ -39,6 +39,7 @@ jobs:
             const titlePattern = /^docs: update digest \d{4}-\d{2}-\d{2}(?: \+ (?:drafts|reporting|pages)){0,3}$/;
             const bodyPattern = /Generated from `?data\/events\/\d{4}-\d{2}-\d{2}\.json`?/;
             const pagesRepairPattern = /Pages build repair for run \d+/;
+            const collectRepairPattern = /Collect updates repair for run \d+/;
             const summaryDatePattern = /^summaries\/daily\/(\d{4}-\d{2}-\d{2})\.md$/;
 
             function isCopilotDraftPlan(currentPr) {
@@ -153,13 +154,20 @@ jobs:
             }
 
             const isPagesBuildRepair = /\+ pages$/.test(pr.title || '') && pagesRepairPattern.test(pr.body || '');
+            const isCollectUpdatesRepair = collectRepairPattern.test(pr.body || '');
             const blocked = files
               .map((file) => file.filename)
               .filter((file) =>
                 !/^summaries\/daily\//.test(file) &&
                 !/^drafts\//.test(file) &&
                 file !== 'scripts/lib/reporting.mjs' &&
-                !(isPagesBuildRepair && file === 'scripts/build-pages.mjs')
+                !(isPagesBuildRepair && file === 'scripts/build-pages.mjs') &&
+                !(isCollectUpdatesRepair && [
+                  'scripts/collect.mjs',
+                  'config/sources.json',
+                  'tests/reporting-low-information.test.mjs',
+                  'tests/sources.test.mjs',
+                ].includes(file))
               );
 
             const hasInferableSource =
@@ -169,6 +177,13 @@ jobs:
 
             if (blocked.length > 0) {
               await markForHumanReview(`PR #${pr.number} changed disallowed files: ${blocked.join(', ')}`);
+              return;
+            }
+
+            if (isCollectUpdatesRepair) {
+              await markForHumanReview(
+                `PR #${pr.number} repairs the collection pipeline and requires human review before merge.`,
+              );
               return;
             }
 
