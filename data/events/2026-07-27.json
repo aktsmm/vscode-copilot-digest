@@ -1,12 +1,45 @@
 {
   "date": "2026-07-27",
-  "generatedAt": "2026-07-27T15:58:38.243Z",
+  "generatedAt": "2026-07-27T22:32:27.498Z",
   "latestRun": {
-    "generatedAt": "2026-07-27T15:58:38.243Z",
+    "generatedAt": "2026-07-27T22:32:27.498Z",
     "newEventsCount": 0,
     "newEventIds": [],
     "errorCount": 0,
-    "skippedLowInformationEvents": []
+    "skippedLowInformationEvents": [
+      {
+        "eventId": "github-changelog:https://github.blog/changelog/2026-07-27-manage-github-copilot-app-access-with-a-dedicated-policy",
+        "sourceId": "github-changelog",
+        "title": "Manage GitHub Copilot app access with a dedicated policy",
+        "fallbackMarkers": [
+          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
+        ]
+      },
+      {
+        "eventId": "github-copilot-blog:https://github.blog/?p=97740",
+        "sourceId": "github-copilot-blog",
+        "title": "The harness is all you need (mostly)",
+        "fallbackMarkers": [
+          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
+        ]
+      },
+      {
+        "eventId": "github-changelog:https://github.blog/changelog/2026-07-21-enterprise-managed-settings-now-apply-to-the-github-copilot-app",
+        "sourceId": "github-changelog",
+        "title": "Enterprise managed settings in the GitHub Copilot app and Copilot cloud agent",
+        "fallbackMarkers": [
+          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
+        ]
+      },
+      {
+        "eventId": "github-copilot-blog:https://github.blog/?p=97758",
+        "sourceId": "github-copilot-blog",
+        "title": "GitHub Copilot app for Beginners: Getting started",
+        "fallbackMarkers": [
+          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
+        ]
+      }
+    ]
   },
   "events": [
     {
