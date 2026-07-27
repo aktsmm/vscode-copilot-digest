@@ -96,9 +96,9 @@ Using automations in the GitHub Copilot app
 Using your own LLM models in the GitHub Copilot app
 Using deep links to open the GitHub Copilot app
 Copilot SDK
+Build your first Copilot-powered app
 Authentication
 Features
-Build your first Copilot-powered app
 Use hooks
 Integrations
 Observability
@@ -143,6 +143,7 @@ Managing MCP usage in your company
 Downloading a GitHub Copilot activity report for your organization or enterprise
 Viewing the Copilot usage metrics dashboard
 Viewing the code generation dashboard
+Viewing the Copilot impact dashboard
 Troubleshoot GitHub Copilot
 Troubleshooting common issues with GitHub Copilot
 Viewing logs for GitHub Copilot in your environment

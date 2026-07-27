@@ -27,6 +27,7 @@ GitHub Copilot usage metrics
 GitHub Copilot usage metrics
 Viewing the Copilot usage metrics dashboard
 Viewing the code generation dashboard
+Viewing the Copilot impact dashboard
 Data available in Copilot usage metrics
 Interpreting usage and adoption metrics for GitHub Copilot
 Reconciling Copilot usage metrics across dashboards, APIs, and reports

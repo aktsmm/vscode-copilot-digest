@@ -1,0 +1,361 @@
+{
+  "date": "2026-07-27",
+  "generatedAt": "2026-07-27T10:26:19.383Z",
+  "latestRun": {
+    "generatedAt": "2026-07-27T10:26:19.383Z",
+    "newEventsCount": 5,
+    "newEventIds": [
+      "vscode-updates:0cd0b75eb9ee17edba8ecdf5dcc693054660fc2aeb61de66e8b8b55472c3ebc4",
+      "vscode-release-notes-1-109:9769d923a993629366050d7841d113d08759a64e7f2d622685c2c9f898394103",
+      "publickey:tag:www.publickey1.jp,2026://2.8642",
+      "publickey:tag:www.publickey1.jp,2026://2.8640",
+      "docs-github-cloud-agent:3abe00b755d80326d5ff44b2dba9421da259ba3cd2c15b85456f80e14bbe007f"
+    ],
+    "errorCount": 0,
+    "skippedLowInformationEvents": [
+      {
+        "eventId": "github-changelog:https://github.blog/changelog/2026-07-24-claude-opus-5-is-now-available-in-github-copilot",
+        "sourceId": "github-changelog",
+        "title": "Claude Opus 5 is now available in GitHub Copilot",
+        "fallbackMarkers": [
+          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
+        ]
+      },
+      {
+        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-07-24-claude-opus-5-is-now-available-in-github-copilot",
+        "sourceId": "github-changelog-copilot",
+        "title": "Claude Opus 5 is now available in GitHub Copilot",
+        "fallbackMarkers": [
+          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
+        ]
+      },
+      {
+        "eventId": "github-changelog:https://github.blog/changelog/2026-07-23-copilot-cloud-agent-for-linear-is-now-generally-available",
+        "sourceId": "github-changelog",
+        "title": "Copilot cloud agent for Linear is now generally available",
+        "fallbackMarkers": [
+          "追跡対象ソースの更新。公開内容の変化や運用への影響を継続監視対象として記録している。"
+        ]
+      },
+      {
+        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-07-23-copilot-cloud-agent-for-linear-is-now-generally-available",
+        "sourceId": "github-changelog-copilot",
+        "title": "Copilot cloud agent for Linear is now generally available",
+        "fallbackMarkers": [
+          "追跡対象ソースの更新。公開内容の変化や運用への影響を継続監視対象として記録している。"
+        ]
+      },
+      {
+        "eventId": "github-changelog:https://github.blog/changelog/2026-07-23-github-mcp-server-supports-the-next-mcp-specification",
+        "sourceId": "github-changelog",
+        "title": "GitHub MCP Server supports the next MCP specification",
+        "fallbackMarkers": [
+          "追跡対象ソースの更新。公開内容の変化や運用への影響を継続監視対象として記録している。"
+        ]
+      },
+      {
+        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-07-23-github-mcp-server-supports-the-next-mcp-specification",
+        "sourceId": "github-changelog-copilot",
+        "title": "GitHub MCP Server supports the next MCP specification",
+        "fallbackMarkers": [
+          "追跡対象ソースの更新。公開内容の変化や運用への影響を継続監視対象として記録している。"
+        ]
+      },
+      {
+        "eventId": "github-changelog:https://github.blog/changelog/2026-07-17-github-mobile-fix-failing-actions-checks-with-copilot-cloud-agent",
+        "sourceId": "github-changelog",
+        "title": "GitHub Mobile: Fix failing Actions checks with Copilot cloud agent",
+        "fallbackMarkers": [
+          "追跡対象ソースの更新。公開内容の変化や運用への影響を継続監視対象として記録している。"
+        ]
+      },
+      {
+        "eventId": "github-changelog:https://github.blog/changelog/2026-07-23-agent-automation-controls-in-github-issues-in-public-preview",
+        "sourceId": "github-changelog",
+        "title": "Agent automation controls in GitHub Issues in public preview",
+        "fallbackMarkers": [
+          "追跡対象ソースの更新。公開内容の変化や運用への影響を継続監視対象として記録している。"
+        ]
+      },
+      {
+        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-07-23-agent-automation-controls-in-github-issues-in-public-preview",
+        "sourceId": "github-changelog-copilot",
+        "title": "Agent automation controls in GitHub Issues in public preview",
+        "fallbackMarkers": [
+          "追跡対象ソースの更新。公開内容の変化や運用への影響を継続監視対象として記録している。"
+        ]
+      },
+      {
+        "eventId": "github-copilot-blog:https://github.blog/?p=97686",
+        "sourceId": "github-copilot-blog",
+        "title": "Copilot vs. raw API access: What are you actually paying for?",
+        "fallbackMarkers": [
+          "追跡対象ソースの更新。公開内容の変化や運用への影響を継続監視対象として記録している。"
+        ]
+      },
+      {
+        "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_130",
+        "sourceId": "vscode-feed",
+        "title": "Visual Studio Code 1.130",
+        "fallbackMarkers": [
+          "Visual Studio Code のリリース。Copilot、agent、エディタ、ワークベンチ周辺の変更点をまとめて確認できる。"
+        ]
+      },
+      {
+        "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_131",
+        "sourceId": "vscode-feed",
+        "title": "Visual Studio Code 1.131 (Insiders)",
+        "fallbackMarkers": [
+          "Visual Studio Code 関連の更新。日々の開発フローや agent 利用に効く変更点を確認しておきたい。"
+        ]
+      },
+      {
+        "eventId": "github-changelog:https://github.blog/changelog/2026-07-21-new-copilot-usage-metrics-impact-dashboard",
+        "sourceId": "github-changelog",
+        "title": "New Copilot usage metrics impact dashboard",
+        "fallbackMarkers": [
+          "追跡対象ソースの更新。公開内容の変化や運用への影響を継続監視対象として記録している。"
+        ]
+      },
+      {
+        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-07-21-new-copilot-usage-metrics-impact-dashboard",
+        "sourceId": "github-changelog-copilot",
+        "title": "New Copilot usage metrics impact dashboard",
+        "fallbackMarkers": [
+          "追跡対象ソースの更新。公開内容の変化や運用への影響を継続監視対象として記録している。"
+        ]
+      },
+      {
+        "eventId": "vscode-release-notes-1-130:section:9037bfc49efa82563c58a9a926a32517db30b9a67931625f8ce7e2270af37fee",
+        "sourceId": "vscode-release-notes-1-130",
+        "title": "Visual Studio Code 1.130: The agent host",
+        "fallbackMarkers": [
+          "に関する release note 更新。該当 section の内容を個別に追跡している。"
+        ]
+      },
+      {
+        "eventId": "vscode-release-notes-1-130:section:4e707df5f33600f9cbf5e82022c67ecaefd594ef1380feb3779cbdbc4613e35d",
+        "sourceId": "vscode-release-notes-1-130",
+        "title": "Visual Studio Code 1.130: Agents window improvements (Preview)",
+        "fallbackMarkers": [
+          "に関する release note 更新。該当 section の内容を個別に追跡している。"
+        ]
+      },
+      {
+        "eventId": "vscode-release-notes-1-130:section:709bba875545b74e9e5221a2179ee75a82a060cf006d61cbf60d88b6e5658147",
+        "sourceId": "vscode-release-notes-1-130",
+        "title": "Visual Studio Code 1.130: Chat timestamps",
+        "fallbackMarkers": [
+          "に関する release note 更新。該当 section の内容を個別に追跡している。"
+        ]
+      },
+      {
+        "eventId": "vscode-release-notes-1-130:section:13975fdaffd5bfe37aa4abf91c3dd5bc982aeb672bd87de5893a43ea09bdf9f0",
+        "sourceId": "vscode-release-notes-1-130",
+        "title": "Visual Studio Code 1.130: Aggregate AI credit usage for Copilot Business and Enterprise",
+        "fallbackMarkers": [
+          "に関する release note 更新。該当 section の内容を個別に追跡している。"
+        ]
+      },
+      {
+        "eventId": "github-copilot-blog:https://github.blog/?p=97611",
+        "sourceId": "github-copilot-blog",
+        "title": "How to build interactive experiences with canvases",
+        "fallbackMarkers": [
+          "追跡対象ソースの更新。公開内容の変化や運用への影響を継続監視対象として記録している。"
+        ]
+      },
+      {
+        "eventId": "github-changelog:https://github.blog/changelog/2026-07-21-gemini-3-6-flash-is-now-available-in-github-copilot",
+        "sourceId": "github-changelog",
+        "title": "Gemini 3.6 Flash is now available in GitHub Copilot",
+        "fallbackMarkers": [
+          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
+        ]
+      },
+      {
+        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-07-21-gemini-3-6-flash-is-now-available-in-github-copilot",
+        "sourceId": "github-changelog-copilot",
+        "title": "Gemini 3.6 Flash is now available in GitHub Copilot",
+        "fallbackMarkers": [
+          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
+        ]
+      }
+    ]
+  },
+  "events": [
+    {
+      "eventId": "vscode-updates:0cd0b75eb9ee17edba8ecdf5dcc693054660fc2aeb61de66e8b8b55472c3ebc4",
+      "sourceId": "vscode-updates",
+      "sourceName": "VS Code Updates",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-07-27T10:26:14.448Z",
+      "publishedAt": "2026-07-22T00:00:00.000Z",
+      "title": "VS Code Updates changed",
+      "url": "https://code.visualstudio.com/updates/",
+      "summary": "Detected 60 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 60,
+        "headings": [
+          "Visual Studio Code 1.130",
+          "Agents window improvements (Preview)",
+          "Chat timestamps",
+          "Aggregate AI credit usage for Copilot Business and Enterprise",
+          "Terminal",
+          "Clickable file links in Git diffs with mnemonic prefixes",
+          "Engineering"
+        ],
+        "additions": [
+          "1.130",
+          "H1: Visual Studio Code 1.130",
+          "Release date: July 22, 2026",
+          "Welcome to the 1.130 release of Visual Studio Code. This release brings agent host improvements, faster review workflows in the Agents window, better chat visibility, and smarter terminal link handling.",
+          "The agent host: Run sessions in a dedicated process that you can connect to from multiple VS Code windows.",
+          "Agents window improvements (Preview): Review multi-file changes faster with compact diffs, file-level stats, and worktree support across harnesses.",
+          "Assisted tool approvals: Reduce approval interruptions by letting the model evaluate tool-call risk during agent tasks.",
+          "Clickable file links in Git diffs with mnemonic prefixes: Open files directly from diff output when mnemonic prefixes are enabled.",
+          "As mentioned in our last release, we're rearchitecting how agent sessions work in VS Code around the agent host - a dedicated process that runs agent harnesses such as Copilot, Claude, and Codex, based on the Agent Host Protocol (AHP). Because a session lives in its own process, the same session can be connected to and rendered from multiple VS Code windows at once. The agent host's Copilot agent is powered by the Copilot SDK, which means that its behavior and functionality is aligned with the Copilot CLI, the standalone GitHub Copilot app, and other Copilot products.",
+          "We're actively developing the agent host and progressively rolling it out to users in both the editor window and the Agents window. To opt in, enable",
+          "As we continue to invest in the agent host, some features might only be available when an agent runs on it. Those features link back to this section and, where relevant, note any additional settings that enable them (for example,",
+          "If you have any feedback or requests while using the agent host, please let us know by filing an issue.",
+          "Setting:",
+          "chat.assistedPermissions.enabled",
+          "Repeated tool approval prompts can interrupt long-running agent tasks. With assisted permissions, the language model evaluates the risk of each tool call and decides whether the tool can run or should require your approval.",
+          "Enable the setting to add Assisted permissions to the permissions picker for agents that run on the agent host. The following video compares default approvals with assisted permissions:"
+        ]
+      },
+      "headings": [
+        "Visual Studio Code 1.130",
+        "Agents",
+        "The agent host",
+        "Agents window improvements (Preview)",
+        "Chat",
+        "Chat timestamps",
+        "Aggregate AI credit usage for Copilot Business and Enterprise",
+        "Terminal",
+        "Clickable file links in Git diffs with mnemonic prefixes",
+        "Engineering",
+        "Thank you",
+        "Issue tracking"
+      ],
+      "score": 9
+    },
+    {
+      "eventId": "vscode-release-notes-1-109:9769d923a993629366050d7841d113d08759a64e7f2d622685c2c9f898394103",
+      "sourceId": "vscode-release-notes-1-109",
+      "sourceName": "VS Code Release Notes 1.109",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-07-27T10:26:15.402Z",
+      "publishedAt": "2026-02-04T00:00:00.000Z",
+      "title": "VS Code Release Notes 1.109 changed",
+      "url": "https://code.visualstudio.com/updates/v1_109",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [],
+        "additions": [
+          "1.130"
+        ]
+      },
+      "headings": [
+        "January 2026 (version 1.109)",
+        "Upcoming events",
+        "Agent Sessions Day",
+        "Chat UX",
+        "Message steering and queueing (Experimental)",
+        "Anthropic models now show thinking tokens",
+        "Mermaid diagrams in chat responses",
+        "Ask Questions tool (Experimental)",
+        "Plan agent",
+        "Context window details",
+        "Inline chat UX revamp (Preview)",
+        "Model descriptions in the model picker"
+      ],
+      "score": 2
+    },
+    {
+      "eventId": "docs-github-cloud-agent:3abe00b755d80326d5ff44b2dba9421da259ba3cd2c15b85456f80e14bbe007f",
+      "sourceId": "docs-github-cloud-agent",
+      "sourceName": "GitHub Docs / Cloud agent",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-07-27T10:26:17.367Z",
+      "publishedAt": "2026-07-27T10:26:17.366Z",
+      "title": "GitHub Docs / Cloud agent changed",
+      "url": "https://docs.github.com/en/copilot/how-tos/use-copilot-agents/cloud-agent",
+      "summary": "Detected 4 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 4,
+        "headings": [
+          "Managing rationale, confidence, and approvals for issues"
+        ],
+        "additions": [
+          "H2: Managing rationale, confidence, and approvals for issues",
+          "Managing rationale, confidence, and approvals for issues",
+          "Set up and manage rationale, confidence, and approvals for issues handled by automation.",
+          "Use the Copilot integration in Linear to provide context, customize how the agent runs, and open pull requests, all from within your Linear workspace."
+        ]
+      },
+      "headings": [
+        "GitHub Copilot cloud agent",
+        "Starting GitHub Copilot sessions",
+        "Creating automations with Copilot cloud agent",
+        "Managing rationale, confidence, and approvals for issues",
+        "Changing the AI model for GitHub Copilot cloud agent",
+        "Configuring settings for GitHub Copilot cloud agent",
+        "Creating custom agents for Copilot cloud agent in your IDE",
+        "Using Copilot cloud agent on GitHub",
+        "Using Copilot cloud agent on GitHub Mobile",
+        "Using agent apps",
+        "Using Copilot cloud agent in your IDE",
+        "Using Copilot cloud agent via the API"
+      ],
+      "score": 3
+    },
+    {
+      "eventId": "publickey:tag:www.publickey1.jp,2026://2.8642",
+      "sourceId": "publickey",
+      "sourceName": "Publickey",
+      "kind": "feed_entry",
+      "detectedAt": "2026-07-27T10:26:16.434Z",
+      "publishedAt": "2026-07-27T02:27:19.000Z",
+      "title": "ゲームエンジン「Unity 7」発表、ランタイム基盤がMonoから.NET CoreCLRへ移行。高速化により、開発画面からほぼ瞬時にプレイモードが起動",
+      "url": "https://www.publickey1.jp/blog/26/unity_7mononet_coreclr.html",
+      "summary": "Unity社は代表的なゲームエンジンの1つである「Unity」の次世代版となる「Unity 7」を発表しました。 Introducing Unity 7 - built for a faster-moving, more open industry where creators, cross-functional teams, and coding agents can seamlessly collaborate across every stage of the deve……",
+      "categories": [
+        ".NET",
+        "プログラミング言語",
+        "開発ツール"
+      ],
+      "isFutureDated": false,
+      "score": 1
+    },
+    {
+      "eventId": "publickey:tag:www.publickey1.jp,2026://2.8640",
+      "sourceId": "publickey",
+      "sourceName": "Publickey",
+      "kind": "feed_entry",
+      "detectedAt": "2026-07-27T10:26:16.434Z",
+      "publishedAt": "2026-07-22T13:39:04.000Z",
+      "title": "アトラシアン、JiraがAIによる要件定義の自動作成、コンテキストを保持しつつタスクをClaudeやCopilotなどのAIエージェントへアサインなど新機能",
+      "url": "https://www.publickey1.jp/blog/26/jiraaiclaudecopilotai.html",
+      "summary": "アトラシアンは、プロジェクト管理ツールとして知られるJiraに生成AI機能を組み込み、AIによる要件定義の自動作成、作業すべきタスクの洗い出し、そして各タスクをClaude CodeやGitHub Copilotなどへ割り当てる新機能を発表しました。 Jiraが要件定義を自動作成 新たに搭載されたJira Plannerは、どのようなソフトウェアを開発したいかが入力されると、まず既存のコードベースやJiraの履歴、ナレッジ共有ツールであるConfluenceの情報などからコン……",
+      "categories": [
+        "機械学習・AI",
+        "開発ツール",
+        "atlassian"
+      ],
+      "isFutureDated": false,
+      "score": 1
+    }
+  ],
+  "errors": []
+}
