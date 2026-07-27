@@ -41,6 +41,7 @@ jobs:
             }
 
             const sourceMarkerPattern = /Generated from `?data\/events\/(\d{4}-\d{2}-\d{2})\.json`?/;
+            const collectRepairPattern = /Collect updates repair for run \d+/;
 
             function resolveDateKey(pr, files) {
               const summaryFile = files
@@ -84,8 +85,17 @@ jobs:
             });
             const pr = pull.data;
             const dateKey = resolveDateKey(pr, files);
+            const isCollectUpdatesRepair = collectRepairPattern.test(pr.body || '');
 
-            if (!dateKey) {
+            if (isCollectUpdatesRepair) {
+              await github.rest.issues.addLabels({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issueNumber,
+                labels: ['needs-human-review'],
+              });
+              core.info(`Preserving bounded collect repair metadata for PR #${issueNumber}.`);
+            } else if (!dateKey) {
               core.warning('Could not infer a date key for generated PR metadata normalization.');
               await github.rest.issues.addLabels({
                 owner: context.repo.owner,
