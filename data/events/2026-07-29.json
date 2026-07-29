@@ -1,30 +1,234 @@
 {
   "date": "2026-07-29",
-  "generatedAt": "2026-07-29T08:01:35.926Z",
+  "generatedAt": "2026-07-29T15:29:56.284Z",
   "latestRun": {
-    "generatedAt": "2026-07-29T08:01:35.926Z",
-    "newEventsCount": 0,
-    "newEventIds": [],
+    "generatedAt": "2026-07-29T15:29:56.284Z",
+    "newEventsCount": 4,
+    "newEventIds": [
+      "vscode-updates:059972f02fe224db8ab8af54f81c7d103d5c8d90b4e645528b2c12c9bf01a2d1",
+      "vscode-release-notes-1-109:e6c9095b5d97f4dd0970a013713e49a3798986bd238be2c8966ebf68057e7585",
+      "docs-github-cloud-agent:4b32902db7d1dc7c37fa7a901ac079a1548e9d228a49f93b62f472f59e8a328d",
+      "docs-github-copilot-concepts:c4f4364e2ab610dbd1a56344dcf60faaf06ef9164a3455e758bae82443d42d9f"
+    ],
     "errorCount": 0,
     "skippedLowInformationEvents": [
       {
-        "eventId": "github-changelog:https://github.blog/changelog/2026-07-28-github-copilot-app-usage-metrics-now-expand-across-report-rollups",
-        "sourceId": "github-changelog",
-        "title": "GitHub Copilot app usage metrics now expand across report rollups",
+        "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_132",
+        "sourceId": "vscode-feed",
+        "title": "Visual Studio Code 1.132 (Insiders)",
         "fallbackMarkers": [
-          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
+          "Visual Studio Code 関連の更新。日々の開発フローや agent 利用に効く変更点を確認しておきたい。"
         ]
       },
       {
-        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-07-28-grok-4-5-is-now-available-in-github-copilot",
+        "eventId": "vscode-release-notes-1-131:section:1ba1a5b0026ba52ce195b1c0aa557f63dc2aae254038a6f6f1d90ac6cc314a31",
+        "sourceId": "vscode-release-notes-1-131",
+        "title": "Visual Studio Code 1.131: Agent host",
+        "fallbackMarkers": [
+          "に関する release note 更新。該当 section の内容を個別に追跡している。"
+        ]
+      },
+      {
+        "eventId": "vscode-release-notes-1-131:section:eb237bda85f835526b97eea6ba61cb1617d63b433dd49b171bd1a52d2df063a5",
+        "sourceId": "vscode-release-notes-1-131",
+        "title": "Visual Studio Code 1.131: More information about running subagents (Agents window)",
+        "fallbackMarkers": [
+          "に関する release note 更新。該当 section の内容を個別に追跡している。"
+        ]
+      },
+      {
+        "eventId": "vscode-release-notes-1-131:section:f0e49d244dbf0111de785a9106978ec529cacc7b34d2d6af26e65da4bf14524a",
+        "sourceId": "vscode-release-notes-1-131",
+        "title": "Visual Studio Code 1.131: VS Code pet (Experimental)",
+        "fallbackMarkers": [
+          "に関する release note 更新。該当 section の内容を個別に追跡している。"
+        ]
+      },
+      {
+        "eventId": "vscode-release-notes-1-131:section:c15b2698d68847109a54c45d118d9a20d8cd0bfd4b347d9f5e52215b67ec53cc",
+        "sourceId": "vscode-release-notes-1-131",
+        "title": "Visual Studio Code 1.131: Hybrid Markdown editor (Experimental)",
+        "fallbackMarkers": [
+          "に関する release note 更新。該当 section の内容を個別に追跡している。"
+        ]
+      },
+      {
+        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-07-28-github-copilot-app-usage-metrics-now-expand-across-report-rollups",
         "sourceId": "github-changelog-copilot",
-        "title": "Grok 4.5 is now available in GitHub Copilot",
+        "title": "GitHub Copilot app usage metrics now expand across report rollups",
         "fallbackMarkers": [
           "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
         ]
       }
     ]
   },
-  "events": [],
+  "events": [
+    {
+      "eventId": "vscode-updates:059972f02fe224db8ab8af54f81c7d103d5c8d90b4e645528b2c12c9bf01a2d1",
+      "sourceId": "vscode-updates",
+      "sourceName": "VS Code Updates",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-07-29T15:29:48.190Z",
+      "publishedAt": "2026-07-29T00:00:00.000Z",
+      "title": "VS Code Updates changed",
+      "url": "https://code.visualstudio.com/updates/",
+      "summary": "Detected 83 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 83,
+        "headings": [
+          "Visual Studio Code 1.131",
+          "Agent host",
+          "More information about running subagents (Agents window)",
+          "Chat",
+          "VS Code pet (Experimental)",
+          "Editor Experience",
+          "Built-in dictation across VS Code (Experimental)",
+          "Hybrid Markdown editor (Experimental)",
+          "Accessibility",
+          "More control over terminal screen reader updates",
+          "Control the terminal resize dimensions overlay",
+          "Languages",
+          "Python",
+          "Deprecated features and settings"
+        ],
+        "additions": [
+          "1.131",
+          "H1: Visual Studio Code 1.131",
+          "Release date: July 29, 2026",
+          "Welcome to the 1.131 release of Visual Studio Code. This release brings more visibility into running subagents, built-in dictation across the workbench, and a new hybrid Markdown editor.",
+          "Subagents: See a running subagent's model, elapsed time, and active tool call without opening its conversation.",
+          "Built-in dictation (Experimental): Dictate in chat, editors, and the terminal without installing the Speech extension.",
+          "Hybrid Markdown editor (Experimental): View, edit, and add agent-actionable comments to Markdown files in the Agents window.",
+          "H3: Agent host",
+          "As mentioned in our last few releases, we're rearchitecting how agent sessions work in VS Code around the agent host - a dedicated process that runs agent harnesses such as Copilot, Claude, and Codex, based on the Agent Host Protocol (AHP). Because a session lives in its own process, the same session can be connected to and rendered from multiple VS Code windows at once. The agent host's Copilot agent is powered by the Copilot SDK, which means that its behavior and functionality is aligned with the Copilot CLI, the standalone GitHub Copilot app, and other Copilot products.",
+          "We're actively developing the agent host and progressively rolling it out to users. To opt in, enable",
+          "This setting can be managed by your organization. Contact your administrator to change it.ORG and then select an agent host harness from the harness dropdown. The screenshot below shows how to select the Copilot harness on the agent host in the editor window:",
+          "You can learn more in our VS Code Agent Host architecture documentation. If you have any feedback or requests, please let us know by filing an issue.",
+          "H3: More information about running subagents (Agents window)",
+          "When working on complex tasks, the agent can delegate tasks to subagents to run them in parallel in its own context window. You can now quickly see what a running subagent is doing without opening its conversation. In the Agents window, the main conversation shows the following information for each running subagent:",
+          "The model used by the subagent",
+          "How long the subagent has been running"
+        ]
+      },
+      "headings": [
+        "Visual Studio Code 1.131",
+        "Agents",
+        "Agent host",
+        "More information about running subagents (Agents window)",
+        "Chat",
+        "VS Code pet (Experimental)",
+        "Editor Experience",
+        "Built-in dictation across VS Code (Experimental)",
+        "Hybrid Markdown editor (Experimental)",
+        "Accessibility",
+        "More control over terminal screen reader updates",
+        "Terminal"
+      ],
+      "score": 16
+    },
+    {
+      "eventId": "vscode-release-notes-1-109:e6c9095b5d97f4dd0970a013713e49a3798986bd238be2c8966ebf68057e7585",
+      "sourceId": "vscode-release-notes-1-109",
+      "sourceName": "VS Code Release Notes 1.109",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-07-29T15:29:48.537Z",
+      "publishedAt": "2026-02-04T00:00:00.000Z",
+      "title": "VS Code Release Notes 1.109 changed",
+      "url": "https://code.visualstudio.com/updates/v1_109",
+      "summary": "Detected 3 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 3,
+        "headings": [],
+        "additions": [
+          "1.131",
+          "This setting can be managed by your organization. Contact your administrator to change it.ORG",
+          "This setting can be managed by your organization. Contact your administrator to change it.ORG):"
+        ]
+      },
+      "headings": [
+        "January 2026 (version 1.109)",
+        "Upcoming events",
+        "Agent Sessions Day",
+        "Chat UX",
+        "Message steering and queueing (Experimental)",
+        "Anthropic models now show thinking tokens",
+        "Mermaid diagrams in chat responses",
+        "Ask Questions tool (Experimental)",
+        "Plan agent",
+        "Context window details",
+        "Inline chat UX revamp (Preview)",
+        "Model descriptions in the model picker"
+      ],
+      "score": 2
+    },
+    {
+      "eventId": "docs-github-copilot-concepts:c4f4364e2ab610dbd1a56344dcf60faaf06ef9164a3455e758bae82443d42d9f",
+      "sourceId": "docs-github-copilot-concepts",
+      "sourceName": "GitHub Docs / Copilot concepts",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-07-29T15:29:55.728Z",
+      "publishedAt": "2026-07-29T15:29:55.728Z",
+      "title": "GitHub Docs / Copilot concepts changed",
+      "url": "https://docs.github.com/en/copilot/concepts",
+      "summary": "Detected 2 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 2,
+        "headings": [],
+        "additions": [
+          "About default availability of Copilot models",
+          "Learning about new features and models"
+        ]
+      },
+      "headings": [
+        "Concepts for GitHub Copilot"
+      ],
+      "score": 2
+    },
+    {
+      "eventId": "docs-github-cloud-agent:4b32902db7d1dc7c37fa7a901ac079a1548e9d228a49f93b62f472f59e8a328d",
+      "sourceId": "docs-github-cloud-agent",
+      "sourceName": "GitHub Docs / Cloud agent",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-07-29T15:29:53.651Z",
+      "publishedAt": "2026-07-29T15:29:53.651Z",
+      "title": "GitHub Docs / Cloud agent changed",
+      "url": "https://docs.github.com/en/copilot/how-tos/use-copilot-agents/cloud-agent",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [],
+        "additions": [
+          "In supported entrypoints, when starting a task with Copilot cloud agent, you can select the model used, and, for supported models, the reasoning level."
+        ]
+      },
+      "headings": [
+        "GitHub Copilot cloud agent",
+        "Starting GitHub Copilot sessions",
+        "Creating automations with Copilot cloud agent",
+        "Managing rationale, confidence, and approvals for issues",
+        "Changing the AI model for GitHub Copilot cloud agent",
+        "Configuring settings for GitHub Copilot cloud agent",
+        "Creating custom agents for Copilot cloud agent in your IDE",
+        "Using Copilot cloud agent on GitHub",
+        "Using Copilot cloud agent on GitHub Mobile",
+        "Using agent apps",
+        "Using Copilot cloud agent in your IDE",
+        "Using Copilot cloud agent via the API"
+      ],
+      "score": 2
+    }
+  ],
   "errors": []
 }

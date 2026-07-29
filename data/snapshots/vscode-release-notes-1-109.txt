@@ -1,4 +1,5 @@
 Insiders
+1.131
 1.130
 1.129
 1.128
@@ -1121,7 +1122,7 @@ Settings:
  Open in VS Code
  Open in VS Code Insiders
  
- This setting is managed at the organization level. Contact your administrator to change it.ORG
+ This setting can be managed by your organization. Contact your administrator to change it.ORG
 The following commands are now auto approved by default when terminal auto approve is enabled (
  
  
@@ -1134,7 +1135,7 @@ The following commands are now auto approved by default when terminal auto appro
  Open in VS Code
  Open in VS Code Insiders
  
- This setting is managed at the organization level. Contact your administrator to change it.ORG):
+ This setting can be managed by your organization. Contact your administrator to change it.ORG):
 Set-Location
 dir
 od

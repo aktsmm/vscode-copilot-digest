@@ -12,7 +12,7 @@ Managing rationale, confidence, and approvals for issues
 Set up and manage rationale, confidence, and approvals for issues handled by automation.
 H2: Changing the AI model for GitHub Copilot cloud agent
 Changing the AI model for GitHub Copilot cloud agent
-In supported entrypoints, when starting a task with Copilot cloud agent, you can select the model used.
+In supported entrypoints, when starting a task with Copilot cloud agent, you can select the model used, and, for supported models, the reasoning level.
 H2: Configuring settings for GitHub Copilot cloud agent
 Configuring settings for GitHub Copilot cloud agent
 Learn how to configure settings for Copilot cloud agent

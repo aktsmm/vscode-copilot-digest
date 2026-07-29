@@ -47,6 +47,7 @@ Concepts for AI tools
 Choosing the right AI tool for your task
 About Copilot integrations
 Models for GitHub Copilot
+About default availability of Copilot models
 Bring your own key for GitHub Copilot
 Utility models
 About Copilot auto model selection
@@ -63,4 +64,4 @@ About enterprise accounts for Copilot Business
 GitHub Copilot policies for enterprises and organizations
 MCP server usage in your company
 Network settings for GitHub Copilot
-Preparing for new features and models
+Learning about new features and models
