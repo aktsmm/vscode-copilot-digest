@@ -1,17 +1,22 @@
 {
   "date": "2026-07-29",
-  "generatedAt": "2026-07-29T15:29:56.284Z",
+  "generatedAt": "2026-07-29T22:26:41.983Z",
   "latestRun": {
-    "generatedAt": "2026-07-29T15:29:56.284Z",
-    "newEventsCount": 4,
+    "generatedAt": "2026-07-29T22:26:41.983Z",
+    "newEventsCount": 1,
     "newEventIds": [
-      "vscode-updates:059972f02fe224db8ab8af54f81c7d103d5c8d90b4e645528b2c12c9bf01a2d1",
-      "vscode-release-notes-1-109:e6c9095b5d97f4dd0970a013713e49a3798986bd238be2c8966ebf68057e7585",
-      "docs-github-cloud-agent:4b32902db7d1dc7c37fa7a901ac079a1548e9d228a49f93b62f472f59e8a328d",
-      "docs-github-copilot-concepts:c4f4364e2ab610dbd1a56344dcf60faaf06ef9164a3455e758bae82443d42d9f"
+      "docs-github-copilot-howtos:b292fa732cf1bd412d706dd9a1235f058c56c425592d4e1b80bf9fb262bf49d2"
     ],
     "errorCount": 0,
     "skippedLowInformationEvents": [
+      {
+        "eventId": "github-changelog:https://github.blog/changelog/2026-07-29-copilot-code-review-agent-skills-and-mcp-now-generally-available",
+        "sourceId": "github-changelog",
+        "title": "Copilot code review: Agent skills and MCP now generally available",
+        "fallbackMarkers": [
+          "GitHub Copilot code review のレビュー依頼やコメント処理に関する更新。チームのレビュー運用に影響する可能性がある。"
+        ]
+      },
       {
         "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_132",
         "sourceId": "vscode-feed",
@@ -21,43 +26,19 @@
         ]
       },
       {
-        "eventId": "vscode-release-notes-1-131:section:1ba1a5b0026ba52ce195b1c0aa557f63dc2aae254038a6f6f1d90ac6cc314a31",
-        "sourceId": "vscode-release-notes-1-131",
-        "title": "Visual Studio Code 1.131: Agent host",
+        "eventId": "github-changelog:https://github.blog/changelog/2026-07-29-default-model-enablement-for-copilot-business-and-enterprise",
+        "sourceId": "github-changelog",
+        "title": "Default model enablement for Copilot Business and Enterprise",
         "fallbackMarkers": [
-          "に関する release note 更新。該当 section の内容を個別に追跡している。"
+          "追跡対象ソースの更新。公開内容の変化や運用への影響を継続監視対象として記録している。"
         ]
       },
       {
-        "eventId": "vscode-release-notes-1-131:section:eb237bda85f835526b97eea6ba61cb1617d63b433dd49b171bd1a52d2df063a5",
-        "sourceId": "vscode-release-notes-1-131",
-        "title": "Visual Studio Code 1.131: More information about running subagents (Agents window)",
+        "eventId": "vscode-feed:https://code.visualstudio.com/blogs/2026/07/29/mai-code-1-flash",
+        "sourceId": "vscode-feed",
+        "title": "MAI-Code-1-Flash: early results from real developer workflows",
         "fallbackMarkers": [
-          "に関する release note 更新。該当 section の内容を個別に追跡している。"
-        ]
-      },
-      {
-        "eventId": "vscode-release-notes-1-131:section:f0e49d244dbf0111de785a9106978ec529cacc7b34d2d6af26e65da4bf14524a",
-        "sourceId": "vscode-release-notes-1-131",
-        "title": "Visual Studio Code 1.131: VS Code pet (Experimental)",
-        "fallbackMarkers": [
-          "に関する release note 更新。該当 section の内容を個別に追跡している。"
-        ]
-      },
-      {
-        "eventId": "vscode-release-notes-1-131:section:c15b2698d68847109a54c45d118d9a20d8cd0bfd4b347d9f5e52215b67ec53cc",
-        "sourceId": "vscode-release-notes-1-131",
-        "title": "Visual Studio Code 1.131: Hybrid Markdown editor (Experimental)",
-        "fallbackMarkers": [
-          "に関する release note 更新。該当 section の内容を個別に追跡している。"
-        ]
-      },
-      {
-        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-07-28-github-copilot-app-usage-metrics-now-expand-across-report-rollups",
-        "sourceId": "github-changelog-copilot",
-        "title": "GitHub Copilot app usage metrics now expand across report rollups",
-        "fallbackMarkers": [
-          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
+          "追跡対象ソースの更新。公開内容の変化や運用への影響を継続監視対象として記録している。"
         ]
       }
     ]
@@ -164,6 +145,32 @@
         "Context window details",
         "Inline chat UX revamp (Preview)",
         "Model descriptions in the model picker"
+      ],
+      "score": 2
+    },
+    {
+      "eventId": "docs-github-copilot-howtos:b292fa732cf1bd412d706dd9a1235f058c56c425592d4e1b80bf9fb262bf49d2",
+      "sourceId": "docs-github-copilot-howtos",
+      "sourceName": "GitHub Docs / Copilot how-tos",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-07-29T22:26:40.272Z",
+      "publishedAt": "2026-07-29T22:26:40.271Z",
+      "title": "GitHub Docs / Copilot how-tos changed",
+      "url": "https://docs.github.com/en/copilot/how-tos",
+      "summary": "Detected 2 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 2,
+        "headings": [],
+        "additions": [
+          "Enabling or disabling cloud sandboxes for your organization or enterprise",
+          "Using local sandboxing"
+        ]
+      },
+      "headings": [
+        "How-tos for GitHub Copilot"
       ],
       "score": 2
     },

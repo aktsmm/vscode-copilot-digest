@@ -84,7 +84,8 @@ Steering agents in GitHub Copilot CLI
 Steering a GitHub Copilot CLI session from another device
 Setting an AI credit session limit in GitHub Copilot CLI
 Cloud and local sandboxes for GitHub Copilot
-Enabling or disabling cloud sandboxes for your organization
+Enabling or disabling cloud sandboxes for your organization or enterprise
+Using local sandboxing
 Configuring local sandbox settings
 GitHub Copilot app
 Getting started with the GitHub Copilot app
