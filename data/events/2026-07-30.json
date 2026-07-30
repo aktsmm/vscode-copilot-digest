@@ -1,30 +1,52 @@
 {
   "date": "2026-07-30",
-  "generatedAt": "2026-07-30T07:44:01.371Z",
+  "generatedAt": "2026-07-30T15:31:44.060Z",
   "latestRun": {
-    "generatedAt": "2026-07-30T07:44:01.371Z",
-    "newEventsCount": 0,
-    "newEventIds": [],
+    "generatedAt": "2026-07-30T15:31:44.060Z",
+    "newEventsCount": 2,
+    "newEventIds": [
+      "github-changelog:https://github.blog/changelog/2026-07-30-github-copilot-in-visual-studio-july-update",
+      "publickey:tag:www.publickey1.jp,2026://2.8650"
+    ],
     "errorCount": 0,
-    "skippedLowInformationEvents": [
-      {
-        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-07-29-copilot-code-review-agent-skills-and-mcp-now-generally-available",
-        "sourceId": "github-changelog-copilot",
-        "title": "Copilot code review: Agent skills and MCP now generally available",
-        "fallbackMarkers": [
-          "GitHub Copilot code review のレビュー依頼やコメント処理に関する更新。チームのレビュー運用に影響する可能性がある。"
-        ]
-      },
-      {
-        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-07-29-default-model-enablement-for-copilot-business-and-enterprise",
-        "sourceId": "github-changelog-copilot",
-        "title": "Default model enablement for Copilot Business and Enterprise",
-        "fallbackMarkers": [
-          "追跡対象ソースの更新。公開内容の変化や運用への影響を継続監視対象として記録している。"
-        ]
-      }
-    ]
+    "skippedLowInformationEvents": []
   },
-  "events": [],
+  "events": [
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-07-30-github-copilot-in-visual-studio-july-update",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-07-30T15:31:38.473Z",
+      "publishedAt": "2026-07-30T15:01:48.000Z",
+      "title": "GitHub Copilot in Visual Studio — July update",
+      "url": "https://github.blog/changelog/2026-07-30-github-copilot-in-visual-studio-july-update",
+      "summary": "July 2026 brought a new agent based on the Copilot SDK, built-in expertise from the .NET and Azure teams, and more ways to tailor GitHub Copilot to how you and…\nThe post GitHub Copilot in Visual Studio — July update appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 6
+    },
+    {
+      "eventId": "publickey:tag:www.publickey1.jp,2026://2.8650",
+      "sourceId": "publickey",
+      "sourceName": "Publickey",
+      "kind": "feed_entry",
+      "detectedAt": "2026-07-30T15:31:41.196Z",
+      "publishedAt": "2026-07-30T14:12:35.000Z",
+      "title": "JetBrains、AIが少ないトークンでコンテキストを取得しやすく、よりよいコード生成を可能にする「JetBrains Context」発表",
+      "url": "https://www.publickey1.jp/blog/26/jetbrainsaijetbrains_context.html",
+      "summary": "JetBrainsは、コードリポジトリの上にインテリジェンスなレイヤを構築し、AIエージェントに対して適切なコードのコンテキストを提供することで、AIエージェントによるよりよいコード生成を可能にする新サービス「JetBrains Context」を発表しました。 Coding agents shouldn't have to rediscover your codebase for every task.JetBrains Context gives them cod……",
+      "categories": [
+        "機械学習・AI",
+        "開発ツール",
+        "jetbrains"
+      ],
+      "isFutureDated": false,
+      "score": 1
+    }
+  ],
   "errors": []
 }
