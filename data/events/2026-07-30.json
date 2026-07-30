@@ -1,15 +1,39 @@
 {
   "date": "2026-07-30",
-  "generatedAt": "2026-07-30T15:31:44.060Z",
+  "generatedAt": "2026-07-30T22:33:16.860Z",
   "latestRun": {
-    "generatedAt": "2026-07-30T15:31:44.060Z",
-    "newEventsCount": 2,
+    "generatedAt": "2026-07-30T22:33:16.860Z",
+    "newEventsCount": 1,
     "newEventIds": [
-      "github-changelog:https://github.blog/changelog/2026-07-30-github-copilot-in-visual-studio-july-update",
-      "publickey:tag:www.publickey1.jp,2026://2.8650"
+      "github-changelog-copilot:https://github.blog/changelog/2026-07-30-github-copilot-in-visual-studio-july-update"
     ],
     "errorCount": 0,
-    "skippedLowInformationEvents": []
+    "skippedLowInformationEvents": [
+      {
+        "eventId": "github-copilot-blog:https://github.blog/?p=97813",
+        "sourceId": "github-copilot-blog",
+        "title": "Stacked sessions and pull requests in the GitHub Copilot app",
+        "fallbackMarkers": [
+          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
+        ]
+      },
+      {
+        "eventId": "github-changelog:https://github.blog/changelog/2026-07-29-limit-remote-control-to-managed-devices",
+        "sourceId": "github-changelog",
+        "title": "Limit remote control to managed devices",
+        "fallbackMarkers": [
+          "追跡対象ソースの更新。公開内容の変化や運用への影響を継続監視対象として記録している。"
+        ]
+      },
+      {
+        "eventId": "github-changelog:https://github.blog/changelog/2026-07-30-github-copilot-in-visual-studio-code-july-2026-releases",
+        "sourceId": "github-changelog",
+        "title": "GitHub Copilot in Visual Studio Code, July 2026 releases",
+        "fallbackMarkers": [
+          "Visual Studio 側の GitHub Copilot 更新。IDE 連携や agent 拡張の強化点を押さえたい。"
+        ]
+      }
+    ]
   },
   "events": [
     {
@@ -18,6 +42,23 @@
       "sourceName": "GitHub Changelog",
       "kind": "feed_entry",
       "detectedAt": "2026-07-30T15:31:38.473Z",
+      "publishedAt": "2026-07-30T15:01:48.000Z",
+      "title": "GitHub Copilot in Visual Studio — July update",
+      "url": "https://github.blog/changelog/2026-07-30-github-copilot-in-visual-studio-july-update",
+      "summary": "July 2026 brought a new agent based on the Copilot SDK, built-in expertise from the .NET and Azure teams, and more ways to tailor GitHub Copilot to how you and…\nThe post GitHub Copilot in Visual Studio — July update appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 6
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-07-30-github-copilot-in-visual-studio-july-update",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-07-30T22:33:09.560Z",
       "publishedAt": "2026-07-30T15:01:48.000Z",
       "title": "GitHub Copilot in Visual Studio — July update",
       "url": "https://github.blog/changelog/2026-07-30-github-copilot-in-visual-studio-july-update",
