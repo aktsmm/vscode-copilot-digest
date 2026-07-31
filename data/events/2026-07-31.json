@@ -1,13 +1,153 @@
 {
   "date": "2026-07-31",
-  "generatedAt": "2026-07-31T15:37:19.540Z",
+  "generatedAt": "2026-07-31T22:30:28.174Z",
   "latestRun": {
-    "generatedAt": "2026-07-31T15:37:19.540Z",
-    "newEventsCount": 0,
-    "newEventIds": [],
+    "generatedAt": "2026-07-31T22:30:28.174Z",
+    "newEventsCount": 3,
+    "newEventIds": [
+      "github-changelog:https://github.blog/changelog/2026-07-31-gemini-2-5-pro-and-gemini-3-flash-deprecated",
+      "vscode-updates:0f72035b3d2f75406c401db217e6b550c581b32fe0ca21ccd1754bb1483e6fbc",
+      "copilot-whats-new:4cdb9bb5e99be8886eb9b3d393d0c7f53bc09dde5df18e625167235c1a3e6fa3"
+    ],
     "errorCount": 0,
-    "skippedLowInformationEvents": []
+    "skippedLowInformationEvents": [
+      {
+        "eventId": "github-changelog:https://github.blog/changelog/2026-07-31-enterprise-teams-model-policy-targeting-in-public-preview",
+        "sourceId": "github-changelog",
+        "title": "Enterprise teams model policy targeting in public preview",
+        "fallbackMarkers": [
+          "追跡対象ソースの更新。公開内容の変化や運用への影響を継続監視対象として記録している。"
+        ]
+      }
+    ]
   },
-  "events": [],
+  "events": [
+    {
+      "eventId": "copilot-whats-new:4cdb9bb5e99be8886eb9b3d393d0c7f53bc09dde5df18e625167235c1a3e6fa3",
+      "sourceId": "copilot-whats-new",
+      "sourceName": "GitHub Copilot What's New",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-07-31T22:30:20.502Z",
+      "publishedAt": "2026-07-31T22:30:20.499Z",
+      "title": "GitHub Copilot What's New changed",
+      "url": "https://github.com/features/copilot/whats-new",
+      "summary": "Detected 68 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 68,
+        "headings": [
+          "Changelog",
+          "Filters (0 selected)",
+          "July",
+          "Jul.31 Retired",
+          "Jul.31 Improvement",
+          "Jul.30 Release",
+          "Jul.30 Improvement",
+          "Jul.29 Improvement",
+          "Jul.28 Improvement",
+          "Jul.28 Release",
+          "Jul.27 Release",
+          "Jul.24 Release",
+          "Jul.23 Release",
+          "Jul.22 Release",
+          "Jul.21 Release",
+          "Jul.20 Improvement"
+        ],
+        "additions": [
+          "H1: Changelog",
+          "H2: Filters (0 selected)",
+          "Account management",
+          "Actions",
+          "Application Security",
+          "Client apps",
+          "Collaboration tools",
+          "Community engagement",
+          "Copilot",
+          "Ecosystem & accessibility",
+          "Enterprise management tools",
+          "Platform governance",
+          "Projects & Issues",
+          "Supply chain security",
+          "Universe ‘25",
+          "H2: July"
+        ]
+      },
+      "headings": [
+        "Changelog",
+        "Filters (0 selected)",
+        "July\n Jul\n 2026",
+        "Jul.31 Retired",
+        "Jul.31 Improvement",
+        "Jul.30 Release",
+        "Jul.30 Improvement",
+        "Jul.30 Release",
+        "Jul.29 Improvement",
+        "Jul.29 Improvement",
+        "Jul.28 Improvement",
+        "Jul.28 Release"
+      ],
+      "score": 18
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-07-31-gemini-2-5-pro-and-gemini-3-flash-deprecated",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-07-31T22:30:17.629Z",
+      "publishedAt": "2026-07-31T20:04:01.000Z",
+      "title": "Gemini 2.5 Pro and Gemini 3 Flash deprecated",
+      "url": "https://github.blog/changelog/2026-07-31-gemini-2-5-pro-and-gemini-3-flash-deprecated",
+      "summary": "As of today, July 31, 2026, we have deprecated the following models across all GitHub Copilot experiences (including Copilot Chat, inline edits, ask and agent modes, and code completions). Model…\nThe post Gemini 2.5 Pro and Gemini 3 Flash deprecated appeared first on The GitHub Blog.",
+      "categories": [
+        "Retired",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 5
+    },
+    {
+      "eventId": "vscode-updates:0f72035b3d2f75406c401db217e6b550c581b32fe0ca21ccd1754bb1483e6fbc",
+      "sourceId": "vscode-updates",
+      "sourceName": "VS Code Updates",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-07-31T22:30:18.581Z",
+      "publishedAt": "2026-07-29T00:00:00.000Z",
+      "title": "VS Code Updates changed",
+      "url": "https://code.visualstudio.com/updates/",
+      "summary": "Detected 6 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 6,
+        "headings": [],
+        "additions": [
+          "(VS Code Insiders),",
+          "With",
+          "dictation.experimental.llmCleanup",
+          "enabled, Copilot refines your transcript as you speak by adding formatting and removing filler words. Transcript text is sent to a language model for cleanup. If cleanup is unavailable, VS Code keeps the raw transcript. In VS Code Insiders, use",
+          "dictation.showTranscript",
+          "to control whether the live transcript appears while you dictate."
+        ]
+      },
+      "headings": [
+        "Visual Studio Code 1.131",
+        "Agents",
+        "Agent host",
+        "More information about running subagents (Agents window)",
+        "Chat",
+        "VS Code pet (Experimental)",
+        "Editor Experience",
+        "Built-in dictation across VS Code (Experimental)",
+        "Hybrid Markdown editor (Experimental)",
+        "Accessibility",
+        "More control over terminal screen reader updates",
+        "Terminal"
+      ],
+      "score": 2
+    }
+  ],
   "errors": []
 }

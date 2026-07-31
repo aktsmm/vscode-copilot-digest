@@ -1,24 +1,118 @@
-Desktop App
-Copilot in VS Code
-Agents on GitHub
-Copilot CLI
-For Business
-Tutorials
-Plans & Pricing
-H1: Preview upcoming features for GitHub Copilot
-Discover AI-powered updates designed to supercharge your productivity and  streamline your workflow.
-H2: Agentic power, now in your terminal. Build, debug, deploy with Github Copilot coding agent without leaving your terminal.
-Agentic power, now in your terminal. Build, debug, deploy with Github Copilot coding agent without leaving your terminal.
-Edit, debug, and refactor code locally. Edit files, run commands, and iterate without ever leaving your local environment.
-Jumpstart your projects. Ask Copilot CLI to map the structure, install dependencies, and explain how everything connects.
-Put GitHub context to work and extend with MCP. Copilot CLI includes GitHub MCP by default—extend it with more servers for extra context.
-H3: Prompt, perfected
-Save and reuse prompt files to get faster, more consistent responses from GitHub Copilot.
-H3: Tailor-made answers, defined by you
-Specify custom instructions to personalize chat responses in VS Code and Visual Studio based on your preferred tools, organizational knowledge, and coding best practices.
-H3: Getting started with GitHub Copilot
-Explore these tips and tricks to start building quickly with your AI-pair programmer using VS Code.
-H3: Stay updated on GitHub and AI
-Check out the GitHub Blog for tips, technical guides, best practices, and more.
-H3: See how GitHub Copilot powers up VS Code
-Get a quick overview of the features for GitHub Copilot in Visual Studio Code.
+H1: Changelog
+H2: Filters (0 selected)
+Account management
+Actions
+Application Security
+Client apps
+Collaboration tools
+Community engagement
+Copilot
+Ecosystem & accessibility
+Enterprise management tools
+Platform governance
+Projects & Issues
+Supply chain security
+Universe ‘25
+H2: July
+ Jul
+ 2026
+H3: Jul.31 Retired
+H3: Jul.31 Improvement
+H3: Jul.30 Release
+H3: Jul.30 Improvement
+H3: Jul.30 Release
+H3: Jul.29 Improvement
+H3: Jul.29 Improvement
+H3: Jul.28 Improvement
+H3: Jul.28 Release
+H3: Jul.27 Release
+H3: Jul.27 Release
+H3: Jul.27 Release
+H3: Jul.24 Release
+H3: Jul.23 Release
+H3: Jul.23 Release
+H3: Jul.23 Release
+H3: Jul.22 Release
+H3: Jul.21 Release
+H3: Jul.20 Improvement
+H3: Jul.20 Improvement
+H3: Jul.17 Release
+H3: Jul.17 Improvement
+H3: Jul.17 Improvement
+H3: Jul.14 Release
+H3: Jul.14 Improvement
+H3: Jul.14 Improvement
+H3: Jul.10 Release
+H3: Jul.09 Release
+H3: Jul.09 Release
+H3: Jul.08 Release
+H3: Jul.08 Release
+H3: Jul.08 Release
+H3: Jul.07 Improvement
+H3: Jul.07 Improvement
+H3: Jul.07 Release
+H3: Jul.07 Improvement
+H3: Jul.07 Release
+H3: Jul.07 Retired
+H3: Jul.02 Improvement
+H3: Jul.02 Retired
+H3: Jul.02 Release
+H3: Jul.02 Improvement
+H3: Jul.02 Release
+H3: Jul.01 Improvement
+H3: Jul.01 Release
+H3: Jul.01 Improvement
+H3: Jul.01 Release
+H3: Jul.01 Release
+H3: Jul.01 Release
+H3: Jul.01 Release
+H3: Jul.01 Improvement
+H2: June
+ Jun
+ 2026
+H2: May
+ May
+ 2026
+H2: April
+ Apr
+ 2026
+H2: March
+ Mar
+ 2026
+H2: February
+ Feb
+ 2026
+H2: January
+ Jan
+ 2026
+H2: Pagination
+Prev
+2026
+
+ 2025
+ 
+ 2024
+ 
+ ...
+
+ 2018
+2026
+2025
+2024
+...
+2018
+2026
+
+ 2025
+ 
+ ...
+ 
+ 2018
+2026
+2025
+...
+2018
+Next
+H2: Subscribe to our developer newsletter
+Discover tips, technical guides, and best practices in our biweekly newsletter just for devs.
+By submitting, I agree to let GitHub and its affiliates use my information for personalized communications, targeted advertising, and campaign effectiveness. See the GitHub Privacy Statement for more details.
