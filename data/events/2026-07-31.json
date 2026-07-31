@@ -1,0 +1,30 @@
+{
+  "date": "2026-07-31",
+  "generatedAt": "2026-07-31T08:12:45.885Z",
+  "latestRun": {
+    "generatedAt": "2026-07-31T08:12:45.885Z",
+    "newEventsCount": 0,
+    "newEventIds": [],
+    "errorCount": 0,
+    "skippedLowInformationEvents": [
+      {
+        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-07-29-limit-remote-control-to-managed-devices",
+        "sourceId": "github-changelog-copilot",
+        "title": "Limit remote control to managed devices",
+        "fallbackMarkers": [
+          "追跡対象ソースの更新。公開内容の変化や運用への影響を継続監視対象として記録している。"
+        ]
+      },
+      {
+        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-07-30-github-copilot-in-visual-studio-code-july-2026-releases",
+        "sourceId": "github-changelog-copilot",
+        "title": "GitHub Copilot in Visual Studio Code, July 2026 releases",
+        "fallbackMarkers": [
+          "Visual Studio 側の GitHub Copilot 更新。IDE 連携や agent 拡張の強化点を押さえたい。"
+        ]
+      }
+    ]
+  },
+  "events": [],
+  "errors": []
+}
