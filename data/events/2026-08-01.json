@@ -1,23 +1,12 @@
 {
   "date": "2026-08-01",
-  "generatedAt": "2026-08-01T07:39:11.259Z",
+  "generatedAt": "2026-08-01T14:46:05.485Z",
   "latestRun": {
-    "generatedAt": "2026-08-01T07:39:11.259Z",
-    "newEventsCount": 1,
-    "newEventIds": [
-      "github-changelog-copilot:https://github.blog/changelog/2026-07-31-gemini-2-5-pro-and-gemini-3-flash-deprecated"
-    ],
+    "generatedAt": "2026-08-01T14:46:05.485Z",
+    "newEventsCount": 0,
+    "newEventIds": [],
     "errorCount": 0,
-    "skippedLowInformationEvents": [
-      {
-        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-07-31-enterprise-teams-model-policy-targeting-in-public-preview",
-        "sourceId": "github-changelog-copilot",
-        "title": "Enterprise teams model policy targeting in public preview",
-        "fallbackMarkers": [
-          "追跡対象ソースの更新。公開内容の変化や運用への影響を継続監視対象として記録している。"
-        ]
-      }
-    ]
+    "skippedLowInformationEvents": []
   },
   "events": [
     {
