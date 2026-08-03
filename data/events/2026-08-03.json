@@ -1,13 +1,43 @@
 {
   "date": "2026-08-03",
-  "generatedAt": "2026-08-03T16:02:30.839Z",
+  "generatedAt": "2026-08-03T22:32:21.412Z",
   "latestRun": {
-    "generatedAt": "2026-08-03T16:02:30.839Z",
-    "newEventsCount": 0,
-    "newEventIds": [],
+    "generatedAt": "2026-08-03T22:32:21.412Z",
+    "newEventsCount": 1,
+    "newEventIds": [
+      "docs-github-copilot-reference:e8eb2b0b07aeab38acf6122c845eb2e85d558cd42d7a8bcc6384646ec58c1bfb"
+    ],
     "errorCount": 0,
     "skippedLowInformationEvents": []
   },
-  "events": [],
+  "events": [
+    {
+      "eventId": "docs-github-copilot-reference:e8eb2b0b07aeab38acf6122c845eb2e85d558cd42d7a8bcc6384646ec58c1bfb",
+      "sourceId": "docs-github-copilot-reference",
+      "sourceName": "GitHub Docs / Copilot reference",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-08-03T22:32:20.537Z",
+      "publishedAt": "2026-08-03T22:32:20.536Z",
+      "title": "GitHub Docs / Copilot reference changed",
+      "url": "https://docs.github.com/en/copilot/reference",
+      "summary": "Detected 3 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 3,
+        "headings": [],
+        "additions": [
+          "GitHub Copilot app reference",
+          "Slash commands for the GitHub Copilot app",
+          "Built-in skills for the GitHub Copilot app"
+        ]
+      },
+      "headings": [
+        "Reference for GitHub Copilot"
+      ],
+      "score": 2
+    }
+  ],
   "errors": []
 }

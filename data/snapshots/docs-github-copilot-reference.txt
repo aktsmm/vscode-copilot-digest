@@ -14,6 +14,9 @@ GitHub Copilot CLI plugin reference
 GitHub Copilot CLI programmatic reference
 Copilot CLI ACP server
 GitHub Copilot CLI configuration directory
+GitHub Copilot app reference
+Slash commands for the GitHub Copilot app
+Built-in skills for the GitHub Copilot app
 Custom agents configuration
 Support for different types of custom instructions
 GitHub Copilot hooks reference
