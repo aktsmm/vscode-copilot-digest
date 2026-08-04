@@ -1,51 +1,87 @@
 {
   "date": "2026-08-04",
-  "generatedAt": "2026-08-04T15:55:17.306Z",
+  "generatedAt": "2026-08-04T22:33:35.942Z",
   "latestRun": {
-    "generatedAt": "2026-08-04T15:55:17.306Z",
-    "newEventsCount": 3,
+    "generatedAt": "2026-08-04T22:33:35.942Z",
+    "newEventsCount": 1,
     "newEventIds": [
-      "copilot-whats-new:6b9783557828cc50af2c960fe67de86ea07a008f012d5cdc9ce2980f73999ba2",
-      "publickey:tag:www.publickey1.jp,2026://2.8655",
-      "docs-github-copilot-reference:8f1fb964d101d4cf0736c536954b2f48acec27ffc9145550f05ef4d3fe44fc8c"
+      "copilot-whats-new:c7f5e0b2e6c707b2502c19bb766627d96aeb639cbb55ea09af19498ea086f97c"
     ],
     "errorCount": 0,
     "skippedLowInformationEvents": [
       {
-        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-08-03-customize-the-reasoning-level-for-copilot-cloud-agent",
-        "sourceId": "github-changelog-copilot",
-        "title": "Customize the reasoning level for Copilot cloud agent",
+        "eventId": "github-changelog:https://github.blog/changelog/2026-08-04-retiring-the-copilot-billing-preview-app",
+        "sourceId": "github-changelog",
+        "title": "Retiring the Copilot Billing Preview app",
         "fallbackMarkers": [
           "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
         ]
       },
       {
-        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-08-03-enterprise-team-specialization-for-managed-settings",
-        "sourceId": "github-changelog-copilot",
-        "title": "Enterprise team specialization for managed settings",
+        "eventId": "github-copilot-blog:https://github.blog/?p=97698",
+        "sourceId": "github-copilot-blog",
+        "title": "How the GitHub legal team used Copilot CLI to streamline their workflows",
+        "fallbackMarkers": [
+          "GitHub Copilot CLI の更新。ターミナルでの agent 作業、設定、ガバナンス、レビュー補助に関わる変更として、CLI 運用への影響を確認しておきたい。"
+        ]
+      },
+      {
+        "eventId": "github-changelog:https://github.blog/changelog/2026-08-04-upcoming-deprecation-of-github-spark-on-github-com",
+        "sourceId": "github-changelog",
+        "title": "Upcoming deprecation of GitHub Spark on github.com",
         "fallbackMarkers": [
           "追跡対象ソースの更新。公開内容の変化や運用への影響を継続監視対象として記録している。"
         ]
       },
       {
-        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-08-03-trigger-copilot-automations-with-comments",
+        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-08-04-upcoming-deprecation-of-github-spark-on-github-com",
         "sourceId": "github-changelog-copilot",
-        "title": "Trigger Copilot automations with comments",
+        "title": "Upcoming deprecation of GitHub Spark on github.com",
         "fallbackMarkers": [
           "追跡対象ソースの更新。公開内容の変化や運用への影響を継続監視対象として記録している。"
-        ]
-      },
-      {
-        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-07-31-upcoming-august-2026-model-deprecations-in-github-copilot",
-        "sourceId": "github-changelog-copilot",
-        "title": "Upcoming August 2026 model deprecations in GitHub Copilot",
-        "fallbackMarkers": [
-          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
         ]
       }
     ]
   },
   "events": [
+    {
+      "eventId": "copilot-whats-new:c7f5e0b2e6c707b2502c19bb766627d96aeb639cbb55ea09af19498ea086f97c",
+      "sourceId": "copilot-whats-new",
+      "sourceName": "GitHub Copilot What's New",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-08-04T22:33:30.831Z",
+      "publishedAt": "2026-08-04T22:33:30.829Z",
+      "title": "GitHub Copilot What's New changed",
+      "url": "https://github.com/features/copilot/whats-new",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [
+          "Aug.04 Retired"
+        ],
+        "additions": [
+          "H3: Aug.04 Retired"
+        ]
+      },
+      "headings": [
+        "Changelog",
+        "Filters (0 selected)",
+        "August\n Aug\n 2026",
+        "Aug.04 Retired",
+        "Aug.04 Retired",
+        "Aug.03 Release",
+        "Aug.03 Release",
+        "Aug.03 Release",
+        "July\n Jul\n 2026",
+        "Jul.31 Retired",
+        "Jul.31 Retired",
+        "Jul.31 Improvement"
+      ],
+      "score": 3
+    },
     {
       "eventId": "copilot-whats-new:6b9783557828cc50af2c960fe67de86ea07a008f012d5cdc9ce2980f73999ba2",
       "sourceId": "copilot-whats-new",
