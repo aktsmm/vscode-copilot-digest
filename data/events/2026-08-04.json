@@ -1,41 +1,43 @@
 {
   "date": "2026-08-04",
-  "generatedAt": "2026-08-04T07:57:40.181Z",
+  "generatedAt": "2026-08-04T15:55:17.306Z",
   "latestRun": {
-    "generatedAt": "2026-08-04T07:57:40.181Z",
-    "newEventsCount": 1,
+    "generatedAt": "2026-08-04T15:55:17.306Z",
+    "newEventsCount": 3,
     "newEventIds": [
-      "copilot-whats-new:8c249e83a96d016c3a5b1286ca4eb61956eb7acbf99e0fb359a7921fb65d5cde"
+      "copilot-whats-new:6b9783557828cc50af2c960fe67de86ea07a008f012d5cdc9ce2980f73999ba2",
+      "publickey:tag:www.publickey1.jp,2026://2.8655",
+      "docs-github-copilot-reference:8f1fb964d101d4cf0736c536954b2f48acec27ffc9145550f05ef4d3fe44fc8c"
     ],
     "errorCount": 0,
     "skippedLowInformationEvents": [
       {
-        "eventId": "github-changelog:https://github.blog/changelog/2026-08-03-customize-the-reasoning-level-for-copilot-cloud-agent",
-        "sourceId": "github-changelog",
+        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-08-03-customize-the-reasoning-level-for-copilot-cloud-agent",
+        "sourceId": "github-changelog-copilot",
         "title": "Customize the reasoning level for Copilot cloud agent",
         "fallbackMarkers": [
           "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
         ]
       },
       {
-        "eventId": "github-changelog:https://github.blog/changelog/2026-08-03-enterprise-team-specialization-for-managed-settings",
-        "sourceId": "github-changelog",
+        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-08-03-enterprise-team-specialization-for-managed-settings",
+        "sourceId": "github-changelog-copilot",
         "title": "Enterprise team specialization for managed settings",
         "fallbackMarkers": [
           "追跡対象ソースの更新。公開内容の変化や運用への影響を継続監視対象として記録している。"
         ]
       },
       {
-        "eventId": "github-changelog:https://github.blog/changelog/2026-08-03-trigger-copilot-automations-with-comments",
-        "sourceId": "github-changelog",
+        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-08-03-trigger-copilot-automations-with-comments",
+        "sourceId": "github-changelog-copilot",
         "title": "Trigger Copilot automations with comments",
         "fallbackMarkers": [
           "追跡対象ソースの更新。公開内容の変化や運用への影響を継続監視対象として記録している。"
         ]
       },
       {
-        "eventId": "github-changelog:https://github.blog/changelog/2026-07-31-upcoming-august-2026-model-deprecations-in-github-copilot",
-        "sourceId": "github-changelog",
+        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-07-31-upcoming-august-2026-model-deprecations-in-github-copilot",
+        "sourceId": "github-changelog-copilot",
         "title": "Upcoming August 2026 model deprecations in GitHub Copilot",
         "fallbackMarkers": [
           "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
@@ -44,6 +46,48 @@
     ]
   },
   "events": [
+    {
+      "eventId": "copilot-whats-new:6b9783557828cc50af2c960fe67de86ea07a008f012d5cdc9ce2980f73999ba2",
+      "sourceId": "copilot-whats-new",
+      "sourceName": "GitHub Copilot What's New",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-08-04T15:55:12.916Z",
+      "publishedAt": "2026-08-04T15:55:12.915Z",
+      "title": "GitHub Copilot What's New changed",
+      "url": "https://github.com/features/copilot/whats-new",
+      "summary": "Detected 4 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 4,
+        "headings": [
+          "August",
+          "Aug.03 Release"
+        ],
+        "additions": [
+          "H2: August",
+          "Aug",
+          "2026",
+          "H3: Aug.03 Release"
+        ]
+      },
+      "headings": [
+        "Changelog",
+        "Filters (0 selected)",
+        "August\n Aug\n 2026",
+        "Aug.03 Release",
+        "Aug.03 Release",
+        "Aug.03 Release",
+        "July\n Jul\n 2026",
+        "Jul.31 Retired",
+        "Jul.31 Retired",
+        "Jul.31 Improvement",
+        "Jul.30 Release",
+        "Jul.30 Improvement"
+      ],
+      "score": 4
+    },
     {
       "eventId": "copilot-whats-new:8c249e83a96d016c3a5b1286ca4eb61956eb7acbf99e0fb359a7921fb65d5cde",
       "sourceId": "copilot-whats-new",
@@ -81,6 +125,54 @@
         "Jul.28 Improvement"
       ],
       "score": 3
+    },
+    {
+      "eventId": "docs-github-copilot-reference:8f1fb964d101d4cf0736c536954b2f48acec27ffc9145550f05ef4d3fe44fc8c",
+      "sourceId": "docs-github-copilot-reference",
+      "sourceName": "GitHub Docs / Copilot reference",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-08-04T15:55:14.657Z",
+      "publishedAt": "2026-08-04T15:55:14.657Z",
+      "title": "GitHub Docs / Copilot reference changed",
+      "url": "https://docs.github.com/en/copilot/reference",
+      "summary": "Detected 7 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 7,
+        "headings": [],
+        "additions": [
+          "Example schema for Copilot usage metrics",
+          "Enterprise administrators",
+          "Available filters for agent sessions",
+          "Audit log events for agents",
+          "Enterprise managed settings",
+          "MCP allowlist enforcement",
+          "Feature availability when GitHub Copilot policies conflict in organizations"
+        ]
+      },
+      "headings": [
+        "Reference for GitHub Copilot"
+      ],
+      "score": 2
+    },
+    {
+      "eventId": "publickey:tag:www.publickey1.jp,2026://2.8655",
+      "sourceId": "publickey",
+      "sourceName": "Publickey",
+      "kind": "feed_entry",
+      "detectedAt": "2026-08-04T15:55:13.589Z",
+      "publishedAt": "2026-08-04T14:38:30.000Z",
+      "title": "アプリが遅い原因をAIがトレースログから分析してくれる「Windows Performance Analyzer MCP」（WPA MCP）、マイクロソフトがプレビュー公開",
+      "url": "https://www.publickey1.jp/blog/26/aiwindows_performance_analyzer_mcpwpa_mcp.html",
+      "summary": "マイクロソフトは、Windowsアプリケーションが遅くなる原因の調査分析をAIに依頼できるツール「Windows Performance Analyzer MCP」（WPA MCP）のアーリープレビューを発表しました。 GitHub Copilot CLIがトレース分析を支援 Windowsアプリケーションの動作が遅い場合、そのボトルネックがCPUの処理にあるのか、ファイル処理にあるのか、それともネットワーク入出力にあるのか、原因を調査するには「Windows Perform……",
+      "categories": [
+        "Windows",
+        "開発ツール"
+      ],
+      "isFutureDated": false,
+      "score": 1
     }
   ],
   "errors": []

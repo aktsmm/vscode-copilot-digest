@@ -20,11 +20,8 @@ Built-in skills for the GitHub Copilot app
 Custom agents configuration
 Support for different types of custom instructions
 GitHub Copilot hooks reference
-Feature availability when GitHub Copilot policies conflict in organizations
 Supported surfaces for GitHub Copilot policies
-Enterprise managed settings reference
 Copilot allowlist reference
-MCP allowlist enforcement
 Metrics data properties for GitHub Copilot
 GitHub Copilot billing
 Models and pricing for GitHub Copilot
@@ -33,8 +30,6 @@ GitHub Copilot seat assignment
 Making changes to your GitHub Copilot license
 GitHub Copilot billing through Azure
 GitHub Copilot request-based billing for annual plan subscribers (legacy)
-Audit log events for agents
-Available filters for agent sessions
 Files excluded from GitHub Copilot code review
 GitHub Copilot usage metrics
 Data available in Copilot usage metrics
@@ -43,3 +38,9 @@ Reconciling Copilot usage metrics across dashboards, APIs, and reports
 Lines of Code metrics
 Team-level Copilot usage metrics
 Example schema for Copilot usage metrics
+Enterprise administrators
+Available filters for agent sessions
+Audit log events for agents
+Enterprise managed settings
+MCP allowlist enforcement
+Feature availability when GitHub Copilot policies conflict in organizations
