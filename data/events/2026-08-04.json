@@ -1,0 +1,87 @@
+{
+  "date": "2026-08-04",
+  "generatedAt": "2026-08-04T07:57:40.181Z",
+  "latestRun": {
+    "generatedAt": "2026-08-04T07:57:40.181Z",
+    "newEventsCount": 1,
+    "newEventIds": [
+      "copilot-whats-new:8c249e83a96d016c3a5b1286ca4eb61956eb7acbf99e0fb359a7921fb65d5cde"
+    ],
+    "errorCount": 0,
+    "skippedLowInformationEvents": [
+      {
+        "eventId": "github-changelog:https://github.blog/changelog/2026-08-03-customize-the-reasoning-level-for-copilot-cloud-agent",
+        "sourceId": "github-changelog",
+        "title": "Customize the reasoning level for Copilot cloud agent",
+        "fallbackMarkers": [
+          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
+        ]
+      },
+      {
+        "eventId": "github-changelog:https://github.blog/changelog/2026-08-03-enterprise-team-specialization-for-managed-settings",
+        "sourceId": "github-changelog",
+        "title": "Enterprise team specialization for managed settings",
+        "fallbackMarkers": [
+          "追跡対象ソースの更新。公開内容の変化や運用への影響を継続監視対象として記録している。"
+        ]
+      },
+      {
+        "eventId": "github-changelog:https://github.blog/changelog/2026-08-03-trigger-copilot-automations-with-comments",
+        "sourceId": "github-changelog",
+        "title": "Trigger Copilot automations with comments",
+        "fallbackMarkers": [
+          "追跡対象ソースの更新。公開内容の変化や運用への影響を継続監視対象として記録している。"
+        ]
+      },
+      {
+        "eventId": "github-changelog:https://github.blog/changelog/2026-07-31-upcoming-august-2026-model-deprecations-in-github-copilot",
+        "sourceId": "github-changelog",
+        "title": "Upcoming August 2026 model deprecations in GitHub Copilot",
+        "fallbackMarkers": [
+          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
+        ]
+      }
+    ]
+  },
+  "events": [
+    {
+      "eventId": "copilot-whats-new:8c249e83a96d016c3a5b1286ca4eb61956eb7acbf99e0fb359a7921fb65d5cde",
+      "sourceId": "copilot-whats-new",
+      "sourceName": "GitHub Copilot What's New",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-08-04T07:57:38.090Z",
+      "publishedAt": "2026-08-04T07:57:38.089Z",
+      "title": "GitHub Copilot What's New changed",
+      "url": "https://github.com/features/copilot/whats-new",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [
+          "Jul.31 Retired"
+        ],
+        "additions": [
+          "H3: Jul.31 Retired"
+        ]
+      },
+      "headings": [
+        "Changelog",
+        "Filters (0 selected)",
+        "July\n Jul\n 2026",
+        "Jul.31 Retired",
+        "Jul.31 Retired",
+        "Jul.31 Improvement",
+        "Jul.30 Release",
+        "Jul.30 Improvement",
+        "Jul.30 Release",
+        "Jul.29 Improvement",
+        "Jul.29 Improvement",
+        "Jul.28 Improvement"
+      ],
+      "score": 3
+    }
+  ],
+  "errors": []
+}
