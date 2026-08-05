@@ -1,22 +1,161 @@
 {
   "date": "2026-08-05",
-  "generatedAt": "2026-08-05T07:58:48.115Z",
+  "generatedAt": "2026-08-05T15:38:17.916Z",
   "latestRun": {
-    "generatedAt": "2026-08-05T07:58:48.115Z",
-    "newEventsCount": 0,
-    "newEventIds": [],
+    "generatedAt": "2026-08-05T15:38:17.916Z",
+    "newEventsCount": 2,
+    "newEventIds": [
+      "vscode-updates:4b14d10e2df3c000d09d9df25b5d7bb3c3c3c91fd6753e5798c7f55cd61a1bf8",
+      "vscode-release-notes-1-109:287aee245ae538c0f1d66f28237b6c54722a690d6be90742bd955a4f0c7933be"
+    ],
     "errorCount": 0,
     "skippedLowInformationEvents": [
       {
-        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-08-04-retiring-the-copilot-billing-preview-app",
-        "sourceId": "github-changelog-copilot",
-        "title": "Retiring the Copilot Billing Preview app",
+        "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_133",
+        "sourceId": "vscode-feed",
+        "title": "Visual Studio Code 1.133 (Insiders)",
         "fallbackMarkers": [
-          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
+          "Visual Studio Code 関連の更新。日々の開発フローや agent 利用に効く変更点を確認しておきたい。"
+        ]
+      },
+      {
+        "eventId": "vscode-release-notes-1-132:section:52769797eb97fe4c31a0ef0ca173b675b0cb3890755df1e539ff571aa05fa4d5",
+        "sourceId": "vscode-release-notes-1-132",
+        "title": "Visual Studio Code 1.132: Agent host",
+        "fallbackMarkers": [
+          "に関する release note 更新。該当 section の内容を個別に追跡している。"
+        ]
+      },
+      {
+        "eventId": "vscode-release-notes-1-132:section:6486a6d6411d93e229c5f023ce9ca098e8ac84b837d3ff7c7f65ea6963acde2a",
+        "sourceId": "vscode-release-notes-1-132",
+        "title": "Visual Studio Code 1.132: Agents window",
+        "fallbackMarkers": [
+          "に関する release note 更新。該当 section の内容を個別に追跡している。"
+        ]
+      },
+      {
+        "eventId": "vscode-release-notes-1-132:section:b801fda096a453aaebd1d04c646ed75647580500118b9083ccea9c20c8d19e3c",
+        "sourceId": "vscode-release-notes-1-132",
+        "title": "Visual Studio Code 1.132: Side chats with /btw",
+        "fallbackMarkers": [
+          "に関する release note 更新。該当 section の内容を個別に追跡している。"
+        ]
+      },
+      {
+        "eventId": "vscode-release-notes-1-132:section:fbc0da58790a961d4d0afd8da05603d7dd728eb36a18da5e522dd0069d86a30d",
+        "sourceId": "vscode-release-notes-1-132",
+        "title": "Visual Studio Code 1.132: Terminal output reflow",
+        "fallbackMarkers": [
+          "に関する release note 更新。該当 section の内容を個別に追跡している。"
         ]
       }
     ]
   },
-  "events": [],
+  "events": [
+    {
+      "eventId": "vscode-updates:4b14d10e2df3c000d09d9df25b5d7bb3c3c3c91fd6753e5798c7f55cd61a1bf8",
+      "sourceId": "vscode-updates",
+      "sourceName": "VS Code Updates",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-08-05T15:38:15.016Z",
+      "publishedAt": "2026-08-05T00:00:00.000Z",
+      "title": "VS Code Updates changed",
+      "url": "https://code.visualstudio.com/updates/",
+      "summary": "Detected 108 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 108,
+        "headings": [
+          "Visual Studio Code 1.132",
+          "Agents window",
+          "Side chats with /btw",
+          "Chat",
+          "Terminal output reflow",
+          "Editor experience",
+          "Dictation onboarding and customization",
+          "Markdown diffs in the hybrid Markdown editor (Experimental)",
+          "Commenting in the integrated browser",
+          "Better dictation for terminal commands",
+          "Proposed APIs",
+          "Configure custom editor priorities by editor mode",
+          "Deprecated features and settings",
+          "New deprecations in this release",
+          "Upcoming deprecations"
+        ],
+        "additions": [
+          "1.132",
+          "H1: Visual Studio Code 1.132",
+          "Release date: August 5, 2026",
+          "Welcome to the 1.132 release of Visual Studio Code. This release brings element-level feedback in the integrated browser, multilingual dictation, side chats, and Markdown diffs in the hybrid Markdown editor.",
+          "Commenting in the integrated browser: Give agents precise feedback by commenting on specific web page elements.",
+          "Multilingual dictation: Dictate in multiple languages with an on-device model that follows your language preference or detects the language automatically.",
+          "Side chats with /btw: Ask contextual questions without interrupting the current agent turn.",
+          "Markdown diffs in the hybrid Markdown editor (Experimental): Review changes in rendered Markdown while continuing to edit the modified document.",
+          "The agent host lets you connect to the same agent session from multiple VS Code windows. It runs agent harnesses such as Copilot, Claude, and Codex in a dedicated process based on the Agent Host Protocol (AHP). The agent host's Copilot agent is powered by the Copilot SDK, which aligns its behavior and functionality with the Copilot CLI, the standalone GitHub Copilot app, and other Copilot products.",
+          "We're actively developing the agent host and progressively rolling it out to users. The screenshot below shows how to select the Copilot harness on the agent host in the editor window:",
+          "You can learn more in our VS Code Agent Host documentation. If you have any feedback or requests, please let us know by filing an issue.",
+          "H3: Agents window",
+          "The Agents window gives you a dedicated space to start and monitor multiple agent sessions.",
+          "When an agent works across files, subagents, previews, and browsers, you can use live status pills above the chat input to follow its progress and quickly return to related work. The pills update with the activity for the session you are viewing:",
+          "Changes summarizes the number of changes. Select it to view the changes for the current turn in a multi-file diff that updates live.",
+          "Previews provides access to Markdown previews for files the agent creates or edits."
+        ]
+      },
+      "headings": [
+        "Visual Studio Code 1.132",
+        "Agents",
+        "Agent host",
+        "Agents window",
+        "Side chats with /btw",
+        "Chat",
+        "Terminal output reflow",
+        "Editor experience",
+        "Dictation onboarding and customization",
+        "Markdown diffs in the hybrid Markdown editor (Experimental)",
+        "Commenting in the integrated browser",
+        "Terminal"
+      ],
+      "score": 17
+    },
+    {
+      "eventId": "vscode-release-notes-1-109:287aee245ae538c0f1d66f28237b6c54722a690d6be90742bd955a4f0c7933be",
+      "sourceId": "vscode-release-notes-1-109",
+      "sourceName": "VS Code Release Notes 1.109",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-08-05T15:38:15.114Z",
+      "publishedAt": "2026-02-04T00:00:00.000Z",
+      "title": "VS Code Release Notes 1.109 changed",
+      "url": "https://code.visualstudio.com/updates/v1_109",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [],
+        "additions": [
+          "1.132"
+        ]
+      },
+      "headings": [
+        "January 2026 (version 1.109)",
+        "Upcoming events",
+        "Agent Sessions Day",
+        "Chat UX",
+        "Message steering and queueing (Experimental)",
+        "Anthropic models now show thinking tokens",
+        "Mermaid diagrams in chat responses",
+        "Ask Questions tool (Experimental)",
+        "Plan agent",
+        "Context window details",
+        "Inline chat UX revamp (Preview)",
+        "Model descriptions in the model picker"
+      ],
+      "score": 2
+    }
+  ],
   "errors": []
 }

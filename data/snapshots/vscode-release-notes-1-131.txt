@@ -1,4 +1,5 @@
 Insiders
+1.132
 1.131
 1.130
 1.129
@@ -52,7 +53,7 @@ We're actively developing the agent host and progressively rolling it out to use
  Open in VS Code
  Open in VS Code Insiders
  
- This setting can be managed by your organization. Contact your administrator to change it.ORG and then select an agent host harness from the harness dropdown. The screenshot below shows how to select the Copilot harness on the agent host in the editor window:
+ and then select an agent host harness from the harness dropdown. The screenshot below shows how to select the Copilot harness on the agent host in the editor window:
 You can learn more in our VS Code Agent Host architecture documentation. If you have any feedback or requests, please let us know by filing an issue.
 H3: More information about running subagents (Agents window)
 When working on complex tasks, the agent can delegate tasks to subagents to run them in parallel in its own context window. You can now quickly see what a running subagent is doing without opening its conversation. In the Agents window, the main conversation shows the following information for each running subagent:
