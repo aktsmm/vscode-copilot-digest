@@ -1,56 +1,14 @@
 {
   "date": "2026-08-05",
-  "generatedAt": "2026-08-05T15:38:17.916Z",
+  "generatedAt": "2026-08-05T22:32:54.053Z",
   "latestRun": {
-    "generatedAt": "2026-08-05T15:38:17.916Z",
-    "newEventsCount": 2,
+    "generatedAt": "2026-08-05T22:32:54.053Z",
+    "newEventsCount": 1,
     "newEventIds": [
-      "vscode-updates:4b14d10e2df3c000d09d9df25b5d7bb3c3c3c91fd6753e5798c7f55cd61a1bf8",
-      "vscode-release-notes-1-109:287aee245ae538c0f1d66f28237b6c54722a690d6be90742bd955a4f0c7933be"
+      "docs-github-copilot-reference:18b029c1e975eb3d72afc791037d30cf08adb26172307bd8c2f793a7a6109b13"
     ],
     "errorCount": 0,
-    "skippedLowInformationEvents": [
-      {
-        "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_133",
-        "sourceId": "vscode-feed",
-        "title": "Visual Studio Code 1.133 (Insiders)",
-        "fallbackMarkers": [
-          "Visual Studio Code 関連の更新。日々の開発フローや agent 利用に効く変更点を確認しておきたい。"
-        ]
-      },
-      {
-        "eventId": "vscode-release-notes-1-132:section:52769797eb97fe4c31a0ef0ca173b675b0cb3890755df1e539ff571aa05fa4d5",
-        "sourceId": "vscode-release-notes-1-132",
-        "title": "Visual Studio Code 1.132: Agent host",
-        "fallbackMarkers": [
-          "に関する release note 更新。該当 section の内容を個別に追跡している。"
-        ]
-      },
-      {
-        "eventId": "vscode-release-notes-1-132:section:6486a6d6411d93e229c5f023ce9ca098e8ac84b837d3ff7c7f65ea6963acde2a",
-        "sourceId": "vscode-release-notes-1-132",
-        "title": "Visual Studio Code 1.132: Agents window",
-        "fallbackMarkers": [
-          "に関する release note 更新。該当 section の内容を個別に追跡している。"
-        ]
-      },
-      {
-        "eventId": "vscode-release-notes-1-132:section:b801fda096a453aaebd1d04c646ed75647580500118b9083ccea9c20c8d19e3c",
-        "sourceId": "vscode-release-notes-1-132",
-        "title": "Visual Studio Code 1.132: Side chats with /btw",
-        "fallbackMarkers": [
-          "に関する release note 更新。該当 section の内容を個別に追跡している。"
-        ]
-      },
-      {
-        "eventId": "vscode-release-notes-1-132:section:fbc0da58790a961d4d0afd8da05603d7dd728eb36a18da5e522dd0069d86a30d",
-        "sourceId": "vscode-release-notes-1-132",
-        "title": "Visual Studio Code 1.132: Terminal output reflow",
-        "fallbackMarkers": [
-          "に関する release note 更新。該当 section の内容を個別に追跡している。"
-        ]
-      }
-    ]
+    "skippedLowInformationEvents": []
   },
   "events": [
     {
@@ -153,6 +111,31 @@
         "Context window details",
         "Inline chat UX revamp (Preview)",
         "Model descriptions in the model picker"
+      ],
+      "score": 2
+    },
+    {
+      "eventId": "docs-github-copilot-reference:18b029c1e975eb3d72afc791037d30cf08adb26172307bd8c2f793a7a6109b13",
+      "sourceId": "docs-github-copilot-reference",
+      "sourceName": "GitHub Docs / Copilot reference",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-08-05T22:32:53.976Z",
+      "publishedAt": "2026-08-05T22:32:53.975Z",
+      "title": "GitHub Docs / Copilot reference changed",
+      "url": "https://docs.github.com/en/copilot/reference",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [],
+        "additions": [
+          "Repository configuration for the GitHub Copilot app"
+        ]
+      },
+      "headings": [
+        "Reference for GitHub Copilot"
       ],
       "score": 2
     }
