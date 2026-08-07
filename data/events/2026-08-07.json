@@ -1,16 +1,94 @@
 {
   "date": "2026-08-07",
-  "generatedAt": "2026-08-07T14:31:49.279Z",
+  "generatedAt": "2026-08-07T22:02:58.625Z",
   "latestRun": {
-    "generatedAt": "2026-08-07T14:31:49.279Z",
-    "newEventsCount": 1,
+    "generatedAt": "2026-08-07T22:02:58.625Z",
+    "newEventsCount": 2,
     "newEventIds": [
-      "docs-github-copilot-reference:e780311d39b01b812ff8827ecbfa5b290ac2c9b9fd78ece4be5f799ce7543173"
+      "copilot-whats-new:68b0cc1d2d74bb4866ca7022a5697f7e9458658bb55af9ddf3e5bff68e85ef32",
+      "docs-github-copilot:77d2abf293d80337c5ea884a79ab68b0e97061bb4db0931d31318bc9bd40b0e1"
     ],
     "errorCount": 0,
-    "skippedLowInformationEvents": []
+    "skippedLowInformationEvents": [
+      {
+        "eventId": "github-changelog:https://github.blog/changelog/2026-08-07-copilot-code-review-effort-levels-are-generally-available",
+        "sourceId": "github-changelog",
+        "title": "Copilot code review effort levels are generally available",
+        "fallbackMarkers": [
+          "GitHub Copilot code review のレビュー依頼やコメント処理に関する更新。チームのレビュー運用に影響する可能性がある。"
+        ]
+      },
+      {
+        "eventId": "github-changelog:https://github.blog/changelog/2026-08-07-copilot-usage-metrics-api-adds-agent-app-activity",
+        "sourceId": "github-changelog",
+        "title": "Copilot usage metrics API adds agent app activity",
+        "fallbackMarkers": [
+          "追跡対象ソースの更新。公開内容の変化や運用への影響を継続監視対象として記録している。"
+        ]
+      },
+      {
+        "eventId": "github-changelog:https://github.blog/changelog/2026-08-07-github-code-quality-no-longer-adds-copilot-as-a-reviewer",
+        "sourceId": "github-changelog",
+        "title": "GitHub Code Quality no longer adds Copilot as a reviewer",
+        "fallbackMarkers": [
+          "GitHub Copilot code review のレビュー依頼やコメント処理に関する更新。チームのレビュー運用に影響する可能性がある。"
+        ]
+      },
+      {
+        "eventId": "github-changelog:https://github.blog/changelog/2026-08-06-mcp-allowlists-in-enterprise-managed-settings",
+        "sourceId": "github-changelog",
+        "title": "MCP allowlists in enterprise managed settings",
+        "fallbackMarkers": [
+          "Copilot CLI への MCP 対応に関する更新。外部ツールや社内サービスを CLI から呼び出す構成に関わるため、MCP server の設定と権限範囲を確認しておきたい。"
+        ]
+      }
+    ]
   },
   "events": [
+    {
+      "eventId": "copilot-whats-new:68b0cc1d2d74bb4866ca7022a5697f7e9458658bb55af9ddf3e5bff68e85ef32",
+      "sourceId": "copilot-whats-new",
+      "sourceName": "GitHub Copilot What's New",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-08-07T22:02:55.404Z",
+      "publishedAt": "2026-08-07T22:02:55.403Z",
+      "title": "GitHub Copilot What's New changed",
+      "url": "https://github.com/features/copilot/whats-new",
+      "summary": "Detected 4 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 4,
+        "headings": [
+          "Aug.07 Release",
+          "Aug.07 Improvement",
+          "Aug.07 Retired",
+          "Aug.06 Release"
+        ],
+        "additions": [
+          "H3: Aug.07 Release",
+          "H3: Aug.07 Improvement",
+          "H3: Aug.07 Retired",
+          "H3: Aug.06 Release"
+        ]
+      },
+      "headings": [
+        "Changelog",
+        "Filters (0 selected)",
+        "August\n Aug\n 2026",
+        "Aug.07 Release",
+        "Aug.07 Improvement",
+        "Aug.07 Retired",
+        "Aug.06 Release",
+        "Aug.06 Release",
+        "Aug.04 Retired",
+        "Aug.04 Retired",
+        "Aug.03 Release",
+        "Aug.03 Release"
+      ],
+      "score": 6
+    },
     {
       "eventId": "copilot-whats-new:488031e94b5a6bfbbe737386f3a46bc9f72d75a3e3f3190629befaec96200d37",
       "sourceId": "copilot-whats-new",
@@ -46,6 +124,52 @@
         "July\n Jul\n 2026",
         "Jul.31 Retired",
         "Jul.31 Retired"
+      ],
+      "score": 3
+    },
+    {
+      "eventId": "docs-github-copilot:77d2abf293d80337c5ea884a79ab68b0e97061bb4db0931d31318bc9bd40b0e1",
+      "sourceId": "docs-github-copilot",
+      "sourceName": "GitHub Docs / Copilot",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-08-07T22:02:56.122Z",
+      "publishedAt": "2026-08-07T22:02:56.122Z",
+      "title": "GitHub Docs / Copilot changed",
+      "url": "https://docs.github.com/en/copilot",
+      "summary": "Detected 10 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 10,
+        "headings": [
+          "About custom agents"
+        ],
+        "additions": [
+          "Agent apps let you use partner-built agents directly in your workflows on GitHub, powered by your Copilot subscription.",
+          "Use one centralized control page to jump between agent sessions, check progress, and stay in control without losing your place.",
+          "Skills allow Copilot to perform specialized tasks.",
+          "Learn about pricing and billing cycles for Copilot.",
+          "Cloud and local sandboxes provide isolated execution environments that let Copilot safely interact with code, tools, filesystem, and network resources securely on your local machine or in fully isolated cloud environments.",
+          "Automatically select the best model for each task.",
+          "Automations let you run Copilot cloud agent automatically, on a schedule or in response to events in a repository.",
+          "Integrate Copilot with other tools and platforms to streamline your workflow.",
+          "H3: About custom agents",
+          "Custom agents enhance Copilot with assistance tailored to your needs."
+        ]
+      },
+      "headings": [
+        "GitHub Copilot documentation",
+        "Articles",
+        "About agent apps",
+        "About agent management",
+        "About agent skills",
+        "About billing for GitHub Copilot in organizations and enterprises",
+        "About cloud and local sandboxes for GitHub Copilot",
+        "About Copilot auto model selection",
+        "About Copilot automations",
+        "About Copilot integrations",
+        "About custom agents"
       ],
       "score": 3
     },

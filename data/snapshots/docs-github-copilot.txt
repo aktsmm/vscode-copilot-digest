@@ -2,11 +2,20 @@ H1: GitHub Copilot documentation
 You can use GitHub Copilot to enhance your productivity and assist as you work on code.
 H2: Articles
 H3: About agent apps
+Agent apps let you use partner-built agents directly in your workflows on GitHub, powered by your Copilot subscription.
 H3: About agent management
+Use one centralized control page to jump between agent sessions, check progress, and stay in control without losing your place.
 H3: About agent skills
+Skills allow Copilot to perform specialized tasks.
 H3: About billing for GitHub Copilot in organizations and enterprises
+Learn about pricing and billing cycles for Copilot.
 H3: About cloud and local sandboxes for GitHub Copilot
+Cloud and local sandboxes provide isolated execution environments that let Copilot safely interact with code, tools, filesystem, and network resources securely on your local machine or in fully isolated cloud environments.
 H3: About Copilot auto model selection
+Automatically select the best model for each task.
 H3: About Copilot automations
+Automations let you run Copilot cloud agent automatically, on a schedule or in response to events in a repository.
 H3: About Copilot integrations
+Integrate Copilot with other tools and platforms to streamline your workflow.
 H3: About custom agents
+Custom agents enhance Copilot with assistance tailored to your needs.
