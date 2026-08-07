@@ -43,5 +43,5 @@ Enterprise administrators
 Available filters for agent sessions
 Audit log events for agents
 Enterprise managed settings
-MCP allowlist enforcement
+MCP private registry enforcement
 Feature availability when GitHub Copilot policies conflict in organizations

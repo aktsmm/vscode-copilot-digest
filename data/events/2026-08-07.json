@@ -1,10 +1,12 @@
 {
   "date": "2026-08-07",
-  "generatedAt": "2026-08-07T06:38:41.603Z",
+  "generatedAt": "2026-08-07T14:31:49.279Z",
   "latestRun": {
-    "generatedAt": "2026-08-07T06:38:41.603Z",
-    "newEventsCount": 0,
-    "newEventIds": [],
+    "generatedAt": "2026-08-07T14:31:49.279Z",
+    "newEventsCount": 1,
+    "newEventIds": [
+      "docs-github-copilot-reference:e780311d39b01b812ff8827ecbfa5b290ac2c9b9fd78ece4be5f799ce7543173"
+    ],
     "errorCount": 0,
     "skippedLowInformationEvents": []
   },
@@ -46,6 +48,31 @@
         "Jul.31 Retired"
       ],
       "score": 3
+    },
+    {
+      "eventId": "docs-github-copilot-reference:e780311d39b01b812ff8827ecbfa5b290ac2c9b9fd78ece4be5f799ce7543173",
+      "sourceId": "docs-github-copilot-reference",
+      "sourceName": "GitHub Docs / Copilot reference",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-08-07T14:31:48.730Z",
+      "publishedAt": "2026-08-07T14:31:48.729Z",
+      "title": "GitHub Docs / Copilot reference changed",
+      "url": "https://docs.github.com/en/copilot/reference",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [],
+        "additions": [
+          "MCP private registry enforcement"
+        ]
+      },
+      "headings": [
+        "Reference for GitHub Copilot"
+      ],
+      "score": 2
     }
   ],
   "errors": []
