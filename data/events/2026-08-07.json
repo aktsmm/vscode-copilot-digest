@@ -1,39 +1,12 @@
 {
   "date": "2026-08-07",
-  "generatedAt": "2026-08-07T01:02:54.147Z",
+  "generatedAt": "2026-08-07T06:38:41.603Z",
   "latestRun": {
-    "generatedAt": "2026-08-07T01:02:54.147Z",
-    "newEventsCount": 1,
-    "newEventIds": [
-      "copilot-whats-new:488031e94b5a6bfbbe737386f3a46bc9f72d75a3e3f3190629befaec96200d37"
-    ],
+    "generatedAt": "2026-08-07T06:38:41.603Z",
+    "newEventsCount": 0,
+    "newEventIds": [],
     "errorCount": 0,
-    "skippedLowInformationEvents": [
-      {
-        "eventId": "github-copilot-blog:https://github.blog/?p=98013",
-        "sourceId": "github-copilot-blog",
-        "title": "A guide to slash commands in the GitHub Copilot app",
-        "fallbackMarkers": [
-          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
-        ]
-      },
-      {
-        "eventId": "github-changelog:https://github.blog/changelog/2026-08-06-auto-draft",
-        "sourceId": "github-changelog",
-        "title": "Kimi K3 is now available in GitHub Copilot",
-        "fallbackMarkers": [
-          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
-        ]
-      },
-      {
-        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-08-06-auto-draft",
-        "sourceId": "github-changelog-copilot",
-        "title": "Kimi K3 is now available in GitHub Copilot",
-        "fallbackMarkers": [
-          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
-        ]
-      }
-    ]
+    "skippedLowInformationEvents": []
   },
   "events": [
     {
