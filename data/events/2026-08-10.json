@@ -1,13 +1,71 @@
 {
   "date": "2026-08-10",
-  "generatedAt": "2026-08-10T14:36:34.152Z",
+  "generatedAt": "2026-08-10T22:04:33.530Z",
   "latestRun": {
-    "generatedAt": "2026-08-10T14:36:34.152Z",
-    "newEventsCount": 0,
-    "newEventIds": [],
+    "generatedAt": "2026-08-10T22:04:33.530Z",
+    "newEventsCount": 1,
+    "newEventIds": [
+      "copilot-whats-new:42294e2a8214f4fd0f8cacba745985adf070ef13df65d668ed059fb833219087"
+    ],
     "errorCount": 0,
-    "skippedLowInformationEvents": []
+    "skippedLowInformationEvents": [
+      {
+        "eventId": "github-changelog:https://github.blog/changelog/2026-08-10-copilot-on-web-expands-conversation-controls",
+        "sourceId": "github-changelog",
+        "title": "Copilot on web expands conversation controls",
+        "fallbackMarkers": [
+          "追跡対象ソースの更新。公開内容の変化や運用への影響を継続監視対象として記録している。"
+        ]
+      },
+      {
+        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-08-10-copilot-on-web-expands-conversation-controls",
+        "sourceId": "github-changelog-copilot",
+        "title": "Copilot on web expands conversation controls",
+        "fallbackMarkers": [
+          "追跡対象ソースの更新。公開内容の変化や運用への影響を継続監視対象として記録している。"
+        ]
+      }
+    ]
   },
-  "events": [],
+  "events": [
+    {
+      "eventId": "copilot-whats-new:42294e2a8214f4fd0f8cacba745985adf070ef13df65d668ed059fb833219087",
+      "sourceId": "copilot-whats-new",
+      "sourceName": "GitHub Copilot What's New",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-08-10T22:04:29.505Z",
+      "publishedAt": "2026-08-10T22:04:29.504Z",
+      "title": "GitHub Copilot What's New changed",
+      "url": "https://github.com/features/copilot/whats-new",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [
+          "Aug.10 Improvement"
+        ],
+        "additions": [
+          "H3: Aug.10 Improvement"
+        ]
+      },
+      "headings": [
+        "Changelog",
+        "Filters (0 selected)",
+        "August\n Aug\n 2026",
+        "Aug.10 Improvement",
+        "Aug.07 Release",
+        "Aug.07 Improvement",
+        "Aug.07 Release",
+        "Aug.07 Improvement",
+        "Aug.07 Retired",
+        "Aug.06 Release",
+        "Aug.06 Release",
+        "Aug.04 Retired"
+      ],
+      "score": 3
+    }
+  ],
   "errors": []
 }
