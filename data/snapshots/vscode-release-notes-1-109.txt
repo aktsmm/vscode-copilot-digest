@@ -8,21 +8,6 @@ Insiders
 1.126
 1.125
 1.124
-1.123
-1.122
-1.121
-1.120
-1.119
-1.118
-1.117
-1.116
-1.115
-1.114
-1.113
-1.112
-1.111
-February 2026
-January 2026
 View All Releases
 H1: January 2026 (version 1.109)
 Release date: February 4, 2026
@@ -81,6 +66,7 @@ Setting:
  
  
  
+ 
  Open in VS Code
  Open in VS Code Insiders
  
@@ -88,6 +74,7 @@ Setting:
  
  
  chat.requestQueuing.defaultAction
+ 
  
  
  
@@ -110,6 +97,7 @@ Use
  
  
  
+ 
  Open in VS Code
  Open in VS Code Insiders
  
@@ -120,6 +108,7 @@ Settings:
  
  
  chat.thinking.style
+ 
  
  
  
@@ -137,6 +126,7 @@ Settings:
  
  
  
+ 
  Open in VS Code
  Open in VS Code Insiders
  
@@ -149,6 +139,7 @@ Settings:
  
  
  
+ 
  Open in VS Code
  Open in VS Code Insiders
  
@@ -156,6 +147,7 @@ Settings:
  
  
  chat.tools.autoExpandFailures
+ 
  
  
  
@@ -174,6 +166,7 @@ Choose between detailed or compact thinking styles to suit your preference (
  
  
  
+ 
  Open in VS Code
  Open in VS Code Insiders
  
@@ -187,18 +180,6 @@ Choose between detailed or compact thinking styles to suit your preference (
  
  
  
- Open in VS Code
- Open in VS Code Insiders
- 
- ).
-You'll see the model's thought process interleaved with tool calls and responses (
- 
- 
- chat.agent.thinking.terminalTools
- 
- 
- 
- 
  
  Open in VS Code
  Open in VS Code Insiders
@@ -208,6 +189,21 @@ You'll see the model's thought process interleaved with tool calls and responses
  
  
  chat.agent.thinking.terminalTools
+ 
+ 
+ 
+ 
+ 
+ 
+ Open in VS Code
+ Open in VS Code Insiders
+ 
+ ).
+You'll see the model's thought process interleaved with tool calls and responses (
+ 
+ 
+ chat.agent.thinking.terminalTools
+ 
  
  
  
@@ -226,6 +222,7 @@ Failing tool calls automatically expand to show more context (
  
  
  
+ 
  Open in VS Code
  Open in VS Code Insiders
  
@@ -234,6 +231,7 @@ Failing tool calls automatically expand to show more context (
  
  
  chat.tools.autoExpandFailures
+ 
  
  
  
@@ -257,6 +255,7 @@ Setting:
  
  
  chat.askQuestions.enabled
+ 
  
  
  
@@ -294,6 +293,7 @@ Settings:
  
  
  
+ 
  Open in VS Code
  Open in VS Code Insiders
  
@@ -301,6 +301,7 @@ Settings:
  
  
  inlineChat.renderMode
+ 
  
  
  
@@ -318,6 +319,7 @@ An affordance that makes it easier to trigger inline chat when selecting text (
  
  
  
+ 
  Open in VS Code
  Open in VS Code Insiders
  
@@ -326,6 +328,7 @@ A lightweight and easier-to-use contextual rendering (
  
  
  inlineChat.renderMode
+ 
  
  
  
@@ -363,6 +366,7 @@ Setting:
  
  
  
+ 
  Open in VS Code
  Open in VS Code Insiders
 Edit mode is now hidden by default from the agent dropdown in chat. Using agents provides a superset of edit mode capabilities and produces better results for code editing tasks.
@@ -370,6 +374,7 @@ If your organization has disabled agent mode, edit mode remains visible in the a
  
  
  chat.editMode.hidden
+ 
  
  
  
@@ -402,6 +407,7 @@ Settings:
  
  
  
+ 
  Open in VS Code
  Open in VS Code Insiders
  
@@ -414,12 +420,14 @@ Settings:
  
  
  
+ 
  Open in VS Code
  Open in VS Code Insiders
 In situations where you have multiple active sessions, it's important to quickly see which sessions need your attention. We added an agent status indicator (
  
  
  chat.agentsControl.enabled
+ 
  
  
  
@@ -439,6 +447,7 @@ We have also updated the chat button in the command center to let you configure 
  
  
  
+ 
  Open in VS Code
  Open in VS Code Insiders
  
@@ -453,6 +462,7 @@ Setting:
  
  
  
+ 
  Open in VS Code
  Open in VS Code Insiders
 Agents can run subtasks using subagents to break down complex tasks into smaller parts. The nice thing about subagents is that they operate in their own dedicated context window and don't add up to the main agent's context window.
@@ -462,6 +472,7 @@ Setting:
  
  
  github.copilot.chat.searchSubagent.enabled
+ 
  
  
  
@@ -525,6 +536,7 @@ Setting:
  
  
  
+ 
  Open in VS Code
  Open in VS Code Insiders
 Last but not least, we're experimenting with a new welcome page and need your help to make it great. When you have multiple agents working in parallel, keeping track of recent sessions matters. The new welcome page surfaces your agent sessions front and center.
@@ -532,6 +544,7 @@ Enable the welcome page as your startup editor by setting
  
  
  workbench.startupEditor
+ 
  
  
  
@@ -548,6 +561,7 @@ Setting:
  
  
  chat.hooks.enabled
+ 
  
  
  
@@ -580,6 +594,7 @@ Settings:
  
  
  
+ 
  Open in VS Code
  Open in VS Code Insiders
  
@@ -587,6 +602,7 @@ Settings:
  
  
  chat.agentSkillsLocations
+ 
  
  
  
@@ -600,6 +616,7 @@ By default, VS Code looks for skills definitions in the .github/skills and .clau
  
  
  chat.agentSkillsLocations
+ 
  
  
  
@@ -621,6 +638,7 @@ Setting:
  
  
  
+ 
  Open in VS Code
  Open in VS Code Insiders
 Previously, VS Code already added support for organization-level custom agents. In this release, VS Code now also supports organization-level custom instructions. If your GitHub organization has configured custom instructions for Copilot, they are automatically applied to your chat sessions, ensuring consistent guidance across your team.
@@ -628,6 +646,7 @@ This feature is enabled by default. You can disable organization instructions by
  
  
  github.copilot.chat.organizationInstructions.enabled
+ 
  
  
  
@@ -648,6 +667,7 @@ Setting:
  
  
  
+ 
  Open in VS Code
  Open in VS Code Insiders
 Like for other customization files, such as prompt files, instructions, and skills, you can now configure where VS Code looks for custom agent definitions (.agent.md).
@@ -655,6 +675,7 @@ By default, VS Code searches for agent files in your workspace's .github/agents 
  
  
  chat.agentFilesLocations
+ 
  
  
  
@@ -674,6 +695,7 @@ Settings:
  
  
  
+ 
  Open in VS Code
  Open in VS Code Insiders
 Custom agents now support additional attributes in the frontmatter header that give you more control over how agents can be invoked. This is particularly useful for setting up agent orchestrations to handle complex tasks with confidence.
@@ -687,6 +709,7 @@ The use of custom agents as subagents is currently still behind a setting. Enabl
  
  
  chat.customAgentInSubagent.enabled
+ 
  
  
  
@@ -726,6 +749,7 @@ Settings:
  
  
  
+ 
  Open in VS Code
  Open in VS Code Insiders
  
@@ -738,6 +762,7 @@ Settings:
  
  
  
+ 
  Open in VS Code
  Open in VS Code Insiders
 Default model for plan implementation (Experimental)
@@ -745,6 +770,7 @@ You can now configure a default language model for the implementation step of th
  
  
  github.copilot.chat.implementAgent.model
+ 
  
  
  
@@ -759,6 +785,7 @@ You can now configure a default language model for the implementation step of th
  
  
  github.copilot.chat.implementAgent.model
+ 
  
  
  
@@ -774,6 +801,7 @@ If you prefer to use a different model, you can configure this with the
  
  
  inlineChat.defaultModel
+ 
  
  
  
@@ -789,6 +817,7 @@ If you prefer to use a different model, you can configure this with the
  
  
  inlineChat.defaultModel
+ 
  
  
  
@@ -809,6 +838,7 @@ Setting:
  
  
  chat.agentCustomizationSkill.enabled
+ 
  
  
  
@@ -860,6 +890,7 @@ Settings:
  
  
  
+ 
  Open in VS Code
  Open in VS Code Insiders
  
@@ -872,6 +903,7 @@ Settings:
  
  
  
+ 
  Open in VS Code
  Open in VS Code Insiders
  
@@ -879,6 +911,7 @@ Settings:
  
  
  github.copilot.chat.anthropic.contextEditing.enabled
+ 
  
  
  
@@ -896,6 +929,7 @@ Messages API with interleaved thinking: Anthropic models now use the Messages AP
  
  
  
+ 
  Open in VS Code
  Open in VS Code Insiders
  
@@ -909,6 +943,7 @@ Messages API with interleaved thinking: Anthropic models now use the Messages AP
  
  
  
+ 
  Open in VS Code
  Open in VS Code Insiders
  
@@ -922,6 +957,7 @@ Tool search tool: We enabled the tool search tool to help Claude discover and se
  
  
  
+ 
  Open in VS Code
  Open in VS Code Insiders
  
@@ -935,18 +971,6 @@ Tool search tool: We enabled the tool search tool to help Claude discover and se
  
  
  
- Open in VS Code
- Open in VS Code Insiders
- 
- setting.
-Context editing (Experimental): We added support for context editing to help manage longer conversations more efficiently. This feature clears tool results and thinking tokens from previous turns, helping to defer summarization and maintain more context in chat sessions. Try it out by enabling the 
- 
- 
- github.copilot.chat.anthropic.contextEditing.enabled
- 
- 
- 
- 
  
  Open in VS Code
  Open in VS Code Insiders
@@ -956,6 +980,21 @@ Context editing (Experimental): We added support for context editing to help man
  
  
  github.copilot.chat.anthropic.contextEditing.enabled
+ 
+ 
+ 
+ 
+ 
+ 
+ Open in VS Code
+ Open in VS Code Insiders
+ 
+ setting.
+Context editing (Experimental): We added support for context editing to help manage longer conversations more efficiently. This feature clears tool results and thinking tokens from previous turns, helping to defer summarization and maintain more context in chat sessions. Try it out by enabling the 
+ 
+ 
+ github.copilot.chat.anthropic.contextEditing.enabled
+ 
  
  
  
@@ -986,6 +1025,7 @@ Setting:
  
  
  
+ 
  Open in VS Code
  Open in VS Code Insiders
 If you find yourself repeatedly providing the same context to the AI, you can now use Copilot Memory to store and recall important information across sessions.
@@ -993,6 +1033,7 @@ With the new memory tool, your chat can now access and update Copilot Memory dir
  
  
  github.copilot.chat.copilotMemory.enabled
+ 
  
  
  
@@ -1009,6 +1050,7 @@ Setting:
  
  
  github.copilot.chat.advanced.workspace.codeSearchExternalIngest.enabled
+ 
  
  
  
@@ -1040,6 +1082,7 @@ Settings:
  
  
  
+ 
  Open in VS Code
  Open in VS Code Insiders
  
@@ -1047,6 +1090,7 @@ Settings:
  
  
  chat.tools.terminal.sandbox.linuxFileSystem
+ 
  
  
  
@@ -1064,6 +1108,7 @@ Settings:
  
  
  
+ 
  Open in VS Code
  Open in VS Code Insiders
  
@@ -1071,6 +1116,7 @@ Settings:
  
  
  chat.tools.terminal.sandbox.network
+ 
  
  
  
@@ -1084,6 +1130,7 @@ To enable terminal sandboxing, set the
  
  
  chat.tools.terminal.sandbox.enabled
+ 
  
  
  
@@ -1120,10 +1167,9 @@ Settings:
  
  
  
+ 
  Open in VS Code
  Open in VS Code Insiders
- 
- This setting can be managed by your organization. Contact your administrator to change it.ORG
 The following commands are now auto approved by default when terminal auto approve is enabled (
  
  
@@ -1133,10 +1179,11 @@ The following commands are now auto approved by default when terminal auto appro
  
  
  
+ 
  Open in VS Code
  Open in VS Code Insiders
  
- This setting can be managed by your organization. Contact your administrator to change it.ORG):
+ ):
 Set-Location
 dir
 od
@@ -1150,6 +1197,7 @@ Setting:
  
  
  terminal.integrated.stickyScroll.ignoredCommands
+ 
  
  
  
@@ -1170,6 +1218,7 @@ Setting:
  
  
  
+ 
  Open in VS Code
  Open in VS Code Insiders
 When workspace trust is not granted, opening the terminal is blocked to protect the user from attacks where the shell may execute code such as by setting variables via an .env file. Security conscious users often configure their shells to prevent this from being a possibility, so there is a new opt-in setting that allows opening terminals in restricted workspaces.
@@ -1178,6 +1227,7 @@ Setting:
  
  
  terminal.integrated.enableKittyKeyboardProtocol
+ 
  
  
  
@@ -1194,6 +1244,7 @@ Setting:
  
  
  terminal.integrated.enableWin32InputMode
+ 
  
  
  
@@ -1236,6 +1287,7 @@ Settings:
  
  
  
+ 
  Open in VS Code
  Open in VS Code Insiders
  
@@ -1248,6 +1300,7 @@ Settings:
  
  
  
+ 
  Open in VS Code
  Open in VS Code Insiders
  
@@ -1255,6 +1308,7 @@ Settings:
  
  
  livePreview.useIntegratedBrowser
+ 
  
  
  
@@ -1280,6 +1334,7 @@ To try it out, run the Browser: Open Integrated Browser command. If you'd like t
  
  
  
+ 
  Open in VS Code
  Open in VS Code Insiders
  
@@ -1293,6 +1348,7 @@ You can also configure the integrated browser to replace the Simple Browser with
  
  
  
+ 
  Open in VS Code
  Open in VS Code Insiders
  
@@ -1300,6 +1356,7 @@ You can also configure the integrated browser to replace the Simple Browser with
  
  
  livePreview.useIntegratedBrowser
+ 
  
  
  
@@ -1319,12 +1376,14 @@ Setting:
  
  
  
+ 
  Open in VS Code
  Open in VS Code Insiders
 Previously, VS Code would always restore all open editors when reopening a workspace. With the new 
  
  
  workbench.editor.restoreEditors
+ 
  
  
  
@@ -1345,12 +1404,14 @@ Setting:
  
  
  
+ 
  Open in VS Code
  Open in VS Code Insiders
 You can now configure VS Code to always show advanced settings in the Settings editor without having to apply the @tag:advanced filter each time. Enable the 
  
  
  workbench.settings.alwaysShowAdvancedSettings
+ 
  
  
  
@@ -1378,12 +1439,14 @@ Setting:
  
  
  
+ 
  Open in VS Code
  Open in VS Code Insiders
 When using background agents, a git worktree is created in order to isolate the changes. With the new 
  
  
  git.worktreeIncludeFiles
+ 
  
  
  
@@ -1407,12 +1470,14 @@ Setting:
  
  
  
+ 
  Open in VS Code
  Open in VS Code Insiders
 You can now disable the hover popup that appears when you move the mouse over the inline Git blame decoration in the editor. Set 
  
  
  git.blame.editorDecoration.hoverEnabled
+ 
  
  
  
@@ -1432,12 +1497,14 @@ Setting:
  
  
  
+ 
  Open in VS Code
  Open in VS Code Insiders
 To improve security and prevent unintended execution of tasks defined in tasks.json when opening a workspace, the 
  
  
  task.allowAutomaticTasks
+ 
  
  
  
@@ -1451,6 +1518,7 @@ To restore the previous behavior, set
  
  
  task.allowAutomaticTasks
+ 
  
  
  

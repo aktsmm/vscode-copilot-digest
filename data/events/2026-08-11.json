@@ -1,13 +1,213 @@
 {
   "date": "2026-08-11",
-  "generatedAt": "2026-08-11T14:35:32.192Z",
+  "generatedAt": "2026-08-11T22:09:35.527Z",
   "latestRun": {
-    "generatedAt": "2026-08-11T14:35:32.192Z",
-    "newEventsCount": 0,
-    "newEventIds": [],
+    "generatedAt": "2026-08-11T22:09:35.527Z",
+    "newEventsCount": 3,
+    "newEventIds": [
+      "vscode-updates:d5c7988e206938897af4da08e5ce561ec090fd47b61f36c09d472127c58bbf4e",
+      "vscode-release-notes-1-109:e812b8a21ce0ad8faea98bb3bbbdf35d11d94a25ad15b0b4d5293ae65dbe2e1d",
+      "copilot-whats-new:19b2699f0a76750a3e7fd8e9d124d27ad6558108aee9b90ceff5b0d6f6901ef2"
+    ],
     "errorCount": 0,
-    "skippedLowInformationEvents": []
+    "skippedLowInformationEvents": [
+      {
+        "eventId": "github-changelog:https://github.blog/changelog/2026-08-11-github-enterprise-server-3-22-release-candidate",
+        "sourceId": "github-changelog",
+        "title": "GitHub Enterprise Server 3.22 release candidate",
+        "fallbackMarkers": [
+          "GitHub Copilot CLI の更新。ターミナルでの agent 作業、設定、ガバナンス、レビュー補助に関わる変更として、CLI 運用への影響を確認しておきたい。"
+        ]
+      },
+      {
+        "eventId": "github-changelog:https://github.blog/changelog/2026-08-11-copilot-memory-and-ollama-in-github-copilot-for-jetbrains",
+        "sourceId": "github-changelog",
+        "title": "Copilot memory and Ollama in GitHub Copilot for JetBrains",
+        "fallbackMarkers": [
+          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
+        ]
+      },
+      {
+        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-08-11-copilot-memory-and-ollama-in-github-copilot-for-jetbrains",
+        "sourceId": "github-changelog-copilot",
+        "title": "Copilot memory and Ollama in GitHub Copilot for JetBrains",
+        "fallbackMarkers": [
+          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
+        ]
+      },
+      {
+        "eventId": "github-changelog:https://github.blog/changelog/2026-08-11-upcoming-deprecation-of-mai-code-1-flash",
+        "sourceId": "github-changelog",
+        "title": "Upcoming deprecation of MAI-Code-1-Flash",
+        "fallbackMarkers": [
+          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
+        ]
+      },
+      {
+        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-08-11-upcoming-deprecation-of-mai-code-1-flash",
+        "sourceId": "github-changelog-copilot",
+        "title": "Upcoming deprecation of MAI-Code-1-Flash",
+        "fallbackMarkers": [
+          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
+        ]
+      },
+      {
+        "eventId": "github-changelog:https://github.blog/changelog/2026-08-11-mai-code-1-1-flash-available-in-github-copilot",
+        "sourceId": "github-changelog",
+        "title": "MAI-Code-1.1-Flash available in GitHub Copilot",
+        "fallbackMarkers": [
+          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
+        ]
+      },
+      {
+        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-08-11-mai-code-1-1-flash-available-in-github-copilot",
+        "sourceId": "github-changelog-copilot",
+        "title": "MAI-Code-1.1-Flash available in GitHub Copilot",
+        "fallbackMarkers": [
+          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
+        ]
+      },
+      {
+        "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_133",
+        "sourceId": "vscode-feed",
+        "title": "Visual Studio Code 1.133 (Insiders)",
+        "fallbackMarkers": [
+          "Visual Studio Code 関連の更新。日々の開発フローや agent 利用に効く変更点を確認しておきたい。"
+        ]
+      },
+      {
+        "eventId": "github-changelog:https://github.blog/changelog/2026-08-11-per-model-token-breakdown-in-the-usage-report",
+        "sourceId": "github-changelog",
+        "title": "Per-model token breakdown in the usage report",
+        "fallbackMarkers": [
+          "追跡対象ソースの更新。公開内容の変化や運用への影響を継続監視対象として記録している。"
+        ]
+      },
+      {
+        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-08-11-per-model-token-breakdown-in-the-usage-report",
+        "sourceId": "github-changelog-copilot",
+        "title": "Per-model token breakdown in the usage report",
+        "fallbackMarkers": [
+          "追跡対象ソースの更新。公開内容の変化や運用への影響を継続監視対象として記録している。"
+        ]
+      }
+    ]
   },
-  "events": [],
+  "events": [
+    {
+      "eventId": "copilot-whats-new:19b2699f0a76750a3e7fd8e9d124d27ad6558108aee9b90ceff5b0d6f6901ef2",
+      "sourceId": "copilot-whats-new",
+      "sourceName": "GitHub Copilot What's New",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-08-11T22:09:33.061Z",
+      "publishedAt": "2026-08-11T22:09:33.060Z",
+      "title": "GitHub Copilot What's New changed",
+      "url": "https://github.com/features/copilot/whats-new",
+      "summary": "Detected 3 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 3,
+        "headings": [
+          "Aug.11 Release",
+          "Aug.11 Retired",
+          "Aug.11 Improvement"
+        ],
+        "additions": [
+          "H3: Aug.11 Release",
+          "H3: Aug.11 Retired",
+          "H3: Aug.11 Improvement"
+        ]
+      },
+      "headings": [
+        "Changelog",
+        "Filters (0 selected)",
+        "August\n Aug\n 2026",
+        "Aug.11 Release",
+        "Aug.11 Retired",
+        "Aug.11 Release",
+        "Aug.11 Improvement",
+        "Aug.10 Improvement",
+        "Aug.07 Release",
+        "Aug.07 Improvement",
+        "Aug.07 Release",
+        "Aug.07 Improvement"
+      ],
+      "score": 5
+    },
+    {
+      "eventId": "vscode-updates:d5c7988e206938897af4da08e5ce561ec090fd47b61f36c09d472127c58bbf4e",
+      "sourceId": "vscode-updates",
+      "sourceName": "VS Code Updates",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-08-11T22:09:32.433Z",
+      "publishedAt": "2026-08-05T00:00:00.000Z",
+      "title": "VS Code Updates changed",
+      "url": "https://code.visualstudio.com/updates/",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [],
+        "additions": [
+          "Update 1.132.1: The update addresses these security issues."
+        ]
+      },
+      "headings": [
+        "Visual Studio Code 1.132",
+        "Agents",
+        "Agent host",
+        "Agents window",
+        "Side chats with /btw",
+        "Chat",
+        "Terminal output reflow",
+        "Editor experience",
+        "Dictation onboarding and customization",
+        "Markdown diffs in the hybrid Markdown editor (Experimental)",
+        "Commenting in the integrated browser",
+        "Terminal"
+      ],
+      "score": 2
+    },
+    {
+      "eventId": "vscode-release-notes-1-109:e812b8a21ce0ad8faea98bb3bbbdf35d11d94a25ad15b0b4d5293ae65dbe2e1d",
+      "sourceId": "vscode-release-notes-1-109",
+      "sourceName": "VS Code Release Notes 1.109",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-08-11T22:09:32.845Z",
+      "publishedAt": "2026-02-04T00:00:00.000Z",
+      "title": "VS Code Release Notes 1.109 changed",
+      "url": "https://code.visualstudio.com/updates/v1_109",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [],
+        "additions": [
+          "):"
+        ]
+      },
+      "headings": [
+        "January 2026 (version 1.109)",
+        "Upcoming events",
+        "Agent Sessions Day",
+        "Chat UX",
+        "Message steering and queueing (Experimental)",
+        "Anthropic models now show thinking tokens",
+        "Mermaid diagrams in chat responses",
+        "Ask Questions tool (Experimental)",
+        "Plan agent",
+        "Context window details",
+        "Inline chat UX revamp (Preview)",
+        "Model descriptions in the model picker"
+      ],
+      "score": 2
+    }
+  ],
   "errors": []
 }

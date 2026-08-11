@@ -8,21 +8,6 @@ Insiders
 1.126
 1.125
 1.124
-1.123
-1.122
-1.121
-1.120
-1.119
-1.118
-1.117
-1.116
-1.115
-1.114
-1.113
-1.112
-1.111
-February 2026
-January 2026
 View All Releases
 H1: Visual Studio Code 1.130
 Follow us on LinkedIn, X, Bluesky
@@ -53,6 +38,7 @@ We're actively developing the agent host and progressively rolling it out to use
  
  
  
+ 
  Open in VS Code
  Open in VS Code Insiders
  
@@ -61,6 +47,7 @@ As we continue to invest in the agent host, some features might only be availabl
  
  
  chat.agents.claude.preferAgentHost
+ 
  
  
  
@@ -75,6 +62,7 @@ Setting:
  
  
  chat.assistedPermissions.enabled
+ 
  
  
  
@@ -101,12 +89,14 @@ Setting:
  
  
  
+ 
  Open in VS Code
  Open in VS Code Insiders
 Timestamps are shown for chat requests and responses. Hover over the message toolbar to view the timestamp and elapsed time for a chat interaction. You can disable this with 
  
  
  chat.verbose
+ 
  
  
  

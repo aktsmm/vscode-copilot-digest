@@ -8,25 +8,11 @@ Insiders
 1.126
 1.125
 1.124
-1.123
-1.122
-1.121
-1.120
-1.119
-1.118
-1.117
-1.116
-1.115
-1.114
-1.113
-1.112
-1.111
-February 2026
-January 2026
 View All Releases
 H1: Visual Studio Code 1.132
 Follow us on LinkedIn, X, Bluesky
 Release date: August 5, 2026
+Update 1.132.1: The update addresses these security issues.
 Downloads: Windows: x64 Arm64 | Mac: Universal Intel silicon | Linux: deb rpm tarball Arm snap
 Welcome to the 1.132 release of Visual Studio Code. This release brings element-level feedback in the integrated browser, multilingual dictation, side chats, and Markdown diffs in the hybrid Markdown editor.
 Commenting in the integrated browser: Give agents precise feedback by commenting on specific web page elements.
@@ -61,6 +47,7 @@ Setting:
  
  
  
+ 
  Open in VS Code
  Open in VS Code Insiders
 When multiple editor types are available, an editor type dropdown in the Agents window shows the current editor and lets you switch between the available regular and diff editors instead of using the Reopen Editor With command. You can also change the default editor from the dropdown. The dropdown uses the right side of the breadcrumb bar, which also provides file navigation in the Agents window.
@@ -68,6 +55,7 @@ To show the editor type dropdown in editor windows, enable
  
  
  breadcrumbs.showEditorType
+ 
  
  
  
@@ -95,6 +83,7 @@ Setting:
  
  
  
+ 
  Open in VS Code
  Open in VS Code Insiders
 The built-in dictation converts speech to text in chat inputs, editors, and terminals. When you use dictation for the first time, an onboarding experience helps you verify the selected microphone before you start. It shows a live microphone waveform, provides a device picker when multiple microphones are available, and links to dictation settings and customization. You can reopen this experience with Voice Mode: Show Introduction from the Command Palette.
@@ -102,6 +91,7 @@ Dictation now uses multilingual Nemotron 3.5 as its default on-device model. The
  
  
  agents.voice.language
+ 
  
  
  
@@ -138,6 +128,7 @@ The ChatAgentHostEnabled policy is removed, so administrators can no longer cent
  
  
  
+ 
  Open in VS Code
  Open in VS Code Insiders
  
@@ -147,6 +138,7 @@ The ChatAgentHostEnabled policy is removed, so administrators can no longer cent
  
  
  chat.agentHost.enabled
+ 
  
  
  

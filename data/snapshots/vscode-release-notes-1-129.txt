@@ -8,21 +8,6 @@ Insiders
 1.126
 1.125
 1.124
-1.123
-1.122
-1.121
-1.120
-1.119
-1.118
-1.117
-1.116
-1.115
-1.114
-1.113
-1.112
-1.111
-February 2026
-January 2026
 View All Releases
 H1: Visual Studio Code 1.129
 Follow us on LinkedIn, X, Bluesky
@@ -54,6 +39,7 @@ We're actively developing the agent host and starting to roll it out to users in
  
  
  
+ 
  Open in VS Code
  Open in VS Code Insiders
  
@@ -62,6 +48,7 @@ As we continue to invest in the agent host, some new features in these release n
  
  
  chat.agents.claude.preferAgentHost
+ 
  
  
  
@@ -81,6 +68,7 @@ This is an experimental, opt-in layout. To try it, enable
  
  
  sessions.layout.singlePaneDetailPanel
+ 
  
  
  
@@ -118,6 +106,7 @@ With
  
  
  
+ 
  Open in VS Code
  Open in VS Code Insiders
  
@@ -138,12 +127,14 @@ Setting:
  
  
  
+ 
  Open in VS Code
  Open in VS Code Insiders
 You can now preview a modernized VS Code UI that updates the look and feel of the editor workbench. This is currently an experimental feature that you can enable with the 
  
  
  workbench.experimental.modernUI
+ 
  
  
  
@@ -166,6 +157,7 @@ Because this support is part of the agent host, ensure the agent host is enabled
  
  
  
+ 
  Open in VS Code
  Open in VS Code Insiders
  
@@ -177,6 +169,7 @@ To open a diff in another editor, use the Reopen Editor With submenu in the edit
  
  
  workbench.diffEditorAssociations
+ 
  
  
  
