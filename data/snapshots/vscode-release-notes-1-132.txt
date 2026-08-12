@@ -1,4 +1,5 @@
 Insiders
+1.133
 1.132
 1.131
 1.130
@@ -106,7 +107,7 @@ If network restrictions prevent the on-device model from downloading, the error 
 H3: Markdown diffs in the hybrid Markdown editor (Experimental)
 In the previous release, we introduced the hybrid Markdown editor, which combines rendered Markdown with in-place editing and agent-actionable comments. In this release, Markdown diffs can open in the hybrid Markdown editor. The modified document remains editable, while gutter indicators highlight added, changed, and deleted content. You can use the editor type dropdown to switch between text diff and the Markdown editor with diff annotations.
 H3: Commenting in the integrated browser
-To provide feedback on web pages, it is often useful to comment on specific elements. In this release, the integrated browser adds support for selecting web page elements and annotating them with agent feedback. You can trigger this mode by using the keyboard shortcut.
+To provide feedback on web pages, it is often useful to comment on specific elements. In this release, the integrated browser adds support for selecting web page elements and annotating them with agent feedback. You can trigger this mode by using the ⌥⌘C (Windows, Linux Ctrl+Alt+C) keyboard shortcut.
 In this mode, you can select multiple elements and add a comment to each before sending to the chat.
 H2: Terminal
 H3: Better dictation for terminal commands

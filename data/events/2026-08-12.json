@@ -1,13 +1,153 @@
 {
   "date": "2026-08-12",
-  "generatedAt": "2026-08-12T06:49:17.799Z",
+  "generatedAt": "2026-08-12T14:35:49.211Z",
   "latestRun": {
-    "generatedAt": "2026-08-12T06:49:17.799Z",
-    "newEventsCount": 0,
-    "newEventIds": [],
+    "generatedAt": "2026-08-12T14:35:49.211Z",
+    "newEventsCount": 2,
+    "newEventIds": [
+      "vscode-updates:36e4a7bf124e8e803fd7b7850c34c05b0055e0df46bb29c98e13d06620a3df15",
+      "vscode-release-notes-1-109:f1308dc69f6619a7fd56c35f01d4b3ead733ec457a2391e7ac11755afea084ea"
+    ],
     "errorCount": 0,
-    "skippedLowInformationEvents": []
+    "skippedLowInformationEvents": [
+      {
+        "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_134",
+        "sourceId": "vscode-feed",
+        "title": "Visual Studio Code 1.134 (Insiders)",
+        "fallbackMarkers": [
+          "Visual Studio Code 関連の更新。日々の開発フローや agent 利用に効く変更点を確認しておきたい。"
+        ]
+      },
+      {
+        "eventId": "vscode-release-notes-1-133:section:4122c91c92ffff714026210ba5826bb925d5cf8c9dc83ddd146d5d6c5825d8a3",
+        "sourceId": "vscode-release-notes-1-133",
+        "title": "Visual Studio Code 1.133: Agent host",
+        "fallbackMarkers": [
+          "に関する release note 更新。該当 section の内容を個別に追跡している。"
+        ]
+      },
+      {
+        "eventId": "vscode-release-notes-1-133:section:1db87c1d42a10b51b1792276a682795eca800be967c9f24d91201b42a9755b7f",
+        "sourceId": "vscode-release-notes-1-133",
+        "title": "Visual Studio Code 1.133: Mix Anthropic and Copilot models in Claude sessions",
+        "fallbackMarkers": [
+          "に関する release note 更新。該当 section の内容を個別に追跡している。"
+        ]
+      },
+      {
+        "eventId": "vscode-release-notes-1-133:section:4e588990be93608b12d1b30799926a5c5cb887343e85b6335d5c42c402d7423c",
+        "sourceId": "vscode-release-notes-1-133",
+        "title": "Visual Studio Code 1.133: Open the Agents window without GitHub sign-in (Experimental)",
+        "fallbackMarkers": [
+          "に関する release note 更新。該当 section の内容を個別に追跡している。"
+        ]
+      },
+      {
+        "eventId": "vscode-release-notes-1-133:section:dce9c604addf49bce1ba4c50f7d264b886e854b32502e191a3521443bff71e7a",
+        "sourceId": "vscode-release-notes-1-133",
+        "title": "Visual Studio Code 1.133: Sticky scroll for prompts",
+        "fallbackMarkers": [
+          "に関する release note 更新。該当 section の内容を個別に追跡している。"
+        ]
+      }
+    ]
   },
-  "events": [],
+  "events": [
+    {
+      "eventId": "vscode-updates:36e4a7bf124e8e803fd7b7850c34c05b0055e0df46bb29c98e13d06620a3df15",
+      "sourceId": "vscode-updates",
+      "sourceName": "VS Code Updates",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-08-12T14:35:40.306Z",
+      "publishedAt": "2026-08-12T00:00:00.000Z",
+      "title": "VS Code Updates changed",
+      "url": "https://code.visualstudio.com/updates/",
+      "summary": "Detected 46 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 46,
+        "headings": [
+          "Visual Studio Code 1.133",
+          "Mix Anthropic and Copilot models in Claude sessions",
+          "Open the Agents window without GitHub sign-in (Experimental)",
+          "Sticky scroll for prompts",
+          "Editor Experience",
+          "Auto-reload HTML files in the integrated browser",
+          "Deprecated features and settings"
+        ],
+        "additions": [
+          "1.133",
+          "H1: Visual Studio Code 1.133",
+          "Release date: August 12, 2026",
+          "Welcome to the 1.133 release of Visual Studio Code. This release gives you more flexibility in Claude sessions, keeps long chats easier to follow, and refreshes local HTML previews as you work.",
+          "Change model provider for Claude sessions: Switch providers between turns without reconfiguring the agent host.",
+          "Agents window without GitHub sign-in: Use Claude with your existing API key when GitHub sign-in is unavailable.",
+          "Auto-reload HTML files: Preview HTML changes immediately without manual refresh.",
+          "The agent host lets you connect to the same agent session from multiple VS Code windows. It runs agent harnesses in a dedicated process based on the Agent Host Protocol (AHP). The agent host's Copilot agent is powered by the Copilot SDK, which aligns its behavior and functionality with the Copilot CLI, the standalone GitHub Copilot app, and other Copilot products.",
+          "We're actively developing the agent host. The screenshot below shows how to select the Copilot harness on the agent host in the editor window:",
+          "H3: Mix Anthropic and Copilot models in Claude sessions",
+          "Previously, a Claude session ran entirely through either your GitHub Copilot subscription or Claude's existing configuration, such as an API key. Switching providers required reconfiguring the agent host.",
+          "Now, the model picker displays both groups, so you can switch providers between turns. The model you select is used for the next turn. Models under Anthropic bill your API key, and models under Copilot use your Copilot subscription.",
+          "H3: Open the Agents window without GitHub sign-in (Experimental)",
+          "chat.agentHost.allowSignedOutWhenUsable",
+          "The Agents window used to open with a GitHub sign-in prompt you could not dismiss. That blocked anyone whose machine can't reach github.com or anyone who doesn't interact with GitHub. Users with Claude already configured with an API key who don't need GitHub sign-in had this extra step.",
+          "Enable this setting to open the Agents window without signing in to GitHub. GitHub authentication is then associated with individual agents or models instead of the Agents window. In this release, this behavior only supports Claude. Support for Copilot with your own model keys and Codex is planned for future releases."
+        ]
+      },
+      "headings": [
+        "Visual Studio Code 1.133",
+        "Agents",
+        "Agent host",
+        "Mix Anthropic and Copilot models in Claude sessions",
+        "Open the Agents window without GitHub sign-in (Experimental)",
+        "Chat",
+        "Sticky scroll for prompts",
+        "Editor Experience",
+        "Auto-reload HTML files in the integrated browser",
+        "Deprecated features and settings",
+        "Thank you",
+        "Issue tracking"
+      ],
+      "score": 9
+    },
+    {
+      "eventId": "vscode-release-notes-1-109:f1308dc69f6619a7fd56c35f01d4b3ead733ec457a2391e7ac11755afea084ea",
+      "sourceId": "vscode-release-notes-1-109",
+      "sourceName": "VS Code Release Notes 1.109",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-08-12T14:35:41.556Z",
+      "publishedAt": "2026-02-04T00:00:00.000Z",
+      "title": "VS Code Release Notes 1.109 changed",
+      "url": "https://code.visualstudio.com/updates/v1_109",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [],
+        "additions": [
+          "1.133"
+        ]
+      },
+      "headings": [
+        "January 2026 (version 1.109)",
+        "Upcoming events",
+        "Agent Sessions Day",
+        "Chat UX",
+        "Message steering and queueing (Experimental)",
+        "Anthropic models now show thinking tokens",
+        "Mermaid diagrams in chat responses",
+        "Ask Questions tool (Experimental)",
+        "Plan agent",
+        "Context window details",
+        "Inline chat UX revamp (Preview)",
+        "Model descriptions in the model picker"
+      ],
+      "score": 2
+    }
+  ],
   "errors": []
 }
