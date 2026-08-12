@@ -16,6 +16,7 @@ Universe ‘25
 H2: August
  Aug
  2026
+H3: Aug.12 Release
 H3: Aug.11 Release
 H3: Aug.11 Retired
 H3: Aug.11 Release
@@ -36,58 +37,6 @@ H3: Aug.03 Release
 H2: July
  Jul
  2026
-H3: Jul.31 Retired
-H3: Jul.31 Retired
-H3: Jul.31 Improvement
-H3: Jul.30 Release
-H3: Jul.30 Improvement
-H3: Jul.30 Release
-H3: Jul.29 Improvement
-H3: Jul.29 Improvement
-H3: Jul.28 Improvement
-H3: Jul.28 Release
-H3: Jul.27 Release
-H3: Jul.27 Release
-H3: Jul.27 Release
-H3: Jul.24 Release
-H3: Jul.23 Release
-H3: Jul.23 Release
-H3: Jul.23 Release
-H3: Jul.22 Release
-H3: Jul.21 Release
-H3: Jul.20 Improvement
-H3: Jul.20 Improvement
-H3: Jul.17 Release
-H3: Jul.17 Improvement
-H3: Jul.17 Improvement
-H3: Jul.14 Release
-H3: Jul.14 Improvement
-H3: Jul.14 Improvement
-H3: Jul.10 Release
-H3: Jul.09 Release
-H3: Jul.09 Release
-H3: Jul.08 Release
-H3: Jul.08 Release
-H3: Jul.08 Release
-H3: Jul.07 Improvement
-H3: Jul.07 Improvement
-H3: Jul.07 Release
-H3: Jul.07 Improvement
-H3: Jul.07 Release
-H3: Jul.07 Retired
-H3: Jul.02 Improvement
-H3: Jul.02 Retired
-H3: Jul.02 Release
-H3: Jul.02 Improvement
-H3: Jul.02 Release
-H3: Jul.01 Improvement
-H3: Jul.01 Release
-H3: Jul.01 Improvement
-H3: Jul.01 Release
-H3: Jul.01 Release
-H3: Jul.01 Release
-H3: Jul.01 Release
-H3: Jul.01 Improvement
 H2: June
  Jun
  2026

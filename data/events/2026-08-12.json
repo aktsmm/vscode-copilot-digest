@@ -1,58 +1,71 @@
 {
   "date": "2026-08-12",
-  "generatedAt": "2026-08-12T14:35:49.211Z",
+  "generatedAt": "2026-08-12T22:08:05.871Z",
   "latestRun": {
-    "generatedAt": "2026-08-12T14:35:49.211Z",
-    "newEventsCount": 2,
+    "generatedAt": "2026-08-12T22:08:05.871Z",
+    "newEventsCount": 1,
     "newEventIds": [
-      "vscode-updates:36e4a7bf124e8e803fd7b7850c34c05b0055e0df46bb29c98e13d06620a3df15",
-      "vscode-release-notes-1-109:f1308dc69f6619a7fd56c35f01d4b3ead733ec457a2391e7ac11755afea084ea"
+      "copilot-whats-new:f17a6cf6c523fd65975bfddbb5deb2f0c59153f3099dfdda6dbd827b068413fa"
     ],
     "errorCount": 0,
     "skippedLowInformationEvents": [
       {
-        "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_134",
-        "sourceId": "vscode-feed",
-        "title": "Visual Studio Code 1.134 (Insiders)",
+        "eventId": "github-copilot-blog:https://github.blog/?p=98221",
+        "sourceId": "github-copilot-blog",
+        "title": "Write your first prompt with the GitHub Copilot app",
         "fallbackMarkers": [
-          "Visual Studio Code 関連の更新。日々の開発フローや agent 利用に効く変更点を確認しておきたい。"
+          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
         ]
       },
       {
-        "eventId": "vscode-release-notes-1-133:section:4122c91c92ffff714026210ba5826bb925d5cf8c9dc83ddd146d5d6c5825d8a3",
-        "sourceId": "vscode-release-notes-1-133",
-        "title": "Visual Studio Code 1.133: Agent host",
+        "eventId": "github-changelog:https://github.blog/changelog/2026-08-12-agent-plugins-1-0-in-vs-code-copilot-cli-and-the-copilot-app",
+        "sourceId": "github-changelog",
+        "title": "Agent Plugins 1.0 in VS Code, Copilot CLI, and the Copilot app",
         "fallbackMarkers": [
-          "に関する release note 更新。該当 section の内容を個別に追跡している。"
-        ]
-      },
-      {
-        "eventId": "vscode-release-notes-1-133:section:1db87c1d42a10b51b1792276a682795eca800be967c9f24d91201b42a9755b7f",
-        "sourceId": "vscode-release-notes-1-133",
-        "title": "Visual Studio Code 1.133: Mix Anthropic and Copilot models in Claude sessions",
-        "fallbackMarkers": [
-          "に関する release note 更新。該当 section の内容を個別に追跡している。"
-        ]
-      },
-      {
-        "eventId": "vscode-release-notes-1-133:section:4e588990be93608b12d1b30799926a5c5cb887343e85b6335d5c42c402d7423c",
-        "sourceId": "vscode-release-notes-1-133",
-        "title": "Visual Studio Code 1.133: Open the Agents window without GitHub sign-in (Experimental)",
-        "fallbackMarkers": [
-          "に関する release note 更新。該当 section の内容を個別に追跡している。"
-        ]
-      },
-      {
-        "eventId": "vscode-release-notes-1-133:section:dce9c604addf49bce1ba4c50f7d264b886e854b32502e191a3521443bff71e7a",
-        "sourceId": "vscode-release-notes-1-133",
-        "title": "Visual Studio Code 1.133: Sticky scroll for prompts",
-        "fallbackMarkers": [
-          "に関する release note 更新。該当 section の内容を個別に追跡している。"
+          "VS Code チームによる AI 活用や実装改善の解説記事。運用の考え方や設計の背景を押さえる材料になる。"
         ]
       }
     ]
   },
   "events": [
+    {
+      "eventId": "copilot-whats-new:f17a6cf6c523fd65975bfddbb5deb2f0c59153f3099dfdda6dbd827b068413fa",
+      "sourceId": "copilot-whats-new",
+      "sourceName": "GitHub Copilot What's New",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-08-12T22:08:02.021Z",
+      "publishedAt": "2026-08-12T22:08:02.018Z",
+      "title": "GitHub Copilot What's New changed",
+      "url": "https://github.com/features/copilot/whats-new",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [
+          "Aug.12 Release"
+        ],
+        "additions": [
+          "H3: Aug.12 Release"
+        ]
+      },
+      "headings": [
+        "Changelog",
+        "Filters (0 selected)",
+        "August\n Aug\n 2026",
+        "Aug.12 Release",
+        "Aug.11 Release",
+        "Aug.11 Retired",
+        "Aug.11 Release",
+        "Aug.11 Improvement",
+        "Aug.10 Improvement",
+        "Aug.07 Release",
+        "Aug.07 Improvement",
+        "Aug.07 Release"
+      ],
+      "score": 3
+    },
     {
       "eventId": "vscode-updates:36e4a7bf124e8e803fd7b7850c34c05b0055e0df46bb29c98e13d06620a3df15",
       "sourceId": "vscode-updates",
