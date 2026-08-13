@@ -1,0 +1,22 @@
+{
+  "date": "2026-08-13",
+  "generatedAt": "2026-08-13T06:52:03.599Z",
+  "latestRun": {
+    "generatedAt": "2026-08-13T06:52:03.599Z",
+    "newEventsCount": 0,
+    "newEventIds": [],
+    "errorCount": 0,
+    "skippedLowInformationEvents": [
+      {
+        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-08-12-agent-plugins-1-0-in-vs-code-copilot-cli-and-the-copilot-app",
+        "sourceId": "github-changelog-copilot",
+        "title": "Agent Plugins 1.0 in VS Code, Copilot CLI, and the Copilot app",
+        "fallbackMarkers": [
+          "VS Code チームによる AI 活用や実装改善の解説記事。運用の考え方や設計の背景を押さえる材料になる。"
+        ]
+      }
+    ]
+  },
+  "events": [],
+  "errors": []
+}
