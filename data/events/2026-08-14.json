@@ -1,13 +1,81 @@
 {
   "date": "2026-08-14",
-  "generatedAt": "2026-08-14T14:30:55.913Z",
+  "generatedAt": "2026-08-14T21:46:21.595Z",
   "latestRun": {
-    "generatedAt": "2026-08-14T14:30:55.913Z",
-    "newEventsCount": 0,
-    "newEventIds": [],
+    "generatedAt": "2026-08-14T21:46:21.595Z",
+    "newEventsCount": 1,
+    "newEventIds": [
+      "copilot-whats-new:57685e6dd8e8e9348ea19226a0c5350c23dc76673da990f2c8384783745239ee"
+    ],
     "errorCount": 0,
-    "skippedLowInformationEvents": []
+    "skippedLowInformationEvents": [
+      {
+        "eventId": "github-changelog:https://github.blog/changelog/2026-08-14-grok-4-6-is-now-available-in-github-copilot",
+        "sourceId": "github-changelog",
+        "title": "Grok 4.6 is now available in GitHub Copilot",
+        "fallbackMarkers": [
+          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
+        ]
+      },
+      {
+        "eventId": "github-copilot-blog:https://github.blog/?p=98252",
+        "sourceId": "github-copilot-blog",
+        "title": "How to bring your software delivery workflow into GitHub with agent apps",
+        "fallbackMarkers": [
+          "追跡対象ソースの更新。公開内容の変化や運用への影響を継続監視対象として記録している。"
+        ]
+      },
+      {
+        "eventId": "github-changelog:https://github.blog/changelog/2026-08-13-github-copilot-weekly-releases-august-10",
+        "sourceId": "github-changelog",
+        "title": "GitHub Copilot weekly releases — August 10",
+        "fallbackMarkers": [
+          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
+        ]
+      }
+    ]
   },
-  "events": [],
+  "events": [
+    {
+      "eventId": "copilot-whats-new:57685e6dd8e8e9348ea19226a0c5350c23dc76673da990f2c8384783745239ee",
+      "sourceId": "copilot-whats-new",
+      "sourceName": "GitHub Copilot What's New",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-08-14T21:46:18.650Z",
+      "publishedAt": "2026-08-14T21:46:18.649Z",
+      "title": "GitHub Copilot What's New changed",
+      "url": "https://github.com/features/copilot/whats-new",
+      "summary": "Detected 2 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 2,
+        "headings": [
+          "Aug.14 Release",
+          "Aug.13 Release"
+        ],
+        "additions": [
+          "H3: Aug.14 Release",
+          "H3: Aug.13 Release"
+        ]
+      },
+      "headings": [
+        "Changelog",
+        "Filters (0 selected)",
+        "August\n Aug\n 2026",
+        "Aug.14 Release",
+        "Aug.13 Release",
+        "Aug.13 Release",
+        "Aug.12 Release",
+        "Aug.11 Release",
+        "Aug.11 Retired",
+        "Aug.11 Release",
+        "Aug.11 Improvement",
+        "Aug.10 Improvement"
+      ],
+      "score": 4
+    }
+  ],
   "errors": []
 }
