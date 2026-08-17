@@ -1,13 +1,33 @@
 {
   "date": "2026-08-17",
-  "generatedAt": "2026-08-17T05:55:29.057Z",
+  "generatedAt": "2026-08-17T14:01:54.674Z",
   "latestRun": {
-    "generatedAt": "2026-08-17T05:55:29.057Z",
-    "newEventsCount": 0,
-    "newEventIds": [],
+    "generatedAt": "2026-08-17T14:01:54.674Z",
+    "newEventsCount": 1,
+    "newEventIds": [
+      "publickey:tag:www.publickey1.jp,2026://2.8665"
+    ],
     "errorCount": 0,
     "skippedLowInformationEvents": []
   },
-  "events": [],
+  "events": [
+    {
+      "eventId": "publickey:tag:www.publickey1.jp,2026://2.8665",
+      "sourceId": "publickey",
+      "sourceName": "Publickey",
+      "kind": "feed_entry",
+      "detectedAt": "2026-08-17T14:01:52.065Z",
+      "publishedAt": "2026-08-17T13:46:33.000Z",
+      "title": "Visual Studio Code 1.133正式リリース。プロンプトを見失わない固定スクロール、ローカルHTMLファイルの自動リロード、ClaudeとCopilotの混在可能など新機能",
+      "url": "https://www.publickey1.jp/blog/26/visual_studio_code_1133htmlclaudecopilot.html",
+      "summary": "マイクロソフトはオープンソースで開発されているコードエディタの最新版「Visual Studio Code 1.133」（以下、VS Code 1.133）の正式リリースを発表しました。 The latest @code release brings more flexibility to Claude sessions and auto-reload for local HTML previews. Here's what's new: pic.twitte……",
+      "categories": [
+        "開発ツール",
+        "visualstudio"
+      ],
+      "isFutureDated": false,
+      "score": 2
+    }
+  ],
   "errors": []
 }
