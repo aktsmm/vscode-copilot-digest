@@ -1,16 +1,56 @@
 {
   "date": "2026-08-17",
-  "generatedAt": "2026-08-17T14:01:54.674Z",
+  "generatedAt": "2026-08-17T21:46:49.196Z",
   "latestRun": {
-    "generatedAt": "2026-08-17T14:01:54.674Z",
-    "newEventsCount": 1,
+    "generatedAt": "2026-08-17T21:46:49.196Z",
+    "newEventsCount": 2,
     "newEventIds": [
-      "publickey:tag:www.publickey1.jp,2026://2.8665"
+      "docs-github-cloud-agent:e2de67eaf3aa15d079e11f413331365af13e88313a49de0d6eb1ae12b79f0f18",
+      "docs-github-copilot-howtos:6cea735eed252a8d19959e36f67862b0e5ee23dfdd846cac79dd38b15b0ab8b9"
     ],
     "errorCount": 0,
-    "skippedLowInformationEvents": []
+    "skippedLowInformationEvents": [
+      {
+        "eventId": "github-copilot-blog:https://github.blog/?p=98309",
+        "sourceId": "github-copilot-blog",
+        "title": "How canvases make agentic workflows visible, steerable, and cost-efficient",
+        "fallbackMarkers": [
+          "追跡対象ソースの更新。公開内容の変化や運用への影響を継続監視対象として記録している。"
+        ]
+      }
+    ]
   },
   "events": [
+    {
+      "eventId": "docs-github-copilot-howtos:6cea735eed252a8d19959e36f67862b0e5ee23dfdd846cac79dd38b15b0ab8b9",
+      "sourceId": "docs-github-copilot-howtos",
+      "sourceName": "GitHub Docs / Copilot how-tos",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-08-17T21:46:47.369Z",
+      "publishedAt": "2026-08-17T21:46:47.369Z",
+      "title": "GitHub Docs / Copilot how-tos changed",
+      "url": "https://docs.github.com/en/copilot/how-tos",
+      "summary": "Detected 6 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 6,
+        "headings": [],
+        "additions": [
+          "GitHub Copilot integrations",
+          "Integrating Copilot cloud agent with Slack",
+          "Integrating Copilot cloud agent with Teams",
+          "Integrating Copilot cloud agent with Jira",
+          "Integrating Copilot cloud agent with Linear",
+          "Integrating Copilot cloud agent with Azure Boards"
+        ]
+      },
+      "headings": [
+        "How-tos for GitHub Copilot"
+      ],
+      "score": 2
+    },
     {
       "eventId": "publickey:tag:www.publickey1.jp,2026://2.8665",
       "sourceId": "publickey",
@@ -26,6 +66,40 @@
         "visualstudio"
       ],
       "isFutureDated": false,
+      "score": 2
+    },
+    {
+      "eventId": "docs-github-cloud-agent:e2de67eaf3aa15d079e11f413331365af13e88313a49de0d6eb1ae12b79f0f18",
+      "sourceId": "docs-github-cloud-agent",
+      "sourceName": "GitHub Docs / Cloud agent",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-08-17T21:46:46.324Z",
+      "publishedAt": "2026-08-17T21:46:46.323Z",
+      "title": "GitHub Docs / Cloud agent changed",
+      "url": "https://docs.github.com/en/copilot/how-tos/use-copilot-agents/cloud-agent",
+      "summary": "Detected 0 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 0,
+        "headings": [],
+        "additions": []
+      },
+      "headings": [
+        "GitHub Copilot cloud agent",
+        "Starting GitHub Copilot sessions",
+        "Creating automations with Copilot cloud agent",
+        "Managing rationale, confidence, and approvals for issues",
+        "Changing the AI model for GitHub Copilot cloud agent",
+        "Configuring settings for GitHub Copilot cloud agent",
+        "Creating custom agents for Copilot cloud agent in your IDE",
+        "Using Copilot cloud agent on GitHub",
+        "Using Copilot cloud agent on GitHub Mobile",
+        "Using agent apps",
+        "Using Copilot cloud agent in your IDE",
+        "Using Copilot cloud agent via the API"
+      ],
       "score": 2
     }
   ],

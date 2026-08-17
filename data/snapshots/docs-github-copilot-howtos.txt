@@ -112,6 +112,12 @@ Use GitHub Copilot agents
 GitHub Copilot cloud agent
 Code review
 Managing Copilot Memory
+GitHub Copilot integrations
+Integrating Copilot cloud agent with Slack
+Integrating Copilot cloud agent with Teams
+Integrating Copilot cloud agent with Jira
+Integrating Copilot cloud agent with Linear
+Integrating Copilot cloud agent with Azure Boards
 AI models for GitHub Copilot
 Changing the AI model for GitHub Copilot Chat
 Changing the AI model for GitHub Copilot inline suggestions

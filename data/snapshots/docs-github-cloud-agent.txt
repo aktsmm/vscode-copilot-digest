@@ -40,21 +40,6 @@ Start and track Copilot cloud agent sessions from the GitHub CLI.
 H2: Using Copilot cloud agent via the GitHub MCP Server
 Using Copilot cloud agent via the GitHub MCP Server
 Start Copilot cloud agent sessions from any IDE or agentic tool that supports Model Context Protocol (MCP).
-H2: Integrating Copilot cloud agent with Jira
-Integrating Copilot cloud agent with Jira
-You can use the GitHub integration in Jira to provide context and open pull requests, all from within your Jira workspace.
-H2: Integrating Copilot cloud agent with Slack
-Integrating Copilot cloud agent with Slack
-Provide context to the Copilot cloud agent and open pull requests, all from within your Slack workspace.
-H2: Integrating Copilot cloud agent with Teams
-Integrating Copilot cloud agent with Teams
-You can use the GitHub integration in Teams to provide context and open pull requests all from within your Teams channels.
-H2: Integrating Copilot cloud agent with Linear
-Integrating Copilot cloud agent with Linear
-Use the Copilot integration in Linear to provide context, customize how the agent runs, and open pull requests, all from within your Linear workspace.
-H2: Integrating Copilot cloud agent with Azure Boards
-Integrating Copilot cloud agent with Azure Boards
-Use the Copilot integration in Azure Boards to send work items directly to Copilot cloud agent and generate pull requests, all from within your Azure DevOps workspace.
 H2: Using Copilot cloud agent from Raycast
 Using Copilot cloud agent from Raycast
 Start and track Copilot cloud agent sessions from the Raycast launcher.
