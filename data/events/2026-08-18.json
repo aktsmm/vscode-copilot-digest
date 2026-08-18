@@ -1,12 +1,21 @@
 {
   "date": "2026-08-18",
-  "generatedAt": "2026-08-18T14:06:05.286Z",
+  "generatedAt": "2026-08-18T21:44:21.778Z",
   "latestRun": {
-    "generatedAt": "2026-08-18T14:06:05.286Z",
+    "generatedAt": "2026-08-18T21:44:21.778Z",
     "newEventsCount": 0,
     "newEventIds": [],
     "errorCount": 0,
-    "skippedLowInformationEvents": []
+    "skippedLowInformationEvents": [
+      {
+        "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_134",
+        "sourceId": "vscode-feed",
+        "title": "Visual Studio Code 1.134 (Insiders)",
+        "fallbackMarkers": [
+          "Visual Studio Code 関連の更新。日々の開発フローや agent 利用に効く変更点を確認しておきたい。"
+        ]
+      }
+    ]
   },
   "events": [],
   "errors": []
