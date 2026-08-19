@@ -1,28 +1,53 @@
 {
   "date": "2026-08-19",
-  "generatedAt": "2026-08-19T05:52:21.999Z",
+  "generatedAt": "2026-08-19T14:06:27.067Z",
   "latestRun": {
-    "generatedAt": "2026-08-19T05:52:21.999Z",
-    "newEventsCount": 1,
+    "generatedAt": "2026-08-19T14:06:27.067Z",
+    "newEventsCount": 2,
     "newEventIds": [
-      "copilot-whats-new:687f60cc8d1fe331392f04ae8669c452f40cab988ce46cddcf7e5b05cd8075e0"
+      "vscode-updates:e2c46b53d863f8ba23ec38d2acf27ef149c2714144c43fd9879a042334c72ca2",
+      "vscode-release-notes-1-109:628dd3973aa13b4e97ee42eff50a925161c0b8b751c5fc90c0707eb7446fa958"
     ],
     "errorCount": 0,
     "skippedLowInformationEvents": [
       {
-        "eventId": "github-changelog:https://github.blog/changelog/2026-08-18-enterprise-managed-settings-in-github-copilot-for-jetbrains",
-        "sourceId": "github-changelog",
-        "title": "Enterprise managed settings in GitHub Copilot for JetBrains",
+        "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_135",
+        "sourceId": "vscode-feed",
+        "title": "Visual Studio Code 1.135 (Insiders)",
         "fallbackMarkers": [
-          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
+          "Visual Studio Code 関連の更新。日々の開発フローや agent 利用に効く変更点を確認しておきたい。"
         ]
       },
       {
-        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-08-18-enterprise-managed-settings-in-github-copilot-for-jetbrains",
-        "sourceId": "github-changelog-copilot",
-        "title": "Enterprise managed settings in GitHub Copilot for JetBrains",
+        "eventId": "vscode-release-notes-1-134:section:094bb18476ac396cd67d774d4140e100aec0406d96efe352b53b96ab0a88dd57",
+        "sourceId": "vscode-release-notes-1-134",
+        "title": "Visual Studio Code 1.134: Agent host",
         "fallbackMarkers": [
-          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
+          "に関する release note 更新。該当 section の内容を個別に追跡している。"
+        ]
+      },
+      {
+        "eventId": "vscode-release-notes-1-134:section:bd6f50f2c937f839e41e144f0c0c17a2e682a186844a1e59622c2206d579acaa",
+        "sourceId": "vscode-release-notes-1-134",
+        "title": "Visual Studio Code 1.134: Grid layout for chats in a session",
+        "fallbackMarkers": [
+          "に関する release note 更新。該当 section の内容を個別に追跡している。"
+        ]
+      },
+      {
+        "eventId": "vscode-release-notes-1-134:section:f69a4407b8ccaec2ec54336ce74fa95c4066dc9c6966c1dececab465876dfaa8",
+        "sourceId": "vscode-release-notes-1-134",
+        "title": "Visual Studio Code 1.134: Improvements to the side pane layout",
+        "fallbackMarkers": [
+          "に関する release note 更新。該当 section の内容を個別に追跡している。"
+        ]
+      },
+      {
+        "eventId": "vscode-release-notes-1-134:section:0d84b4c2622ee2faf3665e87c4e9289699dae53d858c96a8e0a4a9ec42b94d0c",
+        "sourceId": "vscode-release-notes-1-134",
+        "title": "Visual Studio Code 1.134: Prompt timeline",
+        "fallbackMarkers": [
+          "に関する release note 更新。該当 section の内容を個別に追跡している。"
         ]
       }
     ]
@@ -65,6 +90,102 @@
         "Aug.11 Improvement"
       ],
       "score": 3
+    },
+    {
+      "eventId": "vscode-updates:e2c46b53d863f8ba23ec38d2acf27ef149c2714144c43fd9879a042334c72ca2",
+      "sourceId": "vscode-updates",
+      "sourceName": "VS Code Updates",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-08-19T14:06:23.792Z",
+      "publishedAt": "2026-08-19T00:00:00.000Z",
+      "title": "VS Code Updates changed",
+      "url": "https://code.visualstudio.com/updates/",
+      "summary": "Detected 65 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 65,
+        "headings": [
+          "Visual Studio Code 1.134",
+          "Grid layout for chats in a session",
+          "Improvements to the side pane layout",
+          "Prompt timeline",
+          "Chat",
+          "Find in chat",
+          "Close other editors from a tab",
+          "Open HTML files in the integrated browser by default"
+        ],
+        "additions": [
+          "1.134",
+          "H1: Visual Studio Code 1.134",
+          "Release date: August 19, 2026",
+          "Welcome to the 1.134 release of Visual Studio Code. This release helps you work across windows, organize related chats side by side, and navigate long conversations faster.",
+          "Side-by-side chats: Arrange related chats and subagent chats in groups for easier comparison.",
+          "Prompt timeline: Quickly navigate across prompts and review their file changes.",
+          "Find in chat: Search for text in the complete conversation with ease.",
+          "Preview HTML files: Preview local HTML files directly in VS Code by making the integrated browser their default editor.",
+          "The agent host lets you connect to the same agent session from multiple VS Code windows. It runs agent harnesses in a dedicated process based on the Agent Host Protocol (AHP). The agent host's Copilot agent is powered by the Copilot SDK, which aligns the agent's behavior and functionality with the Copilot CLI, the standalone GitHub Copilot app, and other Copilot products.",
+          "We're actively developing the agent host. The following screenshot shows the Copilot harness selected for an agent host in an editor window:",
+          "H3: Grid layout for chats in a session",
+          "Keep related conversations visible by arranging chats in horizontal or vertical groups. Drag chats or subagent chats into a group to compare results or monitor work side by side. VS Code restores the chat-group layout and focus when you return to the session or reload the window.",
+          "Create a side chat to open a new conversation beside the current chat.",
+          "Drag and drop a subagent chat into a group to view it side by side with the current chat.",
+          "You can also Alt+select a chat in the Chats picker to open it to the side.",
+          "H3: Improvements to the side pane layout"
+        ]
+      },
+      "headings": [
+        "Visual Studio Code 1.134",
+        "Agents",
+        "Agent host",
+        "Grid layout for chats in a session",
+        "Improvements to the side pane layout",
+        "Prompt timeline",
+        "Chat",
+        "Find in chat",
+        "Editor Experience",
+        "Close other editors from a tab",
+        "Open HTML files in the integrated browser by default",
+        "Thank you"
+      ],
+      "score": 10
+    },
+    {
+      "eventId": "vscode-release-notes-1-109:628dd3973aa13b4e97ee42eff50a925161c0b8b751c5fc90c0707eb7446fa958",
+      "sourceId": "vscode-release-notes-1-109",
+      "sourceName": "VS Code Release Notes 1.109",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-08-19T14:06:24.276Z",
+      "publishedAt": "2026-02-04T00:00:00.000Z",
+      "title": "VS Code Release Notes 1.109 changed",
+      "url": "https://code.visualstudio.com/updates/v1_109",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [],
+        "additions": [
+          "1.134"
+        ]
+      },
+      "headings": [
+        "January 2026 (version 1.109)",
+        "Upcoming events",
+        "Agent Sessions Day",
+        "Chat UX",
+        "Message steering and queueing (Experimental)",
+        "Anthropic models now show thinking tokens",
+        "Mermaid diagrams in chat responses",
+        "Ask Questions tool (Experimental)",
+        "Plan agent",
+        "Context window details",
+        "Inline chat UX revamp (Preview)",
+        "Model descriptions in the model picker"
+      ],
+      "score": 2
     }
   ],
   "errors": []

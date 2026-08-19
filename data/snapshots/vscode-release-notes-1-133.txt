@@ -1,4 +1,5 @@
 Insiders
+1.134
 1.133
 1.132
 1.131
@@ -29,6 +30,12 @@ H3: Agent host
 The agent host lets you connect to the same agent session from multiple VS Code windows. It runs agent harnesses in a dedicated process based on the Agent Host Protocol (AHP). The agent host's Copilot agent is powered by the Copilot SDK, which aligns its behavior and functionality with the Copilot CLI, the standalone GitHub Copilot app, and other Copilot products.
 We're actively developing the agent host. The screenshot below shows how to select the Copilot harness on the agent host in the editor window:
 You can learn more in our VS Code Agent Host documentation. If you have any feedback or requests, please let us know by filing an issue.
+H3: Support for the Agent Plugins standard
+Plugins bundle agent customizations into something you can install in one step. The catch has been that every agent tool expected its own layout, so publishing the same skill and MCP server to several tools meant maintaining a separate package for each.
+Agent Plugins 1.0 replaces those per-tool layouts with one open standard, and VS Code was part of its launch on August 6 along with other agent clients. A plugin that follows the standard is a directory with a plugin.json manifest, skills in skills/, and MCP server configuration in mcp.json.
+VS Code loads those portable components, and it also reads Copilot-specific components from the com.github.copilot namespace in the same package:
+Clients that don't implement the namespace ignore it. One package can therefore stay portable and still bring your custom agents, slash commands, rules, and hooks to VS Code, GitHub Copilot CLI, and the GitHub Copilot app.
+Learn more about agent plugins in VS Code.
 H3: Mix Anthropic and Copilot models in Claude sessions
 Previously, a Claude session ran entirely through either your GitHub Copilot subscription or Claude's existing configuration, such as an API key. Switching providers required reconfiguring the agent host.
 Now, the model picker displays both groups, so you can switch providers between turns. The model you select is used for the next turn. Models under Anthropic bill your API key, and models under Copilot use your Copilot subscription.
@@ -112,7 +119,6 @@ Rename Voice Mode voices to approved names PR #329576
 @ShehabSherif0 (Shehab Sherif): Fix operator precedence in timeline pageSize calculation PR #303258
 @SimonSiefke (Simon Siefke): fix: memory leak in PerfModelContentProvider PR #328581
 @SVOG23 (Suraj Vaghela): docs: fix stale relative paths in Claude chat sessions AGENTS.md PR #327612
-@vscodebot-pr (VS Code PR Bot): fix: guard against stale line numbers in test decorations (fixes #328988) PR #328994
 @Xaena53 (Bedirhan ÇETİN): refactor: share the find input toggle navigation PR #329128
 H3: Issue tracking
 Contributions to our issue tracking:
