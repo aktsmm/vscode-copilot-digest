@@ -1,0 +1,39 @@
+{
+  "date": "2026-08-20",
+  "generatedAt": "2026-08-20T05:52:27.427Z",
+  "latestRun": {
+    "generatedAt": "2026-08-20T05:52:27.427Z",
+    "newEventsCount": 1,
+    "newEventIds": [
+      "docs-github-copilot-concepts:4ca587749f78f3217515a2f78e34ba9ad3ac91f054056af6f81ab83363bc5d1e"
+    ],
+    "errorCount": 0,
+    "skippedLowInformationEvents": []
+  },
+  "events": [
+    {
+      "eventId": "docs-github-copilot-concepts:4ca587749f78f3217515a2f78e34ba9ad3ac91f054056af6f81ab83363bc5d1e",
+      "sourceId": "docs-github-copilot-concepts",
+      "sourceName": "GitHub Docs / Copilot concepts",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-08-20T05:52:26.221Z",
+      "publishedAt": "2026-08-20T05:52:26.220Z",
+      "title": "GitHub Docs / Copilot concepts changed",
+      "url": "https://docs.github.com/en/copilot/concepts",
+      "summary": "Detected 0 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 0,
+        "headings": [],
+        "additions": []
+      },
+      "headings": [
+        "Concepts for GitHub Copilot"
+      ],
+      "score": 2
+    }
+  ],
+  "errors": []
+}
