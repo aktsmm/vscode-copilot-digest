@@ -1,16 +1,41 @@
 {
   "date": "2026-08-20",
-  "generatedAt": "2026-08-20T05:52:27.427Z",
+  "generatedAt": "2026-08-20T14:08:16.088Z",
   "latestRun": {
-    "generatedAt": "2026-08-20T05:52:27.427Z",
+    "generatedAt": "2026-08-20T14:08:16.088Z",
     "newEventsCount": 1,
     "newEventIds": [
-      "docs-github-copilot-concepts:4ca587749f78f3217515a2f78e34ba9ad3ac91f054056af6f81ab83363bc5d1e"
+      "docs-github-copilot-concepts:5ed8db6917e58f1ed9e50cefe87eea351702ec9385364bfbc1d48ce1bd3f25a1"
     ],
     "errorCount": 0,
     "skippedLowInformationEvents": []
   },
   "events": [
+    {
+      "eventId": "docs-github-copilot-concepts:5ed8db6917e58f1ed9e50cefe87eea351702ec9385364bfbc1d48ce1bd3f25a1",
+      "sourceId": "docs-github-copilot-concepts",
+      "sourceName": "GitHub Docs / Copilot concepts",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-08-20T14:08:14.578Z",
+      "publishedAt": "2026-08-20T14:08:14.577Z",
+      "title": "GitHub Docs / Copilot concepts changed",
+      "url": "https://docs.github.com/en/copilot/concepts",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [],
+        "additions": [
+          "OpenTelemetry for agent monitoring"
+        ]
+      },
+      "headings": [
+        "Concepts for GitHub Copilot"
+      ],
+      "score": 2
+    },
     {
       "eventId": "docs-github-copilot-concepts:4ca587749f78f3217515a2f78e34ba9ad3ac91f054056af6f81ab83363bc5d1e",
       "sourceId": "docs-github-copilot-concepts",

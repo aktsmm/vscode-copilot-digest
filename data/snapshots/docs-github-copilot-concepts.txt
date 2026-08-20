@@ -21,6 +21,7 @@ OpenAI Codex
 Anthropic Claude
 About agent skills
 Agent management for enterprises
+OpenTelemetry for agent monitoring
 About cloud and local sandboxes for GitHub Copilot
 About GitHub Spark
 GitHub Copilot usage metrics
