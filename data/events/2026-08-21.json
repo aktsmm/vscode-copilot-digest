@@ -1,13 +1,87 @@
 {
   "date": "2026-08-21",
-  "generatedAt": "2026-08-21T14:06:08.556Z",
+  "generatedAt": "2026-08-21T21:45:39.030Z",
   "latestRun": {
-    "generatedAt": "2026-08-21T14:06:08.556Z",
-    "newEventsCount": 0,
-    "newEventIds": [],
+    "generatedAt": "2026-08-21T21:45:39.030Z",
+    "newEventsCount": 1,
+    "newEventIds": [
+      "copilot-whats-new:2a0f474a8a9f5233207885ed3ea87ce21ae68c15bd41bb0fd82f2e647362e2c4"
+    ],
     "errorCount": 0,
-    "skippedLowInformationEvents": []
+    "skippedLowInformationEvents": [
+      {
+        "eventId": "github-changelog:https://github.blog/changelog/2026-08-21-the-new-github-copilot-experience-in-slack",
+        "sourceId": "github-changelog",
+        "title": "The new GitHub Copilot experience in Slack",
+        "fallbackMarkers": [
+          "Copilot CLI の agent 機能に関する更新。custom agent、organization agent、message queueing など、CLI 上で agent 作業を継続・反復しやすくする変更を確認しておきたい。"
+        ]
+      },
+      {
+        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-08-21-the-new-github-copilot-experience-in-slack",
+        "sourceId": "github-changelog-copilot",
+        "title": "The new GitHub Copilot experience in Slack",
+        "fallbackMarkers": [
+          "Copilot CLI の agent 機能に関する更新。custom agent、organization agent、message queueing など、CLI 上で agent 作業を継続・反復しやすくする変更を確認しておきたい。"
+        ]
+      },
+      {
+        "eventId": "github-changelog:https://github.blog/changelog/2026-08-21-shared-agentic-work-with-github-copilot-in-microsoft-teams",
+        "sourceId": "github-changelog",
+        "title": "Shared agentic work with GitHub Copilot in Microsoft Teams",
+        "fallbackMarkers": [
+          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
+        ]
+      },
+      {
+        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-08-21-shared-agentic-work-with-github-copilot-in-microsoft-teams",
+        "sourceId": "github-changelog-copilot",
+        "title": "Shared agentic work with GitHub Copilot in Microsoft Teams",
+        "fallbackMarkers": [
+          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
+        ]
+      }
+    ]
   },
-  "events": [],
+  "events": [
+    {
+      "eventId": "copilot-whats-new:2a0f474a8a9f5233207885ed3ea87ce21ae68c15bd41bb0fd82f2e647362e2c4",
+      "sourceId": "copilot-whats-new",
+      "sourceName": "GitHub Copilot What's New",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-08-21T21:45:37.220Z",
+      "publishedAt": "2026-08-21T21:45:37.219Z",
+      "title": "GitHub Copilot What's New changed",
+      "url": "https://github.com/features/copilot/whats-new",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [
+          "Aug.21 Release"
+        ],
+        "additions": [
+          "H3: Aug.21 Release"
+        ]
+      },
+      "headings": [
+        "Changelog",
+        "Filters (0 selected)",
+        "August\n Aug\n 2026",
+        "Aug.21 Release",
+        "Aug.21 Release",
+        "Aug.18 Release",
+        "Aug.14 Release",
+        "Aug.13 Release",
+        "Aug.13 Release",
+        "Aug.12 Release",
+        "Aug.11 Release",
+        "Aug.11 Retired"
+      ],
+      "score": 3
+    }
+  ],
   "errors": []
 }
