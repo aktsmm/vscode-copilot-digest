@@ -1,13 +1,79 @@
 {
   "date": "2026-08-25",
-  "generatedAt": "2026-08-25T14:14:39.477Z",
+  "generatedAt": "2026-08-25T21:50:15.222Z",
   "latestRun": {
-    "generatedAt": "2026-08-25T14:14:39.477Z",
-    "newEventsCount": 0,
-    "newEventIds": [],
+    "generatedAt": "2026-08-25T21:50:15.222Z",
+    "newEventsCount": 1,
+    "newEventIds": [
+      "copilot-whats-new:ce655398e2b5a56d2a749259f0388b9e6ea72df588fd609164bf1000c072d250"
+    ],
     "errorCount": 0,
-    "skippedLowInformationEvents": []
+    "skippedLowInformationEvents": [
+      {
+        "eventId": "github-changelog:https://github.blog/changelog/2026-08-25-github-copilot-app-customize-tab-is-generally-available",
+        "sourceId": "github-changelog",
+        "title": "GitHub Copilot app Customize tab is generally available",
+        "fallbackMarkers": [
+          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
+        ]
+      },
+      {
+        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-08-25-github-copilot-app-customize-tab-is-generally-available",
+        "sourceId": "github-changelog-copilot",
+        "title": "GitHub Copilot app Customize tab is generally available",
+        "fallbackMarkers": [
+          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
+        ]
+      },
+      {
+        "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_135",
+        "sourceId": "vscode-feed",
+        "title": "Visual Studio Code 1.135 (Insiders)",
+        "fallbackMarkers": [
+          "Visual Studio Code 関連の更新。日々の開発フローや agent 利用に効く変更点を確認しておきたい。"
+        ]
+      }
+    ]
   },
-  "events": [],
+  "events": [
+    {
+      "eventId": "copilot-whats-new:ce655398e2b5a56d2a749259f0388b9e6ea72df588fd609164bf1000c072d250",
+      "sourceId": "copilot-whats-new",
+      "sourceName": "GitHub Copilot What's New",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-08-25T21:50:13.085Z",
+      "publishedAt": "2026-08-25T21:50:13.084Z",
+      "title": "GitHub Copilot What's New changed",
+      "url": "https://github.com/features/copilot/whats-new",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [
+          "Aug.25 Release"
+        ],
+        "additions": [
+          "H3: Aug.25 Release"
+        ]
+      },
+      "headings": [
+        "Changelog",
+        "Filters (0 selected)",
+        "August\n Aug\n 2026",
+        "Aug.25 Release",
+        "Aug.21 Release",
+        "Aug.21 Release",
+        "Aug.18 Release",
+        "Aug.14 Release",
+        "Aug.13 Release",
+        "Aug.13 Release",
+        "Aug.12 Release",
+        "Aug.11 Release"
+      ],
+      "score": 3
+    }
+  ],
   "errors": []
 }
