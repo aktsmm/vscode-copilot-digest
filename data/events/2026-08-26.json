@@ -1,13 +1,106 @@
 {
   "date": "2026-08-26",
-  "generatedAt": "2026-08-26T05:55:33.473Z",
+  "generatedAt": "2026-08-26T14:11:41.504Z",
   "latestRun": {
-    "generatedAt": "2026-08-26T05:55:33.473Z",
-    "newEventsCount": 0,
-    "newEventIds": [],
+    "generatedAt": "2026-08-26T14:11:41.504Z",
+    "newEventsCount": 2,
+    "newEventIds": [
+      "vscode-updates:3892d2cc9f9e59934c5fadce4aae8c2fea26c98b9e8974db7bc27aaf8ba49fdb",
+      "vscode-release-notes-1-109:139d737e1e8b2c3f1ba82be6eb1ce679abf2f5f7fa6140d7a25ff861b376495b"
+    ],
     "errorCount": 0,
-    "skippedLowInformationEvents": []
+    "skippedLowInformationEvents": [
+      {
+        "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_136",
+        "sourceId": "vscode-feed",
+        "title": "Visual Studio Code 1.136 (Insiders)",
+        "fallbackMarkers": [
+          "Visual Studio Code 関連の更新。日々の開発フローや agent 利用に効く変更点を確認しておきたい。"
+        ]
+      },
+      {
+        "eventId": "vscode-feed:https://code.visualstudio.com/blogs/2026/08/26/agent-host-architecture",
+        "sourceId": "vscode-feed",
+        "title": "Introducing the Agent Host for persistent, portable agent sessions",
+        "fallbackMarkers": [
+          "Visual Studio Code 関連の更新。日々の開発フローや agent 利用に効く変更点を確認しておきたい。"
+        ]
+      }
+    ]
   },
-  "events": [],
+  "events": [
+    {
+      "eventId": "vscode-updates:3892d2cc9f9e59934c5fadce4aae8c2fea26c98b9e8974db7bc27aaf8ba49fdb",
+      "sourceId": "vscode-updates",
+      "sourceName": "VS Code Updates",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-08-26T14:11:39.051Z",
+      "publishedAt": "2026-08-19T00:00:00.000Z",
+      "title": "VS Code Updates changed",
+      "url": "https://code.visualstudio.com/updates/",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [],
+        "additions": [
+          "1.135"
+        ]
+      },
+      "headings": [
+        "Visual Studio Code 1.134",
+        "Agents",
+        "Agent host",
+        "Grid layout for chats in a session",
+        "Improvements to the side pane layout",
+        "Prompt timeline",
+        "Chat",
+        "Find in chat",
+        "Editor Experience",
+        "Close other editors from a tab",
+        "Open HTML files in the integrated browser by default",
+        "Thank you"
+      ],
+      "score": 2
+    },
+    {
+      "eventId": "vscode-release-notes-1-109:139d737e1e8b2c3f1ba82be6eb1ce679abf2f5f7fa6140d7a25ff861b376495b",
+      "sourceId": "vscode-release-notes-1-109",
+      "sourceName": "VS Code Release Notes 1.109",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-08-26T14:11:39.206Z",
+      "publishedAt": "2026-02-04T00:00:00.000Z",
+      "title": "VS Code Release Notes 1.109 changed",
+      "url": "https://code.visualstudio.com/updates/v1_109",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [],
+        "additions": [
+          "1.135"
+        ]
+      },
+      "headings": [
+        "January 2026 (version 1.109)",
+        "Upcoming events",
+        "Agent Sessions Day",
+        "Chat UX",
+        "Message steering and queueing (Experimental)",
+        "Anthropic models now show thinking tokens",
+        "Mermaid diagrams in chat responses",
+        "Ask Questions tool (Experimental)",
+        "Plan agent",
+        "Context window details",
+        "Inline chat UX revamp (Preview)",
+        "Model descriptions in the model picker"
+      ],
+      "score": 2
+    }
+  ],
   "errors": []
 }
