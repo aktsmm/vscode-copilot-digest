@@ -1,0 +1,198 @@
+{
+  "date": "2026-08-27",
+  "generatedAt": "2026-08-27T00:55:14.809Z",
+  "latestRun": {
+    "generatedAt": "2026-08-27T00:55:14.809Z",
+    "newEventsCount": 3,
+    "newEventIds": [
+      "vscode-updates:3a5afc339b966676ea0f676210f6719f08b4ff0d27d9034a02c57ec97eb0ea72",
+      "copilot-whats-new:06c3768ac0c76db73f784559444cf8104a58f12df7fe5c926deb973ff7ba8784",
+      "docs-github-copilot-howtos:72fd720f3056f20876c841f18734f943aac997b83b51a76d04c80bbb04b0dbf0"
+    ],
+    "errorCount": 0,
+    "skippedLowInformationEvents": [
+      {
+        "eventId": "github-changelog:https://github.blog/changelog/2026-08-26-global-model-policy-generally-available",
+        "sourceId": "github-changelog",
+        "title": "Global model policy generally available",
+        "fallbackMarkers": [
+          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
+        ]
+      },
+      {
+        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-08-26-global-model-policy-generally-available",
+        "sourceId": "github-changelog-copilot",
+        "title": "Global model policy generally available",
+        "fallbackMarkers": [
+          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
+        ]
+      },
+      {
+        "eventId": "github-copilot-blog:https://github.blog/?p=98460",
+        "sourceId": "github-copilot-blog",
+        "title": "GitHub Copilot app for Beginners: Automate Dependabot pull request triage",
+        "fallbackMarkers": [
+          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
+        ]
+      },
+      {
+        "eventId": "vscode-release-notes-1-135:section:094bb18476ac396cd67d774d4140e100aec0406d96efe352b53b96ab0a88dd57",
+        "sourceId": "vscode-release-notes-1-135",
+        "title": "Visual Studio Code 1.135: Agent host",
+        "fallbackMarkers": [
+          "に関する release note 更新。該当 section の内容を個別に追跡している。"
+        ]
+      },
+      {
+        "eventId": "vscode-release-notes-1-135:section:1d64ff074b2b5845aaa7a25e4c9578d85e2c535d5698d43922801d4e88443828",
+        "sourceId": "vscode-release-notes-1-135",
+        "title": "Visual Studio Code 1.135: Continue external agent sessions in VS Code",
+        "fallbackMarkers": [
+          "に関する release note 更新。該当 section の内容を個別に追跡している。"
+        ]
+      },
+      {
+        "eventId": "vscode-release-notes-1-135:section:78fe5db282d1ff7b5354a0f4ca3e7c60796e9d744674b0ffc81a05d82aef8772",
+        "sourceId": "vscode-release-notes-1-135",
+        "title": "Visual Studio Code 1.135: Rubber Duck (Experimental)",
+        "fallbackMarkers": [
+          "に関する release note 更新。該当 section の内容を個別に追跡している。"
+        ]
+      },
+      {
+        "eventId": "vscode-release-notes-1-135:section:f337f11ae3a981c3e3091cea45517361b5b4512b158f9a2a9bfed3790d6f3642",
+        "sourceId": "vscode-release-notes-1-135",
+        "title": "Visual Studio Code 1.135: Single-pane side layout is now the default",
+        "fallbackMarkers": [
+          "に関する release note 更新。該当 section の内容を個別に追跡している。"
+        ]
+      }
+    ]
+  },
+  "events": [
+    {
+      "eventId": "copilot-whats-new:06c3768ac0c76db73f784559444cf8104a58f12df7fe5c926deb973ff7ba8784",
+      "sourceId": "copilot-whats-new",
+      "sourceName": "GitHub Copilot What's New",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-08-27T00:55:11.549Z",
+      "publishedAt": "2026-08-27T00:55:11.549Z",
+      "title": "GitHub Copilot What's New changed",
+      "url": "https://github.com/features/copilot/whats-new",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [
+          "Aug.26 Improvement"
+        ],
+        "additions": [
+          "H3: Aug.26 Improvement"
+        ]
+      },
+      "headings": [
+        "Changelog",
+        "Filters (0 selected)",
+        "August\n Aug\n 2026",
+        "Aug.26 Improvement",
+        "Aug.25 Release",
+        "Aug.21 Release",
+        "Aug.21 Release",
+        "Aug.18 Release",
+        "Aug.14 Release",
+        "Aug.13 Release",
+        "Aug.13 Release",
+        "Aug.12 Release"
+      ],
+      "score": 3
+    },
+    {
+      "eventId": "vscode-updates:3a5afc339b966676ea0f676210f6719f08b4ff0d27d9034a02c57ec97eb0ea72",
+      "sourceId": "vscode-updates",
+      "sourceName": "VS Code Updates",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-08-27T00:55:11.107Z",
+      "publishedAt": "2026-08-26T00:00:00.000Z",
+      "title": "VS Code Updates changed",
+      "url": "https://code.visualstudio.com/updates/",
+      "summary": "Detected 79 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 79,
+        "headings": [
+          "Visual Studio Code 1.135",
+          "Continue external agent sessions in VS Code",
+          "Rubber Duck (Experimental)",
+          "Single-pane side layout is now the default",
+          "Simplified session controls and information",
+          "Chat",
+          "Editor-style sticky scroll for chat (Experimental)",
+          "View detailed chat turn usage",
+          "Sandboxing for the local agent harness",
+          "Deprecated features and settings"
+        ],
+        "additions": [
+          "H1: Visual Studio Code 1.135",
+          "Follow us on LinkedIn, X, Bluesky, Instagram",
+          "Release date: August 26, 2026",
+          "Welcome to the 1.135 release of Visual Studio Code. This release helps you continue agent sessions across applications, get a second opinion on agent work, and understand chat usage while working in a more streamlined Agents window.",
+          "External agent sessions: Continue recent Copilot or Claude agent sessions from other applications in VS Code.",
+          "Rubber Duck (Experimental): Get a second opinion from a complementary model to surface missed details and edge cases.",
+          "Agents window UX improvements: Work with a streamlined side layout, simplified session controls, and session information that is easier to find.",
+          "Detailed chat usage: View a per-model breakdown of input, cached input, and output tokens for each chat turn.",
+          "Learn more from our VS Code Agent Host documentation and the video below. If you have any feedback or requests, please let us know by filing an issue.",
+          "See it in action in our Agent Host introduction YouTube video.",
+          "H3: Continue external agent sessions in VS Code",
+          "Setting:",
+          "chat.agentSessions.showExternal",
+          "The Sessions list in VS Code can now show recent Copilot or Claude agent sessions that you created in other applications. By default, VS Code shows up to two recently updated external sessions. Select a session from the Sessions list to view the conversation and continue it in VS Code with your Copilot subscription.",
+          "When you open an external session, a banner at the top of the chat lets you configure how many external sessions appear in the Sessions list. You can also use the External submenu in the Sessions list filter to choose which external sessions are shown. Change this preference at any time with the",
+          "setting."
+        ]
+      },
+      "headings": [
+        "Visual Studio Code 1.135",
+        "Agents",
+        "Agent host",
+        "Continue external agent sessions in VS Code",
+        "Rubber Duck (Experimental)",
+        "Single-pane side layout is now the default",
+        "Simplified session controls and information",
+        "Chat",
+        "Editor-style sticky scroll for chat (Experimental)",
+        "View detailed chat turn usage",
+        "Sandboxing for the local agent harness",
+        "Deprecated features and settings"
+      ],
+      "score": 12
+    },
+    {
+      "eventId": "docs-github-copilot-howtos:72fd720f3056f20876c841f18734f943aac997b83b51a76d04c80bbb04b0dbf0",
+      "sourceId": "docs-github-copilot-howtos",
+      "sourceName": "GitHub Docs / Copilot how-tos",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-08-27T00:55:13.637Z",
+      "publishedAt": "2026-08-27T00:55:13.637Z",
+      "title": "GitHub Docs / Copilot how-tos changed",
+      "url": "https://docs.github.com/en/copilot/how-tos",
+      "summary": "Detected 0 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 0,
+        "headings": [],
+        "additions": []
+      },
+      "headings": [
+        "How-tos for GitHub Copilot"
+      ],
+      "score": 2
+    }
+  ],
+  "errors": []
+}

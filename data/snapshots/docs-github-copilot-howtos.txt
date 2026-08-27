@@ -17,7 +17,6 @@ Getting started with prompts for GitHub Copilot Chat in your IDE
 Asking GitHub Copilot questions in your IDE
 Asking GitHub Copilot questions in Windows Terminal
 GitHub Copilot CLI
-Getting started with GitHub Copilot CLI
 Best practices for GitHub Copilot CLI
 Setting up GitHub Copilot CLI
 Use GitHub Copilot CLI
@@ -88,7 +87,6 @@ Enabling or disabling cloud sandboxes for your organization or enterprise
 Using local sandboxing
 Configuring local sandbox settings
 GitHub Copilot app
-Getting started with the GitHub Copilot app
 Customizing the GitHub Copilot app
 Working with agent sessions in the GitHub Copilot app
 Working with canvas extensions in the GitHub Copilot app
