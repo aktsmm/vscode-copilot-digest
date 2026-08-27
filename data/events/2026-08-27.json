@@ -1,75 +1,71 @@
 {
   "date": "2026-08-27",
-  "generatedAt": "2026-08-27T00:55:14.809Z",
+  "generatedAt": "2026-08-27T16:35:46.152Z",
   "latestRun": {
-    "generatedAt": "2026-08-27T00:55:14.809Z",
-    "newEventsCount": 3,
+    "generatedAt": "2026-08-27T16:35:46.152Z",
+    "newEventsCount": 1,
     "newEventIds": [
-      "vscode-updates:3a5afc339b966676ea0f676210f6719f08b4ff0d27d9034a02c57ec97eb0ea72",
-      "copilot-whats-new:06c3768ac0c76db73f784559444cf8104a58f12df7fe5c926deb973ff7ba8784",
-      "docs-github-copilot-howtos:72fd720f3056f20876c841f18734f943aac997b83b51a76d04c80bbb04b0dbf0"
+      "copilot-whats-new:0bf710ba68994906f00d8829e954f7533901b5c30a796b6bc3e810115ef94e28"
     ],
     "errorCount": 0,
     "skippedLowInformationEvents": [
       {
-        "eventId": "github-changelog:https://github.blog/changelog/2026-08-26-global-model-policy-generally-available",
+        "eventId": "github-changelog:https://github.blog/changelog/2026-08-26-enterprise-managed-settings-now-support-autoupdate-for-plugin-marketplaces",
         "sourceId": "github-changelog",
-        "title": "Global model policy generally available",
+        "title": "Enterprise-managed settings now support autoUpdate for plugin marketplaces",
         "fallbackMarkers": [
-          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
+          "追跡対象ソースの更新。公開内容の変化や運用への影響を継続監視対象として記録している。"
         ]
       },
       {
-        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-08-26-global-model-policy-generally-available",
+        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-08-26-enterprise-managed-settings-now-support-autoupdate-for-plugin-marketplaces",
         "sourceId": "github-changelog-copilot",
-        "title": "Global model policy generally available",
+        "title": "Enterprise-managed settings now support autoUpdate for plugin marketplaces",
         "fallbackMarkers": [
-          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
-        ]
-      },
-      {
-        "eventId": "github-copilot-blog:https://github.blog/?p=98460",
-        "sourceId": "github-copilot-blog",
-        "title": "GitHub Copilot app for Beginners: Automate Dependabot pull request triage",
-        "fallbackMarkers": [
-          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
-        ]
-      },
-      {
-        "eventId": "vscode-release-notes-1-135:section:094bb18476ac396cd67d774d4140e100aec0406d96efe352b53b96ab0a88dd57",
-        "sourceId": "vscode-release-notes-1-135",
-        "title": "Visual Studio Code 1.135: Agent host",
-        "fallbackMarkers": [
-          "に関する release note 更新。該当 section の内容を個別に追跡している。"
-        ]
-      },
-      {
-        "eventId": "vscode-release-notes-1-135:section:1d64ff074b2b5845aaa7a25e4c9578d85e2c535d5698d43922801d4e88443828",
-        "sourceId": "vscode-release-notes-1-135",
-        "title": "Visual Studio Code 1.135: Continue external agent sessions in VS Code",
-        "fallbackMarkers": [
-          "に関する release note 更新。該当 section の内容を個別に追跡している。"
-        ]
-      },
-      {
-        "eventId": "vscode-release-notes-1-135:section:78fe5db282d1ff7b5354a0f4ca3e7c60796e9d744674b0ffc81a05d82aef8772",
-        "sourceId": "vscode-release-notes-1-135",
-        "title": "Visual Studio Code 1.135: Rubber Duck (Experimental)",
-        "fallbackMarkers": [
-          "に関する release note 更新。該当 section の内容を個別に追跡している。"
-        ]
-      },
-      {
-        "eventId": "vscode-release-notes-1-135:section:f337f11ae3a981c3e3091cea45517361b5b4512b158f9a2a9bfed3790d6f3642",
-        "sourceId": "vscode-release-notes-1-135",
-        "title": "Visual Studio Code 1.135: Single-pane side layout is now the default",
-        "fallbackMarkers": [
-          "に関する release note 更新。該当 section の内容を個別に追跡している。"
+          "追跡対象ソースの更新。公開内容の変化や運用への影響を継続監視対象として記録している。"
         ]
       }
     ]
   },
   "events": [
+    {
+      "eventId": "copilot-whats-new:0bf710ba68994906f00d8829e954f7533901b5c30a796b6bc3e810115ef94e28",
+      "sourceId": "copilot-whats-new",
+      "sourceName": "GitHub Copilot What's New",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-08-27T16:35:42.159Z",
+      "publishedAt": "2026-08-27T16:35:42.158Z",
+      "title": "GitHub Copilot What's New changed",
+      "url": "https://github.com/features/copilot/whats-new",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [
+          "Aug.26 Improvement"
+        ],
+        "additions": [
+          "H3: Aug.26 Improvement"
+        ]
+      },
+      "headings": [
+        "Changelog",
+        "Filters (0 selected)",
+        "August\n Aug\n 2026",
+        "Aug.26 Improvement",
+        "Aug.26 Improvement",
+        "Aug.25 Release",
+        "Aug.21 Release",
+        "Aug.21 Release",
+        "Aug.18 Release",
+        "Aug.14 Release",
+        "Aug.13 Release",
+        "Aug.13 Release"
+      ],
+      "score": 3
+    },
     {
       "eventId": "copilot-whats-new:06c3768ac0c76db73f784559444cf8104a58f12df7fe5c926deb973ff7ba8784",
       "sourceId": "copilot-whats-new",
