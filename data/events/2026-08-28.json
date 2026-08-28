@@ -1,33 +1,97 @@
 {
   "date": "2026-08-28",
-  "generatedAt": "2026-08-28T17:31:10.627Z",
+  "generatedAt": "2026-08-28T23:09:04.006Z",
   "latestRun": {
-    "generatedAt": "2026-08-28T17:31:10.627Z",
+    "generatedAt": "2026-08-28T23:09:04.006Z",
     "newEventsCount": 1,
     "newEventIds": [
-      "copilot-whats-new:5b5fcb4472631fe6f2adcfc9c8952f7daaa08f2f11d3e42db34e126d9b799f30"
+      "copilot-whats-new:5d9b340fd4505c080338900bf43b2027a6d752fbc2e3c9cfd48ad57c85da94c9"
     ],
     "errorCount": 0,
     "skippedLowInformationEvents": [
       {
-        "eventId": "github-changelog:https://github.blog/changelog/2026-08-27-upcoming-changes-to-github-copilot-policies-and-billing",
+        "eventId": "github-changelog:https://github.blog/changelog/2026-08-28-github-copilot-in-visual-studio-august-update-2",
         "sourceId": "github-changelog",
-        "title": "Upcoming changes to GitHub Copilot policies and billing",
+        "title": "GitHub Copilot in Visual Studio — August update",
+        "fallbackMarkers": [
+          "GitHub Copilot code review のレビュー依頼やコメント処理に関する更新。チームのレビュー運用に影響する可能性がある。"
+        ]
+      },
+      {
+        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-08-28-github-copilot-in-visual-studio-august-update-2",
+        "sourceId": "github-changelog-copilot",
+        "title": "GitHub Copilot in Visual Studio — August update",
+        "fallbackMarkers": [
+          "GitHub Copilot code review のレビュー依頼やコメント処理に関する更新。チームのレビュー運用に影響する可能性がある。"
+        ]
+      },
+      {
+        "eventId": "github-changelog:https://github.blog/changelog/2026-08-28-github-copilot-weekly-releases-august-24",
+        "sourceId": "github-changelog",
+        "title": "GitHub Copilot weekly releases — August 24",
         "fallbackMarkers": [
           "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
         ]
       },
       {
-        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-08-27-upcoming-changes-to-github-copilot-policies-and-billing",
+        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-08-28-github-copilot-weekly-releases-august-24",
         "sourceId": "github-changelog-copilot",
-        "title": "Upcoming changes to GitHub Copilot policies and billing",
+        "title": "GitHub Copilot weekly releases — August 24",
         "fallbackMarkers": [
           "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
+        ]
+      },
+      {
+        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-08-24-copilot-harness-generally-available-in-copilot-for-jetbrains",
+        "sourceId": "github-changelog-copilot",
+        "title": "Copilot harness generally available in Copilot for JetBrains",
+        "fallbackMarkers": [
+          "追跡対象ソースの更新。公開内容の変化や運用への影響を継続監視対象として記録している。"
         ]
       }
     ]
   },
   "events": [
+    {
+      "eventId": "copilot-whats-new:5d9b340fd4505c080338900bf43b2027a6d752fbc2e3c9cfd48ad57c85da94c9",
+      "sourceId": "copilot-whats-new",
+      "sourceName": "GitHub Copilot What's New",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-08-28T23:09:02.249Z",
+      "publishedAt": "2026-08-28T23:09:02.247Z",
+      "title": "GitHub Copilot What's New changed",
+      "url": "https://github.com/features/copilot/whats-new",
+      "summary": "Detected 2 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 2,
+        "headings": [
+          "Aug.28 Release",
+          "Aug.24 Release"
+        ],
+        "additions": [
+          "H3: Aug.28 Release",
+          "H3: Aug.24 Release"
+        ]
+      },
+      "headings": [
+        "Changelog",
+        "Filters (0 selected)",
+        "August\n Aug\n 2026",
+        "Aug.28 Release",
+        "Aug.28 Release",
+        "Aug.28 Improvement",
+        "Aug.27 Improvement",
+        "Aug.26 Improvement",
+        "Aug.26 Improvement",
+        "Aug.25 Release",
+        "Aug.24 Release",
+        "Aug.21 Release"
+      ],
+      "score": 4
+    },
     {
       "eventId": "copilot-whats-new:5b5fcb4472631fe6f2adcfc9c8952f7daaa08f2f11d3e42db34e126d9b799f30",
       "sourceId": "copilot-whats-new",
