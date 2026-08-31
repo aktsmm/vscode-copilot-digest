@@ -1676,6 +1676,10 @@ function patternTitle(title) {
 
   const exactMappings = new Map([
     [
+      "GitHub Copilot What's New changed",
+      "GitHub Copilot What's New の更新",
+    ],
+    [
       "GitHub Copilot for Eclipse is open source",
       "GitHub Copilot for Eclipse がオープンソース化された",
     ],

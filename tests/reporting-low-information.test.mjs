@@ -516,6 +516,14 @@ const mappedCodeReviewEvent = {
     "Copilot code review now supports repository-level AGENTS.md files, and it’s easier to request a review from Copilot on draft pull requests with the Request button.",
   categories: ["Improvement", "copilot"],
 };
+assert.equal(
+  localizedTitle({
+    title: "GitHub Copilot What's New changed",
+    summary: "",
+  }),
+  "GitHub Copilot What's New の更新",
+  "Copilot What's New snapshot titles must be localized",
+);
 assert.doesNotMatch(
   localizedSummary(mappedCodeReviewEvent),
   /英語 summary では/,
