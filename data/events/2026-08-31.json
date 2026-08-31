@@ -1,13 +1,63 @@
 {
   "date": "2026-08-31",
-  "generatedAt": "2026-08-31T11:41:21.205Z",
+  "generatedAt": "2026-08-31T19:34:02.788Z",
   "latestRun": {
-    "generatedAt": "2026-08-31T11:41:21.205Z",
-    "newEventsCount": 0,
-    "newEventIds": [],
+    "generatedAt": "2026-08-31T19:34:02.788Z",
+    "newEventsCount": 1,
+    "newEventIds": [
+      "copilot-whats-new:c675f2ae455002441e33caca9f2b6314fd51a62add0a9bf4355289718ca7412e"
+    ],
     "errorCount": 0,
-    "skippedLowInformationEvents": []
+    "skippedLowInformationEvents": [
+      {
+        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-08-31-github-copilot-in-vs-code-august-2026-releases",
+        "sourceId": "github-changelog-copilot",
+        "title": "GitHub Copilot in VS Code, August 2026 releases",
+        "fallbackMarkers": [
+          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
+        ]
+      }
+    ]
   },
-  "events": [],
+  "events": [
+    {
+      "eventId": "copilot-whats-new:c675f2ae455002441e33caca9f2b6314fd51a62add0a9bf4355289718ca7412e",
+      "sourceId": "copilot-whats-new",
+      "sourceName": "GitHub Copilot What's New",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-08-31T19:33:57.611Z",
+      "publishedAt": "2026-08-31T19:33:57.610Z",
+      "title": "GitHub Copilot What's New changed",
+      "url": "https://github.com/features/copilot/whats-new",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [
+          "Aug.31 Release"
+        ],
+        "additions": [
+          "H3: Aug.31 Release"
+        ]
+      },
+      "headings": [
+        "Changelog",
+        "Filters (0 selected)",
+        "August\n Aug\n 2026",
+        "Aug.31 Release",
+        "Aug.28 Release",
+        "Aug.28 Release",
+        "Aug.28 Improvement",
+        "Aug.27 Improvement",
+        "Aug.26 Improvement",
+        "Aug.26 Improvement",
+        "Aug.25 Release",
+        "Aug.24 Release"
+      ],
+      "score": 3
+    }
+  ],
   "errors": []
 }
