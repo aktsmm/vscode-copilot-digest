@@ -154,5 +154,4 @@ Troubleshooting common issues with GitHub Copilot
 Viewing logs for GitHub Copilot in your environment
 Troubleshooting firewall settings for GitHub Copilot
 Troubleshooting network errors for GitHub Copilot
-Troubleshooting common issues with GitHub Spark
 Troubleshooting slow responses from GitHub Copilot

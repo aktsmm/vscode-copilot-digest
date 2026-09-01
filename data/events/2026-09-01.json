@@ -1,0 +1,72 @@
+{
+  "date": "2026-09-01",
+  "generatedAt": "2026-09-01T00:41:28.548Z",
+  "latestRun": {
+    "generatedAt": "2026-09-01T00:41:28.548Z",
+    "newEventsCount": 2,
+    "newEventIds": [
+      "docs-github-copilot-howtos:1a4796053fbe531781c7f0f365177185bed0eb0f8062fde6f0d9ed90a4a985be",
+      "docs-github-copilot-concepts:e3266f85315a9ce615fa53ab181c189460fbdeafade71b4fe669e5a5afe31598"
+    ],
+    "errorCount": 0,
+    "skippedLowInformationEvents": [
+      {
+        "eventId": "github-changelog:https://github.blog/changelog/2026-08-31-github-copilot-in-vs-code-august-2026-releases",
+        "sourceId": "github-changelog",
+        "title": "GitHub Copilot in VS Code, August 2026 releases",
+        "fallbackMarkers": [
+          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
+        ]
+      }
+    ]
+  },
+  "events": [
+    {
+      "eventId": "docs-github-copilot-concepts:e3266f85315a9ce615fa53ab181c189460fbdeafade71b4fe669e5a5afe31598",
+      "sourceId": "docs-github-copilot-concepts",
+      "sourceName": "GitHub Docs / Copilot concepts",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-09-01T00:41:27.930Z",
+      "publishedAt": "2026-09-01T00:41:27.930Z",
+      "title": "GitHub Docs / Copilot concepts changed",
+      "url": "https://docs.github.com/en/copilot/concepts",
+      "summary": "Detected 0 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 0,
+        "headings": [],
+        "additions": []
+      },
+      "headings": [
+        "Concepts for GitHub Copilot"
+      ],
+      "score": 2
+    },
+    {
+      "eventId": "docs-github-copilot-howtos:1a4796053fbe531781c7f0f365177185bed0eb0f8062fde6f0d9ed90a4a985be",
+      "sourceId": "docs-github-copilot-howtos",
+      "sourceName": "GitHub Docs / Copilot how-tos",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-09-01T00:41:27.278Z",
+      "publishedAt": "2026-09-01T00:41:27.277Z",
+      "title": "GitHub Docs / Copilot how-tos changed",
+      "url": "https://docs.github.com/en/copilot/how-tos",
+      "summary": "Detected 0 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 0,
+        "headings": [],
+        "additions": []
+      },
+      "headings": [
+        "How-tos for GitHub Copilot"
+      ],
+      "score": 2
+    }
+  ],
+  "errors": []
+}
