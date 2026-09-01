@@ -1,24 +1,12 @@
 {
   "date": "2026-09-01",
-  "generatedAt": "2026-09-01T00:41:28.548Z",
+  "generatedAt": "2026-09-01T10:15:38.707Z",
   "latestRun": {
-    "generatedAt": "2026-09-01T00:41:28.548Z",
-    "newEventsCount": 2,
-    "newEventIds": [
-      "docs-github-copilot-howtos:1a4796053fbe531781c7f0f365177185bed0eb0f8062fde6f0d9ed90a4a985be",
-      "docs-github-copilot-concepts:e3266f85315a9ce615fa53ab181c189460fbdeafade71b4fe669e5a5afe31598"
-    ],
+    "generatedAt": "2026-09-01T10:15:38.707Z",
+    "newEventsCount": 0,
+    "newEventIds": [],
     "errorCount": 0,
-    "skippedLowInformationEvents": [
-      {
-        "eventId": "github-changelog:https://github.blog/changelog/2026-08-31-github-copilot-in-vs-code-august-2026-releases",
-        "sourceId": "github-changelog",
-        "title": "GitHub Copilot in VS Code, August 2026 releases",
-        "fallbackMarkers": [
-          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
-        ]
-      }
-    ]
+    "skippedLowInformationEvents": []
   },
   "events": [
     {
