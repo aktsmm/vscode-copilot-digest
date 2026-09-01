@@ -1,14 +1,71 @@
 {
   "date": "2026-09-01",
-  "generatedAt": "2026-09-01T10:15:38.707Z",
+  "generatedAt": "2026-09-01T17:22:58.950Z",
   "latestRun": {
-    "generatedAt": "2026-09-01T10:15:38.707Z",
-    "newEventsCount": 0,
-    "newEventIds": [],
+    "generatedAt": "2026-09-01T17:22:58.950Z",
+    "newEventsCount": 1,
+    "newEventIds": [
+      "copilot-whats-new:013f410c63e1aa8ff2428fbb17e13f83d4501b68e9de7c928f52cef1e61f1571"
+    ],
     "errorCount": 0,
-    "skippedLowInformationEvents": []
+    "skippedLowInformationEvents": [
+      {
+        "eventId": "github-changelog:https://github.blog/changelog/2026-08-31-copilot-model-access-update-for-github-team-plans",
+        "sourceId": "github-changelog",
+        "title": "Copilot model access update for GitHub Team plans",
+        "fallbackMarkers": [
+          "追跡対象ソースの更新。公開内容の変化や運用への影響を継続監視対象として記録している。"
+        ]
+      },
+      {
+        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-08-31-copilot-model-access-update-for-github-team-plans",
+        "sourceId": "github-changelog-copilot",
+        "title": "Copilot model access update for GitHub Team plans",
+        "fallbackMarkers": [
+          "追跡対象ソースの更新。公開内容の変化や運用への影響を継続監視対象として記録している。"
+        ]
+      }
+    ]
   },
   "events": [
+    {
+      "eventId": "copilot-whats-new:013f410c63e1aa8ff2428fbb17e13f83d4501b68e9de7c928f52cef1e61f1571",
+      "sourceId": "copilot-whats-new",
+      "sourceName": "GitHub Copilot What's New",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-09-01T17:22:55.015Z",
+      "publishedAt": "2026-09-01T17:22:55.014Z",
+      "title": "GitHub Copilot What's New changed",
+      "url": "https://github.com/features/copilot/whats-new",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [
+          "Aug.31 Improvement"
+        ],
+        "additions": [
+          "H3: Aug.31 Improvement"
+        ]
+      },
+      "headings": [
+        "Changelog",
+        "Filters (0 selected)",
+        "August\n Aug\n 2026",
+        "Aug.31 Improvement",
+        "Aug.31 Release",
+        "Aug.28 Release",
+        "Aug.28 Release",
+        "Aug.28 Improvement",
+        "Aug.27 Improvement",
+        "Aug.26 Improvement",
+        "Aug.26 Improvement",
+        "Aug.25 Release"
+      ],
+      "score": 3
+    },
     {
       "eventId": "docs-github-copilot-concepts:e3266f85315a9ce615fa53ab181c189460fbdeafade71b4fe669e5a5afe31598",
       "sourceId": "docs-github-copilot-concepts",
