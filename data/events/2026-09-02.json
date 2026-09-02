@@ -1,0 +1,123 @@
+{
+  "date": "2026-09-02",
+  "generatedAt": "2026-09-02T09:44:46.017Z",
+  "latestRun": {
+    "generatedAt": "2026-09-02T09:44:46.017Z",
+    "newEventsCount": 3,
+    "newEventIds": [
+      "github-changelog:https://github.blog/changelog/2026-08-31-selected-github-copilot-models-deprecated",
+      "github-changelog-copilot:https://github.blog/changelog/2026-08-31-selected-github-copilot-models-deprecated",
+      "copilot-whats-new:0aaadcf8e4c27ecddc03ec5ebfb528939f3562ef4f3cf4316200ac5a060a7766"
+    ],
+    "errorCount": 0,
+    "skippedLowInformationEvents": [
+      {
+        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-09-01-set-an-expiration-date-for-individual-user-budgets",
+        "sourceId": "github-changelog-copilot",
+        "title": "Set an expiration date for individual user budgets",
+        "fallbackMarkers": [
+          "追跡対象ソースの更新。公開内容の変化や運用への影響を継続監視対象として記録している。"
+        ]
+      },
+      {
+        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-09-01-copilot-code-review-can-now-approve-pull-requests",
+        "sourceId": "github-changelog-copilot",
+        "title": "Copilot code review can now approve pull requests",
+        "fallbackMarkers": [
+          "GitHub Copilot code review のレビュー依頼やコメント処理に関する更新。チームのレビュー運用に影響する可能性がある。"
+        ]
+      },
+      {
+        "eventId": "github-changelog:https://github.blog/changelog/2026-09-01-claude-fable-5-1-generally-available-in-github-copilot",
+        "sourceId": "github-changelog",
+        "title": "Claude Fable 5.1 is generally available in GitHub Copilot",
+        "fallbackMarkers": [
+          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
+        ]
+      },
+      {
+        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-09-01-claude-fable-5-1-generally-available-in-github-copilot",
+        "sourceId": "github-changelog-copilot",
+        "title": "Claude Fable 5.1 is generally available in GitHub Copilot",
+        "fallbackMarkers": [
+          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
+        ]
+      }
+    ]
+  },
+  "events": [
+    {
+      "eventId": "copilot-whats-new:0aaadcf8e4c27ecddc03ec5ebfb528939f3562ef4f3cf4316200ac5a060a7766",
+      "sourceId": "copilot-whats-new",
+      "sourceName": "GitHub Copilot What's New",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-09-02T09:44:39.138Z",
+      "publishedAt": "2026-09-02T09:44:39.138Z",
+      "title": "GitHub Copilot What's New changed",
+      "url": "https://github.com/features/copilot/whats-new",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [
+          "Aug.31 Retired"
+        ],
+        "additions": [
+          "H3: Aug.31 Retired"
+        ]
+      },
+      "headings": [
+        "Changelog",
+        "Filters (0 selected)",
+        "August\n Aug\n 2026",
+        "Aug.31 Improvement",
+        "Aug.31 Retired",
+        "Aug.31 Release",
+        "Aug.28 Release",
+        "Aug.28 Release",
+        "Aug.28 Improvement",
+        "Aug.27 Improvement",
+        "Aug.26 Improvement",
+        "Aug.26 Improvement"
+      ],
+      "score": 3
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-08-31-selected-github-copilot-models-deprecated",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-09-02T09:44:38.032Z",
+      "publishedAt": "2026-08-31T21:21:40.000Z",
+      "title": "Selected GitHub Copilot models deprecated",
+      "url": "https://github.blog/changelog/2026-08-31-selected-github-copilot-models-deprecated",
+      "summary": "As of today, September 1, 2026, we have deprecated the following models across most GitHub Copilot experiences (including Copilot Chat, inline edits, ask and agent modes, and code completions). Note…\nThe post Selected GitHub Copilot models deprecated appeared first on The GitHub Blog.",
+      "categories": [
+        "Retired",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 5
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-08-31-selected-github-copilot-models-deprecated",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-09-02T09:44:38.474Z",
+      "publishedAt": "2026-08-31T21:21:40.000Z",
+      "title": "Selected GitHub Copilot models deprecated",
+      "url": "https://github.blog/changelog/2026-08-31-selected-github-copilot-models-deprecated",
+      "summary": "As of today, September 1, 2026, we have deprecated the following models across most GitHub Copilot experiences (including Copilot Chat, inline edits, ask and agent modes, and code completions). Note…\nThe post Selected GitHub Copilot models deprecated appeared first on The GitHub Blog.",
+      "categories": [
+        "Retired",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 5
+    }
+  ],
+  "errors": []
+}
