@@ -13,6 +13,12 @@ Platform governance
 Projects & Issues
 Supply chain security
 Universe ‘25
+H2: September
+ Sep
+ 2026
+H3: Sep.01 Improvement
+H3: Sep.01 Release
+H3: Sep.01 Release
 H2: August
  Aug
  2026
