@@ -1,67 +1,97 @@
 {
   "date": "2026-09-02",
-  "generatedAt": "2026-09-02T17:14:59.299Z",
+  "generatedAt": "2026-09-02T23:26:14.785Z",
   "latestRun": {
-    "generatedAt": "2026-09-02T17:14:59.299Z",
-    "newEventsCount": 3,
+    "generatedAt": "2026-09-02T23:26:14.785Z",
+    "newEventsCount": 1,
     "newEventIds": [
-      "vscode-updates:56fcc5c2e5e798a057884cae53f9995130eddb1ff47d6144adb0971b37e927b3",
-      "vscode-release-notes-1-109:fc0e807ee2d137e1486d2ee2a85e7205a09aead7268dc1349459872c835e8afc",
-      "copilot-whats-new:673a3e4ff11d1952e590cca324ab5913e0be040f981f5b00767f37112360a687"
+      "copilot-whats-new:0fb4c0417782a474611c911aca065edbb2811590d8450cbd9900b7612c780584"
     ],
     "errorCount": 0,
     "skippedLowInformationEvents": [
       {
-        "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_137",
-        "sourceId": "vscode-feed",
-        "title": "Visual Studio Code 1.137 (Insiders)",
+        "eventId": "github-changelog:https://github.blog/changelog/2026-09-02-enterprise-managed-settings-support-any-default-model",
+        "sourceId": "github-changelog",
+        "title": "Enterprise-managed settings support any default model",
         "fallbackMarkers": [
-          "Visual Studio Code 関連の更新。日々の開発フローや agent 利用に効く変更点を確認しておきたい。"
+          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
         ]
       },
       {
-        "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_136",
-        "sourceId": "vscode-feed",
-        "title": "Visual Studio Code 1.136",
+        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-09-02-enterprise-managed-settings-support-any-default-model",
+        "sourceId": "github-changelog-copilot",
+        "title": "Enterprise-managed settings support any default model",
         "fallbackMarkers": [
-          "Visual Studio Code のリリース。Copilot、agent、エディタ、ワークベンチ周辺の変更点をまとめて確認できる。"
+          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
         ]
       },
       {
-        "eventId": "vscode-release-notes-1-136:section:63bef3a6006c30fdb2a1a246fb31d32b747ea8f69b905491fa92937c0d70812f",
-        "sourceId": "vscode-release-notes-1-136",
-        "title": "Visual Studio Code 1.136: Multi-root workspaces in editor window (Experimental)",
+        "eventId": "github-changelog:https://github.blog/changelog/2026-09-02-content-exclusions-generally-available-in-copilot-app-and-cli",
+        "sourceId": "github-changelog",
+        "title": "Content exclusions generally available in Copilot app and CLI",
         "fallbackMarkers": [
-          "に関する release note 更新。該当 section の内容を個別に追跡している。"
+          "GitHub Copilot CLI の更新。ターミナルでの agent 作業、設定、ガバナンス、レビュー補助に関わる変更として、CLI 運用への影響を確認しておきたい。"
         ]
       },
       {
-        "eventId": "vscode-release-notes-1-136:section:30b936ec72912ee4a86046a1cb1f5164522d1e08f23049e781f9c2700b505eb4",
-        "sourceId": "vscode-release-notes-1-136",
-        "title": "Visual Studio Code 1.136: Redesigned new-session input",
+        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-09-02-content-exclusions-generally-available-in-copilot-app-and-cli",
+        "sourceId": "github-changelog-copilot",
+        "title": "Content exclusions generally available in Copilot app and CLI",
         "fallbackMarkers": [
-          "に関する release note 更新。該当 section の内容を個別に追跡している。"
+          "GitHub Copilot CLI の更新。ターミナルでの agent 作業、設定、ガバナンス、レビュー補助に関わる変更として、CLI 運用への影響を確認しておきたい。"
         ]
       },
       {
-        "eventId": "vscode-release-notes-1-136:section:27607a4d133acec150235b83dd977abe560739f2a0c46bb35cf523d07b688395",
-        "sourceId": "vscode-release-notes-1-136",
-        "title": "Visual Studio Code 1.136: Improved workspace resolution",
+        "eventId": "github-copilot-blog:https://github.blog/?p=98586",
+        "sourceId": "github-copilot-blog",
+        "title": "How we make AI coding more cost efficient without sacrificing task quality",
         "fallbackMarkers": [
-          "に関する release note 更新。該当 section の内容を個別に追跡している。"
-        ]
-      },
-      {
-        "eventId": "vscode-release-notes-1-136:section:c93387215b6d01d3a207e60d9002ae7f51fe316a343d973a91ff9811606cdd15",
-        "sourceId": "vscode-release-notes-1-136",
-        "title": "Visual Studio Code 1.136: Navigate related chats and sessions",
-        "fallbackMarkers": [
-          "に関する release note 更新。該当 section の内容を個別に追跡している。"
+          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
         ]
       }
     ]
   },
   "events": [
+    {
+      "eventId": "copilot-whats-new:0fb4c0417782a474611c911aca065edbb2811590d8450cbd9900b7612c780584",
+      "sourceId": "copilot-whats-new",
+      "sourceName": "GitHub Copilot What's New",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-09-02T23:26:10.107Z",
+      "publishedAt": "2026-09-02T23:26:10.105Z",
+      "title": "GitHub Copilot What's New changed",
+      "url": "https://github.com/features/copilot/whats-new",
+      "summary": "Detected 2 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 2,
+        "headings": [
+          "Sep.02 Improvement",
+          "Sep.02 Release"
+        ],
+        "additions": [
+          "H3: Sep.02 Improvement",
+          "H3: Sep.02 Release"
+        ]
+      },
+      "headings": [
+        "Changelog",
+        "Filters (0 selected)",
+        "September\n Sep\n 2026",
+        "Sep.02 Improvement",
+        "Sep.02 Release",
+        "Sep.01 Improvement",
+        "Sep.01 Release",
+        "Sep.01 Release",
+        "August\n Aug\n 2026",
+        "Aug.31 Improvement",
+        "Aug.31 Retired",
+        "Aug.31 Release"
+      ],
+      "score": 4
+    },
     {
       "eventId": "copilot-whats-new:673a3e4ff11d1952e590cca324ab5913e0be040f981f5b00767f37112360a687",
       "sourceId": "copilot-whats-new",

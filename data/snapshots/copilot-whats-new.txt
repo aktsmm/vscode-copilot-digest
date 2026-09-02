@@ -16,6 +16,8 @@ Universe ‘25
 H2: September
  Sep
  2026
+H3: Sep.02 Improvement
+H3: Sep.02 Release
 H3: Sep.01 Improvement
 H3: Sep.01 Release
 H3: Sep.01 Release
