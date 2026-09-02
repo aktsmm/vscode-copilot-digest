@@ -779,6 +779,10 @@ const exactSummaryMappings = {
     ja: "GitHub Copilot for Eclipse のコードが MIT ライセンスで公開され、オープンソースとして GitHub 上で参照できるようになった。Eclipse 向け拡張の実装を確認しながら導入や拡張方針を判断しやすくなる。",
     en: "GitHub Copilot for Eclipse is now open source under the MIT license, with source code published on GitHub for direct inspection. Teams can review implementation details before deciding rollout or customization plans.",
   },
+  "Selected GitHub Copilot models deprecated": {
+    ja: "2026年9月1日付けで Gemini 3.1 Pro、Claude Opus 4.5/4.6、Claude Sonnet 4.5/4.6、Raptor Mini が GitHub Copilot の主要体験（Chat・インライン編集・ask/agentモード・コード補完）から廃止された。代替は Gemini 3.7 Flash、Claude Opus 4.7/4.8/5、Claude Sonnet 5、MAI-Code-1.1-Flash。個人の年間契約プランでは Claude Sonnet 4.6 が引き続き利用できる。",
+    en: "As of September 1, 2026, GitHub deprecated Gemini 3.1 Pro, Claude Opus 4.5/4.6, Claude Sonnet 4.5/4.6, and Raptor Mini from most GitHub Copilot experiences (Chat, inline edits, ask/agent modes, and code completions). Suggested alternatives are Gemini 3.7 Flash, Claude Opus 4.7/4.8/5, Claude Sonnet 5, and MAI-Code-1.1-Flash, though Claude Sonnet 4.6 remains available to individual subscribers on annual plans.",
+  },
 };
 
 const exactImportanceMappings = {
@@ -1523,6 +1527,10 @@ const exactImportanceMappings = {
       ja: "agent 実行の observability を既存の monitoring インフラへ統合しやすくなるため、長時間タスクや分散型 agent の監視体制を整えたいチームに直接効く更新です。",
       en: "This is directly useful for teams building observability for long-running or distributed agent workflows, as the prebuilt Grafana dashboard reduces the time needed to instrument agent session tracing.",
     },
+  "Selected GitHub Copilot models deprecated": {
+    ja: "6モデルが同時に廃止対象になったため、model policy で明示指定している組織は代替モデルの有効化と利用ガイドの見直しが必要です。個人の年間契約プランでは Claude Sonnet 4.6 が例外的に残る点にも注意してください。",
+    en: "Because six models are deprecated at once, organizations that pin specific models via policy need to enable the replacements and update usage guidance promptly. Note the exception that individual annual-plan subscribers keep access to Claude Sonnet 4.6.",
+  },
 };
 
 function toDateOnly(value) {
@@ -1986,6 +1994,10 @@ function patternTitle(title) {
     [
       "Start Copilot cloud agent tasks via the REST API",
       "Copilot cloud agent のタスクを REST API から開始できるようになった",
+    ],
+    [
+      "Selected GitHub Copilot models deprecated",
+      "Selected GitHub Copilot models が廃止された",
     ],
   ]);
 
