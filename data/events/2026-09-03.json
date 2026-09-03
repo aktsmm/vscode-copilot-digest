@@ -1,26 +1,33 @@
 {
   "date": "2026-09-03",
-  "generatedAt": "2026-09-03T17:06:45.195Z",
+  "generatedAt": "2026-09-03T23:22:36.340Z",
   "latestRun": {
-    "generatedAt": "2026-09-03T17:06:45.195Z",
-    "newEventsCount": 2,
+    "generatedAt": "2026-09-03T23:22:36.340Z",
+    "newEventsCount": 1,
     "newEventIds": [
-      "vscode-updates:e197380af5f46eb5f60295f8b67e8933ee40da5d54c7bf72633be3b882c81cae",
-      "docs-github-copilot-concepts:305dc42475c9e4a13036467ef2d2d75a552aabbeb07890de036515213d42e35b"
+      "copilot-whats-new:4967f639a012654108c19d3fb33bd9d6b887ff5e8810e48993ca2f508cfbc7cb"
     ],
     "errorCount": 0,
     "skippedLowInformationEvents": [
       {
-        "eventId": "github-copilot-blog:https://github.blog/?p=98638",
-        "sourceId": "github-copilot-blog",
-        "title": "GitHub Copilot app for Beginners: Run several agents at once",
+        "eventId": "github-changelog:https://github.blog/changelog/2026-09-03-upcoming-deprecation-of-selected-github-copilot-models",
+        "sourceId": "github-changelog",
+        "title": "Upcoming deprecation of selected GitHub Copilot models",
         "fallbackMarkers": [
           "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
         ]
       },
       {
-        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-09-03-reopening-copilot-business-and-enterprise-signups",
-        "sourceId": "github-changelog-copilot",
+        "eventId": "github-changelog:https://github.blog/changelog/2026-09-03-gemini-3-8-flash-is-now-available-in-github-copilot",
+        "sourceId": "github-changelog",
+        "title": "Gemini 3.8 Flash is now available in GitHub Copilot",
+        "fallbackMarkers": [
+          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
+        ]
+      },
+      {
+        "eventId": "github-changelog:https://github.blog/changelog/2026-09-03-reopening-copilot-business-and-enterprise-signups",
+        "sourceId": "github-changelog",
         "title": "Reopening Copilot Business and Enterprise signups",
         "fallbackMarkers": [
           "追跡対象ソースの更新。公開内容の変化や運用への影響を継続監視対象として記録している。"
@@ -29,6 +36,46 @@
     ]
   },
   "events": [
+    {
+      "eventId": "copilot-whats-new:4967f639a012654108c19d3fb33bd9d6b887ff5e8810e48993ca2f508cfbc7cb",
+      "sourceId": "copilot-whats-new",
+      "sourceName": "GitHub Copilot What's New",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-09-03T23:22:31.537Z",
+      "publishedAt": "2026-09-03T23:22:31.536Z",
+      "title": "GitHub Copilot What's New changed",
+      "url": "https://github.com/features/copilot/whats-new",
+      "summary": "Detected 2 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 2,
+        "headings": [
+          "Sep.03 Retired",
+          "Sep.03 Release"
+        ],
+        "additions": [
+          "H3: Sep.03 Retired",
+          "H3: Sep.03 Release"
+        ]
+      },
+      "headings": [
+        "Changelog",
+        "Filters (0 selected)",
+        "September\n Sep\n 2026",
+        "Sep.03 Retired",
+        "Sep.03 Release",
+        "Sep.03 Release",
+        "Sep.02 Improvement",
+        "Sep.02 Release",
+        "Sep.01 Improvement",
+        "Sep.01 Release",
+        "Sep.01 Release",
+        "August\n Aug\n 2026"
+      ],
+      "score": 4
+    },
     {
       "eventId": "vscode-updates:e197380af5f46eb5f60295f8b67e8933ee40da5d54c7bf72633be3b882c81cae",
       "sourceId": "vscode-updates",
