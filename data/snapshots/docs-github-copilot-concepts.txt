@@ -56,9 +56,8 @@ Base and long-term support (LTS) models
 Usage limits for GitHub Copilot
 GitHub Copilot billing
 Usage-based billing for individuals
-Usage-based billing for organizations and enterprises
+GitHub Copilot billing for organizations and enterprises
 Budgets for usage-based billing
-About billing for GitHub Copilot in organizations and enterprises
 About enterprise accounts for Copilot Business
 GitHub Copilot policies for enterprises and organizations
 MCP server usage in your company

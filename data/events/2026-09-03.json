@@ -1,13 +1,95 @@
 {
   "date": "2026-09-03",
-  "generatedAt": "2026-09-03T09:57:20.744Z",
+  "generatedAt": "2026-09-03T17:06:45.195Z",
   "latestRun": {
-    "generatedAt": "2026-09-03T09:57:20.744Z",
-    "newEventsCount": 0,
-    "newEventIds": [],
+    "generatedAt": "2026-09-03T17:06:45.195Z",
+    "newEventsCount": 2,
+    "newEventIds": [
+      "vscode-updates:e197380af5f46eb5f60295f8b67e8933ee40da5d54c7bf72633be3b882c81cae",
+      "docs-github-copilot-concepts:305dc42475c9e4a13036467ef2d2d75a552aabbeb07890de036515213d42e35b"
+    ],
     "errorCount": 0,
-    "skippedLowInformationEvents": []
+    "skippedLowInformationEvents": [
+      {
+        "eventId": "github-copilot-blog:https://github.blog/?p=98638",
+        "sourceId": "github-copilot-blog",
+        "title": "GitHub Copilot app for Beginners: Run several agents at once",
+        "fallbackMarkers": [
+          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
+        ]
+      },
+      {
+        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-09-03-reopening-copilot-business-and-enterprise-signups",
+        "sourceId": "github-changelog-copilot",
+        "title": "Reopening Copilot Business and Enterprise signups",
+        "fallbackMarkers": [
+          "追跡対象ソースの更新。公開内容の変化や運用への影響を継続監視対象として記録している。"
+        ]
+      }
+    ]
   },
-  "events": [],
+  "events": [
+    {
+      "eventId": "vscode-updates:e197380af5f46eb5f60295f8b67e8933ee40da5d54c7bf72633be3b882c81cae",
+      "sourceId": "vscode-updates",
+      "sourceName": "VS Code Updates",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-09-03T17:06:41.383Z",
+      "publishedAt": "2026-09-02T00:00:00.000Z",
+      "title": "VS Code Updates changed",
+      "url": "https://code.visualstudio.com/updates/",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [],
+        "additions": [
+          "Update 1.136.1: The update addresses these issues."
+        ]
+      },
+      "headings": [
+        "Visual Studio Code 1.136",
+        "The Story of VS Code: World Premiere",
+        "Agents",
+        "Multi-root workspaces in editor window (Experimental)",
+        "Redesigned new-session input",
+        "Improved workspace resolution",
+        "Navigate related chats and sessions",
+        "Readable breadcrumbs for session files",
+        "Chat backgrounds in the Agents window (Experimental)",
+        "Agent session notifications",
+        "Agent Merge (Preview)",
+        "Agent host"
+      ],
+      "score": 2
+    },
+    {
+      "eventId": "docs-github-copilot-concepts:305dc42475c9e4a13036467ef2d2d75a552aabbeb07890de036515213d42e35b",
+      "sourceId": "docs-github-copilot-concepts",
+      "sourceName": "GitHub Docs / Copilot concepts",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-09-03T17:06:44.230Z",
+      "publishedAt": "2026-09-03T17:06:44.230Z",
+      "title": "GitHub Docs / Copilot concepts changed",
+      "url": "https://docs.github.com/en/copilot/concepts",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [],
+        "additions": [
+          "GitHub Copilot billing for organizations and enterprises"
+        ]
+      },
+      "headings": [
+        "Concepts for GitHub Copilot"
+      ],
+      "score": 2
+    }
+  ],
   "errors": []
 }

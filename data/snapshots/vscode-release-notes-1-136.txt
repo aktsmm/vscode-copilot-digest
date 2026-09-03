@@ -16,6 +16,7 @@ View All Releases
 H1: Visual Studio Code 1.136
 Follow us on LinkedIn, X, Bluesky, Instagram
 Release date: September 2, 2026
+Update 1.136.1: The update addresses these issues.
 Downloads: Windows: x64 Arm64 | Mac: Universal Intel silicon | Linux: deb rpm tarball Arm snap
 Welcome to the 1.136 release of Visual Studio Code. This release helps you finish pull requests with agents and manage agent work across complex workspaces and related chats.
 Agent Merge (Preview): Resolve review feedback, failed checks, and merge conflicts until your pull request is ready to merge.
