@@ -1125,6 +1125,10 @@ const exactImportanceMappings = {
     ja: "固定ハブページの変化から新しい release note 導線や主要見出しを早く拾えるので、監視入口として意味があります。",
     en: "This matters because changes on the landing page can surface new release-note entry points and major themes before you inspect every page in detail.",
   },
+  "GitHub Docs / Copilot concepts changed": {
+    ja: "組織・Enterprise の Copilot 請求を確認する公式ドキュメントの追加を把握できるので、管理者が契約や請求運用を見直す際の参照先になります。",
+    en: "This matters because the added organization and enterprise billing documentation gives administrators an official reference when reviewing Copilot contracts and billing operations.",
+  },
   "Visual Studio Code 1.115: Browser agent tools improvements": {
     ja: "agent がブラウザー操作をした後の追跡と再介入がしやすくなるので、Playwright 系の検証フローを安定させやすい更新です。",
     en: "This matters because browser-agent workflows become easier to inspect and resume, which reduces friction in Playwright-heavy validation flows.",
