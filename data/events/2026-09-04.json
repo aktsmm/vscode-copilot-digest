@@ -1,22 +1,87 @@
 {
   "date": "2026-09-04",
-  "generatedAt": "2026-09-04T16:57:19.616Z",
+  "generatedAt": "2026-09-04T23:07:11.071Z",
   "latestRun": {
-    "generatedAt": "2026-09-04T16:57:19.616Z",
-    "newEventsCount": 0,
-    "newEventIds": [],
+    "generatedAt": "2026-09-04T23:07:11.071Z",
+    "newEventsCount": 1,
+    "newEventIds": [
+      "copilot-whats-new:1ccdd1e8d648aca4eda3d41403785cebb25ac4fe5823f9c59cc50e3bf1499bfd"
+    ],
     "errorCount": 0,
     "skippedLowInformationEvents": [
       {
-        "eventId": "github-copilot-blog:https://github.blog/?p=98615",
-        "sourceId": "github-copilot-blog",
-        "title": "Project HydraFusion: Frontier quality via multi-model orchestration",
+        "eventId": "github-changelog:https://github.blog/changelog/2026-09-04-github-copilot-weekly-releases-august-31",
+        "sourceId": "github-changelog",
+        "title": "GitHub Copilot weekly releases — August 31",
+        "fallbackMarkers": [
+          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
+        ]
+      },
+      {
+        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-09-04-github-copilot-weekly-releases-august-31",
+        "sourceId": "github-changelog-copilot",
+        "title": "GitHub Copilot weekly releases — August 31",
+        "fallbackMarkers": [
+          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
+        ]
+      },
+      {
+        "eventId": "github-changelog:https://github.blog/changelog/2026-09-04-gpt-6-astra-is-generally-available-in-github-copilot",
+        "sourceId": "github-changelog",
+        "title": "GPT-6 Astra is generally available in GitHub Copilot",
+        "fallbackMarkers": [
+          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
+        ]
+      },
+      {
+        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-09-04-gpt-6-astra-is-generally-available-in-github-copilot",
+        "sourceId": "github-changelog-copilot",
+        "title": "GPT-6 Astra is generally available in GitHub Copilot",
         "fallbackMarkers": [
           "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
         ]
       }
     ]
   },
-  "events": [],
+  "events": [
+    {
+      "eventId": "copilot-whats-new:1ccdd1e8d648aca4eda3d41403785cebb25ac4fe5823f9c59cc50e3bf1499bfd",
+      "sourceId": "copilot-whats-new",
+      "sourceName": "GitHub Copilot What's New",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-09-04T23:07:08.035Z",
+      "publishedAt": "2026-09-04T23:07:08.034Z",
+      "title": "GitHub Copilot What's New changed",
+      "url": "https://github.com/features/copilot/whats-new",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [
+          "Sep.04 Release"
+        ],
+        "additions": [
+          "H3: Sep.04 Release"
+        ]
+      },
+      "headings": [
+        "Changelog",
+        "Filters (0 selected)",
+        "September\n Sep\n 2026",
+        "Sep.04 Release",
+        "Sep.04 Release",
+        "Sep.03 Retired",
+        "Sep.03 Release",
+        "Sep.03 Release",
+        "Sep.02 Improvement",
+        "Sep.02 Release",
+        "Sep.01 Improvement",
+        "Sep.01 Release"
+      ],
+      "score": 3
+    }
+  ],
   "errors": []
 }
