@@ -1,13 +1,11 @@
 {
   "date": "2026-09-07",
-  "generatedAt": "2026-09-07T18:19:26.578Z",
+  "generatedAt": "2026-09-07T18:22:01.056Z",
   "latestRun": {
-    "generatedAt": "2026-09-07T18:19:26.578Z",
-    "newEventsCount": 1,
-    "newEventIds": [
-      "docs-github-copilot-concepts:cc2dc88d51473008122dfdfb670050977b79f380ab2bc9aa5ba71f6d74113806"
-    ],
-    "errorCount": 0,
+    "generatedAt": "2026-09-07T18:22:01.056Z",
+    "newEventsCount": 0,
+    "newEventIds": [],
+    "errorCount": 4,
     "skippedLowInformationEvents": []
   },
   "events": [
@@ -46,5 +44,22 @@
       "score": 2
     }
   ],
-  "errors": []
+  "errors": [
+    {
+      "sourceId": "vscode-feed",
+      "message": "fetch failed"
+    },
+    {
+      "sourceId": "vscode-updates",
+      "message": "fetch failed"
+    },
+    {
+      "sourceId": "vscode-release-notes-1-109",
+      "message": "fetch failed"
+    },
+    {
+      "sourceId": "publickey",
+      "message": "fetch failed"
+    }
+  ]
 }
