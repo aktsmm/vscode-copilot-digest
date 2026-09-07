@@ -1,13 +1,50 @@
 {
   "date": "2026-09-07",
-  "generatedAt": "2026-09-07T10:31:42.757Z",
+  "generatedAt": "2026-09-07T18:19:26.578Z",
   "latestRun": {
-    "generatedAt": "2026-09-07T10:31:42.757Z",
-    "newEventsCount": 0,
-    "newEventIds": [],
+    "generatedAt": "2026-09-07T18:19:26.578Z",
+    "newEventsCount": 1,
+    "newEventIds": [
+      "docs-github-copilot-concepts:cc2dc88d51473008122dfdfb670050977b79f380ab2bc9aa5ba71f6d74113806"
+    ],
     "errorCount": 0,
     "skippedLowInformationEvents": []
   },
-  "events": [],
+  "events": [
+    {
+      "eventId": "docs-github-copilot-concepts:cc2dc88d51473008122dfdfb670050977b79f380ab2bc9aa5ba71f6d74113806",
+      "sourceId": "docs-github-copilot-concepts",
+      "sourceName": "GitHub Docs / Copilot concepts",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-09-07T18:19:26.023Z",
+      "publishedAt": "2026-09-07T18:19:26.022Z",
+      "title": "GitHub Docs / Copilot concepts changed",
+      "url": "https://docs.github.com/en/copilot/concepts",
+      "summary": "Detected 10 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 10,
+        "headings": [],
+        "additions": [
+          "Network settings for GitHub Copilot",
+          "Enterprise concepts for GitHub Copilot",
+          "About default availability of Copilot models",
+          "FedRAMP-compliant models for GitHub Copilot",
+          "Learning about new features and models",
+          "Agent management for enterprises",
+          "About enterprise-managed plugin standards",
+          "OpenTelemetry for agent monitoring",
+          "Managing access to GitHub Copilot cloud agent",
+          "About enterprise accounts for Copilot Business"
+        ]
+      },
+      "headings": [
+        "Concepts for GitHub Copilot"
+      ],
+      "score": 2
+    }
+  ],
   "errors": []
 }

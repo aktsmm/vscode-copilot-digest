@@ -14,14 +14,11 @@ About GitHub Agentic Workflows
 About GitHub Copilot Memory
 About hooks for GitHub Copilot
 About GitHub Copilot plugins
-About enterprise-managed plugin standards
 About third-party coding agents
 About agent apps
 OpenAI Codex
 Anthropic Claude
 About agent skills
-Agent management for enterprises
-OpenTelemetry for agent monitoring
 About cloud and local sandboxes for GitHub Copilot
 GitHub Copilot usage metrics
 GitHub Copilot usage metrics
@@ -47,19 +44,24 @@ Concepts for AI tools
 Choosing the right AI tool for your task
 About Copilot integrations
 Models for GitHub Copilot
-About default availability of Copilot models
 Bring your own key for GitHub Copilot
 Utility models
 About Copilot auto model selection
-FedRAMP-compliant models for GitHub Copilot
 Base and long-term support (LTS) models
 Usage limits for GitHub Copilot
 GitHub Copilot billing
 Usage-based billing for individuals
 GitHub Copilot billing for organizations and enterprises
 Budgets for usage-based billing
-About enterprise accounts for Copilot Business
-GitHub Copilot policies for enterprises and organizations
-MCP server usage in your company
 Network settings for GitHub Copilot
+Enterprise concepts for GitHub Copilot
+GitHub Copilot policies for enterprises and organizations
+About default availability of Copilot models
+FedRAMP-compliant models for GitHub Copilot
 Learning about new features and models
+Agent management for enterprises
+MCP server usage in your company
+About enterprise-managed plugin standards
+OpenTelemetry for agent monitoring
+Managing access to GitHub Copilot cloud agent
+About enterprise accounts for Copilot Business
