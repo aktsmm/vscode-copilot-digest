@@ -1,13 +1,69 @@
 {
   "date": "2026-09-08",
-  "generatedAt": "2026-09-08T17:20:35.817Z",
+  "generatedAt": "2026-09-08T23:28:59.530Z",
   "latestRun": {
-    "generatedAt": "2026-09-08T17:20:35.817Z",
-    "newEventsCount": 0,
-    "newEventIds": [],
+    "generatedAt": "2026-09-08T23:28:59.530Z",
+    "newEventsCount": 1,
+    "newEventIds": [
+      "vscode-updates:fc791422a2277111fe82ece63b0b583509ae1fbd942a1a92285d9c85e688f970"
+    ],
     "errorCount": 0,
-    "skippedLowInformationEvents": []
+    "skippedLowInformationEvents": [
+      {
+        "eventId": "github-changelog:https://github.blog/changelog/2026-09-08-github-enterprise-server-3-22-is-now-generally-available",
+        "sourceId": "github-changelog",
+        "title": "GitHub Enterprise Server 3.22 is now generally available",
+        "fallbackMarkers": [
+          "GitHub Copilot CLI の更新。ターミナルでの agent 作業、設定、ガバナンス、レビュー補助に関わる変更として、CLI 運用への影響を確認しておきたい。"
+        ]
+      },
+      {
+        "eventId": "github-changelog:https://github.blog/changelog/2026-09-04-new-customer-portal-help-github-com",
+        "sourceId": "github-changelog",
+        "title": "New customer portal help.github.com",
+        "fallbackMarkers": [
+          "追跡対象ソースの更新。公開内容の変化や運用への影響を継続監視対象として記録している。"
+        ]
+      }
+    ]
   },
-  "events": [],
+  "events": [
+    {
+      "eventId": "vscode-updates:fc791422a2277111fe82ece63b0b583509ae1fbd942a1a92285d9c85e688f970",
+      "sourceId": "vscode-updates",
+      "sourceName": "VS Code Updates",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-09-08T23:28:53.925Z",
+      "publishedAt": "2026-09-02T00:00:00.000Z",
+      "title": "VS Code Updates changed",
+      "url": "https://code.visualstudio.com/updates/",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [],
+        "additions": [
+          "Update 1.136.2: The update addresses these security issues."
+        ]
+      },
+      "headings": [
+        "Visual Studio Code 1.136",
+        "The Story of VS Code: World Premiere",
+        "Agents",
+        "Multi-root workspaces in editor window (Experimental)",
+        "Redesigned new-session input",
+        "Improved workspace resolution",
+        "Navigate related chats and sessions",
+        "Readable breadcrumbs for session files",
+        "Chat backgrounds in the Agents window (Experimental)",
+        "Agent session notifications",
+        "Agent Merge (Preview)",
+        "Agent host"
+      ],
+      "score": 2
+    }
+  ],
   "errors": []
 }
