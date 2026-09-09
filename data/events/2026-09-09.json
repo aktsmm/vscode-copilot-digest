@@ -1,20 +1,70 @@
 {
   "date": "2026-09-09",
-  "generatedAt": "2026-09-09T09:55:26.779Z",
+  "generatedAt": "2026-09-09T17:13:45.455Z",
   "latestRun": {
-    "generatedAt": "2026-09-09T09:55:26.779Z",
-    "newEventsCount": 1,
+    "generatedAt": "2026-09-09T17:13:45.455Z",
+    "newEventsCount": 3,
     "newEventIds": [
-      "copilot-whats-new:a6975b98d4a6eb8899ddd187d0eedceaf62110b38c68db4f63c94cfc5bdb8cbe"
+      "vscode-updates:add5da778aa0514d99edaddb2c3c9c957366ffbd84c9534eb49c1c4cc693d035",
+      "vscode-release-notes-1-109:5324aa149bad172640b3ca3bc45f98a632e6db8f5cf14c0315359dee7312bdd6",
+      "docs-github-copilot-howtos:76f03d75542c92bc90cf8176cda481c623a683d82919f6b13218aa80b87efaef"
     ],
     "errorCount": 0,
     "skippedLowInformationEvents": [
       {
-        "eventId": "github-changelog:https://github.blog/changelog/2026-09-08-enterprise-managed-sandbox-in-copilot-for-jetbrains",
-        "sourceId": "github-changelog",
+        "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_138",
+        "sourceId": "vscode-feed",
+        "title": "Visual Studio Code 1.138 (Insiders)",
+        "fallbackMarkers": [
+          "Visual Studio Code 関連の更新。日々の開発フローや agent 利用に効く変更点を確認しておきたい。"
+        ]
+      },
+      {
+        "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_137",
+        "sourceId": "vscode-feed",
+        "title": "Visual Studio Code 1.137",
+        "fallbackMarkers": [
+          "Visual Studio Code のリリース。Copilot、agent、エディタ、ワークベンチ周辺の変更点をまとめて確認できる。"
+        ]
+      },
+      {
+        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-09-08-enterprise-managed-sandbox-in-copilot-for-jetbrains",
+        "sourceId": "github-changelog-copilot",
         "title": "Enterprise-managed sandbox in Copilot for JetBrains",
         "fallbackMarkers": [
           "追跡対象ソースの更新。公開内容の変化や運用への影響を継続監視対象として記録している。"
+        ]
+      },
+      {
+        "eventId": "vscode-release-notes-1-137:section:028640d39784eaaabe71c7cc6adc74c4f4933f0ec7a4c866b2adae737d9b3f3b",
+        "sourceId": "vscode-release-notes-1-137",
+        "title": "Visual Studio Code 1.137: Automations (Preview)",
+        "fallbackMarkers": [
+          "に関する release note 更新。該当 section の内容を個別に追跡している。"
+        ]
+      },
+      {
+        "eventId": "vscode-release-notes-1-137:section:7d93e068a4759af73d971668fa0e213225a183817a1a76baa56026626e84b497",
+        "sourceId": "vscode-release-notes-1-137",
+        "title": "Visual Studio Code 1.137: Open GitHub issues and PR details (Experimental)",
+        "fallbackMarkers": [
+          "に関する release note 更新。該当 section の内容を個別に追跡している。"
+        ]
+      },
+      {
+        "eventId": "vscode-release-notes-1-137:section:eb5419aa01b0577481b4dc3d40923de0e935292afe0cb8d98f071f68af7bc293",
+        "sourceId": "vscode-release-notes-1-137",
+        "title": "Visual Studio Code 1.137: Attach GitHub issues and pull requests in any chat",
+        "fallbackMarkers": [
+          "に関する release note 更新。該当 section の内容を個別に追跡している。"
+        ]
+      },
+      {
+        "eventId": "vscode-release-notes-1-137:section:bc7ec22d290dc2de0488a31aefacc15cc0c522b4b66335c99f3c022204db7d73",
+        "sourceId": "vscode-release-notes-1-137",
+        "title": "Visual Studio Code 1.137: Help name the VS Code pet (Experimental)",
+        "fallbackMarkers": [
+          "に関する release note 更新。該当 section の内容を個別に追跡している。"
         ]
       }
     ]
@@ -57,6 +107,133 @@
         "Sep.01 Improvement"
       ],
       "score": 3
+    },
+    {
+      "eventId": "vscode-updates:add5da778aa0514d99edaddb2c3c9c957366ffbd84c9534eb49c1c4cc693d035",
+      "sourceId": "vscode-updates",
+      "sourceName": "VS Code Updates",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-09-09T17:13:41.652Z",
+      "publishedAt": "2026-09-09T00:00:00.000Z",
+      "title": "VS Code Updates changed",
+      "url": "https://code.visualstudio.com/updates/",
+      "summary": "Detected 134 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 134,
+        "headings": [
+          "Visual Studio Code 1.137",
+          "The Story of VS Code",
+          "Automations (Preview)",
+          "Open GitHub issues and PR details (Experimental)",
+          "Attach GitHub issues and pull requests in any chat",
+          "Help name the VS Code pet (Experimental)",
+          "Continue quick chats in a workspace",
+          "Agent-queued messages",
+          "Agent host",
+          "Chat",
+          "Voice Mode (Experimental)",
+          "Code Editing",
+          "Smart diff editor layout",
+          "Binary files in multi-file diffs",
+          "Languages",
+          "GitHub links in the Markdown editor (Experimental)"
+        ],
+        "additions": [
+          "1.137",
+          "H1: Visual Studio Code 1.137",
+          "Release date: September 9, 2026",
+          "Welcome to the 1.137 release of Visual Studio Code. This release helps you automate recurring work, continue quick chats in a workspace, talk with agents by voice, and work with GitHub issues and pull requests without leaving the Agents window.",
+          "The Story of VS Code: Watch the VS Code documentary and discover how the editor and its community evolved.",
+          "Automations (Preview): Schedule recurring agent tasks to run hourly, daily, or weekly, or run them on demand.",
+          "Voice Mode (Experimental): Talk with an agent and interrupt or redirect it while it works on your code.",
+          "Continue quick chats in a workspace: Attach a project to an existing quick chat without losing the conversation history or current request.",
+          "GitHub issues and pull requests (Experimental): Review issue and pull request details directly in the Agents window, even when the repository is not open.",
+          "Contest: Name the VS Code pet: Meet the VS Code pet and enter the contest to choose its name.",
+          "Don't forget to join the GitHub Copilot Day live on September 10, 2026. Learn the most effective ways to use Copilot, from agents and model choice to working across GitHub, Copilot app, Copilot CLI, and Visual Studio Code.",
+          "H2: The Story of VS Code",
+          "H3: Automations (Preview)",
+          "Setting:",
+          "chat.automations.enabled",
+          "Automations run recurring agent tasks on a schedule, so routine work does not have to be started manually. Start with a template for catching up on changes, triaging issues, or finding bugs, or define your own prompt and schedule."
+        ]
+      },
+      "headings": [
+        "Visual Studio Code 1.137",
+        "The Story of VS Code",
+        "Agents",
+        "Automations (Preview)",
+        "Open GitHub issues and PR details (Experimental)",
+        "Attach GitHub issues and pull requests in any chat",
+        "Help name the VS Code pet (Experimental)",
+        "Continue quick chats in a workspace",
+        "Agent-queued messages",
+        "Agent host",
+        "Chat",
+        "Voice Mode (Experimental)"
+      ],
+      "score": 18
+    },
+    {
+      "eventId": "vscode-release-notes-1-109:5324aa149bad172640b3ca3bc45f98a632e6db8f5cf14c0315359dee7312bdd6",
+      "sourceId": "vscode-release-notes-1-109",
+      "sourceName": "VS Code Release Notes 1.109",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-09-09T17:13:42.496Z",
+      "publishedAt": "2026-02-04T00:00:00.000Z",
+      "title": "VS Code Release Notes 1.109 changed",
+      "url": "https://code.visualstudio.com/updates/v1_109",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [],
+        "additions": [
+          "1.137"
+        ]
+      },
+      "headings": [
+        "January 2026 (version 1.109)",
+        "Upcoming events",
+        "Agent Sessions Day",
+        "Chat UX",
+        "Message steering and queueing (Experimental)",
+        "Anthropic models now show thinking tokens",
+        "Mermaid diagrams in chat responses",
+        "Ask Questions tool (Experimental)",
+        "Plan agent",
+        "Context window details",
+        "Inline chat UX revamp (Preview)",
+        "Model descriptions in the model picker"
+      ],
+      "score": 2
+    },
+    {
+      "eventId": "docs-github-copilot-howtos:76f03d75542c92bc90cf8176cda481c623a683d82919f6b13218aa80b87efaef",
+      "sourceId": "docs-github-copilot-howtos",
+      "sourceName": "GitHub Docs / Copilot how-tos",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-09-09T17:13:44.289Z",
+      "publishedAt": "2026-09-09T17:13:44.288Z",
+      "title": "GitHub Docs / Copilot how-tos changed",
+      "url": "https://docs.github.com/en/copilot/how-tos",
+      "summary": "Detected 0 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 0,
+        "headings": [],
+        "additions": []
+      },
+      "headings": [
+        "How-tos for GitHub Copilot"
+      ],
+      "score": 2
     }
   ],
   "errors": []

@@ -95,7 +95,6 @@ Using automations in the GitHub Copilot app
 Using your own LLM models in the GitHub Copilot app
 Using deep links to open the GitHub Copilot app
 Copilot SDK
-Build your first Copilot-powered app
 Authentication
 Features
 Use hooks
