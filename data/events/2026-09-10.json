@@ -1,21 +1,12 @@
 {
   "date": "2026-09-10",
-  "generatedAt": "2026-09-10T09:52:53.151Z",
+  "generatedAt": "2026-09-10T17:04:47.518Z",
   "latestRun": {
-    "generatedAt": "2026-09-10T09:52:53.151Z",
+    "generatedAt": "2026-09-10T17:04:47.518Z",
     "newEventsCount": 0,
     "newEventIds": [],
     "errorCount": 0,
-    "skippedLowInformationEvents": [
-      {
-        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-08-26-enterprise-managed-permissions-for-github-copilot-agent-operations",
-        "sourceId": "github-changelog-copilot",
-        "title": "Enterprise managed permissions for GitHub Copilot agent operations",
-        "fallbackMarkers": [
-          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
-        ]
-      }
-    ]
+    "skippedLowInformationEvents": []
   },
   "events": [],
   "errors": []
