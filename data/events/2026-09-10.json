@@ -1,13 +1,99 @@
 {
   "date": "2026-09-10",
-  "generatedAt": "2026-09-10T17:04:47.518Z",
+  "generatedAt": "2026-09-10T23:16:45.203Z",
   "latestRun": {
-    "generatedAt": "2026-09-10T17:04:47.518Z",
-    "newEventsCount": 0,
-    "newEventIds": [],
+    "generatedAt": "2026-09-10T23:16:45.203Z",
+    "newEventsCount": 3,
+    "newEventIds": [
+      "github-changelog:https://github.blog/changelog/2026-09-10-mai-code-1-flash-deprecated",
+      "github-changelog-copilot:https://github.blog/changelog/2026-09-10-mai-code-1-flash-deprecated",
+      "copilot-whats-new:f8705a1290b89f79ff08e4b497c633b00aac1b8bdb666f4e6e7e47f80ef51991"
+    ],
     "errorCount": 0,
-    "skippedLowInformationEvents": []
+    "skippedLowInformationEvents": [
+      {
+        "eventId": "github-copilot-blog:https://github.blog/?p=98771",
+        "sourceId": "github-copilot-blog",
+        "title": "GitHub Copilot app for Beginners: Using the diff, terminal, and browser",
+        "fallbackMarkers": [
+          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
+        ]
+      }
+    ]
   },
-  "events": [],
+  "events": [
+    {
+      "eventId": "copilot-whats-new:f8705a1290b89f79ff08e4b497c633b00aac1b8bdb666f4e6e7e47f80ef51991",
+      "sourceId": "copilot-whats-new",
+      "sourceName": "GitHub Copilot What's New",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-09-10T23:16:42.716Z",
+      "publishedAt": "2026-09-10T23:16:42.716Z",
+      "title": "GitHub Copilot What's New changed",
+      "url": "https://github.com/features/copilot/whats-new",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [
+          "Sep.10 Retired"
+        ],
+        "additions": [
+          "H3: Sep.10 Retired"
+        ]
+      },
+      "headings": [
+        "Changelog",
+        "Filters (0 selected)",
+        "September\n Sep\n 2026",
+        "Sep.10 Retired",
+        "Sep.09 Improvement",
+        "Sep.08 Release",
+        "Sep.04 Release",
+        "Sep.04 Release",
+        "Sep.03 Retired",
+        "Sep.03 Release",
+        "Sep.03 Release",
+        "Sep.02 Improvement"
+      ],
+      "score": 3
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-09-10-mai-code-1-flash-deprecated",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-09-10T23:16:39.763Z",
+      "publishedAt": "2026-09-10T16:54:01.000Z",
+      "title": "MAI-Code-1-Flash deprecated",
+      "url": "https://github.blog/changelog/2026-09-10-mai-code-1-flash-deprecated",
+      "summary": "We have deprecated MAI-Code-1-Flash across all GitHub Copilot experiences (including Copilot Chat, inline edits, ask and agent modes, and code completions) today, September 10, 2026. Model Deprecation date Suggested alternative…\nThe post MAI-Code-1-Flash deprecated appeared first on The GitHub Blog.",
+      "categories": [
+        "Retired",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 5
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-09-10-mai-code-1-flash-deprecated",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-09-10T23:16:40.228Z",
+      "publishedAt": "2026-09-10T16:54:01.000Z",
+      "title": "MAI-Code-1-Flash deprecated",
+      "url": "https://github.blog/changelog/2026-09-10-mai-code-1-flash-deprecated",
+      "summary": "We have deprecated MAI-Code-1-Flash across all GitHub Copilot experiences (including Copilot Chat, inline edits, ask and agent modes, and code completions) today, September 10, 2026. Model Deprecation date Suggested alternative…\nThe post MAI-Code-1-Flash deprecated appeared first on The GitHub Blog.",
+      "categories": [
+        "Retired",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 5
+    }
+  ],
   "errors": []
 }
