@@ -32,9 +32,10 @@ Concepts for AI tools
 Choosing the right AI tool for your task
 About Copilot integrations
 Models for GitHub Copilot
+Models in GitHub Copilot
+About Copilot auto model selection
 Bring your own key for GitHub Copilot
 Utility models
-About Copilot auto model selection
 Base and long-term support (LTS) models
 GitHub Copilot billing and usage
 Billing and usage for organizations and enterprises

@@ -1,16 +1,103 @@
 {
   "date": "2026-09-11",
-  "generatedAt": "2026-09-11T09:51:45.024Z",
+  "generatedAt": "2026-09-11T17:05:00.384Z",
   "latestRun": {
-    "generatedAt": "2026-09-11T09:51:45.024Z",
-    "newEventsCount": 1,
+    "generatedAt": "2026-09-11T17:05:00.384Z",
+    "newEventsCount": 3,
     "newEventIds": [
-      "docs-github-copilot-concepts:52b870b58412b7986903b503fd1fcddcb12cd4d5ca7119dc8033725453c60ec7"
+      "copilot-whats-new:08ade252455c51cfc831a09c9f6f00a486deb09b8e472bb67425630fbaaf9f17",
+      "docs-github-copilot:670ef8c93c3461765844eda8906a940c1eade1bc8f14a8636f7bf39d3a3d828b",
+      "docs-github-copilot-concepts:650527651b521b43e6a91382c9c62ff55dace33b9d9902956370dafb3622bccf"
     ],
     "errorCount": 0,
-    "skippedLowInformationEvents": []
+    "skippedLowInformationEvents": [
+      {
+        "eventId": "github-changelog:https://github.blog/changelog/2026-09-10-github-copilot-weekly-releases-september-7",
+        "sourceId": "github-changelog",
+        "title": "GitHub Copilot weekly releases — September 7",
+        "fallbackMarkers": [
+          "Copilot CLI の agent 機能に関する更新。custom agent、organization agent、message queueing など、CLI 上で agent 作業を継続・反復しやすくする変更を確認しておきたい。"
+        ]
+      }
+    ]
   },
   "events": [
+    {
+      "eventId": "copilot-whats-new:08ade252455c51cfc831a09c9f6f00a486deb09b8e472bb67425630fbaaf9f17",
+      "sourceId": "copilot-whats-new",
+      "sourceName": "GitHub Copilot What's New",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-09-11T17:04:57.508Z",
+      "publishedAt": "2026-09-11T17:04:57.507Z",
+      "title": "GitHub Copilot What's New changed",
+      "url": "https://github.com/features/copilot/whats-new",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [
+          "Sep.10 Release"
+        ],
+        "additions": [
+          "H3: Sep.10 Release"
+        ]
+      },
+      "headings": [
+        "Changelog",
+        "Filters (0 selected)",
+        "September\n Sep\n 2026",
+        "Sep.10 Release",
+        "Sep.10 Retired",
+        "Sep.09 Improvement",
+        "Sep.08 Release",
+        "Sep.04 Release",
+        "Sep.04 Release",
+        "Sep.03 Retired",
+        "Sep.03 Release",
+        "Sep.03 Release"
+      ],
+      "score": 3
+    },
+    {
+      "eventId": "docs-github-copilot:670ef8c93c3461765844eda8906a940c1eade1bc8f14a8636f7bf39d3a3d828b",
+      "sourceId": "docs-github-copilot",
+      "sourceName": "GitHub Docs / Copilot",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-09-11T17:04:58.144Z",
+      "publishedAt": "2026-09-11T17:04:58.144Z",
+      "title": "GitHub Docs / Copilot changed",
+      "url": "https://docs.github.com/en/copilot",
+      "summary": "Detected 2 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 2,
+        "headings": [
+          "About custom agents"
+        ],
+        "additions": [
+          "Custom agents enhance Copilot with assistance tailored to your needs.",
+          "H3: About custom agents"
+        ]
+      },
+      "headings": [
+        "GitHub Copilot documentation",
+        "Articles",
+        "About agent apps",
+        "About agent management",
+        "About agent skills",
+        "About cloud and local sandboxes for GitHub Copilot",
+        "About Copilot auto model selection",
+        "About Copilot automations",
+        "About Copilot integrations",
+        "About custom agents",
+        "About custom agents"
+      ],
+      "score": 3
+    },
     {
       "eventId": "docs-github-copilot-concepts:52b870b58412b7986903b503fd1fcddcb12cd4d5ca7119dc8033725453c60ec7",
       "sourceId": "docs-github-copilot-concepts",
@@ -32,6 +119,32 @@
           "Billing and usage for organizations and enterprises",
           "Billing and usage for individuals",
           "GitHub Copilot usage metrics"
+        ]
+      },
+      "headings": [
+        "Concepts for GitHub Copilot"
+      ],
+      "score": 2
+    },
+    {
+      "eventId": "docs-github-copilot-concepts:650527651b521b43e6a91382c9c62ff55dace33b9d9902956370dafb3622bccf",
+      "sourceId": "docs-github-copilot-concepts",
+      "sourceName": "GitHub Docs / Copilot concepts",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-09-11T17:04:59.679Z",
+      "publishedAt": "2026-09-11T17:04:59.679Z",
+      "title": "GitHub Docs / Copilot concepts changed",
+      "url": "https://docs.github.com/en/copilot/concepts",
+      "summary": "Detected 2 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 2,
+        "headings": [],
+        "additions": [
+          "Models in GitHub Copilot",
+          "About Copilot auto model selection"
         ]
       },
       "headings": [
