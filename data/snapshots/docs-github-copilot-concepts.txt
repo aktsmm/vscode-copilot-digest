@@ -20,18 +20,6 @@ OpenAI Codex
 Anthropic Claude
 About agent skills
 About cloud and local sandboxes for GitHub Copilot
-GitHub Copilot usage metrics
-GitHub Copilot usage metrics
-Viewing the Copilot usage metrics dashboard
-Viewing the code generation dashboard
-Viewing the Copilot impact dashboard
-Data available in Copilot usage metrics
-Interpreting usage and adoption metrics for GitHub Copilot
-Reconciling Copilot usage metrics across dashboards, APIs, and reports
-Lines of Code metrics
-Measuring the success of a GitHub Copilot trial
-Tracking license activation and initial usage with Copilot usage metrics
-Example schema for Copilot usage metrics
 Concepts for prompting GitHub Copilot
 Prompt engineering for GitHub Copilot Chat
 About customizing GitHub Copilot responses
@@ -48,11 +36,10 @@ Bring your own key for GitHub Copilot
 Utility models
 About Copilot auto model selection
 Base and long-term support (LTS) models
-Usage limits for GitHub Copilot
-GitHub Copilot billing
-Usage-based billing for individuals
-GitHub Copilot billing for organizations and enterprises
-Budgets for usage-based billing
+GitHub Copilot billing and usage
+Billing and usage for organizations and enterprises
+Billing and usage for individuals
+GitHub Copilot usage metrics
 Network settings for GitHub Copilot
 Enterprise concepts for GitHub Copilot
 GitHub Copilot policies for enterprises and organizations

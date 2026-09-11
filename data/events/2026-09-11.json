@@ -1,0 +1,44 @@
+{
+  "date": "2026-09-11",
+  "generatedAt": "2026-09-11T09:51:45.024Z",
+  "latestRun": {
+    "generatedAt": "2026-09-11T09:51:45.024Z",
+    "newEventsCount": 1,
+    "newEventIds": [
+      "docs-github-copilot-concepts:52b870b58412b7986903b503fd1fcddcb12cd4d5ca7119dc8033725453c60ec7"
+    ],
+    "errorCount": 0,
+    "skippedLowInformationEvents": []
+  },
+  "events": [
+    {
+      "eventId": "docs-github-copilot-concepts:52b870b58412b7986903b503fd1fcddcb12cd4d5ca7119dc8033725453c60ec7",
+      "sourceId": "docs-github-copilot-concepts",
+      "sourceName": "GitHub Docs / Copilot concepts",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-09-11T09:51:43.384Z",
+      "publishedAt": "2026-09-11T09:51:43.383Z",
+      "title": "GitHub Docs / Copilot concepts changed",
+      "url": "https://docs.github.com/en/copilot/concepts",
+      "summary": "Detected 4 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 4,
+        "headings": [],
+        "additions": [
+          "GitHub Copilot billing and usage",
+          "Billing and usage for organizations and enterprises",
+          "Billing and usage for individuals",
+          "GitHub Copilot usage metrics"
+        ]
+      },
+      "headings": [
+        "Concepts for GitHub Copilot"
+      ],
+      "score": 2
+    }
+  ],
+  "errors": []
+}
