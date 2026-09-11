@@ -1,19 +1,41 @@
 {
   "date": "2026-09-11",
-  "generatedAt": "2026-09-11T17:05:00.384Z",
+  "generatedAt": "2026-09-11T23:24:00.222Z",
   "latestRun": {
-    "generatedAt": "2026-09-11T17:05:00.384Z",
-    "newEventsCount": 3,
+    "generatedAt": "2026-09-11T23:24:00.222Z",
+    "newEventsCount": 1,
     "newEventIds": [
-      "copilot-whats-new:08ade252455c51cfc831a09c9f6f00a486deb09b8e472bb67425630fbaaf9f17",
-      "docs-github-copilot:670ef8c93c3461765844eda8906a940c1eade1bc8f14a8636f7bf39d3a3d828b",
-      "docs-github-copilot-concepts:650527651b521b43e6a91382c9c62ff55dace33b9d9902956370dafb3622bccf"
+      "copilot-whats-new:b1c508912debb87d1538184e527ba41ed23eff2dd7d94f2e627feb151f37a003"
     ],
     "errorCount": 0,
     "skippedLowInformationEvents": [
       {
-        "eventId": "github-changelog:https://github.blog/changelog/2026-09-10-github-copilot-weekly-releases-september-7",
+        "eventId": "github-changelog:https://github.blog/changelog/2026-09-11-add-vs-code-agents-to-copilot-usage-metrics",
         "sourceId": "github-changelog",
+        "title": "Add VS Code Agents to Copilot usage metrics",
+        "fallbackMarkers": [
+          "VS Code チームによる AI 活用や実装改善の解説記事。運用の考え方や設計の背景を押さえる材料になる。"
+        ]
+      },
+      {
+        "eventId": "github-changelog:https://github.blog/changelog/2026-09-11-auto-resolution-and-analysis-updates-in-copilot-code-review",
+        "sourceId": "github-changelog",
+        "title": "Auto-resolution and analysis updates in Copilot code review",
+        "fallbackMarkers": [
+          "GitHub Copilot code review のレビュー依頼やコメント処理に関する更新。チームのレビュー運用に影響する可能性がある。"
+        ]
+      },
+      {
+        "eventId": "github-copilot-blog:https://github.blog/?p=98799",
+        "sourceId": "github-copilot-blog",
+        "title": "Marketing ops as code: Automating events from planning to follow-up on GitHub",
+        "fallbackMarkers": [
+          "追跡対象ソースの更新。公開内容の変化や運用への影響を継続監視対象として記録している。"
+        ]
+      },
+      {
+        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-09-10-github-copilot-weekly-releases-september-7",
+        "sourceId": "github-changelog-copilot",
         "title": "GitHub Copilot weekly releases — September 7",
         "fallbackMarkers": [
           "Copilot CLI の agent 機能に関する更新。custom agent、organization agent、message queueing など、CLI 上で agent 作業を継続・反復しやすくする変更を確認しておきたい。"
@@ -22,6 +44,44 @@
     ]
   },
   "events": [
+    {
+      "eventId": "copilot-whats-new:b1c508912debb87d1538184e527ba41ed23eff2dd7d94f2e627feb151f37a003",
+      "sourceId": "copilot-whats-new",
+      "sourceName": "GitHub Copilot What's New",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-09-11T23:23:56.023Z",
+      "publishedAt": "2026-09-11T23:23:56.022Z",
+      "title": "GitHub Copilot What's New changed",
+      "url": "https://github.com/features/copilot/whats-new",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [
+          "Sep.11 Improvement"
+        ],
+        "additions": [
+          "H3: Sep.11 Improvement"
+        ]
+      },
+      "headings": [
+        "Changelog",
+        "Filters (0 selected)",
+        "September\n Sep\n 2026",
+        "Sep.11 Improvement",
+        "Sep.11 Improvement",
+        "Sep.10 Release",
+        "Sep.10 Retired",
+        "Sep.09 Improvement",
+        "Sep.08 Release",
+        "Sep.04 Release",
+        "Sep.04 Release",
+        "Sep.03 Retired"
+      ],
+      "score": 3
+    },
     {
       "eventId": "copilot-whats-new:08ade252455c51cfc831a09c9f6f00a486deb09b8e472bb67425630fbaaf9f17",
       "sourceId": "copilot-whats-new",

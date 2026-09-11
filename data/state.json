@@ -3,6 +3,8 @@
   "sources": {
     "github-changelog": {
       "seenIds": [
+        "https://github.blog/changelog/2026-09-11-add-vs-code-agents-to-copilot-usage-metrics",
+        "https://github.blog/changelog/2026-09-11-auto-resolution-and-analysis-updates-in-copilot-code-review",
         "https://github.blog/changelog/2026-09-10-github-copilot-weekly-releases-september-7",
         "https://github.blog/changelog/2026-09-10-mai-code-1-flash-deprecated",
         "https://github.blog/changelog/2026-08-26-enterprise-managed-permissions-for-github-copilot-agent-operations",
@@ -230,10 +232,11 @@
         "https://github.blog/changelog/2026-04-08-github-mobile-research-and-code-with-copilot-cloud-agent-anywhere"
       ],
       "futureSeenIds": [],
-      "lastCheckedAt": "2026-09-11T17:04:56.972Z"
+      "lastCheckedAt": "2026-09-11T23:23:55.247Z"
     },
     "github-changelog-copilot": {
       "seenIds": [
+        "https://github.blog/changelog/2026-09-10-github-copilot-weekly-releases-september-7",
         "https://github.blog/changelog/2026-09-10-mai-code-1-flash-deprecated",
         "https://github.blog/changelog/2026-08-26-enterprise-managed-permissions-for-github-copilot-agent-operations",
         "https://github.blog/changelog/2026-09-08-enterprise-managed-sandbox-in-copilot-for-jetbrains",
@@ -461,10 +464,11 @@
         "https://github.blog/changelog/2026-04-02-copilot-sdk-in-public-preview"
       ],
       "futureSeenIds": [],
-      "lastCheckedAt": "2026-09-11T17:04:56.988Z"
+      "lastCheckedAt": "2026-09-11T23:23:55.260Z"
     },
     "github-copilot-blog": {
       "seenIds": [
+        "https://github.blog/?p=98799",
         "https://github.blog/?p=98771",
         "https://github.blog/?p=98615",
         "https://github.blog/?p=98638",
@@ -516,7 +520,7 @@
         "https://github.blog/?p=94179"
       ],
       "futureSeenIds": [],
-      "lastCheckedAt": "2026-09-11T17:04:57.010Z"
+      "lastCheckedAt": "2026-09-11T23:23:55.279Z"
     },
     "vscode-feed": {
       "seenIds": [
@@ -569,25 +573,25 @@
       "futureSeenIds": [
         "https://code.visualstudio.com/updates/v1_138"
       ],
-      "lastCheckedAt": "2026-09-11T17:04:57.031Z"
+      "lastCheckedAt": "2026-09-11T23:23:55.302Z"
     },
     "vscode-updates": {
       "releasePublishedAt": "2026-09-09T00:00:00.000Z",
       "releaseTitle": "Visual Studio Code 1.137",
       "snapshotHash": "add5da778aa0514d99edaddb2c3c9c957366ffbd84c9534eb49c1c4cc693d035",
-      "lastCheckedAt": "2026-09-11T17:04:57.298Z"
+      "lastCheckedAt": "2026-09-11T23:23:55.379Z"
     },
     "vscode-release-notes-1-109": {
       "releasePublishedAt": "2026-02-04T00:00:00.000Z",
       "releaseTitle": "January 2026 (version 1.109)",
       "snapshotHash": "5324aa149bad172640b3ca3bc45f98a632e6db8f5cf14c0315359dee7312bdd6",
-      "lastCheckedAt": "2026-09-11T17:04:57.412Z"
+      "lastCheckedAt": "2026-09-11T23:23:55.931Z"
     },
     "copilot-whats-new": {
-      "releasePublishedAt": "2026-09-11T17:04:57.507Z",
+      "releasePublishedAt": "2026-09-11T23:23:56.022Z",
       "releaseTitle": "Changelog",
-      "snapshotHash": "08ade252455c51cfc831a09c9f6f00a486deb09b8e472bb67425630fbaaf9f17",
-      "lastCheckedAt": "2026-09-11T17:04:57.509Z",
+      "snapshotHash": "b1c508912debb87d1538184e527ba41ed23eff2dd7d94f2e627feb151f37a003",
+      "lastCheckedAt": "2026-09-11T23:23:56.023Z",
       "lastError": "Failed to fetch https://github.com/features/copilot/whats-new: 504 Gateway Time-out"
     },
     "publickey": {
@@ -605,7 +609,7 @@
         "tag:www.publickey1.jp,2026://2.8527"
       ],
       "futureSeenIds": [],
-      "lastCheckedAt": "2026-09-11T17:04:57.957Z"
+      "lastCheckedAt": "2026-09-11T23:23:56.471Z"
     },
     "vscode-release-notes-1-115": {
       "sectionHashes": {
@@ -770,38 +774,38 @@
       "lastCheckedAt": "2026-07-21T15:22:00.037Z"
     },
     "docs-github-copilot": {
-      "releasePublishedAt": "2026-09-11T17:04:58.144Z",
+      "releasePublishedAt": "2026-09-11T23:23:56.596Z",
       "releaseTitle": "GitHub Copilot documentation",
       "snapshotHash": "670ef8c93c3461765844eda8906a940c1eade1bc8f14a8636f7bf39d3a3d828b",
-      "lastCheckedAt": "2026-09-11T17:04:58.145Z",
+      "lastCheckedAt": "2026-09-11T23:23:56.596Z",
       "snapshotVersion": 2
     },
     "docs-github-cloud-agent": {
-      "releasePublishedAt": "2026-09-11T17:04:58.404Z",
+      "releasePublishedAt": "2026-09-11T23:23:56.841Z",
       "releaseTitle": "GitHub Copilot cloud agent",
       "snapshotHash": "e2de67eaf3aa15d079e11f413331365af13e88313a49de0d6eb1ae12b79f0f18",
-      "lastCheckedAt": "2026-09-11T17:04:58.404Z",
+      "lastCheckedAt": "2026-09-11T23:23:56.842Z",
       "snapshotVersion": 2
     },
     "docs-github-copilot-howtos": {
-      "releasePublishedAt": "2026-09-11T17:04:59.632Z",
+      "releasePublishedAt": "2026-09-11T23:23:57.661Z",
       "releaseTitle": "How-tos for GitHub Copilot",
       "snapshotHash": "76f03d75542c92bc90cf8176cda481c623a683d82919f6b13218aa80b87efaef",
-      "lastCheckedAt": "2026-09-11T17:04:59.632Z",
+      "lastCheckedAt": "2026-09-11T23:23:57.661Z",
       "snapshotVersion": 2
     },
     "docs-github-copilot-concepts": {
-      "releasePublishedAt": "2026-09-11T17:04:59.679Z",
+      "releasePublishedAt": "2026-09-11T23:23:58.008Z",
       "releaseTitle": "Concepts for GitHub Copilot",
       "snapshotHash": "650527651b521b43e6a91382c9c62ff55dace33b9d9902956370dafb3622bccf",
-      "lastCheckedAt": "2026-09-11T17:04:59.680Z",
+      "lastCheckedAt": "2026-09-11T23:23:58.008Z",
       "snapshotVersion": 2
     },
     "docs-github-copilot-reference": {
-      "releasePublishedAt": "2026-09-11T17:04:59.738Z",
+      "releasePublishedAt": "2026-09-11T23:23:58.338Z",
       "releaseTitle": "Reference for GitHub Copilot",
       "snapshotHash": "e780311d39b01b812ff8827ecbfa5b290ac2c9b9fd78ece4be5f799ce7543173",
-      "lastCheckedAt": "2026-09-11T17:04:59.738Z",
+      "lastCheckedAt": "2026-09-11T23:23:58.338Z",
       "snapshotVersion": 2
     },
     "vscode-release-notes-1-127": {
@@ -898,7 +902,7 @@
       "releasePublishedAt": "2026-08-19T00:00:00.000Z",
       "releaseTitle": "Visual Studio Code 1.134",
       "snapshotHash": "01c051ad4b9b4f44e20ba8ebff7a0245e2a240d517ffeaeab32474a5f81bbe44",
-      "lastCheckedAt": "2026-09-11T17:05:00.377Z"
+      "lastCheckedAt": "2026-09-11T23:24:00.213Z"
     },
     "vscode-release-notes-1-135": {
       "sectionHashes": {
@@ -910,7 +914,7 @@
       "releasePublishedAt": "2026-08-26T00:00:00.000Z",
       "releaseTitle": "Visual Studio Code 1.135",
       "snapshotHash": "bfe43f1733bb74d07c743e396fb39e4d59af74732971ce7037088d1f142fe9ec",
-      "lastCheckedAt": "2026-09-11T17:05:00.331Z"
+      "lastCheckedAt": "2026-09-11T23:23:59.576Z"
     },
     "vscode-release-notes-1-136": {
       "sectionHashes": {
@@ -922,7 +926,7 @@
       "releasePublishedAt": "2026-09-02T00:00:00.000Z",
       "releaseTitle": "Visual Studio Code 1.136",
       "snapshotHash": "e6fcfa1dbef9c60df77d8a81cf11f5152cabbe2ff6255b3ccab0999dc0e89b91",
-      "lastCheckedAt": "2026-09-11T17:04:59.904Z"
+      "lastCheckedAt": "2026-09-11T23:23:58.491Z"
     },
     "vscode-release-notes-1-137": {
       "sectionHashes": {
@@ -934,7 +938,7 @@
       "releasePublishedAt": "2026-09-09T00:00:00.000Z",
       "releaseTitle": "Visual Studio Code 1.137",
       "snapshotHash": "add5da778aa0514d99edaddb2c3c9c957366ffbd84c9534eb49c1c4cc693d035",
-      "lastCheckedAt": "2026-09-11T17:04:59.773Z"
+      "lastCheckedAt": "2026-09-11T23:23:58.444Z"
     }
   }
 }
