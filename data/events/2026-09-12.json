@@ -1,13 +1,50 @@
 {
   "date": "2026-09-12",
-  "generatedAt": "2026-09-12T16:26:00.610Z",
+  "generatedAt": "2026-09-12T23:07:38.748Z",
   "latestRun": {
-    "generatedAt": "2026-09-12T16:26:00.610Z",
-    "newEventsCount": 0,
-    "newEventIds": [],
+    "generatedAt": "2026-09-12T23:07:38.748Z",
+    "newEventsCount": 1,
+    "newEventIds": [
+      "copilot-whats-new:c9ba30ddfbdcad97a625cbbf9cec5411c15a171b50bc280efaa6bcbdd06b57b2"
+    ],
     "errorCount": 0,
     "skippedLowInformationEvents": []
   },
-  "events": [],
+  "events": [
+    {
+      "eventId": "copilot-whats-new:c9ba30ddfbdcad97a625cbbf9cec5411c15a171b50bc280efaa6bcbdd06b57b2",
+      "sourceId": "copilot-whats-new",
+      "sourceName": "GitHub Copilot What's New",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-09-12T23:07:35.875Z",
+      "publishedAt": "2026-09-12T23:07:35.873Z",
+      "title": "GitHub Copilot What's New changed",
+      "url": "https://github.com/features/copilot/whats-new",
+      "summary": "Detected 0 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 0,
+        "headings": [],
+        "additions": []
+      },
+      "headings": [
+        "Changelog",
+        "Filters (0 selected)",
+        "September\n Sep\n 2026",
+        "Sep.11 Improvement",
+        "Sep.11 Improvement",
+        "Sep.10 Release",
+        "Sep.10 Retired",
+        "Sep.09 Improvement",
+        "Sep.08 Release",
+        "Sep.04 Release",
+        "Sep.04 Release",
+        "Sep.03 Retired"
+      ],
+      "score": 2
+    }
+  ],
   "errors": []
 }
