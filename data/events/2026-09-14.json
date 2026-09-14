@@ -1,16 +1,71 @@
 {
   "date": "2026-09-14",
-  "generatedAt": "2026-09-14T10:48:38.727Z",
+  "generatedAt": "2026-09-14T18:48:41.466Z",
   "latestRun": {
-    "generatedAt": "2026-09-14T10:48:38.727Z",
+    "generatedAt": "2026-09-14T18:48:41.466Z",
     "newEventsCount": 1,
     "newEventIds": [
-      "vscode-updates:bbd5d7ccf8c8dbba3fd41be845f9156ed0ce1cdc544d419e2f2a2bb1d9548e5a"
+      "copilot-whats-new:08b999feeb90115381f3c1688f6878c8150f1660d428a9d8eeb19a26a8227dc5"
     ],
     "errorCount": 0,
-    "skippedLowInformationEvents": []
+    "skippedLowInformationEvents": [
+      {
+        "eventId": "github-changelog:https://github.blog/changelog/2026-09-14-configure-cost-and-quality-in-copilot-auto-model-selection",
+        "sourceId": "github-changelog",
+        "title": "Configure cost and quality in Copilot auto model selection",
+        "fallbackMarkers": [
+          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
+        ]
+      },
+      {
+        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-09-14-configure-cost-and-quality-in-copilot-auto-model-selection",
+        "sourceId": "github-changelog-copilot",
+        "title": "Configure cost and quality in Copilot auto model selection",
+        "fallbackMarkers": [
+          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
+        ]
+      }
+    ]
   },
   "events": [
+    {
+      "eventId": "copilot-whats-new:08b999feeb90115381f3c1688f6878c8150f1660d428a9d8eeb19a26a8227dc5",
+      "sourceId": "copilot-whats-new",
+      "sourceName": "GitHub Copilot What's New",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-09-14T18:48:38.730Z",
+      "publishedAt": "2026-09-14T18:48:38.729Z",
+      "title": "GitHub Copilot What's New changed",
+      "url": "https://github.com/features/copilot/whats-new",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [
+          "Sep.14 Release"
+        ],
+        "additions": [
+          "H3: Sep.14 Release"
+        ]
+      },
+      "headings": [
+        "Changelog",
+        "Filters (0 selected)",
+        "September\n Sep\n 2026",
+        "Sep.14 Release",
+        "Sep.11 Improvement",
+        "Sep.11 Improvement",
+        "Sep.10 Release",
+        "Sep.10 Retired",
+        "Sep.09 Improvement",
+        "Sep.08 Release",
+        "Sep.04 Release",
+        "Sep.04 Release"
+      ],
+      "score": 3
+    },
     {
       "eventId": "vscode-updates:bbd5d7ccf8c8dbba3fd41be845f9156ed0ce1cdc544d419e2f2a2bb1d9548e5a",
       "sourceId": "vscode-updates",
