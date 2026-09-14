@@ -154,6 +154,7 @@ Settings:
  Open in VS Code
  Open in VS Code Insiders
 Voice Mode enables you to have a natural, spoken conversation with an agent while it works on your code.
+Note: Voice Mode is rolling out gradually and might not be available to every eligible account immediately. It requires an eligible individual GitHub Copilot plan and is not available with GitHub Copilot Business or GitHub Copilot Enterprise. Organizations can also turn off Copilot preview features by policy.
 To try it, enable 
  
  
@@ -202,7 +203,6 @@ Use
  to select the voice that reads responses aloud.
 Run Voice Mode: Show Introduction from the Command Palette to reopen the introduction, where you can select a microphone and preview the available voices.
 You can also right-click the Voice Mode button in the chat input to quickly access its configuration, instructions, introduction, microphone selection, and transcript controls. Learn more about using Voice Mode.
-Administrators can disable Voice Mode by turning off Copilot preview features for their organization.
 H2: Code Editing
 H3: Smart diff editor layout
 Choose a diff layout in the same way across regular diffs, multi-file diffs, and the Agents window Changes editor. Open More Actions (...) > Diff View, and then select Inline, Side by Side, or Automatic.

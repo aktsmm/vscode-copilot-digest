@@ -1,0 +1,52 @@
+{
+  "date": "2026-09-14",
+  "generatedAt": "2026-09-14T10:48:38.727Z",
+  "latestRun": {
+    "generatedAt": "2026-09-14T10:48:38.727Z",
+    "newEventsCount": 1,
+    "newEventIds": [
+      "vscode-updates:bbd5d7ccf8c8dbba3fd41be845f9156ed0ce1cdc544d419e2f2a2bb1d9548e5a"
+    ],
+    "errorCount": 0,
+    "skippedLowInformationEvents": []
+  },
+  "events": [
+    {
+      "eventId": "vscode-updates:bbd5d7ccf8c8dbba3fd41be845f9156ed0ce1cdc544d419e2f2a2bb1d9548e5a",
+      "sourceId": "vscode-updates",
+      "sourceName": "VS Code Updates",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-09-14T10:48:35.166Z",
+      "publishedAt": "2026-09-09T00:00:00.000Z",
+      "title": "VS Code Updates changed",
+      "url": "https://code.visualstudio.com/updates/",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [],
+        "additions": [
+          "Note: Voice Mode is rolling out gradually and might not be available to every eligible account immediately. It requires an eligible individual GitHub Copilot plan and is not available with GitHub Copilot Business or GitHub Copilot Enterprise. Organizations can also turn off Copilot preview features by policy."
+        ]
+      },
+      "headings": [
+        "Visual Studio Code 1.137",
+        "The Story of VS Code",
+        "Agents",
+        "Automations (Preview)",
+        "Open GitHub issues and PR details (Experimental)",
+        "Attach GitHub issues and pull requests in any chat",
+        "Help name the VS Code pet (Experimental)",
+        "Continue quick chats in a workspace",
+        "Agent-queued messages",
+        "Agent host",
+        "Chat",
+        "Voice Mode (Experimental)"
+      ],
+      "score": 2
+    }
+  ],
+  "errors": []
+}
