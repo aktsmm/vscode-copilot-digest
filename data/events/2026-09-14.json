@@ -1,31 +1,12 @@
 {
   "date": "2026-09-14",
-  "generatedAt": "2026-09-14T18:48:41.466Z",
+  "generatedAt": "2026-09-14T23:55:09.525Z",
   "latestRun": {
-    "generatedAt": "2026-09-14T18:48:41.466Z",
-    "newEventsCount": 1,
-    "newEventIds": [
-      "copilot-whats-new:08b999feeb90115381f3c1688f6878c8150f1660d428a9d8eeb19a26a8227dc5"
-    ],
+    "generatedAt": "2026-09-14T23:55:09.525Z",
+    "newEventsCount": 0,
+    "newEventIds": [],
     "errorCount": 0,
-    "skippedLowInformationEvents": [
-      {
-        "eventId": "github-changelog:https://github.blog/changelog/2026-09-14-configure-cost-and-quality-in-copilot-auto-model-selection",
-        "sourceId": "github-changelog",
-        "title": "Configure cost and quality in Copilot auto model selection",
-        "fallbackMarkers": [
-          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
-        ]
-      },
-      {
-        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-09-14-configure-cost-and-quality-in-copilot-auto-model-selection",
-        "sourceId": "github-changelog-copilot",
-        "title": "Configure cost and quality in Copilot auto model selection",
-        "fallbackMarkers": [
-          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
-        ]
-      }
-    ]
+    "skippedLowInformationEvents": []
   },
   "events": [
     {
