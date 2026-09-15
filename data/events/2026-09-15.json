@@ -1,16 +1,71 @@
 {
   "date": "2026-09-15",
-  "generatedAt": "2026-09-15T17:43:41.848Z",
+  "generatedAt": "2026-09-15T23:33:57.019Z",
   "latestRun": {
-    "generatedAt": "2026-09-15T17:43:41.848Z",
+    "generatedAt": "2026-09-15T23:33:57.019Z",
     "newEventsCount": 1,
     "newEventIds": [
-      "docs-github-copilot-howtos:8a0da09359124b1dc6e0d0ed19b7f5786661e5276ecf402f5050ddbce3dc9001"
+      "copilot-whats-new:b44407b1ab33e9b827a11814e0e793138ef98ca33ecdf813d2c705578c16794a"
     ],
     "errorCount": 0,
-    "skippedLowInformationEvents": []
+    "skippedLowInformationEvents": [
+      {
+        "eventId": "github-changelog:https://github.blog/changelog/2026-09-15-github-copilot-suggests-custom-properties-definitions",
+        "sourceId": "github-changelog",
+        "title": "GitHub Copilot suggests custom properties definitions",
+        "fallbackMarkers": [
+          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
+        ]
+      },
+      {
+        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-09-15-github-copilot-suggests-custom-properties-definitions",
+        "sourceId": "github-changelog-copilot",
+        "title": "GitHub Copilot suggests custom properties definitions",
+        "fallbackMarkers": [
+          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
+        ]
+      }
+    ]
   },
   "events": [
+    {
+      "eventId": "copilot-whats-new:b44407b1ab33e9b827a11814e0e793138ef98ca33ecdf813d2c705578c16794a",
+      "sourceId": "copilot-whats-new",
+      "sourceName": "GitHub Copilot What's New",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-09-15T23:33:54.066Z",
+      "publishedAt": "2026-09-15T23:33:54.065Z",
+      "title": "GitHub Copilot What's New changed",
+      "url": "https://github.com/features/copilot/whats-new",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [
+          "Sep.15 Release"
+        ],
+        "additions": [
+          "H3: Sep.15 Release"
+        ]
+      },
+      "headings": [
+        "Changelog",
+        "Filters (0 selected)",
+        "September\n Sep\n 2026",
+        "Sep.15 Release",
+        "Sep.14 Release",
+        "Sep.11 Improvement",
+        "Sep.11 Improvement",
+        "Sep.10 Release",
+        "Sep.10 Retired",
+        "Sep.09 Improvement",
+        "Sep.08 Release",
+        "Sep.04 Release"
+      ],
+      "score": 3
+    },
     {
       "eventId": "docs-github-copilot-howtos:8a0da09359124b1dc6e0d0ed19b7f5786661e5276ecf402f5050ddbce3dc9001",
       "sourceId": "docs-github-copilot-howtos",
