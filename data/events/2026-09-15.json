@@ -1,0 +1,13 @@
+{
+  "date": "2026-09-15",
+  "generatedAt": "2026-09-15T10:12:02.449Z",
+  "latestRun": {
+    "generatedAt": "2026-09-15T10:12:02.449Z",
+    "newEventsCount": 0,
+    "newEventIds": [],
+    "errorCount": 0,
+    "skippedLowInformationEvents": []
+  },
+  "events": [],
+  "errors": []
+}
