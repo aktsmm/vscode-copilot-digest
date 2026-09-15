@@ -1,13 +1,41 @@
 {
   "date": "2026-09-15",
-  "generatedAt": "2026-09-15T10:12:02.449Z",
+  "generatedAt": "2026-09-15T17:43:41.848Z",
   "latestRun": {
-    "generatedAt": "2026-09-15T10:12:02.449Z",
-    "newEventsCount": 0,
-    "newEventIds": [],
+    "generatedAt": "2026-09-15T17:43:41.848Z",
+    "newEventsCount": 1,
+    "newEventIds": [
+      "docs-github-copilot-howtos:8a0da09359124b1dc6e0d0ed19b7f5786661e5276ecf402f5050ddbce3dc9001"
+    ],
     "errorCount": 0,
     "skippedLowInformationEvents": []
   },
-  "events": [],
+  "events": [
+    {
+      "eventId": "docs-github-copilot-howtos:8a0da09359124b1dc6e0d0ed19b7f5786661e5276ecf402f5050ddbce3dc9001",
+      "sourceId": "docs-github-copilot-howtos",
+      "sourceName": "GitHub Docs / Copilot how-tos",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-09-15T17:43:37.365Z",
+      "publishedAt": "2026-09-15T17:43:37.364Z",
+      "title": "GitHub Docs / Copilot how-tos changed",
+      "url": "https://docs.github.com/en/copilot/how-tos",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [],
+        "additions": [
+          "Managing requests for additional Copilot budget"
+        ]
+      },
+      "headings": [
+        "How-tos for GitHub Copilot"
+      ],
+      "score": 2
+    }
+  ],
   "errors": []
 }

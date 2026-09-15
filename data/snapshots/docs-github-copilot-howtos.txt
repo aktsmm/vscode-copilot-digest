@@ -143,6 +143,7 @@ Managing GitHub Copilot policies as an individual subscriber
 Administer GitHub Copilot for your team
 Managing GitHub Copilot in your organization
 Managing GitHub Copilot in your enterprise
+Managing requests for additional Copilot budget
 Managing MCP usage in your company
 Downloading a GitHub Copilot activity report for your organization or enterprise
 Viewing the Copilot usage metrics dashboard
