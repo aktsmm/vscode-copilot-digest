@@ -1,33 +1,80 @@
 {
   "date": "2026-09-16",
-  "generatedAt": "2026-09-16T17:41:06.308Z",
+  "generatedAt": "2026-09-16T23:41:52.184Z",
   "latestRun": {
-    "generatedAt": "2026-09-16T17:41:06.308Z",
-    "newEventsCount": 1,
+    "generatedAt": "2026-09-16T23:41:52.184Z",
+    "newEventsCount": 2,
     "newEventIds": [
-      "vscode-updates:0240da19326d9c562c7dc854f806380d992d50f6b21f14a86eca2477c6a66721"
+      "vscode-updates:67707c68de6b5d658105a6539f35ff677e5e0f8f5b1352f08fee958df826f040",
+      "copilot-whats-new:57949fcb3338889468db58f794a7374c5e95b4aa7853b812861245dde8812bd9"
     ],
     "errorCount": 0,
     "skippedLowInformationEvents": [
       {
-        "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_138",
-        "sourceId": "vscode-feed",
-        "title": "Visual Studio Code 1.138",
+        "eventId": "github-changelog:https://github.blog/changelog/2026-09-16-copilot-budget-increase-requests-are-generally-available",
+        "sourceId": "github-changelog",
+        "title": "Copilot budget increase requests are generally available",
         "fallbackMarkers": [
-          "Visual Studio Code のリリース。Copilot、agent、エディタ、ワークベンチ周辺の変更点をまとめて確認できる。"
+          "追跡対象ソースの更新。公開内容の変化や運用への影響を継続監視対象として記録している。"
         ]
       },
       {
-        "eventId": "vscode-release-notes-1-138:section:356a8fa31222b03bba7f847cbe600b3ff4a7fb7b4b4b3e04abd8489823180909",
-        "sourceId": "vscode-release-notes-1-138",
-        "title": "Visual Studio Code 1.138: Automations are now enabled by default and can be shared",
+        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-09-16-copilot-budget-increase-requests-are-generally-available",
+        "sourceId": "github-changelog-copilot",
+        "title": "Copilot budget increase requests are generally available",
         "fallbackMarkers": [
-          "に関する release note 更新。該当 section の内容を個別に追跡している。"
+          "追跡対象ソースの更新。公開内容の変化や運用への影響を継続監視対象として記録している。"
+        ]
+      },
+      {
+        "eventId": "vscode-feed:https://code.visualstudio.com/blogs/2026/09/16/building-the-github-copilot-inline-suggestions-model-part-one",
+        "sourceId": "vscode-feed",
+        "title": "Building the new GitHub Copilot Inline Suggestions Model: Part One",
+        "fallbackMarkers": [
+          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
         ]
       }
     ]
   },
   "events": [
+    {
+      "eventId": "copilot-whats-new:57949fcb3338889468db58f794a7374c5e95b4aa7853b812861245dde8812bd9",
+      "sourceId": "copilot-whats-new",
+      "sourceName": "GitHub Copilot What's New",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-09-16T23:41:49.421Z",
+      "publishedAt": "2026-09-16T23:41:49.421Z",
+      "title": "GitHub Copilot What's New changed",
+      "url": "https://github.com/features/copilot/whats-new",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [
+          "Sep.16 Release"
+        ],
+        "additions": [
+          "H3: Sep.16 Release"
+        ]
+      },
+      "headings": [
+        "Changelog",
+        "Filters (0 selected)",
+        "September\n Sep\n 2026",
+        "Sep.16 Release",
+        "Sep.15 Release",
+        "Sep.14 Release",
+        "Sep.11 Improvement",
+        "Sep.11 Improvement",
+        "Sep.10 Release",
+        "Sep.10 Retired",
+        "Sep.09 Improvement",
+        "Sep.08 Release"
+      ],
+      "score": 3
+    },
     {
       "eventId": "vscode-updates:5a05e683ff44899490bbc26f8ee78119867745d3c78ad9318c545998bb34442d",
       "sourceId": "vscode-updates",
@@ -137,6 +184,46 @@
         "Customize chat backgrounds by color theme (Experimental)"
       ],
       "score": 3
+    },
+    {
+      "eventId": "vscode-updates:67707c68de6b5d658105a6539f35ff677e5e0f8f5b1352f08fee958df826f040",
+      "sourceId": "vscode-updates",
+      "sourceName": "VS Code Updates",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-09-16T23:41:47.984Z",
+      "publishedAt": "2026-09-16T00:00:00.000Z",
+      "title": "VS Code Updates changed",
+      "url": "https://code.visualstudio.com/updates/",
+      "summary": "Detected 5 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 5,
+        "headings": [],
+        "additions": [
+          "If you are not signed in to GitHub Copilot and want to use the Codex harness just with your ChatGPT subscription, you also have to enable",
+          "chat.agentHost.allowSignedOutWhenUsable",
+          "Open in VS Code",
+          "Open in VS Code Insiders",
+          "."
+        ]
+      },
+      "headings": [
+        "Visual Studio Code 1.138",
+        "Agents",
+        "Automations are now enabled by default and can be shared",
+        "Run agent sessions in local Dev Containers",
+        "Expanded Codex support in the agent host",
+        "Continue Codex quick chats in a workspace",
+        "On-demand agent SDK downloads",
+        "Create pull requests from agent sessions",
+        "Keep completed sessions organized (Preview)",
+        "See which sessions need attention (Preview)",
+        "Unified workspace and repository picker (Experimental)",
+        "Customize chat backgrounds by color theme (Experimental)"
+      ],
+      "score": 2
     },
     {
       "eventId": "vscode-release-notes-1-109:0d23b2921e6f27876eaa83693621dc7d0004fe3208e53eba11283360f4a5454a",
