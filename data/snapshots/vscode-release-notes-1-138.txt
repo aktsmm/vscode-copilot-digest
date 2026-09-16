@@ -32,6 +32,22 @@ VS Code is rolling out gradually to all users. Use Check for Updates in VS Code 
 To try new features as soon as possible, download the nightly Insiders build, which includes the latest updates as soon as they are available.
 H2: Agents
 The agent host runs agent harnesses in a dedicated process based on the Agent Host Protocol (AHP), so you can connect to the same session from multiple VS Code windows. Learn more about its architecture and workflows in the agent host blog post.
+H3: Automations are now enabled by default and can be shared
+Settings: 
+ 
+ 
+ chat.automations.enabled
+ 
+ 
+ 
+ 
+ 
+ 
+ Open in VS Code
+ Open in VS Code Insiders
+ 
+ (Agents window only)
+Automations are now enabled by default, making it easier to streamline repetitive tasks. You can also export and import automations to share them across different environments or with your team. Learn more about Automations in the VS Code docs.
 H3: Run agent sessions in local Dev Containers
 Setting: 
  

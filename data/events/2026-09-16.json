@@ -1,51 +1,26 @@
 {
   "date": "2026-09-16",
-  "generatedAt": "2026-09-16T10:05:56.209Z",
+  "generatedAt": "2026-09-16T17:41:06.308Z",
   "latestRun": {
-    "generatedAt": "2026-09-16T10:05:56.209Z",
-    "newEventsCount": 2,
+    "generatedAt": "2026-09-16T17:41:06.308Z",
+    "newEventsCount": 1,
     "newEventIds": [
-      "vscode-updates:5a05e683ff44899490bbc26f8ee78119867745d3c78ad9318c545998bb34442d",
-      "vscode-release-notes-1-109:0d23b2921e6f27876eaa83693621dc7d0004fe3208e53eba11283360f4a5454a"
+      "vscode-updates:0240da19326d9c562c7dc854f806380d992d50f6b21f14a86eca2477c6a66721"
     ],
     "errorCount": 0,
     "skippedLowInformationEvents": [
       {
-        "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_139",
+        "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_138",
         "sourceId": "vscode-feed",
-        "title": "Visual Studio Code 1.139 (Insiders)",
+        "title": "Visual Studio Code 1.138",
         "fallbackMarkers": [
-          "Visual Studio Code 関連の更新。日々の開発フローや agent 利用に効く変更点を確認しておきたい。"
+          "Visual Studio Code のリリース。Copilot、agent、エディタ、ワークベンチ周辺の変更点をまとめて確認できる。"
         ]
       },
       {
-        "eventId": "vscode-release-notes-1-138:section:d0a8a22f20773ed9ed2332faed98b9ecde7931d2e6ebc526c56d46ea4be42a8e",
+        "eventId": "vscode-release-notes-1-138:section:356a8fa31222b03bba7f847cbe600b3ff4a7fb7b4b4b3e04abd8489823180909",
         "sourceId": "vscode-release-notes-1-138",
-        "title": "Visual Studio Code 1.138: Run agent sessions in local Dev Containers",
-        "fallbackMarkers": [
-          "に関する release note 更新。該当 section の内容を個別に追跡している。"
-        ]
-      },
-      {
-        "eventId": "vscode-release-notes-1-138:section:9d0eb3906c3f849344a4908064a5aedf04edb174048b77c70c4066f9a7d6bd26",
-        "sourceId": "vscode-release-notes-1-138",
-        "title": "Visual Studio Code 1.138: Expanded Codex support in the agent host",
-        "fallbackMarkers": [
-          "に関する release note 更新。該当 section の内容を個別に追跡している。"
-        ]
-      },
-      {
-        "eventId": "vscode-release-notes-1-138:section:634f1b00010d46f9d07cdfb12dbbaf95243fa42e79b02d8a8142db430324d8d7",
-        "sourceId": "vscode-release-notes-1-138",
-        "title": "Visual Studio Code 1.138: Continue Codex quick chats in a workspace",
-        "fallbackMarkers": [
-          "に関する release note 更新。該当 section の内容を個別に追跡している。"
-        ]
-      },
-      {
-        "eventId": "vscode-release-notes-1-138:section:4e8a3bc5d8dc2c61c461de29370818e29cc7736ec2cef464a4692b8c7ce5f2f7",
-        "sourceId": "vscode-release-notes-1-138",
-        "title": "Visual Studio Code 1.138: On-demand agent SDK downloads",
+        "title": "Visual Studio Code 1.138: Automations are now enabled by default and can be shared",
         "fallbackMarkers": [
           "に関する release note 更新。該当 section の内容を個別に追跡している。"
         ]
@@ -118,6 +93,50 @@
         "Chat"
       ],
       "score": 16
+    },
+    {
+      "eventId": "vscode-updates:0240da19326d9c562c7dc854f806380d992d50f6b21f14a86eca2477c6a66721",
+      "sourceId": "vscode-updates",
+      "sourceName": "VS Code Updates",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-09-16T17:41:03.616Z",
+      "publishedAt": "2026-09-16T00:00:00.000Z",
+      "title": "VS Code Updates changed",
+      "url": "https://code.visualstudio.com/updates/",
+      "summary": "Detected 7 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 7,
+        "headings": [
+          "Automations are now enabled by default and can be shared"
+        ],
+        "additions": [
+          "H3: Automations are now enabled by default and can be shared",
+          "Settings:",
+          "chat.automations.enabled",
+          "Open in VS Code",
+          "Open in VS Code Insiders",
+          "(Agents window only)",
+          "Automations are now enabled by default, making it easier to streamline repetitive tasks. You can also export and import automations to share them across different environments or with your team. Learn more about Automations in the VS Code docs."
+        ]
+      },
+      "headings": [
+        "Visual Studio Code 1.138",
+        "Agents",
+        "Automations are now enabled by default and can be shared",
+        "Run agent sessions in local Dev Containers",
+        "Expanded Codex support in the agent host",
+        "Continue Codex quick chats in a workspace",
+        "On-demand agent SDK downloads",
+        "Create pull requests from agent sessions",
+        "Keep completed sessions organized (Preview)",
+        "See which sessions need attention (Preview)",
+        "Unified workspace and repository picker (Experimental)",
+        "Customize chat backgrounds by color theme (Experimental)"
+      ],
+      "score": 3
     },
     {
       "eventId": "vscode-release-notes-1-109:0d23b2921e6f27876eaa83693621dc7d0004fe3208e53eba11283360f4a5454a",
