@@ -1,13 +1,87 @@
 {
   "date": "2026-09-17",
-  "generatedAt": "2026-09-17T17:41:52.853Z",
+  "generatedAt": "2026-09-17T23:35:16.910Z",
   "latestRun": {
-    "generatedAt": "2026-09-17T17:41:52.853Z",
-    "newEventsCount": 0,
-    "newEventIds": [],
+    "generatedAt": "2026-09-17T23:35:16.910Z",
+    "newEventsCount": 1,
+    "newEventIds": [
+      "copilot-whats-new:916a7e10c0c4121da34c6205f7fb30df3de4a2a1b96c36700400bc293dd1455a"
+    ],
     "errorCount": 0,
-    "skippedLowInformationEvents": []
+    "skippedLowInformationEvents": [
+      {
+        "eventId": "github-changelog:https://github.blog/changelog/2026-09-17-copilot-impact-dashboard-now-shows-feature-engagement",
+        "sourceId": "github-changelog",
+        "title": "Copilot impact dashboard now shows feature engagement",
+        "fallbackMarkers": [
+          "追跡対象ソースの更新。公開内容の変化や運用への影響を継続監視対象として記録している。"
+        ]
+      },
+      {
+        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-09-17-copilot-impact-dashboard-now-shows-feature-engagement",
+        "sourceId": "github-changelog-copilot",
+        "title": "Copilot impact dashboard now shows feature engagement",
+        "fallbackMarkers": [
+          "追跡対象ソースの更新。公開内容の変化や運用への影響を継続監視対象として記録している。"
+        ]
+      },
+      {
+        "eventId": "github-changelog:https://github.blog/changelog/2026-09-17-agentic-cli-customizations-now-in-the-usage-metrics-api",
+        "sourceId": "github-changelog",
+        "title": "Agentic CLI customizations now in the usage metrics API",
+        "fallbackMarkers": [
+          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
+        ]
+      },
+      {
+        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-09-17-agentic-cli-customizations-now-in-the-usage-metrics-api",
+        "sourceId": "github-changelog-copilot",
+        "title": "Agentic CLI customizations now in the usage metrics API",
+        "fallbackMarkers": [
+          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
+        ]
+      }
+    ]
   },
-  "events": [],
+  "events": [
+    {
+      "eventId": "copilot-whats-new:916a7e10c0c4121da34c6205f7fb30df3de4a2a1b96c36700400bc293dd1455a",
+      "sourceId": "copilot-whats-new",
+      "sourceName": "GitHub Copilot What's New",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-09-17T23:35:10.253Z",
+      "publishedAt": "2026-09-17T23:35:10.252Z",
+      "title": "GitHub Copilot What's New changed",
+      "url": "https://github.com/features/copilot/whats-new",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [
+          "Sep.17 Improvement"
+        ],
+        "additions": [
+          "H3: Sep.17 Improvement"
+        ]
+      },
+      "headings": [
+        "Changelog",
+        "Filters (0 selected)",
+        "September\n Sep\n 2026",
+        "Sep.17 Improvement",
+        "Sep.17 Improvement",
+        "Sep.16 Release",
+        "Sep.15 Release",
+        "Sep.14 Release",
+        "Sep.11 Improvement",
+        "Sep.11 Improvement",
+        "Sep.10 Release",
+        "Sep.10 Retired"
+      ],
+      "score": 3
+    }
+  ],
   "errors": []
 }
