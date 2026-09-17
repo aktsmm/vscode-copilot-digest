@@ -1,0 +1,22 @@
+{
+  "date": "2026-09-17",
+  "generatedAt": "2026-09-17T10:09:05.852Z",
+  "latestRun": {
+    "generatedAt": "2026-09-17T10:09:05.852Z",
+    "newEventsCount": 0,
+    "newEventIds": [],
+    "errorCount": 0,
+    "skippedLowInformationEvents": [
+      {
+        "eventId": "github-copilot-blog:https://github.blog/?p=98713",
+        "sourceId": "github-copilot-blog",
+        "title": "Migrating the GitHub Copilot runtime to Rust, using Copilot",
+        "fallbackMarkers": [
+          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
+        ]
+      }
+    ]
+  },
+  "events": [],
+  "errors": []
+}
