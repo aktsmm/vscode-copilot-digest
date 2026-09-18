@@ -1,0 +1,18 @@
+{
+  "date": "2026-09-18",
+  "generatedAt": "2026-09-18T09:55:20.942Z",
+  "latestRun": {
+    "generatedAt": "2026-09-18T09:55:20.942Z",
+    "newEventsCount": 0,
+    "newEventIds": [],
+    "errorCount": 1,
+    "skippedLowInformationEvents": []
+  },
+  "events": [],
+  "errors": [
+    {
+      "sourceId": "publickey",
+      "message": "Failed to fetch https://www.publickey1.jp/atom.xml: 403 Forbidden"
+    }
+  ]
+}
