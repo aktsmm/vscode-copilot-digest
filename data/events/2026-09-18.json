@@ -1,13 +1,83 @@
 {
   "date": "2026-09-18",
-  "generatedAt": "2026-09-18T17:08:49.275Z",
+  "generatedAt": "2026-09-18T23:24:59.741Z",
   "latestRun": {
-    "generatedAt": "2026-09-18T17:08:49.275Z",
-    "newEventsCount": 0,
-    "newEventIds": [],
+    "generatedAt": "2026-09-18T23:24:59.741Z",
+    "newEventsCount": 1,
+    "newEventIds": [
+      "copilot-whats-new:06fbbb2668273ade6d676c8eb4765c4a27cfc0bae2ea0819d0c68891fcff1652"
+    ],
     "errorCount": 0,
-    "skippedLowInformationEvents": []
+    "skippedLowInformationEvents": [
+      {
+        "eventId": "github-changelog:https://github.blog/changelog/2026-09-18-copilot-code-review-an-improved-review-experience",
+        "sourceId": "github-changelog",
+        "title": "Copilot code review: An improved review experience",
+        "fallbackMarkers": [
+          "GitHub Copilot code review のレビュー依頼やコメント処理に関する更新。チームのレビュー運用に影響する可能性がある。"
+        ]
+      },
+      {
+        "eventId": "github-changelog:https://github.blog/changelog/2026-09-18-github-copilot-weekly-releases-september-14",
+        "sourceId": "github-changelog",
+        "title": "GitHub Copilot weekly releases — September 14",
+        "fallbackMarkers": [
+          "GitHub Copilot code review のレビュー依頼やコメント処理に関する更新。チームのレビュー運用に影響する可能性がある。"
+        ]
+      },
+      {
+        "eventId": "github-changelog:https://github.blog/changelog/2026-09-18-upcoming-deprecation-of-selected-github-copilot-models-in-mid-october",
+        "sourceId": "github-changelog",
+        "title": "Upcoming deprecation of selected GitHub Copilot models in mid-October",
+        "fallbackMarkers": [
+          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
+        ]
+      }
+    ]
   },
-  "events": [],
+  "events": [
+    {
+      "eventId": "copilot-whats-new:06fbbb2668273ade6d676c8eb4765c4a27cfc0bae2ea0819d0c68891fcff1652",
+      "sourceId": "copilot-whats-new",
+      "sourceName": "GitHub Copilot What's New",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-09-18T23:24:56.188Z",
+      "publishedAt": "2026-09-18T23:24:56.187Z",
+      "title": "GitHub Copilot What's New changed",
+      "url": "https://github.com/features/copilot/whats-new",
+      "summary": "Detected 3 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 3,
+        "headings": [
+          "Sep.18 Improvement",
+          "Sep.18 Release",
+          "Sep.18 Retired"
+        ],
+        "additions": [
+          "H3: Sep.18 Improvement",
+          "H3: Sep.18 Release",
+          "H3: Sep.18 Retired"
+        ]
+      },
+      "headings": [
+        "Changelog",
+        "Filters (0 selected)",
+        "September\n Sep\n 2026",
+        "Sep.18 Improvement",
+        "Sep.18 Release",
+        "Sep.18 Retired",
+        "Sep.17 Improvement",
+        "Sep.17 Improvement",
+        "Sep.16 Release",
+        "Sep.15 Release",
+        "Sep.14 Release",
+        "Sep.11 Improvement"
+      ],
+      "score": 5
+    }
+  ],
   "errors": []
 }
