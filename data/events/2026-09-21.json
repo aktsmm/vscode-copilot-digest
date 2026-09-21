@@ -1,13 +1,63 @@
 {
   "date": "2026-09-21",
-  "generatedAt": "2026-09-21T10:52:13.393Z",
+  "generatedAt": "2026-09-21T18:51:40.597Z",
   "latestRun": {
-    "generatedAt": "2026-09-21T10:52:13.393Z",
-    "newEventsCount": 0,
-    "newEventIds": [],
+    "generatedAt": "2026-09-21T18:51:40.597Z",
+    "newEventsCount": 1,
+    "newEventIds": [
+      "copilot-whats-new:853eeb3cbbc17e59b4c037cc4c4f9fdf95c756fe354bf6f90beb8dd0350a29f6"
+    ],
     "errorCount": 0,
-    "skippedLowInformationEvents": []
+    "skippedLowInformationEvents": [
+      {
+        "eventId": "github-changelog:https://github.blog/changelog/2026-09-21-grok-4-7-is-now-available-in-github-copilot",
+        "sourceId": "github-changelog",
+        "title": "Grok 4.7 is now available in GitHub Copilot",
+        "fallbackMarkers": [
+          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
+        ]
+      }
+    ]
   },
-  "events": [],
+  "events": [
+    {
+      "eventId": "copilot-whats-new:853eeb3cbbc17e59b4c037cc4c4f9fdf95c756fe354bf6f90beb8dd0350a29f6",
+      "sourceId": "copilot-whats-new",
+      "sourceName": "GitHub Copilot What's New",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-09-21T18:51:37.161Z",
+      "publishedAt": "2026-09-21T18:51:37.159Z",
+      "title": "GitHub Copilot What's New changed",
+      "url": "https://github.com/features/copilot/whats-new",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [
+          "Sep.21 Release"
+        ],
+        "additions": [
+          "H3: Sep.21 Release"
+        ]
+      },
+      "headings": [
+        "Changelog",
+        "Filters (0 selected)",
+        "September\n Sep\n 2026",
+        "Sep.21 Release",
+        "Sep.18 Improvement",
+        "Sep.18 Release",
+        "Sep.18 Retired",
+        "Sep.17 Improvement",
+        "Sep.17 Improvement",
+        "Sep.16 Release",
+        "Sep.15 Release",
+        "Sep.14 Release"
+      ],
+      "score": 3
+    }
+  ],
   "errors": []
 }
