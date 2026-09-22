@@ -89,6 +89,7 @@ Configuring local sandbox settings
 GitHub Copilot app
 Customizing the GitHub Copilot app
 Working with agent sessions in the GitHub Copilot app
+Configuring local sandboxing in the GitHub Copilot app
 Working with canvas extensions in the GitHub Copilot app
 Managing issues and pull requests with the GitHub Copilot app
 Using automations in the GitHub Copilot app

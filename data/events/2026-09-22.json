@@ -1,18 +1,51 @@
 {
   "date": "2026-09-22",
-  "generatedAt": "2026-09-22T17:41:52.909Z",
+  "generatedAt": "2026-09-22T23:40:21.954Z",
   "latestRun": {
-    "generatedAt": "2026-09-22T17:41:52.909Z",
-    "newEventsCount": 1,
+    "generatedAt": "2026-09-22T23:40:21.954Z",
+    "newEventsCount": 2,
     "newEventIds": [
-      "copilot-whats-new:7ee9a0a9f80373f5fb01ed9481c6703d4ca937d18819c7631277b498557a4fda"
+      "copilot-whats-new:81c030bbb1c3d32787d3b164f80eb1e70a361e93e9f6c92094359be05c0914ca",
+      "docs-github-copilot-howtos:c4b640926d6450bdef186aadb52a40c3ce018aec3ced1840743fc5333e456553"
     ],
     "errorCount": 0,
     "skippedLowInformationEvents": [
       {
-        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-09-22-claude-opus-5-5-is-now-available-in-github-copilot",
+        "eventId": "github-changelog:https://github.blog/changelog/2026-09-22-faster-c-code-intelligence-with-whole-codebase-indexing",
+        "sourceId": "github-changelog",
+        "title": "Faster C++ code intelligence with whole codebase indexing",
+        "fallbackMarkers": [
+          "GitHub Copilot CLI の更新。ターミナルでの agent 作業、設定、ガバナンス、レビュー補助に関わる変更として、CLI 運用への影響を確認しておきたい。"
+        ]
+      },
+      {
+        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-09-22-faster-c-code-intelligence-with-whole-codebase-indexing",
         "sourceId": "github-changelog-copilot",
+        "title": "Faster C++ code intelligence with whole codebase indexing",
+        "fallbackMarkers": [
+          "GitHub Copilot CLI の更新。ターミナルでの agent 作業、設定、ガバナンス、レビュー補助に関わる変更として、CLI 運用への影響を確認しておきたい。"
+        ]
+      },
+      {
+        "eventId": "github-changelog:https://github.blog/changelog/2026-09-22-claude-opus-5-5-is-now-available-in-github-copilot",
+        "sourceId": "github-changelog",
         "title": "Claude Opus 5.5 is now available in GitHub Copilot",
+        "fallbackMarkers": [
+          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
+        ]
+      },
+      {
+        "eventId": "github-changelog:https://github.blog/changelog/2026-09-22-openais-gpt-6-sol-and-gpt-6-luna-now-available",
+        "sourceId": "github-changelog",
+        "title": "OpenAI&#8217;s GPT-6 Sol and GPT-6 Luna now available",
+        "fallbackMarkers": [
+          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
+        ]
+      },
+      {
+        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-09-22-openais-gpt-6-sol-and-gpt-6-luna-now-available",
+        "sourceId": "github-changelog-copilot",
+        "title": "OpenAI&#8217;s GPT-6 Sol and GPT-6 Luna now available",
         "fallbackMarkers": [
           "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
         ]
@@ -20,6 +53,44 @@
     ]
   },
   "events": [
+    {
+      "eventId": "copilot-whats-new:81c030bbb1c3d32787d3b164f80eb1e70a361e93e9f6c92094359be05c0914ca",
+      "sourceId": "copilot-whats-new",
+      "sourceName": "GitHub Copilot What's New",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-09-22T23:40:18.948Z",
+      "publishedAt": "2026-09-22T23:40:18.947Z",
+      "title": "GitHub Copilot What's New changed",
+      "url": "https://github.com/features/copilot/whats-new",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [
+          "Sep.22 Release"
+        ],
+        "additions": [
+          "H3: Sep.22 Release"
+        ]
+      },
+      "headings": [
+        "Changelog",
+        "Filters (0 selected)",
+        "September\n Sep\n 2026",
+        "Sep.22 Release",
+        "Sep.22 Release",
+        "Sep.22 Release",
+        "Sep.21 Release",
+        "Sep.18 Improvement",
+        "Sep.18 Release",
+        "Sep.18 Retired",
+        "Sep.17 Improvement",
+        "Sep.17 Improvement"
+      ],
+      "score": 3
+    },
     {
       "eventId": "copilot-whats-new:7ee9a0a9f80373f5fb01ed9481c6703d4ca937d18819c7631277b498557a4fda",
       "sourceId": "copilot-whats-new",
@@ -167,6 +238,31 @@
         "Inline chat UX revamp (Preview)"
       ],
       "score": 3
+    },
+    {
+      "eventId": "docs-github-copilot-howtos:c4b640926d6450bdef186aadb52a40c3ce018aec3ced1840743fc5333e456553",
+      "sourceId": "docs-github-copilot-howtos",
+      "sourceName": "GitHub Docs / Copilot how-tos",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-09-22T23:40:20.878Z",
+      "publishedAt": "2026-09-22T23:40:20.878Z",
+      "title": "GitHub Docs / Copilot how-tos changed",
+      "url": "https://docs.github.com/en/copilot/how-tos",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [],
+        "additions": [
+          "Configuring local sandboxing in the GitHub Copilot app"
+        ]
+      },
+      "headings": [
+        "How-tos for GitHub Copilot"
+      ],
+      "score": 2
     }
   ],
   "errors": []
