@@ -29,7 +29,7 @@ Update 1.109.5: The update addresses these issues and adds these features to imp
 Support for slash commands, including prompt files, hooks, and skills
 The ability to rename background agent sessions
 Kitty keyboard support is now available to all users
-Downloads: Windows: x64 Arm64 | Mac: Universal Intel silicon | Linux: deb rpm tarball Arm snap
+H2: Downloads for 1.109.5
 Welcome to the January 2026 release of Visual Studio Code. In this release, we are further evolving VS Code to make it the home for multi-agent development.
 Chat UX - chat just feels better and snappier with faster streaming, improved reasoning results, and a revamped editor inline chat
 Chat UX - chat just feels better and snappier with faster streaming, improved reasoning results, and a revamped editor inline chat

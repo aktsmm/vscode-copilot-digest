@@ -18,7 +18,7 @@ View All Releases
 H1: Visual Studio Code 1.138
 Follow us on LinkedIn, X, Bluesky, Instagram
 Release date: September 16, 2026
-Downloads: Windows: x64 Arm64 | Mac: Universal Intel silicon | Linux: deb rpm tarball Arm snap
+H2: Downloads for 1.138.0
 Welcome to the 1.138 release of Visual Studio Code. This release helps agents work in your project's development environment, gives Codex sessions more flexibility, and keeps completed sessions organized.
 Agent sessions in Dev Containers: Run agents with your project's tools and dependencies in a local Dev Container.
 Agent sessions in Dev Containers: Run agents with your project's tools and dependencies in a local Dev Container.

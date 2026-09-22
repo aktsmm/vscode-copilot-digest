@@ -12,7 +12,6 @@ Enterprise management tools
 Platform governance
 Projects & Issues
 Supply chain security
-Universe ‘25
 H2: September
  Sep
  2026

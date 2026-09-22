@@ -1,0 +1,137 @@
+{
+  "date": "2026-09-22",
+  "generatedAt": "2026-09-22T00:11:54.991Z",
+  "latestRun": {
+    "generatedAt": "2026-09-22T00:11:54.991Z",
+    "newEventsCount": 3,
+    "newEventIds": [
+      "vscode-updates:30b71999b3a50999dce22a11dfe6d080a80c98ec83d122b87af5ce537ecb4082",
+      "vscode-release-notes-1-109:b044ae63434383a0d0f5015aeb63e3166567ecdf2980458798607c97e174d638",
+      "copilot-whats-new:d637f5175288f08496705406b8b7746996475534be0e125e4dc76d5e5250c446"
+    ],
+    "errorCount": 0,
+    "skippedLowInformationEvents": [
+      {
+        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-09-21-grok-4-7-is-now-available-in-github-copilot",
+        "sourceId": "github-changelog-copilot",
+        "title": "Grok 4.7 is now available in GitHub Copilot",
+        "fallbackMarkers": [
+          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
+        ]
+      }
+    ]
+  },
+  "events": [
+    {
+      "eventId": "copilot-whats-new:d637f5175288f08496705406b8b7746996475534be0e125e4dc76d5e5250c446",
+      "sourceId": "copilot-whats-new",
+      "sourceName": "GitHub Copilot What's New",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-09-22T00:11:53.380Z",
+      "publishedAt": "2026-09-22T00:11:53.380Z",
+      "title": "GitHub Copilot What's New changed",
+      "url": "https://github.com/features/copilot/whats-new",
+      "summary": "Detected 0 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 0,
+        "headings": [],
+        "additions": []
+      },
+      "headings": [
+        "Changelog",
+        "Filters (0 selected)",
+        "September\n Sep\n 2026",
+        "Sep.21 Release",
+        "Sep.18 Improvement",
+        "Sep.18 Release",
+        "Sep.18 Retired",
+        "Sep.17 Improvement",
+        "Sep.17 Improvement",
+        "Sep.16 Release",
+        "Sep.15 Release",
+        "Sep.14 Release"
+      ],
+      "score": 2
+    },
+    {
+      "eventId": "vscode-updates:30b71999b3a50999dce22a11dfe6d080a80c98ec83d122b87af5ce537ecb4082",
+      "sourceId": "vscode-updates",
+      "sourceName": "VS Code Updates",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-09-22T00:11:52.784Z",
+      "publishedAt": "2026-09-16T00:00:00.000Z",
+      "title": "VS Code Updates changed",
+      "url": "https://code.visualstudio.com/updates/",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [
+          "Downloads for 1.138.0"
+        ],
+        "additions": [
+          "H2: Downloads for 1.138.0"
+        ]
+      },
+      "headings": [
+        "Visual Studio Code 1.138",
+        "Downloads for 1.138.0",
+        "Agents",
+        "Automations are now enabled by default and can be shared",
+        "Run agent sessions in local Dev Containers",
+        "Expanded Codex support in the agent host",
+        "Continue Codex quick chats in a workspace",
+        "On-demand agent SDK downloads",
+        "Create pull requests from agent sessions",
+        "Keep completed sessions organized (Preview)",
+        "See which sessions need attention (Preview)",
+        "Unified workspace and repository picker (Experimental)"
+      ],
+      "score": 3
+    },
+    {
+      "eventId": "vscode-release-notes-1-109:b044ae63434383a0d0f5015aeb63e3166567ecdf2980458798607c97e174d638",
+      "sourceId": "vscode-release-notes-1-109",
+      "sourceName": "VS Code Release Notes 1.109",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-09-22T00:11:53.165Z",
+      "publishedAt": "2026-02-04T00:00:00.000Z",
+      "title": "VS Code Release Notes 1.109 changed",
+      "url": "https://code.visualstudio.com/updates/v1_109",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [
+          "Downloads for 1.109.5"
+        ],
+        "additions": [
+          "H2: Downloads for 1.109.5"
+        ]
+      },
+      "headings": [
+        "January 2026 (version 1.109)",
+        "Downloads for 1.109.5",
+        "Upcoming events",
+        "Agent Sessions Day",
+        "Chat UX",
+        "Message steering and queueing (Experimental)",
+        "Anthropic models now show thinking tokens",
+        "Mermaid diagrams in chat responses",
+        "Ask Questions tool (Experimental)",
+        "Plan agent",
+        "Context window details",
+        "Inline chat UX revamp (Preview)"
+      ],
+      "score": 3
+    }
+  ],
+  "errors": []
+}

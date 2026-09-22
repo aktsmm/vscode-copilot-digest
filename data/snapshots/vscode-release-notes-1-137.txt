@@ -18,7 +18,7 @@ View All Releases
 H1: Visual Studio Code 1.137
 Follow us on LinkedIn, X, Bluesky, Instagram
 Release date: September 9, 2026
-Downloads: Windows: x64 Arm64 | Mac: Universal Intel silicon | Linux: deb rpm tarball Arm snap
+H2: Downloads for 1.137.0
 Welcome to the 1.137 release of Visual Studio Code. This release helps you automate recurring work, continue quick chats in a workspace, talk with agents by voice, and work with GitHub issues and pull requests without leaving the Agents window.
 The Story of VS Code: Watch the VS Code documentary and discover how the editor and its community evolved.
 The Story of VS Code: Watch the VS Code documentary and discover how the editor and its community evolved.

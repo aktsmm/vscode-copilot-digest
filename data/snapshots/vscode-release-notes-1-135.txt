@@ -18,7 +18,7 @@ View All Releases
 H1: Visual Studio Code 1.135
 Follow us on LinkedIn, X, Bluesky, Instagram
 Release date: August 26, 2026
-Downloads: Windows: x64 Arm64 | Mac: Universal Intel silicon | Linux: deb rpm tarball Arm snap
+H2: Downloads for 1.135.0
 Welcome to the 1.135 release of Visual Studio Code. This release helps you continue agent sessions across applications, get a second opinion on agent work, and understand chat usage while working in a more streamlined Agents window.
 External agent sessions: Continue recent Copilot or Claude agent sessions from other applications in VS Code.
 External agent sessions: Continue recent Copilot or Claude agent sessions from other applications in VS Code.
