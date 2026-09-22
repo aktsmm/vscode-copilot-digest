@@ -1,25 +1,12 @@
 {
   "date": "2026-09-22",
-  "generatedAt": "2026-09-22T00:11:54.991Z",
+  "generatedAt": "2026-09-22T10:07:11.118Z",
   "latestRun": {
-    "generatedAt": "2026-09-22T00:11:54.991Z",
-    "newEventsCount": 3,
-    "newEventIds": [
-      "vscode-updates:30b71999b3a50999dce22a11dfe6d080a80c98ec83d122b87af5ce537ecb4082",
-      "vscode-release-notes-1-109:b044ae63434383a0d0f5015aeb63e3166567ecdf2980458798607c97e174d638",
-      "copilot-whats-new:d637f5175288f08496705406b8b7746996475534be0e125e4dc76d5e5250c446"
-    ],
+    "generatedAt": "2026-09-22T10:07:11.118Z",
+    "newEventsCount": 0,
+    "newEventIds": [],
     "errorCount": 0,
-    "skippedLowInformationEvents": [
-      {
-        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-09-21-grok-4-7-is-now-available-in-github-copilot",
-        "sourceId": "github-changelog-copilot",
-        "title": "Grok 4.7 is now available in GitHub Copilot",
-        "fallbackMarkers": [
-          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
-        ]
-      }
-    ]
+    "skippedLowInformationEvents": []
   },
   "events": [
     {
