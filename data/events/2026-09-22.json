@@ -1,14 +1,63 @@
 {
   "date": "2026-09-22",
-  "generatedAt": "2026-09-22T10:07:11.118Z",
+  "generatedAt": "2026-09-22T17:41:52.909Z",
   "latestRun": {
-    "generatedAt": "2026-09-22T10:07:11.118Z",
-    "newEventsCount": 0,
-    "newEventIds": [],
+    "generatedAt": "2026-09-22T17:41:52.909Z",
+    "newEventsCount": 1,
+    "newEventIds": [
+      "copilot-whats-new:7ee9a0a9f80373f5fb01ed9481c6703d4ca937d18819c7631277b498557a4fda"
+    ],
     "errorCount": 0,
-    "skippedLowInformationEvents": []
+    "skippedLowInformationEvents": [
+      {
+        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-09-22-claude-opus-5-5-is-now-available-in-github-copilot",
+        "sourceId": "github-changelog-copilot",
+        "title": "Claude Opus 5.5 is now available in GitHub Copilot",
+        "fallbackMarkers": [
+          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
+        ]
+      }
+    ]
   },
   "events": [
+    {
+      "eventId": "copilot-whats-new:7ee9a0a9f80373f5fb01ed9481c6703d4ca937d18819c7631277b498557a4fda",
+      "sourceId": "copilot-whats-new",
+      "sourceName": "GitHub Copilot What's New",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-09-22T17:41:50.187Z",
+      "publishedAt": "2026-09-22T17:41:50.186Z",
+      "title": "GitHub Copilot What's New changed",
+      "url": "https://github.com/features/copilot/whats-new",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [
+          "Sep.22 Release"
+        ],
+        "additions": [
+          "H3: Sep.22 Release"
+        ]
+      },
+      "headings": [
+        "Changelog",
+        "Filters (0 selected)",
+        "September\n Sep\n 2026",
+        "Sep.22 Release",
+        "Sep.21 Release",
+        "Sep.18 Improvement",
+        "Sep.18 Release",
+        "Sep.18 Retired",
+        "Sep.17 Improvement",
+        "Sep.17 Improvement",
+        "Sep.16 Release",
+        "Sep.15 Release"
+      ],
+      "score": 3
+    },
     {
       "eventId": "copilot-whats-new:d637f5175288f08496705406b8b7746996475534be0e125e4dc76d5e5250c446",
       "sourceId": "copilot-whats-new",
