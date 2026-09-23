@@ -1,84 +1,28 @@
 {
   "date": "2026-09-23",
-  "generatedAt": "2026-09-23T10:09:08.534Z",
+  "generatedAt": "2026-09-23T17:54:48.930Z",
   "latestRun": {
-    "generatedAt": "2026-09-23T10:09:08.534Z",
+    "generatedAt": "2026-09-23T17:54:48.930Z",
     "newEventsCount": 3,
     "newEventIds": [
-      "vscode-updates:5fc0b21b6c65887ca4ceb073e2727831bbbcd61004462019e0e83604f062690f",
-      "vscode-release-notes-1-109:8ed5cc8dbbc952b17a9294d6350920c53c3e995b15f650b5db585faa2ec54c5c",
-      "copilot-whats-new:a9dffb6c1722e4b2e2f71994af9f83861b3f75ae5a4d3aa12c442049d479021c"
+      "copilot-whats-new:2099f691ee74c2b98bef6c097296b80b7afa14c2307b325b916ad621c757557b",
+      "docs-github-copilot-howtos:a01d4448109a9f1733a0e6c7bec43f1ed5174f7feadfd899406e40ad47b823f3",
+      "docs-github-copilot-concepts:cd4f9b6af14966a99b0ec887f04cb92b282d6d15e53029bea41eace9904bfa69"
     ],
     "errorCount": 0,
     "skippedLowInformationEvents": [
       {
-        "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_140",
+        "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_139",
         "sourceId": "vscode-feed",
-        "title": "Visual Studio Code 1.140 (Insiders)",
+        "title": "Visual Studio Code 1.139",
         "fallbackMarkers": [
-          "Visual Studio Code 関連の更新。日々の開発フローや agent 利用に効く変更点を確認しておきたい。"
+          "Visual Studio Code のリリース。Copilot、agent、エディタ、ワークベンチ周辺の変更点をまとめて確認できる。"
         ]
       },
       {
-        "eventId": "vscode-release-notes-1-139:section:f36ea050014915ce1a8f9b45da2237e15731ff19a0cc39603dbfc7d96facce82",
-        "sourceId": "vscode-release-notes-1-139",
-        "title": "Visual Studio Code 1.139: Run agent sessions in Dev Containers on remote hosts",
-        "fallbackMarkers": [
-          "に関する release note 更新。該当 section の内容を個別に追跡している。"
-        ]
-      },
-      {
-        "eventId": "vscode-release-notes-1-139:section:b28a618d92d0ec9e57084576b4962c31dcb3ad4d2dd31ee5343d70ad64c33bcc",
-        "sourceId": "vscode-release-notes-1-139",
-        "title": "Visual Studio Code 1.139: Faster session list loading",
-        "fallbackMarkers": [
-          "に関する release note 更新。該当 section の内容を個別に追跡している。"
-        ]
-      },
-      {
-        "eventId": "vscode-release-notes-1-139:section:c0a000d71dcabcbb8031074f2c17df471476e811b40be0dce7fc6b56660c83d9",
-        "sourceId": "vscode-release-notes-1-139",
-        "title": "Visual Studio Code 1.139: Compact sessions list",
-        "fallbackMarkers": [
-          "に関する release note 更新。該当 section の内容を個別に追跡している。"
-        ]
-      },
-      {
-        "eventId": "vscode-release-notes-1-139:section:e75c918edb48f8ba1ad2b5dc1df277f3ee0734fdcc3c94e1d934dbb909e25c3f",
-        "sourceId": "vscode-release-notes-1-139",
-        "title": "Visual Studio Code 1.139: Filter empty session groups",
-        "fallbackMarkers": [
-          "に関する release note 更新。該当 section の内容を個別に追跡している。"
-        ]
-      },
-      {
-        "eventId": "github-changelog:https://github.blog/changelog/2026-09-22-opentelemetry-in-the-github-copilot-app",
+        "eventId": "github-changelog:https://github.blog/changelog/2026-09-22-local-sandboxing-in-the-github-copilot-app",
         "sourceId": "github-changelog",
-        "title": "OpenTelemetry in the GitHub Copilot app",
-        "fallbackMarkers": [
-          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
-        ]
-      },
-      {
-        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-09-22-opentelemetry-in-the-github-copilot-app",
-        "sourceId": "github-changelog-copilot",
-        "title": "OpenTelemetry in the GitHub Copilot app",
-        "fallbackMarkers": [
-          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
-        ]
-      },
-      {
-        "eventId": "github-changelog:https://github.blog/changelog/2026-09-22-new-features-and-improvements-in-copilot-for-jetbrains",
-        "sourceId": "github-changelog",
-        "title": "New features and improvements in Copilot for JetBrains",
-        "fallbackMarkers": [
-          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
-        ]
-      },
-      {
-        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-09-22-new-features-and-improvements-in-copilot-for-jetbrains",
-        "sourceId": "github-changelog-copilot",
-        "title": "New features and improvements in Copilot for JetBrains",
+        "title": "Local sandboxing in the GitHub Copilot app",
         "fallbackMarkers": [
           "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
         ]
@@ -86,6 +30,44 @@
     ]
   },
   "events": [
+    {
+      "eventId": "copilot-whats-new:2099f691ee74c2b98bef6c097296b80b7afa14c2307b325b916ad621c757557b",
+      "sourceId": "copilot-whats-new",
+      "sourceName": "GitHub Copilot What's New",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-09-23T17:54:43.132Z",
+      "publishedAt": "2026-09-23T17:54:43.131Z",
+      "title": "GitHub Copilot What's New changed",
+      "url": "https://github.com/features/copilot/whats-new",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [
+          "Sep.23 Release"
+        ],
+        "additions": [
+          "H3: Sep.23 Release"
+        ]
+      },
+      "headings": [
+        "Changelog",
+        "Filters (0 selected)",
+        "September\n Sep\n 2026",
+        "Sep.23 Release",
+        "Sep.22 Release",
+        "Sep.22 Release",
+        "Sep.22 Release",
+        "Sep.22 Release",
+        "Sep.22 Release",
+        "Sep.21 Release",
+        "Sep.18 Improvement",
+        "Sep.18 Release"
+      ],
+      "score": 3
+    },
     {
       "eventId": "copilot-whats-new:a9dffb6c1722e4b2e2f71994af9f83861b3f75ae5a4d3aa12c442049d479021c",
       "sourceId": "copilot-whats-new",
@@ -225,6 +207,60 @@
         "Plan agent",
         "Context window details",
         "Inline chat UX revamp (Preview)"
+      ],
+      "score": 2
+    },
+    {
+      "eventId": "docs-github-copilot-concepts:cd4f9b6af14966a99b0ec887f04cb92b282d6d15e53029bea41eace9904bfa69",
+      "sourceId": "docs-github-copilot-concepts",
+      "sourceName": "GitHub Docs / Copilot concepts",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-09-23T17:54:45.722Z",
+      "publishedAt": "2026-09-23T17:54:45.722Z",
+      "title": "GitHub Docs / Copilot concepts changed",
+      "url": "https://docs.github.com/en/copilot/concepts",
+      "summary": "Detected 5 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 5,
+        "headings": [],
+        "additions": [
+          "Security, governance, and network settings for GitHub Copilot",
+          "Content exclusion for GitHub Copilot",
+          "About GitHub Copilot session data",
+          "About cloud and local sandboxes for GitHub Copilot",
+          "Risks and mitigations for GitHub Copilot cloud agent"
+        ]
+      },
+      "headings": [
+        "Concepts for GitHub Copilot"
+      ],
+      "score": 2
+    },
+    {
+      "eventId": "docs-github-copilot-howtos:a01d4448109a9f1733a0e6c7bec43f1ed5174f7feadfd899406e40ad47b823f3",
+      "sourceId": "docs-github-copilot-howtos",
+      "sourceName": "GitHub Docs / Copilot how-tos",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-09-23T17:54:45.049Z",
+      "publishedAt": "2026-09-23T17:54:45.048Z",
+      "title": "GitHub Docs / Copilot how-tos changed",
+      "url": "https://docs.github.com/en/copilot/how-tos",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [],
+        "additions": [
+          "About GitHub Copilot session data"
+        ]
+      },
+      "headings": [
+        "How-tos for GitHub Copilot"
       ],
       "score": 2
     }

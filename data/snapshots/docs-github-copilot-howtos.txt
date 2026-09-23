@@ -35,7 +35,6 @@ About custom agents
 About remote control of GitHub Copilot CLI sessions
 Allowing GitHub Copilot CLI to work autonomously
 Canceling a GitHub Copilot CLI operation and rolling back changes
-About GitHub Copilot CLI session data
 Comparing GitHub Copilot CLI customization features
 Managing context in GitHub Copilot CLI
 Loading tools on demand with tool search
@@ -48,6 +47,7 @@ Copilot CLI ACP server
 GitHub Copilot CLI command reference
 GitHub Copilot CLI plugin reference
 GitHub Copilot CLI programmatic reference
+About GitHub Copilot session data
 GitHub Copilot hooks reference
 Application card: GitHub Copilot Agents
 Using hooks with Copilot CLI for predictable, policy-compliant execution

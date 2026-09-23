@@ -19,7 +19,6 @@ About agent apps
 OpenAI Codex
 Anthropic Claude
 About agent skills
-About cloud and local sandboxes for GitHub Copilot
 Concepts for prompting GitHub Copilot
 Prompt engineering for GitHub Copilot Chat
 About customizing GitHub Copilot responses
@@ -27,7 +26,6 @@ Concepts for providing context to GitHub Copilot
 About Model Context Protocol (MCP)
 About GitHub Copilot Spaces
 Indexing repositories for GitHub Copilot
-Content exclusion for GitHub Copilot
 Concepts for AI tools
 Choosing the right AI tool for your task
 About Copilot integrations
@@ -41,6 +39,11 @@ GitHub Copilot billing and usage
 Billing and usage for organizations and enterprises
 Billing and usage for individuals
 GitHub Copilot usage metrics
+Security, governance, and network settings for GitHub Copilot
+Content exclusion for GitHub Copilot
+About GitHub Copilot session data
+About cloud and local sandboxes for GitHub Copilot
+Risks and mitigations for GitHub Copilot cloud agent
 Network settings for GitHub Copilot
 Enterprise concepts for GitHub Copilot
 GitHub Copilot policies for enterprises and organizations
