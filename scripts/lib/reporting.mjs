@@ -77,6 +77,10 @@ export const lowInformationFallbackMarkers = [
 ];
 
 const vscodeReleaseSummaries = {
+  1.139: {
+    ja: "Agents ウィンドウで、SSH、Tunnel、WSL 上のプロジェクトでも Dev Container 内で agent セッションを実行できるようになった。設定を有効にし、リモートホストに Docker と対応する Dev Container 設定があれば、ローカルやホストにツールチェーンを重複配置せず、プロジェクトの依存関係で build と test を実行できる。",
+    en: "The Agents Window can now run agent sessions inside a Dev Container for projects on SSH, Tunnel, and WSL hosts. With the setting enabled, Docker available on the remote host, and a supported Dev Container configuration, agents can build and test with the project's dependencies without duplicating the toolchain locally or on the host.",
+  },
   1.123: {
     ja: "Visual Studio Code 1.123 の release note 予告ページ。正式公開前のため、通常ハイライトには混ぜず、次回 release の監視対象として扱う。",
     en: "A future Visual Studio Code 1.123 release-notes entry. It is tracked as an upcoming release signal rather than mixed into published highlights before the release date.",
@@ -3303,10 +3307,17 @@ export function importanceLabel(event) {
 export function importanceReason(event, locale = "ja") {
   const title = normalizeWhitespace(decodeHtmlEntities(event.title));
   const text = `${title} ${event.summary}`.toLowerCase();
+  const addedVersion = versionIndexAdditionFromEvent(event);
   const editorialOverride = editorialOverrides[title];
 
   if (locale === "ja" && editorialOverride?.jaWhy) {
     return editorialOverride.jaWhy;
+  }
+
+  if (title === "VS Code Updates changed" && addedVersion === "1.139") {
+    return locale === "ja"
+      ? "リモート開発で agent の build と test を Dev Container の依存関係にそろえられるため、設定、Docker、Dev Container 構成を確認する価値があります。"
+      : "This lets remote-development agent builds and tests use the Dev Container's dependencies, so teams should verify the setting, Docker, and Dev Container configuration.";
   }
 
   if (exactImportanceMappings[title]?.[locale]) {
