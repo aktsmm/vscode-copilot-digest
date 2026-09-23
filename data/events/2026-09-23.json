@@ -1,28 +1,52 @@
 {
   "date": "2026-09-23",
-  "generatedAt": "2026-09-23T17:54:48.930Z",
+  "generatedAt": "2026-09-23T23:48:47.620Z",
   "latestRun": {
-    "generatedAt": "2026-09-23T17:54:48.930Z",
+    "generatedAt": "2026-09-23T23:48:47.620Z",
     "newEventsCount": 3,
     "newEventIds": [
-      "copilot-whats-new:2099f691ee74c2b98bef6c097296b80b7afa14c2307b325b916ad621c757557b",
-      "docs-github-copilot-howtos:a01d4448109a9f1733a0e6c7bec43f1ed5174f7feadfd899406e40ad47b823f3",
-      "docs-github-copilot-concepts:cd4f9b6af14966a99b0ec887f04cb92b282d6d15e53029bea41eace9904bfa69"
+      "vscode-updates:48038414392adcbf870f17a8fd5605f8db835302c071d879c0770aa4c7d223a7",
+      "vscode-release-notes-1-109:2e6ab4716f895dfe052160783d8d79e20894c7498aee18f0110b11d638a901af",
+      "copilot-whats-new:dc989669316d3162ac6ebea83a29ca5218f36e58a8c0d5d2fb7cab1adc4ae7ce"
     ],
     "errorCount": 0,
     "skippedLowInformationEvents": [
       {
-        "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_139",
-        "sourceId": "vscode-feed",
-        "title": "Visual Studio Code 1.139",
+        "eventId": "github-changelog:https://github.blog/changelog/2026-09-23-copilot-code-review-more-ways-to-request-and-configure-reviews",
+        "sourceId": "github-changelog",
+        "title": "More ways to request and configure Copilot code reviews",
         "fallbackMarkers": [
-          "Visual Studio Code のリリース。Copilot、agent、エディタ、ワークベンチ周辺の変更点をまとめて確認できる。"
+          "GitHub Copilot code review のレビュー依頼やコメント処理に関する更新。チームのレビュー運用に影響する可能性がある。"
         ]
       },
       {
-        "eventId": "github-changelog:https://github.blog/changelog/2026-09-22-local-sandboxing-in-the-github-copilot-app",
-        "sourceId": "github-changelog",
+        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-09-23-copilot-code-review-more-ways-to-request-and-configure-reviews",
+        "sourceId": "github-changelog-copilot",
+        "title": "More ways to request and configure Copilot code reviews",
+        "fallbackMarkers": [
+          "GitHub Copilot code review のレビュー依頼やコメント処理に関する更新。チームのレビュー運用に影響する可能性がある。"
+        ]
+      },
+      {
+        "eventId": "github-copilot-blog:https://github.blog/?p=99002",
+        "sourceId": "github-copilot-blog",
+        "title": "Rendering huge pull requests in the GitHub Copilot app",
+        "fallbackMarkers": [
+          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
+        ]
+      },
+      {
+        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-09-22-local-sandboxing-in-the-github-copilot-app",
+        "sourceId": "github-changelog-copilot",
         "title": "Local sandboxing in the GitHub Copilot app",
+        "fallbackMarkers": [
+          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
+        ]
+      },
+      {
+        "eventId": "vscode-feed:https://code.visualstudio.com/blogs/2026/09/23/building-the-github-copilot-inline-suggestions-model-part-two",
+        "sourceId": "vscode-feed",
+        "title": "Building the new GitHub Copilot Inline Suggestions Model: Part Two",
         "fallbackMarkers": [
           "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
         ]
@@ -30,6 +54,78 @@
     ]
   },
   "events": [
+    {
+      "eventId": "copilot-whats-new:dc989669316d3162ac6ebea83a29ca5218f36e58a8c0d5d2fb7cab1adc4ae7ce",
+      "sourceId": "copilot-whats-new",
+      "sourceName": "GitHub Copilot What's New",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-09-23T23:48:44.897Z",
+      "publishedAt": "2026-09-23T23:48:44.897Z",
+      "title": "GitHub Copilot What's New changed",
+      "url": "https://github.com/features/copilot/whats-new",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [
+          "Sep.23"
+        ],
+        "additions": [
+          "H3: Sep.23"
+        ]
+      },
+      "headings": [
+        "Changelog",
+        "Filters (0 selected)",
+        "September\n Sep\n 2026",
+        "Sep.23",
+        "Sep.23 Release",
+        "Sep.22 Release",
+        "Sep.22 Release",
+        "Sep.22 Release",
+        "Sep.22 Release",
+        "Sep.22 Release",
+        "Sep.21 Release",
+        "Sep.18 Improvement"
+      ],
+      "score": 3
+    },
+    {
+      "eventId": "vscode-updates:48038414392adcbf870f17a8fd5605f8db835302c071d879c0770aa4c7d223a7",
+      "sourceId": "vscode-updates",
+      "sourceName": "VS Code Updates",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-09-23T23:48:43.918Z",
+      "publishedAt": "2026-09-23T23:48:43.917Z",
+      "title": "VS Code Updates changed",
+      "url": "https://code.visualstudio.com/updates/",
+      "summary": "Detected 0 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 0,
+        "headings": [],
+        "additions": []
+      },
+      "headings": [
+        "Visual Studio Code 1.139",
+        "Downloads for 1.139.0",
+        "Release highlights",
+        "Agents",
+        "Run agent sessions in Dev Containers on remote hosts",
+        "Faster session list loading",
+        "Compact sessions list",
+        "Filter empty session groups",
+        "Rename sessions and chats in place",
+        "Choose how chats appear in a session (Preview)",
+        "Chat",
+        "Pet naming contest update (Experimental)"
+      ],
+      "score": 2
+    },
     {
       "eventId": "copilot-whats-new:2099f691ee74c2b98bef6c097296b80b7afa14c2307b325b916ad621c757557b",
       "sourceId": "copilot-whats-new",
@@ -193,6 +289,40 @@
         "additions": [
           "1.139"
         ]
+      },
+      "headings": [
+        "January 2026 (version 1.109)",
+        "Downloads for 1.109.5",
+        "Upcoming events",
+        "Agent Sessions Day",
+        "Chat UX",
+        "Message steering and queueing (Experimental)",
+        "Anthropic models now show thinking tokens",
+        "Mermaid diagrams in chat responses",
+        "Ask Questions tool (Experimental)",
+        "Plan agent",
+        "Context window details",
+        "Inline chat UX revamp (Preview)"
+      ],
+      "score": 2
+    },
+    {
+      "eventId": "vscode-release-notes-1-109:2e6ab4716f895dfe052160783d8d79e20894c7498aee18f0110b11d638a901af",
+      "sourceId": "vscode-release-notes-1-109",
+      "sourceName": "VS Code Release Notes 1.109",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-09-23T23:48:44.302Z",
+      "publishedAt": "2026-02-04T00:00:00.000Z",
+      "title": "VS Code Release Notes 1.109 changed",
+      "url": "https://code.visualstudio.com/updates/v1_109",
+      "summary": "Detected 0 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 0,
+        "headings": [],
+        "additions": []
       },
       "headings": [
         "January 2026 (version 1.109)",

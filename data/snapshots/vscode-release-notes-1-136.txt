@@ -8,13 +8,6 @@ Insiders
 1.133
 1.132
 1.131
-1.130
-1.129
-1.128
-1.127
-1.126
-1.125
-1.124
 View All Releases
 H1: Visual Studio Code 1.136
 Follow us on LinkedIn, X, Bluesky, Instagram
