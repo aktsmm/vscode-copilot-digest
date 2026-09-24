@@ -1,15 +1,21 @@
 {
   "date": "2026-09-24",
-  "generatedAt": "2026-09-24T17:54:31.286Z",
+  "generatedAt": "2026-09-24T23:55:24.810Z",
   "latestRun": {
-    "generatedAt": "2026-09-24T17:54:31.286Z",
-    "newEventsCount": 2,
-    "newEventIds": [
-      "vscode-updates:3f2e1de99c1e73a09dd2a1fede8d7c11276245a9f4b00f6a3f0125abbab72ba0",
-      "docs-github-copilot-concepts:c55d34e8ae530e0a601607f7af8009ff717704815a1e4fa040fe1487e8566b68"
-    ],
+    "generatedAt": "2026-09-24T23:55:24.810Z",
+    "newEventsCount": 0,
+    "newEventIds": [],
     "errorCount": 0,
-    "skippedLowInformationEvents": []
+    "skippedLowInformationEvents": [
+      {
+        "eventId": "github-copilot-blog:https://github.blog/?p=98939",
+        "sourceId": "github-copilot-blog",
+        "title": "When chat is the wrong UI",
+        "fallbackMarkers": [
+          "追跡対象ソースの更新。公開内容の変化や運用への影響を継続監視対象として記録している。"
+        ]
+      }
+    ]
   },
   "events": [
     {
