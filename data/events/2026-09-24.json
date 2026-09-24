@@ -1,13 +1,87 @@
 {
   "date": "2026-09-24",
-  "generatedAt": "2026-09-24T10:14:37.444Z",
+  "generatedAt": "2026-09-24T17:54:31.286Z",
   "latestRun": {
-    "generatedAt": "2026-09-24T10:14:37.444Z",
-    "newEventsCount": 0,
-    "newEventIds": [],
+    "generatedAt": "2026-09-24T17:54:31.286Z",
+    "newEventsCount": 2,
+    "newEventIds": [
+      "vscode-updates:3f2e1de99c1e73a09dd2a1fede8d7c11276245a9f4b00f6a3f0125abbab72ba0",
+      "docs-github-copilot-concepts:c55d34e8ae530e0a601607f7af8009ff717704815a1e4fa040fe1487e8566b68"
+    ],
     "errorCount": 0,
     "skippedLowInformationEvents": []
   },
-  "events": [],
+  "events": [
+    {
+      "eventId": "vscode-updates:3f2e1de99c1e73a09dd2a1fede8d7c11276245a9f4b00f6a3f0125abbab72ba0",
+      "sourceId": "vscode-updates",
+      "sourceName": "VS Code Updates",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-09-24T17:54:23.864Z",
+      "publishedAt": "2026-09-24T17:54:23.863Z",
+      "title": "VS Code Updates changed",
+      "url": "https://code.visualstudio.com/updates/",
+      "summary": "Detected 8 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 8,
+        "headings": [
+          "Linux desktop launcher names"
+        ],
+        "additions": [
+          "H3: Linux desktop launcher names",
+          "If a pinned launcher stops working after updating to version 1.139, remove it and add the application again from your desktop's application menu.",
+          "The Linux DEB and RPM packages now use reverse-DNS desktop file names to align with the application's desktop identity. For the Stable packages, the files in /usr/share/applications/ are renamed as follows:",
+          "Existing favorites, pinned launchers, and custom references to the old names are not updated automatically. On KDE Plasma, a stale favorite can report \"You are not authorized to execute this file\" even though this is a missing desktop file, not a permissions problem.",
+          "Remove the old favorite or pinned launcher, then add the application again from the application menu. On KDE Plasma, use Remove From Favorites on the old entry, then Add to Favorites on the entry under Applications > Development.",
+          "Update custom shortcuts and scripts that reference the old desktop file names.",
+          "If you explicitly configured file or URL associations using the old IDs, select the application again in your desktop's default-application settings.",
+          "You can still start the application from a terminal with code. Reinstalling the package does not update saved references to the old names."
+        ]
+      },
+      "headings": [
+        "Visual Studio Code 1.139",
+        "Downloads for 1.139.0",
+        "Release highlights",
+        "Agents",
+        "Run agent sessions in Dev Containers on remote hosts",
+        "Faster session list loading",
+        "Compact sessions list",
+        "Filter empty session groups",
+        "Rename sessions and chats in place",
+        "Choose how chats appear in a session (Preview)",
+        "Chat",
+        "Pet naming contest update (Experimental)"
+      ],
+      "score": 3
+    },
+    {
+      "eventId": "docs-github-copilot-concepts:c55d34e8ae530e0a601607f7af8009ff717704815a1e4fa040fe1487e8566b68",
+      "sourceId": "docs-github-copilot-concepts",
+      "sourceName": "GitHub Docs / Copilot concepts",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-09-24T17:54:27.413Z",
+      "publishedAt": "2026-09-24T17:54:27.413Z",
+      "title": "GitHub Docs / Copilot concepts changed",
+      "url": "https://docs.github.com/en/copilot/concepts",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [],
+        "additions": [
+          "About default availability of Copilot features and models"
+        ]
+      },
+      "headings": [
+        "Concepts for GitHub Copilot"
+      ],
+      "score": 2
+    }
+  ],
   "errors": []
 }

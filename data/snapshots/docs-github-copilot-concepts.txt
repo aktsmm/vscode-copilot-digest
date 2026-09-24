@@ -47,7 +47,7 @@ Risks and mitigations for GitHub Copilot cloud agent
 Network settings for GitHub Copilot
 Enterprise concepts for GitHub Copilot
 GitHub Copilot policies for enterprises and organizations
-About default availability of Copilot models
+About default availability of Copilot features and models
 FedRAMP-compliant models for GitHub Copilot
 Learning about new features and models
 Agent management for enterprises
