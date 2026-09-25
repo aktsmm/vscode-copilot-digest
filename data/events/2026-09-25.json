@@ -1,66 +1,87 @@
 {
   "date": "2026-09-25",
-  "generatedAt": "2026-09-25T18:01:46.793Z",
+  "generatedAt": "2026-09-25T23:59:19.912Z",
   "latestRun": {
-    "generatedAt": "2026-09-25T18:01:46.793Z",
-    "newEventsCount": 2,
+    "generatedAt": "2026-09-25T23:59:19.912Z",
+    "newEventsCount": 1,
     "newEventIds": [
-      "vscode-updates:a9fdf6fd971ae19a27e5e9e2ca6269b9f733e574bcea9ec98939dd890eb79877",
-      "copilot-whats-new:d74720d5ced99c24a1ca6343f4f303af7f2be6009be9e316797f7c39216292bd"
+      "copilot-whats-new:21fbb2d3581cd12e391a51936b8210424dddc3c65245034b8207d88d6199f10e"
     ],
     "errorCount": 0,
     "skippedLowInformationEvents": [
       {
-        "eventId": "github-copilot-blog:https://github.blog/?p=99027",
-        "sourceId": "github-copilot-blog",
-        "title": "GitHub Copilot app for Beginners: How to build custom workflows with canvases",
-        "fallbackMarkers": [
-          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
-        ]
-      },
-      {
-        "eventId": "github-changelog:https://github.blog/changelog/2026-09-25-github-copilot-weekly-releases-september-21",
+        "eventId": "github-changelog:https://github.blog/changelog/2026-09-25-enterprise-managed-settings-in-product-validator",
         "sourceId": "github-changelog",
-        "title": "GitHub Copilot weekly releases — September 21",
+        "title": "Enterprise managed settings in-product validator",
         "fallbackMarkers": [
-          "VS Code チームによる AI 活用や実装改善の解説記事。運用の考え方や設計の背景を押さえる材料になる。"
+          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
         ]
       },
       {
-        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-09-25-github-copilot-weekly-releases-september-21",
-        "sourceId": "github-changelog-copilot",
-        "title": "GitHub Copilot weekly releases — September 21",
-        "fallbackMarkers": [
-          "VS Code チームによる AI 活用や実装改善の解説記事。運用の考え方や設計の背景を押さえる材料になる。"
-        ]
-      },
-      {
-        "eventId": "github-changelog:https://github.blog/changelog/2026-09-25-updates-to-github-copilot-for-slack-and-microsoft-teams",
+        "eventId": "github-changelog:https://github.blog/changelog/2026-09-25-usage-metrics-api-adds-pull-request-review-stages",
         "sourceId": "github-changelog",
-        "title": "Updates to GitHub Copilot for Slack and Microsoft Teams",
+        "title": "Usage metrics API adds pull request review stages",
         "fallbackMarkers": [
-          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
+          "追跡対象ソースの更新。公開内容の変化や運用への影響を継続監視対象として記録している。"
         ]
       },
       {
-        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-09-25-updates-to-github-copilot-for-slack-and-microsoft-teams",
-        "sourceId": "github-changelog-copilot",
-        "title": "Updates to GitHub Copilot for Slack and Microsoft Teams",
+        "eventId": "github-changelog:https://github.blog/changelog/2026-09-25-agentic-autofix-now-uses-copilot-memory",
+        "sourceId": "github-changelog",
+        "title": "Agentic autofix now uses Copilot Memory",
         "fallbackMarkers": [
-          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
+          "追跡対象ソースの更新。公開内容の変化や運用への影響を継続監視対象として記録している。"
         ]
       },
       {
-        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-09-24-default-enablement-of-copilot-features-for-copilot-business-and-enterprise",
+        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-09-25-agentic-autofix-now-uses-copilot-memory",
         "sourceId": "github-changelog-copilot",
-        "title": "Default Enablement of Copilot features for Copilot Business and Enterprise",
+        "title": "Agentic autofix now uses Copilot Memory",
         "fallbackMarkers": [
-          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
+          "追跡対象ソースの更新。公開内容の変化や運用への影響を継続監視対象として記録している。"
         ]
       }
     ]
   },
   "events": [
+    {
+      "eventId": "copilot-whats-new:21fbb2d3581cd12e391a51936b8210424dddc3c65245034b8207d88d6199f10e",
+      "sourceId": "copilot-whats-new",
+      "sourceName": "GitHub Copilot What's New",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-09-25T23:59:17.097Z",
+      "publishedAt": "2026-09-25T23:59:17.096Z",
+      "title": "GitHub Copilot What's New changed",
+      "url": "https://github.com/features/copilot/whats-new",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [
+          "Sep.25 Improvement"
+        ],
+        "additions": [
+          "H3: Sep.25 Improvement"
+        ]
+      },
+      "headings": [
+        "Changelog",
+        "Filters (0 selected)",
+        "September\n Sep\n 2026",
+        "Sep.25 Improvement",
+        "Sep.25 Improvement",
+        "Sep.25 Improvement",
+        "Sep.25 Release",
+        "Sep.25 Improvement",
+        "Sep.24 Improvement",
+        "Sep.23",
+        "Sep.23 Release",
+        "Sep.22 Release"
+      ],
+      "score": 3
+    },
     {
       "eventId": "copilot-whats-new:d74720d5ced99c24a1ca6343f4f303af7f2be6009be9e316797f7c39216292bd",
       "sourceId": "copilot-whats-new",
