@@ -1,0 +1,63 @@
+{
+  "date": "2026-09-25",
+  "generatedAt": "2026-09-25T10:19:13.284Z",
+  "latestRun": {
+    "generatedAt": "2026-09-25T10:19:13.284Z",
+    "newEventsCount": 1,
+    "newEventIds": [
+      "copilot-whats-new:d9aac9755bb36c05444c455c3060f122284e3db2cfcc593a0d33aa57618adb4c"
+    ],
+    "errorCount": 0,
+    "skippedLowInformationEvents": [
+      {
+        "eventId": "github-changelog:https://github.blog/changelog/2026-09-24-default-enablement-of-copilot-features-for-copilot-business-and-enterprise",
+        "sourceId": "github-changelog",
+        "title": "Default Enablement of Copilot Features for Copilot Business and Enterprise",
+        "fallbackMarkers": [
+          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
+        ]
+      }
+    ]
+  },
+  "events": [
+    {
+      "eventId": "copilot-whats-new:d9aac9755bb36c05444c455c3060f122284e3db2cfcc593a0d33aa57618adb4c",
+      "sourceId": "copilot-whats-new",
+      "sourceName": "GitHub Copilot What's New",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-09-25T10:19:10.234Z",
+      "publishedAt": "2026-09-25T10:19:10.233Z",
+      "title": "GitHub Copilot What's New changed",
+      "url": "https://github.com/features/copilot/whats-new",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [
+          "Sep.24 Improvement"
+        ],
+        "additions": [
+          "H3: Sep.24 Improvement"
+        ]
+      },
+      "headings": [
+        "Changelog",
+        "Filters (0 selected)",
+        "September\n Sep\n 2026",
+        "Sep.24 Improvement",
+        "Sep.23",
+        "Sep.23 Release",
+        "Sep.22 Release",
+        "Sep.22 Release",
+        "Sep.22 Release",
+        "Sep.22 Release",
+        "Sep.22 Release",
+        "Sep.21 Release"
+      ],
+      "score": 3
+    }
+  ],
+  "errors": []
+}
