@@ -11,7 +11,8 @@ Insiders
 View All Releases
 H1: Visual Studio Code 1.139
 Released September 23, 2026 Stable
-H2: Downloads for 1.139.0
+Update 1.139.1: The update addresses these issues.
+H2: Downloads for 1.139.1
 Already installed? Use Check for Updates in VS Code. For upcoming features, use the Insiders build.
 H2: Release highlights
 This release makes large agent session lists faster, extends Dev Container support to remote projects, and improves everyday editing.
