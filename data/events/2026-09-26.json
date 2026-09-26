@@ -1,29 +1,12 @@
 {
   "date": "2026-09-26",
-  "generatedAt": "2026-09-26T09:58:15.889Z",
+  "generatedAt": "2026-09-26T17:20:28.721Z",
   "latestRun": {
-    "generatedAt": "2026-09-26T09:58:15.889Z",
+    "generatedAt": "2026-09-26T17:20:28.721Z",
     "newEventsCount": 0,
     "newEventIds": [],
     "errorCount": 0,
-    "skippedLowInformationEvents": [
-      {
-        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-09-25-enterprise-managed-settings-in-product-validator",
-        "sourceId": "github-changelog-copilot",
-        "title": "Enterprise managed settings in-product validator",
-        "fallbackMarkers": [
-          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
-        ]
-      },
-      {
-        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-09-25-usage-metrics-api-adds-pull-request-review-stages",
-        "sourceId": "github-changelog-copilot",
-        "title": "Usage metrics API adds pull request review stages",
-        "fallbackMarkers": [
-          "追跡対象ソースの更新。公開内容の変化や運用への影響を継続監視対象として記録している。"
-        ]
-      }
-    ]
+    "skippedLowInformationEvents": []
   },
   "events": [],
   "errors": []
