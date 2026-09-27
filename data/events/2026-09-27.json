@@ -1,13 +1,35 @@
 {
   "date": "2026-09-27",
-  "generatedAt": "2026-09-27T10:37:37.535Z",
+  "generatedAt": "2026-09-27T17:53:48.620Z",
   "latestRun": {
-    "generatedAt": "2026-09-27T10:37:37.535Z",
-    "newEventsCount": 0,
-    "newEventIds": [],
+    "generatedAt": "2026-09-27T17:53:48.620Z",
+    "newEventsCount": 1,
+    "newEventIds": [
+      "publickey:tag:www.publickey1.jp,2026://2.8713"
+    ],
     "errorCount": 0,
     "skippedLowInformationEvents": []
   },
-  "events": [],
+  "events": [
+    {
+      "eventId": "publickey:tag:www.publickey1.jp,2026://2.8713",
+      "sourceId": "publickey",
+      "sourceName": "Publickey",
+      "kind": "feed_entry",
+      "detectedAt": "2026-09-27T17:53:46.846Z",
+      "publishedAt": "2026-09-27T14:03:20.000Z",
+      "title": "マイクロソフト、企業内アプリの実行基盤「Copilot Managed Runtime」プレビュー公開。Microsoft 365と同じテナント内でコード実行、管理者による集中管理も",
+      "url": "https://www.publickey1.jp/blog/26/copilot_managed_runtimemicrosoft_365.html",
+      "summary": "マイクロソフトは、AIコーディングエージェントのMicrosoft Copilotなどで開発した社内アプリケーションを実行するためのセキュアな基盤「Copilot Managed Runtime」をパブリックプレビューとして公開しました。 マイクロソフトは9月25日にMicrosoft Copilotの強化を発表しています。 強化は主に3つの機能に集約されています。 1つ目はAIとチャットすることでWordやExcelなどを操作して成果物を作成できる「Copilot Home……",
+      "categories": [
+        "クラウド",
+        "業務アプリケーション",
+        "機械学習・AI",
+        "microsoft"
+      ],
+      "isFutureDated": false,
+      "score": 1
+    }
+  ],
   "errors": []
 }
