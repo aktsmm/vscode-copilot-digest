@@ -1,12 +1,10 @@
 {
   "date": "2026-09-27",
-  "generatedAt": "2026-09-27T17:53:48.620Z",
+  "generatedAt": "2026-09-27T23:51:26.515Z",
   "latestRun": {
-    "generatedAt": "2026-09-27T17:53:48.620Z",
-    "newEventsCount": 1,
-    "newEventIds": [
-      "publickey:tag:www.publickey1.jp,2026://2.8713"
-    ],
+    "generatedAt": "2026-09-27T23:51:26.515Z",
+    "newEventsCount": 0,
+    "newEventIds": [],
     "errorCount": 0,
     "skippedLowInformationEvents": []
   },
