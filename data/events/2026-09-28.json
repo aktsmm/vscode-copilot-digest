@@ -1,13 +1,71 @@
 {
   "date": "2026-09-28",
-  "generatedAt": "2026-09-28T11:49:21.374Z",
+  "generatedAt": "2026-09-28T20:11:29.410Z",
   "latestRun": {
-    "generatedAt": "2026-09-28T11:49:21.374Z",
-    "newEventsCount": 0,
-    "newEventIds": [],
+    "generatedAt": "2026-09-28T20:11:29.410Z",
+    "newEventsCount": 1,
+    "newEventIds": [
+      "copilot-whats-new:dd817c386c14192e6f26ed4f09a55d0ab8a26d02ef8b189596fdff5dc42b8696"
+    ],
     "errorCount": 0,
-    "skippedLowInformationEvents": []
+    "skippedLowInformationEvents": [
+      {
+        "eventId": "github-changelog:https://github.blog/changelog/2026-09-28-claude-sonnet-5-5-in-github-copilot",
+        "sourceId": "github-changelog",
+        "title": "Claude Sonnet 5.5 in GitHub Copilot",
+        "fallbackMarkers": [
+          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
+        ]
+      },
+      {
+        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-09-28-claude-sonnet-5-5-in-github-copilot",
+        "sourceId": "github-changelog-copilot",
+        "title": "Claude Sonnet 5.5 in GitHub Copilot",
+        "fallbackMarkers": [
+          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
+        ]
+      }
+    ]
   },
-  "events": [],
+  "events": [
+    {
+      "eventId": "copilot-whats-new:dd817c386c14192e6f26ed4f09a55d0ab8a26d02ef8b189596fdff5dc42b8696",
+      "sourceId": "copilot-whats-new",
+      "sourceName": "GitHub Copilot What's New",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-09-28T20:11:27.308Z",
+      "publishedAt": "2026-09-28T20:11:27.307Z",
+      "title": "GitHub Copilot What's New changed",
+      "url": "https://github.com/features/copilot/whats-new",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [
+          "Sep.28 Release"
+        ],
+        "additions": [
+          "H3: Sep.28 Release"
+        ]
+      },
+      "headings": [
+        "Changelog",
+        "Filters (0 selected)",
+        "September\n Sep\n 2026",
+        "Sep.28 Release",
+        "Sep.25 Improvement",
+        "Sep.25 Improvement",
+        "Sep.25 Improvement",
+        "Sep.25 Release",
+        "Sep.25 Improvement",
+        "Sep.24 Improvement",
+        "Sep.23",
+        "Sep.23 Release"
+      ],
+      "score": 3
+    }
+  ],
   "errors": []
 }
