@@ -1,13 +1,90 @@
 {
   "date": "2026-09-29",
-  "generatedAt": "2026-09-29T11:26:43.316Z",
+  "generatedAt": "2026-09-29T18:47:54.446Z",
   "latestRun": {
-    "generatedAt": "2026-09-29T11:26:43.316Z",
-    "newEventsCount": 0,
-    "newEventIds": [],
+    "generatedAt": "2026-09-29T18:47:54.446Z",
+    "newEventsCount": 2,
+    "newEventIds": [
+      "copilot-whats-new:c0814664004064a437a5e64007716f35de9058d1f10b32ada95c2edd00b873e6",
+      "publickey:tag:www.publickey1.jp,2026://2.8716"
+    ],
     "errorCount": 0,
-    "skippedLowInformationEvents": []
+    "skippedLowInformationEvents": [
+      {
+        "eventId": "github-changelog:https://github.blog/changelog/2026-09-29-gpt-6-1-sol-in-github-copilot",
+        "sourceId": "github-changelog",
+        "title": "GPT-6.1 Sol in GitHub Copilot",
+        "fallbackMarkers": [
+          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
+        ]
+      },
+      {
+        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-09-29-gpt-6-1-sol-in-github-copilot",
+        "sourceId": "github-changelog-copilot",
+        "title": "GPT-6.1 Sol in GitHub Copilot",
+        "fallbackMarkers": [
+          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
+        ]
+      }
+    ]
   },
-  "events": [],
+  "events": [
+    {
+      "eventId": "copilot-whats-new:c0814664004064a437a5e64007716f35de9058d1f10b32ada95c2edd00b873e6",
+      "sourceId": "copilot-whats-new",
+      "sourceName": "GitHub Copilot What's New",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-09-29T18:47:52.965Z",
+      "publishedAt": "2026-09-29T18:47:52.964Z",
+      "title": "GitHub Copilot What's New changed",
+      "url": "https://github.com/features/copilot/whats-new",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [
+          "Sep.29 Release"
+        ],
+        "additions": [
+          "H3: Sep.29 Release"
+        ]
+      },
+      "headings": [
+        "Changelog",
+        "Filters (0 selected)",
+        "September\n Sep\n 2026",
+        "Sep.29 Release",
+        "Sep.28 Release",
+        "Sep.25 Improvement",
+        "Sep.25 Improvement",
+        "Sep.25 Improvement",
+        "Sep.25 Release",
+        "Sep.25 Improvement",
+        "Sep.24 Improvement",
+        "Sep.23"
+      ],
+      "score": 3
+    },
+    {
+      "eventId": "publickey:tag:www.publickey1.jp,2026://2.8716",
+      "sourceId": "publickey",
+      "sourceName": "Publickey",
+      "kind": "feed_entry",
+      "detectedAt": "2026-09-29T18:47:53.284Z",
+      "publishedAt": "2026-09-29T14:46:14.000Z",
+      "title": "コーディングエージェントにGoogle Cloudの専門知識とツールを組み込む「Google Cloud Developer Plugin for AI Coding Agents」発表",
+      "url": "https://www.publickey1.jp/blog/26/google_cloudgoogle_cloud_developer_plugin_for_ai_coding_agents.html",
+      "summary": "Google Cloudは、Claude CodeなどのコーディングエージェントにGoogle Cloudの専門知識とツールなどを組み込める「Google Cloud Developer Plugin for AI Coding Agents」を発表しました。 Claude CodeやGoogle Antigravityなどに代表されるコーディングエージェントは優れたプログラミング能力を備えています。 しかしデフォルトの状態では、例えばGoogle Cloudのさまざまなサー……",
+      "categories": [
+        "Google Cloud",
+        "クラウド",
+        "機械学習・AI"
+      ],
+      "isFutureDated": false,
+      "score": 1
+    }
+  ],
   "errors": []
 }
