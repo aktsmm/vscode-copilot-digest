@@ -97,6 +97,10 @@ const vscodeReleaseSummaries = {
     ja: "agent 体験と BYOK 運用をさらに広げる release。Agents ウィンドウの hover details や local harness 改善、agent session の OpenTelemetry 属性、sandboxing の再試行挙動変更に加え、GitHub sign-in なしの BYOK と integrated browser の device emulation が入った。",
     en: "This release expands agent workflows and BYOK operations with Agents window hover details and local-harness improvements, OpenTelemetry attributes for agent sessions, updated sandbox retry behavior, BYOK without GitHub sign-in, and integrated-browser device emulation.",
   },
+  "1.140": {
+    ja: "Copilot harness、複数フォルダーをまたぐ agent session、remote agent host へのタスク委譲、HydraFusion の Research Preview など、agent の実行基盤と並列作業を広げる変更がまとまった。Dev Container の起動・後片付け改善や enterprise 向け AI 制御も含まれる。",
+    en: "This release expands agent infrastructure and parallel work with the Copilot harness, multi-folder sessions, task delegation to remote agent hosts, and the HydraFusion research preview. It also improves Dev Container startup and cleanup and adds enterprise AI controls.",
+  },
   1.118: {
     ja: "agent 体験の拡張が主題の release。VS Code Agents companion app の進化（Insiders）、GitHub.com やモバイルから進行中の Copilot CLI セッションを遠隔操作できる Remote control（Experimental）、CLI セッションタイトルのサーフェス横断一元管理、Copilot の Git co-author 自動追加が入った。全ユーザーへの semantic indexing 展開と GitHub 横断テキスト検索、skills 専用コンテキスト（Experimental）も加わり、agent を継続運用しやすくする変更がまとまっている。",
     en: "The headline is agent experience: the VS Code Agents companion app gains a title-bar entry point (Insiders), CLI sessions can be monitored and steered remotely from GitHub.com or mobile (Experimental), session titles now sync across all surfaces, and Copilot is added as a Git co-author by default. All users also get semantic indexing in non-GitHub repos and GitHub cross-repo text search.",
