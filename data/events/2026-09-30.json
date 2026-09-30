@@ -1,13 +1,244 @@
 {
   "date": "2026-09-30",
-  "generatedAt": "2026-09-30T11:14:28.140Z",
+  "generatedAt": "2026-09-30T18:31:04.855Z",
   "latestRun": {
-    "generatedAt": "2026-09-30T11:14:28.140Z",
-    "newEventsCount": 0,
-    "newEventIds": [],
+    "generatedAt": "2026-09-30T18:31:04.855Z",
+    "newEventsCount": 4,
+    "newEventIds": [
+      "vscode-updates:f173d73738413e46c1b807a7b2e13df17cc53a8bb8a9ee05dc5561c0fa32876c",
+      "vscode-release-notes-1-109:52e791c41d93033198c802a01be3af2cfba7eb21804b9aa2fa028acae7a35307",
+      "docs-github-cloud-agent:2e9385175e5e8bfb43a92c036de2d14ad4d39866430cdc34821686cbce0ac573",
+      "docs-github-copilot-howtos:bf3e7417716d72c351f11ef12282672cc69c860e9fcddf903def6a7d079efe6f"
+    ],
     "errorCount": 0,
-    "skippedLowInformationEvents": []
+    "skippedLowInformationEvents": [
+      {
+        "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_141",
+        "sourceId": "vscode-feed",
+        "title": "Visual Studio Code 1.141 (Insiders)",
+        "fallbackMarkers": [
+          "Visual Studio Code 関連の更新。日々の開発フローや agent 利用に効く変更点を確認しておきたい。"
+        ]
+      },
+      {
+        "eventId": "vscode-release-notes-1-140:section:b695ddfe71a0f44d4b21b0235a5535bdc686b4797c66f43f560557728086b7ba",
+        "sourceId": "vscode-release-notes-1-140",
+        "title": "Visual Studio Code 1.140: Copilot harness",
+        "fallbackMarkers": [
+          "に関する release note 更新。該当 section の内容を個別に追跡している。"
+        ]
+      },
+      {
+        "eventId": "vscode-release-notes-1-140:section:2fd55177dcb39111be8f985cb565da74315f0fffa068a785f4348b4c133c02a1",
+        "sourceId": "vscode-release-notes-1-140",
+        "title": "Visual Studio Code 1.140: HydraFusion model orchestration (Research Preview)",
+        "fallbackMarkers": [
+          "に関する release note 更新。該当 section の内容を個別に追跡している。"
+        ]
+      },
+      {
+        "eventId": "vscode-release-notes-1-140:section:856f8159831e3e29b75534f6242324bc0cb05374c1ee4df0d53180784f417d65",
+        "sourceId": "vscode-release-notes-1-140",
+        "title": "Visual Studio Code 1.140: Multi-folder sessions (Experimental)",
+        "fallbackMarkers": [
+          "に関する release note 更新。該当 section の内容を個別に追跡している。"
+        ]
+      },
+      {
+        "eventId": "vscode-release-notes-1-140:section:ef4f7c069021611275300d2780912031aada23e0fe7cab615c90c07447753229",
+        "sourceId": "vscode-release-notes-1-140",
+        "title": "Visual Studio Code 1.140: Archive chats in a session",
+        "fallbackMarkers": [
+          "に関する release note 更新。該当 section の内容を個別に追跡している。"
+        ]
+      },
+      {
+        "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_140",
+        "sourceId": "vscode-feed",
+        "title": "Visual Studio Code 1.140",
+        "fallbackMarkers": [
+          "Visual Studio Code のリリース。Copilot、agent、エディタ、ワークベンチ周辺の変更点をまとめて確認できる。"
+        ]
+      },
+      {
+        "eventId": "github-changelog:https://github.blog/changelog/2026-09-30-hydrafusion-in-vs-code-and-the-github-copilot-app",
+        "sourceId": "github-changelog",
+        "title": "HydraFusion in VS Code and the GitHub Copilot app",
+        "fallbackMarkers": [
+          "VS Code チームによる AI 活用や実装改善の解説記事。運用の考え方や設計の背景を押さえる材料になる。"
+        ]
+      }
+    ]
   },
-  "events": [],
+  "events": [
+    {
+      "eventId": "vscode-updates:f173d73738413e46c1b807a7b2e13df17cc53a8bb8a9ee05dc5561c0fa32876c",
+      "sourceId": "vscode-updates",
+      "sourceName": "VS Code Updates",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-09-30T18:31:01.113Z",
+      "publishedAt": "2026-09-30T18:31:01.079Z",
+      "title": "VS Code Updates changed",
+      "url": "https://code.visualstudio.com/updates/",
+      "summary": "Detected 204 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 204,
+        "headings": [
+          "Visual Studio Code 1.140",
+          "Downloads for 1.140.0",
+          "Copilot harness",
+          "HydraFusion model orchestration (Research Preview)",
+          "Multi-folder sessions (Experimental)",
+          "Archive chats in a session",
+          "Automatic Dev Container cleanup",
+          "Faster Dev Container startup",
+          "Choose the session relationship and workspace for delegated work",
+          "Create workspace-less chats on remote agent hosts",
+          "Delegate tasks to remote agent hosts (Experimental)",
+          "Personalize new-session welcome phrases (Experimental)",
+          "Improved session composer controls (Experimental)",
+          "See recently completed sessions first",
+          "More reliable agent orchestration (Experimental)",
+          "Open a new session in the Agents window from a URL"
+        ],
+        "additions": [
+          "1.140",
+          "H1: Visual Studio Code 1.140",
+          "Released September 30, 2026 Stable",
+          "H2: Downloads for 1.140.0",
+          "This release expands agent workflows, improves worktree reuse, and adds enterprise AI controls.",
+          "Copilot harness: Use the Copilot harness and get consistent agent behavior across Copilot products.",
+          "Multi-folder sessions (Experimental): Work on tasks across multiple folders within a single agent session.",
+          "Remote delegation (Experimental): Delegate tasks to connected remote agent hosts.",
+          "HydraFusion (Research Preview): Let multiple models draft, critique, and revise coding tasks without coordinating them yourself.",
+          "Shared worktree folders (Experimental): Avoid repeated dependency installs and duplicated artifacts by reusing ignored folders across worktrees.",
+          "Enterprise controls: Ensure everyone in your org follows AI version requirements and defaults.",
+          "H3: Copilot harness",
+          "The Copilot harness adds exciting new agent functionality to VS Code while keeping the way you work familiar. It's powered by the Copilot SDK, so its behavior and capabilities are consistent with other Copilot products, including the standalone GitHub Copilot app and the Copilot CLI.",
+          "To start using the Copilot harness, select it from the harness picker in the chat input. In this release, it might already be the default selection for you. You can continue working as you normally do.",
+          "The harness runs in a dedicated agent host process based on the Agent Host Protocol (AHP), so you can connect to the same agent session from multiple VS Code windows.",
+          "Learn how to work with the Copilot harness, or explore the architecture and workflows in the agent host blog post. If you have feedback or requests, please file an issue."
+        ]
+      },
+      "headings": [
+        "Visual Studio Code 1.140",
+        "Downloads for 1.140.0",
+        "Release highlights",
+        "Agents",
+        "Copilot harness",
+        "HydraFusion model orchestration (Research Preview)",
+        "Multi-folder sessions (Experimental)",
+        "Archive chats in a session",
+        "Automatic Dev Container cleanup",
+        "Faster Dev Container startup",
+        "Choose the session relationship and workspace for delegated work",
+        "Create workspace-less chats on remote agent hosts"
+      ],
+      "score": 18
+    },
+    {
+      "eventId": "vscode-release-notes-1-109:52e791c41d93033198c802a01be3af2cfba7eb21804b9aa2fa028acae7a35307",
+      "sourceId": "vscode-release-notes-1-109",
+      "sourceName": "VS Code Release Notes 1.109",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-09-30T18:31:01.454Z",
+      "publishedAt": "2026-02-04T00:00:00.000Z",
+      "title": "VS Code Release Notes 1.109 changed",
+      "url": "https://code.visualstudio.com/updates/v1_109",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [],
+        "additions": [
+          "1.140"
+        ]
+      },
+      "headings": [
+        "January 2026 (version 1.109)",
+        "Downloads for 1.109.5",
+        "Upcoming events",
+        "Agent Sessions Day",
+        "Chat UX",
+        "Message steering and queueing (Experimental)",
+        "Anthropic models now show thinking tokens",
+        "Mermaid diagrams in chat responses",
+        "Ask Questions tool (Experimental)",
+        "Plan agent",
+        "Context window details",
+        "Inline chat UX revamp (Preview)"
+      ],
+      "score": 2
+    },
+    {
+      "eventId": "docs-github-copilot-howtos:bf3e7417716d72c351f11ef12282672cc69c860e9fcddf903def6a7d079efe6f",
+      "sourceId": "docs-github-copilot-howtos",
+      "sourceName": "GitHub Docs / Copilot how-tos",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-09-30T18:31:03.884Z",
+      "publishedAt": "2026-09-30T18:31:03.883Z",
+      "title": "GitHub Docs / Copilot how-tos changed",
+      "url": "https://docs.github.com/en/copilot/how-tos",
+      "summary": "Detected 6 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 6,
+        "headings": [],
+        "additions": [
+          "GitHub Copilot in your IDE",
+          "Set up Copilot",
+          "Customize Copilot",
+          "Chat with Copilot",
+          "Copilot for common tasks",
+          "Use Copilot agents"
+        ]
+      },
+      "headings": [
+        "How-tos for GitHub Copilot"
+      ],
+      "score": 2
+    },
+    {
+      "eventId": "docs-github-cloud-agent:2e9385175e5e8bfb43a92c036de2d14ad4d39866430cdc34821686cbce0ac573",
+      "sourceId": "docs-github-cloud-agent",
+      "sourceName": "GitHub Docs / Cloud agent",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-09-30T18:31:02.345Z",
+      "publishedAt": "2026-09-30T18:31:02.345Z",
+      "title": "GitHub Docs / Cloud agent changed",
+      "url": "https://docs.github.com/en/copilot/how-tos/use-copilot-agents/cloud-agent",
+      "summary": "Detected 0 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 0,
+        "headings": [],
+        "additions": []
+      },
+      "headings": [
+        "GitHub Copilot cloud agent",
+        "Starting GitHub Copilot sessions",
+        "Creating automations with Copilot cloud agent",
+        "Managing rationale, confidence, and approvals for issues",
+        "Changing the AI model for GitHub Copilot cloud agent",
+        "Configuring settings for GitHub Copilot cloud agent",
+        "Using Copilot cloud agent on GitHub",
+        "Using Copilot cloud agent on GitHub Mobile",
+        "Using agent apps",
+        "Using Copilot cloud agent via the API",
+        "Using Copilot cloud agent from the GitHub CLI",
+        "Using Copilot cloud agent via the GitHub MCP Server"
+      ],
+      "score": 2
+    }
+  ],
   "errors": []
 }

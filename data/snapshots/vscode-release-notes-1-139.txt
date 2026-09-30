@@ -1,4 +1,5 @@
 Insiders
+1.140
 1.139
 1.138
 1.137
@@ -24,6 +25,9 @@ Editor experience: Identify wrapped lines at a glance and avoid duplicate closin
 Editor experience: Identify wrapped lines at a glance and avoid duplicate closing brackets as you type.
 H2: Agents
 The agent host runs agent harnesses in a dedicated process based on the Agent Host Protocol (AHP), so you can connect to the same session from multiple VS Code windows. Learn more about its architecture and workflows in the agent host blog post.
+H3: Faster session list loading
+The Agents Window opens and refreshes large session lists faster. The agent host now keeps lightweight session and chat metadata in a central catalog, instead of opening every conversation database each time the list is built. Full conversation content stays isolated in the individual session and chat databases.
+The improvement grows with the number of sessions, because the previous approach did work in proportion to your session count. Measured with around 645 sessions on a development machine:
 H3: Run agent sessions in Dev Containers on remote hosts
 Setting: 
  
@@ -38,7 +42,7 @@ Setting:
  Open in VS Code
  Open in VS Code Insiders
  
- (Agents Window only)
+ (Agents window only)
 Let agents build and test your remote project with the right tools and dependencies, without duplicating toolchain setup on your laptop or the remote host. This release extends Dev Container sessions from local folders to projects on SSH, Tunnel, and WSL hosts.
 To get started, enable 
  
@@ -81,7 +85,7 @@ Setting:
  Open in VS Code
  Open in VS Code Insiders
  
- (Agents Window only)
+ (Agents window only)
 An agent session can contain multiple chats, each representing a different conversation or context. When a session contains multiple chats, choose the presentation that best fits your workflow from the session header menu:
 Multiple shows each chat on its own tab.
 Single shows only the active chat and hides the tab bar.

@@ -6,16 +6,12 @@ Chat with Copilot
 Customize Copilot
 Copilot for GitHub tasks
 Use Copilot agents
-Setting up GitHub Copilot
-Setting up GitHub Copilot for yourself
-Installing the GitHub Copilot extension in your environment
-Get suggestions from GitHub Copilot
-Getting code suggestions in your IDE with GitHub Copilot
-Finding public code that matches GitHub Copilot suggestions
-GitHub Copilot Chat
-Getting started with prompts for GitHub Copilot Chat in your IDE
-Asking GitHub Copilot questions in your IDE
-Asking GitHub Copilot questions in Windows Terminal
+GitHub Copilot in your IDE
+Set up Copilot
+Customize Copilot
+Chat with Copilot
+Copilot for common tasks
+Use Copilot agents
 GitHub Copilot CLI
 Best practices for GitHub Copilot CLI
 Setting up GitHub Copilot CLI
@@ -116,23 +112,9 @@ Integrating Copilot cloud agent with Teams
 Integrating Copilot cloud agent with Jira
 Integrating Copilot cloud agent with Linear
 Integrating Copilot cloud agent with Azure Boards
-AI models for GitHub Copilot
-Changing the AI model for GitHub Copilot Chat
-Changing the AI model for GitHub Copilot inline suggestions
-Provide context to GitHub Copilot
-GitHub Copilot Spaces
-Using Model Context Protocol in your IDE
-Configure custom instructions for GitHub Copilot
-Adding repository custom instructions for GitHub Copilot in your IDE
 Configure and audit content exclusion
 Excluding content from GitHub Copilot
 Reviewing changes to content exclusions for GitHub Copilot
-Use GitHub Copilot for common tasks
-Using the GitHub CLI Copilot extension
-Configure personal settings
-Configuring network settings for GitHub Copilot
-Configuring GitHub Copilot in your environment
-Using GitHub Copilot with an account on GHE.com
 Manage and monitor spending for GitHub Copilot
 Monitoring your GitHub AI Credits usage
 Managing your company's spending on GitHub Copilot
