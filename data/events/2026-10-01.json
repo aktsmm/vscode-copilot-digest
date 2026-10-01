@@ -1,23 +1,12 @@
 {
   "date": "2026-10-01",
-  "generatedAt": "2026-10-01T00:39:03.026Z",
+  "generatedAt": "2026-10-01T11:42:12.494Z",
   "latestRun": {
-    "generatedAt": "2026-10-01T00:39:03.026Z",
-    "newEventsCount": 1,
-    "newEventIds": [
-      "copilot-whats-new:2f4e55c2a9d02df935cb2f1f2b4a9f802d351a80653b4e1f5d2d9aeb4d4e117a"
-    ],
+    "generatedAt": "2026-10-01T11:42:12.494Z",
+    "newEventsCount": 0,
+    "newEventIds": [],
     "errorCount": 0,
-    "skippedLowInformationEvents": [
-      {
-        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-09-30-hydrafusion-in-vs-code-and-the-github-copilot-app",
-        "sourceId": "github-changelog-copilot",
-        "title": "HydraFusion in VS Code and the GitHub Copilot app",
-        "fallbackMarkers": [
-          "VS Code チームによる AI 活用や実装改善の解説記事。運用の考え方や設計の背景を押さえる材料になる。"
-        ]
-      }
-    ]
+    "skippedLowInformationEvents": []
   },
   "events": [
     {
