@@ -1,0 +1,63 @@
+{
+  "date": "2026-10-01",
+  "generatedAt": "2026-10-01T00:39:03.026Z",
+  "latestRun": {
+    "generatedAt": "2026-10-01T00:39:03.026Z",
+    "newEventsCount": 1,
+    "newEventIds": [
+      "copilot-whats-new:2f4e55c2a9d02df935cb2f1f2b4a9f802d351a80653b4e1f5d2d9aeb4d4e117a"
+    ],
+    "errorCount": 0,
+    "skippedLowInformationEvents": [
+      {
+        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-09-30-hydrafusion-in-vs-code-and-the-github-copilot-app",
+        "sourceId": "github-changelog-copilot",
+        "title": "HydraFusion in VS Code and the GitHub Copilot app",
+        "fallbackMarkers": [
+          "VS Code チームによる AI 活用や実装改善の解説記事。運用の考え方や設計の背景を押さえる材料になる。"
+        ]
+      }
+    ]
+  },
+  "events": [
+    {
+      "eventId": "copilot-whats-new:2f4e55c2a9d02df935cb2f1f2b4a9f802d351a80653b4e1f5d2d9aeb4d4e117a",
+      "sourceId": "copilot-whats-new",
+      "sourceName": "GitHub Copilot What's New",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-10-01T00:38:56.076Z",
+      "publishedAt": "2026-10-01T00:38:56.075Z",
+      "title": "GitHub Copilot What's New changed",
+      "url": "https://github.com/features/copilot/whats-new",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [
+          "Sep.30 Release"
+        ],
+        "additions": [
+          "H3: Sep.30 Release"
+        ]
+      },
+      "headings": [
+        "Changelog",
+        "Filters (0 selected)",
+        "September\n Sep\n 2026",
+        "Sep.30 Release",
+        "Sep.29 Release",
+        "Sep.28 Release",
+        "Sep.25 Improvement",
+        "Sep.25 Improvement",
+        "Sep.25 Improvement",
+        "Sep.25 Release",
+        "Sep.25 Improvement",
+        "Sep.24 Improvement"
+      ],
+      "score": 3
+    }
+  ],
+  "errors": []
+}
