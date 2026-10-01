@@ -8,6 +8,7 @@ Concepts for GitHub Copilot agents
 Concepts for GitHub Copilot cloud agent
 Concepts for GitHub Copilot CLI
 About the GitHub Copilot app
+About computer use in GitHub Copilot
 Using GitHub Copilot in JetBrains IDEs
 About GitHub Copilot code review
 About GitHub Agentic Workflows

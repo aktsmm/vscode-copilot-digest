@@ -1,10 +1,14 @@
 {
   "date": "2026-10-01",
-  "generatedAt": "2026-10-01T11:42:12.494Z",
+  "generatedAt": "2026-10-01T18:58:22.906Z",
   "latestRun": {
-    "generatedAt": "2026-10-01T11:42:12.494Z",
-    "newEventsCount": 0,
-    "newEventIds": [],
+    "generatedAt": "2026-10-01T18:58:22.906Z",
+    "newEventsCount": 3,
+    "newEventIds": [
+      "docs-github-copilot:07b2af28db4f3de9d945d6209077e34d6b6f07944ab88b1eb8736f9b805c5381",
+      "docs-github-copilot-howtos:3a4206689b90523302c6580d9fde9811d8a6aaebb73b0b9cd136a455c4023f26",
+      "docs-github-copilot-concepts:53c6b684363de8ae79f7cd72eafa52c496315ecc55bbf4af7bc4355eea010504"
+    ],
     "errorCount": 0,
     "skippedLowInformationEvents": []
   },
@@ -46,6 +50,94 @@
         "Sep.24 Improvement"
       ],
       "score": 3
+    },
+    {
+      "eventId": "docs-github-copilot:07b2af28db4f3de9d945d6209077e34d6b6f07944ab88b1eb8736f9b805c5381",
+      "sourceId": "docs-github-copilot",
+      "sourceName": "GitHub Docs / Copilot",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-10-01T18:58:19.978Z",
+      "publishedAt": "2026-10-01T18:58:19.977Z",
+      "title": "GitHub Docs / Copilot changed",
+      "url": "https://docs.github.com/en/copilot",
+      "summary": "Detected 2 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 2,
+        "headings": [
+          "About computer use in GitHub Copilot"
+        ],
+        "additions": [
+          "H3: About computer use in GitHub Copilot",
+          "Copilot can interact with desktop applications to automate tasks that cannot be completed with a more direct tool."
+        ]
+      },
+      "headings": [
+        "GitHub Copilot documentation",
+        "Articles",
+        "About agent apps",
+        "About agent management",
+        "About agent skills",
+        "About cloud and local sandboxes for GitHub Copilot",
+        "About computer use in GitHub Copilot",
+        "About Copilot auto model selection",
+        "About Copilot automations",
+        "About Copilot integrations",
+        "About custom agents"
+      ],
+      "score": 3
+    },
+    {
+      "eventId": "docs-github-copilot-concepts:53c6b684363de8ae79f7cd72eafa52c496315ecc55bbf4af7bc4355eea010504",
+      "sourceId": "docs-github-copilot-concepts",
+      "sourceName": "GitHub Docs / Copilot concepts",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-10-01T18:58:22.704Z",
+      "publishedAt": "2026-10-01T18:58:22.704Z",
+      "title": "GitHub Docs / Copilot concepts changed",
+      "url": "https://docs.github.com/en/copilot/concepts",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [],
+        "additions": [
+          "About computer use in GitHub Copilot"
+        ]
+      },
+      "headings": [
+        "Concepts for GitHub Copilot"
+      ],
+      "score": 2
+    },
+    {
+      "eventId": "docs-github-copilot-howtos:3a4206689b90523302c6580d9fde9811d8a6aaebb73b0b9cd136a455c4023f26",
+      "sourceId": "docs-github-copilot-howtos",
+      "sourceName": "GitHub Docs / Copilot how-tos",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-10-01T18:58:22.648Z",
+      "publishedAt": "2026-10-01T18:58:22.648Z",
+      "title": "GitHub Docs / Copilot how-tos changed",
+      "url": "https://docs.github.com/en/copilot/how-tos",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [],
+        "additions": [
+          "Using the GitHub Copilot app to interact with desktop applications"
+        ]
+      },
+      "headings": [
+        "How-tos for GitHub Copilot"
+      ],
+      "score": 2
     }
   ],
   "errors": []

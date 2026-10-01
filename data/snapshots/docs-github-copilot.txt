@@ -9,13 +9,13 @@ H3: About agent skills
 Skills allow Copilot to perform specialized tasks.
 H3: About cloud and local sandboxes for GitHub Copilot
 Cloud and local sandboxes provide isolated execution environments that let Copilot safely interact with code, tools, filesystem, and network resources securely on your local machine or in fully isolated cloud environments.
+H3: About computer use in GitHub Copilot
+Copilot can interact with desktop applications to automate tasks that cannot be completed with a more direct tool.
 H3: About Copilot auto model selection
 Automatically select the best model for each task.
 H3: About Copilot automations
 Automations let you run Copilot cloud agent automatically, on a schedule or in response to events in a repository.
 H3: About Copilot integrations
 Integrate Copilot with other tools and platforms to streamline your workflow.
-H3: About custom agents
-Custom agents enhance Copilot with assistance tailored to your needs.
 H3: About custom agents
 Custom agents enhance Copilot with assistance tailored to your needs.
