@@ -152,6 +152,10 @@ const vscodeReleaseSummaries = {
 };
 
 const exactSummaryMappings = {
+  "Dynamic workflows in Copilot CLI and the Copilot app": {
+    ja: "Copilot CLI、GitHub Copilot app、Copilot SDK で dynamic workflows が利用可能になった。作業手順や agent の分担をコードで定義し、逐次・並列実行や checkpoint を組み合わせられる。複雑な作業の再現性と可観測性を高めるが、public preview のため制約の確認が必要で、CLI では experimental 機能の有効化が必要。",
+    en: "Dynamic workflows are available in Copilot CLI, the GitHub Copilot app, and the Copilot SDK. Teams can define orchestration in code, including sequential or parallel agent work and checkpoints, improving repeatability and observability for complex tasks. They are in public preview, and CLI use requires enabling experimental features.",
+  },
   "Visual Studio Code 1.114: Preview videos in the image carousel": {
     ja: "チャット添付や Explorer のコンテキストメニューから開く画像カルーセルで、動画もそのまま再生・切り替えできるようになった。画像と動画を同じビューアーで確認でき、会話中の確認作業がしやすくなる。",
     en: "The image carousel now supports videos from chat attachments and the Explorer context menu, so images and videos can be previewed and navigated in the same viewer.",
@@ -782,6 +786,10 @@ const exactSummaryMappings = {
 };
 
 const exactImportanceMappings = {
+  "Dynamic workflows in Copilot CLI and the Copilot app": {
+    ja: "手順や検査をコードで定義できるため、複雑な agent 作業を再現・監視しやすくなります。public preview で CLI は experimental 扱いのため、導入時は利用条件と運用上の制約を確認する必要があります。",
+    en: "Code-defined steps make complex agent work easier to reproduce and monitor. Because this is a public preview and CLI use is experimental, teams should confirm current availability and operational limits before adoption.",
+  },
   "Visual Studio Code 1.123": {
     ja: "未来日付の release note 導線として検知しておくことで、正式公開時の差分確認とハイライト作成に早く着手できます。",
     en: "Tracking this future release entry makes it easier to review differences and prepare highlights once the release is officially published.",
