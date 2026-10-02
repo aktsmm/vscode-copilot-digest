@@ -1,50 +1,12 @@
 {
   "date": "2026-10-02",
-  "generatedAt": "2026-10-02T00:57:45.335Z",
+  "generatedAt": "2026-10-02T11:11:37.962Z",
   "latestRun": {
-    "generatedAt": "2026-10-02T00:57:45.335Z",
-    "newEventsCount": 4,
-    "newEventIds": [
-      "github-changelog:https://github.blog/changelog/2026-10-01-dynamic-workflows-in-copilot-cli-and-the-copilot-app",
-      "github-changelog-copilot:https://github.blog/changelog/2026-10-01-dynamic-workflows-in-copilot-cli-and-the-copilot-app",
-      "docs-github-copilot-howtos:4491073f240dadb9e547aa8650f6a97af69105a891d40b20daf4b9be63111eb3",
-      "docs-github-copilot-concepts:55a6bde236707277e5a1e884eb4b7e67c0f6750a02837ea9d2a312ae539963c1"
-    ],
+    "generatedAt": "2026-10-02T11:11:37.962Z",
+    "newEventsCount": 0,
+    "newEventIds": [],
     "errorCount": 0,
-    "skippedLowInformationEvents": [
-      {
-        "eventId": "github-changelog:https://github.blog/changelog/2026-10-01-github-copilot-can-now-interact-with-desktop-apps",
-        "sourceId": "github-changelog",
-        "title": "GitHub Copilot can now interact with desktop apps with computer use",
-        "fallbackMarkers": [
-          "GitHub Copilot CLI の更新。ターミナルでの agent 作業、設定、ガバナンス、レビュー補助に関わる変更として、CLI 運用への影響を確認しておきたい。"
-        ]
-      },
-      {
-        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-10-01-github-copilot-can-now-interact-with-desktop-apps",
-        "sourceId": "github-changelog-copilot",
-        "title": "GitHub Copilot can now interact with desktop apps with computer use",
-        "fallbackMarkers": [
-          "GitHub Copilot CLI の更新。ターミナルでの agent 作業、設定、ガバナンス、レビュー補助に関わる変更として、CLI 運用への影響を確認しておきたい。"
-        ]
-      },
-      {
-        "eventId": "github-changelog:https://github.blog/changelog/2026-10-01-github-copilot-in-visual-studio-code-september-2026-releases",
-        "sourceId": "github-changelog",
-        "title": "GitHub Copilot in VS Code, September 2026 releases",
-        "fallbackMarkers": [
-          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
-        ]
-      },
-      {
-        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-10-01-github-copilot-in-visual-studio-code-september-2026-releases",
-        "sourceId": "github-changelog-copilot",
-        "title": "GitHub Copilot in VS Code, September 2026 releases",
-        "fallbackMarkers": [
-          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
-        ]
-      }
-    ]
+    "skippedLowInformationEvents": []
   },
   "events": [
     {
