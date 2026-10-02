@@ -12,6 +12,12 @@ Enterprise management tools
 Platform governance
 Projects & Issues
 Supply chain security
+H2: October
+ Oct
+ 2026
+H3: Oct.01 Release
+H3: Oct.01 Release
+H3: Oct.01 Release
 H2: September
  Sep
  2026

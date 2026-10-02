@@ -1,14 +1,58 @@
 {
   "date": "2026-10-02",
-  "generatedAt": "2026-10-02T11:11:37.962Z",
+  "generatedAt": "2026-10-02T18:36:17.628Z",
   "latestRun": {
-    "generatedAt": "2026-10-02T11:11:37.962Z",
-    "newEventsCount": 0,
-    "newEventIds": [],
+    "generatedAt": "2026-10-02T18:36:17.628Z",
+    "newEventsCount": 1,
+    "newEventIds": [
+      "copilot-whats-new:3fee31e8c9dce5e39e81b023e5772f5536d7efeffcc50c6edeaf97a6513c64c6"
+    ],
     "errorCount": 0,
     "skippedLowInformationEvents": []
   },
   "events": [
+    {
+      "eventId": "copilot-whats-new:3fee31e8c9dce5e39e81b023e5772f5536d7efeffcc50c6edeaf97a6513c64c6",
+      "sourceId": "copilot-whats-new",
+      "sourceName": "GitHub Copilot What's New",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-10-02T18:36:14.858Z",
+      "publishedAt": "2026-10-02T18:36:14.857Z",
+      "title": "GitHub Copilot What's New changed",
+      "url": "https://github.com/features/copilot/whats-new",
+      "summary": "Detected 4 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 4,
+        "headings": [
+          "October",
+          "Oct.01 Release"
+        ],
+        "additions": [
+          "H2: October",
+          "Oct",
+          "2026",
+          "H3: Oct.01 Release"
+        ]
+      },
+      "headings": [
+        "Changelog",
+        "Filters (0 selected)",
+        "October\n Oct\n 2026",
+        "Oct.01 Release",
+        "Oct.01 Release",
+        "Oct.01 Release",
+        "September\n Sep\n 2026",
+        "Sep.30 Release",
+        "Sep.29 Release",
+        "Sep.28 Release",
+        "Sep.25 Improvement",
+        "Sep.25 Improvement"
+      ],
+      "score": 4
+    },
     {
       "eventId": "github-changelog:https://github.blog/changelog/2026-10-01-dynamic-workflows-in-copilot-cli-and-the-copilot-app",
       "sourceId": "github-changelog",
