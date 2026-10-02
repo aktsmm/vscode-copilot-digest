@@ -13,6 +13,7 @@ Using GitHub Copilot in JetBrains IDEs
 About GitHub Copilot code review
 About GitHub Agentic Workflows
 About GitHub Copilot Memory
+Dynamic workflows
 About hooks for GitHub Copilot
 About GitHub Copilot plugins
 About third-party coding agents

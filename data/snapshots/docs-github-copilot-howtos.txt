@@ -26,6 +26,7 @@ Running GitHub Copilot CLI programmatically
 Scheduling prompts in GitHub Copilot CLI
 About agent skills
 About GitHub Copilot plugins
+Dynamic workflows
 About GitHub Copilot CLI
 About custom agents
 About remote control of GitHub Copilot CLI sessions
@@ -39,6 +40,7 @@ Using LSP servers with GitHub Copilot CLI
 Researching with GitHub Copilot CLI
 About the rubber duck agent
 About extensions for GitHub Copilot CLI
+Using dynamic workflows
 Copilot CLI ACP server
 GitHub Copilot CLI command reference
 GitHub Copilot CLI plugin reference
@@ -105,8 +107,9 @@ Your first agentic workflow
 Creating GitHub Agentic Workflows
 Use GitHub Copilot agents
 GitHub Copilot cloud agent
-Code review
 Managing Copilot Memory
+Using GitHub Copilot code review
+Using dynamic workflows
 GitHub Copilot integrations
 Integrating Copilot cloud agent with Slack
 Integrating Copilot cloud agent with Teams
