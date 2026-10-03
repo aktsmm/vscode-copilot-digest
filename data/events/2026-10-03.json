@@ -1,0 +1,109 @@
+{
+  "date": "2026-10-03",
+  "generatedAt": "2026-10-03T00:34:39.339Z",
+  "latestRun": {
+    "generatedAt": "2026-10-03T00:34:39.339Z",
+    "newEventsCount": 3,
+    "newEventIds": [
+      "github-changelog:https://github.blog/changelog/2026-10-02-selected-models-in-github-copilot-deprecated",
+      "github-changelog-copilot:https://github.blog/changelog/2026-10-02-selected-models-in-github-copilot-deprecated",
+      "copilot-whats-new:1d4cbe7802d614ce1fc604b280f2367e1a1bfa836956982eaeb8b2e7d2892578"
+    ],
+    "errorCount": 0,
+    "skippedLowInformationEvents": [
+      {
+        "eventId": "github-changelog:https://github.blog/changelog/2026-10-02-copilot-code-review-api-support-and-new-default-effort-level",
+        "sourceId": "github-changelog",
+        "title": "Copilot code review: API support and new default effort level",
+        "fallbackMarkers": [
+          "GitHub Copilot code review のレビュー依頼やコメント処理に関する更新。チームのレビュー運用に影響する可能性がある。"
+        ]
+      },
+      {
+        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-10-02-copilot-code-review-api-support-and-new-default-effort-level",
+        "sourceId": "github-changelog-copilot",
+        "title": "Copilot code review: API support and new default effort level",
+        "fallbackMarkers": [
+          "GitHub Copilot code review のレビュー依頼やコメント処理に関する更新。チームのレビュー運用に影響する可能性がある。"
+        ]
+      }
+    ]
+  },
+  "events": [
+    {
+      "eventId": "copilot-whats-new:1d4cbe7802d614ce1fc604b280f2367e1a1bfa836956982eaeb8b2e7d2892578",
+      "sourceId": "copilot-whats-new",
+      "sourceName": "GitHub Copilot What's New",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-10-03T00:34:33.990Z",
+      "publishedAt": "2026-10-03T00:34:33.989Z",
+      "title": "GitHub Copilot What's New changed",
+      "url": "https://github.com/features/copilot/whats-new",
+      "summary": "Detected 2 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 2,
+        "headings": [
+          "Oct.02 Improvement",
+          "Oct.02 Retired"
+        ],
+        "additions": [
+          "H3: Oct.02 Improvement",
+          "H3: Oct.02 Retired"
+        ]
+      },
+      "headings": [
+        "Changelog",
+        "Filters (0 selected)",
+        "October\n Oct\n 2026",
+        "Oct.02 Improvement",
+        "Oct.02 Retired",
+        "Oct.01 Release",
+        "Oct.01 Release",
+        "Oct.01 Release",
+        "September\n Sep\n 2026",
+        "Sep.30 Release",
+        "Sep.29 Release",
+        "Sep.28 Release"
+      ],
+      "score": 4
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-10-02-selected-models-in-github-copilot-deprecated",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-10-03T00:34:33.095Z",
+      "publishedAt": "2026-10-02T18:24:19.000Z",
+      "title": "Selected models in GitHub Copilot deprecated",
+      "url": "https://github.blog/changelog/2026-10-02-selected-models-in-github-copilot-deprecated",
+      "summary": "As of today, October 2, 2026, we have deprecated the following models across all GitHub Copilot experiences (including Copilot Chat, inline edits, ask and agent modes, and code completions). Model…\nThe post Selected models in GitHub Copilot deprecated appeared first on The GitHub Blog.",
+      "categories": [
+        "Retired",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 5
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-10-02-selected-models-in-github-copilot-deprecated",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-10-03T00:34:33.115Z",
+      "publishedAt": "2026-10-02T18:24:19.000Z",
+      "title": "Selected models in GitHub Copilot deprecated",
+      "url": "https://github.blog/changelog/2026-10-02-selected-models-in-github-copilot-deprecated",
+      "summary": "As of today, October 2, 2026, we have deprecated the following models across all GitHub Copilot experiences (including Copilot Chat, inline edits, ask and agent modes, and code completions). Model…\nThe post Selected models in GitHub Copilot deprecated appeared first on The GitHub Blog.",
+      "categories": [
+        "Retired",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 5
+    }
+  ],
+  "errors": []
+}
