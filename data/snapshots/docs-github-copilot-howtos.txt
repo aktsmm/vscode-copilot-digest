@@ -26,8 +26,8 @@ Running GitHub Copilot CLI programmatically
 Scheduling prompts in GitHub Copilot CLI
 About agent skills
 About GitHub Copilot plugins
+GitHub Copilot CLI
 Dynamic workflows
-About GitHub Copilot CLI
 About custom agents
 About remote control of GitHub Copilot CLI sessions
 Allowing GitHub Copilot CLI to work autonomously

@@ -1,16 +1,15 @@
 H1: Concepts for GitHub Copilot
 Learn the core concepts that you'll need to understand GitHub Copilot.
-Completions for GitHub Copilot
-GitHub Copilot code suggestions in your IDE
-GitHub Copilot code referencing
-About GitHub Copilot Chat
+GitHub Copilot surfaces
+GitHub Copilot app
+GitHub Copilot CLI
+GitHub Copilot on GitHub.com
+GitHub Copilot in IDEs
 Concepts for GitHub Copilot agents
 Concepts for GitHub Copilot cloud agent
 Concepts for GitHub Copilot CLI
-About the GitHub Copilot app
-About computer use in GitHub Copilot
-Using GitHub Copilot in JetBrains IDEs
 About GitHub Copilot code review
+About computer use in GitHub Copilot
 About GitHub Agentic Workflows
 About GitHub Copilot Memory
 Dynamic workflows
