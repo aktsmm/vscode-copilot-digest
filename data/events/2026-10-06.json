@@ -1,24 +1,12 @@
 {
   "date": "2026-10-06",
-  "generatedAt": "2026-10-06T01:48:23.588Z",
+  "generatedAt": "2026-10-06T12:06:56.789Z",
   "latestRun": {
-    "generatedAt": "2026-10-06T01:48:23.588Z",
-    "newEventsCount": 2,
-    "newEventIds": [
-      "docs-github-copilot-howtos:4dfd941a66aae5230830f7edc494d5006b9e81b3ef5bdef09bb565c679c406df",
-      "docs-github-copilot-concepts:315d17c6e262d59597fef367dc08e1a05467b65f7c229950fb05fd06fede9d43"
-    ],
+    "generatedAt": "2026-10-06T12:06:56.789Z",
+    "newEventsCount": 0,
+    "newEventIds": [],
     "errorCount": 0,
-    "skippedLowInformationEvents": [
-      {
-        "eventId": "github-copilot-blog:https://github.blog/?p=99258",
-        "sourceId": "github-copilot-blog",
-        "title": "ReviewBench: An open benchmark for AI code review",
-        "fallbackMarkers": [
-          "GitHub Copilot code review のレビュー依頼やコメント処理に関する更新。チームのレビュー運用に影響する可能性がある。"
-        ]
-      }
-    ]
+    "skippedLowInformationEvents": []
   },
   "events": [
     {
