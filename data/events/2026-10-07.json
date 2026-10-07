@@ -1,18 +1,58 @@
 {
   "date": "2026-10-07",
-  "generatedAt": "2026-10-07T00:51:48.767Z",
+  "generatedAt": "2026-10-07T11:52:24.048Z",
   "latestRun": {
-    "generatedAt": "2026-10-07T00:51:48.767Z",
+    "generatedAt": "2026-10-07T11:52:24.048Z",
     "newEventsCount": 2,
     "newEventIds": [
-      "copilot-whats-new:c69591d4033693f4d7f78a75fb00f65f235dda3abcf7eeeb047868a51dcabd8c",
-      "docs-github-copilot-howtos:73f04c0d746769401247101ccfa186186e06763c1aeb8fc7c40445a3d7106253"
+      "vscode-updates:5897d6cb42ddfb4e0eedae856854eb82065a7b7d8e5fe2a8a56bcabbaff2c454",
+      "vscode-release-notes-1-109:e81f22dc5fb1782b898da32502664d3e0d6215d65a5e54a3c171ea0cc90f487e"
     ],
     "errorCount": 0,
     "skippedLowInformationEvents": [
       {
-        "eventId": "github-changelog:https://github.blog/changelog/2026-10-06-update-your-ide-to-restore-agent-activity-in-copilot-usage-metrics",
-        "sourceId": "github-changelog",
+        "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_142",
+        "sourceId": "vscode-feed",
+        "title": "Visual Studio Code 1.142 (Insiders)",
+        "fallbackMarkers": [
+          "Visual Studio Code 関連の更新。日々の開発フローや agent 利用に効く変更点を確認しておきたい。"
+        ]
+      },
+      {
+        "eventId": "vscode-release-notes-1-141:section:34c218dc196969bc24acf714dfc447087c119bbfd22acc89df9d383b0b6b69ad",
+        "sourceId": "vscode-release-notes-1-141",
+        "title": "Visual Studio Code 1.141: Copilot harness",
+        "fallbackMarkers": [
+          "に関する release note 更新。該当 section の内容を個別に追跡している。"
+        ]
+      },
+      {
+        "eventId": "vscode-release-notes-1-141:section:8c71bca700f21608c654d550824e16b7f01170a83e77ae92390293fda6094648",
+        "sourceId": "vscode-release-notes-1-141",
+        "title": "Visual Studio Code 1.141: Reclaim storage from inactive worktrees",
+        "fallbackMarkers": [
+          "に関する release note 更新。該当 section の内容を個別に追跡している。"
+        ]
+      },
+      {
+        "eventId": "vscode-release-notes-1-141:section:3453ac9accff78e9c6e2a76d5256ac374c229ba673e0a94d23e70ddaf3094b94",
+        "sourceId": "vscode-release-notes-1-141",
+        "title": "Visual Studio Code 1.141: Keep track of background shells",
+        "fallbackMarkers": [
+          "に関する release note 更新。該当 section の内容を個別に追跡している。"
+        ]
+      },
+      {
+        "eventId": "vscode-release-notes-1-141:section:92fe2f753a65f99d9ec4babbb0895d406e57c96f04ec8d563a775f0d4519bba2",
+        "sourceId": "vscode-release-notes-1-141",
+        "title": "Visual Studio Code 1.141: More control for agent-triggered messages",
+        "fallbackMarkers": [
+          "に関する release note 更新。該当 section の内容を個別に追跡している。"
+        ]
+      },
+      {
+        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-10-06-update-your-ide-to-restore-agent-activity-in-copilot-usage-metrics",
+        "sourceId": "github-changelog-copilot",
         "title": "Update your IDE to restore agent activity in Copilot usage metrics",
         "fallbackMarkers": [
           "追跡対象ソースの更新。公開内容の変化や運用への影響を継続監視対象として記録している。"
@@ -21,6 +61,74 @@
     ]
   },
   "events": [
+    {
+      "eventId": "vscode-updates:5897d6cb42ddfb4e0eedae856854eb82065a7b7d8e5fe2a8a56bcabbaff2c454",
+      "sourceId": "vscode-updates",
+      "sourceName": "VS Code Updates",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-10-07T11:52:21.924Z",
+      "publishedAt": "2026-10-07T11:52:21.895Z",
+      "title": "VS Code Updates changed",
+      "url": "https://code.visualstudio.com/updates/",
+      "summary": "Detected 196 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 196,
+        "headings": [
+          "Visual Studio Code 1.141",
+          "Downloads for 1.141.0",
+          "Agent loop",
+          "Reclaim storage from inactive worktrees",
+          "Keep track of background shells",
+          "More control for agent-triggered messages",
+          "Agent UX",
+          "Arrange sessions in a grid",
+          "Compact layout density",
+          "Additional session-filtering options",
+          "Track activity across nested sessions",
+          "Simplified new-session controls (Experimental)",
+          "Improved context picker positioning",
+          "Move agent picker in context control (Experimental)",
+          "Customize new-session welcome messages (Experimental)",
+          "Agent environments"
+        ],
+        "additions": [
+          "1.141",
+          "H1: Visual Studio Code 1.141",
+          "Released October 7, 2026 Stable",
+          "H2: Downloads for 1.141.0",
+          "This release makes it easier to manage agent sessions, protect agent workflows, edit columnar text, and work across GitHub Enterprise instances.",
+          "Clean up worktree storage: Reclaim disk space from inactive agent session worktrees, on demand or automatically.",
+          "Cross-platform sandboxing: Limit agent access to files and network resources on Windows, macOS, and Linux with terminal sandboxing.",
+          "Arrange sessions: Compare and monitor multiple agent sessions side by side in a grid layout.",
+          "Continue external sessions: Pick up local external Copilot and Codex conversations in VS Code without losing context.",
+          "Block pasting: Paste block rows across successive lines from a single cursor.",
+          "Multiple GitHub Enterprise instances: Sign in to GHE.com and GitHub Enterprise Server accounts from the same VS Code window.",
+          "H2: Agent loop",
+          "The Copilot harness adds exciting new agent functionality to VS Code. It's powered by the Copilot SDK, so its behavior and capabilities are consistent with other Copilot products, including the standalone GitHub Copilot app and the Copilot CLI.",
+          "H3: Reclaim storage from inactive worktrees",
+          "Run Chat: Open Worktree Cleanup to see how much disk space inactive agent session worktrees use and remove the ones you no longer need. Filter sessions by how long they have been inactive, review each worktree's size, and select the worktrees to clean up.",
+          "The cleanup editor also lets you configure automatic cleanup for sessions with merged pull requests and control whether VS Code suggests cleanup when session storage grows large."
+        ]
+      },
+      "headings": [
+        "Visual Studio Code 1.141",
+        "Downloads for 1.141.0",
+        "Release highlights",
+        "Agent loop",
+        "Copilot harness",
+        "Reclaim storage from inactive worktrees",
+        "Keep track of background shells",
+        "More control for agent-triggered messages",
+        "Agent UX",
+        "Arrange sessions in a grid",
+        "Compact layout density",
+        "Additional session-filtering options"
+      ],
+      "score": 18
+    },
     {
       "eventId": "copilot-whats-new:c69591d4033693f4d7f78a75fb00f65f235dda3abcf7eeeb047868a51dcabd8c",
       "sourceId": "copilot-whats-new",
@@ -58,6 +166,42 @@
         "Sep.29 Release"
       ],
       "score": 3
+    },
+    {
+      "eventId": "vscode-release-notes-1-109:e81f22dc5fb1782b898da32502664d3e0d6215d65a5e54a3c171ea0cc90f487e",
+      "sourceId": "vscode-release-notes-1-109",
+      "sourceName": "VS Code Release Notes 1.109",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-10-07T11:52:22.078Z",
+      "publishedAt": "2026-02-04T00:00:00.000Z",
+      "title": "VS Code Release Notes 1.109 changed",
+      "url": "https://code.visualstudio.com/updates/v1_109",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [],
+        "additions": [
+          "1.141"
+        ]
+      },
+      "headings": [
+        "January 2026 (version 1.109)",
+        "Downloads for 1.109.5",
+        "Upcoming events",
+        "Agent Sessions Day",
+        "Chat UX",
+        "Message steering and queueing (Experimental)",
+        "Anthropic models now show thinking tokens",
+        "Mermaid diagrams in chat responses",
+        "Ask Questions tool (Experimental)",
+        "Plan agent",
+        "Context window details",
+        "Inline chat UX revamp (Preview)"
+      ],
+      "score": 2
     },
     {
       "eventId": "docs-github-copilot-howtos:73f04c0d746769401247101ccfa186186e06763c1aeb8fc7c40445a3d7106253",
