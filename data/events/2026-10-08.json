@@ -1,17 +1,15 @@
 {
   "date": "2026-10-08",
-  "generatedAt": "2026-10-08T01:07:28.745Z",
+  "generatedAt": "2026-10-08T12:07:41.015Z",
   "latestRun": {
-    "generatedAt": "2026-10-08T01:07:28.745Z",
-    "newEventsCount": 1,
-    "newEventIds": [
-      "copilot-whats-new:895a8e62273a15a4c3ba6de2b47f58963e81eb74266b9d8d2913ffb35d167add"
-    ],
+    "generatedAt": "2026-10-08T12:07:41.015Z",
+    "newEventsCount": 0,
+    "newEventIds": [],
     "errorCount": 0,
     "skippedLowInformationEvents": [
       {
-        "eventId": "github-changelog:https://github.blog/changelog/2026-10-07-claude-haiku-5-5-in-github-copilot",
-        "sourceId": "github-changelog",
+        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-10-07-claude-haiku-5-5-in-github-copilot",
+        "sourceId": "github-changelog-copilot",
         "title": "Claude Haiku 5.5 in GitHub Copilot",
         "fallbackMarkers": [
           "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
