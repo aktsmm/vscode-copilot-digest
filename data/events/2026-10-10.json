@@ -1,36 +1,18 @@
 {
   "date": "2026-10-10",
-  "generatedAt": "2026-10-10T01:03:09.374Z",
+  "generatedAt": "2026-10-10T11:15:39.349Z",
   "latestRun": {
-    "generatedAt": "2026-10-10T01:03:09.374Z",
-    "newEventsCount": 1,
-    "newEventIds": [
-      "copilot-whats-new:b91e1d3c014756a2aed351d47b6388cb593a0dae33b519cec203ac27d6e6ddc6"
-    ],
+    "generatedAt": "2026-10-10T11:15:39.349Z",
+    "newEventsCount": 0,
+    "newEventIds": [],
     "errorCount": 0,
     "skippedLowInformationEvents": [
       {
-        "eventId": "github-changelog:https://github.blog/changelog/2026-10-09-github-copilot-weekly-releases-october-5",
-        "sourceId": "github-changelog",
+        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-10-09-github-copilot-weekly-releases-october-5",
+        "sourceId": "github-changelog-copilot",
         "title": "GitHub Copilot weekly releases — October 5",
         "fallbackMarkers": [
           "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
-        ]
-      },
-      {
-        "eventId": "github-changelog:https://github.blog/changelog/2026-10-08-copilot-code-review-new-organization-billing-options-and-controls",
-        "sourceId": "github-changelog",
-        "title": "Copilot code review: New organization billing options and controls",
-        "fallbackMarkers": [
-          "GitHub Copilot code review のレビュー依頼やコメント処理に関する更新。チームのレビュー運用に影響する可能性がある。"
-        ]
-      },
-      {
-        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-10-08-copilot-code-review-new-organization-billing-options-and-controls",
-        "sourceId": "github-changelog-copilot",
-        "title": "Copilot code review: New organization billing options and controls",
-        "fallbackMarkers": [
-          "GitHub Copilot code review のレビュー依頼やコメント処理に関する更新。チームのレビュー運用に影響する可能性がある。"
         ]
       }
     ]
