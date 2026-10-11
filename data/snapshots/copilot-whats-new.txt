@@ -15,6 +15,7 @@ Supply chain security
 H2: October
  Oct
  2026
+H3: Oct.10 Release
 H3: Oct.09 Release
 H3: Oct.08 Improvement
 H3: Oct.07 Release
