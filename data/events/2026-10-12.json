@@ -1,12 +1,21 @@
 {
   "date": "2026-10-12",
-  "generatedAt": "2026-10-12T13:19:41.348Z",
+  "generatedAt": "2026-10-12T21:49:11.707Z",
   "latestRun": {
-    "generatedAt": "2026-10-12T13:19:41.348Z",
+    "generatedAt": "2026-10-12T21:49:11.707Z",
     "newEventsCount": 0,
     "newEventIds": [],
     "errorCount": 0,
-    "skippedLowInformationEvents": []
+    "skippedLowInformationEvents": [
+      {
+        "eventId": "github-copilot-blog:https://github.blog/?p=99409",
+        "sourceId": "github-copilot-blog",
+        "title": "GitHub Copilot app for Beginners: How to teach Copilot about your codebase",
+        "fallbackMarkers": [
+          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
+        ]
+      }
+    ]
   },
   "events": [],
   "errors": []
