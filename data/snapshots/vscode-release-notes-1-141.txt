@@ -13,8 +13,9 @@ Insiders
 View All Releases
 H1: Visual Studio Code 1.141
 Released October 7, 2026 Stable
-H2: Downloads for 1.141.0
+H2: Downloads for 1.141.1
 Already installed? Use Check for Updates in VS Code. For upcoming features, use the Insiders build.
+Update 1.141.1: The update addresses these security issues.
 H2: Release highlights
 This release makes it easier to manage agent sessions, protect agent workflows, edit columnar text, and work across GitHub Enterprise instances.
 Clean up worktree storage: Reclaim disk space from inactive agent session worktrees, on demand or automatically.

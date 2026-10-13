@@ -1,33 +1,113 @@
 {
   "date": "2026-10-13",
-  "generatedAt": "2026-10-13T12:48:35.839Z",
+  "generatedAt": "2026-10-13T19:55:37.261Z",
   "latestRun": {
-    "generatedAt": "2026-10-13T12:48:35.839Z",
-    "newEventsCount": 1,
+    "generatedAt": "2026-10-13T19:55:37.261Z",
+    "newEventsCount": 2,
     "newEventIds": [
-      "copilot-whats-new:a031ef3e02b24d2ef2bd377b757aa487c62b0cb3ea0f1fe2ca79bf97564cf9d1"
+      "vscode-updates:2996ea213ff43fdfe8108e318764e5f7cacb11bbc17fa640bff1291d497d3580",
+      "copilot-whats-new:21a0ed03a183405ed6e80ce237c35971c98c496d0ceb9c20a35094f3e860124e"
     ],
     "errorCount": 0,
     "skippedLowInformationEvents": [
       {
-        "eventId": "github-changelog:https://github.blog/changelog/2026-10-12-client-telemetry-user-attribution-and-configurable-capture",
+        "eventId": "github-changelog:https://github.blog/changelog/2026-10-13-gemini-4-argon-in-github-copilot",
         "sourceId": "github-changelog",
-        "title": "Client telemetry user attribution and configurable capture",
+        "title": "Gemini 4 Argon in GitHub Copilot",
         "fallbackMarkers": [
           "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
         ]
       },
       {
-        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-10-12-client-telemetry-user-attribution-and-configurable-capture",
-        "sourceId": "github-changelog-copilot",
-        "title": "Client telemetry user attribution and configurable capture",
+        "eventId": "github-changelog:https://github.blog/changelog/2026-10-12-enterprise-managed-settings-enforcement-updates",
+        "sourceId": "github-changelog",
+        "title": "Enterprise managed settings enforcement updates",
         "fallbackMarkers": [
-          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
+          "GitHub Copilot CLI の更新。ターミナルでの agent 作業、設定、ガバナンス、レビュー補助に関わる変更として、CLI 運用への影響を確認しておきたい。"
         ]
       }
     ]
   },
   "events": [
+    {
+      "eventId": "copilot-whats-new:21a0ed03a183405ed6e80ce237c35971c98c496d0ceb9c20a35094f3e860124e",
+      "sourceId": "copilot-whats-new",
+      "sourceName": "GitHub Copilot What's New",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-10-13T19:55:30.308Z",
+      "publishedAt": "2026-10-13T19:55:30.307Z",
+      "title": "GitHub Copilot What's New changed",
+      "url": "https://github.com/features/copilot/whats-new",
+      "summary": "Detected 2 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 2,
+        "headings": [
+          "Oct.13 Release",
+          "Oct.13 Improvement"
+        ],
+        "additions": [
+          "H3: Oct.13 Release",
+          "H3: Oct.13 Improvement"
+        ]
+      },
+      "headings": [
+        "Changelog",
+        "Filters (0 selected)",
+        "October\n Oct\n 2026",
+        "Oct.13 Release",
+        "Oct.13 Improvement",
+        "Oct.12 Improvement",
+        "Oct.10 Release",
+        "Oct.09 Release",
+        "Oct.08 Improvement",
+        "Oct.07 Release",
+        "Oct.07 Release",
+        "Oct.07 Release"
+      ],
+      "score": 4
+    },
+    {
+      "eventId": "vscode-updates:2996ea213ff43fdfe8108e318764e5f7cacb11bbc17fa640bff1291d497d3580",
+      "sourceId": "vscode-updates",
+      "sourceName": "VS Code Updates",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-10-13T19:55:30.060Z",
+      "publishedAt": "2026-10-13T19:55:30.058Z",
+      "title": "VS Code Updates changed",
+      "url": "https://code.visualstudio.com/updates/",
+      "summary": "Detected 2 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 2,
+        "headings": [
+          "Downloads for 1.141.1"
+        ],
+        "additions": [
+          "H2: Downloads for 1.141.1",
+          "Update 1.141.1: The update addresses these security issues."
+        ]
+      },
+      "headings": [
+        "Visual Studio Code 1.141",
+        "Downloads for 1.141.1",
+        "Release highlights",
+        "Agent loop",
+        "Copilot harness",
+        "Reclaim storage from inactive worktrees",
+        "Keep track of background shells",
+        "More control for agent-triggered messages",
+        "Agent UX",
+        "Arrange sessions in a grid",
+        "Compact layout density",
+        "Additional session-filtering options"
+      ],
+      "score": 3
+    },
     {
       "eventId": "copilot-whats-new:a031ef3e02b24d2ef2bd377b757aa487c62b0cb3ea0f1fe2ca79bf97564cf9d1",
       "sourceId": "copilot-whats-new",

@@ -15,6 +15,8 @@ Supply chain security
 H2: October
  Oct
  2026
+H3: Oct.13 Release
+H3: Oct.13 Improvement
 H3: Oct.12 Improvement
 H3: Oct.10 Release
 H3: Oct.09 Release
@@ -33,47 +35,6 @@ H3: Oct.01 Release
 H2: September
  Sep
  2026
-H3: Sep.30 Release
-H3: Sep.29 Release
-H3: Sep.28 Release
-H3: Sep.25 Improvement
-H3: Sep.25 Improvement
-H3: Sep.25 Improvement
-H3: Sep.25 Release
-H3: Sep.25 Improvement
-H3: Sep.24 Improvement
-H3: Sep.23
-H3: Sep.23 Release
-H3: Sep.22 Release
-H3: Sep.22 Release
-H3: Sep.22 Release
-H3: Sep.22 Release
-H3: Sep.22 Release
-H3: Sep.21 Release
-H3: Sep.18 Improvement
-H3: Sep.18 Release
-H3: Sep.18 Retired
-H3: Sep.17 Improvement
-H3: Sep.17 Improvement
-H3: Sep.16 Release
-H3: Sep.15 Release
-H3: Sep.14 Release
-H3: Sep.11 Improvement
-H3: Sep.11 Improvement
-H3: Sep.10 Release
-H3: Sep.10 Retired
-H3: Sep.09 Improvement
-H3: Sep.08 Release
-H3: Sep.04 Release
-H3: Sep.04 Release
-H3: Sep.03 Retired
-H3: Sep.03 Release
-H3: Sep.03 Release
-H3: Sep.02 Improvement
-H3: Sep.02 Release
-H3: Sep.01 Improvement
-H3: Sep.01 Release
-H3: Sep.01 Release
 H2: August
  Aug
  2026
