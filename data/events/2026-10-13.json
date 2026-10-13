@@ -1,13 +1,71 @@
 {
   "date": "2026-10-13",
-  "generatedAt": "2026-10-13T02:38:26.093Z",
+  "generatedAt": "2026-10-13T12:48:35.839Z",
   "latestRun": {
-    "generatedAt": "2026-10-13T02:38:26.093Z",
-    "newEventsCount": 0,
-    "newEventIds": [],
+    "generatedAt": "2026-10-13T12:48:35.839Z",
+    "newEventsCount": 1,
+    "newEventIds": [
+      "copilot-whats-new:a031ef3e02b24d2ef2bd377b757aa487c62b0cb3ea0f1fe2ca79bf97564cf9d1"
+    ],
     "errorCount": 0,
-    "skippedLowInformationEvents": []
+    "skippedLowInformationEvents": [
+      {
+        "eventId": "github-changelog:https://github.blog/changelog/2026-10-12-client-telemetry-user-attribution-and-configurable-capture",
+        "sourceId": "github-changelog",
+        "title": "Client telemetry user attribution and configurable capture",
+        "fallbackMarkers": [
+          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
+        ]
+      },
+      {
+        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-10-12-client-telemetry-user-attribution-and-configurable-capture",
+        "sourceId": "github-changelog-copilot",
+        "title": "Client telemetry user attribution and configurable capture",
+        "fallbackMarkers": [
+          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
+        ]
+      }
+    ]
   },
-  "events": [],
+  "events": [
+    {
+      "eventId": "copilot-whats-new:a031ef3e02b24d2ef2bd377b757aa487c62b0cb3ea0f1fe2ca79bf97564cf9d1",
+      "sourceId": "copilot-whats-new",
+      "sourceName": "GitHub Copilot What's New",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-10-13T12:48:33.778Z",
+      "publishedAt": "2026-10-13T12:48:33.777Z",
+      "title": "GitHub Copilot What's New changed",
+      "url": "https://github.com/features/copilot/whats-new",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [
+          "Oct.12 Improvement"
+        ],
+        "additions": [
+          "H3: Oct.12 Improvement"
+        ]
+      },
+      "headings": [
+        "Changelog",
+        "Filters (0 selected)",
+        "October\n Oct\n 2026",
+        "Oct.12 Improvement",
+        "Oct.10 Release",
+        "Oct.09 Release",
+        "Oct.08 Improvement",
+        "Oct.07 Release",
+        "Oct.07 Release",
+        "Oct.07 Release",
+        "Oct.07 Improvement",
+        "Oct.06 Improvement"
+      ],
+      "score": 3
+    }
+  ],
   "errors": []
 }
