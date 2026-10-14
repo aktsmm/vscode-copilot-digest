@@ -52,6 +52,10 @@
 
 ## 完全自動ではない部分
 
+- スライド専用レーン（`author-slide-pr.yml` / `validate-slide-pr.yml` / `auto-merge-slide-pr.yml`）は digest 用レーンと分離している。Copilot が PR に独自のタイトルを付けるため、スライド PR は本文の `slide-authoring-request` マーカーまたは `copilot/slide-` ブランチ名で判定する。digest 用 workflow（validate / auto-merge / review 正規化 / redeploy）を変えるときは、スライド PR を処理しない条件を保つこと（`tests/slide-lane.test.mjs` が検証）
+- Secret: `COPILOT_ASSIGN_TOKEN`（Issue の Copilot 割り当て）、`PDF_PASSWORD`（スライド PDF の暗号化。`deploy-pages.yml` だけが使い、未設定なら PDF は公開されない）、`DISCORD_WEBHOOK_URL`
+- スライド PR の auto-merge は `workflow_run` 起点。Copilot の run が `action_required` で止まる場合は `rerun-blocked-copilot-workflows.yml` が `Validate slide PR` / `Auto-merge slide PR` も再実行する
+
 - GitHub リポジトリ設定で Copilot cloud agent を有効化している必要がある
 - repo 側では auto-merge を有効化し、Actions の `GITHUB_TOKEN` は write 権限と PR review approve 権限を持つ前提にしている
 - branch protection が無い repo では GitHub の auto-merge API が使えないことがあるため、安全条件を満たした生成 PR は workflow が直接 squash merge する

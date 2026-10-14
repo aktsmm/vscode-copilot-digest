@@ -19,6 +19,10 @@ GitHub Copilot と VS Code 周辺の更新を毎日収集し、日次イベン�
 - 更新カード・トップページの簡易検索・専用検索・日次／週間詳細から、原文、確認済みの公式資料（最大 3 件）、掲載日のまとめの該当箇所を直接開ける
 - GitHub.com 上の Copilot cloud agent 向け執筆依頼 Issue / PR フローを自動起票する
 - 日次本文、要点、日本語化・対訳の更新には GitHub Copilot Cloud Agent を使う
+- 静的 JSON API（`api/v1/`）として、更新一覧・月別・カテゴリ別・個別詳細と取得状態を公開する
+- 1 更新 = 1 枚のスライド JSON（`data/slides/`）を Copilot cloud agent が生成し、専用の PR 系統で検証・自動 merge する
+- スライドを PDF 化する（GitHub ダーク＋Copilot パープルの表紙・裏表紙）。最新 1 件は無料サンプル、残りは `PDF_PASSWORD` で暗号化して公開する
+- `slides.html` で期間・種類を絞り、選択を JSON または結合 PDF（ブラウザ内で復号・結合）としてダウンロードできる
 
 運用の詳細は [docs/automation.md](docs/automation.md) にまとめています。
 静的 JSON API・スライド・PDF（範囲選択して結合する `slides.html` を含む）は [docs/api.md](docs/api.md) を参照してください。
@@ -161,7 +165,8 @@ Discord 通知は短い概要を本文に置き、主な更新は embed カー�
 - `.cache/resource-pages`: 取得ページの作業用キャッシュ。Git 管理対象ではなく、確認台帳とは別に扱う
 - [summaries/daily](summaries/daily): 公開済み更新または未来日付項目がある日だけ生成する日次 Markdown
 - [drafts](drafts): 14 日ドラフト
-- [site](site): GitHub Pages 用の静的出力
+- [data/slides](data/slides): 1 更新 1 枚のスライド JSON（Copilot が生成し、検証を通ったものだけ merge）
+- [site](site): GitHub Pages 用の静的出力（`api/v1/`、`slides/`、`pdf/`、`slides.html` を含む）
 
 ## 主要スクリプト
 
@@ -175,6 +180,11 @@ Discord 通知は短い概要を本文に置き、主な更新は embed カー�
 - [scripts/notify-discord.mjs](scripts/notify-discord.mjs): Discord 通知と preview 出力。workflow では weekly mode と 7 日 window で、短い概要と更新カードを投稿する設定で使う
 - [scripts/publish-qiita.mjs](scripts/publish-qiita.mjs): Qiita API への新規投稿 / 更新
 - [scripts/lib/reporting.mjs](scripts/lib/reporting.mjs): 分類、重複除去、日本語化、注記生成の共通ロジック
+- [scripts/lib/api.mjs](scripts/lib/api.mjs): 静的 JSON API と取得状態（coverage）の生成
+- [scripts/lib/slides.mjs](scripts/lib/slides.mjs): スライドの検証規則（許可ホスト、内部メモ語の禁止、状態の根拠）
+- [scripts/lib/theme.mjs](scripts/lib/theme.mjs): PDF / スライドの配色（GitHub / Copilot）と文言の単一定義
+- [scripts/build-slide-pdfs.mjs](scripts/build-slide-pdfs.mjs): スライドの PDF 化、サンプル以外の暗号化、`slides.html` と `data/slides.json` の出力
+- [scripts/pending-slides.mjs](scripts/pending-slides.mjs) / [scripts/validate-slides.mjs](scripts/validate-slides.mjs): スライド未作成の更新の抽出と検証
 
 ## GitHub Actions
 
@@ -186,6 +196,14 @@ Discord 通知は短い概要を本文に置き、主な更新は embed カー�
 - 毎週金曜 06:00 JST を目安に `build-weekly-draft.yml` が直近 7 日分の週間ドラフトを更新する
 - 毎週水曜 06:00 JST を目安に `notify-weekly-discord.yml` が直近 7 日分の週間要約を Discord Webhook へ通知する
 - Copilot 由来の PR が merge されたときも `redeploy-pages-after-generated-pr-merge.yml` が `deploy-pages.yml` を再 dispatch し、superseded な draft PR / digest-authoring issue を cleanup する
+
+### スライド生成と PDF 公開（専用レーン）
+
+- 月・木 03:00 JST を目安に `author-slide-pr.yml` が、スライド未作成の直近 3 か月の更新を最大 10 件選び、`Slide authoring request` Issue を作成して Copilot cloud agent に割り当てる
+- Copilot が `data/slides/{id}.json` を追加する PR を作る。`validate-slide-pr.yml` が許可パス（`data/slides/{id}.json` の追加・更新のみ）と `npm run validate:slides` を検証し、`auto-merge-slide-pr.yml` が安全なものを squash merge して Pages を再デプロイする
+- スライド PR は Issue のマーカーまたは `copilot/slide-` ブランチ名で判定し、digest 用の validate / auto-merge / review 正規化 / redeploy workflow は処理しない
+- `deploy-pages.yml` が `PDF_PASSWORD` を使って PDF を生成・暗号化する。Secret が無い、またはブラウザが使えない場合は PDF を公開せず、サイトのデプロイは続行する
+- 詳細は [docs/api.md](docs/api.md) と [docs/slide-schema.md](docs/slide-schema.md) を参照
 
 ### Copilot Coding Agent による自動化
 
@@ -214,7 +232,10 @@ Discord 通知は短い概要を本文に置き、主な更新は embed カー�
 
 ## 必要な Secrets
 
-- 使用する Secrets と Copilot cloud agent 運用メモは [docs/automation.md](docs/automation.md) に移しました。
+- `COPILOT_ASSIGN_TOKEN`: Copilot cloud agent への Issue 割り当て用（執筆依頼・スライド生成）
+- `PDF_PASSWORD`: スライド PDF の暗号化に使う。未設定なら PDF は公開されない（`deploy-pages.yml` だけが使用）
+- `DISCORD_WEBHOOK_URL`: 週次 Discord 通知用
+- 詳しい運用メモは [docs/automation.md](docs/automation.md) を参照してください。
 
 ## Pages 構成
 
@@ -226,6 +247,8 @@ Discord 通知は短い概要を本文に置き、主な更新は embed カー�
 - 週間ページ: 直近 7 日のハイライト、テーマ別まとめ、ソース内訳、全件一覧
 - 検索ページ: Pagefind のインデックスを使い、公開済み日次・週間詳細ページから title / excerpt を横断検索する
 - raw データ: 各日の Markdown と JSON をそのまま参照可能
+- `slides.html`: スライドの JSON / 結合 PDF ダウンロード（トップページのナビからは辿れないため、直接 URL か [docs/api.md](docs/api.md) から開く）
+- `api/v1/`: 読み取り専用の JSON API
 
 ## 検索実装
 
@@ -243,7 +266,8 @@ Discord 通知は短い概要を本文に置き、主な更新は embed カー�
 - [summaries](summaries): 日次要約
 - [drafts](drafts): 記事ドラフト
 - [scripts](scripts): 収集 / 生成 / 投稿処理
-- [docs](docs): 設計メモ
+- [schema](schema) / [examples](examples): スライド JSON のスキーマとサンプル
+- [docs](docs): 設計メモ（[api.md](docs/api.md)、[slide-schema.md](docs/slide-schema.md) を含む）
 - [research](research): 調査メモ
 
 ## 補足

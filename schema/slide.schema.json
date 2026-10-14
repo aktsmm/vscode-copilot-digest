@@ -6,7 +6,7 @@
   "properties": {
     "schema": { "const": "vscode-copilot-digest/slide/v1" },
     "id": { "type": "string", "pattern": "^[0-9a-f]{16}$" },
-    "title": { "type": "object", "required": ["ja"], "properties": { "ja": { "type": "string" }, "en": { "type": "string" } } },
+    "title": { "type": "object", "required": ["ja"], "properties": { "ja": { "type": "string", "maxLength": 80 }, "en": { "type": "string" } } },
     "date": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
     "topic": { "enum": ["GitHub Copilot", "VS Code", "GitHub Platform", "周辺ニュース"] },
     "status": { "enum": ["ga", "preview", "retirement", "announcement", "update", "unknown"] },

@@ -1,0 +1,33 @@
+{
+  "schema": "vscode-copilot-digest/deck/v1",
+  "selection": {
+    "mode": "ids",
+    "period": { "start": "2026-10-07", "end": "2026-10-07" },
+    "snapshotAt": "2026-10-14T00:00:00.000Z"
+  },
+  "slides": [
+    {
+      "schema": "vscode-copilot-digest/slide/v1",
+      "id": "8241d56116d90ff3",
+      "title": { "ja": "Copilot CLIでローカルモデルを検出" },
+      "date": "2026-10-07",
+      "topic": "GitHub Copilot",
+      "status": "unknown",
+      "summary": "GitHub Copilot CLIの/modelから、実行中のOllamaにある対応モデルを見つけ、既存のモデルと並べて選べるようになった。",
+      "points": [
+        "追加前にプロバイダーとエンドポイントを確認し、このセッションで使うか選べる。",
+        "ローカルモデルの選択はオフラインモードを有効にしない。"
+      ],
+      "references": {
+        "source": "https://github.blog/changelog/2026-10-07-discover-local-models-in-github-copilot-cli/",
+        "documents": [
+          {
+            "title": "GitHub Copilot CLI への LLM モデルの追加",
+            "url": "https://docs.github.com/ja/copilot/how-tos/copilot-cli/customize-copilot/use-byok-models"
+          }
+        ]
+      },
+      "evidence": ["https://github.blog/changelog/2026-10-07-discover-local-models-in-github-copilot-cli/"]
+    }
+  ]
+}
