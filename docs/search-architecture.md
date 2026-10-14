@@ -18,6 +18,7 @@
 - [scripts/build-pages.mjs](../scripts/build-pages.mjs) が静的 HTML を生成する
 - その直後に `pagefind --site site --output-subdir pagefind` を実行する
 - 生成された index は [site/pagefind](../site/pagefind) に出力され、Pages 配布物に含まれる
+- [scripts/finalize-search.mjs](../scripts/finalize-search.mjs) が同じ出力を `site/pagefind-<version>/` に複製し、公開ページはこの版付き bundle を読み込む
 
 ### 検索対象ページ
 
@@ -37,7 +38,7 @@
 - [site/index.html](../site/index.html) に検索ボックスを埋め込む
 - 最近の公開更新へ素早く飛ぶ用途に寄せる
 - 最大 6 件で結果数を抑え、トップページの補助導線として扱う
-- 両検索 UI に原文、文書タイトル付き資料、該当更新のアーカイブアンカーを表示する
+- 両検索 UI に「原文」、文書タイトル付きの「関連ドキュメント」、「掲載日のまとめを見る」を表示する。最後のリンクはサイト内の日次まとめの該当更新へ移動する
 
 ### 専用検索ページ
 
@@ -55,7 +56,7 @@
 
 1. 公開済みイベント列を組み立てる
 2. 検索用 metadata を付加する
-3. トップページの component search 用スクリプトを埋め込む
+3. トップページと専用検索で共有する Pagefind API と結果描画のスクリプトを埋め込む
 4. 専用検索ページの検索 UI と整形ロジックを埋め込む
 5. `data-pagefind-body` を詳細ページ本文とハイライト一覧本文へ付与する
 
@@ -71,12 +72,14 @@
 - source / topic facet 用の内部値
 
 この metadata は [scripts/lib/reporting.mjs](../scripts/lib/reporting.mjs) の分類ロジックに依存しています。
+原文・資料情報は [data/resources.json](../data/resources.json) を読み込み、補完状態とともに各更新へ付加します。検索結果の機能見出しをイベントアンカーに対応づけ、結果から外部の原文・資料とサイト内の日次更新を直接開けるようにします。補完の選定・検証方法は [resource-enrichment.md](resource-enrichment.md) を参照してください。
 
 ## 多言語対応
 
 - build は日本語 / 英語ページを同時生成する
 - Pagefind 側で言語を自動検出し、現在は `ja` と `en` の 2 言語 index を生成する
 - 日本語は stemming 非対応なので、語幹一致よりも語句一致に寄った検索になる
+- 言語ボタンと保存済み言語への自動移動は、検索パラメーターと更新アンカーを保持する
 
 ## 制約と既知の注意点
 

@@ -4,7 +4,7 @@
 
 ## 全体像
 
-1. [collect-updates.yml](../.github/workflows/collect-updates.yml) が毎日ソースを収集する
+1. [collect-updates.yml](../.github/workflows/collect-updates.yml) が `npm run collect` を実行し、ソース収集の後に全期間の原文・公式資料を補完する
 2. 変更があれば `data/**` と `summaries/**` を `github-actions[bot]` が commit する
 3. collect workflow から [deploy-pages.yml](../.github/workflows/deploy-pages.yml) を workflow dispatch し、最新データで Pages を再生成する
 4. collect 成功後に [author-digest-pr.yml](../.github/workflows/author-digest-pr.yml) が Copilot 向け執筆依頼 Issue を作成または更新する
@@ -16,6 +16,7 @@
 
 - [collect-updates.yml](../.github/workflows/collect-updates.yml) は毎日 06:30 / 14:30 / 22:30 JST 目安で実行する。GitHub Actions の schedule は高負荷時に遅延しうる
 - Node.js 22 で `npm ci` と `npm run collect` を実行し、[data/events](../data/events) を毎日更新する。[summaries/daily](../summaries/daily) は公開済み更新または未来日付項目がある日だけ生成する
+- 補完結果と証跡は [data/resources.json](../data/resources.json) に保存する。取得ページの `.cache/resource-pages` は Actions cache で引き継ぎ、新しい検出より古い原文キャッシュは再取得する
 - 収集結果が reader-facing の低情報 fallback になる場合は、collector が保存前に除外し、`latestRun.skippedLowInformationEvents` に根拠を記録する。低情報 guard 自体は残るため、公開カードには定型文を出さない
 - 変更がなければ commit せず終了する
 - 変更があった場合は `github-actions[bot]` が `data/**` と `summaries/**` を commit / push する
@@ -29,7 +30,8 @@
 - 公開済み更新が 0 件の空日は Pages の日次詳細や日次アーカイブに含めず、最新公開日も直近の公開済み日次を基準にする
 - トップページは最新 6 件のハイライトを表示し、全件一覧は 50 件ごとにページ分割する
 - 日次・週間・ハイライト一覧は source / topic / importance フィルタと並び替えを持ち、選択状態を URL query に同期する
-- Pages build の最後に Pagefind インデックスも生成し、トップページの簡易検索と `search.html` の専用検索 UI が同じ静的インデックスを参照する
+- Pages build は資料を再取得せず台帳を読む。HTML 生成後に Pagefind インデックスを作り、`finalize-search.mjs` が版付き bundle を配置する。両検索 UI は同じ版のインデックスを参照する
+- カードと検索結果の「原文」「関連ドキュメント」は外部リンク、「掲載日のまとめを見る」は日次まとめの更新アンカーへのサイト内リンク。古い日次更新と、検索条件・言語切替後のアンカーも保持する
 - 検索対象は `data-pagefind-body` を持つ公開ページだけで、日次・週間の詳細本文とハイライト一覧本文を対象にする
 - 専用検索ページは source / topic facet、URL 同期、軽い query expansion、結果重複除去を持つ
 - 検索 UI / index の詳細設計は [search-architecture.md](search-architecture.md) を参照する
