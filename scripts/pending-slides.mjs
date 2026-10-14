@@ -2,6 +2,7 @@
 // (run `npm run build:pages` first) and data/slides.
 import fs from "node:fs/promises";
 import path from "node:path";
+import { retentionStart } from "./build-slide-pdfs.mjs";
 
 const root = process.cwd();
 const args = process.argv.slice(2);
@@ -11,9 +12,8 @@ const option = (name, fallback) => {
 };
 
 export function selectPending(items, existingIds, { months = 3, limit = 10, ids = null, today = new Date() } = {}) {
-  const cutoff = new Date(today);
-  cutoff.setMonth(cutoff.getMonth() - months);
-  const cutoffDate = cutoff.toISOString().slice(0, 10);
+  // Same calendar-month window as the PDF retention, so every slide made here is also published.
+  const cutoffDate = retentionStart(months, today);
   // Snapshot diffs ("X changed") only say a page changed; a slide needs a real article or release-note section.
   return items
     .filter((item) => item.sourceKind !== "html_snapshot_change")
