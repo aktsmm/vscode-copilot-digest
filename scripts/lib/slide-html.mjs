@@ -70,14 +70,15 @@ code{font-family:Consolas,"Cascadia Mono",monospace;font-size:.92em;background:#
 .cv-foot{display:flex;justify-content:space-between;padding:16px 96px;background:#010409;color:${P.onDark};font-size:16px}
 .end .cv-body{align-items:center;background:linear-gradient(120deg,${P.dark} 0 45%,${P.darkSubtle} 45%)}
 .end h1{font-size:64px;margin:0 0 12px;color:#fff}.end .sub{font-size:26px;color:${P.copilot};font-weight:600}
-.end .note{position:absolute;left:96px;bottom:84px;font-size:14px;color:${P.onDark}}.end .note a{color:${P.onDark}}
+.cv-links{margin-top:26px;font-size:16px;line-height:1.8}.cv-links a{color:#79C0FF}
+.end .note{position:absolute;left:96px;bottom:84px;line-height:1.5;font-size:14px;color:${P.onDark}}.end .note a{color:#79C0FF}
 .plain{padding:50px 70px}.plain h2{font-size:34px;color:${P.dark};margin:0 0 18px;border-bottom:3px solid ${P.copilot};padding-bottom:6px}
 .toc{font-size:20px;line-height:1.9}.toc .n{display:inline-block;width:44px;color:${P.copilot};font-weight:700}
 `;
 
 export function coverHtml(deck) {
   const period = deck.selection?.period ? `<div class="cv-period">対象期間 ${esc(deck.selection.period.start)} 〜 ${esc(deck.selection.period.end)}</div>` : "";
-  return `<section class="page cover"><div class="cv-bar"></div><div class="cv-body"><div class="cv-eyebrow">${esc(DECK_TEXT.eyebrow)}</div><h1>${esc(DECK_TEXT.title)}</h1>${period}<div class="cv-count"><b>${deck.slides.length}</b> 件</div></div><div class="cv-foot"><span>作成日 ${esc(String(deck.selection?.snapshotAt ?? "").slice(0, 10))}（UTC）</span><span>${esc(DECK_TEXT.source)}</span></div></section>`;
+  return `<section class="page cover"><div class="cv-bar"></div><div class="cv-body"><div class="cv-eyebrow">${esc(DECK_TEXT.eyebrow)}</div><h1>${esc(DECK_TEXT.title)}</h1>${period}<div class="cv-count"><b>${deck.slides.length}</b> 件</div><div class="cv-links">作成 <a href="${esc(DECK_TEXT.profileUrl)}">${esc(DECK_TEXT.authorLabel)}</a><br>リポジトリ <a href="${esc(DECK_TEXT.repoUrl)}">${esc(DECK_TEXT.repoUrl)}</a></div></div><div class="cv-foot"><span>作成日 ${esc(String(deck.selection?.snapshotAt ?? "").slice(0, 10))}（UTC）</span><span>${esc(DECK_TEXT.source)}</span></div></section>`;
 }
 
 export function tocHtml(deck) {
@@ -85,7 +86,7 @@ export function tocHtml(deck) {
 }
 
 export function endHtml() {
-  return `<section class="page end"><div class="cv-bar"></div><div class="cv-body"><h1>${esc(DECK_TEXT.endTitle)}</h1><div class="sub">${esc(DECK_TEXT.title)}</div></div><div class="note">${esc(DECK_TEXT.automationNote)}<br><a href="${esc(DECK_TEXT.repoUrl)}">${esc(DECK_TEXT.repoUrl)}</a></div><div class="cv-foot"><span>${esc(DECK_TEXT.copyright)}</span><span>${esc(DECK_TEXT.source)}</span></div></section>`;
+  return `<section class="page end"><div class="cv-bar"></div><div class="cv-body"><h1>${esc(DECK_TEXT.endTitle)}</h1><div class="sub">${esc(DECK_TEXT.title)}</div></div><div class="note">${esc(DECK_TEXT.automationNote)}<br><a href="${esc(DECK_TEXT.repoUrl)}">${esc(DECK_TEXT.repoUrl)}</a><br><a href="${esc(DECK_TEXT.profileUrl)}">${esc(DECK_TEXT.authorLabel)}　${esc(DECK_TEXT.profileUrl)}</a><br><a href="${esc(DECK_TEXT.siteUrl)}">${esc(DECK_TEXT.siteUrl)}</a></div><div class="cv-foot"><span>${esc(DECK_TEXT.copyright)}</span><span>${esc(DECK_TEXT.source)}</span></div></section>`;
 }
 
 // v1 slides keep rendering: their summary becomes the subtitle and their points one panel.
@@ -139,7 +140,7 @@ export function slideHtml(input, { fs = FS_STEPS[0] } = {}) {
 <div class="hd"><div><div class="t">${esc(s.title.ja)}${s.title.subtitleJa ? `<small>${rich(s.title.subtitleJa)}</small>` : ""}</div>${original}</div>${badge}</div>
 ${cards.length ? `<div class="imp">${cards.join("")}</div>` : ""}${timeline}
 <div class="cols"><div class="main">${ba}${panels}</div>${side}</div>
-<div class="ft"><div class="lk">${refs}</div><div style="white-space:nowrap">分類: ${esc(s.topic)} ｜ ID ${esc(s.id)}</div></div>
+<div class="ft"><div class="lk">${refs}</div><div style="white-space:nowrap;text-align:right">分類: ${esc(s.topic)} ｜ ID ${esc(s.id)}<br>Created by <a href="${esc(DECK_TEXT.profileUrl)}">${esc(DECK_TEXT.authorLabel)}</a>　<a href="${esc(DECK_TEXT.repoUrl)}">リポジトリ</a></div></div>
 </section>`;
 }
 
