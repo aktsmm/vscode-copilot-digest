@@ -17,6 +17,8 @@ export function selectPending(items, existingIds, { months = 3, limit = 10, ids 
   // Snapshot diffs ("X changed") only say a page changed; a slide needs a real article or release-note section.
   return items
     .filter((item) => item.sourceKind !== "html_snapshot_change")
+    // The authoring agent cannot open Publickey pages, so it cannot verify them.
+    .filter((item) => !/publickey1\.jp/.test(item.resources?.source?.url ?? item.urls?.source ?? ""))
     .filter((item) => !existingIds.has(item.id))
     .filter((item) => (ids ? ids.includes(item.id) : item.digestDate >= cutoffDate))
     .sort((a, b) => b.digestDate.localeCompare(a.digestDate) || b.importance.score - a.importance.score || a.id.localeCompare(b.id))
@@ -48,7 +50,7 @@ async function main() {
     ids: ids?.length ? ids : null,
   });
   console.log(JSON.stringify(pending.map((i) => ({
-    id: i.id, digestDate: i.digestDate, topic: i.topic, title: i.title, summary: i.summary.ja || i.summary.en,
+    id: i.id, digestDate: i.digestDate, topic: i.topic, title: i.title,
     source: i.resources.source.url, documents: i.resources.documents,
   })), null, 2));
 }
