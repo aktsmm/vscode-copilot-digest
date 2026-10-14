@@ -3,6 +3,7 @@ node_modules/
 .env.*
 site/
 .playwright-mcp/
+.cache/
 .github/skills/**/.skill-meta.json
 
 # Auto-synced agent skills (skill-ninja). Ignore by default; track intentional
@@ -10,4 +11,3 @@ site/
 .github/skills/
 !.github/skills/agentic-workflow-guide/
 !.github/skills/agentic-workflow-guide/**
-

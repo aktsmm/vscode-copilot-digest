@@ -16,6 +16,7 @@ GitHub Copilot と VS Code 周辺の更新を毎日収集し、日次イベン�
 - 必要なら Qiita API へ投稿し、投稿 ID と URL をドラフト frontmatter に反映する
 - collect は 1 日 3 回動かしつつ、Discord Webhook には週 1 回で直近 7 日分をまとめて通知する
 - Pages 上では source-only の簡素なフィルタと、Pagefind による全文検索を提供する
+- 更新カード・トップページの簡易検索・専用検索・日次／週間詳細から原文、最大 3 件の公式資料、該当更新のアーカイブ内アンカーを直接開ける
 - GitHub.com 上の Copilot cloud agent 向け執筆依頼 Issue / PR フローを自動起票する
 - 日次本文、要点、日本語化・対訳の更新には GitHub Copilot Cloud Agent を使う
 
@@ -81,6 +82,18 @@ npm ci
 npm run collect
 ```
 
+`collect` は収集後に全期間の未補完資料を検証し、`data/resources.json` の補完台帳を更新します。イベント JSON に資料を手入力しないため、再収集で資料が消えません。
+
+資料の全期間監査／補完／失敗の再確認:
+
+```bash
+npm run audit:resources
+npm run enrich:resources
+npm run enrich:resources -- --retry-failed
+```
+
+対象範囲、件数、関連資料あり、資料リンク数、対応資料未確認、取得失敗、未調査を出力します。検証途中で停止した場合は同じコマンドで再開します。詳細は [資料補完の運用](docs/resource-enrichment.md) を参照してください。
+
 Pages 生成:
 
 ```bash
@@ -130,6 +143,7 @@ Discord 通知は短い概要を本文に置き、主な更新は embed カー�
 
 - [data/events](data/events): 日次イベント JSON
 - [data/snapshots](data/snapshots): HTML スナップショット比較用テキスト
+- [data/resources.json](data/resources.json): 原文・公式資料の検証台帳（採用根拠、確認日時、本文 hash、失敗情報）
 - [summaries/daily](summaries/daily): 公開済み更新または未来日付項目がある日だけ生成する日次 Markdown
 - [drafts](drafts): 14 日ドラフト
 - [site](site): GitHub Pages 用の静的出力
@@ -198,10 +212,11 @@ Discord 通知は短い概要を本文に置き、主な更新は embed カー�
 ## 検索実装
 
 - `npm run build:pages` は静的 HTML 生成のあとに `pagefind --site site --output-subdir pagefind` を実行し、公開用インデックスを作る
-- トップページは `pagefind-component-ui` を使った簡易検索を埋め込み、最近の公開更新へすぐ飛べるようにしている
+- トップページと専用検索ページは同じ Pagefind API と結果描画を使い、原文と資料へ直接アクセスできる。トップページは最大 6 件表示する
 - 専用の `search.html` は `pagefind.js` を直接読み込み、クエリ文字列同期、preload、結果整形を含む軽量な検索 UI を静的配布している
 - 検索対象は `data-pagefind-body` を持つ公開ページだけで、日次・週間の詳細本文から検索できる
 - 詳細設計は [docs/search-architecture.md](docs/search-architecture.md) を参照
+- 検索 bundle は入力と描画コードの hash を含む `pagefind-<version>/` に配布し、以前の検索データとの混在を防ぐ
 
 ## ディレクトリ概要
 

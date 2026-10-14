@@ -1,6 +1,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { createHash } from "node:crypto";
+import { attachResources, httpUrl, resourceStats } from "./lib/resources.mjs";
 
 import {
   applyEditorialPolicy,
@@ -40,6 +41,8 @@ const sortOrder = ["default", "newest", "oldest", "importance"];
 const HOME_HIGHLIGHT_LIMIT = 6;
 const HOME_ARCHIVE_LIMIT = 6;
 const HIGHLIGHTS_PAGE_SIZE = 50;
+let archiveDates = new Map();
+let searchVersion = "";
 
 function toDateOnly(value) {
   const date = safeDate(value);
@@ -958,6 +961,35 @@ function eventAnchorId(event) {
   return `event-${createHash("sha1").update(eventKey(event)).digest("hex").slice(0, 12)}`;
 }
 
+function resourceLabels(locale) {
+  return locale === "ja"
+    ? { source: "原文", related: "関連ドキュメント", archive: "アーカイブ内の更新", unconfirmed: "対応資料未確認", fetch_failed: "資料の取得失敗（再確認待ち）", unresearched: "資料未調査" }
+    : { source: "Original", related: "Related documentation", archive: "Update in archive", unconfirmed: "Matching documentation unconfirmed", fetch_failed: "Resource fetch failed (pending retry)", unresearched: "Documentation not yet researched" };
+}
+
+function renderResourceLinks(event, locale) {
+  const labels = resourceLabels(locale);
+  const resources = event.resources ?? { status: "unresearched", documents: [] };
+  const source = httpUrl(resources.source?.url ?? event.url);
+  const date = archiveDates.get(eventKey(event));
+  const archive = date ? `${locale === "en" ? "en/" : ""}days/${date}.html#${eventAnchorId(event)}` : null;
+  const external = (url, title) => `<a href="${escapeHtml(url)}" target="_blank" rel="noopener">${escapeHtml(title)} <span aria-hidden="true">&#8599;</span></a>`;
+  return `<div class="resource-links" data-pagefind-ignore>
+    <div>${source ? external(source, labels.source) : ""}${archive ? ` <a data-archive-path="${escapeHtml(archive)}" href="${escapeHtml(`https://aktsmm.github.io/vscode-copilot-digest/${archive}`)}">${escapeHtml(labels.archive)}</a>` : ""}</div>
+    ${resources.documents.length ? `<p class="resource-label">${escapeHtml(labels.related)}</p><ul>${resources.documents.slice(0, 3).map((doc) => `<li>${external(doc.url, doc.title)}</li>`).join("")}</ul>` : ""}
+    ${labels[resources.status] ? `<p class="resource-status">${escapeHtml(labels[resources.status])}</p>` : ""}
+  </div>`;
+}
+
+function cardWhy(event, locale) {
+  if (event.sourceId === "copilot-whats-new" && event.kind === "html_snapshot_change") {
+    return locale === "ja"
+      ? "What's New の見出し差分の検出記録で、独立した製品機能の発表ではありません。原文で実際の変更内容を確認してください。"
+      : "This records changed What's New headings, not a standalone product-feature announcement. Follow the original entry to identify the actual changes.";
+  }
+  return importanceReason(event, locale);
+}
+
 function renderEventCard(event, locale, text, options = {}) {
   const rawTitle = locale === "ja" ? originalTitle(event) : null;
   const summaryMaxLength = options.compact ? 210 : 340;
@@ -965,11 +997,13 @@ function renderEventCard(event, locale, text, options = {}) {
   const topic = classifyEvent(event);
   const importance = importanceFilterValue(event);
   const anchorId = options.anchorId ?? null;
-  const whyText = importanceReason(event, locale);
+  const whyText = cardWhy(event, locale);
   const summaryText = options.compact
     ? cardDescription(event, locale)
     : trimText(localizedSummary(event, locale), summaryMaxLength);
-  const compactWhy = completeSentencePreview(whyText, locale, 1);
+  const compactWhy = /\.\.\.|…/.test(whyText)
+    ? ""
+    : completeSentencePreview(whyText, locale, 1);
   const why = options.includeWhy
     ? options.compact
       ? compactWhy
@@ -989,12 +1023,13 @@ function renderEventCard(event, locale, text, options = {}) {
 
   return `<article class="${cardClass}" data-filter-card data-source-group="${escapeHtml(group)}" data-topic="${escapeHtml(topic)}" data-importance="${escapeHtml(importance)}" data-sort-date="${escapeHtml(String(sortDateValue(event)))}" data-sort-score="${escapeHtml(String(rankEvent(event)))}">
     ${renderBadges(event, locale, text)}
-    <h3${anchorId ? ` id="${escapeHtml(anchorId)}"` : ""}><a href="${escapeHtml(event.url)}"${linkAttrs}${linkLabel}>${escapeHtml(titleText)}${isExternal ? ' <span class="ext-icon" aria-hidden="true">&#8599;</span>' : ""}</a></h3>
+    <h3${anchorId ? ` id="${escapeHtml(anchorId)}"` : ""}><a href="${escapeHtml(event.resources?.source?.url ?? event.url)}"${linkAttrs}${linkLabel}>${escapeHtml(titleText)}${isExternal ? ' <span class="ext-icon" aria-hidden="true">&#8599;</span>' : ""}</a></h3>
     ${rawTitle ? `<p class="original-title">${escapeHtml(text.originalTitleLabel)}: ${escapeHtml(rawTitle)}</p>` : ""}
     ${renderDateMeta(event, locale, text)}
     ${renderSourceMeta(event, locale, text)}
     <p${options.compact ? ' class="mini-summary"' : ""}>${escapeHtml(summaryText)}</p>
     ${why}
+    ${renderResourceLinks(event, locale)}
   </article>`;
 }
 
@@ -1212,10 +1247,11 @@ function renderEventStreamItem(event, locale, text) {
       <div class="stream-item-meta">${renderDateMeta(event, locale, text)}${renderSourceMeta(event, locale, text)}</div>
     </div>
     <div class="stream-item-body">
-      <h3><a href="${escapeHtml(event.url)}"${linkAttrs}${linkLabel}>${escapeHtml(titleText)}${isExternal ? ' <span class="ext-icon" aria-hidden="true">&#8599;</span>' : ""}</a></h3>
+      <h3 id="${eventAnchorId(event)}"><a href="${escapeHtml(event.resources?.source?.url ?? event.url)}"${linkAttrs}${linkLabel}>${escapeHtml(titleText)}${isExternal ? ' <span class="ext-icon" aria-hidden="true">&#8599;</span>' : ""}</a></h3>
       ${rawTitle ? `<p class="original-title">${escapeHtml(text.originalTitleLabel)}: ${escapeHtml(rawTitle)}</p>` : ""}
       <p>${escapeHtml(trimText(localizedSummary(event, locale), 520))}</p>
-      <p class="why-it-matters"><strong>${escapeHtml(text.whyLabel)}:</strong> ${escapeHtml(importanceReason(event, locale))}</p>
+      <p class="why-it-matters"><strong>${escapeHtml(text.whyLabel)}:</strong> ${escapeHtml(cardWhy(event, locale))}</p>
+      ${renderResourceLinks(event, locale)}
     </div>
   </article>`;
 }
@@ -1564,9 +1600,14 @@ function renderIndexPage(
         <p class="hero-copy">${escapeHtml(text.heroCopy)}</p>
         <div class="hero-search">
           <p class="hero-search-label">${escapeHtml(text.homeSearchTitle)}</p>
-          <div class="pagefind-shell pagefind-shell--compact">
-            <pagefind-config preload></pagefind-config>
-            <pagefind-searchbox placeholder="${escapeHtml(text.searchPlaceholder)}" max-results="6" show-sub-results hide-shortcut></pagefind-searchbox>
+          <div class="pagefind-shell pagefind-shell--compact" data-search-root>
+            <div class="search-input-row">
+              <input class="search-input" type="search" placeholder="${escapeHtml(text.searchPlaceholder)}" aria-label="${escapeHtml(text.searchInputLabel)}" autocomplete="off" data-search-input />
+              <button type="button" class="filter-reset" data-search-clear>${escapeHtml(text.filterReset)}</button>
+            </div>
+            <p class="search-status" role="status" aria-live="polite" aria-atomic="true" data-search-count>${escapeHtml(text.searchPrompt)}</p>
+            <p class="search-empty is-hidden" data-search-empty></p>
+            <div class="search-results-grid" data-search-results></div>
           </div>
           <p class="hero-search-help">${escapeHtml(text.homeSearchHelp)} <a class="hero-search-link" href="${escapeHtml(searchHref)}">${escapeHtml(text.homeSearchOpenLink)}</a></p>
         </div>
@@ -1655,30 +1696,18 @@ function renderIndexPage(
     homeHref: links.home,
     weeklyHref: links.weeklyArchive,
     langSwitchHref: links.langSwitch,
-    pagefindUi: true,
-    extraScript: renderPagefindComponentSetupScript(),
+    extraScript: renderSearchPageScript({ ...text, searchEntries: allHighlights }, locale, true),
     extraScriptType: "module",
   });
 }
 
-function renderPagefindComponentSetupScript() {
-  return `const pathName = window.location.pathname;
-const rootPath = pathName.endsWith("/en/")
-  ? pathName.slice(0, -3)
-  : pathName.replace(/(?:en\\/)?index\\.html$/, "");
-const basePath = /\\/$/.test(rootPath) ? rootPath : rootPath + "/";
-document.querySelectorAll("pagefind-config").forEach((config) => {
-  config.setAttribute("bundle-path", basePath + "pagefind/");
-  config.setAttribute("base-url", basePath);
-});
-await import(basePath + "pagefind/pagefind-component-ui.js");`;
-}
-
-function renderSearchPageScript(text, locale) {
+function renderSearchPageScript(text, locale, home = false) {
   const searchMetadata = {};
   for (const event of text.searchEntries ?? []) {
     const title = localizedTitle(event, locale);
-    searchMetadata[`${event.digestDate}\t${title}`] = {
+    searchMetadata[eventAnchorId(event)] = {
+      digestDate: event.digestDate,
+      title,
       sourceGroup: sourceGroup(event),
       sourceClass: `source-badge--${sourceGroup(event)}`,
       sourceShort: sourceGroupMeta(sourceGroup(event), text).short,
@@ -1686,6 +1715,8 @@ function renderSearchPageScript(text, locale) {
       topic: classifyEvent(event),
       topicLabel: text.topicNames[classifyEvent(event)] ?? classifyEvent(event),
       importanceLabel: localizedImportanceLabel(event, locale),
+      resourcesHtml: renderResourceLinks(event, locale),
+      archivePath: `${locale === "en" ? "en/" : ""}days/${event.digestDate}.html#${eventAnchorId(event)}`,
     };
   }
 
@@ -1697,7 +1728,7 @@ function renderSearchPageScript(text, locale) {
   };
 
   return `const strings = ${JSON.stringify(strings)};
-const metadataIndex = ${JSON.stringify(searchMetadata)};
+const metadataIndex = ${JSON.stringify(searchMetadata).replace(/</g, "\\u003c")};
 const root = document.querySelector("[data-search-root]");
 if (!root) {
   throw new Error("Search root not found");
@@ -1710,11 +1741,14 @@ const emptyNode = root.querySelector("[data-search-empty]");
 const filtersRoot = document.querySelector("[data-search-filters]");
 const filterReset = filtersRoot ? filtersRoot.querySelector("[data-search-filter-reset]") : null;
 const facetState = { source: new Set(), topic: new Set() };
-const rootPath = window.location.pathname.replace(/(?:en\\/)?search\\.html$/, "");
+const pathName = window.location.pathname;
+const rootPath = pathName.endsWith("/en/")
+  ? pathName.slice(0, -3)
+  : pathName.replace(/(?:en\\/)?(?:search|index)\\.html$/, "");
 const basePath = /\\/$/.test(rootPath) ? rootPath : rootPath + "/";
-const pagefind = await import(basePath + "pagefind/pagefind.js");
+const pagefind = await import(basePath + "pagefind-${searchVersion}/pagefind.js");
 await pagefind.options({
-  bundlePath: basePath + "pagefind/",
+  bundlePath: basePath + "pagefind-${searchVersion}/",
   baseUrl: basePath,
 });
 await pagefind.init();
@@ -1738,7 +1772,9 @@ function resultLabel(count) {
 }
 
 function lookupMeta(row) {
-  return metadataIndex[(row.digestDate || "") + "\t" + row.title] || null;
+  const anchor = new URL(row.url, window.location.href).hash;
+  return metadataIndex[anchor.slice(1)]
+    || Object.values(metadataIndex).find((entry) => entry.digestDate === row.digestDate && entry.title === row.title) || null;
 }
 
 function readList(value) {
@@ -1771,8 +1807,8 @@ function rowMatchesFacets(row) {
   if (!meta && (facetState.source.size > 0 || facetState.topic.size > 0)) {
     return false;
   }
-  const sourceMatch = facetState.source.size === 0 || facetState.source.has(meta.sourceGroup);
-  const topicMatch = facetState.topic.size === 0 || facetState.topic.has(meta.topic);
+  const sourceMatch = facetState.source.size === 0 || facetState.source.has(meta?.sourceGroup);
+  const topicMatch = facetState.topic.size === 0 || facetState.topic.has(meta?.topic);
   return sourceMatch && topicMatch;
 }
 
@@ -1791,9 +1827,9 @@ function renderRow(row) {
     : '<div class="badge-row"><span class="pill">' + escapeHtml(row.digestDate || "N/A") + '</span></div>';
   return '<article class="update-card search-result-card">'
     + badges
-    + '<h3><a href="' + escapeHtml(row.url) + '">' + escapeHtml(row.title) + '</a></h3>'
+    + '<h3><a href="' + escapeHtml(meta ? basePath + meta.archivePath : row.url) + '">' + escapeHtml(row.title) + '</a></h3>'
     + excerpt
-    + '<div class="search-result-links"><a href="' + escapeHtml(row.dayUrl) + '">' + escapeHtml(strings.openDigest) + '</a></div>'
+    + (meta ? meta.resourcesHtml : '<div class="search-result-links"><a href="' + escapeHtml(row.url) + '">' + escapeHtml(strings.openDigest) + '</a></div>')
     + '</article>';
 }
 
@@ -1838,14 +1874,15 @@ function applyResults(rows, rawQuery) {
     return;
   }
   emptyNode.classList.add("is-hidden");
-  resultsNode.innerHTML = rows.map(renderRow).join("");
+  resultsNode.innerHTML = rows.slice(0, ${home ? 6 : 200}).map(renderRow).join("");
+  resultsNode.querySelectorAll("[data-archive-path]").forEach((link) => { link.href = basePath + link.dataset.archivePath; });
 }
 
 function dedupeRows(rows) {
   const seen = new Set();
   const deduped = [];
   for (const row of rows) {
-    const key = (row.url || "") + "\t" + (row.title || "");
+    const key = lookupMeta(row)?.archivePath || (row.url || "") + "\t" + (row.title || "");
     if (seen.has(key)) continue;
     seen.add(key);
     deduped.push(row);
@@ -2073,6 +2110,7 @@ function renderLayout({
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>${escapeHtml(title)}</title>
     <meta name="description" content="${escapeHtml(description)}" />
+    <meta name="digest-search-version" content="${searchVersion}" />
     <meta property="og:title" content="${escapeHtml(title)}" />
     <meta property="og:description" content="${escapeHtml(description)}" />
     <meta property="og:type" content="website" />
@@ -2083,7 +2121,7 @@ function renderLayout({
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="${assetHref}" />
+    <link rel="stylesheet" href="${assetHref}?v=${searchVersion}" />
     ${pagefindUi ? `<link rel="stylesheet" href="${pagefindCssHref}" />` : ""}
   </head>
   <body>
@@ -2146,6 +2184,8 @@ function renderLayout({
     </div>
     <script>
     (function(){
+      var archiveBase=new URL('${homeHref}',window.location.href).pathname.replace(/(?:en\\/)?index\\.html$/,'');
+      document.querySelectorAll('[data-archive-path]').forEach(function(link){link.href=archiveBase+link.dataset.archivePath;});
       var toggle=document.querySelector('.lang-toggle');
       if(toggle){
         var pref=localStorage.getItem('vcd-lang');
@@ -2394,6 +2434,14 @@ body {
     linear-gradient(180deg, #f8f1e7 0%, #efe4d4 100%);
 }
 a { color: inherit; }
+.resource-links { border-top: 1px solid var(--line); margin-top: 14px; padding-top: 12px; font-size: 0.88rem; overflow-wrap: anywhere; }
+.resource-links > div { display: flex; flex-wrap: wrap; gap: 8px 18px; color: var(--accent); }
+.resource-links ul { padding-left: 20px; margin: 6px 0; }
+.resource-links li { margin: 5px 0; }
+.resource-label { font-weight: 700; margin: 10px 0 4px; }
+.resource-status { color: var(--muted); margin: 6px 0; }
+[id^="event-"] { scroll-margin-top: 24px; }
+[id^="event-"]:target { outline: 2px solid var(--accent); outline-offset: 5px; }
 a:focus-visible,
 button:focus-visible,
 input:focus-visible {
@@ -3118,6 +3166,17 @@ function shouldPublishDailyDigest(digest) {
 
 async function main() {
   const logs = await readDailyLogs();
+  let ledger;
+  try {
+    ledger = JSON.parse(await fs.readFile(path.join(workspaceRoot, "data", "resources.json"), "utf8"));
+  } catch (error) {
+    if (error.code !== "ENOENT") throw error;
+    ledger = { entries: {} };
+    console.warn("Resource ledger missing; updates will be marked unresearched.");
+  }
+  searchVersion = createHash("sha256").update(JSON.stringify(logs)).update(JSON.stringify(ledger))
+    .update(await fs.readFile(new URL(import.meta.url))).digest("hex").slice(0, 16);
+  for (const log of logs) log.events = (log.events ?? []).map((event) => attachResources(event, ledger));
   const digestEntries = logs.map((log) => ({
     log,
     digest: buildDailyDigest(log),
@@ -3134,6 +3193,7 @@ async function main() {
     includeFuture: false,
   });
   const allHighlights = searchableEvents;
+  archiveDates = new Map(searchableEvents.map((event) => [eventKey(event), event.digestDate]));
   const highlightPageCount = Math.max(
     1,
     Math.ceil(allHighlights.length / HIGHLIGHTS_PAGE_SIZE),
@@ -3166,6 +3226,8 @@ async function main() {
     "utf8",
   );
   await fs.writeFile(path.join(siteDir, ".nojekyll"), "", "utf8");
+  await fs.writeFile(path.join(siteDir, "assets", "search-version.json"), JSON.stringify({ version: searchVersion }));
+  await fs.writeFile(path.join(siteDir, "assets", "resource-audit.json"), JSON.stringify(resourceStats(logs.flatMap((log) => log.events), ledger), null, 2));
 
   const jaText = buildText("ja");
   const enText = buildText("en");

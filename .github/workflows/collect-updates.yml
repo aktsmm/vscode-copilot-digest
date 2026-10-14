@@ -28,6 +28,13 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Restore verified resource page cache
+        uses: actions/cache@v4
+        with:
+          path: .cache/resource-pages
+          key: resource-pages-v1-${{ github.run_id }}
+          restore-keys: resource-pages-v1-
+
       - name: Collect updates
         run: npm run collect
 

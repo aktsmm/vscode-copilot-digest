@@ -4,15 +4,17 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "collect": "node scripts/collect.mjs",
+    "collect": "node scripts/collect.mjs && node scripts/enrich-resources.mjs",
+    "enrich:resources": "node scripts/enrich-resources.mjs",
+    "audit:resources": "node scripts/enrich-resources.mjs --audit",
     "render:summaries": "node scripts/collect.mjs --render-existing",
     "render:drafts": "node scripts/render-drafts.mjs",
     "biweekly": "node scripts/build-biweekly.mjs",
     "weekly": "node scripts/build-weekly.mjs",
     "notify:discord": "node scripts/notify-discord.mjs",
-    "build:pages": "node scripts/build-pages.mjs && pagefind --site site --output-subdir pagefind",
-    "test:data": "node tests/reporting-low-information.test.mjs && node tests/sources.test.mjs",
-    "test:pages": "node tests/pages-discord-ux.test.mjs",
+    "build:pages": "node scripts/build-pages.mjs && pagefind --site site --output-subdir pagefind && node scripts/finalize-search.mjs",
+    "test:data": "node tests/reporting-low-information.test.mjs && node tests/sources.test.mjs && node tests/resources.test.mjs",
+    "test:pages": "node tests/pages-discord-ux.test.mjs && node tests/resource-pages.test.mjs",
     "test": "npm run test:data && npm run test:pages"
   },
   "dependencies": {
