@@ -47,7 +47,7 @@ jobs:
       - name: List updates without slides
         id: pending
         env:
-          LIMIT: ${{ inputs.limit || '10' }}
+          LIMIT: ${{ inputs.limit || '5' }}
           REFRESH: ${{ inputs.refresh && '--refresh' || '' }}
           IDS: ${{ inputs.ids }}
         run: |
@@ -96,17 +96,6 @@ jobs:
               owner: context.repo.owner, repo: context.repo.repo, state: 'open', labels: 'slide-authoring', per_page: 100,
             });
             const existing = issues.find((issue) => !issue.pull_request && issue.title === title);
-            let issue;
-            if (existing) {
-              await github.rest.issues.update({ owner: context.repo.owner, repo: context.repo.repo, issue_number: existing.number, body });
-              issue = (await github.rest.issues.get({ owner: context.repo.owner, repo: context.repo.repo, issue_number: existing.number })).data;
-            } else {
-              issue = (await github.rest.issues.create({ owner: context.repo.owner, repo: context.repo.repo, title, body, labels })).data;
-            }
-            if ((issue.labels ?? []).some((label) => label.name === 'needs-human-review')) {
-              core.info('Issue is blocked for human review; not assigning Copilot.');
-              return;
-            }
             const pulls = await github.paginate(github.rest.pulls.list, {
               owner: context.repo.owner, repo: context.repo.repo, state: 'open', per_page: 100,
             });
@@ -114,6 +103,17 @@ jobs:
               core.info('A slide PR is already open; waiting for it to merge.');
               return;
             }
+            if (existing && (existing.labels ?? []).some((label) => label.name === 'needs-human-review')) {
+              core.info('The open request is blocked for human review; not starting a new one.');
+              return;
+            }
+            // Copilot only starts work when an issue is newly assigned, so a finished or stalled
+            // request is closed and a fresh one is opened instead of re-assigning the old one.
+            if (existing) {
+              await github.rest.issues.createComment({ owner: context.repo.owner, repo: context.repo.repo, issue_number: existing.number, body: 'Superseded by a new slide authoring request.' });
+              await github.rest.issues.update({ owner: context.repo.owner, repo: context.repo.repo, issue_number: existing.number, state: 'closed', state_reason: 'not_planned' });
+            }
+            const issue = (await github.rest.issues.create({ owner: context.repo.owner, repo: context.repo.repo, title, body, labels })).data;
             try {
               const ctx = await github.graphql(
                 `query($owner: String!, $repo: String!) {
