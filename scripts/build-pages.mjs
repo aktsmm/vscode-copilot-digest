@@ -313,6 +313,7 @@ function buildText(locale) {
       groupedLabel: "Grouped",
       filterTitle: "Filters",
       filterReset: "Clear",
+      slidesAction: "Slides & PDF",
       filterSourceLabel: "Source",
       filterTopicLabel: "Topic",
       filterImportanceLabel: "Importance",
@@ -464,6 +465,7 @@ function buildText(locale) {
     groupedLabel: "分類済み",
     filterTitle: "フィルター",
     filterReset: "クリア",
+    slidesAction: "スライド・PDF",
     filterSourceLabel: "ソース",
     filterTopicLabel: "テーマ",
     filterImportanceLabel: "重要度",
@@ -917,7 +919,7 @@ function renderFilterBar(text, options = {}) {
   }
 
   return `<section class="section-block filter-block ${escapeHtml(extraClass)}" data-filter-root>
-    <div class="section-heading"><h2>${escapeHtml(text.filterTitle)}</h2><button type="button" class="filter-reset" data-filter-reset>${escapeHtml(text.filterReset)}</button></div>
+    <div class="section-heading"><h2>${escapeHtml(text.filterTitle)}</h2><span class="filter-actions">${options.slidesHref ? `<a class="filter-slides" href="${escapeHtml(options.slidesHref)}">${escapeHtml(text.slidesAction)}</a>` : ""}<button type="button" class="filter-reset" data-filter-reset>${escapeHtml(text.filterReset)}</button></span></div>
     <div class="filter-stack">
       ${rows.join("")}
     </div>
@@ -1348,7 +1350,7 @@ function renderHighlightsArchivePage(
 
     ${pager}
 
-    ${renderFilterBar(text, { showSource: true, showTopic: true, showImportance: true, showSort: true, importanceOptions: renderImportanceOptions(pageEvents, locale), showAxisLabels: true, extraClass: "filter-block--compact" })}
+    ${renderFilterBar(text, { showSource: true, showTopic: true, showImportance: true, showSort: true, importanceOptions: renderImportanceOptions(pageEvents, locale), showAxisLabels: true, extraClass: "filter-block--compact", slidesHref: links.home.replace(/index\.html$/, "slides.html") })}
 
     <section class="section-block" data-pagefind-body>
       ${renderSectionHeading(locale === "ja" ? "ハイライト一覧" : "All highlights", locale === "ja" ? `${visibleCount} / 全${events.length}${text.itemSuffix}` : `${visibleCount} / ${itemCount}`)}
@@ -1526,7 +1528,7 @@ function renderRangePage(digest, locale, text, options) {
 
     ${options.kind === "day" ? renderFutureSection(digest.futureEvents, locale, text) : ""}
 
-  ${renderFilterBar(text, { showSource: true, showTopic: true, showImportance: true, showSort: true, importanceOptions: renderImportanceOptions(displayEvents, locale), showAxisLabels: true, extraClass: "filter-block--compact" })}
+  ${renderFilterBar(text, { showSource: true, showTopic: true, showImportance: true, showSort: true, importanceOptions: renderImportanceOptions(displayEvents, locale), showAxisLabels: true, extraClass: "filter-block--compact", slidesHref: options.homeHref.replace(/index\.html$/, "slides.html") })}
 
     ${
       digest.highlights.length > 0
@@ -1627,7 +1629,7 @@ function renderIndexPage(
       </div>
     </section>
 
-    ${latestHighlights.length > 0 ? renderFilterBar(text, { showSource: latestFilterAxes.showSource, showTopic: false, showAxisLabels: false, extraClass: "filter-block--compact" }) : ""}
+    ${latestHighlights.length > 0 ? renderFilterBar(text, { showSource: latestFilterAxes.showSource, showTopic: false, showAxisLabels: false, extraClass: "filter-block--compact", slidesHref: links.home.replace(/index\.html$/, "slides.html") }) : ""}
 
     <section class="section-block" data-latest-highlights data-count-suffix="${escapeHtml(text.latestHighlightsCountSuffix)}">
       ${renderSectionHeading(
@@ -2738,7 +2740,27 @@ h1 { margin: 0 0 16px; font-size: clamp(1.5rem, 2.4vw, 2.2rem); line-height: 1.1
   text-decoration: underline;
 }
 .filter-chip,
-.filter-reset {
+.filter-actions {
+      display: inline-flex;
+      gap: 10px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .filter-slides {
+      display: inline-flex;
+      align-items: center;
+      min-height: 36px;
+      padding: 0 14px;
+      border-radius: 999px;
+      background: #8534f3;
+      color: #fff;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .filter-slides:hover, .filter-slides:focus-visible {
+      background: #6e2fd0;
+    }
+    .filter-reset {
   appearance: none;
   border: 1px solid var(--line);
   background: rgba(255, 255, 255, 0.66);
