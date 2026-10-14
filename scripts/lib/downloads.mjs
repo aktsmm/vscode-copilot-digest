@@ -218,8 +218,10 @@ export function downloadsJs() {
     ctx.fillStyle = THEME.copilot; ctx.fillRect(70, 94, 120, 4);
     ctx.font = "600 22px " + FONT; ctx.fillText("種類別", 70, 150); ctx.fillText("トピック別", 560, 150);
     ctx.font = "22px " + FONT; ctx.fillStyle = THEME.fg;
-    count(items, function (s) { return STATUS_LABELS[s.status] || "更新"; }).forEach(function (kv, i) { ctx.fillText(kv[0] + "　" + kv[1] + " 件", 90, 196 + i * 34); });
-    count(items, function (s) { return s.topic; }).forEach(function (kv, i) { ctx.fillText(kv[0] + "　" + kv[1] + " 件", 580, 196 + i * 34); });
+    // Labels sit on the left and the counts line up on a shared right edge.
+    var rows = function (list, x) { list.forEach(function (kv, i) { ctx.textAlign = "left"; ctx.fillText(kv[0], x, 196 + i * 34); ctx.textAlign = "right"; ctx.fillText(kv[1] + " 件", x + 380, 196 + i * 34); }); ctx.textAlign = "left"; };
+    rows(count(items, function (s) { return STATUS_LABELS[s.status] || "更新"; }), 90);
+    rows(count(items, function (s) { return s.topic; }), 580);
     footer(ctx, TEXT.title, TEXT.source);
   }
   function drawEnd(ctx) {
@@ -329,9 +331,16 @@ export function downloadsJs() {
       var sum = pptx.addSlide(); frame(sum, TEXT.title, TEXT.source);
       sum.addText("概要", { x: 0.7, y: 0.4, w: 8, h: 0.7, fontFace: F, fontSize: 28, bold: true, color: hex(THEME.dark), margin: 0 });
       sum.addShape("rect", { x: 0.7, y: 1.12, w: 1.2, h: 0.05, fill: { color: hex(THEME.copilot) }, line: { color: hex(THEME.copilot), width: 0 } });
-      var tally = function (key) { var m = {}; slides.forEach(function (x) { var k = key(x); m[k] = (m[k] || 0) + 1; }); return Object.keys(m).sort(function (a, b) { return m[b] - m[a]; }).map(function (k) { return { text: k + "　" + m[k] + " 件", options: { breakLine: true } }; }); };
-      sum.addText([{ text: "種類別", options: { bold: true, color: hex(THEME.copilot), fontSize: 20, breakLine: true } }].concat(tally(function (x) { return STATUS_LABELS[x.status] || "更新"; })), { x: 0.9, y: 1.5, w: 5.5, h: 4.6, fontFace: F, fontSize: 18, color: hex(THEME.fg), valign: "top", paraSpaceAfter: 8, margin: 0 });
-      sum.addText([{ text: "トピック別", options: { bold: true, color: hex(THEME.copilot), fontSize: 20, breakLine: true } }].concat(tally(function (x) { return x.topic; })), { x: 7.2, y: 1.5, w: 5.5, h: 4.6, fontFace: F, fontSize: 18, color: hex(THEME.fg), valign: "top", paraSpaceAfter: 8, margin: 0 });      slides.forEach(function (raw) {
+      var tally = function (key) { var m = {}; slides.forEach(function (x) { var k = key(x); m[k] = (m[k] || 0) + 1; }); return Object.keys(m).sort(function (a, b) { return m[b] - m[a]; }).map(function (k) { return [k, m[k]]; }); };
+      var column = function (title, rows, x) {
+        sum.addText(title, { x: x, y: 1.5, w: 5.5, h: 0.45, fontFace: F, fontSize: 20, bold: true, color: hex(THEME.copilot), margin: 0 });
+        rows.forEach(function (kv, i) {
+          sum.addText(kv[0], { x: x + 0.2, y: 2.1 + i * 0.5, w: 3.6, h: 0.42, fontFace: F, fontSize: 18, color: hex(THEME.fg), margin: 0, valign: "middle" });
+          sum.addText(kv[1] + " 件", { x: x + 3.8, y: 2.1 + i * 0.5, w: 1.5, h: 0.42, fontFace: F, fontSize: 18, color: hex(THEME.fg), align: "right", margin: 0, valign: "middle" });
+        });
+      };
+      column("種類別", tally(function (x) { return STATUS_LABELS[x.status] || "更新"; }), 0.9);
+      column("トピック別", tally(function (x) { return x.topic; }), 7.2);      slides.forEach(function (raw) {
         var s = JSON.parse(JSON.stringify(norm(raw)).replace(/\\u0060/g, "")); var sl = pptx.addSlide();
         var badgeColor = { ga: THEME.success, preview: THEME.done, retirement: THEME.danger, announcement: THEME.copilot, update: THEME.muted }[s.status];
         sl.addText(s.title.ja, { x: 0.4, y: 0.25, w: s.status === "unknown" ? 12.5 : 10.9, h: 0.55, fontFace: F, fontSize: 22, bold: true, color: hex(THEME.dark), valign: "top", fit: "shrink" });
