@@ -1,0 +1,68 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "71ab167788f6ed97",
+  "title": {
+    "ja": "MAI-Code-1-Flash の GitHub Copilot 対応終了",
+    "subtitleJa": "全 Copilot 体験で廃止。ワークフローや連携では MAI-Code-1.1-Flash などの対応モデルへ更新",
+    "original": "MAI-Code-1-Flash deprecated"
+  },
+  "date": "2026-09-10",
+  "topic": "GitHub Copilot",
+  "status": "retirement",
+  "statusEvidence": "We have deprecated MAI-Code-1-Flash across all GitHub Copilot experiences",
+  "audience": {
+    "who": "MAI-Code-1-Flash を GitHub Copilot のワークフローや連携で指定している開発者と管理者",
+    "change": "MAI-Code-1-Flash が Copilot Chat、インライン編集、ask・agent モード、コード補完などで廃止",
+    "changeNature": "breaking"
+  },
+  "action": {
+    "required": "yes",
+    "summary": "ワークフローや連携のモデル指定をサポート対象モデルに更新する。廃止モデルの削除操作は不要"
+  },
+  "panels": [
+    {
+      "id": "replacement",
+      "heading": "代替モデル",
+      "priority": "core",
+      "items": [
+        "記事が推奨する代替モデルは MAI-Code-1.1-Flash",
+        "Copilot のサポートモデル一覧で利用可能なモデルを確認する"
+      ]
+    },
+    {
+      "id": "next-steps",
+      "heading": "対応方法",
+      "priority": "core",
+      "items": [
+        "ワークフローや連携のモデル指定を、サポート対象モデルに更新する",
+        "Copilot Enterprise 管理者は、代替モデルをモデルポリシーで有効にする場合がある",
+        "設定でモデルポリシーを確認し、VS Code や github.com のモデル選択欄で利用可否を確認する"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "廃止モデルを削除する操作は不要",
+        "GitHub Enterprise の質問や懸念は、アカウント マネージャーに相談できる"
+      ]
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "MAI-Code-1-Flash deprecated - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-09-10-mai-code-1-flash-deprecated/"
+    },
+    "documents": [
+      {
+        "title": "GitHub Copilotでサポートされている AI モデル - GitHubドキュメント",
+        "url": "https://docs.github.com/ja/copilot/reference/ai-models/supported-models"
+      }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-09-10-mai-code-1-flash-deprecated/",
+    "https://docs.github.com/ja/copilot/reference/ai-models/supported-models"
+  ]
+}

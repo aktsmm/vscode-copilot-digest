@@ -1,0 +1,69 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "bb7456a90da21f2f",
+  "title": {
+    "ja": "Gemini 2.5 Pro・Gemini 3 Flash の Copilot 提供終了",
+    "subtitleJa": "全 Copilot 体験で廃止。Gemini 3.1 Pro または Gemini 3.6 Flash への更新が案内された",
+    "original": "Gemini 2.5 Pro and Gemini 3 Flash deprecated"
+  },
+  "date": "2026-08-01",
+  "topic": "GitHub Copilot",
+  "status": "retirement",
+  "statusEvidence": "As of today, July 31, 2026, we have deprecated the following models across all GitHub Copilot experiences",
+  "audience": {
+    "who": "Gemini 2.5 Pro または Gemini 3 Flash を Copilot で使う開発者と管理者",
+    "change": "両モデルが Copilot Chat、インライン編集、ask・agent モード、コード補完などで廃止",
+    "changeNature": "breaking"
+  },
+  "action": {
+    "required": "yes",
+    "summary": "ワークフローや連携のモデル指定を代替モデルへ更新する。廃止モデルの削除操作は不要"
+  },
+  "panels": [
+    {
+      "id": "models",
+      "heading": "対象モデルと代替",
+      "priority": "core",
+      "items": [
+        "Gemini 2.5 Pro → Gemini 3.1 Pro（Preview）へ移行",
+        "Gemini 3 Flash → Gemini 3.6 Flash へ移行",
+        "両モデルとも Copilot の全体験で廃止"
+      ]
+    },
+    {
+      "id": "next-steps",
+      "heading": "対応方法",
+      "priority": "core",
+      "items": [
+        "ワークフローや連携のモデル指定を、サポート対象モデルに更新する",
+        "Copilot Enterprise 管理者は、代替モデルをモデルポリシーで有効にする場合がある",
+        "設定でモデルポリシーを確認し、VS Code や github.com のモデル選択欄で利用可否を確認する"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "廃止モデルを削除する操作は不要",
+        "GitHub Enterprise の質問や懸念は、アカウント マネージャーに相談できる"
+      ]
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Gemini 2.5 Pro and Gemini 3 Flash deprecated - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-07-31-gemini-2-5-pro-and-gemini-3-flash-deprecated/"
+    },
+    "documents": [
+      {
+        "title": "GitHub Copilotでサポートされている AI モデル - GitHubドキュメント",
+        "url": "https://docs.github.com/ja/copilot/reference/ai-models/supported-models"
+      }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-07-31-gemini-2-5-pro-and-gemini-3-flash-deprecated/",
+    "https://docs.github.com/ja/copilot/reference/ai-models/supported-models"
+  ]
+}
