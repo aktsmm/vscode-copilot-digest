@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs/promises";
 import path from "node:path";
 import { selectPending } from "../scripts/pending-slides.mjs";
+import { editorialQuality } from "../scripts/lib/reporting.mjs";
 
 const workflows = path.join(process.cwd(), ".github", "workflows");
 const read = (name) => fs.readFile(path.join(workflows, name), "utf8");
@@ -16,6 +17,11 @@ assert.equal(selectPending(items, new Set(), { limit: 1, today: new Date("2026-1
 // Page-change items are slide candidates only when they carry the added lines.
 const snap = (id, changes) => ({ ...item(id, "2026-10-12"), sourceKind: "html_snapshot_change", ...(changes ? { changes } : {}) });
 assert.deepEqual(selectPending([snap("s1", ["New agent setting"]), snap("s2")], new Set(), { today: new Date("2026-10-15") }).map((i) => i.id), ["s1"]);
+
+// Date-only headings ("Oct.13 Release") carry no content, so they stay out of reader cards and slides.
+const dated = (additions) => ({ kind: "html_snapshot_change", sourceId: "copilot-whats-new", title: "x", diffSummary: { additions, headings: additions } });
+assert.equal(editorialQuality(dated(["Oct.13 Release", "Oct.13 Improvement"])), "audit-only");
+assert.notEqual(editorialQuality(dated(["Downloads for 1.141.2", "Update 1.141.2: The update addresses these issues."])), "audit-only");
 
 // The slide lane stays narrow: only data/slides/{id}.json, no deletions.
 for (const name of ["validate-slide-pr.yml", "auto-merge-slide-pr.yml"]) {
