@@ -77,6 +77,7 @@ jobs:
               '## ルール',
               '- 変更してよいのは `data/slides/{id}.json` の追加と、同じファイルの上書きだけです。コード・workflow・設定・他のデータは変更しないでください。',
               '- 形式は `schema: "vscode-copilot-digest/slide/v2"` です。項目・上限・規則は `docs/slide-schema.md`、手本は `examples/slide-deck.sample.json`、検証は `npm run validate:slides` です。通ることを確認してから PR にしてください。',
+              '- 下の対象には、サイトが持つ題名・URL・候補の資料しか入れていません。内容は記事そのものを読んで書いてください（こちらの要約は渡していません）。',
               '- 各更新について、対象の `source` URL の記事そのものと、そこからリンクされている公式ドキュメントを実際に開いて読み、書かれていることだけを日本語でまとめてください。数値・製品名・プラン名・日付を補わないでください。',
               '- 1 枚で読み切れる構成にします: `title.ja`（80 文字以内、名詞止め）、`title.subtitleJa`（要点を 1 行）、`title.original`（記事の英語タイトル）、`audience`（誰に関係するか / 何が変わるか）、`action`（要対応・任意・対応不要・情報のどれか）、`panels`（1〜4 枚。`core` の「使える場所とプラン」「使い方」「前提と制限」など、`detail` の「注意点」など）、`glossary`（記事・ドキュメントに定義がある語だけ、最大 6 語）、`suggestions`（任意、最大 3 件）。',
               '- `references.source` は `{ "title": ..., "url": ... }` で、`title` は記事ページの実際のタイトル（例: 『Gemini 4 Argon in GitHub Copilot - GitHub Changelog』）にします。「原文」「GitHub Changelog」だけのような題は不可です。`references.documents` も、各ページの実際のタイトルを `title` に入れてください（最大 3 件、日本語版 `/ja/` があればそれを優先）。',
