@@ -19,7 +19,9 @@ let cards = 0;
 for (const locale of ["", "en"]) {
   const prefix = path.join("site", locale);
   const files = ["index.html", "highlights.html", ...fs.readdirSync(path.join(prefix, "days"))
-    .filter((name) => /^\d{4}-\d{2}-\d{2}\.html$/.test(name)).map((name) => path.join("days", name))];
+    .filter((name) => /^\d{4}-\d{2}-\d{2}\.html$/.test(name)).map((name) => path.join("days", name)),
+    ...fs.readdirSync(path.join(prefix, "weeks")).filter((name) => name !== "index.html" && name.endsWith(".html"))
+      .map((name) => path.join("weeks", name))];
   for (const file of files) {
     const html = fs.readFileSync(path.join(prefix, file), "utf8");
     const $ = cheerio.load(html);
@@ -32,6 +34,14 @@ for (const locale of ["", "en"]) {
         const [target, id] = archive.split("#");
         const targetHtml = fs.readFileSync(path.join("site", ...target.split("/")), "utf8");
         assert.ok(targetHtml.includes(`id="${id}"`), `${file}: missing archive target ${archive}`);
+        if (file.startsWith(`days${path.sep}`)) {
+          assert.equal(target, `${locale ? "en/" : ""}days/${path.basename(file)}`,
+            "historical daily cards must link to their own occurrence, not a newer observation of the same source URL");
+        }
+        const expectedTitle = $(element).closest("article").find("h3").first().text().replace(/\s+/g, " ").trim();
+        const destination = cheerio.load(targetHtml);
+        assert.equal(destination(`[id="${id}"]`).text().replace(/\s+/g, " ").trim(), expectedTitle,
+          `${file}: archive anchor must identify the displayed update, not just an existing heading`);
       }
     });
     if ($("article").filter((_, element) => $(element).find("h3").text().includes("What's New")).length) {

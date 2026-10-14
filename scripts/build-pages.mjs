@@ -971,7 +971,7 @@ function renderResourceLinks(event, locale) {
   const labels = resourceLabels(locale);
   const resources = event.resources ?? { status: "unresearched", documents: [] };
   const source = httpUrl(resources.source?.url ?? event.url);
-  const date = archiveDates.get(eventKey(event));
+  const date = event.digestDate ?? event.archiveDate ?? archiveDates.get(eventKey(event));
   const archive = date ? `${locale === "en" ? "en/" : ""}days/${date}.html#${eventAnchorId(event)}` : null;
   const external = (url, title) => `<a href="${escapeHtml(url)}" target="_blank" rel="noopener">${escapeHtml(title)} <span aria-hidden="true">&#8599;</span></a>`;
   return `<div class="resource-links" data-pagefind-ignore>
@@ -1076,7 +1076,7 @@ function renderFutureSection(events, locale, text) {
     return "";
   }
 
-  return `<section class="section-block notice-block future-block"><div class="section-heading"><h2>${escapeHtml(text.futureTitle)}</h2><span>${events.length}</span></div><p class="future-note">${escapeHtml(text.futureDescription)}</p><div class="highlight-grid">${events.map((event) => renderEventCard(event, locale, text, { includeWhy: false })).join("")}</div></section>`;
+  return `<section class="section-block notice-block future-block"><div class="section-heading"><h2>${escapeHtml(text.futureTitle)}</h2><span>${events.length}</span></div><p class="future-note">${escapeHtml(text.futureDescription)}</p><div class="highlight-grid">${events.map((event) => renderEventCard(event, locale, text, { includeWhy: false, anchorId: eventAnchorId(event) })).join("")}</div></section>`;
 }
 
 function buildRangeDigest(logs, range) {
@@ -3186,7 +3186,9 @@ async function main() {
     [file.split(path.sep).join("/"), (await fs.readFile(path.join(workspaceRoot, file), "utf8")).replace(/\r\n/g, "\n")]));
   for (const [file, content] of searchInputs) searchHash.update(file).update(content);
   searchVersion = searchHash.digest("hex").slice(0, 16);
-  for (const log of logs) log.events = (log.events ?? []).map((event) => attachResources(event, ledger));
+  for (const log of logs) log.events = (log.events ?? []).map((event) => ({
+    ...attachResources(event, ledger), archiveDate: log.date,
+  }));
   const digestEntries = logs.map((log) => ({
     log,
     digest: buildDailyDigest(log),
