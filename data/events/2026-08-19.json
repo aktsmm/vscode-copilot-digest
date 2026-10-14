@@ -151,6 +151,23 @@
         "Model descriptions in the model picker"
       ],
       "score": 2
+    },
+    {
+      "eventId": "github-copilot-blog:https://github.blog/?p=98348",
+      "sourceId": "github-copilot-blog",
+      "sourceName": "github copilot blog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-08-19T21:47:05.731Z",
+      "publishedAt": "2026-08-19T17:50:23.000Z",
+      "title": "GitHub Copilot app for Beginners: Managing your work",
+      "url": "https://github.blog/ai-and-ml/github-copilot/github-copilot-app-for-beginners-managing-your-work/",
+      "summary": "If you’re juggling multiple Copilot sessions, use the My work pane to track what’s in flight, what’s done, and what’s next. This is the third post in our GitHub Copilot app for Beginners series. If you’re just joining us, check out, GitHub Copilot app for beginners: Getting started, where we introduced the app and how it helps you work across multiple agent sessions. Our second post goes deeper on working within a se",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
     }
   ],
   "errors": []

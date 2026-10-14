@@ -58,6 +58,23 @@
         "Additional session-filtering options"
       ],
       "score": 3
+    },
+    {
+      "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_143",
+      "sourceId": "vscode-feed",
+      "sourceName": "vscode feed",
+      "kind": "feed_entry",
+      "detectedAt": "2026-10-14T18:07:16.269Z",
+      "publishedAt": "2026-10-14T00:00:00.000Z",
+      "title": "Visual Studio Code 1.143 (Insiders)",
+      "url": "https://code.visualstudio.com/updates/v1_143",
+      "summary": "Follow us on LinkedIn, X, Bluesky, Instagram | Follow Insiders Changelog on X or Bluesky Welcome to the 1.143 Insiders release of Visual Studio Code.",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
     }
   ],
   "errors": []

@@ -145,6 +145,40 @@
         "Oct.06 Improvement"
       ],
       "score": 3
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-10-13-gemini-4-argon-in-github-copilot",
+      "sourceId": "github-changelog",
+      "sourceName": "github changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-10-13T19:55:37.261Z",
+      "publishedAt": "2026-10-13T00:00:00.000Z",
+      "title": "Gemini 4 Argon in GitHub Copilot",
+      "url": "https://github.blog/changelog/2026-10-13-gemini-4-argon-in-github-copilot/",
+      "summary": "Gemini 4 Argon, Google’s newest frontier model, is now generally available in GitHub Copilot. It is designed for complex coding, agentic, and reasoning tasks. In early testing, Gemini 4 Argon solved more tasks than previous Gemini models on every coding benchmark, with its largest gains in Copilot CLI. It also thoroughly checks its work, testing edge cases before it finishes. This model is billed at provider list pri",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-10-12-enterprise-managed-settings-enforcement-updates",
+      "sourceId": "github-changelog",
+      "sourceName": "github changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-10-13T19:55:37.261Z",
+      "publishedAt": "2026-10-13T00:00:00.000Z",
+      "title": "Enterprise managed settings enforcement updates",
+      "url": "https://github.blog/changelog/2026-10-13-enterprise-managed-settings-enforcement-updates/",
+      "summary": "Enterprise administrators can now require supported GitHub Copilot clients to retrieve current server-managed settings at startup instead of relying on a cached policy. We are also adding minimum client version requirements to governance-focused managed settings keys over time, starting with the sandbox key. Set forceRemoteSettingsRefresh to true through server-managed, MDM-managed, or file-based settings when a poli",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
     }
   ],
   "errors": []

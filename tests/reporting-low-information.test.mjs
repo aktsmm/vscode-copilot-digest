@@ -469,11 +469,15 @@ assert.equal(
   "clustered highlights must retain the related section count",
 );
 
+// A real article with no Japanese wording yet is shown with its source excerpt, not dropped.
 for (const event of unknownSamples) {
-  assertLowInformationFallback(localizedSummary(event), event.title);
+  assert.match(localizedSummary(event), /^（原文の抜粋）/, `${event.title}: must fall back to the source excerpt`);
+  assertNoLowInformationFallback(localizedSummary(event), event.title);
   assertNoLowInformationFallback(importanceReason(event), event.title);
+  assert.equal(lowInformationFallbacksForEvent(event).length, 0, `${event.title}: must not be rejected`);
 }
-const lowInformationEvent = unknownSamples[0];
+// Without any excerpt there is nothing to show, so the guard still rejects it.
+const lowInformationEvent = { title: "Example Copilot billing control shipped", summary: "", categories: ["Release"] };
 const concreteEvent = {
   title: "Copilot code review: AGENTS.md support and UI improvements",
   summary:

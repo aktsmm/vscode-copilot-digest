@@ -238,6 +238,57 @@
         "Using Copilot cloud agent via the GitHub MCP Server"
       ],
       "score": 2
+    },
+    {
+      "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_141",
+      "sourceId": "vscode-feed",
+      "sourceName": "vscode feed",
+      "kind": "feed_entry",
+      "detectedAt": "2026-09-30T18:31:04.855Z",
+      "publishedAt": "2026-09-30T00:00:00.000Z",
+      "title": "Visual Studio Code 1.141",
+      "url": "https://code.visualstudio.com/updates/v1_141",
+      "summary": "Already installed? Use Check for Updates in VS Code. For upcoming features, use the Insiders build. Update 1.141.1: The update addresses these security issues.",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
+    },
+    {
+      "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_140",
+      "sourceId": "vscode-feed",
+      "sourceName": "vscode feed",
+      "kind": "feed_entry",
+      "detectedAt": "2026-09-30T18:31:04.855Z",
+      "publishedAt": "2026-09-30T00:00:00.000Z",
+      "title": "Visual Studio Code 1.140",
+      "url": "https://code.visualstudio.com/updates/v1_140",
+      "summary": "Already installed? Use Check for Updates in VS Code. For upcoming features, use the Insiders build. This release expands agent workflows, improves worktree reuse, and adds enterprise AI controls.",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-09-30-hydrafusion-in-vs-code-and-the-github-copilot-app",
+      "sourceId": "github-changelog",
+      "sourceName": "github changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-09-30T18:31:04.855Z",
+      "publishedAt": "2026-09-30T00:00:00.000Z",
+      "title": "HydraFusion in VS Code and the GitHub Copilot app",
+      "url": "https://github.blog/changelog/2026-09-30-hydrafusion-in-vs-code-and-the-github-copilot-app/",
+      "summary": "The HydraFusion research preview is now available in Visual Studio Code and the GitHub Copilot app, expanding beyond Copilot CLI. HydraFusion appears in the model picker, but rather than being a single model, it orchestrates multiple models. HydraFusion treats workflow selection as an optimization problem. It uses capability signals for reasoning, code generation, debugging, and tool use to select the most efficient ",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
     }
   ],
   "errors": []

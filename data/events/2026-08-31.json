@@ -57,6 +57,23 @@
         "Aug.24 Release"
       ],
       "score": 3
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-08-31-github-copilot-in-vs-code-august-2026-releases",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "github changelog copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-08-31T19:34:02.788Z",
+      "publishedAt": "2026-08-31T00:00:00.000Z",
+      "title": "GitHub Copilot in VS Code, August 2026 releases",
+      "url": "https://github.blog/changelog/2026-08-31-github-copilot-in-vs-code-august-2026-releases/",
+      "summary": "This changelog covers VS Code v1.132 through v1.135, shipped throughout August 2026. These releases make it easier to organize agent sessions, review changes, and navigate long conversations. Agent Host, the integrated browser, and dictation also get updates to support more ways of working in VS Code.",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
     }
   ],
   "errors": []

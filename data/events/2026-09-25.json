@@ -198,6 +198,57 @@
         "Sep.21 Release"
       ],
       "score": 3
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-09-25-enterprise-managed-settings-in-product-validator",
+      "sourceId": "github-changelog",
+      "sourceName": "github changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-09-25T23:59:19.912Z",
+      "publishedAt": "2026-09-25T00:00:00.000Z",
+      "title": "Enterprise managed settings in-product validator",
+      "url": "https://github.blog/changelog/2026-09-25-enterprise-managed-settings-in-product-validator/",
+      "summary": "You can now use an in-product validator for enterprise managed settings for GitHub Copilot. The validator detects malformed JSON, unsupported configurations, invalid team mappings, and other errors that can prevent policies from being enforced. Review and correct errors in the “Copilot settings validation” section of the enterprise AI controls page. Each issue identifies the affected file and JSON path, helping you m",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-09-25-usage-metrics-api-adds-pull-request-review-stages",
+      "sourceId": "github-changelog",
+      "sourceName": "github changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-09-25T23:59:19.912Z",
+      "publishedAt": "2026-09-25T00:00:00.000Z",
+      "title": "Usage metrics API adds pull request review stages",
+      "url": "https://github.blog/changelog/2026-09-25-usage-metrics-api-adds-pull-request-review-stages/",
+      "summary": "The enterprise and organization repository-level Copilot usage metrics reports now break down how long pull requests spend in each stage of review. A new pull_request_review_times array on each repos-1-day row reports a median and a 90th percentile for the time from ready for review to first review, first review to final review, and final review to merge. Each entry in pull_request_review_times includes:",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-09-25-agentic-autofix-now-uses-copilot-memory",
+      "sourceId": "github-changelog",
+      "sourceName": "github changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-09-25T23:59:19.912Z",
+      "publishedAt": "2026-09-25T00:00:00.000Z",
+      "title": "Agentic autofix now uses Copilot Memory",
+      "url": "https://github.blog/changelog/2026-09-25-agentic-autofix-now-uses-copilot-memory/",
+      "summary": "Agentic autofix now uses Copilot Memory for customers who’ve enabled it. When you use agentic autofix, it reviews existing memories for context that can help resolve security alerts. When it creates a fix, it stores the fix pattern as a memory for future use. These memories can help agentic autofix resolve additional security alerts and teach other GitHub Copilot features (e.g., Copilot code review, Copilot cloud age",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
     }
   ],
   "errors": []

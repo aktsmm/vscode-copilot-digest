@@ -393,6 +393,74 @@
         "How-tos for GitHub Copilot"
       ],
       "score": 2
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-09-23-copilot-code-review-more-ways-to-request-and-configure-reviews",
+      "sourceId": "github-changelog",
+      "sourceName": "github changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-09-23T23:48:47.620Z",
+      "publishedAt": "2026-09-23T00:00:00.000Z",
+      "title": "More ways to request and configure Copilot code reviews",
+      "url": "https://github.blog/changelog/2026-09-23-copilot-code-review-more-ways-to-request-and-configure-reviews/",
+      "summary": "GitHub Copilot code review now offers additional personal configurations to an expanded set of Copilot plans and an enterprise-level default setting. These improvements are now generally available: Previously, personal Copilot code review settings were available only with Copilot Pro, Pro+, and Max on the “Copilot features” page. They covered a single automatic review setting without separate controls for draft pull ",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
+    },
+    {
+      "eventId": "github-copilot-blog:https://github.blog/?p=99002",
+      "sourceId": "github-copilot-blog",
+      "sourceName": "github copilot blog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-09-23T23:48:47.620Z",
+      "publishedAt": "2026-09-23T18:29:49.000Z",
+      "title": "Rendering huge pull requests in the GitHub Copilot app",
+      "url": "https://github.blog/engineering/user-experience/rendering-huge-pull-requests-in-the-github-copilot-app/",
+      "summary": "How we rebuilt the diff surface in the GitHub Copilot app to open a million-line pull request with hundreds of inline review comments. Broad refactors and migrations often have to land as one change.",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-09-22-local-sandboxing-in-the-github-copilot-app",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "github changelog copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-09-23T23:48:47.620Z",
+      "publishedAt": "2026-09-23T00:00:00.000Z",
+      "title": "Local sandboxing in the GitHub Copilot app",
+      "url": "https://github.blog/changelog/2026-09-22-local-sandboxing-in-the-github-copilot-app/",
+      "summary": "Local sandboxing helps reduce the potential impact of unintended commands by limiting access to files, network resources, and credentials on your machine. In the GitHub Copilot app, you configure it per project for local repository and working tree sessions. These project settings describe the policy that the app requests when a sandboxed session starts. The effective policy can be more restrictive when enterprise-ma",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
+    },
+    {
+      "eventId": "vscode-feed:https://code.visualstudio.com/blogs/2026/09/23/building-the-github-copilot-inline-suggestions-model-part-two",
+      "sourceId": "vscode-feed",
+      "sourceName": "vscode feed",
+      "kind": "feed_entry",
+      "detectedAt": "2026-09-23T23:48:47.620Z",
+      "publishedAt": "2026-09-23T00:00:00.000Z",
+      "title": "Building the new GitHub Copilot Inline Suggestions Model: Part Two",
+      "url": "https://code.visualstudio.com/blogs/2026/09/23/building-the-github-copilot-inline-suggestions-model-part-two",
+      "summary": "September 23, 2026 by Julia Gong, Shengjie Ma, Ben Liggett, and Ulugbek Abdullaev Completion-style ghost text, next edit suggestions near the cursor, and edits farther away were previously powered by separate models. We built one model for all three, and learned that the best results come from training, evaluation, and editor design evolving together.",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
     }
   ],
   "errors": []

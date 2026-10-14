@@ -160,6 +160,40 @@
         "Model descriptions in the model picker"
       ],
       "score": 2
+    },
+    {
+      "eventId": "github-copilot-blog:https://github.blog/?p=98221",
+      "sourceId": "github-copilot-blog",
+      "sourceName": "github copilot blog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-08-12T22:08:05.871Z",
+      "publishedAt": "2026-08-12T19:00:00.000Z",
+      "title": "GitHub Copilot app for Beginners: Write your first prompt",
+      "url": "https://github.blog/ai-and-ml/github-copilot/write-your-first-prompt-with-the-github-copilot-app/",
+      "summary": "Learn how to write your first prompt in the GitHub Copilot app, choose the right context and model, and start your first task with confidence. Opening a new AI tool can feel a little like staring at a blank page. You know you want help with something, but figuring out exactly what to ask can be its own task.",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-08-12-agent-plugins-1-0-in-vs-code-copilot-cli-and-the-copilot-app",
+      "sourceId": "github-changelog",
+      "sourceName": "github changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-08-12T22:08:05.871Z",
+      "publishedAt": "2026-08-12T00:00:00.000Z",
+      "title": "Agent Plugins 1.0 in VS Code, Copilot CLI, and the Copilot app",
+      "url": "https://github.blog/changelog/2026-08-12-agent-plugins-1-0-in-vs-code-copilot-cli-and-the-copilot-app/",
+      "summary": "You can now build a plugin once and use it across all compatible agent clients. We published Agent Plugins 1.0 on August 6 with AWS, Anysphere, Microsoft, OpenAI, and Vercel. Google also joined as a core maintainer on the same day. Agent Plugins 1.0 is an open standard that packages agent skills and MCP servers into one installable plugin that is governed independently of any single vendor. Publishing a plugin for se",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
     }
   ],
   "errors": []

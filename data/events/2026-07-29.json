@@ -235,6 +235,74 @@
         "Using Copilot cloud agent via the API"
       ],
       "score": 2
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-07-29-copilot-code-review-agent-skills-and-mcp-now-generally-available",
+      "sourceId": "github-changelog",
+      "sourceName": "github changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-07-29T22:26:41.983Z",
+      "publishedAt": "2026-07-29T00:00:00.000Z",
+      "title": "Copilot code review: Agent skills and MCP now generally available",
+      "url": "https://github.blog/changelog/2026-07-29-copilot-code-review-agent-skills-and-mcp-now-generally-available/",
+      "summary": "Copilot code review support for agent skills and MCP servers is now generally available for all Copilot Pro, Pro+, Business, and Enterprise users. Previously announced in public preview, these capabilities let you bring your team’s tools, standards, and external context directly into every code review. If you configured agent skills or MCP servers during the public preview, no changes are needed. Your existing setup ",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
+    },
+    {
+      "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_132",
+      "sourceId": "vscode-feed",
+      "sourceName": "vscode feed",
+      "kind": "feed_entry",
+      "detectedAt": "2026-07-29T22:26:41.983Z",
+      "publishedAt": "2026-07-29T00:00:00.000Z",
+      "title": "Visual Studio Code 1.132",
+      "url": "https://code.visualstudio.com/updates/v1_132",
+      "summary": "Update 1.132.1: The update addresses these security issues. Welcome to the 1.132 release of Visual Studio Code. This release brings element-level feedback in the integrated browser, multilingual dictation, side chats, and Markdown diffs in the hybrid Markdown editor.",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-07-29-default-model-enablement-for-copilot-business-and-enterprise",
+      "sourceId": "github-changelog",
+      "sourceName": "github changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-07-29T22:26:41.983Z",
+      "publishedAt": "2026-07-29T00:00:00.000Z",
+      "title": "Default model enablement for Copilot Business and Enterprise",
+      "url": "https://github.blog/changelog/2026-07-29-default-model-enablement-for-copilot-business-and-enterprise/",
+      "summary": "We’re introducing a global default enablement policy for generally available Copilot models on Copilot Business and Copilot Enterprise plans. Instead of requiring admins to manually turn on each new model as it ships, models that become generally available will now be on by default. We’re adding a single opt-out control for organizations and enterprises that need stricter governance. Today, a new default availability",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
+    },
+    {
+      "eventId": "vscode-feed:https://code.visualstudio.com/blogs/2026/07/29/mai-code-1-flash",
+      "sourceId": "vscode-feed",
+      "sourceName": "vscode feed",
+      "kind": "feed_entry",
+      "detectedAt": "2026-07-29T22:26:41.983Z",
+      "publishedAt": "2026-07-29T00:00:00.000Z",
+      "title": "MAI-Code-1-Flash: early results from real developer workflows",
+      "url": "https://code.visualstudio.com/blogs/2026/07/29/mai-code-1-flash",
+      "summary": "In VS Code, we’re working to help you get more done with AI-assisted coding while making every token count. That means improving the entire experience, from the models we use to the product and infrastructure behind them, so you have options that fit different workflows, performance needs, and budgets. In The Coding Harness Behind GitHub Copilot in VS Code, we explained how VS Code's coding harness connects the model",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
     }
   ],
   "errors": []

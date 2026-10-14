@@ -65,6 +65,23 @@
         "Sep.23 Release"
       ],
       "score": 3
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-09-28-claude-sonnet-5-5-in-github-copilot",
+      "sourceId": "github-changelog",
+      "sourceName": "github changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-09-28T20:11:29.410Z",
+      "publishedAt": "2026-09-28T00:00:00.000Z",
+      "title": "Claude Sonnet 5.5 in GitHub Copilot",
+      "url": "https://github.blog/changelog/2026-09-28-claude-sonnet-5-5-in-github-copilot/",
+      "summary": "Claude Sonnet 5.5, Anthropic’s newest Sonnet model, is now generally available in GitHub Copilot. It is designed for well-scoped everyday work like building features and fixing bugs. In our early testing, Sonnet 5.5 stood out for its efficiency, matching Claude Sonnet 5 on coding tasks while using significantly fewer steps, tokens, and tool calls. It also finished tasks noticeably faster. This model is billed at prov",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
     }
   ],
   "errors": []

@@ -337,6 +337,74 @@
         "How-tos for GitHub Copilot"
       ],
       "score": 2
+    },
+    {
+      "eventId": "github-copilot-blog:https://github.blog/?p=99310",
+      "sourceId": "github-copilot-blog",
+      "sourceName": "github copilot blog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-10-07T19:27:10.684Z",
+      "publishedAt": "2026-10-07T17:45:34.000Z",
+      "title": "Secret protection must scale with software",
+      "url": "https://github.blog/ai-and-ml/github-copilot/secret-protection-must-scale-with-software/",
+      "summary": "Developers aren’t becoming more careless; they’re being outpaced. The tools that let developers create more software should also take on more of the work of protecting it. Today, one in three pull requests on GitHub involves an AI agent. A year ago, that number was fewer than one in 10. If that pace holds, within the next two years, most of the code pushed to GitHub could be written by an agent. Much of it may never ",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-10-07-purpose-built-model-for-leaked-secret-detection",
+      "sourceId": "github-changelog",
+      "sourceName": "github changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-10-07T19:27:10.684Z",
+      "publishedAt": "2026-10-07T00:00:00.000Z",
+      "title": "Purpose-built model for leaked secret detection",
+      "url": "https://github.blog/changelog/2026-10-07-purpose-built-model-for-leaked-secret-detection/",
+      "summary": "Secret protection should keep pace with the way you build software, whether you write code yourself or work with an AI agent. With our new purpose-built model, we’re bringing context-aware detection into more developer workflows to help you catch secrets before they’re exposed. Today, we’re sharing plans for AI secret detection across secret scanning alerts, push protection, and GitHub Copilot security reviews. These",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-10-07-local-sandboxing-for-github-copilot-now-generally-available",
+      "sourceId": "github-changelog",
+      "sourceName": "github changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-10-07T19:27:10.684Z",
+      "publishedAt": "2026-10-07T00:00:00.000Z",
+      "title": "Local sandboxing for GitHub Copilot now generally available",
+      "url": "https://github.blog/changelog/2026-10-07-local-sandboxing-for-github-copilot-now-generally-available/",
+      "summary": "Local sandboxing for GitHub Copilot is now generally available in GitHub Copilot CLI, the GitHub Copilot app, and VS Code sessions using Agent Host. Local sandboxes give developers a secure execution boundary for agentic workflows on their own machines. Tools and commands initiated by Copilot run with restricted access to the filesystem, network, credentials, and other system capabilities, based on policies defined b",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-10-01-github-copilot-weekly-releases-september-28",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "github changelog copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-10-07T19:27:10.684Z",
+      "publishedAt": "2026-10-02T00:00:00.000Z",
+      "title": "GitHub Copilot weekly releases — September 28",
+      "url": "https://github.blog/changelog/2026-10-02-github-copilot-weekly-releases-september-28/",
+      "summary": "This week, put Copilot to work with new models, reusable workflows and desktop app automation, plus Azure canvases and VS Code improvements. Explore Azure resources, understand costs, and build automated workflows alongside Copilot. Three new Azure canvases bring resource queries, cost health checks, and Azure Functions hosted skills into interactive workspaces in the Copilot app. Install them from the Awesome Copilo",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
     }
   ],
   "errors": []

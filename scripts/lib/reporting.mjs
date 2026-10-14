@@ -2487,7 +2487,21 @@ export function localizedTitle(event, locale = "ja") {
   return patternTitle(title);
 }
 
+// A real article whose Japanese wording is not written yet is still shown, with the source excerpt,
+// instead of being dropped as "low information".
+function excerptFallback(event, locale, rendered) {
+  if (locale !== "ja" || event.kind === "html_snapshot_change") return rendered;
+  const excerpt = cleanupSummary(event.summary);
+  if (excerpt.length < 40 || containsJapanese(excerpt)) return rendered;
+  if (!lowInformationFallbackMarkers.some((marker) => rendered.includes(marker))) return rendered;
+  return `（原文の抜粋）${trimText(excerpt, 300)}`;
+}
+
 export function localizedSummary(event, locale = "ja") {
+  return excerptFallback(event, locale, localizedSummaryCore(event, locale));
+}
+
+function localizedSummaryCore(event, locale = "ja") {
   const summary = cleanupSummary(event.summary);
   const title = normalizeWhitespace(decodeHtmlEntities(event.title));
   const editorialOverride = editorialOverrides[title];
