@@ -19,7 +19,7 @@ jobs:
     env:
       PR_TITLE: ${{ github.event.pull_request.title }}
     # Only slide PRs are handled here; digest PRs use validate-generated-pr.yml.
-    if: startsWith(github.event.pull_request.title, 'slides: ') || startsWith(github.event.pull_request.title, 'Slide authoring request') || startsWith(github.event.pull_request.title, '[WIP] Slide authoring request')
+    if: startsWith(github.event.pull_request.title, 'slides:') || startsWith(github.event.pull_request.title, 'Slide authoring request') || startsWith(github.event.pull_request.title, '[WIP] Slide authoring request')
 
     steps:
       - name: Checkout
