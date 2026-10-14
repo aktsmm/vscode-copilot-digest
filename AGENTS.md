@@ -29,6 +29,11 @@
 - Slide PRs (slides: ... / Slide authoring request) are a separate lane that may change only data/slides/{id}.json. Keep alidate-slide-pr, uto-merge-slide-pr, and the skip rules in the digest lane workflows in sync (see 	ests/slide-lane.test.mjs).
 - PDF_PASSWORD must only be used by deploy-pages.yml. Never publish PDFs without it, because Pages is public.
 
+### Maintenance Lane
+
+- Biweekly maintenance PRs (`maint: ...` / `pipeline-maintenance-request`) are a separate lane. Keep `validate-maintenance-pr`, `auto-merge-maintenance-pr` and the skip rules in the digest lane workflows in sync (see `tests/slide-lane.test.mjs`). Workflow and dependency changes in that lane must stay behind `needs-human-review`.
+- `slide-watchdog.yml` may only close stalled Copilot slide requests, record `slide-skip` issues, nudge, and dispatch workflows. It must not edit repository files.
+
 ### Schedule Expectations
 
 - GitHub Actions `schedule` is best-effort and may drift materially from the configured cron time.
