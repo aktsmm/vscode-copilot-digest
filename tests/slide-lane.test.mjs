@@ -22,9 +22,9 @@ assert.ok((await read("auto-merge-slide-pr.yml")).includes("status === 'removed'
 
 // Digest lanes must not process slide PRs.
 assert.ok((await read("validate-generated-pr.yml")).includes("isSlidePr"));
-assert.ok((await read("auto-merge-generated-pr.yml")).includes("Slide authoring request"));
-assert.ok((await read("request-copilot-review.yml")).includes("Slide authoring request"));
-assert.ok((await read("redeploy-pages-after-generated-pr-merge.yml")).includes("Slide authoring request"));
+assert.ok((await read("auto-merge-generated-pr.yml")).includes("slide-authoring-request"));
+assert.ok((await read("request-copilot-review.yml")).includes("slide-authoring-request"));
+assert.ok((await read("redeploy-pages-after-generated-pr-merge.yml")).includes("slide-authoring-request"));
 
 // Copilot titles its PR itself, so the lane is detected by the issue marker and branch prefix too.
 for (const name of ["validate-generated-pr.yml", "auto-merge-generated-pr.yml", "request-copilot-review.yml", "redeploy-pages-after-generated-pr-merge.yml", "validate-slide-pr.yml", "auto-merge-slide-pr.yml", "author-slide-pr.yml"]) {
