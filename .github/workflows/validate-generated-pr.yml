@@ -73,11 +73,12 @@ jobs:
           const body = process.env.PR_BODY || '';
           const author = process.env.PR_AUTHOR || '';
           const labels = JSON.parse(process.env.PR_LABELS || '[]');
-          const isGeneratedPr =
+          const isSlidePr = /^(\[WIP\] )?(slides: |Slide authoring request)/.test(title);
+          const isGeneratedPr = !isSlidePr && (
             /copilot/i.test(author) ||
             labels.includes('auto-pr') ||
             /^Digest authoring request:/.test(title) ||
-            /Generated from `?data\/events\//.test(body);
+            /Generated from `?data\/events\//.test(body));
           fs.appendFileSync(
             process.env.GITHUB_OUTPUT,
             `is_generated=${isGeneratedPr}\n`,

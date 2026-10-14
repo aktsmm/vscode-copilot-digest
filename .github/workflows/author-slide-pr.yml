@@ -1,0 +1,134 @@
+name: Author slides
+
+on:
+  schedule:
+    - cron: "0 18 * * 0,3" # Mon / Thu 03:00 JST as a target time; GitHub may delay it
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: Maximum number of updates per request
+        default: "10"
+
+permissions:
+  contents: read
+  issues: write
+  pull-requests: read
+
+concurrency:
+  group: author-slides
+  cancel-in-progress: false
+
+jobs:
+  request:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build API data
+        run: npm run build:pages
+
+      - name: List updates without slides
+        id: pending
+        env:
+          LIMIT: ${{ inputs.limit || '10' }}
+        run: |
+          node scripts/pending-slides.mjs --months 3 --limit "$LIMIT" > pending.json
+          count="$(node -e "console.log(JSON.parse(require('fs').readFileSync('pending.json','utf8')).length)")"
+          echo "count=$count" >> "$GITHUB_OUTPUT"
+
+      - name: Create or update the authoring issue and assign Copilot
+        if: steps.pending.outputs.count != '0'
+        uses: actions/github-script@v8
+        with:
+          github-token: ${{ secrets.COPILOT_ASSIGN_TOKEN }}
+          script: |
+            const fs = require('fs');
+            const pending = JSON.parse(fs.readFileSync('pending.json', 'utf8'));
+            const title = 'Slide authoring request';
+            const labels = ['copilot', 'slide-authoring'];
+            const copilotLogins = new Set(['Copilot', 'copilot-swe-agent']);
+            const body = [
+              '<!-- slide-authoring-request -->',
+              '以下の更新ごとに 1 枚のスライド JSON を `data/slides/{id}.json` として追加してください。',
+              '',
+              '## ルール',
+              '- 変更してよいのは `data/slides/*.json` の新規ファイルだけです。コード・workflow・設定・他のデータは変更しないでください。',
+              '- スキーマは `schema/slide.schema.json`、検証は `npm run validate:slides` です。通ることを確認してから PR にしてください。',
+              '- `title.ja` / `summary` / `points` は日本語で、この Issue の資料と `references` / `evidence` の URL から確認できる内容だけを書いてください。数値や製品名を補わないでください。',
+              '- `status` は原文が GA / Preview / 廃止などを明示している場合だけ使い、その引用を `statusEvidence` に入れてください。根拠がなければ `unknown` にします。',
+              '- `evidence` には実際に確認した https URL を 1 件以上入れてください。',
+              '- PR タイトルは `slides: update YYYY-MM-DD` にしてください。不確実な場合は `needs-human-review` を付けて停止してください。',
+              '',
+              '## 対象',
+              '```json',
+              JSON.stringify(pending, null, 2),
+              '```',
+            ].join('\n');
+            const issues = await github.paginate(github.rest.issues.listForRepo, {
+              owner: context.repo.owner, repo: context.repo.repo, state: 'open', labels: 'slide-authoring', per_page: 100,
+            });
+            const existing = issues.find((issue) => !issue.pull_request && issue.title === title);
+            let issue;
+            if (existing) {
+              await github.rest.issues.update({ owner: context.repo.owner, repo: context.repo.repo, issue_number: existing.number, body });
+              issue = (await github.rest.issues.get({ owner: context.repo.owner, repo: context.repo.repo, issue_number: existing.number })).data;
+            } else {
+              issue = (await github.rest.issues.create({ owner: context.repo.owner, repo: context.repo.repo, title, body, labels })).data;
+            }
+            if ((issue.labels ?? []).some((label) => label.name === 'needs-human-review')) {
+              core.info('Issue is blocked for human review; not assigning Copilot.');
+              return;
+            }
+            const pulls = await github.paginate(github.rest.pulls.list, {
+              owner: context.repo.owner, repo: context.repo.repo, state: 'open', per_page: 100,
+            });
+            if (pulls.some((pull) => /slide authoring request|^slides: /i.test(pull.title || '') && /copilot/i.test(pull.user?.login || ''))) {
+              core.info('A slide PR is already open; waiting for it to merge.');
+              return;
+            }
+            try {
+              const ctx = await github.graphql(
+                `query($owner: String!, $repo: String!) {
+                  repository(owner: $owner, name: $repo) {
+                    id
+                    suggestedActors(capabilities: [CAN_BE_ASSIGNED], first: 20) {
+                      nodes { login __typename ... on Bot { id } ... on User { id } }
+                    }
+                  }
+                }`,
+                { owner: context.repo.owner, repo: context.repo.repo },
+              );
+              const actor = (ctx.repository.suggestedActors?.nodes ?? []).find((node) => copilotLogins.has(node.login) && node.id);
+              if (!actor) {
+                core.warning('Could not resolve the Copilot actor; assign the issue to Copilot manually.');
+                return;
+              }
+              await github.graphql(
+                `mutation($assignableId: ID!, $actorIds: [ID!]!, $targetRepositoryId: ID!, $customInstructions: String!) {
+                  replaceActorsForAssignable(input: {
+                    assignableId: $assignableId,
+                    actorIds: $actorIds,
+                    agentAssignment: { targetRepositoryId: $targetRepositoryId, baseRef: "main", customInstructions: $customInstructions }
+                  }) { assignable { ... on Issue { id } } }
+                }`,
+                {
+                  assignableId: issue.node_id,
+                  actorIds: [actor.id],
+                  targetRepositoryId: ctx.repository.id,
+                  customInstructions: 'Issue のルールに従い、data/slides/*.json 以外は変更しないでください。不確実な場合は needs-human-review を付けて停止してください。',
+                },
+              );
+              core.info(`Assigned issue #${issue.number} to Copilot.`);
+            } catch (error) {
+              core.warning(`Failed to assign Copilot: ${error.message}`);
+            }

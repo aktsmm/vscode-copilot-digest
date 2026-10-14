@@ -2,6 +2,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import { createHash } from "node:crypto";
 import { attachResources, httpUrl, resourceStats } from "./lib/resources.mjs";
+import { buildApiFiles } from "./lib/api.mjs";
 
 import {
   applyEditorialPolicy,
@@ -3243,6 +3244,12 @@ async function main() {
   await fs.writeFile(path.join(siteDir, ".nojekyll"), "", "utf8");
   await fs.writeFile(path.join(siteDir, "assets", "search-version.json"), JSON.stringify({ version: searchVersion }));
   await fs.writeFile(path.join(siteDir, "assets", "resource-audit.json"), JSON.stringify(resourceStats(logs.flatMap((log) => log.events), ledger), null, 2));
+
+  for (const file of buildApiFiles({ logs, events: searchableEvents })) {
+    const target = path.join(siteDir, ...file.path.split("/"));
+    await fs.mkdir(path.dirname(target), { recursive: true });
+    await fs.writeFile(target, file.content, "utf8");
+  }
 
   const jaText = buildText("ja");
   const enText = buildText("en");

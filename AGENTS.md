@@ -24,6 +24,11 @@
 - When changing generated PR allow-lists or repair rules, update validation, auto-merge, self-heal feedback, and authoring issue instructions together.
 - Keep exceptional write access narrow and marker-gated, such as Pages build repair access to `scripts/build-pages.mjs`.
 
+### Slide PR Lane
+
+- Slide PRs (slides: ... / Slide authoring request) are a separate lane that may change only data/slides/{id}.json. Keep alidate-slide-pr, uto-merge-slide-pr, and the skip rules in the digest lane workflows in sync (see 	ests/slide-lane.test.mjs).
+- PDF_PASSWORD must only be used by deploy-pages.yml. Never publish PDFs without it, because Pages is public.
+
 ### Schedule Expectations
 
 - GitHub Actions `schedule` is best-effort and may drift materially from the configured cron time.

@@ -13,7 +13,11 @@
     "weekly": "node scripts/build-weekly.mjs",
     "notify:discord": "node scripts/notify-discord.mjs",
     "build:pages": "node scripts/build-pages.mjs && pagefind --site site --output-subdir pagefind && node scripts/finalize-search.mjs",
-    "test:data": "node tests/reporting-low-information.test.mjs && node tests/sources.test.mjs && node tests/resources.test.mjs",
+    "build:pdfs": "node scripts/build-slide-pdfs.mjs",
+    "pending:slides": "node scripts/pending-slides.mjs",
+    "validate:slides": "node scripts/validate-slides.mjs",
+    "test:e2e": "node tests/slides-e2e.test.mjs",
+    "test:data": "node tests/reporting-low-information.test.mjs && node tests/sources.test.mjs && node tests/resources.test.mjs && node tests/api-slides.test.mjs && node tests/slide-lane.test.mjs",
     "test:pages": "node tests/pages-discord-ux.test.mjs && node tests/resource-pages.test.mjs",
     "test": "npm run test:data && npm run test:pages"
   },
@@ -21,9 +25,11 @@
     "cheerio": "^1.0.0",
     "diff": "^9.0.0",
     "fast-xml-parser": "^5.8.0",
-    "gray-matter": "^4.0.3"
+    "gray-matter": "^4.0.3",
+    "pdf-lib": "^1.17.1"
   },
   "devDependencies": {
-    "pagefind": "^1.3.0"
+    "pagefind": "^1.3.0",
+    "playwright": "^1.65.0-alpha-2026-10-07"
   }
 }

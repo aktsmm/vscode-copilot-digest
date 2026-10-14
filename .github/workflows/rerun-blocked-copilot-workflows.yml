@@ -7,6 +7,8 @@ on:
       - Request Copilot review
       - Validate generated PR
       - Auto-merge generated PR
+      - Validate slide PR
+      - Auto-merge slide PR
     types:
       - completed
   schedule:
@@ -30,6 +32,8 @@ jobs:
               'Request Copilot review',
               'Validate generated PR',
               'Auto-merge generated PR',
+              'Validate slide PR',
+              'Auto-merge slide PR',
             ];
             const cutoff = Date.now() - 60 * 60 * 1000;
             const maxAttempts = 3;
