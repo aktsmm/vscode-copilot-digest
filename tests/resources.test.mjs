@@ -92,6 +92,30 @@ try {
   const redirect = createPageFetcher({ cache, delay: 0, request: async () =>
     new Response(null, { status: 302, headers: { location: "https://unapproved.example/private" } }) });
   await assert.rejects(redirect("https://github.blog/changelog/redirect"), /Unapproved redirect/);
+  let throttled = 0;
+  const retry = createPageFetcher({ cache, delay: 0, request: async () => {
+    throttled++;
+    return throttled === 1 ? new Response(null, { status: 429, headers: { "retry-after": "0" } }) :
+      new Response(html, { headers: { "content-type": "text/html" } });
+  } });
+  await retry("https://github.blog/changelog/retry");
+  assert.equal(throttled, 2, "429 must be retried within a bounded budget");
+  let outages = 0;
+  const unavailableUrl = "https://github.blog/changelog/unavailable";
+  await assert.rejects(createPageFetcher({ cache, delay: 0, request: async () => {
+    outages++;
+    return new Response(null, { status: 404 });
+  } })(unavailableUrl), /HTTP 404/);
+  await assert.rejects(createPageFetcher({ cache, delay: 0, request: async () => {
+    outages++;
+    return new Response(html, { headers: { "content-type": "text/html" } });
+  } })(unavailableUrl), /HTTP 404/);
+  assert.equal(outages, 1, "cached failures must not masquerade as empty pages or hammer the host");
+  await createPageFetcher({ cache, delay: 0, retryFailed: true, request: async () => {
+    outages++;
+    return new Response(html, { headers: { "content-type": "text/html" } });
+  } })(unavailableUrl);
+  assert.equal(outages, 2, "explicit retry must bypass the negative cache after recovery");
 } finally {
   await fs.rm(cache, { recursive: true });
 }

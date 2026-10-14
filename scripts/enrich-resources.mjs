@@ -17,7 +17,7 @@ async function readJson(file, fallback) {
   catch (error) { if (error.code === "ENOENT") return fallback; throw error; }
 }
 
-export function createPageFetcher({ cache = cacheDir, delay = 200, request = fetch } = {}) {
+export function createPageFetcher({ cache = cacheDir, delay = 200, request = fetch, retryFailed = false } = {}) {
   const pending = new Map();
   let nextRequest = 0;
   return function getPage(value) {
@@ -31,7 +31,8 @@ export function createPageFetcher({ cache = cacheDir, delay = 200, request = fet
     const result = (async () => {
       const file = path.join(cache, `${createHash("sha256").update(key).digest("hex")}.json`);
       const saved = await readJson(file, null);
-      if (saved?.parserVersion === PARSER_VERSION && Date.now() - Date.parse(saved.checkedAt) < (saved.error ? 3600000 : 7 * 86400000)) {
+      if (saved?.parserVersion === PARSER_VERSION && !(retryFailed && saved.error) &&
+          Date.now() - Date.parse(saved.checkedAt) < (saved.error ? 3600000 : 7 * 86400000)) {
         if (saved.error) throw new Error(saved.error);
         saved.links = saved.links.map((link) => ({ ...link, url: httpUrl(link.url) }));
         saved.sections = saved.sections.map((section) => ({ ...section,
@@ -62,7 +63,9 @@ export function createPageFetcher({ cache = cacheDir, delay = 200, request = fet
           if ([429, 502, 503, 504].includes(response.status) && attempt < 2) {
             const retry = response.headers.get("retry-after");
             const seconds = Number(retry);
-            const wait = retry && !Number.isNaN(seconds) ? seconds * 1000 : 2000 * (attempt + 1);
+            const retryDate = retry ? Date.parse(retry) : NaN;
+            const wait = retry && !Number.isNaN(seconds) ? seconds * 1000 :
+              !Number.isNaN(retryDate) ? Math.max(0, retryDate - Date.now()) : 2000 * (attempt + 1);
             nextRequest = Date.now() + Math.min(60000, Math.max(delay, wait));
             continue;
           }
@@ -198,7 +201,7 @@ export async function main() {
     console.log(JSON.stringify({ range: [files[0], files.at(-1)], ...resourceStats(events, ledger) }, null, 2));
     return;
   }
-  const getPage = createPageFetcher();
+  const getPage = createPageFetcher({ retryFailed: process.argv.includes("--retry-failed") });
   ledger.version = RESOURCE_VERSION;
   const catalog = [];
   const catalogErrors = [];
