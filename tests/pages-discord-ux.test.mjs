@@ -10,7 +10,7 @@ function readSiteFile(relativePath) {
 const indexHtml = readSiteFile("index.html");
 assert.match(
   indexHtml,
-  /<nav class="demo-nav" aria-label="関連デモ">[\s\S]*?<a href="https:\/\/aktsmm\.github\.io\/azure-ops-pulse-demo\/#\/overview">Azure Ops Pulse<\/a>[\s\S]*?<a href="https:\/\/aktsmm\.github\.io\/m365-message-center-dashboard\/">M365 Message Center Dashboard<\/a>[\s\S]*?<a href="https:\/\/aktsmm\.github\.io\/m365-copilot-update-digest\/">M365 Copilot Update Digest<\/a>[\s\S]*?<a href="https:\/\/aktsmm\.github\.io\/daily-dev-byte\/">Daily Dev Byte<\/a>[\s\S]*?<span class="demo-nav-current" aria-current="page">VS Code Copilot Digest<\/span>[\s\S]*?<\/nav>/,
+  /<nav class="demo-nav" aria-label="関連デモ">[\s\S]*?<a href="https:\/\/aktsmm\.github\.io\/azure-ops-pulse-demo\/#\/overview">Azure Ops Pulse<\/a>[\s\S]*?<a href="https:\/\/aktsmm\.github\.io\/azure-update-digest\/">Azure Update Digest<\/a>[\s\S]*?<a href="https:\/\/aktsmm\.github\.io\/m365-message-center-dashboard\/">M365 Message Center Dashboard<\/a>[\s\S]*?<a href="https:\/\/aktsmm\.github\.io\/m365-copilot-update-digest\/">M365 Copilot Update Digest<\/a>[\s\S]*?<a href="https:\/\/aktsmm\.github\.io\/daily-dev-byte\/">Daily Dev Byte<\/a>[\s\S]*?<span class="demo-nav-current" aria-current="page">VS Code Copilot Digest<\/span>[\s\S]*?<\/nav>/,
   "home page must expose links to the related demos and mark the current demo",
 );
 assert.match(
