@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
+import { createHash } from "node:crypto";
 import {
   parseResourcePage, selectSource, documentCandidates, resourceKey,
   resourceStats, attachResources, httpUrl, isOfficialDocument,
@@ -51,7 +52,14 @@ assert.equal(documentCandidates({ title: "Copilot CLI second opinion", summary: 
 }, [{ title: "Using Copilot CLI for an enterprise", url: "https://docs.github.com/en/copilot/how-tos/copilot-cli/administer-copilot-cli-for-your-enterprise" }]).length, 0);
 
 const docPage = parseResourcePage(`<main><h1>Agent skills</h1><p>${"Skills documentation. ".repeat(10)}</p></main>`, docUrl);
-const enriched = await enrichEvent(event, async (url) => url === releaseUrl ? page : docPage);
+const detectionDate = new Date().toISOString();
+const enriched = await enrichEvent({ ...event, detectedAt: detectionDate }, async (url, options) => {
+  if (url === releaseUrl) {
+    assert.equal(options.notBefore, detectionDate, "original evidence must be at least as new as the observation");
+    return { ...page, checkedAt: detectionDate };
+  }
+  return docPage;
+});
 assert.equal(enriched.status, "verified");
 assert.equal(enriched.documents.length, 1);
 assert.equal(enriched.documents[0].title, "Agent skills");
@@ -95,6 +103,38 @@ try {
   await createPageFetcher({ cache, delay: 0, request })(releaseUrl);
   await createPageFetcher({ cache, delay: 0, request })(releaseUrl);
   assert.equal(requests, 1, "verified pages must survive process restarts");
+  let revisions = 0;
+  const mutable = createPageFetcher({ cache, delay: 0, request: async () => {
+    revisions++;
+    return new Response(html.replace("January 2026", "Fresh release snapshot"), { headers: { "content-type": "text/html" } });
+  } });
+  const cached = await mutable(releaseUrl);
+  cached.checkedAt = new Date(Date.now() - 60000).toISOString();
+  const cachedFile = path.join(cache, `${createHash("sha256").update(releaseUrl).digest("hex")}.json`);
+  await fs.writeFile(cachedFile, JSON.stringify(cached));
+  const refreshed = await mutable(releaseUrl, { notBefore: new Date().toISOString() });
+  assert.equal(revisions, 1, "a newly detected change must bypass both warm memory and disk caches");
+  assert.equal(refreshed.title, "Fresh release snapshot");
+  assert.throws(() => mutable(releaseUrl, { notBefore: "invalid" }), /Invalid source freshness/);
+  let sourceAttempts = 0;
+  let previousFailure;
+  const changingSourceUrl = "https://github.blog/changelog/new-observation";
+  const changingSource = createPageFetcher({ cache, delay: 0, request: async () => {
+    sourceAttempts++;
+    return sourceAttempts === 1 ? new Response(null, { status: 404 }) :
+      new Response(html, { headers: { "content-type": "text/html" } });
+  } });
+  await assert.rejects(changingSource(changingSourceUrl), (error) => {
+    previousFailure = error;
+    return /404/.test(error.message);
+  });
+  previousFailure.resourceCheckedAt = new Date(Date.now() - 60000).toISOString();
+  const failureFile = path.join(cache, `${createHash("sha256").update(changingSourceUrl).digest("hex")}.json`);
+  const previousCache = JSON.parse(await fs.readFile(failureFile, "utf8"));
+  previousCache.checkedAt = previousFailure.resourceCheckedAt;
+  await fs.writeFile(failureFile, JSON.stringify(previousCache));
+  await changingSource(changingSourceUrl, { notBefore: new Date().toISOString() });
+  assert.equal(sourceAttempts, 2, "a new source observation must also invalidate an older cached failure");
   const redirect = createPageFetcher({ cache, delay: 0, request: async () =>
     new Response(null, { status: 302, headers: { location: "https://unapproved.example/private" } }) });
   await assert.rejects(redirect("https://github.blog/changelog/redirect"), /Unapproved redirect/);
