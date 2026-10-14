@@ -18066,6 +18066,26 @@
         "Original article explicit links",
         "Feature-matched official documentation indexes"
       ]
+    },
+    "03418006058230a1cc9778707bad4f0d4230fcaddb654781ef0bfe5cc81113d3": {
+      "version": 6,
+      "checkedAt": "2026-10-14T18:07:16.752Z",
+      "inputUrl": "https://code.visualstudio.com/updates/",
+      "inputTitle": "VS Code Updates changed",
+      "status": "unconfirmed",
+      "source": {
+        "url": "https://code.visualstudio.com/updates/v1_141#release-downloads-heading",
+        "status": "verified",
+        "reason": "Explicit release link for 1.141",
+        "checkedAt": "2026-10-14T18:07:17.084Z",
+        "contentHash": "7f3d5f2254401f40bd985fd594bc067389c86dc8b482036d47ae8b90611f111e"
+      },
+      "documents": [],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
     }
   }
 }

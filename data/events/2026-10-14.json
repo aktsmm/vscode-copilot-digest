@@ -1,13 +1,64 @@
 {
   "date": "2026-10-14",
-  "generatedAt": "2026-10-14T11:13:45.162Z",
+  "generatedAt": "2026-10-14T18:07:16.269Z",
   "latestRun": {
-    "generatedAt": "2026-10-14T11:13:45.162Z",
-    "newEventsCount": 0,
-    "newEventIds": [],
+    "generatedAt": "2026-10-14T18:07:16.269Z",
+    "newEventsCount": 1,
+    "newEventIds": [
+      "vscode-updates:80887c16d51e035c2e2f713da20836e1946379aa8802769da5aeb1b7a515bf10"
+    ],
     "errorCount": 0,
-    "skippedLowInformationEvents": []
+    "skippedLowInformationEvents": [
+      {
+        "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_143",
+        "sourceId": "vscode-feed",
+        "title": "Visual Studio Code 1.143 (Insiders)",
+        "fallbackMarkers": [
+          "Visual Studio Code 関連の更新。日々の開発フローや agent 利用に効く変更点を確認しておきたい。"
+        ]
+      }
+    ]
   },
-  "events": [],
+  "events": [
+    {
+      "eventId": "vscode-updates:80887c16d51e035c2e2f713da20836e1946379aa8802769da5aeb1b7a515bf10",
+      "sourceId": "vscode-updates",
+      "sourceName": "VS Code Updates",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-10-14T18:07:11.198Z",
+      "publishedAt": "2026-10-14T18:07:11.196Z",
+      "title": "VS Code Updates changed",
+      "url": "https://code.visualstudio.com/updates/",
+      "summary": "Detected 2 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 2,
+        "headings": [
+          "Downloads for 1.141.2"
+        ],
+        "additions": [
+          "H2: Downloads for 1.141.2",
+          "Update 1.141.2: The update addresses these issues."
+        ]
+      },
+      "headings": [
+        "Visual Studio Code 1.141",
+        "Downloads for 1.141.2",
+        "Release highlights",
+        "Agent loop",
+        "Copilot harness",
+        "Reclaim storage from inactive worktrees",
+        "Keep track of background shells",
+        "More control for agent-triggered messages",
+        "Agent UX",
+        "Arrange sessions in a grid",
+        "Compact layout density",
+        "Additional session-filtering options"
+      ],
+      "score": 3
+    }
+  ],
   "errors": []
 }
