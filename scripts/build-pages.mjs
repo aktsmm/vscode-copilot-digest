@@ -2151,6 +2151,7 @@ function renderLayout({
           <nav class="demo-nav" aria-label="${escapeHtml(locale === "ja" ? "関連デモ" : "Related demos")}">
             <span class="demo-nav-label">${escapeHtml(locale === "ja" ? "関連デモ" : "Related demos")}</span>
             <a href="https://aktsmm.github.io/azure-ops-pulse-demo/#/overview">Azure Ops Pulse</a>
+            <a href="https://aktsmm.github.io/azure-update-digest/">Azure Update Digest</a>
             <a href="https://aktsmm.github.io/m365-message-center-dashboard/">M365 Message Center Dashboard</a>
             <a href="https://aktsmm.github.io/m365-copilot-update-digest/">M365 Copilot Update Digest</a>
             <a href="https://aktsmm.github.io/daily-dev-byte/">Daily Dev Byte</a>
