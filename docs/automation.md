@@ -50,6 +50,17 @@
 - Copilot 起点で `action_required` になった review / validate / auto-merge workflow は [rerun-blocked-copilot-workflows.yml](../.github/workflows/rerun-blocked-copilot-workflows.yml) が定期的に検出して 1 回だけ rerun する
 - Copilot 由来 PR が merge されたときは [redeploy-pages-after-generated-pr-merge.yml](../.github/workflows/redeploy-pages-after-generated-pr-merge.yml) が [deploy-pages.yml](../.github/workflows/deploy-pages.yml) を再 dispatch し、本文更新を live ページへ反映した後に superseded な draft PR / digest-authoring issue を自動 cleanup する
 
+## 止まらないための仕組み（スライドレーンと点検）
+
+- [slide-watchdog.yml](../.github/workflows/slide-watchdog.yml)（3 時間ごとが目安）は、スライドの流れを自動で直します。
+  - Copilot が 2 時間以上ファイルを変えずに止まった依頼は、PR と Issue を閉じて、次の依頼を 1 件ずつに絞ります。1 件だけの依頼が止まった場合は、その更新を `Slide skip: {id}`（ラベル `slide-skip`）として記録し、以後の依頼から外します（再試行するには、その Issue を削除し、ラベルを外します）。
+  - 検証が失敗した PR には、30 分後に `@copilot` で修正を依頼します（最大 2 回、同じコミットには 1 度だけ）。それでも直らなければ閉じて作り直します。
+  - `needs-human-review` のまま 1 日以上たった PR は閉じて、依頼を作り直します。
+  - 直近の Pages デプロイが失敗していれば再実行し、10 日以上スライドの依頼が動いていなければ再開します。
+- [pipeline-maintenance.yml](../.github/workflows/pipeline-maintenance.yml) は、**2 週間おき**（ISO 週が偶数の月曜、手動実行も可）に点検依頼の Issue を作り、Copilot cloud agent に割り当てます。モデルは指定せず Auto です。直近 14 日の失敗した run、待機中の PR、`needs-human-review` の Issue、スキップ中のスライドを渡し、原因の調査と修正、テストの確認を依頼します。直すものがなければ PR を作らずに Issue を閉じます。
+- 点検 PR（タイトル `maint: YYYY-MM-DD 点検`）は専用の検証（`validate-maintenance-pr.yml`）と自動 merge（`auto-merge-maintenance-pr.yml`）を通ります。変更が `scripts/` `tests/` `docs/` `config/` `data/slides/` の範囲に収まれば自動 merge し、`.github/workflows/` や `package*.json` を含む場合は `needs-human-review` で止めます。digest 用の workflow は、点検 PR を処理しません。
+- 使う token は `COPILOT_ASSIGN_TOKEN`（Copilot への割り当てと、Copilot の PR へのコメント）です。期限が切れると、この仕組み全体が止まります。
+
 ## 完全自動ではない部分
 
 - スライド専用レーン（`author-slide-pr.yml` / `validate-slide-pr.yml` / `auto-merge-slide-pr.yml`）は digest 用レーンと分離している。Copilot が PR に独自のタイトルを付けるため、スライド PR は本文の `slide-authoring-request` マーカーまたは `copilot/slide-` ブランチ名で判定する。digest 用 workflow（validate / auto-merge / review 正規化 / redeploy）を変えるときは、スライド PR を処理しない条件を保つこと（`tests/slide-lane.test.mjs` が検証）

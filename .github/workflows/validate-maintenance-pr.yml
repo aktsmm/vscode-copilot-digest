@@ -1,0 +1,47 @@
+name: Validate maintenance PR
+
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+      - ready_for_review
+      - edited
+
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    # Only the biweekly maintenance lane; other lanes have their own validators.
+    if: startsWith(github.event.pull_request.title, 'maint:') || contains(github.event.pull_request.body, 'pipeline-maintenance-request') || startsWith(github.event.pull_request.head.ref, 'copilot/pipeline-maintenance')
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Validate slides
+        run: npm run validate:slides
+
+      - name: Validate data tests
+        run: npm run test:data
+
+      - name: Validate Pages build
+        run: npm run build:pages
+
+      - name: Validate Pages UX
+        run: npm run test:pages

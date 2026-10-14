@@ -9,6 +9,8 @@ on:
       - Auto-merge generated PR
       - Validate slide PR
       - Auto-merge slide PR
+      - Validate maintenance PR
+      - Auto-merge maintenance PR
     types:
       - completed
   schedule:
@@ -34,6 +36,8 @@ jobs:
               'Auto-merge generated PR',
               'Validate slide PR',
               'Auto-merge slide PR',
+              'Validate maintenance PR',
+              'Auto-merge maintenance PR',
             ];
             const cutoff = Date.now() - 60 * 60 * 1000;
             const maxAttempts = 3;

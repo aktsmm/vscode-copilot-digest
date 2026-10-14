@@ -44,9 +44,21 @@ jobs:
       - name: Build API data
         run: npm run build:pages
 
+      - name: Collect updates the watchdog marked as not authorable
+        id: skip
+        uses: actions/github-script@v8
+        with:
+          script: |
+            const issues = await github.paginate(github.rest.issues.listForRepo, {
+              owner: context.repo.owner, repo: context.repo.repo, state: 'all', labels: 'slide-skip', per_page: 100,
+            });
+            const ids = issues.map((i) => (i.title.match(/Slide skip: ([0-9a-f]{16})/) || [])[1]).filter(Boolean);
+            core.setOutput('ids', ids.join(','));
+
       - name: List updates without slides
         id: pending
         env:
+          SKIP: ${{ steps.skip.outputs.ids }}
           LIMIT: ${{ inputs.limit || '5' }}
           REFRESH: ${{ inputs.refresh && '--refresh' || '' }}
           IDS: ${{ inputs.ids }}
@@ -54,7 +66,7 @@ jobs:
           if [ -n "$IDS" ]; then
             node scripts/pending-slides.mjs --ids "$IDS" --limit "$LIMIT" $REFRESH > pending.json
           else
-            node scripts/pending-slides.mjs --months 3 --limit "$LIMIT" $REFRESH > pending.json
+            node scripts/pending-slides.mjs --months 3 --limit "$LIMIT" --skip "$SKIP" $REFRESH > pending.json
           fi
           count="$(node -e "console.log(JSON.parse(require('fs').readFileSync('pending.json','utf8')).length)")"
           echo "count=$count" >> "$GITHUB_OUTPUT"
