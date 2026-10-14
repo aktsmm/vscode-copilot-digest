@@ -121,3 +121,7 @@ GitHub hosted runner の Node 20 deprecation warning に合わせて主要 actio
 - 新しい `digest-authoring` Issue を作っても 10 分以内に PR が出ない場合は、workflow 失敗より先に GitHub リポジトリ設定の Copilot cloud agent 有効化状態を確認する
 - 15 分を超えても PR が出ない、または review ruleset が動かない場合は、GitHub 側の Copilot Code Review 設定と GitHub 側キューを見直す
 - Pages だけ古い場合は workflow 失敗より先に live HTML の stale 配信を疑い、[deploy-pages.yml](../.github/workflows/deploy-pages.yml) を手動 dispatch して再確認する
+
+## 資料の補完
+
+通常の `collect` は全期間の未補完項目を検証し、原文・公式資料の台帳を `data/resources.json` に保存する。収集 workflow は `.cache/resource-pages` を引き継ぎ、台帳を通常の `data` commit に含める。途中再開、失敗の再試行、日本語本文の検証、全期間件数の解釈は [resource-enrichment.md](resource-enrichment.md) を参照。

@@ -33,10 +33,11 @@
 
 ### トップページの簡易検索
 
-- `pagefind-component-ui` を使う
+- 専用検索と同じ Pagefind API／結果描画を使う
 - [site/index.html](../site/index.html) に検索ボックスを埋め込む
 - 最近の公開更新へ素早く飛ぶ用途に寄せる
-- `max-results="6"` で結果数を抑え、トップページの補助導線として扱う
+- 最大 6 件で結果数を抑え、トップページの補助導線として扱う
+- 両検索 UI に原文、文書タイトル付き資料、該当更新のアーカイブアンカーを表示する
 
 ### 専用検索ページ
 
@@ -46,7 +47,7 @@
 - source group と topic の facet を持ち、クエリと facet を URL に同期する
 - `GitHub Copilot`、`VS Code`、`Copilot CLI` などの表記ゆれは client-side query expansion で補助する
 - Pagefind の sub results を展開し、見出し単位の一致を優先して見せる
-- ハイライト一覧と詳細ページの重複 hit は、結果表示時に URL + title で軽く重複除去する
+- ハイライト一覧と詳細ページの重複 hit は、結果表示時にイベントアンカーで重複除去する
 
 ## build-pages.mjs の役割
 
@@ -66,7 +67,7 @@
 - source group
 - topic
 - importance label
-- 日次ページへの導線
+- 原文、最大 3 件の関連公式資料、該当更新のアンカー付き日次ページへの導線
 - source / topic facet 用の内部値
 
 この metadata は [scripts/lib/reporting.mjs](../scripts/lib/reporting.mjs) の分類ロジックに依存しています。
@@ -82,7 +83,7 @@
 - 日本語は stemming 非対応なので、query expansion で補助しても表記ゆれ吸収には限界がある
 - index 対象は詳細ページ本文とハイライト一覧本文だけなので、トップページのカード文言だけではヒットしないことがある
 - Pagefind index は `npm run build:pages` を回さないと更新されない
-- live の GitHub Pages 配信が stale の場合、HTML と index の更新タイミングがずれて見えることがある
+- build の入力と描画コードの hash を含む `pagefind-<version>/` を配布し、bundle 内の相対参照も同じ版に固定する。HTML が新しくなった後に旧キャッシュの index を読むのを防ぐ。古い HTML 自体が配信される場合は Pages の再反映確認が必要
 
 ## 運用時の確認ポイント
 

@@ -1,0 +1,14 @@
+[
+  {
+    "title": "Adding MCP servers for GitHub Copilot CLI",
+    "url": "https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/add-mcp-servers",
+    "discoveryUrl": "github-mcp:github_support_docs_search",
+    "discoveredAt": "2026-10-14T09:13:27Z"
+  },
+  {
+    "title": "Azure Skills plugin",
+    "url": "https://learn.microsoft.com/ja-jp/azure/developer/azure-skills/overview",
+    "discoveryUrl": "microsoft-learn:microsoft_docs_search",
+    "discoveredAt": "2026-10-14T09:14:46Z"
+  }
+]

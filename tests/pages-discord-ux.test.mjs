@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import assert from "node:assert/strict";
 import { spawnSync } from "node:child_process";
+import { runInNewContext } from "node:vm";
 
 function readSiteFile(relativePath) {
   return fs.readFileSync(`site/${relativePath}`, "utf8");
@@ -291,15 +292,20 @@ for (const card of englishHomeDigestCards) {
     "English home card explanations must not contain ellipsis truncation",
   );
 }
-const opusCardSummary = readSiteFile("en/index.html").match(
-  /<p class="digest-card-summary">(Opus 4\.6 \(fast\) will be deprecated across GitHub Copilot experiences[^<]*)<\/p>/,
+const rendererSource = fs.readFileSync("scripts/build-pages.mjs", "utf8");
+const previewSource = rendererSource.slice(
+  rendererSource.indexOf("function completeSentencePreview("),
+  rendererSource.indexOf("function cardDescription("),
 );
-assert.ok(
+const opusCardSummary = runInNewContext(`${previewSource}
+completeSentencePreview("Opus 4.6 (fast) will be deprecated across GitHub Copilot experiences. Review the model policy.", "en", 1)`);
+assert.equal(
   opusCardSummary,
+  "Opus 4.6 (fast) will be deprecated across GitHub Copilot experiences.",
   "English card summaries must preserve version numbers at the sentence start",
 );
 assert.doesNotMatch(
-  opusCardSummary[1],
+  opusCardSummary,
   /\.\.\.|…/,
   "English card summaries must not cut the sentence with an ellipsis",
 );
