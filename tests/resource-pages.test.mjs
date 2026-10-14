@@ -65,6 +65,27 @@ for (const locale of ["", "en"]) {
   }
 }
 assert.ok(cards > 100, "verify full generated history, not only a few sample cards");
+const anchoredDay = fs.readFileSync(path.join("site", "days", "2026-04-06.html"), "utf8");
+const languageScript = anchoredDay.slice(anchoredDay.indexOf("var toggle=document.querySelector"),
+  anchoredDay.indexOf("var shareFeedback=document.querySelector"));
+for (const preference of ["ja", "en"]) {
+  let click;
+  let replaced;
+  const location = { search: "?q=skills", hash: "#event-test", href: "",
+    replace: (value) => { replaced = value; } };
+  runInNewContext(languageScript, {
+    document: { querySelector: () => ({
+      getAttribute: () => "../en/days/2026-04-06.html",
+      addEventListener: (_, handler) => { click = handler; },
+    }) },
+    localStorage: { getItem: () => preference, setItem: () => {} },
+    window: { location },
+  });
+  if (preference === "en") assert.equal(replaced, "../en/days/2026-04-06.html?q=skills#event-test");
+  click();
+  assert.equal(location.href, "../en/days/2026-04-06.html?q=skills#event-test",
+    "language switching must preserve the selected update anchor and search parameters");
+}
 const rendererSource = fs.readFileSync(path.join("scripts", "build-pages.mjs"), "utf8");
 const versionCalculation = rendererSource.slice(
   rendererSource.indexOf('  const searchHash = createHash("sha256")'),

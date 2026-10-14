@@ -127,15 +127,18 @@ try:
             documentation = card.locator(".resource-links li a").first
             doc_url = documentation.get_attribute("href")
             doc_title = documentation.text_content()
+            card_title = card.locator("h3").inner_text().strip()
             assert version in original
+            assert archive.split("#")[0].endswith(f"/days/{date}.html")
             assert doc_url and doc_title.strip(), "Related documentation must have a document title"
             page.goto(archive, wait_until="networkidle")
             assert page.evaluate("() => !!document.getElementById(decodeURIComponent(location.hash.slice(1)))")
+            assert page.evaluate("() => document.getElementById(decodeURIComponent(location.hash.slice(1))).innerText.trim()") == card_title
             page.goto(original, wait_until="domcontentloaded")
             assert page.url.startswith("https://code.visualstudio.com/updates/" + version)
-            assert page.locator("main").inner_text().strip()
+            assert page.locator("main").last.inner_text().strip()
             page.goto(doc_url, wait_until="domcontentloaded")
-            assert page.locator("main").inner_text().strip()
+            assert page.locator("main").last.inner_text().strip()
             assert page.evaluate("() => !location.hash || !!document.getElementById(decodeURIComponent(location.hash.slice(1)))")
             report["checks"].append({
                 "date": date, "version": version, "original": original,
