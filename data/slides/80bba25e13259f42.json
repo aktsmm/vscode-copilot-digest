@@ -1,0 +1,61 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "80bba25e13259f42",
+  "title": {
+    "ja": "Copilot Business / Enterprise の請求サイクル内 AI クレジット使用量表示",
+    "subtitleJa": "個人予算の有無にかかわらず、使用状況ページで当期の利用量を確認可能",
+    "original": "Copilot users can now see AI credits used per billing cycle"
+  },
+  "date": "2026-07-20",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "Copilot Business / Enterprise の利用者と、予算を管理する管理者",
+    "change": "請求サイクル内に使用した AI クレジット数を Copilot 使用状況ページで確認できる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "GitHub 設定にある Copilot 使用状況ページで、請求サイクル内の利用量を確認する"
+  },
+  "beforeAfter": {
+    "before": "予算に対する使用率のみを表示",
+    "after": "使用済みクレジット数を表示。予算があれば予算額に対する使用量も表示"
+  },
+  "panels": [
+    {
+      "id": "usage-display",
+      "heading": "表示される使用量",
+      "priority": "core",
+      "items": [
+        "管理者が個人予算を設定していない場合、請求サイクル内の使用済み AI クレジット数を表示",
+        "予算が設定されている場合、使用済みクレジット数と予算額を表示",
+        "GitHub 設定の Copilot 使用状況ページで確認できる"
+      ]
+    },
+    {
+      "id": "scope",
+      "heading": "対象",
+      "priority": "detail",
+      "items": [
+        "Copilot Business と Copilot Enterprise の利用者が対象"
+      ]
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Copilot users can now see AI credits used per billing cycle - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-07-20-copilot-users-can-now-see-ai-credits-used-per-billing-cycle/"
+    },
+    "documents": [
+      {
+        "title": "使用量ベースの課金の予算 - GitHubドキュメント",
+        "url": "https://docs.github.com/ja/enterprise-cloud@latest/copilot/concepts/billing-and-usage/organizations-and-enterprises/budgets"
+      }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-07-20-copilot-users-can-now-see-ai-credits-used-per-billing-cycle/",
+    "https://docs.github.com/ja/enterprise-cloud@latest/copilot/concepts/billing-and-usage/organizations-and-enterprises/budgets"
+  ]
+}
