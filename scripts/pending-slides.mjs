@@ -14,9 +14,9 @@ const option = (name, fallback) => {
 export function selectPending(items, existingIds, { months = 3, limit = 10, ids = null, skip = [], today = new Date() } = {}) {
   // Same calendar-month window as the PDF retention, so every slide made here is also published.
   const cutoffDate = retentionStart(months, today);
-  // Snapshot diffs ("X changed") only say a page changed; a slide needs a real article or release-note section.
+  // A page-change item is usable only when it carries the added lines that say what changed.
   return items
-    .filter((item) => item.sourceKind !== "html_snapshot_change")
+    .filter((item) => item.sourceKind !== "html_snapshot_change" || item.changes?.length > 0)
     // The authoring agent cannot open Publickey pages, so it cannot verify them.
     .filter((item) => !/publickey1\.jp/.test(item.resources?.source?.url ?? item.urls?.source ?? ""))
     .filter((item) => !existingIds.has(item.id) && !skip.includes(item.id))
@@ -53,6 +53,7 @@ async function main() {
   console.log(JSON.stringify(pending.map((i) => ({
     id: i.id, digestDate: i.digestDate, topic: i.topic, title: i.title,
     source: i.resources.source.url, documents: i.resources.documents,
+    ...(i.changes?.length ? { kind: "page-change", changes: i.changes } : {}),
   })), null, 2));
 }
 

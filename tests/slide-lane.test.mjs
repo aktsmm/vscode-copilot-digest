@@ -13,6 +13,10 @@ const pending = selectPending(items, new Set(["a"]), { months: 3, limit: 5, toda
 assert.deepEqual(pending.map((i) => i.id), ["d", "b"]);
 assert.equal(selectPending(items, new Set(), { limit: 1, today: new Date("2026-10-15") }).length, 1);
 
+// Page-change items are slide candidates only when they carry the added lines.
+const snap = (id, changes) => ({ ...item(id, "2026-10-12"), sourceKind: "html_snapshot_change", ...(changes ? { changes } : {}) });
+assert.deepEqual(selectPending([snap("s1", ["New agent setting"]), snap("s2")], new Set(), { today: new Date("2026-10-15") }).map((i) => i.id), ["s1"]);
+
 // The slide lane stays narrow: only data/slides/{id}.json, no deletions.
 for (const name of ["validate-slide-pr.yml", "auto-merge-slide-pr.yml"]) {
   assert.ok((await read(name)).includes("data/slides/") || (await read(name)).includes("data\\/slides\\/"), `${name} must pin data/slides`);
