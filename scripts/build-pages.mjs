@@ -963,8 +963,8 @@ function eventAnchorId(event) {
 
 function resourceLabels(locale) {
   return locale === "ja"
-    ? { source: "原文", related: "関連ドキュメント", archive: "アーカイブ内の更新", unconfirmed: "対応資料未確認", fetch_failed: "資料の取得失敗（再確認待ち）", unresearched: "資料未調査" }
-    : { source: "Original", related: "Related documentation", archive: "Update in archive", unconfirmed: "Matching documentation unconfirmed", fetch_failed: "Resource fetch failed (pending retry)", unresearched: "Documentation not yet researched" };
+    ? { source: "原文", related: "関連ドキュメント", archive: "掲載日のまとめを見る", unconfirmed: "対応資料未確認", fetch_failed: "資料の取得失敗（再確認待ち）", unresearched: "資料未調査" }
+    : { source: "Original", related: "Related documentation", archive: "View that day's digest", unconfirmed: "Matching documentation unconfirmed", fetch_failed: "Resource fetch failed (pending retry)", unresearched: "Documentation not yet researched" };
 }
 
 function renderResourceLinks(event, locale) {

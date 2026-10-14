@@ -32,6 +32,9 @@ for (const locale of ["", "en"]) {
       assert.ok($(element).find("li").length <= 3);
       const archive = $(element).find("[data-archive-path]").attr("data-archive-path");
       if (archive) {
+        assert.equal($(element).find("[data-archive-path]").text(),
+          locale ? "View that day's digest" : "掲載日のまとめを見る",
+          "archive actions must explain that they open the publication day's digest");
         const [target, id] = archive.split("#");
         if (!archiveHeadings.has(target)) {
           const destination = cheerio.load(fs.readFileSync(path.join("site", ...target.split("/")), "utf8"));
