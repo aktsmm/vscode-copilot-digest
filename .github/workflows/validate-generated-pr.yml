@@ -21,6 +21,7 @@ jobs:
       PR_BODY: ${{ github.event.pull_request.body }}
       PR_AUTHOR: ${{ github.event.pull_request.user.login }}
       PR_LABELS: ${{ toJson(github.event.pull_request.labels.*.name) }}
+      PR_HEAD_REF: ${{ github.event.pull_request.head.ref }}
 
     steps:
       - name: Checkout
@@ -73,7 +74,7 @@ jobs:
           const body = process.env.PR_BODY || '';
           const author = process.env.PR_AUTHOR || '';
           const labels = JSON.parse(process.env.PR_LABELS || '[]');
-          const isSlidePr = /^(\[WIP\] )?(slides: |Slide authoring request)/.test(title);
+          const isSlidePr = /^(\[WIP\] )?(slides:|Slide authoring request)/.test(title) || body.includes('slide-authoring-request') || (process.env.PR_HEAD_REF || '').startsWith('copilot/slide-');
           const isGeneratedPr = !isSlidePr && (
             /copilot/i.test(author) ||
             labels.includes('auto-pr') ||

@@ -29,7 +29,7 @@ jobs:
             }
             const { owner, repo } = context.repo;
             let pr = (await github.rest.pulls.get({ owner, repo, pull_number: pullRequests[0].number })).data;
-            const isSlidePr = /^(\[WIP\] )?(slides: |Slide authoring request)/.test(pr.title || '');
+            const isSlidePr = /^(\[WIP\] )?(slides:|Slide authoring request)/.test(pr.title || '') || (pr.body || '').includes('slide-authoring-request') || (pr.head?.ref || '').startsWith('copilot/slide-');
             if (pr.state !== 'open' || !isSlidePr || !/copilot/i.test(pr.user?.login || '')) {
               core.info(`PR #${pr.number} is not an open Copilot slide PR.`);
               return;
