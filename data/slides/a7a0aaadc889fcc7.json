@@ -1,0 +1,60 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "a7a0aaadc889fcc7",
+  "title": {
+    "ja": "Copilotによるデスクトップアプリ操作",
+    "subtitleJa": "より直接的なツールでは難しい作業を、デスクトップアプリとの対話で自動化",
+    "original": "GitHub Copilot documentation"
+  },
+  "date": "2026-10-01",
+  "topic": "GitHub Copilot",
+  "status": "preview",
+  "statusEvidence": "Computer use is in public preview and subject to change.",
+  "audience": {
+    "who": "CLIやGitHub Copilotアプリで、GUI上の作業を自動化したい開発者",
+    "change": "Copilotがデスクトップアプリを操作し、直接利用できるツールでは完了できない作業を支援する",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "利用時は操作対象と権限を確認し、データを変更する結果を人がレビューする"
+  },
+  "panels": [
+    {
+      "id": "capabilities",
+      "heading": "できること",
+      "priority": "core",
+      "items": [
+        "画面上の情報を読み取り、クリックや文字入力などで操作する",
+        "複数のアプリをまたぐ操作や、GUIのみのソフトウェアでの作業を支援する",
+        "CLIとアプリのmacOS・Windows上のローカルセッションで利用できる"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "機能は既定で無効で、利用前に有効化が必要",
+        "画面上の情報をコンテキストとして扱うため、対象アプリや表示内容に注意する",
+        "誤操作の可能性があり、特にデータ変更や他者に影響する操作の結果を確認する"
+      ]
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "GitHub Copilot documentation - GitHub Docs",
+      "url": "https://docs.github.com/en/copilot"
+    },
+    "documents": [
+      {
+        "title": "GitHub Copilotでのコンピューターの使用について",
+        "url": "https://docs.github.com/ja/copilot/concepts/agents/computer-use"
+      }
+    ]
+  },
+  "evidence": [
+    "https://docs.github.com/en/copilot",
+    "https://docs.github.com/ja/copilot/concepts/agents/computer-use"
+  ]
+}

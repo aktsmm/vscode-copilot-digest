@@ -1,0 +1,64 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "02a39dbb972c21a0",
+  "title": {
+    "ja": "Copilot CLIとアプリで外部モデルを使う方法",
+    "subtitleJa": "独自のAPIキーで外部プロバイダーを設定し、セッションでモデルを選択",
+    "original": "How-tos for GitHub Copilot"
+  },
+  "date": "2026-10-07",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "Copilot CLIやGitHub Copilotアプリで外部モデルを使いたい開発者",
+    "change": "CLIとアプリで、独自のAPIキーを使うモデルの追加・利用方法を確認できる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "外部モデルを利用する場合は、各環境の手順に沿ってプロバイダーを設定する"
+  },
+  "panels": [
+    {
+      "id": "cli",
+      "heading": "CLIでの設定",
+      "priority": "core",
+      "items": [
+        "BYOKでGitHubホスト型モデル以外のプロバイダーにも接続できる",
+        "OpenAI互換、Azure OpenAI、Anthropicのプロバイダーを環境変数で構成する",
+        "モデルはツール呼び出しとストリーミングに対応している必要がある"
+      ]
+    },
+    {
+      "id": "app",
+      "heading": "アプリでの設定",
+      "priority": "core",
+      "items": [
+        "アプリ設定の「モデル プロバイダー」から外部プロバイダーを追加する",
+        "追加したモデルはGitHubホスト型モデルとともにモデルピッカーに表示される",
+        "独自プロバイダーの利用にはGitHubアカウントが必要で、Copilotプランは不要"
+      ]
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "How-tos for GitHub Copilot - GitHub Docs",
+      "url": "https://docs.github.com/en/copilot/how-tos"
+    },
+    "documents": [
+      {
+        "title": "GITHUB COPILOT CLI への LLM モデルの追加",
+        "url": "https://docs.github.com/ja/copilot/how-tos/copilot-cli/customize-copilot/use-byok-models"
+      },
+      {
+        "title": "GitHub Copilot アプリ への LLM モデルの追加",
+        "url": "https://docs.github.com/ja/copilot/how-tos/github-copilot-app/use-byok-models"
+      }
+    ]
+  },
+  "evidence": [
+    "https://docs.github.com/en/copilot/how-tos",
+    "https://docs.github.com/ja/copilot/how-tos/copilot-cli/customize-copilot/use-byok-models",
+    "https://docs.github.com/ja/copilot/how-tos/github-copilot-app/use-byok-models"
+  ]
+}
