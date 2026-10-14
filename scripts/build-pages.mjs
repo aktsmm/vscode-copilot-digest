@@ -3174,8 +3174,18 @@ async function main() {
     ledger = { entries: {} };
     console.warn("Resource ledger missing; updates will be marked unresearched.");
   }
-  searchVersion = createHash("sha256").update(JSON.stringify(logs)).update(JSON.stringify(ledger))
-    .update(await fs.readFile(new URL(import.meta.url))).digest("hex").slice(0, 16);
+  const searchHash = createHash("sha256").update(JSON.stringify(logs)).update(JSON.stringify(ledger))
+    .update((await fs.readFile(new URL(import.meta.url), "utf8")).replace(/\r\n/g, "\n"));
+  const searchInputFiles = [
+    ...(await fs.readdir(path.join(workspaceRoot, "scripts", "lib"))).filter((name) => name.endsWith(".mjs"))
+      .map((name) => path.join("scripts", "lib", name)),
+    ...(await fs.readdir(summariesDir)).filter((name) => name.endsWith(".md"))
+      .map((name) => path.join("summaries", "daily", name)),
+  ].sort();
+  const searchInputs = await Promise.all(searchInputFiles.map(async (file) =>
+    [file.split(path.sep).join("/"), (await fs.readFile(path.join(workspaceRoot, file), "utf8")).replace(/\r\n/g, "\n")]));
+  for (const [file, content] of searchInputs) searchHash.update(file).update(content);
+  searchVersion = searchHash.digest("hex").slice(0, 16);
   for (const log of logs) log.events = (log.events ?? []).map((event) => attachResources(event, ledger));
   const digestEntries = logs.map((log) => ({
     log,

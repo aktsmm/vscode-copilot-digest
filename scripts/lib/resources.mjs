@@ -191,7 +191,16 @@ export function documentCandidates(event, source, catalog = []) {
 }
 
 export function resourceStats(events, ledger) {
-  const unique = [...new Map(events.map((event) => [event.eventId, event])).values()];
+  const byId = new Map();
+  for (const event of events) {
+    const previous = byId.get(event.eventId);
+    const time = (value) => Date.parse(value.detectedAt ?? value.publishedAt) || 0;
+    if (!previous || time(event) > time(previous) ||
+        (time(event) === time(previous) && resourceKey(event) > resourceKey(previous))) {
+      byId.set(event.eventId, event);
+    }
+  }
+  const unique = [...byId.values()];
   const stats = { total: unique.length, occurrences: events.length, withDocuments: 0, documents: 0, unconfirmed: 0, fetchFailed: 0, unresearched: 0 };
   for (const event of unique) {
     const entry = ledger.entries[resourceKey(event)];
