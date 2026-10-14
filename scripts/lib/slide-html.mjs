@@ -7,6 +7,8 @@ const esc = (v) => String(v ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "
 export const FS_STEPS = [24, 22, 20, 19, 18, 17, 16, 15, 14, 13];
 
 const SITE_NAMES = { "github.blog": "GitHub Blog", "github.com": "GitHub", "docs.github.com": "GitHub Docs", "code.visualstudio.com": "VS Code", "www.publickey1.jp": "Publickey", "learn.microsoft.com": "Microsoft Learn" };
+// Inline `code` in a line becomes monospace text; everything else stays escaped.
+const rich = (v) => esc(v).replace(/`([^`]+)`/g, "<code>$1</code>");
 const siteOf = (url) => {
   try {
     const u = new URL(url);
@@ -52,6 +54,7 @@ ul{margin:0;padding-left:20px;font-size:var(--fs);line-height:1.4}li{margin:1px 
 .ba .bf{background:${P.subtle};border:1.5px solid ${P.border}}.ba .af{background:#e8f6ec;border:1.5px solid ${P.success}}
 .ba .p b.l{display:block;font-size:12.5px;margin-bottom:2px}.ba .bf b.l{color:${P.muted}}.ba .af b.l{color:${P.success}}
 .ba .ar{align-self:center;font-size:24px;color:${P.copilot};font-weight:700}
+code{font-family:Consolas,"Cascadia Mono",monospace;font-size:.92em;background:#eceff3;border-radius:3px;padding:0 4px}
 .term{font-size:calc(var(--fs) - 2px);line-height:1.4;margin:0 0 5px}.term b{color:${P.dark}}
 .term .k{display:inline-block;font-size:11px;background:#ece3fd;color:${P.copilotDeep};border-radius:3px;padding:0 5px;margin-left:4px}
 .ft{display:flex;justify-content:space-between;align-items:flex-end;gap:10px;font-size:12.5px;color:${P.muted};border-top:1px solid ${P.border};padding-top:6px;margin-top:auto}
@@ -112,28 +115,28 @@ export function slideHtml(input, { fs = FS_STEPS[0] } = {}) {
   const original = s.title.original ? `<div class="en">${esc(s.title.original)}<span class="dt">掲載 ${esc(s.date)}</span></div>` : `<div class="en"><span class="dt" style="margin-left:0">掲載 ${esc(s.date)}</span></div>`;
   const cards = [];
   if (s.audience) {
-    cards.push(`<div class="c who"><b class="l">誰に関係するか</b>${esc(s.audience.who)}</div>`);
-    cards.push(`<div class="c ch-${esc(s.audience.changeNature ?? "neutral")}"><b class="l">${s.audience.changeNature === "breaking" ? "変わること（注意が必要な変更）" : "変わること・使えること"}</b>${esc(s.audience.change)}</div>`);
+    cards.push(`<div class="c who"><b class="l">誰に関係するか</b>${rich(s.audience.who)}</div>`);
+    cards.push(`<div class="c ch-${esc(s.audience.changeNature ?? "neutral")}"><b class="l">${s.audience.changeNature === "breaking" ? "変わること（注意が必要な変更）" : "変わること・使えること"}</b>${rich(s.audience.change)}</div>`);
   }
   if (s.action) {
     const deadline = deadlineLabel(s.action.deadline);
-    cards.push(`<div class="c act-${esc(s.action.required)}"><b class="l">対応</b><strong>${esc(ACTION_LABELS[s.action.required] ?? "情報")}</strong>　${esc(s.action.summary)}${deadline ? `<span class="dl">期限 ${esc(deadline)}</span>` : ""}</div>`);
+    cards.push(`<div class="c act-${esc(s.action.required)}"><b class="l">対応</b><strong>${esc(ACTION_LABELS[s.action.required] ?? "情報")}</strong>　${rich(s.action.summary)}${deadline ? `<span class="dl">期限 ${esc(deadline)}</span>` : ""}</div>`);
   }
   const timeline = s.timeline?.length
     ? `<div class="tl">${s.timeline.map((t, i, a) => `<div class="pt"><b>${esc(t.when)}</b>${esc(t.label)}</div>${i < a.length - 1 ? '<div class="ln"></div>' : ""}`).join("")}</div>`
     : "";
-  const ba = s.beforeAfter ? `<div class="ba"><div class="p bf"><b class="l">変更前</b>${esc(s.beforeAfter.before)}</div><div class="ar">→</div><div class="p af"><b class="l">変更後</b>${esc(s.beforeAfter.after)}</div></div>` : "";
-  const panels = (s.panels ?? []).map((p) => `<div class="card ${CAUTION_IDS.has(p.id) ? "red" : p.priority === "core" ? "hot" : ""}"><h3>${esc(p.heading)}</h3><ul>${p.items.map((i) => `<li>${esc(i)}</li>`).join("")}</ul></div>`).join("");
+  const ba = s.beforeAfter ? `<div class="ba"><div class="p bf"><b class="l">変更前</b>${rich(s.beforeAfter.before)}</div><div class="ar">→</div><div class="p af"><b class="l">変更後</b>${rich(s.beforeAfter.after)}</div></div>` : "";
+  const panels = (s.panels ?? []).map((p) => `<div class="card ${CAUTION_IDS.has(p.id) ? "red" : p.priority === "core" ? "hot" : ""}"><h3>${esc(p.heading)}</h3><ul>${p.items.map((i) => `<li>${rich(i)}</li>`).join("")}</ul></div>`).join("");
   const glossary = s.glossary?.length
-    ? `<div class="card gl"><h3>用語ミニ解説</h3>${s.glossary.map((g) => `<div class="term"><b>${esc(g.term)}</b>${g.type ? `<span class="k">${esc(TERM_TYPES[g.type] ?? g.type)}</span>` : ""}<br>${esc(g.oneLine)}</div>`).join("")}</div>`
+    ? `<div class="card gl"><h3>用語ミニ解説</h3>${s.glossary.map((g) => `<div class="term"><b>${esc(g.term)}</b>${g.type ? `<span class="k">${esc(TERM_TYPES[g.type] ?? g.type)}</span>` : ""}<br>${rich(g.oneLine)}</div>`).join("")}</div>`
     : "";
-  const suggestions = s.suggestions?.length ? `<div class="card sug"><h3>こう使うと便利</h3><ul>${s.suggestions.map((x) => `<li>${esc(x)}</li>`).join("")}</ul></div>` : "";
+  const suggestions = s.suggestions?.length ? `<div class="card sug"><h3>こう使うと便利</h3><ul>${s.suggestions.map((x) => `<li>${rich(x)}</li>`).join("")}</ul></div>` : "";
   const side = glossary || suggestions ? `<div class="side">${glossary}${suggestions}</div>` : "";
   const source = s.references.source;
   const docs = (s.references.documents ?? []).map((d) => `<a href="${esc(d.url)}">${esc(d.title)}</a><span class="site">（${esc(siteOf(d.url))}）</span>`).join("　|　");
   const refs = `<div><b class="fl">発表</b> <a href="${esc(source.url)}">${esc(source.title || source.url)}</a><span class="site">（${esc(siteOf(source.url))}）</span></div>${docs ? `<div><b class="fl">詳細</b> ${docs}</div>` : ""}`;
   return `<section class="page slide" data-id="${esc(s.id)}" style="--fs:${fs}px">
-<div class="hd"><div><div class="t">${esc(s.title.ja)}${s.title.subtitleJa ? `<small>${esc(s.title.subtitleJa)}</small>` : ""}</div>${original}</div>${badge}</div>
+<div class="hd"><div><div class="t">${esc(s.title.ja)}${s.title.subtitleJa ? `<small>${rich(s.title.subtitleJa)}</small>` : ""}</div>${original}</div>${badge}</div>
 ${cards.length ? `<div class="imp">${cards.join("")}</div>` : ""}${timeline}
 <div class="cols"><div class="main">${ba}${panels}</div>${side}</div>
 <div class="ft"><div class="lk">${refs}</div><div style="white-space:nowrap">分類: ${esc(s.topic)} ｜ ID ${esc(s.id)}</div></div>

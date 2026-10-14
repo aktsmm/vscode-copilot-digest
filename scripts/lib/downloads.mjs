@@ -289,7 +289,7 @@ export function downloadsJs() {
       toc.addText(TEXT.tocTitle, { x: 0.6, y: 0.3, w: 12, h: 0.7, fontFace: F, fontSize: 28, bold: true, color: hex(THEME.dark) });
       toc.addText(slides.map(function (s, i) { return { text: (i + 1) + ".  【" + s.topic + "】" + s.title.ja, options: { breakLine: true } }; }), { x: 0.6, y: 1.2, w: 12, h: 5.8, fontFace: F, fontSize: 14, color: hex(THEME.fg), valign: "top" });
       slides.forEach(function (raw) {
-        var s = norm(raw); var sl = pptx.addSlide();
+        var s = JSON.parse(JSON.stringify(norm(raw)).replace(/\\u0060/g, "")); var sl = pptx.addSlide();
         var badgeColor = { ga: THEME.success, preview: THEME.done, retirement: THEME.danger, announcement: THEME.copilot, update: THEME.muted }[s.status];
         sl.addText(s.title.ja, { x: 0.4, y: 0.25, w: s.status === "unknown" ? 12.5 : 10.9, h: 0.55, fontFace: F, fontSize: 22, bold: true, color: hex(THEME.dark), valign: "top", fit: "shrink" });
         if (s.title.subtitleJa) sl.addText(s.title.subtitleJa, { x: 0.4, y: 0.8, w: 11, h: 0.35, fontFace: F, fontSize: 13, bold: true, color: hex(THEME.copilotDeep) });
