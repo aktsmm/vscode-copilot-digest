@@ -26,6 +26,12 @@ assert.ok((await read("auto-merge-generated-pr.yml")).includes("Slide authoring 
 assert.ok((await read("request-copilot-review.yml")).includes("Slide authoring request"));
 assert.ok((await read("redeploy-pages-after-generated-pr-merge.yml")).includes("Slide authoring request"));
 
+// Copilot titles its PR itself, so the lane is detected by the issue marker and branch prefix too.
+for (const name of ["validate-generated-pr.yml", "auto-merge-generated-pr.yml", "request-copilot-review.yml", "redeploy-pages-after-generated-pr-merge.yml", "validate-slide-pr.yml", "auto-merge-slide-pr.yml", "author-slide-pr.yml"]) {
+  const text = await read(name);
+  assert.ok(text.includes("slide-authoring-request") && text.includes("copilot/slide-"), `${name} must detect slide PRs by marker and branch`);
+}
+
 // The PDF secret is only available to the protected deploy workflow.
 for (const name of await fs.readdir(workflows)) {
   if (name === "deploy-pages.yml") continue;

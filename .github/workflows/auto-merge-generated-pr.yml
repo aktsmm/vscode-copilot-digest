@@ -118,7 +118,7 @@ jobs:
               return;
             }
 
-            if (/^(\[WIP\] )?(slides: |Slide authoring request)/.test(pr.title || '')) {
+            if (/^(\[WIP\] )?(slides:|Slide authoring request)/.test(pr.title || '') || (pr.body || '').includes('slide-authoring-request') || (pr.head?.ref || '').startsWith('copilot/slide-')) {
               core.info(`PR #${pr.number} is a slide PR handled by auto-merge-slide-pr.yml.`);
               return;
             }

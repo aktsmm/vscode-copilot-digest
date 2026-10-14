@@ -13,7 +13,7 @@ permissions:
 
 jobs:
   redeploy:
-    if: github.event.pull_request.merged == true && github.event.pull_request.head.repo.full_name == github.repository && !startsWith(github.event.pull_request.title, 'slides:') && !startsWith(github.event.pull_request.title, 'Slide authoring request') && (contains(github.event.pull_request.user.login, 'copilot') || contains(toJson(github.event.pull_request.labels), 'auto-pr'))
+    if: github.event.pull_request.merged == true && github.event.pull_request.head.repo.full_name == github.repository && !(startsWith(github.event.pull_request.title, 'slides:') || contains(github.event.pull_request.body, 'slide-authoring-request') || startsWith(github.event.pull_request.head.ref, 'copilot/slide-')) && (contains(github.event.pull_request.user.login, 'copilot') || contains(toJson(github.event.pull_request.labels), 'auto-pr'))
     runs-on: ubuntu-latest
 
     steps:
