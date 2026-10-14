@@ -3040,6 +3040,13 @@ export function meaningfulSnapshotAdditions(event) {
     );
 }
 
+// "Oct.13 Release" style headings only date a page section; the content lives in the linked posts.
+function isDateOnlyLabel(value) {
+  return /^(?:H[1-3]:\s*)?(?:(?:jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*\.?\s*\d{0,2}(?:,?\s*\d{4})?|\d{4})(?:\s+(?:release|releases|improvement|improvements|update|updates|retired|retirement|preview|ga))?$/i.test(
+    normalizeWhitespace(value),
+  );
+}
+
 function isDocsNavigationLabel(value) {
   return /^(?:GitHub Copilot|How-tos|Use Copilot agents|Concepts|Reference)$/i.test(
     normalizeWhitespace(value),
@@ -3073,6 +3080,10 @@ export function editorialQuality(event) {
     String(event.sourceId ?? "").startsWith("docs-github-") &&
     additions.every(isDocsNavigationLabel)
   ) {
+    return "audit-only";
+  }
+
+  if (additions.every(isDateOnlyLabel)) {
     return "audit-only";
   }
 
