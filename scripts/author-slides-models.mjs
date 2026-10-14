@@ -59,6 +59,7 @@ export function buildMessages({ item, article, articleTitle, docs, schemaDoc, ex
     `トピック: ${item.topic}`,
     `記事 URL: ${item.source}`,
     `記事ページのタイトル: ${articleTitle}`,
+    ...(item.changes?.length ? ["", "この更新は記事ではなく、監視ページで検出した差分です。次の追加行が「何が変わったか」の根拠です。本文のうちこの追加行に関わる部分だけをまとめ、それ以外の内容や「ページが変わった」という言い方は書かないでください。", ...item.changes.map((c) => `+ ${c}`)] : []),
     "",
     "## 記事の本文",
     article,
@@ -146,7 +147,8 @@ async function main() {
   const ctx = { schemaDoc, example: sample.slides[1] };
   await fs.mkdir(slidesDir, { recursive: true });
   let written = 0, authFailure = false;
-  for (const item of pending) {
+  for (const entry of pending) {
+    const item = { id: entry.id, digestDate: entry.digestDate, topic: entry.topic, source: entry.resources.source.url, documents: entry.resources.documents, changes: entry.changes };
     try {
       const slide = await authorOne(item, ctx, token);
       await fs.writeFile(path.join(slidesDir, `${item.id}.json`), `${JSON.stringify(slide, null, 2)}\n`, "utf8");

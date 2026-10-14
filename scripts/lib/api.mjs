@@ -8,6 +8,8 @@ import {
   originalTitle,
   rankEvent,
   sourceGroup,
+  editorialQuality,
+  meaningfulSnapshotAdditions,
 } from "./reporting.mjs";
 
 export const API_VERSION = "v1";
@@ -31,8 +33,12 @@ export function buildDigestItems(events) {
     const en = localizedSummary(event, "en") || "";
     const resources = event.resources ?? {};
     const id = itemId(event);
+    // A page-change event has no article; the added lines are the only record of what changed.
+    const changes = event.kind === "html_snapshot_change" && editorialQuality(event) !== "audit-only"
+      ? meaningfulSnapshotAdditions(event).slice(0, 12) : [];
     return {
       id,
+      ...(changes.length ? { changes } : {}),
       title: { ja: localizedTitle(event, "ja"), en: localizedTitle(event, "en"), original: originalTitle(event) },
       digestDate: event.digestDate,
       publishedDate: dayOf(event.publishedAt),

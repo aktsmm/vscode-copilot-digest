@@ -3028,7 +3028,7 @@ function isConcatenatedOrdinalNavigationLine(value) {
   return (matches?.length ?? 0) >= 2;
 }
 
-function meaningfulSnapshotAdditions(event) {
+export function meaningfulSnapshotAdditions(event) {
   return normalizeArray(event.diffSummary?.additions ?? [])
     .map((addition) => normalizeWhitespace(addition))
     .filter(
