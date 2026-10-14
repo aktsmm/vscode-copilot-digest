@@ -7,7 +7,7 @@ import http from "node:http";
 import os from "node:os";
 import path from "node:path";
 import { PDFDocument } from "pdf-lib";
-import { SLIDE_SCHEMA, validateDeck } from "../scripts/lib/slides.mjs";
+import { SLIDE_SCHEMA_V1 as SLIDE_SCHEMA, validateDeck } from "../scripts/lib/slides.mjs";
 import { downloadPanelHtml, downloadsCss, downloadsJs } from "../scripts/lib/downloads.mjs";
 
 let chromium;

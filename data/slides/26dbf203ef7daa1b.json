@@ -1,21 +1,77 @@
 {
-  "schema": "vscode-copilot-digest/slide/v1",
+  "schema": "vscode-copilot-digest/slide/v2",
   "id": "26dbf203ef7daa1b",
   "title": {
-    "ja": "GitHub CopilotでGemini 4 Argonが一般提供"
+    "ja": "GitHub Copilot で Gemini 4 Argon が一般提供に",
+    "subtitleJa": "Pro+・Max・Business・Enterprise で、各種エディターのモデルピッカーから選択可能",
+    "original": "Gemini 4 Argon in GitHub Copilot"
   },
   "date": "2026-10-13",
   "topic": "GitHub Copilot",
   "status": "ga",
   "statusEvidence": "Gemini 4 Argon, Google’s newest frontier model, is now generally available in GitHub Copilot.",
-  "summary": "Gemini 4 ArgonがGitHub Copilotで一般提供され、複雑なコーディング、エージェント、推論タスク向けに利用できる。",
-  "points": [
-    "Copilot Pro+、Max、Business、Enterpriseで利用できる。",
-    "VS Code、Visual Studio、Copilot CLIなどのモデルピッカーから選択できる。",
-    "提供は段階的に進むため、表示されない場合は後で確認する。"
+  "audience": {
+    "who": "Copilot Pro+ / Max / Business / Enterprise で使うモデルを選びたい開発者と管理者",
+    "change": "Google の最新モデルを、複雑なコーディング・エージェント・推論タスクで選べる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "モデルピッカーで選べるか確認する。管理者は組織のモデルポリシーを確認する"
+  },
+  "timeline": [
+    { "when": "2026-10-13", "label": "一般提供を発表" },
+    { "when": "順次", "label": "段階的に展開" }
+  ],
+  "panels": [
+    {
+      "id": "availability",
+      "heading": "使える場所とプラン",
+      "priority": "core",
+      "items": [
+        "対象プランは Copilot Pro+、Max、Business、Enterprise",
+        "VS Code、Visual Studio、Copilot CLI、Copilot コーディング エージェント、Copilot アプリで選べる",
+        "JetBrains IDE、Xcode、Eclipse のモデルピッカーにも対応"
+      ]
+    },
+    {
+      "id": "features",
+      "heading": "モデルの特徴",
+      "priority": "core",
+      "items": [
+        "複雑なコーディング、エージェント、推論タスク向けのモデル",
+        "初期テストでは、すべてのコーディング ベンチマークで従来の Gemini モデルより多くのタスクを解決し、Copilot CLI での伸びが最大",
+        "完了前にエッジ ケースを検証して結果を確認する"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "提供は段階的で、表示されない場合は少し待ってから再確認する",
+        "利用料金は、使用量ベースの課金でプロバイダーの定価で請求される",
+        "Business / Enterprise では管理者のモデル ポリシーで利用可否が決まる"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "モデルピッカー", "type": "feature", "oneLine": "Copilot で使う AI モデルを切り替える選択画面。" },
+    { "term": "モデル ポリシー", "type": "feature", "oneLine": "管理者が組織で使えるモデルを制御する Copilot の設定。" },
+    { "term": "使用量ベースの課金", "type": "term", "oneLine": "利用したモデルの量に応じて請求される課金方式。" }
+  ],
+  "suggestions": [
+    "既存のタスクで他のモデルと同じ依頼を試し、出力を比べる",
+    "管理者は既定のモデル有効化の設定と、このモデルの個別設定を確認する"
   ],
   "references": {
-    "source": "https://github.blog/changelog/?label=copilot#changelog-item-meta-99479"
+    "source": {
+      "title": "Gemini 4 Argon in GitHub Copilot - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-10-13-gemini-4-argon-in-github-copilot/"
+    },
+    "documents": [
+      { "title": "GitHub Copilotでサポートされている AI モデル - GitHubドキュメント", "url": "https://docs.github.com/ja/copilot/reference/ai-models/supported-models" }
+    ]
   },
   "evidence": [
     "https://github.blog/changelog/2026-10-13-gemini-4-argon-in-github-copilot/"
