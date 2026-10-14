@@ -2,7 +2,7 @@ name: Author slides
 
 on:
   schedule:
-    - cron: "0 18 * * 0,3" # Mon / Thu 03:00 JST as a target time; GitHub may delay it
+    - cron: "0 18 * * *" # Daily 03:00 JST as a target time; GitHub may delay it
   workflow_dispatch:
     inputs:
       refresh:

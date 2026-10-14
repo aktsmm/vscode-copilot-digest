@@ -107,6 +107,23 @@
       "isFutureDated": false,
       "score": 3,
       "backfilled": true
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-09-15-github-copilot-suggests-custom-properties-definitions",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "github changelog copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-09-15T23:33:57.019Z",
+      "publishedAt": "2026-09-15T00:00:00.000Z",
+      "title": "GitHub Copilot suggests custom properties definitions",
+      "url": "https://github.blog/changelog/2026-09-15-github-copilot-suggests-custom-properties-definitions/",
+      "summary": "GitHub Copilot can now suggest allowed values when you create a custom property for repositories in your organization. This feature is in public preview for GitHub Copilot Business and Copilot Enterprise plans. Custom properties let enterprise and organization admins attach governance metadata to repositories, which you can then use to target repositories with rulesets. Custom properties are one of the most popular w",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
     }
   ],
   "errors": []

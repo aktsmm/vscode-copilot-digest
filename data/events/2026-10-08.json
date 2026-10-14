@@ -46,6 +46,23 @@
         "Oct.01 Release"
       ],
       "score": 3
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-10-08-copilot-code-review-new-organization-billing-options-and-controls",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "github changelog copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-10-08T19:21:38.381Z",
+      "publishedAt": "2026-10-08T00:00:00.000Z",
+      "title": "Copilot code review: New organization billing options and controls",
+      "url": "https://github.blog/changelog/2026-10-08-copilot-code-review-new-organization-billing-options-and-controls/",
+      "summary": "This release adds new billing and license controls for Copilot code review admins: By default, Copilot code review bills requests associated with members who have a Copilot license to that member’s own Copilot entitlement. Organization owners can now choose to bill the organization that owns the repository instead in order to avoid consuming or exhausting member quotas.",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
     }
   ],
   "errors": []

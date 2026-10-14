@@ -4,6 +4,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import * as cheerio from "cheerio";
+import { buildReport } from "./coverage-report.mjs";
 
 const root = process.cwd();
 const eventsDir = path.join(root, "data", "events");
@@ -40,6 +41,14 @@ async function main() {
     for (const event of day.events ?? []) { have.add(event.eventId); have.add(event.url); }
     for (const entry of day.latestRun?.skippedLowInformationEvents ?? []) {
       if (FEED_SOURCES.has(entry.sourceId) && !skipped.has(entry.eventId)) skipped.set(entry.eventId, { file, ...entry });
+    }
+  }
+
+  // --coverage also restores feed articles that never reached data/events (not only the dropped ones).
+  if (process.argv.includes("--coverage")) {
+    for (const item of (await buildReport(30)).missing) {
+      const file = `${item.date}.json`;
+      if (days.has(file)) skipped.set(`${item.source}:${item.url}`, { file, eventId: `${item.source}:${item.url}`, sourceId: item.source });
     }
   }
 

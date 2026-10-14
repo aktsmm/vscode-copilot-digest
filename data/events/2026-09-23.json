@@ -461,6 +461,40 @@
       "isFutureDated": false,
       "score": 3,
       "backfilled": true
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-09-23-copilot-code-review-more-ways-to-request-and-configure-reviews",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "github changelog copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-09-23T23:48:47.620Z",
+      "publishedAt": "2026-09-23T00:00:00.000Z",
+      "title": "More ways to request and configure Copilot code reviews",
+      "url": "https://github.blog/changelog/2026-09-23-copilot-code-review-more-ways-to-request-and-configure-reviews/",
+      "summary": "GitHub Copilot code review now offers additional personal configurations to an expanded set of Copilot plans and an enterprise-level default setting. These improvements are now generally available: Previously, personal Copilot code review settings were available only with Copilot Pro, Pro+, and Max on the “Copilot features” page. They covered a single automatic review setting without separate controls for draft pull ",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
+    },
+    {
+      "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_139",
+      "sourceId": "vscode-feed",
+      "sourceName": "vscode feed",
+      "kind": "feed_entry",
+      "detectedAt": "2026-09-23T23:48:47.620Z",
+      "publishedAt": "2026-09-23T00:00:00.000Z",
+      "title": "Visual Studio Code 1.139",
+      "url": "https://code.visualstudio.com/updates/v1_139",
+      "summary": "Update 1.139.1: The update addresses these issues. Already installed? Use Check for Updates in VS Code. For upcoming features, use the Insiders build.",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
     }
   ],
   "errors": []

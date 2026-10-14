@@ -75,6 +75,40 @@
       "isFutureDated": false,
       "score": 3,
       "backfilled": true
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-10-14-hydrafusion-updates-and-new-max-option",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "github changelog copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-10-14T18:07:16.269Z",
+      "publishedAt": "2026-10-14T00:00:00.000Z",
+      "title": "HydraFusion updates and new Max option",
+      "url": "https://github.blog/changelog/2026-10-14-hydrafusion-updates-and-new-max-option/",
+      "summary": "HydraFusion has an updated model pool, improved orchestration workflows, and introduces HydraFusion Max. Both HydraFusion and HydraFusion Max are available across VS Code, the GitHub Copilot app, and GitHub Copilot CLI and remain in research preview. HydraFusion orchestrates multiple models to produce a single response, bringing together their strengths so you don’t have to choose an individual model for each task.",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
+    },
+    {
+      "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_142",
+      "sourceId": "vscode-feed",
+      "sourceName": "vscode feed",
+      "kind": "feed_entry",
+      "detectedAt": "2026-10-14T18:07:16.269Z",
+      "publishedAt": "2026-10-14T00:00:00.000Z",
+      "title": "Visual Studio Code 1.142",
+      "url": "https://code.visualstudio.com/updates/v1_142",
+      "summary": "Already installed? Use Check for Updates in VS Code. For upcoming features, use the Insiders build. This release adds shared canvases for agent workflows, lets you move chats without losing context, expands the Markdown editor, and gives administrators more control over agent permissions.",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
     }
   ],
   "errors": []
