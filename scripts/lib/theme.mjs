@@ -28,6 +28,8 @@ export const DECK_TEXT = Object.freeze({
   source: "出典: GitHub Changelog ／ GitHub Blog ／ VS Code Release Notes ／ GitHub Docs",
   creator: "Created by yamapan（GitHub: aktsmm）",
   repoUrl: "https://github.com/aktsmm/vscode-copilot-digest",
+  profileUrl: "https://github.com/aktsmm",
+  authorLabel: "yamapan（GitHub: aktsmm）",
   siteUrl: "https://aktsmm.github.io/vscode-copilot-digest/",
   automationNote: "GitHub Actions ＋ GitHub Copilot cloud agent で自動生成しています。改善要望は GitHub（Issue）で対応します。",
   copyright: "© 2026 yamapan（GitHub: aktsmm）  CC BY-NC-SA 4.0",

@@ -176,6 +176,12 @@ export function downloadsJs() {
   }
   function fitText(ctx, s, max) { if (ctx.measureText(s).width <= max) return s; var t = s; while (t.length > 1 && ctx.measureText(t + "…").width > max) t = t.slice(0, -1); return t + "…"; }
   function count(items, key) { var m = new Map(); items.forEach(function (i) { var k = key(i); m.set(k, (m.get(k) || 0) + 1); }); return Array.from(m).sort(function (a, b) { return b[1] - a[1]; }); }
+  // Draws a link-coloured, underlined line and returns its clickable rectangle (px, top-based).
+  function linkLine(ctx, text, x, y, url, size) {
+    ctx.font = (size || 16) + "px " + FONT; ctx.fillStyle = "#79C0FF"; ctx.fillText(text, x, y);
+    var w = ctx.measureText(text).width; ctx.fillRect(x, y + 4, w, 1);
+    return { x: x, top: y - (size || 16), w: w, h: (size || 16) + 8, url: url };
+  }
   function drawCover(ctx, items, period, created) {
     ctx.fillStyle = THEME.dark; ctx.fillRect(0, 0, W, H); frame(ctx);
     ctx.fillStyle = THEME.darkSubtle; ctx.beginPath(); ctx.moveTo(W * 0.7, 14); ctx.lineTo(W, 14); ctx.lineTo(W, H - 56); ctx.lineTo(W * 0.42, H - 56); ctx.closePath(); ctx.fill();
@@ -185,7 +191,13 @@ export function downloadsJs() {
     ctx.fillStyle = THEME.onDark; ctx.font = "600 28px " + FONT; if (period) ctx.fillText("対象期間 " + period, 96, 360);
     ctx.font = "700 44px " + FONT; ctx.fillStyle = "#fff"; ctx.fillText(String(items.length), 96, 430);
     var w = ctx.measureText(String(items.length)).width; ctx.font = "26px " + FONT; ctx.fillText(" 件", 96 + w, 430);
+    var links = [];
+    ctx.fillStyle = THEME.onDark; ctx.font = "16px " + FONT; ctx.fillText("作成", 96, 520);
+    links.push(linkLine(ctx, TEXT.authorLabel, 150, 520, TEXT.profileUrl));
+    ctx.fillStyle = THEME.onDark; ctx.font = "16px " + FONT; ctx.fillText("リポジトリ", 96, 552);
+    links.push(linkLine(ctx, TEXT.repoUrl, 190, 552, TEXT.repoUrl));
     footer(ctx, "作成日 " + created + "（UTC）", TEXT.source);
+    return { links: links };
   }
   function drawToc(ctx, items, start, first, firstPage) {
     ctx.fillStyle = "#fff"; ctx.fillRect(0, 0, W, H); frame(ctx);
@@ -214,11 +226,14 @@ export function downloadsJs() {
     ctx.fillStyle = THEME.dark; ctx.fillRect(0, 0, W, H); frame(ctx);
     ctx.textAlign = "center"; ctx.fillStyle = "#fff"; ctx.font = "700 64px " + FONT; ctx.fillText(TEXT.endTitle, W / 2, 330);
     ctx.fillStyle = THEME.copilot; ctx.font = "600 26px " + FONT; ctx.fillText(TEXT.title, W / 2, 390); ctx.textAlign = "left";
-    ctx.fillStyle = THEME.onDark; ctx.font = "14px " + FONT; ctx.fillText(TEXT.automationNote, 96, 604);
-    ctx.fillStyle = THEME.link; ctx.fillText(TEXT.repoUrl, 96, 630);
-    var width = ctx.measureText(TEXT.repoUrl).width; ctx.fillRect(96, 634, width, 1);
+    ctx.fillStyle = THEME.onDark; ctx.font = "14px " + FONT; ctx.fillText(TEXT.automationNote, 96, 560);
+    var links = [
+      linkLine(ctx, TEXT.repoUrl, 96, 590, TEXT.repoUrl, 14),
+      linkLine(ctx, TEXT.authorLabel + "　" + TEXT.profileUrl, 96, 614, TEXT.profileUrl, 14),
+      linkLine(ctx, TEXT.siteUrl, 96, 638, TEXT.siteUrl, 14),
+    ];
     footer(ctx, TEXT.copyright, TEXT.source);
-    return { x: 96, top: 616, w: width, h: 22 };
+    return { links: links };
   }
   async function canvasPng(draw) {
     var canvas = document.createElement("canvas"); canvas.width = W; canvas.height = H;
@@ -241,7 +256,13 @@ export function downloadsJs() {
         page.drawImage(await out.embedPng(r.bytes), { x: 0, y: 0, width: W * PT, height: H * PT }); return { page: page, result: r.result };
       };
       var tocPages = Math.max(1, Math.ceil(list.length / PER_TOC)), firstPage = 1 + tocPages + 1 + 1;
-      await addImage(function (ctx) { drawCover(ctx, list, periodOf(list), new Date().toISOString().slice(0, 10)); });
+      var addLinks = function (item) {
+        item.result.links.forEach(function (r) {
+          var a = out.context.obj({ Type: "Annot", Subtype: "Link", Rect: [r.x * PT, (H - r.top - r.h) * PT, (r.x + r.w) * PT, (H - r.top) * PT], Border: [0, 0, 0], A: { Type: "Action", S: "URI", URI: PDFString.of(r.url) } });
+          item.page.node.addAnnot(out.context.register(a));
+        });
+      };
+      addLinks(await addImage(function (ctx) { return drawCover(ctx, list, periodOf(list), new Date().toISOString().slice(0, 10)); }));
       for (var s = 0; s < list.length; s += PER_TOC) { await addImage(function (ctx) { drawToc(ctx, list.slice(s, s + PER_TOC), s, s === 0, firstPage); }); }
       await addImage(function (ctx) { drawSummary(ctx, list); });
       var done = 0;
@@ -250,9 +271,7 @@ export function downloadsJs() {
         var src = await PDFDocument.load(await fetchPdf(list[i], password));
         var pages = await out.copyPages(src, src.getPageIndices()); pages.forEach(function (p) { out.addPage(p); });
       }
-      var end = await addImage(drawEnd), r = end.result;
-      var link = out.context.obj({ Type: "Annot", Subtype: "Link", Rect: [r.x * PT, (H - r.top - r.h) * PT, (r.x + r.w) * PT, (H - r.top) * PT], Border: [0, 0, 0], A: { Type: "Action", S: "URI", URI: PDFString.of(TEXT.repoUrl) } });
-      end.page.node.addAnnot(out.context.register(link));
+      addLinks(await addImage(drawEnd));
       out.setTitle(TEXT.title);
       download(new Blob([await out.save()], { type: "application/pdf" }), stem(list) + ".pdf");
       setStatus(savedText(list.length));
@@ -294,6 +313,7 @@ export function downloadsJs() {
       cover.addText(TEXT.eyebrow, { x: 1, y: 2.0, w: 11, h: 0.45, fontFace: F, fontSize: 20, bold: true, color: hex(THEME.copilot), margin: 0 });
       cover.addText(TEXT.title, { x: 1, y: 2.55, w: 11.5, h: 1.0, fontFace: F, fontSize: 36, bold: true, color: "FFFFFF", margin: 0, fit: "shrink" });
       cover.addText([{ text: periodOf(list) ? "対象期間 " + periodOf(list) : "", options: { breakLine: true, fontSize: 24 } }, { text: list.length + " 件", options: { fontSize: 36, bold: true } }], { x: 1, y: 3.75, w: 11, h: 1.6, fontFace: F, color: hex(THEME.onDark), valign: "top", margin: 0 });
+      cover.addText([{ text: "作成　", options: { color: hex(THEME.onDark) } }, { text: TEXT.authorLabel, options: { hyperlink: { url: TEXT.profileUrl }, color: "79C0FF", underline: { style: "sng" }, breakLine: true } }, { text: "リポジトリ　", options: { color: hex(THEME.onDark) } }, { text: TEXT.repoUrl, options: { hyperlink: { url: TEXT.repoUrl }, color: "79C0FF", underline: { style: "sng" } } }], { x: 1, y: 5.4, w: 11, h: 0.8, fontFace: F, fontSize: 13, valign: "top", margin: 0 });
       var tocPages = Math.max(1, Math.ceil(slides.length / PER_TOC)), firstPage = 1 + tocPages + 1 + 1;
       for (var t = 0; t < tocPages; t++) {
         var toc = pptx.addSlide(); frame(toc, TEXT.title, TEXT.source);
@@ -349,7 +369,7 @@ export function downloadsJs() {
       frame(end, TEXT.copyright, TEXT.source);
       end.addText(TEXT.endTitle, { x: 0, y: 2.4, w: W, h: 1.1, fontFace: F, fontSize: 48, bold: true, color: "FFFFFF", align: "center", margin: 0 });
       end.addText(TEXT.title, { x: 0, y: 3.55, w: W, h: 0.55, fontFace: F, fontSize: 20, bold: true, color: hex(THEME.copilot), align: "center", margin: 0 });
-      end.addText([{ text: TEXT.automationNote, options: { breakLine: true, color: hex(THEME.onDark) } }, { text: TEXT.repoUrl, options: { hyperlink: { url: TEXT.repoUrl }, color: "79C0FF", underline: { style: "sng" } } }], { x: 1, y: 5.7, w: 11.3, h: 0.7, fontFace: F, fontSize: 11, valign: "top", margin: 0 });      await pptx.writeFile({ fileName: stem(list) + ".pptx" });
+      end.addText([{ text: TEXT.automationNote, options: { breakLine: true, color: hex(THEME.onDark) } }, { text: TEXT.repoUrl, options: { hyperlink: { url: TEXT.repoUrl }, color: "79C0FF", underline: { style: "sng" }, breakLine: true } }, { text: TEXT.authorLabel + "　" + TEXT.profileUrl, options: { hyperlink: { url: TEXT.profileUrl }, color: "79C0FF", underline: { style: "sng" }, breakLine: true } }, { text: TEXT.siteUrl, options: { hyperlink: { url: TEXT.siteUrl }, color: "79C0FF", underline: { style: "sng" } } }], { x: 1, y: 5.4, w: 11.3, h: 1.1, fontFace: F, fontSize: 11, valign: "top", margin: 0 });      await pptx.writeFile({ fileName: stem(list) + ".pptx" });
       setStatus(savedText(list.length));
     } catch (e) { setStatus(e instanceof WrongPassword ? L.wrongPassword : L.failed, true); }
   }
