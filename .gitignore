@@ -11,3 +11,4 @@ site/
 .github/skills/
 !.github/skills/agentic-workflow-guide/
 !.github/skills/agentic-workflow-guide/**
+dist-pdf/

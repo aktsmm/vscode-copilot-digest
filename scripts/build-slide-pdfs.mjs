@@ -40,7 +40,7 @@ async function readSlides(since) {
   return orderSlides(slides);
 }
 
-async function launchBrowser() {
+export async function launchBrowser() {
   let chromium;
   try {
     ({ chromium } = await import("playwright"));
