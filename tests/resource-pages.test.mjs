@@ -2,6 +2,16 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
 import * as cheerio from "cheerio";
+import { resourceStats } from "../scripts/lib/resources.mjs";
+import os from "node:os";
+import { createHash } from "node:crypto";
+import { runInNewContext } from "node:vm";
+
+const ledger = JSON.parse(fs.readFileSync(path.join("data", "resources.json")));
+const events = fs.readdirSync(path.join("data", "events")).filter((name) => name.endsWith(".json"))
+  .flatMap((name) => JSON.parse(fs.readFileSync(path.join("data", "events", name))).events ?? []);
+assert.deepEqual(JSON.parse(fs.readFileSync(path.join("site", "assets", "resource-audit.json"))),
+  resourceStats(events, ledger), "published full-history totals must match the operational audit");
 
 const { version } = JSON.parse(fs.readFileSync(path.join("site", "assets", "search-version.json")));
 assert.ok(fs.existsSync(path.join("site", `pagefind-${version}`, "pagefind.js")));
@@ -36,4 +46,34 @@ for (const locale of ["", "en"]) {
   }
 }
 assert.ok(cards > 100, "verify full generated history, not only a few sample cards");
+const rendererSource = fs.readFileSync(path.join("scripts", "build-pages.mjs"), "utf8");
+const versionCalculation = rendererSource.slice(
+  rendererSource.indexOf('  const searchHash = createHash("sha256")'),
+  rendererSource.indexOf("  for (const log of logs) log.events ="),
+).replace("new URL(import.meta.url)", "rendererPath");
+assert.ok(versionCalculation.includes("searchInputFiles"), "search input version calculation must be testable");
+const fixture = fs.mkdtempSync(path.join(os.tmpdir(), "digest-search-version-"));
+try {
+  const library = path.join(fixture, "scripts", "lib", "reporting.mjs");
+  const summary = path.join(fixture, "summaries", "daily", "2026-04-01.md");
+  fs.mkdirSync(path.dirname(library), { recursive: true });
+  fs.mkdirSync(path.dirname(summary), { recursive: true });
+  fs.writeFileSync(library, "initial translations\n");
+  fs.writeFileSync(summary, "initial daily content\n");
+  const calculate = () => runInNewContext(`(async () => { let searchVersion; ${versionCalculation} return searchVersion; })()`, {
+    fs: fs.promises, path, createHash, logs: [], ledger: { entries: {} },
+    workspaceRoot: fixture, summariesDir: path.dirname(summary),
+    rendererPath: path.resolve("scripts", "build-pages.mjs"),
+  });
+  const initialVersion = await calculate();
+  fs.writeFileSync(library, "updated translations\n");
+  const translatedVersion = await calculate();
+  assert.notEqual(translatedVersion, initialVersion, "translation-only updates must invalidate the search bundle");
+  fs.writeFileSync(library, "updated translations\r\n");
+  assert.equal(await calculate(), translatedVersion, "OS newline differences must not create inconsistent versions");
+  fs.writeFileSync(summary, "updated daily content\n");
+  assert.notEqual(await calculate(), translatedVersion, "daily text updates must invalidate the search bundle");
+} finally {
+  fs.rmSync(fixture, { recursive: true });
+}
 console.log(`Verified resource actions and archive targets in ${cards} generated cards.`);

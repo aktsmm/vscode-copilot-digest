@@ -7,6 +7,7 @@ import subprocess
 import threading
 import time
 import urllib.request
+from urllib.parse import urljoin
 
 import win32gui
 from playwright.sync_api import sync_playwright
@@ -122,7 +123,7 @@ try:
             ).first
             card.wait_for()
             original = card.locator('.resource-links a[target="_blank"]').first.get_attribute("href")
-            archive = card.locator("[data-archive-path]").get_attribute("href")
+            archive = urljoin(page.url, card.locator("[data-archive-path]").get_attribute("href"))
             documentation = card.locator(".resource-links li a").first
             doc_url = documentation.get_attribute("href")
             doc_title = documentation.text_content()

@@ -64,6 +64,12 @@ assert.equal(attachResources(event, ledger).resources.status, "verified");
 assert.deepEqual(resourceStats([event, event, { ...event, eventId: "pending", summary: "Other" }], ledger), {
   total: 2, occurrences: 3, withDocuments: 1, documents: 1, unconfirmed: 0, fetchFailed: 0, unresearched: 1,
 });
+const earlier = { ...event, detectedAt: "2026-04-01T00:00:00Z" };
+const later = { ...event, detectedAt: "2026-04-02T00:00:00Z", summary: "Revised source content" };
+assert.deepEqual(resourceStats([earlier, later], ledger), resourceStats([later, earlier], ledger),
+  "collect and Pages must report the same totals regardless of archive traversal order");
+assert.equal(resourceStats([earlier, later], ledger).unresearched, 1,
+  "the latest observed content determines the representative event ID, not whichever file is read last");
 
 const githubUrl = "https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/add-mcp-servers";
 const japaneseUrl = githubUrl.replace("/en/", "/ja/");
