@@ -22,10 +22,10 @@ GitHub Copilot と VS Code 周辺の更新を毎日収集し、日次イベン�
 - 静的 JSON API（`api/v1/`）として、更新一覧・月別・カテゴリ別・個別詳細と取得状態を公開する
 - 1 更新 = 1 枚のスライド JSON（`data/slides/`）を Copilot cloud agent が生成し、専用の PR 系統で検証・自動 merge する
 - スライドを PDF 化する（GitHub ダーク＋Copilot パープルの表紙・裏表紙）。最新 1 件は無料サンプル、残りは `PDF_PASSWORD` で暗号化して公開する
-- `slides.html` で期間・種類を絞り、選択を JSON または結合 PDF（ブラウザ内で復号・結合）としてダウンロードできる
+- トップページとハイライト一覧の「スライドをダウンロード」パネルで、期間・種類・トピックを絞り、JSON / PDF / PPTX（PowerPoint）をその場でダウンロードできる（別ページへの遷移なし）。サンプル PDF はパスワード不要
 
 運用の詳細は [docs/automation.md](docs/automation.md) にまとめています。
-静的 JSON API・スライド・PDF（範囲選択して結合する `slides.html` を含む）は [docs/api.md](docs/api.md) を参照してください。
+静的 JSON API・スライド・PDF・PPTX のダウンロードパネルは [docs/api.md](docs/api.md) を参照してください。
 検索の仕組みは [docs/search-architecture.md](docs/search-architecture.md) に分けてあります。
 原文と公式資料の選び方、確認状態、途中再開は [docs/resource-enrichment.md](docs/resource-enrichment.md) にまとめています。
 
@@ -166,7 +166,7 @@ Discord 通知は短い概要を本文に置き、主な更新は embed カー�
 - [summaries/daily](summaries/daily): 公開済み更新または未来日付項目がある日だけ生成する日次 Markdown
 - [drafts](drafts): 14 日ドラフト
 - [data/slides](data/slides): 1 更新 1 枚のスライド JSON（Copilot が生成し、検証を通ったものだけ merge）
-- [site](site): GitHub Pages 用の静的出力（`api/v1/`、`slides/`、`pdf/`、`slides.html` を含む）
+- [site](site): GitHub Pages 用の静的出力（`api/v1/`、`slides/`、`pdf/` を含む）
 
 ## 主要スクリプト
 
@@ -183,7 +183,7 @@ Discord 通知は短い概要を本文に置き、主な更新は embed カー�
 - [scripts/lib/api.mjs](scripts/lib/api.mjs): 静的 JSON API と取得状態（coverage）の生成
 - [scripts/lib/slides.mjs](scripts/lib/slides.mjs): スライドの検証規則（許可ホスト、内部メモ語の禁止、状態の根拠）
 - [scripts/lib/theme.mjs](scripts/lib/theme.mjs): PDF / スライドの配色（GitHub / Copilot）と文言の単一定義
-- [scripts/build-slide-pdfs.mjs](scripts/build-slide-pdfs.mjs): スライドの PDF 化、サンプル以外の暗号化、`slides.html` と `data/slides.json` の出力
+- [scripts/build-slide-pdfs.mjs](scripts/build-slide-pdfs.mjs): スライドの PDF 化、サンプル以外の暗号化、`data/slides.json`（一覧・サンプル・暗号化情報）の出力
 - [scripts/pending-slides.mjs](scripts/pending-slides.mjs) / [scripts/validate-slides.mjs](scripts/validate-slides.mjs): スライド未作成の更新の抽出と検証
 - [scripts/render-pdf.mjs](scripts/render-pdf.mjs): 指定したスライドを暗号化なしの PDF としてローカルで描画（`npm run pdf`）
 
@@ -248,7 +248,7 @@ Discord 通知は短い概要を本文に置き、主な更新は embed カー�
 - 週間ページ: 直近 7 日のハイライト、テーマ別まとめ、ソース内訳、全件一覧
 - 検索ページ: Pagefind のインデックスを使い、公開済み日次・週間詳細ページから title / excerpt を横断検索する
 - raw データ: 各日の Markdown と JSON をそのまま参照可能
-- `slides.html`: スライドの JSON / 結合 PDF ダウンロード（トップページのナビからは辿れないため、直接 URL か [docs/api.md](docs/api.md) から開く）
+- 「スライドをダウンロード」パネル（トップ・ハイライト一覧）: 絞り込み結果の JSON / PDF / PPTX をダウンロード。実装は [scripts/lib/downloads.mjs](scripts/lib/downloads.mjs)
 - `api/v1/`: 読み取り専用の JSON API
 
 ## 検索実装

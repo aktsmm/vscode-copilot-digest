@@ -3,6 +3,7 @@ import path from "node:path";
 import { createHash } from "node:crypto";
 import { attachResources, httpUrl, resourceStats } from "./lib/resources.mjs";
 import { buildApiFiles } from "./lib/api.mjs";
+import { downloadPanelHtml, downloadsCss, downloadsJs } from "./lib/downloads.mjs";
 
 import {
   applyEditorialPolicy,
@@ -215,7 +216,6 @@ function buildText(locale) {
       dailyNav: "Daily",
       weeklyNav: "Weekly",
       searchNav: "Search",
-      slidesNav: "Slides",
       repositoryNav: "Repository",
       langSwitchLabel: "日本語",
       heroEyebrow: "GitHub Pages",
@@ -313,7 +313,6 @@ function buildText(locale) {
       groupedLabel: "Grouped",
       filterTitle: "Filters",
       filterReset: "Clear",
-      slidesAction: "Slides & PDF",
       filterSourceLabel: "Source",
       filterTopicLabel: "Topic",
       filterImportanceLabel: "Importance",
@@ -369,7 +368,6 @@ function buildText(locale) {
     dailyNav: "日次ダイジェスト",
     weeklyNav: "週間ダイジェスト",
     searchNav: "検索",
-    slidesNav: "スライド",
     repositoryNav: "Repository",
     langSwitchLabel: "EN",
     heroEyebrow: "GitHub Pages",
@@ -465,7 +463,6 @@ function buildText(locale) {
     groupedLabel: "分類済み",
     filterTitle: "フィルター",
     filterReset: "クリア",
-    slidesAction: "スライド・PDF",
     filterSourceLabel: "ソース",
     filterTopicLabel: "テーマ",
     filterImportanceLabel: "重要度",
@@ -919,7 +916,7 @@ function renderFilterBar(text, options = {}) {
   }
 
   return `<section class="section-block filter-block ${escapeHtml(extraClass)}" data-filter-root>
-    <div class="section-heading"><h2>${escapeHtml(text.filterTitle)}</h2><span class="filter-actions">${options.slidesHref ? `<a class="filter-slides" href="${escapeHtml(options.slidesHref)}">${escapeHtml(text.slidesAction)}</a>` : ""}<button type="button" class="filter-reset" data-filter-reset>${escapeHtml(text.filterReset)}</button></span></div>
+    <div class="section-heading"><h2>${escapeHtml(text.filterTitle)}</h2><button type="button" class="filter-reset" data-filter-reset>${escapeHtml(text.filterReset)}</button></div>
     <div class="filter-stack">
       ${rows.join("")}
     </div>
@@ -1350,7 +1347,8 @@ function renderHighlightsArchivePage(
 
     ${pager}
 
-    ${renderFilterBar(text, { showSource: true, showTopic: true, showImportance: true, showSort: true, importanceOptions: renderImportanceOptions(pageEvents, locale), showAxisLabels: true, extraClass: "filter-block--compact", slidesHref: links.home.replace(/index\.html$/, "slides.html") })}
+    ${downloadPanelHtml(locale)}
+    ${renderFilterBar(text, { showSource: true, showTopic: true, showImportance: true, showSort: true, importanceOptions: renderImportanceOptions(pageEvents, locale), showAxisLabels: true, extraClass: "filter-block--compact" })}
 
     <section class="section-block" data-pagefind-body>
       ${renderSectionHeading(locale === "ja" ? "ハイライト一覧" : "All highlights", locale === "ja" ? `${visibleCount} / 全${events.length}${text.itemSuffix}` : `${visibleCount} / ${itemCount}`)}
@@ -1528,7 +1526,7 @@ function renderRangePage(digest, locale, text, options) {
 
     ${options.kind === "day" ? renderFutureSection(digest.futureEvents, locale, text) : ""}
 
-  ${renderFilterBar(text, { showSource: true, showTopic: true, showImportance: true, showSort: true, importanceOptions: renderImportanceOptions(displayEvents, locale), showAxisLabels: true, extraClass: "filter-block--compact", slidesHref: options.homeHref.replace(/index\.html$/, "slides.html") })}
+  ${renderFilterBar(text, { showSource: true, showTopic: true, showImportance: true, showSort: true, importanceOptions: renderImportanceOptions(displayEvents, locale), showAxisLabels: true, extraClass: "filter-block--compact" })}
 
     ${
       digest.highlights.length > 0
@@ -1629,7 +1627,9 @@ function renderIndexPage(
       </div>
     </section>
 
-    ${latestHighlights.length > 0 ? renderFilterBar(text, { showSource: latestFilterAxes.showSource, showTopic: false, showAxisLabels: false, extraClass: "filter-block--compact", slidesHref: links.home.replace(/index\.html$/, "slides.html") }) : ""}
+    ${downloadPanelHtml(locale)}
+
+    ${latestHighlights.length > 0 ? renderFilterBar(text, { showSource: latestFilterAxes.showSource, showTopic: false, showAxisLabels: false, extraClass: "filter-block--compact" }) : ""}
 
     <section class="section-block" data-latest-highlights data-count-suffix="${escapeHtml(text.latestHighlightsCountSuffix)}">
       ${renderSectionHeading(
@@ -2107,6 +2107,7 @@ function renderLayout({
     relativePrefix === "."
       ? "./assets/styles.css"
       : `${relativePrefix}/assets/styles.css`;
+  const downloadsSrc = `${relativePrefix}/assets/downloads.js?v=${searchVersion}`;
   const searchHref = homeHref.replace(/index\.html$/, "search.html");
   const pagefindCssHref =
     relativePrefix === "."
@@ -2149,7 +2150,6 @@ function renderLayout({
             <a href="${escapeHtml(homeHref)}">${escapeHtml(text.dailyNav)}</a>
             <a href="${escapeHtml(weeklyHref)}">${escapeHtml(text.weeklyNav)}</a>
             <a href="${escapeHtml(searchHref)}">${escapeHtml(text.searchNav)}</a>
-            <a href="${escapeHtml(searchHref.replace(/search\.html$/, "slides.html"))}">${escapeHtml(text.slidesNav)}</a>
             <a href="https://github.com/aktsmm/vscode-copilot-digest">${escapeHtml(text.repositoryNav)}</a>
             <button class="lang-toggle" type="button" data-href="${escapeHtml(langSwitchHref)}" aria-label="${escapeHtml(locale === "ja" ? "Switch to English" : "日本語に切り替え")}" aria-pressed="${locale === "en" ? "true" : "false"}">
               <span class="lang-toggle-track">
@@ -2193,6 +2193,7 @@ function renderLayout({
         <span class="sr-only" role="status" aria-live="polite" aria-atomic="true" data-share-feedback></span>
       </footer>
     </div>
+    ${body.includes("data-dl-panel") ? `<script src="${downloadsSrc}" defer></script>` : ""}
     <script>
     (function(){
       var archiveBase=new URL('${homeHref}',window.location.href).pathname.replace(/(?:en\\/)?index\\.html$/,'');
@@ -2740,26 +2741,6 @@ h1 { margin: 0 0 16px; font-size: clamp(1.5rem, 2.4vw, 2.2rem); line-height: 1.1
   text-decoration: underline;
 }
 .filter-chip,
-.filter-actions {
-      display: inline-flex;
-      gap: 10px;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-    .filter-slides {
-      display: inline-flex;
-      align-items: center;
-      min-height: 36px;
-      padding: 0 14px;
-      border-radius: 999px;
-      background: #8534f3;
-      color: #fff;
-      font-weight: 700;
-      text-decoration: none;
-    }
-    .filter-slides:hover, .filter-slides:focus-visible {
-      background: #6e2fd0;
-    }
     .filter-reset {
   appearance: none;
   border: 1px solid var(--line);
@@ -3264,7 +3245,7 @@ async function main() {
 
   await fs.writeFile(
     path.join(siteDir, "assets", "styles.css"),
-    stylesCss(),
+    stylesCss() + downloadsCss(),
     "utf8",
   );
   await fs.writeFile(
@@ -3273,6 +3254,11 @@ async function main() {
     "utf8",
   );
   await fs.writeFile(path.join(siteDir, ".nojekyll"), "", "utf8");
+  await fs.mkdir(path.join(siteDir, "assets", "vendor"), { recursive: true });
+  await fs.writeFile(path.join(siteDir, "assets", "downloads.js"), downloadsJs(), "utf8");
+  for (const [from, to] of [["pdf-lib/dist/pdf-lib.min.js", "pdf-lib.min.js"], ["pptxgenjs/dist/pptxgen.bundle.js", "pptxgen.bundle.js"]]) {
+    await fs.copyFile(path.join(workspaceRoot, "node_modules", ...from.split("/")), path.join(siteDir, "assets", "vendor", to));
+  }
   await fs.writeFile(path.join(siteDir, "assets", "search-version.json"), JSON.stringify({ version: searchVersion }));
   await fs.writeFile(path.join(siteDir, "assets", "resource-audit.json"), JSON.stringify(resourceStats(logs.flatMap((log) => log.events), ledger), null, 2));
 

@@ -166,7 +166,7 @@ Pages の主要出力:
 - [data/slides](../data/slides): 1 更新 1 枚のスライド JSON。Copilot cloud agent が専用の PR 系統で追加し、[scripts/lib/slides.mjs](../scripts/lib/slides.mjs) が許可ホスト・内部メモ語・状態の根拠を検証する
 - [scripts/build-slide-pdfs.mjs](../scripts/build-slide-pdfs.mjs): 直近 3 か月のスライドを PDF 化する。最新 1 件は無料サンプル、残りは `PDF_PASSWORD` で暗号化する。Secret やブラウザが無ければ PDF は公開せず、サイトのデプロイは止めない。不正なスライドは 1 件だけ警告して飛ばす
 - [scripts/lib/theme.mjs](../scripts/lib/theme.mjs): GitHub / Copilot の配色と PDF の文言の単一定義。HTML 描画とブラウザ側の結合ページが同じ値を使う
-- `slides.html`: 期間・種類で絞り込み、JSON または結合 PDF（ブラウザ内で復号・結合）をダウンロードする
+- ダウンロードパネル（トップ・ハイライト一覧、[scripts/lib/downloads.mjs](../scripts/lib/downloads.mjs)）: 期間・種類・トピックで絞り込み、JSON / 結合 PDF / PPTX をページ遷移なしでダウンロードする
 
 ## 拡張候補
 

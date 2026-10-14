@@ -14,7 +14,7 @@
 | `api/v1/updates/{id}.json` | 1 件の詳細。`id` は更新キーの SHA-256 先頭 16 桁 |
 | `api/v1/categories/{category}.json` | `github-copilot` / `vs-code` / `github-platform` / `news` の軽量索引 |
 | `slides/{id}.json` | スライド JSON（直近 3 か月） |
-| `data/slides.json` | スライドの一覧と PDF の公開状態（`pdf`、`encrypted`、`pdfCrypto`） |
+| `data/slides.json` | スライドの一覧、PDF の公開状態（`pdf`、`encrypted`、`pdfCrypto`）、サンプル PDF（`sample`） |
 
 - 出力は決定的です。`snapshotAt` はビルド時刻ではなく入力ログ（`generatedAt`）の最新値で、同じ入力から同じ JSON が出ます。
 - `coverage.months[].coverage` は `complete` / `collected_empty` / `partial_failure` です。`complete` 以外は更新が欠けている可能性があり、0 件と同義ではありません。
@@ -43,13 +43,17 @@ npm run pdf -- --ids <id>[,<id>] --out dist-pdf     # 暗号化なしの PDF を
 PDF_PASSWORD=*** npm run build:pdfs                 # デプロイ時と同じ手順（サンプル以外は暗号化）
 ```
 
-## `slides.html`（範囲指定・結合）
+## ダウンロードパネル
 
-期間・種類（GA / Preview / 廃止 / アナウンス / 更新）で絞り込み、更新を選んで次をダウンロードできます。
+トップページとハイライト一覧の「スライドをダウンロード」パネルから、別ページへ移動せずにダウンロードできます。期間（開始・終了・過去30日・過去7日）、種類（GA / Preview / 廃止 / アナウンス / 更新）、トピックで絞り込み、ボタンの件数が絞り込み結果に追従します。
 
-- **選択を JSON で**: パスワード不要。`deck/v1` 形式です。
-- **結合 PDF**: ブラウザ内で各 PDF を取得・復号して結合します。サンプルだけの選択はパスワード不要です。表紙・目次（ページ番号付き）・概要・裏表紙（著作権表示とリポジトリへのリンク）はブラウザが描画して画像ページとして追加します（文字の検索・選択はできません）。結合後の PDF は暗号化されません。最大 50 件です。
-- 一覧は `data/slides.json` から作ります。PDF の公開が無い場合は JSON のみ使えます。CSS / JS は内容 hash 付きの URL で配信し、Pages のキャッシュによる古い版を避けます。
+- **JSON（n）**: 絞り込んだスライドを `deck/v1` 形式で。パスワード不要。
+- **PDF（n）**: ブラウザ内で各 PDF を取得・復号して 1 つに結合します。表紙・目次（ページ番号付き）・概要・裏表紙（著作権表示とリポジトリへのリンク）はブラウザが描画した画像ページです（文字の検索・選択はできません）。結合後の PDF は暗号化されません。最大 50 件。
+- **PPTX（n）**: 同じ範囲を PowerPoint（pptxgenjs で生成）として。スライド JSON は公開のため、パスワードは暗号化 PDF を 1 件復号して確認します。
+- **サンプル PDF**: 最新の 1 件。パスワード不要。サンプルだけの選択ではパスワードを求めません。
+- パスワードは `window.prompt` で尋ね、同じページ内では記憶します。違う場合は「パスワードが違います」と表示します。
+- PDF の公開が無い（Secret 未設定など）場合は、PDF と PPTX のボタンを出さず、JSON だけ使えます。
+- 実装は `scripts/lib/downloads.mjs` で、pdf-lib と pptxgenjs はボタンを押したときだけ読み込みます（`assets/vendor/`）。
 
 ## スライド生成の自動化（専用 PR 系統）
 
@@ -65,4 +69,4 @@ digest 用の `validate-generated-pr` / `auto-merge-generated-pr` / `request-cop
 ## テスト
 
 - `npm test`: データ・API・スライド規則・暗号・workflow の分離を検証します。
-- `npm run test:e2e`: 暗号化 PDF の生成からブラウザでの結合・JSON ダウンロードまでを検証します（ブラウザが無い環境ではスキップ）。
+- `npm run test:e2e`: 暗号化 PDF の生成から、パネルでの絞り込み、JSON / PDF / PPTX のダウンロード、誤ったパスワードの拒否までを検証します（ブラウザが無い環境ではスキップ）。
