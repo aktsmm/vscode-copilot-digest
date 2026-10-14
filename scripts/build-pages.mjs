@@ -43,6 +43,8 @@ const HOME_HIGHLIGHT_LIMIT = 6;
 const HOME_ARCHIVE_LIMIT = 6;
 const HIGHLIGHTS_PAGE_SIZE = 50;
 let archiveDates = new Map();
+// "date#anchor" for every update a daily page actually renders; links to other anchors would dangle.
+let publishedAnchors = new Set();
 let searchVersion = "";
 
 function toDateOnly(value) {
@@ -213,6 +215,7 @@ function buildText(locale) {
       dailyNav: "Daily",
       weeklyNav: "Weekly",
       searchNav: "Search",
+      slidesNav: "Slides",
       repositoryNav: "Repository",
       langSwitchLabel: "日本語",
       heroEyebrow: "GitHub Pages",
@@ -365,6 +368,7 @@ function buildText(locale) {
     dailyNav: "日次ダイジェスト",
     weeklyNav: "週間ダイジェスト",
     searchNav: "検索",
+    slidesNav: "スライド",
     repositoryNav: "Repository",
     langSwitchLabel: "EN",
     heroEyebrow: "GitHub Pages",
@@ -972,7 +976,9 @@ function renderResourceLinks(event, locale) {
   const labels = resourceLabels(locale);
   const resources = event.resources ?? { status: "unresearched", documents: [] };
   const source = httpUrl(resources.source?.url ?? event.url);
-  const date = event.digestDate ?? event.archiveDate ?? archiveDates.get(eventKey(event));
+  const anchor = eventAnchorId(event);
+  const date = [event.digestDate, event.archiveDate, archiveDates.get(eventKey(event))]
+    .find((candidate) => candidate && publishedAnchors.has(`${candidate}#${anchor}`));
   const archive = date ? `${locale === "en" ? "en/" : ""}days/${date}.html#${eventAnchorId(event)}` : null;
   const external = (url, title) => `<a href="${escapeHtml(url)}" target="_blank" rel="noopener">${escapeHtml(title)} <span aria-hidden="true">&#8599;</span></a>`;
   return `<div class="resource-links" data-pagefind-ignore>
@@ -2141,6 +2147,7 @@ function renderLayout({
             <a href="${escapeHtml(homeHref)}">${escapeHtml(text.dailyNav)}</a>
             <a href="${escapeHtml(weeklyHref)}">${escapeHtml(text.weeklyNav)}</a>
             <a href="${escapeHtml(searchHref)}">${escapeHtml(text.searchNav)}</a>
+            <a href="${escapeHtml(searchHref.replace(/search\.html$/, "slides.html"))}">${escapeHtml(text.slidesNav)}</a>
             <a href="https://github.com/aktsmm/vscode-copilot-digest">${escapeHtml(text.repositoryNav)}</a>
             <button class="lang-toggle" type="button" data-href="${escapeHtml(langSwitchHref)}" aria-label="${escapeHtml(locale === "ja" ? "Switch to English" : "日本語に切り替え")}" aria-pressed="${locale === "en" ? "true" : "false"}">
               <span class="lang-toggle-track">
@@ -3210,6 +3217,8 @@ async function main() {
   });
   const allHighlights = searchableEvents;
   archiveDates = new Map(searchableEvents.map((event) => [eventKey(event), event.digestDate]));
+  publishedAnchors = new Set(dailyDigests.flatMap((digest) => [...(digest.readerEvents ?? digest.uniqueEvents ?? []), ...(digest.futureEvents ?? []).filter(isReaderEvent)]
+    .map((event) => `${digest.date}#${eventAnchorId(event)}`)));
   const highlightPageCount = Math.max(
     1,
     Math.ceil(allHighlights.length / HIGHLIGHTS_PAGE_SIZE),

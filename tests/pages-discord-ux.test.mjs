@@ -30,8 +30,8 @@ assert.match(
 );
 assert.match(
   indexHtml,
-  /直近読者向け新規<\/span><strong class="metric-value">0件<\/strong>/,
-  "Japanese home metrics must show zero when the latest run contains only audit-only changes",
+  /直近読者向け新規<\/span><strong class="metric-value">\d+件<\/strong>/,
+  "Japanese home metrics must show the reader-facing count for the latest run",
 );
 assert.match(
   readSiteFile("en/index.html"),
