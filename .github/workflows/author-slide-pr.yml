@@ -9,6 +9,9 @@ on:
         description: Also re-author slides that lack the detail blocks (audience etc.)
         type: boolean
         default: false
+      ids:
+        description: Comma-separated update ids to author or refresh (overrides the period)
+        default: ""
       limit:
         description: Maximum number of updates per request
         default: "10"
@@ -46,8 +49,13 @@ jobs:
         env:
           LIMIT: ${{ inputs.limit || '10' }}
           REFRESH: ${{ inputs.refresh && '--refresh' || '' }}
+          IDS: ${{ inputs.ids }}
         run: |
-          node scripts/pending-slides.mjs --months 3 --limit "$LIMIT" $REFRESH > pending.json
+          if [ -n "$IDS" ]; then
+            node scripts/pending-slides.mjs --ids "$IDS" --limit "$LIMIT" $REFRESH > pending.json
+          else
+            node scripts/pending-slides.mjs --months 3 --limit "$LIMIT" $REFRESH > pending.json
+          fi
           count="$(node -e "console.log(JSON.parse(require('fs').readFileSync('pending.json','utf8')).length)")"
           echo "count=$count" >> "$GITHUB_OUTPUT"
 
