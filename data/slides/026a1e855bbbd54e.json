@@ -1,0 +1,73 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "026a1e855bbbd54e",
+  "title": {
+    "ja": "Copilotの利用面とコンピューター操作の解説",
+    "subtitleJa": "アプリ・CLI・GitHub.com・IDEの案内に加え、デスクトップ操作の概念を掲載",
+    "original": "Concepts for GitHub Copilot"
+  },
+  "date": "2026-10-06",
+  "topic": "GitHub Copilot",
+  "status": "preview",
+  "statusEvidence": "Computer use is in public preview and subject to change.",
+  "audience": {
+    "who": "GitHub Copilotを使う開発者と、利用面の機能を把握したい管理者",
+    "change": "利用場所ごとの概要と、CLIやアプリからデスクトップアプリを操作する機能を確認できる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "info",
+    "summary": "利用する環境の機能と、コンピューター操作の権限設定を確認する"
+  },
+  "panels": [
+    {
+      "id": "surfaces",
+      "heading": "利用できる場所",
+      "priority": "core",
+      "items": [
+        "アプリ、CLI、GitHub.com、IDEの各環境での利用方法を案内",
+        "IDEではコード提案、チャット、エージェント機能を利用できる",
+        "GitHub.comでは質問、作業の委任、コードレビュー、自動化を利用できる"
+      ]
+    },
+    {
+      "id": "computer-use",
+      "heading": "デスクトップ操作",
+      "priority": "core",
+      "items": [
+        "macOSとWindowsのローカルセッションで、CLIとアプリからデスクトップアプリを操作できる",
+        "画面の読み取り、クリック、入力、スクロールなどでGUI上の作業を進める",
+        "機能は既定で無効。画面内容や操作結果を確認し、権限を慎重に設定する"
+      ]
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Concepts for GitHub Copilot - GitHub Docs",
+      "url": "https://docs.github.com/en/copilot/concepts"
+    },
+    "documents": [
+      {
+        "title": "GitHub Copilot 画面",
+        "url": "https://docs.github.com/ja/copilot/concepts/copilot-surfaces"
+      },
+      {
+        "title": "GitHub Copilotでのコンピューターの使用について",
+        "url": "https://docs.github.com/ja/copilot/concepts/agents/computer-use"
+      },
+      {
+        "title": "GitHub Copilot アプリ",
+        "url": "https://docs.github.com/ja/copilot/concepts/copilot-surfaces/github-copilot-app"
+      }
+    ]
+  },
+  "evidence": [
+    "https://docs.github.com/en/copilot/concepts",
+    "https://docs.github.com/ja/copilot/concepts/copilot-surfaces",
+    "https://docs.github.com/ja/copilot/concepts/copilot-surfaces/github-copilot-app",
+    "https://docs.github.com/ja/copilot/concepts/agents/computer-use",
+    "https://docs.github.com/en/copilot/concepts/copilot-surfaces/copilot-cli",
+    "https://docs.github.com/en/copilot/concepts/copilot-surfaces/copilot-on-github",
+    "https://docs.github.com/en/copilot/concepts/copilot-surfaces/copilot-in-ides"
+  ]
+}

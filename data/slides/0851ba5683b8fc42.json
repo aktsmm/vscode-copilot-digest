@@ -1,0 +1,61 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "0851ba5683b8fc42",
+  "title": {
+    "ja": "MCPプライベート レジストリ適用の仕様と制限",
+    "subtitleJa": "レジストリによる制御には制限があり、より安全な許可リスト方式が案内されている",
+    "original": "Reference for GitHub Copilot"
+  },
+  "date": "2026-08-07",
+  "topic": "GitHub Copilot",
+  "status": "preview",
+  "statusEvidence": "This feature is in public preview and is not the recommended method for restricting access to MCP servers.",
+  "audience": {
+    "who": "CopilotのMCPサーバー利用を管理する組織・企業の管理者",
+    "change": "プライベート レジストリ適用の対応範囲、仕組み、制約を確認できる",
+    "changeNature": "neutral"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "より強い制御が必要な場合は、管理設定のMCPサーバー許可リストを検討する"
+  },
+  "panels": [
+    {
+      "id": "enforcement",
+      "heading": "適用の仕組み",
+      "priority": "core",
+      "items": [
+        "プライベート レジストリの表示と許可リスト適用に対応するCopilot利用面がある",
+        "ローカルとリモートのMCPサーバーが対象。「レジストリのみ」ではローカルサーバーも登録が必要",
+        "複数の利用権がある場合は、適用範囲・制限の強さ・レジストリの更新時期でポリシーを決定"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "適用はサーバー名またはIDの照合に基づき、設定ファイルの編集で回避される可能性がある",
+        "ユーザーがローカルで上書きできない厳格な適用には対応していない",
+        "より安全な方法として、managed-settings.jsonで許可リストを定義する方法が案内されている"
+      ]
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Reference for GitHub Copilot - GitHub Docs",
+      "url": "https://docs.github.com/en/copilot/reference"
+    },
+    "documents": [
+      {
+        "title": "MCP プライベート レジストリの適用",
+        "url": "https://docs.github.com/ja/copilot/reference/enterprise-administrators/mcp-private-registry-enforcement"
+      }
+    ]
+  },
+  "evidence": [
+    "https://docs.github.com/en/copilot/reference",
+    "https://docs.github.com/ja/copilot/reference/enterprise-administrators/mcp-private-registry-enforcement",
+    "https://docs.github.com/en/copilot/reference/enterprise-administrators/mcp-private-registry-enforcement"
+  ]
+}
