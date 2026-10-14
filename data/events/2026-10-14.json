@@ -1,29 +1,12 @@
 {
   "date": "2026-10-14",
-  "generatedAt": "2026-10-14T00:25:39.729Z",
+  "generatedAt": "2026-10-14T09:54:09.437Z",
   "latestRun": {
-    "generatedAt": "2026-10-14T00:25:39.729Z",
+    "generatedAt": "2026-10-14T09:54:09.437Z",
     "newEventsCount": 0,
     "newEventIds": [],
     "errorCount": 0,
-    "skippedLowInformationEvents": [
-      {
-        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-10-13-gemini-4-argon-in-github-copilot",
-        "sourceId": "github-changelog-copilot",
-        "title": "Gemini 4 Argon in GitHub Copilot",
-        "fallbackMarkers": [
-          "GitHub Copilot 関連の更新。利用状況、管理、開発フローへの影響候補として追跡している。"
-        ]
-      },
-      {
-        "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-10-12-enterprise-managed-settings-enforcement-updates",
-        "sourceId": "github-changelog-copilot",
-        "title": "Enterprise managed settings enforcement updates",
-        "fallbackMarkers": [
-          "GitHub Copilot CLI の更新。ターミナルでの agent 作業、設定、ガバナンス、レビュー補助に関わる変更として、CLI 運用への影響を確認しておきたい。"
-        ]
-      }
-    ]
+    "skippedLowInformationEvents": []
   },
   "events": [],
   "errors": []
