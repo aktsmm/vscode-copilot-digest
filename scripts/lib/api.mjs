@@ -37,6 +37,7 @@ export function buildDigestItems(events) {
       digestDate: event.digestDate,
       publishedDate: dayOf(event.publishedAt),
       topic: classifyEvent(event),
+      sourceKind: event.kind ?? null,
       sourceGroup: sourceGroup(event),
       importance: { score: rankEvent(event), label: localizedImportanceLabel(event, "en") },
       summary: { state: ja ? "generated" : "missing", ja, en },

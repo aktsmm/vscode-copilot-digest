@@ -14,7 +14,9 @@ export function selectPending(items, existingIds, { months = 3, limit = 10, ids 
   const cutoff = new Date(today);
   cutoff.setMonth(cutoff.getMonth() - months);
   const cutoffDate = cutoff.toISOString().slice(0, 10);
+  // Snapshot diffs ("X changed") only say a page changed; a slide needs a real article or release-note section.
   return items
+    .filter((item) => item.sourceKind !== "html_snapshot_change")
     .filter((item) => !existingIds.has(item.id))
     .filter((item) => (ids ? ids.includes(item.id) : item.digestDate >= cutoffDate))
     .sort((a, b) => b.digestDate.localeCompare(a.digestDate) || b.importance.score - a.importance.score || a.id.localeCompare(b.id))
@@ -37,7 +39,7 @@ async function main() {
   const existing = new Set();
   for (const file of slideFiles) {
     const slide = refresh ? JSON.parse(await fs.readFile(path.join(slidesDir, file), "utf8")) : null;
-    if (!refresh || slide.audience) existing.add(file.replace(/\.json$/, ""));
+    if (!refresh || slide.schema === "vscode-copilot-digest/slide/v2") existing.add(file.replace(/\.json$/, ""));
   }
   const ids = option("ids", "")?.split(",").filter(Boolean);
   const pending = selectPending(items, existing, {

@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs/promises";
 import path from "node:path";
 import { buildApiFiles, buildCoverage } from "../scripts/lib/api.mjs";
-import { validateSlide, validateDeck, orderSlides, SLIDE_SCHEMA, DECK_SCHEMA } from "../scripts/lib/slides.mjs";
+import { validateSlide, validateDeck, orderSlides, SLIDE_SCHEMA_V1 as SLIDE_SCHEMA, SLIDE_SCHEMA_V2, DECK_SCHEMA } from "../scripts/lib/slides.mjs";
 import { coverHtml, endHtml, deckHtml, PDF_CSS } from "../scripts/lib/slide-html.mjs";
 import { newCryptoInfo, deriveKey, encryptPdf, decryptPdf } from "../scripts/lib/pdf-crypto.mjs";
 import { retentionStart } from "../scripts/build-slide-pdfs.mjs";
@@ -52,6 +52,23 @@ assert.ok(validateSlide({ ...rich, audience: { who: "abc", change: "変更" } })
 assert.ok(validateSlide({ ...rich, timeline: [] }).some((m) => m.includes("timeline")));
 assert.ok(validateSlide({ ...rich, action: "要確認です" }).some((m) => m.includes("forbidden phrase")));
 assert.ok(deckHtml({ ...deck, slides: [rich] }).includes("誰に関係するか"));
+// v2 slides: the full layout with required audience, action, panels and a titled source.
+const v2 = JSON.parse(await fs.readFile(path.join(process.cwd(), "data", "slides", "8241d56116d90ff3.json"), "utf8"));
+assert.equal(v2.schema, SLIDE_SCHEMA_V2);
+assert.deepEqual(validateSlide(v2), []);
+const bad = (patch, needle) => assert.ok(validateSlide({ ...v2, ...patch }).some((m) => m.includes(needle)), needle);
+bad({ references: { ...v2.references, source: "https://github.blog/changelog/x" } }, "references.source");
+bad({ references: { ...v2.references, source: { url: v2.references.source.url, title: "GitHub Changelog" } } }, "references.source");
+bad({ audience: undefined }, "audience");
+bad({ action: { required: "maybe", summary: "確認する" } }, "action");
+bad({ panels: [] }, "panels");
+bad({ panels: [{ ...v2.panels[0], priority: "detail" }] }, "core");
+bad({ title: { ...v2.title, original: undefined } }, "title.original");
+bad({ glossary: [{ term: "x", type: "unknown", oneLine: "説明です" }] }, "glossary");
+const v2Html = deckHtml({ ...deck, slides: [v2] });
+for (const label of ["誰に関係するか", "用語ミニ解説", "発表", "詳細", v2.references.source.title, v2.references.documents[0].title]) assert.ok(v2Html.includes(label), label);
+assert.ok(!v2Html.includes(">原文<"), "links are labelled with page titles, not a bare 原文");
+
 // PDF wording and colors: repo wording, GitHub / Copilot palette, no Azure leftovers.
 const html = deckHtml(deck);
 assert.ok(coverHtml(deck).includes("GitHub Copilot &amp; VS Code アップデート情報"));
