@@ -158,6 +158,16 @@ Pages の主要出力:
 - `QIITA_ACCESS_TOKEN` が設定されていること
 - draft 側の frontmatter に `title` と `tags` があること
 
+## API・スライド・PDF レイヤー
+
+収集・補完・Pages 生成と同じデータを正本として、読み取り専用 API とスライド / PDF を追加で公開します。詳細は [api.md](api.md) と [slide-schema.md](slide-schema.md) を参照してください。
+
+- [scripts/lib/api.mjs](../scripts/lib/api.mjs): 公開済み更新から静的 JSON API（`site/api/v1/`）を決定的に生成する。収集状態（`coverage`）と、更新ごとの要約・資料の状態は別の概念として扱い、欠けのある月を 0 件と混同しない。`snapshotAt` は入力ログの `generatedAt` 由来で、ビルド時刻を使わない
+- [data/slides](../data/slides): 1 更新 1 枚のスライド JSON。Copilot cloud agent が専用の PR 系統で追加し、[scripts/lib/slides.mjs](../scripts/lib/slides.mjs) が許可ホスト・内部メモ語・状態の根拠を検証する
+- [scripts/build-slide-pdfs.mjs](../scripts/build-slide-pdfs.mjs): 直近 3 か月のスライドを PDF 化する。最新 1 件は無料サンプル、残りは `PDF_PASSWORD` で暗号化する。Secret やブラウザが無ければ PDF は公開せず、サイトのデプロイは止めない。不正なスライドは 1 件だけ警告して飛ばす
+- [scripts/lib/theme.mjs](../scripts/lib/theme.mjs): GitHub / Copilot の配色と PDF の文言の単一定義。HTML 描画とブラウザ側の結合ページが同じ値を使う
+- `slides.html`: 期間・種類で絞り込み、JSON または結合 PDF（ブラウザ内で復号・結合）をダウンロードする
+
 ## 拡張候補
 
 - GitHub Community Discussions の取り込み

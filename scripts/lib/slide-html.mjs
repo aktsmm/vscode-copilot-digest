@@ -1,17 +1,20 @@
 import { DECK_TEXT, GITHUB_PALETTE as P, STATUS_COLORS } from "./theme.mjs";
+import { STATUS_LABELS } from "./slides.mjs";
 
 const esc = (v) => String(v ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
+
+export const FS_STEPS = [30, 28, 26, 24, 22, 20, 18, 16, 14];
 
 export const PDF_CSS = `
 @page{size:1280px 720px;margin:0}
 html,body{margin:0;background:${P.canvas};font-family:"Noto Sans CJK JP","Noto Sans JP","Yu Gothic UI","Meiryo","Segoe UI",sans-serif;color:${P.fg};-webkit-print-color-adjust:exact;print-color-adjust:exact}
 .page{width:1280px;height:720px;box-sizing:border-box;page-break-after:always;overflow:hidden;position:relative}
-.slide{padding:28px 44px 18px;display:flex;flex-direction:column;gap:10px}
+.slide{padding:28px 44px 18px;display:flex;flex-direction:column;gap:10px;--fs:24px}
 .slide .t{font-size:30px;font-weight:700;color:${P.dark};line-height:1.25}
 .slide .meta{font-size:14px;color:${P.muted}}
-.badge{display:inline-block;color:#fff;font-weight:700;font-size:18px;padding:2px 18px;border-radius:999px}
-.sum{font-size:20px;line-height:1.5;border-left:6px solid ${P.copilot};background:${P.copilotTint};padding:10px 16px;border-radius:0 8px 8px 0}
-.pts{font-size:18px;line-height:1.55;margin:0;padding-left:24px}
+.badge{display:inline-block;color:#fff;font-weight:700;font-size:18px;padding:2px 18px;border-radius:999px;margin-left:8px}
+.sum{font-size:var(--fs);line-height:1.5;border-left:6px solid ${P.copilot};background:${P.copilotTint};padding:10px 16px;border-radius:0 8px 8px 0}
+.pts{font-size:calc(var(--fs) - 2px);line-height:1.6;margin:0;padding-left:28px}.pts li{margin:6px 0}
 .ft{margin-top:auto;display:flex;justify-content:space-between;gap:12px;font-size:13px;color:${P.muted};border-top:1px solid ${P.border};padding-top:8px}
 .ft a{color:${P.link}}
 .cover,.end{display:flex;flex-direction:column;background:${P.dark};color:${P.onDark}}
@@ -24,6 +27,7 @@ html,body{margin:0;background:${P.canvas};font-family:"Noto Sans CJK JP","Noto S
 .cv-foot{display:flex;justify-content:space-between;padding:16px 96px;background:#010409;color:${P.onDark};font-size:16px}
 .end .cv-body{align-items:center;background:linear-gradient(120deg,${P.dark} 0 45%,${P.darkSubtle} 45%)}
 .end h1{font-size:64px;margin:0 0 12px;color:#fff}.end .sub{font-size:26px;color:${P.copilot};font-weight:600}
+.end .note{position:absolute;left:96px;bottom:84px;font-size:14px;color:${P.onDark}}.end .note a{color:${P.onDark}}
 .plain{padding:50px 70px}.plain h2{font-size:34px;color:${P.dark};margin:0 0 18px;border-bottom:3px solid ${P.copilot};padding-bottom:6px}
 .toc{font-size:20px;line-height:1.9}.toc .n{display:inline-block;width:44px;color:${P.copilot};font-weight:700}
 `;
@@ -38,18 +42,35 @@ export function tocHtml(deck) {
 }
 
 export function endHtml() {
-  return `<section class="page end"><div class="cv-bar"></div><div class="cv-body"><h1>${esc(DECK_TEXT.endTitle)}</h1><div class="sub">${esc(DECK_TEXT.title)}</div></div><div class="cv-foot"><span>${esc(DECK_TEXT.creator)}</span><span>${esc(DECK_TEXT.source)}</span></div></section>`;
+  return `<section class="page end"><div class="cv-bar"></div><div class="cv-body"><h1>${esc(DECK_TEXT.endTitle)}</h1><div class="sub">${esc(DECK_TEXT.title)}</div></div><div class="note">${esc(DECK_TEXT.automationNote)}<br><a href="${esc(DECK_TEXT.repoUrl)}">${esc(DECK_TEXT.repoUrl)}</a></div><div class="cv-foot"><span>${esc(DECK_TEXT.copyright)}</span><span>${esc(DECK_TEXT.source)}</span></div></section>`;
 }
 
-export function slideHtml(s) {
+export function slideHtml(s, { fs = FS_STEPS[0] } = {}) {
   const docs = (s.references.documents ?? []).map((d) => `<a href="${esc(d.url)}">${esc(d.title)}</a>`).join(" / ");
-  return `<section class="page slide" data-id="${esc(s.id)}"><div class="meta">${esc(s.date)} ・ ${esc(s.topic)} ${s.status === "unknown" ? "" : `<span class="badge" style="background:${STATUS_COLORS[s.status] ?? STATUS_COLORS.unknown}">${esc(s.status)}</span>`}</div><div class="t">${esc(s.title.ja)}</div><div class="sum">${esc(s.summary)}</div><ul class="pts">${s.points.map((p) => `<li>${esc(p)}</li>`).join("")}</ul><div class="ft"><div><a href="${esc(s.references.source)}">原文</a>${docs ? ` ／ ${docs}` : ""}</div><div>${esc(DECK_TEXT.creator)}</div></div></section>`;
+  const badge = s.status === "unknown" ? "" : `<span class="badge" style="background:${STATUS_COLORS[s.status] ?? STATUS_COLORS.unknown}">${esc(STATUS_LABELS[s.status] ?? s.status)}</span>`;
+  return `<section class="page slide" data-id="${esc(s.id)}" style="--fs:${fs}px"><div class="meta">${esc(s.date)} ・ ${esc(s.topic)}${badge}</div><div class="t">${esc(s.title.ja)}</div><div class="sum">${esc(s.summary)}</div><ul class="pts">${s.points.map((p) => `<li>${esc(p)}</li>`).join("")}</ul><div class="ft"><div><a href="${esc(s.references.source)}">原文</a>${docs ? ` ／ ${docs}` : ""}</div><div>${esc(DECK_TEXT.creator)}</div></div></section>`;
 }
 
-export function slideDocHtml(slide) {
-  return `<!doctype html><html lang="ja"><head><meta charset="utf-8"><title>${esc(slide.title.ja)}</title><style>${PDF_CSS}</style></head><body>${slideHtml(slide)}</body></html>`;
+export function slideDocHtml(slide, options) {
+  return `<!doctype html><html lang="ja"><head><meta charset="utf-8"><title>${esc(slide.title.ja)}</title><style>${PDF_CSS}</style></head><body>${slideHtml(slide, options)}</body></html>`;
 }
 
 export function deckHtml(deck) {
-  return `<!doctype html><html lang="ja"><head><meta charset="utf-8"><title>${esc(DECK_TEXT.title)}</title><style>${PDF_CSS}</style></head><body>${coverHtml(deck)}${tocHtml(deck)}${deck.slides.map(slideHtml).join("")}${endHtml()}</body></html>`;
+  return `<!doctype html><html lang="ja"><head><meta charset="utf-8"><title>${esc(DECK_TEXT.title)}</title><style>${PDF_CSS}</style></head><body>${coverHtml(deck)}${tocHtml(deck)}${deck.slides.map((s) => slideHtml(s)).join("")}${endHtml()}</body></html>`;
+}
+
+// Largest font step where the slide content fits in the 1280x720 page; null when even the smallest overflows.
+export async function fitFontSize(page, slide) {
+  for (const fs of FS_STEPS) {
+    await page.setContent(slideDocHtml(slide, { fs }), { waitUntil: "load" });
+    await page.evaluate(() => document.fonts.ready);
+    const overflow = await page.evaluate(() => {
+      const s = document.querySelector(".slide");
+      const ft = s.querySelector(".ft").getBoundingClientRect();
+      const sum = s.querySelector(".pts").getBoundingClientRect();
+      return Math.max(s.scrollHeight - s.clientHeight, sum.bottom - ft.top);
+    });
+    if (overflow <= 0) return fs;
+  }
+  return null;
 }

@@ -2,9 +2,10 @@ import assert from "node:assert/strict";
 import fs from "node:fs/promises";
 import path from "node:path";
 import { buildApiFiles, buildCoverage } from "../scripts/lib/api.mjs";
-import { validateSlide, validateDeck, SLIDE_SCHEMA } from "../scripts/lib/slides.mjs";
+import { validateSlide, validateDeck, orderSlides, SLIDE_SCHEMA, DECK_SCHEMA } from "../scripts/lib/slides.mjs";
 import { coverHtml, endHtml, deckHtml, PDF_CSS } from "../scripts/lib/slide-html.mjs";
-import { encryptPdf, decryptPdf } from "../scripts/lib/pdf-crypto.mjs";
+import { newCryptoInfo, deriveKey, encryptPdf, decryptPdf } from "../scripts/lib/pdf-crypto.mjs";
+import { retentionStart } from "../scripts/build-slide-pdfs.mjs";
 import { FORBIDDEN_AZURE_TOKENS, GITHUB_PALETTE } from "../scripts/lib/theme.mjs";
 
 const event = {
@@ -40,7 +41,7 @@ assert.deepEqual(validateSlide(slide), []);
 assert.ok(validateSlide({ ...slide, status: "ga" }).some((m) => m.includes("statusEvidence")));
 assert.ok(validateSlide({ ...slide, summary: "Azure アップデート情報 を要約" }).some((m) => m.includes("forbidden")));
 assert.ok(validateSlide({ ...slide, evidence: [] }).length > 0);
-const deck = { schema: "vscode-copilot-digest/deck/v1", selection: { snapshotAt: "2026-10-02T10:00:00Z", period: { start: "2026-10-01", end: "2026-10-02" } }, slides: [slide] };
+const deck = { schema: DECK_SCHEMA, selection: { snapshotAt: "2026-10-02T10:00:00Z", period: { start: "2026-10-01", end: "2026-10-02" } }, slides: [slide] };
 assert.deepEqual(validateDeck(deck), []);
 assert.ok(validateDeck({ ...deck, slides: [slide, slide] }).some((m) => m.includes("duplicate")));
 
@@ -51,14 +52,29 @@ assert.ok(endHtml().includes("以上"));
 for (const token of FORBIDDEN_AZURE_TOKENS) assert.ok(!(html + PDF_CSS).toLowerCase().includes(token.toLowerCase()), `Azure token leaked: ${token}`);
 assert.ok(PDF_CSS.includes(GITHUB_PALETTE.dark) && PDF_CSS.includes(GITHUB_PALETTE.copilot));
 
-// Crypto round trip, wrong password and tamper detection.
+// Crypto: shared salt, one derivation, wrong password and tamper detection.
 const pdf = Buffer.from("%PDF-1.7 test");
-const enc = encryptPdf(pdf, "pw", 1000);
-assert.deepEqual(decryptPdf(enc, "pw", 1000), pdf);
-assert.throws(() => decryptPdf(enc, "bad", 1000));
+const info = newCryptoInfo(1000);
+const key = deriveKey("pw", info);
+const enc = encryptPdf(pdf, key);
+assert.deepEqual(decryptPdf(enc, key), pdf);
+assert.notDeepEqual(encryptPdf(pdf, key), enc);
+assert.throws(() => decryptPdf(enc, deriveKey("bad", info)));
 enc[enc.length - 1] ^= 1;
-assert.throws(() => decryptPdf(enc, "pw", 1000));
+assert.throws(() => decryptPdf(enc, key));
 
+// Retention window is by JST calendar month; the shipped sample deck stays valid.
+assert.equal(retentionStart(3, new Date("2026-10-15T00:00:00Z")), "2026-08-01");
+assert.equal(retentionStart(1, new Date("2026-10-31T16:00:00Z")), "2026-11-01");
+assert.equal(retentionStart(0), "0000-00-00");
+assert.deepEqual(validateDeck(JSON.parse(await fs.readFile(path.join(process.cwd(), "examples", "slide-deck.sample.json"), "utf8"))), []);
+
+// Review rules adopted from the upstream project: hosts, internal wording, headline length, ordering.
+assert.ok(validateSlide({ ...slide, references: { ...slide.references, source: "https://example.com/x" } }).some((m) => m.includes("allowed host")));
+assert.ok(validateSlide({ ...slide, points: ["この内容は要確認です"] }).some((m) => m.includes("forbidden phrase")));
+assert.ok(validateSlide({ ...slide, title: { ja: "あ".repeat(81) } }).some((m) => m.includes("at most 80")));
+assert.deepEqual(orderSlides([{ id: "b", date: "2026-10-01" }, { id: "a", date: "2026-10-02" }, { id: "a2", date: "2026-10-01" }]).map((s) => s.id), ["a", "a2", "b"]);
+assert.ok(endHtml().includes("CC BY-NC-SA 4.0") && endHtml().includes("https://github.com/aktsmm/vscode-copilot-digest"));
 // Built site (if present) exposes the API and no plaintext PDFs.
 const siteApi = path.join(process.cwd(), "site", "api", "v1", "index.json");
 if (await fs.stat(siteApi).then(() => true, () => false)) {
