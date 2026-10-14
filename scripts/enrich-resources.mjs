@@ -20,20 +20,40 @@ async function readJson(file, fallback) {
 export function createPageFetcher({ cache = cacheDir, delay = 200, request = fetch, retryFailed = false } = {}) {
   const pending = new Map();
   let nextRequest = 0;
-  return function getPage(value) {
+  return function getPage(value, { notBefore } = {}) {
     const url = new URL(value);
     url.hash = "";
     const key = url.href;
+    const requiredTime = notBefore == null ? 0 : Date.parse(notBefore);
+    if (!Number.isFinite(requiredTime)) throw new Error(`Invalid source freshness boundary: ${notBefore}`);
+    const freshEnough = (checkedAt) => !requiredTime || Date.parse(checkedAt) >= requiredTime;
     if (!httpUrl(key) || !allowedHosts.has(url.hostname)) {
       throw new Error(`Unsupported resource host: ${key}`);
     }
-    if (pending.has(key)) return pending.get(key);
+    if (pending.has(key)) {
+      const previous = pending.get(key);
+      const refresh = () => {
+        if (pending.get(key) === previous) pending.delete(key);
+        return getPage(value, { notBefore });
+      };
+      return previous.then(
+        (page) => freshEnough(page.checkedAt) ? page : refresh(),
+        (error) => {
+          if (requiredTime && error.resourceCheckedAt && !freshEnough(error.resourceCheckedAt)) return refresh();
+          throw error;
+        },
+      );
+    }
     const result = (async () => {
       const file = path.join(cache, `${createHash("sha256").update(key).digest("hex")}.json`);
       const saved = await readJson(file, null);
-      if (saved?.parserVersion === PARSER_VERSION && !(retryFailed && saved.error) &&
+      if (saved?.parserVersion === PARSER_VERSION && freshEnough(saved.checkedAt) && !(retryFailed && saved.error) &&
           Date.now() - Date.parse(saved.checkedAt) < (saved.error ? 3600000 : 7 * 86400000)) {
-        if (saved.error) throw new Error(saved.error);
+        if (saved.error) {
+          const error = new Error(saved.error);
+          error.resourceCheckedAt = saved.checkedAt;
+          throw error;
+        }
         saved.links = saved.links.map((link) => ({ ...link, url: httpUrl(link.url) }));
         saved.sections = saved.sections.map((section) => ({ ...section,
           links: section.links.map((link) => ({ ...link, url: httpUrl(link.url) })),
@@ -79,7 +99,8 @@ export function createPageFetcher({ cache = cacheDir, delay = 200, request = fet
         await fs.writeFile(file, JSON.stringify(page));
         return page;
       } catch (error) {
-        await fs.writeFile(file, JSON.stringify({ parserVersion: PARSER_VERSION, checkedAt: new Date().toISOString(), error: error.message }));
+        error.resourceCheckedAt = new Date().toISOString();
+        await fs.writeFile(file, JSON.stringify({ parserVersion: PARSER_VERSION, checkedAt: error.resourceCheckedAt, error: error.message }));
         throw error;
       }
     })();
@@ -138,7 +159,7 @@ export async function enrichEvent(event, getPage, catalog = []) {
   const documents = [];
   let source;
   try {
-    let page = await getPage(event.url);
+    let page = await getPage(event.url, { notBefore: event.detectedAt });
     if (event.sourceId === "copilot-whats-new") {
       const heading = event.diffSummary?.headings?.find((value) => /^(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\./.test(value));
       if (heading && !page.sections.some((section) => section.title === heading)) {
@@ -152,15 +173,15 @@ export async function enrichEvent(event, getPage, catalog = []) {
         if (!monthLink) {
           const yearLink = page.links.find((link) => new URL(link.url).pathname === `/changelog/${year}/` &&
             new URL(link.url).searchParams.get("label") === "copilot");
-          if (yearLink) monthLink = findMonth(await getPage(yearLink.url));
+          if (yearLink) monthLink = findMonth(await getPage(yearLink.url, { notBefore: event.detectedAt }));
         }
-        if (monthLink) page = await getPage(monthLink.url);
+        if (monthLink) page = await getPage(monthLink.url, { notBefore: event.detectedAt });
       }
     }
     source = selectSource(event, page);
     if (source.status === "release_pending" || source.status === "article_pending") {
       const article = source.status === "article_pending";
-      const release = await getPage(source.url);
+      const release = await getPage(source.url, { notBefore: event.detectedAt });
       source = { ...selectSource({ ...event, sourceId: "resolved-original",
         kind: article ? "feed_entry" : event.kind, url: source.url }, release), reason: source.reason };
       page = release;
