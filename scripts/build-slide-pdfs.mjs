@@ -3,12 +3,13 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { validateSlide } from "./lib/slides.mjs";
-import { deckHtml } from "./lib/slide-html.mjs";
+import { slideDocHtml } from "./lib/slide-html.mjs";
 import { encryptPdf, PDF_CRYPTO } from "./lib/pdf-crypto.mjs";
+import { slidesPageHtml, slidesUiJs } from "./lib/slides-ui.mjs";
 
 const root = process.cwd();
-const slidesDir = path.join(root, "data", "slides");
-const siteDir = path.join(root, "site");
+const slidesDir = path.resolve(process.env.SLIDES_DIR ?? path.join(root, "data", "slides"));
+const siteDir = path.resolve(process.env.SITE_DIR ?? path.join(root, "site"));
 
 async function readSlides() {
   const names = await fs.readdir(slidesDir).catch((e) => (e.code === "ENOENT" ? [] : Promise.reject(e)));
@@ -26,7 +27,11 @@ async function main() {
   const slides = await readSlides();
   const password = process.env.PDF_PASSWORD;
   await fs.mkdir(path.join(siteDir, "data"), { recursive: true });
-  const manifest = { schema: "vscode-copilot-digest/slides-manifest/v1", pdfCrypto: null, slides: slides.map((s) => ({ id: s.id, date: s.date, pdf: null })) };
+  await fs.mkdir(path.join(siteDir, "assets", "vendor"), { recursive: true });
+  await fs.writeFile(path.join(siteDir, "slides.html"), slidesPageHtml(), "utf8");
+  await fs.writeFile(path.join(siteDir, "assets", "slides-ui.js"), slidesUiJs(), "utf8");
+  await fs.copyFile(path.join(root, "node_modules", "pdf-lib", "dist", "pdf-lib.min.js"), path.join(siteDir, "assets", "vendor", "pdf-lib.min.js"));
+  const manifest = { schema: "vscode-copilot-digest/slides-manifest/v1", pdfCrypto: null, slides: slides.map((s) => ({ id: s.id, date: s.date, topic: s.topic, title: s.title.ja, pdf: null })) };
   const finish = async (message) => {
     await fs.writeFile(path.join(siteDir, "data", "slides.json"), `${JSON.stringify(manifest, null, 2)}\n`, "utf8");
     console.log(message);
@@ -41,13 +46,16 @@ async function main() {
   } catch {
     throw new Error("playwright is required to render PDFs; refusing to publish without it");
   }
-  const browser = await chromium.launch();
+  let browser;
+  for (const options of [{}, { channel: "chrome" }, { channel: "msedge" }]) {
+    try { browser = await chromium.launch(options); break; } catch { /* try the next browser */ }
+  }
+  if (!browser) throw new Error("no Chromium-compatible browser is available; refusing to publish PDFs");
   try {
     await fs.mkdir(path.join(siteDir, "pdf"), { recursive: true });
     for (const slide of slides) {
-      const deck = { schema: "vscode-copilot-digest/deck/v1", selection: { snapshotAt: `${slide.date}T00:00:00Z` }, slides: [slide] };
       const page = await browser.newPage();
-      await page.setContent(deckHtml(deck), { waitUntil: "load" });
+      await page.setContent(slideDocHtml(slide), { waitUntil: "load" });
       const pdf = await page.pdf({ width: "1280px", height: "720px", printBackground: true });
       await page.close();
       await fs.writeFile(path.join(siteDir, "pdf", `${slide.id}.pdf.enc`), encryptPdf(pdf, password));

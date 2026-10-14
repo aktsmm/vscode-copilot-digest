@@ -16,7 +16,7 @@ permissions:
 
 jobs:
   request-review:
-    if: github.event.pull_request.head.repo.full_name == github.repository && (contains(github.event.pull_request.user.login, 'copilot') || contains(github.event.pull_request.title, 'Digest authoring request') || contains(github.event.pull_request.body, 'Generated from data/events/'))
+    if: github.event.pull_request.head.repo.full_name == github.repository && !startsWith(github.event.pull_request.title, 'slides: ') && !startsWith(github.event.pull_request.title, 'Slide authoring request') && !startsWith(github.event.pull_request.title, '[WIP] Slide authoring request') && (contains(github.event.pull_request.user.login, 'copilot') || contains(github.event.pull_request.title, 'Digest authoring request') || contains(github.event.pull_request.body, 'Generated from data/events/'))
     runs-on: ubuntu-latest
 
     steps:

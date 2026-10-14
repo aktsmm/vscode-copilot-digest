@@ -118,6 +118,10 @@ jobs:
               return;
             }
 
+            if (/^(\[WIP\] )?(slides: |Slide authoring request)/.test(pr.title || '')) {
+              core.info(`PR #${pr.number} is a slide PR handled by auto-merge-slide-pr.yml.`);
+              return;
+            }
             if (!labels.has('auto-pr') && !(pr.user?.login || '').includes('copilot')) {
               core.info(`PR #${pr.number} is not marked as a generated PR.`);
               return;

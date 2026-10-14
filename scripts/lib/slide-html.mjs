@@ -46,6 +46,10 @@ export function slideHtml(s) {
   return `<section class="page slide" data-id="${esc(s.id)}"><div class="meta">${esc(s.date)} ・ ${esc(s.topic)} ${s.status === "unknown" ? "" : `<span class="badge" style="background:${STATUS_COLORS[s.status] ?? STATUS_COLORS.unknown}">${esc(s.status)}</span>`}</div><div class="t">${esc(s.title.ja)}</div><div class="sum">${esc(s.summary)}</div><ul class="pts">${s.points.map((p) => `<li>${esc(p)}</li>`).join("")}</ul><div class="ft"><div><a href="${esc(s.references.source)}">原文</a>${docs ? ` ／ ${docs}` : ""}</div><div>${esc(DECK_TEXT.creator)}</div></div></section>`;
 }
 
+export function slideDocHtml(slide) {
+  return `<!doctype html><html lang="ja"><head><meta charset="utf-8"><title>${esc(slide.title.ja)}</title><style>${PDF_CSS}</style></head><body>${slideHtml(slide)}</body></html>`;
+}
+
 export function deckHtml(deck) {
   return `<!doctype html><html lang="ja"><head><meta charset="utf-8"><title>${esc(DECK_TEXT.title)}</title><style>${PDF_CSS}</style></head><body>${coverHtml(deck)}${tocHtml(deck)}${deck.slides.map(slideHtml).join("")}${endHtml()}</body></html>`;
 }

@@ -29,7 +29,22 @@
 - `npm run build:pdfs` は `data/slides` を検証し、Playwright で PDF を描画します。
 - Secret `PDF_PASSWORD` がある場合のみ、AES-256-GCM（PBKDF2-SHA256）で暗号化した `pdf/{id}.pdf.enc` を公開します。Pages は全公開のため、Secret が無い場合は PDF を一切出力しません。`data/slides.json` の `pdfCrypto` が `null` なら PDF は公開されていません。
 
-## 未実装
+## スライド生成の自動化（専用 PR 系統）
 
-- スライド JSON を Copilot cloud agent で生成する専用 PR 系統（`data/slides/**` のみ許可する validate / auto-merge）
-- サイト上の範囲指定ボタンとブラウザ内の復号・結合
+既存の digest 用 PR 系統とは分離しています。
+
+1. [author-slide-pr.yml](../.github/workflows/author-slide-pr.yml)（月・木 03:00 JST を目安、手動実行可）が、スライド未作成の直近 3 か月の更新を新しい順に最大 10 件選び、`Slide authoring request` Issue を作成または更新して Copilot cloud agent に割り当てる。
+2. Copilot が `data/slides/{id}.json` だけを追加する PR（`slides: update YYYY-MM-DD`）を作る。
+3. [validate-slide-pr.yml](../.github/workflows/validate-slide-pr.yml) が、変更が `data/slides/{id}.json` の追加・更新だけであること（削除不可）、`npm run validate:slides`、`npm run test:data`、Pages ビルドを検証する。
+4. [auto-merge-slide-pr.yml](../.github/workflows/auto-merge-slide-pr.yml) が、許可パス以外の変更や `needs-human-review` がなければタイトルを正規化して squash merge し、Pages を再デプロイする。許可外の変更があれば `needs-human-review` を付けて停止する。
+
+digest 用の `validate-generated-pr` / `auto-merge-generated-pr` / `request-copilot-review` / `redeploy-pages-after-generated-pr-merge` はスライド PR を処理しません。コード・スキーマ・依存・workflow・暗号化の変更は自動 merge の対象外です。`PDF_PASSWORD` は `deploy-pages.yml` だけが使います（`tests/slide-lane.test.mjs` が検証）。
+
+## ブラウザでの範囲選択・結合
+
+`slides.html`（サイト直下）で期間と更新を選び、パスワードを入力すると、ブラウザ内で各 PDF を復号して結合します。
+
+- 表紙・目次・裏表紙は `scripts/lib/theme.mjs` の文言と GitHub / Copilot 配色でブラウザが描画し、画像ページとして追加します（文字検索・選択はできません）。
+- 結合後の PDF は暗号化されません。最大 50 件です。パスワードが違う場合は「復号に失敗しました」と表示します。
+- PDF が公開されていない場合（Secret 未設定・スライドなし）は、選択 UI を出さず案内だけを表示します。
+- `npm run test:e2e` が、暗号化 PDF の生成からブラウザでの結合までを検証します（ブラウザが無い環境ではスキップ）。
