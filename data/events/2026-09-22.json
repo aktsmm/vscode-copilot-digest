@@ -263,6 +263,57 @@
         "How-tos for GitHub Copilot"
       ],
       "score": 2
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-09-22-faster-c-code-intelligence-with-whole-codebase-indexing",
+      "sourceId": "github-changelog",
+      "sourceName": "github changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-09-22T23:40:21.954Z",
+      "publishedAt": "2026-09-22T00:00:00.000Z",
+      "title": "Faster C++ code intelligence with whole codebase indexing",
+      "url": "https://github.blog/changelog/2026-09-22-faster-c-code-intelligence-with-whole-codebase-indexing/",
+      "summary": "C++ code intelligence in GitHub Copilot CLI is now faster with support for whole codebase indexing. C++ repositories can contain millions of lines of code across deeply connected source files and headers. Without a reusable index, code-intelligence requests may need to rediscover project information as you navigate, making it slower to find a definition, locate references, or understand unfamiliar code.",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-09-22-claude-opus-5-5-is-now-available-in-github-copilot",
+      "sourceId": "github-changelog",
+      "sourceName": "github changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-09-22T23:40:21.954Z",
+      "publishedAt": "2026-09-22T00:00:00.000Z",
+      "title": "Claude Opus 5.5 is now available in GitHub Copilot",
+      "url": "https://github.blog/changelog/2026-09-22-claude-opus-5-5-is-now-available-in-github-copilot/",
+      "summary": "Claude Opus 5.5, Anthropic’s newest Opus model, is now available in GitHub Copilot. You can use it for agentic coding, long-running agentic tasks, and knowledge work. In early testing, Opus 5.5 resolved tasks comparably to Claude Opus 5 while using significantly fewer steps and tokens. It also quickly recovered from errors in multistep tasks. Claude Opus 5.5 watermarks its text outputs. The watermark doesn’t change t",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-09-22-openais-gpt-6-sol-and-gpt-6-luna-now-available",
+      "sourceId": "github-changelog",
+      "sourceName": "github changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-09-22T23:40:21.954Z",
+      "publishedAt": "2026-09-22T00:00:00.000Z",
+      "title": "OpenAI's GPT-6 Sol and GPT-6 Luna now available",
+      "url": "https://github.blog/changelog/2026-09-22-openais-gpt-6-sol-and-gpt-6-luna-now-available/",
+      "summary": "OpenAI’s GPT-6 family is expanding in GitHub Copilot with two additional models: GPT-6 Sol, and GPT-6 Luna. Joining the previously released GPT-6 Astra, these new options let you select the model that best fits your task, whether that’s everyday agentic coding or fast, cost-efficient assistance. These models are billed under usage-based billing. See pricing for GitHub Copilot models and requests for details.",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
     }
   ],
   "errors": []

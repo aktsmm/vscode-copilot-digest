@@ -77,6 +77,57 @@
         "Sep.11 Improvement"
       ],
       "score": 5
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-09-18-copilot-code-review-an-improved-review-experience",
+      "sourceId": "github-changelog",
+      "sourceName": "github changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-09-18T23:24:59.741Z",
+      "publishedAt": "2026-09-18T00:00:00.000Z",
+      "title": "Copilot code review: An improved review experience",
+      "url": "https://github.blog/changelog/2026-09-18-copilot-code-review-an-improved-review-experience/",
+      "summary": "Copilot code review now gives you a clearer view of how a review changes over time, more intelligently auto-resolves its own suggestions, and generates useful commit messages when you accept eligible suggestions in a batch. These updates help you focus on findings that still need attention and make the resulting commits easier to understand. These updates are now generally available. The refreshed overview comment sh",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-09-18-github-copilot-weekly-releases-september-14",
+      "sourceId": "github-changelog",
+      "sourceName": "github changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-09-18T23:24:59.741Z",
+      "publishedAt": "2026-09-18T00:00:00.000Z",
+      "title": "GitHub Copilot weekly releases — September 14",
+      "url": "https://github.blog/changelog/2026-09-18-github-copilot-weekly-releases-september-14/",
+      "summary": "This week, GitHub Copilot adds new model selection options, code review updates, and Sentry integration in the Copilot app. There are also updates for admins, plus new agent features in VS Code. Fix production crashes from Sentry reports. Move from crash report to code fix with the new Sentry canvas in the GitHub Copilot app. Review errors, stack traces, and related context, then work with Copilot to investigate the ",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-09-18-upcoming-deprecation-of-selected-github-copilot-models-in-mid-october",
+      "sourceId": "github-changelog",
+      "sourceName": "github changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-09-18T23:24:59.741Z",
+      "publishedAt": "2026-09-18T00:00:00.000Z",
+      "title": "Upcoming deprecation of selected GitHub Copilot models in mid-October",
+      "url": "https://github.blog/changelog/2026-09-18-upcoming-deprecation-of-selected-github-copilot-models-in-mid-october/",
+      "summary": "We will deprecate the following models across all GitHub Copilot experiences (including Copilot Chat, inline edits, ask and agent modes, and code completions) on October 19th, 2026: Please update your workflows and integrations to use the supported models before this date. Under default model enablement, the suggested alternatives are automatically enabled for Copilot Enterprise and Copilot Business customers unless ",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
     }
   ],
   "errors": []

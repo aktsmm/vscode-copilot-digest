@@ -222,6 +222,23 @@
         "How-tos for GitHub Copilot"
       ],
       "score": 2
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-08-26-enterprise-managed-permissions-for-github-copilot-agent-operations",
+      "sourceId": "github-changelog",
+      "sourceName": "github changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-09-09T23:23:23.092Z",
+      "publishedAt": "2026-09-09T00:00:00.000Z",
+      "title": "Enterprise managed permissions for GitHub Copilot agent operations",
+      "url": "https://github.blog/changelog/2026-09-09-enterprise-managed-permissions-for-github-copilot-agent-operations/",
+      "summary": "If you administer GitHub Copilot Business or GitHub Copilot Enterprise, you can now centrally control which agent operations are blocked, require human approval, or can proceed without a prompt. Managed permissions cover shell commands, file reads and edits, and network domains. This gives you fine-grained guardrails for sensitive operations without disabling agent workflows. Managed restrictions can’t be weakened by",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
     }
   ],
   "errors": []

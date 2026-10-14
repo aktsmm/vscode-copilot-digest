@@ -17,6 +17,24 @@
       }
     ]
   },
-  "events": [],
+  "events": [
+    {
+      "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_134",
+      "sourceId": "vscode-feed",
+      "sourceName": "vscode feed",
+      "kind": "feed_entry",
+      "detectedAt": "2026-08-18T21:44:21.778Z",
+      "publishedAt": "2026-08-18T00:00:00.000Z",
+      "title": "Visual Studio Code 1.134",
+      "url": "https://code.visualstudio.com/updates/v1_134",
+      "summary": "Welcome to the 1.134 release of Visual Studio Code. This release helps you work across windows, organize related chats side by side, and navigate long conversations faster. Side-by-side chats: Arrange related chats and subagent chats in groups for easier comparison.",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
+    }
+  ],
   "errors": []
 }

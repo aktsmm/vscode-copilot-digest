@@ -81,6 +81,40 @@
         "Sep.01 Release"
       ],
       "score": 3
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-09-04-github-copilot-weekly-releases-august-31",
+      "sourceId": "github-changelog",
+      "sourceName": "github changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-09-04T23:07:11.071Z",
+      "publishedAt": "2026-09-04T00:00:00.000Z",
+      "title": "GitHub Copilot weekly releases — August 31",
+      "url": "https://github.blog/changelog/2026-09-04-github-copilot-weekly-releases-august-31/",
+      "summary": "This week, GitHub Copilot expands model choice and content protections, while VS Code adds new ways to manage agent sessions and get pull requests merge-ready. For more information, see our list of all supported models.",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-09-04-gpt-6-astra-is-generally-available-in-github-copilot",
+      "sourceId": "github-changelog",
+      "sourceName": "github changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-09-04T23:07:11.071Z",
+      "publishedAt": "2026-09-04T00:00:00.000Z",
+      "title": "GPT-6 Astra is generally available in GitHub Copilot",
+      "url": "https://github.blog/changelog/2026-09-04-gpt-6-astra-is-generally-available-in-github-copilot/",
+      "summary": "GPT-6 Astra from OpenAI is now available in GitHub Copilot. OpenAI’s latest general-purpose model, GPT-6 Astra, is designed for long-horizon, autonomous coding and agentic tasks. In our internal testing, GPT-6 Astra stood out for how it works, not just what it produces: it plans and validates as it goes, batches diagnosis with verification, and independently confirms its results before declaring a task done. That tra",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
     }
   ],
   "errors": []

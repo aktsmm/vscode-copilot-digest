@@ -87,6 +87,23 @@
         "Concepts for GitHub Copilot"
       ],
       "score": 2
+    },
+    {
+      "eventId": "github-copilot-blog:https://github.blog/?p=98939",
+      "sourceId": "github-copilot-blog",
+      "sourceName": "github copilot blog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-09-24T23:55:24.810Z",
+      "publishedAt": "2026-09-24T20:00:00.000Z",
+      "title": "When chat is the wrong UI",
+      "url": "https://github.blog/ai-and-ml/github-copilot/when-chat-is-the-wrong-ui/",
+      "summary": "What is a developer to do when they need something more tangible than a chat box? Enter canvases. Sometimes I remember things that happened last year, but it feels like it was so long ago. Did that really happen to me, or was it something that happened to my dad and he just told me about it when I was a kid?",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
     }
   ],
   "errors": []

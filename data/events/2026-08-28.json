@@ -167,6 +167,57 @@
         "Aug.13 Release"
       ],
       "score": 3
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-08-28-github-copilot-in-visual-studio-august-update-2",
+      "sourceId": "github-changelog",
+      "sourceName": "github changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-08-28T23:09:04.006Z",
+      "publishedAt": "2026-08-28T00:00:00.000Z",
+      "title": "GitHub Copilot in Visual Studio — August update",
+      "url": "https://github.blog/changelog/2026-08-28-github-copilot-in-visual-studio-august-update-2/",
+      "summary": "August 2026 brought more control over how GitHub Copilot reasons, which models you use, how teams share specialized agents, and when you ask for a code review. Here’s what’s new with GitHub Copilot in Visual Studio 2026. Check the Insiders channel for the latest:",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-08-28-github-copilot-weekly-releases-august-24",
+      "sourceId": "github-changelog",
+      "sourceName": "github changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-08-28T23:09:04.006Z",
+      "publishedAt": "2026-08-28T00:00:00.000Z",
+      "title": "GitHub Copilot weekly releases — August 24",
+      "url": "https://github.blog/changelog/2026-08-28-github-copilot-weekly-releases-august-24/",
+      "summary": "This week’s updates give you more control over how Copilot runs, from team sessions in Slack and Teams to customization across the app, CLI, and your IDE. Explore everything that’s new with VS Code 1.135 in the full release notes.",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-08-24-copilot-harness-generally-available-in-copilot-for-jetbrains",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "github changelog copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-08-28T23:09:04.006Z",
+      "publishedAt": "2026-08-24T00:00:00.000Z",
+      "title": "Copilot harness generally available in Copilot for JetBrains",
+      "url": "https://github.blog/changelog/2026-08-24-copilot-harness-generally-available-in-copilot-for-jetbrains/",
+      "summary": "This update brings Copilot harness to generally availability. You also get more stable account, model, and MCP experiences. Copilot harness is now generally available, providing faster feature delivery and better code quality.",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
     }
   ],
   "errors": []

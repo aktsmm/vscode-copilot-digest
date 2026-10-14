@@ -136,6 +136,57 @@
         "Concepts for GitHub Copilot"
       ],
       "score": 2
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-09-03-upcoming-deprecation-of-selected-github-copilot-models",
+      "sourceId": "github-changelog",
+      "sourceName": "github changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-09-03T23:22:36.340Z",
+      "publishedAt": "2026-09-03T00:00:00.000Z",
+      "title": "Upcoming deprecation of selected GitHub Copilot models",
+      "url": "https://github.blog/changelog/2026-09-03-upcoming-deprecation-of-selected-github-copilot-models/",
+      "summary": "We will deprecate the following models across all GitHub Copilot experiences (including Copilot Chat, inline edits, ask and agent modes, and code completions) on October 2nd, 2026: Please update your workflows and integrations to use the supported models before this date. Copilot Enterprise and Copilot Business administrators may need to enable access to the alternative models through their model policies in Copilot ",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-09-03-gemini-3-8-flash-is-now-available-in-github-copilot",
+      "sourceId": "github-changelog",
+      "sourceName": "github changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-09-03T23:22:36.340Z",
+      "publishedAt": "2026-09-03T00:00:00.000Z",
+      "title": "Gemini 3.8 Flash is now available in GitHub Copilot",
+      "url": "https://github.blog/changelog/2026-09-03-gemini-3-8-flash-is-now-available-in-github-copilot/",
+      "summary": "Gemini 3.8 Flash, Google’s latest Flash model, is now available in GitHub Copilot. In our early testing, Gemini 3.8 Flash performed strongly on complex terminal-based coding tasks and demonstrated rigorous validation and persistent recovery from actionable failures.",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-09-03-reopening-copilot-business-and-enterprise-signups",
+      "sourceId": "github-changelog",
+      "sourceName": "github changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-09-03T23:22:36.340Z",
+      "publishedAt": "2026-09-03T00:00:00.000Z",
+      "title": "Reopening Copilot Business and Enterprise signups",
+      "url": "https://github.blog/changelog/2026-09-03-reopening-copilot-business-and-enterprise-signups/",
+      "summary": "We’re gradually reopening sign-ups for Copilot Business and Copilot Enterprise customers paying by credit card or PayPal over the next couple of weeks. If you’ve been waiting to get started with Copilot, select the plan that fits your needs. If your preferred option isn’t available yet, check back soon. To improve availability and reliability of Copilot services, we’re also strengthening account vetting and updating ",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
     }
   ],
   "errors": []

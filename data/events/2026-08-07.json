@@ -197,6 +197,74 @@
         "Reference for GitHub Copilot"
       ],
       "score": 2
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-08-07-copilot-code-review-effort-levels-are-generally-available",
+      "sourceId": "github-changelog",
+      "sourceName": "github changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-08-07T22:02:58.625Z",
+      "publishedAt": "2026-08-07T00:00:00.000Z",
+      "title": "Copilot code review effort levels are generally available",
+      "url": "https://github.blog/changelog/2026-08-07-copilot-code-review-effort-levels-are-generally-available/",
+      "summary": "Lite and Balanced effort levels for GitHub Copilot code review are now generally available. They let you match the depth of a review to the complexity and risk of a pull request. Not every pull request needs the same scrutiny. Documentation updates and small fixes may only need focused feedback, while complex logic, security-sensitive code, and cross-service changes benefit from deeper analysis. You can now:",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-08-07-copilot-usage-metrics-api-adds-agent-app-activity",
+      "sourceId": "github-changelog",
+      "sourceName": "github changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-08-07T22:02:58.625Z",
+      "publishedAt": "2026-08-07T00:00:00.000Z",
+      "title": "Copilot usage metrics API adds agent app activity",
+      "url": "https://github.blog/changelog/2026-08-07-copilot-usage-metrics-api-adds-agent-app-activity/",
+      "summary": "Since agent apps arrived on GitHub, teams have been able to run agents from partners like Claude and Codex directly in their GitHub workflows. The Copilot usage metrics API now reports that activity, broken out by individual agent. The usage metrics API does this in the enterprise, organization, enterprise-user, and organization-user 1-day and 28-day reports. A new optional totals_by_3rd_party_agent array contains on",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-08-07-github-code-quality-no-longer-adds-copilot-as-a-reviewer",
+      "sourceId": "github-changelog",
+      "sourceName": "github changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-08-07T22:02:58.625Z",
+      "publishedAt": "2026-08-07T00:00:00.000Z",
+      "title": "GitHub Code Quality no longer adds Copilot as a reviewer",
+      "url": "https://github.blog/changelog/2026-08-07-github-code-quality-no-longer-adds-copilot-as-a-reviewer/",
+      "summary": "Enabling GitHub Code Quality on a repository no longer creates a ruleset that automatically requests a code review from GitHub Copilot on your pull requests. In repositories that already have that ruleset, we’ve turned off the settings we enabled. When Code Quality became generally available on July 20, 2026, enabling it created a repository ruleset named Code Quality Copilot review for default branch that targeted y",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-08-06-mcp-allowlists-in-enterprise-managed-settings",
+      "sourceId": "github-changelog",
+      "sourceName": "github changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-08-07T22:02:58.625Z",
+      "publishedAt": "2026-08-06T00:00:00.000Z",
+      "title": "MCP allowlists in enterprise managed settings",
+      "url": "https://github.blog/changelog/2026-08-06-mcp-allowlists-in-enterprise-managed-settings/",
+      "summary": "Enterprise owners can now centrally control which Model Context Protocol (MCP) servers GitHub Copilot clients are allowed to run by using the new allowedMcpServers and deniedMcpServers keys in enterprise managed settings. Approve the MCP servers your developers depend on and block untrusted or non-compliant ones across your enterprise. This capability is generally available. Add either or both keys to copilot/managed",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
     }
   ],
   "errors": []

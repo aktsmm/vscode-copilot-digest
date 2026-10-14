@@ -101,6 +101,23 @@
         "Using Copilot cloud agent via the API"
       ],
       "score": 2
+    },
+    {
+      "eventId": "github-copilot-blog:https://github.blog/?p=98309",
+      "sourceId": "github-copilot-blog",
+      "sourceName": "github copilot blog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-08-17T21:46:49.196Z",
+      "publishedAt": "2026-08-17T16:00:00.000Z",
+      "title": "How canvases make agentic workflows visible, steerable, and cost-efficient",
+      "url": "https://github.blog/ai-and-ml/github-copilot/how-canvases-make-agentic-workflows-visible-steerable-and-cost-efficient/",
+      "summary": "Chat is great for intent, but agent work gets lost in the scroll. Here is how I use canvases with my agentic workflows—and why your workflow also deserves a canvas. When I was in college, I joined the beta for one of the first versions of AI inline completions in VS Code. It felt like a game changer. Since then, GenAI has fundamentally changed software development: hybrid teams where agents and humans work in tandem,",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
     }
   ],
   "errors": []

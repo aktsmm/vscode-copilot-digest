@@ -100,6 +100,40 @@
         "Model descriptions in the model picker"
       ],
       "score": 2
+    },
+    {
+      "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_136",
+      "sourceId": "vscode-feed",
+      "sourceName": "vscode feed",
+      "kind": "feed_entry",
+      "detectedAt": "2026-08-26T14:11:41.504Z",
+      "publishedAt": "2026-08-26T00:00:00.000Z",
+      "title": "Visual Studio Code 1.136",
+      "url": "https://code.visualstudio.com/updates/v1_136",
+      "summary": "Follow us on LinkedIn, X, Bluesky, Instagram Update 1.136.1: The update addresses these issues.",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
+    },
+    {
+      "eventId": "vscode-feed:https://code.visualstudio.com/blogs/2026/08/26/agent-host-architecture",
+      "sourceId": "vscode-feed",
+      "sourceName": "vscode feed",
+      "kind": "feed_entry",
+      "detectedAt": "2026-08-26T14:11:41.504Z",
+      "publishedAt": "2026-08-26T00:00:00.000Z",
+      "title": "Introducing the Agent Host for persistent, portable agent sessions",
+      "url": "https://code.visualstudio.com/blogs/2026/08/26/agent-host-architecture",
+      "summary": "August 26, 2026 by Rob Lourens, Connor Peet, and Brigit Murtaugh When you assign work to an agent, it should just continue its work, even when you're not actively watching. Whether you switch to another agent session, move between the editor and the Agents window, or connect remotely from another machine or the browser, you should be able to monitor and interact with that session.",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
     }
   ],
   "errors": []

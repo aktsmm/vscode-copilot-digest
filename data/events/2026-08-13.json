@@ -65,6 +65,23 @@
         "Aug.07 Improvement"
       ],
       "score": 3
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-08-13-gemini-3-7-flash-is-now-available-in-github-copilot",
+      "sourceId": "github-changelog",
+      "sourceName": "github changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-08-13T22:08:28.807Z",
+      "publishedAt": "2026-08-13T00:00:00.000Z",
+      "title": "Gemini 3.7 Flash is now available in GitHub Copilot",
+      "url": "https://github.blog/changelog/2026-08-13-gemini-3-7-flash-is-now-available-in-github-copilot/",
+      "summary": "Gemini 3.7 Flash, Google’s latest Flash model, is now rolling out in GitHub Copilot. From our early testing, the model has made improvements in web and app development and agentic coding workflows over it’s previous version. The model also delivers improvements in code quality, final-output presentation, codebase research, and verification during complex coding tasks. This model is billed at provider list pricing und",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
     }
   ],
   "errors": []

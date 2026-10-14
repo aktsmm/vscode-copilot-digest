@@ -260,6 +260,40 @@
         "Model descriptions in the model picker"
       ],
       "score": 2
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-09-16-copilot-budget-increase-requests-are-generally-available",
+      "sourceId": "github-changelog",
+      "sourceName": "github changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-09-16T23:41:52.184Z",
+      "publishedAt": "2026-09-16T00:00:00.000Z",
+      "title": "Copilot budget increase requests are generally available",
+      "url": "https://github.blog/changelog/2026-09-16-copilot-budget-increase-requests-are-generally-available/",
+      "summary": "Previously, when a member used all the Copilot AI credits available to them, they were blocked from Copilot features that consume credits. This release adds a flow for them to request more budget the moment they hit the limit. You can approve, adjust, or deny that request without leaving your settings. Requests automatically route to whichever account pays for the budget. Requests against an organization-owned budget",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
+    },
+    {
+      "eventId": "vscode-feed:https://code.visualstudio.com/blogs/2026/09/16/building-the-github-copilot-inline-suggestions-model-part-one",
+      "sourceId": "vscode-feed",
+      "sourceName": "vscode feed",
+      "kind": "feed_entry",
+      "detectedAt": "2026-09-16T23:41:52.184Z",
+      "publishedAt": "2026-09-16T00:00:00.000Z",
+      "title": "Building the new GitHub Copilot Inline Suggestions Model: Part One",
+      "url": "https://code.visualstudio.com/blogs/2026/09/16/building-the-github-copilot-inline-suggestions-model-part-one",
+      "summary": "September 16, 2026 by Julia Gong, Ben Liggett, and Ulugbek Abdullaev Completion-style ghost text, next edit suggestions near the cursor, and edits farther away were previously powered by separate models. We built one model for all three, and learned that the best results come from training, evaluation, and editor design evolving together.",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
     }
   ],
   "errors": []

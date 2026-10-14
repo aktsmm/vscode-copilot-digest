@@ -178,6 +178,23 @@
         "How-tos for GitHub Copilot"
       ],
       "score": 2
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-08-27-copilot-code-review-resolution-reasons-and-expanded-capabilities",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "github changelog copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-08-27T23:01:38.325Z",
+      "publishedAt": "2026-08-27T00:00:00.000Z",
+      "title": "Copilot code review: Resolution reasons and expanded capabilities",
+      "url": "https://github.blog/changelog/2026-08-27-copilot-code-review-resolution-reasons-and-expanded-capabilities/",
+      "summary": "Copilot code review can now review two types of pull requests it didn’t cover before: Additionally, you can now submit the reason for why you’re resolving a particular Copilot code review comment.",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
     }
   ],
   "errors": []

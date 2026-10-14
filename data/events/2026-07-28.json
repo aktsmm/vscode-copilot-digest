@@ -17,6 +17,24 @@
       }
     ]
   },
-  "events": [],
+  "events": [
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-07-28-grok-4-5-is-now-available-in-github-copilot",
+      "sourceId": "github-changelog",
+      "sourceName": "github changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-07-28T22:33:09.291Z",
+      "publishedAt": "2026-07-28T00:00:00.000Z",
+      "title": "Grok 4.5 is now available in GitHub Copilot",
+      "url": "https://github.blog/changelog/2026-07-28-grok-4-5-is-now-available-in-github-copilot/",
+      "summary": "Grok 4.5, xAI’s latest reasoning model, is now rolling out in GitHub Copilot. It is designed for fast, agentic coding and complex multi-step workflows, with a context window of up to 500,000 tokens, support for text and image inputs, as well as low, medium, and high reasoning effort. In our internal testing, Grok 4.5 showed strong results across terminal-based coding tasks in Visual Studio Code and Copilot CLI. It pe",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
+    }
+  ],
   "errors": []
 }

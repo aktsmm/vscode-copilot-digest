@@ -213,6 +213,74 @@
       ],
       "isFutureDated": false,
       "score": 1
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-07-27-manage-github-copilot-app-access-with-a-dedicated-policy",
+      "sourceId": "github-changelog",
+      "sourceName": "github changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-07-27T22:32:27.498Z",
+      "publishedAt": "2026-07-27T00:00:00.000Z",
+      "title": "Manage GitHub Copilot app access with a dedicated policy",
+      "url": "https://github.blog/changelog/2026-07-27-manage-github-copilot-app-access-with-a-dedicated-policy/",
+      "summary": "The GitHub Copilot app now has its own policy, so you can control who has access to it at the enterprise and organization levels. Until now, access to the Copilot app depended on your GitHub Copilot CLI policy being enabled. From several conversations with customers, we understand that many of you want to manage each client independently. Now the Copilot app and the Copilot CLI each have their own policy, giving you ",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
+    },
+    {
+      "eventId": "github-copilot-blog:https://github.blog/?p=97740",
+      "sourceId": "github-copilot-blog",
+      "sourceName": "github copilot blog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-07-27T22:32:27.498Z",
+      "publishedAt": "2026-07-27T18:00:00.000Z",
+      "title": "The harness is all you need (mostly)",
+      "url": "https://github.blog/ai-and-ml/github-copilot/the-harness-is-all-you-need-mostly/",
+      "summary": "A practical GitHub Copilot workflow for prototyping, planning, implementing, and reviewing software without chasing every new AI tool. If you’re feeling overwhelmed by AI right now, you’re not alone.",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-07-21-enterprise-managed-settings-now-apply-to-the-github-copilot-app",
+      "sourceId": "github-changelog",
+      "sourceName": "github changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-07-27T22:32:27.498Z",
+      "publishedAt": "2026-07-27T00:00:00.000Z",
+      "title": "Enterprise managed settings in the GitHub Copilot app and Copilot cloud agent",
+      "url": "https://github.blog/changelog/2026-07-27-enterprise-managed-settings-now-apply-to-the-github-copilot-app/",
+      "summary": "You can now govern the GitHub Copilot app and Copilot cloud agent with enterprise managed settings, the same centrally managed policies you use to control Copilot across your enterprise. With a managed-settings.json file, enterprise owners define one set of guardrails, such as which plugins and marketplaces developers can use and whether they can bypass approval prompts. Copilot clients automatically enforce these se",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
+    },
+    {
+      "eventId": "github-copilot-blog:https://github.blog/?p=97758",
+      "sourceId": "github-copilot-blog",
+      "sourceName": "github copilot blog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-07-27T22:32:27.498Z",
+      "publishedAt": "2026-07-27T16:00:00.000Z",
+      "title": "GitHub Copilot app for Beginners: Getting started",
+      "url": "https://github.blog/ai-and-ml/github-copilot/github-copilot-app-for-beginners-getting-started/",
+      "summary": "New to the GitHub Copilot app? Learn how to start projects, work with AI agents, explore canvases, and streamline your development workflow. AI coding tools often begin with a chat window. While that works for quick questions or generating code, real software development rarely happens in a straight line. One minute you’re fixing a bug, the next you’re reviewing a pull request, digging into an unfamiliar part of the ",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
     }
   ],
   "errors": []

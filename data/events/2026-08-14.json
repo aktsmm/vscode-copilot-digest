@@ -75,6 +75,57 @@
         "Aug.10 Improvement"
       ],
       "score": 4
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-08-14-grok-4-6-is-now-available-in-github-copilot",
+      "sourceId": "github-changelog",
+      "sourceName": "github changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-08-14T21:46:21.595Z",
+      "publishedAt": "2026-08-14T00:00:00.000Z",
+      "title": "Grok 4.6 is now available in GitHub Copilot",
+      "url": "https://github.blog/changelog/2026-08-14-grok-4-6-is-now-available-in-github-copilot/",
+      "summary": "Grok 4.6, xAI’s latest reasoning model, is now rolling out in GitHub Copilot. It is designed for agentic coding and complex multi-step workflows. In our internal testing, Grok 4.6 showed strong results across terminal-based coding tasks in Visual Studio Code and Copilot CLI. It performed especially well on longer-horizon tasks requiring sustained reasoning and tool use, making it a strong fit for complex coding workf",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
+    },
+    {
+      "eventId": "github-copilot-blog:https://github.blog/?p=98252",
+      "sourceId": "github-copilot-blog",
+      "sourceName": "github copilot blog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-08-14T21:46:21.595Z",
+      "publishedAt": "2026-08-14T16:00:00.000Z",
+      "title": "How to bring your software delivery workflow into GitHub with agent apps",
+      "url": "https://github.blog/ai-and-ml/github-copilot/how-to-bring-your-software-delivery-workflow-into-github-with-agent-apps/",
+      "summary": "See how four GitHub agent apps can help you scope, secure, roll out, and ship a feature across the SDLC–all without leaving GitHub. How many tabs do you have open alongside your pull request?",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-08-13-github-copilot-weekly-releases-august-10",
+      "sourceId": "github-changelog",
+      "sourceName": "github changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-08-14T21:46:21.595Z",
+      "publishedAt": "2026-08-13T00:00:00.000Z",
+      "title": "GitHub Copilot weekly releases — August 10",
+      "url": "https://github.blog/changelog/2026-08-13-github-copilot-weekly-releases-august-10/",
+      "summary": "From new models and portable plugins to smoother agent workflows, this week’s updates make GitHub Copilot more flexible across editors, the command line, and the Copilot app. Explore everything that’s new in the full release notes.",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
     }
   ],
   "errors": []

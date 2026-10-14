@@ -209,6 +209,57 @@
       ],
       "isFutureDated": false,
       "score": 1
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-08-04-retiring-the-copilot-billing-preview-app",
+      "sourceId": "github-changelog",
+      "sourceName": "github changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-08-04T22:33:35.942Z",
+      "publishedAt": "2026-08-04T00:00:00.000Z",
+      "title": "Retiring the Copilot Billing Preview app",
+      "url": "https://github.blog/changelog/2026-08-04-retiring-the-copilot-billing-preview-app/",
+      "summary": "We’ve retired the GitHub Copilot Billing Preview app, and it’s no longer available. You can review and manage your Copilot spend directly in your GitHub billing settings. The app helped you understand your bill during the move to usage-based billing. Your billing settings now give you a more complete view that the app’s underlying reports couldn’t show, including user-level budgets, cost centers, and usage pool alloc",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
+    },
+    {
+      "eventId": "github-copilot-blog:https://github.blog/?p=97698",
+      "sourceId": "github-copilot-blog",
+      "sourceName": "github copilot blog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-08-04T22:33:35.942Z",
+      "publishedAt": "2026-08-04T19:02:34.000Z",
+      "title": "How the GitHub legal team used Copilot CLI to streamline their workflows",
+      "url": "https://github.blog/ai-and-ml/github-copilot/how-the-github-legal-team-used-copilot-cli-to-streamline-their-workflows/",
+      "summary": "Learn how to build tools to simplify how you work—without writing a single line of code. Whether you are just starting out or are not in a technical role at all, you likely already have the skills you need to build your own tools. If you have ever thought “I’m not technical enough to build that,” this post is for you.",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-08-04-upcoming-deprecation-of-github-spark-on-github-com",
+      "sourceId": "github-changelog",
+      "sourceName": "github changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-08-04T22:33:35.942Z",
+      "publishedAt": "2026-08-04T00:00:00.000Z",
+      "title": "Upcoming deprecation of GitHub Spark on github.com",
+      "url": "https://github.blog/changelog/2026-08-04-upcoming-deprecation-of-github-spark-on-github-com/",
+      "summary": "Beginning August 4, 2026, GitHub Spark no longer accepts new users or allows the creation of new apps. Existing users can continue to access GitHub Spark until August 31, 2026 to export apps they’ve already created. Apps you’ve already deployed will continue to work after GitHub Spark is retired. GitHub Spark was created to help people quickly move from an idea to a working application. Since its launch, AI models an",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
     }
   ],
   "errors": []

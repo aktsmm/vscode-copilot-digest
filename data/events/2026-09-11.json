@@ -211,6 +211,74 @@
         "Concepts for GitHub Copilot"
       ],
       "score": 2
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-09-11-add-vs-code-agents-to-copilot-usage-metrics",
+      "sourceId": "github-changelog",
+      "sourceName": "github changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-09-11T23:24:00.222Z",
+      "publishedAt": "2026-09-11T00:00:00.000Z",
+      "title": "Add VS Code Agents to Copilot usage metrics",
+      "url": "https://github.blog/changelog/2026-09-11-add-vs-code-agents-to-copilot-usage-metrics/",
+      "summary": "GitHub Copilot usage metrics reports now include generally available metrics for activity in the dedicated VS Code Agents window, helping you measure adoption and engagement across enterprises and organizations. Aggregate enterprise and organization reports for both 1-day and 28-day periods now include:",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-09-11-auto-resolution-and-analysis-updates-in-copilot-code-review",
+      "sourceId": "github-changelog",
+      "sourceName": "github changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-09-11T23:24:00.222Z",
+      "publishedAt": "2026-09-11T00:00:00.000Z",
+      "title": "Auto-resolution and analysis updates in Copilot code review",
+      "url": "https://github.blog/changelog/2026-09-11-auto-resolution-and-analysis-updates-in-copilot-code-review/",
+      "summary": "Copilot code review now resolves its own comments once you address them and writes smart commit messages for you when you apply its code suggestions. Behind the scenes, Copilot now uses a broader set of shell tools to validate the code it reviews, and an ensemble of agents produce a more thorough review within the Lite effort level. Together, these updates make it easier to focus on the feedback that still matters an",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
+    },
+    {
+      "eventId": "github-copilot-blog:https://github.blog/?p=98799",
+      "sourceId": "github-copilot-blog",
+      "sourceName": "github copilot blog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-09-11T23:24:00.222Z",
+      "publishedAt": "2026-09-11T18:26:10.000Z",
+      "title": "Marketing ops as code: Automating events from planning to follow-up on GitHub",
+      "url": "https://github.blog/ai-and-ml/github-copilot/marketing-ops-as-code-automating-events-from-planning-to-follow-up-on-github/",
+      "summary": "If you can write down how you do your work, you can automate it. Here’s what I did to support GitHub’s APAC marketing team. I run marketing for GitHub in Japan and Korea, and events are the heartbeat of it: a recurring webinar series for enterprise developers, community meetups in Tokyo, invite-only executive sessions in Seoul. What does a developer in this market actually need right now? Which topics are worth an ho",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-09-10-github-copilot-weekly-releases-september-7",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "github changelog copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-09-11T23:24:00.222Z",
+      "publishedAt": "2026-09-10T00:00:00.000Z",
+      "title": "GitHub Copilot weekly releases — September 7",
+      "url": "https://github.blog/changelog/2026-09-10-github-copilot-weekly-releases-september-7/",
+      "summary": "This week, GitHub Copilot introduces Jira integration in Copilot app and adaptive model orchestration with Project HydraFusion in Copilot CLI. We also introduced new agent automation in Visual Studio Code and expanded enterprise controls for Copilot in JetBrains. Turn Jira issues into action. Bring Jira issues into a shared canvas, choose what moves forward, and let Copilot carry the context into investigation, imple",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
     }
   ],
   "errors": []

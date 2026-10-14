@@ -57,6 +57,23 @@
         "Sep.14 Release"
       ],
       "score": 3
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-09-21-grok-4-7-is-now-available-in-github-copilot",
+      "sourceId": "github-changelog",
+      "sourceName": "github changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-09-21T18:51:40.597Z",
+      "publishedAt": "2026-09-21T00:00:00.000Z",
+      "title": "Grok 4.7 is now available in GitHub Copilot",
+      "url": "https://github.blog/changelog/2026-09-21-grok-4-7-is-now-available-in-github-copilot/",
+      "summary": "Grok 4.7, xAI’s latest reasoning model, is now rolling out in GitHub Copilot. Building on Grok 4.6, it is designed for agentic coding and complex, multistep workflows. This model is billed at provider list pricing under usage-based billing. See Models and pricing for GitHub Copilot for details.",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
     }
   ],
   "errors": []

@@ -81,6 +81,40 @@
         "Aug.11 Retired"
       ],
       "score": 3
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-08-21-the-new-github-copilot-experience-in-slack",
+      "sourceId": "github-changelog",
+      "sourceName": "github changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-08-21T21:45:39.030Z",
+      "publishedAt": "2026-08-21T00:00:00.000Z",
+      "title": "The new GitHub Copilot experience in Slack",
+      "url": "https://github.blog/changelog/2026-08-21-the-new-github-copilot-experience-in-slack/",
+      "summary": "The GitHub integration in Slack now brings the agentic capabilities of GitHub Copilot CLI and the GitHub Copilot app into Slack in public preview. You can work with @GitHub to plan changes, investigate problems, and hand off coding tasks from the conversations where your team coordinates work. GitHub is also a launch partner for Slack Code, a new type of channel designed for agents. Bringing Copilot into the flow of ",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-08-21-shared-agentic-work-with-github-copilot-in-microsoft-teams",
+      "sourceId": "github-changelog",
+      "sourceName": "github changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-08-21T21:45:39.030Z",
+      "publishedAt": "2026-08-21T00:00:00.000Z",
+      "title": "Shared agentic work with GitHub Copilot in Microsoft Teams",
+      "url": "https://github.blog/changelog/2026-08-21-shared-agentic-work-with-github-copilot-in-microsoft-teams/",
+      "summary": "Turn a Microsoft Teams discussion into a collaborative agent session everyone can see and help direct. Mention @GitHub in a channel, thread, or direct message to start a GitHub Copilot cloud agent session. Anyone in the conversation can ask questions, add context, and help plan or steer the work. Participants with write access to the repository can trigger Copilot to make changes. When a meeting produces an action it",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
     }
   ],
   "errors": []
