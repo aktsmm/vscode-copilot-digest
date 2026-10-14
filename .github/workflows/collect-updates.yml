@@ -38,6 +38,15 @@ jobs:
       - name: Collect updates
         run: npm run collect
 
+      # Feed articles can be missed (older runs dropped some as "low information"). Re-read them from
+      # their own pages so nothing real is lost; a failure here must not block the normal collect.
+      - name: Restore feed articles the collector missed
+        continue-on-error: true
+        run: |
+          node scripts/backfill-skipped.mjs --coverage
+          npm run render:summaries
+          npm run enrich:resources
+
       - name: Validate collected output
         run: npm run test:data
 
@@ -53,6 +62,10 @@ jobs:
           git add data summaries
           git commit -m "chore: collect daily updates"
           git push
+
+      # Runs after the commit so a gap is reported (failed run) without blocking the data.
+      - name: Report feed coverage gaps
+        run: node scripts/coverage-report.mjs --strict
 
       - name: Redeploy Pages after collect commit
         uses: actions/github-script@v8

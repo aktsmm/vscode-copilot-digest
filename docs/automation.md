@@ -17,7 +17,9 @@
 - [collect-updates.yml](../.github/workflows/collect-updates.yml) は毎日 06:30 / 14:30 / 22:30 JST 目安で実行する。GitHub Actions の schedule は高負荷時に遅延しうる
 - Node.js 22 で `npm ci` と `npm run collect` を実行し、[data/events](../data/events) を毎日更新する。[summaries/daily](../summaries/daily) は公開済み更新または未来日付項目がある日だけ生成する
 - 補完結果と証跡は [data/resources.json](../data/resources.json) に保存する。取得ページの `.cache/resource-pages` は Actions cache で引き継ぎ、新しい検出より古い原文キャッシュは再取得する
-- 収集結果が reader-facing の低情報 fallback になる場合は、collector が保存前に除外し、`latestRun.skippedLowInformationEvents` に根拠を記録する。低情報 guard 自体は残るため、公開カードには定型文を出さない
+- 日本語の要約がまだ無い実在の記事は、捨てずに、原文の抜粋（先頭に「（原文の抜粋）」）付きで載せる。抜粋も無く定型文しか出せないものだけを、collector が保存前に除外し、`latestRun.skippedLowInformationEvents` に記録する（公開カードには定型文を出さない）
+- 日付だけの見出し差分（`Oct.13 Release` など）は内容が無いので、読者向けカードにもスライド候補にも出さない。内容のある差分は「ページに追加された内容」として載せる
+- 収集の後に `node scripts/backfill-skipped.mjs --coverage` が、フィードに出ているのに `data/events` に無い記事（過去に捨てたものを含む）を、記事ページから読み直して戻す。最後に `node scripts/coverage-report.mjs --strict` で漏れを確認し、残っていれば run を失敗させて知らせる（2 週間ごとの点検依頼でも確認する）
 - 変更がなければ commit せず終了する
 - 変更があった場合は `github-actions[bot]` が `data/**` と `summaries/**` を commit / push する
 - collect の最後に [deploy-pages.yml](../.github/workflows/deploy-pages.yml) を dispatch して、push 起点 workflow の非連鎖を補う

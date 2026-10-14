@@ -3,6 +3,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import { selectPending } from "../scripts/pending-slides.mjs";
 import { editorialQuality } from "../scripts/lib/reporting.mjs";
+import { findMissing, normalizeUrl, parseFeed } from "../scripts/coverage-report.mjs";
 
 const workflows = path.join(process.cwd(), ".github", "workflows");
 const read = (name) => fs.readFile(path.join(workflows, name), "utf8");
@@ -22,6 +23,16 @@ assert.deepEqual(selectPending([snap("s1", ["New agent setting"]), snap("s2")], 
 const dated = (additions) => ({ kind: "html_snapshot_change", sourceId: "copilot-whats-new", title: "x", diffSummary: { additions, headings: additions } });
 assert.equal(editorialQuality(dated(["Oct.13 Release", "Oct.13 Improvement"])), "audit-only");
 assert.notEqual(editorialQuality(dated(["Downloads for 1.141.2", "Update 1.141.2: The update addresses these issues."])), "audit-only");
+
+// Coverage: a feed article that is not in the events is reported; trailing slashes do not matter.
+const feedXml = `<rss><channel><item><title><![CDATA[Gemini 4]]></title><link>https://example.test/a/</link><pubDate>Tue, 13 Oct 2026 18:39:56 +0000</pubDate></item><item><title>Old</title><link>https://example.test/b</link><pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate></item></channel></rss>`;
+const feedEntries = parseFeed(feedXml);
+assert.deepEqual(feedEntries.map((e) => e.url), ["https://example.test/a", "https://example.test/b"]);
+const window = { since: Date.parse("2026-10-01"), until: Date.parse("2026-10-15") };
+assert.deepEqual(findMissing(feedEntries, new Set(), window).map((e) => e.title), ["Gemini 4"]);
+assert.equal(findMissing(feedEntries, new Set([normalizeUrl("https://example.test/a/")]), window).length, 0);
+const collectWorkflow = await read("collect-updates.yml");
+assert.ok(collectWorkflow.includes("backfill-skipped.mjs --coverage") && collectWorkflow.includes("coverage-report.mjs --strict"), "collect restores and reports coverage gaps");
 
 // The slide lane stays narrow: only data/slides/{id}.json, no deletions.
 for (const name of ["validate-slide-pr.yml", "auto-merge-slide-pr.yml"]) {

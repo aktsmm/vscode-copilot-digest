@@ -34,6 +34,23 @@
       "isFutureDated": false,
       "score": 3,
       "backfilled": true
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-10-12-client-telemetry-user-attribution-and-configurable-capture",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "github changelog copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-10-12T21:49:11.707Z",
+      "publishedAt": "2026-10-12T00:00:00.000Z",
+      "title": "Client telemetry user attribution and configurable capture",
+      "url": "https://github.blog/changelog/2026-10-12-client-telemetry-user-attribution-and-configurable-capture/",
+      "summary": "Enterprise administrators can now use telemetry in managed settings to attribute GitHub Copilot activity to a user without collecting their prompts, responses, or tool content. The telemetry.capture.identity setting adds three attributes to OpenTelemetry (OTel) data:",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
     }
   ],
   "errors": []

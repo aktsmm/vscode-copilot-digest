@@ -48,6 +48,23 @@
         "Oct.02 Retired"
       ],
       "score": 4
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-10-10-new-controls-and-chat-improvements-in-copilot-for-jetbrains",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "github changelog copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-10-10T17:56:27.970Z",
+      "publishedAt": "2026-10-10T00:00:00.000Z",
+      "title": "New controls and chat improvements in Copilot for JetBrains",
+      "url": "https://github.blog/changelog/2026-10-10-new-controls-and-chat-improvements-in-copilot-for-jetbrains/",
+      "summary": "This update brings more control over default models and MCP server in GitHub Copilot for JetBrains. It also makes diagnostics easier to address, improves chat navigation and account controls, and strengthens reliability across agent sessions, customizations, and worktrees. Enterprise administrators can now use managed settings to choose any available Copilot agent model as the default for new conversations. This give",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
     }
   ],
   "errors": []

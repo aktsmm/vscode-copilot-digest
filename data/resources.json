@@ -21834,6 +21834,569 @@
         "Original article explicit links",
         "Feature-matched official documentation indexes"
       ]
+    },
+    "1440a1e698b1b4206b2dda4761a6e6015ede362391dc5f08e759b64878f71077": {
+      "version": 6,
+      "checkedAt": "2026-10-14T23:12:36.936Z",
+      "inputUrl": "https://code.visualstudio.com/updates/v1_138",
+      "inputTitle": "Visual Studio Code 1.138",
+      "status": "verified",
+      "source": {
+        "url": "https://code.visualstudio.com/updates/v1_138",
+        "status": "verified",
+        "reason": "Fetched original article",
+        "checkedAt": "2026-10-14T23:12:37.900Z",
+        "contentHash": "62ecfce17b6c75d0b11ba75e2480f53e2c951eec5f0d3f1b69596e94b5a21511"
+      },
+      "documents": [
+        {
+          "url": "https://code.visualstudio.com/docs/agents/concepts/agent-host",
+          "title": "Agent Host architecture",
+          "language": "en",
+          "checkedAt": "2026-10-14T23:05:25.118Z",
+          "contentHash": "e442bd916195cfc93f833abb0529f165b7167c5d6f40a01b5fceb7174fff0d4c",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_138",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://code.visualstudio.com/docs/agents/run/automations",
+          "title": "Create and manage agent automations",
+          "language": "en",
+          "checkedAt": "2026-10-14T23:12:39.163Z",
+          "contentHash": "0e7c4ecf38a3d55bfd5a66d12d240971dcbc72d76f57a691143468eb09bfa5c9",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_138",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://code.visualstudio.com/docs/agents/concepts/tools",
+          "title": "Understand tools in AI agents",
+          "language": "en",
+          "checkedAt": "2026-10-14T23:12:40.152Z",
+          "contentHash": "f2a3e252adc8c868f5817452ba45960318e41a6f8a381f685ae683db1a55a2b6",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_138",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "c5fe7121ee958c735907d6a637696f74ba47c52c24d216e9a0ca4f224c1340c0": {
+      "version": 6,
+      "checkedAt": "2026-10-14T23:12:40.205Z",
+      "inputUrl": "https://github.blog/ai-and-ml/generative-ai/migrating-the-github-copilot-runtime-to-rust-using-copilot/",
+      "inputTitle": "Migrating the GitHub Copilot runtime to Rust, using Copilot",
+      "status": "verified",
+      "source": {
+        "url": "https://github.blog/ai-and-ml/generative-ai/migrating-the-github-copilot-runtime-to-rust-using-copilot/",
+        "status": "verified",
+        "reason": "Fetched original article",
+        "checkedAt": "2026-10-14T23:12:40.248Z",
+        "contentHash": "b216c59e3be1f10dbc871eeb06532411f4ea7c2120e72763edaa6bf2de5cb04c"
+      },
+      "documents": [
+        {
+          "url": "https://docs.github.com/en/copilot/how-tos/use-copilot-agents/cloud-agent",
+          "title": "GitHub Copilot cloud agent",
+          "language": "en",
+          "checkedAt": "2026-10-14T23:12:41.030Z",
+          "contentHash": "accbb028dbe4a2afabd00ed30790043fa44bf531731cc6f229f45f2ece43c992",
+          "discoveryUrl": "https://github.blog/ai-and-ml/generative-ai/migrating-the-github-copilot-runtime-to-rust-using-copilot/",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "english_body",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://docs.github.com/ja/copilot/concepts/agents/code-review",
+          "title": "GitHub Copilotによるコードレビューについて",
+          "language": "ja",
+          "checkedAt": "2026-10-14T23:05:39.914Z",
+          "contentHash": "cb25b53139a5190c9760e890895407e176830f70819af270a22a1e1cfdee32bd",
+          "discoveryUrl": "https://github.blog/ai-and-ml/generative-ai/migrating-the-github-copilot-runtime-to-rust-using-copilot/",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "7ef61ed73aa266e83562614abbe788e416d230885ef06d9f59585300ec60b3f2": {
+      "version": 6,
+      "checkedAt": "2026-10-14T23:12:41.574Z",
+      "inputUrl": "https://code.visualstudio.com/updates/v1_139",
+      "inputTitle": "Visual Studio Code 1.139",
+      "status": "verified",
+      "source": {
+        "url": "https://code.visualstudio.com/updates/v1_139",
+        "status": "verified",
+        "reason": "Fetched original article",
+        "checkedAt": "2026-10-14T23:12:41.816Z",
+        "contentHash": "2aa7d6f549641b5ccbcde42e76d0676f23a6c58cc4ef72975a9cc688fa783eee"
+      },
+      "documents": [
+        {
+          "url": "https://code.visualstudio.com/docs/agents/concepts/agent-host",
+          "title": "Agent Host architecture",
+          "language": "en",
+          "checkedAt": "2026-10-14T23:05:25.118Z",
+          "contentHash": "e442bd916195cfc93f833abb0529f165b7167c5d6f40a01b5fceb7174fff0d4c",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_139",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://code.visualstudio.com/docs/agents/run/sessions/manage-sessions#_run-multiple-chats-in-a-session",
+          "title": "Manage agent sessions in VS Code",
+          "language": "en",
+          "checkedAt": "2026-10-14T23:07:05.333Z",
+          "contentHash": "8b9007874d96c5aa6519569cf9bdd78adf467116dd6a70951469f2feb48e55dd",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_139",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "verified",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://code.visualstudio.com/docs/agents/reference/chat-pet",
+          "title": "VS Code pet interactions and reactions",
+          "language": "en",
+          "checkedAt": "2026-10-14T23:12:42.956Z",
+          "contentHash": "e35b580a746d229345615545fceec8f484f6b9fe18279cd72f9a9a5361c95963",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_139",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "1d246562327fb336e02c34f44b63890a44673aedf04eed1787d302a53e8239b1": {
+      "version": 6,
+      "checkedAt": "2026-10-14T23:12:43.023Z",
+      "inputUrl": "https://github.blog/ai-and-ml/github-copilot/github-copilot-app-for-beginners-how-to-build-custom-workflows-with-canvases/",
+      "inputTitle": "GitHub Copilot app for Beginners: How to build custom workflows with canvases",
+      "status": "verified",
+      "source": {
+        "url": "https://github.blog/ai-and-ml/github-copilot/github-copilot-app-for-beginners-how-to-build-custom-workflows-with-canvases/",
+        "status": "verified",
+        "reason": "Fetched original article",
+        "checkedAt": "2026-10-14T23:12:43.875Z",
+        "contentHash": "7620d338ba1b92da601f49c81d03ca0fdafe0cb4b11f07c66b41c9461ff1c57f"
+      },
+      "documents": [
+        {
+          "url": "https://docs.github.com/ja/copilot/how-tos/github-copilot-app/working-with-canvas-extensions",
+          "title": "GitHub Copilot アプリ でのキャンバス拡張機能の操作",
+          "language": "ja",
+          "checkedAt": "2026-10-14T23:06:58.887Z",
+          "contentHash": "24fb6fa8090513a881ee9974dd16f72aba708668b93248b73a85331be1aa4a8e",
+          "discoveryUrl": "https://github.blog/ai-and-ml/github-copilot/github-copilot-app-for-beginners-how-to-build-custom-workflows-with-canvases/",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://docs.github.com/ja/copilot/reference/github-copilot-app-reference/built-in-skills",
+          "title": "GitHub Copilot アプリの組み込みスキル",
+          "language": "ja",
+          "checkedAt": "2026-10-14T23:12:44.710Z",
+          "contentHash": "f3578c7e4f55a98c4d877495e4fdb2db4b4d26556d4eb48ae3cd752e566fcf89",
+          "discoveryUrl": "https://github.blog/ai-and-ml/github-copilot/github-copilot-app-for-beginners-how-to-build-custom-workflows-with-canvases/",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "743abc201cf441a1104bf8968786eb68fc6c3e91018f98a9679f8e348f1713ca": {
+      "version": 6,
+      "checkedAt": "2026-10-14T23:12:44.838Z",
+      "inputUrl": "https://github.blog/ai-and-ml/github-copilot/reviewbench-an-open-benchmark-for-ai-code-review/",
+      "inputTitle": "ReviewBench: An open benchmark for AI code review",
+      "status": "verified",
+      "source": {
+        "url": "https://github.blog/ai-and-ml/github-copilot/reviewbench-an-open-benchmark-for-ai-code-review/",
+        "status": "verified",
+        "reason": "Fetched original article",
+        "checkedAt": "2026-10-14T23:12:44.882Z",
+        "contentHash": "94c31814612ef70da3dcf65c2763cf0fd63948ea6ecbdd99c9fb12c0122c1cd2"
+      },
+      "documents": [
+        {
+          "url": "https://docs.github.com/ja/copilot/how-tos/use-copilot-agents/use-code-review",
+          "title": "GitHub Copilotを使ったコードレビュー",
+          "language": "ja",
+          "checkedAt": "2026-10-14T23:12:46.011Z",
+          "contentHash": "086615ce7a658657415355aff83b809a95e16e8c73fcb1d69996bc3a0d3c1862",
+          "discoveryUrl": "https://github.blog/ai-and-ml/github-copilot/reviewbench-an-open-benchmark-for-ai-code-review/",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "3a116a41f6a77970df196cafa6913a8cc0c85c516f922d7c800e79067755f04b": {
+      "version": 6,
+      "checkedAt": "2026-10-14T23:12:46.142Z",
+      "inputUrl": "https://github.blog/changelog/2026-10-07-claude-haiku-5-5-in-github-copilot/",
+      "inputTitle": "Claude Haiku 5.5 in GitHub Copilot",
+      "status": "verified",
+      "source": {
+        "url": "https://github.blog/changelog/2026-10-07-claude-haiku-5-5-in-github-copilot/",
+        "status": "verified",
+        "reason": "Fetched original article",
+        "checkedAt": "2026-10-14T23:12:46.695Z",
+        "contentHash": "efc1ec28bc98408edb2913261835e619dbb6d4e49501fab46147a351675fae21"
+      },
+      "documents": [
+        {
+          "url": "https://docs.github.com/ja/copilot/reference/copilot-billing/models-and-pricing",
+          "title": "GitHub Copilot のモデルと価格設定",
+          "language": "ja",
+          "checkedAt": "2026-10-14T23:05:16.212Z",
+          "contentHash": "a120ead5fd77d8cd0f0ef3cfeef34df806ba8eb23fcf63f9e93fad5defc7e1a4",
+          "discoveryUrl": "https://github.blog/changelog/2026-10-07-claude-haiku-5-5-in-github-copilot/",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://docs.github.com/ja/copilot/reference/ai-models/supported-models",
+          "title": "GitHub Copilotでサポートされている AI モデル",
+          "language": "ja",
+          "checkedAt": "2026-10-14T23:05:19.019Z",
+          "contentHash": "99966d8397658c7d6048ac4e10a08d27f8ceb8c06bf4d50d9ed98c00cc947306",
+          "discoveryUrl": "https://github.blog/changelog/2026-10-07-claude-haiku-5-5-in-github-copilot/",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "62b9ab9fed289263dad73e0ae37f47f5ff9ee81b4cea22400a98af174e8f3fe7": {
+      "version": 6,
+      "checkedAt": "2026-10-14T23:12:46.747Z",
+      "inputUrl": "https://github.blog/changelog/2026-10-08-copilot-code-review-new-organization-billing-options-and-controls/",
+      "inputTitle": "Copilot code review: New organization billing options and controls",
+      "status": "verified",
+      "source": {
+        "url": "https://github.blog/changelog/2026-10-08-copilot-code-review-new-organization-billing-options-and-controls/",
+        "status": "verified",
+        "reason": "Fetched original article",
+        "checkedAt": "2026-10-14T23:12:47.351Z",
+        "contentHash": "4731a6fb5c6cef5592bfe06511cf5f1fdf0ee85c6a1e2be56a9a08ca8e8dd4a7"
+      },
+      "documents": [
+        {
+          "url": "https://docs.github.com/ja/copilot/concepts/agents/code-review",
+          "title": "GitHub Copilotによるコードレビューについて",
+          "language": "ja",
+          "checkedAt": "2026-10-14T23:05:39.914Z",
+          "contentHash": "cb25b53139a5190c9760e890895407e176830f70819af270a22a1e1cfdee32bd",
+          "discoveryUrl": "https://github.blog/changelog/2026-10-08-copilot-code-review-new-organization-billing-options-and-controls/",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "Localized anchor not found; verified Japanese document body used: #reviews-requested-with-an-external-copilot-license",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "25ecf0a7dfe602faadb46ca5e7d7a210fd10e48476f06addf4960ecba60c6a8c": {
+      "version": 6,
+      "checkedAt": "2026-10-14T23:12:47.403Z",
+      "inputUrl": "https://github.blog/changelog/2026-10-09-github-copilot-weekly-releases-october-5/",
+      "inputTitle": "GitHub Copilot weekly releases — October 5",
+      "status": "verified",
+      "source": {
+        "url": "https://github.blog/changelog/2026-10-09-github-copilot-weekly-releases-october-5/",
+        "status": "verified",
+        "reason": "Fetched original article",
+        "checkedAt": "2026-10-14T23:12:47.965Z",
+        "contentHash": "b78f69261f7fe706cbb8229c735a7e232affb81e37762d0786b7a8b8799e39bc"
+      },
+      "documents": [
+        {
+          "url": "https://docs.github.com/ja/copilot/concepts/security-governance-and-network-settings/about-cloud-and-local-sandboxes",
+          "title": "クラウドサンドボックスとローカルサンドボックスについて GitHub Copilot",
+          "language": "ja",
+          "checkedAt": "2026-10-14T23:06:11.407Z",
+          "contentHash": "813fcdf564e28a6924f2304be0a74ca7ba2e053e4b827eba4baf107a4f7458c2",
+          "discoveryUrl": "https://github.blog/changelog/2026-10-09-github-copilot-weekly-releases-october-5/",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://code.visualstudio.com/updates/v1_141",
+          "title": "Visual Studio Code 1.141",
+          "language": "en",
+          "checkedAt": "2026-10-14T23:07:03.590Z",
+          "contentHash": "7f3d5f2254401f40bd985fd594bc067389c86dc8b482036d47ae8b90611f111e",
+          "discoveryUrl": "https://github.blog/changelog/2026-10-09-github-copilot-weekly-releases-october-5/",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "none",
+          "kind": "release_notes",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "cf5ae750eedb236f73b8fc2694d697936ea5dab0cef133727127d62a0146fdef": {
+      "version": 6,
+      "checkedAt": "2026-10-14T23:12:48.053Z",
+      "inputUrl": "https://github.blog/changelog/2026-10-10-new-controls-and-chat-improvements-in-copilot-for-jetbrains/",
+      "inputTitle": "New controls and chat improvements in Copilot for JetBrains",
+      "status": "verified",
+      "source": {
+        "url": "https://github.blog/changelog/2026-10-10-new-controls-and-chat-improvements-in-copilot-for-jetbrains/",
+        "status": "verified",
+        "reason": "Fetched original article",
+        "checkedAt": "2026-10-14T23:12:48.065Z",
+        "contentHash": "7307f3af7611cd8a9ef09be4c2b21facee94a37826c1d31a4fd7db343c284253"
+      },
+      "documents": [
+        {
+          "url": "https://docs.github.com/ja/copilot/concepts/enterprise/mcp-management",
+          "title": "社内での MCP サーバーの使用状況",
+          "language": "ja",
+          "checkedAt": "2026-10-14T23:06:13.841Z",
+          "contentHash": "e754564dac6e932d09e3633220b74260d751972b724af1fd1655bef0e74123ac",
+          "discoveryUrl": "https://docs.github.com/en/copilot/concepts",
+          "basis": "Matching feature terms in official documentation index",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://docs.github.com/ja/copilot/reference/enterprise-administrators",
+          "title": "エンタープライズ管理者",
+          "language": "ja",
+          "checkedAt": "2026-10-14T23:06:49.236Z",
+          "contentHash": "f5a0029c6f0f911bec2c6304e8282be88872ebdcdae82284c1cd5ebb561ac6ca",
+          "discoveryUrl": "https://docs.github.com/en/copilot/reference",
+          "basis": "Matching feature terms in official documentation index",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://docs.github.com/ja/copilot/reference/enterprise-administrators/enterprise-managed-settings",
+          "title": "エンタープライズ管理設定",
+          "language": "ja",
+          "checkedAt": "2026-10-14T23:05:12.198Z",
+          "contentHash": "e3944acf18836c1ea92575de160593bde442e4d01e82c56e1eb2cd8fe07def28",
+          "discoveryUrl": "https://docs.github.com/en/copilot/reference",
+          "basis": "Matching feature terms in official documentation index",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "20686c6b0b09c7b77c83adb4b313e253e0252fded451ade255012ad35a9b2f88": {
+      "version": 6,
+      "checkedAt": "2026-10-14T23:12:48.173Z",
+      "inputUrl": "https://github.blog/changelog/2026-10-12-client-telemetry-user-attribution-and-configurable-capture/",
+      "inputTitle": "Client telemetry user attribution and configurable capture",
+      "status": "verified",
+      "source": {
+        "url": "https://github.blog/changelog/2026-10-12-client-telemetry-user-attribution-and-configurable-capture/",
+        "status": "verified",
+        "reason": "Fetched original article",
+        "checkedAt": "2026-10-14T23:12:48.279Z",
+        "contentHash": "0df345d843b5feda0c03c3c5845736febafca17047c642a68799a0599192c95d"
+      },
+      "documents": [
+        {
+          "url": "https://docs.github.com/ja/copilot/reference/enterprise-administrators/enterprise-managed-settings",
+          "title": "エンタープライズ管理設定",
+          "language": "ja",
+          "checkedAt": "2026-10-14T23:05:12.198Z",
+          "contentHash": "e3944acf18836c1ea92575de160593bde442e4d01e82c56e1eb2cd8fe07def28",
+          "discoveryUrl": "https://github.blog/changelog/2026-10-12-client-telemetry-user-attribution-and-configurable-capture/",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://code.visualstudio.com/docs/agents/guides/monitoring-agents",
+          "title": "Monitor agent usage with OpenTelemetry",
+          "language": "en",
+          "checkedAt": "2026-10-14T23:12:51.774Z",
+          "contentHash": "7fe9506e8f808230dbef3ac5438f288f291d5c4ff299a1b8b122c681247b5305",
+          "discoveryUrl": "https://github.blog/changelog/2026-10-12-client-telemetry-user-attribution-and-configurable-capture/",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "de6d83551ccbb26a5271f5db78e350b5d5032c8abfafdbe360a308e3fa43f588": {
+      "version": 6,
+      "checkedAt": "2026-10-14T23:12:51.849Z",
+      "inputUrl": "https://github.blog/changelog/2026-10-14-hydrafusion-updates-and-new-max-option/",
+      "inputTitle": "HydraFusion updates and new Max option",
+      "status": "unconfirmed",
+      "source": {
+        "url": "https://github.blog/changelog/2026-10-14-hydrafusion-updates-and-new-max-option/",
+        "status": "verified",
+        "reason": "Fetched original article",
+        "checkedAt": "2026-10-14T23:12:51.864Z",
+        "contentHash": "cc93bc2f376c2c2a81a636953388caa991718c0ae700413616d0b1ad611db34e"
+      },
+      "documents": [],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "506f65dd3703b3070397e0394b9678ee60182cdc2b256735d07a76cb28cc6ba4": {
+      "version": 6,
+      "checkedAt": "2026-10-14T23:12:51.901Z",
+      "inputUrl": "https://code.visualstudio.com/updates/v1_142",
+      "inputTitle": "Visual Studio Code 1.142",
+      "status": "verified",
+      "source": {
+        "url": "https://code.visualstudio.com/updates/v1_142",
+        "status": "verified",
+        "reason": "Fetched original article",
+        "checkedAt": "2026-10-14T23:06:44.199Z",
+        "contentHash": "dbbeffec699e2768f16fe740bc644d423713b7691d83917bdec31cbfd86a4008"
+      },
+      "documents": [
+        {
+          "url": "https://code.visualstudio.com/docs/agents/run/sessions/manage-sessions",
+          "title": "Manage agent sessions in VS Code",
+          "language": "en",
+          "checkedAt": "2026-10-14T23:07:05.333Z",
+          "contentHash": "8b9007874d96c5aa6519569cf9bdd78adf467116dd6a70951469f2feb48e55dd",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_142",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "Original anchor no longer exists; verified document body used: #move-a-chat-to-another-folder-or-worktree",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://code.visualstudio.com/docs/agents/concepts/agent-host",
+          "title": "Agent Host architecture",
+          "language": "en",
+          "checkedAt": "2026-10-14T23:05:25.118Z",
+          "contentHash": "e442bd916195cfc93f833abb0529f165b7167c5d6f40a01b5fceb7174fff0d4c",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_142",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://code.visualstudio.com/docs/agents/run/agent-harnesses",
+          "title": "Choose an agent harness",
+          "language": "en",
+          "checkedAt": "2026-10-14T23:07:04.467Z",
+          "contentHash": "61333e9e2da4f4b8402a1afcb904d30dda708588787a05836656862c22c9d5c9",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_142",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "Original anchor no longer exists; verified document body used: #use-the-copilot-harness",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
     }
   }
 }

@@ -294,6 +294,40 @@
       "isFutureDated": false,
       "score": 3,
       "backfilled": true
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-09-16-copilot-budget-increase-requests-are-generally-available",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "github changelog copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-09-16T23:41:52.184Z",
+      "publishedAt": "2026-09-16T00:00:00.000Z",
+      "title": "Copilot budget increase requests are generally available",
+      "url": "https://github.blog/changelog/2026-09-16-copilot-budget-increase-requests-are-generally-available/",
+      "summary": "Previously, when a member used all the Copilot AI credits available to them, they were blocked from Copilot features that consume credits. This release adds a flow for them to request more budget the moment they hit the limit. You can approve, adjust, or deny that request without leaving your settings. Requests automatically route to whichever account pays for the budget. Requests against an organization-owned budget",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
+    },
+    {
+      "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_138",
+      "sourceId": "vscode-feed",
+      "sourceName": "vscode feed",
+      "kind": "feed_entry",
+      "detectedAt": "2026-09-16T23:41:52.184Z",
+      "publishedAt": "2026-09-16T00:00:00.000Z",
+      "title": "Visual Studio Code 1.138",
+      "url": "https://code.visualstudio.com/updates/v1_138",
+      "summary": "Follow us on LinkedIn, X, Bluesky, Instagram Welcome to the 1.138 release of Visual Studio Code. This release helps agents work in your project's development environment, gives Codex sessions more flexibility, and keeps completed sessions organized.",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
     }
   ],
   "errors": []

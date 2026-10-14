@@ -8,6 +8,24 @@
     "errorCount": 0,
     "skippedLowInformationEvents": []
   },
-  "events": [],
+  "events": [
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-10-09-github-copilot-weekly-releases-october-5",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "github changelog copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-10-09T18:55:19.816Z",
+      "publishedAt": "2026-10-09T00:00:00.000Z",
+      "title": "GitHub Copilot weekly releases — October 5",
+      "url": "https://github.blog/changelog/2026-10-09-github-copilot-weekly-releases-october-5/",
+      "summary": "This week’s updates make Copilot easier to use across accounts and environments, with more control over what agents can access and how you manage their work. The Copilot app now lets you use separate GitHub accounts for your Copilot license and your repositories. For example, use an enterprise-provided Copilot license while accessing repositories through another account.",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
+    }
+  ],
   "errors": []
 }

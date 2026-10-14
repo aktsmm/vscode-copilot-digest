@@ -260,6 +260,23 @@
       "isFutureDated": false,
       "score": 3,
       "backfilled": true
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-08-04-upcoming-deprecation-of-github-spark-on-github-com",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "github changelog copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-08-04T22:33:35.942Z",
+      "publishedAt": "2026-08-04T00:00:00.000Z",
+      "title": "Upcoming deprecation of GitHub Spark on github.com",
+      "url": "https://github.blog/changelog/2026-08-04-upcoming-deprecation-of-github-spark-on-github-com/",
+      "summary": "Beginning August 4, 2026, GitHub Spark no longer accepts new users or allows the creation of new apps. Existing users can continue to access GitHub Spark until August 31, 2026 to export apps they’ve already created. Apps you’ve already deployed will continue to work after GitHub Spark is retired. GitHub Spark was created to help people quickly move from an idea to a working application. Since its launch, AI models an",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
     }
   ],
   "errors": []
