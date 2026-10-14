@@ -1,0 +1,121 @@
+name: Author slides fallback
+
+# Copilot agent authoring depends on a personal token that can expire. When the lane has been
+# quiet, this workflow writes slides itself with GitHub Models using the built-in GITHUB_TOKEN,
+# which never expires. Output goes through the same validator and is committed to main directly.
+on:
+  schedule:
+    - cron: "40 21 * * *" # 06:40 JST as a target time; GitHub may delay it
+  workflow_dispatch:
+    inputs:
+      force:
+        description: Run even if the Copilot lane is active
+        type: boolean
+        default: false
+      limit:
+        description: Maximum number of updates
+        default: "3"
+
+permissions:
+  actions: write
+  contents: write
+  issues: read
+  pull-requests: read
+  models: read
+
+concurrency:
+  group: slides-main-write
+  cancel-in-progress: false
+
+jobs:
+  fallback:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Decide whether the Copilot lane is quiet
+        id: gate
+        uses: actions/github-script@v8
+        env:
+          FORCE: ${{ inputs.force }}
+        with:
+          script: |
+            const { owner, repo } = context.repo;
+            if (process.env.FORCE === 'true') { core.setOutput('run', 'true'); return; }
+            const pulls = await github.paginate(github.rest.pulls.list, { owner, repo, state: 'open', per_page: 100 });
+            const open = pulls.some((p) => /copilot/i.test(p.user?.login || '') &&
+              (/slide authoring|^slides:/i.test(p.title || '') || String(p.body || '').includes('slide-authoring-request') || (p.head?.ref || '').startsWith('copilot/slide-')));
+            if (open) { core.info('A Copilot slide PR is open; leaving it alone.'); core.setOutput('run', 'false'); return; }
+            const commits = await github.rest.repos.listCommits({ owner, repo, path: 'data/slides', per_page: 1 });
+            const last = commits.data[0]?.commit.committer.date;
+            const days = last ? (Date.now() - Date.parse(last)) / 86400000 : 999;
+            core.info(`Last slide commit ${last} (${days.toFixed(1)} days ago).`);
+            core.setOutput('run', days > 6 ? 'true' : 'false');
+
+      - name: Setup Node.js
+        if: steps.gate.outputs.run == 'true'
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        if: steps.gate.outputs.run == 'true'
+        run: npm ci
+
+      - name: Build API data
+        if: steps.gate.outputs.run == 'true'
+        run: npm run build:pages
+
+      - name: Collect updates marked as not authorable
+        if: steps.gate.outputs.run == 'true'
+        id: skip
+        uses: actions/github-script@v8
+        with:
+          script: |
+            const issues = await github.paginate(github.rest.issues.listForRepo, {
+              owner: context.repo.owner, repo: context.repo.repo, state: 'all', labels: 'slide-skip', per_page: 100,
+            });
+            core.setOutput('ids', issues.map((i) => (i.title.match(/Slide skip: ([0-9a-f]{16})/) || [])[1]).filter(Boolean).join(','));
+
+      - name: Author slides with GitHub Models
+        if: steps.gate.outputs.run == 'true'
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          LIMIT: ${{ inputs.limit || '3' }}
+          SKIP: ${{ steps.skip.outputs.ids }}
+        run: node scripts/author-slides-models.mjs --limit "$LIMIT" --skip "$SKIP"
+
+      - name: Validate and commit
+        if: steps.gate.outputs.run == 'true'
+        id: commit
+        run: |
+          if [ -z "$(git status --porcelain data/slides)" ]; then
+            echo "No new slides."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          # Only data/slides may change in this workflow.
+          if [ -n "$(git status --porcelain | grep -v ' data/slides/' || true)" ]; then
+            echo "Unexpected changes outside data/slides" >&2
+            git status --porcelain >&2
+            exit 1
+          fi
+          npm run validate:slides
+          npm run test:data
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/slides
+          git commit -m "slides: fallback authoring with GitHub Models"
+          git pull --rebase origin main
+          git push origin HEAD:main
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Redeploy Pages
+        if: steps.commit.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run deploy-pages.yml --ref main

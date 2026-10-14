@@ -52,4 +52,9 @@ for (const name of ["validate-generated-pr.yml", "auto-merge-generated-pr.yml", 
 }
 const skipped = selectPending([item("x", "2026-10-12"), item("y", "2026-10-12")], new Set(), { skip: ["x"], today: new Date("2026-10-15") });
 assert.deepEqual(skipped.map((i) => i.id), ["y"]);
+// The fallback needs no personal token and writes only data/slides.
+const fallback = await read("author-slide-fallback.yml");
+assert.ok(fallback.includes("models: read") && fallback.includes("github.token") && !fallback.includes("COPILOT_ASSIGN_TOKEN"), "fallback uses the built-in token only");
+assert.ok(fallback.includes("Unexpected changes outside data/slides") && fallback.includes("validate:slides"));
+assert.ok(watchdog.includes("token-health") && watchdog.includes("github-authentication-token-expiration"), "the watchdog warns before the token expires");
 console.log("slide-lane tests passed");

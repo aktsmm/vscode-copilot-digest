@@ -59,6 +59,9 @@
   - 直近の Pages デプロイが失敗していれば再実行し、10 日以上スライドの依頼が動いていなければ再開します。
 - [pipeline-maintenance.yml](../.github/workflows/pipeline-maintenance.yml) は、**2 週間おき**（ISO 週が偶数の月曜、手動実行も可）に点検依頼の Issue を作り、Copilot cloud agent に割り当てます。モデルは指定せず Auto です。直近 14 日の失敗した run、待機中の PR、`needs-human-review` の Issue、スキップ中のスライドを渡し、原因の調査と修正、テストの確認を依頼します。直すものがなければ PR を作らずに Issue を閉じます。
 - 点検 PR（タイトル `maint: YYYY-MM-DD 点検`）は専用の検証（`validate-maintenance-pr.yml`）と自動 merge（`auto-merge-maintenance-pr.yml`）を通ります。変更が `scripts/` `tests/` `docs/` `config/` `data/slides/` の範囲に収まれば自動 merge し、`.github/workflows/` や `package*.json` を含む場合は `needs-human-review` で止めます。digest 用の workflow は、点検 PR を処理しません。
+- **トークンが切れても止まらない仕組み**:
+  - [author-slide-fallback.yml](../.github/workflows/author-slide-fallback.yml)（毎日 06:40 JST が目安）は、Copilot の流れが 6 日以上静かで、開いている Copilot の PR もないときだけ動き、GitHub Models（既定は `openai/gpt-4.1`、`MODELS_MODEL` で変更）でスライドを自分で書きます。Actions 標準の `GITHUB_TOKEN`（`models: read`）だけを使うので、期限切れの個人トークンに依存しません。記事と資料のページを取得して本文を渡し、`validateSlide` が通るまで最大 3 回やり直して、`data/slides/` だけを main に直接 commit し、Pages を再デプロイします（手元の確認は `node scripts/author-slides-models.mjs --limit 1` に `GITHUB_TOKEN` を渡す）。
+  - 見張り役（`slide-watchdog.yml`）の `token-health` ジョブが、`COPILOT_ASSIGN_TOKEN` の有効期限を毎回確認し、無効、または残り 21 日未満なら `token-health` ラベルの Issue を作ります（Actions 標準の token で作るので、個人トークンが死んでいても通知されます）。
 - 使う token は `COPILOT_ASSIGN_TOKEN`（Copilot への割り当てと、Copilot の PR へのコメント）です。期限が切れると、この仕組み全体が止まります。
 
 ## 完全自動ではない部分
