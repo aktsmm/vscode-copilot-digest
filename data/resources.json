@@ -22397,6 +22397,287 @@
         "Original article explicit links",
         "Feature-matched official documentation indexes"
       ]
+    },
+    "72bcc2c4eb7613ffd4382751ad89ce107f00d6ebc83f96d0d1ad6eb87444165f": {
+      "version": 6,
+      "checkedAt": "2026-10-14T23:22:04.724Z",
+      "inputUrl": "https://code.visualstudio.com/updates/v1_142",
+      "inputTitle": "Visual Studio Code 1.142: Copilot harness",
+      "status": "verified",
+      "source": {
+        "url": "https://code.visualstudio.com/updates/v1_142#_copilot-harness",
+        "status": "verified",
+        "reason": "Exact release heading: Copilot harness",
+        "checkedAt": "2026-10-14T23:22:04.768Z",
+        "contentHash": "dbbeffec699e2768f16fe740bc644d423713b7691d83917bdec31cbfd86a4008"
+      },
+      "documents": [
+        {
+          "url": "https://code.visualstudio.com/docs/agents/run/agent-harnesses",
+          "title": "Choose an agent harness",
+          "language": "en",
+          "checkedAt": "2026-10-14T23:22:04.985Z",
+          "contentHash": "61333e9e2da4f4b8402a1afcb904d30dda708588787a05836656862c22c9d5c9",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_142#_copilot-harness",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "Original anchor no longer exists; verified document body used: #use-the-copilot-harness",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://code.visualstudio.com/docs/agents/concepts/agent-host",
+          "title": "Agent Host architecture",
+          "language": "en",
+          "checkedAt": "2026-10-14T23:22:05.186Z",
+          "contentHash": "e442bd916195cfc93f833abb0529f165b7167c5d6f40a01b5fceb7174fff0d4c",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_142#_copilot-harness",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "7bcb9d94fa062f1e652aef3fa36f10c1fe3b17ee063d7ea01337ddbae7988d5d": {
+      "version": 6,
+      "checkedAt": "2026-10-14T23:22:05.224Z",
+      "inputUrl": "https://code.visualstudio.com/updates/v1_142",
+      "inputTitle": "Visual Studio Code 1.142: Canvases (Preview)",
+      "status": "verified",
+      "source": {
+        "url": "https://code.visualstudio.com/updates/v1_142#_canvases-preview",
+        "status": "verified",
+        "reason": "Exact release heading: Canvases (Preview)",
+        "checkedAt": "2026-10-14T23:22:04.768Z",
+        "contentHash": "dbbeffec699e2768f16fe740bc644d423713b7691d83917bdec31cbfd86a4008"
+      },
+      "documents": [
+        {
+          "url": "https://docs.github.com/ja/copilot/how-tos/github-copilot-app/working-with-canvas-extensions",
+          "title": "GitHub Copilot アプリ でのキャンバス拡張機能の操作",
+          "language": "ja",
+          "checkedAt": "2026-10-14T23:22:05.546Z",
+          "contentHash": "24fb6fa8090513a881ee9974dd16f72aba708668b93248b73a85331be1aa4a8e",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_142#_canvases-preview",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://code.visualstudio.com/docs/agents/run/agent-harnesses#_use-canvases-with-the-copilot-harness",
+          "title": "Choose an agent harness",
+          "language": "en",
+          "checkedAt": "2026-10-14T23:22:04.985Z",
+          "contentHash": "61333e9e2da4f4b8402a1afcb904d30dda708588787a05836656862c22c9d5c9",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_142#_canvases-preview",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "verified",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "5db2c8911fdfb89644ae634964a722f713012bf046689ec9ae2389096340bcec": {
+      "version": 6,
+      "checkedAt": "2026-10-14T23:22:05.608Z",
+      "inputUrl": "https://code.visualstudio.com/updates/v1_142",
+      "inputTitle": "Visual Studio Code 1.142: Move chats between folders and worktrees",
+      "status": "verified",
+      "source": {
+        "url": "https://code.visualstudio.com/updates/v1_142#_move-chats-between-folders-and-worktrees",
+        "status": "verified",
+        "reason": "Exact release heading: Move chats between folders and worktrees",
+        "checkedAt": "2026-10-14T23:22:04.768Z",
+        "contentHash": "dbbeffec699e2768f16fe740bc644d423713b7691d83917bdec31cbfd86a4008"
+      },
+      "documents": [
+        {
+          "url": "https://code.visualstudio.com/docs/agents/run/sessions/manage-sessions",
+          "title": "Manage agent sessions in VS Code",
+          "language": "en",
+          "checkedAt": "2026-10-14T23:22:05.760Z",
+          "contentHash": "8b9007874d96c5aa6519569cf9bdd78adf467116dd6a70951469f2feb48e55dd",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_142#_move-chats-between-folders-and-worktrees",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "Original anchor no longer exists; verified document body used: #move-a-chat-to-another-folder-or-worktree",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://code.visualstudio.com/docs/agents/run/agents-window",
+          "title": "Use the Agents window",
+          "language": "en",
+          "checkedAt": "2026-10-14T23:22:05.963Z",
+          "contentHash": "d6e08e3d98a16b095624b105f2de7cd7a1ca0ef8b0f09436a281b2e9ac0573f1",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_142#_move-chats-between-folders-and-worktrees",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "e40e696f0634ddd27d4cb8bcfe4c540bb8083d70a4e7baab0f33aaadc5b205be": {
+      "version": 6,
+      "checkedAt": "2026-10-14T23:22:06.004Z",
+      "inputUrl": "https://code.visualstudio.com/updates/v1_142",
+      "inputTitle": "Visual Studio Code 1.142: Session-scoped layout in the Agents window (Experimental)",
+      "status": "unconfirmed",
+      "source": {
+        "url": "https://code.visualstudio.com/updates/v1_142#_session-scoped-layout-in-the-agents-window-experimental",
+        "status": "verified",
+        "reason": "Exact release heading: Session-scoped layout in the Agents window (Experimental)",
+        "checkedAt": "2026-10-14T23:22:04.768Z",
+        "contentHash": "dbbeffec699e2768f16fe740bc644d423713b7691d83917bdec31cbfd86a4008"
+      },
+      "documents": [],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "946e50af03986f1765ca34f7838ba113496babf28109ebd4e2cf688cb71905f8": {
+      "version": 6,
+      "checkedAt": "2026-10-14T23:22:06.016Z",
+      "inputUrl": "https://github.com/features/copilot/whats-new",
+      "inputTitle": "GitHub Copilot What's New changed",
+      "status": "unconfirmed",
+      "source": {
+        "url": "https://github.blog/changelog/2026-10-14-hydrafusion-updates-and-new-max-option/",
+        "status": "verified",
+        "reason": "Snapshot observation, not a standalone feature: Oct.14 Release; explicit article: HydraFusion updates and new Max option",
+        "checkedAt": "2026-10-14T23:22:06.373Z",
+        "contentHash": "cc93bc2f376c2c2a81a636953388caa991718c0ae700413616d0b1ad611db34e"
+      },
+      "documents": [],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "a5674ed6e4c4b1b76867e0622b5235f5e12d8dc492cd182d2f374e88f3348354": {
+      "version": 6,
+      "checkedAt": "2026-10-14T23:22:06.407Z",
+      "inputUrl": "https://code.visualstudio.com/updates/",
+      "inputTitle": "VS Code Updates changed",
+      "status": "verified",
+      "source": {
+        "url": "https://code.visualstudio.com/updates/v1_142#release-downloads-heading",
+        "status": "verified",
+        "reason": "Explicit release link for 1.142",
+        "checkedAt": "2026-10-14T23:22:04.768Z",
+        "contentHash": "dbbeffec699e2768f16fe740bc644d423713b7691d83917bdec31cbfd86a4008"
+      },
+      "documents": [
+        {
+          "url": "https://code.visualstudio.com/docs/agents/concepts/agent-host",
+          "title": "Agent Host architecture",
+          "language": "en",
+          "checkedAt": "2026-10-14T23:22:05.186Z",
+          "contentHash": "e442bd916195cfc93f833abb0529f165b7167c5d6f40a01b5fceb7174fff0d4c",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_142#release-downloads-heading",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://code.visualstudio.com/docs/agents/run/agent-harnesses",
+          "title": "Choose an agent harness",
+          "language": "en",
+          "checkedAt": "2026-10-14T23:22:04.985Z",
+          "contentHash": "61333e9e2da4f4b8402a1afcb904d30dda708588787a05836656862c22c9d5c9",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_142#release-downloads-heading",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "Original anchor no longer exists; verified document body used: #use-the-copilot-harness",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://docs.github.com/ja/copilot/how-tos/github-copilot-app/working-with-canvas-extensions",
+          "title": "GitHub Copilot アプリ でのキャンバス拡張機能の操作",
+          "language": "ja",
+          "checkedAt": "2026-10-14T23:22:05.546Z",
+          "contentHash": "24fb6fa8090513a881ee9974dd16f72aba708668b93248b73a85331be1aa4a8e",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_142#release-downloads-heading",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "420f2e6daf7c7ad80f0c229d85071a55872ca8acebbef4127049470149d3e851": {
+      "version": 6,
+      "checkedAt": "2026-10-14T23:22:06.643Z",
+      "inputUrl": "https://github.blog/changelog/2026-10-14-hydrafusion-updates-and-new-max-option",
+      "inputTitle": "HydraFusion updates and new Max option",
+      "status": "unconfirmed",
+      "source": {
+        "url": "https://github.blog/changelog/2026-10-14-hydrafusion-updates-and-new-max-option/",
+        "status": "verified",
+        "reason": "Fetched original article",
+        "checkedAt": "2026-10-14T23:22:06.373Z",
+        "contentHash": "cc93bc2f376c2c2a81a636953388caa991718c0ae700413616d0b1ad611db34e"
+      },
+      "documents": [],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "fd8dbedf91d180d266eb44e26355316f182a89b8de9bee338291852663cf8efa": {
+      "version": 6,
+      "checkedAt": "2026-10-14T23:22:06.657Z",
+      "inputUrl": "https://code.visualstudio.com/updates/v1_109",
+      "inputTitle": "VS Code Release Notes 1.109 changed",
+      "status": "unconfirmed",
+      "source": {
+        "url": "https://code.visualstudio.com/updates/v1_109",
+        "status": "unconfirmed",
+        "reason": "Historical changed feature not identifiable in current page",
+        "checkedAt": "2026-10-14T23:22:06.735Z",
+        "contentHash": "9175441fbd05b250660e4637869af16764337b35c900c52a780540bd677a07af"
+      },
+      "documents": [],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
     }
   }
 }

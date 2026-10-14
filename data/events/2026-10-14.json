@@ -1,25 +1,223 @@
 {
   "date": "2026-10-14",
-  "generatedAt": "2026-10-14T18:07:16.269Z",
+  "generatedAt": "2026-10-14T23:22:04.166Z",
   "latestRun": {
-    "generatedAt": "2026-10-14T18:07:16.269Z",
-    "newEventsCount": 1,
+    "generatedAt": "2026-10-14T23:22:04.166Z",
+    "newEventsCount": 9,
     "newEventIds": [
-      "vscode-updates:80887c16d51e035c2e2f713da20836e1946379aa8802769da5aeb1b7a515bf10"
+      "github-changelog:https://github.blog/changelog/2026-10-14-hydrafusion-updates-and-new-max-option",
+      "vscode-feed:https://code.visualstudio.com/updates/v1_142",
+      "vscode-updates:946074d438f7642ee2fe2aa5a1c5242202a163e95f2cde7198de1fa493b66b18",
+      "vscode-release-notes-1-109:799f825533e4cf90e69a62d41717da8b38c0aeb56b7df676a9e01784027d7aec",
+      "copilot-whats-new:587135ec2bc3f1fb97bb67b231b07e60267094d29aeb6c61acb6605f6395c70c",
+      "vscode-release-notes-1-142:section:6330c5f438813eeec1c3688af4b6cc7b99d88fdc4522c3801a5d28d68066cae8",
+      "vscode-release-notes-1-142:section:503da89b419b48dd8e4c3fa8a390a4823cec91b8e569e8621dbe48c384a9ef21",
+      "vscode-release-notes-1-142:section:d6f4b334628b7ecad44bf829a8171785abc763a3056f05ba4f6711f497400e32",
+      "vscode-release-notes-1-142:section:92207703d4bec64441d05b4734d77522f3e4fcf412955091f4d2c99c0ebd153e"
     ],
     "errorCount": 0,
-    "skippedLowInformationEvents": [
-      {
-        "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_143",
-        "sourceId": "vscode-feed",
-        "title": "Visual Studio Code 1.143 (Insiders)",
-        "fallbackMarkers": [
-          "Visual Studio Code 関連の更新。日々の開発フローや agent 利用に効く変更点を確認しておきたい。"
-        ]
-      }
-    ]
+    "skippedLowInformationEvents": []
   },
   "events": [
+    {
+      "eventId": "vscode-release-notes-1-142:section:6330c5f438813eeec1c3688af4b6cc7b99d88fdc4522c3801a5d28d68066cae8",
+      "sourceId": "vscode-release-notes-1-142",
+      "sourceName": "VS Code Release Notes 1.142",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-10-14T23:22:04.029Z",
+      "publishedAt": "2026-10-14T23:22:04.029Z",
+      "title": "Visual Studio Code 1.142: Copilot harness",
+      "url": "https://code.visualstudio.com/updates/v1_142",
+      "summary": "The Copilot harness is powered by the Copilot SDK, a shared foundation that helps align behavior, capabilities, and improvements across Copilot products. In VS Code, the Copilot harness runs sessions through the Agent Host, which lets sessions continue in the background and be accessed from both the VS Code editor window and the Agents window. The Copilot harness has been available from the harness picker in the cha...",
+      "categories": [
+        "release",
+        "section",
+        "Agents"
+      ],
+      "sectionHeading": "Agents",
+      "sectionTitle": "Copilot harness",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-142:section:503da89b419b48dd8e4c3fa8a390a4823cec91b8e569e8621dbe48c384a9ef21",
+      "sourceId": "vscode-release-notes-1-142",
+      "sourceName": "VS Code Release Notes 1.142",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-10-14T23:22:04.030Z",
+      "publishedAt": "2026-10-14T23:22:04.029Z",
+      "title": "Visual Studio Code 1.142: Canvases (Preview)",
+      "url": "https://code.visualstudio.com/updates/v1_142",
+      "summary": "Setting: \n \n \n chat.canvases.enabled\n \n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders Canvases are interactive interfaces to collaborate with an agent. A canvas opens beside the chat, where you and the agent can inspect and update the same artifact instead of coordinating solely through prompts. For example, use a Kanban canvas to plan and track implementation work. You can create and move cards directly,...",
+      "categories": [
+        "release",
+        "section",
+        "Agents"
+      ],
+      "sectionHeading": "Agents",
+      "sectionTitle": "Canvases (Preview)",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-142:section:d6f4b334628b7ecad44bf829a8171785abc763a3056f05ba4f6711f497400e32",
+      "sourceId": "vscode-release-notes-1-142",
+      "sourceName": "VS Code Release Notes 1.142",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-10-14T23:22:04.030Z",
+      "publishedAt": "2026-10-14T23:22:04.029Z",
+      "title": "Visual Studio Code 1.142: Move chats between folders and worktrees",
+      "url": "https://code.visualstudio.com/updates/v1_142",
+      "summary": "Previously, if you started investigating a task in one folder and then wanted to implement it in a Git worktree, or continue in a different repository, you had to start a new chat and rebuild the context. In the Agents window, you can now ask the agent to move the current chat to another folder or into a new Git worktree, and it keeps the conversation history intact. Changing the workspace also works for chats that...",
+      "categories": [
+        "release",
+        "section",
+        "Agents"
+      ],
+      "sectionHeading": "Agents",
+      "sectionTitle": "Move chats between folders and worktrees",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-142:section:92207703d4bec64441d05b4734d77522f3e4fcf412955091f4d2c99c0ebd153e",
+      "sourceId": "vscode-release-notes-1-142",
+      "sourceName": "VS Code Release Notes 1.142",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-10-14T23:22:04.030Z",
+      "publishedAt": "2026-10-14T23:22:04.029Z",
+      "title": "Visual Studio Code 1.142: Session-scoped layout in the Agents window (Experimental)",
+      "url": "https://code.visualstudio.com/updates/v1_142",
+      "summary": "Setting: \n \n \n sessions.experimental.layoutScope\n \n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders\n \n (Agents window only) Previously, when you switched between sessions in the Agents window, VS Code shared layout settings such as editor visibility, details, and panel visibility across sessions. If you're used to VS Code remembering the layout for each workspace, sharing the layout across sessions can be di...",
+      "categories": [
+        "release",
+        "section",
+        "Agents"
+      ],
+      "sectionHeading": "Agents",
+      "sectionTitle": "Session-scoped layout in the Agents window (Experimental)",
+      "score": 4
+    },
+    {
+      "eventId": "copilot-whats-new:587135ec2bc3f1fb97bb67b231b07e60267094d29aeb6c61acb6605f6395c70c",
+      "sourceId": "copilot-whats-new",
+      "sourceName": "GitHub Copilot What's New",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-10-14T23:22:03.559Z",
+      "publishedAt": "2026-10-14T23:22:03.559Z",
+      "title": "GitHub Copilot What's New changed",
+      "url": "https://github.com/features/copilot/whats-new",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [
+          "Oct.14 Release"
+        ],
+        "additions": [
+          "H3: Oct.14 Release"
+        ]
+      },
+      "headings": [
+        "Changelog",
+        "Filters (0 selected)",
+        "October\n Oct\n 2026",
+        "Oct.14 Release",
+        "Oct.13 Release",
+        "Oct.13 Improvement",
+        "Oct.12 Improvement",
+        "Oct.10 Release",
+        "Oct.09 Release",
+        "Oct.08 Improvement",
+        "Oct.07 Release",
+        "Oct.07 Release"
+      ],
+      "score": 3
+    },
+    {
+      "eventId": "vscode-updates:946074d438f7642ee2fe2aa5a1c5242202a163e95f2cde7198de1fa493b66b18",
+      "sourceId": "vscode-updates",
+      "sourceName": "VS Code Updates",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-10-14T23:22:02.757Z",
+      "publishedAt": "2026-10-14T23:22:02.727Z",
+      "title": "VS Code Updates changed",
+      "url": "https://code.visualstudio.com/updates/",
+      "summary": "Detected 140 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 140,
+        "headings": [
+          "Visual Studio Code 1.142",
+          "Downloads for 1.142.0",
+          "Agents",
+          "Canvases (Preview)",
+          "Move chats between folders and worktrees",
+          "Session-scoped layout in the Agents window (Experimental)",
+          "Customize the Agents window panel layout",
+          "Chat",
+          "Quickly identify the active harness",
+          "Stop background shells",
+          "Stateful responses for BYOK custom endpoints",
+          "Windows sandboxing for Local harness is no longer supported",
+          "Redesigned model picker",
+          "Markdown editor",
+          "Editing mode closer to the Markdown source",
+          "Paste images"
+        ],
+        "additions": [
+          "1.142",
+          "H1: Visual Studio Code 1.142",
+          "Released October 14, 2026 Stable",
+          "H2: Downloads for 1.142.0",
+          "This release adds shared canvases for agent workflows, lets you move chats without losing context, expands the Markdown editor, and gives administrators more control over agent permissions.",
+          "Canvases (Preview): Collaborate with agents beyond chat using visual and interactive canvases.",
+          "Move chats: Continue a chat in another folder or a new Git worktree without losing conversation history.",
+          "Markdown editor: Work on Markdown files more efficiently with features like pasting images, renaming file links, or breadcrumb navigation.",
+          "Enterprise management: Enforce agent sandboxing and permission policies while controlling which permission modes developers can use.",
+          "Redesigned model picker: Quickly switch between Copilot and BYOK contributed models, and manage effort levels and context windows more intuitively.",
+          "H2: Agents",
+          "The Copilot harness is powered by the Copilot SDK, a shared foundation that helps align behavior, capabilities, and improvements across Copilot products. In VS Code, the Copilot harness runs sessions through the Agent Host, which lets sessions continue in the background and be accessed from both the VS Code editor window and the Agents window.",
+          "The Copilot harness has been available from the harness picker in the chat input. Based on overwhelmingly positive and valuable feedback, we're progressively rolling it out as the default harness for new sessions in VS Code. When you start a new session, Copilot in the harness picker indicates that the session will use the Copilot harness.",
+          "Thank you to everyone who has shared feedback. We're actively using it to shape the experience. One example is reintroducing Ask as a built-in agent in the Copilot harness. Your feedback showed that a dedicated read-only experience remains valuable. Select Ask from the agent picker to use it.",
+          "H3: Canvases (Preview)",
+          "chat.canvases.enabled"
+        ]
+      },
+      "headings": [
+        "Visual Studio Code 1.142",
+        "Downloads for 1.142.0",
+        "Release highlights",
+        "Agents",
+        "Copilot harness",
+        "Canvases (Preview)",
+        "Move chats between folders and worktrees",
+        "Session-scoped layout in the Agents window (Experimental)",
+        "Customize the Agents window panel layout",
+        "Chat",
+        "Quickly identify the active harness",
+        "Stop background shells"
+      ],
+      "score": 18
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-10-14-hydrafusion-updates-and-new-max-option",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-10-14T23:22:02.549Z",
+      "publishedAt": "2026-10-14T20:01:35.000Z",
+      "title": "HydraFusion updates and new Max option",
+      "url": "https://github.blog/changelog/2026-10-14-hydrafusion-updates-and-new-max-option",
+      "summary": "HydraFusion has an updated model pool, improved orchestration workflows, and introduces HydraFusion Max. Both HydraFusion and HydraFusion Max are available across VS Code, the GitHub Copilot app, and GitHub Copilot…\nThe post HydraFusion updates and new Max option appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
     {
       "eventId": "vscode-updates:80887c16d51e035c2e2f713da20836e1946379aa8802769da5aeb1b7a515bf10",
       "sourceId": "vscode-updates",
@@ -109,6 +307,42 @@
       "isFutureDated": false,
       "score": 3,
       "backfilled": true
+    },
+    {
+      "eventId": "vscode-release-notes-1-109:799f825533e4cf90e69a62d41717da8b38c0aeb56b7df676a9e01784027d7aec",
+      "sourceId": "vscode-release-notes-1-109",
+      "sourceName": "VS Code Release Notes 1.109",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-10-14T23:22:02.902Z",
+      "publishedAt": "2026-02-04T00:00:00.000Z",
+      "title": "VS Code Release Notes 1.109 changed",
+      "url": "https://code.visualstudio.com/updates/v1_109",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [],
+        "additions": [
+          "1.142"
+        ]
+      },
+      "headings": [
+        "January 2026 (version 1.109)",
+        "Downloads for 1.109.5",
+        "Upcoming events",
+        "Agent Sessions Day",
+        "Chat UX",
+        "Message steering and queueing (Experimental)",
+        "Anthropic models now show thinking tokens",
+        "Mermaid diagrams in chat responses",
+        "Ask Questions tool (Experimental)",
+        "Plan agent",
+        "Context window details",
+        "Inline chat UX revamp (Preview)"
+      ],
+      "score": 2
     }
   ],
   "errors": []
