@@ -21,6 +21,7 @@ GitHub Copilot と VS Code 周辺の更新を毎日収集し、日次イベン�
 - 日次本文、要点、日本語化・対訳の更新には GitHub Copilot Cloud Agent を使う
 
 運用の詳細は [docs/automation.md](docs/automation.md) にまとめています。
+静的 JSON API・スライド・PDF は [docs/api.md](docs/api.md) を参照してください。
 検索の仕組みは [docs/search-architecture.md](docs/search-architecture.md) に分けてあります。
 原文と公式資料の選び方、確認状態、途中再開は [docs/resource-enrichment.md](docs/resource-enrichment.md) にまとめています。
 

@@ -47,6 +47,13 @@ jobs:
       - name: Build Pages site
         run: npm run build:pages
 
+      - name: Build encrypted slide PDFs
+        env:
+          PDF_PASSWORD: ${{ secrets.PDF_PASSWORD }}
+        run: |
+          if [ -d data/slides ] && [ -n "$PDF_PASSWORD" ]; then npx playwright install --with-deps chromium; fi
+          npm run build:pdfs
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
