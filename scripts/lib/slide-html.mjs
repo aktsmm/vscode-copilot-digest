@@ -3,7 +3,7 @@ import { STATUS_LABELS } from "./slides.mjs";
 
 const esc = (v) => String(v ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
 
-export const FS_STEPS = [30, 28, 26, 24, 22, 20, 18, 16, 14];
+export const FS_STEPS = [30, 28, 26, 24, 22, 20, 18, 17, 16, 15, 14];
 
 export const PDF_CSS = `
 @page{size:1280px 720px;margin:0}
@@ -13,6 +13,11 @@ html,body{margin:0;background:${P.canvas};font-family:"Noto Sans CJK JP","Noto S
 .slide .t{font-size:30px;font-weight:700;color:${P.dark};line-height:1.25}
 .slide .meta{font-size:14px;color:${P.muted}}
 .badge{display:inline-block;color:#fff;font-weight:700;font-size:18px;padding:2px 18px;border-radius:999px;margin-left:8px}
+.two{display:flex;gap:12px}.two .c{flex:1;border:1.5px solid ${P.border};border-radius:8px;padding:8px 14px;font-size:calc(var(--fs) - 4px);line-height:1.45;background:${P.subtle}}.two .c b.l{display:block;font-size:calc(var(--fs) - 8px);color:${P.copilotDeep};margin-bottom:2px}
+.ba{display:flex;gap:12px;align-items:stretch}.ba .p{flex:1;border-radius:8px;padding:8px 14px;font-size:calc(var(--fs) - 4px);line-height:1.45}.ba .bf{background:${P.subtle};border:1.5px solid ${P.border}}.ba .af{background:${P.copilotTint};border:1.5px solid ${P.copilot}}.ba b.l{display:block;font-size:calc(var(--fs) - 8px);margin-bottom:2px}.ba .ar{align-self:center;font-size:26px;color:${P.copilot};font-weight:700}
+.act{font-size:calc(var(--fs) - 4px);line-height:1.45;border:1.5px dashed ${P.attention};background:#fff8e8;border-radius:8px;padding:8px 14px}.act b{color:${P.attention}}
+.gl{font-size:calc(var(--fs) - 6px);line-height:1.5;color:${P.fg}}.gl b{color:${P.dark}}
+.tl{display:flex;align-items:center;font-size:calc(var(--fs) - 7px)}.tl .pt{flex:none;text-align:center}.tl .pt b{display:block;font-size:calc(var(--fs) - 5px)}.tl .ln{flex:1;height:4px;margin:0 10px;background:linear-gradient(90deg,${P.border},${P.copilot});border-radius:2px}
 .sum{font-size:var(--fs);line-height:1.5;border-left:6px solid ${P.copilot};background:${P.copilotTint};padding:10px 16px;border-radius:0 8px 8px 0}
 .pts{font-size:calc(var(--fs) - 2px);line-height:1.6;margin:0;padding-left:28px}.pts li{margin:6px 0}
 .ft{margin-top:auto;display:flex;justify-content:space-between;gap:12px;font-size:13px;color:${P.muted};border-top:1px solid ${P.border};padding-top:8px}
@@ -45,10 +50,25 @@ export function endHtml() {
   return `<section class="page end"><div class="cv-bar"></div><div class="cv-body"><h1>${esc(DECK_TEXT.endTitle)}</h1><div class="sub">${esc(DECK_TEXT.title)}</div></div><div class="note">${esc(DECK_TEXT.automationNote)}<br><a href="${esc(DECK_TEXT.repoUrl)}">${esc(DECK_TEXT.repoUrl)}</a></div><div class="cv-foot"><span>${esc(DECK_TEXT.copyright)}</span><span>${esc(DECK_TEXT.source)}</span></div></section>`;
 }
 
+function detailHtml(s) {
+  const parts = [];
+  if (s.audience) parts.push(`<div class="two"><div class="c"><b class="l">誰に関係するか</b>${esc(s.audience.who)}</div><div class="c"><b class="l">何が変わるか</b>${esc(s.audience.change)}</div></div>`);
+  if (s.beforeAfter) parts.push(`<div class="ba"><div class="p bf"><b class="l">変更前</b>${esc(s.beforeAfter.before)}</div><div class="ar">→</div><div class="p af"><b class="l">変更後</b>${esc(s.beforeAfter.after)}</div></div>`);
+  return parts.join("");
+}
+
+function extraHtml(s) {
+  const parts = [];
+  if (s.action) parts.push(`<div class="act"><b>やること</b>　${esc(s.action)}</div>`);
+  if (s.timeline?.length) parts.push(`<div class="tl">${s.timeline.map((x, i, a) => `<div class="pt"><b>${esc(x.when)}</b>${esc(x.label)}</div>${i < a.length - 1 ? `<div class="ln"></div>` : ""}`).join("")}</div>`);
+  if (s.glossary?.length) parts.push(`<div class="gl">${s.glossary.map((g) => `<div><b>${esc(g.term)}</b>　${esc(g.oneLine)}</div>`).join("")}</div>`);
+  return parts.join("");
+}
+
 export function slideHtml(s, { fs = FS_STEPS[0] } = {}) {
   const docs = (s.references.documents ?? []).map((d) => `<a href="${esc(d.url)}">${esc(d.title)}</a>`).join(" / ");
   const badge = s.status === "unknown" ? "" : `<span class="badge" style="background:${STATUS_COLORS[s.status] ?? STATUS_COLORS.unknown}">${esc(STATUS_LABELS[s.status] ?? s.status)}</span>`;
-  return `<section class="page slide" data-id="${esc(s.id)}" style="--fs:${fs}px"><div class="meta">${esc(s.date)} ・ ${esc(s.topic)}${badge}</div><div class="t">${esc(s.title.ja)}</div><div class="sum">${esc(s.summary)}</div><ul class="pts">${s.points.map((p) => `<li>${esc(p)}</li>`).join("")}</ul><div class="ft"><div><a href="${esc(s.references.source)}">原文</a>${docs ? ` ／ ${docs}` : ""}</div><div>${esc(DECK_TEXT.creator)}</div></div></section>`;
+  return `<section class="page slide" data-id="${esc(s.id)}" style="--fs:${fs}px"><div class="meta">${esc(s.date)} ・ ${esc(s.topic)}${badge}</div><div class="t">${esc(s.title.ja)}</div><div class="sum">${esc(s.summary)}</div>${detailHtml(s)}<ul class="pts">${s.points.map((p) => `<li>${esc(p)}</li>`).join("")}</ul>${extraHtml(s)}<div class="ft"><div><a href="${esc(s.references.source)}">原文</a>${docs ? ` ／ ${docs}` : ""}</div><div>${esc(DECK_TEXT.creator)}</div></div></section>`;
 }
 
 export function slideDocHtml(slide, options) {

@@ -45,6 +45,13 @@ const deck = { schema: DECK_SCHEMA, selection: { snapshotAt: "2026-10-02T10:00:0
 assert.deepEqual(validateDeck(deck), []);
 assert.ok(validateDeck({ ...deck, slides: [slide, slide] }).some((m) => m.includes("duplicate")));
 
+// Optional detail blocks are validated when present and ignored when absent.
+const rich = { ...slide, audience: { who: "有料プランの利用者", change: "モデルが選べる" }, beforeAfter: { before: "選べなかった", after: "選べる" }, action: "表示を確認する", timeline: [{ when: "2026-10-13", label: "提供開始" }], glossary: [{ term: "モデルピッカー", oneLine: "モデルの選択画面。" }] };
+assert.deepEqual(validateSlide(rich), []);
+assert.ok(validateSlide({ ...rich, audience: { who: "abc", change: "変更" } }).some((m) => m.includes("audience")));
+assert.ok(validateSlide({ ...rich, timeline: [] }).some((m) => m.includes("timeline")));
+assert.ok(validateSlide({ ...rich, action: "要確認です" }).some((m) => m.includes("forbidden phrase")));
+assert.ok(deckHtml({ ...deck, slides: [rich] }).includes("誰に関係するか"));
 // PDF wording and colors: repo wording, GitHub / Copilot palette, no Azure leftovers.
 const html = deckHtml(deck);
 assert.ok(coverHtml(deck).includes("GitHub Copilot &amp; VS Code アップデート情報"));
