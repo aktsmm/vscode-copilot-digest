@@ -197,7 +197,8 @@ jobs:
           node <<'NODE'
           const fs = require('fs');
           const changed = (process.env.CHANGED_FILES || '').split(/\r?\n/).filter(Boolean);
-          const markdownFiles = changed.filter((file) => /^(summaries\/daily|drafts)\/.*\.md$/.test(file));
+          // A summary that the PR deletes has nothing left to check.
+          const markdownFiles = changed.filter((file) => /^(summaries\/daily|drafts)\/.*\.md$/.test(file) && fs.existsSync(file));
           const sensationalPattern = /(絶対|必ず成功|革命的|最強|衝撃|完全無欠|間違いなく)/;
 
           for (const file of markdownFiles) {
