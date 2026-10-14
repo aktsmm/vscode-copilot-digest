@@ -1,0 +1,23 @@
+{
+  "schema": "vscode-copilot-digest/slide/v1",
+  "id": "26dbf203ef7daa1b",
+  "title": {
+    "ja": "GitHub CopilotでGemini 4 Argonが一般提供"
+  },
+  "date": "2026-10-13",
+  "topic": "GitHub Copilot",
+  "status": "ga",
+  "statusEvidence": "Gemini 4 Argon, Google’s newest frontier model, is now generally available in GitHub Copilot.",
+  "summary": "Gemini 4 ArgonがGitHub Copilotで一般提供され、複雑なコーディング、エージェント、推論タスク向けに利用できる。",
+  "points": [
+    "Copilot Pro+、Max、Business、Enterpriseで利用できる。",
+    "VS Code、Visual Studio、Copilot CLIなどのモデルピッカーから選択できる。",
+    "提供は段階的に進むため、表示されない場合は後で確認する。"
+  ],
+  "references": {
+    "source": "https://github.blog/changelog/?label=copilot#changelog-item-meta-99479"
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-10-13-gemini-4-argon-in-github-copilot/"
+  ]
+}

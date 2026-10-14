@@ -1,0 +1,33 @@
+{
+  "schema": "vscode-copilot-digest/slide/v1",
+  "id": "02a39dbb972c21a0",
+  "title": {
+    "ja": "Copilot CLIとアプリのモデル設定ガイド"
+  },
+  "date": "2026-10-07",
+  "topic": "GitHub Copilot",
+  "status": "unknown",
+  "summary": "GitHub DocsのCopilot how-tosに、CLIとCopilotアプリへ自分のLLMモデルを追加するガイドが加わった。",
+  "points": [
+    "CLIのガイドでは、外部プロバイダーやローカルモデルの接続方法を説明する。",
+    "アプリのガイドでは、モデルプロバイダーを設定してセッションで使う方法を説明する。"
+  ],
+  "references": {
+    "source": "https://docs.github.com/en/copilot/how-tos",
+    "documents": [
+      {
+        "title": "Adding LLM models to GitHub Copilot CLI",
+        "url": "https://docs.github.com/ja/copilot/how-tos/copilot-cli/customize-copilot/use-byok-models"
+      },
+      {
+        "title": "Adding LLM models to the GitHub Copilot app",
+        "url": "https://docs.github.com/ja/copilot/how-tos/github-copilot-app/use-byok-models"
+      }
+    ]
+  },
+  "evidence": [
+    "https://docs.github.com/en/copilot/how-tos",
+    "https://docs.github.com/ja/copilot/how-tos/copilot-cli/customize-copilot/use-byok-models",
+    "https://docs.github.com/ja/copilot/how-tos/github-copilot-app/use-byok-models"
+  ]
+}
