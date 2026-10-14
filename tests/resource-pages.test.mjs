@@ -16,6 +16,7 @@ assert.deepEqual(JSON.parse(fs.readFileSync(path.join("site", "assets", "resourc
 const { version } = JSON.parse(fs.readFileSync(path.join("site", "assets", "search-version.json")));
 assert.ok(fs.existsSync(path.join("site", `pagefind-${version}`, "pagefind.js")));
 let cards = 0;
+const archiveHeadings = new Map();
 for (const locale of ["", "en"]) {
   const prefix = path.join("site", locale);
   const files = ["index.html", "highlights.html", ...fs.readdirSync(path.join(prefix, "days"))
@@ -32,15 +33,23 @@ for (const locale of ["", "en"]) {
       const archive = $(element).find("[data-archive-path]").attr("data-archive-path");
       if (archive) {
         const [target, id] = archive.split("#");
-        const targetHtml = fs.readFileSync(path.join("site", ...target.split("/")), "utf8");
-        assert.ok(targetHtml.includes(`id="${id}"`), `${file}: missing archive target ${archive}`);
+        if (!archiveHeadings.has(target)) {
+          const destination = cheerio.load(fs.readFileSync(path.join("site", ...target.split("/")), "utf8"));
+          const headings = new Map();
+          destination("h3[id]").each((_, heading) => {
+            const headingId = destination(heading).attr("id");
+            assert.ok(!headings.has(headingId), `${target}: duplicate update anchor ${headingId}`);
+            headings.set(headingId, destination(heading).text().replace(/\s+/g, " ").trim());
+          });
+          archiveHeadings.set(target, headings);
+        }
+        assert.ok(archiveHeadings.get(target).has(id), `${file}: missing archive target ${archive}`);
         if (file.startsWith(`days${path.sep}`)) {
           assert.equal(target, `${locale ? "en/" : ""}days/${path.basename(file)}`,
             "historical daily cards must link to their own occurrence, not a newer observation of the same source URL");
         }
         const expectedTitle = $(element).closest("article").find("h3").first().text().replace(/\s+/g, " ").trim();
-        const destination = cheerio.load(targetHtml);
-        assert.equal(destination(`[id="${id}"]`).text().replace(/\s+/g, " ").trim(), expectedTitle,
+        assert.equal(archiveHeadings.get(target).get(id), expectedTitle,
           `${file}: archive anchor must identify the displayed update, not just an existing heading`);
       }
     });
