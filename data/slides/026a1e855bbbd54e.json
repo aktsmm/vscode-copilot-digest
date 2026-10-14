@@ -1,0 +1,22 @@
+{
+  "schema": "vscode-copilot-digest/slide/v1",
+  "id": "026a1e855bbbd54e",
+  "title": {
+    "ja": "GitHub Copilotの概念ドキュメントを拡充"
+  },
+  "date": "2026-10-06",
+  "topic": "GitHub Copilot",
+  "status": "unknown",
+  "summary": "GitHub Copilotの概念ドキュメントに、利用できる場や機能を説明する項目が追加された。",
+  "points": [
+    "Copilot surfaces、Copilotアプリ、Copilot CLIに関する項目が追加された。",
+    "GitHub.com、IDEでの利用やコンピューター操作に関する項目も追加された。"
+  ],
+  "references": {
+    "source": "https://docs.github.com/en/copilot/concepts"
+  },
+  "evidence": [
+    "https://docs.github.com/en/copilot/concepts",
+    "https://docs.github.com/en/copilot/concepts/copilot-surfaces"
+  ]
+}
