@@ -2192,12 +2192,14 @@ function renderLayout({
         toggle.addEventListener('click',function(){
           var dest=toggle.getAttribute('data-href');
           if(dest&&window.location.search){dest+=window.location.search;}
+          if(dest&&window.location.hash){dest+=window.location.hash;}
           localStorage.setItem('vcd-lang','${locale === "ja" ? "en" : "ja"}');
           window.location.href=dest;
         });
         if(pref&&pref!=='${locale}'){
           var dest=toggle.getAttribute('data-href');
           if(dest&&window.location.search){dest+=window.location.search;}
+          if(dest&&window.location.hash){dest+=window.location.hash;}
           if(dest)window.location.replace(dest);
         }
       }
