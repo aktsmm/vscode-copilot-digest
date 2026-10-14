@@ -5,6 +5,10 @@ on:
     - cron: "0 18 * * 0,3" # Mon / Thu 03:00 JST as a target time; GitHub may delay it
   workflow_dispatch:
     inputs:
+      refresh:
+        description: Also re-author slides that lack the detail blocks (audience etc.)
+        type: boolean
+        default: false
       limit:
         description: Maximum number of updates per request
         default: "10"
@@ -41,8 +45,9 @@ jobs:
         id: pending
         env:
           LIMIT: ${{ inputs.limit || '10' }}
+          REFRESH: ${{ inputs.refresh && '--refresh' || '' }}
         run: |
-          node scripts/pending-slides.mjs --months 3 --limit "$LIMIT" > pending.json
+          node scripts/pending-slides.mjs --months 3 --limit "$LIMIT" $REFRESH > pending.json
           count="$(node -e "console.log(JSON.parse(require('fs').readFileSync('pending.json','utf8')).length)")"
           echo "count=$count" >> "$GITHUB_OUTPUT"
 
@@ -62,8 +67,10 @@ jobs:
               '以下の更新ごとに 1 枚のスライド JSON を `data/slides/{id}.json` として追加してください。',
               '',
               '## ルール',
-              '- 変更してよいのは `data/slides/*.json` の新規ファイルだけです。コード・workflow・設定・他のデータは変更しないでください。',
-              '- スキーマは `schema/slide.schema.json`、検証は `npm run validate:slides` です。通ることを確認してから PR にしてください。',
+              '- 変更してよいのは `data/slides/{id}.json` の追加と、同じファイルの上書きだけです。コード・workflow・設定・他のデータは変更しないでください。',
+              '- スキーマは `schema/slide.schema.json`（詳細は `docs/slide-schema.md`）、検証は `npm run validate:slides` です。通ることを確認してから PR にしてください。',
+              '- `title.ja` は 80 文字以内（名詞止め）です。`references` / `evidence` の URL は github.blog / github.com / docs.github.com / code.visualstudio.com / www.publickey1.jp / learn.microsoft.com のみ使えます。『未確認』『要確認』『推定』など内部メモの語は本文に使わないでください。',
+              '- 原文から確認できる場合は、任意の詳細ブロック（`audience` 誰に関係するか・何が変わるか、`beforeAfter`、`action`、`timeline`、`glossary`）も書いてください。確認できないものは省略し、推測で埋めないでください。',
               '- `title.ja` / `summary` / `points` は日本語で、この Issue の資料と `references` / `evidence` の URL から確認できる内容だけを書いてください。数値や製品名を補わないでください。',
               '- `status` は原文が GA / Preview / 廃止などを明示している場合だけ使い、その引用を `statusEvidence` に入れてください。根拠がなければ `unknown` にします。',
               '- `evidence` には実際に確認した https URL を 1 件以上入れてください。',

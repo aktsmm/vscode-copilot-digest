@@ -30,8 +30,15 @@ async function main() {
   for (const file of files.filter((f) => f.endsWith(".json")).sort()) {
     items.push(...JSON.parse(await fs.readFile(path.join(monthsDir, file), "utf8")).items);
   }
-  const existing = new Set((await fs.readdir(path.join(root, "data", "slides")).catch(() => []))
-    .filter((f) => f.endsWith(".json")).map((f) => f.replace(/\.json$/, "")));
+  const slidesDir = path.join(root, "data", "slides");
+  const slideFiles = (await fs.readdir(slidesDir).catch(() => [])).filter((f) => f.endsWith(".json"));
+  // --refresh also returns slides written before the detail blocks (audience etc.) existed.
+  const refresh = args.includes("--refresh");
+  const existing = new Set();
+  for (const file of slideFiles) {
+    const slide = refresh ? JSON.parse(await fs.readFile(path.join(slidesDir, file), "utf8")) : null;
+    if (!refresh || slide.audience) existing.add(file.replace(/\.json$/, ""));
+  }
   const ids = option("ids", "")?.split(",").filter(Boolean);
   const pending = selectPending(items, existing, {
     months: Number(option("months", 3)),

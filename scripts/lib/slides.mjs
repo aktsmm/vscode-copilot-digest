@@ -24,7 +24,11 @@ const allowedUrl = (v) => {
 };
 
 export function renderedTexts(slide) {
-  return [slide.title?.ja, slide.summary, ...(slide.points ?? []), ...(slide.references?.documents ?? []).map((d) => d.title)].filter(Boolean);
+  return [
+    slide.title?.ja, slide.summary, ...(slide.points ?? []), ...(slide.references?.documents ?? []).map((d) => d.title),
+    slide.audience?.who, slide.audience?.change, slide.action, slide.beforeAfter?.before, slide.beforeAfter?.after,
+    ...(slide.timeline ?? []).flatMap((t) => [t.when, t.label]), ...(slide.glossary ?? []).flatMap((g) => [g.term, g.oneLine]),
+  ].filter(Boolean);
 }
 
 export function validateSlide(slide) {
@@ -45,6 +49,13 @@ export function validateSlide(slide) {
   if (!Array.isArray(docs) || docs.length > 3 || docs.some((d) => !allowedUrl(d.url) || !d.title)) err("references.documents must be up to 3 titled https URLs on allowed hosts");
   if (new Set(docs.map((d) => d.url)).size !== docs.length) err("references.documents has a duplicate URL");
   if (!Array.isArray(slide.evidence) || slide.evidence.length < 1 || !slide.evidence.every(allowedUrl)) err("evidence must list at least one https URL on an allowed host");
+  // Optional detail blocks: every field is validated when present, and none is required.
+  const short = (v, max) => typeof v === "string" && v.length > 0 && v.length <= max && hasJapanese(v);
+  if (slide.audience !== undefined && !(short(slide.audience?.who, 100) && short(slide.audience?.change, 100))) err("audience needs Japanese who and change of up to 100 chars");
+  if (slide.action !== undefined && !short(slide.action, 120)) err("action must be Japanese, up to 120 chars");
+  if (slide.beforeAfter !== undefined && !(short(slide.beforeAfter?.before, 100) && short(slide.beforeAfter?.after, 100))) err("beforeAfter needs Japanese before and after of up to 100 chars");
+  if (slide.timeline !== undefined && (!Array.isArray(slide.timeline) || slide.timeline.length < 1 || slide.timeline.length > 4 || slide.timeline.some((x) => !x?.when || String(x.when).length > 20 || !short(x.label, 40)))) err("timeline must be 1-4 items with when (up to 20) and Japanese label (up to 40)");
+  if (slide.glossary !== undefined && (!Array.isArray(slide.glossary) || slide.glossary.length < 1 || slide.glossary.length > 3 || slide.glossary.some((x) => !x?.term || String(x.term).length > 40 || !short(x.oneLine, 100)))) err("glossary must be 1-3 items with term (up to 40) and Japanese oneLine (up to 100)");
   const text = JSON.stringify(slide);
   for (const token of FORBIDDEN_AZURE_TOKENS) if (text.includes(token)) err(`forbidden token: ${token}`);
   for (const rendered of renderedTexts(slide)) {
