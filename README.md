@@ -16,16 +16,29 @@ GitHub Copilot と VS Code 周辺の更新を毎日収集し、日次イベン�
 - 必要なら Qiita API へ投稿し、投稿 ID と URL をドラフト frontmatter に反映する
 - collect は 1 日 3 回動かしつつ、Discord Webhook には週 1 回で直近 7 日分をまとめて通知する
 - Pages 上では source-only の簡素なフィルタと、Pagefind による全文検索を提供する
-- 更新カード・トップページの簡易検索・専用検索・日次／週間詳細から原文、最大 3 件の公式資料、該当更新のアーカイブ内アンカーを直接開ける
+- 更新カード・トップページの簡易検索・専用検索・日次／週間詳細から、原文、確認済みの公式資料（最大 3 件）、掲載日のまとめの該当箇所を直接開ける
 - GitHub.com 上の Copilot cloud agent 向け執筆依頼 Issue / PR フローを自動起票する
 - 日次本文、要点、日本語化・対訳の更新には GitHub Copilot Cloud Agent を使う
 
 運用の詳細は [docs/automation.md](docs/automation.md) にまとめています。
 検索の仕組みは [docs/search-architecture.md](docs/search-architecture.md) に分けてあります。
+原文と公式資料の選び方、確認状態、途中再開は [docs/resource-enrichment.md](docs/resource-enrichment.md) にまとめています。
+
+## 更新カードのリンク
+
+| 表示 | 開く先 |
+| --- | --- |
+| **原文** | 更新の発表記事や対象リリース。確認できた場合は、実在する機能見出しまで直接移動する |
+| **関連ドキュメント** | 設定・使い方・制限を確認する公式資料。文書タイトル付きで最大 3 件、日本語の本文が提供されている場合は日本語版を優先する |
+| **掲載日のまとめを見る** | このサイトの日次まとめにある、その更新の掲載箇所。ページ内で探し直さなくて済むよう、更新アンカー付きで移動する |
+
+「原文」と「関連ドキュメント」は外部サイト、「掲載日のまとめを見る」はサイト内へのリンクです。古い日次カードはその日の更新を開き、後日に同じ URL が再検出されても別の日の更新へ飛ばしません。言語切替でも検索条件と更新アンカーを保持します。
+
+資料が確認できない場合は「対応資料未確認」、取得に失敗した場合は「資料の取得失敗」、未処理の場合は「資料未調査」と表示します。未確認を資料不存在と断定せず、無関係なトップページや推測 URL で埋めません。
 
 ## 自動更新と自動執筆の流れ
 
-1. [collect-updates.yml](.github/workflows/collect-updates.yml) が毎日ソースを収集し、[data/events](data/events) と [summaries/daily](summaries/daily) を更新する
+1. [collect-updates.yml](.github/workflows/collect-updates.yml) が `npm run collect` を実行し、ソース収集と全期間の原文・資料補完を行う。イベントは [data/events](data/events)、本文は [summaries/daily](summaries/daily)、確認証跡は [data/resources.json](data/resources.json) に保存する
 2. 変更があれば `github-actions[bot]` が `data/**` と `summaries/**` を commit する
 3. collect commit の直後に workflow から [deploy-pages.yml](.github/workflows/deploy-pages.yml) を dispatch し、最新データで Pages を再生成する
 4. collect 成功後に [author-digest-pr.yml](.github/workflows/author-digest-pr.yml) が Copilot 向け執筆依頼 Issue を作成または更新する
@@ -100,7 +113,7 @@ Pages 生成:
 npm run build:pages
 ```
 
-低情報 fallback guard:
+低情報 fallback、資料補完、生成ページの検査（先に Pages を生成する）:
 
 ```bash
 npm test
@@ -144,6 +157,7 @@ Discord 通知は短い概要を本文に置き、主な更新は embed カー�
 - [data/events](data/events): 日次イベント JSON
 - [data/snapshots](data/snapshots): HTML スナップショット比較用テキスト
 - [data/resources.json](data/resources.json): 原文・公式資料の検証台帳（採用根拠、確認日時、本文 hash、失敗情報）
+- `.cache/resource-pages`: 取得ページの作業用キャッシュ。Git 管理対象ではなく、確認台帳とは別に扱う
 - [summaries/daily](summaries/daily): 公開済み更新または未来日付項目がある日だけ生成する日次 Markdown
 - [drafts](drafts): 14 日ドラフト
 - [site](site): GitHub Pages 用の静的出力
@@ -151,7 +165,10 @@ Discord 通知は短い概要を本文に置き、主な更新は embed カー�
 ## 主要スクリプト
 
 - [scripts/collect.mjs](scripts/collect.mjs): ソース収集、未来日付項目の警告付き分離、日次 JSON / Markdown 生成
+- [scripts/enrich-resources.mjs](scripts/enrich-resources.mjs): 全期間の原文・公式資料の補完、本文と見出しの確認、証跡保存、監査と途中再開
+- [scripts/lib/resources.mjs](scripts/lib/resources.mjs): 補完キー、HTML 解析、原文解決、資料候補の選定、確認状態の集計
 - [scripts/build-pages.mjs](scripts/build-pages.mjs): トップページ、日次・週間詳細、ハイライト一覧、日次・週間アーカイブ一覧、検索ページを含む Pages 用静的サイト生成
+- [scripts/finalize-search.mjs](scripts/finalize-search.mjs): Pagefind の出力を版付き bundle に複製し、公開 HTML と検索データの版を揃える
 - [scripts/build-biweekly.mjs](scripts/build-biweekly.mjs): 14 日ドラフト生成
 - [scripts/build-weekly.mjs](scripts/build-weekly.mjs): 7 日ドラフト生成
 - [scripts/notify-discord.mjs](scripts/notify-discord.mjs): Discord 通知と preview 出力。workflow では weekly mode と 7 日 window で、短い概要と更新カードを投稿する設定で使う
@@ -211,10 +228,10 @@ Discord 通知は短い概要を本文に置き、主な更新は embed カー�
 
 ## 検索実装
 
-- `npm run build:pages` は静的 HTML 生成のあとに `pagefind --site site --output-subdir pagefind` を実行し、公開用インデックスを作る
+- `npm run build:pages` は静的 HTML 生成 → Pagefind インデックス生成 → `finalize-search.mjs` による版付き bundle 配置まで実行する
 - トップページと専用検索ページは同じ Pagefind API と結果描画を使い、原文と資料へ直接アクセスできる。トップページは最大 6 件表示する
 - 専用の `search.html` は `pagefind.js` を直接読み込み、クエリ文字列同期、preload、結果整形を含む軽量な検索 UI を静的配布している
-- 検索対象は `data-pagefind-body` を持つ公開ページだけで、日次・週間の詳細本文から検索できる
+- 検索対象は `data-pagefind-body` を持つ公開ページだけで、日次・週間の詳細本文とハイライト一覧本文から検索できる。原文・資料の補助リンクは検索本文から除外する
 - 詳細設計は [docs/search-architecture.md](docs/search-architecture.md) を参照
 - 検索 bundle は入力と描画コードの hash を含む `pagefind-<version>/` に配布し、以前の検索データとの混在を防ぐ
 
