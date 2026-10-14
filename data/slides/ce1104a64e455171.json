@@ -2,15 +2,15 @@
   "schema": "vscode-copilot-digest/slide/v1",
   "id": "ce1104a64e455171",
   "title": {
-    "ja": "VS Code 1.141.1のセキュリティ更新"
+    "ja": "VS Code 1.141.2のダウンロードと更新内容"
   },
-  "date": "2026-10-13",
+  "date": "2026-10-14",
   "topic": "VS Code",
   "status": "unknown",
-  "summary": "VS Code 1.141.1の更新で、リリースノートにセキュリティ上の問題への対応が記載された。",
+  "summary": "VS Code 1.141.2のダウンロード案内が追加され、更新で問題に対処するとリリースノートに記載された。",
   "points": [
-    "1.141.1のダウンロード案内が追加された。",
-    "リリースノートは、この更新がセキュリティ上の問題に対処すると説明している。"
+    "1.141.2のダウンロード案内が追加された。",
+    "リリースノートには、この更新がこれらの問題に対処すると記載された。"
   ],
   "references": {
     "source": "https://code.visualstudio.com/updates/v1_141#release-downloads-heading"
