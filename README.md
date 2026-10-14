@@ -185,6 +185,7 @@ Discord 通知は短い概要を本文に置き、主な更新は embed カー�
 - [scripts/lib/theme.mjs](scripts/lib/theme.mjs): PDF / スライドの配色（GitHub / Copilot）と文言の単一定義
 - [scripts/build-slide-pdfs.mjs](scripts/build-slide-pdfs.mjs): スライドの PDF 化、サンプル以外の暗号化、`slides.html` と `data/slides.json` の出力
 - [scripts/pending-slides.mjs](scripts/pending-slides.mjs) / [scripts/validate-slides.mjs](scripts/validate-slides.mjs): スライド未作成の更新の抽出と検証
+- [scripts/render-pdf.mjs](scripts/render-pdf.mjs): 指定したスライドを暗号化なしの PDF としてローカルで描画（`npm run pdf`）
 
 ## GitHub Actions
 

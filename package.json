@@ -14,6 +14,7 @@
     "notify:discord": "node scripts/notify-discord.mjs",
     "build:pages": "node scripts/build-pages.mjs && pagefind --site site --output-subdir pagefind && node scripts/finalize-search.mjs",
     "build:pdfs": "node scripts/build-slide-pdfs.mjs",
+    "pdf": "node scripts/render-pdf.mjs",
     "pending:slides": "node scripts/pending-slides.mjs",
     "validate:slides": "node scripts/validate-slides.mjs",
     "test:e2e": "node tests/slides-e2e.test.mjs",

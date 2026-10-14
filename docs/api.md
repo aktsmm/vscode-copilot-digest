@@ -34,6 +34,15 @@
 - Secret `PDF_PASSWORD` が無い、またはブラウザが使えない場合は PDF を 1 件も公開しません（Pages は全公開のため）。このとき `data/slides.json` の `pdfCrypto` は `null` で、スライド JSON と一覧は公開されます。
 - パスワードは暗号化の鍵であって、ユーザー認証ではありません。知っている人は全 PDF を復号できます。変更するときは Secret を更新して `deploy-pages.yml` を再実行します。
 
+## ローカルでの確認
+
+```bash
+npm run pending:slides -- --limit 5                 # スライド未作成の更新（直近 3 か月）
+npm run validate:slides                             # data/slides/*.json の検証
+npm run pdf -- --ids <id>[,<id>] --out dist-pdf     # 暗号化なしの PDF をローカルで描画（要 Chrome / Edge）
+PDF_PASSWORD=*** npm run build:pdfs                 # デプロイ時と同じ手順（サンプル以外は暗号化）
+```
+
 ## `slides.html`（範囲指定・結合）
 
 期間・種類（GA / Preview / 廃止 / アナウンス / 更新）で絞り込み、更新を選んで次をダウンロードできます。
