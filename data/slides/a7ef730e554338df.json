@@ -1,0 +1,81 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "a7ef730e554338df",
+  "title": {
+    "ja": "Copilot のリポジトリ単位使用状況メトリクスの一般提供",
+    "subtitleJa": "coding agent と code review の PR 活動を、日次・リポジトリ別に API で取得",
+    "original": "Repository-level GitHub Copilot usage metrics generally available"
+  },
+  "date": "2026-07-18",
+  "topic": "GitHub Copilot",
+  "status": "ga",
+  "statusEvidence": "Repository-level GitHub Copilot usage metrics generally available",
+  "audience": {
+    "who": "Copilot 使用状況メトリクスを利用する組織・エンタープライズの管理者",
+    "change": "REST API で、Copilot coding agent と code review の PR 活動をリポジトリ別に取得できる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "info",
+    "summary": "利用状況メトリクス API でレポートを取得する。アクセス権とメトリクスポリシーが必要"
+  },
+  "beforeAfter": {
+    "before": "使用状況メトリクスは組織・ユーザーレベルまで",
+    "after": "リポジトリ単位の日次レポートを取得可能"
+  },
+  "panels": [
+    {
+      "id": "reported-activity",
+      "heading": "取得できる活動",
+      "priority": "core",
+      "items": [
+        "Copilot coding agent が作成・マージしたプルリクエスト",
+        "Copilot code review がレビューしたプルリクエストと、コメント種別ごとの提案数",
+        "エンタープライズと組織の各レポートで、日次・リポジトリ別の内訳を取得"
+      ]
+    },
+    {
+      "id": "access",
+      "heading": "利用条件",
+      "priority": "core",
+      "items": [
+        "エンタープライズ所有者、請求マネージャー、組織所有者、または View Copilot Metrics 権限を持つカスタムロールがアクセス可能",
+        "Copilot 使用状況メトリクスポリシーを有効にする必要がある"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "対象範囲",
+      "priority": "detail",
+      "items": [
+        "指定日に活動があったリポジトリだけがレポートに含まれる"
+      ]
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Repository-level GitHub Copilot usage metrics generally available - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-07-17-repository-level-github-copilot-usage-metrics-generally-available/"
+    },
+    "documents": [
+      {
+        "title": "Copilot使用状況メトリックの REST API エンドポイント - GitHubドキュメント",
+        "url": "https://docs.github.com/ja/rest/copilot/copilot-usage-metrics"
+      },
+      {
+        "title": "Copilot 使用状況メトリック ダッシュボードの表示 - GitHubドキュメント",
+        "url": "https://docs.github.com/ja/copilot/how-tos/administer-copilot/view-usage-and-adoption"
+      },
+      {
+        "title": "GitHub Copilot の使用状況メトリクス - GitHubドキュメント",
+        "url": "https://docs.github.com/ja/copilot/reference/copilot-usage-metrics"
+      }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-07-17-repository-level-github-copilot-usage-metrics-generally-available/",
+    "https://docs.github.com/ja/rest/copilot/copilot-usage-metrics",
+    "https://docs.github.com/ja/copilot/how-tos/administer-copilot/view-usage-and-adoption",
+    "https://docs.github.com/ja/copilot/reference/copilot-usage-metrics"
+  ]
+}

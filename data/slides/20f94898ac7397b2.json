@@ -1,0 +1,80 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "20f94898ac7397b2",
+  "title": {
+    "ja": "Copilot CLI・アプリの動的ワークフロー",
+    "subtitleJa": "コードで処理手順を定義し、複数段階のタスクを再利用可能に",
+    "original": "Dynamic workflows in Copilot CLI and the Copilot app"
+  },
+  "date": "2026-10-02",
+  "topic": "GitHub Copilot",
+  "status": "preview",
+  "statusEvidence": "Dynamic workflows are in public preview and subject to change.",
+  "audience": {
+    "who": "Copilot CLI や Copilot app で、複数段階の作業を組み立てたい開発者",
+    "change": "コードで処理の流れを定義し、自動処理とエージェントの作業を組み合わせられる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "CLI では実験的機能を有効にする。Copilot app では追加設定なしで利用できる"
+  },
+  "panels": [
+    {
+      "id": "workflow-capabilities",
+      "heading": "できること",
+      "priority": "core",
+      "items": [
+        "動的ワークフローは、タスクの実行方法を定義するプログラム",
+        "自動処理と複数エージェントの作業を、順次または並行して実行できる",
+        "段階間で結果を渡し、確認のために一時停止する処理も組み立てられる"
+      ]
+    },
+    {
+      "id": "availability",
+      "heading": "利用方法",
+      "priority": "core",
+      "items": [
+        "すべての Copilot プランで利用可能",
+        "Copilot app ではセットアップ不要",
+        "Copilot CLI では `--experimental` または `/experimental on` で実験的機能を有効にする"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "パブリック プレビューとして提供され、内容が変更される可能性がある"
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "動的ワークフロー",
+      "type": "feature",
+      "oneLine": "タスクの実行方法を定義するプログラム。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Dynamic workflows in Copilot CLI and the Copilot app - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-10-01-dynamic-workflows-in-copilot-cli-and-the-copilot-app/"
+    },
+    "documents": [
+      {
+        "title": "動的ワークフロー - GitHubドキュメント",
+        "url": "https://docs.github.com/ja/copilot/concepts/agents/dynamic-workflows#how-dynamic-workflows-differ-from-autopilot-and-fleet"
+      },
+      {
+        "title": "動的ワークフローの使用 - GitHubドキュメント",
+        "url": "https://docs.github.com/ja/copilot/how-tos/use-copilot-agents/use-dynamic-workflows#creating-a-dynamic-workflow"
+      }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-10-01-dynamic-workflows-in-copilot-cli-and-the-copilot-app/",
+    "https://docs.github.com/ja/copilot/concepts/agents/dynamic-workflows#how-dynamic-workflows-differ-from-autopilot-and-fleet",
+    "https://docs.github.com/ja/copilot/how-tos/use-copilot-agents/use-dynamic-workflows#creating-a-dynamic-workflow"
+  ]
+}
