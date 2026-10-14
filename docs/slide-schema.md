@@ -42,4 +42,4 @@
 
 ## デッキ
 
-`slides.html` が書き出す JSON（`vscode-copilot-digest/deck/v1`）は `selection`（`mode` / `period` / `snapshotAt`）と `slides[]` を持ちます。
+ダウンロードパネルが書き出す JSON（`vscode-copilot-digest/deck/v1`）は `selection`（`mode` / `period` / `snapshotAt`）と `slides[]` を持ちます。
