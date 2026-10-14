@@ -26,6 +26,7 @@ import {
   selectEditorialHighlights,
   sourceGroup,
   summarizeEventSet,
+  meaningfulSnapshotAdditions,
 } from "./lib/reporting.mjs";
 
 const workspaceRoot = process.cwd();
@@ -990,10 +991,20 @@ function renderResourceLinks(event, locale) {
 function cardWhy(event, locale) {
   if (event.sourceId === "copilot-whats-new" && event.kind === "html_snapshot_change") {
     return locale === "ja"
-      ? "What's New の見出し差分の検出記録で、独立した製品機能の発表ではありません。原文で実際の変更内容を確認してください。"
-      : "This records changed What's New headings, not a standalone product-feature announcement. Follow the original entry to identify the actual changes.";
+      ? "What's New の見出し差分の検出記録で、独立した製品機能の発表ではありません。下の追加内容と原文で実際の変更を確認してください。"
+      : "This records changed What's New headings, not a standalone product-feature announcement. See the added items below and the original entry for the actual changes.";
   }
   return importanceReason(event, locale);
+}
+
+// A page-change event has no article, so the added lines are what tells the reader what changed.
+function renderSnapshotChanges(event, locale, limit) {
+  if (event.kind !== "html_snapshot_change") return "";
+  const lines = meaningfulSnapshotAdditions(event).map((line) => line.replace(/^H[1-3]:\s*/, ""));
+  if (lines.length === 0) return "";
+  const label = locale === "ja" ? "ページに追加された内容" : "Added to the page";
+  const more = lines.length > limit ? `<li>${escapeHtml(locale === "ja" ? `ほか ${lines.length - limit} 件` : `and ${lines.length - limit} more`)}</li>` : "";
+  return `<div class="snapshot-changes"><p class="resource-label">${escapeHtml(label)}</p><ul>${lines.slice(0, limit).map((line) => `<li>${escapeHtml(trimText(line, 140))}</li>`).join("")}${more}</ul></div>`;
 }
 
 function renderEventCard(event, locale, text, options = {}) {
@@ -1035,6 +1046,7 @@ function renderEventCard(event, locale, text, options = {}) {
     ${renderSourceMeta(event, locale, text)}
     <p${options.compact ? ' class="mini-summary"' : ""}>${escapeHtml(summaryText)}</p>
     ${why}
+    ${renderSnapshotChanges(event, locale, options.compact ? 3 : 6)}
     ${renderResourceLinks(event, locale)}
   </article>`;
 }
@@ -2453,6 +2465,8 @@ a { color: inherit; }
 .resource-links ul { padding-left: 20px; margin: 6px 0; }
 .resource-links li { margin: 5px 0; }
 .resource-label { font-weight: 700; margin: 10px 0 4px; }
+.snapshot-changes ul { margin: 0 0 8px; padding-left: 1.2em; }
+.snapshot-changes li { margin: 2px 0; }
 .resource-status { color: var(--muted); margin: 6px 0; }
 [id^="event-"] { scroll-margin-top: 24px; }
 [id^="event-"]:target { outline: 2px solid var(--accent); outline-offset: 5px; }

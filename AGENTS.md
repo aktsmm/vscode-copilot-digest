@@ -32,7 +32,6 @@
 ### Maintenance Lane
 
 - Biweekly maintenance PRs (`maint: ...` / `pipeline-maintenance-request`) are a separate lane. Keep `validate-maintenance-pr`, `auto-merge-maintenance-pr` and the skip rules in the digest lane workflows in sync (see `tests/slide-lane.test.mjs`). Workflow and dependency changes in that lane must stay behind `needs-human-review`.
-- `author-slide-fallback.yml` must use only the built-in `GITHUB_TOKEN` (never `COPILOT_ASSIGN_TOKEN`) and may only commit `data/slides/**` after `validate:slides` passes.
 - `slide-watchdog.yml` may only close stalled Copilot slide requests, record `slide-skip` issues, nudge, and dispatch workflows. It must not edit repository files.
 
 ### Schedule Expectations
