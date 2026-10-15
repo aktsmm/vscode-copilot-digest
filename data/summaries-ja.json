@@ -218,5 +218,220 @@
   "cdb2c49e659eb507": {
     "summary": "Agentsウィンドウで自然言語により、チャットを別フォルダーまたは新しいGit worktreeへ移せるようになった。会話履歴を保ったまま既存のworkspaceがあるチャットも移動でき、エージェントに新しいworktreeで作業を分離させることもできる。",
     "why": "調査から実装へ場所を切り替える際も会話を引き継げるため、再説明せずに別フォルダーやworktreeで作業を続けられる。"
+  },
+  "449b1014bc1499c1": {
+    "summary": "コードスキャンアラートをCopilotに割り当てると、関連コードを調査して修正案を作成し、CodeQLで検証した後にレビュー用のドラフトPRを開くAgentic autofixが一般提供になった。",
+    "why": "セキュリティ担当者は、検証手順と修正理由が記載されたPRを確認してから修正を取り込める。",
+    "points": [
+      "対象はGitHub Enterprise CloudのGitHub Code SecurityまたはGitHub Advanced Security契約。",
+      "既定ブランチのアラートを割り当てるか、一覧から最大25件をまとめて指定できる。",
+      "Enterprise管理者がAgentic autofixポリシーを有効にし、Copilotの課金方法を設定する。",
+      "利用分はCode Security予算のAI CreditsとGitHub Actions分数を消費する。"
+    ]
+  },
+  "5ff0bcef74701c64": {
+    "summary": "VS Code 1.142では、エージェントと共同編集するCanvases、会話履歴を保ったチャット移動、Markdown編集機能、エージェントの権限管理が追加された。",
+    "why": "利用者は作業の見える化や会話の移動に使い、管理者は許可する権限モードを統制できる。",
+    "points": [
+      "Canvasesはプレビューで、Copilot harnessのローカルセッションと設定chat.canvases.enabledが必要。",
+      "チャット移動はCodex harnessまたはCodex Interactive modeの単一チャット・ローカルフォルダーが対象。",
+      "Markdown編集では画像貼り付け、Rename Symbolによるリンク変更、パンくずナビゲーションが使える。",
+      "Enterprise管理者はサンドボックスと利用可能なエージェント権限モードを制御できる。"
+    ]
+  },
+  "f0e5fddf67c3af81": {
+    "summary": "VS Code 1.143 Insidersでは、エディターウィンドウのNew Chatに登録済みCanvasesを開くメニューが加わり、ポータブルモードとMCP設定の扱いも更新された。",
+    "why": "Insiders利用者はCanvasesを新規チャットから開き、ポータブル環境やMCPサーバー設定を更新内容に合わせられる。",
+    "points": [
+      "2026年10月15日付でNew ChatメニューにCanvasサブメニューが追加された。",
+      "ポータブルモードではCLIの状態・キャッシュがユーザーのホームではなくポータブルデータ領域に保存される。",
+      "ワークスペースルートの.mcp.jsonで${VAR}と${VAR:-default}の環境変数展開を使える。"
+    ]
+  },
+  "ce1104a64e455171": {
+    "summary": "VS Code 1.141.1のダウンロード提供が始まり、同更新がセキュリティ問題に対処すると案内された。",
+    "why": "VS Code 1.141系列の利用者は、セキュリティ修正を含む更新を適用する。",
+    "points": [
+      "1.141.1の更新説明はsecurity issuesへの対処を告知している。",
+      "対象IssueはVS Codeの1.141.1マイルストーンに紐づいている。"
+    ]
+  },
+  "3edcfec6dc5c735a": {
+    "summary": "VS Code 1.141では、非アクティブなエージェント用worktreeの整理、Windows・macOS・Linuxでのサンドボックス、セッションのグリッド表示、複数GitHub Enterprise環境へのサインインが追加された。",
+    "why": "エージェント作業の保存領域や権限を管理しながら、複数セッションとEnterprise環境を並行して扱える。",
+    "points": [
+      "Chat: Open Worktree Cleanupで非アクティブworktreeの容量を確認し、削除対象を選べる。",
+      "Copilot Agent HostのサンドボックスはWindows、macOS、Linuxでファイルとネットワークへのアクセスを制限する。",
+      "Agentsウィンドウではセッションを横・縦のグリッドに配置し、同時に比較できる。",
+      "GitHub Enterprise CloudとGitHub Enterprise Serverのアカウントを同じVS Codeウィンドウで使える。"
+    ]
+  },
+  "fefbbe2fa28d302e": {
+    "summary": "VS Code 1.140では、Copilot harnessや複数フォルダーのエージェントセッション、リモートへの作業委任、無視対象フォルダーのworktree間再利用、Enterprise向けAI制御が追加された。",
+    "why": "複数リポジトリにまたがる作業やworktree切り替えを効率化し、組織はAI利用の既定値を統制できる。",
+    "points": [
+      "Copilot harnessはハーネス選択欄から利用し、Copilot製品間で共通のエージェント動作を提供する。",
+      "複数フォルダーセッションは実験的機能で、既定では無効。",
+      "有効化はsettings.jsonで各ハーネスのmultiRootEnabled設定をtrueにする。",
+      "Enterprise管理者はAIバージョン要件とautoTier managed settingを設定できる。"
+    ]
+  },
+  "5c9dea62fc51b326": {
+    "summary": "VS Code 1.139では、リモートDev Container内でのエージェント実行、大量セッション一覧の高速化、一覧上での名前変更や表示切り替え、エディターの折り返し表示と括弧補完が改善された。",
+    "why": "リモート環境でエージェントを動かす人はプロジェクトの依存関係を利用でき、長いセッション一覧も扱いやすくなる。",
+    "points": [
+      "設定chat.agentHost.devContainer.enabledを有効にし、フォルダーのUse Dev Containerを選ぶ。",
+      "リモートの対象はSSH、Tunnel、WSLホストで、ホスト側にDockerが必要。",
+      "Compact Viewでセッションを省スペース表示し、タイトルを一覧内で直接変更できる。",
+      "Linux DEB/RPMのデスクトップファイル名が変更され、古い固定ランチャーは再登録が必要。"
+    ]
+  },
+  "8bc291f39a282969": {
+    "summary": "VS Code 1.138では、プロジェクトのDev Container内でのエージェント実行、CopilotとChatGPTの契約を切り替えられるCodexセッション、完了セッションの自動整理が追加された。",
+    "why": "利用者はプロジェクト環境を保ってエージェントを動かし、Codex会話を引き継ぎながら完了済みセッションを整理できる。",
+    "points": [
+      "ローカルDev Containerには設定chat.agentHost.devContainer.enabledとDockerが必要。",
+      "CodexはCopilotまたはChatGPTの契約をモデル選択欄から切り替えて同じ会話を続けられる。",
+      "ChatGPT契約だけでCodexを使う場合はchat.agentHost.allowSignedOutWhenUsableも有効にする。",
+      "マージ後の自動完了・削除設定はプレビューで、初期状態では無効。"
+    ]
+  },
+  "79d906a3af1d4d74": {
+    "summary": "Copilotの新規会話に使う既定モデルをEnterprise管理設定で指定できるようになり、team-mappings.jsonでチームごとのモデルを割り当てる構成も一般提供された。",
+    "why": "Enterprise管理者は組織やチームの標準モデルを設定し、利用者は新しい会話で適切な既定モデルを使える。",
+    "points": [
+      "対象はCopilot BusinessとCopilot EnterpriseのGitHub Copilotアプリ、CLI、Visual Studio Code。",
+      "managed settingsのmodelキーをoverridableにすると、チーム別設定を許可できる。",
+      "チーム別のモデルはteam-mappings.jsonで定義し、それ以外の利用者はEnterprise既定値を継承する。"
+    ]
+  },
+  "0363631ad59a8e79": {
+    "summary": "Copilot code reviewにPRの承認準備状況を示すassessmentが加わり、管理者が許可すればCopilot自身が承認を送信できる機能がパブリックプレビューになった。",
+    "why": "レビュー担当者はPR概要のassessmentを判断材料にでき、管理者は承認権限と対象ファイルを組織の運用に合わせて制御できる。",
+    "points": [
+      "対象プランはCopilot Pro、Pro+、Max、Business、Enterprise。",
+      "Copilotの承認は既定で無効で、Enterprise・organization・repositoryの各管理者が設定する。",
+      "assessmentだけではマージ要件を満たさず、PRに新しいコミットが追加されるとCopilotの承認も破棄される。",
+      "repository管理者はCopilotが承認できるファイルパスを指定できる。"
+    ]
+  },
+  "03d8130ed7d37f78": {
+    "summary": "Copilot Business／Enterpriseの個人ユーザー予算に有効期限を設定できるようになり、期限到来時に予算が削除され、次に適用されるユーザー予算または全体予算へ移行する。",
+    "why": "管理者は一時的な個人予算を期限付きにして、手作業での削除や予算の適用漏れを減らせる。",
+    "points": [
+      "期限は設定なし、次の請求サイクル開始時、または指定日のいずれかを選ぶ。",
+      "請求設定画面またはBudgets REST APIのexpires_atフィールドで作成・変更する。",
+      "期限切れ後はコストセンターの個人予算、または該当する全体予算が適用される。",
+      "有効期限を後から変更または解除できる。"
+    ]
+  },
+  "d887e42ec9d130be": {
+    "summary": "VS Code 1.132〜1.135では、エージェントセッションの整理やレビュー、長い会話の操作に加え、Agent Host、統合ブラウザー、音声入力が拡張された。",
+    "why": "VS Codeで複数のエージェント作業や長い会話を扱う開発者は、一覧・検索・ブラウザーの新機能を作業に組み込める。",
+    "points": [
+      "/btwで主チャットのコンテキストを共有する横断チャットを開き、主チャットを継続できる。",
+      "チャット全文検索では大文字小文字、単語単位、正規表現を指定できる。",
+      "統合ブラウザーではHTML要素に注釈を付け、ローカルHTMLの保存変更を自動反映できる。",
+      "音声入力は複数言語に対応し、プロジェクト指示とシェル向けの文字起こし調整を利用できる。"
+    ]
+  },
+  "1fde2f1ede962375": {
+    "summary": "Visual Studio 2026のCopilotは、組織共有のカスタムエージェント、モデルの推論強度や一覧の管理、Git agentによる変更・コミットレビューを追加した。",
+    "why": "Visual Studio利用者はチームのエージェントを共有し、作業に応じてモデルやレビュー方法を選べる。",
+    "points": [
+      "組織カスタムエージェントにはGitHub organizationが必要で、エージェント選択欄に表示される。",
+      "対応モデルでは推論強度をLow、Medium、Highから選べる。",
+      "Git agentのレビューは未コミット変更またはコミットが対象で、GitHubとAzure DevOpsのリポジトリで使える。",
+      "Copilot Free、Student、Pro、Pro+、Max、Business、Enterpriseが対象。"
+    ]
+  },
+  "748c721075895777": {
+    "summary": "Copilot for JetBrainsでCopilot harnessが一般提供され、組み込みJetBrains MCPサーバーのプレビュー、harnessの/review連携、更新後に変更点を開くWhat's Newタブが追加された。",
+    "why": "JetBrains利用者はharnessやIDE機能を使ったエージェント作業を始めやすくなり、プラグイン更新後の変更も追いやすい。",
+    "points": [
+      "Copilot harnessは一般提供、組み込みJetBrains MCPサーバーはパブリックプレビュー。",
+      "JetBrains内でCopilot harnessの/review連携を直接利用できる。",
+      "What's NewタブはCopilot for JetBrainsプラグインの更新後に開く。",
+      "モデル管理、長いツール出力のスクロール、WSL上のworktree起動も改善された。"
+    ]
+  },
+  "5f600c7561b5b076": {
+    "summary": "Copilot code reviewが、bot作成PRやCopilot cloud agentのPR、従来の規模上限を超える大規模PRをレビューできるようになり、コメント解決時に理由を記録する選択肢も加わった。",
+    "why": "レビュー担当者はbotや大規模PRにもレビューを依頼でき、解決理由を残してCopilotの改善に役立てられる。",
+    "points": [
+      "bot作成PRのレビューには、Copilotライセンスのないメンバーへの利用を許可するポリシーが必要。",
+      "Copilot cloud agentが作成したPRでは、限定版でなくfull agentic reviewを利用できる。",
+      "従来の300ファイルまたは20,000行というPRレビュー上限が撤廃された。",
+      "コメント解決時にAddressed、Won't fix、Incorrectを選択できる。"
+    ]
+  },
+  "81c6b4506055269f": {
+    "summary": "VS Code 1.136では、エージェントによるPRのレビュー対応やマージ準備、Copilot・Claudeの複数ルート作業、セッション階層表示、Agentsウィンドウの背景設定が追加された。",
+    "why": "エージェントにPRの仕上げや複数フォルダーの作業を任せる利用者は、関連セッションを整理して追跡できる。",
+    "points": [
+      "Agent mergeはプレビューで、レビュー指摘、失敗したチェック、マージ競合への対応を支援する。",
+      "複数ルートの実験機能はエディターウィンドウ内のCopilot・Claudeセッションが対象。",
+      "セッション一覧では親セッション配下に関連チャットを表示し、個別の状態や承認待ちを確認できる。",
+      "更新1.136.1は、1.136.1マイルストーンに紐づくIssueに対処する。"
+    ]
+  },
+  "477bb68b624ad0e3": {
+    "summary": "VS Code 1.135では、他アプリで作成したCopilot・Claudeセッションの継続、実験的なRubber Duckによる別モデルの意見、簡素化されたAgentsウィンドウが追加された。",
+    "why": "開発者は会話をアプリ間で引き継ぎ、別モデルの視点やモデル別トークン使用量を確認できる。",
+    "points": [
+      "chat.agentSessions.showExternalで外部セッション表示を設定し、既定では最近更新された最大2件を表示する。",
+      "Copilot Agent Hostセッションで/rubber-duckを実行すると、別モデルに見落としやエッジケースを尋ねられる。",
+      "回答フッターにマウスを合わせると、モデル別の入力・キャッシュ入力・出力トークン数を表示する。",
+      "Agentsウィンドウは単一ペインのレイアウトが既定になり、元の配置へ戻す設定もある。"
+    ]
+  },
+  "853108da5191e923": {
+    "summary": "GitHub CopilotアプリのCustomizeタブが一般提供され、MCPサーバー、plugins、skills、canvasesをまとめて探し、注目項目や種類別の一覧からチーム向けのカスタマイズを選べるようになった。",
+    "why": "アプリ利用者は必要な連携やカスタマイズを一か所から探し、既存のツールや知識をCopilotに組み込める。",
+    "points": [
+      "CopilotアプリでCustomizeを開くと、Featured項目と種類別の一覧を利用できる。",
+      "MCPサーバーはトレンド順やカテゴリ別に探せる。",
+      "Azure DevOpsのcanvasからバックログの整理や担当割り当てをCopilotへ委任できる。"
+    ]
+  },
+  "6b18681068b67b05": {
+    "summary": "GitHub Copilot CLIとCopilotアプリのエージェント機能をSlackで使う連携がパブリックプレビューになり、会話から調査、修正、検証、PR作成を依頼できる。",
+    "why": "チームは相談が始まったSlack会話から作業を依頼し、進捗や差分を共有しながらエージェントを誘導できる。",
+    "points": [
+      "対象はCopilot BusinessとCopilot Enterpriseのorganizationで、管理者がCopilot cloud agentポリシーを有効にする。",
+      "GitHub app for Slackをインストールし、GitHubアカウントを接続して@GitHubをメンションする。",
+      "利用量は既存Copilot entitlementに計上され、Copilot cloud agent予算で管理できる。",
+      "repository管理者はCopilot app identityによるPRに追加承認を必須にできる。"
+    ]
+  },
+  "8e90cc2a42b826cf": {
+    "summary": "Microsoft Teamsのチャンネル、スレッド、ダイレクトメッセージで@GitHubを呼び出し、会話参加者と共有するCopilot cloud agentセッションを開始できる機能がパブリックプレビューになった。",
+    "why": "チームは議論の場で作業を依頼・誘導し、リポジトリへの書き込み権限を持つ参加者が変更を進められる。",
+    "points": [
+      "有料Copilotプランが対象で、Teamsでのセッション利用はAI creditsを消費する。",
+      "組織では管理者がCopilot cloud agentとcloud sandboxesを有効にし、GitHub app for Microsoft Teamsを導入する。",
+      "公開チャンネルでは既定リポジトリを設定し、DMでは既定リポジトリを使わない。",
+      "repository管理者はTeams連携が作成したPRに追加承認を要求できる。"
+    ]
+  },
+  "36e7375455b74f9e": {
+    "summary": "GitHub CopilotアプリのMy workペインでは、作業対象のリポジトリに関連するPRやIssueを一覧化し、標準・独自ビューで絞り込みながら、選択した項目からエージェントセッションを開始できる。",
+    "why": "複数のPRやIssueを抱える利用者は、対応中・レビュー待ち・完了を整理し、関連タスクをCopilotに引き継げる。",
+    "points": [
+      "標準ビューはAll、Active、Review requests、Doneで、Allはアプリ内で作業したリポジトリに絞られる。",
+      "独自ビューはIs:IssueやAssignee:Meなどのフィルターで作成できる。",
+      "複数のIssueやPRを選び、個別セッションまたはまとめた新規セッションを作成できる。",
+      "一覧はリスト表示とテーブル表示を切り替え、テーブルでは列の表示・順序・幅を調整できる。"
+    ]
+  },
+  "b84cbcbbc4d79b9e": {
+    "summary": "VS Code 1.134では、関連チャットの並列表示、長い会話のプロンプト履歴移動と検索、ローカルHTMLを統合ブラウザーで開く設定が追加された。",
+    "why": "複数のエージェント会話を比較しながら、過去の依頼や変更内容を探してローカルHTMLを素早く確認できる。",
+    "points": [
+      "チャットやサブエージェントを横・縦のグループにドラッグして並べ、配置はセッションに保持される。",
+      "sessions.chatTimeline.displayでプロンプトタイムラインを表示するか非表示にするか選べる。",
+      "ChatビューやAgentsウィンドウではworkbench.action.chat.findで会話全体を検索できる。",
+      "workbench.editorAssociationsで統合ブラウザーをHTMLファイルの既定エディターにできる。"
+    ]
   }
 }
