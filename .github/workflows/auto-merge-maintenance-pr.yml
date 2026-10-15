@@ -44,9 +44,11 @@ jobs:
               core.info(`PR #${pr.number} has no file changes yet.`);
               return;
             }
-            // Workflows, dependencies and secrets-related files always wait for a person.
-            const safe = /^(scripts\/|tests\/|docs\/|config\/|data\/slides\/|README\.md$|AGENTS\.md$)/;
-            const blocked = files.filter((file) => !safe.test(file.filename) || /(^|\/)\.env/.test(file.filename));
+            // The validate workflow already ran the guard (scripts/lib/maintenance-guard.mjs) from the base branch;
+            // this is the same rule as a second check. Files that control the lane itself always wait for a person.
+            const control = new Set(['.github/workflows/pipeline-maintenance.yml', '.github/workflows/validate-maintenance-pr.yml', '.github/workflows/auto-merge-maintenance-pr.yml', '.github/workflows/slide-watchdog.yml', '.github/workflows/deploy-pages.yml', 'scripts/lib/maintenance-guard.mjs', 'scripts/check-maintenance-change.mjs']);
+            const safe = /^(scripts\/|tests\/|docs\/|config\/|data\/slides\/[0-9a-f]{16}\.json$|data\/summaries-ja\.json$|\.github\/workflows\/[^/]+\.ya?ml$|\.github\/instructions\/|\.github\/copilot-instructions\.md$|package(-lock)?\.json$|README\.md$|AGENTS\.md$)/;
+            const blocked = files.filter((file) => control.has(file.filename) || !safe.test(file.filename) || /(^|\/)\.env/.test(file.filename) || (file.status === 'removed' && file.filename.startsWith('.github/workflows/')));
             if (blocked.length > 0) {
               await github.rest.issues.addLabels({ owner, repo, issue_number: pr.number, labels: ['needs-human-review'] });
               await github.rest.issues.createComment({

