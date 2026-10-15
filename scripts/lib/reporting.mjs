@@ -4,6 +4,14 @@ import { editorialOverrides } from "./editorial-overrides.mjs";
 // Japanese wording written by the slide lane (data/slides) replaces excerpts and filler on cards.
 const slideSummaries = new Map();
 const slideSummariesByUrl = new Map();
+const writtenSummaries = new Map();
+// Summaries written by the summary lane (data/summaries-ja.json), keyed by update id.
+export function registerWrittenSummaries(map) {
+  writtenSummaries.clear();
+  for (const [id, entry] of Object.entries(map ?? {})) {
+    if (entry?.summary) writtenSummaries.set(id, { summary: entry.summary, why: entry.why ?? "" });
+  }
+}
 export const normalizeSourceUrl = (url) => String(url ?? "").replace(/[#?].*$/, "").replace(/\/+$/, "");
 export function registerSlideSummaries(slides) {
   slideSummaries.clear();
@@ -26,10 +34,12 @@ export function registerSlideSummaries(slides) {
   }
 }
 function slideSummaryFor(event) {
-  if (slideSummaries.size === 0) return null;
-  const byId = slideSummaries.get(createHash("sha256").update(eventKey(event)).digest("hex").slice(0, 16));
+  if (slideSummaries.size === 0 && writtenSummaries.size === 0) return null;
+  const id = createHash("sha256").update(eventKey(event)).digest("hex").slice(0, 16);
+  const byId = slideSummaries.get(id);
   if (byId) return byId;
-  return event.kind === "html_snapshot_change" ? null : slideSummariesByUrl.get(normalizeSourceUrl(event.url)) ?? null;
+  const byUrl = event.kind === "html_snapshot_change" ? null : slideSummariesByUrl.get(normalizeSourceUrl(event.url));
+  return byUrl ?? writtenSummaries.get(id) ?? null;
 }
 
 export function safeDate(value) {

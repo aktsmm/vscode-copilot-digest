@@ -74,7 +74,7 @@ jobs:
           const body = process.env.PR_BODY || '';
           const author = process.env.PR_AUTHOR || '';
           const labels = JSON.parse(process.env.PR_LABELS || '[]');
-          const isSlidePr = /^(\[WIP\] )?(slides:|Slide authoring request)/.test(title) || body.includes('slide-authoring-request') || (process.env.PR_HEAD_REF || '').startsWith('copilot/slide-') || /^(\[WIP\] )?(maint:|Pipeline maintenance)/i.test(title) || body.includes('pipeline-maintenance-request') || (process.env.PR_HEAD_REF || '').startsWith('copilot/pipeline-maintenance');
+          const isSlidePr = /^(\[WIP\] )?(slides:|Slide authoring request)/.test(title) || body.includes('slide-authoring-request') || (process.env.PR_HEAD_REF || '').startsWith('copilot/slide-') || /^(\[WIP\] )?(summaries:|Summary authoring request)/.test(title) || body.includes('summary-authoring-request') || (process.env.PR_HEAD_REF || '').startsWith('copilot/summar') || /^(\[WIP\] )?(maint:|Pipeline maintenance)/i.test(title) || body.includes('pipeline-maintenance-request') || (process.env.PR_HEAD_REF || '').startsWith('copilot/pipeline-maintenance');
           const isGeneratedPr = !isSlidePr && (
             /copilot/i.test(author) ||
             labels.includes('auto-pr') ||
