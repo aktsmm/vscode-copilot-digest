@@ -50,6 +50,11 @@ assert.equal(findMissing(feedEntries, new Set([normalizeUrl("https://example.tes
 const collectWorkflow = await read("collect-updates.yml");
 assert.ok(collectWorkflow.includes("backfill-skipped.mjs --coverage") && collectWorkflow.includes("coverage-report.mjs --strict"), "collect restores and reports coverage gaps");
 
+// The same article arriving twice in one batch gets one slide (the earliest item).
+const dup = [withUrl("early", "https://example.test/same"), { ...withUrl("late", "https://example.test/same/"), digestDate: "2026-10-13" }];
+dup[0].digestDate = "2026-10-12";
+assert.deepEqual(selectPending(dup, new Set(), { today: new Date("2026-10-15") }).map((i) => i.id), ["early"]);
+
 // An article already covered by a slide (written from a page-change item) is not authored twice.
 const withUrl = (id, url) => ({ ...item(id, "2026-10-12"), resources: { source: { url } } });
 assert.deepEqual(selectPending([withUrl("u1", "https://example.test/post/"), withUrl("u2", "https://example.test/other")], new Set(), { existingUrls: new Set(["https://example.test/post"]), today: new Date("2026-10-15") }).map((i) => i.id), ["u2"]);

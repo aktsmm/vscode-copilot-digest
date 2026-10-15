@@ -26,6 +26,12 @@ export function selectPending(items, existingIds, { months = 3, limit = 10, ids 
     // A slide written from a page-change item already covers the article it names.
     .filter((item) => item.sourceKind === "html_snapshot_change" || !existingUrls.has(normalizeUrl(item.resources?.source?.url ?? item.urls?.source)))
     .filter((item) => (ids ? ids.includes(item.id) : item.digestDate >= cutoffDate))
+    .sort((a, b) => a.digestDate.localeCompare(b.digestDate) || b.importance.score - a.importance.score || a.id.localeCompare(b.id))
+    // The same article can arrive from two feeds on different days; one slide covers it (the earliest item).
+    .filter((item, index, all) => {
+      const url = normalizeUrl(item.resources?.source?.url ?? item.urls?.source);
+      return item.sourceKind === "html_snapshot_change" || !url || all.findIndex((o) => o.sourceKind !== "html_snapshot_change" && normalizeUrl(o.resources?.source?.url ?? o.urls?.source) === url) === index;
+    })
     .sort((a, b) => b.digestDate.localeCompare(a.digestDate) || b.importance.score - a.importance.score || a.id.localeCompare(b.id))
     .slice(0, limit);
 }
