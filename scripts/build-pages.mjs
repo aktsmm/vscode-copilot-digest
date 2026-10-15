@@ -31,6 +31,7 @@ import {
   isGenericImportanceReason,
   slideIdFor,
   cardPointsFor,
+  jaCardTitleFor,
 } from "./lib/reporting.mjs";
 
 const workspaceRoot = process.cwd();
@@ -1020,6 +1021,11 @@ function renderSnapshotChanges(event, locale, limit) {
   return `<div class="snapshot-changes"><p class="resource-label">${escapeHtml(label)}</p><ul>${lines.slice(0, limit).map((line) => `<li>${escapeHtml(trimText(line, 140))}</li>`).join("")}${more}</ul></div>`;
 }
 
+// A written Japanese title leads the card; without one the usual title is kept.
+function displayTitle(event, locale) {
+  return (locale === "ja" && jaCardTitleFor(event)) || localizedTitle(event, locale);
+}
+
 function renderCardPoints(event) {
   const points = cardPointsFor(event);
   return points.length ? `<ul class="card-points">${points.map((p) => `<li>${escapeHtml(p)}</li>`).join("")}</ul>` : "";
@@ -1051,7 +1057,7 @@ function renderEventCard(event, locale, text, options = {}) {
   const isExternal =
     event.url && !event.url.startsWith("./") && !event.url.startsWith("../");
   const linkAttrs = isExternal ? ` target="_blank" rel="noopener"` : "";
-  const titleText = localizedTitle(event, locale);
+  const titleText = displayTitle(event, locale);
   const linkLabel = isExternal
     ? ` aria-label="${escapeHtml(`${titleText} (${text.externalLinkSuffix})`)}"`
     : "";
@@ -1277,7 +1283,7 @@ function renderEventStreamItem(event, locale, text) {
   const isExternal =
     event.url && !event.url.startsWith("./") && !event.url.startsWith("../");
   const linkAttrs = isExternal ? ` target="_blank" rel="noopener"` : "";
-  const titleText = localizedTitle(event, locale);
+  const titleText = displayTitle(event, locale);
   const linkLabel = isExternal
     ? ` aria-label="${escapeHtml(`${titleText} (${text.externalLinkSuffix})`)}"`
     : "";

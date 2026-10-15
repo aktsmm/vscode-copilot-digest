@@ -9,10 +9,10 @@ const writtenSummaries = new Map();
 export function registerWrittenSummaries(map) {
   writtenSummaries.clear();
   for (const [id, entry] of Object.entries(map ?? {})) {
-    if (entry?.summary) writtenSummaries.set(id, { summary: entry.summary, why: entry.why ?? "", points: Array.isArray(entry.points) ? entry.points : [] });
+    if (entry?.summary) writtenSummaries.set(id, { summary: entry.summary, why: entry.why ?? "", title: entry.title ?? "", points: Array.isArray(entry.points) ? entry.points : [] });
   }
 }
-export const normalizeSourceUrl = (url) => String(url ?? "").replace(/[#?].*$/, "").replace(/\/+$/, "");
+export const normalizeSourceUrl = (url) => String(url ?? "").replace(/\?[^#]*/, "").replace(/\/+(?=#|$)/, "");
 export function registerSlideSummaries(slides) {
   slideSummaries.clear();
   slideSummariesByUrl.clear();
@@ -38,6 +38,11 @@ export function registerSlideSummaries(slides) {
     if (sourceUrl) slideSummariesByUrl.set(sourceUrl, entry);
   }
 }
+// The Japanese title written for this update (slide title, or the written summary's title), or "".
+export function jaCardTitleFor(event) {
+  return slideSummaryFor(event)?.title ?? "";
+}
+
 // Concrete facts for the card (slide panel items, or the written summary points), or [].
 export function cardPointsFor(event) {
   return slideSummaryFor(event)?.points ?? [];

@@ -28,6 +28,10 @@ assert.ok(validateSummaries(withPoints([])).length > 0);
 assert.ok(validateSummaries(withPoints(["短い"])).length > 0);
 assert.ok(validateSummaries(withPoints(["a","b","c","d","e"].map(() => "ローカルモデルを接続する手順を設定する"))).length > 0);
 
+// A Japanese title is optional but checked when present, and leads the card.
+assert.deepEqual(validateSummaries({ "0123456789abcdef": { ...good["0123456789abcdef"], title: "外部モデルをAPIキーで使えるように" } }), []);
+assert.ok(validateSummaries({ "0123456789abcdef": { ...good["0123456789abcdef"], title: "Short English title only" } }).length > 0);
+
 // Selection: items covered by a slide (id or source URL) or already written are skipped.
 const item = (id, url, extra = {}) => ({ id, digestDate: "2026-10-12", importance: { score: 1 }, title: { original: id, en: id }, resources: { source: { url } }, ...extra });
 const picked = selectNeedingSummary(

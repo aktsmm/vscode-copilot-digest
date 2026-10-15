@@ -11,7 +11,7 @@ const option = (name, fallback) => {
   const index = args.indexOf(`--${name}`);
   return index >= 0 ? args[index + 1] : fallback;
 };
-const normalizeUrl = (url) => String(url ?? "").replace(/[#?].*$/, "").replace(/\/+$/, "");
+const normalizeUrl = (url) => String(url ?? "").replace(/\?[^#]*/, "").replace(/\/+(?=#|$)/, "");
 
 export function selectNeedingSummary(items, { slideIds, slideUrls, written, months = 3, limit = 30, ids = null, skip = [], today = new Date() }) {
   const cutoff = retentionStart(months, today);
@@ -48,7 +48,9 @@ async function main() {
     slideIds.add(file.replace(/\.json$/, ""));
     if (slide.references?.source?.url) slideUrls.add(normalizeUrl(slide.references.source.url));
   }
-  const written = new Set(Object.keys(JSON.parse(await fs.readFile(path.join(root, "data", "summaries-ja.json"), "utf8").catch(() => "{}"))));
+  const writtenMap = JSON.parse(await fs.readFile(path.join(root, "data", "summaries-ja.json"), "utf8").catch(() => "{}"));
+  // An entry without a title and concrete points is handed back so it can be rewritten with them.
+  const written = new Set(Object.entries(writtenMap).filter(([, e]) => e.title && Array.isArray(e.points) && e.points.length > 0).map(([id]) => id));
   const ids = option("ids", "")?.split(",").filter(Boolean);
   const pending = selectNeedingSummary(items, {
     slideIds, slideUrls, written,
@@ -60,6 +62,7 @@ async function main() {
   console.log(JSON.stringify(pending.map((i) => ({
     id: i.id, digestDate: i.digestDate, title: i.title.original || i.title.en, source: i.resources.source.url,
     excerpt: (i.summary?.en || "").slice(0, 400),
+    ...(writtenMap[i.id]?.summary ? { current: writtenMap[i.id].summary } : {}),
     ...(i.changes?.length ? { kind: "page-change", changes: i.changes } : {}),
   })), null, 2));
 }
