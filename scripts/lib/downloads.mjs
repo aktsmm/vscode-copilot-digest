@@ -21,6 +21,7 @@ const LABELS = {
     preparing: "準備中…", merging: (d, t) => `結合中… ${d} / ${t}`, saved: (n) => `保存しました（${n} 件）`, failed: "作成できませんでした。時間をおいて再度お試しください。",
     topicLabels: { "GitHub Copilot": "GitHub Copilot", "VS Code": "VS Code", "GitHub Platform": "GitHub Platform", "周辺ニュース": "周辺ニュース" },
     periodPrefix: "対象期間", countUnit: " 件",
+    pick: "個別に選ぶ", selectAll: "すべて選択", selectNone: "すべて解除", noItems: "条件に合うスライドはありません",
   },
   en: {
     title: "Download slides", from: "From", to: "To", last30: "Last 30 days", last7: "Last 7 days", clear: "Clear",
@@ -35,6 +36,7 @@ const LABELS = {
     preparing: "Preparing…", merging: (d, t) => `Merging… ${d} / ${t}`, saved: (n) => `Saved (${n} items)`, failed: "Could not build the file. Please try again later.",
     topicLabels: { "GitHub Copilot": "GitHub Copilot", "VS Code": "VS Code", "GitHub Platform": "GitHub Platform", "周辺ニュース": "Other news" },
     periodPrefix: "Period", countUnit: "",
+    pick: "Pick individually", selectAll: "Select all", selectNone: "Clear selection", noItems: "No slides match the filters",
   },
 };
 
@@ -53,6 +55,14 @@ export function downloadPanelHtml(locale = "ja") {
     </div>
     <div class="dl-chips"><span class="dl-label">${esc(L.kind)}</span>${KINDS.map((k) => chip("kind", k, kindLabel(locale, k))).join("")}</div>
     <div class="dl-chips"><span class="dl-label">${esc(L.topic)}</span>${TOPICS.map((t) => chip("topic", t, L.topicLabels[t])).join("")}</div>
+    <details class="dl-items">
+      <summary>${esc(L.pick)} <span class="dl-items-count" data-dl-items-count></span></summary>
+      <div class="dl-row dl-items-tools">
+        <button type="button" class="dl-btn dl-btn--ghost" data-dl-all>${esc(L.selectAll)}</button>
+        <button type="button" class="dl-btn dl-btn--ghost" data-dl-none>${esc(L.selectNone)}</button>
+      </div>
+      <ul class="dl-list" data-dl-list></ul>
+    </details>
     <div class="dl-actions">
       <button type="button" class="dl-btn" data-dl="json" title="${esc(L.jsonTitle)}">${esc(L.json)}</button>
       <button type="button" class="dl-btn" data-dl="pdf" title="${esc(L.pdfTitle)}" hidden>${esc(L.pdf)}</button>
@@ -78,6 +88,17 @@ export function downloadsCss() {
 .dl-btn:hover:not(:disabled),.dl-btn:focus-visible{background:${P.copilotTint}}
 .dl-btn:disabled{border-color:${P.border};color:${P.muted};cursor:not-allowed;background:${P.subtle}}
 .dl-btn--ghost{border-color:${P.border};color:${P.fg}}
+.dl-items summary{cursor:pointer;font-weight:700;color:${P.fg};font-size:.92rem}
+.dl-items-count{font-weight:400;color:${P.muted};margin-left:6px}
+.dl-items-tools{margin:8px 0 4px}
+.dl-list{list-style:none;margin:6px 0 0;padding:0;max-height:280px;overflow:auto;border:1px solid ${P.border};border-radius:8px}
+.dl-list li{border-bottom:1px solid ${P.border}}
+.dl-list li:last-child{border-bottom:0}
+.dl-list label{display:grid;grid-template-columns:auto 6.2em 5em 1fr;gap:8px;align-items:center;padding:6px 10px;font-size:.9rem;cursor:pointer}
+.dl-list label:hover{background:${P.subtle}}
+.dl-list .dl-date{color:${P.muted};font-variant-numeric:tabular-nums}
+.dl-list .dl-kind{font-size:.78rem;border:1px solid ${P.border};border-radius:999px;padding:1px 8px;text-align:center}
+.dl-empty{padding:10px;color:${P.muted};font-size:.9rem}
 .dl-sample{color:${P.link};text-decoration:underline;font-size:.92rem}
 .dl-status{font-size:.9rem;color:${P.muted}}
 .dl-status.is-error{color:${P.danger};font-weight:700}
@@ -111,16 +132,34 @@ export function downloadsJs() {
 
   function setStatus(message, error) { var el = $("[data-dl-status]"); el.textContent = message || ""; el.className = "dl-status" + (error ? " is-error" : ""); }
   function checked(attr) { return Array.prototype.map.call(panel.querySelectorAll("[data-dl-" + attr + "]:checked"), function (el) { return el.value; }); }
-  function selection() {
+  var excluded = new Set();
+  // Slides that pass the date, type and topic filters; the list below lets the reader drop single ones.
+  function matching() {
     var from = $("[data-dl-from]").value, to = $("[data-dl-to]").value, kinds = checked("kind"), topics = checked("topic");
     return manifest.slides.filter(function (s) {
       return (!from || s.date >= from) && (!to || s.date <= to) && (!kinds.length || kinds.indexOf(s.status === "unknown" ? "update" : s.status) >= 0) && (!topics.length || topics.indexOf(s.topic) >= 0);
+    });
+  }
+  function selection() { return matching().filter(function (s) { return !excluded.has(s.id); }); }
+  var pickedText = locale === "ja" ? function (n, m) { return "選択中 " + n + " / " + m + " 件"; } : function (n, m) { return n + " of " + m + " selected"; };
+  function renderList() {
+    var list = $("[data-dl-list]"), items = matching();
+    list.textContent = "";
+    if (items.length === 0) { var empty = document.createElement("li"); empty.className = "dl-empty"; empty.textContent = L.noItems; list.appendChild(empty); return; }
+    items.forEach(function (s) {
+      var li = document.createElement("li"), label = document.createElement("label"), box = document.createElement("input");
+      box.type = "checkbox"; box.setAttribute("data-dl-item", ""); box.value = s.id; box.checked = !excluded.has(s.id);
+      var date = document.createElement("span"); date.className = "dl-date"; date.textContent = s.date;
+      var kind = document.createElement("span"); kind.className = "dl-kind"; kind.textContent = (STATUS_LABELS[s.status] || STATUS_LABELS.update || "");
+      var title = document.createElement("span"); title.textContent = s.title;
+      label.appendChild(box); label.appendChild(date); label.appendChild(kind); label.appendChild(title); li.appendChild(label); list.appendChild(li);
     });
   }
   function ordered(list) { return list.slice().sort(function (a, b) { return a.date.localeCompare(b.date) || a.id.localeCompare(b.id); }); }
   function refresh() {
     var sel = selection(), withPdf = sel.filter(function (s) { return s.pdf; });
     var json = $('[data-dl="json"]'), pdf = $('[data-dl="pdf"]'), pptx = $('[data-dl="pptx"]');
+    $("[data-dl-items-count]").textContent = pickedText(sel.length, matching().length);
     json.textContent = L.json + "（" + sel.length + "）"; json.disabled = sel.length === 0 || sel.length > MAX;
     pdf.textContent = L.pdf + "（" + withPdf.length + "）"; pdf.disabled = withPdf.length === 0 || withPdf.length > MAX;
     pptx.textContent = L.pptx + "（" + withPdf.length + "）"; pptx.disabled = withPdf.length === 0 || withPdf.length > MAX;
@@ -128,7 +167,7 @@ export function downloadsJs() {
   function setRange(days) {
     var end = new Date(); var start = new Date(end.getTime() - (days - 1) * 86400000);
     var fmt = function (d) { return d.toISOString().slice(0, 10); };
-    $("[data-dl-from]").value = fmt(start); $("[data-dl-to]").value = fmt(end); refresh();
+    $("[data-dl-from]").value = fmt(start); $("[data-dl-to]").value = fmt(end); renderList(); refresh();
   }
 
   function b64(s) { return Uint8Array.from(atob(s), function (c) { return c.charCodeAt(0); }); }
@@ -395,9 +434,15 @@ export function downloadsJs() {
     } catch (e) { setStatus(L.failed, true); }
   }
 
-  panel.addEventListener("change", refresh);
+  panel.addEventListener("change", function (e) {
+    var t = e.target;
+    if (t && t.hasAttribute && t.hasAttribute("data-dl-item")) { if (t.checked) excluded.delete(t.value); else excluded.add(t.value); refresh(); return; }
+    renderList(); refresh();
+  });
+  $("[data-dl-all]").addEventListener("click", function () { excluded.clear(); renderList(); refresh(); });
+  $("[data-dl-none]").addEventListener("click", function () { matching().forEach(function (s) { excluded.add(s.id); }); renderList(); refresh(); });
   panel.querySelectorAll("[data-dl-range]").forEach(function (b) { b.addEventListener("click", function () { setRange(Number(b.getAttribute("data-dl-range"))); }); });
-  $("[data-dl-reset]").addEventListener("click", function () { panel.querySelectorAll("input").forEach(function (i) { if (i.type === "checkbox") i.checked = false; else i.value = ""; }); setStatus(""); refresh(); });
+  $("[data-dl-reset]").addEventListener("click", function () { panel.querySelectorAll("input:not([data-dl-item])").forEach(function (i) { if (i.type === "checkbox") i.checked = false; else i.value = ""; }); excluded.clear(); setStatus(""); renderList(); refresh(); });
   $('[data-dl="json"]').addEventListener("click", downloadJson);
   $('[data-dl="pdf"]').addEventListener("click", mergePdf);
   $('[data-dl="pptx"]').addEventListener("click", buildPptx);
@@ -409,7 +454,7 @@ export function downloadsJs() {
     panel.hidden = false;
     if (m.pdfCrypto) { $('[data-dl="pdf"]').hidden = false; $('[data-dl="pptx"]').hidden = false; }
     if (m.sample) { var a = $("[data-dl-sample]"); a.href = new URL(m.sample, root).href; a.hidden = false; }
-    refresh();
+    renderList(); refresh();
   }).catch(function () { /* no slides published */ });
 })();
 `;
