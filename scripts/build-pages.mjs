@@ -30,6 +30,7 @@ import {
   meaningfulSnapshotAdditions,
   isGenericImportanceReason,
   slideIdFor,
+  cardPointsFor,
 } from "./lib/reporting.mjs";
 
 const workspaceRoot = process.cwd();
@@ -1019,6 +1020,11 @@ function renderSnapshotChanges(event, locale, limit) {
   return `<div class="snapshot-changes"><p class="resource-label">${escapeHtml(label)}</p><ul>${lines.slice(0, limit).map((line) => `<li>${escapeHtml(trimText(line, 140))}</li>`).join("")}${more}</ul></div>`;
 }
 
+function renderCardPoints(event) {
+  const points = cardPointsFor(event);
+  return points.length ? `<ul class="card-points">${points.map((p) => `<li>${escapeHtml(p)}</li>`).join("")}</ul>` : "";
+}
+
 function renderEventCard(event, locale, text, options = {}) {
   const rawTitle = locale === "ja" ? originalTitle(event) : null;
   const summaryMaxLength = options.compact ? 210 : 340;
@@ -1061,6 +1067,7 @@ function renderEventCard(event, locale, text, options = {}) {
     ${options.compact ? `<div class="meta-row"><span>${escapeHtml(formatDate(event.publishedAt, locale))}</span><span class="source-name-list">${escapeHtml((event.sourceNames ?? [event.sourceName]).join(" / "))}</span></div>` : `${renderDateMeta(event, locale, text)}
     ${renderSourceMeta(event, locale, text)}`}
     <p${options.compact ? ' class="mini-summary"' : ""}>${escapeHtml(summaryText)}</p>
+    ${renderCardPoints(event)}
     ${why}
     ${renderSnapshotChanges(event, locale, options.compact ? 3 : 6)}
     ${renderResourceLinks(event, locale)}
@@ -3201,6 +3208,8 @@ body { background: var(--bg); font-size: 15.5px; line-height: 1.6; }
 .card-pick { display: inline-flex; align-items: center; gap: 6px; justify-self: start; font-size: 0.82rem; color: var(--accent-strong); background: var(--accent-soft); border-radius: 999px; padding: 2px 10px; cursor: pointer; }
 .mini-highlight.dl-out { display: none; }
 .mini-highlight.dl-unpicked { opacity: 0.55; }
+.card-points { margin: 2px 0 4px; padding-left: 1.25em; color: var(--text); font-size: 0.92rem; line-height: 1.65; }
+.card-points li { margin: 1px 0; }
 .date-chips { display: flex; flex-wrap: wrap; gap: 8px; }
 .date-chip { display: inline-flex; gap: 8px; align-items: center; padding: 5px 12px; border: 1px solid var(--line); border-radius: 999px; background: #fff; text-decoration: none; font-size: 0.9rem; font-variant-numeric: tabular-nums; }
 .date-chip span { color: var(--muted); font-size: 0.8rem; }

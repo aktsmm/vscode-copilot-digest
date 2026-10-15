@@ -9,7 +9,7 @@ const writtenSummaries = new Map();
 export function registerWrittenSummaries(map) {
   writtenSummaries.clear();
   for (const [id, entry] of Object.entries(map ?? {})) {
-    if (entry?.summary) writtenSummaries.set(id, { summary: entry.summary, why: entry.why ?? "" });
+    if (entry?.summary) writtenSummaries.set(id, { summary: entry.summary, why: entry.why ?? "", points: Array.isArray(entry.points) ? entry.points : [] });
   }
 }
 export const normalizeSourceUrl = (url) => String(url ?? "").replace(/[#?].*$/, "").replace(/\/+$/, "");
@@ -22,9 +22,13 @@ export function registerSlideSummaries(slides) {
     const change = slide.audience?.change?.trim();
     const who = slide.audience?.who?.trim();
     const todo = slide.action?.summary?.trim();
+    // "…を確認できる" says nothing about what changed; the concrete facts are the panel items shown as points.
+    const vague = change && /(確認|参照|把握)(できる|しておきたい)[。.]?$/.test(change);
+    const points = (slide.panels ?? []).filter((p) => p.priority === "core").flatMap((p) => p.items ?? []).map((s) => String(s).replace(/[。.]+$/, "")).slice(0, 4);
     const entry = {
       slideId: slide.id,
-      summary: [sub, change && change !== sub ? change : ""].filter(Boolean).map((s) => s.replace(/[。.]+$/, "")).join("。") + "。",
+      points,
+      summary: [sub, change && change !== sub && !(vague && points.length) ? change : ""].filter(Boolean).map((s) => s.replace(/[。.]+$/, "")).join("。") + "。",
       why: [who ? `${who}向け。` : "", todo ? `${todo.replace(/[。.]+$/, "")}。` : ""].join(""),
       title: slide.title?.ja,
     };
@@ -34,6 +38,11 @@ export function registerSlideSummaries(slides) {
     if (sourceUrl) slideSummariesByUrl.set(sourceUrl, entry);
   }
 }
+// Concrete facts for the card (slide panel items, or the written summary points), or [].
+export function cardPointsFor(event) {
+  return slideSummaryFor(event)?.points ?? [];
+}
+
 // The slide that covers this update (by its own id, or by the article it cites), or null.
 export function slideIdFor(event) {
   const id = createHash("sha256").update(eventKey(event)).digest("hex").slice(0, 16);
