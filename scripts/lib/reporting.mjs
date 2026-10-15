@@ -1,4 +1,27 @@
+import { createHash } from "node:crypto";
 import { editorialOverrides } from "./editorial-overrides.mjs";
+
+// Japanese wording written by the slide lane (data/slides) replaces excerpts and filler on cards.
+const slideSummaries = new Map();
+export function registerSlideSummaries(slides) {
+  slideSummaries.clear();
+  for (const slide of slides ?? []) {
+    const sub = slide.title?.subtitleJa?.trim();
+    if (!slide.id || !sub) continue;
+    const change = slide.audience?.change?.trim();
+    const who = slide.audience?.who?.trim();
+    const todo = slide.action?.summary?.trim();
+    slideSummaries.set(slide.id, {
+      summary: [sub, change && change !== sub ? change : ""].filter(Boolean).map((s) => s.replace(/[。.]+$/, "")).join("。") + "。",
+      why: [who ? `${who}向け。` : "", todo ? `${todo.replace(/[。.]+$/, "")}。` : ""].join(""),
+      title: slide.title?.ja,
+    });
+  }
+}
+function slideSummaryFor(event) {
+  if (slideSummaries.size === 0) return null;
+  return slideSummaries.get(createHash("sha256").update(eventKey(event)).digest("hex").slice(0, 16)) ?? null;
+}
 
 export function safeDate(value) {
   const date = new Date(value ?? Date.now());
@@ -2513,10 +2536,12 @@ export function excerptToSentences(text, limit = 240) {
 
 // Boilerplate "why it matters" lines add nothing to a card, so the page leaves them out.
 export function isGenericImportanceReason(text) {
-  return /の公開内容を追跡し、Copilot|追加内容から、利用中の手順や設定に関わる変更かを原典で確認できます|固定ページの追記や差し替えを拾うための更新です|This update is worth tracking because|is worth checking against existing procedures or settings|This reflects a detected change on a tracked static page/.test(String(text ?? ""));
+  return /の公開内容を追跡し、Copilot|監視入口として意味があります|追加内容から、利用中の手順や設定に関わる変更かを原典で確認できます|固定ページの追記や差し替えを拾うための更新です|This update is worth tracking because|is worth checking against existing procedures or settings|This reflects a detected change on a tracked static page/.test(String(text ?? ""));
 }
 
 export function localizedSummary(event, locale = "ja") {
+  const fromSlide = locale === "ja" ? slideSummaryFor(event) : null;
+  if (fromSlide) return fromSlide.summary;
   return excerptFallback(event, locale, localizedSummaryCore(event, locale));
 }
 
@@ -3345,6 +3370,12 @@ export function importanceLabel(event) {
 }
 
 export function importanceReason(event, locale = "ja") {
+  const fromSlide = locale === "ja" ? slideSummaryFor(event) : null;
+  if (fromSlide?.why) return fromSlide.why;
+  return importanceReasonCore(event, locale);
+}
+
+function importanceReasonCore(event, locale = "ja") {
   const title = normalizeWhitespace(decodeHtmlEntities(event.title));
   const text = `${title} ${event.summary}`.toLowerCase();
   const editorialOverride = editorialOverrides[title];
