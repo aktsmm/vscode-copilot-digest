@@ -1,0 +1,75 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "4947b28dd6cbdacb",
+  "title": {
+    "ja": "Copilotの再利用ワークフローとデスクトップ操作",
+    "subtitleJa": "動的ワークフローと画面操作がCLI・Copilotアプリで提供され、繰り返し作業を自動化",
+    "original": "GitHub Copilot weekly releases — September 28"
+  },
+  "date": "2026-10-07",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "Copilot CLIやCopilotアプリで定型作業やデスクトップアプリを扱う開発者",
+    "change": "手順を再利用する動的ワークフローと、デスクトップアプリを操作するコンピューター使用が加わった",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "CLIでは実験的機能を有効にし、画面操作は対象アプリの権限を確認してから使う"
+  },
+  "panels": [
+    {
+      "id": "workflows",
+      "heading": "動的ワークフロー",
+      "priority": "core",
+      "items": [
+        "CLI、Copilotアプリ、Copilot SDKでパブリックプレビュー",
+        "CLIでは `--experimental` または対話セッションの `/experimental on` が必要",
+        "自然言語で実行を依頼でき、CLIでは `copilot workflow run WORKFLOW-NAME [OPTIONS]` でも実行できる",
+        "ワークフローは実行に必要な入力やツール権限を指定する"
+      ]
+    },
+    {
+      "id": "computer-use",
+      "heading": "デスクトップ操作",
+      "priority": "core",
+      "items": [
+        "Copilot CLIとCopilotアプリで、macOSとWindowsのデスクトップアプリを操作",
+        "有効化は既定でオフ。アプリ操作の前に権限を許可する",
+        "画面の読み取り、クリック、入力、キー操作、スクロール、ドラッグが可能",
+        "APIやCLIが使える作業では、そちらの方が構造化され予測しやすい"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "動的ワークフローの実行には、利用するワークフローが登録済みであることが必要",
+        "コンピューター使用では誤操作の可能性があり、変更操作と結果を確認する"
+      ]
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "GitHub Copilot weekly releases — September 28 - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-10-02-github-copilot-weekly-releases-september-28/"
+    },
+    "documents": [
+      {
+        "title": "動的ワークフローの使用 - GitHub Docs",
+        "url": "https://docs.github.com/ja/copilot/how-tos/use-copilot-agents/use-dynamic-workflows"
+      },
+      {
+        "title": "About computer use in GitHub Copilot - GitHub Docs",
+        "url": "https://docs.github.com/ja/copilot/concepts/agents/computer-use"
+      }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-10-02-github-copilot-weekly-releases-september-28/",
+    "https://docs.github.com/ja/copilot/how-tos/use-copilot-agents/use-dynamic-workflows",
+    "https://docs.github.com/ja/copilot/concepts/agents/computer-use"
+  ]
+}

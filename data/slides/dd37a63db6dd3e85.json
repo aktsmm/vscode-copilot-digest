@@ -1,0 +1,60 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "dd37a63db6dd3e85",
+  "title": {
+    "ja": "Copilotコードレビューの組織請求と依頼者制御",
+    "subtitleJa": "ライセンス保有者のレビュー費用を組織に付け替え、外部ライセンスからの依頼を制限可能に",
+    "original": "Copilot code review: New organization billing options and controls"
+  },
+  "date": "2026-10-08",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "Copilotコードレビューを使う組織のオーナーとリポジトリ管理者",
+    "change": "ライセンス保有者の請求先を組織に切り替え、レビューを依頼できる利用者を制限できる",
+    "changeNature": "neutral"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "メンバーのクォータ消費や外部ライセンスからの依頼を管理する場合に設定を見直す"
+  },
+  "panels": [
+    {
+      "id": "billing",
+      "heading": "請求先の選択",
+      "priority": "core",
+      "items": [
+        "組織設定の Copilot > Policies で「Choose how members with a Copilot license are billed」を選ぶ",
+        "既定の Member は、依頼者自身のCopilot利用枠に請求する",
+        "Organization はリポジトリ所有組織に請求し、AI credits paid usage の有効化が必要",
+        "Organization では予算を任意で設定できる"
+      ]
+    },
+    {
+      "id": "request-control",
+      "heading": "依頼者の制御",
+      "priority": "core",
+      "items": [
+        "「Only allow Copilot code review to be triggered by authorized users」を有効にすると、組織・企業外のライセンスで依頼できない",
+        "組織オーナーまたはリポジトリ管理者が設定できる",
+        "組織レベルで有効にすると、リポジトリ管理者は無効にできない"
+      ]
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Copilot code review: New organization billing options and controls - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-10-08-copilot-code-review-new-organization-billing-options-and-controls/"
+    },
+    "documents": [
+      {
+        "title": "GitHub Copilot code review - GitHub Docs",
+        "url": "https://docs.github.com/ja/copilot/concepts/agents/code-review"
+      }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-10-08-copilot-code-review-new-organization-billing-options-and-controls/",
+    "https://docs.github.com/ja/copilot/concepts/agents/code-review"
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "592feb5a160097b6",
+  "title": {
+    "ja": "GitHub CopilotでClaude Haiku 5.5が一般提供",
+    "subtitleJa": "軽量モデルを各種Copilot環境で選択可能、利用量ベースの課金はプロバイダー定価",
+    "original": "Claude Haiku 5.5 in GitHub Copilot"
+  },
+  "date": "2026-10-07",
+  "topic": "GitHub Copilot",
+  "status": "ga",
+  "statusEvidence": "Claude Haiku 5.5, Anthropic’s newest lightweight model, is now generally available in GitHub Copilot.",
+  "audience": {
+    "who": "Copilot利用者と、Business・Enterpriseのモデルポリシーを管理する担当者",
+    "change": "Claude Haiku 5.5をモデルピッカーで選び、素早い大量処理やサブエージェントに使える",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "利用する場合はモデルピッカーを確認し、組織管理者はモデルポリシーを確認する"
+  },
+  "panels": [
+    {
+      "id": "availability",
+      "heading": "使える場所とプラン",
+      "priority": "core",
+      "items": [
+        "Copilot Pro、Pro+、Max、Business、Enterpriseで利用可能",
+        "VS Code、Visual Studio、Copilot CLI、Copilot cloud agent、Copilotアプリ、github.com、GitHub Mobileに対応",
+        "JetBrains IDE、Xcode、Eclipseでもモデルピッカーから選択できる",
+        "提供は段階的に展開される"
+      ]
+    },
+    {
+      "id": "model",
+      "heading": "モデルの特徴と課金",
+      "priority": "core",
+      "items": [
+        "素早い大量処理、サブエージェント、簡単な編集、ターミナル作業向け",
+        "初期テストでは、多くのコーディングタスクでClaude Sonnet 5と同等の結果を、より少ないトークンと手順で達成",
+        "使用量ベースの課金ではプロバイダーの定価で請求される"
+      ]
+    },
+    {
+      "id": "admin",
+      "heading": "管理者の設定",
+      "priority": "detail",
+      "items": [
+        "BusinessとEnterpriseの管理者は、Copilot設定のモデルポリシーでアクセスを管理する",
+        "既定モデルの有効化がオンなら、新しいモデルは自動的に有効になる。ただし全体設定または個別設定で無効化されている場合を除く"
+      ]
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Claude Haiku 5.5 in GitHub Copilot - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-10-07-claude-haiku-5-5-in-github-copilot/"
+    },
+    "documents": [
+      {
+        "title": "GitHub Copilot のモデルと価格設定 - GitHub Docs",
+        "url": "https://docs.github.com/ja/copilot/reference/copilot-billing/models-and-pricing"
+      },
+      {
+        "title": "GitHub Copilotでサポートされている AI モデル - GitHub Docs",
+        "url": "https://docs.github.com/ja/copilot/reference/ai-models/supported-models"
+      }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-10-07-claude-haiku-5-5-in-github-copilot/",
+    "https://docs.github.com/ja/copilot/reference/copilot-billing/models-and-pricing",
+    "https://docs.github.com/ja/copilot/reference/ai-models/supported-models"
+  ]
+}
