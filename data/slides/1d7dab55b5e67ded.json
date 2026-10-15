@@ -1,0 +1,63 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "1d7dab55b5e67ded",
+  "title": {
+    "ja": "管理設定の起動時適用と最低クライアント バージョン",
+    "subtitleJa": "設定の鮮度を必須化でき、sandbox 設定では古いクライアントに更新を要求",
+    "original": "Enterprise managed settings enforcement updates"
+  },
+  "date": "2026-10-13",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "Copilot の管理設定を配信するエンタープライズ管理者",
+    "change": "起動時の最新ポリシー取得と、sandbox 設定を使うクライアントの最低バージョンを要求できる",
+    "changeNature": "neutral"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "ポリシー変更を起動前に反映する場合は設定を有効化し、対象クライアントの更新要件を確認する"
+  },
+  "panels": [
+    {
+      "id": "refresh",
+      "heading": "起動時に最新設定を要求",
+      "priority": "core",
+      "items": [
+        "`forceRemoteSettingsRefresh` を true にすると、Copilot CLI、VS Code、GitHub Copilot app が起動時に最新のサーバー管理設定を取得",
+        "MDM・ファイル配信では初回サインイン前から適用可能。サーバー管理値は一度受信した後の起動から適用",
+        "最新ポリシーを確認できない場合、古い設定で実行せずフェイルクローズ"
+      ]
+    },
+    {
+      "id": "minimum-version",
+      "heading": "sandbox の最低バージョン",
+      "priority": "core",
+      "items": [
+        "管理設定に `sandbox` キーを含めると、最低クライアント バージョンの適用対象になる",
+        "古いバージョンに固定したユーザーは、Copilot の利用再開前に更新が必要"
+      ]
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Enterprise managed settings enforcement updates - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-10-13-enterprise-managed-settings-enforcement-updates/"
+    },
+    "documents": [
+      {
+        "title": "エンタープライズ管理の設定をユーザーに展開する方法の選択 - GitHubドキュメント",
+        "url": "https://docs.github.com/ja/enterprise-cloud@latest/copilot/how-tos/administer-copilot/manage-for-enterprise/use-managed-settings/deploy-managed-settings#requiring-fresh-server-managed-settings-on-startup"
+      },
+      {
+        "title": "エンタープライズ管理設定 - GitHubドキュメント",
+        "url": "https://docs.github.com/ja/enterprise-cloud@latest/copilot/reference/enterprise-administrators/enterprise-managed-settings#minimum-client-version-enforcement-for-sandbox"
+      }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-10-13-enterprise-managed-settings-enforcement-updates/",
+    "https://docs.github.com/ja/enterprise-cloud@latest/copilot/how-tos/administer-copilot/manage-for-enterprise/use-managed-settings/deploy-managed-settings#requiring-fresh-server-managed-settings-on-startup",
+    "https://docs.github.com/ja/enterprise-cloud@latest/copilot/reference/enterprise-administrators/enterprise-managed-settings#minimum-client-version-enforcement-for-sandbox"
+  ]
+}

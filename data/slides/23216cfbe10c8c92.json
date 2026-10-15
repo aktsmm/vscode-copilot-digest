@@ -1,0 +1,81 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "23216cfbe10c8c92",
+  "title": {
+    "ja": "Copilot にコードベースの知識を伝える方法",
+    "subtitleJa": "指示、スキル、カスタム エージェント、MCP を目的に応じて使い分ける",
+    "original": "GitHub Copilot app for Beginners: How to teach Copilot about your codebase"
+  },
+  "date": "2026-10-12",
+  "topic": "GitHub Copilot",
+  "status": "unknown",
+  "audience": {
+    "who": "Copilot にプロジェクトの規約や繰り返し作業を理解させたい開発者",
+    "change": "コードベースの背景を伝える四つのカスタマイズ方法と、それぞれの役割を整理",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "info",
+    "summary": "毎回説明する規約や手順を整理し、目的に合うカスタマイズ方法を選ぶ"
+  },
+  "panels": [
+    {
+      "id": "customization",
+      "heading": "役割ごとのカスタマイズ",
+      "priority": "core",
+      "items": [
+        "カスタム指示は、プロジェクト全体や特定パスに適用する規約を伝える",
+        "エージェント スキルは、指示・スクリプト・リソースをまとめ、反復手順を再利用する",
+        "カスタム エージェントは、広範な専門タスク向けに目的やツールを定める",
+        "MCP サーバーは、Copilot を外部ツールやデータに接続する"
+      ]
+    },
+    {
+      "id": "instructions",
+      "heading": "指示の適用範囲",
+      "priority": "detail",
+      "items": [
+        "リポジトリ全体の指示と、対象ファイルに一致するパス固有の指示は併用される",
+        "エージェント スキルは関連するタスクで読み込まれ、カスタム指示とは用途が異なる"
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "エージェント スキル",
+      "type": "feature",
+      "oneLine": "関連するタスクで Copilot が読み込める、指示・スクリプト・リソースのフォルダー。"
+    },
+    {
+      "term": "モデル コンテキスト プロトコル（MCP）",
+      "type": "term",
+      "oneLine": "アプリケーションが大規模言語モデルとコンテキストを共有する方法を定めるオープン標準。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "GitHub Copilot app for Beginners: How to teach Copilot about your codebase - The GitHub Blog",
+      "url": "https://github.blog/ai-and-ml/github-copilot/github-copilot-app-for-beginners-how-to-teach-copilot-about-your-codebase/"
+    },
+    "documents": [
+      {
+        "title": "IDE での GitHub Copilot のリポジトリ カスタム手順の追加 - GitHubドキュメント",
+        "url": "https://docs.github.com/ja/copilot/how-tos/copilot-in-your-ide/customize-copilot/configure-custom-instructions/add-repository-instructions-in-your-ide"
+      },
+      {
+        "title": "エージェントのスキルについて - GitHubドキュメント",
+        "url": "https://docs.github.com/ja/copilot/concepts/agents/about-agent-skills"
+      },
+      {
+        "title": "モデル コンテキスト プロトコル (MCP) について - GitHubドキュメント",
+        "url": "https://docs.github.com/ja/copilot/concepts/context/mcp"
+      }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/ai-and-ml/github-copilot/github-copilot-app-for-beginners-how-to-teach-copilot-about-your-codebase/",
+    "https://docs.github.com/ja/copilot/how-tos/copilot-in-your-ide/customize-copilot/configure-custom-instructions/add-repository-instructions-in-your-ide",
+    "https://docs.github.com/ja/copilot/concepts/agents/about-agent-skills",
+    "https://docs.github.com/ja/copilot/concepts/context/mcp"
+  ]
+}
