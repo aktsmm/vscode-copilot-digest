@@ -93,10 +93,11 @@ assert.ok(!/pull_request/.test(deploy) && deploy.includes("PDF_PASSWORD"));
 const watchdog = await read("slide-watchdog.yml");
 assert.ok(watchdog.includes("slide-skip") && watchdog.includes("author-slide-pr.yml") && watchdog.includes("deploy-pages.yml"));
 const maintenance = await read("pipeline-maintenance.yml");
-assert.ok(maintenance.includes("isoWeek % 2") && maintenance.includes("workflow_dispatch"), "biweekly via ISO week parity");
+assert.ok(!maintenance.includes("isoWeek") && maintenance.includes("workflow_dispatch") && maintenance.includes("0 19 * * 0"), "runs every week");
+assert.ok(maintenance.includes("COPILOT_AGENT_FIREWALL_ALLOW_LIST_ADDITIONS") && maintenance.includes("merge されずに閉じた"), "blocked work and firewall hosts are handled");
 assert.ok(!/model\s*:/i.test(maintenance.replace(/#.*$/gm, "")), "no model is pinned (Auto)");
 assert.ok(maintenance.includes("pipeline-maintenance-request"));
-assert.ok((await read("auto-merge-maintenance-pr.yml")).includes("needs-human-review"), "workflow and dependency changes wait for a person");
+assert.ok((await read("auto-merge-maintenance-pr.yml")).includes("needs-human-review"), "lane-control files wait for a person");
 for (const name of ["validate-generated-pr.yml", "auto-merge-generated-pr.yml", "request-copilot-review.yml", "redeploy-pages-after-generated-pr-merge.yml"]) {
   assert.ok((await read(name)).includes("pipeline-maintenance-request"), `${name} must skip maintenance PRs`);
 }

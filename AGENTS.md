@@ -31,7 +31,7 @@
 
 ### Maintenance Lane
 
-- Biweekly maintenance PRs (`maint: ...` / `pipeline-maintenance-request`) are a separate lane. Keep `validate-maintenance-pr`, `auto-merge-maintenance-pr` and the skip rules in the digest lane workflows in sync (see `tests/slide-lane.test.mjs`). Workflow and dependency changes in that lane must stay behind `needs-human-review`.
+- Weekly maintenance PRs (`maint: ...` / `pipeline-maintenance-request`) are a separate lane. Keep `validate-maintenance-pr`, `auto-merge-maintenance-pr` and the skip rules in the digest lane workflows in sync (see `tests/slide-lane.test.mjs`). The lane may change workflows and dependencies and is auto-merged, but only within `scripts/lib/maintenance-guard.mjs`: the files that control the lane itself, `deploy-pages.yml` (PDF password), the guard, new secrets, `write-all`, `pull_request_target`, workflow deletion and install scripts stay behind `needs-human-review`. The validate workflow runs the base-branch copy of the guard; never change that.
 - `slide-watchdog.yml` may only close stalled Copilot slide requests, record `slide-skip` issues, nudge, and dispatch workflows. It must not edit repository files.
 
 #### Summary PR Lane
