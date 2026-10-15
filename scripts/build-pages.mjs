@@ -27,6 +27,7 @@ import {
   sourceGroup,
   summarizeEventSet,
   meaningfulSnapshotAdditions,
+  isGenericImportanceReason,
 } from "./lib/reporting.mjs";
 
 const workspaceRoot = process.cwd();
@@ -984,7 +985,7 @@ function renderResourceLinks(event, locale) {
   return `<div class="resource-links" data-pagefind-ignore>
     <div>${source ? external(source, labels.source) : ""}${archive ? ` <a data-archive-path="${escapeHtml(archive)}" href="${escapeHtml(`https://aktsmm.github.io/vscode-copilot-digest/${archive}`)}">${escapeHtml(labels.archive)}</a>` : ""}</div>
     ${resources.documents.length ? `<p class="resource-label">${escapeHtml(labels.related)}</p><ul>${resources.documents.slice(0, 3).map((doc) => `<li>${external(doc.url, doc.title)}</li>`).join("")}</ul>` : ""}
-    ${labels[resources.status] ? `<p class="resource-status">${escapeHtml(labels[resources.status])}</p>` : ""}
+    ${labels[resources.status] && resources.status === "fetch_failed" ? `<p class="resource-status">${escapeHtml(labels[resources.status])}</p>` : ""}
   </div>`;
 }
 
@@ -994,8 +995,10 @@ function cardWhy(event, locale) {
       ? "What's New の見出し差分の検出記録で、独立した製品機能の発表ではありません。下の追加内容と原文で実際の変更を確認してください。"
       : "This records changed What's New headings, not a standalone product-feature announcement. See the added items below and the original entry for the actual changes.";
   }
-  return importanceReason(event, locale);
+  const reason = importanceReason(event, locale);
+  return isGenericImportanceReason(reason) ? "" : reason;
 }
+
 
 // A page-change event has no article, so the added lines are what tells the reader what changed.
 function renderSnapshotChanges(event, locale, limit) {
@@ -1021,7 +1024,7 @@ function renderEventCard(event, locale, text, options = {}) {
   const compactWhy = /\.\.\.|…/.test(whyText)
     ? ""
     : completeSentencePreview(whyText, locale, 1);
-  const why = options.includeWhy
+  const why = options.includeWhy && whyText
     ? options.compact
       ? compactWhy
         ? `<p class="mini-why">${escapeHtml(compactWhy)}</p>`

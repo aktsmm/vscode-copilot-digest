@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs/promises";
 import path from "node:path";
 import { selectPending } from "../scripts/pending-slides.mjs";
-import { editorialQuality } from "../scripts/lib/reporting.mjs";
+import { editorialQuality, excerptToSentences, isGenericImportanceReason } from "../scripts/lib/reporting.mjs";
 import { findMissing, normalizeUrl, parseFeed } from "../scripts/coverage-report.mjs";
 
 const workflows = path.join(process.cwd(), ".github", "workflows");
@@ -23,6 +23,12 @@ assert.deepEqual(selectPending([snap("s1", ["New agent setting"]), snap("s2")], 
 const dated = (additions) => ({ kind: "html_snapshot_change", sourceId: "copilot-whats-new", title: "x", diffSummary: { additions, headings: additions } });
 assert.equal(editorialQuality(dated(["Oct.13 Release", "Oct.13 Improvement"])), "audit-only");
 assert.notEqual(editorialQuality(dated(["Downloads for 1.141.2", "Update 1.141.2: The update addresses these issues."])), "audit-only");
+
+// Excerpts end on a sentence; boilerplate "why" lines are recognised so cards can leave them out.
+assert.equal(excerptToSentences("First point. Second point is here. Third one cut off in the mid…", 40), "First point. Second point is here.");
+assert.ok(excerptToSentences("x".repeat(30) + " " + "y".repeat(400)).endsWith("…"));
+assert.ok(isGenericImportanceReason("「A」の公開内容を追跡し、Copilot / VS Code 周辺の運用・説明材料として影響を確認したい更新です。"));
+assert.ok(!isGenericImportanceReason("管理者向けの新しい制御が追加され、組織の方針を一括で設定できます。"));
 
 // Coverage: a feed article that is not in the events is reported; trailing slashes do not matter.
 const feedXml = `<rss><channel><item><title><![CDATA[Gemini 4]]></title><link>https://example.test/a/</link><pubDate>Tue, 13 Oct 2026 18:39:56 +0000</pubDate></item><item><title>Old</title><link>https://example.test/b</link><pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate></item></channel></rss>`;
