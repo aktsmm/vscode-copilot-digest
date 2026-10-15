@@ -1,0 +1,69 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "84297d3cb7738744",
+  "title": {
+    "ja": "HydraFusion の更新と Max オプション追加",
+    "subtitleJa": "複数モデルの連携を改善し、難しいタスク向けの選択肢を追加",
+    "original": "HydraFusion updates and new Max option"
+  },
+  "date": "2026-10-14",
+  "topic": "GitHub Copilot",
+  "status": "preview",
+  "statusEvidence": "Both HydraFusion and HydraFusion Max are available across VS Code, the GitHub Copilot app, and GitHub Copilot CLI and remain in research preview.",
+  "audience": {
+    "who": "複数モデルの連携や、難しいタスク向けの推論を使いたい Copilot 利用者",
+    "change": "HydraFusion の実行方法が改善され、より深い推論向けの HydraFusion Max を選べる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "実験的機能を有効にし、タスクに応じて HydraFusion または Max を選ぶ"
+  },
+  "panels": [
+    {
+      "id": "availability",
+      "heading": "使える場所とプラン",
+      "priority": "core",
+      "items": [
+        "VS Code、GitHub Copilot app、GitHub Copilot CLI で利用可能",
+        "Copilot Pro、Pro+、Business、Enterprise が対象。実験機能またはプレビュー機能の有効化が必要",
+        "組織のモデル ポリシーにより、使えるモデルがない場合は選択肢に表示されない"
+      ]
+    },
+    {
+      "id": "changes",
+      "heading": "連携と Max の特徴",
+      "priority": "core",
+      "items": [
+        "下書きには中程度、レビューには高い推論 effort を使い、工程ごとに調整",
+        "Cascade は必要な場合だけ判定・修正を追加。Critique は並列の批評モデルとツールで作業環境を確認",
+        "Max はより難しいタスク向けに高い推論能力を重視し、オーケストレーションでトークン効率も考慮"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "HydraFusion は複数モデルを使う場合があり、単一モデルより AI クレジットを多く消費することがある",
+        "各モデルの標準料金で課金され、HydraFusion 独自の追加料金はない"
+      ]
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "HydraFusion updates and new Max option - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-10-14-hydrafusion-updates-and-new-max-option/"
+    },
+    "documents": [
+      {
+        "title": "Using HydraFusion - GitHub Docs",
+        "url": "https://docs.github.com/en/early-access/copilot/hydrafusion"
+      }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-10-14-hydrafusion-updates-and-new-max-option/",
+    "https://docs.github.com/en/early-access/copilot/hydrafusion"
+  ]
+}
