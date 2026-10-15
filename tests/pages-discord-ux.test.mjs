@@ -223,14 +223,16 @@ for (const card of englishLatestHighlightCards) {
   );
 }
 
+assert.ok((indexHtml.match(/class="date-chip"/g) ?? []).length >= 7, "home page must link recent daily pages as date chips");
+assert.ok((indexHtml.match(/<article class="mini-highlight"/g) ?? []).length >= 30, "home page must list 30 highlights by default");
 const homeDigestCards = Array.from(
   indexHtml.matchAll(/<article class="digest-card">([\s\S]*?)<\/article>/g),
   (match) => match[1],
 );
 assert.equal(
   homeDigestCards.length,
-  12,
-  "home page must render weekly and daily digest cards",
+  6,
+  "home page must render the weekly digest cards (daily pages are date links)",
 );
 for (const card of homeDigestCards) {
   assert.match(
@@ -265,8 +267,8 @@ const englishHomeDigestCards = Array.from(
 );
 assert.equal(
   englishHomeDigestCards.length,
-  12,
-  "English home page must render weekly and daily digest cards",
+  6,
+  "English home page must render the weekly digest cards (daily pages are date links)",
 );
 for (const card of englishHomeDigestCards) {
   assert.match(

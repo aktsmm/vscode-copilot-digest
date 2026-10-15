@@ -43,7 +43,8 @@ const topicOrder = [
 ];
 const sourceGroupOrder = ["github", "vscode", "platform", "other"];
 const sortOrder = ["default", "newest", "oldest", "importance"];
-const HOME_HIGHLIGHT_LIMIT = 6;
+const HOME_HIGHLIGHT_LIMIT = 30;
+const HOME_DAILY_CHIPS = 14;
 const HOME_ARCHIVE_LIMIT = 6;
 const HIGHLIGHTS_PAGE_SIZE = 50;
 let archiveDates = new Map();
@@ -1608,13 +1609,14 @@ function renderIndexPage(
   const latestFilterAxes = renderFilterAxes(latestHighlights);
   const sourceHighlightGroups = buildSourceHighlightGroups(dailyDigests);
   const weeklyHomeDigests = weeklyDigests.slice(0, HOME_ARCHIVE_LIMIT);
-  const dailyHomeDigests = dailyDigests.slice(0, HOME_ARCHIVE_LIMIT);
+  const dailyHomeDigests = dailyDigests.slice(0, HOME_DAILY_CHIPS);
 
   const weeklyMarkup =
     weeklyHomeDigests.length === 0
       ? `<div class="content-card empty-card"><p>${escapeHtml(text.weeklyEmpty)}</p></div>`
       : `<div class="digest-grid">${weeklyHomeDigests.map((digest) => renderArchiveCard(digest, locale, text, links.weekHref(digest.key), "week")).join("")}</div>`;
-  const dailyMarkup = `<div class="digest-grid">${dailyHomeDigests.map((digest) => renderArchiveCard(digest, locale, text, links.dayHref(digest.date), "day")).join("")}</div>`;
+  // Daily pages hold only a few updates each, so the home page offers them as a row of date links, not cards.
+  const dailyMarkup = `<div class="date-chips">${dailyHomeDigests.map((digest) => `<a class="date-chip" href="${escapeHtml(links.dayHref(digest.date))}">${escapeHtml(digest.date.slice(5))}<span>${digest.readerEventCount ?? digest.uniqueEventCount}</span></a>`).join("")}</div>`;
 
   const body = `
     <section class="hero hero-home">
@@ -3182,6 +3184,10 @@ body { background: var(--bg); font-size: 15.5px; line-height: 1.6; }
 .update-card .source-meta { display: none; }
 .update-card .meta-row { display: flex; gap: 4px 16px; flex-wrap: wrap; font-size: 0.82rem; }
 .update-card .resource-links ul { display: flex; flex-wrap: wrap; gap: 4px 16px; padding: 0; margin: 4px 0 0; list-style: none; }
+.date-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.date-chip { display: inline-flex; gap: 8px; align-items: center; padding: 5px 12px; border: 1px solid var(--line); border-radius: 999px; background: #fff; text-decoration: none; font-size: 0.9rem; font-variant-numeric: tabular-nums; }
+.date-chip span { color: var(--muted); font-size: 0.8rem; }
+.date-chip:hover { border-color: var(--accent); color: var(--accent-strong); }
 .digest-card-head { justify-content: flex-end; }
 .digest-card-head p, .digest-card-focus-label { display: none; }
 .digest-card h3 { font-size: 1rem; margin: 0 0 6px; }
