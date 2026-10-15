@@ -29,7 +29,7 @@ jobs:
             }
             const { owner, repo } = context.repo;
             let pr = (await github.rest.pulls.get({ owner, repo, pull_number: pullRequests[0].number })).data;
-            const isSummaryPr = /^(\[WIP\] )?(summaries:|Summary authoring request)/.test(pr.title || '') || (pr.body || '').includes('summary-authoring-request') || (pr.head?.ref || '').startsWith('copilot/summar');
+            const isSummaryPr = /^(\[WIP\] )?(summaries:|Summary authoring request)/.test(pr.title || '') || (pr.body || '').includes('summary-authoring-request') || (pr.head?.ref || '').startsWith('copilot/summar') || /summaries/i.test(pr.head?.ref || '') || /summaries/i.test(pr.title || '');
             if (pr.state !== 'open' || !isSummaryPr || !/copilot/i.test(pr.user?.login || '')) {
               core.info(`PR #${pr.number} is not an open Copilot summary PR.`);
               return;

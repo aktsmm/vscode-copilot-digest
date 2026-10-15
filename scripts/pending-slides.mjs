@@ -3,6 +3,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { retentionStart } from "./build-slide-pdfs.mjs";
+import { AGENT_UNREACHABLE } from "./lib/slides.mjs";
 
 const root = process.cwd();
 const args = process.argv.slice(2);
@@ -20,7 +21,7 @@ export function selectPending(items, existingIds, { months = 3, limit = 10, ids 
   return items
     .filter((item) => item.sourceKind !== "html_snapshot_change" || item.changes?.length > 0)
     // The authoring agent cannot open Publickey pages, so it cannot verify them.
-    .filter((item) => !/publickey1\.jp/.test(item.resources?.source?.url ?? item.urls?.source ?? ""))
+    .filter((item) => !AGENT_UNREACHABLE.test(item.resources?.source?.url ?? item.urls?.source ?? ""))
     .filter((item) => !existingIds.has(item.id) && !skip.includes(item.id))
     // A slide written from a page-change item already covers the article it names.
     .filter((item) => item.sourceKind === "html_snapshot_change" || !existingUrls.has(normalizeUrl(item.resources?.source?.url ?? item.urls?.source)))

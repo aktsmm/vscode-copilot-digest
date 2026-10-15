@@ -3,6 +3,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { retentionStart } from "./build-slide-pdfs.mjs";
+import { AGENT_UNREACHABLE } from "./lib/slides.mjs";
 
 const root = process.cwd();
 const args = process.argv.slice(2);
@@ -16,7 +17,7 @@ export function selectNeedingSummary(items, { slideIds, slideUrls, written, mont
   const cutoff = retentionStart(months, today);
   return items
     .filter((item) => item.sourceKind !== "html_snapshot_change" || item.changes?.length > 0)
-    .filter((item) => !/publickey1\.jp/.test(item.resources?.source?.url ?? item.urls?.source ?? ""))
+    .filter((item) => !AGENT_UNREACHABLE.test(item.resources?.source?.url ?? item.urls?.source ?? ""))
     .filter((item) => !slideIds.has(item.id) && !written.has(item.id) && !skip.includes(item.id))
     .filter((item) => item.sourceKind === "html_snapshot_change" || !slideUrls.has(normalizeUrl(item.resources?.source?.url ?? item.urls?.source)))
     .filter((item) => (ids ? ids.includes(item.id) : item.digestDate >= cutoff))

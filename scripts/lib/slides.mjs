@@ -15,6 +15,9 @@ export const TOPICS = ["GitHub Copilot", "VS Code", "GitHub Platform", "周辺�
 // Hosts the sources and the resource ledger actually use; evidence outside them needs a human.
 export const ALLOWED_HOSTS = new Set(["github.blog", "github.com", "docs.github.com", "code.visualstudio.com", "www.publickey1.jp", "learn.microsoft.com"]);
 // Internal-memo wording that must never reach a reader.
+// Pages the Copilot coding agent cannot open from its sandbox (its firewall blocks them), so it cannot verify them.
+// Remove a host here once it is added to the repository's Copilot coding agent allowlist.
+export const AGENT_UNREACHABLE = /publickey1\.jp|code\.visualstudio\.com/;
 export const FORBIDDEN_PHRASES = ["未確認", "記載なし", "要確認", "推定", "未発表", "判定保留", "AI 生成", "AI生成", "データ時点", "初心者向け"];
 // A bare site name or a URL tells the reader nothing about the linked page.
 const GENERIC_TITLES = /^(github changelog|github blog|changelog|原文|source|link|リンク|https?:\/\/.*)$/i;
