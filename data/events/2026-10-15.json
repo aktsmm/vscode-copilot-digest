@@ -1,21 +1,90 @@
 {
   "date": "2026-10-15",
-  "generatedAt": "2026-10-15T18:24:36.264Z",
+  "generatedAt": "2026-10-15T23:43:53.900Z",
   "latestRun": {
-    "generatedAt": "2026-10-15T18:24:36.264Z",
-    "newEventsCount": 6,
+    "generatedAt": "2026-10-15T23:43:53.900Z",
+    "newEventsCount": 3,
     "newEventIds": [
-      "github-changelog:https://github.blog/changelog/2026-10-15-agentic-autofix-for-code-scanning-alerts-general-availability",
-      "github-changelog-copilot:https://github.blog/changelog/2026-10-15-agentic-autofix-for-code-scanning-alerts-general-availability",
-      "vscode-feed:https://code.visualstudio.com/blogs/2026/10/15/modern-ui",
-      "copilot-whats-new:5e896735cd44ef3c6164da40ae03cfa5db9c583c3e64ff4b57ef4b7fc280569d",
-      "docs-github-copilot:a9338c93a9baa0d54fc60a6e089348eee5bd3e1b9f778a8c6968a3363afefe36",
-      "docs-github-copilot-howtos:19aaa203d2ffff35febbb26ab63e5828a84ede8d0632ce3419644a81d2910756"
+      "github-changelog:https://github.blog/changelog/2026-10-15-upcoming-deprecation-of-selected-github-copilot-models-in-mid-november",
+      "github-changelog-copilot:https://github.blog/changelog/2026-10-15-upcoming-deprecation-of-selected-github-copilot-models-in-mid-november",
+      "copilot-whats-new:f8d1e68087b462bb09fe86ba3acb05fce1fde2acc896df2ce547caa11fcaf9b9"
     ],
     "errorCount": 0,
     "skippedLowInformationEvents": []
   },
   "events": [
+    {
+      "eventId": "copilot-whats-new:f8d1e68087b462bb09fe86ba3acb05fce1fde2acc896df2ce547caa11fcaf9b9",
+      "sourceId": "copilot-whats-new",
+      "sourceName": "GitHub Copilot What's New",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-10-15T23:43:51.627Z",
+      "publishedAt": "2026-10-15T23:43:51.626Z",
+      "title": "GitHub Copilot What's New changed",
+      "url": "https://github.com/features/copilot/whats-new",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [
+          "Oct.15 Retired"
+        ],
+        "additions": [
+          "H3: Oct.15 Retired"
+        ]
+      },
+      "headings": [
+        "Changelog",
+        "Filters (0 selected)",
+        "October\n Oct\n 2026",
+        "Oct.15 Retired",
+        "Oct.15 Release",
+        "Oct.14 Release",
+        "Oct.13 Release",
+        "Oct.13 Improvement",
+        "Oct.12 Improvement",
+        "Oct.10 Release",
+        "Oct.09 Release",
+        "Oct.08 Improvement"
+      ],
+      "score": 3
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-10-15-upcoming-deprecation-of-selected-github-copilot-models-in-mid-november",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-10-15T23:43:49.635Z",
+      "publishedAt": "2026-10-15T19:35:13.000Z",
+      "title": "Upcoming deprecation of selected GitHub Copilot models in mid-November",
+      "url": "https://github.blog/changelog/2026-10-15-upcoming-deprecation-of-selected-github-copilot-models-in-mid-november",
+      "summary": "We will deprecate the following models across all GitHub Copilot experiences (including Copilot Chat, inline edits, ask and agent modes, and code completions) on November 16th, 2026: Model Deprecation date…\nThe post Upcoming deprecation of selected GitHub Copilot models in mid-November appeared first on The GitHub Blo...",
+      "categories": [
+        "Retired",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 5
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-10-15-upcoming-deprecation-of-selected-github-copilot-models-in-mid-november",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-10-15T23:43:50.197Z",
+      "publishedAt": "2026-10-15T19:35:13.000Z",
+      "title": "Upcoming deprecation of selected GitHub Copilot models in mid-November",
+      "url": "https://github.blog/changelog/2026-10-15-upcoming-deprecation-of-selected-github-copilot-models-in-mid-november",
+      "summary": "We will deprecate the following models across all GitHub Copilot experiences (including Copilot Chat, inline edits, ask and agent modes, and code completions) on November 16th, 2026: Model Deprecation date…\nThe post Upcoming deprecation of selected GitHub Copilot models in mid-November appeared first on The GitHub Blo...",
+      "categories": [
+        "Retired",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 5
+    },
     {
       "eventId": "copilot-whats-new:5e896735cd44ef3c6164da40ae03cfa5db9c583c3e64ff4b57ef4b7fc280569d",
       "sourceId": "copilot-whats-new",

@@ -22866,6 +22866,74 @@
         "Original article explicit links",
         "Feature-matched official documentation indexes"
       ]
+    },
+    "1d02261e325a13c72f7f10d4a7e5483823ab2cf1bbd95459e005ee746d7d7eb1": {
+      "version": 6,
+      "checkedAt": "2026-10-15T23:43:54.457Z",
+      "inputUrl": "https://github.com/features/copilot/whats-new",
+      "inputTitle": "GitHub Copilot What's New changed",
+      "status": "verified",
+      "source": {
+        "url": "https://github.blog/changelog/2026-10-15-upcoming-deprecation-of-selected-github-copilot-models-in-mid-november/",
+        "status": "verified",
+        "reason": "Snapshot observation, not a standalone feature: Oct.15 Retired; explicit article: Upcoming deprecation of selected GitHub Copilot models in mid-November",
+        "checkedAt": "2026-10-15T23:43:54.701Z",
+        "contentHash": "3b8f0586f865a68714490785aea658a1c8c9e2a936b363bba4e22b3893ac95b2"
+      },
+      "documents": [
+        {
+          "url": "https://docs.github.com/ja/copilot/reference/ai-models/supported-models",
+          "title": "GitHub Copilotでサポートされている AI モデル",
+          "language": "ja",
+          "checkedAt": "2026-10-15T23:43:55.127Z",
+          "contentHash": "99966d8397658c7d6048ac4e10a08d27f8ceb8c06bf4d50d9ed98c00cc947306",
+          "discoveryUrl": "https://github.blog/changelog/2026-10-15-upcoming-deprecation-of-selected-github-copilot-models-in-mid-november/",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "54b19f5b04ba61e350d1119b9d7db56bd93ba0f417e56fd8b5d2c7865534a3a3": {
+      "version": 6,
+      "checkedAt": "2026-10-15T23:43:55.316Z",
+      "inputUrl": "https://github.blog/changelog/2026-10-15-upcoming-deprecation-of-selected-github-copilot-models-in-mid-november",
+      "inputTitle": "Upcoming deprecation of selected GitHub Copilot models in mid-November",
+      "status": "verified",
+      "source": {
+        "url": "https://github.blog/changelog/2026-10-15-upcoming-deprecation-of-selected-github-copilot-models-in-mid-november/",
+        "status": "verified",
+        "reason": "Fetched original article",
+        "checkedAt": "2026-10-15T23:43:54.701Z",
+        "contentHash": "3b8f0586f865a68714490785aea658a1c8c9e2a936b363bba4e22b3893ac95b2"
+      },
+      "documents": [
+        {
+          "url": "https://docs.github.com/ja/copilot/reference/ai-models/supported-models",
+          "title": "GitHub Copilotでサポートされている AI モデル",
+          "language": "ja",
+          "checkedAt": "2026-10-15T23:43:55.127Z",
+          "contentHash": "99966d8397658c7d6048ac4e10a08d27f8ceb8c06bf4d50d9ed98c00cc947306",
+          "discoveryUrl": "https://github.blog/changelog/2026-10-15-upcoming-deprecation-of-selected-github-copilot-models-in-mid-november/",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
     }
   }
 }
