@@ -18,6 +18,7 @@ import {
   summarizeEventSet,
 } from "./lib/reporting.mjs";
 import { normalizeSnapshotLine } from "./lib/snapshot-text.mjs";
+import { loadSlideSummaries } from "./lib/slide-summaries.mjs";
 
 const workspaceRoot = process.cwd();
 const configFile = path.join(workspaceRoot, "config", "sources.json");
@@ -967,6 +968,7 @@ async function writeDailySummaries(logs) {
 }
 
 async function main() {
+  await loadSlideSummaries(workspaceRoot);
   await Promise.all([
     ensureDirectory(eventsDir),
     ensureDirectory(snapshotsDir),

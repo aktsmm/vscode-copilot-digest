@@ -2,7 +2,8 @@ import assert from "node:assert/strict";
 import fs from "node:fs/promises";
 import path from "node:path";
 import { selectPending } from "../scripts/pending-slides.mjs";
-import { editorialQuality, excerptToSentences, isGenericImportanceReason } from "../scripts/lib/reporting.mjs";
+import { editorialQuality, excerptToSentences, isGenericImportanceReason, importanceReason, localizedSummary, registerSlideSummaries, eventKey } from "../scripts/lib/reporting.mjs";
+import { createHash } from "node:crypto";
 import { findMissing, normalizeUrl, parseFeed } from "../scripts/coverage-report.mjs";
 
 const workflows = path.join(process.cwd(), ".github", "workflows");
@@ -29,6 +30,15 @@ assert.equal(excerptToSentences("First point. Second point is here. Third one cu
 assert.ok(excerptToSentences("x".repeat(30) + " " + "y".repeat(400)).endsWith("…"));
 assert.ok(isGenericImportanceReason("「A」の公開内容を追跡し、Copilot / VS Code 周辺の運用・説明材料として影響を確認したい更新です。"));
 assert.ok(!isGenericImportanceReason("管理者向けの新しい制御が追加され、組織の方針を一括で設定できます。"));
+
+// A written slide supplies the card wording in place of the excerpt and the generic reason.
+const slideEvent = { kind: "feed_entry", title: "Local models", url: "https://example.test/local", summary: "Use local models from the CLI whenever you like to.", categories: [] };
+const slideId = createHash("sha256").update(eventKey(slideEvent)).digest("hex").slice(0, 16);
+assert.match(localizedSummary(slideEvent), /^（原文の抜粋）/);
+registerSlideSummaries([{ id: slideId, title: { ja: "ローカルモデル" }, audience: { who: "CLI の利用者", change: "手元のモデルを選べる" }, action: { summary: "必要なら設定する" } }].map((s) => ({ ...s, title: { ...s.title, subtitleJa: "CLI でローカルモデルを使える" } })));
+assert.equal(localizedSummary(slideEvent), "CLI でローカルモデルを使える。手元のモデルを選べる。");
+assert.equal(importanceReason(slideEvent), "CLI の利用者向け。必要なら設定する。");
+registerSlideSummaries([]);
 
 // Coverage: a feed article that is not in the events is reported; trailing slashes do not matter.
 const feedXml = `<rss><channel><item><title><![CDATA[Gemini 4]]></title><link>https://example.test/a/</link><pubDate>Tue, 13 Oct 2026 18:39:56 +0000</pubDate></item><item><title>Old</title><link>https://example.test/b</link><pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate></item></channel></rss>`;

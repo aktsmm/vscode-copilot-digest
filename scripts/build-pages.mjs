@@ -3,6 +3,7 @@ import path from "node:path";
 import { createHash } from "node:crypto";
 import { attachResources, httpUrl, resourceStats } from "./lib/resources.mjs";
 import { buildApiFiles } from "./lib/api.mjs";
+import { loadSlideSummaries } from "./lib/slide-summaries.mjs";
 import { downloadPanelHtml, downloadsCss, downloadsJs } from "./lib/downloads.mjs";
 
 import {
@@ -3196,6 +3197,7 @@ function shouldPublishDailyDigest(digest) {
 }
 
 async function main() {
+  await loadSlideSummaries(workspaceRoot);
   const logs = await readDailyLogs();
   let ledger;
   try {
