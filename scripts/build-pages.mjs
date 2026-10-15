@@ -206,6 +206,11 @@ function importanceFilterValue(event) {
   );
 }
 
+// Retirements, deprecations and migrations: the updates that may force a change in settings or workflows.
+function isRetirementEvent(event) {
+  return localizedImportanceLabel(event, "en") === "Retired";
+}
+
 function sortDateValue(event) {
   return safeDate(
     event.publishedAt ?? event.updatedAt ?? event.dateKey ?? event.date,
@@ -1330,6 +1335,7 @@ function renderHighlightsArchivePage(
   options = {},
 ) {
   const pageNumber = options.pageNumber ?? 1;
+  const retire = options.retirements === true;
   const totalPages = Math.max(
     1,
     Math.ceil(events.length / HIGHLIGHTS_PAGE_SIZE),
@@ -1356,9 +1362,9 @@ function renderHighlightsArchivePage(
   const body = `
     <section class="hero hero-day">
       <div>
-        <p class="eyebrow">${escapeHtml(locale === "ja" ? "ハイライト一覧" : "Highlights archive")}</p>
-        <h1>${escapeHtml(locale === "ja" ? "最新ハイライトをまとめて見る。" : "Browse all highlights.")}</h1>
-        <p class="hero-copy">${escapeHtml(locale === "ja" ? "トップページでは最新の一部だけを見せています。このページでは公開済みのハイライトを時系列でまとめて追えます。50件を超えるとページ分割します。" : "The home page shows only a subset. This page lists published highlights in reverse chronological order and splits them into pages of 50 items.")}</p>
+        <p class="eyebrow">${escapeHtml(retire ? (locale === "ja" ? "提供終了・廃止" : "Retirements") : (locale === "ja" ? "ハイライト一覧" : "Highlights archive"))}</p>
+        <h1>${escapeHtml(retire ? (locale === "ja" ? "提供終了・廃止・移行の更新をまとめて見る。" : "Retirements and deprecations in one place.") : (locale === "ja" ? "最新ハイライトをまとめて見る。" : "Browse all highlights."))}</h1>
+        <p class="hero-copy">${escapeHtml(retire ? (locale === "ja" ? "モデルや機能の提供終了・廃止・移行に関わる更新だけを、新しい順に並べています。設定やワークフローの見直しが必要か、早めに確認できます。" : "Only updates about retired, deprecated or migrated models and features, newest first, so you can check early whether settings or workflows need changes.") : (locale === "ja" ? "トップページでは最新の一部だけを見せています。このページでは公開済みのハイライトを時系列でまとめて追えます。50件を超えるとページ分割します。" : "The home page shows only a subset. This page lists published highlights in reverse chronological order and splits them into pages of 50 items."))}</p>
       </div>
       <div class="metrics-grid">
         ${renderMetric(text.trackedUpdates, visibleCount, locale === "ja" ? "このページに表示している件数" : "Items shown on this page")}
@@ -1373,8 +1379,8 @@ function renderHighlightsArchivePage(
     ${downloadPanelHtml(locale)}
     ${renderFilterBar(text, { showSource: true, showTopic: true, showImportance: true, showSort: true, importanceOptions: renderImportanceOptions(pageEvents, locale), showAxisLabels: true, extraClass: "filter-block--compact" })}
 
-    <section class="section-block" data-pagefind-body>
-      ${renderSectionHeading(locale === "ja" ? "ハイライト一覧" : "All highlights", locale === "ja" ? `${visibleCount} / 全${events.length}${text.itemSuffix}` : `${visibleCount} / ${itemCount}`)}
+    <section class="section-block"${retire ? "" : " data-pagefind-body"}>
+      ${renderSectionHeading(retire ? (locale === "ja" ? "提供終了・廃止の更新" : "Retirements") : (locale === "ja" ? "ハイライト一覧" : "All highlights"), locale === "ja" ? `${visibleCount} / 全${events.length}${text.itemSuffix}` : `${visibleCount} / ${itemCount}`)}
       <div class="stream-list" data-sort-list>${pageEvents.map((event) => renderEventStreamItem(event, locale, text)).join("")}</div>
     </section>
 
@@ -1384,12 +1390,14 @@ function renderHighlightsArchivePage(
   return renderLayout({
     locale,
     text,
-    title:
-      locale === "ja"
+    title: retire
+      ? (locale === "ja" ? "提供終了・廃止 | vscode-copilot-digest" : "Retirements | vscode-copilot-digest")
+      : locale === "ja"
         ? "ハイライト一覧 | vscode-copilot-digest"
         : "Highlights | vscode-copilot-digest",
-    description:
-      locale === "ja"
+    description: retire
+      ? (locale === "ja" ? "提供終了・廃止・移行に関わる更新の一覧" : "Updates about retirements and deprecations")
+      : locale === "ja"
         ? "公開済みハイライトの一覧ページ"
         : "Published highlights archive",
     body,
@@ -2173,6 +2181,7 @@ function renderLayout({
           <nav class="site-nav" aria-label="${escapeHtml(locale === "ja" ? "主要ナビゲーション" : "Primary navigation")}">
             <a href="${escapeHtml(homeHref)}">${escapeHtml(text.dailyNav)}</a>
             <a href="${escapeHtml(weeklyHref)}">${escapeHtml(text.weeklyNav)}</a>
+            <a href="${escapeHtml(homeHref.replace(/index\.html$/, "retirements.html"))}">${escapeHtml(locale === "ja" ? "提供終了・廃止" : "Retirements")}</a>
             <a href="${escapeHtml(searchHref)}">${escapeHtml(text.searchNav)}</a>
             <a href="https://github.com/aktsmm/vscode-copilot-digest">${escapeHtml(text.repositoryNav)}</a>
             <button class="lang-toggle" type="button" data-href="${escapeHtml(langSwitchHref)}" aria-label="${escapeHtml(locale === "ja" ? "Switch to English" : "日本語に切り替え")}" aria-pressed="${locale === "en" ? "true" : "false"}">
@@ -3491,6 +3500,16 @@ async function main() {
           pageHref: (page) => `./${highlightArchiveFileName(page)}`,
         },
       ),
+      "utf8",
+    ),
+    fs.writeFile(
+      path.join(siteDir, "retirements.html"),
+      renderHighlightsArchivePage(allHighlights.filter(isRetirementEvent), "ja", jaText, lastUpdatedAt, ".", { home: "./index.html", weekly: "./weeks/index.html", langSwitch: "./en/retirements.html", pageHref: () => "./retirements.html" }, { retirements: true }),
+      "utf8",
+    ),
+    fs.writeFile(
+      path.join(siteDir, "en", "retirements.html"),
+      renderHighlightsArchivePage(allHighlights.filter(isRetirementEvent), "en", enText, lastUpdatedAt, "..", { home: "./index.html", weekly: "./weeks/index.html", langSwitch: "../retirements.html", pageHref: () => "./retirements.html" }, { retirements: true }),
       "utf8",
     ),
     fs.writeFile(

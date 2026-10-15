@@ -21,7 +21,7 @@ const LABELS = {
     preparing: "準備中…", merging: (d, t) => `結合中… ${d} / ${t}`, saved: (n) => `保存しました（${n} 件）`, failed: "作成できませんでした。時間をおいて再度お試しください。",
     topicLabels: { "GitHub Copilot": "GitHub Copilot", "VS Code": "VS Code", "GitHub Platform": "GitHub Platform", "周辺ニュース": "周辺ニュース" },
     periodPrefix: "対象期間", countUnit: " 件",
-    pick: "個別に選ぶ", selectAll: "すべて選択", selectNone: "すべて解除", noItems: "条件に合うスライドはありません",
+    search: "タイトル・要約で絞り込み", pick: "個別に選ぶ", selectAll: "すべて選択", selectNone: "すべて解除", noItems: "条件に合うスライドはありません",
   },
   en: {
     title: "Download slides", from: "From", to: "To", last30: "Last 30 days", last7: "Last 7 days", clear: "Clear",
@@ -36,7 +36,7 @@ const LABELS = {
     preparing: "Preparing…", merging: (d, t) => `Merging… ${d} / ${t}`, saved: (n) => `Saved (${n} items)`, failed: "Could not build the file. Please try again later.",
     topicLabels: { "GitHub Copilot": "GitHub Copilot", "VS Code": "VS Code", "GitHub Platform": "GitHub Platform", "周辺ニュース": "Other news" },
     periodPrefix: "Period", countUnit: "",
-    pick: "Pick individually", selectAll: "Select all", selectNone: "Clear selection", noItems: "No slides match the filters",
+    search: "Filter by title or summary", pick: "Pick individually", selectAll: "Select all", selectNone: "Clear selection", noItems: "No slides match the filters",
   },
 };
 
@@ -46,6 +46,7 @@ export function downloadPanelHtml(locale = "ja") {
   const L = LABELS[locale] ?? LABELS.ja;
   const chip = (group, value, label) => `<label class="dl-chip"><input type="checkbox" data-dl-${group} value="${esc(value)}"><span>${esc(label)}</span></label>`;
   return `<section class="section-block dl-panel" data-dl-panel hidden aria-label="${esc(L.title)}">
+    <input class="dl-search" type="search" data-dl-q placeholder="${esc(L.search)}" aria-label="${esc(L.search)}" autocomplete="off">
     <details class="dl-collapse">
     <summary>${esc(L.pick)} <span class="dl-items-count" data-dl-items-count></span></summary>
     <div class="dl-row">
@@ -86,6 +87,7 @@ export function downloadsCss() {
 .dl-label{font-size:.82rem;font-weight:700;color:${P.muted};min-width:4.5em}
 .dl-chip{display:inline-flex;align-items:center;gap:6px;border:1px solid ${P.border};border-radius:999px;padding:4px 12px;font-size:.9rem;background:#fff;cursor:pointer}
 .dl-chip:has(input:checked){border-color:${P.copilot};background:${P.copilotTint};color:${P.copilotDeep};font-weight:700}
+.dl-search{font:inherit;padding:9px 12px;border:1px solid ${P.border};border-radius:10px;background:#fff;color:${P.fg};width:100%}
 .dl-btn{font:inherit;padding:7px 16px;border-radius:8px;border:1px solid ${P.copilot};background:#fff;color:${P.copilotDeep};cursor:pointer}
 .dl-btn:hover:not(:disabled),.dl-btn:focus-visible{background:${P.copilotTint}}
 .dl-btn:disabled{border-color:${P.border};color:${P.muted};cursor:not-allowed;background:${P.subtle}}
@@ -135,22 +137,27 @@ export function downloadsJs() {
   function checked(attr) { return Array.prototype.map.call(panel.querySelectorAll("[data-dl-" + attr + "]:checked"), function (el) { return el.value; }); }
   var excluded = new Set();
   // Slides that pass the date, type and topic filters; the list below lets the reader drop single ones.
+  var feedCards = Array.prototype.slice.call(document.querySelectorAll("[data-card-date]"));
+  var cardText = {};
+  feedCards.forEach(function (c) { var sid = c.getAttribute("data-slide-id"); if (sid) cardText[sid] = c.textContent.toLowerCase(); });
+  var KIND_IMPORTANCE = { ga: ["ga"], preview: ["preview"], retirement: ["retired"], announcement: ["release"], update: ["update", "feature-update", "snapshot"] };
   function matching() {
-    var from = $("[data-dl-from]").value, to = $("[data-dl-to]").value, kinds = checked("kind"), topics = checked("topic");
+    var from = $("[data-dl-from]").value, to = $("[data-dl-to]").value, kinds = checked("kind"), topics = checked("topic"), q = $("[data-dl-q]").value.trim().toLowerCase();
     return manifest.slides.filter(function (s) {
-      return (!from || s.date >= from) && (!to || s.date <= to) && (!kinds.length || kinds.indexOf(s.status === "unknown" ? "update" : s.status) >= 0) && (!topics.length || topics.indexOf(s.topic) >= 0);
+      var hay = cardText[s.id] || String(s.title || "").toLowerCase();
+      return (!from || s.date >= from) && (!to || s.date <= to) && (!kinds.length || kinds.indexOf(s.status === "unknown" ? "update" : s.status) >= 0) && (!topics.length || topics.indexOf(s.topic) >= 0) && (!q || hay.indexOf(q) >= 0);
     });
   }
   function selection() { return matching().filter(function (s) { return !excluded.has(s.id); }); }
   // The update list on the page follows the same date / type / topic filters, and each card that has a slide can be dropped.
-  var feedCards = Array.prototype.slice.call(document.querySelectorAll("[data-card-date]"));
   function syncFeed() {
     if (!feedCards.length || !manifest) return;
-    var from = $("[data-dl-from]").value, to = $("[data-dl-to]").value, kinds = checked("kind"), topics = checked("topic");
+    var from = $("[data-dl-from]").value, to = $("[data-dl-to]").value, kinds = checked("kind"), topics = checked("topic"), q = $("[data-dl-q]").value.trim().toLowerCase();
     var inRange = new Set(matching().map(function (s) { return s.id; }));
     feedCards.forEach(function (card) {
       var sid = card.getAttribute("data-slide-id"), date = card.getAttribute("data-card-date") || "";
-      var show = sid ? inRange.has(sid) : ((!from || date >= from) && (!to || date <= to) && !kinds.length && (!topics.length || topics.indexOf(card.getAttribute("data-topic")) >= 0));
+      var kindOk = !kinds.length || kinds.some(function (k) { return (KIND_IMPORTANCE[k] || []).indexOf(card.getAttribute("data-importance")) >= 0; });
+      var show = sid ? inRange.has(sid) : ((!from || date >= from) && (!to || date <= to) && kindOk && (!topics.length || topics.indexOf(card.getAttribute("data-topic")) >= 0) && (!q || card.textContent.toLowerCase().indexOf(q) >= 0));
       card.classList.toggle("dl-out", !show);
       var box = card.querySelector("[data-card-pick]");
       if (box) { box.checked = !excluded.has(sid); card.classList.toggle("dl-unpicked", !box.checked); }
@@ -457,6 +464,7 @@ export function downloadsJs() {
     if (t && t.hasAttribute && t.hasAttribute("data-dl-item")) { if (t.checked) excluded.delete(t.value); else excluded.add(t.value); refresh(); return; }
     renderList(); refresh();
   });
+  $("[data-dl-q]").addEventListener("input", function () { renderList(); refresh(); });
   document.addEventListener("change", function (e) {
     var t = e.target;
     if (!t || !t.hasAttribute || !t.hasAttribute("data-card-pick")) return;
