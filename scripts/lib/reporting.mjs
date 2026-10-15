@@ -1635,6 +1635,9 @@ function cleanupSummary(summary) {
     decodeHtmlEntities(String(summary ?? ""))
       .replace(/The post .*? appeared first on The GitHub Blog\.?/gi, "")
       .replace(/Read the full article/gi, "")
+      // Buttons and setting ids copied from the VS Code release notes page.
+      .replace(/\bSetting:\s*[A-Za-z0-9_.]+(?:\s*,\s*[A-Za-z0-9_.]+)*/g, "")
+      .replace(/Open in VS Code(?: Insiders)?/g, "")
       .replace(/Learn what's new in /gi, "")
       .replace(/Learn what is new in /gi, "")
       .replace(/What\'s new in /gi, "")
@@ -2118,12 +2121,12 @@ function summaryFromPatterns(event, locale = "ja") {
   if (title === "VS Code Updates changed" && addedVersion) {
     if (vscodeReleaseSummaries[addedVersion]?.[locale]) {
       return locale === "ja"
-        ? `VS Code の版一覧ページに ${addedVersion} が追加され、release notes への導線が公開された。${vscodeReleaseSummaries[addedVersion][locale]}`
+        ? `VS Code ${addedVersion} が公開された。${vscodeReleaseSummaries[addedVersion][locale]}`
         : `The VS Code Updates landing page now lists ${addedVersion}, exposing the release notes entry point. ${vscodeReleaseSummaries[addedVersion][locale]}`;
     }
 
     return locale === "ja"
-      ? `VS Code の版一覧ページに ${addedVersion} が追加され、release notes への導線が公開された。`
+      ? `VS Code ${addedVersion} のリリースが案内された。新機能と変更点は、公式の release notes で確認できる。`
       : `The VS Code Updates landing page now lists ${addedVersion}, exposing the release notes entry point.`;
   }
 
@@ -2548,7 +2551,7 @@ export function excerptToSentences(text, limit = 240) {
 
 // Boilerplate "why it matters" lines add nothing to a card, so the page leaves them out.
 export function isGenericImportanceReason(text) {
-  return /の公開内容を追跡し、Copilot|監視入口として意味があります|追加内容から、利用中の手順や設定に関わる変更かを原典で確認できます|固定ページの追記や差し替えを拾うための更新です|This update is worth tracking because|is worth checking against existing procedures or settings|This reflects a detected change on a tracked static page/.test(String(text ?? ""));
+  return /の公開内容を追跡し、Copilot|版一覧ページに|監視入口として意味があります|追加内容から、利用中の手順や設定に関わる変更かを原典で確認できます|固定ページの追記や差し替えを拾うための更新です|This update is worth tracking because|is worth checking against existing procedures or settings|This reflects a detected change on a tracked static page/.test(String(text ?? ""));
 }
 
 export function localizedSummary(event, locale = "ja") {
@@ -3157,6 +3160,14 @@ export function editorialQuality(event) {
     return "audit-only";
   }
 
+  // The VS Code hub page only lists versions (the release itself is covered by its feed article), and release-notes
+  // pages are tracked section by section. Only a patch-update notice carries news of its own.
+  if (
+    (event.sourceId === "vscode-updates" && !additions.some((line) => /^(?:H[1-3]:\s*)?Update\s+[0-9.]+:/i.test(line))) ||
+    String(event.sourceId ?? "").startsWith("vscode-release-notes-")
+  ) {
+    return "audit-only";
+  }
   if (additions.length >= 3 || (event.diffSummary?.headings?.length ?? 0) > 0) {
     return "high";
   }
@@ -3449,56 +3460,8 @@ function importanceReasonCore(event, locale = "ja") {
       : "This matters because it reduces one of the most visible sources of cloud-agent latency without narrowing the validation checks that protect quality and security.";
   }
 
-  const label = importanceLabel(event);
-  const displayTitle = trimText(localizedTitle(event, locale), 84);
-
-  if (label === "Retired") {
-    return locale === "ja"
-      ? `「${displayTitle}」の廃止・移行に関わるため、既存の設定や利用モデルへの影響を確認したい更新です。`
-      : "This update is likely to require changes to existing model choices or workflows.";
-  }
-
-  if (label === "GA") {
-    return locale === "ja"
-      ? `「${displayTitle}」が GA として扱える段階になったため、本番運用や社内案内の候補に入れやすくなります。`
-      : "This feature has moved beyond preview and is now easier to treat as production-ready.";
-  }
-
-  if (label === "Release") {
-    return locale === "ja"
-      ? `「${displayTitle}」がリリースされたため、対象プランや設定で利用・影響確認を進めやすくなります。`
-      : "This indicates newly shipped capabilities that may be ready for immediate evaluation.";
-  }
-
-  if (label === "Preview") {
-    return locale === "ja"
-      ? `「${displayTitle}」を早期検証できるため、正式利用前に運用適合や制約を確認しやすくなります。`
-      : "This is worth validating early so you can decide whether it fits your workflow.";
-  }
-
-  if (label === "Improvement") {
-    return locale === "ja"
-      ? `「${displayTitle}」により、既存ワークフローの制約や手間を減らせるか確認したい更新です。`
-      : "This tends to reduce friction or constraints in an existing workflow.";
-  }
-
-  if (label === "Snapshot") {
-    const additions = meaningfulSnapshotAdditions(event);
-    const quality = editorialQuality(event);
-    if (quality !== "audit-only" && additions.length > 0) {
-      return locale === "ja"
-        ? `「${trimText(additions[0], 84)}」${additions.length > 1 ? `など${additions.length}件の` : "の"}追加内容から、利用中の手順や設定に関わる変更かを原典で確認できます。`
-        : `The newly added "${trimText(additions[0], 84)}" item${additions.length > 1 ? ` and ${additions.length - 1} related item(s)` : ""} is worth checking against existing procedures or settings.`;
-    }
-
-    return locale === "ja"
-      ? "固定ページの追記や差し替えを拾うための更新です。"
-      : "This reflects a detected change on a tracked static page.";
-  }
-
-  return locale === "ja"
-    ? `「${displayTitle}」の公開内容を追跡し、Copilot / VS Code 周辺の運用・説明材料として影響を確認したい更新です。`
-    : `This update is worth tracking because "${displayTitle}" may affect how Copilot or VS Code capabilities are explained or operated.`;
+  // Label-only templates (GA / Preview / Release ...) said nothing about the update itself, so there is no reason line.
+  return "";
 }
 
 export function buildDailyDigest(eventLog) {
