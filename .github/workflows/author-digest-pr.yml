@@ -172,8 +172,9 @@ jobs:
             const fallbackEntry = fallbackSummaryHits.find((entry) => entry.dateKey === dateKey);
             const fallbackMatches = fallbackEntry?.matches ?? [];
             const hasLowInformationSummary = fallbackMatches.length > 0;
+            // New events alone no longer open a request: cards take their wording from the source excerpt and
+            // from slides, and daily requests on page-diff events only produced unmerged PRs.
             const shouldAuthor =
-              newEventsCount > 0 ||
               forceIssue ||
               hasLowInformationSummary ||
               hasPagesBuildFailure ||

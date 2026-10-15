@@ -61,6 +61,10 @@ assert.ok((await read("auto-merge-slide-pr.yml")).includes("status === 'removed'
 assert.ok((await read("validate-generated-pr.yml")).includes("isSlidePr"));
 assert.ok((await read("auto-merge-generated-pr.yml")).includes("slide-authoring-request"));
 assert.ok((await read("request-copilot-review.yml")).includes("slide-authoring-request"));
+// The duplicate-closing step must not treat slide or maintenance PRs as duplicate digest PRs.
+assert.ok((await read("request-copilot-review.yml")).includes("if (inOtherLane(candidate)) return false;"));
+// New events alone no longer open a digest request (they produced only unmerged PRs).
+assert.ok(!(await read("author-digest-pr.yml")).includes("newEventsCount > 0 ||"));
 assert.ok((await read("redeploy-pages-after-generated-pr-merge.yml")).includes("slide-authoring-request"));
 
 // Copilot titles its PR itself, so the lane is detected by the issue marker and branch prefix too.

@@ -120,8 +120,14 @@ jobs:
                 state: 'open',
                 per_page: 100,
               });
+              // Slide and maintenance PRs may carry the same date marker; they are other lanes, never duplicates.
+              const inOtherLane = (candidate) =>
+                /^(maint:|slides:)/.test(candidate.title || '') ||
+                /slide-authoring-request|pipeline-maintenance-request/.test(String(candidate.body || '')) ||
+                /^copilot\/(slide-|pipeline-maintenance)/.test(candidate.head?.ref || '');
               const duplicateCandidates = openPulls
                 .filter((candidate) => {
+                  if (inOtherLane(candidate)) return false;
                   const isGenerated = /copilot/i.test(candidate.user?.login || '') || (candidate.labels || []).some((label) => label.name === 'auto-pr');
                   const matchesDate =
                     (candidate.title || '').includes(dateKey) ||
