@@ -142,6 +142,22 @@ export function downloadsJs() {
     });
   }
   function selection() { return matching().filter(function (s) { return !excluded.has(s.id); }); }
+  // The update list on the page follows the same date / type / topic filters, and each card that has a slide can be dropped.
+  var feedCards = Array.prototype.slice.call(document.querySelectorAll("[data-card-date]"));
+  function syncFeed() {
+    if (!feedCards.length || !manifest) return;
+    var from = $("[data-dl-from]").value, to = $("[data-dl-to]").value, kinds = checked("kind"), topics = checked("topic");
+    var inRange = new Set(matching().map(function (s) { return s.id; }));
+    feedCards.forEach(function (card) {
+      var sid = card.getAttribute("data-slide-id"), date = card.getAttribute("data-card-date") || "";
+      var show = sid ? inRange.has(sid) : ((!from || date >= from) && (!to || date <= to) && !kinds.length && (!topics.length || topics.indexOf(card.getAttribute("data-topic")) >= 0));
+      card.classList.toggle("dl-out", !show);
+      var box = card.querySelector("[data-card-pick]");
+      if (box) { box.checked = !excluded.has(sid); card.classList.toggle("dl-unpicked", !box.checked); }
+    });
+    var holder = document.querySelector("[data-latest-highlights]"), label = holder && holder.querySelector(".section-heading-tools span");
+    if (label) label.textContent = feedCards.filter(function (c) { return !c.classList.contains("dl-out"); }).length + (holder.getAttribute("data-count-suffix") || "");
+  }
   var pickedText = locale === "ja" ? function (n, m) { return "選択中 " + n + " / " + m + " 件"; } : function (n, m) { return n + " of " + m + " selected"; };
   function renderList() {
     var list = $("[data-dl-list]"), items = matching();
@@ -160,6 +176,7 @@ export function downloadsJs() {
   function refresh() {
     var sel = selection(), withPdf = sel.filter(function (s) { return s.pdf; });
     var json = $('[data-dl="json"]'), pdf = $('[data-dl="pdf"]'), pptx = $('[data-dl="pptx"]');
+    syncFeed();
     $("[data-dl-items-count]").textContent = pickedText(sel.length, matching().length);
     json.textContent = L.json + "（" + sel.length + "）"; json.disabled = sel.length === 0 || sel.length > MAX;
     pdf.textContent = L.pdf + "（" + withPdf.length + "）"; pdf.disabled = withPdf.length === 0 || withPdf.length > MAX;
@@ -440,6 +457,12 @@ export function downloadsJs() {
     if (t && t.hasAttribute && t.hasAttribute("data-dl-item")) { if (t.checked) excluded.delete(t.value); else excluded.add(t.value); refresh(); return; }
     renderList(); refresh();
   });
+  document.addEventListener("change", function (e) {
+    var t = e.target;
+    if (!t || !t.hasAttribute || !t.hasAttribute("data-card-pick")) return;
+    if (t.checked) excluded.delete(t.value); else excluded.add(t.value);
+    renderList(); refresh();
+  });
   $("[data-dl-all]").addEventListener("click", function () { excluded.clear(); renderList(); refresh(); });
   $("[data-dl-none]").addEventListener("click", function () { matching().forEach(function (s) { excluded.add(s.id); }); renderList(); refresh(); });
   panel.querySelectorAll("[data-dl-range]").forEach(function (b) { b.addEventListener("click", function () { setRange(Number(b.getAttribute("data-dl-range"))); }); });
@@ -455,7 +478,7 @@ export function downloadsJs() {
     panel.hidden = false;
     if (m.pdfCrypto) { $('[data-dl="pdf"]').hidden = false; $('[data-dl="pptx"]').hidden = false; }
     if (m.sample) { var a = $("[data-dl-sample]"); a.href = new URL(m.sample, root).href; a.hidden = false; }
-    renderList(); refresh();
+    setRange(30);
   }).catch(function () { /* no slides published */ });
 })();
 `;
