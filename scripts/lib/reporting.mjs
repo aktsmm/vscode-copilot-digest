@@ -3,24 +3,33 @@ import { editorialOverrides } from "./editorial-overrides.mjs";
 
 // Japanese wording written by the slide lane (data/slides) replaces excerpts and filler on cards.
 const slideSummaries = new Map();
+const slideSummariesByUrl = new Map();
+export const normalizeSourceUrl = (url) => String(url ?? "").replace(/[#?].*$/, "").replace(/\/+$/, "");
 export function registerSlideSummaries(slides) {
   slideSummaries.clear();
+  slideSummariesByUrl.clear();
   for (const slide of slides ?? []) {
     const sub = slide.title?.subtitleJa?.trim();
     if (!slide.id || !sub) continue;
     const change = slide.audience?.change?.trim();
     const who = slide.audience?.who?.trim();
     const todo = slide.action?.summary?.trim();
-    slideSummaries.set(slide.id, {
+    const entry = {
       summary: [sub, change && change !== sub ? change : ""].filter(Boolean).map((s) => s.replace(/[。.]+$/, "")).join("。") + "。",
       why: [who ? `${who}向け。` : "", todo ? `${todo.replace(/[。.]+$/, "")}。` : ""].join(""),
       title: slide.title?.ja,
-    });
+    };
+    slideSummaries.set(slide.id, entry);
+    // A slide written from a page-change item still describes the article it names.
+    const sourceUrl = normalizeSourceUrl(slide.references?.source?.url);
+    if (sourceUrl) slideSummariesByUrl.set(sourceUrl, entry);
   }
 }
 function slideSummaryFor(event) {
   if (slideSummaries.size === 0) return null;
-  return slideSummaries.get(createHash("sha256").update(eventKey(event)).digest("hex").slice(0, 16)) ?? null;
+  const byId = slideSummaries.get(createHash("sha256").update(eventKey(event)).digest("hex").slice(0, 16));
+  if (byId) return byId;
+  return event.kind === "html_snapshot_change" ? null : slideSummariesByUrl.get(normalizeSourceUrl(event.url)) ?? null;
 }
 
 export function safeDate(value) {

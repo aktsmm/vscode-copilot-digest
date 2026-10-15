@@ -11,7 +11,9 @@ const option = (name, fallback) => {
   return index >= 0 ? args[index + 1] : fallback;
 };
 
-export function selectPending(items, existingIds, { months = 3, limit = 10, ids = null, skip = [], today = new Date() } = {}) {
+const normalizeUrl = (url) => String(url ?? "").replace(/[#?].*$/, "").replace(/\/+$/, "");
+
+export function selectPending(items, existingIds, { months = 3, limit = 10, ids = null, skip = [], today = new Date(), existingUrls = new Set() } = {}) {
   // Same calendar-month window as the PDF retention, so every slide made here is also published.
   const cutoffDate = retentionStart(months, today);
   // A page-change item is usable only when it carries the added lines that say what changed.
@@ -20,6 +22,8 @@ export function selectPending(items, existingIds, { months = 3, limit = 10, ids 
     // The authoring agent cannot open Publickey pages, so it cannot verify them.
     .filter((item) => !/publickey1\.jp/.test(item.resources?.source?.url ?? item.urls?.source ?? ""))
     .filter((item) => !existingIds.has(item.id) && !skip.includes(item.id))
+    // A slide written from a page-change item already covers the article it names.
+    .filter((item) => item.sourceKind === "html_snapshot_change" || !existingUrls.has(normalizeUrl(item.resources?.source?.url ?? item.urls?.source)))
     .filter((item) => (ids ? ids.includes(item.id) : item.digestDate >= cutoffDate))
     .sort((a, b) => b.digestDate.localeCompare(a.digestDate) || b.importance.score - a.importance.score || a.id.localeCompare(b.id))
     .slice(0, limit);
@@ -39,9 +43,11 @@ async function main() {
   // --refresh also returns slides written before the detail blocks (audience etc.) existed.
   const refresh = args.includes("--refresh");
   const existing = new Set();
+  const existingUrls = new Set();
   for (const file of slideFiles) {
-    const slide = refresh ? JSON.parse(await fs.readFile(path.join(slidesDir, file), "utf8")) : null;
+    const slide = JSON.parse(await fs.readFile(path.join(slidesDir, file), "utf8"));
     if (!refresh || slide.schema === "vscode-copilot-digest/slide/v2") existing.add(file.replace(/\.json$/, ""));
+    if (!refresh && slide.references?.source?.url) existingUrls.add(normalizeUrl(slide.references.source.url));
   }
   const ids = option("ids", "")?.split(",").filter(Boolean);
   const pending = selectPending(items, existing, {
@@ -49,6 +55,7 @@ async function main() {
     limit: Number(option("limit", 10)),
     ids: ids?.length ? ids : null,
     skip: option("skip", "")?.split(",").filter(Boolean) ?? [],
+    existingUrls,
   });
   console.log(JSON.stringify(pending.map((i) => ({
     id: i.id, digestDate: i.digestDate, topic: i.topic, title: i.title,
