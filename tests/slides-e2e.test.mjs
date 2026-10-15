@@ -66,7 +66,10 @@ await fs.writeFile(path.join(siteDir, "assets", "downloads.js"), downloadsJs());
 for (const [from, to] of [["pdf-lib/dist/pdf-lib.min.js", "pdf-lib.min.js"], ["pptxgenjs/dist/pptxgen.bundle.js", "pptxgen.bundle.js"]]) {
   await fs.copyFile(path.join("node_modules", ...from.split("/")), path.join(siteDir, "assets", "vendor", to));
 }
-await fs.writeFile(path.join(siteDir, "index.html"), `<!doctype html><html lang="ja"><head><meta charset="utf-8"><style>${downloadsCss()}</style></head><body>${downloadPanelHtml("ja")}<script src="./assets/downloads.js?v=1" defer></script></body></html>`);
+// Stand-in update list: three cards that have slides, one without a slide, one that is too old for the default range.
+const card = (date, topic, slideId) => `<article class="mini-highlight" data-card-date="${date}" data-topic="${topic}"${slideId ? ` data-slide-id="${slideId}"` : ""}>${slideId ? `<label class="card-pick"><input type="checkbox" data-card-pick value="${slideId}" checked></label>` : ""}<h3>card</h3></article>`;
+const feedCards = `<div data-latest-highlights>${ids.map((id, i) => card(today, i === 2 ? "VS Code" : "GitHub Copilot", id)).join("")}${card(today, "GitHub Copilot", null)}${card("2020-01-01", "GitHub Copilot", null)}</div>`;
+await fs.writeFile(path.join(siteDir, "index.html"), `<!doctype html><html lang="ja"><head><meta charset="utf-8"><style>${downloadsCss()}</style></head><body>${downloadPanelHtml("ja")}${feedCards}<script src="./assets/downloads.js?v=1" defer></script></body></html>`);
 
 const mime = { ".html": "text/html", ".js": "text/javascript", ".json": "application/json", ".pdf": "application/pdf" };
 const server = http.createServer(async (req, res) => {
@@ -89,6 +92,7 @@ try {
   // The filters sit in a collapsed section; the download buttons are always visible.
   assert.equal(await page.isVisible(`[data-dl="json"]`), true);
   await page.click(".dl-collapse summary");
+  assert.equal(await page.locator("article.mini-highlight:not(.dl-out)").count(), 4, "the default last-30-days range hides the 2020 card");
 
   // Counts follow the filters.
   assert.equal(await text('[data-dl="json"]'), "JSON（3）");
@@ -100,6 +104,18 @@ try {
   await page.click("[data-dl-reset]");
   assert.equal(await text('[data-dl="json"]'), "JSON（3）");
   assert.ok((await page.getAttribute("[data-dl-sample]", "href")).endsWith(sample.pdf));
+
+  // The update list follows the panel: default range hides the old card; the topic filter narrows it; a card can be dropped.
+  const visibleCards = () => page.locator("article.mini-highlight:not(.dl-out)").count();
+  assert.equal(await visibleCards(), 5, "after Clear every card is shown again");
+  await page.check(`[data-dl-topic][value="VS Code"]`);
+  assert.equal(await visibleCards(), 1, "topic filter narrows the list");
+  await page.uncheck(`[data-dl-topic][value="VS Code"]`);
+  await page.uncheck(`[data-card-pick] >> nth=0`);
+  assert.equal(await text(`[data-dl="json"]`), "JSON（2）", "dropping a card drops its slide from the download");
+  assert.equal(await page.locator("article.mini-highlight.dl-unpicked").count(), 1);
+  await page.check(`[data-card-pick] >> nth=0`);
+  assert.equal(await text(`[data-dl="json"]`), "JSON（3）");
 
   // Every slide starts selected; single slides can be dropped, and the files follow the pick.
   assert.equal(await page.locator("[data-dl-item]").count(), 3);

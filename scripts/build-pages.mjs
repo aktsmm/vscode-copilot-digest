@@ -29,6 +29,7 @@ import {
   summarizeEventSet,
   meaningfulSnapshotAdditions,
   isGenericImportanceReason,
+  slideIdFor,
 } from "./lib/reporting.mjs";
 
 const workspaceRoot = process.cwd();
@@ -43,7 +44,7 @@ const topicOrder = [
 ];
 const sourceGroupOrder = ["github", "vscode", "platform", "other"];
 const sortOrder = ["default", "newest", "oldest", "importance"];
-const HOME_HIGHLIGHT_LIMIT = 30;
+const HOME_HIGHLIGHT_LIMIT = 120;
 const HOME_DAILY_CHIPS = 14;
 const HOME_ARCHIVE_LIMIT = 6;
 const HIGHLIGHTS_PAGE_SIZE = 50;
@@ -1044,7 +1045,11 @@ function renderEventCard(event, locale, text, options = {}) {
     ? ` aria-label="${escapeHtml(`${titleText} (${text.externalLinkSuffix})`)}"`
     : "";
 
-  return `<article class="${cardClass}" data-filter-card data-source-group="${escapeHtml(group)}" data-topic="${escapeHtml(topic)}" data-importance="${escapeHtml(importance)}" data-sort-date="${escapeHtml(String(sortDateValue(event)))}" data-sort-score="${escapeHtml(String(rankEvent(event)))}">
+  const slideId = options.pick ? slideIdFor(event) : null;
+  const pickAttrs = options.pick ? ` data-card-date="${escapeHtml(String(event.digestDate ?? ""))}"${slideId ? ` data-slide-id="${escapeHtml(slideId)}"` : ""}` : "";
+  const pickBox = slideId ? `<label class="card-pick" title="${escapeHtml(locale === "ja" ? "ダウンロード（JSON / PDF / PPTX）の対象に含める" : "Include in the JSON / PDF / PPTX download")}"><input type="checkbox" data-card-pick value="${escapeHtml(slideId)}" checked><span>${escapeHtml(locale === "ja" ? "スライドあり・保存対象" : "Slide · include in download")}</span></label>` : "";
+  return `<article class="${cardClass}"${pickAttrs} data-filter-card data-source-group="${escapeHtml(group)}" data-topic="${escapeHtml(topic)}" data-importance="${escapeHtml(importance)}" data-sort-date="${escapeHtml(String(sortDateValue(event)))}" data-sort-score="${escapeHtml(String(rankEvent(event)))}">
+    ${pickBox}
     ${renderBadges(event, locale, text)}
     <h3${anchorId ? ` id="${escapeHtml(anchorId)}"` : ""}><a href="${escapeHtml(event.resources?.source?.url ?? event.url)}"${linkAttrs}${linkLabel}>${escapeHtml(titleText)}${isExternal ? ' <span class="ext-icon" aria-hidden="true">&#8599;</span>' : ""}</a></h3>
     ${rawTitle ? `<p class="original-title">${escapeHtml(text.originalTitleLabel)}: ${escapeHtml(rawTitle)}</p>` : ""}
@@ -1669,7 +1674,7 @@ function renderIndexPage(
             )
           : "",
       )}
-      <div class="highlight-grid latest-highlights-grid" data-highlight-group="all">${latestHighlights.map((event) => renderEventCard(event, locale, text, { compact: true, includeWhy: true })).join("")}</div>
+      <div class="highlight-grid latest-highlights-grid" data-highlight-group="all">${latestHighlights.map((event) => renderEventCard(event, locale, text, { compact: true, includeWhy: true, pick: true })).join("")}</div>
       ${sourceHighlightGroups.map((entry) => renderSourceHighlightPanel(entry, locale, text)).join("")}
       <p class="latest-highlights-empty is-hidden" data-latest-empty>${escapeHtml(text.noItems)}</p>
     </section>
@@ -3184,6 +3189,9 @@ body { background: var(--bg); font-size: 15.5px; line-height: 1.6; }
 .update-card .source-meta { display: none; }
 .update-card .meta-row { display: flex; gap: 4px 16px; flex-wrap: wrap; font-size: 0.82rem; }
 .update-card .resource-links ul { display: flex; flex-wrap: wrap; gap: 4px 16px; padding: 0; margin: 4px 0 0; list-style: none; }
+.card-pick { display: inline-flex; align-items: center; gap: 6px; justify-self: start; font-size: 0.82rem; color: var(--accent-strong); background: var(--accent-soft); border-radius: 999px; padding: 2px 10px; cursor: pointer; }
+.mini-highlight.dl-out { display: none; }
+.mini-highlight.dl-unpicked { opacity: 0.55; }
 .date-chips { display: flex; flex-wrap: wrap; gap: 8px; }
 .date-chip { display: inline-flex; gap: 8px; align-items: center; padding: 5px 12px; border: 1px solid var(--line); border-radius: 999px; background: #fff; text-decoration: none; font-size: 0.9rem; font-variant-numeric: tabular-nums; }
 .date-chip span { color: var(--muted); font-size: 0.8rem; }

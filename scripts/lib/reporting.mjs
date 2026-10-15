@@ -23,6 +23,7 @@ export function registerSlideSummaries(slides) {
     const who = slide.audience?.who?.trim();
     const todo = slide.action?.summary?.trim();
     const entry = {
+      slideId: slide.id,
       summary: [sub, change && change !== sub ? change : ""].filter(Boolean).map((s) => s.replace(/[。.]+$/, "")).join("。") + "。",
       why: [who ? `${who}向け。` : "", todo ? `${todo.replace(/[。.]+$/, "")}。` : ""].join(""),
       title: slide.title?.ja,
@@ -33,6 +34,14 @@ export function registerSlideSummaries(slides) {
     if (sourceUrl) slideSummariesByUrl.set(sourceUrl, entry);
   }
 }
+// The slide that covers this update (by its own id, or by the article it cites), or null.
+export function slideIdFor(event) {
+  const id = createHash("sha256").update(eventKey(event)).digest("hex").slice(0, 16);
+  if (slideSummaries.has(id)) return id;
+  if (event.kind === "html_snapshot_change") return null;
+  return slideSummariesByUrl.get(normalizeSourceUrl(event.url))?.slideId ?? null;
+}
+
 function slideSummaryFor(event) {
   if (slideSummaries.size === 0 && writtenSummaries.size === 0) return null;
   const id = createHash("sha256").update(eventKey(event)).digest("hex").slice(0, 16);

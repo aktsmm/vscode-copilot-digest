@@ -224,7 +224,9 @@ for (const card of englishLatestHighlightCards) {
 }
 
 assert.ok((indexHtml.match(/class="date-chip"/g) ?? []).length >= 7, "home page must link recent daily pages as date chips");
-assert.ok((indexHtml.match(/<article class="mini-highlight"/g) ?? []).length >= 30, "home page must list 30 highlights by default");
+assert.ok((indexHtml.match(/<article class="mini-highlight"/g) ?? []).length >= 30, "home page must list at least 30 highlights");
+assert.ok((indexHtml.match(/data-card-pick/g) ?? []).length >= 5, "home cards that have a slide must carry a download checkbox");
+assert.ok(/data-card-date="\d{4}-\d{2}-\d{2}"/.test(indexHtml), "home cards must carry their date for the range filter");
 const homeDigestCards = Array.from(
   indexHtml.matchAll(/<article class="digest-card">([\s\S]*?)<\/article>/g),
   (match) => match[1],
