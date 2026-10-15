@@ -1,0 +1,76 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "449b1014bc1499c1",
+  "title": {
+    "ja": "コードスキャンのエージェント型自動修正、一般提供開始",
+    "subtitleJa": "Copilotが修正案を作成・CodeQLで検証し、レビュー用のドラフトPRを作成",
+    "original": "Agentic autofix for code scanning alerts general availability"
+  },
+  "date": "2026-10-15",
+  "topic": "GitHub Copilot",
+  "status": "ga",
+  "statusEvidence": "Agentic autofix for code scanning alerts is now generally available.",
+  "audience": {
+    "who": "GitHub Enterprise CloudでGitHub Code SecurityまたはGitHub Advanced Securityを利用する管理者と開発者",
+    "change": "アラートの割り当てから修正案の検証、レビュー用ドラフトPR作成までCopilotが実行する",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "管理者はAdvanced Securityポリシーで許可し、組織またはリポジトリのCode Security設定で有効化する"
+  },
+  "panels": [
+    {
+      "id": "availability",
+      "heading": "使える場所と設定",
+      "priority": "core",
+      "items": [
+        "GitHub Enterprise Cloud上のGitHub Code Security / GitHub Advanced Securityで利用可能。データレジデンシーも含む",
+        "Enterprise管理者がAdvanced Security policiesで許可し、組織またはリポジトリ管理者が機能を有効化",
+        "Copilotの請求方法が必要。対象は既定ブランチのアラートで、PRや他ブランチだけのアラートは対象外",
+        "アラート一覧またはsecurity campaignから最大25件を選び、1つのPRで修正を依頼できる"
+      ]
+    },
+    {
+      "id": "workflow",
+      "heading": "修正の流れ",
+      "priority": "core",
+      "items": [
+        "アラートをCopilotに割り当てると、関連ファイルを調査して修正案を作成",
+        "CodeQLを再実行して修正を検証し、必要に応じて反復した後、ドラフトPRを作成",
+        "PRには修正の概要、アラートが解消する理由、検証手順が含まれる"
+      ]
+    },
+    {
+      "id": "costs",
+      "heading": "利用料金と確認",
+      "priority": "detail",
+      "items": [
+        "Code SecurityのAI CreditsとGitHub Actions minutesを消費",
+        "AI使用量はEnterpriseの請求・ライセンス画面でAdvanced Securityとして表示",
+        "作成された変更は、マージ前に必ずレビューしてテストする"
+      ]
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Agentic autofix for code scanning alerts general availability - The GitHub Blog",
+      "url": "https://github.blog/changelog/2026-10-15-agentic-autofix-for-code-scanning-alerts-general-availability/"
+    },
+    "documents": [
+      {
+        "title": "コード スキャンの自動修正について - GitHub Docs",
+        "url": "https://docs.github.com/ja/enterprise-cloud@latest/code-security/concepts/code-scanning/autofix-for-code-scanning"
+      },
+      {
+        "title": "組織と企業の使用量ベースの課金 - GitHub Docs",
+        "url": "https://docs.github.com/ja/enterprise-cloud@latest/copilot/concepts/billing-and-usage/organizations-and-enterprises/billing"
+      }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-10-15-agentic-autofix-for-code-scanning-alerts-general-availability/",
+    "https://docs.github.com/ja/enterprise-cloud@latest/code-security/concepts/code-scanning/autofix-for-code-scanning",
+    "https://docs.github.com/ja/enterprise-cloud@latest/copilot/concepts/billing-and-usage/organizations-and-enterprises/billing"
+  ]
+}

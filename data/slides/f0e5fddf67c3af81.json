@@ -1,0 +1,50 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "f0e5fddf67c3af81",
+  "title": {
+    "ja": "VS Code 1.143 InsidersのMCP環境変数展開",
+    "subtitleJa": "workspace rootの.mcp.jsonで環境変数と既定値を展開し、portable modeのCLIデータも移動",
+    "original": "Visual Studio Code 1.143 (Insiders)"
+  },
+  "date": "2026-10-14",
+  "topic": "VS Code",
+  "status": "update",
+  "audience": {
+    "who": "VS Code InsidersでMCPサーバーやportable modeを使う開発者",
+    "change": "workspace rootの.mcp.jsonで環境変数展開が使え、portable modeのCLI状態とcacheはportableデータ領域に保存される",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "MCPサーバー設定値には${VAR}または${VAR:-default}を記述できる"
+  },
+  "panels": [
+    {
+      "id": "mcp",
+      "heading": "MCP設定での展開",
+      "priority": "core",
+      "items": [
+        "workspace rootの.mcp.jsonでMCPサーバー設定値の環境変数を展開",
+        "${VAR}は環境変数の値、${VAR:-default}は値がない場合の既定値を表す",
+        "この変更は2026年10月14日のInsiders更新に記載"
+      ]
+    },
+    {
+      "id": "portable",
+      "heading": "portable modeの保存先",
+      "priority": "core",
+      "items": [
+        "portable modeではCLIの状態ファイルとcacheファイルをユーザーのhomeではなくportableデータディレクトリに保存"
+      ]
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.143 (Insiders) - Visual Studio Code",
+      "url": "https://code.visualstudio.com/updates/v1_143"
+    }
+  },
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_143"
+  ]
+}

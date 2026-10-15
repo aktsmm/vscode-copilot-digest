@@ -1,0 +1,41 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "ce1104a64e455171",
+  "title": {
+    "ja": "VS Code 1.141.1のセキュリティ修正",
+    "subtitleJa": "1.141.1の更新がセキュリティ問題に対処する旨をリリースノートに追加",
+    "original": "Visual Studio Code 1.141"
+  },
+  "date": "2026-10-13",
+  "topic": "VS Code",
+  "status": "update",
+  "audience": {
+    "who": "VS Code 1.141系列を利用する開発者と管理者",
+    "change": "1.141.1がセキュリティ問題に対処する更新として記載され、同版のダウンロード見出しが追加",
+    "changeNature": "neutral"
+  },
+  "action": {
+    "required": "info",
+    "summary": "1.141.1の更新内容はVS Code 1.141のリリースノートで確認する"
+  },
+  "panels": [
+    {
+      "id": "update",
+      "heading": "1.141.1の更新",
+      "priority": "core",
+      "items": [
+        "Update 1.141.1はセキュリティ問題に対処するとリリースノートに記載",
+        "Downloads for 1.141.1の見出しを掲載"
+      ]
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.141 - Visual Studio Code",
+      "url": "https://code.visualstudio.com/updates/v1_141#release-downloads-heading"
+    }
+  },
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_141#release-downloads-heading"
+  ]
+}

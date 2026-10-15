@@ -1,0 +1,72 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "107426bd9eaa068b",
+  "title": {
+    "ja": "VS CodeでCopilotハーネスを新規セッションの既定に段階展開",
+    "subtitleJa": "Agent Host経由のセッションを両方のウィンドウで利用でき、読み取り専用のAskも復活",
+    "original": "Visual Studio Code 1.142"
+  },
+  "date": "2026-10-14",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "VS Codeで新しいCopilotセッションを始める開発者",
+    "change": "Copilotハーネスが新規セッションの既定として段階展開され、Askをビルトインエージェントに再追加",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "info",
+    "summary": "新しいセッションのハーネスピッカーでCopilotを選び、質問だけならエージェントピッカーでAskを選ぶ"
+  },
+  "panels": [
+    {
+      "id": "harness",
+      "heading": "ハーネスの変更",
+      "priority": "core",
+      "items": [
+        "Copilot SDKを基盤とするCopilotハーネスを、新規セッションの既定として段階的に展開",
+        "VS CodeではAgent Host上で動き、セッションはエディターウィンドウとAgents windowの両方から利用可能",
+        "新規セッションでピッカーにCopilotと表示されれば、このハーネスを使用"
+      ]
+    },
+    {
+      "id": "ask",
+      "heading": "Askの使い方",
+      "priority": "core",
+      "items": [
+        "AskをCopilotハーネスのビルトインエージェントとして再導入",
+        "質問とコードベース調査に使う読み取り専用の役割で、ファイル編集や状態を変更するコマンドは実行しない",
+        "エージェントピッカーからAskを選択"
+      ]
+    },
+    {
+      "id": "availability",
+      "heading": "展開について",
+      "priority": "detail",
+      "items": [
+        "既定ハーネスへの切り替えは段階展開。すべての利用者に同時に表示されるとは限らない"
+      ]
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.142 - Visual Studio Code",
+      "url": "https://code.visualstudio.com/updates/v1_142#_copilot-harness"
+    },
+    "documents": [
+      {
+        "title": "Choose an agent harness - Visual Studio Code",
+        "url": "https://code.visualstudio.com/docs/agents/run/agent-harnesses"
+      },
+      {
+        "title": "Agent Host architecture - Visual Studio Code",
+        "url": "https://code.visualstudio.com/docs/agents/concepts/agent-host"
+      }
+    ]
+  },
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_142#_copilot-harness",
+    "https://code.visualstudio.com/docs/agents/run/agent-harnesses",
+    "https://code.visualstudio.com/docs/agents/concepts/agent-host"
+  ]
+}
