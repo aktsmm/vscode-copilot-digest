@@ -1388,7 +1388,7 @@ function renderHighlightsArchivePage(
 
     <section class="section-block"${retire ? "" : " data-pagefind-body"}>
       ${renderSectionHeading(retire ? (locale === "ja" ? "提供終了・廃止の更新" : "Retirements") : (locale === "ja" ? "ハイライト一覧" : "All highlights"), locale === "ja" ? `${visibleCount} / 全${events.length}${text.itemSuffix}` : `${visibleCount} / ${itemCount}`)}
-      <div class="stream-list" data-sort-list>${pageEvents.map((event) => renderEventStreamItem(event, locale, text)).join("")}</div>
+      <div class="stream-list" data-sort-list style="counter-reset: card-no ${(pageNumber - 1) * HIGHLIGHTS_PAGE_SIZE}">${pageEvents.map((event) => renderEventStreamItem(event, locale, text)).join("")}</div>
     </section>
 
     ${pager}
@@ -3208,6 +3208,10 @@ body { background: var(--bg); font-size: 15.5px; line-height: 1.6; }
 .card-pick { display: inline-flex; align-items: center; gap: 6px; justify-self: start; font-size: 0.82rem; color: var(--accent-strong); background: var(--accent-soft); border-radius: 999px; padding: 2px 10px; cursor: pointer; }
 .mini-highlight.dl-out { display: none; }
 .mini-highlight.dl-unpicked { opacity: 0.55; }
+/* item numbers: hidden cards do not count, so filtering renumbers the list */
+.highlight-grid, .update-list, .stream-list { counter-reset: card-no; }
+.mini-highlight, .update-card, .stream-item { counter-increment: card-no; }
+.mini-highlight h3::before, .update-card h3::before, .stream-item h3::before { content: counter(card-no) "."; display: inline-block; min-width: 1.9em; margin-right: 4px; color: var(--accent-strong); font-weight: 700; font-variant-numeric: tabular-nums; }
 .card-points { margin: 2px 0 4px; padding-left: 1.25em; color: var(--text); font-size: 0.92rem; line-height: 1.65; }
 .card-points li { margin: 1px 0; }
 .date-chips { display: flex; flex-wrap: wrap; gap: 8px; }
