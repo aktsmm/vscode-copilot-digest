@@ -86,6 +86,10 @@ try {
   await page.waitForSelector("[data-dl-panel]:not([hidden])");
   const text = (sel) => page.textContent(sel);
 
+  // The filters sit in a collapsed section; the download buttons are always visible.
+  assert.equal(await page.isVisible(`[data-dl="json"]`), true);
+  await page.click(".dl-collapse summary");
+
   // Counts follow the filters.
   assert.equal(await text('[data-dl="json"]'), "JSON（3）");
   await page.check('[data-dl-topic][value="VS Code"]');
@@ -98,7 +102,6 @@ try {
   assert.ok((await page.getAttribute("[data-dl-sample]", "href")).endsWith(sample.pdf));
 
   // Every slide starts selected; single slides can be dropped, and the files follow the pick.
-  await page.click(".dl-items summary");
   assert.equal(await page.locator("[data-dl-item]").count(), 3);
   assert.equal(await page.locator("[data-dl-item]:checked").count(), 3);
   assert.match(await text("[data-dl-items-count]"), /3 \/ 3/);

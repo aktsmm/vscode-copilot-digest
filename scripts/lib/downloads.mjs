@@ -46,6 +46,8 @@ export function downloadPanelHtml(locale = "ja") {
   const L = LABELS[locale] ?? LABELS.ja;
   const chip = (group, value, label) => `<label class="dl-chip"><input type="checkbox" data-dl-${group} value="${esc(value)}"><span>${esc(label)}</span></label>`;
   return `<section class="section-block dl-panel" data-dl-panel hidden aria-label="${esc(L.title)}">
+    <details class="dl-collapse">
+    <summary>${esc(L.pick)} <span class="dl-items-count" data-dl-items-count></span></summary>
     <div class="dl-row">
       <label class="dl-field">${esc(L.from)} <input type="date" data-dl-from></label>
       <label class="dl-field">${esc(L.to)} <input type="date" data-dl-to></label>
@@ -55,13 +57,13 @@ export function downloadPanelHtml(locale = "ja") {
     </div>
     <div class="dl-chips"><span class="dl-label">${esc(L.kind)}</span>${KINDS.map((k) => chip("kind", k, kindLabel(locale, k))).join("")}</div>
     <div class="dl-chips"><span class="dl-label">${esc(L.topic)}</span>${TOPICS.map((t) => chip("topic", t, L.topicLabels[t])).join("")}</div>
-    <details class="dl-items">
-      <summary>${esc(L.pick)} <span class="dl-items-count" data-dl-items-count></span></summary>
+    <div class="dl-items">
       <div class="dl-row dl-items-tools">
         <button type="button" class="dl-btn dl-btn--ghost" data-dl-all>${esc(L.selectAll)}</button>
         <button type="button" class="dl-btn dl-btn--ghost" data-dl-none>${esc(L.selectNone)}</button>
       </div>
       <ul class="dl-list" data-dl-list></ul>
+    </div>
     </details>
     <div class="dl-actions">
       <button type="button" class="dl-btn" data-dl="json" title="${esc(L.jsonTitle)}">${esc(L.json)}</button>
@@ -88,7 +90,6 @@ export function downloadsCss() {
 .dl-btn:hover:not(:disabled),.dl-btn:focus-visible{background:${P.copilotTint}}
 .dl-btn:disabled{border-color:${P.border};color:${P.muted};cursor:not-allowed;background:${P.subtle}}
 .dl-btn--ghost{border-color:${P.border};color:${P.fg}}
-.dl-items summary{cursor:pointer;font-weight:700;color:${P.fg};font-size:.92rem}
 .dl-items-count{font-weight:400;color:${P.muted};margin-left:6px}
 .dl-items-tools{margin:8px 0 4px}
 .dl-list{list-style:none;margin:6px 0 0;padding:0;max-height:280px;overflow:auto;border:1px solid ${P.border};border-radius:8px}
