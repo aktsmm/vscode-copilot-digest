@@ -21,6 +21,7 @@
 - 日付だけの見出し差分（`Oct.13 Release` など）は内容が無いので、読者向けカードにもスライド候補にも出さない。内容のある差分は「ページに追加された内容」として載せる
 - 収集の後に `node scripts/backfill-skipped.mjs --coverage` が、フィードに出ているのに `data/events` に無い記事（過去に捨てたものを含む）を、記事ページから読み直して戻す。最後に `node scripts/coverage-report.mjs --strict` で漏れを確認し、残っていれば run を失敗させて知らせる（2 週間ごとの点検依頼でも確認する）
 - **要約の流れ**: [author-summary-pr.yml](../.github/workflows/author-summary-pr.yml)（毎日 03:30 JST が目安）が、英語の抜粋のままになっている更新（スライドも要約も無いもの）を最大 30 件、Copilot に依頼する。Copilot が記事を読み、日本語の要約を [data/summaries-ja.json](../data/summaries-ja.json) に書き足す。[validate-summary-pr.yml](../.github/workflows/validate-summary-pr.yml) が `npm run validate:summaries` と許可ファイル（このファイルだけ、削除なし）を確認し、[auto-merge-summary-pr.yml](../.github/workflows/auto-merge-summary-pr.yml) が自動で merge する。カードの文面は、スライド → 要約 → 原文の抜粋の順で選ばれる。`tests/card-boilerplate.test.mjs` が、定型文や、多くのカードで繰り返される文を検出して失敗させる
+- Copilot coding agent のファイアウォールは、リポジトリの Environment `copilot` の変数 `COPILOT_AGENT_FIREWALL_ALLOW_LIST_ADDITIONS` で、記事の取得元（code.visualstudio.com、github.blog、docs.github.com、learn.microsoft.com、www.publickey1.jp など）を許可している。新しい取得元を足したら、この変数にも追加する。許可できずに開けない host がある間は、`scripts/lib/slides.mjs` の `AGENT_UNREACHABLE` に host を入れると、その更新は依頼から外れる
 - 日次の執筆依頼（[author-digest-pr.yml](../.github/workflows/author-digest-pr.yml)）は、新規イベントがあるだけでは起票しない（ページ差分ばかりで、マージできる PR にならなかったため）。低情報 fallback の残り、collect / Pages の失敗、手動実行のときだけ起票する。記事の日本語文面は、原文の抜粋 → スライド（`data/slides`）の順で自動的に良くなる
 - 変更がなければ commit せず終了する
 - 変更があった場合は `github-actions[bot]` が `data/**` と `summaries/**` を commit / push する
