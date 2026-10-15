@@ -8,18 +8,14 @@ GitHub Copilot in IDEs
 Concepts for GitHub Copilot agents
 Concepts for GitHub Copilot cloud agent
 Concepts for GitHub Copilot CLI
-About GitHub Copilot code review
-About computer use in GitHub Copilot
-About GitHub Agentic Workflows
 About GitHub Copilot Memory
-Dynamic workflows
 About hooks for GitHub Copilot
 About GitHub Copilot plugins
-About third-party coding agents
-About agent apps
-OpenAI Codex
-Anthropic Claude
 About agent skills
+Agent capabilities
+About agents
+Choosing and delegating agent work
+Agent-powered workflows and operations
 Concepts for prompting GitHub Copilot
 Prompt engineering for GitHub Copilot Chat
 About customizing GitHub Copilot responses
@@ -27,9 +23,6 @@ Concepts for providing context to GitHub Copilot
 About Model Context Protocol (MCP)
 About GitHub Copilot Spaces
 Indexing repositories for GitHub Copilot
-Concepts for AI tools
-Choosing the right AI tool for your task
-About Copilot integrations
 Models for GitHub Copilot
 Models in GitHub Copilot
 About Copilot auto model selection

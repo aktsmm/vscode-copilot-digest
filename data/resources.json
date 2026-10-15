@@ -22678,6 +22678,26 @@
         "Original article explicit links",
         "Feature-matched official documentation indexes"
       ]
+    },
+    "e6f234d5f87965d83b1e4c8e44e872543fdca2fe7d4002ce527e6bf5643add05": {
+      "version": 6,
+      "checkedAt": "2026-10-15T10:07:36.616Z",
+      "inputUrl": "https://docs.github.com/en/copilot/concepts",
+      "inputTitle": "GitHub Docs / Copilot concepts changed",
+      "status": "unconfirmed",
+      "source": {
+        "url": "https://docs.github.com/en/copilot/concepts",
+        "status": "unconfirmed",
+        "reason": "Historical changed feature not identifiable in current page",
+        "checkedAt": "2026-10-15T10:07:36.756Z",
+        "contentHash": "d0620c889631c0e82fef35f1fce6d9a26d90a59795497524bbe5129921901945"
+      },
+      "documents": [],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
     }
   }
 }
