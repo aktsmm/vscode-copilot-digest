@@ -101,8 +101,8 @@ function completeSentencePreview(value, locale, maxSentences = 2) {
     const previousCharacter = normalized[index - 1] ?? "";
     const nextCharacter = normalized[index + 1] ?? "";
     const isJapaneseTerminator = locale === "ja" && /[。！？]/.test(character);
+    // Excerpts that are still English can appear on Japanese pages, so both kinds of full stop end a sentence.
     const isEnglishTerminator =
-      locale !== "ja" &&
       /[.!?]/.test(character) &&
       !(
         character === "." &&
@@ -140,7 +140,8 @@ function cardDescription(event, locale) {
     return summary;
   }
 
-  return completeSentencePreview(importanceReason(event, locale), locale);
+  const reason = importanceReason(event, locale);
+  return isGenericImportanceReason(reason) ? "" : completeSentencePreview(reason, locale);
 }
 
 function formatDate(value, locale = "ja") {

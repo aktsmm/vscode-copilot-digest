@@ -172,7 +172,7 @@ for (const card of latestHighlightCards) {
   assert.ok(summary, "latest highlight cards must include an explanation");
   assert.match(
     summary[1],
-    /[。！？]$/,
+    /[。！？.!?]$/,
     "Japanese latest highlight explanations must end at a sentence boundary",
   );
   assert.doesNotMatch(
@@ -184,7 +184,7 @@ for (const card of latestHighlightCards) {
   if (why) {
     assert.match(
       why[1],
-      /[。！？]$/,
+      /[。！？.!?]$/,
       "Japanese latest highlight importance text must end at a sentence boundary",
     );
     assert.doesNotMatch(
@@ -247,7 +247,7 @@ for (const card of homeDigestCards) {
   assert.ok(summary, "Japanese home digest cards must include an explanation");
   assert.match(
     summary[1],
-    /[。！？]$/,
+    /[。！？.!?]$/,
     "Japanese home card explanations must end at a sentence boundary",
   );
   assert.doesNotMatch(
@@ -334,7 +334,7 @@ assert.ok(
 for (const summary of weeklyArchiveSummaries) {
   assert.match(
     summary,
-    /[。！？]$/,
+    /[。！？.!?]$/,
     "weekly archive explanations must end at a Japanese sentence boundary",
   );
   assert.doesNotMatch(
