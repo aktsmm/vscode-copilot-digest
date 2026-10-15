@@ -34,7 +34,12 @@
 - Biweekly maintenance PRs (`maint: ...` / `pipeline-maintenance-request`) are a separate lane. Keep `validate-maintenance-pr`, `auto-merge-maintenance-pr` and the skip rules in the digest lane workflows in sync (see `tests/slide-lane.test.mjs`). Workflow and dependency changes in that lane must stay behind `needs-human-review`.
 - `slide-watchdog.yml` may only close stalled Copilot slide requests, record `slide-skip` issues, nudge, and dispatch workflows. It must not edit repository files.
 
-### Schedule Expectations
+#### Summary PR Lane
+
+- Summary PRs (summaries: ... / Summary authoring request) are a separate lane that may change only data/summaries-ja.json. Keep validate-summary-pr, auto-merge-summary-pr and the skip rules in the digest and slide lane workflows in sync (see tests/summary-lane.test.mjs).
+- Card wording is chosen as slide, then written summary, then source excerpt. Never add label-only templates ("this is GA, so ...") back to importanceReason; tests/card-boilerplate.test.mjs fails on repeated filler.
+
+## Schedule Expectations
 
 - GitHub Actions `schedule` is best-effort and may drift materially from the configured cron time.
 - In docs and incident analysis, describe daily workflow timing as a target time, not as an exact guarantee.

@@ -1,0 +1,62 @@
+name: Validate summary PR
+
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+      - ready_for_review
+      - edited
+
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    env:
+      PR_TITLE: ${{ github.event.pull_request.title }}
+    # Only summary PRs are handled here; digest and slide PRs have their own workflows.
+    if: (startsWith(github.event.pull_request.title, 'summaries:') || contains(github.event.pull_request.body, 'summary-authoring-request') || startsWith(github.event.pull_request.head.ref, 'copilot/summar'))
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Check the allow-list
+        shell: bash
+        run: |
+          git fetch --no-tags --prune origin "${{ github.base_ref }}" --depth=200
+          merge_base="$(git merge-base "origin/${{ github.base_ref }}" HEAD)"
+          blocked="$(git diff --name-only "$merge_base..HEAD" | grep -Ev '^data/summaries-ja\.json$' || true)"
+          if [ -n "$blocked" ]; then
+            echo "Summary PRs may only change data/summaries-ja.json. Disallowed files:" >&2
+            echo "$blocked" >&2
+            exit 1
+          fi
+          if [ -n "$(git diff --diff-filter=D --name-only "$merge_base..HEAD")" ]; then
+            echo "Summary PRs may not delete files." >&2
+            exit 1
+          fi
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Validate summaries
+        run: npm run validate:summaries
+
+      - name: Validate data tests
+        run: npm run test:data
+
+      - name: Validate Pages build
+        run: npm run build:pages
