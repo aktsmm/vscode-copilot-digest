@@ -227,6 +227,14 @@ assert.ok((indexHtml.match(/class="date-chip"/g) ?? []).length >= 7, "home page 
 assert.ok((indexHtml.match(/<article class="mini-highlight"/g) ?? []).length >= 30, "home page must list at least 30 highlights");
 assert.ok((indexHtml.match(/data-card-pick/g) ?? []).length >= 5, "home cards that have a slide must carry a download checkbox");
 assert.ok(/data-card-date="\d{4}-\d{2}-\d{2}"/.test(indexHtml), "home cards must carry their date for the range filter");
+// The retirements page lists only retirement updates and is linked from every page header (both languages).
+for (const [file, nav] of [["retirements.html", "提供終了・廃止"], ["en/retirements.html", "Retirements"]]) {
+  const page = readSiteFile(file);
+  assert.ok((page.match(/data-importance="retired"/g) ?? []).length >= 1, `${file} must list retirement updates`);
+  assert.equal((page.match(/data-importance="(?!retired")[^"]*"/g) ?? []).length, 0, `${file} must hold only retirement updates`);
+  assert.ok(page.includes(nav), `${file} must carry the header link`);
+}
+assert.ok(indexHtml.includes(`href="./retirements.html"`), "the home header links to the retirements page");
 const homeDigestCards = Array.from(
   indexHtml.matchAll(/<article class="digest-card">([\s\S]*?)<\/article>/g),
   (match) => match[1],

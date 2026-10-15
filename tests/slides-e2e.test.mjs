@@ -67,8 +67,8 @@ for (const [from, to] of [["pdf-lib/dist/pdf-lib.min.js", "pdf-lib.min.js"], ["p
   await fs.copyFile(path.join("node_modules", ...from.split("/")), path.join(siteDir, "assets", "vendor", to));
 }
 // Stand-in update list: three cards that have slides, one without a slide, one that is too old for the default range.
-const card = (date, topic, slideId) => `<article class="mini-highlight" data-card-date="${date}" data-topic="${topic}"${slideId ? ` data-slide-id="${slideId}"` : ""}>${slideId ? `<label class="card-pick"><input type="checkbox" data-card-pick value="${slideId}" checked></label>` : ""}<h3>card</h3></article>`;
-const feedCards = `<div data-latest-highlights>${ids.map((id, i) => card(today, i === 2 ? "VS Code" : "GitHub Copilot", id)).join("")}${card(today, "GitHub Copilot", null)}${card("2020-01-01", "GitHub Copilot", null)}</div>`;
+const card = (date, topic, slideId, title = "card", importance = "update") => `<article class="mini-highlight" data-card-date="${date}" data-topic="${topic}" data-importance="${importance}"${slideId ? ` data-slide-id="${slideId}"` : ""}>${slideId ? `<label class="card-pick"><input type="checkbox" data-card-pick value="${slideId}" checked></label>` : ""}<h3>${title}</h3></article>`;
+const feedCards = `<div data-latest-highlights>${ids.map((id, i) => card(today, i === 2 ? "VS Code" : "GitHub Copilot", id, `slide-${i}`)).join("")}${card(today, "GitHub Copilot", null, "plain", "retired")}${card("2020-01-01", "GitHub Copilot", null)}</div>`;
 await fs.writeFile(path.join(siteDir, "index.html"), `<!doctype html><html lang="ja"><head><meta charset="utf-8"><style>${downloadsCss()}</style></head><body>${downloadPanelHtml("ja")}${feedCards}<script src="./assets/downloads.js?v=1" defer></script></body></html>`);
 
 const mime = { ".html": "text/html", ".js": "text/javascript", ".json": "application/json", ".pdf": "application/pdf" };
@@ -116,6 +116,16 @@ try {
   assert.equal(await page.locator("article.mini-highlight.dl-unpicked").count(), 1);
   await page.check(`[data-card-pick] >> nth=0`);
   assert.equal(await text(`[data-dl="json"]`), "JSON（3）");
+
+  // Keyword filter: matches the card text, for slides and for updates without a slide; the type filter also reaches plain cards.
+  await page.fill("[data-dl-q]", "slide-1");
+  assert.equal(await visibleCards(), 1);
+  assert.equal(await text(`[data-dl="json"]`), "JSON（1）");
+  await page.fill("[data-dl-q]", "");
+  await page.check(`[data-dl-kind][value="retirement"]`);
+  assert.equal(await visibleCards(), 1, "only the plain card is a retirement");
+  await page.uncheck(`[data-dl-kind][value="retirement"]`);
+  assert.equal(await visibleCards(), 5);
 
   // Every slide starts selected; single slides can be dropped, and the files follow the pick.
   assert.equal(await page.locator("[data-dl-item]").count(), 3);
