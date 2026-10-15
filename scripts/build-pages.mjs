@@ -226,7 +226,7 @@ function buildText(locale) {
       lastUpdatedLabel: "Last updated",
       heroTitle: "Track GitHub Copilot and VS Code updates without the noise.",
       heroCopy:
-        "GitHub Actions collects GitHub Changelog, VS Code updates, and complementary sources every day, while GitHub Copilot Cloud Agent updates digest copy and translation mappings. Start with highlights, then drop into topic sections, the full list, or /en/ when you need more detail.",
+        "Official GitHub Changelog and VS Code updates, collected daily and summarised. Slides can be saved as JSON, PDF or PowerPoint.",
       publishedCount: "Published daily digests",
       publishedCountDetail: "Number of daily digests on Pages",
       overallCount: "Tracked updates",
@@ -378,7 +378,7 @@ function buildText(locale) {
     lastUpdatedLabel: "最終更新",
     heroTitle: "GitHub Copilot と VS Code の更新を、毎日読む。",
     heroCopy:
-      "GitHub Actions が GitHub Changelog、VS Code Updates、補完ソースを毎日収集し、GitHub Copilot Cloud Agent が日次本文や対訳更新を反映します。まずはハイライトを見て、必要ならテーマ別まとめ・全件リスト・/en/ に進めます。",
+      "GitHub Changelog と VS Code の公式更新を毎日集め、日本語でまとめています。スライドは JSON / PDF / PowerPoint で保存できます。",
     publishedCount: "公開済み日次",
     publishedCountDetail: "Pages に載っている日次ダイジェスト数",
     overallCount: "累計更新件数",
@@ -1047,8 +1047,8 @@ function renderEventCard(event, locale, text, options = {}) {
     ${renderBadges(event, locale, text)}
     <h3${anchorId ? ` id="${escapeHtml(anchorId)}"` : ""}><a href="${escapeHtml(event.resources?.source?.url ?? event.url)}"${linkAttrs}${linkLabel}>${escapeHtml(titleText)}${isExternal ? ' <span class="ext-icon" aria-hidden="true">&#8599;</span>' : ""}</a></h3>
     ${rawTitle ? `<p class="original-title">${escapeHtml(text.originalTitleLabel)}: ${escapeHtml(rawTitle)}</p>` : ""}
-    ${renderDateMeta(event, locale, text)}
-    ${renderSourceMeta(event, locale, text)}
+    ${options.compact ? `<div class="meta-row"><span>${escapeHtml(formatDate(event.publishedAt, locale))}</span><span class="source-name-list">${escapeHtml((event.sourceNames ?? [event.sourceName]).join(" / "))}</span></div>` : `${renderDateMeta(event, locale, text)}
+    ${renderSourceMeta(event, locale, text)}`}
     <p${options.compact ? ' class="mini-summary"' : ""}>${escapeHtml(summaryText)}</p>
     ${why}
     ${renderSnapshotChanges(event, locale, options.compact ? 3 : 6)}
@@ -2176,13 +2176,17 @@ function renderLayout({
             </button>
           </nav>
           <nav class="demo-nav" aria-label="${escapeHtml(locale === "ja" ? "関連デモ" : "Related demos")}">
-            <span class="demo-nav-label">${escapeHtml(locale === "ja" ? "関連デモ" : "Related demos")}</span>
-            <a href="https://aktsmm.github.io/azure-ops-pulse-demo/#/overview">Azure Ops Pulse</a>
-            <a href="https://aktsmm.github.io/azure-update-digest/">Azure Update Digest</a>
-            <a href="https://aktsmm.github.io/m365-message-center-dashboard/">M365 Message Center Dashboard</a>
-            <a href="https://aktsmm.github.io/m365-copilot-update-digest/">M365 Copilot Update Digest</a>
-            <a href="https://aktsmm.github.io/daily-dev-byte/">Daily Dev Byte</a>
-            <span class="demo-nav-current" aria-current="page">VS Code Copilot Digest</span>
+            <details>
+              <summary><span class="demo-nav-label">${escapeHtml(locale === "ja" ? "関連デモ" : "Related demos")}</span></summary>
+              <div class="demo-links">
+                <a href="https://aktsmm.github.io/azure-ops-pulse-demo/#/overview">Azure Ops Pulse</a>
+                <a href="https://aktsmm.github.io/azure-update-digest/">Azure Update Digest</a>
+                <a href="https://aktsmm.github.io/m365-message-center-dashboard/">M365 Message Center Dashboard</a>
+                <a href="https://aktsmm.github.io/m365-copilot-update-digest/">M365 Copilot Update Digest</a>
+                <a href="https://aktsmm.github.io/daily-dev-byte/">Daily Dev Byte</a>
+                <span class="demo-nav-current" aria-current="page">VS Code Copilot Digest</span>
+              </div>
+            </details>
           </nav>
         </div>
       </header>
@@ -3102,7 +3106,91 @@ h1 { margin: 0 0 16px; font-size: clamp(1.5rem, 2.4vw, 2.2rem); line-height: 1.1
 .back-to-top.visible { display: flex; }
 .back-to-top:hover { background: var(--accent-soft); color: var(--accent); }
 .ext-icon { font-size: 0.8em; opacity: 0.5; margin-left: 2px; }
-@media (max-width: 960px) {
+/* ---- v2: flat GitHub-style layout, one-column update feed, compact header ---- */
+:root { --bg: #f6f8fa; --panel: #ffffff; --line: #d0d7de; --text: #1f2328; --muted: #59636e; --accent: #8534f3; --accent-strong: #6a1fd1; --accent-soft: rgba(133, 52, 243, 0.1); --shadow: 0 1px 2px rgba(31, 35, 40, 0.06); }
+body { background: var(--bg); font-size: 15.5px; line-height: 1.6; }
+.page-shell { max-width: 1040px; padding: 0 20px 40px; }
+.site-header { position: sticky; top: 0; z-index: 20; margin: 0 -20px 20px; padding: 10px 20px; background: rgba(255, 255, 255, 0.94); border: 0; border-bottom: 1px solid var(--line); border-radius: 0; backdrop-filter: blur(8px); align-items: center; }
+.site-lead, .site-updated-inline { display: none; }
+.site-brand { font-size: 1.05rem; color: var(--text); }
+.site-navigation { display: flex; align-items: center; gap: 14px; justify-items: initial; }
+.site-nav { gap: 16px; font-size: 0.93rem; }
+.site-nav a:hover { color: var(--accent); }
+.demo-nav { display: block; padding: 0; border: 0; position: relative; font-size: 0.85rem; }
+.demo-nav details > summary { cursor: pointer; color: var(--muted); list-style: none; padding: 4px 10px; border: 1px solid var(--line); border-radius: 999px; background: #fff; }
+.demo-nav details > summary::-webkit-details-marker { display: none; }
+.demo-nav details[open] > summary { border-color: var(--accent); color: var(--accent-strong); }
+.demo-nav .demo-links { position: absolute; right: 0; top: calc(100% + 6px); z-index: 30; display: grid; gap: 2px; min-width: 250px; padding: 8px; background: #fff; border: 1px solid var(--line); border-radius: 10px; box-shadow: 0 8px 24px rgba(31, 35, 40, 0.14); }
+.demo-nav .demo-links a, .demo-nav .demo-links .demo-nav-current { padding: 6px 10px; border-radius: 6px; }
+.demo-nav .demo-links a:hover { background: var(--accent-soft); text-decoration: none; }
+.metric-card, .content-card, .side-panel, .digest-card, .update-card, .mini-highlight, .topic-section { border-radius: 12px; box-shadow: var(--shadow); background: var(--panel); }
+.hero.hero-home { display: block; padding: 4px 0 6px; background: none; border: 0; box-shadow: none; }
+.hero-home .eyebrow, .hero-home .hero-search-label { display: none; }
+.hero-home h1 { font-size: 1.7rem; margin: 0 0 6px; }
+.hero-home .hero-copy { margin: 0 0 14px; color: var(--muted); max-width: none; font-size: 0.97rem; line-height: 1.6; }
+.hero-home .hero-search { margin-top: 0; }
+.hero-home .hero-search-help { font-size: 0.85rem; }
+.hero-home .metrics-grid { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.hero-home .metric-card { flex-direction: row; align-items: baseline; gap: 8px; padding: 6px 12px; border-radius: 999px; box-shadow: none; }
+.hero-home .metric-detail { display: none; }
+.hero-home .metric-label { font-size: 0.82rem; }
+.hero-home .metric-value { font-size: 1.05rem; font-weight: 700; }
+.search-input { border-radius: 10px; background: #fff; padding: 11px 14px; }
+.filter-block, .dl-panel { background: #fff; border-radius: 12px; padding: 12px 16px; box-shadow: var(--shadow); }
+.filter-chip-row { gap: 8px; }
+.section-block { margin-top: 26px; }
+.section-heading h2 { font-size: 1.25rem; }
+/* one update per row instead of three narrow columns */
+.latest-highlights-grid, .highlight-grid.latest-highlights-grid { grid-template-columns: 1fr; gap: 10px; }
+.mini-highlight { padding: 14px 18px; display: grid; gap: 6px; }
+.mini-highlight .badge-row { gap: 6px; }
+.mini-highlight h3 { font-size: 1.08rem; line-height: 1.4; margin: 0; }
+.mini-highlight .meta-row { display: flex; gap: 8px 14px; flex-wrap: wrap; font-size: 0.82rem; }
+.mini-highlight .original-title { margin: 0; font-size: 0.82rem; }
+.mini-highlight .mini-summary { margin: 0; color: var(--text); line-height: 1.7; }
+.mini-highlight .mini-why { margin: 0; padding: 8px 12px; background: var(--accent-soft); border-radius: 8px; color: var(--text); font-size: 0.92rem; }
+.mini-highlight .resource-links { margin-top: 4px; padding-top: 8px; font-size: 0.85rem; }
+.mini-highlight .resource-links ul { display: flex; flex-wrap: wrap; gap: 4px 16px; padding: 0; margin: 4px 0 0; list-style: none; }
+.mini-highlight .resource-links .resource-label { display: inline; margin: 0 8px 0 0; }
+.pill { font-size: 0.78rem; padding: 2px 10px; }
+.digest-grid { grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 10px; }
+.digest-card { padding: 12px 14px; }
+.digest-card-summary { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; font-size: 0.88rem; }
+.dl-panel .dl-actions { order: -1; }
+.hero-home .search-status { margin: 4px 0 0; font-size: 0.82rem; }
+.hero-home .hero-search-help { display: none; }
+.filter-block--compact .section-heading h2, .filter-block--compact .filter-title { display: none; }
+.filter-block--compact { padding: 10px 14px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
+.filter-block--compact .section-heading { order: 2; margin: 0 0 0 auto; }
+.filter-block--compact .filter-stack { order: 1; flex: 1; min-width: 0; }
+.mini-highlight .resource-links > p.resource-label { display: inline-block; margin: 6px 8px 0 0; }
+.mini-highlight .resource-links ul { display: inline-flex; }
+.mini-highlight .snapshot-changes ul { display: flex; flex-wrap: wrap; gap: 2px 18px; list-style: none; padding: 0; margin: 2px 0 0; }
+.mini-highlight .snapshot-changes .resource-label { margin: 6px 0 0; }
+.hero:not(.hero-home) { display: block; padding: 4px 0 8px; background: none; border: 0; box-shadow: none; }
+.hero:not(.hero-home) h1 { font-size: 1.6rem; margin: 0 0 6px; }
+.hero:not(.hero-home) .eyebrow { margin: 0 0 4px; }
+.hero:not(.hero-home) .hero-copy { margin: 0 0 12px; max-width: none; }
+.hero:not(.hero-home) .metrics-grid { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.hero:not(.hero-home) .metric-card { flex-direction: row; align-items: baseline; gap: 8px; padding: 6px 12px; border-radius: 999px; box-shadow: none; }
+.hero:not(.hero-home) .metric-detail { display: none; }
+.hero:not(.hero-home) .metric-label { font-size: 0.82rem; }
+.hero:not(.hero-home) .metric-value { font-size: 1.05rem; font-weight: 700; }
+.highlight-grid, .update-list { grid-template-columns: 1fr; gap: 10px; }
+.update-card { padding: 14px 18px; }
+.update-card h3 { font-size: 1.08rem; line-height: 1.4; margin: 6px 0; }
+.update-card .source-meta { display: none; }
+.update-card .meta-row { display: flex; gap: 4px 16px; flex-wrap: wrap; font-size: 0.82rem; }
+.update-card .resource-links ul { display: flex; flex-wrap: wrap; gap: 4px 16px; padding: 0; margin: 4px 0 0; list-style: none; }
+.digest-card-head { justify-content: flex-end; }
+.digest-card-head p, .digest-card-focus-label { display: none; }
+.digest-card h3 { font-size: 1rem; margin: 0 0 6px; }
+.demo-nav summary { white-space: nowrap; }
+.site-navigation { flex-wrap: wrap; justify-content: flex-end; }
+@media (max-width: 720px) { .site-header { position: static; margin-bottom: 12px; } .site-navigation { justify-content: flex-start; } .page-shell { padding: 0 14px 32px; } .site-header { margin: 0 -14px 12px; padding: 10px 14px; } .demo-nav .demo-links { left: 0; right: auto; } }
+.dl-collapse > summary { cursor: pointer; font-weight: 700; font-size: 0.92rem; color: var(--text); padding: 2px 0; }
+.dl-collapse[open] > summary { margin-bottom: 10px; }
+.dl-collapse > .dl-row, .dl-collapse > .dl-chips, .dl-collapse > .dl-items { margin-top: 8px; }@media (max-width: 960px) {
   .hero, .page-grid { grid-template-columns: 1fr; }
   .archive-stream-item { grid-template-columns: 1fr; }
   .archive-stream-link { justify-content: flex-start; }
