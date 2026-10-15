@@ -29,16 +29,14 @@ About GitHub Copilot plugins
 GitHub Copilot CLI
 Dynamic workflows
 About custom agents
-About remote control of GitHub Copilot CLI sessions
-Allowing GitHub Copilot CLI to work autonomously
-Canceling a GitHub Copilot CLI operation and rolling back changes
+Remote control of GitHub Copilot CLI sessions
 Comparing GitHub Copilot CLI customization features
 Managing context in GitHub Copilot CLI
 Loading tools on demand with tool search
-Running tasks in parallel with the /fleet command
+Delegating and parallelizing work with agents
 Using LSP servers with GitHub Copilot CLI
 Researching with GitHub Copilot CLI
-About the rubber duck agent
+Getting a second opinion with the rubber duck agent
 About extensions for GitHub Copilot CLI
 Using dynamic workflows
 Copilot CLI ACP server
@@ -68,6 +66,8 @@ Troubleshooting GitHub Copilot CLI authentication
 Requesting a code review with GitHub Copilot CLI
 Allowing and denying tool use
 Use voice input with Copilot CLI
+Using Autopilot mode in GitHub Copilot CLI
+Allowing GitHub Copilot to work autonomously
 Using GitHub Copilot CLI session data
 Connecting GitHub Copilot CLI to VS Code
 Delegating tasks to Copilot
@@ -75,7 +75,7 @@ Browsing issues, pull requests, and gists from GitHub Copilot CLI
 Invoking custom agents
 Managing pull requests with the /pr command
 Using GitHub Copilot CLI
-Rolling back changes made during a GitHub Copilot CLI session
+Canceling operations and rolling back changes in GitHub Copilot CLI
 Speeding up task completion with the /fleet command
 Steering agents in GitHub Copilot CLI
 Steering a GitHub Copilot CLI session from another device

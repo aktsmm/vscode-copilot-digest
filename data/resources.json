@@ -22698,6 +22698,174 @@
         "Original article explicit links",
         "Feature-matched official documentation indexes"
       ]
+    },
+    "4705a2e31edec217ce91e83bb55c54c20a1c16841203bbc389e3c477259c6acc": {
+      "version": 6,
+      "checkedAt": "2026-10-15T18:24:36.770Z",
+      "inputUrl": "https://github.com/features/copilot/whats-new",
+      "inputTitle": "GitHub Copilot What's New changed",
+      "status": "verified",
+      "source": {
+        "url": "https://github.blog/changelog/2026-10-15-agentic-autofix-for-code-scanning-alerts-general-availability/",
+        "status": "verified",
+        "reason": "Snapshot observation, not a standalone feature: Oct.15 Release; explicit article: Agentic autofix for code scanning alerts general availability",
+        "checkedAt": "2026-10-15T18:24:38.400Z",
+        "contentHash": "15ddce15141132db8e66ff2af4861975d81e297fb83d981c750c3a3f405ac31d"
+      },
+      "documents": [
+        {
+          "url": "https://docs.github.com/ja/enterprise-cloud@latest/copilot/concepts/billing-and-usage/organizations-and-enterprises/billing",
+          "title": "組織と企業の使用量ベースの課金",
+          "language": "ja",
+          "checkedAt": "2026-10-15T18:24:38.673Z",
+          "contentHash": "4f7f1a67a453197171b98e1d833f862de892c4b6a27a82badb22bf323c5c839c",
+          "discoveryUrl": "https://github.blog/changelog/2026-10-15-agentic-autofix-for-code-scanning-alerts-general-availability/",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "580d269568e88f02beff8693ec26de187b4971dec09d63e828b08ec6b62a197b": {
+      "version": 6,
+      "checkedAt": "2026-10-15T18:24:38.767Z",
+      "inputUrl": "https://github.blog/changelog/2026-10-15-agentic-autofix-for-code-scanning-alerts-general-availability",
+      "inputTitle": "Agentic autofix for code scanning alerts general availability",
+      "status": "verified",
+      "source": {
+        "url": "https://github.blog/changelog/2026-10-15-agentic-autofix-for-code-scanning-alerts-general-availability/",
+        "status": "verified",
+        "reason": "Fetched original article",
+        "checkedAt": "2026-10-15T18:24:38.400Z",
+        "contentHash": "15ddce15141132db8e66ff2af4861975d81e297fb83d981c750c3a3f405ac31d"
+      },
+      "documents": [
+        {
+          "url": "https://docs.github.com/ja/enterprise-cloud@latest/copilot/concepts/billing-and-usage/organizations-and-enterprises/billing",
+          "title": "組織と企業の使用量ベースの課金",
+          "language": "ja",
+          "checkedAt": "2026-10-15T18:24:38.673Z",
+          "contentHash": "4f7f1a67a453197171b98e1d833f862de892c4b6a27a82badb22bf323c5c839c",
+          "discoveryUrl": "https://github.blog/changelog/2026-10-15-agentic-autofix-for-code-scanning-alerts-general-availability/",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "959d404dd27acba3f0250a1280be6ebd6ccb9d7806e6251eccf8f836ba2ccaf9": {
+      "version": 6,
+      "checkedAt": "2026-10-15T18:24:38.918Z",
+      "inputUrl": "https://code.visualstudio.com/blogs/2026/10/15/modern-ui",
+      "inputTitle": "Modernizing the VS Code UI",
+      "status": "verified",
+      "source": {
+        "url": "https://code.visualstudio.com/blogs/2026/10/15/modern-ui",
+        "status": "verified",
+        "reason": "Fetched original article",
+        "checkedAt": "2026-10-15T18:24:39.095Z",
+        "contentHash": "345b45533b184c8509c52eb4cb980c89daeef5a832f313a7ee2bafd4967aa52e"
+      },
+      "documents": [
+        {
+          "url": "https://code.visualstudio.com/updates/v1_31#_new-tree-widget",
+          "title": "January 2019 (version 1.31)",
+          "language": "en",
+          "checkedAt": "2026-10-15T18:24:39.433Z",
+          "contentHash": "778b36e21fbbc332e8000e390e915a87cf4f86d280687df19ff977eebb2ca522",
+          "discoveryUrl": "https://code.visualstudio.com/blogs/2026/10/15/modern-ui",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "verified",
+          "kind": "release_notes",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://code.visualstudio.com/updates/v1_78#_new-default-color-themes",
+          "title": "April 2023 (version 1.78)",
+          "language": "en",
+          "checkedAt": "2026-10-15T18:24:40.000Z",
+          "contentHash": "cfe5c312f1426285eb7978f995f5dc8e93d774f5f4f8763a3940c4a647e2fa4f",
+          "discoveryUrl": "https://code.visualstudio.com/blogs/2026/10/15/modern-ui",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "verified",
+          "kind": "release_notes",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://code.visualstudio.com/docs/agents/run/agents-window",
+          "title": "Use the Agents window",
+          "language": "en",
+          "checkedAt": "2026-10-14T23:22:05.963Z",
+          "contentHash": "d6e08e3d98a16b095624b105f2de7cd7a1ca0ef8b0f09436a281b2e9ac0573f1",
+          "discoveryUrl": "https://code.visualstudio.com/blogs/2026/10/15/modern-ui",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "cfdf18a9c7c7d4f7adeefc69f8e4fb2903b5eb2a6b95d83131f6bfb32517a2a1": {
+      "version": 6,
+      "checkedAt": "2026-10-15T18:24:40.062Z",
+      "inputUrl": "https://docs.github.com/en/copilot",
+      "inputTitle": "GitHub Docs / Copilot changed",
+      "status": "unconfirmed",
+      "source": {
+        "url": "https://docs.github.com/en/copilot",
+        "status": "unconfirmed",
+        "reason": "Historical changed feature not identifiable in current page",
+        "checkedAt": "2026-10-15T18:24:40.094Z",
+        "contentHash": "53c12f28d99571561100f3a36afa626e56b2974a86353ffa823cf136a0430d19"
+      },
+      "documents": [],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "c8d9f7b4c7b83fce1bec17c0abf6a10baafca547f09db7cba3fd4da396d1b291": {
+      "version": 6,
+      "checkedAt": "2026-10-15T18:24:40.171Z",
+      "inputUrl": "https://docs.github.com/en/copilot/how-tos",
+      "inputTitle": "GitHub Docs / Copilot how-tos changed",
+      "status": "unconfirmed",
+      "source": {
+        "url": "https://docs.github.com/en/copilot/how-tos",
+        "status": "unconfirmed",
+        "reason": "Historical changed feature not identifiable in current page",
+        "checkedAt": "2026-10-15T18:24:40.272Z",
+        "contentHash": "7b0fcd6b99a3a2ee71629fcd2083ec6f9174af74a29fb532faf03b3c2ac3e22e"
+      },
+      "documents": [],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
     }
   }
 }

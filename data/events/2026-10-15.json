@@ -1,17 +1,111 @@
 {
   "date": "2026-10-15",
-  "generatedAt": "2026-10-15T10:07:36.292Z",
+  "generatedAt": "2026-10-15T18:24:36.264Z",
   "latestRun": {
-    "generatedAt": "2026-10-15T10:07:36.292Z",
-    "newEventsCount": 2,
+    "generatedAt": "2026-10-15T18:24:36.264Z",
+    "newEventsCount": 6,
     "newEventIds": [
-      "github-changelog-copilot:https://github.blog/changelog/2026-10-14-hydrafusion-updates-and-new-max-option",
-      "docs-github-copilot-concepts:b4e3dfdfb196f7a56853853a79b86312b022f3da58450ffde8637bd8432aa53d"
+      "github-changelog:https://github.blog/changelog/2026-10-15-agentic-autofix-for-code-scanning-alerts-general-availability",
+      "github-changelog-copilot:https://github.blog/changelog/2026-10-15-agentic-autofix-for-code-scanning-alerts-general-availability",
+      "vscode-feed:https://code.visualstudio.com/blogs/2026/10/15/modern-ui",
+      "copilot-whats-new:5e896735cd44ef3c6164da40ae03cfa5db9c583c3e64ff4b57ef4b7fc280569d",
+      "docs-github-copilot:a9338c93a9baa0d54fc60a6e089348eee5bd3e1b9f778a8c6968a3363afefe36",
+      "docs-github-copilot-howtos:19aaa203d2ffff35febbb26ab63e5828a84ede8d0632ce3419644a81d2910756"
     ],
     "errorCount": 0,
     "skippedLowInformationEvents": []
   },
   "events": [
+    {
+      "eventId": "copilot-whats-new:5e896735cd44ef3c6164da40ae03cfa5db9c583c3e64ff4b57ef4b7fc280569d",
+      "sourceId": "copilot-whats-new",
+      "sourceName": "GitHub Copilot What's New",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-10-15T18:24:34.001Z",
+      "publishedAt": "2026-10-15T18:24:34.000Z",
+      "title": "GitHub Copilot What's New changed",
+      "url": "https://github.com/features/copilot/whats-new",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [
+          "Oct.15 Release"
+        ],
+        "additions": [
+          "H3: Oct.15 Release"
+        ]
+      },
+      "headings": [
+        "Changelog",
+        "Filters (0 selected)",
+        "October\n Oct\n 2026",
+        "Oct.15 Release",
+        "Oct.14 Release",
+        "Oct.13 Release",
+        "Oct.13 Improvement",
+        "Oct.12 Improvement",
+        "Oct.10 Release",
+        "Oct.09 Release",
+        "Oct.08 Improvement",
+        "Oct.07 Release"
+      ],
+      "score": 3
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-10-15-agentic-autofix-for-code-scanning-alerts-general-availability",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-10-15T18:24:31.446Z",
+      "publishedAt": "2026-10-15T13:49:20.000Z",
+      "title": "Agentic autofix for code scanning alerts general availability",
+      "url": "https://github.blog/changelog/2026-10-15-agentic-autofix-for-code-scanning-alerts-general-availability",
+      "summary": "Agentic autofix for code scanning alerts is now generally available. It remediates alerts by working across your codebase the way a developer would: it explores relevant files, proposes a fix,…\nThe post Agentic autofix for code scanning alerts general availability appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "application security",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-10-15-agentic-autofix-for-code-scanning-alerts-general-availability",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-10-15T18:24:31.971Z",
+      "publishedAt": "2026-10-15T13:49:20.000Z",
+      "title": "Agentic autofix for code scanning alerts general availability",
+      "url": "https://github.blog/changelog/2026-10-15-agentic-autofix-for-code-scanning-alerts-general-availability",
+      "summary": "Agentic autofix for code scanning alerts is now generally available. It remediates alerts by working across your codebase the way a developer would: it explores relevant files, proposes a fix,…\nThe post Agentic autofix for code scanning alerts general availability appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "application security",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
+    {
+      "eventId": "vscode-feed:https://code.visualstudio.com/blogs/2026/10/15/modern-ui",
+      "sourceId": "vscode-feed",
+      "sourceName": "VS Code Feed",
+      "kind": "feed_entry",
+      "detectedAt": "2026-10-15T18:24:32.049Z",
+      "publishedAt": "2026-10-15T00:00:00.000Z",
+      "title": "Modernizing the VS Code UI",
+      "url": "https://code.visualstudio.com/blogs/2026/10/15/modern-ui",
+      "summary": "See how developer feedback is shaping the modern VS Code interface, from layout density and editor tabs to themes and responsiveness.\n Read the full article",
+      "categories": [
+        "blog"
+      ],
+      "isFutureDated": false,
+      "score": 0
+    },
     {
       "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-10-14-hydrafusion-updates-and-new-max-option",
       "sourceId": "github-changelog-copilot",
@@ -28,6 +122,83 @@
       ],
       "isFutureDated": false,
       "score": 4
+    },
+    {
+      "eventId": "docs-github-copilot:a9338c93a9baa0d54fc60a6e089348eee5bd3e1b9f778a8c6968a3363afefe36",
+      "sourceId": "docs-github-copilot",
+      "sourceName": "GitHub Docs / Copilot",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-10-15T18:24:34.473Z",
+      "publishedAt": "2026-10-15T18:24:34.472Z",
+      "title": "GitHub Docs / Copilot changed",
+      "url": "https://docs.github.com/en/copilot",
+      "summary": "Detected 8 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 8,
+        "headings": [
+          "About custom agents",
+          "About customizing GitHub Copilot responses",
+          "About default availability of Copilot features and models",
+          "About enterprise accounts for Copilot Business"
+        ],
+        "additions": [
+          "Custom agents enhance Copilot with assistance tailored to your needs.",
+          "H3: About custom agents",
+          "H3: About customizing GitHub Copilot responses",
+          "Learn about customizing the behavior of GitHub Copilot to fit with your preferences and requirements.",
+          "H3: About default availability of Copilot features and models",
+          "Policies control whether unconfigured features and models default to enabled or disabled.",
+          "H3: About enterprise accounts for Copilot Business",
+          "An enterprise account lets you manage only Copilot Business licenses, without consuming GitHub Enterprise Cloud licenses."
+        ]
+      },
+      "headings": [
+        "GitHub Copilot documentation",
+        "Articles",
+        "About agent skills",
+        "About cloud and local sandboxes for GitHub Copilot",
+        "About computer use in GitHub Copilot",
+        "About Copilot auto model selection",
+        "About custom agents",
+        "About custom agents",
+        "About customizing GitHub Copilot responses",
+        "About default availability of Copilot features and models",
+        "About enterprise accounts for Copilot Business"
+      ],
+      "score": 6
+    },
+    {
+      "eventId": "docs-github-copilot-howtos:19aaa203d2ffff35febbb26ab63e5828a84ede8d0632ce3419644a81d2910756",
+      "sourceId": "docs-github-copilot-howtos",
+      "sourceName": "GitHub Docs / Copilot how-tos",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-10-15T18:24:35.863Z",
+      "publishedAt": "2026-10-15T18:24:35.863Z",
+      "title": "GitHub Docs / Copilot how-tos changed",
+      "url": "https://docs.github.com/en/copilot/how-tos",
+      "summary": "Detected 6 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 6,
+        "headings": [],
+        "additions": [
+          "Remote control of GitHub Copilot CLI sessions",
+          "Delegating and parallelizing work with agents",
+          "Getting a second opinion with the rubber duck agent",
+          "Using Autopilot mode in GitHub Copilot CLI",
+          "Allowing GitHub Copilot to work autonomously",
+          "Canceling operations and rolling back changes in GitHub Copilot CLI"
+        ]
+      },
+      "headings": [
+        "How-tos for GitHub Copilot"
+      ],
+      "score": 2
     },
     {
       "eventId": "docs-github-copilot-concepts:b4e3dfdfb196f7a56853853a79b86312b022f3da58450ffde8637bd8432aa53d",

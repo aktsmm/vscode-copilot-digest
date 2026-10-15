@@ -27,9 +27,6 @@ Editor experience: Identify wrapped lines at a glance and avoid duplicate closin
 Editor experience: Identify wrapped lines at a glance and avoid duplicate closing brackets as you type.
 H2: Agents
 The agent host runs agent harnesses in a dedicated process based on the Agent Host Protocol (AHP), so you can connect to the same session from multiple VS Code windows. Learn more about its architecture and workflows in the agent host blog post.
-H3: Faster session list loading
-The Agents Window opens and refreshes large session lists faster. The agent host now keeps lightweight session and chat metadata in a central catalog, instead of opening every conversation database each time the list is built. Full conversation content stays isolated in the individual session and chat databases.
-The improvement grows with the number of sessions, because the previous approach did work in proportion to your session count. Measured with around 645 sessions on a development machine:
 H3: Run agent sessions in Dev Containers on remote hosts
 Setting: 
  
