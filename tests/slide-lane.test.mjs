@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs/promises";
 import path from "node:path";
 import { selectPending } from "../scripts/pending-slides.mjs";
-import { cardPointsFor, editorialQuality, excerptToSentences, isGenericImportanceReason, importanceReason, localizedSummary, registerSlideSummaries, eventKey } from "../scripts/lib/reporting.mjs";
+import { jaCardTitleFor, cardPointsFor, editorialQuality, excerptToSentences, isGenericImportanceReason, importanceReason, localizedSummary, registerSlideSummaries, eventKey } from "../scripts/lib/reporting.mjs";
 import { createHash } from "node:crypto";
 import { findMissing, normalizeUrl, parseFeed } from "../scripts/coverage-report.mjs";
 
@@ -40,6 +40,13 @@ assert.deepEqual(cardPointsFor(pointEvent), ["OpenAI互換とAzure OpenAIを環�
 assert.equal(localizedSummary(pointEvent), "独自のAPIキーで外部プロバイダーを設定する。");
 registerSlideSummaries([]);
 
+// A slide's Japanese title replaces the English page title on the card.
+const titledEvent = { kind: "html_snapshot_change", title: "GitHub Docs / Copilot how-tos changed", url: "https://example.test/h", summary: "x", categories: [], diffSummary: { additions: ["Adding LLM models"] } };
+const titledId = createHash("sha256").update(eventKey(titledEvent)).digest("hex").slice(0, 16);
+registerSlideSummaries([{ id: titledId, title: { ja: "Copilot CLIとアプリで外部モデルを使う方法", subtitleJa: "独自のAPIキーで外部プロバイダーを設定する" }, audience: {}, panels: [] }]);
+assert.equal(jaCardTitleFor(titledEvent), "Copilot CLIとアプリで外部モデルを使う方法");
+registerSlideSummaries([]);
+
 // A written slide supplies the card wording in place of the excerpt and the generic reason.
 const slideEvent = { kind: "feed_entry", title: "Local models", url: "https://example.test/local", summary: "Use local models from the CLI whenever you like to.", categories: [] };
 const slideId = createHash("sha256").update(eventKey(slideEvent)).digest("hex").slice(0, 16);
@@ -68,6 +75,10 @@ dup[0].digestDate = "2026-10-12";
 assert.deepEqual(selectPending(dup, new Set(), { today: new Date("2026-10-15") }).map((i) => i.id), ["early"]);
 
 assert.deepEqual(selectPending([withUrl("u1", "https://example.test/post/"), withUrl("u2", "https://example.test/other")], new Set(), { existingUrls: new Set(["https://example.test/post"]), today: new Date("2026-10-15") }).map((i) => i.id), ["u2"]);
+
+// Sections of one page (different #fragments) are different updates, not duplicates of each other.
+const sec = [withUrl("s1", "https://example.test/notes#a"), withUrl("s2", "https://example.test/notes#b")];
+assert.deepEqual(selectPending(sec, new Set(), { today: new Date("2026-10-15") }).map((i) => i.id).sort(), ["s1", "s2"]);
 // ...and its wording reaches the article card by source URL.
 const urlEvent = { kind: "feed_entry", title: "Same article", url: "https://example.test/post/", summary: "An English excerpt that is long enough to count.", categories: [] };
 registerSlideSummaries([{ id: "0000000000000000", title: { subtitleJa: "同じ記事の要点" }, audience: { change: "確認できる" }, references: { source: { url: "https://example.test/post" } } }]);

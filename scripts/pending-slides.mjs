@@ -12,7 +12,7 @@ const option = (name, fallback) => {
   return index >= 0 ? args[index + 1] : fallback;
 };
 
-const normalizeUrl = (url) => String(url ?? "").replace(/[#?].*$/, "").replace(/\/+$/, "");
+const normalizeUrl = (url) => String(url ?? "").replace(/\?[^#]*/, "").replace(/\/+(?=#|$)/, "");
 
 export function selectPending(items, existingIds, { months = 3, limit = 10, ids = null, skip = [], today = new Date(), existingUrls = new Set() } = {}) {
   // Same calendar-month window as the PDF retention, so every slide made here is also published.
