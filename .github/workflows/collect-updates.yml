@@ -61,7 +61,14 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data summaries
           git commit -m "chore: collect daily updates"
-          git push
+          # main moves while a run is going (merged PRs), so a plain push can be rejected; rebase and retry.
+          for attempt in 1 2 3 4; do
+            if git push; then exit 0; fi
+            echo "Push rejected (attempt $attempt); rebasing onto origin/main"
+            git pull --rebase origin main || { git rebase --abort 2>/dev/null; exit 1; }
+          done
+          echo "Could not push after retries" >&2
+          exit 1
 
       # Runs after the commit so a gap is reported (failed run) without blocking the data.
       - name: Report feed coverage gaps
