@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs/promises";
 import path from "node:path";
 import { selectPending } from "../scripts/pending-slides.mjs";
-import { editorialQuality, excerptToSentences, isGenericImportanceReason, importanceReason, localizedSummary, registerSlideSummaries, eventKey } from "../scripts/lib/reporting.mjs";
+import { cardPointsFor, editorialQuality, excerptToSentences, isGenericImportanceReason, importanceReason, localizedSummary, registerSlideSummaries, eventKey } from "../scripts/lib/reporting.mjs";
 import { createHash } from "node:crypto";
 import { findMissing, normalizeUrl, parseFeed } from "../scripts/coverage-report.mjs";
 
@@ -30,6 +30,15 @@ assert.equal(excerptToSentences("First point. Second point is here. Third one cu
 assert.ok(excerptToSentences("x".repeat(30) + " " + "y".repeat(400)).endsWith("…"));
 assert.ok(isGenericImportanceReason("「A」の公開内容を追跡し、Copilot / VS Code 周辺の運用・説明材料として影響を確認したい更新です。"));
 assert.ok(!isGenericImportanceReason("管理者向けの新しい制御が追加され、組織の方針を一括で設定できます。"));
+
+// The card shows a slide's concrete panel items, and drops a vague "…を確認できる" line when it has them.
+registerSlideSummaries([{ id: "1111111111111111", title: { subtitleJa: "独自のAPIキーで外部プロバイダーを設定する" }, audience: { change: "CLIとアプリで、独自のAPIキーを使うモデルの追加・利用方法を確認できる" }, panels: [{ priority: "core", items: ["OpenAI互換とAzure OpenAIを環境変数で構成する。", "ツール呼び出しに対応したモデルが必要"] }, { priority: "detail", items: ["注意点は使わない"] }] }]);
+const pointEvent = { kind: "feed_entry", title: "p", url: "https://example.test/p-none", summary: "x", categories: [] };
+const pointId = createHash("sha256").update(eventKey(pointEvent)).digest("hex").slice(0, 16);
+registerSlideSummaries([{ id: pointId, title: { subtitleJa: "独自のAPIキーで外部プロバイダーを設定する" }, audience: { change: "CLIとアプリで、独自のAPIキーを使うモデルの追加・利用方法を確認できる" }, panels: [{ priority: "core", items: ["OpenAI互換とAzure OpenAIを環境変数で構成する。", "ツール呼び出しに対応したモデルが必要"] }, { priority: "detail", items: ["注意点は使わない"] }] }]);
+assert.deepEqual(cardPointsFor(pointEvent), ["OpenAI互換とAzure OpenAIを環境変数で構成する", "ツール呼び出しに対応したモデルが必要"]);
+assert.equal(localizedSummary(pointEvent), "独自のAPIキーで外部プロバイダーを設定する。");
+registerSlideSummaries([]);
 
 // A written slide supplies the card wording in place of the excerpt and the generic reason.
 const slideEvent = { kind: "feed_entry", title: "Local models", url: "https://example.test/local", summary: "Use local models from the CLI whenever you like to.", categories: [] };

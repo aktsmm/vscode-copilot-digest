@@ -21,6 +21,13 @@ assert.ok(validateSummaries({ "0123456789abcdef": { summary: "This is an English
 assert.ok(validateSummaries({ "0123456789abcdef": { summary: "詳細は https://example.com を参照。ローカルのモデルを接続できるようになった更新です。" } }).length > 0);
 assert.ok(validateSummaries({ "0123456789abcdef": { ...good["0123456789abcdef"], extra: 1 } }).length > 0);
 
+// Points are optional but checked when present.
+const withPoints = (points) => ({ "0123456789abcdef": { ...good["0123456789abcdef"], points } });
+assert.deepEqual(validateSummaries(withPoints(["OpenAI互換とAzure OpenAIを環境変数で構成する", "ツール呼び出しに対応したモデルが必要"])), []);
+assert.ok(validateSummaries(withPoints([])).length > 0);
+assert.ok(validateSummaries(withPoints(["短い"])).length > 0);
+assert.ok(validateSummaries(withPoints(["a","b","c","d","e"].map(() => "ローカルモデルを接続する手順を設定する"))).length > 0);
+
 // Selection: items covered by a slide (id or source URL) or already written are skipped.
 const item = (id, url, extra = {}) => ({ id, digestDate: "2026-10-12", importance: { score: 1 }, title: { original: id, en: id }, resources: { source: { url } }, ...extra });
 const picked = selectNeedingSummary(
