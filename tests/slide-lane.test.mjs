@@ -85,6 +85,14 @@ registerSlideSummaries([{ id: "0000000000000000", title: { subtitleJa: "同じ�
 assert.equal(localizedSummary(urlEvent), "同じ記事の要点。確認できる。");
 registerSlideSummaries([]);
 
+// The lane is recognised even when Copilot names the branch freely (copilot/add-slide-json-files).
+for (const name of ["validate-slide-pr.yml", "request-copilot-review.yml", "redeploy-pages-after-generated-pr-merge.yml"]) {
+  assert.ok((await read(name)).includes("contains(github.event.pull_request.head.ref, 'slide')"), `${name} must detect slide PRs by branch name`);
+}
+for (const name of ["auto-merge-slide-pr.yml", "auto-merge-generated-pr.yml", "validate-generated-pr.yml", "author-slide-pr.yml"]) {
+  assert.ok((await read(name)).includes("copilot\\/.*slide"), `${name} must detect slide PRs by branch name`);
+}
+
 // The slide lane stays narrow: only data/slides/{id}.json, no deletions.
 for (const name of ["validate-slide-pr.yml", "auto-merge-slide-pr.yml"]) {
   assert.ok((await read(name)).includes("data/slides/") || (await read(name)).includes("data\\/slides\\/"), `${name} must pin data/slides`);
