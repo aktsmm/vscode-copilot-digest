@@ -19,7 +19,7 @@ jobs:
     env:
       PR_TITLE: ${{ github.event.pull_request.title }}
     # Only summary PRs are handled here; digest and slide PRs have their own workflows.
-    if: (startsWith(github.event.pull_request.title, 'summaries:') || contains(github.event.pull_request.body, 'summary-authoring-request') || startsWith(github.event.pull_request.head.ref, 'copilot/summar'))
+    if: (startsWith(github.event.pull_request.title, 'summaries:') || contains(github.event.pull_request.body, 'summary-authoring-request') || startsWith(github.event.pull_request.head.ref, 'copilot/summar') || contains(github.event.pull_request.head.ref, 'summaries') || contains(github.event.pull_request.title, 'summaries'))
 
     steps:
       - name: Checkout

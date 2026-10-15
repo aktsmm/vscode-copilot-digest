@@ -89,7 +89,8 @@ jobs:
               '- 禁止: 「原文の抜粋」「公開内容を追跡し」「確認したい更新です」のような定型句、URL、『未確認』『要確認』『推定』など内部メモの語。同じ文面を複数の更新に使い回さないでください。',
               '- 読んでも内容を確認できなかった更新は、無理に書かず飛ばし、PR 本文に ID と理由を書いてください。',
               '- 検証は `npm run validate:summaries` です。通ることを確認してから PR にしてください。',
-              '- PR タイトルは `summaries: update YYYY-MM-DD` にしてください。不確実な場合は `needs-human-review` を付けて停止してください。',
+              '- 一部の更新を確認できなくても、全体を止めないでください。書けた更新の分は必ず PR に含め、書けなかった更新の ID と理由だけを PR 本文に書いてください。`needs-human-review` を付けて止めるのは、1 件も書けなかった場合だけです。',
+              '- PR 本文の先頭に `<!-- summary-authoring-request -->` をそのまま入れ、PR タイトルは `summaries: update YYYY-MM-DD` にしてください。',
               '',
               '## 対象',
               '```json',
@@ -103,7 +104,7 @@ jobs:
             const pulls = await github.paginate(github.rest.pulls.list, {
               owner: context.repo.owner, repo: context.repo.repo, state: 'open', per_page: 100,
             });
-            if (pulls.some((pull) => (/summary authoring request|^summaries:/i.test(pull.title || '') || String(pull.body || '').includes('summary-authoring-request') || (pull.head?.ref || '').startsWith('copilot/summar')) && /copilot/i.test(pull.user?.login || ''))) {
+            if (pulls.some((pull) => (/summary authoring request|^summaries:/i.test(pull.title || '') || String(pull.body || '').includes('summary-authoring-request') || (pull.head?.ref || '').startsWith('copilot/summar') || /summaries/i.test(pull.head?.ref || '') || /summaries/i.test(pull.title || '')) && /copilot/i.test(pull.user?.login || ''))) {
               core.info('A summary PR is already open; waiting for it to merge.');
               return;
             }

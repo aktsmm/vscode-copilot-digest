@@ -40,6 +40,15 @@ assert.equal(localizedSummary(event), "スライドの要点。確認できる�
 registerSlideSummaries([]);
 registerWrittenSummaries({});
 
+// The lane is recognised even when Copilot picks its own branch name and title.
+for (const name of ["validate-summary-pr.yml", "request-copilot-review.yml", "redeploy-pages-after-generated-pr-merge.yml"]) {
+  assert.ok((await read(name)).includes("contains(github.event.pull_request.head.ref, 'summaries')"), `${name} must detect summary PRs by branch name`);
+}
+// The agent cannot open some hosts, so their updates are not handed to it (one unreadable item blocked a whole batch).
+const unreachable = selectNeedingSummary([item("v", "https://code.visualstudio.com/updates/v1_142"), item("g", "https://github.blog/changelog/x")], { slideIds: new Set(), slideUrls: new Set(), written: new Set(), today: new Date("2026-10-15") });
+assert.deepEqual(unreachable.map((i) => i.id), ["g"]);
+assert.ok((await read("author-slide-pr.yml")).includes("全体を止めないでください") && (await read("author-summary-pr.yml")).includes("全体を止めないでください"));
+
 // The lane is narrow and never collides with the other lanes.
 const validate = await read("validate-summary-pr.yml");
 assert.ok(validate.includes("^data/summaries-ja\\.json$") && validate.includes("may not delete") && validate.includes("validate:summaries"));
