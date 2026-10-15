@@ -2494,7 +2494,26 @@ function excerptFallback(event, locale, rendered) {
   const excerpt = cleanupSummary(event.summary);
   if (excerpt.length < 40 || containsJapanese(excerpt)) return rendered;
   if (!lowInformationFallbackMarkers.some((marker) => rendered.includes(marker))) return rendered;
-  return `（原文の抜粋）${trimText(excerpt, 300)}`;
+  return `（原文の抜粋）${excerptToSentences(excerpt)}`;
+}
+
+// Whole sentences up to ~240 characters; only a single over-long sentence is cut (with an ellipsis).
+export function excerptToSentences(text, limit = 240) {
+  const clean = normalizeWhitespace(String(text ?? "")).replace(/(?:…|\.\.\.)+\s*$/, "").trim();
+  const sentences = clean.match(/[^.!?]+[.!?]+(?=\s|$)/g) ?? [];
+  let out = "";
+  for (const sentence of sentences) {
+    if ((out + sentence).trim().length > limit) break;
+    out = `${out} ${sentence.trim()}`.trim();
+  }
+  if (out) return out;
+  if (clean.length <= limit && /[.!?]$/.test(clean)) return clean;
+  return `${clean.slice(0, limit).replace(/\s+\S*$/, "")}…`;
+}
+
+// Boilerplate "why it matters" lines add nothing to a card, so the page leaves them out.
+export function isGenericImportanceReason(text) {
+  return /の公開内容を追跡し、Copilot|追加内容から、利用中の手順や設定に関わる変更かを原典で確認できます|固定ページの追記や差し替えを拾うための更新です|This update is worth tracking because|is worth checking against existing procedures or settings|This reflects a detected change on a tracked static page/.test(String(text ?? ""));
 }
 
 export function localizedSummary(event, locale = "ja") {
