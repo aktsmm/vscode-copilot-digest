@@ -50,6 +50,15 @@ assert.equal(findMissing(feedEntries, new Set([normalizeUrl("https://example.tes
 const collectWorkflow = await read("collect-updates.yml");
 assert.ok(collectWorkflow.includes("backfill-skipped.mjs --coverage") && collectWorkflow.includes("coverage-report.mjs --strict"), "collect restores and reports coverage gaps");
 
+// An article already covered by a slide (written from a page-change item) is not authored twice.
+const withUrl = (id, url) => ({ ...item(id, "2026-10-12"), resources: { source: { url } } });
+assert.deepEqual(selectPending([withUrl("u1", "https://example.test/post/"), withUrl("u2", "https://example.test/other")], new Set(), { existingUrls: new Set(["https://example.test/post"]), today: new Date("2026-10-15") }).map((i) => i.id), ["u2"]);
+// ...and its wording reaches the article card by source URL.
+const urlEvent = { kind: "feed_entry", title: "Same article", url: "https://example.test/post/", summary: "An English excerpt that is long enough to count.", categories: [] };
+registerSlideSummaries([{ id: "0000000000000000", title: { subtitleJa: "同じ記事の要点" }, audience: { change: "確認できる" }, references: { source: { url: "https://example.test/post" } } }]);
+assert.equal(localizedSummary(urlEvent), "同じ記事の要点。確認できる。");
+registerSlideSummaries([]);
+
 // The slide lane stays narrow: only data/slides/{id}.json, no deletions.
 for (const name of ["validate-slide-pr.yml", "auto-merge-slide-pr.yml"]) {
   assert.ok((await read(name)).includes("data/slides/") || (await read(name)).includes("data\\/slides\\/"), `${name} must pin data/slides`);
