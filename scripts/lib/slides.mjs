@@ -17,7 +17,9 @@ export const ALLOWED_HOSTS = new Set(["github.blog", "github.com", "docs.github.
 // Internal-memo wording that must never reach a reader.
 // Pages the Copilot coding agent cannot open from its sandbox (its firewall blocks them), so it cannot verify them.
 // Remove a host here once it is added to the repository's Copilot coding agent allowlist.
-export const AGENT_UNREACHABLE = /publickey1\.jp|code\.visualstudio\.com/;
+// The sources are allowlisted through COPILOT_AGENT_FIREWALL_ALLOW_LIST_ADDITIONS (repository environment "copilot"),
+// so nothing is excluded now. Put a host pattern here again if a new source cannot be opened by the agent.
+export const AGENT_UNREACHABLE = /(?!)/;
 export const FORBIDDEN_PHRASES = ["未確認", "記載なし", "要確認", "推定", "未発表", "判定保留", "AI 生成", "AI生成", "データ時点", "初心者向け"];
 // A bare site name or a URL tells the reader nothing about the linked page.
 const GENERIC_TITLES = /^(github changelog|github blog|changelog|原文|source|link|リンク|https?:\/\/.*)$/i;
