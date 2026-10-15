@@ -48,6 +48,7 @@ const window = { since: Date.parse("2026-10-01"), until: Date.parse("2026-10-15"
 assert.deepEqual(findMissing(feedEntries, new Set(), window).map((e) => e.title), ["Gemini 4"]);
 assert.equal(findMissing(feedEntries, new Set([normalizeUrl("https://example.test/a/")]), window).length, 0);
 const collectWorkflow = await read("collect-updates.yml");
+assert.ok(collectWorkflow.includes("git pull --rebase origin main"), "collect retries a rejected push after a rebase");
 assert.ok(collectWorkflow.includes("backfill-skipped.mjs --coverage") && collectWorkflow.includes("coverage-report.mjs --strict"), "collect restores and reports coverage gaps");
 
 // An article already covered by a slide (written from a page-change item) is not authored twice.
