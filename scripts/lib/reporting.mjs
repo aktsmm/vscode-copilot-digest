@@ -2225,19 +2225,22 @@ function summaryFromPatterns(event, locale = "ja") {
         return "監査用のナビゲーションまたは見出し差分を検知した。読者向けハイライトには含めていない。";
       }
 
-      const updateMatch = additions[0]?.match(/^Update\s+([0-9.]+):\s*(.+)$/i);
-      if (updateMatch && /security issues/i.test(updateMatch[2])) {
-        return `VS Code ${updateMatch[1]} のセキュリティ修正を含む更新案内が追加された。`;
+      const lines = additions.map((addition) => addition.replace(/^H[1-3]:\s*/, ""));
+      for (const line of lines) {
+        const update = line.match(/^Update\s+([0-9.]+):\s*(.+)$/i);
+        if (update) {
+          const kind = /security/i.test(update[2]) ? "セキュリティ修正を含む" : /addresses these issues/i.test(update[2]) ? "不具合修正を含む" : "";
+          return `VS Code ${update[1]} の${kind}更新版が公開された。該当版を使っている環境は更新を検討したい。`;
+        }
+      }
+      const release = lines.map((line) => line.match(/^Visual Studio Code (\d+\.\d+(?:\.\d+)?)$/i)).find(Boolean);
+      if (release) {
+        return `VS Code ${release[1]} のリリースが案内された。新機能と変更点は、公式の release notes で確認できる。`;
       }
 
-      if (updateMatch) {
-        return `VS Code ${updateMatch[1]} の更新案内が追加された。`;
-      }
-
-      const sample = additions.slice(0, 3).map((addition) => `「${addition}」`);
-      const countText =
-        additions.length > sample.length ? `など${additions.length}件の` : "の";
-      return `${event.sourceName ?? "監視対象ページ"} に ${sample.join("、")} ${countText} 更新が追加された。`;
+      const sample = lines.slice(0, 3).map((line) => `「${trimText(line, 60)}」`);
+      const more = lines.length > sample.length ? `ほか ${lines.length - sample.length} 件` : "";
+      return `${event.sourceName ?? "監視対象ページ"} に ${sample.join("、")}${more} が追加された。`;
     }
 
     if (quality === "audit-only") {

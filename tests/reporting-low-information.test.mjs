@@ -345,7 +345,7 @@ assert.equal(isReaderEvent(substantiveSnapshot), true);
 assert.equal(isHighlightEligible(substantiveSnapshot), false);
 assert.equal(
   localizedSummary(substantiveSnapshot),
-  "VS Code 1.128.1 のセキュリティ修正を含む更新案内が追加された。",
+  "VS Code 1.128.1 のセキュリティ修正を含む更新版が公開された。該当版を使っている環境は更新を検討したい。",
   "concrete snapshot additions must render as factual reader copy",
 );
 assert.doesNotMatch(
