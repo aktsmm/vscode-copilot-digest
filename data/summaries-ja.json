@@ -28,84 +28,209 @@
     "why": "企業のCopilotライセンスと別アカウントのリポジトリを併用する開発者は、アカウントを分けて作業できる。"
   },
   "dd37a63db6dd3e85": {
-    "summary": "Copilot code reviewの課金先を、ライセンスを持つメンバー自身の利用枠からリポジトリ所有組織へ切り替えられるようになった。組織・企業が提供したライセンスの利用者だけにレビュー依頼を許可し、外部ライセンスによる依頼を制限する設定も追加された。",
-    "why": "組織課金を選ぶ管理者はAI Creditsの有料利用を有効にし、必要に応じて予算とレビュー依頼の権限を設定する。"
+    "title": "Copilot code reviewの課金先と依頼権限を組織で設定",
+    "summary": "Copilot code reviewの既定の課金先を、ライセンスを持つメンバー個人からリポジトリ所有組織へ変更できるようになった。組織・企業が提供したCopilotライセンスを持つ利用者だけにレビュー依頼を許可する制御も追加された。",
+    "why": "組織課金を選ぶ管理者はAI Creditsの有料利用を有効にし、予算とレビュー依頼者の範囲を設定する。",
+    "points": [
+      "既定はMember課金で、メンバーの利用枠が尽きるとレビュー依頼は失敗する。",
+      "Organization課金ではリポジトリ所有組織に請求され、AI Creditsの有料利用が必要。",
+      "管理者はCopilotポリシーで組織提供ライセンスの利用者に依頼者を制限できる。"
+    ]
   },
   "4947b28dd6cbdacb": {
-    "summary": "Copilot CLI・app・SDKで、手順を保存して再実行できるdynamic workflowsがパブリックプレビューになった。CLIとappではmacOS・Windowsのデスクトップ操作もプレビュー提供され、Copilot appにはリソース照会やコスト確認などを行うAzureキャンバスが追加された。",
-    "why": "開発者は反復作業を再利用可能な手順にまとめ、APIやCLIのないアプリの操作も承認の下で自動化できる。"
+    "title": "Copilotで再利用ワークフローとデスクトップ操作をプレビュー",
+    "summary": "Copilot CLI、app、SDKで手順を保存して再実行できるdynamic workflowsがパブリックプレビューになった。CLIとappではmacOS・Windowsのデスクトップ操作もプレビュー提供され、Copilot appにはAzureのリソース照会やコスト確認を行うキャンバスが加わった。",
+    "why": "開発者は反復作業を手順化し、APIやCLIのないアプリの操作も確認・承認しながら自動化できる。",
+    "points": [
+      "dynamic workflowsは自然言語またはコードで定義し、確認待ちなどの手順を含められる。",
+      "computer useはmacOS・WindowsのCopilot CLIとappでプレビュー提供される。",
+      "デスクトップアプリの操作前には利用者の承認が必要。",
+      "Azureキャンバスはリソース検索、コスト健全性確認、Azure Functions作業を支援する。"
+    ]
   },
   "592feb5a160097b6": {
-    "summary": "軽量モデルClaude Haiku 5.5がCopilot Pro、Pro+、Max、Business、Enterprise向けに一般提供され、段階的に展開中。サブエージェント、短い編集、ターミナル作業向けで、初期テストでは多くのコーディング課題でSonnet 5に匹敵しつつトークンと手順を削減した。",
-    "why": "組織管理者はモデルポリシーで利用可否を管理でき、従量課金にはプロバイダーの定価が適用される。"
+    "title": "Claude Haiku 5.5がGitHub Copilotで一般提供に",
+    "summary": "軽量モデルClaude Haiku 5.5がGitHub Copilotで一般提供となり、対象プランへ段階的に展開される。サブエージェント、短い編集、ターミナル作業など高速な処理向けで、GitHubの初期テストでは多くのコーディング課題でSonnet 5に匹敵したと報告された。",
+    "why": "対象プランの利用者は軽量モデルを選べ、管理者はモデルポリシーと従量課金を管理できる。",
+    "points": [
+      "対象はCopilot Pro、Pro+、Max、Business、Enterprise。",
+      "VS Code、Copilot CLI、appなどで利用でき、ロールアウトは段階的。",
+      "従量課金ではAnthropicのプロバイダー定価が適用される。"
+    ]
   },
   "5c642d6251ee4eda": {
-    "summary": "GitHubが周辺コードから認証情報を判別する専用モデルを導入し、既存のAI検出パスワードアラートを自動更新した。push protectionでの利用はプライベートプレビューで、Copilotの/security-reviewへの追加も予定。既存アラートは追加料金なしだが、新しい任意チェックはAI Creditsを消費する予定。",
-    "why": "管理者は新チェックの有効化前に対象プランと予算を確認し、既存アラートと追加の課金対象を区別する必要がある。"
+    "title": "GitHubがシークレット検出専用モデルを導入",
+    "summary": "GitHubは周辺コードを踏まえて認証情報を判定する専用モデルを導入し、既存のAI検出シークレットアラートを自動更新する。push protectionでの検出はプライベートプレビューで、Copilotの/security-reviewへの追加は今後の提供として案内された。",
+    "why": "管理者は既存アラートの更新と追加チェックを区別し、push protectionの適用範囲やAI Creditsを確認する。",
+    "points": [
+      "既存のAI検出アラートは追加料金なしで新モデルへ自動移行する。",
+      "push protectionでのAI検出はプライベートプレビューとして案内された。",
+      "push protectionにはGitHub Secret ProtectionまたはGitHub Advanced Securityが必要。",
+      "/security-reviewへの追加チェックは別途AI Creditsを消費する予定。"
+    ]
   },
   "c6fb2b313984d9d2": {
-    "summary": "GitHubは9四半期のデータから、秘密情報漏えいの増加を開発者の不注意ではなくコード生成量の増加という観点で分析した。周辺コードを読むModernBERT分類器を紹介し、形式の決まらない秘密情報もpush時に防ぐことで、漏えい後の人手による対応負担を減らす方針を示した。",
-    "why": "開発チームは漏えい後の対応だけに頼らず、秘密情報を履歴に入れる前の検出を組み込む重要性を把握できる。"
+    "title": "GitHubがシークレット保護をコード生成の増加に対応",
+    "summary": "GitHubは、開発者の不注意ではなくコード生成量の増加が秘密情報漏えいの背景にあると分析し、コードの周辺文脈を読むModernBERT分類器を紹介した。候補をpush時に検出して防ぐことで、形式が固定されない秘密情報にも対応し、漏えい後の人手対応を減らす方針を示した。",
+    "why": "開発チームは漏えい後の対応だけに頼らず、push前の文脈ベース検出を防御策として評価できる。",
+    "points": [
+      "2024年第2四半期から2026年第2四半期に秘密情報を含むpushは2.59倍になった。",
+      "ModernBERT分類器は候補シークレットのバッチを2ミリ秒未満で評価する。",
+      "push protectionへの適用は記事公開時点でプライベートプレビュー。"
+    ]
   },
   "ed2d6a7f23b61952": {
-    "summary": "Copilot CLI、Copilot app、Agent Hostを使うVS Codeセッションでローカルサンドボックスが一般提供された。MXCを基盤にWindows・macOS・LinuxのOS制御を適用し、エージェントが実行するツールやコマンドのファイル・ネットワーク・認証情報へのアクセスを制限する。追加料金は不要。",
-    "why": "組織は利用者が緩和できないサンドボックスポリシーを管理設定で強制し、エージェントの実行範囲を制御できる。"
+    "title": "Copilotのローカルサンドボックスが一般提供に",
+    "summary": "GitHub Copilot CLI、Copilot app、Agent Hostを使うVS Codeセッションでローカルサンドボックスが一般提供された。MXCを基盤にWindows・macOS・LinuxのOS制御を適用し、エージェントのファイル、ネットワーク、認証情報へのアクセスを制限する。追加料金は不要。",
+    "why": "ローカルでエージェントを実行する開発者と管理者は、実行環境のアクセス範囲をポリシーで制限できる。",
+    "points": [
+      "対象はCopilot CLI、Copilot app、Agent Hostを使うVS Codeセッション。",
+      "Microsoft eXecution ContainerがWindows、macOS、LinuxのOS制御に変換する。",
+      "ファイル、ネットワーク、GitやGitHub CLIの認証情報などを制限できる。",
+      "組織管理設定でサンドボックスを必須にし、利用者のポリシー変更を制限できる。"
+    ]
   },
   "6f397884428e9f0f": {
-    "summary": "GitHubがAIコードレビュー向けの公開ベンチマークReviewBenchを研究プレビューとして公開。19言語・187リポジトリの219件のPRを使い、既知の問題の検出に加え、新たに発見した問題も評価できる。",
-    "why": "レビューエージェントを共通基準で評価し、重大度や精度・再現率の優先度に応じて比較できる。"
+    "title": "AIコードレビューの公開ベンチマークReviewBenchを公開",
+    "summary": "GitHubがAIコードレビュー用の公開ベンチマークReviewBenchを研究プレビューとして公開した。19言語・187リポジトリの219件のPRを使い、既知の問題への一致だけでなく、レビューエージェントが新たに見つけた指摘も評価できる。",
+    "why": "開発チームや研究者は同じPR群と評価基準でレビューエージェントの検出精度を比較できる。",
+    "points": [
+      "評価データは19言語、187の公開リポジトリから選んだ219件のPRで構成。",
+      "既存ラベルに基づくgrounded指標と、新規指摘を含めるaugmented指標を提供。",
+      "エージェントの登録ではコンテナイメージと設定を提出し、テストセットを実行する。"
+    ]
   },
   "19d7f08a7fa07c19": {
-    "summary": "複数モデルを協調させるHydraFusionの研究プレビューが、Copilot CLIに加えてVS CodeとGitHub Copilot appに対応。HydraFusionが単一モデル、段階的なエスカレーション、別モデルによる批評の3方式から実行方法を自動選択する。",
-    "why": "利用者はHydraFusionを選ぶことで、タスクに応じた処理方式の自動選択と複数モデルの連携を試せる。"
+    "title": "HydraFusionの研究プレビューがVS CodeとCopilot appに拡大",
+    "summary": "複数モデルを協調させるHydraFusionの研究プレビューが、Copilot CLIに加えてVS CodeとGitHub Copilot appで利用可能になった。単一モデル、段階的なモデル切り替え、別モデルによる批評の方式をワークフローに応じて選び、単一の応答を生成する。",
+    "why": "対象プランの利用者は個別モデルを選び分けずに、速度やタスクの難しさに合わせた推論方式を試せる。",
+    "points": [
+      "対象はCopilot Pro、Pro+、Business、Enterpriseで、BusinessとEnterpriseはプレビュー機能の有効化が必要。",
+      "VS Code 1.140以降ではモデルピッカーから選び、表示されない場合はchat.copilot.hydraFusion.enabledを有効にする。",
+      "Single、Cascade、Critiqueの3ワークフローでモデルの連携方法を変える。"
+    ]
   },
   "11a5ac5113f98055": {
-    "summary": "GPT-6.1 SolがGitHub Copilotで一般提供となり、段階的に展開中。対象はPro+、Max、Business、Enterpriseで、VS CodeやCLIなどから利用できる。従量課金ではプロバイダーの定価が適用される。",
-    "why": "対象プランの利用者はモデルを選択でき、組織管理者はモデルポリシーでアクセスを管理できる。"
+    "title": "GPT-6.1 SolがGitHub Copilotで一般提供に",
+    "summary": "OpenAIのGPT-6.1 SolがGitHub Copilotで一般提供となり、対象プランへ段階的に展開される。エージェント型コーディングやターミナル作業向けで、GitHubの初期テストではコーディング課題を少ないトークンと手順で完了したと報告された。",
+    "why": "対象プランの利用者はモデルを選択でき、Business・Enterprise管理者はモデルポリシーでアクセスを管理できる。",
+    "points": [
+      "対象はCopilot Pro+、Max、Business、Enterprise。",
+      "VS Code、Copilot CLI、Copilot appなどから利用でき、段階的に展開される。",
+      "従量課金ではOpenAIのプロバイダー定価が適用される。"
+    ]
   },
   "1af50bc5d28f4d83": {
-    "summary": "Claude Sonnet 5.5がGitHub Copilotで一般提供され、段階的に展開中。Pro、Pro+、Max、Business、Enterpriseが対象。GitHubの初期テストでは、Sonnet 5相当のコーディング性能を、より少ない手順・トークン・ツール呼び出しで実現したという。",
-    "why": "日常的な機能開発やバグ修正で、性能だけでなく処理効率も重視したモデル選択肢となる。"
+    "title": "Claude Sonnet 5.5がGitHub Copilotで一般提供に",
+    "summary": "Claude Sonnet 5.5がGitHub Copilotで一般提供となり、対象プランへ段階的に展開される。機能開発やバグ修正など日常的な作業向けで、GitHubの初期テストではSonnet 5相当のコーディング性能を、より少ない手順・トークン・ツール呼び出しで実現したと報告された。",
+    "why": "対象プランの利用者はモデルを選べ、管理者はモデルポリシーと従量課金を管理できる。",
+    "points": [
+      "対象はCopilot Pro、Pro+、Max、Business、Enterprise。",
+      "VS Code、Copilot CLI、appなどで利用でき、ロールアウトは段階的。",
+      "従量課金ではAnthropicのプロバイダー定価が適用される。"
+    ]
   },
   "40c38fd4f5b4bf26": {
-    "summary": "Agentic autofixが、有効化済みのCopilot Memoryを利用するようになった。既存のメモリをセキュリティアラート修正の参考にし、作成した修正パターンも保存して再利用する。両機能ともパブリックプレビュー。",
-    "why": "リポジトリ固有の安全な開発パターンを、追加のアラート修正や他のCopilot機能にも活用できる。"
+    "title": "Agentic autofixがCopilot Memoryを利用",
+    "summary": "Copilot Memoryを有効にしている顧客では、agentic autofixが既存メモリをセキュリティアラート修正の参考にし、作成した修正パターンも将来のために保存する。メモリを使ってリポジトリ固有の安全な開発パターンを再利用できる。",
+    "why": "Copilot Memoryを有効にしたチームは、過去の修正知識を後続のセキュリティアラート対応に活用できる。",
+    "points": [
+      "agentic autofixとCopilot Memoryはいずれもパブリックプレビュー。",
+      "修正を始める際に既存メモリを参照し、修正後にパターンを保存する。",
+      "メモリ機能を有効にした顧客が対象。"
+    ]
   },
   "a2908e03cf24041e": {
-    "summary": "GitHub Copilot appで、自然言語と/create-canvasを使って独自の操作画面を作る方法を紹介。利用者とエージェントが同じ状態を共有し、ボードやチェックリストを双方から更新できる。作成した画面は拡張として保存・再利用できる。",
-    "why": "利用者は定型の画面に業務を合わせる代わりに、自分の作業に合う操作画面をエージェントと作れる。"
+    "title": "Copilot appのCanvasesで独自の作業画面を作成",
+    "summary": "GitHub Copilot appで自然言語または/create-canvasを使い、エージェントと共有する操作画面を作る方法が紹介された。ボードやチェックリストなどの状態を利用者とエージェントの双方から更新でき、作成したCanvasは拡張として保存・再利用できる。",
+    "why": "チームは会話の往復を減らし、定型作業に合わせた共有画面を作って繰り返し利用できる。",
+    "points": [
+      "/create-canvasに必要な画面や操作を記述してCanvasを生成する。",
+      "ユーザーの操作とエージェントの変更は共有状態に反映される。",
+      "Canvasは個人用またはプロジェクトに置く拡張として保存できる。"
+    ]
   },
   "a63e6ca5e6ebff30": {
-    "summary": "Copilot利用状況メトリクスの企業・組織向けrepos-1-dayレポートに、PRレビューの段階別所要時間を追加。レビュー可能状態から初回レビュー、初回から最終レビュー、最終レビューからマージの3区間を中央値と90パーセンタイルで示す。人間が作成し、別の人間がレビューしたPRが対象。",
-    "why": "チームはレビュー開始待ち、レビュー中、マージ待ちを分けて把握し、遅延の発生箇所を特定しやすくなる。"
+    "title": "Copilot利用状況APIにPRレビュー時間の段階別指標",
+    "summary": "企業・組織向けCopilot利用状況のrepos-1-dayレポートにpull_request_review_timesを追加。レビュー可能になってから初回レビュー、初回から最終レビュー、最終レビューからマージまでの時間を、中央値と90パーセンタイルで示す。",
+    "why": "管理者はPRのレビュー工程ごとの滞留時間を集計し、ボトルネックを特定できる。",
+    "points": [
+      "時間は分単位で、PRがマージされた日にレポートへ計上される。",
+      "人が作成し、別の人がレビューしたPRが対象で、botレビューは除外される。",
+      "2026年9月21日より前にレビュー可能になったPRは遡及集計されない。",
+      "利用にはCopilot usage metrics policyの有効化が必要。"
+    ]
   },
   "f0e3d3172d660bda": {
-    "summary": "GitHub Copilotの企業管理設定に、製品内バリデーターが追加された。不正なJSON、未対応の構成、無効なチームマッピングなどを検出し、企業のAI controlsページで対象ファイルとJSONパスを確認できる。",
-    "why": "企業管理者はポリシーの適用を妨げる設定エラーを特定し、修正後の構成を再検証できる。"
+    "title": "Enterprise managed settingsの製品内検証機能を追加",
+    "summary": "GitHub Copilotのenterprise managed settingsに、JSONの形式不正、未対応設定、無効なteam mappingなどを検出する製品内バリデーターが加わった。問題ごとに対象ファイルとJSON pathを示し、ポリシー適用前に修正箇所を特定できる。",
+    "why": "Enterprise管理者は設定エラーを修正し、意図したCopilotポリシーが適用される状態にできる。",
+    "points": [
+      "copilot/managed-settings.jsonとcopilot/team-mappings.jsonを検証する。",
+      "team mappingsが参照するteam settings filesのエラーも表示する。",
+      "修正を.github-privateのdefault branchへコミットし、Agentsページを再読み込みする。"
+    ]
   },
   "3d14844898469c56": {
-    "summary": "GitHub Copilot appのcanvasは、エージェントと利用者が同じ画面を双方向に操作するアプリ内の作業面。記事ではゲームやPCパッケージ管理画面を例に、チャットを介さず繰り返し使えるツールを作る方法を紹介している。",
-    "why": "反復操作をエージェントへの依頼から専用画面に移し、作業に合うUIを用意できる。"
+    "title": "Copilot appのCanvasesでチャット以外の作業画面を作成",
+    "summary": "GitHub Copilot appのCanvasesは、利用者とエージェントが同じ画面を双方向に操作するアプリ内の作業面。記事ではゲームやPCパッケージ管理画面を例に、チャットを介さず繰り返し使えるツールを作る考え方を紹介している。",
+    "why": "手順が決まった作業や状態を扱う作業では、会話の代わりに専用画面で入力・操作できる。",
+    "points": [
+      "CanvasはCopilot app内で動くアプリで、エージェントと双方向に連携する。",
+      "記事ではConnect FourのゲームやWingetのパッケージ管理画面を例示。",
+      "第三者APIの呼び出しやローカルコード実行を組み込める。"
+    ]
   },
   "0f1a07da5479caba": {
-    "summary": "GitHub Copilot appのPR画面を、2,200ファイル・100万行超の差分と400件超のレビューコメントを扱えるよう再設計した。コード行の仮想化に加え、可変高コメントの計測や差分データのストリーミングを組み合わせている。",
-    "why": "大規模な一括変更でも、差分とレビューの表示を保ちながら確認を進められる。"
+    "title": "Copilot appが100万行超の巨大PRを表示できるよう再設計",
+    "summary": "GitHub Copilot appのPR画面を、2,200ファイル・100万行超の差分と400件超のインラインレビューコメントを扱えるよう再設計した。コード行の仮想化、可変高コメントの計測、差分データのストリーミングなどを組み合わせ、表示位置を保ちながら描画する。",
+    "why": "大規模な一括変更をレビューする開発者は、差分やコメントを読み込む際の待ち時間と表示負荷を抑えられる。",
+    "points": [
+      "検証対象のPRは2,200ファイル、100万行超、400件超のレビューコメント。",
+      "画面内のコード行とコメントを中心に測定・描画する。",
+      "差分の構造を先に表示し、内容をストリーミングして読み込み遅延を抑える。"
+    ]
   },
   "35569c11ea75ea41": {
-    "summary": "GitHub Copilot appにローカルセッション用サンドボックスがパブリックプレビューで追加された。プロジェクトごとにファイルの読み書き、ネットワーク、GitやGitHub CLIの認証情報へのアクセスを設定でき、OSが制限を適用できない場合はシェルを実行しない。",
-    "why": "利用者は設定を有効にして新しいローカルセッションの実行範囲を制限できる。"
+    "title": "GitHub Copilot appにローカルサンドボックスをプレビュー提供",
+    "summary": "GitHub Copilot appで、ローカルリポジトリとworktreeのセッションをプロジェクト単位のサンドボックスで実行できるようになった。ファイル、ネットワーク、GitやGitHub CLIの認証情報へのアクセスを設定し、OSが制限を適用できない場合はシェルを実行しない。",
+    "why": "ローカル作業の影響範囲を絞るため、利用者はプロジェクトごとに許可するアクセスを設定する。",
+    "points": [
+      "機能はパブリックプレビューで、既定では無効。",
+      "プロジェクト設定は新しいローカルセッションに適用される。",
+      "実行中のローカルセッションでは/sandbox onで有効にできる。",
+      "クラウドサンドボックスやリモートホストのセッションには適用されない。"
+    ]
   },
   "ea9db1d280cd8f5e": {
-    "summary": "Copilot code reviewの個人設定ページが全プランで使えるようになり、PR作成・共同作成時や新しいpush時などの自動レビューと既定のレビュー強度を設定できる。Enterprise管理者は組織所有リポジトリ向けの既定強度も指定できる。",
-    "why": "利用者や管理者はレビューの開始条件と強度を設定し、組織単位の既定値も調整できる。"
+    "title": "Copilot code reviewの個人設定とEnterprise既定値を拡充",
+    "summary": "Copilot code reviewの個人設定ページが全プランで利用可能になり、PR作成・共同作成時や新しいpush時などの自動レビュー条件と既定のレビュー強度を設定できる。Enterprise管理者は組織所有リポジトリ向けの既定強度も指定できる。",
+    "why": "開発者はレビューの起動条件や強度を選び、Enterprise管理者は組織の初期値を統一できる。",
+    "points": [
+      "個人設定ではPR作成・共同作成、draft解除、新しいpushなどを自動レビュー対象にできる。",
+      "既定強度はLiteまたはBalancedに設定し、手動依頼では別の強度を選べる。",
+      "Enterpriseの既定値は組織やリポジトリ単位で上書きできる。"
+    ]
   },
   "07f27f13997821d8": {
-    "summary": "GitHub CopilotでGPT-6 SolとGPT-6 Lunaが利用可能になった。Solは対話的・エージェント型の開発向け、Lunaは小規模タスク向けの軽量・低コストモデルで、どちらも使用量ベース課金となる。SolはPro+、Max、Business、Enterprise、LunaはProを含む全プランが対象。",
-    "why": "利用者はタスクと対象プランに応じてモデルを選び、管理者はモデルポリシーで利用可否を制御できる。"
+    "title": "GitHub CopilotでGPT-6 SolとGPT-6 Lunaが利用可能に",
+    "summary": "GitHub CopilotにGPT-6 SolとGPT-6 Lunaが加わった。Solは対話型・エージェント型の開発向け、Lunaは小規模タスク向けの軽量・低コストモデルで、どちらも使用量ベース課金となる。",
+    "why": "利用者はタスク規模に応じてモデルを選び、管理者はプランごとの利用可否を設定できる。",
+    "points": [
+      "SolはPro+、Max、Business、Enterprise、LunaはProを含む全プランが対象。",
+      "両モデルともVS Code、Copilot CLI、Copilot appなどのモデルピッカーで選択できる。",
+      "Business・Enterprise管理者はモデルポリシーで利用を管理する。"
+    ]
   },
   "784f424dccc2eb10": {
+    "title": "Copilot CLIのC++全体索引でコード検索を高速化",
     "summary": "GitHub Copilot CLIのC++コードインテリジェンスで、コードベース全体を索引化する機能が既定で有効になった。Microsoft C++ Language Serverがシンボルやファイル間の関係を解決し、索引を再利用・更新するため、初回作成後の検索を速める。",
-    "why": "C++開発者は初回索引作成時の負荷を考慮しつつ、定義や参照の検索を効率化できる。"
+    "why": "C++開発者は大規模なプロジェクトでも定義や参照を検索し、ファイル間の関係をたどりやすくなる。",
+    "points": [
+      "インデックスはプロジェクト内のシンボル、型、include、ファイル関係を保持する。",
+      "初回作成には時間がかかり、大規模リポジトリでは一時的にメモリ使用量が増える。",
+      "作成後は変更に応じて更新され、設定を変えた場合はCopilotセッションを再起動する。"
+    ]
   },
   "d3f380f2df40f992": {
     "summary": "Claude Opus 5.5がGitHub Copilotで段階的に提供開始された。エージェント型コーディングや長時間タスク向けで、GitHubの初期テストではOpus 5と同程度の課題をより少ない手順とトークンで解決したと報告されている。",
@@ -208,16 +333,34 @@
     "why": "新しいセッションではハーネス選択欄の「Copilot」を確認し、読み取り専用で質問する場合は「Ask」を選べる。"
   },
   "174b5a1d37b1981d": {
-    "summary": "Agentsウィンドウでセッションを切り替えた際、これまで共有されていたエディター、詳細、下部パネルの表示状態について、実験的なsessions.experimental.layoutScope設定でレイアウトをどの範囲で記憶するか選べるようになった。設定変更後はウィンドウの再読み込みが必要。",
-    "why": "複数セッションを使う人は作業ごとの表示状態を保つか共有するかを選び、設定変更後にウィンドウを再読み込みする。"
+    "title": "Agentsウィンドウでセッション別レイアウトを試験提供",
+    "summary": "Agentsウィンドウでセッションを切り替えた際のエディター、詳細、パネルの表示状態を、実験設定sessions.experimental.layoutScopeで共有範囲を選べるようになった。初期値はsession-sharedで、設定変更後はウィンドウの再読み込みが必要。",
+    "why": "複数セッションを使う人は表示状態をセッション間で共有するかチャットごとに分けるか選べる。",
+    "points": [
+      "設定値はsession-shared、chat-shared、chatの3種類で、既定値はsession-shared。",
+      "対象はAgentsウィンドウのみで、ウィンドウ形状やペイン幅、サイドバーは引き続き共有される。",
+      "設定を変更した後はVS Codeウィンドウを再読み込みする。"
+    ]
   },
   "65e37068be420f7b": {
-    "summary": "エージェントと同じ成果物をチャット横で確認・更新できるCanvasesがプレビュー提供された。VS CodeデスクトップのCopilot harnessによるローカルセッションで利用でき、Kanbanでは利用者がカードを動かし、エージェントがタスクや状態を更新できる。利用にはchat.canvases.enabledを有効にして新しいセッションを始める。",
-    "why": "実装計画をカード化し、チャットを往復せずにエージェントとタスクや進捗を更新できる。"
+    "title": "VS Codeでエージェントと共有するCanvasesがプレビューに",
+    "summary": "VS Codeデスクトップで、チャット横のCanvasesを使い、利用者とエージェントが同じ成果物を操作できるようになった。Kanbanではカードの移動やタスク状態の更新を双方から行える。プレビュー機能で、Copilot harnessのローカルセッションが対象。",
+    "why": "計画や進捗をカードにして、チャットを介さず利用者とエージェントが同じ状態を更新できる。",
+    "points": [
+      "設定chat.canvases.enabledを有効にし、新しいCopilot harnessセッションを開始する。",
+      "CanvasesはVS Codeデスクトップのローカルセッションで利用できる。",
+      "組み込みKanbanではカードの作成・移動やタスク状態の更新ができる。"
+    ]
   },
   "cdb2c49e659eb507": {
-    "summary": "Agentsウィンドウで自然言語により、チャットを別フォルダーまたは新しいGit worktreeへ移せるようになった。会話履歴を保ったまま既存のworkspaceがあるチャットも移動でき、エージェントに新しいworktreeで作業を分離させることもできる。",
-    "why": "調査から実装へ場所を切り替える際も会話を引き継げるため、再説明せずに別フォルダーやworktreeで作業を続けられる。"
+    "title": "VS Codeで会話を保ったままチャットを移動",
+    "summary": "Agentsウィンドウでエージェントに依頼し、チャットを別フォルダーまたは新しいGit worktreeへ移せるようになった。会話履歴を引き継ぐため、調査から実装へ作業場所を変えても文脈を保てる。",
+    "why": "別のローカル作業場所へ移る際に会話を作り直さず、既存の文脈を使って続行できる。",
+    "points": [
+      "対象はCodex harnessまたはCodex Interactive modeのセッション。",
+      "移動できるのは単一チャット・単一ローカルフォルダーのセッション。",
+      "新しいGit worktreeへの移動も依頼でき、会話履歴は保持される。"
+    ]
   },
   "449b1014bc1499c1": {
     "summary": "コードスキャンアラートをCopilotに割り当てると、関連コードを調査して修正案を作成し、CodeQLで検証した後にレビュー用のドラフトPRを開くAgentic autofixが一般提供になった。",
@@ -230,13 +373,14 @@
     ]
   },
   "5ff0bcef74701c64": {
-    "summary": "VS Code 1.142では、エージェントと共同編集するCanvases、会話履歴を保ったチャット移動、Markdown編集機能、エージェントの権限管理が追加された。",
-    "why": "利用者は作業の見える化や会話の移動に使い、管理者は許可する権限モードを統制できる。",
+    "title": "VS Code 1.142でCanvasesやチャット移動を追加",
+    "summary": "VS Code 1.142ではCopilot harnessの新規セッションへの段階的な既定化、Canvasesプレビュー、チャット移動、Markdown編集、企業向け権限制御が加わった。Canvasesは同じ成果物をエージェントと操作でき、チャット移動は履歴を保ったまま別フォルダーやworktreeへ移れる。",
+    "why": "利用者は作業の可視化や会話の引き継ぎに使い、管理者はエージェントの権限とサンドボックスを制御できる。",
     "points": [
-      "Canvasesはプレビューで、Copilot harnessのローカルセッションと設定chat.canvases.enabledが必要。",
-      "チャット移動はCodex harnessまたはCodex Interactive modeの単一チャット・ローカルフォルダーが対象。",
-      "Markdown編集では画像貼り付け、Rename Symbolによるリンク変更、パンくずナビゲーションが使える。",
-      "Enterprise管理者はサンドボックスと利用可能なエージェント権限モードを制御できる。"
+      "Canvasesはchat.canvases.enabledを有効にしたCopilot harnessのローカルセッション向けプレビュー。",
+      "チャット移動はCodex harnessまたはInteractive modeの単一チャット・ローカルフォルダーが対象。",
+      "Markdown編集では画像貼り付け、ファイルリンクのRename Symbol、パンくずナビゲーションを追加。",
+      "企業管理設定でAgent Hostのサンドボックスと利用可能な権限モードを制御できる。"
     ]
   },
   "f0e5fddf67c3af81": {
@@ -257,33 +401,35 @@
     ]
   },
   "3edcfec6dc5c735a": {
-    "summary": "VS Code 1.141では、非アクティブなエージェント用worktreeの整理、Windows・macOS・Linuxでのサンドボックス、セッションのグリッド表示、複数GitHub Enterprise環境へのサインインが追加された。",
-    "why": "エージェント作業の保存領域や権限を管理しながら、複数セッションとEnterprise環境を並行して扱える。",
+    "title": "VS Code 1.141でサンドボックスと複数セッション表示を追加",
+    "summary": "VS Code 1.141では非アクティブなエージェント用worktreeの整理、Copilot Agent HostのOS別サンドボックス、Agentsウィンドウのグリッド表示、複数GitHub Enterprise環境へのサインインが加わった。",
+    "why": "管理者はエージェントの実行権限を制御でき、開発者はworktree容量や並行セッションを管理しやすくなる。",
     "points": [
-      "Chat: Open Worktree Cleanupで非アクティブworktreeの容量を確認し、削除対象を選べる。",
-      "Copilot Agent HostのサンドボックスはWindows、macOS、Linuxでファイルとネットワークへのアクセスを制限する。",
-      "Agentsウィンドウではセッションを横・縦のグリッドに配置し、同時に比較できる。",
-      "GitHub Enterprise CloudとGitHub Enterprise Serverのアカウントを同じVS Codeウィンドウで使える。"
+      "Chat: Open Worktree Cleanupで容量を確認し、削除する非アクティブworktreeを選ぶ。",
+      "サンドボックスはWindows、macOS、Linuxに対応し、chat.agent.sandbox.enabledで有効化できる。",
+      "Agentsウィンドウでセッションを横または縦のグリッドに並べられる。",
+      "Enterprise CloudとEnterprise Serverのアカウントを同じVS Codeウィンドウで利用できる。"
     ]
   },
   "fefbbe2fa28d302e": {
-    "summary": "VS Code 1.140では、Copilot harnessや複数フォルダーのエージェントセッション、リモートへの作業委任、無視対象フォルダーのworktree間再利用、Enterprise向けAI制御が追加された。",
-    "why": "複数リポジトリにまたがる作業やworktree切り替えを効率化し、組織はAI利用の既定値を統制できる。",
+    "title": "VS Code 1.140で複数フォルダー作業とEnterprise制御を追加",
+    "summary": "VS Code 1.140ではCopilot harness、複数フォルダーのエージェントセッション、リモートホストへの作業委任、無視対象フォルダーのworktree間再利用、Enterprise向けAI制御が加わった。複数フォルダーとリモート委任は実験的機能として提供される。",
+    "why": "複数リポジトリやリモートホストにまたがる作業を行うチームは、機能の実験段階と管理ポリシーを踏まえて導入できる。",
     "points": [
-      "Copilot harnessはハーネス選択欄から利用し、Copilot製品間で共通のエージェント動作を提供する。",
-      "複数フォルダーセッションは実験的機能で、既定では無効。",
-      "有効化はsettings.jsonで各ハーネスのmultiRootEnabled設定をtrueにする。",
-      "Enterprise管理者はAIバージョン要件とautoTier managed settingを設定できる。"
+      "複数フォルダーセッションは実験的で、各ハーネスのmultiRootEnabled設定を有効にする。",
+      "リモート委任も実験的で、remoteAgentHostsとremoteSessionsの設定が必要。",
+      "無視対象フォルダーは新しいworktreeに再利用できる。",
+      "Enterprise管理者はAIバージョン要件とautoTier managed settingを構成できる。"
     ]
   },
   "5c9dea62fc51b326": {
-    "summary": "VS Code 1.139では、リモートDev Container内でのエージェント実行、大量セッション一覧の高速化、一覧上での名前変更や表示切り替え、エディターの折り返し表示と括弧補完が改善された。",
-    "why": "リモート環境でエージェントを動かす人はプロジェクトの依存関係を利用でき、長いセッション一覧も扱いやすくなる。",
+    "title": "VS Code 1.139でリモートDev Container内のエージェント実行",
+    "summary": "VS Code 1.139では、リモートDev Container内でのエージェント実行、大量セッション一覧の高速化、一覧上での名前変更や表示切り替えが加わった。エディターでは折り返し表示と括弧補完も改善された。",
+    "why": "リモート環境の依存関係を使って作業でき、長いセッション一覧やコード編集を扱いやすくなる。",
     "points": [
       "設定chat.agentHost.devContainer.enabledを有効にし、フォルダーのUse Dev Containerを選ぶ。",
-      "リモートの対象はSSH、Tunnel、WSLホストで、ホスト側にDockerが必要。",
-      "Compact Viewでセッションを省スペース表示し、タイトルを一覧内で直接変更できる。",
-      "Linux DEB/RPMのデスクトップファイル名が変更され、古い固定ランチャーは再登録が必要。"
+      "対象ホストはSSH、Tunnel、WSLで、リモート側にDockerが必要。",
+      "Compact Viewでセッションを省スペース表示し、タイトルを一覧から変更できる。"
     ]
   },
   "8bc291f39a282969": {
