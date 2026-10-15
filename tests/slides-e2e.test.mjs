@@ -97,6 +97,26 @@ try {
   assert.equal(await text('[data-dl="json"]'), "JSON（3）");
   assert.ok((await page.getAttribute("[data-dl-sample]", "href")).endsWith(sample.pdf));
 
+  // Every slide starts selected; single slides can be dropped, and the files follow the pick.
+  await page.click(".dl-items summary");
+  assert.equal(await page.locator("[data-dl-item]").count(), 3);
+  assert.equal(await page.locator("[data-dl-item]:checked").count(), 3);
+  assert.match(await text("[data-dl-items-count]"), /3 \/ 3/);
+  await page.uncheck("[data-dl-item] >> nth=0");
+  assert.equal(await text(`[data-dl="json"]`), "JSON（2）");
+  assert.equal(await text(`[data-dl="pdf"]`), "PDF（2）");
+  const [pickedJson] = await Promise.all([page.waitForEvent("download", { timeout: 60000 }), page.click(`[data-dl="json"]`)]);
+  const pickedFile = path.join(tmp, "picked.json");
+  await pickedJson.saveAs(pickedFile);
+  assert.equal(JSON.parse(await fs.readFile(pickedFile, "utf8")).slides.length, 2);
+  await page.click("[data-dl-none]");
+  assert.equal(await page.isDisabled(`[data-dl="json"]`), true);
+  await page.click("[data-dl-all]");
+  assert.equal(await text(`[data-dl="json"]`), "JSON（3）");
+  await page.uncheck("[data-dl-item] >> nth=0");
+  await page.click("[data-dl-reset]");
+  assert.equal(await text(`[data-dl="json"]`), "JSON（3）", "reset selects everything again");
+
   // JSON needs no password.
   const [jsonDownload] = await Promise.all([page.waitForEvent("download", { timeout: 60000 }), page.click('[data-dl="json"]')]);
   const jsonFile = path.join(tmp, "deck.json");
