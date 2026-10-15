@@ -1,0 +1,73 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "6c5dc5c287594ed6",
+  "title": {
+    "ja": "Copilotテレメトリの利用者属性と収集範囲を個別管理",
+    "subtitleJa": "managed settingsでID属性と5種類のコンテンツ収集を独立して制御",
+    "original": "Client telemetry user attribution and configurable capture"
+  },
+  "date": "2026-10-12",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "CopilotクライアントのOpenTelemetryを管理するEnterprise管理者",
+    "change": "利用者・OSユーザー・ホスト名の属性と、プロンプト等の5収集クラスを別々に制御できる",
+    "changeNature": "neutral"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "監査目的に必要な属性や収集クラスだけをmanaged settingsで有効化し、承認済みの収集先に送る"
+  },
+  "panels": [
+    {
+      "id": "identity",
+      "heading": "利用者属性",
+      "priority": "core",
+      "items": [
+        "telemetry.capture.identityは既定でオフ。user.name、process.user.name、host.nameをOpenTelemetryデータに追加",
+        "user.nameは認証済みCopilotアカウント名（現在はGitHub login）、残りはOSアカウント名とマシン名",
+        "ID属性の収集は、既存の仮名ユーザー識別子とは別の設定"
+      ]
+    },
+    {
+      "id": "capture",
+      "heading": "収集クラス",
+      "priority": "core",
+      "items": [
+        "prompts、responses、toolArguments、toolOutput、policyDetailを個別に制御",
+        "5クラスすべて既定でオフ。明示したmanaged settingsがローカル設定・SDK設定・環境変数より優先",
+        "従来のcaptureContentは5つのコンテンツ収集の略式設定で、ID属性の収集は有効にしない"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "収集時の注意",
+      "priority": "detail",
+      "items": [
+        "プロンプト、ツール、ポリシーの収集にはソースコード、ファイル内容、コマンド、実行結果、パスが含まれうる",
+        "必要な収集クラスだけを有効にし、承認済みの収集エンドポイントへ送信"
+      ]
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Client telemetry user attribution and configurable capture - The GitHub Blog",
+      "url": "https://github.blog/changelog/2026-10-12-client-telemetry-user-attribution-and-configurable-capture/"
+    },
+    "documents": [
+      {
+        "title": "エンタープライズ管理設定 - GitHub Docs",
+        "url": "https://docs.github.com/ja/copilot/reference/enterprise-administrators/enterprise-managed-settings"
+      },
+      {
+        "title": "Monitor agent usage with OpenTelemetry - Visual Studio Code",
+        "url": "https://code.visualstudio.com/docs/agents/guides/monitoring-agents"
+      }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-10-12-client-telemetry-user-attribution-and-configurable-capture/",
+    "https://docs.github.com/ja/copilot/reference/enterprise-administrators/enterprise-managed-settings",
+    "https://code.visualstudio.com/docs/agents/guides/monitoring-agents"
+  ]
+}

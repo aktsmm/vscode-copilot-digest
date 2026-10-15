@@ -1,0 +1,76 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "181599bdd62c9fe1",
+  "title": {
+    "ja": "JetBrains版Copilotの既定モデル・MCP起動制御とチャット改善",
+    "subtitleJa": "管理者が新規会話の既定モデルを指定可能に。JetBrains IDE 2025.1のサポートは終了",
+    "original": "New controls and chat improvements in Copilot for JetBrains"
+  },
+  "date": "2026-10-10",
+  "topic": "GitHub Copilot",
+  "status": "retirement",
+  "statusEvidence": "GitHub Copilot has ended support for JetBrains IDE 2025.1.",
+  "audience": {
+    "who": "Copilot for JetBrainsを使う開発者と、設定を管理するEnterprise管理者",
+    "change": "新規会話の既定モデルを管理でき、診断から修正を依頼する操作とMCP起動制御を追加",
+    "changeNature": "neutral"
+  },
+  "action": {
+    "required": "yes",
+    "summary": "JetBrains IDE 2025.2以降を使用する。組織ではmanaged settingsで既定モデルを指定できる"
+  },
+  "panels": [
+    {
+      "id": "models",
+      "heading": "管理者のモデル設定",
+      "priority": "core",
+      "items": [
+        "Enterprise管理者はmanaged settingsのmodelで、利用可能なCopilot agent modelを新規会話の既定に設定可能",
+        "利用者がmodel pickerで明示的に選んだモデルは、その選択が維持される"
+      ]
+    },
+    {
+      "id": "chat",
+      "heading": "診断とMCPの操作",
+      "priority": "core",
+      "items": [
+        "診断のintention menuにFixを追加。inline chatを開いて修正を依頼",
+        "agent modeが使える場合はagent mode、使えない場合はask modeで修正を依頼",
+        "CopilotとClaudeのMCPサーバー自動起動を無効にする設定を追加"
+      ]
+    },
+    {
+      "id": "requirements",
+      "heading": "IDEの前提",
+      "priority": "detail",
+      "items": [
+        "JetBrains IDE 2025.1のサポートを終了。プラグイン利用には2025.2以降が必要"
+      ]
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "New controls and chat improvements in Copilot for JetBrains - The GitHub Blog",
+      "url": "https://github.blog/changelog/2026-10-10-new-controls-and-chat-improvements-in-copilot-for-jetbrains/"
+    },
+    "documents": [
+      {
+        "title": "社内での MCP サーバーの使用状況 - GitHub Docs",
+        "url": "https://docs.github.com/ja/copilot/concepts/enterprise/mcp-management"
+      },
+      {
+        "title": "エンタープライズ管理設定 - GitHub Docs",
+        "url": "https://docs.github.com/ja/copilot/reference/enterprise-administrators/enterprise-managed-settings"
+      },
+      {
+        "title": "エンタープライズ管理者 - GitHub Docs",
+        "url": "https://docs.github.com/ja/copilot/reference/enterprise-administrators"
+      }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-10-10-new-controls-and-chat-improvements-in-copilot-for-jetbrains/",
+    "https://docs.github.com/ja/copilot/concepts/enterprise/mcp-management",
+    "https://docs.github.com/ja/copilot/reference/enterprise-administrators/enterprise-managed-settings"
+  ]
+}

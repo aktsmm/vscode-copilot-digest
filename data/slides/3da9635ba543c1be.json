@@ -1,0 +1,79 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "3da9635ba543c1be",
+  "title": {
+    "ja": "VS CodeのUI刷新、プレビュー提供",
+    "subtitleJa": "Agents windowとエディターに共通のデザイン基盤を導入し、密度やタブ表示も調整可能",
+    "original": "Modernizing the VS Code UI"
+  },
+  "date": "2026-10-15",
+  "topic": "VS Code",
+  "status": "preview",
+  "statusEvidence": "The modernized UI is available today in preview.",
+  "audience": {
+    "who": "新しいUIを試すVS Code利用者とテーマ作成者",
+    "change": "Agents windowとエディターの見た目を共通化しつつ、レイアウト密度やタブ形状を選べる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "省スペースにするにはCustomize LayoutからLayout Density > Compactを選ぶ"
+  },
+  "panels": [
+    {
+      "id": "design",
+      "heading": "共通化する要素",
+      "priority": "core",
+      "items": [
+        "Agents windowで整えた余白・文字・色・タブ・コントロールの設計をエディターにも展開",
+        "密度やテーマ、ワークスペース配置は引き続き利用者が調整可能",
+        "テーマ作者は既存テーマを使い続けられ、新しい色IDで追加カスタマイズも可能"
+      ]
+    },
+    {
+      "id": "customization",
+      "heading": "表示を調整する",
+      "priority": "core",
+      "items": [
+        "Customize Layout > Layout Density > Compact、またはwindow.density.layoutをcompactに設定",
+        "接続タブは選択中のタブとエディター面を連続して表示",
+        "従来のピル型タブはworkbench.experimental.modernUIEditorTabStyleで選択可能"
+      ]
+    },
+    {
+      "id": "transition",
+      "heading": "移行中の選択肢",
+      "priority": "detail",
+      "items": [
+        "刷新UIは既定で有効だが、設定のworkbench.experimental.modernUIをオフにしてクラシックUIへ戻せる",
+        "クラシックUIへ戻す選択肢は移行中の一時的なもの。終了日は示されていない"
+      ]
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Modernizing the VS Code UI - Visual Studio Code",
+      "url": "https://code.visualstudio.com/blogs/2026/10/15/modern-ui"
+    },
+    "documents": [
+      {
+        "title": "January 2019 (version 1.31) - Visual Studio Code",
+        "url": "https://code.visualstudio.com/updates/v1_31#_new-tree-widget"
+      },
+      {
+        "title": "April 2023 (version 1.78) - Visual Studio Code",
+        "url": "https://code.visualstudio.com/updates/v1_78#_new-default-color-themes"
+      },
+      {
+        "title": "Use the Agents window - Visual Studio Code",
+        "url": "https://code.visualstudio.com/docs/agents/run/agents-window"
+      }
+    ]
+  },
+  "evidence": [
+    "https://code.visualstudio.com/blogs/2026/10/15/modern-ui",
+    "https://code.visualstudio.com/updates/v1_31#_new-tree-widget",
+    "https://code.visualstudio.com/updates/v1_78#_new-default-color-themes",
+    "https://code.visualstudio.com/docs/agents/run/agents-window"
+  ]
+}

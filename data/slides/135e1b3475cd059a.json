@@ -1,0 +1,73 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "135e1b3475cd059a",
+  "title": {
+    "ja": "Copilotのローカルサンドボックスが一般提供",
+    "subtitleJa": "CLI・Copilot app・VS CodeのAgent Hostセッションで、エージェントのアクセスを制限",
+    "original": "GitHub Copilot weekly releases — October 5"
+  },
+  "date": "2026-10-09",
+  "topic": "GitHub Copilot",
+  "status": "ga",
+  "statusEvidence": "Limit agents’ access to files, networks, and credentials with local sandboxing, now generally available in Copilot CLI, the Copilot app, and VS Code sessions using Agent Host.",
+  "audience": {
+    "who": "Copilot CLI、Copilot app、Agent Hostを使うVS Codeセッションでエージェントを実行する開発者",
+    "change": "ローカルサンドボックスが3つのクライアントで一般提供となり、ファイル・ネットワーク・資格情報へのアクセスを制限",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "VS Codeではchat.agent.sandbox.enabledを有効にするか、Permissionsメニューでセッションごとに設定する"
+  },
+  "panels": [
+    {
+      "id": "availability",
+      "heading": "使える場所",
+      "priority": "core",
+      "items": [
+        "Copilot CLI、Copilot app、Agent Hostを使うVS Codeセッションで一般提供",
+        "Copilotに含まれ、追加料金なしで利用可能",
+        "ファイル、ネットワーク、資格情報へのエージェントのアクセスを制限"
+      ]
+    },
+    {
+      "id": "vscode",
+      "heading": "VS Codeでの設定",
+      "priority": "core",
+      "items": [
+        "すべてのセッションに適用するにはchat.agent.sandbox.enabledを有効化",
+        "個別セッションではPermissionsメニューのSandboxing for terminalを切り替え",
+        "ローカル接続のリモートセッションでは、エージェントが動くリモートホストで制限を適用"
+      ]
+    },
+    {
+      "id": "limits",
+      "heading": "前提と制限",
+      "priority": "detail",
+      "items": [
+        "サンドボックスは保護の層を追加するもので、エンドポイントセキュリティの代わりや単独のセキュリティ境界ではない"
+      ]
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "GitHub Copilot weekly releases — October 5 - The GitHub Blog",
+      "url": "https://github.blog/changelog/2026-10-09-github-copilot-weekly-releases-october-5/"
+    },
+    "documents": [
+      {
+        "title": "クラウドサンドボックスとローカルサンドボックスについて GitHub Copilot - GitHub Docs",
+        "url": "https://docs.github.com/ja/copilot/concepts/security-governance-and-network-settings/about-cloud-and-local-sandboxes"
+      },
+      {
+        "title": "Visual Studio Code 1.141 - Visual Studio Code",
+        "url": "https://code.visualstudio.com/updates/v1_141"
+      }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-10-09-github-copilot-weekly-releases-october-5/",
+    "https://docs.github.com/ja/copilot/concepts/security-governance-and-network-settings/about-cloud-and-local-sandboxes",
+    "https://code.visualstudio.com/updates/v1_141"
+  ]
+}
