@@ -54,8 +54,11 @@ const validate = await read("validate-summary-pr.yml");
 assert.ok(validate.includes("^data/summaries-ja\\.json$") && validate.includes("may not delete") && validate.includes("validate:summaries"));
 const merge = await read("auto-merge-summary-pr.yml");
 assert.ok(merge.includes("summaries-ja") && merge.includes("status === 'removed'") && merge.includes("copilot/summar"));
+assert.ok(merge.includes("error.status === 405") && merge.includes("Merge already in progress"), "summary merge races are treated as an in-progress merge");
 const author = await read("author-summary-pr.yml");
 assert.ok(author.includes("summary-authoring-request") && author.includes("pending-summaries.mjs") && author.includes("COPILOT_ASSIGN_TOKEN"));
+const generatedValidation = await read("validate-generated-pr.yml");
+assert.ok(generatedValidation.includes("/summaries/i.test(process.env.PR_HEAD_REF || '')") && generatedValidation.includes("/summaries/i.test(title)"), "summary PRs must not enter the generated digest lane");
 for (const name of ["validate-generated-pr.yml", "auto-merge-generated-pr.yml", "request-copilot-review.yml", "redeploy-pages-after-generated-pr-merge.yml"]) {
   assert.ok((await read(name)).includes("summary-authoring-request"), `${name} must skip summary PRs`);
 }

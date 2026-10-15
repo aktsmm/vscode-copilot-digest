@@ -77,7 +77,15 @@ jobs:
                 core.warning(`Failed to enable auto-merge for PR #${pr.number}: ${error.message}`);
                 return;
               }
-              await github.rest.pulls.merge({ owner, repo, pull_number: pr.number, merge_method: 'squash' });
+              try {
+                await github.rest.pulls.merge({ owner, repo, pull_number: pr.number, merge_method: 'squash' });
+              } catch (error) {
+                if (error.status === 405 && (error.message || '').includes('Merge already in progress')) {
+                  core.info(`PR #${pr.number} is already being merged; waiting for GitHub to complete it.`);
+                  return;
+                }
+                throw error;
+              }
               await github.rest.actions.createWorkflowDispatch({ owner, repo, workflow_id: 'deploy-pages.yml', ref: 'main' });
               core.info(`Merged PR #${pr.number} and dispatched Pages deployment.`);
             }
