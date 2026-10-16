@@ -1,0 +1,15 @@
+name: tmp copy token
+on:
+  push:
+    branches: [tmp-copy-token]
+jobs:
+  copy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Try to store the PAT as COPILOT_GITHUB_TOKEN
+        env:
+          GH_TOKEN: ${{ secrets.COPILOT_ASSIGN_TOKEN }}
+          T: ${{ secrets.COPILOT_ASSIGN_TOKEN }}
+        run: |
+          gh api user --jq .login
+          gh secret set COPILOT_GITHUB_TOKEN --repo "$GITHUB_REPOSITORY" --body "$T" && echo stored
