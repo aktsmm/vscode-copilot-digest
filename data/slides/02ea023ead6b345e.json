@@ -1,0 +1,88 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "02ea023ead6b345e",
+  "title": {
+    "ja": "Copilot ランタイムを Rust へ全面移行。CLI・アプリ・SDK の共通基盤",
+    "subtitleJa": "TypeScript のランタイムを 80 万行超の Rust に書き換え、SDK から同一プロセスで利用可能に",
+    "original": "Migrating the GitHub Copilot runtime to Rust, using Copilot"
+  },
+  "date": "2026-09-17",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "Copilot CLI・Copilot アプリ・Copilot SDK を使う開発者と、SDK で自社製品に組み込む開発者",
+    "change": "ランタイムが Rust 製のネイティブ ライブラリになり、SDK 6 言語から C ABI 経由で同一プロセス内に組み込める",
+    "changeNature": "neutral"
+  },
+  "action": {
+    "required": "info",
+    "summary": "利用者側の操作は不要。SDK で組み込むなら、同一プロセスでの利用が選べるようになった点を把握する"
+  },
+  "beforeAfter": {
+    "before": "SDK は CLI をサブプロセスで起動し、JSON-RPC で通信していた",
+    "after": "Rust 製の runtime.node を SDK が同一プロセスに読み込み、FFI で呼び出せる"
+  },
+  "panels": [
+    {
+      "id": "what-changed",
+      "heading": "何が変わったか",
+      "priority": "core",
+      "items": [
+        "Copilot アプリと CLI を使い、ランタイム全体を 80 万行超の本番 Rust に書き換えた",
+        "コードの大半は AI エージェントが書き、main に入った 128 件の PR で段階的に出荷した",
+        "ランタイムの性能は桁違いに向上したと説明されている"
+      ]
+    },
+    {
+      "id": "where-used",
+      "heading": "使える場所と SDK",
+      "priority": "core",
+      "items": [
+        "同じランタイムが CLI、Copilot アプリ、Copilot SDK の基盤になっている",
+        "SDK は C#、TypeScript、Python、Rust、Go、Java の 6 言語",
+        "runtime.node は共有ライブラリで、Node 向けの napi と、各言語向けの C ABI の 2 つの入口を持つ"
+      ]
+    },
+    {
+      "id": "constraints",
+      "heading": "前提と制限",
+      "priority": "detail",
+      "items": [
+        "同一プロセスでの利用は、SDK 6 言語で追加の選択式トランスポートとして提供され、既存の方式は変わらない",
+        "CLI はまだランタイム内部を直接呼ぶ箇所があり、SDK の公開面への移行は進行中"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "Copilot agent runtime", "type": "product", "oneLine": "CLI・アプリ・SDK などに組み込める、エージェント実行の基盤。" },
+    { "term": "FFI", "type": "term", "oneLine": "言語ごとの外部関数インターフェース。ライブラリを同一プロセスで呼び出す仕組み。" },
+    { "term": "JSON-RPC", "type": "term", "oneLine": "SDK とランタイムが関数呼び出しをやり取りするプロトコル。" }
+  ],
+  "qa": [
+    {
+      "q": "何が Rust に置き換わったのですか。",
+      "a": "CLI、Copilot アプリ、Copilot SDK の基盤である Copilot agent runtime です。以前は TypeScript と Node.js、V8 で動いていましたが、80 万行超の本番 Rust に書き換えられたと記事は説明しています。"
+    },
+    {
+      "q": "なぜ移行したのですか。",
+      "a": "SDK が CLI をサブプロセスで起動する構成では、各言語の利用側が Node.js を抱え、プロセス間通信も発生していました。組み込みやすさ、起動と使用メモリの小ささ、信頼性などを求めて Rust を選んだとあります。"
+    },
+    {
+      "q": "SDK 利用者は何が変わりますか。",
+      "a": "各 SDK に、同一プロセスでランタイムを動かす選択式のトランスポートが追加されました。既存の方式は変わりません。通信は引き続き JSON-RPC で、パイプやソケットが関数呼び出しに置き換わります。"
+    },
+    {
+      "q": "CLI は完全に SDK 経由になりましたか。",
+      "a": "まだです。CLI は現在もランタイム内部を直接呼ぶ箇所があり、SDK の公開面への完全移行は進行中の作業だと記事は述べています。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Migrating the GitHub Copilot runtime to Rust, using Copilot - The GitHub Blog",
+      "url": "https://github.blog/ai-and-ml/generative-ai/migrating-the-github-copilot-runtime-to-rust-using-copilot/"
+    }
+  },
+  "evidence": [
+    "https://github.blog/ai-and-ml/generative-ai/migrating-the-github-copilot-runtime-to-rust-using-copilot/"
+  ]
+}
