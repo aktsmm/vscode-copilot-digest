@@ -69,5 +69,27 @@
     "https://code.visualstudio.com/updates/v1_142#_canvases-preview",
     "https://code.visualstudio.com/docs/agents/run/agent-harnesses#_use-canvases-with-the-copilot-harness",
     "https://docs.github.com/ja/copilot/how-tos/github-copilot-app/working-with-canvas-extensions"
+  ],
+  "qa": [
+    {
+      "q": "キャンバスはどの環境で使えますか？",
+      "a": "VS Codeデスクトップ版で、Copilot harnessを使うローカルセッションが対象のPreviewです。エディターウィンドウとAgentsウィンドウの両方で動作し、キャンバス拡張機能はGitHub Copilot appでも使えます。"
+    },
+    {
+      "q": "どうすれば有効にできますか？",
+      "a": "設定 `chat.canvases.enabled` を有効にし、Copilot harnessで新しいセッションを開始します。その後、チャット入力に `/create-canvas` と入力して作りたい画面を説明すると、拡張機能が作られキャンバスが開きます。"
+    },
+    {
+      "q": "既存のキャンバスを使うにはどうしますか？",
+      "a": "現時点では、GitHub Copilot appでキャンバス拡張機能を含むチャットプラグインをインストールし、VS Codeでエージェントに利用可能なキャンバスを列挙して開くよう頼みます。Agentsウィンドウでは Add Tab (+) > Canvas からも開けます。"
+    },
+    {
+      "q": "キャンバスでは具体的に何ができますか？",
+      "a": "チャット横に開く画面で、人とエージェントが同じ成果物を確認・更新できます。例えばカンバンでは、人がカードを作成・移動し、エージェントがタスク分解や状態更新、新しい作業の追加を行えます。"
+    },
+    {
+      "q": "チームで共有できますか？",
+      "a": "GitHub Copilot appのドキュメントでは、プロジェクトスコープ（`.github/extensions`、リポジトリにコミットしてチーム共有）とユーザースコープ（`~/.copilot/extensions`、個人用）を選べると説明されています。"
+    }
   ]
 }
