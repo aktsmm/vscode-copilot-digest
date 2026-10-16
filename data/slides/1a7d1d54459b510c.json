@@ -1,0 +1,83 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "1a7d1d54459b510c",
+  "title": {
+    "ja": "Copilot コード レビューで、対応済みコメントの自動解決とコミット メッセージ生成",
+    "subtitleJa": "再レビュー時に対応済みコメントを自動で解決し、提案の適用時にコミット メッセージを生成する",
+    "original": "Auto-resolution and analysis updates in Copilot code review"
+  },
+  "date": "2026-09-11",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "Copilot コード レビューを使う開発者とレビュー担当者",
+    "change": "対応済みのコメントは再レビューで自動解決され、提案を適用すると変更内容に応じたコミット メッセージが提示される",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "no",
+    "summary": "操作の変更は不要。未解決のコメントだけが、まだ対応が必要な指摘を表す"
+  },
+  "panels": [
+    {
+      "id": "review-experience",
+      "heading": "レビュー体験の変更",
+      "priority": "core",
+      "items": [
+        "対応する修正をプッシュすると、再レビュー時に Copilot がそのコメントを解決する",
+        "後のコミットで対応された指摘だけが自動解決され、未対応の指摘は開いたまま残る",
+        "Copilot のコメントの提案を適用するとき、標準のメッセージではなく変更内容に基づくコミット メッセージが提示される"
+      ]
+    },
+    {
+      "id": "analysis",
+      "heading": "分析の強化（裏側）",
+      "priority": "core",
+      "items": [
+        "Copilot SDK のシェル ツール一式を、Copilot エージェント ファイアウォール内で使って検証する",
+        "ビルド、テスト、対象を絞ったスクリプトの実行や、利用可能なツール・API からの情報取得が可能",
+        "Lite の作業レベルは、単独ではなく複数のエージェントのアンサンブルでレビューする"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "分析の更新はレビューの質を高めるもので、レビューの依頼や受け取り方は変わらない",
+        "実験では、Lite で対応されたコメント数が重大度 高で平均 47%、中で 31%、低で 11% 増え、コストは約 8% 減った"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "Lite", "type": "term", "oneLine": "Copilot コード レビューの作業レベルのひとつ。" },
+    { "term": "アンサンブル", "type": "term", "oneLine": "複数のエージェントがそれぞれの視点で指摘し、Copilot が 1 つのレビューにまとめる方式。" }
+  ],
+  "references": {
+    "source": {
+      "title": "Auto-resolution and analysis updates in Copilot code review - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-09-11-auto-resolution-and-analysis-updates-in-copilot-code-review/"
+    }
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-09-11-auto-resolution-and-analysis-updates-in-copilot-code-review/"
+  ],
+  "qa": [
+    {
+      "q": "どのコメントが自動で解決されますか。",
+      "a": "対応する修正をプッシュしたあと、Copilot の再レビュー時に、後続のコミットで内容が対応されたコメントが解決されます。まだ対応が必要な指摘は開いたまま残ります。"
+    },
+    {
+      "q": "提案を適用するときのコミット メッセージはどうなりますか。",
+      "a": "標準のメッセージが自動入力される代わりに、Copilot が変更内容に基づいてスマートなコミット メッセージを提案します。"
+    },
+    {
+      "q": "シェル ツールの利用で、何が変わりますか。",
+      "a": "Copilot SDK のシェル ツール一式をエージェント ファイアウォール内で使い、ビルドやテストの実行などで検証します。レビューの質が上がるもので、依頼や受け取り方は変わりません。"
+    },
+    {
+      "q": "Lite のレビューはどう変わりましたか。",
+      "a": "単独のエージェントではなく、複数のエージェントのアンサンブルでレビューします。実験では、対応されたコメント数が増え、レビューのコストは約 8% 減ったとのことです。"
+    }
+  ]
+}
