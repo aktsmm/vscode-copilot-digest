@@ -1,0 +1,82 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "784f424dccc2eb10",
+  "title": {
+    "ja": "Copilot CLI の C++ コード インテリジェンスが、全コードベース インデックスで高速化",
+    "subtitleJa": "C++ プロジェクト全体のシンボルを永続インデックス化し、定義や参照の検索を高速にする",
+    "original": "Faster C++ code intelligence with whole codebase indexing"
+  },
+  "date": "2026-09-22",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "Copilot CLI で C++ のコードを読み書きする開発者",
+    "change": "全コードベース インデックス (WCI) が既定で有効になり、定義・参照・実装・シンボル検索の待ち時間が減る",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "no",
+    "summary": "既定で有効。無効にしたい場合のみ設定を変え、Copilot セッションを再起動する"
+  },
+  "panels": [
+    {
+      "id": "how-it-works",
+      "heading": "仕組みと使い方",
+      "priority": "core",
+      "items": [
+        "WCI は、開いていないファイルも含め C++ プロジェクト全体のシンボルの永続インデックスを作る",
+        "Microsoft C++ Language Server が、プロジェクトのコンパイル情報で型・シンボル・インクルード・ファイル間の関係を解決する",
+        "C++ プロジェクトを初めて開くときにインデックスが読み込まれ、進捗は /lsp logs で確認できる"
+      ]
+    },
+    {
+      "id": "prerequisites",
+      "heading": "前提と制限",
+      "priority": "core",
+      "items": [
+        "初回のインデックス作成には時間がかかり、メモリ使用量が一時的に増える。大規模・複雑なリポジトリで顕著",
+        "初回完了後はインデックスが再利用され、動的に更新される"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "WCI を無効にする手順は、Language Server のインデックス ドキュメントにある",
+        "設定を変更したら、Copilot セッションを再起動する"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "WCI", "type": "term", "oneLine": "Whole codebase indexing。C++ プロジェクト全体のシンボルの永続インデックス。" },
+    { "term": "Microsoft C++ Language Server", "type": "product", "oneLine": "プロジェクトのコンパイル情報を使って型やシンボルを解決する言語サーバー。" }
+  ],
+  "references": {
+    "source": {
+      "title": "Faster C++ code intelligence with whole codebase indexing - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-09-22-faster-c-code-intelligence-with-whole-codebase-indexing/"
+    }
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-09-22-faster-c-code-intelligence-with-whole-codebase-indexing/"
+  ],
+  "qa": [
+    {
+      "q": "WCI は設定しないと使えませんか。",
+      "a": "いいえ。全コードベース インデックスは既定で有効で、C++ プロジェクトを初めて開いたときに言語サーバーがインデックスを読み込みます。"
+    },
+    {
+      "q": "インデックスの進捗はどこで見られますか。",
+      "a": "/lsp logs でいつでも確認できます。"
+    },
+    {
+      "q": "導入時のデメリットはありますか。",
+      "a": "初回のインデックス作成には時間がかかり、メモリ使用量が一時的に増えることがあります。特に大規模・複雑なリポジトリで顕著です。完了後は再利用され動的に更新されるため、負荷は主に初期セットアップ時です。"
+    },
+    {
+      "q": "無効にするにはどうしますか。",
+      "a": "Language Server のインデックス ドキュメントにある手順で一時的に無効にできます。設定を変えたあとは Copilot セッションを再起動してください。"
+    }
+  ]
+}
