@@ -59,10 +59,9 @@ PDF_PASSWORD=*** npm run build:pdfs                 # デプロイ時と同じ�
 
 既存の digest 用 PR 系統とは分離しています。
 
-1. [author-slide-pr.yml](../.github/workflows/author-slide-pr.yml)（月・木 03:00 JST を目安、手動実行可）が、スライド未作成の直近 3 か月の更新を新しい順に最大 10 件選び、`Slide authoring request` Issue を作成または更新して Copilot cloud agent に割り当てる。
-2. Copilot が `data/slides/{id}.json` だけを追加する PR を作る。Copilot は PR タイトルを自分で付けるため、スライド PR は **Issue のマーカー（`slide-authoring-request`）または `copilot/slide-` ブランチ名** で判定する。
-3. [validate-slide-pr.yml](../.github/workflows/validate-slide-pr.yml) が、変更が `data/slides/{id}.json` の追加・更新だけであること（削除不可）、`npm run validate:slides`、`npm run test:data`、Pages ビルドを検証する。
-4. [auto-merge-slide-pr.yml](../.github/workflows/auto-merge-slide-pr.yml) が、許可外の変更や `needs-human-review` がなければタイトルを `slides: update YYYY-MM-DD` に正規化して squash merge し、Pages を再デプロイする。許可外の変更があれば `needs-human-review` を付けて停止する。
+1. [slide-dispatch.yml](../.github/workflows/slide-dispatch.yml)（毎日 03:00 / 15:00 JST を目安、手動実行可）が、スライド未作成の直近 3 か月の更新を新しい順に最大 8 件選び、1 件ずつ agentic workflow [slide.md](../.github/workflows/slide.md)（gh-aw、モデル `claude-sonnet-5.5`）を起動する。`Slide skip` の Issue がある更新と、PR が開いている更新は外す。
+2. agent が記事を読み、`data/slides/{id}.json` だけを書き、`npm run validate:slides` を通して、タイトルが `slides: ` で始まる PR を作る。読めなかった更新は、ファイルを作らず `Slide skip: {id}` の Issue を作る。
+3. [auto-merge-agent-prs.yml](../.github/workflows/auto-merge-agent-prs.yml)（毎時、agent の完了後）が [scripts/merge-agent-prs.mjs](../scripts/merge-agent-prs.mjs) で、変更が `data/slides/{id}.json` 1 件だけ（削除不可）であることを確認し、PR を main に merge した作業ブランチで `npm run validate:slides` と `npm run test:data` を通してから squash merge し、Pages を再デプロイする。許可外の変更や検証失敗は `needs-human-review` を付けて停止する。
 
 digest 用の `validate-generated-pr` / `auto-merge-generated-pr` / `request-copilot-review` / `redeploy-pages-after-generated-pr-merge` はスライド PR を処理しません。コード・スキーマ・依存・workflow・暗号化の変更は自動 merge の対象外です。`PDF_PASSWORD` は `deploy-pages.yml` だけが使います（`tests/slide-lane.test.mjs` が検証）。
 

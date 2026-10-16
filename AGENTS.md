@@ -26,17 +26,18 @@
 
 ### Slide PR Lane
 
-- Slide PRs (slides: ... / Slide authoring request) are a separate lane that may change only data/slides/{id}.json. Keep alidate-slide-pr, uto-merge-slide-pr, and the skip rules in the digest lane workflows in sync (see 	ests/slide-lane.test.mjs).
+- Slides, summaries and maintenance run as GitHub Agentic Workflows (gh-aw): `.github/workflows/{slide,summarize,maintain}.md` are the source and `gh aw compile` makes the `*.lock.yml`. Never hand-edit a lock file; commit both together. The model is pinned to `claude-sonnet-5.5`, the secret is `COPILOT_GITHUB_TOKEN`.
+- Their PRs (`slides: ...` / `summaries: ...` / `maint: ...`, label `automation`) are merged only by `scripts/merge-agent-prs.mjs` (run by `auto-merge-agent-prs.yml` from the default branch). Slide PRs may change only one `data/slides/{id}.json`; summary PRs only `data/summaries-ja.json`. Keep the lane allow-lists in `merge-agent-prs.mjs` and the skip rules in the digest lane workflows in sync (see `tests/slide-lane.test.mjs`).
 - PDF_PASSWORD must only be used by deploy-pages.yml. Never publish PDFs without it, because Pages is public.
 
 ### Maintenance Lane
 
-- Weekly maintenance PRs (`maint: ...` / `pipeline-maintenance-request`) are a separate lane. Keep `validate-maintenance-pr`, `auto-merge-maintenance-pr` and the skip rules in the digest lane workflows in sync (see `tests/slide-lane.test.mjs`). The lane may change workflows and dependencies and is auto-merged, but only within `scripts/lib/maintenance-guard.mjs`: the files that control the lane itself, `deploy-pages.yml` (PDF password), the guard, new secrets, `write-all`, `pull_request_target`, workflow deletion and install scripts stay behind `needs-human-review`. The validate workflow runs the base-branch copy of the guard; never change that.
-- `slide-watchdog.yml` may only close stalled Copilot slide requests, record `slide-skip` issues, nudge, and dispatch workflows. It must not edit repository files.
+- Weekly maintenance PRs (`maint: ...`) are a separate lane. It may change workflows and dependencies and is auto-merged, but only within `scripts/lib/maintenance-guard.mjs`: the files that control the lane itself (`auto-merge-agent-prs.yml`, `watchdog.yml`, `deploy-pages.yml`, `merge-agent-prs.mjs`, the guard), agentic workflow sources and lock files, new secrets, `write-all`, `pull_request_target`, workflow deletion and install scripts stay behind `needs-human-review`. The merger runs the guard from the default branch; never change that.
+- `watchdog.yml` may only cancel hung agent runs, re-run a failed Pages deploy and open `token-health` issues. It must not edit repository files.
 
 #### Summary PR Lane
 
-- Summary PRs (summaries: ... / Summary authoring request) are a separate lane that may change only data/summaries-ja.json. Keep validate-summary-pr, auto-merge-summary-pr and the skip rules in the digest and slide lane workflows in sync (see tests/summary-lane.test.mjs).
+- Summary PRs (summaries: ...) are a separate lane that may change only data/summaries-ja.json (see tests/summary-lane.test.mjs).
 - Card wording is chosen as slide, then written summary, then source excerpt. Never add label-only templates ("this is GA, so ...") back to importanceReason; tests/card-boilerplate.test.mjs fails on repeated filler.
 
 ## Schedule Expectations

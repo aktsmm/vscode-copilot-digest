@@ -3,18 +3,17 @@
 // deployment that holds the PDF password, or the guard below. The validate workflow runs the copy of this file
 // from the base branch, so a PR cannot weaken its own check.
 export const CONTROL_FILES = [
-  ".github/workflows/pipeline-maintenance.yml",
-  ".github/workflows/validate-maintenance-pr.yml",
-  ".github/workflows/auto-merge-maintenance-pr.yml",
-  ".github/workflows/slide-watchdog.yml",
+  ".github/workflows/auto-merge-agent-prs.yml",
+  ".github/workflows/watchdog.yml",
   ".github/workflows/deploy-pages.yml",
+  "scripts/merge-agent-prs.mjs",
   "scripts/lib/maintenance-guard.mjs",
-  "scripts/check-maintenance-change.mjs",
 ];
 
-export const ALLOWED = /^(scripts\/|tests\/|docs\/|config\/|data\/slides\/[0-9a-f]{16}\.json$|data\/summaries-ja\.json$|\.github\/workflows\/[^/]+\.ya?ml$|\.github\/instructions\/|\.github\/copilot-instructions\.md$|package(-lock)?\.json$|README\.md$|AGENTS\.md$)/;
+// The agentic workflow sources (*.md) and their compiled *.lock.yml are made by `gh aw compile`, never by hand.
+export const ALLOWED = /^(scripts\/|tests\/|docs\/|config\/|data\/slides\/[0-9a-f]{16}\.json$|data\/summaries-ja\.json$|\.github\/workflows\/(?![^/]*\.lock\.yml$)[^/]+\.ya?ml$|\.github\/instructions\/|\.github\/copilot-instructions\.md$|package(-lock)?\.json$|README\.md$|AGENTS\.md$)/;
 
-const KNOWN_SECRETS = /^(COPILOT_ASSIGN_TOKEN|GITHUB_TOKEN)$/;
+const KNOWN_SECRETS = /^(COPILOT_GITHUB_TOKEN|COPILOT_ASSIGN_TOKEN|GITHUB_TOKEN)$/;
 
 // files: [{ filename, status, patch }] as returned by the pull request files API.
 export function checkMaintenanceChange(files) {

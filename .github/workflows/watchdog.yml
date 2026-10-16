@@ -1,0 +1,89 @@
+name: Watchdog
+
+# No AI. Keeps the pipeline moving when GitHub itself gets stuck:
+#  - warns before the Copilot token expires
+#  - cancels agent runs that hang
+#  - re-runs the latest Pages deploy once when it failed
+# Times are targets; GitHub schedules can drift.
+on:
+  schedule:
+    - cron: "41 20 * * *"
+  workflow_dispatch:
+
+permissions:
+  actions: write
+  contents: read
+  issues: write
+
+concurrency:
+  group: watchdog
+  cancel-in-progress: false
+
+jobs:
+  token-health:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Warn before the Copilot token expires
+        uses: actions/github-script@v8
+        env:
+          COPILOT_TOKEN: ${{ secrets.COPILOT_GITHUB_TOKEN }}
+        with:
+          # The built-in token opens the warning, so it works even when the personal token is dead.
+          script: |
+            const { owner, repo } = context.repo;
+            const token = process.env.COPILOT_TOKEN || '';
+            let problem = null;
+            if (!token) {
+              problem = { title: 'COPILOT_GITHUB_TOKEN is not set', detail: 'The agentic workflows (slides, summaries, maintenance) cannot run.' };
+            } else {
+              const response = await fetch('https://api.github.com/user', { headers: { authorization: `Bearer ${token}`, accept: 'application/vnd.github+json' } });
+              const expires = response.headers.get('github-authentication-token-expiration');
+              const days = expires ? (Date.parse(expires) - Date.now()) / 86400000 : null;
+              if (response.status === 401) {
+                problem = { title: 'COPILOT_GITHUB_TOKEN is invalid or expired', detail: 'Create a new fine-grained token with the Copilot Requests permission and run `gh secret set COPILOT_GITHUB_TOKEN`.' };
+              } else if (days !== null && days < 21) {
+                problem = { title: `COPILOT_GITHUB_TOKEN expires in ${Math.max(0, Math.floor(days))} days`, detail: `It expires on ${expires}. Create a new token before then and run \`gh secret set COPILOT_GITHUB_TOKEN\`.` };
+              } else {
+                core.info(`Token is healthy (expires: ${expires || 'never'}).`);
+              }
+            }
+            if (!problem) return;
+            const open = await github.paginate(github.rest.issues.listForRepo, { owner, repo, state: 'open', labels: 'token-health', per_page: 100 });
+            if (open.length > 0) { core.info('A token warning is already open.'); return; }
+            await github.rest.issues.create({ owner, repo, title: problem.title, labels: ['token-health'], body: `${problem.detail}\n\nUntil it is replaced, the agentic workflows cannot run.` });
+            core.warning(problem.title);
+
+  watch:
+    needs: token-health
+    if: ${{ !cancelled() }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+    steps:
+      - name: Cancel hung agent runs
+        run: |
+          limit=$(date -u -d '60 minutes ago' +%Y-%m-%dT%H:%M:%SZ)
+          for wf in slide.lock.yml summarize.lock.yml maintain.lock.yml; do
+            for id in $(gh run list --workflow "$wf" --status in_progress --limit 30 --json databaseId,startedAt \
+                -q ".[] | select(.startedAt < \"$limit\") | .databaseId"); do
+              echo "cancel $wf #$id (running > 60 min)"
+              gh run cancel "$id" || true
+              sleep 30
+              if [ "$(gh run view "$id" --json status -q .status)" != "completed" ]; then
+                gh api -X POST "repos/$GH_REPO/actions/runs/$id/force-cancel" || true
+              fi
+            done
+          done
+      - name: Re-run a failed Pages deploy once
+        run: |
+          read -r id attempt concl created < <(gh run list --workflow deploy-pages.yml --limit 1 --json databaseId,attempt,conclusion,createdAt \
+            -q '.[0] | "\(.databaseId) \(.attempt) \(.conclusion // "none") \(.createdAt)"')
+          age=$(( $(date +%s) - $(date -d "$created" +%s) ))
+          if [ "$concl" = "failure" ] && [ "$attempt" = "1" ] && [ "$age" -lt 7200 ]; then
+            echo "re-running deploy #$id"
+            gh run rerun "$id" --failed
+          else
+            echo "deploy ok or already retried ($concl, attempt $attempt)"
+          fi

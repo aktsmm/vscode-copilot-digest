@@ -12,3 +12,6 @@ site/
 !.github/skills/agentic-workflow-guide/
 !.github/skills/agentic-workflow-guide/**
 dist-pdf/
+
+# Scratch inputs the agentic workflows prepare for the agent
+.work/

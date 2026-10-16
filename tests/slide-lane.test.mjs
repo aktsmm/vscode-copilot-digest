@@ -85,36 +85,40 @@ registerSlideSummaries([{ id: "0000000000000000", title: { subtitleJa: "同じ�
 assert.equal(localizedSummary(urlEvent), "同じ記事の要点。確認できる。");
 registerSlideSummaries([]);
 
-// The lane is recognised even when Copilot names the branch freely (copilot/add-slide-json-files).
-for (const name of ["validate-slide-pr.yml", "request-copilot-review.yml", "redeploy-pages-after-generated-pr-merge.yml"]) {
-  assert.ok((await read(name)).includes("contains(github.event.pull_request.head.ref, 'slide')"), `${name} must detect slide PRs by branch name`);
+// The slide lane is an agentic workflow (gh-aw): the source compiles to a lock file, the model is pinned,
+// and one run writes one slide. The dispatcher starts the runs; a script merges the finished PRs.
+const slideSource = await read("slide.md");
+assert.ok(slideSource.includes("claude-sonnet-5.5") && slideSource.includes('title-prefix: "slides: "') && slideSource.includes("npm run validate:slides"));
+assert.ok(slideSource.includes("Slide skip: ") && slideSource.includes("slide-skip"), "unreadable updates are recorded as skips");
+for (const name of ["slide", "summarize", "maintain"]) {
+  const source = await read(`${name}.md`);
+  assert.ok(source.includes("claude-sonnet-5.5") && source.includes("create-pull-request"), `${name}.md pins the model and opens a PR`);
+  assert.ok((await read(`${name}.lock.yml`)).includes("COPILOT_GITHUB_TOKEN"), `${name}.lock.yml is compiled`);
 }
-for (const name of ["auto-merge-slide-pr.yml", "auto-merge-generated-pr.yml", "validate-generated-pr.yml", "author-slide-pr.yml"]) {
-  assert.ok((await read(name)).includes("copilot\\/.*slide"), `${name} must detect slide PRs by branch name`);
-}
+const dispatcher = await read("slide-dispatch.yml");
+assert.ok(dispatcher.includes("slide.lock.yml") && dispatcher.includes("pending-slides.mjs") && dispatcher.includes("slide-skip") && dispatcher.includes("open PR"));
+const merger = await read("auto-merge-agent-prs.yml");
+assert.ok(merger.includes("scripts/merge-agent-prs.mjs") && merger.includes("deploy-pages.yml") && merger.includes("schedule"));
 
-// The slide lane stays narrow: only data/slides/{id}.json, no deletions.
-for (const name of ["validate-slide-pr.yml", "auto-merge-slide-pr.yml"]) {
-  assert.ok((await read(name)).includes("data/slides/") || (await read(name)).includes("data\\/slides\\/"), `${name} must pin data/slides`);
-}
-assert.ok((await read("validate-slide-pr.yml")).includes("may not delete"));
-assert.ok((await read("auto-merge-slide-pr.yml")).includes("status === 'removed'"));
+// The merger only accepts what each lane may change.
+const { LANES } = await import("../scripts/merge-agent-prs.mjs");
+const file = (filename, status = "added") => ({ filename, status });
+assert.ok(LANES.slides.allowed([file("data/slides/0123456789abcdef.json")]));
+assert.ok(!LANES.slides.allowed([file("data/slides/0123456789abcdef.json"), file("data/slides/fedcba9876543210.json")]), "one slide per PR");
+assert.ok(!LANES.slides.allowed([file("scripts/a.mjs")]));
+assert.ok(!LANES.slides.allowed([file("data/slides/0123456789abcdef.json", "removed")]), "no deletions");
+assert.ok(LANES.summaries.allowed([file("data/summaries-ja.json", "modified")]));
+assert.ok(!LANES.summaries.allowed([file("data/summaries-ja.json", "modified"), file("scripts/a.mjs")]));
+assert.ok(LANES.maint.allowed([file("scripts/a.mjs", "modified")]));
+assert.ok(!LANES.maint.allowed([file(".github/workflows/auto-merge-agent-prs.yml", "modified")]), "lane-control files wait for a person");
+assert.ok(!LANES.maint.allowed([file(".github/workflows/slide.lock.yml", "modified")]), "compiled workflows are never hand-edited");
 
-// Digest lanes must not process slide PRs.
+// Digest lanes (Copilot coding agent) must not process the new lanes' PRs, which are recognised by title.
 assert.ok((await read("validate-generated-pr.yml")).includes("isSlidePr"));
 assert.ok((await read("auto-merge-generated-pr.yml")).includes("slide-authoring-request"));
-assert.ok((await read("request-copilot-review.yml")).includes("slide-authoring-request"));
-// The duplicate-closing step must not treat slide or maintenance PRs as duplicate digest PRs.
 assert.ok((await read("request-copilot-review.yml")).includes("if (inOtherLane(candidate)) return false;"));
 // New events alone no longer open a digest request (they produced only unmerged PRs).
 assert.ok(!(await read("author-digest-pr.yml")).includes("newEventsCount > 0 ||"));
-assert.ok((await read("redeploy-pages-after-generated-pr-merge.yml")).includes("slide-authoring-request"));
-
-// Copilot titles its PR itself, so the lane is detected by the issue marker and branch prefix too.
-for (const name of ["validate-generated-pr.yml", "auto-merge-generated-pr.yml", "request-copilot-review.yml", "redeploy-pages-after-generated-pr-merge.yml", "validate-slide-pr.yml", "auto-merge-slide-pr.yml", "author-slide-pr.yml"]) {
-  const text = await read(name);
-  assert.ok(text.includes("slide-authoring-request") && text.includes("copilot/slide-"), `${name} must detect slide PRs by marker and branch`);
-}
 
 // The PDF secret is only available to the protected deploy workflow.
 for (const name of await fs.readdir(workflows)) {
@@ -123,18 +127,11 @@ for (const name of await fs.readdir(workflows)) {
 }
 const deploy = await read("deploy-pages.yml");
 assert.ok(!/pull_request/.test(deploy) && deploy.includes("PDF_PASSWORD"));
-// The watchdog and the biweekly maintenance lane exist, stay in their lanes and pin no model.
-const watchdog = await read("slide-watchdog.yml");
-assert.ok(watchdog.includes("slide-skip") && watchdog.includes("author-slide-pr.yml") && watchdog.includes("deploy-pages.yml"));
-const maintenance = await read("pipeline-maintenance.yml");
-assert.ok(!maintenance.includes("isoWeek") && maintenance.includes("workflow_dispatch") && maintenance.includes("0 19 * * 0"), "runs every week");
-assert.ok(maintenance.includes("COPILOT_AGENT_FIREWALL_ALLOW_LIST_ADDITIONS") && maintenance.includes("merge されずに閉じた"), "blocked work and firewall hosts are handled");
-assert.ok(!/model\s*:/i.test(maintenance.replace(/#.*$/gm, "")), "no model is pinned (Auto)");
-assert.ok(maintenance.includes("pipeline-maintenance-request"));
-assert.ok((await read("auto-merge-maintenance-pr.yml")).includes("needs-human-review"), "lane-control files wait for a person");
-for (const name of ["validate-generated-pr.yml", "auto-merge-generated-pr.yml", "request-copilot-review.yml", "redeploy-pages-after-generated-pr-merge.yml"]) {
-  assert.ok((await read(name)).includes("pipeline-maintenance-request"), `${name} must skip maintenance PRs`);
-}
+const watchdog = await read("watchdog.yml");
+assert.ok(watchdog.includes("slide.lock.yml") && watchdog.includes("deploy-pages.yml"));
+const maintenance = await read("maintain.md");
+assert.ok(maintenance.includes("workflow_dispatch") && maintenance.includes("0 19 * * 0"), "runs every week");
+assert.ok(maintenance.includes("health-report.mjs") && maintenance.includes("protected-files: allowed"));
 const skipped = selectPending([item("x", "2026-10-12"), item("y", "2026-10-12")], new Set(), { skip: ["x"], today: new Date("2026-10-15") });
 assert.deepEqual(skipped.map((i) => i.id), ["y"]);
 assert.ok(watchdog.includes("token-health") && watchdog.includes("github-authentication-token-expiration"), "the watchdog warns before the token expires");
