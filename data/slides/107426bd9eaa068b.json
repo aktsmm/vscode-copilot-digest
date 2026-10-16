@@ -68,5 +68,27 @@
     "https://code.visualstudio.com/updates/v1_142#_copilot-harness",
     "https://code.visualstudio.com/docs/agents/run/agent-harnesses",
     "https://code.visualstudio.com/docs/agents/concepts/agent-host"
+  ],
+  "qa": [
+    {
+      "q": "Copilotハーネスとは何ですか？",
+      "a": "Copilot SDKを基盤とするハーネスです。VS CodeではAgent Host経由でセッションを実行し、バックグラウンドで継続でき、エディターウィンドウとAgents windowの両方から利用できます。"
+    },
+    {
+      "q": "自分のセッションがCopilotハーネスか、どこで分かりますか？",
+      "a": "新規セッションでハーネスピッカーにCopilotと表示されればCopilotハーネスです。チャットのタイトルにも、CopilotやCodexなど有効なハーネス名が表示されます。"
+    },
+    {
+      "q": "Askはどう使いますか？",
+      "a": "エージェントピッカーからAskを選びます。質問やコードベースの調査に使う読み取り専用の役割で、ファイル編集や状態を変更するコマンドは実行できません。"
+    },
+    {
+      "q": "すべてのユーザーに同時に既定になりますか？",
+      "a": "いいえ。新規セッションの既定ハーネスとして段階的に展開されるため、利用者によって切り替わる時期が異なる可能性があります。"
+    },
+    {
+      "q": "管理者が従来のLocalハーネスを残すには？",
+      "a": "統一管理設定でvscode.temporaryDefaultToLocalHarnessをtrueにすると、Copilotへの自動切り替えが止まりLocalが使えます。ただし管理されたサンドボックスや権限の強制はLocalでは行われません。"
+    }
   ]
 }
