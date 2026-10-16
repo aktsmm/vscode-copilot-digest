@@ -63,6 +63,8 @@
 
 ## agentic workflow（gh-aw）のレーンと、止まらないための仕組み
 
+**切り替え（現在は旧方式で稼働）**: リポジトリ変数 `AGENT_ENGINE` が `gh-aw` でない間は、旧方式（Issue を Copilot coding agent に割り当てる `author-slide-pr.yml` / `author-summary-pr.yml` / `pipeline-maintenance.yml` と、その検証・自動 merge・`slide-watchdog.yml`）が動く。agentic workflow 側（`slide-dispatch.yml`、`summarize.md`、`maintain.md`、`watchdog.yml` の token-health）は `AGENT_ENGINE=gh-aw` のときだけ動く。切り替えるには、(1) Copilot Requests 権限のある fine-grained PAT（`github_pat_...`）を作って `gh secret set COPILOT_GITHUB_TOKEN`、(2) `gh workflow run slide-dispatch.yml -f limit=1` で 1 件試す前に `gh variable set AGENT_ENGINE --body gh-aw`、の順に行う。OAuth トークン（`gho_...`）は gh-aw が受け付けない。切り替えた後で旧方式のワークフロー（上記 4 本と validate / auto-merge の 3 組）は削除してよい。
+
 スライド・要約・点検は、GitHub Agentic Workflows（gh-aw）で動く。`.github/workflows/*.md` が正本で、`gh aw compile` が `*.lock.yml` を作る（lock は手で編集しない）。モデルは `claude-sonnet-5.5` に固定している。認証は Secret `COPILOT_GITHUB_TOKEN`（Copilot Requests 権限のある個人トークン）。
 
 | レーン | 起動 | 1 回の内容 | PR のタイトル |

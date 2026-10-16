@@ -1,0 +1,91 @@
+name: Auto-merge summary PR
+
+on:
+  workflow_run:
+    workflows:
+      - Validate summary PR
+    types:
+      - completed
+
+permissions:
+  actions: write
+  contents: write
+  issues: write
+  pull-requests: write
+
+jobs:
+  auto-merge:
+    if: github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Merge the summary PR when it is safe
+        uses: actions/github-script@v8
+        with:
+          script: |
+            const pullRequests = context.payload.workflow_run.pull_requests || [];
+            if (pullRequests.length === 0) {
+              core.info('No pull request is associated with this workflow run.');
+              return;
+            }
+            const { owner, repo } = context.repo;
+            let pr = (await github.rest.pulls.get({ owner, repo, pull_number: pullRequests[0].number })).data;
+            const isSummaryPr = /^(\[WIP\] )?(summaries:|Summary authoring request)/.test(pr.title || '') || (pr.body || '').includes('summary-authoring-request') || (pr.head?.ref || '').startsWith('copilot/summar') || /summaries/i.test(pr.head?.ref || '') || /summaries/i.test(pr.title || '');
+            if (pr.state !== 'open' || !isSummaryPr || !/copilot/i.test(pr.user?.login || '')) {
+              core.info(`PR #${pr.number} is not an open Copilot summary PR.`);
+              return;
+            }
+            const labels = new Set((pr.labels || []).map((label) => label.name));
+            if (labels.has('needs-human-review')) {
+              core.info(`PR #${pr.number} requires human review.`);
+              return;
+            }
+            const files = await github.paginate(github.rest.pulls.listFiles, { owner, repo, pull_number: pr.number, per_page: 100 });
+            if (files.length === 0) {
+              core.info(`PR #${pr.number} has no file changes yet.`);
+              return;
+            }
+            const allowed = /^data\/summaries-ja\.json$/;
+            const blocked = files.filter((file) => !allowed.test(file.filename) || file.status === 'removed');
+            if (blocked.length > 0) {
+              await github.rest.issues.addLabels({ owner, repo, issue_number: pr.number, labels: ['needs-human-review'] });
+              await github.rest.issues.createComment({
+                owner, repo, issue_number: pr.number,
+                body: `Auto-merge stopped: disallowed changes: ${blocked.map((file) => file.filename).join(', ')}`,
+              });
+              return;
+            }
+            const date = new Date().toISOString().slice(0, 10);
+            const title = /^summaries: update \d{4}-\d{2}-\d{2}$/.test(pr.title) ? pr.title : `summaries: update ${date}`;
+            if (title !== pr.title) {
+              await github.rest.pulls.update({ owner, repo, pull_number: pr.number, title });
+            }
+            if (pr.draft) {
+              await github.graphql(
+                `mutation($id: ID!) { markPullRequestReadyForReview(input: {pullRequestId: $id}) { pullRequest { number } } }`,
+                { id: pr.node_id },
+              );
+              pr = (await github.rest.pulls.get({ owner, repo, pull_number: pr.number })).data;
+            }
+            try {
+              await github.graphql(
+                `mutation($id: ID!) { enablePullRequestAutoMerge(input: {pullRequestId: $id, mergeMethod: SQUASH}) { pullRequest { number } } }`,
+                { id: pr.node_id },
+              );
+              core.info(`Enabled auto-merge for PR #${pr.number}.`);
+            } catch (error) {
+              if (!(error.message || '').includes('Pull request is in clean status')) {
+                core.warning(`Failed to enable auto-merge for PR #${pr.number}: ${error.message}`);
+                return;
+              }
+              try {
+                await github.rest.pulls.merge({ owner, repo, pull_number: pr.number, merge_method: 'squash' });
+              } catch (error) {
+                if (error.status === 405 && (error.message || '').includes('Merge already in progress')) {
+                  core.info(`PR #${pr.number} is already being merged; waiting for GitHub to complete it.`);
+                  return;
+                }
+                throw error;
+              }
+              await github.rest.actions.createWorkflowDispatch({ owner, repo, workflow_id: 'deploy-pages.yml', ref: 'main' });
+              core.info(`Merged PR #${pr.number} and dispatched Pages deployment.`);
+            }

@@ -1,0 +1,159 @@
+name: Author summaries
+
+on:
+  schedule:
+    - cron: "30 18 * * *" # Daily 03:30 JST as a target time; GitHub may delay it
+  workflow_dispatch:
+    inputs:
+      ids:
+        description: Comma-separated update ids to write summaries for (overrides the period)
+        default: ""
+      limit:
+        description: Maximum number of updates per request
+        default: "30"
+
+permissions:
+  contents: read
+  issues: write
+  pull-requests: read
+
+concurrency:
+  group: author-summaries
+  cancel-in-progress: false
+
+jobs:
+  request:
+    if: ${{ vars.AGENT_ENGINE != 'gh-aw' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build API data
+        run: npm run build:pages
+
+      - name: Collect updates the watchdog marked as not authorable
+        id: skip
+        uses: actions/github-script@v8
+        with:
+          script: |
+            const issues = await github.paginate(github.rest.issues.listForRepo, {
+              owner: context.repo.owner, repo: context.repo.repo, state: 'all', labels: 'slide-skip', per_page: 100,
+            });
+            const ids = issues.map((i) => (i.title.match(/Slide skip: ([0-9a-f]{16})/) || [])[1]).filter(Boolean);
+            core.setOutput('ids', ids.join(','));
+
+      - name: List updates without a Japanese summary
+        id: pending
+        env:
+          SKIP: ${{ steps.skip.outputs.ids }}
+          LIMIT: ${{ inputs.limit || '30' }}
+          IDS: ${{ inputs.ids }}
+        run: |
+          if [ -n "$IDS" ]; then
+            node scripts/pending-summaries.mjs --ids "$IDS" --limit "$LIMIT" > pending.json
+          else
+            node scripts/pending-summaries.mjs --months 3 --limit "$LIMIT" --skip "$SKIP" > pending.json
+          fi
+          count="$(node -e "console.log(JSON.parse(require('fs').readFileSync('pending.json','utf8')).length)")"
+          echo "count=$count" >> "$GITHUB_OUTPUT"
+
+      - name: Create or update the authoring issue and assign Copilot
+        if: steps.pending.outputs.count != '0'
+        uses: actions/github-script@v8
+        with:
+          github-token: ${{ secrets.COPILOT_ASSIGN_TOKEN }}
+          script: |
+            const fs = require('fs');
+            const pending = JSON.parse(fs.readFileSync('pending.json', 'utf8'));
+            const title = 'Summary authoring request';
+            const labels = ['copilot', 'summary-authoring'];
+            const copilotLogins = new Set(['Copilot', 'copilot-swe-agent']);
+            const body = [
+              '<!-- summary-authoring-request -->',
+              '以下の更新ごとに、サイトのカードに載せる日本語の要約を `data/summaries-ja.json` に書き足してください（キーは更新 ID）。',
+              '',
+              '## ルール',
+              '- 変更してよいのは `data/summaries-ja.json` だけです。既存のキーは変えず、対象の ID を追加してください。コード・workflow・他のデータは変更しないでください。',
+              '- 形式: `{ "<id>": { "title": "...", "summary": "...", "why": "...", "points": ["...", "..."] } }`。`title` は 6〜60 文字の、日本語のわかりやすい題名で、サイトのカードの見出しになります（製品名・機能名は原文のまま、「〜が一般提供に」「〜を廃止予定」のように、何が起きたかが題名だけで分かるようにします。英語の記事名の直訳や、「〜について」「〜の解説」だけの題は避けます）。`summary` は 30〜280 文字の日本語で、「何が変わったか」を具体的に書きます（製品名・機能名・対象プラン・数値は原文にあるものだけ）。`why` は 10〜160 文字で、「誰が何をすべきか／何に影響するか」を 1 文で書きます。`points` は 2〜4 個（各 8〜90 文字）で、読者がそのまま使える具体的な事実を書きます（対象プラン・対象環境、設定名・コマンド名・手順、前提と制限、廃止日や移行先など）。',
+              '- 「〜を確認できる」「〜を把握できる」「〜を解説している」で終わる、中身のない文は書かないでください。何が使えるようになったか、どう設定するか、何が制限か、を書きます。`current` がある更新は、すでにある文面を、具体的な `points` を足して書き直してください（良い部分は残す）。',
+              '- 内容は、各 `source` の記事そのもの（と、そこからリンクされた公式ドキュメント）を実際に開いて読み、書かれていることだけをまとめてください。下の `excerpt` は手がかりで、そのまま訳すだけにしないでください。',
+              '- 対象に `kind: "page-change"` と `changes` がある更新は、記事ではなく監視ページの差分です。`changes` の追加行が根拠です。その行に関わる箇所を読み、変わった内容だけを書いてください（「ページが変わった」という言い方は不可）。',
+              '- 禁止: 「原文の抜粋」「公開内容を追跡し」「確認したい更新です」のような定型句、URL、『未確認』『要確認』『推定』など内部メモの語。同じ文面を複数の更新に使い回さないでください。',
+              '- 読んでも内容を確認できなかった更新は、無理に書かず飛ばし、PR 本文に ID と理由を書いてください。',
+              '- 検証は `npm run validate:summaries` です。通ることを確認してから PR にしてください。',
+              '- 一部の更新を確認できなくても、全体を止めないでください。書けた更新の分は必ず PR に含め、書けなかった更新の ID と理由だけを PR 本文に書いてください。`needs-human-review` を付けて止めるのは、1 件も書けなかった場合だけです。',
+              '- PR 本文の先頭に `<!-- summary-authoring-request -->` をそのまま入れ、PR タイトルは `summaries: update YYYY-MM-DD` にしてください。',
+              '',
+              '## 対象',
+              '```json',
+              JSON.stringify(pending, null, 2),
+              '```',
+            ].join('\n');
+            const issues = await github.paginate(github.rest.issues.listForRepo, {
+              owner: context.repo.owner, repo: context.repo.repo, state: 'open', labels: 'summary-authoring', per_page: 100,
+            });
+            const existing = issues.find((issue) => !issue.pull_request && issue.title === title);
+            const pulls = await github.paginate(github.rest.pulls.list, {
+              owner: context.repo.owner, repo: context.repo.repo, state: 'open', per_page: 100,
+            });
+            if (pulls.some((pull) => (/summary authoring request|^summaries:/i.test(pull.title || '') || String(pull.body || '').includes('summary-authoring-request') || (pull.head?.ref || '').startsWith('copilot/summar') || /summaries/i.test(pull.head?.ref || '') || /summaries/i.test(pull.title || '')) && /copilot/i.test(pull.user?.login || ''))) {
+              core.info('A summary PR is already open; waiting for it to merge.');
+              return;
+            }
+            if (existing && (existing.labels ?? []).some((label) => label.name === 'needs-human-review')) {
+              core.info('The open request is blocked for human review; not starting a new one.');
+              return;
+            }
+            // Copilot only starts work when an issue is newly assigned, so a finished or stalled
+            // request is closed and a fresh one is opened instead of re-assigning the old one.
+            if (existing) {
+              await github.rest.issues.createComment({ owner: context.repo.owner, repo: context.repo.repo, issue_number: existing.number, body: 'Superseded by a new summary authoring request.' });
+              await github.rest.issues.update({ owner: context.repo.owner, repo: context.repo.repo, issue_number: existing.number, state: 'closed', state_reason: 'not_planned' });
+            }
+            const issue = (await github.rest.issues.create({ owner: context.repo.owner, repo: context.repo.repo, title, body, labels })).data;
+            try {
+              const ctx = await github.graphql(
+                `query($owner: String!, $repo: String!) {
+                  repository(owner: $owner, name: $repo) {
+                    id
+                    suggestedActors(capabilities: [CAN_BE_ASSIGNED], first: 20) {
+                      nodes { login __typename ... on Bot { id } ... on User { id } }
+                    }
+                  }
+                }`,
+                { owner: context.repo.owner, repo: context.repo.repo },
+              );
+              const actor = (ctx.repository.suggestedActors?.nodes ?? []).find((node) => copilotLogins.has(node.login) && node.id);
+              if (!actor) {
+                core.warning('Could not resolve the Copilot actor; assign the issue to Copilot manually.');
+                return;
+              }
+              await github.graphql(
+                `mutation($assignableId: ID!, $actorIds: [ID!]!, $targetRepositoryId: ID!, $customInstructions: String!) {
+                  replaceActorsForAssignable(input: {
+                    assignableId: $assignableId,
+                    actorIds: $actorIds,
+                    agentAssignment: { targetRepositoryId: $targetRepositoryId, baseRef: "main", customInstructions: $customInstructions }
+                  }) { assignable { ... on Issue { id } } }
+                }`,
+                {
+                  assignableId: issue.node_id,
+                  actorIds: [actor.id],
+                  targetRepositoryId: ctx.repository.id,
+                  customInstructions: 'Issue のルールに従い、data/summaries-ja.json 以外は変更しないでください。不確実な場合は needs-human-review を付けて停止してください。',
+                },
+              );
+              core.info(`Assigned issue #${issue.number} to Copilot.`);
+            } catch (error) {
+              core.warning(`Failed to assign Copilot: ${error.message}`);
+            }

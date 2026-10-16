@@ -10,6 +10,7 @@ permissions:
   actions: read
   pull-requests: read
   issues: read
+if: ${{ vars.AGENT_ENGINE == 'gh-aw' }}
 engine:
   id: copilot
   model: claude-sonnet-5.5
