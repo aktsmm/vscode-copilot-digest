@@ -1,0 +1,92 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "d2cf6b022ed40eed",
+  "title": {
+    "ja": "使用状況メトリクス API に、Copilot CLI のスキル・エージェント等の利用が追加",
+    "subtitleJa": "スキル、カスタム エージェント、MCP、スラッシュ コマンド、プラグインの上位 5 件と種類数を取得できる",
+    "original": "Agentic CLI customizations now in the usage metrics API"
+  },
+  "date": "2026-09-17",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "Copilot の使用状況メトリクスを見る Enterprise・Organization の管理者",
+    "change": "CLI のカスタマイズ（スキル等）ごとの利用上位と、使われた種類数をレポートで把握できる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "活用状況を見たい場合は、メトリクス API のレポートで新しいフィールドを参照する"
+  },
+  "panels": [
+    {
+      "id": "where-and-who",
+      "heading": "使える場所とプラン",
+      "priority": "core",
+      "items": [
+        "Enterprise と Organization の、ユーザー別・集計の 1 日レポートと、ユーザー別の 28 日レポートに追加",
+        "集計の 28 日レポートでは day_totals の項目に追加",
+        "閲覧できるのは Enterprise オーナー、課金マネージャー、Organization オーナー、View Copilot Metrics 権限を持つカスタム ロールの人",
+        "Copilot usage metrics ポリシーの有効化が必要"
+      ]
+    },
+    {
+      "id": "fields",
+      "heading": "追加されたフィールド",
+      "priority": "core",
+      "items": [
+        "totals_by_skill / custom_agent / mcp / slash_cmd / plugin：最も活動の多い最大 5 件。各項目に interaction_count",
+        "distinct_skill_use_count など 5 種：使われた項目の種類数。上位 5 件の外も含む",
+        "集計レポートの種類数は、ユーザーごとではなく、使った人全体で 1 回と数える"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "顧客定義の名前は表示されず、スキル等は other、スラッシュ コマンドは custom にまとめられる",
+        "MCP の interaction_count は、接続・再接続の試行（成否問わず）だけで増える",
+        "プラグインの数はスキルの一部なので、スキルと足し合わせない"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "interaction_count", "type": "term", "oneLine": "スキル・スラッシュ コマンド・プラグインは呼び出し、カスタム エージェントは開始、MCP は接続試行の回数。" },
+    { "term": "MCP", "type": "term", "oneLine": "Model Context Protocol。レポートではサーバーごとに集計される。" }
+  ],
+  "suggestions": [
+    "distinct の種類数を時系列で比べ、使われるカスタマイズの幅が広がっているかを見る"
+  ],
+  "qa": [
+    {
+      "q": "誰がこのレポートを見られますか。",
+      "a": "Enterprise オーナーと課金マネージャー、Organization オーナー、および View Copilot Metrics 権限を付与したカスタム ロールの人です。Copilot usage metrics ポリシーが有効である必要があります。"
+    },
+    {
+      "q": "自分たちで作ったスキルの名前も見えますか。",
+      "a": "いいえ。プライバシー保護のため、顧客定義の名前は表示されません。スキル、カスタム エージェント、MCP サーバー、プラグインは other にまとめられ、スラッシュ コマンドは custom と表示されます。"
+    },
+    {
+      "q": "MCP の回数は、ツールを呼ぶたびに増えますか。",
+      "a": "増えません。Copilot CLI がサーバーへ接続または再接続を試みたときだけ増え、成功も失敗も数えます。同じ接続済みサーバーのツールを何度呼んでも増えません。"
+    },
+    {
+      "q": "プラグインとスキルの数は合算してよいですか。",
+      "a": "合算しないでください。プラグインの指標はプラグイン由来のスキル呼び出しだけを数えるため、プラグインの数はスキルの合計の一部です。"
+    },
+    {
+      "q": "数値が空や null のときはどう読みますか。",
+      "a": "空の配列とゼロは該当する活動がないことを示します。カスタマイズのデータが取得できない場合は、フィールドが null か存在しません。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Agentic CLI customizations now in the usage metrics API - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-09-17-agentic-cli-customizations-now-in-the-usage-metrics-api/"
+    }
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-09-17-agentic-cli-customizations-now-in-the-usage-metrics-api/"
+  ]
+}
