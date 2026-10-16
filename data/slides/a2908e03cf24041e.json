@@ -1,0 +1,98 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "a2908e03cf24041e",
+  "title": {
+    "ja": "Copilot アプリ: /create-canvas で自分のワークフロー用キャンバスを作成",
+    "subtitleJa": "説明するだけで、エージェントと共有する看板やチェックリストの画面を生成できる",
+    "original": "GitHub Copilot app for Beginners: How to build custom workflows with canvases"
+  },
+  "date": "2026-09-25",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "GitHub Copilot アプリで、チャットでは足りない作業を画面付きで進めたい開発者",
+    "change": "キャンバスは、あなたとエージェントが同時に編集できる共有画面。自然文の説明から作れる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "セッションで /create-canvas を実行し、簡単なボードやチェックリストを作って試す"
+  },
+  "panels": [
+    {
+      "id": "how-to",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "エージェントセッションを開き、/create-canvas スキルを入力して作りたいものを英語などで説明する",
+        "説明には「支えるワークフロー」「利用者ができる操作」「エージェントができる操作」の 3 点を含める",
+        "エージェントがキャンバスを作り、右側のパネルで開く。列やフィルターの追加などは追加の依頼で変更できる"
+      ]
+    },
+    {
+      "id": "availability",
+      "heading": "使える場所とプラン",
+      "priority": "core",
+      "items": [
+        "GitHub Copilot アプリで利用でき、アプリはすべての Copilot プランで使える",
+        "作成したキャンバスは拡張機能として保存され、再利用できる",
+        "保存先はプロジェクト（.github/extensions）かユーザー（~/.copilot/extensions）から選べる"
+      ]
+    },
+    {
+      "id": "collaboration",
+      "heading": "双方向の共有",
+      "priority": "core",
+      "items": [
+        "ボタン・カード・フィルターでの操作は共有状態にすぐ反映され、エージェントにも同じ更新が見える",
+        "エージェントもキャンバスの機能で、メモの追加やカードの移動ができる",
+        "Awesome Copilot で共有されたキャンバス拡張機能（リリースノート、かんばん、Issue トリアージなど）を入れて改良もできる"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "一部のキャンバスはプラグイン経由で配信され、セッションで使う前にインストールが必要",
+        "固定のレイアウトはなく、最初の版は出発点として繰り返し改良する前提"
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "キャンバス",
+      "type": "feature",
+      "oneLine": "ユーザーとエージェントが共有する、カスタマイズ可能なインターフェイス。キャンバス拡張機能とも呼ぶ。"
+    },
+    {
+      "term": "/create-canvas",
+      "type": "feature",
+      "oneLine": "説明からキャンバスを作成するスキル。"
+    }
+  ],
+  "suggestions": [
+    "まず今取り組んでいる作業の簡単なボードかチェックリストを 1 つ作る",
+    "作る前に「見たい情報」「直接変えたいこと」「エージェントにさせたいこと」を書き出す"
+  ],
+  "references": {
+    "source": {
+      "title": "GitHub Copilot app for Beginners: How to build custom workflows with canvases - The GitHub Blog",
+      "url": "https://github.blog/ai-and-ml/github-copilot/github-copilot-app-for-beginners-how-to-build-custom-workflows-with-canvases/"
+    },
+    "documents": [
+      {
+        "title": "GitHub Copilot アプリ でのキャンバス拡張機能の操作 - GitHubドキュメント",
+        "url": "https://docs.github.com/ja/copilot/how-tos/github-copilot-app/working-with-canvas-extensions"
+      },
+      {
+        "title": "GitHub Copilot アプリの組み込みスキル - GitHubドキュメント",
+        "url": "https://docs.github.com/ja/copilot/reference/github-copilot-app-reference/built-in-skills"
+      }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/ai-and-ml/github-copilot/github-copilot-app-for-beginners-how-to-build-custom-workflows-with-canvases/",
+    "https://docs.github.com/ja/copilot/how-tos/github-copilot-app/working-with-canvas-extensions"
+  ]
+}
