@@ -1,0 +1,48 @@
+name: Pipeline status
+
+# Keeps one open issue, "Pipeline status", up to date once a day so the state of the automation can be read
+# without opening the Actions tab. No AI. The built-in token edits the issue.
+on:
+  schedule:
+    - cron: "10 21 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+  issues: write
+  pull-requests: read
+
+concurrency:
+  group: pipeline-status
+  cancel-in-progress: false
+
+jobs:
+  status:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: node scripts/build-pages.mjs
+      - name: Write the report
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          node scripts/health-report.mjs
+          node scripts/status-issue.mjs
+      - name: Update the issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          number=$(gh issue list --label pipeline-status --state open --limit 1 --json number -q '.[0].number')
+          if [ -z "$number" ]; then
+            gh label create pipeline-status --description "Daily automation status" --color 0E8A16 2>/dev/null || true
+            gh issue create --title "Pipeline status" --label pipeline-status --body-file .work/status.md
+          else
+            gh issue edit "$number" --body-file .work/status.md
+          fi

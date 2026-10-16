@@ -49,6 +49,8 @@ export const LANES = {
         if (strip(git("show", `origin/${base}:${files[0].filename}`)) !== strip(fs.readFileSync(files[0].filename, "utf8"))) throw new Error("an existing slide may only gain qa");
       }
       run("node", ["scripts/render-pdf.mjs", "--dir", "data/slides", "--ids", id, "--out", ".render-check"]);
+      // Versions, identifiers, numbers and days must come from the pages the slide cites.
+      run("node", ["scripts/verify-slide-facts.mjs", files[0].filename]);
     },
   },
   summaries: {

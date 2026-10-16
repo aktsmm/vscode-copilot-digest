@@ -64,6 +64,9 @@
 - **失敗したら自動で直す**: [heal-on-failure.yml](../.github/workflows/heal-on-failure.yml) が、収集・デプロイ・merge・スライド依頼・各 agent の失敗を検知し、6 時間以内に点検が動いていなければ `maintain.lock.yml` を起動する（毎週の定期実行を待たない）。点検の agent は `scripts/health-report.mjs` の `.work/health.json`（失敗した run、開いている `[aw] ... failed` Issue、ライブサイトの応答、直近のデプロイ、最新の event の古さ、待機中・不成立の PR、バックログ）を読み、原因を直す PR か、直せないものの Issue を 1 件ずつ作る。watchdog は、同じ workflow の最新の run が成功していれば `[aw]` の失敗 Issue を閉じる。
 - **品質ゲート**: merge 前に、スライドは `scripts/render-pdf.mjs` で 1 ページに収まるか（最小フォントでも溢れないか）を確認する。要約・点検は `npm run test:pages` まで通す。検証や merge の競合に失敗したスライド・要約の PR は、merger が閉じて次の依頼で書き直させる。同じ更新の PR が 2 回閉じられたら、依頼から外す（点検が原因を見る）。`collect-updates.yml` と merger は同じ `data-write` ロックを使い、main への push が重ならない。スライドの agent は、`examples/slides/` の実際のスライド（GA / Preview / 廃止 / 更新）を見本にする。
 - **想定問答（スライドノート）**: スライドの任意項目 `qa`（3〜5 組の質問と答え、日本語）は、発表者向けの想定問答で、ページや PDF には出さず、PPTX のスライドノート（「【想定問答】」）と JSON に入る。新しいスライドは agent が書く。既存のスライドへは、`slide-dispatch.yml` の `qa_backfill`（手動）か、新しい更新が無いときの余力で追加する（agent は `qa` だけを足し、merger が他の項目が変わっていないことを確認する）。
+- **事実チェック**: merge 前に `scripts/verify-slide-facts.mjs` が、スライド（想定問答を含む）の版番号・設定名などの識別子、数値、日付が、スライドが引用したページ（`references` と `evidence`）に実在するかを確認する。識別子が 1 つでも無ければ、数値が 2 つ以上無ければ、却下する（ページを取得できないときは確認を飛ばす）。実在の 47 枚で誤検出が 0 件になることを確認している。
+- **回し方と上限**: スライドの依頼は 1 日 4 回（各回最大 10 件）、要約は [summarize-dispatch.yml](../.github/workflows/summarize-dispatch.yml) が 1 日 4 回、未処理があり要約の PR が開いていないときだけ agent を起動する（何も無い日は agent の費用がかからない）。agent の 1 日の上限は、リポジトリ変数 `GH_AW_DEFAULT_MAX_DAILY_AI_CREDITS`（1500）で止める。
+- **運用状況**: [pipeline-status.yml](../.github/workflows/pipeline-status.yml) が毎日、Issue「Pipeline status」（ラベル `pipeline-status`）を更新する。サイトの応答、最新データ、直近のデプロイ、スライド・要約の件数と残り、失敗の run を 1 つの表で見られる（AI は使わない）。
 - トークンが切れると agentic workflow は全て止まる。GitHub Models は 2026-07-30 に廃止されたため、トークンなしの代替手段はない。
 
 ## 完全自動ではない部分
