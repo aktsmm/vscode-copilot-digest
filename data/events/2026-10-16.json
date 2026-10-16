@@ -1,14 +1,10 @@
 {
   "date": "2026-10-16",
-  "generatedAt": "2026-10-16T09:57:49.017Z",
+  "generatedAt": "2026-10-16T17:37:08.457Z",
   "latestRun": {
-    "generatedAt": "2026-10-16T09:57:49.017Z",
-    "newEventsCount": 3,
-    "newEventIds": [
-      "github-changelog:https://github.blog/changelog/2026-10-15-copilot-in-slack-and-teams-adds-model-and-repository-updates",
-      "github-changelog-copilot:https://github.blog/changelog/2026-10-15-copilot-in-slack-and-teams-adds-model-and-repository-updates",
-      "copilot-whats-new:986f293ce91934e5b864cdec7af8af0740459281c2386e3de1908e7e99130672"
-    ],
+    "generatedAt": "2026-10-16T17:37:08.457Z",
+    "newEventsCount": 0,
+    "newEventIds": [],
     "errorCount": 0,
     "skippedLowInformationEvents": []
   },
