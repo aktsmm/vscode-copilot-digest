@@ -1,0 +1,95 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "d3f380f2df40f992",
+  "title": {
+    "ja": "GitHub Copilot で Claude Opus 5.5 が利用可能に",
+    "subtitleJa": "Pro+、Max、Business、Enterprise でモデルピッカーから選べる。段階的に展開",
+    "original": "Claude Opus 5.5 is now available in GitHub Copilot"
+  },
+  "date": "2026-09-22",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "Copilot Pro+、Max、Business、Enterprise で高度なエージェント作業を行う開発者と管理者",
+    "change": "Anthropic の最新 Opus モデルを、各 IDE や github.com のモデルピッカーで選べる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "使うならモデルピッカーで選ぶ。管理者はモデルポリシーでアクセスを管理する"
+  },
+  "panels": [
+    {
+      "id": "availability",
+      "heading": "使える場所とプラン",
+      "priority": "core",
+      "items": [
+        "対象プランは Copilot Pro+、Max、Business、Enterprise",
+        "VS Code、Visual Studio、Copilot CLI、コーディング エージェント、Copilot アプリ、github.com のモデルピッカーで選べる",
+        "GitHub Mobile（iOS / Android）、JetBrains、Xcode、Eclipse でも選べる",
+        "展開は段階的で、表示されない場合は後で再確認する"
+      ]
+    },
+    {
+      "id": "usage",
+      "heading": "用途と課金",
+      "priority": "core",
+      "items": [
+        "用途はエージェント型コーディング、長時間のエージェント タスク、ナレッジ ワーク",
+        "初期テストでは Claude Opus 5 と同等のタスク解決を、大幅に少ないステップとトークンで達成",
+        "従量課金では、プロバイダーの定価で課金される"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "テキスト出力には透かしが入る。意味・品質・可読性は変わらず、トークンやコストも増えない",
+        "Business / Enterprise の管理者は、Copilot 設定のモデルポリシーで管理する"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "モデルポリシー", "type": "feature", "oneLine": "Copilot 設定で、管理者がモデルへのアクセスを管理する仕組み。" }
+  ],
+  "suggestions": [
+    "モデルごとの価格や対応状況は、モデルと価格設定のドキュメントで比較する"
+  ],
+  "qa": [
+    {
+      "q": "どのプランで使えますか？",
+      "a": "Copilot Pro+、Max、Business、Enterprise のユーザーが対象です。"
+    },
+    {
+      "q": "どこで選べますか？",
+      "a": "VS Code、Visual Studio、Copilot CLI、コーディング エージェント、Copilot アプリ、github.com、GitHub Mobile、JetBrains、Xcode、Eclipse のモデルピッカーで選べます。"
+    },
+    {
+      "q": "表示されないときはどうしますか？",
+      "a": "展開は段階的に行われます。まだ表示されない場合は、しばらくしてから再確認してください。"
+    },
+    {
+      "q": "管理者は有効化を制御できますか？",
+      "a": "Business と Enterprise の管理者は、Copilot 設定のモデルポリシーで制御できます。既定のモデル有効化では、管理者が全体の既定を無効にするか、このモデルを明示的に無効にしない限り、新しいモデルは自動で有効になります。"
+    },
+    {
+      "q": "課金はどうなりますか？",
+      "a": "従量課金では、プロバイダーの定価で課金されます。詳細はモデルと価格設定のドキュメントに掲載されています。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Claude Opus 5.5 is now available in GitHub Copilot - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-09-22-claude-opus-5-5-is-now-available-in-github-copilot/"
+    },
+    "documents": [
+      { "title": "GitHub Copilot のモデルと価格設定", "url": "https://docs.github.com/ja/copilot/reference/copilot-billing/models-and-pricing" },
+      { "title": "GitHub Copilotでサポートされている AI モデル", "url": "https://docs.github.com/ja/copilot/reference/ai-models/supported-models" }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-09-22-claude-opus-5-5-is-now-available-in-github-copilot/",
+    "https://docs.github.com/ja/copilot/reference/copilot-billing/models-and-pricing"
+  ]
+}
