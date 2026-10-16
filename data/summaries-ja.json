@@ -233,16 +233,68 @@
     ]
   },
   "d3f380f2df40f992": {
-    "summary": "Claude Opus 5.5がGitHub Copilotで段階的に提供開始された。エージェント型コーディングや長時間タスク向けで、GitHubの初期テストではOpus 5と同程度の課題をより少ない手順とトークンで解決したと報告されている。",
-    "why": "対象プランの利用者はモデルを選択でき、管理者はポリシーと使用量ベース課金を確認できる。"
+    "title": "Claude Opus 5.5がCopilotで利用可能に",
+    "summary": "Claude Opus 5.5がGitHub Copilotで段階的に提供開始された。エージェント型コーディングや長時間タスク向けで、初期テストではOpus 5と同程度の課題をより少ない手順とトークンで解決し、多段タスクでの誤りからも素早く回復したという。",
+    "why": "対象プランの利用者はモデルピッカーから選択でき、管理者はモデルポリシーで利用可否を制御できる。",
+    "points": [
+      "対象はCopilot Pro+、Max、Business、Enterprise。",
+      "VS Code、Copilot CLI、github.com、JetBrains、Xcodeなど多数の環境で選択できる。",
+      "従量課金ではプロバイダー定価で請求され、出力にはテキスト透かしが入る。",
+      "既定ではBusiness/Enterpriseでも自動的に有効化される。"
+    ]
   },
   "4704d0c444d8cfae": {
-    "summary": "xAIの推論モデルGrok 4.7がGitHub Copilotで段階的に提供される。Grok 4.6を基に、エージェント型コーディングや複雑な複数段階のワークフロー向けに設計され、従量課金ではプロバイダー価格が適用される。",
-    "why": "対象プランの利用者はモデル選択欄を確認し、管理者はモデルポリシーでアクセスを管理できる。"
+    "title": "Grok 4.7がCopilotで順次提供開始",
+    "summary": "xAIの推論モデルGrok 4.7がGitHub Copilotで順次提供される。Grok 4.6を基にエージェント型コーディングや複雑な多段ワークフロー向けに設計され、従量課金ではプロバイダー定価で請求される。",
+    "why": "対象プランの利用者はモデル選択欄で確認でき、管理者はモデルポリシーでアクセスを管理できる。",
+    "points": [
+      "対象はCopilot Pro、Pro+、Max、Business、Enterprise。",
+      "VS Code、Visual Studio、Copilot CLI、JetBrains、Xcode、Eclipseなどで選べる。",
+      "ロールアウトは段階的で、表示されない場合は後日再確認する。",
+      "管理者が既定の自動有効化を無効にしている場合はポリシーで許可する。"
+    ]
   },
   "574a347d7d2fcc2b": {
-    "summary": "GitHub CopilotはGemini 3.7 Flash、GPT-5.5、GPT-5.4、GPT-5.4 mini、GPT-5 mini、Grok 4.5を2026年10月19日に廃止予定と発表した。代替としてGemini 3.8 Flash、GPT-6 Sol、GPT-6 Luna、Grok 4.6を案内している。",
-    "why": "モデル名を固定したワークフローや連携は、告知された廃止日までに代替先へ切り替える必要がある。"
+    "title": "Copilotの6モデルが10月19日に廃止予定",
+    "summary": "GitHub CopilotはGemini 3.7 Flash、GPT-5.5、GPT-5.4、GPT-5.4 mini、GPT-5 mini、Grok 4.5を、Chat、インライン編集、エージェント、コード補完を含む全体験で2026年10月19日に廃止する。",
+    "why": "これらのモデルを指定しているワークフローや連携は、廃止日までに代替モデルへ切り替える必要がある。",
+    "points": [
+      "移行先はGemini 3.7 FlashがGemini 3.8 Flash、Grok 4.5がGrok 4.6。",
+      "GPT-5.5とGPT-5.4はGPT-5.6 Sol、GPT-5.4 miniとGPT-5 miniはGPT-5.6 Luna。",
+      "既定設定ならBusiness/Enterpriseでは代替モデルが自動有効化される。",
+      "既定を無効にしている組織はモデルポリシーで代替モデルを有効化する。"
+    ]
+  },
+  "0ad90c538fb4d522": {
+    "title": "Google Cloud用のコーディングエージェント向けプラグイン発表",
+    "summary": "Google Cloudが、Claude Codeなどのコーディングエージェントに同社の専門知識を組み込む「Google Cloud Developer Plugin for AI Coding Agents」を発表した。Google Cloudのスキルと公式ドキュメントを参照するMCPサーバの設定を、プラグイン仕様で一括導入できる。",
+    "why": "Google Cloud上でエージェントに構築を任せたい開発者は、スキルとMCP設定をまとめて導入できる。",
+    "points": [
+      "スキルとMCPサーバ設定を1つのプラグインとして提供する。",
+      "MCPサーバはGoogle Cloudの公式ドキュメントを参照する。",
+      "プラグインはGitHubリポジトリから入手して導入する。"
+    ]
+  },
+  "71249bf24945535d": {
+    "title": "Copilot Managed Runtimeがパブリックプレビューに",
+    "summary": "Microsoftが、Copilotで作った社内アプリを実行する基盤「Copilot Managed Runtime」をパブリックプレビューで公開した。アプリはMicrosoft 365と同じテナント境界内で動き、権限はMicrosoft 365のユーザーIDに従い、管理は管理センターから行う。",
+    "why": "社内向けアプリを安全に運用したいMicrosoft 365管理者は、公開設定や状態を集中管理できる。",
+    "points": [
+      "対象はCopilot Cowork、Copilot Code、Copilot Studioで作ったアプリとSDK製アプリ。",
+      "デプロイ用にCopilot Managed Runtime CLIとSDKが用意される。",
+      "1500種類以上のデータソース向けコネクタやMicrosoft Graphを利用できる。"
+    ]
+  },
+  "958c3483761172ad": {
+    "title": "補完・NESを1つに統合した新モデルの学習手法",
+    "summary": "ゴーストテキスト補完、カーソル付近のNES、離れた位置の編集を1つの3-in-1モデルに統合した過程を紹介した。補完データの追加や出力長の調整に加え、クライアント側の挙動見直しで却下率の上昇を抑えたという。",
+    "why": "インライン提案の品質は、モデルだけでなくクライアント設定との組み合わせで決まることがわかる。",
+    "points": [
+      "1回のリクエストで補完と編集を判断し、モデル呼び出しを減らす。",
+      "無視したゴーストテキストをNESとして再表示する挙動が却下率を押し上げていた。",
+      "設定nesMimicGhostTextBehaviorで当該挙動を検証した。",
+      "投機的デコーディングは現在行の補完を推測する方式を採用した。"
+    ]
   },
   "999e769d06217678": {
     "summary": "週次更新で、自動モデル選択に効率・均衡・知能の3段階、Copilot code reviewの対応済み指摘の解決や複数エージェントによるLiteレビュー、Copilot appのSentry canvasを追加。Business／Enterprise向け利用指標や予算増額申請も紹介された。",
