@@ -1,0 +1,80 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "81d2a78e15b1172e",
+  "title": {
+    "ja": "サポート ポータルを help.github.com に刷新して移転",
+    "subtitleJa": "サポート・ドキュメント・学習・コミュニティを集約し、Copilot 検索を追加",
+    "original": "New customer portal help.github.com"
+  },
+  "date": "2026-09-08",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "GitHub のサポートやドキュメント、アカウント関連の情報を探す利用者",
+    "change": "サポート ポータルが help.github.com に移り、Copilot を使った横断検索が使える",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "info",
+    "summary": "help.github.com を開いて試す。まだ使えない場合は support.github.com を使い続ける"
+  },
+  "panels": [
+    {
+      "id": "where-and-how",
+      "heading": "使える場所と使い方",
+      "priority": "core",
+      "items": [
+        "新しい窓口は help.github.com。サポート、ドキュメント、学習、コミュニティ、アカウントのリソースを集約",
+        "サポート、権限 (entitlements)、セルフサービスのリソースを 1 つの入口から探せる",
+        "検索すると Copilot による回答が得られ、サインインは不要"
+      ]
+    },
+    {
+      "id": "status",
+      "heading": "ステータスと告知",
+      "priority": "core",
+      "items": [
+        "GitHub 製品のステータスと重要なお知らせを、同じ場所で確認できる"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "今後数週間かけて段階的に展開するため、すぐには新しい画面にならない場合がある",
+        "未提供の間も support.github.com はこれまでどおり使える"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "help.github.com", "type": "product", "oneLine": "再設計されたサポート ポータルの新しい URL。" }
+  ],
+  "references": {
+    "source": {
+      "title": "New customer portal help.github.com - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-09-08-new-customer-portal-help-github-com/"
+    }
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-09-08-new-customer-portal-help-github-com/"
+  ],
+  "qa": [
+    {
+      "q": "新しいポータルはどこにありますか。",
+      "a": "help.github.com です。サポート、ドキュメント、学習、コミュニティ、アカウントのリソースを 1 か所にまとめ、Copilot による検索を備えています。"
+    },
+    {
+      "q": "検索にサインインは必要ですか。",
+      "a": "不要です。サインインしなくても、検索すると Copilot による回答を得られます。"
+    },
+    {
+      "q": "まだ新しい画面が表示されない場合はどうしますか。",
+      "a": "今後数週間かけて段階的に展開されます。利用できるようになるまでは、support.github.com がこれまでどおり使えます。"
+    },
+    {
+      "q": "製品のステータスも見られますか。",
+      "a": "はい。GitHub 製品のステータスと重要なお知らせを、新しいポータルで確認できます。"
+    }
+  ]
+}
