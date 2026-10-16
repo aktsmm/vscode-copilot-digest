@@ -13,6 +13,7 @@
 | `api/v1/months/YYYY-MM.json` | 掲載日の月別一覧 |
 | `api/v1/updates/{id}.json` | 1 件の詳細。`id` は更新キーの SHA-256 先頭 16 桁 |
 | `api/v1/categories/{category}.json` | `github-copilot` / `vs-code` / `github-platform` / `news` の軽量索引 |
+| `api/v1/qa.json` | スライドの**想定問答**（`qa`）を、新しい順に 1 ファイルへ集めたもの。各項目は `id`、`title`（スライドの日本語題名）、`digestDate`、`topic`、`source`、`urls`、`qa[{q, a}]`。件数は `count`（更新数）と `questionCount`（質問数）。個別の更新は `api/v1/updates/{id}.json` の `qa` でも取れ、`months` などの項目には `slide.hasQa` / `slide.qaCount` が付く |
 | `slides/{id}.json` | スライド JSON（直近 3 か月） |
 | `data/slides.json` | スライドの一覧、PDF の公開状態（`pdf`、`encrypted`、`pdfCrypto`）、サンプル PDF（`sample`） |
 

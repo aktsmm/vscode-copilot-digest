@@ -3424,7 +3424,12 @@ async function main() {
   await fs.writeFile(path.join(siteDir, "assets", "search-version.json"), JSON.stringify({ version: searchVersion }));
   await fs.writeFile(path.join(siteDir, "assets", "resource-audit.json"), JSON.stringify(resourceStats(logs.flatMap((log) => log.events), ledger), null, 2));
 
-  for (const file of buildApiFiles({ logs, events: searchableEvents })) {
+  const apiSlides = [];
+  const slideDir = path.join(workspaceRoot, "data", "slides");
+  for (const name of (await fs.readdir(slideDir).catch(() => [])).filter((n) => n.endsWith(".json"))) {
+    try { apiSlides.push(JSON.parse(await fs.readFile(path.join(slideDir, name), "utf8"))); } catch { /* validate:slides reports it */ }
+  }
+  for (const file of buildApiFiles({ logs, events: searchableEvents, slides: apiSlides })) {
     const target = path.join(siteDir, ...file.path.split("/"));
     await fs.mkdir(path.dirname(target), { recursive: true });
     await fs.writeFile(target, file.content, "utf8");

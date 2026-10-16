@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import fs from "node:fs/promises";
 import path from "node:path";
-import { buildApiFiles, buildCoverage } from "../scripts/lib/api.mjs";
+import { buildApiFiles, buildCoverage, itemId } from "../scripts/lib/api.mjs";
 import { validateSlide, validateDeck, orderSlides, SLIDE_SCHEMA_V1 as SLIDE_SCHEMA, SLIDE_SCHEMA_V2, DECK_SCHEMA } from "../scripts/lib/slides.mjs";
 import { coverHtml, endHtml, deckHtml, PDF_CSS } from "../scripts/lib/slide-html.mjs";
 import { newCryptoInfo, deriveKey, encryptPdf, decryptPdf } from "../scripts/lib/pdf-crypto.mjs";
@@ -29,6 +29,20 @@ assert.equal(index.coverage.months.find((m) => m.month === "2026-10").coverage, 
 assert.equal(index.coverage.months.find((m) => m.month === "2026-09").coverage, "collected_empty");
 assert.equal(buildCoverage([]).months.length, 0);
 assert.ok(buildApiFiles({ logs: [], events: [] }).some((f) => f.path === "api/v1/latest.json"));
+// Presenter Q&A is exposed in api/v1/qa.json, in updates/{id}.json and as a pointer on the item.
+{
+  const slideId = itemId(event);
+  const qa = [1, 2, 3].map((n) => ({ q: `質問${n}はどうなりますか`, a: "記事に答えがあります。" }));
+  const files = buildApiFiles({ logs, events: [event], slides: [{ id: slideId, title: { ja: "題名" }, qa }] });
+  const qaFile = JSON.parse(files.find((f) => f.path === "api/v1/qa.json").content);
+  assert.equal(qaFile.count, 1);
+  assert.equal(qaFile.questionCount, 3);
+  assert.deepEqual(qaFile.items[0].qa, qa);
+  const update = JSON.parse(files.find((f) => f.path === `api/v1/updates/${slideId}.json`).content);
+  assert.deepEqual(update.qa, qa);
+  assert.equal(update.item.slide.qaCount, 3);
+  assert.equal(JSON.parse(buildApiFiles({ logs, events: [event] }).find((f) => f.path === "api/v1/qa.json").content).count, 0);
+}
 
 // Slides
 const slide = {

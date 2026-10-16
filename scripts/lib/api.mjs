@@ -27,18 +27,22 @@ export function itemId(event) {
 const dayOf = (value) => String(value ?? "").slice(0, 10);
 const monthOf = (value) => dayOf(value).slice(0, 7);
 
-export function buildDigestItems(events) {
+export function buildDigestItems(events, slides = []) {
+  const slideById = new Map(slides.map((s) => [s.id, s]));
   const items = events.map((event) => {
     const ja = localizedSummary(event, "ja") || "";
     const en = localizedSummary(event, "en") || "";
     const resources = event.resources ?? {};
     const id = itemId(event);
+    const slide = slideById.get(id);
     // A page-change event has no article; the added lines are the only record of what changed.
     const changes = event.kind === "html_snapshot_change" && editorialQuality(event) !== "audit-only"
       ? meaningfulSnapshotAdditions(event).slice(0, 12) : [];
     return {
       id,
       ...(changes.length ? { changes } : {}),
+      // Presenter Q&A written with the slide (also in the PPTX speaker notes); see api/v1/qa.json for all of them.
+      ...(slide ? { slide: { hasQa: Array.isArray(slide.qa) && slide.qa.length > 0, qaCount: slide.qa?.length ?? 0 } } : {}),
       title: { ja: localizedTitle(event, "ja"), en: localizedTitle(event, "en"), original: originalTitle(event) },
       digestDate: event.digestDate,
       publishedDate: dayOf(event.publishedAt),
@@ -95,8 +99,9 @@ export function buildCoverage(logs) {
 const stableJson = (value) => `${JSON.stringify(value, null, 2)}\n`;
 
 // Returns [{ path, content }] relative to site/. Deterministic for identical input.
-export function buildApiFiles({ logs, events }) {
-  const items = buildDigestItems(events);
+export function buildApiFiles({ logs, events, slides = [] }) {
+  const items = buildDigestItems(events, slides);
+  const slideById = new Map(slides.map((s) => [s.id, s]));
   const coverage = buildCoverage(logs);
   const snapshotAt = logs.map((l) => l.generatedAt).filter(Boolean).sort().at(-1) ?? null;
   const base = { schema: API_SCHEMA, apiVersion: API_VERSION, snapshotAt, license: API_LICENSE, attribution: API_ATTRIBUTION };
@@ -117,7 +122,13 @@ export function buildApiFiles({ logs, events }) {
       items: list.map((i) => ({ id: i.id, title: i.title, digestDate: i.digestDate, urls: i.urls })),
     });
   }
-  for (const item of items) add(`updates/${item.id}.json`, { item });
+  for (const item of items) add(`updates/${item.id}.json`, { item, ...(slideById.get(item.id)?.qa?.length ? { qa: slideById.get(item.id).qa } : {}) });
+  // Every presenter Q&A in one file, newest first, for tools that build a Q&A bank or a speaker prompt.
+  const qaItems = items.filter((i) => slideById.get(i.id)?.qa?.length).map((i) => ({
+    id: i.id, title: slideById.get(i.id).title?.ja ?? i.title.ja, digestDate: i.digestDate, topic: i.topic,
+    source: i.resources.source.url, urls: i.urls, qa: slideById.get(i.id).qa,
+  }));
+  add("qa.json", { count: qaItems.length, questionCount: qaItems.reduce((n, i) => n + i.qa.length, 0), items: qaItems });
 
   const newest = items[0]?.digestDate;
   const cutoff = newest ? new Date(new Date(`${newest}T00:00:00Z`).getTime() - 29 * 86400000).toISOString().slice(0, 10) : null;
@@ -128,7 +139,7 @@ export function buildApiFiles({ logs, events }) {
     coverage,
     months: monthsList.map((m) => ({ month: m, path: `api/v1/months/${m}.json` })),
     categories: topics.map((t) => ({ category: slug(t), label: t, path: `api/v1/categories/${slug(t)}.json` })),
-    endpoints: ["api/v1/index.json", "api/v1/latest.json", "api/v1/months/YYYY-MM.json", "api/v1/updates/{id}.json", "api/v1/categories/{category}.json"],
+    endpoints: ["api/v1/index.json", "api/v1/latest.json", "api/v1/months/YYYY-MM.json", "api/v1/updates/{id}.json", "api/v1/categories/{category}.json", "api/v1/qa.json"],
     notes: [
       "digestDate and months use the digest's calendar date as published on the site.",
       "coverage.months[].coverage other than complete may be missing updates; it is not the same as zero updates.",
