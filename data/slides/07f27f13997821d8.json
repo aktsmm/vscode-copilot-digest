@@ -1,0 +1,96 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "07f27f13997821d8",
+  "title": {
+    "ja": "OpenAI GPT-6 SolとGPT-6 Luna、GitHub Copilotで利用可能に",
+    "subtitleJa": "GPT-6 Astraに加え、汎用のSolと低コストのLunaをモデルピッカーで選択可能",
+    "original": "OpenAI's GPT-6 Sol and GPT-6 Luna now available"
+  },
+  "date": "2026-09-22",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "Copilot Pro / Pro+ / Max / Business / Enterpriseの利用者と、BusinessおよびEnterpriseの管理者",
+    "change": "GPT-6 Sol（バランス型）とGPT-6 Luna（軽量・低コスト）が選べるようになる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "モデルピッカーで選択する。管理者はCopilot設定のモデルポリシーでアクセスを管理する"
+  },
+  "panels": [
+    {
+      "id": "availability",
+      "heading": "使える場所とプラン",
+      "priority": "core",
+      "items": [
+        "GPT-6 Sol: Copilot Pro+、Max、Business、Enterpriseで利用可能",
+        "GPT-6 Luna: Copilot Pro、Pro+、Max、Business、Enterpriseで利用可能",
+        "VS Code、Visual Studio、CLI、クラウドエージェント、github.com、JetBrains、Xcode等のモデルピッカーで選択"
+      ]
+    },
+    {
+      "id": "models",
+      "heading": "モデルの特徴",
+      "priority": "core",
+      "items": [
+        "Sol: 対話・エージェント型コーディング向けのバランス型。複数手順の慎重な検証が要る作業に向く",
+        "Luna: 小さく速いタスク向けの軽量モデルで、GPT-6ファミリーで最も低コスト",
+        "利用量ベースの課金の対象"
+      ]
+    },
+    {
+      "id": "admin",
+      "heading": "管理者向け",
+      "priority": "detail",
+      "items": [
+        "BusinessとEnterpriseの管理者はCopilot設定のモデルポリシーで管理",
+        "既定のモデル有効化では、全体既定を無効にするか個別に無効化しない限り自動で有効",
+        "展開は段階的で、表示されない場合は後で再確認"
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "GPT-6 Sol",
+      "type": "product",
+      "oneLine": "対話・エージェント型コーディング向けのバランス型モデル"
+    },
+    {
+      "term": "GPT-6 Luna",
+      "type": "product",
+      "oneLine": "軽量で低コストなGPT-6ファミリーのモデル"
+    }
+  ],
+  "qa": [
+    {
+      "q": "どのプランで使えますか？",
+      "a": "GPT-6 SolはCopilot Pro+、Max、Business、Enterprise、GPT-6 LunaはPro、Pro+、Max、Business、Enterpriseで利用できます。"
+    },
+    {
+      "q": "どこで選べますか？",
+      "a": "VS Code、Visual Studio、Copilot CLI、クラウドエージェント、Copilot app、github.com、GitHub Mobile、JetBrains、Xcode、Eclipseのモデルピッカーです。"
+    },
+    {
+      "q": "SolとLunaはどう使い分けますか？",
+      "a": "Solは対話・エージェント型コーディング向けのバランス型で、複数手順の検証が要る作業に向きます。Lunaは小さく速いタスク向けで、GPT-6ファミリーで最も低コストです。"
+    },
+    {
+      "q": "管理者は有効化を制御できますか？",
+      "a": "BusinessとEnterpriseの管理者はCopilot設定のモデルポリシーで管理できます。既定のモデル有効化では、全体既定を無効にするか個別に無効化しない限り自動で有効になります。"
+    },
+    {
+      "q": "モデルが表示されない場合は？",
+      "a": "展開は段階的に行われます。表示されない場合は、しばらくしてから再確認してください。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "OpenAI's GPT-6 Sol and GPT-6 Luna now available - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-09-22-openais-gpt-6-sol-and-gpt-6-luna-now-available/"
+    }
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-09-22-openais-gpt-6-sol-and-gpt-6-luna-now-available/"
+  ]
+}
