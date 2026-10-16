@@ -1,0 +1,52 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "174b5a1d37b1981d",
+  "title": {
+    "ja": "Agentsウィンドウのセッション別レイアウト",
+    "subtitleJa": "設定でレイアウトをセッション単位に分け、エディターやパネルの状態を切り替え可能に",
+    "original": "Visual Studio Code 1.142: Session-scoped layout in the Agents window (Experimental)"
+  },
+  "date": "2026-10-14",
+  "topic": "VS Code",
+  "status": "preview",
+  "statusEvidence": "Session-scoped layout in the Agents window (Experimental)",
+  "audience": {
+    "who": "VS CodeのAgentsウィンドウで複数のエージェントセッションを切り替える利用者",
+    "change": "セッションごとにエディターや選択中のパネル表示を保持する範囲を設定できる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "`sessions.experimental.layoutScope` を設定し、ウィンドウを再読み込みする"
+  },
+  "panels": [
+    {
+      "id": "layout-options",
+      "heading": "設定値",
+      "priority": "core",
+      "items": [
+        "対象はAgentsウィンドウのみ。`sessions.experimental.layoutScope` を設定して再読み込みする",
+        "`session-shared` は既定値で、セッションとネストしたセッションがエディターと選択中のパネルを共有する",
+        "`chat-shared` は各セッション固有のエディターと選択パネルを保持し、表示領域は共有する",
+        "`chat` はセッションごとにエディター、詳細、下部パネルの表示状態も保持する"
+      ]
+    },
+    {
+      "id": "shared-state",
+      "heading": "共通の表示状態",
+      "priority": "detail",
+      "items": [
+        "ウィンドウのサイズ、ペインの幅、サイドバーはどの設定値でもウィンドウ全体で共有される"
+      ]
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.142 - Visual Studio Code",
+      "url": "https://code.visualstudio.com/updates/v1_142#_session-scoped-layout-in-the-agents-window-experimental"
+    }
+  },
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_142#_session-scoped-layout-in-the-agents-window-experimental"
+  ]
+}

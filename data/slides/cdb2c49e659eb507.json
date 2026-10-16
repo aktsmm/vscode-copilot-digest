@@ -1,0 +1,64 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "cdb2c49e659eb507",
+  "title": {
+    "ja": "エージェントチャットを別フォルダーやworktreeへ移動",
+    "subtitleJa": "Agentsウィンドウで会話履歴を保ったまま作業場所を移し、新しい場所で作業を継続",
+    "original": "Visual Studio Code 1.142: Move chats between folders and worktrees"
+  },
+  "date": "2026-10-14",
+  "topic": "VS Code",
+  "status": "update",
+  "audience": {
+    "who": "Agentsウィンドウで、調査から別フォルダーやGit worktreeでの実装へ移りたい開発者",
+    "change": "チャット履歴を引き継いで別の作業場所へ移動し、そこでエージェントの作業を続けられる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "移動したいフォルダーのパス、または新しいGit worktreeで続ける旨をエージェントに指示する"
+  },
+  "panels": [
+    {
+      "id": "how-to",
+      "heading": "移動の流れ",
+      "priority": "core",
+      "items": [
+        "Agentsウィンドウで、自然言語の指示により現在のチャットを別フォルダーまたは新しいGit worktreeへ移す",
+        "エージェントは現在のターンを終えて移動し、作業場所の変更を通知してから自動で続行する",
+        "会話履歴を維持し、編集やコマンドは移動先で実行する。元のcheckoutは変更されない"
+      ]
+    },
+    {
+      "id": "prerequisites",
+      "heading": "前提と制限",
+      "priority": "core",
+      "items": [
+        "Codex harnessまたはInteractive modeのCodexを使い、チャット1件・ローカルフォルダー1件のセッションで利用する",
+        "フォルダー移動先には既存のファイルを使う。移動前のファイルをコピーする機能ではない",
+        "新しいworktreeはコミット済みのGit状態から作られ、未コミット変更は元のフォルダーに残る"
+      ]
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.142 - Visual Studio Code",
+      "url": "https://code.visualstudio.com/updates/v1_142#_move-chats-between-folders-and-worktrees"
+    },
+    "documents": [
+      {
+        "title": "Manage agent sessions in VS Code - Visual Studio Code",
+        "url": "https://code.visualstudio.com/docs/agents/run/sessions/manage-sessions"
+      },
+      {
+        "title": "Use the Agents window - Visual Studio Code",
+        "url": "https://code.visualstudio.com/docs/agents/run/agents-window"
+      }
+    ]
+  },
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_142#_move-chats-between-folders-and-worktrees",
+    "https://code.visualstudio.com/docs/agents/run/sessions/manage-sessions",
+    "https://code.visualstudio.com/docs/agents/run/agents-window"
+  ]
+}
