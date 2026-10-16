@@ -22934,6 +22934,46 @@
         "Original article explicit links",
         "Feature-matched official documentation indexes"
       ]
+    },
+    "bb73ab06ed517f778e0140485b65961b05a26ab9954dfd64c870c2e2368598da": {
+      "version": 6,
+      "checkedAt": "2026-10-16T09:57:49.540Z",
+      "inputUrl": "https://github.com/features/copilot/whats-new",
+      "inputTitle": "GitHub Copilot What's New changed",
+      "status": "unconfirmed",
+      "source": {
+        "url": "https://github.blog/changelog/2026-10-15-copilot-in-slack-and-teams-adds-model-and-repository-updates/",
+        "status": "verified",
+        "reason": "Snapshot observation, not a standalone feature: Oct.15 Improvement; explicit article: Multi-repo support and other improvements for GitHub Copilot in Slack and Microsoft Teams",
+        "checkedAt": "2026-10-16T09:57:49.850Z",
+        "contentHash": "43c340b22366721f25b15ef970a9b432f345b243c8b8dd1df2c94dce6ae82256"
+      },
+      "documents": [],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "f644659494ee7ff49c0fdc14957c626300093c4390e284b234f32af850c7784a": {
+      "version": 6,
+      "checkedAt": "2026-10-16T09:57:49.894Z",
+      "inputUrl": "https://github.blog/changelog/2026-10-15-copilot-in-slack-and-teams-adds-model-and-repository-updates",
+      "inputTitle": "Multi-repo support and other improvements for GitHub Copilot in Slack and Microsoft Teams",
+      "status": "unconfirmed",
+      "source": {
+        "url": "https://github.blog/changelog/2026-10-15-copilot-in-slack-and-teams-adds-model-and-repository-updates/",
+        "status": "verified",
+        "reason": "Fetched original article",
+        "checkedAt": "2026-10-16T09:57:49.850Z",
+        "contentHash": "43c340b22366721f25b15ef970a9b432f345b243c8b8dd1df2c94dce6ae82256"
+      },
+      "documents": [],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
     }
   }
 }
