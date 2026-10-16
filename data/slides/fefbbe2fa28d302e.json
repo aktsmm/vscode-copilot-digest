@@ -1,0 +1,101 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "fefbbe2fa28d302e",
+  "title": {
+    "ja": "VS Code 1.140、Copilot ハーネスとマルチフォルダー セッションを追加",
+    "subtitleJa": "Copilot SDK 基盤のハーネス、複数フォルダーのセッション、リモート委任、管理者向けバージョン要件の案内",
+    "original": "Visual Studio Code 1.140"
+  },
+  "date": "2026-09-30",
+  "topic": "VS Code",
+  "status": "update",
+  "audience": {
+    "who": "VS Code でエージェントを使う開発者と、AI 機能の最低バージョンを要求する管理者",
+    "change": "Copilot ハーネスを選べ、1 つのセッションで複数フォルダーや worktree を扱える",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "チャット入力のハーネス ピッカーで Copilot を確認する。試験的機能は設定で有効にする"
+  },
+  "panels": [
+    {
+      "id": "harness",
+      "heading": "Copilot ハーネス",
+      "priority": "core",
+      "items": [
+        "Copilot SDK 基盤で、Copilot アプリや Copilot CLI と一貫した動作になる",
+        "チャット入力のハーネス ピッカーで選ぶ。このリリースでは既定で選択済みの場合がある",
+        "Agent Host Protocol に基づく専用プロセスで動き、複数の VS Code ウィンドウから同じセッションに接続できる",
+        "HydraFusion (Research Preview) は、プレビュー機能を有効にした対象ユーザーがモデル ピッカーから選べる"
+      ]
+    },
+    {
+      "id": "multi-folder",
+      "heading": "マルチフォルダー セッション (試験的)",
+      "priority": "core",
+      "items": [
+        "チャットごとに別のフォルダーまたは worktree を使え、変更が混ざらない",
+        "既定は無効。user の settings.json で chat.agentHost.copilotAgent.multiRootEnabled を true にする",
+        "Claude は claudeAgent、Codex は codexAgent の同名設定を使う",
+        "フォルダー追加の UI はないため、メイン チャットにピア チャットの作成を依頼する"
+      ]
+    },
+    {
+      "id": "remote",
+      "heading": "リモート委任 (試験的)",
+      "priority": "core",
+      "items": [
+        "Agents ウィンドウで、エージェントが接続済みのリモート エージェント ホストに作業を委任できる",
+        "chat.remoteAgentHostsEnabled と chat.remoteSessions.tools.enabled を有効にする。ツールは既定でオフ",
+        "list_agent_hosts、create_remote_session、get_remote_session、send_remote_message が使える"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "管理者がバージョンを要求している場合、チャット・エディター ウィンドウ・Agents ウィンドウに必要バージョンと更新操作が表示される",
+        "リモート エージェントの最終回答は自動転送されず、send_remote_message で報告される",
+        "リモート側はワークスペースを複製せず、ホスト上の信頼済みフォルダーを使う"
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "エージェント ハーネス",
+      "type": "term",
+      "oneLine": "エージェントが使う言語モデル、コンテキスト、ツールを調整する仕組み。"
+    },
+    {
+      "term": "Agent Host",
+      "type": "feature",
+      "oneLine": "エージェント セッションをエディターのウィンドウとは別に実行・管理する専用プロセス。"
+    },
+    {
+      "term": "ピア チャット",
+      "type": "feature",
+      "oneLine": "同じセッション内で関連作業を行う別のチャット。"
+    }
+  ],
+  "suggestions": [
+    "複数リポジトリにまたがる変更は、メイン チャットから各リポジトリ用のピア チャットを作らせる"
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.140",
+      "url": "https://code.visualstudio.com/updates/v1_140"
+    },
+    "documents": [
+      {
+        "title": "Choose an agent harness",
+        "url": "https://code.visualstudio.com/docs/agents/run/agent-harnesses"
+      }
+    ]
+  },
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_140",
+    "https://code.visualstudio.com/docs/agents/run/agent-harnesses"
+  ]
+}
