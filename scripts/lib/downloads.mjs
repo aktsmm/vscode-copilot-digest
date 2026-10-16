@@ -434,7 +434,7 @@ export function downloadsJs() {
         var refs = [{ text: "発表　", options: { bold: true, color: hex(THEME.fg) } }, { text: s.references.source.title || s.references.source.url, options: { hyperlink: { url: s.references.source.url }, color: hex(THEME.link) } }];
         (s.references.documents || []).forEach(function (d, i) { refs.push({ text: i === 0 ? "　　詳細　" : "　|　", options: { bold: i === 0, color: hex(THEME.fg) } }); refs.push({ text: d.title, options: { hyperlink: { url: d.url }, color: hex(THEME.link) } }); });
         sl.addText(refs, { x: 0.4, y: 6.9, w: 9.4, h: 0.5, fontFace: F, fontSize: 9, valign: "top" });
-        sl.addNotes(["発表: " + s.references.source.url].concat((s.references.documents || []).map(function (d) { return "詳細: " + d.url; }), (s.evidence || []).map(function (u) { return "根拠: " + u; })).join("\\n"));
+        sl.addNotes(["発表: " + s.references.source.url].concat((s.references.documents || []).map(function (d) { return "詳細: " + d.url; }), (s.evidence || []).map(function (u) { return "根拠: " + u; }), (s.qa && s.qa.length ? ["", "【想定問答】"].concat(s.qa.map(function (x, i) { return "Q" + (i + 1) + ". " + x.q + "\\nA. " + x.a; })) : [])).join("\\n"));
         sl.addText("分類: " + s.topic + " ｜ ID " + s.id, { x: 9.9, y: 7.12, w: 3.0, h: 0.25, fontFace: F, fontSize: 8, color: hex(THEME.muted), align: "right" });
       });
       var end = pptx.addSlide(); end.background = { color: hex(THEME.dark) };

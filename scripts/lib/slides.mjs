@@ -49,6 +49,7 @@ export function renderedTexts(slide) {
     ...(slide.panels ?? []).flatMap((p) => [p.heading, ...(p.items ?? [])]),
     ...(slide.glossary ?? []).flatMap((g) => [g.term, g.oneLine]),
     ...(slide.suggestions ?? []),
+    ...(slide.qa ?? []).flatMap((x) => [x?.q, x?.a]),
   ].filter(Boolean);
 }
 
@@ -110,6 +111,10 @@ function validateV2(slide, err) {
   if (g !== undefined && (!Array.isArray(g) || g.length < 1 || g.length > 6 || g.some((x) => !x?.term || String(x.term).length > 40 || !TERM_TYPES[x.type] || !short(x.oneLine, 90)))) err("glossary must be 1-6 items with term (up to 40), type (product / feature / term / label) and a Japanese oneLine of up to 90 chars");
   const sug = slide.suggestions;
   if (sug !== undefined && (!Array.isArray(sug) || sug.length < 1 || sug.length > 3 || sug.some((s) => !short(s, 100)))) err("suggestions must be 1-3 Japanese lines of up to 100 chars");
+  // Anticipated questions for the presenter; they go into the PPTX speaker notes, not onto the page.
+  const qa = slide.qa;
+  if (qa !== undefined && (!Array.isArray(qa) || qa.length < 3 || qa.length > 5 || qa.some((x) => !short(x?.q, 80) || !short(x?.a, 260)))) err("qa must be 3-5 items with a Japanese q (up to 80 chars) and a (up to 260 chars)");
+  if (qa !== undefined && new Set((qa ?? []).map((x) => x?.q)).size !== (qa ?? []).length) err("qa has a duplicate question");
 }
 
 export function validateSlide(slide) {

@@ -42,6 +42,12 @@ export const LANES = {
       npm("run", "test:data");
       // A slide that overflows the page at the smallest font is rejected, as in the PDF build.
       const id = files[0].filename.match(/([0-9a-f]{16})\.json$/)[1];
+      // A change to an existing slide may only add notes (qa); the rest of the slide must stay as published.
+      if (files[0].status === "modified") {
+        const canon = (value) => JSON.stringify(value, (key, item) => (item && typeof item === "object" && !Array.isArray(item) ? Object.fromEntries(Object.entries(item).sort(([a], [b]) => a.localeCompare(b))) : item));
+        const strip = (value) => { const copy = JSON.parse(value); delete copy.qa; return canon(copy); };
+        if (strip(git("show", `origin/${base}:${files[0].filename}`)) !== strip(fs.readFileSync(files[0].filename, "utf8"))) throw new Error("an existing slide may only gain qa");
+      }
       run("node", ["scripts/render-pdf.mjs", "--dir", "data/slides", "--ids", id, "--out", ".render-check"]);
     },
   },

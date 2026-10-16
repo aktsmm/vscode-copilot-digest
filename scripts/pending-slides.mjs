@@ -49,9 +49,12 @@ async function main() {
   const slideFiles = (await fs.readdir(slidesDir).catch(() => [])).filter((f) => f.endsWith(".json"));
   // --refresh also returns slides written before the detail blocks (audience etc.) existed.
   const refresh = args.includes("--refresh");
+  // --include-existing lists updates that already have a slide too (used to add notes such as `qa` to them).
+  const includeExisting = args.includes("--include-existing");
   const existing = new Set();
   const existingUrls = new Set();
   for (const file of slideFiles) {
+    if (includeExisting) break;
     const slide = JSON.parse(await fs.readFile(path.join(slidesDir, file), "utf8"));
     if (!refresh || slide.schema === "vscode-copilot-digest/slide/v2") existing.add(file.replace(/\.json$/, ""));
     if (!refresh && slide.references?.source?.url) existingUrls.add(normalizeUrl(slide.references.source.url));

@@ -3187,6 +3187,7 @@ body { background: var(--bg); font-size: 15.5px; line-height: 1.6; }
 .mini-highlight h3 { font-size: 1.08rem; line-height: 1.4; margin: 0; }
 .mini-highlight .meta-row { display: flex; gap: 8px 14px; flex-wrap: wrap; font-size: 0.82rem; }
 .mini-highlight .original-title { margin: 0; font-size: 0.82rem; }
+.mini-highlight { content-visibility: auto; contain-intrinsic-size: auto 280px; }
 .mini-highlight .mini-summary { margin: 0; color: var(--text); line-height: 1.7; }
 .mini-highlight .mini-why { margin: 0; padding: 8px 12px; background: var(--accent-soft); border-radius: 8px; color: var(--text); font-size: 0.92rem; }
 .mini-highlight .resource-links { margin-top: 4px; padding-top: 8px; font-size: 0.85rem; }

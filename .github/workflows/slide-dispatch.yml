@@ -19,6 +19,11 @@ on:
         required: false
         default: ""
         type: string
+      qa_backfill:
+        description: "Add speaker-note Q&A to published slides that have none (newest first)"
+        required: false
+        default: false
+        type: boolean
 
 permissions:
   contents: read
@@ -47,6 +52,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           LIMIT: ${{ inputs.limit || '10' }}
           IDS: ${{ inputs.ids }}
+          QA_BACKFILL: ${{ inputs.qa_backfill }}
         run: |
           case "$LIMIT" in ''|*[!0-9]*) echo "invalid limit"; exit 1;; esac
           [ "$LIMIT" -gt 30 ] && LIMIT=30
@@ -55,10 +61,14 @@ jobs:
           capped=$(gh pr list --state closed --limit 300 --json title,mergedAt,files -q '[.[] | select(.mergedAt == null and (.title | startswith("slides:"))) | .files[].path | capture("(?<id>[0-9a-f]{16})").id] | group_by(.) | map(select(length >= 2) | .[0]) | .[]' | paste -sd, - || true)
           skip="$skip,$capped"
           open=$(gh pr list --state open --limit 200 --json files -q '.[].files[].path' | grep -Eo '[0-9a-f]{16}' || true)
-          if [ -n "$IDS" ]; then
+          if [ "$QA_BACKFILL" = "true" ]; then
+            candidates=$(node scripts/slides-without-qa.mjs)
+          elif [ -n "$IDS" ]; then
             candidates=$(node scripts/pending-slides.mjs --ids "$IDS" --limit 100 | jq -r '.[].id')
           else
             candidates=$(node scripts/pending-slides.mjs --months 3 --limit 100 --skip "$skip" | jq -r '.[].id')
+            # Once every update has a slide, the spare capacity adds Q&A notes to published slides that lack them.
+            candidates="$candidates $(node scripts/slides-without-qa.mjs)"
           fi
           started=0
           for id in $candidates; do

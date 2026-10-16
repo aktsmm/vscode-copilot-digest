@@ -1719,12 +1719,16 @@ function trimmedEnglishSummary(summary) {
 }
 
 function replaceMonth(text) {
-  let nextText = text;
-  for (const [english, japanese] of Object.entries(monthMap)) {
-    nextText = nextText.replace(new RegExp(english, "g"), japanese);
-  }
-
-  return nextText;
+  const names = Object.keys(monthMap).join("|");
+  const half = { early: "上旬", mid: "中旬", late: "下旬" };
+  const jp = (name) => monthMap[name[0].toUpperCase() + name.slice(1).toLowerCase()];
+  return text
+    // "mid-November 2026" -> "2026年11月中旬", "early October" -> "10月上旬"
+    .replace(new RegExp(`\\b(early|mid|late)[- ](${names})\\b(?:,? (\\d{4}))?`, "gi"), (_m, part, name, year) => `${year ? `${year}年` : ""}${jp(name)}${half[part.toLowerCase()]}`)
+    // "November 2026" -> "2026年11月", "November 16th" -> "11月16日"
+    .replace(new RegExp(`\\b(${names}) (\\d{4})\\b`, "g"), (_m, name, year) => `${year}年${monthMap[name]}`)
+    .replace(new RegExp(`\\b(${names}) (\\d{1,2})(?:st|nd|rd|th)?\\b`, "g"), (_m, name, day) => `${monthMap[name]}${day}日`)
+    .replace(new RegExp(`\\b(${names})\\b`, "g"), (_m, name) => monthMap[name]);
 }
 
 function patternTitle(title) {
