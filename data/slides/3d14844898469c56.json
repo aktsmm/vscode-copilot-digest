@@ -1,0 +1,90 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "3d14844898469c56",
+  "title": {
+    "ja": "チャットでは不向きな作業を、Copilot アプリのキャンバスで扱う",
+    "subtitleJa": "キャンバスはアプリ内で動く小さなフルスタック アプリで、エージェントと双方向にやり取りできる",
+    "original": "When chat is the wrong UI"
+  },
+  "date": "2026-09-24",
+  "topic": "GitHub Copilot",
+  "status": "unknown",
+  "audience": {
+    "who": "GitHub Copilot アプリで、チャット以外の画面でエージェントと作業したい開発者",
+    "change": "依頼するだけで作業用の UI（キャンバス）を作り、ユーザーとエージェントが同じ画面で操作できる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "info",
+    "summary": "キャンバスを試すなら、Copilot アプリでキャンバスの作成を依頼する"
+  },
+  "panels": [
+    {
+      "id": "what-is-canvas",
+      "heading": "キャンバスとは",
+      "priority": "core",
+      "items": [
+        "ブラウザー クロームなしで Copilot アプリ内で動く、小さなフルスタック アプリ",
+        "エージェントとサーバー側が双方向に通信でき、サードパーティ API の呼び出しやローカルでのコード実行もできる",
+        "作成を依頼するだけで作れる。アプリはキャンバスを理解しているため、細かい説明は不要"
+      ]
+    },
+    {
+      "id": "usage",
+      "heading": "使い方と活用例",
+      "priority": "core",
+      "items": [
+        "/create-canvas スキルで、できることとエージェントの機能を説明して作成する",
+        "作成後はアプリの右側のパネルで開き、追加や変更を依頼して反復できる",
+        "例: Winget のパッケージ管理、SQLite の操作、開発ワークフローの自動化"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "ツール化すれば以後の操作にトークンを使わず、「stage and commit」のような依頼を毎回エージェントに任せるのは無駄になりうる",
+        "SQLite の例は一度の依頼で作れたが、ワークフローの例は設計と自動化に丸一日近くかかった"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "キャンバス", "type": "feature", "oneLine": "作業成果物の共有された対話型サーフェス。ユーザーとエージェントが同じ画面で編集できる。" },
+    { "term": "/create-canvas", "type": "feature", "oneLine": "セッション内から新しいキャンバスを作成するスキル。" }
+  ],
+  "qa": [
+    {
+      "q": "キャンバスはどのプランで使えますか。",
+      "a": "ドキュメントによると、GitHub Copilot アプリはすべての Copilot プランで使用できます。"
+    },
+    {
+      "q": "キャンバスはどうやって作りますか。",
+      "a": "セッションで /create-canvas と入力し、キャンバスで対応したいワークフローと、ユーザーやエージェントができることを説明します。完成すると右側のパネルで開きます。"
+    },
+    {
+      "q": "チームで共有できますか。",
+      "a": "プロジェクト スコープなら .github/extensions に置いてリポジトリにコミットし、チームで共有できます。個人用はユーザー スコープの ~/.copilot/extensions です。"
+    },
+    {
+      "q": "プラグインが必要なキャンバスはありますか。",
+      "a": "一部のキャンバスはプラグインで提供され、セッションで使う前にインストールが必要です。[カスタマイズ] の [キャンバス] で、おすすめを確認できます。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "When chat is the wrong UI - The GitHub Blog",
+      "url": "https://github.blog/ai-and-ml/github-copilot/when-chat-is-the-wrong-ui/"
+    },
+    "documents": [
+      {
+        "title": "GitHub Copilot アプリ でのキャンバス拡張機能の操作 - GitHubドキュメント",
+        "url": "https://docs.github.com/ja/copilot/how-tos/github-copilot-app/working-with-canvas-extensions"
+      }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/ai-and-ml/github-copilot/when-chat-is-the-wrong-ui/",
+    "https://docs.github.com/ja/copilot/how-tos/github-copilot-app/working-with-canvas-extensions"
+  ]
+}
