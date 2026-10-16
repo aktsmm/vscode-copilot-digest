@@ -1,0 +1,90 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "243fbc7123f71efe",
+  "title": {
+    "ja": "Copilot追加予算リクエスト、一般提供開始",
+    "subtitleJa": "AI credits上限に達したメンバーが、その場で追加予算を申請できる",
+    "original": "Copilot budget increase requests are generally available"
+  },
+  "date": "2026-09-16",
+  "topic": "GitHub Copilot",
+  "status": "ga",
+  "statusEvidence": "Copilot budget increase requests are generally available",
+  "audience": {
+    "who": "使用量ベース課金のCopilot Business / Enterpriseで、組織・Enterpriseのオーナーまたは課金マネージャー",
+    "change": "上限到達時にメンバーが追加予算を申請でき、管理者は設定画面から承認・調整・拒否できる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "info",
+    "summary": "申請は設定の「メンバーからのリクエスト」に届く。金額を設定して承認する"
+  },
+  "beforeAfter": {
+    "before": "AI creditsを使い切ると、credits消費機能がブロックされていた",
+    "after": "上限到達時に追加予算を申請でき、承認で即座にアクセスが復元される"
+  },
+  "panels": [
+    {
+      "id": "availability",
+      "heading": "使える場所とプラン",
+      "priority": "core",
+      "items": [
+        "Copilot BusinessとCopilot Enterpriseの使用量ベース課金で利用可能",
+        "申請先は予算の負担アカウント。組織予算は組織、Enterprise予算はEnterpriseの設定に表示",
+        "管理対象ユーザー(managed users)のEnterpriseでは利用できない"
+      ]
+    },
+    {
+      "id": "usage",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "組織またはEnterpriseの設定で「メンバーからのリクエスト」を開く",
+        "各リクエストに新しい金額を設定し、「承認して増やす」を選択",
+        "承認でメンバーの予算が設定額に更新され、AI creditsへのアクセスが復元"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "承認・調整・拒否ができるのは、組織オーナー、Enterpriseオーナー、課金マネージャー"
+      ]
+    }
+  ],
+  "qa": [
+    {
+      "q": "誰が追加予算リクエストを承認できますか？",
+      "a": "組織オーナー、Enterpriseオーナー、課金マネージャーです。承認・調整・拒否のいずれも設定画面から行えます。"
+    },
+    {
+      "q": "対象のプランは？",
+      "a": "使用量ベース課金のGitHub Copilot BusinessとGitHub Copilot Enterpriseです。管理対象ユーザーのEnterpriseでは利用できません。"
+    },
+    {
+      "q": "リクエストはどこに届きますか？",
+      "a": "予算を負担するアカウントに届きます。組織所有の予算なら組織の設定、Enterprise所有の予算ならEnterpriseの設定に表示されます。"
+    },
+    {
+      "q": "承認するとどうなりますか？",
+      "a": "各リクエストに設定した金額でメンバーの予算が更新され、AI creditsへのアクセスがすぐに復元されます。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Copilot budget increase requests are generally available - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-09-16-copilot-budget-increase-requests-are-generally-available/"
+    },
+    "documents": [
+      {
+        "title": "Copilot の追加予算リクエストの管理 - GitHub Enterprise Cloud Docs",
+        "url": "https://docs.github.com/ja/enterprise-cloud@latest/copilot/how-tos/administer-copilot/manage-budget-requests"
+      }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-09-16-copilot-budget-increase-requests-are-generally-available/",
+    "https://docs.github.com/ja/enterprise-cloud@latest/copilot/how-tos/administer-copilot/manage-budget-requests"
+  ]
+}
