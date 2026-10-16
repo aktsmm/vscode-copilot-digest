@@ -1,0 +1,86 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "574a347d7d2fcc2b",
+  "title": {
+    "ja": "GitHub Copilotの6モデル、10月19日廃止予定",
+    "subtitleJa": "Gemini 3.7 Flash、GPT-5.5 など6モデルが廃止予定となり、後継モデルへの移行が必要に",
+    "original": "Upcoming deprecation of selected GitHub Copilot models in mid-October"
+  },
+  "date": "2026-09-18",
+  "topic": "GitHub Copilot",
+  "status": "retirement",
+  "statusEvidence": "We will deprecate the following models across all GitHub Copilot experiences (including Copilot Chat, inline edits, ask and agent modes, and code completions) on October 19th, 2026",
+  "audience": {
+    "who": "対象モデルをワークフローや連携で指定している開発者と、組織のCopilot管理者",
+    "change": "6モデルが2026年10月19日にCopilot全体で廃止され、案内された後継モデルへ移行する",
+    "changeNature": "breaking"
+  },
+  "action": {
+    "required": "yes",
+    "summary": "2026-10-19までにワークフローと連携先のモデル指定を後継モデルへ切り替える",
+    "deadline": "2026-10-19"
+  },
+  "timeline": [
+    {
+      "when": "2026-10-19",
+      "label": "対象モデルを廃止"
+    }
+  ],
+  "panels": [
+    {
+      "id": "models",
+      "heading": "対象モデルと後継",
+      "priority": "core",
+      "items": [
+        "Gemini 3.7 Flash は Gemini 3.8 Flash、Grok 4.5 は Grok 4.6 へ移行",
+        "GPT-5.5 と GPT-5.4 は GPT-5.6 Sol へ移行",
+        "GPT-5.4 mini と GPT-5 mini は GPT-5.6 Luna へ移行",
+        "対象は Copilot Chat、インライン編集、ask／agent モード、コード補完を含む全体験"
+      ]
+    },
+    {
+      "id": "admin-action",
+      "heading": "切り替えの準備",
+      "priority": "core",
+      "items": [
+        "Enterprise／Business では既定のモデル有効化により後継モデルが自動で有効になる",
+        "全体の既定をオフにした場合は、Copilot設定のモデルポリシーで後継モデルを有効にする"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "廃止後にモデルを削除する操作は不要"
+      ]
+    }
+  ],
+  "qa": [
+    {
+      "q": "いつ廃止されますか。",
+      "a": "対象の6モデルは、Copilot Chat、インライン編集、ask／agent モード、コード補完を含むCopilot全体で2026年10月19日に廃止されます。"
+    },
+    {
+      "q": "各モデルの移行先は何ですか。",
+      "a": "Gemini 3.7 Flash は Gemini 3.8 Flash、GPT-5.5 と GPT-5.4 は GPT-5.6 Sol、GPT-5.4 mini と GPT-5 mini は GPT-5.6 Luna、Grok 4.5 は Grok 4.6 です。"
+    },
+    {
+      "q": "管理者は何をすればよいですか。",
+      "a": "既定のモデル有効化のもとでは、後継モデルは Enterprise／Business で自動的に有効になります。全体の既定をオフにしている場合は、Copilot設定のモデルポリシーで有効にします。"
+    },
+    {
+      "q": "廃止後に削除作業は必要ですか。",
+      "a": "不要です。廃止後にモデルを削除する操作は求められていません。有効化後、後継モデルは Copilot Chat のモデルセレクターに表示されます。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Upcoming deprecation of selected GitHub Copilot models in mid-October - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-09-18-upcoming-deprecation-of-selected-github-copilot-models-in-mid-october/"
+    }
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-09-18-upcoming-deprecation-of-selected-github-copilot-models-in-mid-october/"
+  ]
+}
