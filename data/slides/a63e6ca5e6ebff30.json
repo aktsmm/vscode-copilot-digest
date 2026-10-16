@@ -1,0 +1,100 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "a63e6ca5e6ebff30",
+  "title": {
+    "ja": "使用状況メトリクス API に pull request のレビュー段階別の時間を追加",
+    "subtitleJa": "repos-1-day の各行に、レビュー 3 段階の中央値と 90 パーセンタイルを返す配列が加わった",
+    "original": "Usage metrics API adds pull request review stages"
+  },
+  "date": "2026-09-25",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "Copilot 使用状況メトリクスのレポートを使う Enterprise / 組織の管理者と開発チーム",
+    "change": "pull request がレビューのどの段階で滞留しているかを、段階別の所要時間で把握できる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "レポートで pull_request_review_times を参照し、待ち時間の長い段階を確認する"
+  },
+  "timeline": [
+    {
+      "when": "2026-09-21",
+      "label": "この日以降にレビュー準備完了となった PR が集計対象"
+    },
+    {
+      "when": "2026-09-25",
+      "label": "新しい配列を発表"
+    }
+  ],
+  "panels": [
+    {
+      "id": "availability",
+      "heading": "使える場所とプラン",
+      "priority": "core",
+      "items": [
+        "Enterprise と組織の repos-1-day レポート（リポジトリ レベル）が対象",
+        "各行に pull_request_review_times 配列が加わる",
+        "Enterprise オーナー、課金マネージャー、組織オーナー、View Copilot Metrics 権限を持つカスタム ロールが閲覧できる",
+        "Copilot usage metrics ポリシーの有効化が前提"
+      ]
+    },
+    {
+      "id": "fields",
+      "heading": "追加される項目",
+      "priority": "core",
+      "items": [
+        "median / p90_minutes_ready_to_first_review: レビュー準備完了から最初のレビューまで",
+        "median / p90_minutes_first_to_final_review: 最初のレビューから最後のレビューまで",
+        "median / p90_minutes_final_review_to_merge: 最後のレビューからマージまで",
+        "total_merged、authored_by、reviewed_by（今回はどちらも human）も含まれる",
+        "単位は分で、PR がマージされた日に帰属する。既存の pull_requests の項目は変更なし"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "対象は人が作成し、他の人が 1 件以上レビューした PR。Copilot コード レビュー、他のボット、作成者のレビューは計測外",
+        "過去分の再集計はなく、2026-09-21 より前にレビュー準備完了となった PR は含まれない",
+        "対象 PR がない日は 0 ではなく空配列 []。レビューが 1 回だけなら first_to_final は 0"
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "p90",
+      "type": "term",
+      "oneLine": "90 パーセンタイル。少数の遅い PR が全体の遅延を引き上げているかを中央値と並べて見られる。"
+    },
+    {
+      "term": "pull_request_review_times",
+      "type": "feature",
+      "oneLine": "repos-1-day の各行に追加された、レビュー段階別の所要時間の配列。"
+    }
+  ],
+  "suggestions": [
+    "最初のレビューまでが長ければ、レビュー依頼の割り当てを見直す"
+  ],
+  "references": {
+    "source": {
+      "title": "Usage metrics API adds pull request review stages - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-09-25-usage-metrics-api-adds-pull-request-review-stages/"
+    },
+    "documents": [
+      {
+        "title": "GitHub Copilot の使用状況メトリクス",
+        "url": "https://docs.github.com/ja/copilot/reference/copilot-usage-metrics"
+      },
+      {
+        "title": "Copilot 使用状況メトリック ダッシュボードの表示",
+        "url": "https://docs.github.com/ja/copilot/how-tos/administer-copilot/view-usage-and-adoption"
+      }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-09-25-usage-metrics-api-adds-pull-request-review-stages/"
+  ]
+}
