@@ -297,88 +297,231 @@
     ]
   },
   "999e769d06217678": {
-    "summary": "週次更新で、自動モデル選択に効率・均衡・知能の3段階、Copilot code reviewの対応済み指摘の解決や複数エージェントによるLiteレビュー、Copilot appのSentry canvasを追加。Business／Enterprise向け利用指標や予算増額申請も紹介された。",
-    "why": "管理者は新しいレビュー・利用状況・予算機能を確認し、利用者は用途に合わせて自動選択の重みを設定できる。"
+    "title": "自動モデル選択に3段階の重みづけが登場",
+    "summary": "自動モデル選択に効率・バランス・知能の3段階が加わり、コスト・品質・応答時間の重みを選べる。3段階とも利用可能な同じモデル群から選ぶ。VS Code、Copilot CLI、Copilot appで順次展開。同週にCopilot appのSentry canvasや、VS Code 1.138のDev Container対応も紹介された。",
+    "why": "コスト重視か品質重視かをチームの用途に合わせて選びたい利用者と、予算管理者に関係する。",
+    "points": [
+      "自動モデル選択の段階は efficiency / balance / intelligence の3つ",
+      "対象はVS Code、Copilot CLI、Copilot appで、順次展開",
+      "Copilot appのSentry canvasでクラッシュ調査から修正PRまで進められる",
+      "予算増額申請の一般提供は、管理対象ユーザーのEnterpriseでは使えない"
+    ]
   },
   "ad33c73c1b86a695": {
-    "summary": "Copilot code reviewの概要コメントで指摘を未対応・解決済み・後から発見に分類し、重要度と該当コメントへのリンクを表示する。返信内容を尊重した自動解決や、一括適用した提案に基づくコミットメッセージ生成も一般提供された。",
-    "why": "レビュー担当者は残る課題を把握しやすくなり、修正をまとめたコミットの内容も伝えやすくなる。"
+    "title": "Copilot code reviewの概要コメントが進捗を一覧化",
+    "summary": "Copilot code reviewの概要コメントが、指摘をOpen、Resolved since last review、Previously missedに分けて表示するようになった。各指摘にタイトルが付き、返信で未解決とした指摘は自動解決されない。一括適用した提案には、変更内容に沿ったコミットメッセージが生成される。",
+    "why": "再レビューを繰り返すPRで、残っている指摘だけを素早く拾いたいレビュー担当者向けの改善。",
+    "points": [
+      "Resolved since last reviewには重要度とインラインコメントへのリンクが付く",
+      "Previously missedは新コミット由来ではなく、後から見つかった指摘",
+      "解決理由としてWon't FixまたはIncorrectが使われる",
+      "今回の更新は一般提供"
+    ]
   },
   "02ea023ead6b345e": {
-    "summary": "Copilot CLI、app、SDKなどを支えるエージェントランタイムを、TypeScriptとNode.jsからRustへ移植した。記事ではAIエージェントが大半を書いた本番Rustコード80万行超と、128件のPRによる段階的な移行を報告している。",
-    "why": "ランタイムを共有する製品群は、共通基盤の性能改善や修正を各製品で活用できる。"
+    "title": "Copilotのランタイムを80万行のRustへ全面移行",
+    "summary": "Copilot CLI、app、SDKを支えるエージェントランタイムを、TypeScript/Node.jsからRustへ書き換えた経緯の解説。2026年5月の計画では約13万行と見積もったが、移植中に約43万行のTypeScriptが対象になり、結果は80万行超のRust、128件のPRとなった。",
+    "why": "大規模な言語移行にAIエージェントをどう使い、段階的に出荷したかを知りたい開発チームの参考になる。",
+    "points": [
+      "mainを常に出荷可能に保ち、PRごとにTypeScriptを薄いシムとRust呼び出しへ置換",
+      "一時的なN-API連携は8月3日に2,019個のexportでピークとなり、完了時に0",
+      "C ABIで公開し、6言語のSDKからプロセス内でも別プロセスでも利用できる",
+      "既存のCLI/SDKのE2Eテストを各ステップで実行して検証"
+    ]
   },
   "6bac01d2822bb791": {
-    "summary": "Copilot impact dashboardに、直近28日間で少なくとも2日利用したユーザー数を機能別に表示する機能が加わった。Enterprise／Organizationの集計APIにも同じ内訳と、各日の時点でのローリング28日間のAI adoption phase別人数が追加された。",
-    "why": "管理者は機能ごとの定着状況を把握し、利用促進や設定変更が必要な領域を検討できる。"
+    "title": "Copilot impact dashboardに機能別の定着度が追加",
+    "summary": "Copilot impact dashboardが、28日間に2日以上使ったアクティブユーザー数を機能ごとに表示する。Enterprise/Organizationの28日集計APIにも同じ内訳が入り、AI adoption phase別の28日間人数を示すusers_in_phase_28dも加わった。",
+    "why": "どの機能が定着していないかを把握し、研修や設定変更の優先順位を決めたい管理者向け。",
+    "points": [
+      "copilot_feature_engagementに、補完、agent edit、code review、cloud agent、CLI、appの人数",
+      "同じユーザーが複数の機能に重複して数えられる",
+      "ユーザー単位のレポートには追加されない",
+      "閲覧にはView Copilot Metrics権限とusage metricsポリシーの有効化が必要"
+    ]
   },
   "d2cf6b022ed40eed": {
-    "summary": "Copilot usage metrics APIに、CLIのskills、custom agents、MCP servers、slash commands、pluginsの利用指標を追加した。レポートには利用上位項目と異なる項目数が含まれ、顧客定義の名称はプライバシー保護のため表示されない。",
-    "why": "組織管理者はCLIカスタマイズの利用状況を把握し、活用支援の優先順位を決められる。"
+    "title": "usage metrics APIでCLIの拡張利用を集計可能に",
+    "summary": "Copilot usage metrics APIに、CLIのskills、custom agents、MCP servers、slash commands、pluginsの利用指標が加わった。totals_by_*で上位5件とinteraction_count、distinct_*_use_countで種類数を取得できる。顧客定義の名前はプライバシー保護のためotherにまとめられる。",
+    "why": "CLI拡張の導入状況を測り、活用が進まないチームへの支援を考える管理者向け。",
+    "points": [
+      "MCPのinteraction_countは接続・再接続の試行数で、成功も失敗も数える",
+      "pluginの指標はskill呼び出しの部分集合なので、skillとの合算は不可",
+      "slash commandsの独自定義はcustomにまとめられる",
+      "データがない場合はnullまたはフィールドなし"
+    ]
   },
   "243fbc7123f71efe": {
-    "summary": "CopilotのAIクレジット上限に達したメンバーが、追加予算を申請できる機能が一般提供された。使用量ベース課金のBusiness／Enterpriseが対象で、申請は予算を負担する組織またはEnterpriseに届き、オーナーや請求管理者は承認・金額変更・拒否ができる。",
-    "why": "対象プランの管理者は申請を審査し、承認時には設定した予算額でメンバーのクレジット利用を再開できる。"
+    "title": "AIクレジット上限での予算増額申請が一般提供に",
+    "summary": "メンバーがAIクレジットを使い切ったとき、その場で追加予算を申請できる機能が一般提供になった。申請は予算を負担する組織またはEnterpriseの設定に届く。オーナーや請求管理者は金額を設定して承認でき、承認するとすぐにAIクレジットが使える状態に戻る。",
+    "why": "クレジット切れによる作業停止を減らしたいBusiness/Enterpriseの管理者が、承認フローを整える際に関係する。",
+    "points": [
+      "設定の Requests from members で、金額を決めて Approve and increase を選ぶ",
+      "対象は使用量ベース課金のCopilot BusinessとEnterprise",
+      "管理対象ユーザーのEnterpriseでは利用できない",
+      "組織所有の予算は組織、Enterprise所有の予算はEnterpriseの設定に表示"
+    ]
   },
   "c295eac4b45dc07c": {
-    "summary": "GitHub Copilotが、OrganizationやEnterpriseのカスタムプロパティ定義時に許可値を提案する機能をパブリックプレビューで提供する。単一選択・複数選択プロパティが対象で、Copilot BusinessとEnterpriseの管理者がポリシーで制御できる。",
-    "why": "管理者は提案を参考にプロパティ値を設定し、組織内で使うリポジトリ分類の一貫性を高められる。"
+    "title": "カスタムプロパティの許可値をCopilotが提案",
+    "summary": "EnterpriseまたはOrganizationでリポジトリ用カスタムプロパティを新規定義する際、Copilotが許可値を提案する機能がパブリックプレビューで始まった。たとえばinternet-facingなら yes と no、FedRAMPなら関連する値が出て、1クリックで採用できる。",
+    "why": "ルールセットの対象指定に使うプロパティ設計に悩む管理者が、分類体系を早く整えるのに役立つ。",
+    "points": [
+      "対象はCopilot BusinessとEnterpriseのプラン",
+      "Repository custom property suggestions ポリシーで提供を制御できる",
+      "単一選択と複数選択のプロパティ定義で提案される",
+      "提案の例として FedRAMP や internet-facing を挙げている"
+    ]
   },
   "1a7d1d54459b510c": {
-    "summary": "Copilot code reviewは、後続レビューで修正済みの指摘を自動解決し、提案コード適用時にコミットメッセージを作成する。レビュー時のシェルツールによる検証と、複数エージェントの結果をまとめるLiteレビューも追加された。",
-    "why": "開発者は未対応の指摘に集中しやすくなり、レビューでビルドやテストなどの検証も行える。"
+    "title": "Copilot code reviewが指摘の自動解決とシェル検証に対応",
+    "summary": "Copilot code reviewは、後続コミットで対処された自分のコメントを再レビュー時に自動で解決する。提案の適用時には変更内容に基づくコミットメッセージを生成する。内部ではCopilot SDKのシェルツールで検証し、Liteレビューは複数エージェントの結果を統合する。",
+    "why": "未対応の指摘だけを残したいレビュー担当者と、レビューの精度や費用を気にするチームに関係する。",
+    "points": [
+      "シェルツールはCopilot agentファイアウォール内で動き、ビルドやテストも実行できる",
+      "社内実験では高重要度の指摘が増え、細かな指摘が減ったと報告",
+      "Liteは高重要度で対応数が47%増、レビュー費用は約8%減",
+      "依頼方法や受け取り方法は変わらない"
+    ]
   },
   "507e5c6c667cb625": {
-    "summary": "週次更新でCopilot appのJira連携、Copilot CLIのHydraFusionによるモデル振り分け、JetBrains向け企業サンドボックス管理を紹介。VS Codeではエージェントの定期実行がプレビューとなり、音声モードなども実験的機能として加わった。",
-    "why": "開発チームはJira起点の作業やモデル選択を試せる一方、プレビュー機能は対象環境を確認して導入できる。"
+    "title": "Copilot CLIにHydraFusion、VS Codeに定期実行が登場",
+    "summary": "Copilot appにJira連携、Copilot CLIの/experimentalにProject HydraFusionが加わった。HydraFusionはローカル、クラウド、複合モデルの間で性能・費用・遅延を見て自動で振り分ける。VS Code 1.137ではautomationsによる定期実行がパブリックプレビューになった。",
+    "why": "モデル選択を任せたいCLI利用者と、定期タスクを自動化したいVS Code利用者が試せる内容。",
+    "points": [
+      "HydraFusionは他のモデルと同様に選択して使う",
+      "automationsは毎時・毎日・毎週、またはオンデマンドで実行",
+      "Voice modeとAgents windowでのIssue/PR確認は実験的機能",
+      "JetBrainsの企業サンドボックス設定はパブリックプレビュー"
+    ]
   },
   "ab45e9114c1f14d5": {
-    "summary": "Copilot usage metricsに、VS Codeの専用Agentsウィンドウの利用指標が一般提供で加わった。Enterprise／Organizationの集計レポートには日次利用者数・セッション数・メッセージ数、ユーザー別レポートには利用有無と活動量が含まれる。",
-    "why": "管理者はエディター内の指標とは分けて、専用Agentsウィンドウの組織内利用状況を把握できる。"
+    "title": "VS Code Agentsウィンドウの利用指標が一般提供に",
+    "summary": "Copilot usage metricsに、専用のVS Code Agentsウィンドウの利用状況が一般提供で追加された。集計レポートにはdaily_active_vscode_agent_usersとtotals_by_vscode_agentがあり、ユーザー別レポートにはused_vscode_agentとセッション数などが入る。",
+    "why": "Agentsウィンドウの定着度をチーム別に見たい管理者が、レポートの項目を把握しておく必要がある。",
+    "points": [
+      "totals_by_vscode_agentはsession_countとtotal_user_messagesを持つ",
+      "エディタウィンドウのAgent Modeとは別集計",
+      "データがない場合、項目はなしまたはnull",
+      "View Copilot Metrics権限とusage metricsポリシーが必要"
+    ]
   },
   "c493987b897c3716": {
-    "summary": "GitHubの日本・韓国マーケティングチームの事例として、IssueフォームとGitHub Actionsでイベントページ、UTMリンク、招待状、進行管理を自動化する方法を紹介。イベント後のリード処理や報告にはCopilot agent skillsを活用している。",
-    "why": "イベント運営者は既存の手順をIssueや自動化に結び付け、定型作業と後処理を効率化できる。"
+    "title": "IssueとActionsでイベント運営を自動化した事例",
+    "summary": "GitHub日本・韓国のマーケティング担当者が、イベント運営をIssue 1件から動かす仕組みを紹介した。Issue formが申込書、ラベルがトリガー、Actionsが処理を担う。ランブックはAGENTS.mdに書き、Copilotと会話しながら自動化を育てている。",
+    "why": "APIかCLIのあるツールで繰り返し作業を抱える非エンジニア部門が、同様の自動化を設計する際の参考になる。",
+    "points": [
+      "event-setupなどのラベルを付けるとワークフローが起動する",
+      "ランディングページ複製、UTMリンク生成、招待メール依頼、ボード登録を自動化",
+      "毎朝の登録者確認や、終了後のCRM用リスト整形も対象",
+      "ワークフロー変更はPRとレビューで反映する"
+    ]
   },
   "53dc2a824ef94f8a": {
-    "summary": "GitHub Copilot appでは、エージェントの変更差分を確認し、ターミナルで実行し、内蔵ブラウザーでアプリを試せる。画面要素を選んで修正を頼む操作や、変更の承認とPR作成までをアプリ内で行う手順も紹介している。",
-    "why": "利用者は画面を移動せずにコード変更を確認・実行・プレビューしてから承認できる。"
+    "title": "Copilot appのdiff・ターミナル・ブラウザーで変更を検証",
+    "summary": "Copilot appに内蔵された3つのパネルで、エージェントの変更を確認から実行、動作確認まで行う手順を紹介している。diffパネルで承認やコメント、ターミナルでスクリプトの実行、ブラウザーでPick & Polishによる要素指定の修正ができる。",
+    "why": "エージェントの変更を受け入れる前に、何が変わり、動くかを確かめる習慣をつけたい人に向く。",
+    "points": [
+      "diffパネルでは追加行が緑、削除行が赤で表示される",
+      "ターミナルのスクリプトはRunボタンで実行でき、複数ウィンドウも開ける",
+      "Pick & Polishで画面要素を選び、エージェントに修正を頼める",
+      "確認後はアプリ内で承認してPRを作成できる"
+    ]
   },
   "fdde2a0c6bec05f9": {
-    "summary": "Copilot Business／Enterpriseの管理者が、エージェントのシェル実行・ファイル操作・ネットワーク接続を禁止、都度承認、無確認で許可に設定できるようになった。チーム別ポリシーにも対応し、管理設定は利用者側から緩和できない。",
-    "why": "管理者はCopilot app、CLI、VS CodeのAgent Hostセッションに組織の操作制限を適用できる。"
+    "title": "エージェントの操作権限を管理者が一括制御可能に",
+    "summary": "Copilot BusinessとEnterpriseの管理者が、シェルコマンド、ファイルの読み取り・編集、ネットワークドメインについて、禁止、承認制、無確認許可を一元設定できる。ユーザーやワークスペースの設定、自動承認、保存済みの承認では緩められない。チーム別ポリシーも作れる。",
+    "why": "エージェントを止めずに機密操作へ歯止めをかけたい管理者が、組織の標準を作る際に使える。",
+    "points": [
+      "Copilot app、Copilot CLI、Agent Hostを使うVS Codeセッションで一般提供",
+      "対象はシェルコマンド、ファイル操作、ネットワークドメイン",
+      "Enterpriseのチームごとに別の方針を適用できる"
+    ]
   },
   "15bde5bc46a61b26": {
-    "summary": "GitHub Enterprise Server 3.22が一般提供され、Enterprise Teamsによる企業横断のユーザー・アクセス管理がGAになった。ルールセットの個人によるバイパスや特定レビュー担当者の要求、Issue上で関連PRのリリース状態を確認する機能なども加わった。",
-    "why": "GHES管理者は新しいアクセス管理やレビュー規則を評価し、アップグレード計画に反映できる。"
+    "title": "GitHub Enterprise Server 3.22が一般提供、Enterprise Teamsも正式化",
+    "summary": "GitHub Enterprise Server 3.22が提供された。Enterprise teamsが一般提供になり、組織やリポジトリをまたぐアクセスを1つのチーム構造で管理できる。ルールセットは個人ユーザーのバイパスと、特定チームを指定する必須レビュアー規則に対応した。",
+    "why": "GHESの管理者は、アップグレード時にチーム管理やルールセット運用を見直す材料になる。",
+    "points": [
+      "Copilot CLIをGHESの認証で使う構成は、閉域環境向けのテクニカルプレビュー",
+      "必須レビュアー規則はブランチ、ファイル、フォルダーを指定でき、チームごとに最小承認数も設定",
+      "Issueのサイドバーに Latest release / Pre-release バッジを表示",
+      "secret scanningの要求を日付順に並べ替え可能"
+    ]
   },
   "81d2a78e15b1172e": {
-    "summary": "GitHubのカスタマーポータルがhelp.github.comに移り、サポート、ドキュメント、学習、コミュニティ、アカウント情報を集約した。Copilotを使った検索や製品ステータスも提供し、数週間かけて段階的に展開される。",
-    "why": "利用者は新ポータルへの切り替え状況を確認し、移行中は従来のsupport.github.comも利用できる。"
+    "title": "サポート窓口がhelp.github.comに移転",
+    "summary": "GitHubのサポートポータルが刷新され、help.github.comに移った。サポート、ドキュメント、学習、コミュニティ、アカウント情報を1か所に集め、サインインなしでCopilotによる横断検索を使える。製品ステータスやお知らせも見られ、数週間かけて展開される。",
+    "why": "サポートへの問い合わせ先が変わるため、社内の案内やブックマークを見直す管理者向け。",
+    "points": [
+      "新しい画面が出ない間は support.github.com を従来どおり使える",
+      "Copilot検索はサインイン不要",
+      "意見は GitHub Community のディスカッションに投稿できる"
+    ]
   },
   "4a71e714207eacfa": {
-    "summary": "週次更新でClaude Fable 5.1とGemini 3.8 Flashの提供、Copilot appとCLIでのコンテンツ除外対応、JetBrains向けCopilot harnessの一般提供を紹介。VS Code 1.136ではAgent Mergeがプレビューとなり、セッション管理機能も加わった。",
-    "why": "管理者は機密コードの除外設定を確認し、利用者は対象プランやプレビュー状況に応じて新機能を試せる。"
+    "title": "Claude Fable 5.1提供開始、appとCLIがコンテンツ除外に対応",
+    "summary": "Claude Fable 5.1がPro+、Max、Business、Enterpriseで利用可能になり、Gemini 3.8 Flashも順次展開された。Copilot appとCLIはコンテンツ除外を尊重する。VS Code 1.136ではAgent Mergeがパブリックプレビュー、JetBrains向けharnessは一般提供になった。",
+    "why": "利用できるモデルと、機密コードの扱いが変わるため、管理者と利用者が提供範囲を確認しておきたい。",
+    "points": [
+      "Agent MergeはレビューコメントやCI失敗、マージ競合の解消を支援",
+      "マルチルートワークスペースと背景の変更は実験的機能",
+      "Gemini 3.8 FlashはPro、Pro+、Max、Business、Enterpriseが対象",
+      "chat sessionsは階層表示され、注意が必要なものがわかる"
+    ]
   },
   "86763ecae0e6c54f": {
-    "summary": "OpenAIのGPT-6 AstraがGitHub Copilotで一般提供された。Copilot Pro+、Max、Business、Enterpriseが対象で、長期的な自律型コーディングやエージェント作業向け。GitHubの社内テストでは計画・検証を進めながら長いタスクを処理する性能が報告されている。",
-    "why": "対象プランの利用者はモデルを選択でき、Enterprise／Business管理者はモデルポリシーで利用を管理できる。"
+    "title": "GPT-6 AstraがCopilotで一般提供",
+    "summary": "OpenAIのGPT-6 Astraが、Copilot Pro+、Max、Business、Enterpriseで使えるようになった。長時間の自律的なコーディングやエージェント作業向けで、GitHubの社内テストでは計画と検証を進めながら少ない手順で完了した。使用量ベース課金ではプロバイダーの定価で請求される。",
+    "why": "Business/Enterpriseの管理者は、モデルポリシーで有効化されているかを確認し、利用者へ案内する。",
+    "points": [
+      "VS Code、JetBrains、CLI、coding agent、app、github.com、モバイルなどで選択可能",
+      "展開は段階的で、表示されない場合は後日再確認",
+      "新モデルは、管理者が無効にしていなければ既定で有効"
+    ]
   },
   "14de8f0237b8daf6": {
-    "summary": "GitHub CopilotはGemini 3.5／3.6 Flash、Kimi K2.7 Code、Claude Opus 4.7を2026年10月2日に廃止予定と発表し、それぞれGemini 3.8 Flash、Kimi K3、Claude Opus 5を代替候補として示した。",
-    "why": "旧モデルを指定するワークフローや連携は、代替モデルの利用可否を管理者と確認して切り替える必要がある。"
+    "title": "Gemini 3.5/3.6 Flash、Kimi K2.7 Code、Claude Opus 4.7を10月2日に廃止",
+    "summary": "Copilotは、Gemini 3.5 Flash、Gemini 3.6 Flash、Kimi K2.7 Code、Claude Opus 4.7を2026年10月2日に全体験から廃止すると告知した。チャット、インライン編集、askとagentモード、コード補完が対象で、代替はGemini 3.8 Flash、Kimi K3、Claude Opus 5。",
+    "why": "対象モデルを固定している設定や連携は、期日前に代替へ切り替える必要がある。",
+    "points": [
+      "Gemini 3.5/3.6 Flashの代替はGemini 3.8 Flash",
+      "Kimi K2.7 CodeはKimi K3、Claude Opus 4.7はClaude Opus 5へ移行",
+      "BusinessとEnterpriseの管理者は、代替モデルのポリシー有効化が必要な場合がある",
+      "廃止後にモデルを手動で削除する作業は不要"
+    ]
   },
   "c7588c3327cdae75": {
-    "summary": "GoogleのGemini 3.8 FlashがCopilot Pro、Pro+、Max、Business、Enterprise向けに段階的に提供される。GitHubの初期テストでは、複雑なターミナル中心のコーディング、厳密な検証、失敗からの回復で強みを示したと報告されている。",
-    "why": "対象プランの利用者はモデル選択欄を確認し、管理者はモデルポリシーと使用量ベース料金を確認できる。"
+    "title": "Gemini 3.8 FlashがCopilotに登場",
+    "summary": "GoogleのGemini 3.8 Flashが、Copilot Pro、Pro+、Max、Business、Enterpriseで順次使えるようになる。GitHubの初期テストでは、ターミナル中心の複雑なコーディングで強く、検証が丁寧で失敗からの回復も粘り強かったという。導入価格は2026年12月31日まで。",
+    "why": "コスト重視で高速なモデルを探している人が、モデルピッカーで試せる。",
+    "points": [
+      "2026年12月31日まで、使用量ベース課金で導入時のプロバイダー価格",
+      "VS Code、Visual Studio、CLI、cloud agent、app、JetBrains、Xcode、Eclipseで選択可能",
+      "BusinessとEnterpriseはモデルポリシーで管理"
+    ]
   },
   "d46aa82da12fa698": {
-    "summary": "クレジットカードまたはPayPal払いのCopilot Business／Enterpriseの新規申込を段階的に再開すると発表した。既存顧客には2026年10月1日から、次の請求サイクルで割当済みシート分を前払いする請求方式も案内された。",
-    "why": "該当する組織は新規申込の提供状況と、シート割当時や追加利用時の請求を確認する必要がある。"
+    "title": "Copilot Business/Enterpriseの新規申込を再開、10月に前払い課金",
+    "summary": "クレジットカードまたはPayPal払いのCopilot BusinessとEnterpriseで、新規申込を数週間かけて再開する。新しいシート割り当てには、利用前の支払いが必要になる。既存の顧客にも、2026年10月1日からの請求サイクルで割当済みシートの前払いが始まる。",
+    "why": "カードやPayPalで支払う契約者は、10月以降の請求とシート追加の手順を確認しておきたい。",
+    "points": [
+      "含まれる利用量はシート費用の日割りに合わせて按分される場合がある",
+      "超過分の利用には追加支払いが必要になる場合がある",
+      "プラン価格と追加利用の購入は変わらない",
+      "Copilotを完全に解約して戻ると、再審査や課金の対象になり得る"
+    ]
   },
   "1738353f28d07e4a": {
-    "summary": "GitHubはCopilotのタスク全体のコストを抑えるため、反復出力の圧縮、行番号など不要な情報の除去、指示文の短縮、バックグラウンド作業の通知改善を紹介した。各変更は品質指標を確認する実験を経て導入したとしている。",
-    "why": "AIコーディングの効率は応答の短さだけでなく、タスク全体のコストと品質を合わせて評価できる。"
+    "title": "Copilotのコスト削減は1回の出力でなく作業全体で評価",
+    "summary": "GitHubはCopilot CLIを例に、タスク全体の効率を上げる4つの変更を説明した。繰り返しの多い出力の選択的圧縮、viewツールの行番号の廃止、指示文の短縮、完了した背景作業の通知改善である。tool呼び出し単位のトークン数は適切な指標ではないとしている。",
+    "why": "エージェントの費用最適化を考える開発者に、評価方法と失敗例が参考になる。",
+    "points": [
+      "行番号の除去で、オフラインのベンチマークでは推論コストが約5%、CLIの実験では1人あたり1日で約3%下がった",
+      "git diffやcatの出力は圧縮せず、そのまま返す",
+      "圧縮した出力は、元の全文を取得する経路を残す",
+      "指示文の短縮では、並列実行が逐次化する退行が見つかり実験を停止"
+    ]
   },
   "107426bd9eaa068b": {
     "summary": "VS CodeのCopilot harnessはAgent Host経由でセッションを実行し、バックグラウンドで継続しながらエディターとAgentsウィンドウの両方から利用できる。新規セッションでは既定として段階展開中で、読み取り専用の組み込みAskエージェントも再導入された。",
@@ -485,72 +628,77 @@
     ]
   },
   "8bc291f39a282969": {
-    "summary": "VS Code 1.138では、プロジェクトのDev Container内でのエージェント実行、CopilotとChatGPTの契約を切り替えられるCodexセッション、完了セッションの自動整理が追加された。",
-    "why": "利用者はプロジェクト環境を保ってエージェントを動かし、Codex会話を引き継ぎながら完了済みセッションを整理できる。",
+    "title": "VS Code 1.138でDev Container内のエージェント実行に対応",
+    "summary": "VS Code 1.138では、Agents windowのセッションをローカルのDev Container内で動かせる。CodexはCopilotまたはChatGPTの契約を選べ、ChatGPTアプリとの間でセッションを継続できる。マージ済みセッションを自動でDoneにするクリーンアップはプレビュー。",
+    "why": "プロジェクト固有の環境でエージェントを動かしたい開発者と、Codexを使う利用者が設定を確認する際に関係する。",
     "points": [
-      "ローカルDev Containerには設定chat.agentHost.devContainer.enabledとDockerが必要。",
-      "CodexはCopilotまたはChatGPTの契約をモデル選択欄から切り替えて同じ会話を続けられる。",
-      "ChatGPT契約だけでCodexを使う場合はchat.agentHost.allowSignedOutWhenUsableも有効にする。",
-      "マージ後の自動完了・削除設定はプレビューで、初期状態では無効。"
+      "chat.agentHost.devContainer.enabled を有効にし、Dockerと対応するDev Container設定が必要",
+      "Codexの契約切り替えは、モデルピッカーで会話を保ったまま行う",
+      "chat.automations.enabled は既定で有効になり、automationsの共有も可能",
+      "自動クリーンアップ2設定は既定で無効"
     ]
   },
   "79d906a3af1d4d74": {
-    "summary": "Copilotの新規会話に使う既定モデルをEnterprise管理設定で指定できるようになり、team-mappings.jsonでチームごとのモデルを割り当てる構成も一般提供された。",
-    "why": "Enterprise管理者は組織やチームの標準モデルを設定し、利用者は新しい会話で適切な既定モデルを使える。",
+    "title": "企業管理設定で既定モデルを自由に指定可能に",
+    "summary": "新しい会話に使う既定モデルを、Enterprise管理設定で好きなモデルに指定できるようになった。モデルのキーを上書き可能にし、team-mappings.jsonを更新すると、Enterpriseのチームごとに別の既定モデルも割り当てられる。それ以外のユーザーは企業の既定を継承する。",
+    "why": "チームごとに最適なモデルを標準化したいBusiness/Enterpriseの管理者向け。",
     "points": [
-      "対象はCopilot BusinessとCopilot EnterpriseのGitHub Copilotアプリ、CLI、Visual Studio Code。",
-      "managed settingsのmodelキーをoverridableにすると、チーム別設定を許可できる。",
-      "チーム別のモデルはteam-mappings.jsonで定義し、それ以外の利用者はEnterprise既定値を継承する。"
+      "Copilot app、Copilot CLI、VS Codeで一般提供",
+      "チーム別の設定はteam-mappings.jsonに記述",
+      "対象プランはCopilot BusinessとEnterprise"
     ]
   },
   "0363631ad59a8e79": {
-    "summary": "Copilot code reviewにPRの承認準備状況を示すassessmentが加わり、管理者が許可すればCopilot自身が承認を送信できる機能がパブリックプレビューになった。",
-    "why": "レビュー担当者はPR概要のassessmentを判断材料にでき、管理者は承認権限と対象ファイルを組織の運用に合わせて制御できる。",
+    "title": "Copilot code reviewがPRの承認を送信可能に",
+    "summary": "Copilot code reviewの概要コメントに、PRが承認可能かの評価が加わった。管理者が許可すれば、Copilot自身が承認を送信できる機能がパブリックプレビューで始まった。承認は既定でオフで、評価だけではマージ要件に数えられない。",
+    "why": "レビューの自動化を進める管理者は、承認を許可する範囲とファイルパスを慎重に決める必要がある。",
     "points": [
-      "対象プランはCopilot Pro、Pro+、Max、Business、Enterprise。",
-      "Copilotの承認は既定で無効で、Enterprise・organization・repositoryの各管理者が設定する。",
-      "assessmentだけではマージ要件を満たさず、PRに新しいコミットが追加されるとCopilotの承認も破棄される。",
-      "repository管理者はCopilotが承認できるファイルパスを指定できる。"
+      "有効時の承認は、必須承認数のルールに数えられる",
+      "承認後に新しいコミットを押すと、人間のレビュアーと同様に承認が取り消される",
+      "Enterprise、組織、リポジトリの3階層で制御でき、承認可能なファイルパスも指定できる",
+      "対象はPro、Pro+、Max、Business、Enterprise"
     ]
   },
   "03d8130ed7d37f78": {
-    "summary": "Copilot Business／Enterpriseの個人ユーザー予算に有効期限を設定できるようになり、期限到来時に予算が削除され、次に適用されるユーザー予算または全体予算へ移行する。",
-    "why": "管理者は一時的な個人予算を期限付きにして、手作業での削除や予算の適用漏れを減らせる。",
+    "title": "個人ユーザー予算に有効期限を設定可能に",
+    "summary": "個人ユーザーの予算に有効期限を設定でき、期日になるとGitHubが予算を削除する。削除後は、コストセンターの1人あたり予算、なければ全体予算が適用される。一時的な上乗せ予算を手作業で外す手間が減る。一般提供で、BusinessとEnterpriseが対象。",
+    "why": "臨時の予算上限を多数のユーザーに付与している請求管理者の運用負担が減る。",
     "points": [
-      "期限は設定なし、次の請求サイクル開始時、または指定日のいずれかを選ぶ。",
-      "請求設定画面またはBudgets REST APIのexpires_atフィールドで作成・変更する。",
-      "期限切れ後はコストセンターの個人予算、または該当する全体予算が適用される。",
-      "有効期限を後から変更または解除できる。"
+      "選択肢は、期限なし(既定)、次の請求サイクル開始時、特定の日付",
+      "期限は請求設定から、またはBudgets REST APIのexpires_atで指定",
+      "期限はいつでも変更や解除ができる"
     ]
   },
   "d887e42ec9d130be": {
-    "summary": "VS Code 1.132〜1.135では、エージェントセッションの整理やレビュー、長い会話の操作に加え、Agent Host、統合ブラウザー、音声入力が拡張された。",
-    "why": "VS Codeで複数のエージェント作業や長い会話を扱う開発者は、一覧・検索・ブラウザーの新機能を作業に組み込める。",
+    "title": "VS Code 1.132〜1.135でAgentsウィンドウが強化",
+    "summary": "8月のVS Codeでは、複数チャットの並べ表示、/btwによる横道の会話、プロンプトのタイムライン、Agent Plugins 1.0対応のプラグインなどが加わった。Agent Hostは複数ウィンドウから同じセッションに接続でき、統合ブラウザーと音声入力も拡張された。",
+    "why": "Agents windowで長い作業や複数セッションを扱う開発者が、追加された操作を把握する際に役立つ。",
     "points": [
-      "/btwで主チャットのコンテキストを共有する横断チャットを開き、主チャットを継続できる。",
-      "チャット全文検索では大文字小文字、単語単位、正規表現を指定できる。",
-      "統合ブラウザーではHTML要素に注釈を付け、ローカルHTMLの保存変更を自動反映できる。",
-      "音声入力は複数言語に対応し、プロジェクト指示とシェル向けの文字起こし調整を利用できる。"
+      "/btwで、主チャットと文脈やプロンプトキャッシュを共有する側チャットを開く",
+      "チャットの文字検索は、大小文字、単語、正規表現に対応",
+      "統合ブラウザーで複数のHTML要素にコメントし、ローカルHTMLは自動で再読み込み",
+      "音声入力は複数言語に対応し、端末コマンドは構文を保つ"
     ]
   },
   "1fde2f1ede962375": {
-    "summary": "Visual Studio 2026のCopilotは、組織共有のカスタムエージェント、モデルの推論強度や一覧の管理、Git agentによる変更・コミットレビューを追加した。",
-    "why": "Visual Studio利用者はチームのエージェントを共有し、作業に応じてモデルやレビュー方法を選べる。",
+    "title": "Visual Studioで組織共有エージェントとGit agentのレビューに対応",
+    "summary": "Visual Studio 2026のCopilotに、組織やEnterpriseのオーナーが公開するカスタムエージェント、Low/Medium/Highの思考量の調整、お気に入りモデルのピン留めが加わった。Git agentは未コミットの変更やコミットを、PR作成前にレビューできる。",
+    "why": "Visual Studio利用者は、タスクに合わせた思考量の設定と、PR前の自己レビューを試せる。",
     "points": [
-      "組織カスタムエージェントにはGitHub organizationが必要で、エージェント選択欄に表示される。",
-      "対応モデルでは推論強度をLow、Medium、Highから選べる。",
-      "Git agentのレビューは未コミット変更またはコミットが対象で、GitHubとAzure DevOpsのリポジトリで使える。",
-      "Copilot Free、Student、Pro、Pro+、Max、Business、Enterpriseが対象。"
+      "組織のカスタムエージェントを使うには、GitHub組織が必要",
+      "Manage modelsでモデルの機能、コンテキスト長、コストを一覧できる",
+      "Git agentの指摘はエディタ内に表示され、GitHubとAzure DevOpsの両方で使える",
+      "Copilot FreeからEnterpriseまで全プランが対象"
     ]
   },
   "748c721075895777": {
-    "summary": "Copilot for JetBrainsでCopilot harnessが一般提供され、組み込みJetBrains MCPサーバーのプレビュー、harnessの/review連携、更新後に変更点を開くWhat's Newタブが追加された。",
-    "why": "JetBrains利用者はharnessやIDE機能を使ったエージェント作業を始めやすくなり、プラグイン更新後の変更も追いやすい。",
+    "title": "JetBrainsでCopilot harnessが一般提供に",
+    "summary": "Copilot for JetBrainsでCopilot harnessが一般提供になり、機能の提供が速く、コード品質が上がるとしている。組み込みのJetBrains MCPサーバーのサポートはパブリックプレビュー。harnessの/review連携も使え、更新後にはWhat's Newタブが開く。",
+    "why": "JetBrains IDEの利用者は、プラグイン更新でharnessやレビュー連携を使えるか確認できる。",
     "points": [
-      "Copilot harnessは一般提供、組み込みJetBrains MCPサーバーはパブリックプレビュー。",
-      "JetBrains内でCopilot harnessの/review連携を直接利用できる。",
-      "What's NewタブはCopilot for JetBrainsプラグインの更新後に開く。",
-      "モデル管理、長いツール出力のスクロール、WSL上のworktree起動も改善された。"
+      "組み込みJetBrains MCPサーバーは外部サーバーなしでIDEの機能を公開できる",
+      "モデル表の検索改善と列幅の変更、デバッグログのトークン使用量の絞り込みを追加",
+      "WSLから開いたプロジェクトでworktreeセッションが起動しない不具合を修正"
     ]
   },
   "5f600c7561b5b076": {
@@ -640,6 +788,27 @@
       "代替は Opus 4.8 と Opus 5 が Claude Opus 5.5、Terra が GPT-6.1 Sol か GPT-6 Luna。",
       "年額プランの個人契約者は Claude Opus 4.8 を引き続き使える。",
       "Enterprise と Business では既定設定なら代替モデルが自動で有効になる。"
+    ]
+  },
+  "636b7671bfd5d099": {
+    "title": "補完とNESを1つに統合した新インライン提案モデル",
+    "summary": "ghost text補完、カーソル付近のnext edit suggestions、離れた位置の編集を、別々のモデルから単一の「3-in-1」モデルに統合した。出力形式をdiff patchに統一し、複数の編集を1回の応答で返してキャッシュできる。200件超のオフライン実験と20件のオンライン実験を経た。",
+    "why": "インライン提案の品質向上の背景と、VS Codeでの提案挙動の変化を理解したい開発者に参考になる。",
+    "points": [
+      "従来は1回の機会に最大4回のモデル呼び出しが発生していた",
+      "複数パッチを先読みキャッシュし、続けて受け入れる操作を速くする",
+      "学習はSFTとRLで、v1 NES、v2長距離NES、v3と段階的に改善",
+      "過去90日間で610億回超のモデルリクエストがあったと記載"
+    ]
+  },
+  "95bcd8d84a05c315": {
+    "title": "Copilot appとCLIがコンテンツ除外ポリシーに対応",
+    "summary": "GitHub Copilot appとCopilot CLIが、Enterprise、組織、リポジトリの管理者が設定したコンテンツ除外ポリシーを尊重するようになり、一般提供された。除外対象のファイルはコンテキストに使われず、エージェント作業でも機密性の高いコードを守れる。",
+    "why": "appやCLIの導入を進めるBusiness/Enterpriseの管理者は、既存の除外設定がそのまま効くか見直せる。",
+    "points": [
+      "対象プランはCopilot BusinessとEnterprise",
+      "設定の単位はEnterprise、組織、リポジトリ",
+      "除外されたファイルはCopilotのコンテキストに使われない"
     ]
   }
 }
