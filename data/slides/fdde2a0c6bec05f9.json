@@ -1,0 +1,93 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "fdde2a0c6bec05f9",
+  "title": {
+    "ja": "Copilot のエージェント操作に、エンタープライズ管理の権限を設定可能に",
+    "subtitleJa": "シェル・ファイル・ネットワークの操作を、ブロック／承認必須／プロンプトなしに一括設定",
+    "original": "Enterprise managed permissions for GitHub Copilot agent operations"
+  },
+  "date": "2026-09-09",
+  "topic": "GitHub Copilot",
+  "status": "ga",
+  "statusEvidence": "These controls are generally available in the GitHub Copilot app, GitHub Copilot CLI, and Visual Studio Code sessions that use Agent Host.",
+  "audience": {
+    "who": "GitHub Copilot Business / Enterprise の管理者",
+    "change": "エージェント操作を、ブロック・人の承認必須・プロンプトなしの 3 種類に分けて一元管理できる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "統制したい操作があれば、エンタープライズ管理設定で権限ルールを定義する"
+  },
+  "panels": [
+    {
+      "id": "where-and-plans",
+      "heading": "使える場所とプラン",
+      "priority": "core",
+      "items": [
+        "対象は Copilot Business と Copilot Enterprise の管理者",
+        "GitHub Copilot アプリ、Copilot CLI、Agent Host を使う VS Code セッションで一般提供"
+      ]
+    },
+    {
+      "id": "how-to-use",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "管理設定の permissions.deny でブロック、permissions.ask で新たな承認必須、permissions.allow でプロンプトなしを指定",
+        "対象はシェル コマンド、ファイルの読み取りと編集、ネットワーク ドメイン",
+        "エンタープライズのチームごとに、専用のポリシーを用意できる"
+      ]
+    },
+    {
+      "id": "limits",
+      "heading": "前提と制限",
+      "priority": "core",
+      "items": [
+        "管理された制限は、ユーザー設定・ワークスペース設定・自動承認・保存済みの承認で弱められない"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "Agent Host", "type": "product", "oneLine": "記事で、VS Code セッションが管理権限の対象になる条件として挙げられている実行基盤。" },
+    { "term": "permissions.ask", "type": "feature", "oneLine": "特定の操作を続行する前に、新しい人間の承認を必要とする設定。" }
+  ],
+  "references": {
+    "source": {
+      "title": "Enterprise managed permissions for GitHub Copilot agent operations - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-09-09-enterprise-managed-permissions-for-github-copilot-agent-operations/"
+    },
+    "documents": [
+      {
+        "title": "エンタープライズ管理設定 - GitHub Enterprise Cloud Docs",
+        "url": "https://docs.github.com/ja/enterprise-cloud@latest/copilot/reference/enterprise-administrators/enterprise-managed-settings"
+      }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-09-09-enterprise-managed-permissions-for-github-copilot-agent-operations/",
+    "https://docs.github.com/ja/enterprise-cloud@latest/copilot/reference/enterprise-administrators/enterprise-managed-settings"
+  ],
+  "qa": [
+    {
+      "q": "どのプランの管理者が使えますか。",
+      "a": "GitHub Copilot Business または GitHub Copilot Enterprise を管理している管理者が、エージェント操作のブロック・承認必須・プロンプトなしを一元的に制御できます。"
+    },
+    {
+      "q": "どのクライアントで有効ですか。",
+      "a": "GitHub Copilot アプリ、GitHub Copilot CLI、Agent Host を使う Visual Studio Code セッションで一般提供されています。"
+    },
+    {
+      "q": "何を制御できますか。",
+      "a": "シェル コマンド、ファイルの読み取りと編集、ネットワーク ドメインです。エージェント ワークフローを無効にせず、機微な操作にだけガードレールを設けられます。"
+    },
+    {
+      "q": "ユーザーが設定を上書きできますか。",
+      "a": "できません。管理された制限は、ユーザー設定やワークスペース設定、自動承認、以前保存された承認では弱められません。"
+    },
+    {
+      "q": "チームごとにポリシーを変えられますか。",
+      "a": "エンタープライズ内のチームごとに、専用のポリシーを用意できます。"
+    }
+  ]
+}
