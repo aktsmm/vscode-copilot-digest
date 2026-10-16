@@ -1,0 +1,96 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "35569c11ea75ea41",
+  "title": {
+    "ja": "GitHub Copilot アプリのローカル サンドボックス",
+    "subtitleJa": "プロジェクト単位でファイル・ネットワーク・資格情報へのアクセスを制限できる",
+    "original": "Local sandboxing in the GitHub Copilot app"
+  },
+  "date": "2026-09-22",
+  "topic": "GitHub Copilot",
+  "status": "preview",
+  "statusEvidence": "Local sandboxing is in public preview and subject to change.",
+  "audience": {
+    "who": "Copilot アプリでローカル リポジトリや作業ツリーのセッションを使う開発者",
+    "change": "意図しないコマンドの影響を抑えるため、プロジェクトごとにサンドボックスを設定できる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "必要なら、アプリの設定でプロジェクトの「Sandbox new sessions」をオンにする"
+  },
+  "panels": [
+    {
+      "id": "how-to",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "既定はオフ。アプリの設定でプロジェクトを選び、「Sandbox」の Sandbox new sessions をオンにする",
+        "新しいセッションに適用され、実行中のセッションには適用されない",
+        "実行中のローカル セッションでは /sandbox on で有効化でき、プロジェクトの既定は変わらない"
+      ]
+    },
+    {
+      "id": "settings",
+      "heading": "プロジェクトの設定項目",
+      "priority": "core",
+      "items": [
+        "ファイルシステム: 追加の読み書き、追加の読み取り専用、拒否フォルダーの各リスト",
+        "ネットワーク: 外向きのインターネットとローカル ネットワークの設定",
+        "資格情報: HTTPS の git 操作用 Git 資格情報と、GitHub CLI 認証用の資格情報"
+      ]
+    },
+    {
+      "id": "limits",
+      "heading": "前提と制限",
+      "priority": "detail",
+      "items": [
+        "クラウド サンドボックスのセッションとリモート ホスト上のセッションには適用されない",
+        "Copilot アプリと Copilot CLI のサンドボックス設定は別々に構成する",
+        "OS が要求ポリシーを強制できない場合、サンドボックス化シェルはエラーで失敗する"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "ローカル サンドボックス", "type": "feature", "oneLine": "ファイル、ネットワーク、資格情報へのアクセスを制限し、意図しないコマンドの影響を抑える仕組み。" }
+  ],
+  "suggestions": [
+    "設定の変更は新しいセッションか既存セッションの再起動で反映されるため、変更後はセッションを開き直す"
+  ],
+  "qa": [
+    {
+      "q": "ローカル サンドボックスは既定で有効ですか。",
+      "a": "いいえ、既定ではオフです。アプリの設定でプロジェクトを選び、Sandbox の Sandbox new sessions をオンにします。適用されるのは新しいセッションで、実行中のセッションは対象外です。"
+    },
+    {
+      "q": "今のセッションだけ有効にできますか。",
+      "a": "実行中のローカル セッションで /sandbox on を入力すると、そのセッションだけ有効になります。プロジェクトの既定は変わりません。"
+    },
+    {
+      "q": "設定内容を変えたらすぐ反映されますか。",
+      "a": "ファイルシステム、ネットワーク、資格情報の設定の変更は、新しいセッション、または既存セッションの再起動時に適用されます。"
+    },
+    {
+      "q": "OS が対応していない場合はどうなりますか。",
+      "a": "OS が要求されたポリシーを強制できない場合は、サンドボックスなしで実行されず、サンドボックス化シェルがエラーで失敗します。"
+    },
+    {
+      "q": "クラウドや Copilot CLI のセッションにも効きますか。",
+      "a": "クラウド サンドボックスのセッションとリモート ホスト上のセッションには適用されません。Copilot アプリと Copilot CLI のサンドボックス設定は別々に構成します。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Local sandboxing in the GitHub Copilot app - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-09-22-local-sandboxing-in-the-github-copilot-app/"
+    },
+    "documents": [
+      { "title": "ローカル サンドボックスの利用 - GitHubドキュメント", "url": "https://docs.github.com/ja/copilot/how-tos/cloud-and-local-sandboxes/using-local-sandboxing" },
+      { "title": "ローカル サンドボックス設定の構成 - GitHubドキュメント", "url": "https://docs.github.com/ja/copilot/how-tos/cloud-and-local-sandboxes/configuring-local-sandbox-settings" }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-09-22-local-sandboxing-in-the-github-copilot-app/",
+    "https://docs.github.com/ja/copilot/how-tos/cloud-and-local-sandboxes/using-local-sandboxing"
+  ]
+}
