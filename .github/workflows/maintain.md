@@ -26,9 +26,9 @@ network:
     - learn.microsoft.com
     - aktsmm.github.io
 tools:
-  web-fetch:
   edit:
   bash:
+    - "node scripts/fetch-text.mjs:*"
     - "cat"
     - "ls"
     - "jq"
