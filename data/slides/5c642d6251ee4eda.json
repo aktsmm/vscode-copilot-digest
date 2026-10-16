@@ -1,0 +1,81 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "5c642d6251ee4eda",
+  "title": {
+    "ja": "漏えいシークレット検出に特化したモデル",
+    "subtitleJa": "既存のAI検出パスワード警告は新モデルへ移行し、新しい任意チェックはAIクレジットを消費",
+    "original": "Purpose-built model for leaked secret detection"
+  },
+  "date": "2026-10-07",
+  "topic": "GitHub Copilot",
+  "status": "announcement",
+  "statusEvidence": "Today, we’re sharing plans for AI secret detection across secret scanning alerts, push protection, and GitHub Copilot security reviews.",
+  "audience": {
+    "who": "GHSP・GHASを利用する管理者と、Copilotのsecurity-reviewを使う開発者",
+    "change": "既存のAI検出警告は新モデルに切り替わり、Push Protectionとsecurity-reviewにAI検出を追加する計画",
+    "changeNature": "neutral"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "新しいクレジット消費チェックを使う前に、対象範囲、ポリシー、予算を確認する"
+  },
+  "panels": [
+    {
+      "id": "existing-alerts",
+      "heading": "既存の検出警告",
+      "priority": "core",
+      "items": [
+        "AI検出パスワード警告を利用中の顧客は、新モデルに自動で切り替わった",
+        "既存のAI検出シークレット警告はGHSP・GHASに含まれ、追加料金はかからない",
+        "新モデルは周辺コードから文脈を読み、形式で識別しにくいパスワードも検出する"
+      ]
+    },
+    {
+      "id": "optional-checks",
+      "heading": "新しい任意チェック",
+      "priority": "core",
+      "items": [
+        "Push ProtectionのAI検査はプライベートプレビュー。GitHub Enterprise CloudまたはGitHub Teamと、GHSPまたはGHASの購入が必要",
+        "管理者が有効にする。プレビューに参加して機能を有効化すると、AIクレジット課金が始まる",
+        "Copilot CLIとCopilotアプリの `/security-review` への追加検査は近日プライベートプレビュー予定",
+        "security-reviewの新検査は既定でオフ。実行するだけでは有効にならない"
+      ]
+    },
+    {
+      "id": "billing",
+      "heading": "課金と制御",
+      "priority": "detail",
+      "items": [
+        "Push ProtectionのAI検査は、ブロックしない場合もクレジットを消費しうる",
+        "security-reviewの追加検査は既存レビューの使用量に加えてクレジットを消費する",
+        "管理者はポリシーで無効化でき、AIクレジットの予算も設定できる"
+      ]
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Purpose-built model for leaked secret detection - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-10-07-purpose-built-model-for-leaked-secret-detection/"
+    },
+    "documents": [
+      {
+        "title": "カスタム エージェントについて - GitHub Docs",
+        "url": "https://docs.github.com/ja/copilot/concepts/agents/copilot-cli/about-custom-agents#built-in-agents"
+      },
+      {
+        "title": "GitHub Copilot アプリ でのエージェント セッションの操作 - GitHub Docs",
+        "url": "https://docs.github.com/ja/copilot/how-tos/github-copilot-app/agent-sessions#using-security-review-in-app-sessions"
+      },
+      {
+        "title": "組織と企業の使用量ベースの課金 - GitHub Docs",
+        "url": "https://docs.github.com/ja/enterprise-cloud@latest/copilot/concepts/billing-and-usage/organizations-and-enterprises/billing"
+      }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-10-07-purpose-built-model-for-leaked-secret-detection/",
+    "https://docs.github.com/ja/copilot/concepts/agents/copilot-cli/about-custom-agents#built-in-agents",
+    "https://docs.github.com/ja/copilot/how-tos/github-copilot-app/agent-sessions#using-security-review-in-app-sessions",
+    "https://docs.github.com/ja/enterprise-cloud@latest/copilot/concepts/billing-and-usage/organizations-and-enterprises/billing"
+  ]
+}
