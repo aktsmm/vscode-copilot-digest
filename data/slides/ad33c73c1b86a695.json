@@ -1,0 +1,89 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "ad33c73c1b86a695",
+  "title": {
+    "ja": "Copilot コード レビューの改善: 概要コメント、自動解決、コミット メッセージ",
+    "subtitleJa": "レビューの進捗が概要コメントで分かり、自動解決が賢くなり、一括適用のコミット メッセージも自動生成",
+    "original": "Copilot code review: An improved review experience"
+  },
+  "date": "2026-09-18",
+  "topic": "GitHub Copilot",
+  "status": "ga",
+  "statusEvidence": "These updates are now generally available.",
+  "audience": {
+    "who": "プル リクエストで Copilot code review を使う開発者とレビュアー",
+    "change": "概要コメントで指摘を状態別に把握でき、各コメントにタイトルが付き、自動解決とコミット メッセージ生成が改善",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "no",
+    "summary": "対応は不要。再レビューを依頼すると、新しい概要コメントと指摘の状態が確認できる"
+  },
+  "panels": [
+    {
+      "id": "overview",
+      "heading": "概要コメントとタイトル",
+      "priority": "core",
+      "items": [
+        "概要コメントに、PR への現在の評価、使われたレビューの工数レベル、指摘の一覧が表示される",
+        "指摘は Open / Resolved since last review / Previously missed に分類される",
+        "各指摘にはタイトルが付き、概要の一覧や一目で把握する説明に使われる"
+      ]
+    },
+    {
+      "id": "auto-resolve",
+      "heading": "自動解決とコミット メッセージ",
+      "priority": "core",
+      "items": [
+        "指摘を未解決のままにする返信があれば、Copilot はそれを尊重する",
+        "以降のコミットに基づき、Won't Fix または Incorrect の理由付きでコメントを解決する",
+        "対象の一括提案をコミットすると、タイトルと任意の説明を自動生成する"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "Previously missed には、他に表示されない指摘の詳細が含まれる",
+        "再レビュー後も、過去の PR 要約とファイル別要約は残る"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "Open", "type": "label", "oneLine": "まだ対処されていない指摘。新しいコミットで生じたものには新規ラベルが付くことがある。" },
+    { "term": "Resolved since last review", "type": "label", "oneLine": "以前の指摘が修正されたことを Copilot が確認したもの。" },
+    { "term": "Previously missed", "type": "label", "oneLine": "新しいコミット起因ではなく、後続のレビューで既存の変更から新たに見つかった指摘。" }
+  ],
+  "qa": [
+    {
+      "q": "概要コメントの指摘はどう分類されますか?",
+      "a": "Open（未対処。新しいコミット起因なら新規ラベル付き）、Resolved since last review（修正を Copilot が確認済み）、Previously missed（既存の変更から後続のレビューで新たに見つかったもの）の 3 つです。"
+    },
+    {
+      "q": "追加コミットして再レビューすると、これまでの内容は消えますか?",
+      "a": "概要コメントは進捗を保持し、Copilot の指摘を記録します。以前の PR 要約とファイル別要約も引き続き参照できます。"
+    },
+    {
+      "q": "自動解決はどう改善されましたか?",
+      "a": "指摘を未解決のままにする返信を尊重します。また、以降のコミットに基づいて、Won't Fix または Incorrect の理由を付けてコメントを解決します。"
+    },
+    {
+      "q": "コミット メッセージはどんなときに自動生成されますか?",
+      "a": "対象となる、完全な Copilot code review の提案の一括をコミットするときです。選んだ変更に基づくタイトルと任意の説明が生成され、Copilot 以外のコメントを含む一括でも生成されます。"
+    },
+    {
+      "q": "この更新は GA ですか?",
+      "a": "はい。記事に、これらの更新は一般提供になったと記載されています。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Copilot code review: An improved review experience - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-09-18-copilot-code-review-an-improved-review-experience/"
+    }
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-09-18-copilot-code-review-an-improved-review-experience/"
+  ]
+}
