@@ -50,6 +50,28 @@
       ]
     }
   ],
+  "qa": [
+    {
+      "q": "モダン UI は今すぐ使えますか？",
+      "a": "プレビューとして提供中です。Stable では実験的設定として登場し、段階的な展開を経て、現在は既定で有効です。従来の UI に戻す選択肢も残されています。"
+    },
+    {
+      "q": "画面が狭く感じるときはどうしますか？",
+      "a": "Customize Layout の Layout Density で Compact を選ぶか、window.density.layout を compact にします。workbench.activityBar.compact で Activity Bar も狭められます。"
+    },
+    {
+      "q": "従来の UI に戻せますか？",
+      "a": "Settings で workbench.experimental.modernUI を検索し、チェックを外すと戻せます。この選択肢は暫定で、削除日は未定ですが、終了前に告知されます。"
+    },
+    {
+      "q": "タブの見た目は変えられますか？",
+      "a": "選択タブがエディターと連続する接続型タブが新しい標準です。ピル型を好む場合は workbench.experimental.modernUIEditorTabStyle で選べます。"
+    },
+    {
+      "q": "既存のカラーテーマは動きますか？",
+      "a": "新旧どちらの UI とも互換です。新しい色 ID は未定義ならこれまでの色にフォールバックします。ID は実験的なので、両方の UI で確認してください。"
+    }
+  ],
   "references": {
     "source": {
       "title": "Modernizing the VS Code UI - Visual Studio Code",
