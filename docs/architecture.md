@@ -2,7 +2,7 @@
 
 ## 基本方針
 
-このリポジトリは、収集、原文・資料補完、要約 / 記事化、Pages 公開、Copilot cloud agent による本文更新を分離して組み合わせます。更新の記録は `data/events/*.json`、本文は `summaries/daily/*.md`、原文・資料の検証証跡は `data/resources.json` を正本とし、Pages や draft は再生成する前提です。取得ページの `.cache/resource-pages` と公開出力の `site` は正本ではありません。
+このリポジトリは、収集、原文・資料補完、要約 / 記事化、Pages 公開、agentic workflow（gh-aw）によるスライド・要約の作成を分離して組み合わせます。更新の記録は `data/events/*.json`、本文は `summaries/daily/*.md`、原文・資料の検証証跡は `data/resources.json` を正本とし、Pages や draft は再生成する前提です。取得ページの `.cache/resource-pages` と公開出力の `site` は正本ではありません。
 
 1. GitHub Actions が毎日ソースを取得する
 2. 新着や差分だけをイベントとして保存する
@@ -10,7 +10,7 @@
 4. イベントと本文、確認台帳から公開用 view model を作る
 5. 7 日・14 日単位で draft を作る
 6. GitHub Pages 用の静的ページ群と版付き検索インデックスを作る
-7. GitHub.com 側の Copilot cloud agent が日次本文や draft の更新 PR を作る
+7. agentic workflow がスライド・日本語要約を書き、merger が検証して merge する（日次本文はそのデータを読んで自動で良くなる）
 8. 必要なら Qiita API で公開する
 
 ## なぜこの構成か
@@ -20,7 +20,7 @@
 - GitHub Docs のように RSS が無いソースは、カテゴリ index ページ（例: `/en/copilot/how-tos`、`/concepts`、`/reference`）のスナップショットを監視し、Changelog や blog に出ない doc-only 更新も拾う。ルート index は server-side で全記事を列挙しないため、カテゴリ index を併用する
 - 記録を JSON と Markdown の両方で残すと、人も機械も扱いやすい
 - GitHub Pages を静的生成にすると、収集ロジック、本文更新、公開ロジックを分離できる
-- Copilot cloud agent の自動執筆を Issue / PR フローに閉じ込めることで、変更範囲と検証条件を workflow 側で制御しやすい
+- agent の自動執筆を PR（safe output）に閉じ込め、merge を信頼できるスクリプトに限ることで、変更範囲と検証条件を workflow 側で制御しやすい
 
 ## システム構成
 
@@ -153,7 +153,7 @@ Pages の主要出力:
 収集・補完・Pages 生成と同じデータを正本として、読み取り専用 API とスライド / PDF を追加で公開します。詳細は [api.md](api.md) と [slide-schema.md](slide-schema.md) を参照してください。
 
 - [scripts/lib/api.mjs](../scripts/lib/api.mjs): 公開済み更新から静的 JSON API（`site/api/v1/`）を決定的に生成する。収集状態（`coverage`）と、更新ごとの要約・資料の状態は別の概念として扱い、欠けのある月を 0 件と混同しない。`snapshotAt` は入力ログの `generatedAt` 由来で、ビルド時刻を使わない
-- [data/slides](../data/slides): 1 更新 1 枚のスライド JSON。Copilot cloud agent が専用の PR 系統で追加し、[scripts/lib/slides.mjs](../scripts/lib/slides.mjs) が許可ホスト・内部メモ語・状態の根拠を検証する
+- [data/slides](../data/slides): 1 更新 1 枚のスライド JSON（想定問答 `qa` を含む）。agent が PR で追加し、[scripts/lib/slides.mjs](../scripts/lib/slides.mjs) が許可ホスト・内部メモ語・状態の根拠を検証し、[scripts/verify-slide-facts.mjs](../scripts/verify-slide-facts.mjs) が引用ページとの一致を確認する
 - [scripts/build-slide-pdfs.mjs](../scripts/build-slide-pdfs.mjs): 直近 3 か月のスライドを PDF 化する。最新 1 件は無料サンプル、残りは `PDF_PASSWORD` で暗号化する。Secret やブラウザが無ければ PDF は公開せず、サイトのデプロイは止めない。不正なスライドは 1 件だけ警告して飛ばす
 - [scripts/lib/theme.mjs](../scripts/lib/theme.mjs): GitHub / Copilot の配色と PDF の文言の単一定義。HTML 描画とブラウザ側の結合ページが同じ値を使う
 - ダウンロードパネル（トップ・ハイライト一覧、[scripts/lib/downloads.mjs](../scripts/lib/downloads.mjs)）: 期間・種類・トピックで絞り込み、JSON / 結合 PDF / PPTX をページ遷移なしでダウンロードする
@@ -163,5 +163,5 @@ Pages の主要出力:
 - GitHub Community Discussions の取り込み
 - VS Code Bluesky フィード監視
 - Bluesky / Mastodon / Slack への通知
-- OpenAI / GitHub Models などを使った LLM 要約の追加
+- 英語版のスライド・想定問答
 - weekly / biweekly draft の対象期間ルールの強化
