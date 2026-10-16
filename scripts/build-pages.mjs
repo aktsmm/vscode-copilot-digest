@@ -145,7 +145,18 @@ function cardDescription(event, locale) {
   }
 
   const reason = importanceReason(event, locale);
-  return isGenericImportanceReason(reason) ? "" : completeSentencePreview(reason, locale);
+  const fromReason = isGenericImportanceReason(reason) ? "" : completeSentencePreview(reason, locale);
+  if (fromReason) {
+    return fromReason;
+  }
+
+  // A truncated excerpt with no sentence end still beats an empty card.
+  const excerpt = String(localizedSummary(event, locale) ?? "")
+    .replace(/\s+/g, " ")
+    .replace(/(?:…|\.\.\.)+.*$/, "")
+    .replace(/[:：,、\s]+$/, "")
+    .trim();
+  return excerpt ? `${locale === "ja" ? "。" : "."}` : "";
 }
 
 function formatDate(value, locale = "ja") {

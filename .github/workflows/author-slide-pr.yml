@@ -114,7 +114,7 @@ jobs:
             const pulls = await github.paginate(github.rest.pulls.list, {
               owner: context.repo.owner, repo: context.repo.repo, state: 'open', per_page: 100,
             });
-            if (pulls.some((pull) => (/slide authoring request|^slides:/i.test(pull.title || '') || String(pull.body || '').includes('slide-authoring-request') || (pull.head?.ref || '').startsWith('copilot/slide-')) && /copilot/i.test(pull.user?.login || ''))) {
+            if (pulls.some((pull) => (/slide authoring request|^slides:/i.test(pull.title || '') || String(pull.body || '').includes('slide-authoring-request') || (pull.head?.ref || '').startsWith('copilot/slide-') || /^copilot\/.*slide/i.test(pull.head?.ref || '')) && /copilot/i.test(pull.user?.login || ''))) {
               core.info('A slide PR is already open; waiting for it to merge.');
               return;
             }

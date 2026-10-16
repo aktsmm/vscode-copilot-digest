@@ -579,5 +579,15 @@
       "ChatビューやAgentsウィンドウではworkbench.action.chat.findで会話全体を検索できる。",
       "workbench.editorAssociationsで統合ブラウザーをHTMLファイルの既定エディターにできる。"
     ]
+  },
+  "0fb5cf8a26c77a05": {
+    "title": "GitHub Copilot の一部モデルを 11 月 16 日に廃止予定",
+    "summary": "2026年11月16日に、Claude Opus 4.8、Claude Opus 5、GPT-5.6 Terra が GitHub Copilot のすべての体験（チャット、インライン編集、ask / agent モード、コード補完）で廃止される。",
+    "why": "これらのモデルを固定で使うワークフローや連携は、期日までに代替モデルへ切り替える必要がある。",
+    "points": [
+      "代替は Opus 4.8 と Opus 5 が Claude Opus 5.5、Terra が GPT-6.1 Sol か GPT-6 Luna。",
+      "年額プランの個人契約者は Claude Opus 4.8 を引き続き使える。",
+      "Enterprise と Business では既定設定なら代替モデルが自動で有効になる。"
+    ]
   }
 }

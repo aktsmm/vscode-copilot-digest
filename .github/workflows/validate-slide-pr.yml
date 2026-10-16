@@ -19,7 +19,7 @@ jobs:
     env:
       PR_TITLE: ${{ github.event.pull_request.title }}
     # Only slide PRs are handled here; digest PRs use validate-generated-pr.yml.
-    if: (startsWith(github.event.pull_request.title, 'slides:') || contains(github.event.pull_request.body, 'slide-authoring-request') || startsWith(github.event.pull_request.head.ref, 'copilot/slide-'))
+    if: (startsWith(github.event.pull_request.title, 'slides:') || contains(github.event.pull_request.body, 'slide-authoring-request') || startsWith(github.event.pull_request.head.ref, 'copilot/slide-') || startsWith(github.event.pull_request.head.ref, 'copilot/') && contains(github.event.pull_request.head.ref, 'slide'))
 
     steps:
       - name: Checkout
