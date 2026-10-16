@@ -1,0 +1,75 @@
+name: Dispatch slide authoring
+
+# Twice a day (03:00 and 15:00 JST as target times; GitHub may delay them) one agentic run is started per update
+# that has no slide yet (newest first, last 3 calendar months). Updates the agent could not read are recorded as
+# "Slide skip" issues and are not offered again; updates with an open PR are left alone.
+on:
+  schedule:
+    - cron: "0 18 * * *"
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: "Maximum number of updates"
+        required: false
+        default: "8"
+        type: string
+      ids:
+        description: "Comma-separated update ids (overrides the period)"
+        required: false
+        default: ""
+        type: string
+
+permissions:
+  contents: read
+  actions: write
+  pull-requests: read
+  issues: read
+
+concurrency:
+  group: slide-dispatch
+  cancel-in-progress: false
+
+jobs:
+  dispatch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: node scripts/build-pages.mjs
+      - name: Dispatch
+        env:
+          GH_TOKEN: ${{ github.token }}
+          LIMIT: ${{ inputs.limit || '8' }}
+          IDS: ${{ inputs.ids }}
+        run: |
+          case "$LIMIT" in ''|*[!0-9]*) echo "invalid limit"; exit 1;; esac
+          [ "$LIMIT" -gt 30 ] && LIMIT=30
+          skip=$(gh issue list --label slide-skip --state all --limit 500 --json title -q '.[].title' | grep -Eo '[0-9a-f]{16}' | paste -sd, - || true)
+          open=$(gh pr list --state open --limit 200 --json files -q '.[].files[].path' | grep -Eo '[0-9a-f]{16}' || true)
+          if [ -n "$IDS" ]; then
+            candidates=$(node scripts/pending-slides.mjs --ids "$IDS" --limit 100 | jq -r '.[].id')
+          else
+            candidates=$(node scripts/pending-slides.mjs --months 3 --limit 100 --skip "$skip" | jq -r '.[].id')
+          fi
+          started=0
+          for id in $candidates; do
+            [ "$started" -ge "$LIMIT" ] && break
+            if echo "$open" | grep -q "^$id$"; then echo "skip $id: open PR"; continue; fi
+            echo "dispatch $id"
+            gh workflow run slide.lock.yml -f id="$id"
+            started=$((started + 1))
+            sleep 45
+          done
+          echo "started $started"
+      - name: Merge the finished PRs once the last run has had time to finish
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          sleep 1200
+          gh workflow run auto-merge-agent-prs.yml

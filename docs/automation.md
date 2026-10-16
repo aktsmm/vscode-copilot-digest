@@ -22,12 +22,12 @@
 - 収集の後に `node scripts/backfill-skipped.mjs --coverage` が、フィードに出ているのに `data/events` に無い記事（過去に捨てたものを含む）を、記事ページから読み直して戻す。最後に `node scripts/coverage-report.mjs --strict` で漏れを確認し、残っていれば run を失敗させて知らせる（2 週間ごとの点検依頼でも確認する）
 - **提供終了・廃止ページ**: `retirements.html`（英語版は `en/retirements.html`）は、提供終了・廃止・移行に関わる更新だけを新しい順に並べる。ヘッダーの「提供終了・廃止」から行ける。検索の対象には入れない（ハイライト一覧と重複するため）。ダウンロード欄の上のキーワード欄は、一覧の文字（スライドがある更新ではカードの文字）に対して絞り込み、種類（GA / Preview / 廃止 / アナウンス / 更新）はスライドの無い更新にも効く
 - **カードの具体性**: スライドがある更新のカードは、副題に加えて、スライドの `core` パネルの先頭 2〜4 項目（対象プラン、設定・手順、前提と制限など）を箇条書きで表示する。「〜を確認できる」で終わる変更点の文は、箇条書きがあれば出さない。書かれた要約（`data/summaries-ja.json`）も `points` を持てて、持たない既存分は次回の要約依頼で書き直しの対象に戻る（`current` に今の文面が付く）
-- **スライドの作成ペース**: 依頼は 1 日 2 回（03:00 / 15:00 JST が目安）、1 回に最大 8 件で、前の依頼の PR が merge されるまで次を出さない。そのため、増えるのは 1 日に最大 16 件ほどで、スケジュールの遅れや Copilot の混雑で前後する。急ぐときは `author-slide-pr.yml` を手動で実行する
+- **スライドの作成ペース**: [slide-dispatch.yml](../.github/workflows/slide-dispatch.yml) が 1 日 2 回（03:00 / 15:00 JST が目安）、スライドが無い更新を新しい順に最大 8 件選び、1 件ずつ agentic workflow（[slide.md](../.github/workflows/slide.md)）を起動する。増えるのは 1 日に最大 16 件ほどで、スケジュールの遅れで前後する。急ぐときは `slide-dispatch.yml` を手動で実行する（`ids` に ID、`limit` に件数）
 - **日本語の題名**: スライドがある更新のカードは、スライドの日本語の題名（`title.ja`）を見出しにし、英語の原題は「原題」として小さく添える。書かれた要約（`data/summaries-ja.json`）も `title` を持てて、持たない既存分は次回の要約依頼で書き直しの対象に戻る。同じ記事のページの別の節（`#` 以降が違う URL）は、別の更新として扱う
 - **一覧との連動**: ダウンロード欄の期間・種類・トピックは、その下の更新一覧にも効く（最初は過去 30 日）。スライドがある更新のカードには「スライドあり・保存対象」のチェックがあり、外すとその 1 件が JSON / PDF / PPTX から外れる（一覧側と「個別に選ぶ」側は同じ選択を共有する）。スライドが無い更新は、日付とトピックでだけ絞り込まれる
 - **ダウンロードの選び方**: トップとハイライトのダウンロード欄は、期間・種類・トピックで絞り込んだうえで、「個別に選ぶ」から 1 件ずつ外せる（最初は全部が選択済み。「すべて選択」「すべて解除」あり）。JSON / PDF / PPTX は、選んだものだけを 1 つにまとめる
-- **要約の流れ**: [author-summary-pr.yml](../.github/workflows/author-summary-pr.yml)（毎日 03:30 JST が目安）が、英語の抜粋のままになっている更新（スライドも要約も無いもの）を最大 30 件、Copilot に依頼する。Copilot が記事を読み、日本語の要約を [data/summaries-ja.json](../data/summaries-ja.json) に書き足す。[validate-summary-pr.yml](../.github/workflows/validate-summary-pr.yml) が `npm run validate:summaries` と許可ファイル（このファイルだけ、削除なし）を確認し、[auto-merge-summary-pr.yml](../.github/workflows/auto-merge-summary-pr.yml) が自動で merge する。カードの文面は、スライド → 要約 → 原文の抜粋の順で選ばれる。`tests/card-boilerplate.test.mjs` が、定型文や、多くのカードで繰り返される文を検出して失敗させる
-- Copilot coding agent のファイアウォールは、リポジトリの Environment `copilot` の変数 `COPILOT_AGENT_FIREWALL_ALLOW_LIST_ADDITIONS` で、記事の取得元（code.visualstudio.com、github.blog、docs.github.com、learn.microsoft.com、www.publickey1.jp など）を許可している。新しい取得元を足したら、この変数にも追加する。許可できずに開けない host がある間は、`scripts/lib/slides.mjs` の `AGENT_UNREACHABLE` に host を入れると、その更新は依頼から外れる
+- **要約の流れ**: agentic workflow [summarize.md](../.github/workflows/summarize.md)（毎日 03:30 JST が目安、手動実行も可）が、英語の抜粋のままになっている更新（スライドも要約も無いもの）を最大 30 件読み、記事を開いて日本語の要約を [data/summaries-ja.json](../data/summaries-ja.json) に書き足す。要約の PR が開いている間は新しい依頼を出さない。カードの文面は、スライド → 要約 → 原文の抜粋の順で選ばれる。`tests/card-boilerplate.test.mjs` が、定型文や、多くのカードで繰り返される文を検出して失敗させる
+- agentic workflow（gh-aw）のネットワーク許可は、各 `.md` の `network.allowed` に書く（code.visualstudio.com、github.blog、docs.github.com、learn.microsoft.com、www.publickey1.jp など）。取得元を足すときは `.md` を直し、`gh aw compile` で `.lock.yml` を作り直して一緒にコミットする。digest 用の執筆レーン（Copilot coding agent）だけは、リポジトリの Environment `copilot` の変数 `COPILOT_AGENT_FIREWALL_ALLOW_LIST_ADDITIONS` を使う
 - 日次の執筆依頼（[author-digest-pr.yml](../.github/workflows/author-digest-pr.yml)）は、新規イベントがあるだけでは起票しない（ページ差分ばかりで、マージできる PR にならなかったため）。低情報 fallback の残り、collect / Pages の失敗、手動実行のときだけ起票する。記事の日本語文面は、原文の抜粋 → スライド（`data/slides`）の順で自動的に良くなる
 - 変更がなければ commit せず終了する
 - 変更があった場合は `github-actions[bot]` が `data/**` と `summaries/**` を commit / push する
@@ -61,24 +61,26 @@
 - Copilot 起点で `action_required` になった review / validate / auto-merge workflow は [rerun-blocked-copilot-workflows.yml](../.github/workflows/rerun-blocked-copilot-workflows.yml) が定期的に検出して 1 回だけ rerun する
 - Copilot 由来 PR が merge されたときは [redeploy-pages-after-generated-pr-merge.yml](../.github/workflows/redeploy-pages-after-generated-pr-merge.yml) が [deploy-pages.yml](../.github/workflows/deploy-pages.yml) を再 dispatch し、本文更新を live ページへ反映した後に superseded な draft PR / digest-authoring issue を自動 cleanup する
 
-## 止まらないための仕組み（スライドレーンと点検）
+## agentic workflow（gh-aw）のレーンと、止まらないための仕組み
 
-- [slide-watchdog.yml](../.github/workflows/slide-watchdog.yml)（3 時間ごとが目安）は、スライドの流れを自動で直します。
-  - Copilot が 2 時間以上ファイルを変えずに止まった依頼は、PR と Issue を閉じて、次の依頼を 1 件ずつに絞ります。1 件だけの依頼が止まった場合は、その更新を `Slide skip: {id}`（ラベル `slide-skip`）として記録し、以後の依頼から外します（再試行するには、その Issue を削除し、ラベルを外します）。
-  - 検証が失敗した PR には、30 分後に `@copilot` で修正を依頼します（最大 2 回、同じコミットには 1 度だけ）。それでも直らなければ閉じて作り直します。
-  - `needs-human-review` のまま 1 日以上たった PR は閉じて、依頼を作り直します。
-  - 直近の Pages デプロイが失敗していれば再実行し、10 日以上スライドの依頼が動いていなければ再開します。
-- [pipeline-maintenance.yml](../.github/workflows/pipeline-maintenance.yml) は、**毎週月曜 04:00 JST 目安**（手動実行も可）に点検依頼の Issue を作り、Copilot cloud agent に割り当てます。モデルは指定せず Auto です。直近 14 日の失敗した run、merge されずに閉じた Copilot の PR、PR が付かないまま止まった Copilot の Issue、待機中の PR、`needs-human-review` の Issue、スキップ中のスライドを渡し、原因の調査と修正、テストの確認を依頼します。agent のファイアウォールが PR でブロックを報告した host（信頼する発行元のみ）は、この workflow が許可リスト（`COPILOT_AGENT_FIREWALL_ALLOW_LIST_ADDITIONS`）に自動で追加します。直すものがなければ PR を作らずに Issue を閉じます。
-- 点検 PR（タイトル `maint: YYYY-MM-DD 点検`）は専用の検証（`validate-maintenance-pr.yml`）と自動 merge（`auto-merge-maintenance-pr.yml`）を通ります。変更が `scripts/` `tests/` `docs/` `config/` `data/slides/` `data/summaries-ja.json` `.github/workflows/`（例外を除く）`.github/instructions/` `package*.json` の範囲に収まれば自動 merge します。点検の流れ自体を制御するファイル（`pipeline-maintenance.yml`、`validate-maintenance-pr.yml`、`auto-merge-maintenance-pr.yml`、`slide-watchdog.yml`、`deploy-pages.yml`、`scripts/lib/maintenance-guard.mjs`、`scripts/check-maintenance-change.mjs`）、`data/events` などのデータ、新しい secret の参照、`write-all`、`pull_request_target` の追加、workflow の削除、install スクリプトの追加は、`needs-human-review` で止めます。この判定は、base ブランチの `maintenance-guard` を使うので、PR 自身は弱められません。digest 用の workflow は、点検 PR を処理しません。
-- **トークンが切れても止まらない仕組み**:
-  - 見張り役（`slide-watchdog.yml`）の `token-health` ジョブが、`COPILOT_ASSIGN_TOKEN` の有効期限を毎回確認し、無効、または残り 21 日未満なら `token-health` ラベルの Issue を作ります（Actions 標準の token で作るので、個人トークンが死んでいても通知されます）。GitHub Models は 2026-07-30 に廃止されたため、token なしでスライドを作る代替手段はありません。トークン切れの間は Copilot 経由の流れが止まります。
-- 使う token は `COPILOT_ASSIGN_TOKEN`（Copilot への割り当てと、Copilot の PR へのコメント）です。期限が切れると、この仕組み全体が止まります。
+スライド・要約・点検は、GitHub Agentic Workflows（gh-aw）で動く。`.github/workflows/*.md` が正本で、`gh aw compile` が `*.lock.yml` を作る（lock は手で編集しない）。モデルは `claude-sonnet-5.5` に固定している。認証は Secret `COPILOT_GITHUB_TOKEN`（Copilot Requests 権限のある個人トークン）。
+
+| レーン | 起動 | 1 回の内容 | PR のタイトル |
+|---|---|---|---|
+| スライド [slide.md](../.github/workflows/slide.md) | [slide-dispatch.yml](../.github/workflows/slide-dispatch.yml) が 1 日 2 回、1 件ずつ起動 | 記事を読み `data/slides/{id}.json` を 1 枚書き、`npm run validate:slides` を通す | `slides: ...` |
+| 要約 [summarize.md](../.github/workflows/summarize.md) | 毎日 03:30 JST が目安 | 最大 30 件の要約を `data/summaries-ja.json` に書く | `summaries: ...` |
+| 点検 [maintain.md](../.github/workflows/maintain.md) | 毎週月曜 04:00 JST が目安 | `scripts/health-report.mjs` の事実から原因を調べて直す | `maint: ...` |
+
+- **読めない更新**: スライドの agent が記事を読めなかったときは、ファイルを作らず `Slide skip: {id}`（ラベル `slide-skip`）の Issue を作る。以後の依頼から外れる（再試行するには、その Issue を閉じてラベルを外す）。
+- **merge**: [auto-merge-agent-prs.yml](../.github/workflows/auto-merge-agent-prs.yml)（毎時、各 agent の完了後）が [scripts/merge-agent-prs.mjs](../scripts/merge-agent-prs.mjs) を main のコードで実行する。内蔵トークンで作られた PR は `pull_request` の検証が走らないため、各 PR を main に merge した作業ブランチで検証してから squash merge する。許可範囲は、スライドが `data/slides/{16 桁の hex}.json` 1 件、要約が `data/summaries-ja.json` のみ、点検が `scripts/lib/maintenance-guard.mjs` の範囲内。範囲外や検証失敗は `needs-human-review` を付けて止める。merge した後は `deploy-pages.yml` を起動する。
+- **点検の権限**: `scripts/` `tests/` `docs/` `config/` `data/slides/` `data/summaries-ja.json` `.github/workflows/*.yml`（lock と `.md` を除く）`.github/instructions/` `package*.json` の範囲に収まれば自動 merge する。レーンを制御するファイル（`auto-merge-agent-prs.yml`、`watchdog.yml`、`deploy-pages.yml`、`scripts/merge-agent-prs.mjs`、`scripts/lib/maintenance-guard.mjs`）、agentic workflow の `.md` と `*.lock.yml`、`data/events` などのデータ、新しい secret の参照、`write-all`、`pull_request_target` の追加、workflow の削除、install スクリプトの追加は、`needs-human-review` で止める。ガードは main のコードを使うので、PR 自身は弱められない。
+- [watchdog.yml](../.github/workflows/watchdog.yml)（毎日 05:41 JST が目安）は、AI を使わずに止まりを直す: `COPILOT_GITHUB_TOKEN` の有効期限を確認し、無効または残り 21 日未満なら `token-health` ラベルの Issue を作る（内蔵トークンで作るので、個人トークンが死んでいても通知される）。60 分以上動いている agent の run を取り消す。直近の Pages デプロイが失敗していれば 1 回だけ再実行する。
+- トークンが切れると agentic workflow は全て止まる。GitHub Models は 2026-07-30 に廃止されたため、トークンなしの代替手段はない。
 
 ## 完全自動ではない部分
 
-- スライド専用レーン（`author-slide-pr.yml` / `validate-slide-pr.yml` / `auto-merge-slide-pr.yml`）は digest 用レーンと分離している。Copilot が PR に独自のタイトルを付けるため、スライド PR は本文の `slide-authoring-request` マーカーまたは `copilot/slide-` ブランチ名で判定する。digest 用 workflow（validate / auto-merge / review 正規化 / redeploy）を変えるときは、スライド PR を処理しない条件を保つこと（`tests/slide-lane.test.mjs` が検証）
-- Secret: `COPILOT_ASSIGN_TOKEN`（Issue の Copilot 割り当て）、`PDF_PASSWORD`（スライド PDF の暗号化。`deploy-pages.yml` だけが使い、未設定なら PDF は公開されない）、`DISCORD_WEBHOOK_URL`
-- スライド PR の auto-merge は `workflow_run` 起点。Copilot の run が `action_required` で止まる場合は `rerun-blocked-copilot-workflows.yml` が `Validate slide PR` / `Auto-merge slide PR` も再実行する
+- スライド・要約・点検の PR は、タイトルの接頭辞（`slides:` / `summaries:` / `maint:`）で判定する。digest 用 workflow（validate / auto-merge / review 正規化 / redeploy）を変えるときは、これらの PR を処理しない条件を保つこと（`tests/slide-lane.test.mjs` が検証）
+- Secret: `COPILOT_GITHUB_TOKEN`（agentic workflow が Copilot を使うための個人トークン）、`COPILOT_ASSIGN_TOKEN`（digest 用レーンの Issue の Copilot 割り当て）、`PDF_PASSWORD`（スライド PDF の暗号化。`deploy-pages.yml` だけが使い、未設定なら PDF は公開されない）、`DISCORD_WEBHOOK_URL`
 
 - GitHub リポジトリ設定で Copilot cloud agent を有効化している必要がある
 - repo 側では auto-merge を有効化し、Actions の `GITHUB_TOKEN` は write 権限と PR review approve 権限を持つ前提にしている

@@ -1,0 +1,60 @@
+name: Auto-merge agent PRs
+
+# Merges the PRs the agentic workflows open (slides: / summaries: / maint:) once they are provably safe.
+# Each PR is merged into a scratch branch of the default branch and checked there with trusted code
+# (scripts/merge-agent-prs.mjs); PRs made with the built-in token do not start pull_request checks.
+on:
+  workflow_run:
+    workflows:
+      - "vscode-copilot-digest: one-update slide JSON"
+      - "vscode-copilot-digest: Japanese card summaries"
+      - "vscode-copilot-digest: weekly maintenance"
+    types: [completed]
+  schedule:
+    - cron: "23 * * * *"
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: data-write
+  cancel-in-progress: false
+
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: write
+    outputs:
+      merged: ${{ steps.run.outputs.merged }}
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Validate and merge the eligible PRs
+        id: run
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          BASE_BRANCH: ${{ github.event.repository.default_branch }}
+        run: node scripts/merge-agent-prs.mjs
+
+  deploy:
+    needs: merge
+    if: needs.merge.outputs.merged == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+    steps:
+      - name: Deploy the site
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run deploy-pages.yml --repo "$GITHUB_REPOSITORY"
