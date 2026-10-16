@@ -79,7 +79,7 @@ async function main() {
       try {
         git("merge", "--no-edit", "-q", head);
       } catch {
-        git("merge", "--abort");
+        try { git("merge", "--abort"); } catch { /* the merge never started */ }
         console.log(`PR #${pr.number}: conflicts with ${base}; leaving it for the maintenance run`);
         continue;
       }
