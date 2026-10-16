@@ -1,0 +1,104 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "1af50bc5d28f4d83",
+  "title": {
+    "ja": "GitHub Copilot で Claude Sonnet 5.5 が一般提供に",
+    "subtitleJa": "Pro・Pro+・Max・Business・Enterprise で、各種エディターのモデルピッカーから選択可能",
+    "original": "Claude Sonnet 5.5 in GitHub Copilot"
+  },
+  "date": "2026-09-28",
+  "topic": "GitHub Copilot",
+  "status": "ga",
+  "statusEvidence": "Claude Sonnet 5.5, Anthropic’s newest Sonnet model, is now generally available in GitHub Copilot.",
+  "audience": {
+    "who": "Copilot Pro / Pro+ / Max / Business / Enterprise で使うモデルを選びたい開発者と管理者",
+    "change": "Anthropic の最新 Sonnet モデルを、機能開発やバグ修正などの日常作業で選べる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "モデルピッカーで選べるか確認する。管理者は Copilot 設定のモデル ポリシーを確認する"
+  },
+  "timeline": [
+    {
+      "when": "2026-09-28",
+      "label": "一般提供を発表"
+    },
+    {
+      "when": "順次",
+      "label": "段階的に展開"
+    }
+  ],
+  "panels": [
+    {
+      "id": "availability",
+      "heading": "使える場所とプラン",
+      "priority": "core",
+      "items": [
+        "対象プランは Copilot Pro、Pro+、Max、Business、Enterprise",
+        "VS Code、Visual Studio、Copilot CLI、Copilot コーディング エージェント、Copilot アプリのモデルピッカーで選べる",
+        "github.com、GitHub Mobile（iOS / Android）、JetBrains IDE、Xcode、Eclipse でも選べる"
+      ]
+    },
+    {
+      "id": "features",
+      "heading": "モデルの特徴",
+      "priority": "core",
+      "items": [
+        "機能開発やバグ修正など、範囲の定まった日常作業向けのモデル",
+        "初期テストでは、コーディング タスクで Claude Sonnet 5 と同等の結果を、大幅に少ないステップ・トークン・ツール呼び出しで達成",
+        "タスクの完了も体感できるほど速かった"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "提供は段階的で、表示されない場合は少し待ってから再確認する",
+        "使用量ベースの課金で、プロバイダーの定価で請求される",
+        "Business / Enterprise では、モデル ポリシーで利用可否を管理できる。既定のモデル有効化では新モデルは自動で有効になる"
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "モデルピッカー",
+      "type": "feature",
+      "oneLine": "Copilot で使う AI モデルを切り替える選択画面。"
+    },
+    {
+      "term": "モデル ポリシー",
+      "type": "feature",
+      "oneLine": "管理者が Copilot 設定で、組織で使えるモデルを制御する設定。"
+    },
+    {
+      "term": "使用量ベースの課金",
+      "type": "term",
+      "oneLine": "利用したモデルの量に応じて請求される課金方式。"
+    }
+  ],
+  "suggestions": [
+    "既存のタスクで他のモデルと同じ依頼を試し、ステップ数や速度を比べる",
+    "管理者は、既定のモデル有効化の設定とこのモデルの個別設定を確認する"
+  ],
+  "references": {
+    "source": {
+      "title": "Claude Sonnet 5.5 in GitHub Copilot - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-09-28-claude-sonnet-5-5-in-github-copilot/"
+    },
+    "documents": [
+      {
+        "title": "GitHub Copilot のモデルと価格設定",
+        "url": "https://docs.github.com/ja/copilot/reference/copilot-billing/models-and-pricing"
+      },
+      {
+        "title": "GitHub Copilotでサポートされている AI モデル",
+        "url": "https://docs.github.com/ja/copilot/reference/ai-models/supported-models"
+      }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-09-28-claude-sonnet-5-5-in-github-copilot/"
+  ]
+}
