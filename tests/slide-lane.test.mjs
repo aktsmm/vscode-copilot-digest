@@ -113,12 +113,6 @@ assert.ok(LANES.maint.allowed([file("scripts/a.mjs", "modified")]));
 assert.ok(!LANES.maint.allowed([file(".github/workflows/auto-merge-agent-prs.yml", "modified")]), "lane-control files wait for a person");
 assert.ok(!LANES.maint.allowed([file(".github/workflows/slide.lock.yml", "modified")]), "compiled workflows are never hand-edited");
 
-// Digest lanes (Copilot coding agent) must not process the new lanes' PRs, which are recognised by title.
-assert.ok((await read("validate-generated-pr.yml")).includes("isSlidePr"));
-assert.ok((await read("auto-merge-generated-pr.yml")).includes("slide-authoring-request"));
-assert.ok((await read("request-copilot-review.yml")).includes("if (inOtherLane(candidate)) return false;"));
-// New events alone no longer open a digest request (they produced only unmerged PRs).
-assert.ok(!(await read("author-digest-pr.yml")).includes("newEventsCount > 0 ||"));
 
 // The PDF secret is only available to the protected deploy workflow.
 for (const name of await fs.readdir(workflows)) {
@@ -134,6 +128,22 @@ assert.ok(watchdog.includes("agentic-workflows"), "the watchdog closes failure i
 assert.ok((await read("collect-updates.yml")).includes("group: data-write") && merger.includes("group: data-write"), "collect and the merger share a write lock");
 assert.ok((await import("node:fs")).readFileSync("scripts/merge-agent-prs.mjs", "utf8").includes("render-pdf.mjs"), "slides are render-checked before merge");
 assert.ok(slideSource.includes("examples/slides/"), "the slide agent reads real sample slides");
+// Anticipated Q&A (speaker notes) is optional, 3-5 Japanese pairs, and goes into the PPTX notes.
+const { validateSlide } = await import("../scripts/lib/slides.mjs");
+const sampleSlide = JSON.parse(await fs.readFile("examples/slides/ga.json", "utf8"));
+assert.deepEqual(validateSlide(sampleSlide), [], "the real sample slide is valid");
+const qa = [1, 2, 3].map((n) => ({ q: `対象のプランはどれですか（${n}）`, a: "記事では Copilot Pro と Business が対象とされています。" }));
+assert.deepEqual(validateSlide({ ...sampleSlide, qa }), []);
+assert.ok(validateSlide({ ...sampleSlide, qa: qa.slice(0, 2) }).some((m) => m.includes("qa must be")), "fewer than 3 pairs is rejected");
+assert.ok(validateSlide({ ...sampleSlide, qa: [...qa.slice(0, 2), { q: "english only question", a: "answer" }] }).some((m) => m.includes("qa must be")), "Japanese is required");
+assert.ok(validateSlide({ ...sampleSlide, qa: [...qa.slice(0, 2), { ...qa[0] }] }).some((m) => m.includes("duplicate")), "duplicate questions are rejected");
+assert.ok((await fs.readFile("scripts/lib/downloads.mjs", "utf8")).includes("【想定問答】"), "the PPTX notes carry the Q&A");
+// Month names in English titles become natural Japanese, not "mid-11月".
+const { localizedTitle } = await import("../scripts/lib/reporting.mjs");
+const titleOf = (title) => localizedTitle({ title, kind: "feed_entry", url: "https://example.test/x", summary: "", categories: [] });
+assert.ok(!/mid-11月/.test(titleOf("Upcoming deprecation of selected GitHub Copilot models in mid-November deprecated")), "no mid-11月");
+assert.ok(titleOf("Models deprecated on November 16th, 2026").includes("11月16日"));
+assert.ok(titleOf("Support ends in early October 2026 deprecated").includes("2026年10月上旬"));
 assert.ok(watchdog.includes("slide.lock.yml") && watchdog.includes("deploy-pages.yml"));
 const maintenance = await read("maintain.md");
 assert.ok(maintenance.includes("workflow_dispatch") && maintenance.includes("0 19 * * 0"), "runs every week");

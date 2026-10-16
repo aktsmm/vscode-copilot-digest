@@ -63,7 +63,7 @@ PDF_PASSWORD=*** npm run build:pdfs                 # デプロイ時と同じ�
 2. agent が記事を読み、`data/slides/{id}.json` だけを書き、`npm run validate:slides` を通して、タイトルが `slides: ` で始まる PR を作る。読めなかった更新は、ファイルを作らず `Slide skip: {id}` の Issue を作る。
 3. [auto-merge-agent-prs.yml](../.github/workflows/auto-merge-agent-prs.yml)（毎時、agent の完了後）が [scripts/merge-agent-prs.mjs](../scripts/merge-agent-prs.mjs) で、変更が `data/slides/{id}.json` 1 件だけ（削除不可）であることを確認し、PR を main に merge した作業ブランチで `npm run validate:slides` と `npm run test:data` を通してから squash merge し、Pages を再デプロイする。許可外の変更や検証失敗は `needs-human-review` を付けて停止する。
 
-digest 用の `validate-generated-pr` / `auto-merge-generated-pr` / `request-copilot-review` / `redeploy-pages-after-generated-pr-merge` はスライド PR を処理しません。コード・スキーマ・依存・workflow・暗号化の変更は自動 merge の対象外です。`PDF_PASSWORD` は `deploy-pages.yml` だけが使います（`tests/slide-lane.test.mjs` が検証）。
+コード・スキーマ・依存・workflow・暗号化の変更は自動 merge の対象外です。`PDF_PASSWORD` は `deploy-pages.yml` だけが使います（`tests/slide-lane.test.mjs` が検証）。
 
 ## テスト
 

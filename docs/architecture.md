@@ -53,11 +53,7 @@
 
 ### 自動執筆レイヤー
 
-- [author-digest-pr.yml](../.github/workflows/author-digest-pr.yml): Copilot 向け執筆依頼 Issue を作る
-- [request-copilot-review.yml](../.github/workflows/request-copilot-review.yml): 生成 PR を正規化する
-- [validate-generated-pr.yml](../.github/workflows/validate-generated-pr.yml): 生成 PR を検証する
-- [auto-merge-generated-pr.yml](../.github/workflows/auto-merge-generated-pr.yml): 安全な PR を自動 merge する
-- [redeploy-pages-after-generated-pr-merge.yml](../.github/workflows/redeploy-pages-after-generated-pr-merge.yml): merge 後の Pages 再デプロイを補う
+スライド・要約・点検は gh-aw の agentic workflow が書き、`scripts/merge-agent-prs.mjs` が検証して merge する。詳細は [automation.md](automation.md) を参照。
 
 ## イベント種別
 
@@ -141,13 +137,7 @@ Pages の主要出力:
 
 ## 自動執筆フロー
 
-1. collect 成功後に [author-digest-pr.yml](../.github/workflows/author-digest-pr.yml) が対象日付とスコープを決める
-2. workflow が Copilot 向け執筆依頼 Issue を作成または更新し、assignment まで自動化する
-3. Copilot cloud agent が Issue から PR を作成する
-4. PR は review / validate / auto-merge workflow で整形・検証・自動 merge される
-5. merge 後は Pages 再デプロイ workflow が走り、本文更新を live へ反映する
-
-この構成により、収集と本文更新を別レーンに分離しつつ、最終的な公開物は workflow で再現可能な形に維持する。
+[slide-dispatch.yml](../.github/workflows/slide-dispatch.yml) がスライド未作成の更新を 1 件ずつ agent に渡し、要約・点検は日次・週次に動く。失敗は `heal-on-failure.yml` が点検の agent に渡す。
 
 ## 公開フロー
 

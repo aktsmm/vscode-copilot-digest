@@ -21,7 +21,7 @@
 
 ### Generated PR Workflow Sync
 
-- When changing generated PR allow-lists or repair rules, update validation, auto-merge, self-heal feedback, and authoring issue instructions together.
+- The agent lanes (slides, summaries, maintenance) are merged only by `scripts/merge-agent-prs.mjs`; keep its lane allow-lists, the maintenance guard and `tests/slide-lane.test.mjs` in sync.
 - Keep exceptional write access narrow and marker-gated, such as Pages build repair access to `scripts/build-pages.mjs`.
 
 ### Slide PR Lane
