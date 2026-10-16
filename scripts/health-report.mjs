@@ -36,7 +36,8 @@ const open = await api("/pulls?state=open");
 const closed = await api("/pulls?state=closed&sort=updated&direction=desc");
 const issues = (await api("/issues?state=open")).filter((i) => !i.pull_request);
 
-const failures = runs.slice(0, 40).map((r) => ({ workflow: r.name, branch: r.head_branch, at: short(r.created_at), url: r.html_url }));
+// Runs of workflows that no longer exist (removed lanes) are history, not a problem.
+const failures = runs.filter((r) => fs.existsSync(String(r.path ?? ""))).slice(0, 40).map((r) => ({ workflow: r.name, branch: r.head_branch, at: short(r.created_at), url: r.html_url }));
 const waiting = open.map((p) => ({ number: p.number, title: p.title, labels: p.labels.map((l) => l.name), updated: short(p.updated_at) }));
 const closedUnmerged = closed
   .filter((p) => !p.merged_at && p.closed_at >= since && /^(slides|summaries|maint):/.test(p.title))
@@ -50,12 +51,32 @@ const backlog = {
   summariesPending: count("scripts/pending-summaries.mjs", ["--months", "3", "--limit", "1000"]),
 };
 
+const probe = async (url) => {
+  try {
+    const response = await fetch(url, { redirect: "follow" });
+    return response.status;
+  } catch {
+    return 0;
+  }
+};
+const siteBase = `https://${repo.split("/")[0]}.github.io/${repo.split("/")[1]}`;
+const site = { index: await probe(`${siteBase}/`), apiLatest: await probe(`${siteBase}/api/v1/latest.json`), enIndex: await probe(`${siteBase}/en/index.html`) };
+const lastDeploy = (await api("/actions/workflows/deploy-pages.yml/runs?status=success")).at(0)?.updated_at ?? null;
+const newestEvent = fs.readdirSync("data/events").filter((n) => /^\d{4}-\d{2}-\d{2}\.json$/.test(n)).sort().at(-1)?.slice(0, 10) ?? null;
+const eventAgeDays = newestEvent ? Math.floor((Date.now() - Date.parse(newestEvent)) / 86400000) : null;
+const failureIssues = issues.filter((i) => i.labels.some((l) => l.name === "agentic-workflows")).map((i) => ({ number: i.number, title: i.title, opened: short(i.created_at) }));
+const slidesPublished = fs.readdirSync("data/slides").filter((n) => n.endsWith(".json")).length;
+
 const flags = [];
+for (const [name, status] of Object.entries(site)) if (status !== 200) flags.push(`the live site check "${name}" returned ${status}`);
+if (!lastDeploy || Date.now() - Date.parse(lastDeploy) > 3 * 86400000) flags.push("no successful Pages deploy in the last 3 days");
+if (eventAgeDays !== null && eventAgeDays > 2) flags.push(`the newest event file is ${eventAgeDays} days old (collection may be stuck)`);
+if (failureIssues.length) flags.push(`${failureIssues.length} open agentic workflow failure issue(s)`);
 if (failures.length) flags.push(`${failures.length} failed workflow run(s) in the last 14 days`);
 if (closedUnmerged.length) flags.push(`${closedUnmerged.length} automation PR(s) were closed without merging`);
 if (staleAutomationPrs.length) flags.push(`${staleAutomationPrs.length} automation PR(s) have been open for more than 3 days`);
 if (needsHuman.length) flags.push(`${needsHuman.length} open issue(s) labelled needs-human-review`);
 
 fs.mkdirSync(".work", { recursive: true });
-fs.writeFileSync(".work/health.json", JSON.stringify({ generatedAt: new Date().toISOString(), flags, failures, closedUnmerged, waiting, staleAutomationPrs, needsHuman, slideSkips, backlog }, null, 2));
+fs.writeFileSync(".work/health.json", JSON.stringify({ generatedAt: new Date().toISOString(), flags, site, lastDeploy, newestEvent, slidesPublished, failureIssues, failures, closedUnmerged, waiting, staleAutomationPrs, needsHuman, slideSkips, backlog }, null, 2));
 console.log(`health: ${flags.length} flag(s)`);

@@ -1,0 +1,77 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "8241d56116d90ff3",
+  "title": {
+    "ja": "Copilot CLI で、ローカルのモデルを見つけて使えるように",
+    "subtitleJa": "/model が実行中の Ollama の対応モデルを検出。追加前に内容を確認して選べる",
+    "original": "Discover local models in GitHub Copilot CLI"
+  },
+  "date": "2026-10-07",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "Copilot CLI で自分のマシン上のローカル モデルを使いたい開発者",
+    "change": "/model の一覧に、実行中の Ollama にあるモデルが現れ、再起動せずに使える",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "ローカル モデルを使うなら、CLI を 1.0.94-0 以降にして Ollama を準備する"
+  },
+  "panels": [
+    {
+      "id": "how-it-works",
+      "heading": "使い方の流れ",
+      "priority": "core",
+      "items": [
+        "CLI のバージョン 1.0.94-0 以降で、/model を実行する",
+        "実行中の Ollama の対応モデルが、設定済みのモデルや Copilot のクラウド モデルと並んで表示される",
+        "モデルを選び、プロバイダーとエンドポイントを確認してから「このセッションで追加して使う」か「切り替えずに追加」を選ぶ",
+        "CLI を再起動せずに、現在のセッションですぐ使える"
+      ]
+    },
+    {
+      "id": "prerequisites",
+      "heading": "前提と制限",
+      "priority": "core",
+      "items": [
+        "Ollama とモデルは事前にインストールが必要で、この操作では導入やダウンロードをしない",
+        "モデルは tool calling と streaming に対応している必要がある",
+        "検出しただけではモデルは自動追加されない。接続に失敗した場合は、ピッカーに理由が表示される"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "ローカル モデルを選んでも、オフライン モードは有効にならず、GitHub のテレメトリも無効にならない",
+        "オフライン モードは COPILOT_OFFLINE=true で明示的に有効にする",
+        "リモート プロバイダーは、オフライン モードでもネットワーク経由でプロンプトやコードの文脈を受け取りうる"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "Ollama", "type": "product", "oneLine": "ローカル マシンで言語モデルを動かすための実行環境。" },
+    { "term": "tool calling", "type": "feature", "oneLine": "モデルが外部のツールを呼び出して処理を進める機能。" },
+    { "term": "streaming", "type": "feature", "oneLine": "回答を生成しながら順次表示する出力方式。" }
+  ],
+  "suggestions": [
+    "Copilot アプリでは、[設定] > [モデル プロバイダー] でサポート対象のプロバイダーを追加できる",
+    "設定の詳細と制限は、CLI のプロバイダーとオフライン モードのドキュメントで確認する"
+  ],
+  "references": {
+    "source": {
+      "title": "Discover local models in GitHub Copilot CLI - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-10-07-discover-local-models-in-github-copilot-cli/"
+    },
+    "documents": [
+      { "title": "GITHUB COPILOT CLI への LLM モデルの追加 - GitHubドキュメント", "url": "https://docs.github.com/ja/copilot/how-tos/copilot-cli/customize-copilot/use-byok-models" },
+      { "title": "GitHub Copilot アプリ への LLM モデルの追加 - GitHubドキュメント", "url": "https://docs.github.com/ja/copilot/how-tos/github-copilot-app/use-byok-models" }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-10-07-discover-local-models-in-github-copilot-cli/",
+    "https://docs.github.com/ja/copilot/how-tos/copilot-cli/customize-copilot/use-byok-models"
+  ]
+}

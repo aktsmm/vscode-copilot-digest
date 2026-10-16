@@ -5,6 +5,7 @@
 export const CONTROL_FILES = [
   ".github/workflows/auto-merge-agent-prs.yml",
   ".github/workflows/watchdog.yml",
+  ".github/workflows/heal-on-failure.yml",
   ".github/workflows/deploy-pages.yml",
   "scripts/merge-agent-prs.mjs",
   "scripts/fetch-text.mjs",

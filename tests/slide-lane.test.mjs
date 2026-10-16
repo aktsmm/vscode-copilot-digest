@@ -128,6 +128,12 @@ for (const name of await fs.readdir(workflows)) {
 const deploy = await read("deploy-pages.yml");
 assert.ok(!/pull_request/.test(deploy) && deploy.includes("PDF_PASSWORD"));
 const watchdog = await read("watchdog.yml");
+const heal = await read("heal-on-failure.yml");
+assert.ok(heal.includes("maintain.lock.yml") && heal.includes("21600") && heal.includes("workflow_run"), "a failure starts maintenance at most every 6 hours");
+assert.ok(watchdog.includes("agentic-workflows"), "the watchdog closes failure issues of workflows that recovered");
+assert.ok((await read("collect-updates.yml")).includes("group: data-write") && merger.includes("group: data-write"), "collect and the merger share a write lock");
+assert.ok((await import("node:fs")).readFileSync("scripts/merge-agent-prs.mjs", "utf8").includes("render-pdf.mjs"), "slides are render-checked before merge");
+assert.ok(slideSource.includes("examples/slides/"), "the slide agent reads real sample slides");
 assert.ok(watchdog.includes("slide.lock.yml") && watchdog.includes("deploy-pages.yml"));
 const maintenance = await read("maintain.md");
 assert.ok(maintenance.includes("workflow_dispatch") && maintenance.includes("0 19 * * 0"), "runs every week");

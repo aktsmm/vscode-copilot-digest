@@ -15,3 +15,4 @@ dist-pdf/
 
 # Scratch inputs the agentic workflows prepare for the agent
 .work/
+.render-check/

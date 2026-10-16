@@ -1,0 +1,75 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "19d7f08a7fa07c19",
+  "title": {
+    "ja": "VS Code と Copilot アプリに HydraFusion",
+    "subtitleJa": "複数モデルの実行手順を選ぶ研究プレビューが、CLI に加えて VS Code とアプリでも利用可能に",
+    "original": "HydraFusion in VS Code and the GitHub Copilot app"
+  },
+  "date": "2026-09-30",
+  "topic": "GitHub Copilot",
+  "status": "preview",
+  "statusEvidence": "The HydraFusion research preview is now available in Visual Studio Code and the GitHub Copilot app",
+  "audience": {
+    "who": "VS Code または GitHub Copilot アプリで複数モデルによるタスク処理を試したい開発者",
+    "change": "モデルピッカーから HydraFusion を選び、タスクに合うモデル実行パターンの選択を任せられる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "対応クライアントで HydraFusion を選ぶ。Business・Enterprise では管理者にプレビュー機能の許可を依頼する"
+  },
+  "panels": [
+    {
+      "id": "availability",
+      "heading": "使える場所とプラン",
+      "priority": "core",
+      "items": [
+        "Copilot Pro、Pro+、Business、Enterprise で利用可能",
+        "VS Code 1.140 以降または VS Code Insiders で、Copilot Chat のモデルピッカーから選ぶ",
+        "表示されない場合は `chat.copilot.hydraFusion.enabled` を有効化。Business・Enterprise は管理者の許可が必要な場合がある",
+        "Copilot アプリは最新版に更新し、Settings で HydraFusion を有効にしてモデルピッカーから選択"
+      ]
+    },
+    {
+      "id": "workflows",
+      "heading": "実行パターン",
+      "priority": "core",
+      "items": [
+        "HydraFusion は単一モデルではなく、タスクに応じて複数モデルを調整するシステム",
+        "Single は 1 モデルで処理。Cascade は下書きを品質判定し、必要なら強いモデルへ引き継ぐ",
+        "Critique は別モデル系列の読み取り専用モデルが下書きを確認し、作成モデルが 1 回修正する"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "HydraFusion は研究プレビューで、仕様が変更される可能性がある",
+        "Auto は要求ごとにモデルを選択し、HydraFusion はモデルに加えて実行パターンも調整する"
+      ]
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "HydraFusion in VS Code and the GitHub Copilot app - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-09-30-hydrafusion-in-vs-code-and-the-github-copilot-app/"
+    },
+    "documents": [
+      {
+        "title": "Using HydraFusion - GitHub Docs",
+        "url": "https://docs.github.com/early-access/copilot/hydrafusion"
+      },
+      {
+        "title": "ゴムダックエージェントで別の視点を得る - GitHub ドキュメント",
+        "url": "https://docs.github.com/ja/copilot/concepts/agents/copilot-cli/rubber-duck"
+      }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-09-30-hydrafusion-in-vs-code-and-the-github-copilot-app/",
+    "https://docs.github.com/early-access/copilot/hydrafusion",
+    "https://docs.github.com/ja/copilot/concepts/agents/copilot-cli/rubber-duck"
+  ]
+}
