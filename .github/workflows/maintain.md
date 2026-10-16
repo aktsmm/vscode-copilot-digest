@@ -28,16 +28,7 @@ network:
 tools:
   edit:
   bash:
-    - "node scripts/fetch-text.mjs:*"
-    - "cat"
-    - "ls"
-    - "jq"
-    - "node scripts/coverage-report.mjs"
-    - "node scripts/backfill-skipped.mjs --coverage"
-    - "npm test"
-    - "npm run build:pages"
-    - "npm run validate:slides"
-    - "npm run validate:summaries"
+    - ":*"
 steps:
   - uses: actions/setup-node@v4
     with:
