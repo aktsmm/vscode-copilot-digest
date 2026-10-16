@@ -1,0 +1,94 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "999e769d06217678",
+  "title": {
+    "ja": "Copilot 週次リリース（9月14日）：自動モデル選択の3段階とコードレビュー更新",
+    "subtitleJa": "auto の効率・バランス・知能の3段階、レビューの解決済みコメント処理、Sentry canvas が加わった",
+    "original": "GitHub Copilot weekly releases — September 14"
+  },
+  "date": "2026-09-18",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "Copilot を使う開発者と、Business / Enterprise の管理者",
+    "change": "自動モデル選択の3段階、コードレビューの改善、予算リクエスト、VS Code 1.138 の Agents window 機能が使える",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "info",
+    "summary": "必要な機能だけ、各項目の対象プランと前提を確認して試す"
+  },
+  "panels": [
+    {
+      "id": "copilot-features",
+      "heading": "開発者向けの更新",
+      "priority": "core",
+      "items": [
+        "auto のモデル選択に efficiency / balance / intelligence の3段階。VS Code、Copilot CLI、Copilot アプリで展開中",
+        "コードレビューは、対応済みコメントを次回レビューで解決し、未対応の指摘は開いたままにする",
+        "コードレビューは、提案の適用時にコミットメッセージも提案する。シェルツールで変更を検証でき、Lite レビューは複数エージェントの指摘を統合する",
+        "Copilot アプリの Sentry canvas で、クラッシュ報告から原因調査、修正の検証、PR 作成まで進められる"
+      ]
+    },
+    {
+      "id": "admin-features",
+      "heading": "管理者向けの更新",
+      "priority": "core",
+      "items": [
+        "VS Code の Agents window の利用指標が GA。日次アクティブユーザー、セッション数、ユーザーメッセージ数を確認できる",
+        "AI クレジット上限に達したら、上位の予算をリクエストできる。Business / Enterprise の従量課金プランで GA",
+        "リポジトリのカスタムプロパティの値を Copilot が提案する機能がパブリックプレビュー。Copilot ポリシーでオン/オフできる"
+      ]
+    },
+    {
+      "id": "vscode-138",
+      "heading": "VS Code 1.138 の更新",
+      "priority": "core",
+      "items": [
+        "Agents window で、ローカルの Dev Containers でエージェントを実行できる。Docker と対応する Dev Container 構成が必要",
+        "全 PR がマージされた非アクティブなセッションを自動で Done にする。オプトインで、プレビュー",
+        "Agent Host セッションから、Agents window を離れずに PR を作成できる"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "予算リクエストは、managed users の Enterprise では使えない",
+        "Dev Containers 対応は段階的に展開中。Agents window の指標は、エディターウィンドウの指標とは別"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "Agents window", "type": "feature", "oneLine": "VS Code でエージェントを実行・管理する専用ウィンドウ。" },
+    { "term": "Sentry canvas", "type": "feature", "oneLine": "Copilot アプリで Sentry のエラー、スタックトレース、関連情報を確認する画面。" }
+  ],
+  "qa": [
+    {
+      "q": "自動モデル選択の3段階とは何ですか？",
+      "a": "efficiency、balance、intelligence の3段階で、コスト、品質、応答時間のどれを重視するかを選べます。3つとも同じ利用可能なモデルから選びます。VS Code、Copilot CLI、Copilot アプリで展開中です。"
+    },
+    {
+      "q": "予算リクエストは誰が使え、誰が承認しますか？",
+      "a": "従量課金の Copilot Business と Copilot Enterprise で GA です。AI クレジット上限に達したときに組織や Enterprise へ依頼し、オーナーと課金管理者が設定で承認・調整・却下します。managed users の Enterprise では使えません。"
+    },
+    {
+      "q": "Dev Containers でエージェントを動かすには何が必要ですか？",
+      "a": "Agents window のローカル Dev Containers には Docker と対応する Dev Container 構成が必要です。対応は段階的に展開されています。"
+    },
+    {
+      "q": "カスタムプロパティの値提案は管理者が止められますか？",
+      "a": "パブリックプレビューの機能で、組織と Enterprise のオーナーが Copilot ポリシーでオン/オフを切り替えられます。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "GitHub Copilot weekly releases — September 14 - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-09-18-github-copilot-weekly-releases-september-14/"
+    }
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-09-18-github-copilot-weekly-releases-september-14/"
+  ]
+}
