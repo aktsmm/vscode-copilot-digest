@@ -1,0 +1,91 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "40c38fd4f5b4bf26",
+  "title": {
+    "ja": "エージェント型自動修正が Copilot Memory を利用",
+    "subtitleJa": "有効化済みなら、既存メモリを参照して修正し、修正パターンをメモリに保存する",
+    "original": "Agentic autofix now uses Copilot Memory"
+  },
+  "date": "2026-09-25",
+  "topic": "GitHub Copilot",
+  "status": "preview",
+  "statusEvidence": "Both agentic autofix and Copilot Memory are available in public preview.",
+  "audience": {
+    "who": "Copilot Memory を有効にしていて、エージェント型自動修正でセキュリティ アラートを修正する開発者",
+    "change": "自動修正がメモリを文脈に使い、作成した修正パターンを保存して他の Copilot 機能でも再利用できる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "Copilot Memory を有効にしている場合に自動で適用される。必要なら保存されたメモリを確認する"
+  },
+  "timeline": [
+    {
+      "when": "2026-09-25",
+      "label": "変更を発表"
+    }
+  ],
+  "panels": [
+    {
+      "id": "behavior",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "Copilot Memory を有効にしている顧客が対象",
+        "修正時に既存のメモリを確認し、セキュリティ アラート解決の文脈に使う",
+        "修正を作成すると、その修正パターンをメモリに保存して今後に使う"
+      ]
+    },
+    {
+      "id": "scope",
+      "heading": "使える場所とプラン",
+      "priority": "core",
+      "items": [
+        "保存されたメモリは、他のアラート修正の解決に役立つ",
+        "Copilot コード レビューや Copilot cloud agent にも、リポジトリ固有の安全な開発パターンを伝える",
+        "Copilot Memory はすべての有料 Copilot プランで利用できる"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "エージェント型自動修正と Copilot Memory は、どちらもパブリック プレビュー",
+        "Copilot Memory は、個人プランでは既定でオン。組織・エンタープライズ管理では管理者がポリシーを有効にする",
+        "使われないメモリは 28 日後に自動削除される。リポジトリの所有者は保存済みの事実を確認・削除できる"
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Copilot Memory",
+      "type": "feature",
+      "oneLine": "リポジトリに関する事実や個人の設定を Copilot が覚え、時間とともに効果を高める機能。"
+    },
+    {
+      "term": "エージェント型自動修正",
+      "type": "feature",
+      "oneLine": "セキュリティ アラートの修正を作成する機能。Copilot Memory を使う機能の 1 つ。"
+    }
+  ],
+  "suggestions": [
+    "Copilot Memory が有効かを、個人設定または管理者ポリシーで確認する"
+  ],
+  "references": {
+    "source": {
+      "title": "Agentic autofix now uses Copilot Memory - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-09-25-agentic-autofix-now-uses-copilot-memory/"
+    },
+    "documents": [
+      {
+        "title": "GitHub Copilot Memory について - GitHub Enterprise Cloud Docs",
+        "url": "https://docs.github.com/ja/enterprise-cloud@latest/copilot/concepts/agents/copilot-memory"
+      }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-09-25-agentic-autofix-now-uses-copilot-memory/",
+    "https://docs.github.com/ja/enterprise-cloud@latest/copilot/concepts/agents/copilot-memory"
+  ]
+}
