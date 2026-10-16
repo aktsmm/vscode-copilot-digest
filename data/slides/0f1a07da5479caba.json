@@ -1,0 +1,97 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "0f1a07da5479caba",
+  "title": {
+    "ja": "Copilot アプリの pull request ビュー、巨大な差分とコメントでも高速に表示",
+    "subtitleJa": "コード行とコメントの高さを別々に管理し、100 万行超の差分でも開いてスクロールできる",
+    "original": "Rendering huge pull requests in the GitHub Copilot app"
+  },
+  "date": "2026-09-23",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "GitHub Copilot アプリで大規模な pull request をレビューする開発者",
+    "change": "2,200 ファイル・100 万行超・400 件超のインライン コメントがある pull request でも、通常サイズと同様に開いてスクロールできる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "info",
+    "summary": "設定変更は不要。重い pull request をアプリで開いて使い心地を試せる"
+  },
+  "panels": [
+    {
+      "id": "how-it-works",
+      "heading": "仕組み",
+      "priority": "core",
+      "items": [
+        "画面に見える行だけをマウントする仮想化で、コード行は高さが既知のため事前に計算する",
+        "レビュー スレッドなど高さが変わるコメントは別の領域で管理し、見積もり高さを実測値へ補正する",
+        "測定はスクロールが止まってから表示範囲付近のブロックだけに対して一括で行う"
+      ]
+    },
+    {
+      "id": "experience",
+      "heading": "レビューでの体験",
+      "priority": "core",
+      "items": [
+        "コメントはスクロール ボックスに切り詰められず、全文が表示される",
+        "セクションを展開しても、動くのはその下のコードだけ",
+        "直前に開いていた pull request に戻ると、元の位置から再開できる"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "補足",
+      "priority": "detail",
+      "items": [
+        "差分は構造から先に取得し、構文ハイライトは後から色付けされる",
+        "直近の差分だけ保持し、メモリ消費を抑える"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "仮想化", "type": "feature", "oneLine": "画面に見える行だけを描画し、スクロールに合わせて要素を再利用する方式。" },
+    { "term": "Stacked pull requests", "type": "feature", "oneLine": "作業を小さな変更に分けて積み重ね、レビューしやすくする方法。" }
+  ],
+  "suggestions": [
+    "Copilot アプリの「自分の作業」から pull request を開き、[変更されたファイル] タブで差分を確認できる"
+  ],
+  "qa": [
+    {
+      "q": "この改善はどのプランで使えますか？",
+      "a": "記事には改善の対象プランの記載はありません。ドキュメントでは、GitHub Copilot アプリはすべての Copilot プランで使用できるとされています。"
+    },
+    {
+      "q": "何を設定すれば高速になりますか？",
+      "a": "記事に設定の記載はありません。Copilot アプリの pull request ビューを再構築した内容として紹介されています。"
+    },
+    {
+      "q": "なぜコメントがあると大きな差分は遅くなりやすいのですか？",
+      "a": "コード行は高さが既知ですが、コメントは Markdown の折り返し、details の展開、返信欄、画像の読み込みで高さが描画時にしか分からず、事前計算の前提が崩れるためです。"
+    },
+    {
+      "q": "pull request を分割すれば済む話では？",
+      "a": "Stacked pull requests は変更を分けてレビューしやすくしますが、記事では大規模なリファクタリングや移行など、きれいに分割できない変更もあるとしています。"
+    },
+    {
+      "q": "Copilot アプリで pull request をレビューする手順は？",
+      "a": "ドキュメントでは、[自分の作業] で pull request を開き、[変更された ファイル] タブで差分を確認します。[新しいセッション] からエージェントに変更を依頼でき、上部の [レビュー] で送信します。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Rendering huge pull requests in the GitHub Copilot app - The GitHub Blog",
+      "url": "https://github.blog/engineering/user-experience/rendering-huge-pull-requests-in-the-github-copilot-app/"
+    },
+    "documents": [
+      {
+        "title": "GitHub Copilot アプリを使用した問題と pull request の管理 - GitHubドキュメント",
+        "url": "https://docs.github.com/ja/copilot/how-tos/github-copilot-app/managing-issues-and-pull-requests"
+      }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/engineering/user-experience/rendering-huge-pull-requests-in-the-github-copilot-app/",
+    "https://docs.github.com/ja/copilot/how-tos/github-copilot-app/managing-issues-and-pull-requests"
+  ]
+}
