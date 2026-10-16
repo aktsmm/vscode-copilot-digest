@@ -1,0 +1,83 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "0ad90c538fb4d522",
+  "title": {
+    "ja": "コーディングエージェントに Google Cloud の専門知識とツールを組み込むプラグインの発表",
+    "subtitleJa": "Google Cloud のスキルと MCP サーバ設定を、プラグインとして一括でエージェントに導入できる",
+    "original": "コーディングエージェントにGoogle Cloudの専門知識とツールを組み込む「Google Cloud Developer Plugin for AI Coding Agents」発表"
+  },
+  "date": "2026-09-29",
+  "topic": "周辺ニュース",
+  "status": "announcement",
+  "statusEvidence": "Google Cloudは、Claude CodeなどのコーディングエージェントにGoogle Cloudの専門知識とツールなどを組み込める「Google Cloud Developer Plugin for AI Coding Agents」を発表しました。",
+  "audience": {
+    "who": "Claude Code などのコーディングエージェントで Google Cloud 上のシステムを構築する開発者",
+    "change": "Google Cloud のスキルと MCP サーバ設定を、プラグインで一括して導入できる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "info",
+    "summary": "Google Cloud を扱うエージェントを使うなら、GitHub リポジトリからプラグインを入手して導入を検討する"
+  },
+  "panels": [
+    {
+      "id": "what-it-is",
+      "heading": "何が提供されるか",
+      "priority": "core",
+      "items": [
+        "Google Cloud のスキルと、公式ドキュメントなどを参照する MCP サーバをまとめて提供する",
+        "エージェント向けのプラグイン仕様を用い、スキルと MCP サーバの設定で構成される",
+        "エージェントが Google Cloud 上で適切にシステムを構築できるようにするのが目的"
+      ]
+    },
+    {
+      "id": "how-to-get",
+      "heading": "導入方法",
+      "priority": "core",
+      "items": [
+        "プラグインは GitHub リポジトリから入手し、AI エージェントに導入できる",
+        "Google Cloud 関連の公式スキルは GitHub 上に多数公開されており、単独で読み込ませる使い方もできる",
+        "プラグインならスキルと MCP サーバ設定を一括で組み込める"
+      ]
+    },
+    {
+      "id": "background",
+      "heading": "背景",
+      "priority": "detail",
+      "items": [
+        "既定のエージェントは、Google Cloud のサービスや組み合わせ方の知識を十分に備えていない",
+        "クラウドは新サービスや更新が続くため、最新情報の参照が必要になる"
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "スキル",
+      "type": "feature",
+      "oneLine": "エージェントに専門知識を与える仕組み。Google Cloud 向けの公式スキルが GitHub に公開されている。"
+    },
+    {
+      "term": "MCP サーバ",
+      "type": "feature",
+      "oneLine": "エージェントが公式ドキュメントなどの外部情報を参照するための接続先。"
+    }
+  ],
+  "suggestions": [
+    "すでに公式スキルを個別に読み込んでいる場合は、プラグインでの一括導入と比べて手順を見直す"
+  ],
+  "references": {
+    "source": {
+      "title": "コーディングエージェントにGoogle Cloudの専門知識とツールを組み込む「Google Cloud Developer Plugin for AI Coding Agents」発表 － Publickey",
+      "url": "https://www.publickey1.jp/blog/26/google_cloudgoogle_cloud_developer_plugin_for_ai_coding_agents.html"
+    },
+    "documents": [
+      {
+        "title": "google/skills - Google Cloud 関連の公式スキル (GitHub)",
+        "url": "https://github.com/google/skills/tree/main"
+      }
+    ]
+  },
+  "evidence": [
+    "https://www.publickey1.jp/blog/26/google_cloudgoogle_cloud_developer_plugin_for_ai_coding_agents.html"
+  ]
+}
