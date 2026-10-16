@@ -1,0 +1,99 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "ea9db1d280cd8f5e",
+  "title": {
+    "ja": "Copilot コード レビューの個人設定を全プランに拡大、企業の既定の強度も設定可能に",
+    "subtitleJa": "専用の個人設定ページが全プランで使え、企業管理者は既定のレビュー強度を一括設定できる",
+    "original": "More ways to request and configure Copilot code reviews"
+  },
+  "date": "2026-09-23",
+  "topic": "GitHub Copilot",
+  "status": "ga",
+  "statusEvidence": "These improvements are now generally available",
+  "audience": {
+    "who": "Copilot コード レビューを使う全プランの開発者と、Enterprise の管理者",
+    "change": "個人設定の専用ページが Business / Enterprise を含む全プランで使え、企業全体の既定のレビュー強度も設定できる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "自動レビューや既定のレビュー強度を変えたい場合は、個人設定の code review ページで設定する"
+  },
+  "beforeAfter": {
+    "before": "個人設定は Pro、Pro+、Max の「Copilot features」ページにあり、自動レビューの設定が 1 つだけだった",
+    "after": "全プランで専用の code review ページから、自動レビューと既定のレビュー強度を個別に設定できる"
+  },
+  "panels": [
+    {
+      "id": "personal-settings",
+      "heading": "使える場所とプラン",
+      "priority": "core",
+      "items": [
+        "プロフィール → Copilot settings の Copilot 配下にある「code review」ページ",
+        "Copilot Business と Copilot Enterprise を含む、すべての Copilot プランで利用できる"
+      ]
+    },
+    {
+      "id": "how-to-use",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "PR の作成・共同作成・ドラフト解除時に自動レビューを有効にできる",
+        "新しい push と、自分が作成・共同作成したドラフト PR への自動レビューも有効にできる",
+        "既定のレビュー強度は、現在 Lite または Balanced から選ぶ"
+      ]
+    },
+    {
+      "id": "enterprise-default",
+      "heading": "企業の既定の強度",
+      "priority": "core",
+      "items": [
+        "権限のある企業管理者が、Lite、Balanced、GitHub の既定のいずれかを企業全体の既定にできる",
+        "組織所有のリポジトリに継承され、組織やリポジトリは個別に上書きできる"
+      ]
+    },
+    {
+      "id": "notes",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "既定の強度は、自動レビューを含む自分が依頼するレビューに適用される",
+        "PR ページの「Reviewers」から手動で依頼するときは、別の強度を選べる"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "レビュー強度", "type": "feature", "oneLine": "Copilot コード レビューの深さの設定。現在は Lite または Balanced。" }
+  ],
+  "references": {
+    "source": {
+      "title": "More ways to request and configure Copilot code reviews - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-09-23-copilot-code-review-more-ways-to-request-and-configure-reviews/"
+    }
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-09-23-copilot-code-review-more-ways-to-request-and-configure-reviews/"
+  ],
+  "qa": [
+    {
+      "q": "個人設定の code review ページはどのプランで使えますか？",
+      "a": "Copilot Business と Copilot Enterprise を含む、すべての Copilot プランで使えます。以前は Pro、Pro+、Max の「Copilot features」ページにある自動レビュー設定 1 つだけでした。"
+    },
+    {
+      "q": "どこで設定しますか？",
+      "a": "プロフィール → Copilot settings の Copilot 配下にある「code review」ページです。"
+    },
+    {
+      "q": "個人設定で何を選べますか？",
+      "a": "PR の作成・共同作成・ドラフト解除時の自動レビュー、新しい push とドラフト PR への自動レビュー、既定のレビュー強度（現在は Lite または Balanced）です。"
+    },
+    {
+      "q": "企業の既定の強度は、組織で変更できますか？",
+      "a": "企業管理者が設定した既定は組織所有のリポジトリに継承されますが、組織とリポジトリは独自に上書きできます。既定の選択肢は Lite、Balanced、GitHub の既定です。"
+    },
+    {
+      "q": "既定の強度を決めても、依頼時に変えられますか？",
+      "a": "変えられます。PR ページの「Reviewers」から手動でレビューを依頼するときに、別の強度を選べます。"
+    }
+  ]
+}
