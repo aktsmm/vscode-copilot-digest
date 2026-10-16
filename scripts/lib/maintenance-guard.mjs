@@ -9,6 +9,8 @@ export const CONTROL_FILES = [
   ".github/workflows/deploy-pages.yml",
   "scripts/merge-agent-prs.mjs",
   "scripts/fetch-text.mjs",
+  "scripts/verify-slide-facts.mjs",
+  "scripts/lib/slide-facts.mjs",
   "scripts/lib/maintenance-guard.mjs",
 ];
 

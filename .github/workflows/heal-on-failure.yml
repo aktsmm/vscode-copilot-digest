@@ -9,6 +9,7 @@ on:
       - "Deploy GitHub Pages"
       - "Auto-merge agent PRs"
       - "Dispatch slide authoring"
+      - "Dispatch summaries"
       - "vscode-copilot-digest: one-update slide JSON"
       - "vscode-copilot-digest: Japanese card summaries"
     types: [completed]

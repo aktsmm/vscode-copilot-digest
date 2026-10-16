@@ -1,9 +1,6 @@
 ---
 description: Write the Japanese card summaries for updates that have no slide, validate them, and open a data PR.
 on:
-  schedule:
-    # 03:30 JST (18:30 UTC) as a target time; GitHub may delay it
-    - cron: "30 18 * * *"
   workflow_dispatch:
     inputs:
       limit:

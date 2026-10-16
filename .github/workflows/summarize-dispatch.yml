@@ -1,0 +1,42 @@
+name: Dispatch summaries
+
+# Four times a day (03:30, 09:30, 15:30 and 21:30 JST as target times) start the summaries agent, but only when there
+# are updates without a written summary and no summaries PR is open, so an idle day costs no agent run.
+on:
+  schedule:
+    - cron: "30 18,0,6,12 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: write
+  pull-requests: read
+
+concurrency:
+  group: summaries-dispatch
+  cancel-in-progress: false
+
+jobs:
+  dispatch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: node scripts/build-pages.mjs
+      - name: Start the agent when something is pending
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh pr list --state open --limit 100 --json title -q '.[].title' | grep -Eq '^summaries:'; then
+            echo "A summaries PR is still open."; exit 0
+          fi
+          count=$(node scripts/pending-summaries.mjs --months 3 --limit 100 | jq 'length')
+          echo "pending summaries: $count"
+          if [ "$count" -gt 0 ]; then
+            gh workflow run summarize.lock.yml -f limit=30
+          fi
