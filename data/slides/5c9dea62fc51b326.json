@@ -1,0 +1,95 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "5c9dea62fc51b326",
+  "title": {
+    "ja": "VS Code 1.139:リモートの Dev Container でエージェント実行、セッション一覧が高速化",
+    "subtitleJa": "SSH・Tunnel・WSL 上の Dev Container でエージェント セッションを実行でき、大量セッションの一覧表示も速くなった",
+    "original": "Visual Studio Code 1.139"
+  },
+  "date": "2026-09-23",
+  "topic": "VS Code",
+  "status": "update",
+  "audience": {
+    "who": "VS Code でエージェント セッションを使う開発者、Linux の DEB / RPM 版 Stable 利用者",
+    "change": "リモート ホストの Dev Container でエージェントを実行でき、セッション一覧の読み込みが速くなる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "Dev Container を使うなら設定を有効化する。Linux の固定ランチャーは追加し直す"
+  },
+  "panels": [
+    {
+      "id": "dev-container",
+      "heading": "使える場所と使い方",
+      "priority": "core",
+      "items": [
+        "SSH・Tunnel・WSL ホスト上のプロジェクトで、Dev Container セッションを実行できる",
+        "chat.agentHost.devContainer.enabled を有効にし、Agents Window のフォルダー メニューで「Use Dev Container」を選ぶ",
+        "段階的に展開中のため、既定では未有効の場合がある。設定を手動で有効にして試せる"
+      ]
+    },
+    {
+      "id": "limits",
+      "heading": "前提と制限",
+      "priority": "core",
+      "items": [
+        "リモート フォルダーに、対応する Dev Container 構成が必要",
+        "リモート ホストで Docker が使える必要がある"
+      ]
+    },
+    {
+      "id": "sessions",
+      "heading": "セッション一覧の改善",
+      "priority": "core",
+      "items": [
+        "軽量なメタデータを中央カタログに保持し、大きな一覧の読み込みと更新が速くなる。以前のセッションは自動で移行される",
+        "Compact View で一覧に表示できるセッション数が増える",
+        "タイトルのダブルクリックか F2 で、セッションやチャット名をその場で変更できる"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "Linux の DEB / RPM は desktop ファイル名が code.desktop から com.microsoft.VSCode.desktop に変わる",
+        "既存のお気に入りや固定ランチャーは自動更新されず、削除して追加し直す必要がある"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "Agent Host Protocol (AHP)", "type": "term", "oneLine": "エージェント ホストが採用するプロトコル。複数の VS Code ウィンドウから同じセッションに接続できる。" },
+    { "term": "Dev Container", "type": "feature", "oneLine": "プロジェクトに合ったツールと依存関係を備えた開発用コンテナー環境。" }
+  ],
+  "suggestions": [
+    "セッションが多い場合は、Compact View と「Empty Groups」の無効化で一覧を整理する"
+  ],
+  "qa": [
+    {
+      "q": "リモートの Dev Container セッションはどう有効にしますか？",
+      "a": "chat.agentHost.devContainer.enabled を有効にし、Agents Window のフォルダー メニューで「Use Dev Container」を選びます。段階的に展開中のため、既定では有効になっていない場合があります。"
+    },
+    {
+      "q": "利用するための前提条件は何ですか？",
+      "a": "リモート フォルダーに対応する Dev Container 構成があり、リモート ホストで Docker が使えることが必要です。対象は SSH、Tunnel、WSL のホストです。"
+    },
+    {
+      "q": "既存のセッションに対する移行作業は必要ですか？",
+      "a": "不要です。このリリースより前に作成されたセッションは、バックグラウンドで自動的に移行されます。セッション数が少ない場合は、速度の差は小さくなります。"
+    },
+    {
+      "q": "Linux でランチャーが起動しなくなったらどうしますか？",
+      "a": "DEB / RPM の Stable では desktop ファイル名が変わりました。古い固定ランチャーを削除し、アプリケーション メニューから追加し直します。ターミナルからは code で起動できます。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.139",
+      "url": "https://code.visualstudio.com/updates/v1_139"
+    }
+  },
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_139"
+  ]
+}
