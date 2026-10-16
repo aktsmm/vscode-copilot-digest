@@ -1,0 +1,106 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "958c3483761172ad",
+  "title": {
+    "ja": "インライン提案を 1 つのモデルに統合した 3-in-1 モデルの開発解説",
+    "subtitleJa": "ゴースト テキスト、NES、遠隔編集を 1 モデルで処理し、オンライン実験で取り消しが 10.1% 減少",
+    "original": "Building the new GitHub Copilot Inline Suggestions Model: Part Two"
+  },
+  "date": "2026-09-23",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "VS Code で Copilot のインライン提案 (ゴースト テキスト、NES) を使う有料プランの開発者",
+    "change": "別々のモデルだった 3 種の提案が 1 つの統合モデルで動き、1 回のリクエストで最適な編集を選べる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "VS Code を最新にし、次の編集候補 (NES) を有効にして試す"
+  },
+  "panels": [
+    {
+      "id": "availability",
+      "heading": "使える場所とプラン",
+      "priority": "core",
+      "items": [
+        "統合されたインライン提案は、VS Code の GitHub Copilot 有料ユーザー向けに提供中",
+        "VS Code を最新にし、次の編集候補 (NES) を有効にする",
+        "設定は github.copilot.nextEditSuggestions.enabled"
+      ]
+    },
+    {
+      "id": "what-changed",
+      "heading": "変わった点",
+      "priority": "core",
+      "items": [
+        "ゴースト テキスト、カーソル付近の NES、遠い位置の編集が別モデルから 1 つの 3-in-1 モデルに統合された",
+        "1 回のリクエストで編集全般を考慮し、複数の編集をつなげて返せる",
+        "モデル呼び出しと配信の複雑さが減る"
+      ]
+    },
+    {
+      "id": "results",
+      "heading": "オンライン実験の結果",
+      "priority": "detail",
+      "items": [
+        "従来構成 (2-in-1 と補完モデル) との比較で、取り消し (dismissal) が 10.1% 減少",
+        "承認後も残る文字数など主要指標に有意な悪化はなく、カーソル位置のゴースト テキストの割合は 13% 低下"
+      ]
+    },
+    {
+      "id": "client",
+      "heading": "クライアント側の見直し",
+      "priority": "detail",
+      "items": [
+        "無視したゴースト テキストが NES として再表示される挙動を、設定 nesMimicGhostTextBehavior で無効化",
+        "この変更で取り消し率は +15.9% から -10.1% に改善した"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "NES", "type": "feature", "oneLine": "次の編集の位置と内容を予測する、Copilot の次の編集候補。" },
+    { "term": "ゴースト テキスト", "type": "feature", "oneLine": "カーソル位置に薄く表示される補完の提案。" }
+  ],
+  "suggestions": [
+    "NES の設定と使い方は、VS Code のインライン提案のドキュメントで確認する"
+  ],
+  "qa": [
+    {
+      "q": "この統合モデルは誰が使えますか?",
+      "a": "記事では、VS Code の GitHub Copilot 有料ユーザー向けに提供中とされています。"
+    },
+    {
+      "q": "使うには何をすればよいですか?",
+      "a": "VS Code を最新版に更新し、次の編集候補 (NES) が有効になっていることを確認します。設定は github.copilot.nextEditSuggestions.enabled です。"
+    },
+    {
+      "q": "3-in-1 モデルとは何ですか?",
+      "a": "ゴースト テキスト、カーソル付近の NES、遠い位置の編集を 1 つのモデルで扱うものです。1 回のリクエストで最適な編集を選べます。"
+    },
+    {
+      "q": "効果はどのくらいありましたか?",
+      "a": "従来構成との比較で取り消しが 10.1% 減少し、主要指標に有意な悪化はありませんでした。ゴースト テキストの割合は 13% 低下しています。"
+    },
+    {
+      "q": "今後の予定はありますか?",
+      "a": "詳細な技術レポートを準備中で、提案の積極度をユーザーの好みに合わせる個人化も進めているとのことです。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Building the new GitHub Copilot Inline Suggestions Model: Part Two",
+      "url": "https://code.visualstudio.com/blogs/2026/09/23/building-the-github-copilot-inline-suggestions-model-part-two"
+    },
+    "documents": [
+      {
+        "title": "Inline suggestions from GitHub Copilot in VS Code",
+        "url": "https://code.visualstudio.com/docs/editing/ai-powered-suggestions"
+      }
+    ]
+  },
+  "evidence": [
+    "https://code.visualstudio.com/blogs/2026/09/23/building-the-github-copilot-inline-suggestions-model-part-two",
+    "https://code.visualstudio.com/docs/editing/ai-powered-suggestions"
+  ]
+}
