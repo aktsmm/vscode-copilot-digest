@@ -21,7 +21,6 @@ concurrency:
 
 jobs:
   token-health:
-    if: ${{ vars.AGENT_ENGINE == 'gh-aw' }}
     runs-on: ubuntu-latest
     steps:
       - name: Warn before the Copilot token expires
