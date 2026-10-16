@@ -1,0 +1,73 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "65e37068be420f7b",
+  "title": {
+    "ja": "VS Codeのエージェント向けキャンバス",
+    "subtitleJa": "Copilot harnessのローカルセッションで、チャット横の成果物をエージェントと共同編集",
+    "original": "Visual Studio Code 1.142: Canvases (Preview)"
+  },
+  "date": "2026-10-14",
+  "topic": "VS Code",
+  "status": "preview",
+  "statusEvidence": "Canvases (Preview)",
+  "audience": {
+    "who": "VS CodeのCopilot harnessで、計画や作業成果物をエージェントと扱う開発者",
+    "change": "チャットだけでなく、キャンバス上の同じ成果物を人とエージェントが確認・更新できる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "`chat.canvases.enabled` を有効にし、新しいローカルCopilot harnessセッションを開始する"
+  },
+  "panels": [
+    {
+      "id": "availability",
+      "heading": "使える環境",
+      "priority": "core",
+      "items": [
+        "VS Codeデスクトップ版のローカルセッションで、Copilot harnessを使う場合にPreview提供",
+        "`chat.canvases.enabled` を有効にしてから、新しいCopilot harnessセッションを開始する",
+        "キャンバスはエディターウィンドウとAgentsウィンドウの両方で使える"
+      ]
+    },
+    {
+      "id": "how-to",
+      "heading": "始め方と操作",
+      "priority": "core",
+      "items": [
+        "チャット入力に `/create-canvas` と入力し、作りたい画面を説明して拡張機能を作成する",
+        "GitHub Copilot appでキャンバス拡張機能を含むチャットプラグインを入れ、VS Codeでエージェントに利用可能なキャンバスを開くよう頼む",
+        "Agentsウィンドウでは **Add Tab (+) > Canvas** から利用可能なキャンバスを開ける"
+      ]
+    },
+    {
+      "id": "canvas-model",
+      "heading": "キャンバスの仕組み",
+      "priority": "detail",
+      "items": [
+        "各キャンバスはキャンバス拡張機能が提供し、例としてカンバン上のカードを人が移動し、エージェントがタスクを更新できる"
+      ]
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.142 - Visual Studio Code",
+      "url": "https://code.visualstudio.com/updates/v1_142#_canvases-preview"
+    },
+    "documents": [
+      {
+        "title": "Choose an agent harness - Visual Studio Code",
+        "url": "https://code.visualstudio.com/docs/agents/run/agent-harnesses#_use-canvases-with-the-copilot-harness"
+      },
+      {
+        "title": "GitHub Copilot アプリ でのキャンバス拡張機能の操作 - GitHubドキュメント",
+        "url": "https://docs.github.com/ja/copilot/how-tos/github-copilot-app/working-with-canvas-extensions"
+      }
+    ]
+  },
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_142#_canvases-preview",
+    "https://code.visualstudio.com/docs/agents/run/agent-harnesses#_use-canvases-with-the-copilot-harness",
+    "https://docs.github.com/ja/copilot/how-tos/github-copilot-app/working-with-canvas-extensions"
+  ]
+}

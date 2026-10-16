@@ -1,0 +1,75 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "0fb5cf8a26c77a05",
+  "title": {
+    "ja": "GitHub Copilotの3モデル、11月16日廃止予定",
+    "subtitleJa": "Claude Opus 4.8／5 と GPT-5.6 Terra が廃止予定となり、後継モデルへの移行が必要に",
+    "original": "Upcoming deprecation of selected GitHub Copilot models in mid-November"
+  },
+  "date": "2026-10-15",
+  "topic": "GitHub Copilot",
+  "status": "retirement",
+  "statusEvidence": "We will deprecate the following models across all GitHub Copilot experiences (including Copilot Chat, inline edits, ask and agent modes, and code completions) on November 16th, 2026",
+  "audience": {
+    "who": "対象モデルをワークフローや連携で指定している開発者と、組織のCopilot管理者",
+    "change": "3モデルが2026年11月16日にCopilot全体で廃止され、案内された後継モデルへ移行する",
+    "changeNature": "breaking"
+  },
+  "action": {
+    "required": "yes",
+    "summary": "2026-11-16までにワークフローと連携先のモデル指定を後継モデルへ切り替える",
+    "deadline": "2026-11-16"
+  },
+  "timeline": [
+    {
+      "when": "2026-11-16",
+      "label": "対象モデルを廃止"
+    }
+  ],
+  "panels": [
+    {
+      "id": "models",
+      "heading": "対象モデルと後継",
+      "priority": "core",
+      "items": [
+        "Claude Opus 4.8／Claude Opus 5 は Claude Opus 5.5 へ移行",
+        "GPT-5.6 Terra → GPT-6.1 Sol または GPT-6 Luna",
+        "対象は Copilot Chat、インライン編集、ask／agent モード、コード補完を含む全体験"
+      ]
+    },
+    {
+      "id": "admin-action",
+      "heading": "切り替えの準備",
+      "priority": "core",
+      "items": [
+        "Business／Enterprise では既定設定により後継モデルが自動有効化される場合がある",
+        "管理者が全体の既定有効化をオフにした場合は、Copilot設定のモデルポリシーで後継モデルを有効にする",
+        "年額プランの個人Copilot加入者はClaude Opus 4.8を引き続き利用できる"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "廃止後にモデルを削除する操作は不要"
+      ]
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Upcoming deprecation of selected GitHub Copilot models in mid-November - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-10-15-upcoming-deprecation-of-selected-github-copilot-models-in-mid-november/"
+    },
+    "documents": [
+      {
+        "title": "GitHub Copilotでサポートされている AI モデル - GitHubドキュメント",
+        "url": "https://docs.github.com/ja/copilot/reference/ai-models/supported-models"
+      }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-10-15-upcoming-deprecation-of-selected-github-copilot-models-in-mid-november/",
+    "https://docs.github.com/ja/copilot/reference/ai-models/supported-models"
+  ]
+}

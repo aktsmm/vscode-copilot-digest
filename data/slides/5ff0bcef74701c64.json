@@ -1,0 +1,77 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "5ff0bcef74701c64",
+  "title": {
+    "ja": "VS Code 1.142でCopilot harnessの既定化を段階展開",
+    "subtitleJa": "新規セッションへの既定展開が始まり、エディターとAgentsウィンドウで同じセッションを利用可能に",
+    "original": "Visual Studio Code 1.142"
+  },
+  "date": "2026-10-14",
+  "topic": "VS Code",
+  "status": "update",
+  "audience": {
+    "who": "VS Codeでエージェントセッションを始める開発者と、セッションを複数画面で扱う利用者",
+    "change": "Copilot harnessの新規セッションへの既定展開が段階的に始まり、別ウィンドウからも同じセッションを利用できる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "info",
+    "summary": "新規セッションのハーネス選択欄でCopilotが選ばれているか確認する"
+  },
+  "panels": [
+    {
+      "id": "copilot-harness",
+      "heading": "新規セッション",
+      "priority": "core",
+      "items": [
+        "Copilot harnessはCopilot SDKを基盤とし、VS CodeではAgent Hostを通じてセッションを実行する",
+        "新規セッションで既定のハーネスにする展開を段階的に開始。選択欄の「Copilot」が利用を示す",
+        "Agent Hostによりセッションはバックグラウンドで継続し、VS CodeエディターとAgentsウィンドウの両方からアクセスできる"
+      ]
+    },
+    {
+      "id": "how-to",
+      "heading": "使い始める方法",
+      "priority": "core",
+      "items": [
+        "チャット入力欄のハーネスピッカーでCopilotを選ぶ。設定により新規セッションですでに選択されている場合がある",
+        "Agentsウィンドウでセッションを選ぶと、会話履歴とプロジェクトのコンテキストを引き継いで開ける"
+      ]
+    },
+    {
+      "id": "agent-host",
+      "heading": "セッションの前提",
+      "priority": "detail",
+      "items": [
+        "バックグラウンド実行にはAgent Hostと実行環境が稼働している必要がある",
+        "エディターウィンドウを閉じても実行は続けられるが、VS Codeアプリケーション自体は起動したままにする"
+      ]
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.142 - Visual Studio Code",
+      "url": "https://code.visualstudio.com/updates/v1_142"
+    },
+    "documents": [
+      {
+        "title": "Manage agent sessions in VS Code - Visual Studio Code",
+        "url": "https://code.visualstudio.com/docs/agents/run/sessions/manage-sessions"
+      },
+      {
+        "title": "Agent Host architecture - Visual Studio Code",
+        "url": "https://code.visualstudio.com/docs/agents/concepts/agent-host"
+      },
+      {
+        "title": "Choose an agent harness - Visual Studio Code",
+        "url": "https://code.visualstudio.com/docs/agents/run/agent-harnesses"
+      }
+    ]
+  },
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_142",
+    "https://code.visualstudio.com/docs/agents/run/sessions/manage-sessions",
+    "https://code.visualstudio.com/docs/agents/concepts/agent-host",
+    "https://code.visualstudio.com/docs/agents/run/agent-harnesses"
+  ]
+}

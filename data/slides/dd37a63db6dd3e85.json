@@ -1,0 +1,67 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "dd37a63db6dd3e85",
+  "title": {
+    "ja": "Copilot code reviewの組織課金と依頼制御",
+    "subtitleJa": "メンバー枠を使わない組織課金と、レビュー依頼者の制限が可能に",
+    "original": "Copilot code review: New organization billing options and controls"
+  },
+  "date": "2026-10-08",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "Copilot code reviewを組織で運用する組織所有者とリポジトリ管理者",
+    "change": "課金先を組織に切り替え、外部Copilotライセンスによるレビュー依頼を制限できる",
+    "changeNature": "neutral"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "Organization課金を使う場合はAI credits有料利用を有効にし、必要に応じて予算を設定する"
+  },
+  "panels": [
+    {
+      "id": "billing",
+      "heading": "課金先の設定",
+      "priority": "core",
+      "items": [
+        "組織設定の **Copilot > Policies** にある `Choose how members with a Copilot license are billed` で選ぶ",
+        "**Member** は既定値で、メンバー自身のCopilot枠を使う。枠を使い切るとレビューは失敗する",
+        "**Organization** はリポジトリ所有組織へ請求し、組織のAI credits有料利用が必要。予算は任意"
+      ]
+    },
+    {
+      "id": "review-access",
+      "heading": "依頼できる人",
+      "priority": "core",
+      "items": [
+        "組織所有者とリポジトリ管理者は `Only allow Copilot code review to be triggered by authorized users` を有効にできる",
+        "有効にすると、組織または企業がライセンスを提供した人にレビュー依頼を制限する",
+        "組織レベルで有効にした場合、リポジトリ管理者は無効にできない"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "適用範囲",
+      "priority": "detail",
+      "items": [
+        "組織課金の変更は課金先だけを変え、Copilot code reviewの利用権限は付与しない"
+      ]
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Copilot code review: New organization billing options and controls - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-10-08-copilot-code-review-new-organization-billing-options-and-controls/"
+    },
+    "documents": [
+      {
+        "title": "GitHub Copilot code review - GitHub Docs",
+        "url": "https://docs.github.com/ja/copilot/concepts/agents/code-review"
+      }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-10-08-copilot-code-review-new-organization-billing-options-and-controls/",
+    "https://docs.github.com/ja/copilot/concepts/agents/code-review"
+  ]
+}
