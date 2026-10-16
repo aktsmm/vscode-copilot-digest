@@ -71,7 +71,8 @@ async function main() {
     const files = await list(`/pulls/${pr.number}/files`);
     if (!lane.allowed(files)) { await reject(pr, `changes outside what the ${laneOf(pr)} lane may touch: ${files.map((f) => f.filename).slice(0, 8).join(", ")}`); continue; }
     try {
-      git("fetch", "-q", "origin", base, `pull/${pr.number}/head`);
+      git("fetch", "-q", "origin", base);
+      git("fetch", "-q", "origin", `pull/${pr.number}/head`);
       const head = git("rev-parse", "FETCH_HEAD").trim();
       if (head !== pr.head.sha) { console.log(`PR #${pr.number}: head moved, will retry later`); continue; }
       git("checkout", "-q", "-B", "merge-check", `origin/${base}`);
