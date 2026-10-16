@@ -56,6 +56,28 @@
       ]
     }
   ],
+  "qa": [
+    {
+      "q": "いつ、どのモデルが廃止されますか？",
+      "a": "2026年11月16日に、Claude Opus 4.8、Claude Opus 5、GPT-5.6 Terra が、Copilot Chat、インライン編集、ask／agentモード、コード補完を含む全体験で廃止されます。"
+    },
+    {
+      "q": "それぞれの移行先は何ですか？",
+      "a": "Claude Opus 4.8 と Claude Opus 5 の推奨代替は Claude Opus 5.5、GPT-5.6 Terra は GPT-6.1 Sol または GPT-6 Luna です。"
+    },
+    {
+      "q": "Business／Enterprise で後継モデルは自動で使えますか？",
+      "a": "既定のモデル有効化が有効なら、管理者が全体の既定をオフにしたりモデルを明示的に無効化したりしていない限り、推奨代替は自動で有効になります。"
+    },
+    {
+      "q": "管理者が既定をオフにしている場合はどうしますか？",
+      "a": "Copilot設定のモデルポリシーから後継モデルへのアクセスを有効にします。有効化後は、対応する体験のCopilot Chatのモデルセレクターに表示されます。"
+    },
+    {
+      "q": "Claude Opus 4.8 は全員が使えなくなりますか？",
+      "a": "いいえ。年額プランの個人Copilot加入者は、Opusモデルを使い続けられるよう Claude Opus 4.8 を引き続き利用できます。廃止はこの顧客には適用されません。"
+    }
+  ],
   "references": {
     "source": {
       "title": "Upcoming deprecation of selected GitHub Copilot models in mid-November - GitHub Changelog",
