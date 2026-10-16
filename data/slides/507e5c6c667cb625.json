@@ -1,0 +1,82 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "507e5c6c667cb625",
+  "title": {
+    "ja": "Copilot 週次リリース（9月7日）：Jira 連携、HydraFusion、VS Code の自動化",
+    "subtitleJa": "Copilot アプリに Jira 連携、CLI に HydraFusion、VS Code に定期実行の automations",
+    "original": "GitHub Copilot weekly releases — September 7"
+  },
+  "date": "2026-09-10",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "Copilot アプリ・CLI・VS Code・JetBrains を使う開発者と、JetBrains 向け Copilot の管理者",
+    "change": "Jira issue の取り込み、モデルの自動ルーティング、エージェント タスクの定期実行などが加わった",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "使っている製品の項目を確認し、必要なものを試す"
+  },
+  "panels": [
+    {
+      "id": "app-cli",
+      "heading": "Copilot アプリと CLI",
+      "priority": "core",
+      "items": [
+        "アプリ: Jira issue を共有キャンバスに取り込み、進める項目を選ぶと、調査・実装・プル リクエスト準備へ文脈が引き継がれる",
+        "CLI: Project HydraFusion が /experimental に登場。ローカル・クラウド・複合モデルを自動で意味的にルーティングする",
+        "HydraFusion は他のモデルと同様に選択し、性能・コスト・遅延のバランスでワークフローを選ぶ"
+      ]
+    },
+    {
+      "id": "vscode",
+      "heading": "VS Code 1.137 の更新",
+      "priority": "core",
+      "items": [
+        "automations（パブリック プレビュー）: エージェント タスクを毎時・毎日・毎週で定期実行、またはオンデマンドで実行",
+        "音声モード（試験的）: Copilot の作業中に話しかけ、割り込み、方向修正ができる",
+        "Agents ウィンドウ（試験的）: リポジトリを開いていなくても issue やプル リクエストの詳細を確認できる"
+      ]
+    },
+    {
+      "id": "jetbrains",
+      "heading": "JetBrains の管理者向け",
+      "priority": "detail",
+      "items": [
+        "パブリック プレビュー: 管理者が JetBrains IDE の Copilot のサンドボックス動作を一元設定できる",
+        "管理ポリシーで、サンドボックスの有効化、ファイルシステムとネットワークのアクセス、プロキシ設定、開発者ツールへのアクセス、macOS キーチェーンへのアクセスなどを制御"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "Project HydraFusion", "type": "product", "oneLine": "ローカル・クラウド・複合モデルの間で、タスクごとに自動でルーティングする CLI の機能。" }
+  ],
+  "references": {
+    "source": {
+      "title": "GitHub Copilot weekly releases — September 7 - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-09-10-github-copilot-weekly-releases-september-7/"
+    }
+  },
+  "qa": [
+    {
+      "q": "HydraFusion はどう使いますか？",
+      "a": "Copilot CLI の /experimental にあります。他のモデルと同じように選択すると、タスクごとに性能・コスト・遅延のバランスを取るワークフローを自動で選びます。"
+    },
+    {
+      "q": "VS Code の automations は何ができますか？",
+      "a": "エージェント タスクを毎時・毎日・毎週で定期実行したり、オンデマンドで実行したりできます。パブリック プレビューです。"
+    },
+    {
+      "q": "JetBrains のサンドボックス設定は誰が使えますか？",
+      "a": "エンタープライズ管理者がパブリック プレビューで一元設定できます。サンドボックスの有効化、ファイルシステムとネットワーク、プロキシ、macOS キーチェーンなどを管理ポリシーで制御します。"
+    },
+    {
+      "q": "Copilot アプリの Jira 連携では何が起きますか？",
+      "a": "Jira issue を共有キャンバスに取り込み、進める項目を選ぶと、Copilot が調査・実装・プル リクエスト準備へ文脈を引き継ぎます。"
+    }
+  ],
+  "evidence": [
+    "https://github.blog/changelog/2026-09-10-github-copilot-weekly-releases-september-7/"
+  ]
+}
