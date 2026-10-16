@@ -1,0 +1,89 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "3edcfec6dc5c735a",
+  "title": {
+    "ja": "Visual Studio Code 1.141: Copilot ハーネス、サンドボックス、worktree 整理",
+    "subtitleJa": "Agents ウィンドウでセッションをグリッド表示。不要な worktree を削除し、サンドボックスで権限を制限",
+    "original": "Visual Studio Code 1.141"
+  },
+  "date": "2026-09-30",
+  "topic": "VS Code",
+  "status": "update",
+  "audience": {
+    "who": "VS Code でエージェントセッションを使う開発者と、GitHub Enterprise を使う組織の管理者",
+    "change": "セッションの整理・並列表示、サンドボックス、複数の GitHub Enterprise への同時サインインが使える",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "chat.agent.sandbox.enabled を試す。GHE を使う場合は github-enterprise.uris へ移行する"
+  },
+  "panels": [
+    {
+      "id": "agents",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "Chat: Open Worktree Cleanup で、非アクティブなセッションの worktree の容量を確認して削除できる",
+        "Agents ウィンドウのセッショングリッドで、セッションを水平・垂直に分割して並べ、サイズも変更できる",
+        "Filter Sessions で、環境・ハーネス・作成元（Created In）ごとにセッションを絞り込める",
+        "Copilot CLI と GitHub Copilot app のセッション、ChatGPT app や Codex CLI の Codex チャットを引き継いで続けられる"
+      ]
+    },
+    {
+      "id": "security",
+      "heading": "前提と制限",
+      "priority": "core",
+      "items": [
+        "chat.agent.sandbox.enabled を有効にすると、エージェントのファイル・ネットワークへのアクセスを制限できる（Windows・macOS・Linux）",
+        "セッション単位では、Permissions メニューの Sandboxing for terminal で切り替える",
+        "サンドボックスは追加の保護層で、エンドポイントセキュリティの代わりにはならない",
+        "worktree の削除では、実行中・入力待ち・ピン留めされたセッションは保護される"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "github-enterprise.uri は非推奨。github-enterprise.uris に GHE.com と GHES の複数のインスタンスを指定する",
+        "Copilot ハーネスは、VS Code の実験が有効な企業ユーザーで段階的に既定になる",
+        "従来の VS Code のサンドボックス設定とデバイスポリシーは非推奨",
+        "Codex チャットは同時に 1 つのアプリからしか送信できない"
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Copilot ハーネス",
+      "type": "feature",
+      "oneLine": "Copilot SDK で動くエージェント機能。Agent Host プロセス上で動作する。"
+    },
+    {
+      "term": "Agent Host",
+      "type": "term",
+      "oneLine": "エージェントのハーネスとセッションを管理する専用プロセス。"
+    },
+    {
+      "term": "worktree",
+      "type": "term",
+      "oneLine": "エージェントセッションごとに作られる作業用のディレクトリ。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.141",
+      "url": "https://code.visualstudio.com/updates/v1_141"
+    },
+    "documents": [
+      {
+        "title": "Agent Host architecture",
+        "url": "https://code.visualstudio.com/docs/agents/concepts/agent-host"
+      }
+    ]
+  },
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_141",
+    "https://code.visualstudio.com/docs/agents/concepts/agent-host"
+  ]
+}
