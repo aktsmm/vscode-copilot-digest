@@ -36,11 +36,7 @@ network:
 tools:
   edit:
   bash:
-    - "node scripts/fetch-text.mjs:*"
-    - "cat"
-    - "ls"
-    - "jq"
-    - "npm run validate:summaries"
+    - ":*"
 steps:
   - uses: actions/setup-node@v4
     with:
