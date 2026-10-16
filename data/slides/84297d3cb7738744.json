@@ -50,6 +50,28 @@
       ]
     }
   ],
+  "qa": [
+    {
+      "q": "どのプランと環境で使えますか？",
+      "a": "Copilot Pro、Pro+、Business、Enterprise で、実験機能またはプレビュー機能を有効にした場合に使えます。VS Code、GitHub Copilot app、GitHub Copilot CLI の 3 つに対応し、組織のモデル ポリシーに従います。"
+    },
+    {
+      "q": "HydraFusion と HydraFusion Max の違いは？",
+      "a": "HydraFusion は速度・コスト・性能のバランスを取り、トークンを適度に節約します。Max は同じ構造で、最も深い推論と徹底した分析が必要な難しいタスク向けに調整され、高い推論 effort を使います。"
+    },
+    {
+      "q": "今回のモデル プールには何が加わりましたか？",
+      "a": "Claude Opus 5.5、GPT-6 Astra、GPT-6.1 Sol、GPT-6 Luna が含まれます。どのモデルを使うかは、タスクごとのオーケストレーション ワークフローによって変わります。"
+    },
+    {
+      "q": "推論 effort の扱いはどう変わりましたか？",
+      "a": "これまでは各モデルの既定の推論 effort のみでした。今後は工程ごとに調整し、初期の下書きには中程度、レビューには高い effort を使います。"
+    },
+    {
+      "q": "正式版（GA）ですか？",
+      "a": "いいえ。HydraFusion と HydraFusion Max はどちらもリサーチ プレビューのままです。"
+    }
+  ],
   "references": {
     "source": {
       "title": "HydraFusion updates and new Max option - GitHub Changelog",
