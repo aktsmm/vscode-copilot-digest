@@ -11,6 +11,11 @@ permissions:
   actions: write
   contents: write
 
+# Shared with the agent PR merger so the two never push to main at the same time.
+concurrency:
+  group: data-write
+  cancel-in-progress: false
+
 jobs:
   collect:
     runs-on: ubuntu-latest

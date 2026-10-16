@@ -78,6 +78,17 @@ jobs:
               fi
             done
           done
+      - name: Close failure issues whose workflow is healthy again
+        run: |
+          for row in $(gh issue list --label agentic-workflows --state open --limit 50 --json number,title -q '.[] | "\(.number)|\(.title)"' | tr ' ' '~'); do
+            number="${row%%|*}"; title="${row#*|}"; title="${title//\~/ }"
+            name=$(echo "$title" | sed -E 's/^\[aw\] //; s/ failed$//')
+            result=$(gh run list --workflow "$name" --limit 1 --json conclusion,status -q '.[0] | "\(.status) \(.conclusion)"' 2>/dev/null || true)
+            if [ "$result" = "completed success" ]; then
+              echo "closing #$number: '$name' succeeded since"
+              gh issue close "$number" -c "The latest run of this workflow succeeded, so this failure issue is closed by the watchdog." || true
+            fi
+          done
       - name: Re-run a failed Pages deploy once
         run: |
           read -r id attempt concl created < <(gh run list --workflow deploy-pages.yml --limit 1 --json databaseId,attempt,conclusion,createdAt \

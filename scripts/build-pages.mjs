@@ -2161,8 +2161,8 @@ function renderLayout({
 }) {
   const assetHref =
     relativePrefix === "."
-      ? "./assets/styles.css"
-      : `${relativePrefix}/assets/styles.css`;
+      ? `./assets/styles.css?v=${searchVersion}`
+      : `${relativePrefix}/assets/styles.css?v=${searchVersion}`;
   const downloadsSrc = `${relativePrefix}/assets/downloads.js?v=${searchVersion}`;
   const searchHref = homeHref.replace(/index\.html$/, "search.html");
   const pagefindCssHref =

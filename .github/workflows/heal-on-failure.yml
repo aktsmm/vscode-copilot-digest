@@ -1,0 +1,43 @@
+name: Heal on failure
+
+# When a pipeline workflow fails, start the maintenance agent (at most once every 6 hours) instead of waiting for
+# the weekly run. The agent reads the health report, fixes what it may fix through a PR and reports the rest.
+on:
+  workflow_run:
+    workflows:
+      - "Collect updates"
+      - "Deploy GitHub Pages"
+      - "Auto-merge agent PRs"
+      - "Dispatch slide authoring"
+      - "vscode-copilot-digest: one-update slide JSON"
+      - "vscode-copilot-digest: Japanese card summaries"
+    types: [completed]
+
+permissions:
+  actions: write
+  contents: read
+
+concurrency:
+  group: heal-on-failure
+  cancel-in-progress: false
+
+jobs:
+  heal:
+    if: github.event.workflow_run.conclusion == 'failure'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Start maintenance unless it ran recently
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          FAILED: ${{ github.event.workflow_run.name }}
+        run: |
+          read -r status created < <(gh run list --workflow maintain.lock.yml --limit 1 --json status,createdAt -q '.[0] | "\(.status) \(.createdAt)"' || echo "none 1970-01-01T00:00:00Z")
+          age=$(( $(date +%s) - $(date -d "$created" +%s) ))
+          if [ "$status" = "in_progress" ] || [ "$status" = "queued" ] || [ "$status" = "pending" ] || [ "$age" -lt 21600 ]; then
+            echo "maintenance ran recently or is running ($status, ${age}s ago); not starting another for: $FAILED"
+            exit 0
+          fi
+          echo "starting maintenance because '$FAILED' failed"
+          gh workflow run maintain.lock.yml

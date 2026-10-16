@@ -12,7 +12,7 @@ on:
       limit:
         description: "Maximum number of updates"
         required: false
-        default: "8"
+        default: "10"
         type: string
       ids:
         description: "Comma-separated update ids (overrides the period)"
@@ -45,12 +45,15 @@ jobs:
       - name: Dispatch
         env:
           GH_TOKEN: ${{ github.token }}
-          LIMIT: ${{ inputs.limit || '8' }}
+          LIMIT: ${{ inputs.limit || '10' }}
           IDS: ${{ inputs.ids }}
         run: |
           case "$LIMIT" in ''|*[!0-9]*) echo "invalid limit"; exit 1;; esac
           [ "$LIMIT" -gt 30 ] && LIMIT=30
           skip=$(gh issue list --label slide-skip --state all --limit 500 --json title -q '.[].title' | grep -Eo '[0-9a-f]{16}' | paste -sd, - || true)
+          # An update whose PRs were closed unmerged twice is not offered again (the maintenance run looks at those).
+          capped=$(gh pr list --state closed --limit 300 --json title,mergedAt,files -q '[.[] | select(.mergedAt == null and (.title | startswith("slides:"))) | .files[].path | capture("(?<id>[0-9a-f]{16})").id] | group_by(.) | map(select(length >= 2) | .[0]) | .[]' | paste -sd, - || true)
+          skip="$skip,$capped"
           open=$(gh pr list --state open --limit 200 --json files -q '.[].files[].path' | grep -Eo '[0-9a-f]{16}' || true)
           if [ -n "$IDS" ]; then
             candidates=$(node scripts/pending-slides.mjs --ids "$IDS" --limit 100 | jq -r '.[].id')
