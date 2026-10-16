@@ -1,0 +1,74 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "11a5ac5113f98055",
+  "title": {
+    "ja": "GitHub Copilot で GPT-6.1 Sol が一般提供",
+    "subtitleJa": "Pro+・Max・Business・Enterprise で、対応クライアントのモデルピッカーから選択可能",
+    "original": "GPT-6.1 Sol in GitHub Copilot"
+  },
+  "date": "2026-09-29",
+  "topic": "GitHub Copilot",
+  "status": "ga",
+  "statusEvidence": "GPT-6.1 Sol, the latest model from OpenAI, is now generally available and rolling out in GitHub Copilot.",
+  "audience": {
+    "who": "Copilot Pro+、Max、Business、Enterprise でエージェント型コーディングやターミナル作業をする開発者",
+    "change": "GPT-6.1 Sol をモデルピッカーから選び、エージェント型コーディングやターミナル作業に使える",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "モデルピッカーを確認し、Business・Enterprise の管理者はモデルポリシーを確認する"
+  },
+  "panels": [
+    {
+      "id": "availability",
+      "heading": "使える場所とプラン",
+      "priority": "core",
+      "items": [
+        "対象は Copilot Pro+、Max、Business、Enterprise",
+        "VS Code、Visual Studio、Copilot CLI、コーディング エージェント、Copilot アプリ、github.com で選択可能",
+        "GitHub Mobile、JetBrains IDE、Xcode、Eclipse のモデルピッカーにも対応"
+      ]
+    },
+    {
+      "id": "model",
+      "heading": "モデルの用途",
+      "priority": "core",
+      "items": [
+        "エージェント型コーディングとターミナルのワークフロー向け",
+        "記事の初期テストでは、GPT-6 系・GPT-5.6 系の従来モデルより少ないトークンと手順でタスクを完了"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "展開と管理",
+      "priority": "detail",
+      "items": [
+        "利用可能になる時期は段階的。表示されない場合は後で再確認する",
+        "Business・Enterprise は Copilot 設定のモデルポリシーでアクセスを管理",
+        "使用量ベースの課金では、プロバイダーの定価で請求"
+      ]
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "GPT-6.1 Sol in GitHub Copilot - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-09-29-gpt-6-1-sol-in-github-copilot/"
+    },
+    "documents": [
+      {
+        "title": "GitHub Copilot のモデルと価格設定 - GitHub ドキュメント",
+        "url": "https://docs.github.com/ja/copilot/reference/copilot-billing/models-and-pricing"
+      },
+      {
+        "title": "GitHub Copilotでサポートされている AI モデル - GitHub ドキュメント",
+        "url": "https://docs.github.com/ja/copilot/reference/ai-models/supported-models"
+      }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-09-29-gpt-6-1-sol-in-github-copilot/",
+    "https://docs.github.com/ja/copilot/reference/copilot-billing/models-and-pricing",
+    "https://docs.github.com/ja/copilot/reference/ai-models/supported-models"
+  ]
+}

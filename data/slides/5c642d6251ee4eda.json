@@ -1,0 +1,78 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "5c642d6251ee4eda",
+  "title": {
+    "ja": "漏えいシークレット検出に専用モデルを導入",
+    "subtitleJa": "既存アラートは新モデルへ移行し、push protection はプレビュー、security review 検査は追加予定",
+    "original": "Purpose-built model for leaked secret detection"
+  },
+  "date": "2026-10-07",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "GitHub Secret Protection・GitHub Advanced Security の利用者と Copilot CLI／アプリの開発者",
+    "change": "文脈から書式のない資格情報も検出するモデルが、既存アラートと新しい検査機能に広がる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "info",
+    "summary": "追加の AI 検査を有効にする前に、対象プラン・管理ポリシー・AI Credits の扱いを確認する"
+  },
+  "panels": [
+    {
+      "id": "coverage",
+      "heading": "対象となる検査",
+      "priority": "core",
+      "items": [
+        "既存の AI 検出アラートは新モデルへ自動移行し、GHSP・GHAS に含まれる",
+        "push protection の AI 検査はプライベート プレビューで、GitHub Secret Protection の対象組織向け",
+        "Copilot CLI とアプリの `/security-review` にも、シークレット検査を追加予定"
+      ]
+    },
+    {
+      "id": "how-it-works",
+      "heading": "モデルの役割",
+      "priority": "core",
+      "items": [
+        "周辺コードを読み、形式が決まっていないパスワードなどの資格情報を検出する",
+        "コードや文章を生成せず、候補シークレットを文脈とともに分類する"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "費用と設定",
+      "priority": "detail",
+      "items": [
+        "既存の AI 検出アラートは追加料金なし。push protection と security review の新検査は AI Credits を消費する",
+        "security review の新検査は既定でオフ。プランとポリシーで許可される場合に利用者が有効化する",
+        "組織・企業の管理者はポリシーで機能を無効にし、AI Credits の予算を設定できる"
+      ]
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Purpose-built model for leaked secret detection - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-10-07-purpose-built-model-for-leaked-secret-detection/"
+    },
+    "documents": [
+      {
+        "title": "カスタム エージェントについて - GitHub ドキュメント",
+        "url": "https://docs.github.com/ja/copilot/concepts/agents/copilot-cli/about-custom-agents#built-in-agents"
+      },
+      {
+        "title": "GitHub Copilot アプリ でのエージェント セッションの操作 - GitHub ドキュメント",
+        "url": "https://docs.github.com/ja/copilot/how-tos/github-copilot-app/agent-sessions#using-security-review-in-app-sessions"
+      },
+      {
+        "title": "組織と企業の使用量ベースの課金 - GitHub ドキュメント",
+        "url": "https://docs.github.com/ja/enterprise-cloud@latest/copilot/concepts/billing-and-usage/organizations-and-enterprises/billing"
+      }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-10-07-purpose-built-model-for-leaked-secret-detection/",
+    "https://docs.github.com/ja/copilot/concepts/agents/copilot-cli/about-custom-agents#built-in-agents",
+    "https://docs.github.com/ja/copilot/how-tos/github-copilot-app/agent-sessions#using-security-review-in-app-sessions",
+    "https://docs.github.com/ja/enterprise-cloud@latest/copilot/concepts/billing-and-usage/organizations-and-enterprises/billing"
+  ]
+}

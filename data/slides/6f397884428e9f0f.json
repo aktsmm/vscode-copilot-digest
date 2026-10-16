@@ -1,0 +1,69 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "6f397884428e9f0f",
+  "title": {
+    "ja": "AI コードレビューの公開ベンチマーク",
+    "subtitleJa": "実際の pull request を基にしたデータと指標で、コードレビューエージェントを比較",
+    "original": "ReviewBench: An open benchmark for AI code review"
+  },
+  "date": "2026-10-05",
+  "topic": "GitHub Copilot",
+  "status": "preview",
+  "statusEvidence": "ReviewBench’s research preview version is now available through the ReviewBench website",
+  "audience": {
+    "who": "コードレビューエージェントを開発・評価し、レビューの精度や見逃しを比べたいチーム",
+    "change": "ReviewBench で共通のデータセットと評価方法を使い、既存システムや独自エージェントを比較できる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "info",
+    "summary": "ベンチマークのデータセットと評価方法を使い、対象のレビューエージェントを評価する"
+  },
+  "panels": [
+    {
+      "id": "dataset",
+      "heading": "データセット",
+      "priority": "core",
+      "items": [
+        "公開 OSS リポジトリ 187 件の pull request 219 件を収録し、19 言語に対応",
+        "GitHub 全体の言語・リポジトリ規模の分布に沿いつつ、レビュー対象となる規模の変更を厚くした",
+        "人のレビュー、修正後の issue、静的解析、複数の LLM から候補を集めて正解データを構成"
+      ]
+    },
+    {
+      "id": "evaluation",
+      "heading": "評価方法",
+      "priority": "core",
+      "items": [
+        "重複する指摘を統合し、真陽性は正確・関連性があり、重要な指摘かを共通基準で判定",
+        "既知の指摘を測る grounded 指標と、新たに見つかった指摘も判定する augmented 指標を使う",
+        "重大度・カテゴリ別に結果を分け、精度と再現率の重み付けも調整できる"
+      ]
+    },
+    {
+      "id": "using",
+      "heading": "利用方法",
+      "priority": "detail",
+      "items": [
+        "データセット、評価方法、判定用プロンプト、実行ツールを公開し、独自エージェントを評価できる",
+        "共通のリーダーボードで、重大度・カテゴリや精度と再現率の重み別に比較できる"
+      ]
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "ReviewBench: An open benchmark for AI code review - The GitHub Blog",
+      "url": "https://github.blog/ai-and-ml/github-copilot/reviewbench-an-open-benchmark-for-ai-code-review/"
+    },
+    "documents": [
+      {
+        "title": "GitHub Copilotを使ったコードレビュー - GitHub ドキュメント",
+        "url": "https://docs.github.com/ja/copilot/how-tos/use-copilot-agents/use-code-review"
+      }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/ai-and-ml/github-copilot/reviewbench-an-open-benchmark-for-ai-code-review/",
+    "https://docs.github.com/ja/copilot/how-tos/use-copilot-agents/use-code-review"
+  ]
+}

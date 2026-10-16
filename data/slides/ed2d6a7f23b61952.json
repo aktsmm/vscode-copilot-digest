@@ -1,0 +1,69 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "ed2d6a7f23b61952",
+  "title": {
+    "ja": "Copilot のローカル サンドボックスが一般提供",
+    "subtitleJa": "CLI・Copilot アプリ・Agent Host を使う VS Code セッションで、ローカル実行の権限を制限可能",
+    "original": "Local sandboxing for GitHub Copilot now generally available"
+  },
+  "date": "2026-10-07",
+  "topic": "GitHub Copilot",
+  "status": "ga",
+  "statusEvidence": "Local sandboxing for GitHub Copilot is now generally available",
+  "audience": {
+    "who": "Copilot CLI、Copilot アプリ、Agent Host を使う VS Code でエージェントを実行する開発者と管理者",
+    "change": "エージェントが実行するツールのファイル・ネットワーク・資格情報へのアクセスをポリシーで制限できる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "利用するクライアントでサンドボックスを有効にし、OS の対応条件とポリシーを確認する"
+  },
+  "panels": [
+    {
+      "id": "availability",
+      "heading": "使える場所と費用",
+      "priority": "core",
+      "items": [
+        "Copilot CLI、GitHub Copilot アプリ、Agent Host を使う VS Code セッションで利用可能",
+        "Copilot の追加料金なしで利用できる",
+        "Windows、macOS、Linux の OS 制御に共通ポリシーを適用する MXC を使用"
+      ]
+    },
+    {
+      "id": "controls",
+      "heading": "制御できる範囲",
+      "priority": "core",
+      "items": [
+        "エージェントのツールとコマンドによるファイル、ネットワーク、資格情報などへのアクセスを制限する",
+        "組織・企業の管理設定でサンドボックスを必須にし、開発者がポリシーを弱められないようにできる",
+        "モデルの実行とツールの分離は別の機能で、ポリシーはモデルにかかわらずツール実行に適用"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "前提と制限",
+      "priority": "detail",
+      "items": [
+        "ローカル サンドボックスは既定でオフ。CLI では `/sandbox enable` で有効化できる",
+        "ローカル サンドボックスは VM やコンテナーでコマンドを実行する方式ではなく、OS レベルでアクセスを制限する"
+      ]
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Local sandboxing for GitHub Copilot now generally available - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-10-07-local-sandboxing-for-github-copilot-now-generally-available/"
+    },
+    "documents": [
+      {
+        "title": "クラウドサンドボックスとローカルサンドボックスについて GitHub Copilot - GitHub ドキュメント",
+        "url": "https://docs.github.com/ja/copilot/concepts/security-governance-and-network-settings/about-cloud-and-local-sandboxes"
+      }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-10-07-local-sandboxing-for-github-copilot-now-generally-available/",
+    "https://docs.github.com/ja/copilot/concepts/security-governance-and-network-settings/about-cloud-and-local-sandboxes"
+  ]
+}

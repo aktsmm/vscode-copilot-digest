@@ -1,0 +1,61 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "c6fb2b313984d9d2",
+  "title": {
+    "ja": "AI によるシークレット保護の拡張",
+    "subtitleJa": "コードの文脈から非構造化シークレットを分類し、push protection と security review に適用",
+    "original": "Secret protection must scale with software"
+  },
+  "date": "2026-10-07",
+  "topic": "GitHub Copilot",
+  "status": "preview",
+  "statusEvidence": "The feature is currently in private preview.",
+  "audience": {
+    "who": "シークレットの流出防止を強化したい開発者と GitHub Secret Protection の管理者",
+    "change": "文脈を使う分類器が push protection と Copilot の security review に組み込まれる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "info",
+    "summary": "対象組織への提供と AI Credits の扱いを確認してから利用する"
+  },
+  "panels": [
+    {
+      "id": "detection",
+      "heading": "検出のしくみ",
+      "priority": "core",
+      "items": [
+        "ModernBERT 分類器が候補シークレットを周辺コードの文脈とともに評価する",
+        "認識できるトークン形式がないパスワードも対象にし、コードや文章は生成しない",
+        "候補のまとまりを 2 ミリ秒未満で評価し、push protection の検査に使う"
+      ]
+    },
+    {
+      "id": "availability",
+      "heading": "提供と費用",
+      "priority": "core",
+      "items": [
+        "push protection への追加はプライベート プレビュー。GitHub Secret Protection を使う Enterprise Cloud と GitHub Teams の組織向け",
+        "push protection の AI 検査は AI Credits を消費する",
+        "Copilot CLI／アプリの `/security-review` に分類器を追加予定。利用分は GitHub Secret Protection として計上"
+      ]
+    },
+    {
+      "id": "alerts",
+      "heading": "既存アラート",
+      "priority": "detail",
+      "items": [
+        "push 後の AI 検出アラートは、既存のシークレット スキャン契約に含まれ、追加料金はかからない"
+      ]
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Secret protection must scale with software - The GitHub Blog",
+      "url": "https://github.blog/ai-and-ml/github-copilot/secret-protection-must-scale-with-software/"
+    }
+  },
+  "evidence": [
+    "https://github.blog/ai-and-ml/github-copilot/secret-protection-must-scale-with-software/"
+  ]
+}
