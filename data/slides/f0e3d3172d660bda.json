@@ -1,0 +1,80 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "f0e3d3172d660bda",
+  "title": {
+    "ja": "エンタープライズ管理設定に製品内の検証機能",
+    "subtitleJa": "不正な JSON や無効なチーム マッピングを、ファイルと JSON パス付きで検出",
+    "original": "Enterprise managed settings in-product validator"
+  },
+  "date": "2026-09-25",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "GitHub Copilot のエンタープライズ管理設定を運用する管理者",
+    "change": "ポリシーの適用を妨げる設定ミスを、エンタープライズの AI コントロール ページで確認できる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "管理設定を使っている場合は、「Copilot settings validation」にエラーがないか確認する"
+  },
+  "panels": [
+    {
+      "id": "how-to",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "エンタープライズの AI コントロール ページの「Copilot settings validation」セクションでエラーを確認する",
+        "各エラーには、対象のファイルと JSON パスが示される",
+        "修正は .github-private リポジトリの既定ブランチにコミットする",
+        "Agents ページを再読み込みして、検証結果で設定が有効になったか確認する"
+      ]
+    },
+    {
+      "id": "scope",
+      "heading": "検出できるもの",
+      "priority": "core",
+      "items": [
+        "不正な形式の JSON、サポートされていない構成、無効なチーム マッピングなど",
+        "対象は copilot/managed-settings.json",
+        "copilot/team-mappings.json と、そのファイルが参照するチーム設定ファイルも対象"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "これらのエラーは、ポリシーが適用されない原因になりうる"
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "エンタープライズ管理設定",
+      "type": "feature",
+      "oneLine": "Copilot の構成設定を一元的に定義し、サポートされているクライアントに配布する機能。"
+    },
+    {
+      "term": ".github-private",
+      "type": "term",
+      "oneLine": "managed-settings.json をホストできる、企業内の指定された組織のリポジトリ。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Enterprise managed settings in-product validator - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-09-25-enterprise-managed-settings-in-product-validator/"
+    },
+    "documents": [
+      {
+        "title": "エンタープライズ管理設定を使い始める - GitHub Enterprise Cloud Docs",
+        "url": "https://docs.github.com/ja/enterprise-cloud@latest/copilot/how-tos/administer-copilot/manage-for-enterprise/use-managed-settings/get-started"
+      }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-09-25-enterprise-managed-settings-in-product-validator/",
+    "https://docs.github.com/ja/enterprise-cloud@latest/copilot/how-tos/administer-copilot/manage-for-enterprise/use-managed-settings/get-started"
+  ]
+}
