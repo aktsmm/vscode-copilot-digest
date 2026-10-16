@@ -1,0 +1,85 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "4704d0c444d8cfae",
+  "title": {
+    "ja": "GitHub Copilot で xAI の推論モデル Grok 4.7 を段階的に提供開始",
+    "subtitleJa": "Grok 4.6 を土台にしたエージェント型コーディング向けモデルを、モデル ピッカーで選べる",
+    "original": "Grok 4.7 is now available in GitHub Copilot"
+  },
+  "date": "2026-09-21",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "Copilot で Grok 4.7 を使いたい開発者と、モデル ポリシーを管理する Business / Enterprise の管理者",
+    "change": "Grok 4.7 が、対応する各クライアントのモデル ピッカーに段階的に追加される",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "使うならモデル ピッカーで選択する。管理者はモデル ポリシーで利用可否を確認する"
+  },
+  "panels": [
+    {
+      "id": "availability",
+      "heading": "使える場所とプラン",
+      "priority": "core",
+      "items": [
+        "対象プラン: Copilot Pro、Pro+、Max、Business、Enterprise",
+        "VS Code、Visual Studio、Copilot CLI、cloud agent、Copilot app、JetBrains、Xcode、Eclipse のモデル ピッカーで選べる",
+        "展開は段階的。表示されない場合は、しばらくしてから再確認する"
+      ]
+    },
+    {
+      "id": "admin",
+      "heading": "管理者向けの設定",
+      "priority": "core",
+      "items": [
+        "Business / Enterprise の管理者は、Copilot 設定のモデル ポリシーでアクセスを管理できる",
+        "既定のモデル有効化では、管理者がグローバル既定をオフにするか、このモデルを明示的に無効にしない限り自動で有効になる"
+      ]
+    },
+    {
+      "id": "billing",
+      "heading": "課金",
+      "priority": "detail",
+      "items": [
+        "使用量ベース課金のもとで、プロバイダーの定価で課金される"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "Grok 4.7", "type": "product", "oneLine": "xAI の最新の推論モデル。エージェント型コーディングや複雑な多段階ワークフロー向け。" }
+  ],
+  "qa": [
+    {
+      "q": "どのプランで使えますか？",
+      "a": "Copilot Pro、Pro+、Max、Business、Enterprise で利用できる予定です。展開は段階的なので、表示されない場合はしばらくしてから確認してください。"
+    },
+    {
+      "q": "どこで選べますか？",
+      "a": "VS Code、Visual Studio、Copilot CLI、GitHub Copilot cloud agent、Copilot app、JetBrains、Xcode、Eclipse のモデル ピッカーで選べます。"
+    },
+    {
+      "q": "組織で使わせたくない場合はどうしますか？",
+      "a": "Business / Enterprise の管理者が Copilot 設定のモデル ポリシーで管理できます。既定では新モデルは自動で有効になり、グローバル既定をオフにするか、このモデルを明示的に無効にすると止められます。"
+    },
+    {
+      "q": "料金はどうなりますか？",
+      "a": "使用量ベース課金のもとで、プロバイダーの定価で課金されます。詳細は「GitHub Copilot のモデルと価格設定」を参照してください。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Grok 4.7 is now available in GitHub Copilot - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-09-21-grok-4-7-is-now-available-in-github-copilot/"
+    },
+    "documents": [
+      { "title": "GitHub Copilot のモデルと価格設定 - GitHub ドキュメント", "url": "https://docs.github.com/ja/copilot/reference/copilot-billing/models-and-pricing" },
+      { "title": "GitHub Copilotでサポートされている AI モデル - GitHub ドキュメント", "url": "https://docs.github.com/ja/copilot/reference/ai-models/supported-models" }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-09-21-grok-4-7-is-now-available-in-github-copilot/",
+    "https://docs.github.com/ja/copilot/reference/copilot-billing/models-and-pricing"
+  ]
+}
