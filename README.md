@@ -1,6 +1,6 @@
 # vscode-copilot-digest
 
-GitHub Copilot と VS Code 周辺の更新を毎日収集し、日次イベント、日次本文、週間・隔週ドラフト、GitHub Pages 用の静的サイトを自動生成するリポジトリです。GitHub Actions が収集と公開を回し、GitHub.com 側の Copilot cloud agent が本文・要点・対訳の更新 PR を自動作成します。
+GitHub Copilot と VS Code 周辺の更新を毎日収集し、日次イベント、日次本文、週間・隔週ドラフト、GitHub Pages 用の静的サイト、更新ごとのスライド（JSON / PDF / PPTX）を自動生成するリポジトリです。GitHub Actions が収集と公開を回し、GitHub Agentic Workflows（gh-aw、モデルは Claude Sonnet 5.5）がスライド・日本語要約・点検を担当します。人手を介さず、失敗は自動で検知して直す構成です。
 
 現在の公開先:
 
@@ -11,16 +11,17 @@ GitHub Copilot と VS Code 周辺の更新を毎日収集し、日次イベン�
 - RSS / Atom / HTML スナップショットから GitHub Copilot / VS Code 関連更新を収集する
 - 日次イベントを JSON で保存し、公開済み更新または未来日付項目がある日だけ Markdown を保存する
 - GitHub Pages 用に、日本語 / 英語のトップページ、日次詳細、週間詳細、ハイライト一覧、日次アーカイブ一覧、週間アーカイブ一覧、検索ページを静的生成する
-- 最新ハイライトをトップページでは 6 件表示し、全件一覧は 50 件単位でページ分割して公開する
+- トップページは直近の更新を最大 120 件、項番付きの 1 列カードで表示し、期間・種類・トピック・キーワードで絞り込める（既定は過去 30 日）。全件一覧は 50 件単位でページ分割して公開する
+- 提供終了・廃止に関わる更新だけを並べた「提供終了・廃止」ページ（`retirements.html`、英語版 `en/retirements.html`）を公開する
 - 7 日分の記録から週間ドラフト、14 日分の記録から隔週ドラフトを生成する
 - 必要なら Qiita API へ投稿し、投稿 ID と URL をドラフト frontmatter に反映する
 - collect は 1 日 3 回動かしつつ、Discord Webhook には週 1 回で直近 7 日分をまとめて通知する
 - Pages 上では source-only の簡素なフィルタと、Pagefind による全文検索を提供する
 - 更新カード・トップページの簡易検索・専用検索・日次／週間詳細から、原文、確認済みの公式資料（最大 3 件）、掲載日のまとめの該当箇所を直接開ける
-- GitHub.com 上の Copilot cloud agent 向け執筆依頼 Issue / PR フローを自動起票する
-- 日次本文、要点、日本語化・対訳の更新には GitHub Copilot Cloud Agent を使う
-- 静的 JSON API（`api/v1/`）として、更新一覧・月別・カテゴリ別・個別詳細と取得状態を公開する
-- 1 更新 = 1 枚のスライド JSON（`data/slides/`）を Copilot cloud agent が生成し、専用の PR 系統で検証・自動 merge する
+- スライド・日本語要約・点検は agentic workflow が書き、PR を `scripts/merge-agent-prs.mjs` が検証（スキーマ、1 ページに収まるか、事実が引用ページにあるか）してから自動 merge する
+- 失敗は `heal-on-failure.yml` が点検の agent に渡し、直せるものは PR で直し、直せないものは Issue にまとめる。毎日、Issue「Pipeline status」に運用状況の表を更新する
+- 静的 JSON API（`api/v1/`）として、更新一覧・月別・カテゴリ別・個別詳細・想定問答（`qa.json`）と取得状態を公開する
+- 1 更新 = 1 枚のスライド JSON（`data/slides/`）を agent が記事から書く。発表者向けの**想定問答**（`qa`）は PPTX のスライドノートと JSON、API に入る
 - スライドを PDF 化する（GitHub ダーク＋Copilot パープルの表紙・裏表紙）。最新 1 件は無料サンプル、残りは `PDF_PASSWORD` で暗号化して公開する
 - トップページとハイライト一覧の「スライドをダウンロード」パネルで、期間・種類・トピックを絞り、JSON / PDF / PPTX（PowerPoint）をその場でダウンロードできる（別ページへの遷移なし）。サンプル PDF はパスワード不要
 
@@ -46,10 +47,11 @@ GitHub Copilot と VS Code 周辺の更新を毎日収集し、日次イベン�
 1. [collect-updates.yml](.github/workflows/collect-updates.yml) が `npm run collect` を実行し、ソース収集と全期間の原文・資料補完を行う。イベントは [data/events](data/events)、本文は [summaries/daily](summaries/daily)、確認証跡は [data/resources.json](data/resources.json) に保存する
 2. 変更があれば `github-actions[bot]` が `data/**` と `summaries/**` を commit する
 3. collect commit の直後に workflow から [deploy-pages.yml](.github/workflows/deploy-pages.yml) を dispatch し、最新データで Pages を再生成する
-4. collect 成功後に [author-digest-pr.yml](.github/workflows/author-digest-pr.yml) が Copilot 向け執筆依頼 Issue を作成または更新する
-5. Copilot cloud agent が Issue を受けて、日次本文・ドラフト・必要な対訳更新を含む PR を作成する
-6. [request-copilot-review.yml](.github/workflows/request-copilot-review.yml)、[validate-generated-pr.yml](.github/workflows/validate-generated-pr.yml)、[auto-merge-generated-pr.yml](.github/workflows/auto-merge-generated-pr.yml) が PR を正規化・検証・自動 merge する
-7. 生成 PR が merge されたときは [redeploy-pages-after-generated-pr-merge.yml](.github/workflows/redeploy-pages-after-generated-pr-merge.yml) が Pages を再度 dispatch し、本文更新を live へ反映したうえで superseded な draft PR / digest-authoring issue を cleanup する
+4. スライドは [slide-dispatch.yml](.github/workflows/slide-dispatch.yml)（1 日 4 回、各回最大 10 件）が 1 件ずつ [slide.md](.github/workflows/slide.md) に渡し、日本語要約は [summarize-dispatch.yml](.github/workflows/summarize-dispatch.yml) が未処理があるときだけ [summarize.md](.github/workflows/summarize.md) を起動する。agent が記事を読み、PR（`slides:` / `summaries:`）を作る
+5. [auto-merge-agent-prs.yml](.github/workflows/auto-merge-agent-prs.yml)（毎時）が PR を main に merge した作業ブランチで検証し、通ったものだけ squash merge して Pages を再デプロイする
+6. 失敗は [heal-on-failure.yml](.github/workflows/heal-on-failure.yml) が [maintain.md](.github/workflows/maintain.md)（点検の agent）に渡し、毎週月曜にも点検が動く
+
+`.github/workflows/*.md` が agentic workflow の正本で、`gh aw compile` が `*.lock.yml` を作ります（lock は手で編集しません）。
 
 ## 監視対象
 
@@ -71,7 +73,7 @@ GitHub Copilot と VS Code 周辺の更新を毎日収集し、日次イベン�
 - GitHub Copilot や VS Code の coding agent と関係が薄い記事は除外する
 - feed に未来日付の項目が見えた場合は、通常のハイライトには混ぜず、日次ページの警告付き別セクションで扱う
 - 公開済み更新が 0 件の空日は Pages の日次ページとして公開しない
-- 通知文面、日次 Markdown、Pages 表示で同じ日本語化ルールを使い、必要な対訳更新は GitHub Copilot Cloud Agent の PR フローで反映する
+- 通知文面、日次 Markdown、Pages 表示で同じ日本語化ルールを使い、カードの文面はスライド → 書かれた要約（`data/summaries-ja.json`）→ 原文の抜粋の順で選ぶ
 - `要点` と `なぜ重要か / Why it matters` は、単なる release / preview ラベルの定型文に寄りすぎないよう、主要タイトルには個別の説明文を優先して使う
 - Pages では文書更新日とこのサイトに載った日を両方表示する
 - Pages は日本語と英語の両方を静的生成し、フィルタ UI は source-only の簡素版に揃える
@@ -185,7 +187,13 @@ Discord 通知は短い概要を本文に置き、主な更新は embed カー�
 - [scripts/lib/theme.mjs](scripts/lib/theme.mjs): PDF / スライドの配色（GitHub / Copilot）と文言の単一定義
 - [scripts/build-slide-pdfs.mjs](scripts/build-slide-pdfs.mjs): スライドの PDF 化、サンプル以外の暗号化、`data/slides.json`（一覧・サンプル・暗号化情報）の出力
 - [scripts/pending-slides.mjs](scripts/pending-slides.mjs) / [scripts/validate-slides.mjs](scripts/validate-slides.mjs): スライド未作成の更新の抽出と検証
-- [scripts/render-pdf.mjs](scripts/render-pdf.mjs): 指定したスライドを暗号化なしの PDF としてローカルで描画（`npm run pdf`）
+- [scripts/render-pdf.mjs](scripts/render-pdf.mjs): 指定したスライドを暗号化なしの PDF としてローカルで描画（`npm run pdf`）。1 ページに収まらないスライドは失敗にする
+- [scripts/merge-agent-prs.mjs](scripts/merge-agent-prs.mjs): agent の PR（`slides:` / `summaries:` / `maint:`）を、許可範囲・検証を通したものだけ merge する
+- [scripts/verify-slide-facts.mjs](scripts/verify-slide-facts.mjs) / [scripts/lib/slide-facts.mjs](scripts/lib/slide-facts.mjs): スライドの版番号・識別子・数値・日付が、引用ページにあるかを確認する
+- [scripts/fetch-text.mjs](scripts/fetch-text.mjs): agent が記事を読むためのページ取得（許可した host だけ）
+- [scripts/health-report.mjs](scripts/health-report.mjs) / [scripts/status-issue.mjs](scripts/status-issue.mjs): 点検の agent に渡す健康チェックと、運用状況 Issue の本文
+- [scripts/pending-summaries.mjs](scripts/pending-summaries.mjs) / [scripts/slides-without-qa.mjs](scripts/slides-without-qa.mjs): 要約待ち・想定問答が無いスライドの抽出
+- [scripts/backfill-skipped.mjs](scripts/backfill-skipped.mjs) / [scripts/coverage-report.mjs](scripts/coverage-report.mjs): フィードにあるのに `data/events` に無い記事の復元と確認
 
 ## GitHub Actions
 
@@ -196,34 +204,24 @@ Discord 通知は短い概要を本文に置き、主な更新は embed カー�
 - collect commit の直後に workflow dispatch で `deploy-pages.yml` を呼び出し、Pages を再生成する
 - 毎週金曜 06:00 JST を目安に `build-weekly-draft.yml` が直近 7 日分の週間ドラフトを更新する
 - 毎週水曜 06:00 JST を目安に `notify-weekly-discord.yml` が直近 7 日分の週間要約を Discord Webhook へ通知する
-- Copilot 由来の PR が merge されたときも `redeploy-pages-after-generated-pr-merge.yml` が `deploy-pages.yml` を再 dispatch し、superseded な draft PR / digest-authoring issue を cleanup する
+- agent の PR が merge されたときは、merger が `deploy-pages.yml` を dispatch して反映する
 
-### スライド生成と PDF 公開（専用レーン）
+### スライド・要約・点検（agentic workflow）
 
-- 月・木 03:00 JST を目安に `author-slide-pr.yml` が、スライド未作成の直近 3 か月の更新を最大 10 件選び、`Slide authoring request` Issue を作成して Copilot cloud agent に割り当てる
-- Copilot が `data/slides/{id}.json` を追加する PR を作る。`validate-slide-pr.yml` が許可パス（`data/slides/{id}.json` の追加・更新のみ）と `npm run validate:slides` を検証し、`auto-merge-slide-pr.yml` が安全なものを squash merge して Pages を再デプロイする
-- スライド PR は Issue のマーカーまたは `copilot/slide-` ブランチ名で判定し、digest 用の validate / auto-merge / review 正規化 / redeploy workflow は処理しない
+- スライド: `slide-dispatch.yml` が 1 日 4 回（各回最大 10 件）、スライド未作成の直近 3 か月の更新を新しい順に 1 件ずつ `slide.md` に渡す。読めない更新は `Slide skip` Issue に記録して依頼から外す。新しい更新が無いときの余力で、想定問答が無い既存スライドに `qa` を足す
+- 要約: `summarize-dispatch.yml` が 1 日 4 回、未処理があり `summaries:` の PR が開いていないときだけ `summarize.md` を起動する（最大 30 件）
+- 点検: 毎週月曜 04:00 JST を目安に `maintain.md` が動き、失敗を検知した `heal-on-failure.yml` からも起動する。健康チェック（`scripts/health-report.mjs`）を読み、原因を直す PR か、直せないものの Issue を作る
+- merge: `auto-merge-agent-prs.yml` が検証して merge する。スライドは `data/slides/{id}.json` 1 件だけ、要約は `data/summaries-ja.json` だけ、点検は `scripts/lib/maintenance-guard.mjs` の範囲だけ。1 ページに収まるか、事実が引用ページにあるかも確認する。検証に失敗したスライド・要約の PR は閉じて書き直させ、同じ更新で 2 回閉じられたら依頼から外す
+- `watchdog.yml`（毎日）が、トークンの期限の警告、固まった agent の run の取り消し、失敗した Pages デプロイの再実行、回復した `[aw]` 失敗 Issue のクローズを行い、`pipeline-status.yml`（毎日）が運用状況の Issue を更新する
 - `deploy-pages.yml` が `PDF_PASSWORD` を使って PDF を生成・暗号化する。Secret が無い、またはブラウザが使えない場合は PDF を公開せず、サイトのデプロイは続行する
-- 詳細は [docs/api.md](docs/api.md) と [docs/slide-schema.md](docs/slide-schema.md) を参照
-
-### Copilot Coding Agent による自動化
-
-- `collect-updates.yml` 成功後に `author-digest-pr.yml` が Copilot 向けの執筆依頼 Issue を自動作成する
-- Issue の Copilot assignee が自動化され、Copilot cloud agent がダイジェスト PR を生成する
-- 生成 PR に対して以下の workflow が自動実行される：
-  - `request-copilot-review.yml`: PR にラベルやメタデータを付与する
-  - `validate-generated-pr.yml`: draft の構文と内容を検証する
-  - `auto-merge-generated-pr.yml`: 検証成功時に PR を ready for review に変更し、可能なら自動 merge する
-- Copilot が作成した workflow run が `action_required` で blocked された場合、`rerun-blocked-copilot-workflows.yml` が定期的に検出して 1 回だけ自動リトライする
+- 詳細は [docs/automation.md](docs/automation.md)、[docs/api.md](docs/api.md)、[docs/slide-schema.md](docs/slide-schema.md) を参照
 
 ### workflow の詳細
 
 - GitHub hosted runner の Node 20 deprecation warning に対応し、主要 action は新しい major へ更新済み
-- 生成 PR は `summaries/daily/**`、`drafts/**`、`scripts/lib/reporting.mjs` 以外を変更しない限り auto-merge される
 - `needs-human-review` ラベルがある PR は自動 merge から除外される
 - Pages 再生成は commit や squash merge の直後に別途 dispatch で呼び出す（push 起点の workflow が自動連鎖しないため）
 - 最新 collect が 0 件なら、トップページの「最新日付」は前回公開された日次のまま据え置きになる。これは反映漏れではなく、新規公開対象が無かったことを示す
-- 新規イベントも Pages build failure も low-information fallback も無い日に stale な `digest-authoring` Issue が残っていた場合、`author-digest-pr.yml` が自動で close してキューを整理する
 - まれに live の Pages 配信が stale で、日本語 / 英語のどちらか片方だけ古い文面を返すことがある。その場合は repo 上の `site/**` と raw summary を先に確認し、必要なら `deploy-pages.yml` を手動 dispatch して再確認する
 
 ### 詳細は設計資産を参照
@@ -233,15 +231,17 @@ Discord 通知は短い概要を本文に置き、主な更新は embed カー�
 
 ## 必要な Secrets
 
-- `COPILOT_ASSIGN_TOKEN`: Copilot cloud agent への Issue 割り当て用（執筆依頼・スライド生成）
+- `COPILOT_GITHUB_TOKEN`: agentic workflow が Copilot を使うための fine-grained PAT（「Copilot Requests」権限のみ。OAuth トークンは使えない）。期限が近づくと `token-health` Issue で知らせる
 - `PDF_PASSWORD`: スライド PDF の暗号化に使う。未設定なら PDF は公開されない（`deploy-pages.yml` だけが使用）
+- リポジトリ設定で「Actions に PR の作成・承認を許可」が必要。日次の agent の費用上限は変数 `GH_AW_DEFAULT_MAX_DAILY_AI_CREDITS`（1500）
 - `DISCORD_WEBHOOK_URL`: 週次 Discord 通知用
 - 詳しい運用メモは [docs/automation.md](docs/automation.md) を参照してください。
 
 ## Pages 構成
 
-- トップページ: 最新 6 件ハイライト、週間アーカイブ、日次アーカイブ、簡易検索
+- トップページ: 直近の更新（最大 120 件・項番付き）、期間・種類・トピック・キーワードの絞り込み、ダウンロードパネル、週間アーカイブ、日次アーカイブ（日付チップ）、簡易検索
 - ハイライト一覧: 公開済みハイライトの全件一覧。50 件ごとにページ分割
+- 提供終了・廃止ページ: 提供終了・廃止・移行に関わる更新だけを新しい順に表示
 - 日次アーカイブ一覧: 日付ごとのダイジェストを 1 行 1 件寄りの縦一覧で表示
 - 週間アーカイブ一覧: 週単位ダイジェストを 1 行 1 件寄りの縦一覧で表示
 - 日次ページ: 未来日付項目の警告セクション、注目トピック、テーマ別まとめ、ソース内訳、全件一覧
@@ -254,7 +254,7 @@ Discord 通知は短い概要を本文に置き、主な更新は embed カー�
 ## 検索実装
 
 - `npm run build:pages` は静的 HTML 生成 → Pagefind インデックス生成 → `finalize-search.mjs` による版付き bundle 配置まで実行する
-- トップページと専用検索ページは同じ Pagefind API と結果描画を使い、原文と資料へ直接アクセスできる。トップページは最大 6 件表示する
+- トップページと専用検索ページは同じ Pagefind API と結果描画を使い、原文と資料へ直接アクセスできる
 - 専用の `search.html` は `pagefind.js` を直接読み込み、クエリ文字列同期、preload、結果整形を含む軽量な検索 UI を静的配布している
 - 検索対象は `data-pagefind-body` を持つ公開ページだけで、日次・週間の詳細本文とハイライト一覧本文から検索できる。原文・資料の補助リンクは検索本文から除外する
 - 詳細設計は [docs/search-architecture.md](docs/search-architecture.md) を参照

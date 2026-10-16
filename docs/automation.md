@@ -19,11 +19,11 @@
 - 収集の後に `node scripts/backfill-skipped.mjs --coverage` が、フィードに出ているのに `data/events` に無い記事（過去に捨てたものを含む）を、記事ページから読み直して戻す。最後に `node scripts/coverage-report.mjs --strict` で漏れを確認し、残っていれば run を失敗させて知らせる（2 週間ごとの点検依頼でも確認する）
 - **提供終了・廃止ページ**: `retirements.html`（英語版は `en/retirements.html`）は、提供終了・廃止・移行に関わる更新だけを新しい順に並べる。ヘッダーの「提供終了・廃止」から行ける。検索の対象には入れない（ハイライト一覧と重複するため）。ダウンロード欄の上のキーワード欄は、一覧の文字（スライドがある更新ではカードの文字）に対して絞り込み、種類（GA / Preview / 廃止 / アナウンス / 更新）はスライドの無い更新にも効く
 - **カードの具体性**: スライドがある更新のカードは、副題に加えて、スライドの `core` パネルの先頭 2〜4 項目（対象プラン、設定・手順、前提と制限など）を箇条書きで表示する。「〜を確認できる」で終わる変更点の文は、箇条書きがあれば出さない。書かれた要約（`data/summaries-ja.json`）も `points` を持てて、持たない既存分は次回の要約依頼で書き直しの対象に戻る（`current` に今の文面が付く）
-- **スライドの作成ペース**: [slide-dispatch.yml](../.github/workflows/slide-dispatch.yml) が 1 日 2 回（03:00 / 15:00 JST が目安）、スライドが無い更新を新しい順に最大 8 件選び、1 件ずつ agentic workflow（[slide.md](../.github/workflows/slide.md)）を起動する。増えるのは 1 日に最大 16 件ほどで、スケジュールの遅れで前後する。急ぐときは `slide-dispatch.yml` を手動で実行する（`ids` に ID、`limit` に件数）
+- **スライドの作成ペース**: [slide-dispatch.yml](../.github/workflows/slide-dispatch.yml) が 1 日 4 回（各回最大 10 件）、スライドが無い更新を新しい順に選び、1 件ずつ agentic workflow（[slide.md](../.github/workflows/slide.md)）を起動する。スケジュールの遅れや runner の待ちで前後する。急ぐときは `slide-dispatch.yml` を手動で実行する（`ids` に ID、`limit` に件数）
 - **日本語の題名**: スライドがある更新のカードは、スライドの日本語の題名（`title.ja`）を見出しにし、英語の原題は「原題」として小さく添える。書かれた要約（`data/summaries-ja.json`）も `title` を持てて、持たない既存分は次回の要約依頼で書き直しの対象に戻る。同じ記事のページの別の節（`#` 以降が違う URL）は、別の更新として扱う
 - **一覧との連動**: ダウンロード欄の期間・種類・トピックは、その下の更新一覧にも効く（最初は過去 30 日）。スライドがある更新のカードには「スライドあり・保存対象」のチェックがあり、外すとその 1 件が JSON / PDF / PPTX から外れる（一覧側と「個別に選ぶ」側は同じ選択を共有する）。スライドが無い更新は、日付とトピックでだけ絞り込まれる
 - **ダウンロードの選び方**: トップとハイライトのダウンロード欄は、期間・種類・トピックで絞り込んだうえで、「個別に選ぶ」から 1 件ずつ外せる（最初は全部が選択済み。「すべて選択」「すべて解除」あり）。JSON / PDF / PPTX は、選んだものだけを 1 つにまとめる
-- **要約の流れ**: agentic workflow [summarize.md](../.github/workflows/summarize.md)（毎日 03:30 JST が目安、手動実行も可）が、英語の抜粋のままになっている更新（スライドも要約も無いもの）を最大 30 件読み、記事を開いて日本語の要約を [data/summaries-ja.json](../data/summaries-ja.json) に書き足す。要約の PR が開いている間は新しい依頼を出さない。カードの文面は、スライド → 要約 → 原文の抜粋の順で選ばれる。`tests/card-boilerplate.test.mjs` が、定型文や、多くのカードで繰り返される文を検出して失敗させる
+- **要約の流れ**: [summarize-dispatch.yml](../.github/workflows/summarize-dispatch.yml)（1 日 4 回）が、英語の抜粋のままになっている更新（スライドも要約も無いもの）があり、要約の PR が開いていないときだけ agentic workflow [summarize.md](../.github/workflows/summarize.md) を起動する。agent は最大 30 件の記事を開いて日本語の要約を [data/summaries-ja.json](../data/summaries-ja.json) に書き足す（手動実行も可）。カードの文面は、スライド → 要約 → 原文の抜粋の順で選ばれる。`tests/card-boilerplate.test.mjs` が、定型文や、多くのカードで繰り返される文を検出して失敗させる
 - agentic workflow（gh-aw）のネットワーク許可は、各 `.md` の `network.allowed` に書く（code.visualstudio.com、github.blog、docs.github.com、learn.microsoft.com、www.publickey1.jp など）。取得元を足すときは `.md` を直し、`gh aw compile` で `.lock.yml` を作り直して一緒にコミットする。digest 用の執筆レーン（Copilot coding agent）だけは、リポジトリの Environment `copilot` の変数 `COPILOT_AGENT_FIREWALL_ALLOW_LIST_ADDITIONS` を使う
 - 変更がなければ commit せず終了する
 - 変更があった場合は `github-actions[bot]` が `data/**` と `summaries/**` を commit / push する
@@ -53,8 +53,8 @@
 
 | レーン | 起動 | 1 回の内容 | PR のタイトル |
 |---|---|---|---|
-| スライド [slide.md](../.github/workflows/slide.md) | [slide-dispatch.yml](../.github/workflows/slide-dispatch.yml) が 1 日 2 回、1 件ずつ起動 | 記事を読み `data/slides/{id}.json` を 1 枚書き、`npm run validate:slides` を通す | `slides: ...` |
-| 要約 [summarize.md](../.github/workflows/summarize.md) | 毎日 03:30 JST が目安 | 最大 30 件の要約を `data/summaries-ja.json` に書く | `summaries: ...` |
+| スライド [slide.md](../.github/workflows/slide.md) | [slide-dispatch.yml](../.github/workflows/slide-dispatch.yml) が 1 日 4 回、1 件ずつ起動 | 記事を読み `data/slides/{id}.json` を 1 枚書き（想定問答 `qa` を含む）、`npm run validate:slides` を通す | `slides: ...` |
+| 要約 [summarize.md](../.github/workflows/summarize.md) | [summarize-dispatch.yml](../.github/workflows/summarize-dispatch.yml) が 1 日 4 回、未処理があるときだけ | 最大 30 件の要約を `data/summaries-ja.json` に書く | `summaries: ...` |
 | 点検 [maintain.md](../.github/workflows/maintain.md) | 毎週月曜 04:00 JST が目安 | `scripts/health-report.mjs` の事実から原因を調べて直す | `maint: ...` |
 
 - **読めない更新**: スライドの agent が記事を読めなかったときは、ファイルを作らず `Slide skip: {id}`（ラベル `slide-skip`）の Issue を作る。以後の依頼から外れる（再試行するには、その Issue を閉じてラベルを外す）。
@@ -72,7 +72,7 @@
 ## 完全自動ではない部分
 
 - スライド・要約・点検の PR は、タイトルの接頭辞（`slides:` / `summaries:` / `maint:`）で判定する。digest 用 workflow（validate / auto-merge / review 正規化 / redeploy）を変えるときは、これらの PR を処理しない条件を保つこと（`tests/slide-lane.test.mjs` が検証）
-- Secret: `COPILOT_GITHUB_TOKEN`（agentic workflow が Copilot を使うための個人トークン）、`COPILOT_ASSIGN_TOKEN`（digest 用レーンの Issue の Copilot 割り当て）、`PDF_PASSWORD`（スライド PDF の暗号化。`deploy-pages.yml` だけが使い、未設定なら PDF は公開されない）、`DISCORD_WEBHOOK_URL`
+- Secret: `COPILOT_GITHUB_TOKEN`（agentic workflow が Copilot を使うための個人トークン）、`PDF_PASSWORD`（スライド PDF の暗号化。`deploy-pages.yml` だけが使い、未設定なら PDF は公開されない）、`DISCORD_WEBHOOK_URL`
 
 - agentic workflow を使うには、Secret `COPILOT_GITHUB_TOKEN` と、リポジトリ設定の「Actions に PR の作成・承認を許可」が必要
 - repo 側では auto-merge を有効化し、Actions の `GITHUB_TOKEN` は write 権限と PR review approve 権限を持つ前提にしている
@@ -88,21 +88,28 @@
 - [build-biweekly-draft.yml](../.github/workflows/build-biweekly-draft.yml): 手動の隔週ドラフト生成
 - [publish-qiita.yml](../.github/workflows/publish-qiita.yml): Qiita 投稿
 - [test-discord-notification.yml](../.github/workflows/test-discord-notification.yml): Discord preview 通知の実送信テスト
+- [slide-dispatch.yml](../.github/workflows/slide-dispatch.yml) / [summarize-dispatch.yml](../.github/workflows/summarize-dispatch.yml): スライド・要約の agent を起動する（AI なし）
+- [slide.md](../.github/workflows/slide.md) / [summarize.md](../.github/workflows/summarize.md) / [maintain.md](../.github/workflows/maintain.md): agentic workflow の正本（`gh aw compile` で `*.lock.yml` を作る）
+- [auto-merge-agent-prs.yml](../.github/workflows/auto-merge-agent-prs.yml): agent の PR の検証と merge、Pages の再デプロイ
+- [heal-on-failure.yml](../.github/workflows/heal-on-failure.yml): 失敗した workflow を検知して点検の agent を起動する
+- [watchdog.yml](../.github/workflows/watchdog.yml): token の期限、固まった run、失敗したデプロイ、回復した失敗 Issue
+- [pipeline-status.yml](../.github/workflows/pipeline-status.yml): 運用状況 Issue の毎日の更新
 
 ## Secrets
 
 - `DISCORD_WEBHOOK_URL`: Discord 通知と通知テスト用
 - `PAGES_BASE_URL`: Discord 通知に載せる Pages URL のベース。未設定時は公開 URL を既定値として使う
 - `QIITA_ACCESS_TOKEN`: Qiita 投稿用
-- `COPILOT_ASSIGN_TOKEN`: authoring Issue を Copilot に割り当てるための token
+- `COPILOT_GITHUB_TOKEN`: agentic workflow が Copilot を使うための fine-grained PAT（「Copilot Requests」権限のみ。OAuth トークンは使えない）
+- `PDF_PASSWORD`: スライド PDF の暗号化（`deploy-pages.yml` だけが使う）
 
 ## セキュリティメモ
 
 - リポジトリ内に Discord Webhook URL や GitHub token を直書きしない構成です。通知や投稿はすべて GitHub Secrets 経由です
 - `github-script` への workflow input は script 直埋め込みではなく `env` 経由で渡します
-- auto-merge は `summaries/daily/**`、`drafts/**`、`scripts/lib/reporting.mjs` 以外を変更した PR では止まります
+- agent の PR は `scripts/merge-agent-prs.mjs` だけが merge する（スライドは 1 ファイル、要約は 1 ファイル、点検は `scripts/lib/maintenance-guard.mjs` の範囲）。agent は secret の無い sandbox で動き、書き込みは PR（safe output）だけに限られる
 - `needs-human-review` ラベルがある PR は必ず手動確認に倒れます
-- blocked workflow の rerun は Copilot actor が起点の run に 1 回だけ限定し、無限 rerun を避けます
+- agent が読むページは、`scripts/fetch-text.mjs` と `network.allowed` の host に限る。取得した本文は信頼できないデータとして扱うよう、各 agent の指示に書いてある
 
 ## Node / action バージョン
 
@@ -127,7 +134,7 @@ GitHub hosted runner の Node 20 deprecation warning に合わせて主要 actio
 
 ## まず見るべき確認ポイント
 
-- 15 分を超えても PR が出ない、または review ruleset が動かない場合は、GitHub 側の Copilot Code Review 設定と GitHub 側キューを見直す
+- agent の PR が出ない・merge されないときは、Issue「Pipeline status」と `[aw] ... failed` の Issue、merger の run のログ（`Auto-merge stopped` のコメントも）を先に見る
 - Pages だけ古い場合は workflow 失敗より先に live HTML の stale 配信を疑い、[deploy-pages.yml](../.github/workflows/deploy-pages.yml) を手動 dispatch して再確認する
 
 ## 資料の補完
