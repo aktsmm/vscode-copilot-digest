@@ -1,0 +1,83 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "53dc2a824ef94f8a",
+  "title": {
+    "ja": "Copilot アプリの diff・ターミナル・ブラウザー パネルで、エージェントの変更を一か所で確認",
+    "subtitleJa": "差分の確認、コマンド実行、画面の動作確認をアプリ内の組み込みパネルで完結できる",
+    "original": "GitHub Copilot app for Beginners: Using the diff, terminal, and browser"
+  },
+  "date": "2026-09-10",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "GitHub Copilot アプリでエージェントが加えた変更をレビューして取り込む開発者",
+    "change": "エディター・ターミナル・ブラウザーを行き来せず、アプリ内のパネルで確認から PR 作成まで行える",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "info",
+    "summary": "エージェントの変更を受け入れる前に、変更点・実行・動作の 3 点をパネルで確認する"
+  },
+  "panels": [
+    {
+      "id": "panels",
+      "heading": "3 つのパネル",
+      "priority": "core",
+      "items": [
+        "diff パネル: 追加は緑、削除は赤で表示。変更の承認、コメント、Copilot への修正依頼ができる",
+        "ターミナル パネル: セッション内でコマンドを実行。複数のターミナルを同時に開ける",
+        "ブラウザー パネル: UI のある機能を、サイトを使うのと同じように試せる"
+      ]
+    },
+    {
+      "id": "how-to",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "スクリプトを設定すると Run ボタンから実行できる（例: client フォルダーを開いて npm run dev）",
+        "ブラウザー パネルの Pick & Polish で要素を選び、エージェントと調整できる",
+        "変更後に開発サーバー スクリプトを再実行して修正を確認する",
+        "満足したらアプリから変更を承認し、プル リクエストを作成する"
+      ]
+    },
+    {
+      "id": "checks",
+      "heading": "受け入れ前の 3 つの問い",
+      "priority": "detail",
+      "items": [
+        "何が変わったか。動くか。実際に機能するか"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "diff", "type": "term", "oneLine": "変更前と変更後の比較。追加・削除・変更された行を示す。" },
+    { "term": "Pick & Polish", "type": "feature", "oneLine": "ブラウザー パネルで要素を選び、エージェントと調整するツール。" }
+  ],
+  "references": {
+    "source": {
+      "title": "GitHub Copilot app for Beginners: Using the diff, terminal, and browser - The GitHub Blog",
+      "url": "https://github.blog/ai-and-ml/github-copilot/github-copilot-app-for-beginners-using-the-diff-terminal-and-browser/"
+    }
+  },
+  "evidence": [
+    "https://github.blog/ai-and-ml/github-copilot/github-copilot-app-for-beginners-using-the-diff-terminal-and-browser/"
+  ],
+  "qa": [
+    {
+      "q": "diff パネルでは何ができますか。",
+      "a": "追加された行は緑、削除された行は赤で表示されます。変更を承認する、コメントを残す、Copilot に修正を依頼する、のいずれかを選べます。"
+    },
+    {
+      "q": "ターミナル パネルでコマンドを繰り返し実行するには。",
+      "a": "スクリプトとして設定すると Run ボタンから実行できます。記事の例は、client フォルダーを開いて npm run dev を実行する開発サーバー スクリプトです。複数のターミナルを同時に開けます。"
+    },
+    {
+      "q": "Pick & Polish とは何ですか。",
+      "a": "ブラウザー パネルで画面上の要素を選び、エージェントと一緒に調整するツールです。変更後は開発サーバー スクリプトを再実行して修正を確認します。"
+    },
+    {
+      "q": "確認が終わったあとはどうしますか。",
+      "a": "Copilot アプリから変更を承認し、そのままプル リクエストを作成できます。"
+    }
+  ]
+}
