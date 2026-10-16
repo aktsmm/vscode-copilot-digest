@@ -1,0 +1,62 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "6fdf4a6bc9a49fd0",
+  "title": {
+    "ja": "Slack と Teams の Copilot が、複数リポジトリをまたいだ会話に対応",
+    "subtitleJa": "1 つの会話で複数リポジトリの PR や Issue を扱え、@GitHub を文中のどこでも呼べる",
+    "original": "Multi-repo support and other improvements for GitHub Copilot in Slack and Microsoft Teams"
+  },
+  "date": "2026-10-15",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "Slack や Microsoft Teams で GitHub Copilot を使っている開発者",
+    "change": "1 つの会話で複数リポジトリを扱え、メンションや文脈の扱いも改善された",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "Slack や Teams で @GitHub に、リポジトリをまたぐ質問をしてみる"
+  },
+  "panels": [
+    {
+      "id": "multi-repo",
+      "heading": "複数リポジトリ対応",
+      "priority": "core",
+      "items": [
+        "1 つの会話の中で、複数のリポジトリをまたいで作業できる",
+        "会話を切り替えずに、PR の追跡、Issue の調査、活動の把握ができる",
+        "例：「@GitHub Show me all my open pull requests across repositories」"
+      ]
+    },
+    {
+      "id": "improvements",
+      "heading": "そのほかの改善",
+      "priority": "core",
+      "items": [
+        "@GitHub をメッセージの先頭だけでなく、どこにでも書ける",
+        "会話中のリポジトリの切り替えがしやすくなった",
+        "Slack で共有されたメッセージやスレッドを文脈として使える",
+        "エラーの低減、タスク開始の改善、中断からの復帰を改善した"
+      ]
+    }
+  ],
+  "suggestions": [
+    "「@GitHub What pull requests were merged this week across my repositories?」のように週次の状況把握に使う"
+  ],
+  "qa": [
+    { "q": "複数リポジトリ対応で何ができるようになりますか。", "a": "1 つの会話の中で複数のリポジトリをまたいで、PR の追跡、Issue の調査、最近の活動の把握ができます。会話を切り替える必要はありません。" },
+    { "q": "どのチャットツールで使えますか。", "a": "Slack と Microsoft Teams の GitHub Copilot で使えます。どちらも @GitHub に直接質問します。" },
+    { "q": "@GitHub のメンションの位置に制約はありますか。", "a": "メッセージの先頭に限らず、文中のどこにでも @GitHub を書けるようになりました。" },
+    { "q": "Slack の会話はどう文脈に使われますか。", "a": "共有された Slack のメッセージやスレッドを Copilot が文脈として使えるため、内容をコピーして貼る必要がなくなります。" }
+  ],
+  "references": {
+    "source": {
+      "title": "Multi-repo support and other improvements for GitHub Copilot in Slack and Microsoft Teams - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-10-15-copilot-in-slack-and-teams-adds-model-and-repository-updates/"
+    }
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-10-15-copilot-in-slack-and-teams-adds-model-and-repository-updates/"
+  ]
+}
