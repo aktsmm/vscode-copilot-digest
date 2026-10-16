@@ -52,6 +52,28 @@
       ]
     }
   ],
+  "qa": [
+    {
+      "q": "どのプランで使えますか。",
+      "a": "GitHub Enterprise Cloud（データレジデンシー版を含む）で、GitHub Code SecurityまたはGitHub Advanced Securityを利用している場合に使えます。"
+    },
+    {
+      "q": "有効化するにはどうしますか。",
+      "a": "Enterprise管理者がAdvanced Security policiesの「Agentic autofix」ポリシーを有効にし、その後、組織またはリポジトリの管理者がCode Security設定で有効化します。Copilotの請求方法の設定も必要です。"
+    },
+    {
+      "q": "どのアラートが対象ですか。",
+      "a": "リポジトリの既定ブランチのコードスキャンアラートが対象です。プルリクエストや他のブランチだけで検出されたアラートはCopilotに割り当てられません。"
+    },
+    {
+      "q": "一度に複数のアラートを修正できますか。",
+      "a": "アラート一覧またはセキュリティキャンペーンで最大25件を選ぶと、1つのプルリクエストでまとめて修正を依頼できます。REST APIでassigneesにcopilot-swe-agent[bot]を設定する方法もあります。"
+    },
+    {
+      "q": "費用はどのように発生しますか。",
+      "a": "Code SecurityのバジェットからAI Creditsを消費し、GitHub Actionsの分数も使います。AI使用量はEnterpriseの請求・ライセンスの「AI usage」に「Advanced Security」として表示されます。"
+    }
+  ],
   "references": {
     "source": {
       "title": "Agentic autofix for code scanning alerts general availability - The GitHub Blog",
