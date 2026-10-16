@@ -73,5 +73,23 @@
     "https://code.visualstudio.com/docs/agents/run/sessions/manage-sessions",
     "https://code.visualstudio.com/docs/agents/concepts/agent-host",
     "https://code.visualstudio.com/docs/agents/run/agent-harnesses"
+  ],
+  "qa": [
+    {
+      "q": "Copilot harnessは自分の環境で既定になりますか？",
+      "a": "新規セッションの既定として段階的に展開中です。新しいセッションを始めたとき、ハーネスピッカーの「Copilot」表示で、そのセッションがCopilot harnessを使うか確認できます。"
+    },
+    {
+      "q": "Copilot harnessのセッションはどこから使えますか？",
+      "a": "Copilot harnessはAgent Hostを通じてセッションを実行します。そのためバックグラウンドで継続でき、VS Codeエディターウィンドウとエージェントウィンドウの両方からアクセスできます。"
+    },
+    {
+      "q": "読み取り専用のAskエージェントは使えますか？",
+      "a": "フィードバックを受けて、Copilot harnessにAskが組み込みエージェントとして再導入されました。エージェントピッカーからAskを選ぶと使えます。"
+    },
+    {
+      "q": "ほかに1.142で追加された主な機能は？",
+      "a": "プレビューのCanvases（chat.canvases.enabled）、チャットの別フォルダーやGit worktreeへの移動、再設計されたモデルピッカー、Markdownエディターの強化、エージェント権限のエンタープライズ管理などです。"
+    }
   ]
 }
