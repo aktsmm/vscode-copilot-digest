@@ -1,0 +1,82 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "71249bf24945535d",
+  "title": {
+    "ja": "Microsoft の社内アプリ実行基盤「Copilot Managed Runtime」がプレビュー公開",
+    "subtitleJa": "Microsoft 365 と同じテナント境界内でアプリを実行し、管理者が一元管理できる",
+    "original": "マイクロソフト、企業内アプリの実行基盤「Copilot Managed Runtime」プレビュー公開。Microsoft 365と同じテナント内でコード実行、管理者による集中管理も"
+  },
+  "date": "2026-09-27",
+  "topic": "GitHub Copilot",
+  "status": "preview",
+  "statusEvidence": "「Copilot Managed Runtime」をパブリックプレビューとして公開しました。",
+  "audience": {
+    "who": "Microsoft Copilot などで作った社内アプリを安全に動かしたい開発者・Microsoft 365 管理者",
+    "change": "作成したアプリを Microsoft 365 のテナント境界内で実行し、権限と公開設定を管理者が管理できる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "info",
+    "summary": "社内アプリを運用する管理者は、実行基盤と Microsoft 365 管理センターでの管理方法を把握する"
+  },
+  "panels": [
+    {
+      "id": "overview",
+      "heading": "何ができるか",
+      "priority": "core",
+      "items": [
+        "Microsoft Copilot などで開発した社内アプリを実行するための基盤",
+        "アプリはユーザーの Microsoft 365 と同じテナント境界内で実行される",
+        "実行ユーザーの権限は、Microsoft 365 で設定済みのユーザー ID と権限を参照する",
+        "公開・非公開の設定や状態把握は、Microsoft 365 のアドミン コンソールで行う"
+      ]
+    },
+    {
+      "id": "targets",
+      "heading": "実行できるアプリ",
+      "priority": "core",
+      "items": [
+        "Copilot Home の一部である Copilot Cowork で生成したアプリ",
+        "Copilot Code で生成したアプリ",
+        "Copilot Studio で開発したアプリ",
+        "Copilot Managed Runtime SDK で開発したカスタム アプリ"
+      ]
+    },
+    {
+      "id": "tools",
+      "heading": "使える機能",
+      "priority": "detail",
+      "items": [
+        "デプロイなどの操作用に Copilot Managed Runtime CLI を提供",
+        "1500 種類以上のデータ ソースに接続できるコネクタを利用可能",
+        "Microsoft Graph や Work IQ など、組織内データを扱う機能も利用可能"
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Copilot Managed Runtime",
+      "type": "product",
+      "oneLine": "Copilot で作った社内アプリを、ガバナンスを保って実行するための基盤。"
+    },
+    {
+      "term": "Copilot Code",
+      "type": "product",
+      "oneLine": "Microsoft Copilot の強化で示された、AI コーディング エージェント。"
+    },
+    {
+      "term": "Copilot Autopilot",
+      "type": "product",
+      "oneLine": "指示に基づいて 24 時間稼働し続ける AI エージェント。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "マイクロソフト、企業内アプリの実行基盤「Copilot Managed Runtime」プレビュー公開。Microsoft 365と同じテナント内でコード実行、管理者による集中管理も － Publickey",
+      "url": "https://www.publickey1.jp/blog/26/copilot_managed_runtimemicrosoft_365.html"
+    }
+  },
+  "evidence": [
+    "https://www.publickey1.jp/blog/26/copilot_managed_runtimemicrosoft_365.html"
+  ]
+}
