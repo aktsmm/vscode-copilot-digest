@@ -5,9 +5,14 @@
 export const CONTROL_FILES = [
   ".github/workflows/auto-merge-agent-prs.yml",
   ".github/workflows/watchdog.yml",
+  ".github/workflows/pipeline-maintenance.yml",
+  ".github/workflows/validate-maintenance-pr.yml",
+  ".github/workflows/auto-merge-maintenance-pr.yml",
+  ".github/workflows/slide-watchdog.yml",
   ".github/workflows/deploy-pages.yml",
   "scripts/merge-agent-prs.mjs",
   "scripts/lib/maintenance-guard.mjs",
+  "scripts/check-maintenance-change.mjs",
 ];
 
 // The agentic workflow sources (*.md) and their compiled *.lock.yml are made by `gh aw compile`, never by hand.

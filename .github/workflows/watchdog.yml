@@ -21,6 +21,7 @@ concurrency:
 
 jobs:
   token-health:
+    if: ${{ vars.AGENT_ENGINE == 'gh-aw' }}
     runs-on: ubuntu-latest
     steps:
       - name: Warn before the Copilot token expires
@@ -35,6 +36,8 @@ jobs:
             let problem = null;
             if (!token) {
               problem = { title: 'COPILOT_GITHUB_TOKEN is not set', detail: 'The agentic workflows (slides, summaries, maintenance) cannot run.' };
+            } else if (!token.startsWith('github_pat_')) {
+              problem = { title: 'COPILOT_GITHUB_TOKEN is not a fine-grained PAT', detail: 'gh-aw accepts only a fine-grained personal access token (github_pat_...) with the Copilot Requests permission, not an OAuth token (gho_...).' };
             } else {
               const response = await fetch('https://api.github.com/user', { headers: { authorization: `Bearer ${token}`, accept: 'application/vnd.github+json' } });
               const expires = response.headers.get('github-authentication-token-expiration');
