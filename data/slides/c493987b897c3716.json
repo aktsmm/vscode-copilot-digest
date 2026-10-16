@@ -1,0 +1,89 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "c493987b897c3716",
+  "title": {
+    "ja": "GitHub Issue 1 件でイベント運営を自動化する事例",
+    "subtitleJa": "イシュー フォーム、ラベル、Actions、Copilot スキルで準備から事後処理までを自動化",
+    "original": "Marketing ops as code: Automating events from planning to follow-up on GitHub"
+  },
+  "date": "2026-09-11",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "API や CLI を持つツールで繰り返し作業をしているマーケティング担当者や開発者",
+    "change": "運用手順を Markdown に書き、Copilot と GitHub の機能で、イベントの準備から事後処理までを自動化する例",
+    "changeNature": "neutral"
+  },
+  "action": {
+    "required": "info",
+    "summary": "最も繰り返しの多い作業を 1 つ選び、API か CLI があるか確認して小さく始める"
+  },
+  "panels": [
+    {
+      "id": "mechanism",
+      "heading": "仕組み",
+      "priority": "core",
+      "items": [
+        "イシュー フォームが入力欄、ラベル（event-setup など）が起動の合図、Actions が実行役",
+        "AGENTS.md に命名規則やタイム ゾーンを書き、Copilot が過去のイベントを参考に案を作る",
+        "ラベルが付くと、ランディング ページの複製、UTM 付きリンク、招待メール、プロジェクト ボード登録を実行"
+      ]
+    },
+    {
+      "id": "followup",
+      "heading": "事後処理と運用",
+      "priority": "core",
+      "items": [
+        "毎朝のスケジュール ワークフローが登録者を取得し、招待制イベントでは待機リストも選別する",
+        "/lead-upload と /event-report は SKILL.md で書いた Copilot のエージェント スキル",
+        "DRY_RUN リポジトリ変数を有効にすると、外部システムに触れずにリハーサルできる"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "対象ツールに API か CLI が必要",
+        "スケジュール ワークフローは、失敗を気づける通知の仕組みが必要。記事では静かに失敗した例を紹介",
+        "スキルは pull request でレビューし、CODEOWNERS でレビュー担当を振り分ける"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "イシュー フォーム", "type": "feature", "oneLine": "タイトルや日付などの構造化された入力欄を持つ Issue のテンプレート。" },
+    { "term": "SKILL.md", "type": "term", "oneLine": "Copilot に手順を伝える、Markdown で書いたエージェント スキルの定義。" },
+    { "term": "DRY_RUN", "type": "term", "oneLine": "有効にすると外部システムに触れず動作だけを確認できる切り替え。" }
+  ],
+  "suggestions": [
+    "運用手順を SKILL.md に書き、Copilot に実行させるところから始める"
+  ],
+  "references": {
+    "source": {
+      "title": "Marketing ops as code: Automating events from planning to follow-up on GitHub - The GitHub Blog",
+      "url": "https://github.blog/ai-and-ml/github-copilot/marketing-ops-as-code-automating-events-from-planning-to-follow-up-on-github/"
+    },
+    "documents": []
+  },
+  "evidence": [
+    "https://github.blog/ai-and-ml/github-copilot/marketing-ops-as-code-automating-events-from-planning-to-follow-up-on-github/"
+  ],
+  "qa": [
+    {
+      "q": "自動化にコードは必要ですか。",
+      "a": "筆者は運用手順を書いて Copilot に渡し、対話しながら自動化を育てたと述べています。後処理は SKILL.md という Markdown の手順書で書いたスキルです。"
+    },
+    {
+      "q": "試行中に外部システムを壊さない方法は。",
+      "a": "DRY_RUN というリポジトリ変数を各ワークフローが確認します。有効にすると、ランディング ページの作成や他リポジトリへのイシュー登録、リスト共有などを行わずに動作だけを通せます。"
+    },
+    {
+      "q": "どんなツールなら同じ方法が使えますか。",
+      "a": "API または CLI など、スクリプトから操作できる手段があるツールです。記事では、イベント プラットフォーム、CRM、フォーム ビルダー、分析サービスが例に挙がっています。"
+    },
+    {
+      "q": "運用上の落とし穴は。",
+      "a": "朝の登録者選別ワークフローが、気づかれないまま失敗してリストが古くなった例が紹介されています。スケジュール実行には、失敗を目立たせる仕組みを付けることが勧められています。"
+    }
+  ]
+}
