@@ -1,0 +1,88 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "c295eac4b45dc07c",
+  "title": {
+    "ja": "カスタム プロパティの定義時に、Copilot が許可値を提案",
+    "subtitleJa": "プロパティ作成時に、名前に応じた許可値を Copilot が提案し、1 クリックで採用できる",
+    "original": "GitHub Copilot suggests custom properties definitions"
+  },
+  "date": "2026-09-15",
+  "topic": "GitHub Copilot",
+  "status": "preview",
+  "statusEvidence": "This feature is in public preview for GitHub Copilot Business and Copilot Enterprise plans.",
+  "audience": {
+    "who": "Copilot Business / Enterprise で、リポジトリのカスタム プロパティを定義する Organization・Enterprise の管理者",
+    "change": "新しいカスタム プロパティ定義の作成時に、Copilot が関連する許可値を提案する",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "使う場合は、オーナーが「Repository custom property suggestions」Copilot ポリシーで提供可否を設定する"
+  },
+  "panels": [
+    {
+      "id": "availability",
+      "heading": "使える場所とプラン",
+      "priority": "core",
+      "items": [
+        "パブリック プレビュー。対象は Copilot Business と Copilot Enterprise",
+        "Enterprise または Organization レベルでカスタム プロパティを新規作成するときに提案される"
+      ]
+    },
+    {
+      "id": "usage",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "定義するプロパティに応じて、関連する許可値が提案される",
+        "例: multi-select の FedRAMP ではコンプライアンス関連の値、single-select の internet-facing では yes / no",
+        "提案は 1 クリックで採用できる"
+      ]
+    },
+    {
+      "id": "policy",
+      "heading": "ポリシー",
+      "priority": "detail",
+      "items": [
+        "Enterprise / Organization のオーナーは Repository custom property suggestions Copilot ポリシーで機能の提供を制御できる"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "カスタム プロパティ", "type": "feature", "oneLine": "リポジトリにメタデータを追加する項目。ルールセットの対象指定にも使える。" }
+  ],
+  "qa": [
+    {
+      "q": "どのプランで使えますか？",
+      "a": "パブリック プレビューで、GitHub Copilot Business と Copilot Enterprise のプランが対象です。"
+    },
+    {
+      "q": "どんなときに提案が表示されますか？",
+      "a": "Enterprise または Organization レベルで新しいカスタム プロパティの定義を作成するときに、プロパティの内容に基づく許可値が提案されます。"
+    },
+    {
+      "q": "提案はどう使いますか？",
+      "a": "提案された値は 1 クリックで採用できます。例として、FedRAMP にはコンプライアンス関連の値、internet-facing には yes や no が提案されます。"
+    },
+    {
+      "q": "機能を制御できますか？",
+      "a": "Enterprise と Organization のオーナーは、Repository custom property suggestions Copilot ポリシーで機能の提供を設定できます。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "GitHub Copilot suggests custom properties definitions - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-09-15-github-copilot-suggests-custom-properties-definitions/"
+    },
+    "documents": [
+      {
+        "title": "Organization 内リポジトリのカスタム プロパティの管理 - GitHubドキュメント",
+        "url": "https://docs.github.com/ja/organizations/managing-organization-settings/managing-custom-properties-for-repositories-in-your-organization"
+      }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-09-15-github-copilot-suggests-custom-properties-definitions/",
+    "https://docs.github.com/ja/organizations/managing-organization-settings/managing-custom-properties-for-repositories-in-your-organization"
+  ]
+}
