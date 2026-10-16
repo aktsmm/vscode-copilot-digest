@@ -1,0 +1,102 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "6bac01d2822bb791",
+  "title": {
+    "ja": "Copilot 影響ダッシュボードに、機能ごとの利用状況を追加",
+    "subtitleJa": "28 日間で 2 日以上使ったアクティブ ユーザー数を機能別に表示し、レポート API にも追加",
+    "original": "Copilot impact dashboard now shows feature engagement"
+  },
+  "date": "2026-09-17",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "Copilot の導入状況を把握するエンタープライズ管理者・組織オーナー",
+    "change": "どの機能が定着し、どの機能に追加の支援が必要かをダッシュボードと API で確認できる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "利用状況を見たい場合は、Copilot 使用状況メトリックのポリシーを有効にして確認する"
+  },
+  "panels": [
+    {
+      "id": "what-changed",
+      "heading": "変わること",
+      "priority": "core",
+      "items": [
+        "ダッシュボードは、28 日間のうち 2 日以上その機能を使ったアクティブ ユーザー数を機能別に表示する",
+        "エンタープライズと組織の 28 日集計レポートに copilot_feature_engagement が加わる",
+        "totals_by_feature は、コード補完、エージェント編集、Copilot コード レビュー（受動・能動）、クラウド エージェント、CLI、アプリ別に集計する"
+      ]
+    },
+    {
+      "id": "who-and-plan",
+      "heading": "使える人と前提",
+      "priority": "core",
+      "items": [
+        "エンタープライズ オーナー、課金マネージャー、組織オーナー、View Copilot Metrics 権限を持つカスタム ロールの利用者",
+        "Copilot 使用状況メトリックのポリシーが有効であること"
+      ]
+    },
+    {
+      "id": "phase",
+      "heading": "AI 導入フェーズの改善",
+      "priority": "core",
+      "items": [
+        "users_in_phase_28d は、その日時点で各フェーズに分類された直近 28 日の全ユーザー数を返す",
+        "total_engaged_users は、従来どおりその日にアクティブだったフェーズ内のユーザーのみを返す"
+      ]
+    },
+    {
+      "id": "limits",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "機能別の集計はユーザー単位のレポートには含まれず、1 人が複数の機能で数えられることがある",
+        "copilot_feature_engagement は、計算できない場合は存在しないか null になる"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "能動的な Copilot コード レビュー", "type": "term", "oneLine": "ユーザーが Copilot のレビューを手動で依頼するか、レビューの提案を適用したもの。" },
+    { "term": "受動的な Copilot コード レビュー", "type": "term", "oneLine": "Copilot が pull request のレビューに自動で割り当てられ、ユーザーは関与していないもの。" }
+  ],
+  "suggestions": [
+    "利用が少ない機能に絞って、トレーニングや設定の見直しを進める"
+  ],
+  "qa": [
+    {
+      "q": "誰がこのデータを見られますか。",
+      "a": "エンタープライズ オーナーと課金マネージャー、組織オーナー、View Copilot Metrics 権限を持つカスタムの組織またはエンタープライズ ロールの利用者です。Copilot 使用状況メトリックのポリシーを有効にする必要があります。"
+    },
+    {
+      "q": "「エンゲージしたユーザー」はどう数えますか。",
+      "a": "28 日間のうち少なくとも 2 日、その機能を使ったアクティブ ユーザーです。1 人が複数の機能で数えられることがあります。"
+    },
+    {
+      "q": "ユーザー個人ごとのレポートでも見られますか。",
+      "a": "いいえ。機能別のエンゲージメントは、エンタープライズと組織の 28 日集計レポートにあり、ユーザー単位のレポートには追加されません。"
+    },
+    {
+      "q": "能動的と受動的な Copilot コード レビューの違いは何ですか。",
+      "a": "能動的は、ユーザーが Copilot のレビューを手動で依頼するか、提案を適用した場合です。受動的は、Copilot が pull request に自動で割り当てられ、ユーザーが関与していない場合です。"
+    },
+    {
+      "q": "users_in_phase_28d が出力されないことはありますか。",
+      "a": "フェーズの人数が計測されていない場合は省略されます。0 は、計測されたうえで該当ユーザーがいなかったことを示します。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Copilot impact dashboard now shows feature engagement - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-09-17-copilot-impact-dashboard-now-shows-feature-engagement/"
+    },
+    "documents": [
+      { "title": "Copilot影響ダッシュボードの表示 - GitHubドキュメント", "url": "https://docs.github.com/ja/copilot/how-tos/administer-copilot/view-impact-dashboard" }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-09-17-copilot-impact-dashboard-now-shows-feature-engagement/",
+    "https://docs.github.com/ja/copilot/how-tos/administer-copilot/view-impact-dashboard"
+  ]
+}
