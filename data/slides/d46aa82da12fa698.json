@@ -1,0 +1,92 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "d46aa82da12fa698",
+  "title": {
+    "ja": "Copilot Business / Enterprise のサインアップ再開と、課金の前払い化",
+    "subtitleJa": "クレジットカード・PayPal 払いは、席ごとの前払いが必要になる。既存顧客は 2026-10-01 から",
+    "original": "Reopening Copilot Business and Enterprise signups"
+  },
+  "date": "2026-09-03",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "クレジットカードまたは PayPal で Copilot Business / Enterprise を支払う管理者",
+    "change": "新規の席の割り当ては、席ごとの支払い後に Copilot を使えるようになる",
+    "changeNature": "breaking"
+  },
+  "action": {
+    "required": "yes",
+    "summary": "既存顧客は 2026-10-01 からの請求更新に備え、次の請求サイクルの前払いを見込む",
+    "deadline": "2026-10-01"
+  },
+  "timeline": [
+    { "when": "今後数週間", "label": "サインアップを段階的に再開" },
+    { "when": "2026-10-01", "label": "既存顧客に請求の更新が適用" }
+  ],
+  "panels": [
+    {
+      "id": "scope",
+      "heading": "使える場所とプラン",
+      "priority": "core",
+      "items": [
+        "Copilot Business と Copilot Enterprise のサインアップを、今後数週間かけて段階的に再開する",
+        "対象はクレジットカードまたは PayPal で支払う顧客。希望のプランがまだ選べなければ、後日再確認する"
+      ]
+    },
+    {
+      "id": "changes",
+      "heading": "変わること",
+      "priority": "core",
+      "items": [
+        "新規の席の割り当ては、席ごとの支払い後に Copilot へアクセスできる",
+        "次の請求サイクルの開始時に、割り当て済みの全席に前払いの請求が発生する。既存顧客は 2026-10-01 から",
+        "含まれる利用量を超えると、継続利用のために追加の支払いが必要になることがある",
+        "含まれる利用量は、席費用の日割りに合わせて月内で按分されることがある"
+      ]
+    },
+    {
+      "id": "unchanged",
+      "heading": "変わらないこと",
+      "priority": "detail",
+      "items": [
+        "Business / Enterprise のプラン料金と席の日割り計算は変わらない",
+        "含まれる利用量を超える追加分を購入できる点も変わらない",
+        "Copilot を完全に解約して後で戻ると、更新後のアカウント審査と請求の扱いが適用されることがある"
+      ]
+    }
+  ],
+  "suggestions": [
+    "プランの選択は、Copilot Quick Start のドキュメントで手順を確認する"
+  ],
+  "qa": [
+    {
+      "q": "どの支払い方法が対象ですか？",
+      "a": "クレジットカードまたは PayPal で支払う Copilot Business と Copilot Enterprise の顧客が対象です。"
+    },
+    {
+      "q": "既存顧客の請求はいつから変わりますか？",
+      "a": "既存の顧客には、2026 年 10 月 1 日から請求の更新が適用されます。次の請求サイクルの開始時に、割り当て済みの全席に前払いの請求が発生します。"
+    },
+    {
+      "q": "新しく席を割り当てるとどうなりますか？",
+      "a": "新規の Business / Enterprise の席の割り当ては、席ごとに支払いが済んでから、ユーザーが Copilot にアクセスできるようになります。"
+    },
+    {
+      "q": "料金やプランは変わりますか？",
+      "a": "プラン料金と席の日割り計算は変わりません。含まれる利用量を超える追加分を購入できる点も同じです。"
+    },
+    {
+      "q": "解約して戻る場合の注意はありますか？",
+      "a": "Copilot を完全に解約して後で戻ると、更新後のアカウント審査と請求の扱いが適用されることがあります。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Reopening Copilot Business and Enterprise signups - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-09-03-reopening-copilot-business-and-enterprise-signups/"
+    }
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-09-03-reopening-copilot-business-and-enterprise-signups/"
+  ]
+}
