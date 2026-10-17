@@ -1,0 +1,99 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "b84cbcbbc4d79b9e",
+  "title": {
+    "ja": "Visual Studio Code 1.134 リリース：チャットの並べて表示とプロンプト タイムライン",
+    "subtitleJa": "チャットをグリッド配置し、プロンプト タイムラインと Find in chat で長い会話をたどれる",
+    "original": "Visual Studio Code 1.134"
+  },
+  "date": "2026-08-18",
+  "topic": "VS Code",
+  "status": "update",
+  "audience": {
+    "who": "VS Code のエージェント セッションやチャットを日常的に使う開発者",
+    "change": "関連チャットを並べて比較でき、長い会話をタイムラインと検索で移動できる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "更新後、必要に応じてタイムラインの表示設定や HTML の既定エディターを調整する"
+  },
+  "panels": [
+    {
+      "id": "chat-features",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "チャットやサブエージェント チャットをグループへドラッグし、横・縦に並べて比較できる",
+        "Chats ピッカーで Alt+選択すると、チャットを横に開ける。レイアウトとフォーカスは復元される",
+        "Find in chat は ⌘F（Windows / Linux は Ctrl+F）。描画されていない部分も含め会話全体を検索できる",
+        "Alt を押すとタブの閉じる操作が「他のエディターを閉じる」に変わる"
+      ]
+    },
+    {
+      "id": "settings",
+      "heading": "設定と前提",
+      "priority": "core",
+      "items": [
+        "プロンプト タイムライン: Agents ウィンドウで、sessions.chatTimeline.display によりスクロール バー横（ruler）か off を選ぶ",
+        "変更したファイルのあるプロンプトは、追加・削除行数を表示し、変更を直接開ける",
+        "HTML をプレビュー: workbench.editorAssociations か、エディター ヘッダーで統合ブラウザーを既定にできる",
+        "単一ペイン レイアウトは sessions.layout.singlePaneDetailPanel を有効にしてウィンドウを再読み込みする"
+      ]
+    },
+    {
+      "id": "agent-host",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "Agent host により、複数の VS Code ウィンドウから同じエージェント セッションに接続できる",
+        "VS Code は全ユーザーへ段階的に展開される。Check for Updates で即時に取得できる"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "Agent host", "type": "feature", "oneLine": "Agent Host Protocol に基づく専用プロセスでエージェント ハーネスを実行する仕組み。" },
+    { "term": "Prompt timeline", "type": "feature", "oneLine": "トランスクリプトの余白に自分のプロンプトを点で示し、選んで移動できる機能。" }
+  ],
+  "suggestions": [
+    "長いエージェント セッションでは、タイムラインから変更のあったプロンプトへ移って差分を確認する"
+  ],
+  "qa": [
+    {
+      "q": "いつ、どのように入手できますか？",
+      "a": "1.134 は 2026 年 8 月 19 日リリースで、全ユーザーへ段階的に展開されます。VS Code の Check for Updates で最新版をすぐ取得できます。"
+    },
+    {
+      "q": "プロンプト タイムラインはどこに表示され、どう切り替えますか？",
+      "a": "Agents ウィンドウのトランスクリプトの余白に表示されます。sessions.chatTimeline.display で、スクロール バー横（ruler）に出すか off で隠すかを選べます。"
+    },
+    {
+      "q": "Find in chat はどこで使えますか？",
+      "a": "Chat ビュー、チャット エディター、Agents ウィンドウで ⌘F（Windows / Linux は Ctrl+F）を使います。画面に描画されていない部分も含め、会話全体が検索対象です。"
+    },
+    {
+      "q": "HTML ファイルを統合ブラウザーで開くにはどうしますか？",
+      "a": "workbench.editorAssociations 設定、またはエディター ヘッダーから、統合ブラウザーを HTML の既定エディターにできます。関連付けを保つため、リンク先は新しいタブで開きます。"
+    },
+    {
+      "q": "Agent host とは何ですか？",
+      "a": "エージェント ハーネスを専用プロセスで実行し、同じセッションに複数の VS Code ウィンドウから接続できるようにする仕組みです。Copilot エージェントは Copilot SDK を基盤にしています。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.134",
+      "url": "https://code.visualstudio.com/updates/v1_134"
+    },
+    "documents": [
+      {
+        "title": "Agent Host architecture",
+        "url": "https://code.visualstudio.com/docs/agents/concepts/agent-host"
+      }
+    ]
+  },
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_134",
+    "https://code.visualstudio.com/docs/agents/concepts/agent-host"
+  ]
+}
