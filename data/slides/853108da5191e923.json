@@ -1,0 +1,78 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "853108da5191e923",
+  "title": {
+    "ja": "GitHub Copilot app の Customize タブ、一般提供開始",
+    "subtitleJa": "MCP サーバー・プラグイン・スキル・キャンバスを 1 か所で探して追加できる",
+    "original": "GitHub Copilot app Customize tab is generally available"
+  },
+  "date": "2026-08-25",
+  "topic": "GitHub Copilot",
+  "status": "ga",
+  "statusEvidence": "GitHub Copilot app Customize tab is generally available",
+  "audience": {
+    "who": "GitHub Copilot app を使う開発者とチーム",
+    "change": "Customize タブで MCP サーバー、プラグイン、スキル、キャンバスをまとめて探せる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "Copilot app を開いて Customize を選び、おすすめや種類別の一覧から必要なものを探す"
+  },
+  "panels": [
+    {
+      "id": "usage",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "GitHub Copilot app を開き、Customize を選ぶ",
+        "Featured 表示で、各セクションから選ばれたおすすめを一覧できる",
+        "MCP サーバー・プラグイン・スキル・キャンバスの種類別セクションでも探せる"
+      ]
+    },
+    {
+      "id": "discover",
+      "heading": "探しやすくなる点",
+      "priority": "core",
+      "items": [
+        "MCP サーバーは、トレンドやカテゴリ別の閲覧で見つけやすい",
+        "注目のキャンバスは、関連するコンテキストを見せたまま作業に移れる",
+        "例として Azure DevOps のバックログ作業を Copilot に任せる連携が紹介されている"
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Customize タブ",
+      "type": "feature",
+      "oneLine": "MCP サーバー、プラグイン、スキル、キャンバスを 1 か所にまとめた Copilot app の画面"
+    }
+  ],
+  "qa": [
+    {
+      "q": "Customize タブはどこから使いますか。",
+      "a": "GitHub Copilot app を開いて Customize を選びます。おすすめ（Featured）の表示や、種類別のセクションから探せます。"
+    },
+    {
+      "q": "何をカスタマイズできますか。",
+      "a": "MCP サーバー、プラグイン、スキル、キャンバスの 4 種類を 1 か所で探せます。"
+    },
+    {
+      "q": "MCP サーバーはどう探しますか。",
+      "a": "トレンドの MCP サーバーを見たり、カテゴリ別に閲覧したりして探せます。"
+    },
+    {
+      "q": "Azure DevOps との連携は何ができますか。",
+      "a": "記事では、Azure DevOps のバックログから課題の整理や優先順位付け、フォローアップの割り当てを行い、Copilot に調査・実装・レビュー準備を任せる例が紹介されています。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "GitHub Copilot app Customize tab is generally available - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-08-25-github-copilot-app-customize-tab-is-generally-available/"
+    }
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-08-25-github-copilot-app-customize-tab-is-generally-available/"
+  ]
+}
