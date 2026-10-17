@@ -1,0 +1,87 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "748c721075895777",
+  "title": {
+    "ja": "Copilot for JetBrainsでCopilot harnessが一般提供開始",
+    "subtitleJa": "harnessがGAに。JetBrains組み込みMCPサーバー対応はパブリックプレビュー",
+    "original": "Copilot harness generally available in Copilot for JetBrains"
+  },
+  "date": "2026-08-24",
+  "topic": "GitHub Copilot",
+  "status": "ga",
+  "statusEvidence": "Copilot harness is now generally available, providing faster feature delivery and better code quality.",
+  "audience": {
+    "who": "JetBrains IDEでGitHub Copilotプラグインを使う開発者",
+    "change": "Copilot harnessがGAになり、/reviewの連携やMCP、アカウント・モデル周りの安定性が向上した",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "最新のGitHub Copilotプラグインに更新し、更新後に開くWhat's Newタブで変更点を確認する"
+  },
+  "panels": [
+    {
+      "id": "new",
+      "heading": "新機能",
+      "priority": "core",
+      "items": [
+        "Copilot harnessが一般提供。機能提供が速くなり、コード品質も向上する",
+        "JetBrains組み込みMCPサーバー対応はパブリックプレビュー。IDEの機能をMCP経由のエージェントに公開できる",
+        "Copilot harnessの/review連携をJetBrains内で直接利用でき、コンテキスト切替が減る"
+      ]
+    },
+    {
+      "id": "usage",
+      "heading": "更新後の変化",
+      "priority": "core",
+      "items": [
+        "プラグイン更新後にWhat's Newタブが開き、変更点をすぐ確認できる",
+        "モデル管理：検索の改善と、言語モデル表の列幅変更に対応",
+        "チャット：長いツール出力のスクロールを改善し、送信オプションのショートカットを追加"
+      ]
+    },
+    {
+      "id": "quality",
+      "heading": "品質改善",
+      "priority": "detail",
+      "items": [
+        "アカウント検出・サインイン、MCPスキーマとツール状態、BYOK・モデル更新の信頼性を改善",
+        "WSLで開いたプロジェクトのworktreeセッション起動失敗を修正"
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "BYOK",
+      "type": "term",
+      "oneLine": "記事では、モデル管理の信頼性改善の対象として挙げられている機能"
+    }
+  ],
+  "qa": [
+    {
+      "q": "Copilot harnessはGAになったのですか？",
+      "a": "はい。Copilot for JetBrainsでCopilot harnessが一般提供になりました。機能提供が速くなり、コード品質が向上するとされています。"
+    },
+    {
+      "q": "JetBrains組み込みMCPサーバー対応も一般提供ですか？",
+      "a": "いいえ、パブリックプレビューです。外部サーバーの設定だけに頼らず、IDEの機能をMCP経由のエージェントワークフローに公開しやすくなります。"
+    },
+    {
+      "q": "更新後に何を確認すればよいですか？",
+      "a": "プラグインを更新するとWhat's Newタブが開き、変更点をすぐ確認できます。最新版は記事内のJetBrains Marketplaceのバージョンページから入手できます。"
+    },
+    {
+      "q": "JetBrainsで/reviewは使えますか？",
+      "a": "はい。Copilot harnessの/review連携をJetBrains内で直接使え、開発中にレビューの助言を得る際のコンテキスト切替を減らせます。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Copilot harness generally available in Copilot for JetBrains - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-08-24-copilot-harness-generally-available-in-copilot-for-jetbrains/"
+    }
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-08-24-copilot-harness-generally-available-in-copilot-for-jetbrains/"
+  ]
+}
