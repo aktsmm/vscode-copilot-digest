@@ -1,0 +1,91 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "de045264722e907d",
+  "title": {
+    "ja": "VS Code 1.133 リリース。プロンプトの固定スクロール、HTML 自動リロード、Claude セッションでのモデル混在",
+    "subtitleJa": "チャットのプロンプト固定表示、内蔵ブラウザの自動リロード、ターンごとのプロバイダー切替が可能に",
+    "original": "Visual Studio Code 1.133"
+  },
+  "date": "2026-08-17",
+  "topic": "VS Code",
+  "status": "update",
+  "audience": {
+    "who": "VS Code でチャットやエージェント、Claude セッションを使う開発者",
+    "change": "プロンプトが上部に固定され、ローカル HTML が自動で更新され、Claude セッションで Anthropic と Copilot のモデルを切り替えられる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "VS Code を更新し、必要な設定を有効にして試す"
+  },
+  "panels": [
+    {
+      "id": "features",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "chat.stickyScroll.enabled: スクロールで過ぎたプロンプトをチャット上部に固定し、前後ボタンで移動できる",
+        "workbench.browser.autoReloadOnFileChange: 内蔵ブラウザで開いたローカル HTML を、ファイル変更時に自動更新する",
+        "Claude セッションのモデル ピッカーに Anthropic と Copilot の両方が並び、次のターンから切り替えられる"
+      ]
+    },
+    {
+      "id": "plans",
+      "heading": "課金と前提",
+      "priority": "core",
+      "items": [
+        "Anthropic のモデルは API キーに課金され、Copilot のモデルは Copilot サブスクリプションを使う",
+        "自動リロードはブラウザのタブごとに切り替えられ、既定値は設定で変えられる",
+        "更新は順次展開され、Check for Updates ですぐ取得できる"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "chat.agentHost.allowSignedOutWhenUsable（試験的）で、GitHub にサインインせず Agents ウィンドウを開ける",
+        "この版で対応するのは Claude のみ。独自モデル キーの Copilot と Codex は今後の対応予定"
+      ]
+    }
+  ],
+  "beforeAfter": {
+    "before": "Claude セッションは Copilot か Claude の既存設定のどちらかで動き、切替にはエージェント ホストの再設定が必要だった",
+    "after": "モデル ピッカーで両方を選び、ターンごとにプロバイダーを切り替えられる"
+  },
+  "glossary": [
+    { "term": "Agents ウィンドウ", "type": "feature", "oneLine": "VS Code でエージェントを扱うウィンドウ。" },
+    { "term": "エージェント ホスト", "type": "feature", "oneLine": "複数の VS Code ウィンドウから同じエージェント セッションに接続できる専用プロセス。" }
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.133正式リリース。プロンプトを見失わない固定スクロール、ローカルHTMLファイルの自動リロード、ClaudeとCopilotの混在可能など新機能 － Publickey",
+      "url": "https://www.publickey1.jp/blog/26/visual_studio_code_1133htmlclaudecopilot.html"
+    },
+    "documents": [
+      { "title": "Visual Studio Code 1.133", "url": "https://code.visualstudio.com/updates/v1_133" }
+    ]
+  },
+  "evidence": [
+    "https://www.publickey1.jp/blog/26/visual_studio_code_1133htmlclaudecopilot.html",
+    "https://code.visualstudio.com/updates/v1_133"
+  ],
+  "qa": [
+    {
+      "q": "固定スクロールはどう有効にしますか？",
+      "a": "設定 chat.stickyScroll.enabled を有効にします。スクロールで過ぎたプロンプトがチャット上部に固定され、会話内での位置が表示されます。選ぶとそのプロンプトに戻れ、前後ボタンで順に移動できます。"
+    },
+    {
+      "q": "Anthropic と Copilot のモデルの課金はどうなりますか？",
+      "a": "モデル ピッカーで Anthropic の下にあるモデルは API キーに課金され、Copilot の下にあるモデルは Copilot サブスクリプションを使います。選んだモデルは次のターンで使われます。"
+    },
+    {
+      "q": "HTML の自動リロードは常にオンですか？",
+      "a": "内蔵ブラウザでローカル HTML を開いているとき、ディスク上の変更で更新されます。タブごとに切り替えられ、既定値は workbench.browser.autoReloadOnFileChange 設定で変えられます。"
+    },
+    {
+      "q": "GitHub にサインインせずに Agents ウィンドウを使えますか？",
+      "a": "試験的な設定 chat.agentHost.allowSignedOutWhenUsable を有効にすると可能です。この版で対応するのは Claude のみで、独自モデル キーの Copilot と Codex は今後の対応予定です。"
+    }
+  ]
+}
