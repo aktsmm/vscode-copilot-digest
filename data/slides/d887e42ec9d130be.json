@@ -1,0 +1,83 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "d887e42ec9d130be",
+  "title": {
+    "ja": "VS Code 2026年8月リリース（v1.132〜v1.135）のエージェント・チャット更新",
+    "subtitleJa": "Agents ウィンドウの並べ表示と /btw、チャット内検索、ブラウザーのコメント、多言語ディクテーション",
+    "original": "GitHub Copilot in VS Code, August 2026 releases"
+  },
+  "date": "2026-08-31",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "VS Code でエージェント セッションやチャットを使う開発者",
+    "change": "チャットの並べ表示、/btw、会話内検索、ブラウザー上のコメント、多言語ディクテーションなどが加わった",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "最新の VS Code に更新し、必要な機能を試す。実験的な機能は設定で有効にする"
+  },
+  "panels": [
+    {
+      "id": "agent-sessions",
+      "heading": "エージェント セッション",
+      "priority": "core",
+      "items": [
+        "Agents ウィンドウでチャットを横・縦のグループに並べ、レイアウトは戻ると復元される",
+        "/btw で、メイン チャットのコンテキストとプロンプト キャッシュを共有するサイド チャットを開ける",
+        "Agent Host で、複数の VS Code ウィンドウから同じセッションに接続できる",
+        "Agent Plugins 1.0 標準のプラグインから、エージェントのカスタマイズをインストールできる"
+      ]
+    },
+    {
+      "id": "chat-review",
+      "heading": "チャットとレビュー",
+      "priority": "core",
+      "items": [
+        "チャット全体の文字列検索（大文字小文字、単語単位、正規表現に対応）",
+        "スティッキー スクロールで、スクロール中も現在のプロンプトを固定表示",
+        "応答フッターにホバーすると、モデルごとの入力・キャッシュ入力・出力トークン使用量を表示"
+      ]
+    },
+    {
+      "id": "browser-dictation",
+      "heading": "ブラウザーとディクテーション",
+      "priority": "core",
+      "items": [
+        "統合ブラウザーで複数の HTML 要素を選んでコメントし、エージェントがまとめて対応できる",
+        "ローカル HTML ファイルは、ディスク上で変更されると自動で再読み込みされる",
+        "ディクテーションはオンデバイス モデルで複数言語に対応し、言語の自動検出も選べる",
+        "ユーザー／ワークスペース単位の指示で整形でき、ターミナルではシェルを意識して構文を保つ"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "/rubber-duck と、ハイブリッド Markdown エディターは実験的な機能",
+        "GitHub サインインなしで Agents ウィンドウを開くには、Claude を API キーで構成し、実験的な設定を有効にする"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "Agent Host", "type": "feature", "oneLine": "複数の VS Code ウィンドウから同じエージェント セッションに接続できる仕組み。" },
+    { "term": "/rubber-duck", "type": "feature", "oneLine": "Copilot Agent Host セッションで、補完的なモデルに見落としやエッジ ケースを指摘させる実験的コマンド。" }
+  ],
+  "qa": [
+    { "q": "どのバージョンの更新ですか", "a": "VS Code v1.132 から v1.135 までの、2026年8月に提供された更新をまとめたものです。" },
+    { "q": "/btw とは何ですか", "a": "Agents ウィンドウで入力すると、メイン チャットのコンテキストとプロンプト キャッシュを共有するサイド チャットを開きます。メインのチャットは実行を続けます。" },
+    { "q": "GitHub にサインインせず Agents ウィンドウを使えますか", "a": "Claude を API キーで構成している場合に限り、実験的な設定を有効にするとサインインなしで開けます。" },
+    { "q": "ディクテーションはどう変わりましたか", "a": "オンデバイス モデルで複数言語に対応し、言語を選ぶか自動検出できます。ユーザー／ワークスペース単位の指示で整形でき、ターミナル コマンドの構文も保ちます。" }
+  ],
+  "references": {
+    "source": {
+      "title": "GitHub Copilot in VS Code, August 2026 releases - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-08-31-github-copilot-in-vs-code-august-2026-releases/"
+    }
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-08-31-github-copilot-in-vs-code-august-2026-releases/"
+  ]
+}
