@@ -1,0 +1,83 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "1fde2f1ede962375",
+  "title": {
+    "ja": "Visual Studio の Copilot 8月更新、思考の深さとモデル管理を調整可能に",
+    "subtitleJa": "思考の強度を Low/Medium/High で選べ、組織のカスタム エージェントや Git エージェントのレビューも追加",
+    "original": "GitHub Copilot in Visual Studio — August update"
+  },
+  "date": "2026-08-28",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "Visual Studio 2026 で GitHub Copilot を使う開発者と、組織・Enterprise のオーナー",
+    "change": "モデルの思考強度の調整、モデルの固定と管理、組織のカスタム エージェント、コミット前レビューが使える",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "必要な機能を試す。最新の機能は Insiders チャネルで確認できる"
+  },
+  "panels": [
+    {
+      "id": "availability",
+      "heading": "使える場所とプラン",
+      "priority": "core",
+      "items": [
+        "Visual Studio 2026 の GitHub Copilot",
+        "Copilot Free、Student、Pro、Pro+、Max、Business、Enterprise のすべてのプランで利用できる",
+        "組織のカスタム エージェントは GitHub organization が必要"
+      ]
+    },
+    {
+      "id": "how-to-use",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "対応モデルで思考強度を Low / Medium / High から選ぶ。単純な作業は低、複雑なデバッグや設計は高",
+        "モデルは固定、使用頻度の低いものは折りたたみ、「Manage models」で能力・コンテキスト サイズ・コストを確認できる",
+        "Git エージェントに、未コミットの変更やコミットのレビューを PR 前に依頼できる",
+        "プロンプト ボックスのコンテキスト ウィンドウから「View all Copilot usage」でプランの詳細を見る"
+      ]
+    },
+    {
+      "id": "notes",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "レビューの指摘はエディターにインライン表示され、Git Changes に一覧が出る。対象は GitHub と Azure DevOps のリポジトリ",
+        "組織・Enterprise のオーナーが公開したエージェントは、説明と組織の提供元とともにエージェント ピッカーに表示される"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "Git agent", "type": "feature", "oneLine": "コミット前の変更やコミットをレビューし、指摘を返すエージェント。" }
+  ],
+  "references": {
+    "source": {
+      "title": "GitHub Copilot in Visual Studio — August update - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-08-28-github-copilot-in-visual-studio-august-update-2/"
+    }
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-08-28-github-copilot-in-visual-studio-august-update-2/"
+  ],
+  "qa": [
+    {
+      "q": "どのプランで使えますか?",
+      "a": "Copilot Free、Student、Pro、Pro+、Max、Business、Enterprise のすべてのプランで利用できます。ただし組織のカスタム エージェントには GitHub organization が必要です。"
+    },
+    {
+      "q": "思考強度はどう使い分けますか?",
+      "a": "対応モデルで Low、Medium、High を選べます。単純な作業は低め、複雑なデバッグ、アルゴリズム、設計の判断は高めにして、推論の深さとトークン使用量のバランスを取ります。"
+    },
+    {
+      "q": "コミット前のレビューはどこで見られますか?",
+      "a": "Git エージェントに未コミットの変更やコミットのレビューを依頼すると、指摘がエディターにインライン表示され、Git Changes に一覧が出ます。GitHub と Azure DevOps のリポジトリで動作します。"
+    },
+    {
+      "q": "Copilot の利用状況はどこで確認できますか?",
+      "a": "プロンプト ボックスからコンテキスト ウィンドウを開き、View all Copilot usage を選ぶとプランの詳細を確認できます。上限に近づくと、通知で選択肢も分かりやすく示されます。"
+    }
+  ]
+}
