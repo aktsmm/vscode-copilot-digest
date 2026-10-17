@@ -1,0 +1,107 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "8e90cc2a42b826cf",
+  "title": {
+    "ja": "Microsoft Teams で、Copilot クラウド エージェントの作業を共同で進められるように",
+    "subtitleJa": "Teams で @GitHub にメンションすると、会話の全員が見て指示できるセッションが始まる",
+    "original": "Shared agentic work with GitHub Copilot in Microsoft Teams"
+  },
+  "date": "2026-08-21",
+  "topic": "GitHub Copilot",
+  "status": "preview",
+  "statusEvidence": "The public preview is available with paid GitHub Copilot plans.",
+  "audience": {
+    "who": "Teams で議論しながら Copilot クラウド エージェントに作業を任せたいチーム",
+    "change": "チャネル、スレッド、ダイレクト メッセージから cloud agent セッションを開始し、参加者全員で進め方を指示できる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "使うなら Teams に GitHub アプリを入れ、管理者はクラウド エージェントとサンドボックスを有効にする"
+  },
+  "panels": [
+    {
+      "id": "availability",
+      "heading": "使える場所とプラン",
+      "priority": "core",
+      "items": [
+        "パブリック プレビュー。すべての有料 Copilot プランで利用できる",
+        "Teams のチャネル、スレッド、ダイレクト メッセージで @GitHub にメンションして開始する",
+        "AI クレジットを消費する。組織では使用量ベースの課金の予算で管理される"
+      ]
+    },
+    {
+      "id": "how-to",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "Teams に GitHub アプリをインストールし、@GitHub から GitHub アカウントを接続する",
+        "パブリック チャネルでは、求められたら既定のリポジトリを設定する。ダイレクト メッセージでは使わない",
+        "@GitHub に続けてタスクを入力する。@GitHub help でコマンドを確認できる"
+      ]
+    },
+    {
+      "id": "limits",
+      "heading": "前提と制限",
+      "priority": "core",
+      "items": [
+        "組織や企業のユーザーは、管理者によるクラウド エージェントとクラウド サンドボックスの有効化が必要",
+        "変更のために Copilot を動かせるのは、リポジトリへの書き込みアクセス権を持つ参加者のみ",
+        "クラウド サンドボックスの利用は別に課金され、製品または SKU 単位の予算で制御できる"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "共有の場の PR は、リポジトリ管理者が追加の承認を必須にできる。承認 2 件の必須設定なら 3 件になる",
+        "スレッド全体が依頼のコンテキストとして使われ、成果物に格納される"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "クラウド サンドボックス", "type": "feature", "oneLine": "Copilot が非同期で作業を進める、セキュリティで保護されたクラウド環境。" }
+  ],
+  "suggestions": [
+    "コンテキストを絞りたいときは、新しいスレッドを開始するか Teams の GitHub アプリに直接メッセージを送る"
+  ],
+  "qa": [
+    {
+      "q": "どのプランで使えますか。",
+      "a": "すべての有料 Copilot プランで、パブリック プレビューとして利用できます。セッションは AI クレジットを消費し、クラウド サンドボックスの利用は別に課金されます。"
+    },
+    {
+      "q": "組織のメンバーは、すぐ使えますか。",
+      "a": "管理者が GitHub Copilot クラウド エージェントとクラウド サンドボックスを有効にしている必要があります。サンドボックスのポリシーはクラウド エージェントのポリシーと同じ構成を共有します。"
+    },
+    {
+      "q": "誰が Copilot に変更をさせられますか。",
+      "a": "会話の参加者は質問や文脈の追加ができますが、変更のために Copilot を動かせるのは、リポジトリへの書き込みアクセス権を持つ参加者です。"
+    },
+    {
+      "q": "始め方を教えてください。",
+      "a": "Teams に GitHub アプリをインストールし、@GitHub にメンションして GitHub アカウントを接続します。その後 @GitHub に続けてタスクを入力します。@GitHub help でコマンドを確認できます。"
+    },
+    {
+      "q": "Copilot が作った PR のレビューはどうなりますか。",
+      "a": "リポジトリ管理者は、Teams 連携の ID による PR に追加の承認を必須にできます。承認 2 件を必須にしているリポジトリでは、Copilot 作成の PR には 3 件が必要になります。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Shared agentic work with GitHub Copilot in Microsoft Teams - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-08-21-shared-agentic-work-with-github-copilot-in-microsoft-teams/"
+    },
+    "documents": [
+      {
+        "title": "Copilot クラウド エージェントと Teams の統合 - GitHubドキュメント",
+        "url": "https://docs.github.com/ja/copilot/how-tos/copilot-integrations/integrate-cloud-agent-with-teams"
+      }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-08-21-shared-agentic-work-with-github-copilot-in-microsoft-teams/",
+    "https://docs.github.com/ja/copilot/how-tos/copilot-integrations/integrate-cloud-agent-with-teams"
+  ]
+}
