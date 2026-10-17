@@ -1,0 +1,93 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "14de8f0237b8daf6",
+  "title": {
+    "ja": "GitHub Copilotの4モデル、10月2日廃止予定",
+    "subtitleJa": "Gemini 3.5／3.6 Flash など4モデルが廃止予定となり、後継への移行が必要に",
+    "original": "Upcoming deprecation of selected GitHub Copilot models"
+  },
+  "date": "2026-09-03",
+  "topic": "GitHub Copilot",
+  "status": "retirement",
+  "statusEvidence": "We will deprecate the following models across all GitHub Copilot experiences (including Copilot Chat, inline edits, ask and agent modes, and code completions) on October 2nd, 2026",
+  "audience": {
+    "who": "対象モデルをワークフローや連携で指定している開発者と、組織のCopilot管理者",
+    "change": "4モデルが2026年10月2日にCopilot全体で廃止され、案内された後継モデルへ移行する",
+    "changeNature": "breaking"
+  },
+  "action": {
+    "required": "yes",
+    "summary": "2026-10-02までにワークフローと連携先のモデル指定を後継モデルへ切り替える",
+    "deadline": "2026-10-02"
+  },
+  "timeline": [
+    {
+      "when": "2026-10-02",
+      "label": "対象モデルを廃止"
+    }
+  ],
+  "panels": [
+    {
+      "id": "models",
+      "heading": "対象モデルと後継",
+      "priority": "core",
+      "items": [
+        "Gemini 3.5 Flash／3.6 Flash は Gemini 3.8 Flash へ移行",
+        "Kimi K2.7 Code は Kimi K3、Claude Opus 4.7 は Claude Opus 5 へ移行",
+        "対象は Copilot Chat、インライン編集、ask／agent モード、コード補完を含む全体験"
+      ]
+    },
+    {
+      "id": "admin-action",
+      "heading": "切り替えの準備",
+      "priority": "core",
+      "items": [
+        "Enterprise／Business の管理者は、モデルポリシーで後継モデルの有効化が必要な場合がある",
+        "組織・Enterpriseのモデル設定で、対象モデルのポリシーが有効か確認できる",
+        "有効化後は、サポート対象の体験でChatのモデルピッカーに表示される"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "廃止後にモデルを削除する操作は不要"
+      ]
+    }
+  ],
+  "qa": [
+    {
+      "q": "どのモデルがいつ廃止されますか？",
+      "a": "Gemini 3.5 Flash、Gemini 3.6 Flash、Kimi K2.7 Code、Claude Opus 4.7 の4モデルが、2026年10月2日にCopilotの全体験で廃止されます。"
+    },
+    {
+      "q": "移行先のモデルは何ですか？",
+      "a": "Gemini 3.5／3.6 Flash は Gemini 3.8 Flash、Kimi K2.7 Code は Kimi K3、Claude Opus 4.7 は Claude Opus 5 が案内されています。"
+    },
+    {
+      "q": "管理者は何をすればよいですか？",
+      "a": "Enterprise／Business の管理者は、Copilot設定のモデルポリシーで後継モデルへのアクセスを有効にする必要がある場合があります。組織またはEnterpriseのモデル設定で有効か確認できます。"
+    },
+    {
+      "q": "廃止後にモデルを削除する作業は必要ですか？",
+      "a": "不要です。廃止後にモデルを削除する操作は必要ないと案内されています。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Upcoming deprecation of selected GitHub Copilot models - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-09-03-upcoming-deprecation-of-selected-github-copilot-models/"
+    },
+    "documents": [
+      {
+        "title": "GitHub Copilotでサポートされている AI モデル - GitHubドキュメント",
+        "url": "https://docs.github.com/ja/copilot/reference/ai-models/supported-models"
+      }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-09-03-upcoming-deprecation-of-selected-github-copilot-models/",
+    "https://docs.github.com/ja/copilot/reference/ai-models/supported-models"
+  ]
+}
