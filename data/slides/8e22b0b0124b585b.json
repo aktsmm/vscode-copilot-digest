@@ -1,0 +1,90 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "8e22b0b0124b585b",
+  "title": {
+    "ja": "GitHub Copilot アプリ入門: 最初のプロンプトの書き方",
+    "subtitleJa": "プロジェクトを選び、普通の言葉で依頼するだけで始められる。モデルや音声入力も使える",
+    "original": "GitHub Copilot app for Beginners: Write your first prompt"
+  },
+  "date": "2026-08-12",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "GitHub Copilot アプリで最初のタスクを始めたい開発者",
+    "change": "プロジェクトを選んで平易な言葉で依頼し、モデル・音声入力・エージェントも切り替えられる",
+    "changeNature": "neutral"
+  },
+  "action": {
+    "required": "info",
+    "summary": "小さな変更を平易な言葉で依頼し、結果を見ながら追加で指示して整える"
+  },
+  "panels": [
+    {
+      "id": "how-to-start",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "ホーム画面で過去のプロジェクトを選ぶか、新しく追加する",
+        "ローカルだけにあるコードは、ローカル フォルダーを追加できる",
+        "作りたい変更を平易な言葉で書く（例: ゲーム一覧に資金調達額順の並べ替えを追加）"
+      ]
+    },
+    {
+      "id": "options",
+      "heading": "選べる設定",
+      "priority": "core",
+      "items": [
+        "モデル: 最初は既定のモデルでよく、複雑な推論が必要なときに切り替える",
+        "音声入力: 話した内容が入力欄にテキスト化され、送信前に編集できる",
+        "セッション名から別のエージェントを選ぶか、リモート制御を有効にできる"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "最初の結果が違っても、詳細を足したり修正を依頼して繰り返し調整する",
+        "リモート制御を使うと、同じセッションにウェブから後で戻れる"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "プロンプト", "type": "term", "oneLine": "やりたいことを説明した文。完璧でなくても始められる。" },
+    { "term": "リモート セッション", "type": "feature", "oneLine": "ローカルだけでなくウェブから同じセッションにアクセスできる。" }
+  ],
+  "suggestions": [
+    "既に知っているプロジェクトの小さな変更から試す"
+  ],
+  "qa": [
+    {
+      "q": "最初にプロンプトを書く前に何を準備しますか。",
+      "a": "ホーム画面で GitHub リポジトリのプロジェクトを選ぶか、新しく追加します。ローカルだけにあるコードならローカル フォルダーを追加できます。接続したプロジェクトがセッションの文脈になります。"
+    },
+    {
+      "q": "プロンプトに決まった書き方はありますか。",
+      "a": "特別な構文はありません。やりたい変更を平易な言葉で書けば始められます。期待と違った場合は、詳細を追加したり変更を依頼して繰り返し調整します。"
+    },
+    {
+      "q": "モデルは最初から選ぶ必要がありますか。",
+      "a": "最初は既定のモデルで十分です。複雑な推論が必要なときや、最初の方法で結果が出ないときに切り替えます。"
+    },
+    {
+      "q": "音声入力は送信前に直せますか。",
+      "a": "はい。音声はプロンプト欄でテキストに変換され、送信前に確認・編集できます。"
+    },
+    {
+      "q": "ノート PC を閉じた後も作業を続けられますか。",
+      "a": "セッションでリモート制御を有効にすると、同じセッションにウェブから別の端末でアクセスでき、後で戻れます。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "GitHub Copilot app for Beginners: Write your first prompt - The GitHub Blog",
+      "url": "https://github.blog/ai-and-ml/github-copilot/write-your-first-prompt-with-the-github-copilot-app/"
+    }
+  },
+  "evidence": [
+    "https://github.blog/ai-and-ml/github-copilot/write-your-first-prompt-with-the-github-copilot-app/"
+  ]
+}
