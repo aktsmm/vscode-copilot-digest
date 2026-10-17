@@ -1,0 +1,76 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "20ede34d1ea8bb32",
+  "title": {
+    "ja": "github.com の Copilot Chat、最小化と会話再開、トークン消費表示に対応",
+    "subtitleJa": "チャットを最小化して GitHub を閲覧でき、最近の会話を再開し、トークン消費を確認できる",
+    "original": "Copilot on web expands conversation controls"
+  },
+  "date": "2026-08-10",
+  "topic": "GitHub Copilot",
+  "status": "ga",
+  "statusEvidence": "These features are generally available to all Copilot plans.",
+  "audience": {
+    "who": "github.com で Copilot Chat を使うすべての Copilot プランのユーザー",
+    "change": "チャットの最小化、最近の会話の再開、トークン消費インジケーターが使える",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "no",
+    "summary": "github.com/copilot で新しい操作を試せる。特別な設定は記事に記載されていない"
+  },
+  "panels": [
+    {
+      "id": "where-and-plans",
+      "heading": "使える場所とプラン",
+      "priority": "core",
+      "items": [
+        "github.com の Copilot Chat（github.com/copilot）",
+        "すべての Copilot プランで一般提供（GA）"
+      ]
+    },
+    {
+      "id": "how-to-use",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "会話中にチャット画面を最小化すると、Copilot の応答を待つ間に GitHub を閲覧できる",
+        "最近の会話を、より簡単に表示して続けられる",
+        "トークン消費アイコンをクリックすると、セッションごと・メッセージごとのクォータを確認できる"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "チャット オーバーレイ", "type": "feature", "oneLine": "github.com 上で重ねて表示される Copilot Chat の画面。" }
+  ],
+  "suggestions": [
+    "応答待ちの間はチャットを最小化して、別のページを見ながら進められる"
+  ],
+  "qa": [
+    {
+      "q": "どの Copilot プランで使えますか？",
+      "a": "記事によると、これらの機能はすべての Copilot プランで一般提供されています。"
+    },
+    {
+      "q": "どこで試せますか？",
+      "a": "github.com/copilot の Copilot Chat で試せます。"
+    },
+    {
+      "q": "チャットを最小化すると何ができますか？",
+      "a": "会話中にチャット画面を最小化して、Copilot の応答を待つ間に GitHub を閲覧できます。進行中の会話にも戻れます。"
+    },
+    {
+      "q": "トークン消費はどう確認しますか？",
+      "a": "チャット内のトークン消費アイコンをクリックすると、セッションごととメッセージごとのクォータを確認でき、消費と予算を把握しやすくなります。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Copilot on web expands conversation controls - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-08-10-copilot-on-web-expands-conversation-controls/"
+    }
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-08-10-copilot-on-web-expands-conversation-controls/"
+  ]
+}
