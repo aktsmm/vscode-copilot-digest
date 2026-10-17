@@ -1,0 +1,94 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "95bcd8d84a05c315",
+  "title": {
+    "ja": "Copilotアプリ・CLIでコンテンツ除外が一般提供開始",
+    "subtitleJa": "管理者が設定した除外ポリシーをCopilotアプリとCLIが尊重し、除外ファイルを文脈に使わない",
+    "original": "Content exclusions generally available in Copilot app and CLI"
+  },
+  "date": "2026-09-02",
+  "topic": "GitHub Copilot",
+  "status": "ga",
+  "statusEvidence": "Content exclusions generally available in Copilot app and CLI",
+  "audience": {
+    "who": "Copilot BusinessまたはCopilot EnterpriseでCopilotアプリ・CLIを使う管理者と開発者",
+    "change": "Enterprise・組織・リポジトリ管理者が設定した除外ポリシーに、CopilotアプリとCLIが従う",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "info",
+    "summary": "機密コードを除外したい管理者は、既存のコンテンツ除外設定がアプリ・CLIにも適用される点を把握する"
+  },
+  "panels": [
+    {
+      "id": "availability",
+      "heading": "使える場所とプラン",
+      "priority": "core",
+      "items": [
+        "Copilot BusinessとCopilot Enterpriseの顧客が対象",
+        "GitHub Copilot appとGitHub Copilot CLIが除外ポリシーを尊重する",
+        "Enterprise・組織・リポジトリの管理者が設定したポリシーが対象"
+      ]
+    },
+    {
+      "id": "behavior",
+      "heading": "除外されたときの動作",
+      "priority": "core",
+      "items": [
+        "除外されたファイルは、Copilotがコンテキストとして使用しない",
+        "エージェント型のワークフローでも機密コードを保護できる",
+        "除外内容は応答にも反映されず、コードレビューでも確認されない"
+      ]
+    },
+    {
+      "id": "limits",
+      "heading": "設定できる人と制限",
+      "priority": "detail",
+      "items": [
+        "設定できるのはリポジトリ管理者、組織所有者、Enterprise所有者",
+        "シンボリックリンクとリモートファイルシステム上のリポジトリには適用されない"
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "コンテンツ除外",
+      "type": "feature",
+      "oneLine": "特定のファイルを無視するようCopilotを構成する機能"
+    }
+  ],
+  "qa": [
+    {
+      "q": "どのプランで使えますか？",
+      "a": "Copilot BusinessとCopilot Enterpriseの顧客が対象です。"
+    },
+    {
+      "q": "誰が除外を設定できますか？",
+      "a": "リポジトリ管理者、組織所有者、Enterprise所有者です。リポジトリ管理者は自分のリポジトリのコンテンツのみ除外できます。"
+    },
+    {
+      "q": "除外されたファイルはどう扱われますか？",
+      "a": "Copilotはそのファイルをコンテキストとして使いません。ドキュメントによると、影響を受けるファイルの内容はCopilotの応答にも反映されず、コードレビューでも確認されません。"
+    },
+    {
+      "q": "適用されない場合はありますか？",
+      "a": "シンボリックリンクや、リモートファイルシステムに配置されたリポジトリには現在適用されません。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Content exclusions generally available in Copilot app and CLI - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-09-02-content-exclusions-generally-available-in-copilot-app-and-cli/"
+    },
+    "documents": [
+      {
+        "title": "GitHub Copilot のコンテンツの除外 - GitHubドキュメント",
+        "url": "https://docs.github.com/ja/copilot/concepts/security-governance-and-network-settings/content-exclusion"
+      }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-09-02-content-exclusions-generally-available-in-copilot-app-and-cli/",
+    "https://docs.github.com/ja/copilot/concepts/security-governance-and-network-settings/content-exclusion"
+  ]
+}
