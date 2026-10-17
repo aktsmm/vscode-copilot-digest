@@ -1,0 +1,92 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "5f600c7561b5b076",
+  "title": {
+    "ja": "Copilot code review、ボット作成の PR と大規模 PR をレビュー可能に",
+    "subtitleJa": "300 ファイル・20,000 行の上限が撤廃され、解決理由も選べるように",
+    "original": "Copilot code review: Resolution reasons and expanded capabilities"
+  },
+  "date": "2026-08-27",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "Copilot code review を使う開発者と、組織・エンタープライズの管理者",
+    "change": "ボット作成の PR や大規模 PR もレビュー対象になり、コメントの解決理由を送れる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "ボット作成の PR も自動レビューするなら、ライセンスなし利用のポリシーを確認する"
+  },
+  "beforeAfter": {
+    "before": "レビューできる PR は 300 ファイルまたは 20,000 行まで",
+    "after": "この上限は適用されなくなった"
+  },
+  "panels": [
+    {
+      "id": "expanded",
+      "heading": "拡大した対象",
+      "priority": "core",
+      "items": [
+        "ボットが作成し自動で要求された PR もレビューでき、使用料は組織に直接課金される",
+        "Copilot cloud agent の PR は、制限付きの体験ではなく完全なエージェント レビューを受ける",
+        "大規模 PR の 300 ファイル・20,000 行の上限がなくなった"
+      ]
+    },
+    {
+      "id": "prerequisites",
+      "heading": "前提と制限",
+      "priority": "core",
+      "items": [
+        "ボット作成 PR のレビューには「Copilot ライセンスを持たないメンバーが GitHub.com で Copilot code review を使用できるようにする」ポリシーが必要",
+        "ライセンスなしの利用は Copilot Business と Copilot Enterprise の組織が対象"
+      ]
+    },
+    {
+      "id": "resolution",
+      "heading": "解決理由の送信",
+      "priority": "core",
+      "items": [
+        "「Resolve conversation」ボタン横のドロップダウンから「Addressed」「Won't fix」「Incorrect」を選ぶ",
+        "選択内容は製品チームへのフィードバックになる"
+      ]
+    }
+  ],
+  "suggestions": [
+    "不要な指摘は「Incorrect」、対応しない指摘は「Won't fix」で解決すると、理由が残る"
+  ],
+  "qa": [
+    {
+      "q": "ボットが作成した PR のレビューは誰に課金されますか？",
+      "a": "対象のポリシーを有効にすると、Copilot ライセンスのあるアカウントに帰属させられないレビューの使用料は、組織に直接課金されます。"
+    },
+    {
+      "q": "ボット作成 PR のレビューを使うには何が必要ですか？",
+      "a": "「Copilot ライセンスを持たないメンバーが GitHub.com で Copilot code review を使用できるようにする」ポリシーを有効にします。ドキュメントでは、Copilot Business と Copilot Enterprise の組織が対象です。"
+    },
+    {
+      "q": "大規模な PR にも制限はありますか？",
+      "a": "以前の 300 ファイルまたは 20,000 行の上限は、適用されなくなりました。"
+    },
+    {
+      "q": "コメントの解決理由はどこで選びますか？",
+      "a": "Copilot code review のコメント下部にある「Resolve conversation」ボタン横のドロップダウンで、Addressed、Won't fix、Incorrect から選びます。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Copilot code review: Resolution reasons and expanded capabilities - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-08-27-copilot-code-review-resolution-reasons-and-expanded-capabilities/"
+    },
+    "documents": [
+      {
+        "title": "GitHub Copilotによるコードレビューについて - GitHub ドキュメント",
+        "url": "https://docs.github.com/ja/copilot/concepts/agents/code-review"
+      }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-08-27-copilot-code-review-resolution-reasons-and-expanded-capabilities/",
+    "https://docs.github.com/ja/copilot/concepts/agents/code-review"
+  ]
+}
