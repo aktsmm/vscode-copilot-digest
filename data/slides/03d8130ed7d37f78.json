@@ -1,0 +1,82 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "03d8130ed7d37f78",
+  "title": {
+    "ja": "個人ユーザー予算に有効期限を設定可能に",
+    "subtitleJa": "期限日に予算が自動で削除され、次に適用される予算へ戻る",
+    "original": "Set an expiration date for individual user budgets"
+  },
+  "date": "2026-09-01",
+  "topic": "GitHub Platform",
+  "status": "ga",
+  "statusEvidence": "This capability is generally available.",
+  "audience": {
+    "who": "Copilot Business / Enterprise で個人ユーザー予算を管理する管理者",
+    "change": "個人ユーザー予算に任意の有効期限を設定でき、期限日に GitHub が予算を削除する",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "一時的な予算の上書きには、作成・編集時に有効期限を設定する"
+  },
+  "beforeAfter": {
+    "before": "一時的な予算の上書きを、1 件ずつ手作業で削除する必要があった",
+    "after": "有効期限を設定すると、期限日に予算が自動で削除される"
+  },
+  "panels": [
+    {
+      "id": "plans",
+      "heading": "使える場所とプラン",
+      "priority": "core",
+      "items": [
+        "GitHub Copilot Business と Copilot Enterprise プランで利用できる",
+        "期限後は、コスト センターのユーザー単位予算、なければ全体の予算に戻る"
+      ]
+    },
+    {
+      "id": "how-to",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "予算の作成・編集時に「期限なし（既定）」「次の請求サイクル開始時」「特定の日付」から選ぶ",
+        "請求設定、または Budgets REST API の expires_at フィールドで設定できる",
+        "期限日はいつでも変更・解除できる"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "expires_at", "type": "feature", "oneLine": "Budgets REST API で予算の作成・更新時に有効期限を指定するフィールド。" }
+  ],
+  "qa": [
+    {
+      "q": "どのプランで使えますか。",
+      "a": "GitHub Copilot Business と Copilot Enterprise プランで利用できます。GA として提供されています。"
+    },
+    {
+      "q": "有効期限の指定方法は。",
+      "a": "請求設定で個人ユーザー予算を作成・編集する際に指定するか、Budgets REST API の作成・更新で expires_at フィールドを使います。"
+    },
+    {
+      "q": "期限に使える選択肢は。",
+      "a": "期限なし（既定で従来どおり）、次の請求サイクル開始時、特定の日付の 3 つです。期限はいつでも変更・解除できます。"
+    },
+    {
+      "q": "期限が来るとどうなりますか。",
+      "a": "GitHub がその日に予算を削除し、ユーザーにはコスト センターのユーザー単位予算、なければ全体の予算が適用されます。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Set an expiration date for individual user budgets - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-09-01-set-an-expiration-date-for-individual-user-budgets/"
+    },
+    "documents": [
+      { "title": "Setting up budgets to control spending on metered products - GitHub Enterprise Cloud Docs", "url": "https://docs.github.com/enterprise-cloud@latest/billing/how-tos/set-up-budgets" },
+      { "title": "Budgets - GitHub Enterprise Cloud Docs", "url": "https://docs.github.com/enterprise-cloud@latest/rest/billing/budgets" }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-09-01-set-an-expiration-date-for-individual-user-budgets/",
+    "https://docs.github.com/enterprise-cloud@latest/billing/how-tos/set-up-budgets"
+  ]
+}
