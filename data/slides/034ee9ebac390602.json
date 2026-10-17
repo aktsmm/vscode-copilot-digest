@@ -1,0 +1,85 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "034ee9ebac390602",
+  "title": {
+    "ja": "GitHub Copilot で Gemini 3.7 Flash が利用可能に",
+    "subtitleJa": "Google の Flash モデルが順次提供。Business / Enterprise は管理者のポリシー有効化が必要",
+    "original": "Gemini 3.7 Flash is now available in GitHub Copilot"
+  },
+  "date": "2026-08-13",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "Copilot でモデルを選んで使う開発者と、Business / Enterprise の管理者",
+    "change": "Gemini 3.7 Flash がモデル ピッカーで選べるようになる。提供は段階的",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "使うなら、モデル ピッカーで選ぶ。Business / Enterprise は管理者がポリシーを有効にする"
+  },
+  "panels": [
+    {
+      "id": "availability",
+      "heading": "使える場所とプラン",
+      "priority": "core",
+      "items": [
+        "プラン: Copilot Pro、Pro+、Max、Business、Enterprise",
+        "VS Code、Visual Studio、Copilot CLI、cloud agent、Copilot app、JetBrains、Xcode、Eclipse のモデル ピッカーで選べる",
+        "提供は段階的。表示されない場合は後で再確認する"
+      ]
+    },
+    {
+      "id": "how-to-enable",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "Business / Enterprise の管理者が、Copilot 設定で「Gemini 3.7 Flash Preview」ポリシーを有効にする",
+        "有効化後に、組織のメンバーがモデル ピッカーで選択できる"
+      ]
+    },
+    {
+      "id": "notes",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "従量課金のもとで、プロバイダーの定価で課金される",
+        "初期テストでは、Web / アプリ開発とエージェント型のコーディングが前バージョンより改善"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "モデル ピッカー", "type": "feature", "oneLine": "Copilot で使うモデルを選ぶ UI。" }
+  ],
+  "references": {
+    "source": {
+      "title": "Gemini 3.7 Flash is now available in GitHub Copilot - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-08-13-gemini-3-7-flash-is-now-available-in-github-copilot/"
+    },
+    "documents": [
+      { "title": "GitHub Copilot のモデルと価格設定 - GitHubドキュメント", "url": "https://docs.github.com/ja/copilot/reference/copilot-billing/models-and-pricing" },
+      { "title": "GitHub Copilotでサポートされている AI モデル - GitHubドキュメント", "url": "https://docs.github.com/ja/copilot/reference/ai-models/supported-models" }
+    ]
+  },
+  "qa": [
+    {
+      "q": "どのプランで使えますか？",
+      "a": "Copilot Pro、Pro+、Max、Business、Enterprise のユーザーが対象です。提供は段階的なので、表示されない場合は後で確認します。"
+    },
+    {
+      "q": "どの環境で選べますか？",
+      "a": "VS Code、Visual Studio、Copilot CLI、cloud agent、Copilot app、JetBrains、Xcode、Eclipse のモデル ピッカーで選べます。"
+    },
+    {
+      "q": "Business / Enterprise で使うために必要なことは？",
+      "a": "管理者が Copilot 設定で Gemini 3.7 Flash Preview ポリシーを有効にすると、組織の全員が選択できるようになります。"
+    },
+    {
+      "q": "料金はどうなりますか？",
+      "a": "従量課金のもとで、プロバイダーの定価で課金されます。詳細はモデルと価格設定のドキュメントを参照します。"
+    }
+  ],
+  "evidence": [
+    "https://github.blog/changelog/2026-08-13-gemini-3-7-flash-is-now-available-in-github-copilot/"
+  ]
+}
