@@ -1,0 +1,100 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "477bb68b624ad0e3",
+  "title": {
+    "ja": "VS Code 1.135: 外部エージェント セッションの継続と Agents ウィンドウの刷新",
+    "subtitleJa": "他アプリの Copilot / Claude セッションを VS Code で継続でき、1 ターンごとのトークン内訳も確認できる",
+    "original": "Visual Studio Code 1.135"
+  },
+  "date": "2026-08-25",
+  "topic": "VS Code",
+  "status": "update",
+  "audience": {
+    "who": "VS Code で Copilot のエージェント セッションや Agents ウィンドウを使う開発者",
+    "change": "他アプリで作ったセッションを継続でき、Agents ウィンドウは単一ペイン レイアウトが既定になった",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "必要に応じて設定を見直す。従来のレイアウトに戻すなら sessions.layout.singlePaneDetailPanel を無効にして再読み込み"
+  },
+  "panels": [
+    {
+      "id": "external-sessions",
+      "heading": "外部セッションの継続",
+      "priority": "core",
+      "items": [
+        "Sessions 一覧に、他のアプリで作った最近の Copilot / Claude のエージェント セッションを表示できる",
+        "セッションを選ぶと会話を確認し、Copilot サブスクリプションで VS Code から継続できる",
+        "表示数はチャット上部のバナーか、フィルターの External サブメニュー、chat.agentSessions.showExternal で変更する"
+      ]
+    },
+    {
+      "id": "agents-window",
+      "heading": "Agents ウィンドウの変更",
+      "priority": "core",
+      "items": [
+        "単一ペイン レイアウトがデスクトップの既定に。差分は幅が足りないとき インライン表示に切り替わる",
+        "セッション情報の pill（変更・PR・Issue・ブラウザー・成果物）がチャット入力欄の真上に移動",
+        "pill を右クリックして、表示する種類を選べる。変更がある間は Changes pill が表示される"
+      ]
+    },
+    {
+      "id": "usage-and-experimental",
+      "heading": "利用状況と試験的機能",
+      "priority": "core",
+      "items": [
+        "チャット応答のフッターにホバーすると、モデルごとの入力・キャッシュ入力・出力トークンを確認できる",
+        "Rubber Duck（試験的）: Copilot エージェント ホスト セッションで /rubber-duck を使うと別モデルの意見を得られる"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "ローカル エージェント ハーネスのサンドボックスは既定のロールアウトが 0% に戻り、UI からのオプトインで利用する",
+        "チャットの sticky scroll は試験的で、chat.stickyScroll.enabled と chat.experimental.stickyScroll.enabled の両方で有効化"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "Agent Host", "type": "feature", "oneLine": "エージェント ハーネスを実行しセッションを管理する専用プロセス。複数のクライアントが同じセッションを操作できる。" },
+    { "term": "Rubber Duck", "type": "feature", "oneLine": "補完的なモデルからエージェントの作業への意見をもらい、見落としやエッジ ケースを見つける試験的機能。" }
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.135",
+      "url": "https://code.visualstudio.com/updates/v1_135"
+    },
+    "documents": [
+      { "title": "Agent Host architecture", "url": "https://code.visualstudio.com/docs/agents/concepts/agent-host" }
+    ]
+  },
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_135",
+    "https://code.visualstudio.com/docs/agents/concepts/agent-host"
+  ],
+  "qa": [
+    {
+      "q": "外部セッションはどこに表示され、何ができますか？",
+      "a": "Sessions 一覧に、他のアプリで作成した最近の Copilot または Claude のエージェント セッションが表示されます。選ぶと会話を確認でき、Copilot サブスクリプションを使って VS Code で続きを進められます。"
+    },
+    {
+      "q": "外部セッションの表示を調整するには？",
+      "a": "外部セッションを開いたときのチャット上部のバナーで表示数を設定できます。Sessions 一覧のフィルターの External サブメニューや、chat.agentSessions.showExternal 設定でも変更できます。"
+    },
+    {
+      "q": "Agents ウィンドウの従来レイアウトに戻せますか？",
+      "a": "はい。単一ペイン レイアウトはデスクトップの Agents ウィンドウで既定になりました。従来のレイアウトを使うには sessions.layout.singlePaneDetailPanel を無効にして、ウィンドウを再読み込みします。"
+    },
+    {
+      "q": "チャットのトークン使用量はどこで見られますか？",
+      "a": "チャット応答のフッターを再設計しました。フッターにホバーすると、そのターンで使われた入力、キャッシュ入力、出力トークンがモデルごとに表示されます。"
+    },
+    {
+      "q": "Rubber Duck はどう使いますか？",
+      "a": "試験的機能です。Copilot エージェント ホスト セッションで /rubber-duck コマンドを実行すると、補完的なモデルからエージェントの作業について意見をもらえ、見落としやエッジ ケースの発見に役立ちます。"
+    }
+  ]
+}
