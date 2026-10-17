@@ -1,0 +1,98 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "0363631ad59a8e79",
+  "title": {
+    "ja": "Copilot コード レビューが、プル リクエストを承認可能に",
+    "subtitleJa": "レビューに承認の評価が付き、管理者が許可すると必須承認にカウントされる承認も出せる",
+    "original": "Copilot code review can now approve pull requests"
+  },
+  "date": "2026-09-01",
+  "topic": "GitHub Copilot",
+  "status": "preview",
+  "statusEvidence": "This feature is available in public preview to GitHub Copilot Pro, Pro+, Max, Business, and Enterprise plans.",
+  "audience": {
+    "who": "Copilot コード レビューを使うリポジトリの開発者と、Enterprise・組織・リポジトリの管理者",
+    "change": "全レビューの概要コメントに承認の評価が入り、有効化すると Copilot の承認が必須承認ルールにカウントされる",
+    "changeNature": "neutral"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "Copilot に承認させたい場合のみ、管理者が Enterprise・組織・リポジトリのいずれかで有効にする"
+  },
+  "panels": [
+    {
+      "id": "availability",
+      "heading": "使える場所とプラン",
+      "priority": "core",
+      "items": [
+        "パブリック プレビュー。Copilot Pro、Pro+、Max、Business、Enterprise プランが対象",
+        "承認の評価は、すべての Copilot レビューの概要コメントに表示される",
+        "評価だけでは、マージ要件にカウントされない"
+      ]
+    },
+    {
+      "id": "setup",
+      "heading": "有効化の設定",
+      "priority": "core",
+      "items": [
+        "既定では Copilot は承認しない。有効化すると、必須承認ルールにカウントされる承認を送信できる",
+        "Enterprise: 全体でオフのままにするか、組織に判断を任せる",
+        "組織: 全体で有効、リポジトリ管理者に任せる、特定リポジトリのみ有効、全体で無効から選ぶ",
+        "リポジトリ: オン・オフの切り替えと、承認を許可するファイル パスを選べる"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "承認後に新しいコミットをプッシュすると、人間のレビュー担当者と同様に承認は取り消される",
+        "新しい承認が必要なときは、Copilot に再度レビューを依頼する"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "承認の評価", "type": "feature", "oneLine": "Copilot がプル リクエストを承認できる状態と判断したかを示す、概要コメント内の表示。" }
+  ],
+  "suggestions": [
+    "まずはリポジトリ単位で有効にし、承認を許可するファイル パスを絞って試す"
+  ],
+  "qa": [
+    {
+      "q": "どのプランで使えますか?",
+      "a": "パブリック プレビューとして、GitHub Copilot Pro、Pro+、Max、Business、Enterprise の各プランで利用できます。"
+    },
+    {
+      "q": "Copilot が勝手に承認しますか?",
+      "a": "いいえ。既定では承認しません。管理者が有効にした場合のみ、必須承認ルールにカウントされる承認を送信できます。"
+    },
+    {
+      "q": "承認の評価はマージ要件に影響しますか?",
+      "a": "評価だけではマージ要件にカウントされません。Copilot の判断を示す情報として概要コメントに表示され、どう扱うかは利用者が決めます。"
+    },
+    {
+      "q": "どのレベルで設定できますか?",
+      "a": "Enterprise、組織、リポジトリの 3 段階です。リポジトリでは、オン・オフに加えて Copilot が承認できるファイル パスも選べます。"
+    },
+    {
+      "q": "承認後にコミットを追加するとどうなりますか?",
+      "a": "人間のレビュー担当者の場合と同様に、Copilot の承認は取り消されます。新しい承認が必要なら、Copilot に再レビューを依頼します。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Copilot code review can now approve pull requests - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-09-01-copilot-code-review-can-now-approve-pull-requests/"
+    },
+    "documents": [
+      {
+        "title": "GitHub Copilotによるコード レビューの構成",
+        "url": "https://docs.github.com/ja/copilot/how-tos/copilot-on-github/set-up-copilot/configure-code-review"
+      }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-09-01-copilot-code-review-can-now-approve-pull-requests/",
+    "https://docs.github.com/ja/copilot/how-tos/copilot-on-github/set-up-copilot/configure-code-review"
+  ]
+}
