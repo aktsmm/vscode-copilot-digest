@@ -1,0 +1,87 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "c7588c3327cdae75",
+  "title": {
+    "ja": "Gemini 3.8 Flash が GitHub Copilot で利用可能に",
+    "subtitleJa": "Google の Flash モデルを Pro から Enterprise までのプランで選択可能。段階的に展開",
+    "original": "Gemini 3.8 Flash is now available in GitHub Copilot"
+  },
+  "date": "2026-09-03",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "Copilot でモデルを選んで使う開発者と、Business / Enterprise のモデル ポリシー管理者",
+    "change": "モデル ピッカーで Gemini 3.8 Flash を選べる。2026-12-31 まで導入価格の使用量ベース課金",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "使いたい場合はモデル ピッカーで選ぶ。管理者はモデル ポリシーで可否を確認する"
+  },
+  "panels": [
+    {
+      "id": "availability",
+      "heading": "使える場所とプラン",
+      "priority": "core",
+      "items": [
+        "対象プラン: Copilot Pro、Pro+、Max、Business、Enterprise",
+        "モデル ピッカーで選択: VS Code、Visual Studio、Copilot CLI、クラウド エージェント、Copilot アプリ",
+        "モデル ピッカーで選択: JetBrains IDE、Xcode、Eclipse",
+        "展開は段階的。表示されない場合は後で再確認する"
+      ]
+    },
+    {
+      "id": "admin",
+      "heading": "前提と制限",
+      "priority": "core",
+      "items": [
+        "Business / Enterprise の管理者は、Copilot 設定のモデル ポリシーでアクセスを管理する",
+        "既定のモデル有効化では、管理者が全体の既定を無効にするか個別に無効化しない限り自動で有効"
+      ]
+    },
+    {
+      "id": "billing",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "2026-12-31 まで、導入価格の使用量ベース課金で請求される"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "モデル ピッカー", "type": "feature", "oneLine": "Copilot で使うモデルを選ぶ画面。" },
+    { "term": "モデル ポリシー", "type": "feature", "oneLine": "Business / Enterprise の管理者が Copilot 設定でモデルのアクセスを管理する仕組み。" }
+  ],
+  "references": {
+    "source": {
+      "title": "Gemini 3.8 Flash is now available in GitHub Copilot - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-09-03-gemini-3-8-flash-is-now-available-in-github-copilot/"
+    },
+    "documents": [
+      { "title": "GitHub Copilot のモデルと価格設定 - GitHubドキュメント", "url": "https://docs.github.com/ja/copilot/reference/copilot-billing/models-and-pricing" },
+      { "title": "GitHub Copilotでサポートされている AI モデル - GitHubドキュメント", "url": "https://docs.github.com/ja/copilot/reference/ai-models/supported-models" }
+    ]
+  },
+  "qa": [
+    {
+      "q": "どのプランで使えますか。",
+      "a": "Copilot Pro、Pro+、Max、Business、Enterprise のユーザーが対象です。展開は段階的なので、表示されない場合は後で再確認してください。"
+    },
+    {
+      "q": "どこで選べますか。",
+      "a": "モデル ピッカーで、VS Code、Visual Studio、Copilot CLI、クラウド エージェント、Copilot アプリ、JetBrains IDE、Xcode、Eclipse から選べます。"
+    },
+    {
+      "q": "管理者はどう制御しますか。",
+      "a": "Business / Enterprise の管理者は、Copilot 設定のモデル ポリシーで管理します。既定のモデル有効化では、全体の既定か本モデルを無効にしない限り自動で有効になります。"
+    },
+    {
+      "q": "料金はどうなりますか。",
+      "a": "2026-12-31 まで、導入価格の使用量ベース課金で請求されます。詳細は Copilot のモデルと価格設定のドキュメントを参照してください。"
+    }
+  ],
+  "evidence": [
+    "https://github.blog/changelog/2026-09-03-gemini-3-8-flash-is-now-available-in-github-copilot/",
+    "https://docs.github.com/ja/copilot/reference/copilot-billing/models-and-pricing"
+  ]
+}
