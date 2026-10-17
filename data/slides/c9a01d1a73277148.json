@@ -1,0 +1,81 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "c9a01d1a73277148",
+  "title": {
+    "ja": "GitHub Copilot 週次リリース（8月24日）：アプリ、CLI、IDE の更新",
+    "subtitleJa": "Copilot アプリの Customize タブが GA、CLI は Rust ランタイムで高速化",
+    "original": "GitHub Copilot weekly releases — August 24"
+  },
+  "date": "2026-08-28",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "Copilot アプリ、CLI、VS Code、Visual Studio、JetBrains、Slack / Teams を使う開発者と管理者",
+    "change": "Customize タブの GA、CLI の既定モード設定とセッション復元、各 IDE の機能追加が 1 週間分まとまって公開された",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "info",
+    "summary": "使っている製品の項目を確認し、必要なものを試す"
+  },
+  "panels": [
+    {
+      "id": "app",
+      "heading": "Copilot アプリ",
+      "priority": "core",
+      "items": [
+        "Customize タブが GA。MCP サーバー、プラグイン、スキル、キャンバスを 1 か所に集約",
+        "Customize タブから Azure DevOps の issue / プル リクエストを Copilot セッションにできる",
+        "Windows Subsystem for Linux (WSL) を実験的にサポート"
+      ]
+    },
+    {
+      "id": "cli",
+      "heading": "Copilot CLI の更新",
+      "priority": "core",
+      "items": [
+        "defaultMode と defaultPermissionMode で、新規セッションの実行・権限モードを既定にできる",
+        "/plugin、/mcp、/skills の管理操作が新しくなった",
+        "正常終了しなかったセッション（ターン途中の中断を含む）を復元できる",
+        "ネイティブ Rust ランタイムで高速化。ターミナル UI は TypeScript のまま"
+      ]
+    },
+    {
+      "id": "ide",
+      "heading": "VS Code と Visual Studio",
+      "priority": "core",
+      "items": [
+        "VS Code 1.135: 他アプリの Copilot / Claude エージェント セッションを継続、単一ペインの Agents レイアウト、モデル別のチャット使用量表示",
+        "Visual Studio: モデルのピン留め・非表示、組織でのカスタム エージェント共有、Git エージェントによる変更レビュー"
+      ]
+    },
+    {
+      "id": "other",
+      "heading": "チャットと JetBrains",
+      "priority": "detail",
+      "items": [
+        "Slack / Teams で @GitHub にメンションし、チームで共有するエージェント セッションを開始できる",
+        "JetBrains: プラグイン、MCP サーバー、テレメトリ、エージェント権限モードの企業向け制御を統一して適用できる"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "Customize タブ", "type": "feature", "oneLine": "MCP サーバー、プラグイン、スキル、キャンバスを 1 か所にまとめる Copilot アプリのタブ。" },
+    { "term": "WSL", "type": "term", "oneLine": "Windows Subsystem for Linux。Copilot アプリで実験的に対応。" }
+  ],
+  "qa": [
+    { "q": "Customize タブでは何をまとめて扱えますか？", "a": "Copilot アプリの Customize タブは GA になり、MCP サーバー、プラグイン、スキル、キャンバスを 1 か所で扱えます。Azure DevOps の issue やプル リクエストを Copilot セッションにすることもできます。" },
+    { "q": "CLI で新規セッションの既定モードを決めるには？", "a": "defaultMode と defaultPermissionMode を使うと、新しいセッションを好みの実行モードと権限モードで開始できます。" },
+    { "q": "CLI が異常終了したセッションは戻せますか？", "a": "正常に終了しなかったセッションは、ターン途中で中断されたものを含めて復元できます。" },
+    { "q": "CLI の高速化は何によるものですか？", "a": "Copilot CLI がネイティブ Rust ランタイムで動くようになったためです。ターミナル インターフェイスは TypeScript のままです。" }
+  ],
+  "references": {
+    "source": {
+      "title": "GitHub Copilot weekly releases — August 24 - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-08-28-github-copilot-weekly-releases-august-24/"
+    }
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-08-28-github-copilot-weekly-releases-august-24/"
+  ]
+}
