@@ -1,0 +1,95 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "c0cf4ac26ed3a223",
+  "title": {
+    "ja": "AI 使用状況レポートに、モデル別のトークン内訳が追加",
+    "subtitleJa": "モデルごとの入力・出力・キャッシュ読み取り/書き込みトークンを AI クレジットと並べて表示",
+    "original": "Per-model token breakdown in the usage report"
+  },
+  "date": "2026-08-11",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "Copilot Business / Enterprise の管理者と、個人向け Copilot の利用者",
+    "change": "AI クレジット消費の根拠を、モデル別のトークン内訳として追える",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "課金設定の AI 使用状況ページから AI 使用状況レポートをダウンロードして確認する"
+  },
+  "beforeAfter": {
+    "before": "AI クレジットだけが表示され、内訳のトークン詳細はなかった",
+    "after": "モデルごとに入力・出力・キャッシュ読み取り・書き込みのトークンを確認できる"
+  },
+  "panels": [
+    {
+      "id": "where-and-plan",
+      "heading": "使える場所とプラン",
+      "priority": "core",
+      "items": [
+        "Copilot Business と Copilot Enterprise の管理者が対象",
+        "個人向け Copilot の利用者も対象"
+      ]
+    },
+    {
+      "id": "how-to-use",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "課金設定の AI 使用状況ページから AI 使用状況レポートをダウンロードする",
+        "モデルごとに input、output、cache_read、cache_write のトークンが、消費した AI クレジットと並ぶ",
+        "AI 使用状況レポートの対象期間は最大 31 日"
+      ]
+    },
+    {
+      "id": "notes",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "集計の単位は date、model、username の組み合わせ"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "AI クレジット", "type": "term", "oneLine": "AI 使用状況レポートで、モデルごとの消費量として示される単位。" }
+  ],
+  "suggestions": [
+    "請求の説明やコスト削減の検討に、モデル別のトークン内訳を使い、関係者と共有する"
+  ],
+  "qa": [
+    {
+      "q": "誰がこの内訳を見られますか。",
+      "a": "Copilot Business と Copilot Enterprise の管理者、および個人向け Copilot の利用者です。"
+    },
+    {
+      "q": "内訳はどこで入手しますか。",
+      "a": "課金設定の AI 使用状況ページから、AI 使用状況レポートをダウンロードします。"
+    },
+    {
+      "q": "どんなトークンが分かりますか。",
+      "a": "モデルごとに、入力、出力、キャッシュ読み取り、キャッシュ書き込みのトークンを、消費した AI クレジットと並べて確認できます。"
+    },
+    {
+      "q": "以前のレポートとの違いは何ですか。",
+      "a": "以前は AI クレジットのみで、トークンの詳細がなく、請求の説明やコスト削減の検討が難しい状態でした。"
+    },
+    {
+      "q": "レポートの対象期間はどれくらいですか。",
+      "a": "AI 使用状況レポートは最大 31 日分です。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Per-model token breakdown in the usage report - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-08-11-per-model-token-breakdown-in-the-usage-report/"
+    },
+    "documents": [
+      { "title": "Billing reports reference - GitHub Docs", "url": "https://docs.github.com/billing/reference/billing-reports" }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-08-11-per-model-token-breakdown-in-the-usage-report/",
+    "https://docs.github.com/billing/reference/billing-reports"
+  ]
+}
