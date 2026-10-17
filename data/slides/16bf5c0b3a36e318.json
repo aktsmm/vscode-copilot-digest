@@ -1,0 +1,82 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "16bf5c0b3a36e318",
+  "title": {
+    "ja": "GitHub Enterprise Server 3.22 リリース候補、Enterprise Teams が GA",
+    "subtitleJa": "Copilot CLI の GHES 連携（技術プレビュー）、必須レビュアー ルール、個人ユーザーのバイパスなどを追加",
+    "original": "GitHub Enterprise Server 3.22 release candidate"
+  },
+  "date": "2026-08-11",
+  "topic": "GitHub Platform",
+  "status": "update",
+  "audience": {
+    "who": "GitHub Enterprise Server の管理者、Enterprise owner、リポジトリ管理者",
+    "change": "3.22 のリリース候補で、Enterprise Teams の GA やリポジトリ ルールセットの拡張を事前に試せる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "info",
+    "summary": "新機能を早めに試したい場合は、3.22 リリース候補をダウンロードしてフィードバックを送る"
+  },
+  "panels": [
+    {
+      "id": "admin",
+      "heading": "管理・Copilot 関連",
+      "priority": "core",
+      "items": [
+        "Copilot CLI を GHES と連携でき、切断・エアギャップ環境でも利用可能。モデル プロバイダーを GHES に 1 回設定する（技術プレビュー、変更の可能性あり）",
+        "Enterprise Teams が public preview から GA。Enterprise 全体のユーザーとアクセスを 1 つのチーム構造で管理できる"
+      ]
+    },
+    {
+      "id": "rulesets",
+      "heading": "リポジトリ ルールセットとレビュー",
+      "priority": "core",
+      "items": [
+        "ルールセットで個人ユーザー単位のバイパスに対応。サービス アカウントを専用のロールやチームなしで追加できる",
+        "必須レビュアー ルールで、ブランチやファイル、フォルダーをパターンで指定し、チームごとの最小レビュー数を設定できる。CODEOWNERS と併用する"
+      ]
+    },
+    {
+      "id": "ux",
+      "heading": "その他の改善",
+      "priority": "detail",
+      "items": [
+        "シークレット スキャンのプッシュ保護バイパス申請と、アラート却下申請を日付の昇順・降順で並べ替えられる",
+        "Issue のサイドバーにリリース状況のバッジ、PR 一覧に投稿者のロール ラベルを表示（公開リポジトリ）"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "リリース候補", "type": "term", "oneLine": "最新機能を早めに試し、フィードバックを集めるための版。" },
+    { "term": "Enterprise Teams", "type": "feature", "oneLine": "Enterprise 全体のユーザーとアクセスを一元管理するチーム構造。" }
+  ],
+  "references": {
+    "source": {
+      "title": "GitHub Enterprise Server 3.22 release candidate - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-08-11-github-enterprise-server-3-22-release-candidate/"
+    },
+    "documents": []
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-08-11-github-enterprise-server-3-22-release-candidate/"
+  ],
+  "qa": [
+    {
+      "q": "リリース候補とは何ですか?",
+      "a": "最新機能を早めに試し、フィードバックを集めるための版です。3.22 のリリース候補はダウンロードでき、質問やフィードバックはサポート チームに連絡します。"
+    },
+    {
+      "q": "Copilot CLI を GHES で使うには?",
+      "a": "管理者が GHES にモデル プロバイダーを 1 回設定すると、Enterprise 内のユーザーが GHES の資格情報で Copilot CLI を使えます。技術プレビューで、変更される可能性があります。"
+    },
+    {
+      "q": "Enterprise Teams の状況は?",
+      "a": "public preview から GA になりました。Enterprise owner が Organization やリポジトリを含むアクセスを 1 つのチーム構造で管理できます。"
+    },
+    {
+      "q": "必須レビュアー ルールでは何ができますか?",
+      "a": "ルールセットに追加し、ブランチやファイル、フォルダーをパターンで指定できます。チームごとに最小レビュー数を設定でき、CODEOWNERS と併用できます。"
+    }
+  ]
+}
