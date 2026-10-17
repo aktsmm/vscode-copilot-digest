@@ -1,0 +1,85 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "5c4a74d8bb68599c",
+  "title": {
+    "ja": "GitHub Copilot 週次リリース（8月10日の週）",
+    "subtitleJa": "Agent Plugins 1.0 が GA。Kimi K3 など新モデルと CLI・アプリの改善",
+    "original": "GitHub Copilot weekly releases — August 10"
+  },
+  "date": "2026-08-13",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "VS Code、Copilot CLI、Copilot アプリ、JetBrains で Copilot を使う開発者",
+    "change": "プラグインを一度作れば互換ツールで使え、CLI やアプリの操作も広がった",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "使っている環境に関係する項目だけ試す"
+  },
+  "panels": [
+    {
+      "id": "models-plugins",
+      "heading": "使える場所とプラン",
+      "priority": "core",
+      "items": [
+        "Agent Plugins 1.0 が GA。VS Code、Copilot CLI、GitHub Copilot SDK、Copilot アプリで使える",
+        "Kimi K3 を Copilot Pro、Pro+、Max、Business、Enterprise に順次提供",
+        "MAI-Code-1.1-Flash を順次提供。画像理解とコーディング品質などが向上"
+      ]
+    },
+    {
+      "id": "cli-app",
+      "heading": "CLI とアプリの変更",
+      "priority": "core",
+      "items": [
+        "CLI: /tasks でサブエージェントとタスクを管理。実行中もプロンプトやシェルコマンドをキューに追加できる",
+        "CLI: ヘッドレス（-p）で --plan と --mode autopilot を併用すると、計画の作成後に実装まで進む",
+        "CLI: /rewind で git なしに Copilot の変更を戻せる。/app は会話とフォルダーの文脈を保って開く",
+        "アプリ: インストール済みプラグインのバージョン確認、個別更新、一括更新が Customize か Settings でできる"
+      ]
+    },
+    {
+      "id": "ide",
+      "heading": "IDE 側の更新",
+      "priority": "detail",
+      "items": [
+        "JetBrains: Copilot メモリでエージェント チャットの文脈を保持。Ollama を BYOK プロバイダーとして利用可能",
+        "VS Code 1.133: Claude セッションで Claude BYOK と組み込みモデルをターンごとに選べる",
+        "VS Code 1.133: 長いチャットで該当プロンプトを固定表示。統合ブラウザーは HTML の変更が即時反映"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "Agent Plugins", "type": "feature", "oneLine": "一度作れば互換性のあるエージェント ツールで使えるプラグイン。" },
+    { "term": "BYOK", "type": "term", "oneLine": "bring your own key。自分のキーでモデル プロバイダーを使う方式。" }
+  ],
+  "references": {
+    "source": {
+      "title": "GitHub Copilot weekly releases — August 10 - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-08-13-github-copilot-weekly-releases-august-10/"
+    }
+  },
+  "qa": [
+    {
+      "q": "Agent Plugins 1.0 はどこで使えますか？",
+      "a": "記事によると、VS Code、Copilot CLI、GitHub Copilot SDK、GitHub Copilot アプリで一般提供（GA）になっています。一度作ったプラグインを互換性のあるエージェント ツールで使えます。"
+    },
+    {
+      "q": "Kimi K3 はどのプランで使えますか？",
+      "a": "Copilot Pro、Pro+、Max、Business、Enterprise の各プランに順次提供されています。"
+    },
+    {
+      "q": "CLI のヘッドレス実行で計画と実装を続けて行えますか？",
+      "a": "はい。ヘッドレス モード（-p）で --plan と --mode autopilot を組み合わせると、エージェントが計画を作成してから実装します。"
+    },
+    {
+      "q": "Copilot アプリのプラグイン更新はどう変わりましたか？",
+      "a": "各プラグインの現在のバージョンを確認でき、個別または一括で更新できます。操作は Customize か Settings から行います。"
+    }
+  ],
+  "evidence": [
+    "https://github.blog/changelog/2026-08-13-github-copilot-weekly-releases-august-10/"
+  ]
+}
