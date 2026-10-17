@@ -1,0 +1,86 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "e97540a634524887",
+  "title": {
+    "ja": "Copilot で小型コーディング モデル MAI-Code-1.1-Flash の提供を開始",
+    "subtitleJa": "画像理解に対応し、旧版より list price が 73% 低い小型モデルが順次利用可能に",
+    "original": "MAI-Code-1.1-Flash available in GitHub Copilot"
+  },
+  "date": "2026-08-11",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "Copilot でコストと性能のバランスが良い軽量なモデルを使いたい開発者と管理者",
+    "change": "MAI-Code-1.1-Flash が順次提供され、モデル ピッカーや自動モデル選択で使える",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "使うなら、Business / Enterprise は管理者が MAI-Code-1.1-Flash のポリシーを有効にする"
+  },
+  "panels": [
+    {
+      "id": "availability",
+      "heading": "使える場所とプラン",
+      "priority": "core",
+      "items": [
+        "Free と Student は、自動モデル選択を通じて利用できる",
+        "Pro、Pro+、Max、Business、Enterprise は、自動選択に加えてモデルを手動で選べる",
+        "ピッカー対応: CLI、VS Code、Visual Studio、JetBrains、Eclipse、Xcode ほか"
+      ]
+    },
+    {
+      "id": "model",
+      "heading": "モデルの特長",
+      "priority": "core",
+      "items": [
+        "Microsoft の小型 (small-tier) コーディング モデル。MAI-Code-1-Flash の後継",
+        "ネイティブの画像理解 (vision) に対応し、コーディング品質、指示追従、ツール利用、性能が向上",
+        "list price は MAI-Code-1-Flash より 73% 低い"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "Business と Enterprise は管理者のポリシー有効化が必要で、既定はオフ",
+        "従量課金ではプロバイダーの list price で請求。年額契約者のプレミアム リクエスト倍率は 0.25×"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "自動モデル選択", "type": "feature", "oneLine": "Copilot が状況に応じてモデルを自動で選ぶ機能。Free と Student はこの経由で本モデルを使う。" }
+  ],
+  "qa": [
+    {
+      "q": "どのプランで使えますか？",
+      "a": "Free と Student は自動モデル選択を通じて使えます。Pro、Pro+、Max、Business、Enterprise は、自動選択に加えてモデル ピッカーから手動で選べます。"
+    },
+    {
+      "q": "Business や Enterprise で使うには何が必要ですか？",
+      "a": "管理者が Copilot の設定で MAI-Code-1.1-Flash のポリシーを有効にする必要があります。ポリシーは既定でオフです。"
+    },
+    {
+      "q": "どの環境のモデル ピッカーで選べますか？",
+      "a": "Copilot CLI、クラウド エージェント、GitHub Copilot アプリ、GitHub 上の Copilot Chat、VS Code、Visual Studio、GitHub Mobile、JetBrains IDE、Eclipse、Xcode です。"
+    },
+    {
+      "q": "旧版の MAI-Code-1-Flash から何が変わりましたか？",
+      "a": "ネイティブの画像理解に対応し、コーディング品質、指示追従、ツール利用、性能が向上しました。list price は旧版より 73% 低くなっています。"
+    },
+    {
+      "q": "料金はどうなりますか？",
+      "a": "従量課金ではプロバイダーの list price で請求されます。年額契約の Copilot 利用者には 0.25× のプレミアム リクエスト倍率が適用されます。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "MAI-Code-1.1-Flash available in GitHub Copilot - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-08-11-mai-code-1-1-flash-available-in-github-copilot/"
+    }
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-08-11-mai-code-1-1-flash-available-in-github-copilot/"
+  ]
+}
