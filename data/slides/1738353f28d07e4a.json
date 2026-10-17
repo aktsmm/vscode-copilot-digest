@@ -1,0 +1,89 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "1738353f28d07e4a",
+  "title": {
+    "ja": "Copilot のコスト効率化: 出力圧縮・行番号削除・プロンプト短縮・通知の改善",
+    "subtitleJa": "タスク全体で評価した 4 つの変更で、品質を落とさずトークン消費を削減",
+    "original": "How we make AI coding more cost efficient without sacrificing task quality"
+  },
+  "date": "2026-09-02",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "Copilot CLI や Copilot コードレビューなどを使う開発者、エージェント基盤に関心のある人",
+    "change": "共通のハーネスで、冗長な出力や不要な書式、重複する取得ターンが減り、コストが下がる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "no",
+    "summary": "設定変更は不要。効率化の考え方と、変更ごとの測定結果を把握する"
+  },
+  "panels": [
+    {
+      "id": "changes",
+      "heading": "出荷された 4 つの変更",
+      "priority": "core",
+      "items": [
+        "出力圧縮: インストール・ビルド・テストなどの繰り返しノイズだけを、削減が大きいときに圧縮する",
+        "view ツールの行番号プレフィックスを削除。オフライン評価でモデル推論コストが約 5% 減",
+        "task ツールのプロンプトを約 1,300 トークン削減。1 セッションの総プロンプトトークンは約 1.8% 減",
+        "完了したバックグラウンド作業の結果を通知と一緒に配信。AI クレジット換算で約 2.3% 減"
+      ]
+    },
+    {
+      "id": "policy",
+      "heading": "出力圧縮の方針",
+      "priority": "core",
+      "items": [
+        "cat、git diff、git show、任意のスクリプトの出力は変更せずそのまま返す",
+        "grep などの検索結果は、全件を残したまま効率よくまとめ直す",
+        "圧縮しても、完全な元の出力を取り出す経路がある"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "Copilot CLI のオンライン実験で、1 ユーザーの 1 日平均のモデル推論コストが約 3% 減",
+        "ファイルツールの指示を短くする案は、Copilot CLI でコストが増えたため出荷しなかった",
+        "結果は、検証したワークロードと設定での値"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "ハーネス", "type": "term", "oneLine": "Copilot CLI、Copilot アプリ、Copilot コードレビューが共有する基盤。" },
+    { "term": "RTK", "type": "product", "oneLine": "エージェントが読む前にシェル出力を短くするユーティリティ（Rust Token Killer）。" }
+  ],
+  "qa": [
+    {
+      "q": "どの製品に効果がありますか。",
+      "a": "記事の例は Copilot CLI のものです。Copilot アプリや Copilot コードレビューも同じ基盤（ハーネス）を使い、同様に効率化されると説明されています。"
+    },
+    {
+      "q": "出力を圧縮すると品質が落ちませんか。",
+      "a": "圧縮は繰り返しノイズに限り、削減が大きいときだけ行います。圧縮が働いたオフラインのタスクで、成功率の有意な低下は検出されず、元の出力を開く例も極めて稀でした。"
+    },
+    {
+      "q": "行番号を消して編集は失敗しませんか。",
+      "a": "現在の編集ツールは周辺のコードで一致を取り、行番号を使いません。評価では成功率は run 間のばらつきの範囲内で、編集失敗も増えませんでした。"
+    },
+    {
+      "q": "なぜ RTK を採用しなかったのですか。",
+      "a": "検証した構成では、省略された内容が必要なときに元の出力を開き直したり再実行したりして、ターンとコンテキストが増え、タスク全体ではトークンも時間も増えました。"
+    },
+    {
+      "q": "プロンプト短縮での失敗はありましたか。",
+      "a": "最初のオンライン実験で、独立したカスタム エージェントが順番に実行される退行が見つかり、実験を止めました。回帰テストを書き、1 文のガイダンスに置き換えて解消しました。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "How we make AI coding more cost efficient without sacrificing task quality - The GitHub Blog",
+      "url": "https://github.blog/ai-and-ml/github-copilot/how-we-make-ai-coding-more-cost-efficient-without-sacrificing-task-quality/"
+    }
+  },
+  "evidence": [
+    "https://github.blog/ai-and-ml/github-copilot/how-we-make-ai-coding-more-cost-efficient-without-sacrificing-task-quality/"
+  ]
+}
