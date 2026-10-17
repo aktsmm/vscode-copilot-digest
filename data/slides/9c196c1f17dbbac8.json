@@ -1,0 +1,106 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "9c196c1f17dbbac8",
+  "title": {
+    "ja": "エージェント アプリで、開発フローの各ツールを GitHub 上から使う",
+    "subtitleJa": "Amplitude・Endor Labs・LaunchDarkly・PagerDuty を issue や PR から呼び出せる",
+    "original": "How to bring your software delivery workflow into GitHub with agent apps"
+  },
+  "date": "2026-08-14",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "issue や PR の作業中に、外部サービスの情報や操作を GitHub 内で完結させたい開発者",
+    "change": "パートナー製のエージェントを @メンションや担当者割り当てで呼び出し、ツールを切り替えずに作業できる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "使いたいアプリを GitHub Marketplace からインストールし、組織で有効にして試す"
+  },
+  "panels": [
+    {
+      "id": "workflow",
+      "heading": "開発の流れでの使いどころ",
+      "priority": "core",
+      "items": [
+        "着手前: Amplitude のエージェントに、機能の効果をファネル分析で尋ねる",
+        "実装中: Endor Labs のエージェントが、PR で変更した依存関係の脆弱性を確認する",
+        "公開時: LaunchDarkly のエージェントが、フラグの作成とコード追加をコミットで行う",
+        "マージ前: PagerDuty のエージェントが、稼働中のインシデントと過去 90 日を見て展開リスクを評価する"
+      ]
+    },
+    {
+      "id": "how-to-use",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "GitHub Marketplace からインストールし、組織で有効にする",
+        "issue に割り当てて、タスクを開始する",
+        "PR のコメントで @メンションして、分析や変更を依頼する",
+        "リポジトリの Agents タブからも選べる"
+      ]
+    },
+    {
+      "id": "limits",
+      "heading": "前提と制限",
+      "priority": "core",
+      "items": [
+        "すべての有料 Copilot プランで利用できる。現在はパブリック プレビューで、変更される可能性がある",
+        "企業所有の組織では、エンタープライズ設定で「Agent apps」ポリシーの有効化も必要",
+        "Copilot cloud agent で動作し、AI の使用量は Copilot サブスクリプションに課金される"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "初回は OAuth フローでアプリの承認を求められる",
+        "承認が必要な環境では LaunchDarkly のエージェントは承認リクエストを作成し、進めるかは人が決める"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "agent apps", "type": "product", "oneLine": "GitHub 上でエージェントを公開する GitHub App。パートナーが自社のツールを開発フローに取り込むために作る。" },
+    { "term": "Copilot cloud agent", "type": "product", "oneLine": "agent apps の基盤となるエージェント。" },
+    { "term": "Agents タブ", "type": "feature", "oneLine": "リポジトリでエージェントを選んでタスクを始める画面。" }
+  ],
+  "qa": [
+    {
+      "q": "どのプランで使えますか？",
+      "a": "公式ドキュメントでは、すべての有料 Copilot プランで利用できるとされています。現在はパブリック プレビューで、変更される可能性があります。"
+    },
+    {
+      "q": "どうやって使い始めますか？",
+      "a": "GitHub Marketplace でアプリを追加し、アカウントまたは組織にインストールしてエージェント機能を有効にします。初回は OAuth フローでの承認が求められます。"
+    },
+    {
+      "q": "どこから呼び出せますか？",
+      "a": "issue への割り当て、PR コメントでの @メンション、Agents タブまたはパネルのプロンプト ボックスから呼び出せます。GitHub Mobile でも同じ入口から開始できます。"
+    },
+    {
+      "q": "企業の組織でも使えますか？",
+      "a": "企業が所有する組織では、エンタープライズ設定で「Agent apps」Copilot ポリシーも有効にする必要があります。"
+    },
+    {
+      "q": "料金はどうなりますか？",
+      "a": "agent apps は Copilot cloud agent で動作し、AI の使用量は Copilot サブスクリプションに課金されます。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "How to bring your software delivery workflow into GitHub with agent apps - The GitHub Blog",
+      "url": "https://github.blog/ai-and-ml/github-copilot/how-to-bring-your-software-delivery-workflow-into-github-with-agent-apps/"
+    },
+    "documents": [
+      { "title": "エージェント アプリ - GitHubドキュメント", "url": "https://docs.github.com/ja/copilot/concepts/agents/agent-apps" },
+      { "title": "エージェント アプリの使用 - GitHubドキュメント", "url": "https://docs.github.com/ja/copilot/how-tos/use-copilot-agents/cloud-agent/use-agent-apps" }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/ai-and-ml/github-copilot/how-to-bring-your-software-delivery-workflow-into-github-with-agent-apps/",
+    "https://docs.github.com/ja/copilot/concepts/agents/agent-apps",
+    "https://docs.github.com/ja/copilot/how-tos/use-copilot-agents/cloud-agent/use-agent-apps"
+  ]
+}
