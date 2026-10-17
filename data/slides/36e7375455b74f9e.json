@@ -1,0 +1,91 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "36e7375455b74f9e",
+  "title": {
+    "ja": "Copilot アプリの「My work」で、issue と pull request を一か所で管理",
+    "subtitleJa": "ビューやフィルターで絞り込み、issue や PR から直接エージェント セッションを開始できる",
+    "original": "GitHub Copilot app for Beginners: Managing your work"
+  },
+  "date": "2026-08-19",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "Copilot アプリで複数の issue や pull request を扱う開発者",
+    "change": "My work で自分の issue と PR を一覧し、選んだ項目から Copilot のセッションを始められる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "info",
+    "summary": "My work を開き、ビューを作って issue や PR からセッションを始める"
+  },
+  "panels": [
+    {
+      "id": "where-and-plans",
+      "heading": "使える場所とプラン",
+      "priority": "core",
+      "items": [
+        "Copilot アプリは、すべての Copilot プランで使用できる",
+        "一覧はアプリで扱ったプロジェクトに自動で絞られ、アクセスできる全リポジトリではない",
+        "表示したいリポジトリは、そのリポジトリを指すセッションを作ると現れる"
+      ]
+    },
+    {
+      "id": "usage",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "既定のビューは All・Active（未完了）・Review requests・Done（クローズ済み）",
+        "New view で Is:Issue と Assignee:Me などのフィルターを保存して独自のビューを作れる",
+        "リストのほか、列の選択・並べ替え・サイズ変更ができるテーブル表示がある",
+        "項目を選んで新しいセッションを開始し、複数選択は Actions から個別または 1 つにまとめて作成できる"
+      ]
+    },
+    {
+      "id": "notes",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "セッションで使うリポジトリは変更でき、issue と コードのリポジトリが別でも対応できる",
+        "New issue ボタンで issue を作成し、その文脈でセッションを始められる"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "My work", "type": "feature", "oneLine": "Copilot アプリで pull request と issue を一か所で確認するペイン。" },
+    { "term": "Review requests", "type": "feature", "oneLine": "自分にレビューが依頼された pull request を表示するビュー。" }
+  ],
+  "references": {
+    "source": {
+      "title": "GitHub Copilot app for Beginners: Managing your work - The GitHub Blog",
+      "url": "https://github.blog/ai-and-ml/github-copilot/github-copilot-app-for-beginners-managing-your-work/"
+    },
+    "documents": [
+      {
+        "title": "GitHub Copilot アプリを使用した問題と pull request の管理 - GitHubドキュメント",
+        "url": "https://docs.github.com/ja/copilot/how-tos/github-copilot-app/managing-issues-and-pull-requests"
+      }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/ai-and-ml/github-copilot/github-copilot-app-for-beginners-managing-your-work/",
+    "https://docs.github.com/ja/copilot/how-tos/github-copilot-app/managing-issues-and-pull-requests"
+  ],
+  "qa": [
+    {
+      "q": "My work にはどのリポジトリが表示されますか？",
+      "a": "Copilot アプリで扱ったプロジェクトに自動で絞られます。アクセスできる全リポジトリではなく、表示したいリポジトリはそれを指すセッションを作ると現れます。"
+    },
+    {
+      "q": "どのプランで使えますか？",
+      "a": "ドキュメントでは、Copilot アプリはすべての Copilot プランで使用できるとされています。"
+    },
+    {
+      "q": "独自のビューはどう作りますか？",
+      "a": "New view を選び、名前を付けて、Is:Issue や Assignee:Me のようなフィルターを入力または UI で追加して Save します。"
+    },
+    {
+      "q": "複数の issue から一度にセッションを作れますか？",
+      "a": "リストで複数選択して Actions から作成できます。独立した要望は個別に、同じ機能に関する不具合は New session で 1 つにまとめられます。"
+    }
+  ]
+}
