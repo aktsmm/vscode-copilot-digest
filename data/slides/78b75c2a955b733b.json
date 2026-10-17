@@ -1,0 +1,95 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "78b75c2a955b733b",
+  "title": {
+    "ja": "VS Code の Agent Host、エージェント セッションを永続化して持ち運べるように",
+    "subtitleJa": "セッションを専用プロセスが保持し、フォルダーを閉じても継続。エディターと Agents window で同期",
+    "original": "Introducing the Agent Host for persistent, portable agent sessions"
+  },
+  "date": "2026-08-26",
+  "topic": "VS Code",
+  "status": "update",
+  "audience": {
+    "who": "VS Code でエージェント セッションを長時間実行・並行実行したい開発者",
+    "change": "セッションを Agent Host が保持し、フォルダーを閉じても継続。複数の画面やリモートから同じセッションを操作できる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "最新の VS Code Stable / Insiders で、フォルダーを閉じても続くセッションを試す"
+  },
+  "panels": [
+    {
+      "id": "where-and-how",
+      "heading": "使える場所と使い方",
+      "priority": "core",
+      "items": [
+        "Agent Host は最新の VS Code Stable と Insiders で有効",
+        "エディターで開始したセッションを、コピーせず Agents window で同じライブ セッションとして続けられる",
+        "SSH、dev tunnel、Web 経由で、別マシン上のワークスペースに接続できる"
+      ]
+    },
+    {
+      "id": "try-it",
+      "heading": "試す手順",
+      "priority": "core",
+      "items": [
+        "フォルダーを開き、ハーネス ピッカーで Copilot を選んでセッションを開始する",
+        "実行中にフォルダーを閉じても、VS Code を終了しなければ処理は続く",
+        "フォルダーを開き直すと状態と進捗が残っている。Agents window でも同期して見られる"
+      ]
+    },
+    {
+      "id": "limits",
+      "heading": "前提と制限",
+      "priority": "detail",
+      "items": [
+        "ローカル セッションは VS Code がローカルの Agent Host を管理するため、VS Code の起動継続が必要",
+        "Agent Host の実装と AHP 仕様は開発中で、新機能は順次追加される"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "Agent Host", "type": "feature", "oneLine": "エージェント セッションを保持する、独立したプロセス。" },
+    { "term": "AHP", "type": "term", "oneLine": "Agent Host Protocol。ホストとクライアントをつなぐオープンなプロトコル。" },
+    { "term": "ハーネス", "type": "term", "oneLine": "コンテキストの組み立て、ツール提供、エージェント ループ、変更の適用を担う部分。" }
+  ],
+  "suggestions": [
+    "リモート接続を試すなら、Agents window をリモートの Agent Host につなぎ、insiders.vscode.dev/agents で同じホストを選ぶ",
+    "独自クライアントは code agent host で standalone ホストを起動して接続する"
+  ],
+  "qa": [
+    {
+      "q": "どの VS Code で使えますか。",
+      "a": "記事によると、Agent Host は最新の VS Code Stable と Insiders で有効です。"
+    },
+    {
+      "q": "フォルダーを閉じてもセッションは続きますか。",
+      "a": "続きます。実行中のターンは Agent Host で継続します。ただしフォルダーを閉じても VS Code は終了しないだけで、ローカル セッションでは VS Code の起動継続が必要です。"
+    },
+    {
+      "q": "リモートのセッションはどう使いますか。",
+      "a": "Agent Host をワークスペースのある別マシンで動かし、デスクトップや Web から進捗確認、変更のレビュー、セッション管理ができます。接続方法は SSH、dev tunnel、Web です。"
+    },
+    {
+      "q": "Copilot 以外のエージェントでも使えますか。",
+      "a": "Agent Host は複数のハーネスに対応する設計で、Copilot ハーネスと Claude ハーネスがそれぞれ独自の機能を保ったままアダプター経由で AHP に接続します。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Introducing the Agent Host for persistent, portable agent sessions",
+      "url": "https://code.visualstudio.com/blogs/2026/08/26/agent-host-architecture"
+    },
+    "documents": [
+      {
+        "title": "Run and manage remote agent sessions",
+        "url": "https://code.visualstudio.com/docs/agents/run/remote-agent-sessions"
+      }
+    ]
+  },
+  "evidence": [
+    "https://code.visualstudio.com/blogs/2026/08/26/agent-host-architecture",
+    "https://code.visualstudio.com/docs/agents/run/remote-agent-sessions"
+  ]
+}
