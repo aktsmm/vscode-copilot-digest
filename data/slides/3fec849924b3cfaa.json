@@ -1,0 +1,86 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "3fec849924b3cfaa",
+  "title": {
+    "ja": "MAI-Code-1-Flash、9月10日に廃止予定",
+    "subtitleJa": "MAI-Code-1.1-Flash の登場に伴い、全Copilot体験で旧モデルが廃止される",
+    "original": "Upcoming deprecation of MAI-Code-1-Flash"
+  },
+  "date": "2026-08-11",
+  "topic": "GitHub Copilot",
+  "status": "retirement",
+  "statusEvidence": "we will deprecate MAI-Code-1-Flash across all GitHub Copilot experiences on September 10, 2026",
+  "audience": {
+    "who": "MAI-Code-1-Flash をワークフローや連携で指定している開発者と、Copilot Enterprise の管理者",
+    "change": "MAI-Code-1-Flash が2026年9月10日に全Copilot体験で廃止され、代替は MAI-Code-1.1-Flash",
+    "changeNature": "breaking"
+  },
+  "action": {
+    "required": "yes",
+    "summary": "9月10日までにワークフローと連携先のモデル指定を MAI-Code-1.1-Flash へ切り替える",
+    "deadline": "2026-09-10"
+  },
+  "timeline": [
+    {
+      "when": "2026-09-10",
+      "label": "MAI-Code-1-Flash を廃止"
+    }
+  ],
+  "panels": [
+    {
+      "id": "model",
+      "heading": "対象モデルと代替",
+      "priority": "core",
+      "items": [
+        "廃止対象は MAI-Code-1-Flash、廃止日は 2026年9月10日",
+        "代替モデルは MAI-Code-1.1-Flash",
+        "対象は全GitHub Copilot体験"
+      ]
+    },
+    {
+      "id": "admin",
+      "heading": "管理者の準備",
+      "priority": "core",
+      "items": [
+        "Copilot Enterprise 管理者は、Copilot設定のモデルポリシーで代替モデルの有効化が必要な場合がある",
+        "個人のCopilot設定で、対象モデルのポリシーが有効か確認できる",
+        "有効化後、VS Code と github.com のCopilot Chatモデル選択に表示される"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "廃止後に旧モデルを削除する操作は不要"
+      ]
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Upcoming deprecation of MAI-Code-1-Flash - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-08-11-upcoming-deprecation-of-mai-code-1-flash/"
+    }
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-08-11-upcoming-deprecation-of-mai-code-1-flash/"
+  ],
+  "qa": [
+    {
+      "q": "いつ廃止されますか？",
+      "a": "2026年9月10日に、全GitHub Copilot体験で MAI-Code-1-Flash が廃止されます。"
+    },
+    {
+      "q": "何に移行すればよいですか？",
+      "a": "代替として案内されているのは MAI-Code-1.1-Flash です。9月10日までにワークフローと連携のモデル指定を更新してください。"
+    },
+    {
+      "q": "管理者は何をする必要がありますか？",
+      "a": "Copilot Enterprise 管理者は、Copilot設定のモデルポリシーで代替モデルを有効化する必要がある場合があります。有効化すると VS Code と github.com のモデル選択に表示されます。"
+    },
+    {
+      "q": "廃止後に旧モデルを削除する必要はありますか？",
+      "a": "不要です。廃止後に旧モデルを削除する操作はありません。"
+    }
+  ]
+}
