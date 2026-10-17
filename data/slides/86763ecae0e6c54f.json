@@ -1,0 +1,98 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "86763ecae0e6c54f",
+  "title": {
+    "ja": "GPT-6 Astra、GitHub Copilotで一般提供開始",
+    "subtitleJa": "長時間の自律コーディング向けOpenAIモデルをモデルピッカーで選択可能に",
+    "original": "GPT-6 Astra is generally available in GitHub Copilot"
+  },
+  "date": "2026-09-04",
+  "topic": "GitHub Copilot",
+  "status": "ga",
+  "statusEvidence": "GPT-6 Astra is generally available in GitHub Copilot",
+  "audience": {
+    "who": "Copilot Pro+、Max、Business、Enterpriseの利用者と、BusinessとEnterpriseのプラン管理者",
+    "change": "OpenAIのGPT-6 Astraが各種クライアントのモデルピッカーから選べる。段階的に展開",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "利用者はモデルピッカーで選択。管理者はCopilot設定のモデルポリシーでアクセスを管理する"
+  },
+  "panels": [
+    {
+      "id": "availability",
+      "heading": "使える場所とプラン",
+      "priority": "core",
+      "items": [
+        "対象プランはCopilot Pro+、Max、Business、Enterprise",
+        "VS Code、Visual Studio、Copilot CLI、Copilot coding agent、Copilot app、github.comのモデルピッカーで選択",
+        "GitHub Mobile（iOS・Android）、JetBrains IDEs、Xcode、Eclipseでも選択可能",
+        "展開は段階的。表示されない場合は後で再確認"
+      ]
+    },
+    {
+      "id": "admin",
+      "heading": "管理者の設定",
+      "priority": "core",
+      "items": [
+        "BusinessとEnterpriseの管理者はCopilot設定のモデルポリシーでアクセスを管理",
+        "既定のモデル有効化では、全体既定の無効化やこのモデルの明示的な無効化がなければ自動で有効"
+      ]
+    },
+    {
+      "id": "billing",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "使用量ベースの課金で、プロバイダーの定価で請求される"
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "GPT-6 Astra",
+      "type": "product",
+      "oneLine": "OpenAIの最新の汎用モデル。長時間の自律的なコーディングやエージェントタスク向け"
+    }
+  ],
+  "qa": [
+    {
+      "q": "どのプランで使えますか。",
+      "a": "Copilot Pro+、Max、Business、Enterpriseの利用者が対象です。展開は段階的で、表示されない場合は後で確認してください。"
+    },
+    {
+      "q": "どこで選べますか。",
+      "a": "VS Code、Visual Studio、Copilot CLI、Copilot coding agent、Copilot app、github.com、GitHub Mobile、JetBrains IDEs、Xcode、Eclipseのモデルピッカーで選べます。"
+    },
+    {
+      "q": "管理者はアクセスを制御できますか。",
+      "a": "BusinessとEnterpriseの管理者は、Copilot設定のモデルポリシーで管理できます。既定のモデル有効化では、無効にしない限り新モデルは自動で有効になります。"
+    },
+    {
+      "q": "料金はどうなりますか。",
+      "a": "使用量ベースの課金のもと、プロバイダーの定価で請求されます。詳細はCopilotモデルの価格設定のドキュメントを参照してください。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "GPT-6 Astra is generally available in GitHub Copilot - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-09-04-gpt-6-astra-is-generally-available-in-github-copilot/"
+    },
+    "documents": [
+      {
+        "title": "GitHub Copilot のモデルと価格設定 - GitHub Docs",
+        "url": "https://docs.github.com/ja/copilot/reference/copilot-billing/models-and-pricing"
+      },
+      {
+        "title": "GitHub Copilotでサポートされている AI モデル - GitHub Docs",
+        "url": "https://docs.github.com/ja/copilot/reference/ai-models/supported-models"
+      }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-09-04-gpt-6-astra-is-generally-available-in-github-copilot/",
+    "https://docs.github.com/ja/copilot/reference/copilot-billing/models-and-pricing",
+    "https://docs.github.com/ja/copilot/reference/ai-models/supported-models"
+  ]
+}
