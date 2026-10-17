@@ -1,0 +1,100 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "0cf174d407ea599a",
+  "title": {
+    "ja": "Agent Plugins 1.0 が VS Code・Copilot CLI・Copilot アプリで一般提供",
+    "subtitleJa": "スキルと MCP サーバーを 1 つのプラグインにまとめ、対応クライアントで共有できる",
+    "original": "Agent Plugins 1.0 in VS Code, Copilot CLI, and the Copilot app"
+  },
+  "date": "2026-08-12",
+  "topic": "GitHub Copilot",
+  "status": "ga",
+  "statusEvidence": "Support is generally available in VS Code, Copilot CLI, the GitHub Copilot SDK, and the GitHub Copilot app, on all Copilot plans.",
+  "audience": {
+    "who": "Copilot 向けプラグインを作る開発者と、プラグインの利用を管理する組織の管理者",
+    "change": "1 つのプラグインを、対応するすべてのエージェント クライアントで使えるようになった",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "プラグインを公開している場合は、仕様に合わせてマニフェストを整える。既存プラグインの移行は不要"
+  },
+  "panels": [
+    {
+      "id": "availability",
+      "heading": "使える場所とプラン",
+      "priority": "core",
+      "items": [
+        "VS Code、Copilot CLI、GitHub Copilot SDK、GitHub Copilot アプリで一般提供。すべての Copilot プランが対象",
+        "Awesome Copilot マーケットプレースが、VS Code・CLI・アプリで既定で利用できる",
+        "Agent Plugins 1.0 を対象にしない既存の GitHub Copilot プラグインも、移行なしで引き続き使える"
+      ]
+    },
+    {
+      "id": "build",
+      "heading": "作成・移行の手順",
+      "priority": "core",
+      "items": [
+        "plugin.json に $schema を追加する",
+        "スキルは skills/、MCP 設定は mcp.json に置く",
+        "Copilot 固有のファイルは com.github.copilot/ ディレクトリへ移す（他のクライアントは無視する）"
+      ]
+    },
+    {
+      "id": "governance",
+      "heading": "組織での管理",
+      "priority": "core",
+      "items": [
+        "Copilot Business / Enterprise は、既存の managed-settings.json の設定がそのまま適用される",
+        "enabledPlugins で自動インストール・ブロック、extraKnownMarketplaces で追加、strictKnownMarketplaces で管理対象に限定"
+      ]
+    },
+    {
+      "id": "notes",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "仕様が標準化するのはスキルと MCP サーバーのみ。カスタム エージェントやフックは com.github.copilot/ から読み込まれる",
+        "プラグインは MCP サーバー設定も含むため、MCP の許可リストと併用できる"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "Agent Plugins 1.0", "type": "product", "oneLine": "エージェントのスキルと MCP サーバーを 1 つにまとめる、特定ベンダーに依存しないオープン標準。" },
+    { "term": "managed-settings.json", "type": "term", "oneLine": "企業が管理する設定ファイル。プラグインとマーケットプレースの設定を指定する。" }
+  ],
+  "suggestions": [
+    "公式のサンプル プラグインと移行ガイドから始めると、最小構成を確認できる"
+  ],
+  "qa": [
+    {
+      "q": "どのプランで使えますか。",
+      "a": "すべての Copilot プランで、VS Code、Copilot CLI、GitHub Copilot SDK、GitHub Copilot アプリの各クライアントで一般提供されています。"
+    },
+    {
+      "q": "既存のプラグインは移行が必要ですか。",
+      "a": "不要です。Agent Plugins 1.0 を対象にしない既存の GitHub Copilot プラグインも、引き続きサポートされます。"
+    },
+    {
+      "q": "プラグインを仕様に対応させるには何をしますか。",
+      "a": "plugin.json に $schema を追加し、スキルは skills/、MCP 設定は mcp.json に置き、Copilot 固有のファイルは com.github.copilot/ ディレクトリへ移します。"
+    },
+    {
+      "q": "組織でプラグインを制御できますか。",
+      "a": "Copilot Business / Enterprise では、managed-settings.json の enabledPlugins、extraKnownMarketplaces、strictKnownMarketplaces を使えます。既にこれらを管理していれば、Agent Plugins 1.0 にも適用され、別のポリシーは不要です。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Agent Plugins 1.0 in VS Code, Copilot CLI, and the Copilot app - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-08-12-agent-plugins-1-0-in-vs-code-copilot-cli-and-the-copilot-app/"
+    },
+    "documents": [
+      { "title": "GitHub Copilot プラグインについて - GitHubドキュメント", "url": "https://docs.github.com/ja/copilot/concepts/agents/about-plugins" },
+      { "title": "Agent plugins in VS Code", "url": "https://code.visualstudio.com/docs/agent-customization/agent-plugins" }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-08-12-agent-plugins-1-0-in-vs-code-copilot-cli-and-the-copilot-app/"
+  ]
+}
