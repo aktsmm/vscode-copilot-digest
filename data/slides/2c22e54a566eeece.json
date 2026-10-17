@@ -1,0 +1,91 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "2c22e54a566eeece",
+  "title": {
+    "ja": "Copilot 使用状況メトリクス API に、エージェント アプリ別のアクティビティを追加",
+    "subtitleJa": "totals_by_3rd_party_agent 配列で、Claude や Codex などの利用をエージェントごとに集計",
+    "original": "Copilot usage metrics API adds agent app activity"
+  },
+  "date": "2026-08-07",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "Copilot の使用状況メトリクスで、エージェント アプリの導入状況を把握したい管理者",
+    "change": "エンタープライズ・組織などのレポートに、認識されたエージェント アプリごとの集計が加わる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "エージェント別に追跡したい場合は、新しい配列をレポート処理に取り込む"
+  },
+  "panels": [
+    {
+      "id": "where-and-who",
+      "heading": "使える場所とプラン",
+      "priority": "core",
+      "items": [
+        "エンタープライズ、組織、エンタープライズ ユーザー、組織ユーザーの 1 日・28 日レポートが対象",
+        "エンタープライズ オーナー、課金マネージャー、組織オーナー、View Copilot Metrics 権限を持つカスタム ロールが利用可能",
+        "Copilot usage metrics ポリシーを有効にする必要がある"
+      ]
+    },
+    {
+      "id": "fields",
+      "heading": "追加されるフィールド",
+      "priority": "core",
+      "items": [
+        "任意の配列 totals_by_3rd_party_agent に、認識されたエージェント アプリごとに 1 エントリ",
+        "agent_id は安定した識別子で、期間をまたぐ結合のキー。agent_name は変わりうる表示名",
+        "user_initiated_interaction_count は、ユーザーが開始したジョブ開始数",
+        "session_count はセッション数。集計レポートのみで、ユーザー別エントリには含まれない"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "同名の最上位フィールドとは別物で、合算や同一視はしない",
+        "同じエージェントの複数アプリは 1 エントリに集約され、識別できないエージェントは除外される"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "totals_by_3rd_party_agent", "type": "feature", "oneLine": "認識されたエージェント アプリごとに 1 エントリを持つ、任意の配列。" },
+    { "term": "agent_id", "type": "term", "oneLine": "エージェントの安定した識別子。期間をまたぐ結合のキーにする。" }
+  ],
+  "qa": [
+    {
+      "q": "既存のレポート形式は変わりますか。",
+      "a": "後方互換です。既存フィールドの形は変わりません。認識されたエージェント アプリのアクティビティがない期間は、totals_by_3rd_party_agent 自体がレポートから省略されます。"
+    },
+    {
+      "q": "誰がこのメトリクスを見られますか。",
+      "a": "エンタープライズ オーナーと課金マネージャー、組織オーナー、View Copilot Metrics 権限を付与されたカスタム ロールの利用者です。Copilot usage metrics ポリシーの有効化も必要です。"
+    },
+    {
+      "q": "エージェントの集計はどのキーで行うべきですか。",
+      "a": "agent_id です。agent_name は表示名で変更される可能性があるため、期間をまたぐ結合には向きません。"
+    },
+    {
+      "q": "既存の user_initiated_interaction_count と足してよいですか。",
+      "a": "足せません。配列内のものはエージェント アプリのジョブ開始数で、最上位の同名フィールドは他の対応テレメトリの明示的なプロンプト数です。別の指標です。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Copilot usage metrics API adds agent app activity - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-08-07-copilot-usage-metrics-api-adds-agent-app-activity/"
+    },
+    "documents": [
+      {
+        "title": "Copilot使用状況メトリックで使用可能なデータ - GitHubドキュメント",
+        "url": "https://docs.github.com/ja/copilot/reference/copilot-usage-metrics/copilot-usage-metrics"
+      }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-08-07-copilot-usage-metrics-api-adds-agent-app-activity/",
+    "https://docs.github.com/ja/copilot/reference/copilot-usage-metrics/copilot-usage-metrics"
+  ]
+}
