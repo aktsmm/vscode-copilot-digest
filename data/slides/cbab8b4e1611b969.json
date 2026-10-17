@@ -1,0 +1,81 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "cbab8b4e1611b969",
+  "title": {
+    "ja": "Visual Studio Code 1.133: Claude セッションの切り替えと Agent Plugins 対応",
+    "subtitleJa": "Claude セッションでモデル提供元をターンごとに切り替え、チャットの prompt を固定表示",
+    "original": "Visual Studio Code 1.133"
+  },
+  "date": "2026-08-11",
+  "topic": "VS Code",
+  "status": "update",
+  "audience": {
+    "who": "VS Code のエージェントや Claude セッション、チャットを日常的に使う開発者",
+    "change": "Claude セッションで Anthropic と Copilot のモデルを混在でき、HTML のプレビューも自動で更新される",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "必要な機能の設定を有効にして試す。VS Code は順次展開され、[Check for Updates] で即時に更新できる"
+  },
+  "panels": [
+    {
+      "id": "claude-sessions",
+      "heading": "Claude セッション",
+      "priority": "core",
+      "items": [
+        "モデル ピッカーに Anthropic と Copilot の両グループが並び、ターンの間で提供元を切り替えられる",
+        "選んだモデルは次のターンに使われ、Anthropic は API キー、Copilot は Copilot サブスクリプションで課金される",
+        "chat.agentHost.allowSignedOutWhenUsable（試験的）で、GitHub サインインなしに Agents window を開ける。この版は Claude のみ対応"
+      ]
+    },
+    {
+      "id": "plugins",
+      "heading": "Agent Plugins 標準への対応",
+      "priority": "core",
+      "items": [
+        "Agent Plugins 1.0 は 8 月 6 日に公開された共通標準で、VS Code も立ち上げに参加した",
+        "plugin.json、skills/、mcp.json を持つディレクトリが 1 つのプラグインになる",
+        "com.github.copilot 名前空間の agents、commands、rules、hooks も VS Code、Copilot CLI、Copilot アプリが読む"
+      ]
+    },
+    {
+      "id": "chat-editor",
+      "heading": "チャットとエディター",
+      "priority": "core",
+      "items": [
+        "chat.stickyScroll.enabled: スクロールで過ぎた prompt を上部に固定し、位置表示と前後ボタンで移動できる",
+        "workbench.browser.autoReloadOnFileChange: 統合ブラウザーで開いたローカル HTML がファイル変更時に自動更新される"
+      ]
+    },
+    {
+      "id": "limits",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "サインインなしの Agents window は試験的で、Copilot の独自モデル キーや Codex は今後の対応予定",
+        "Agent host は開発中の機能で、同じエージェント セッションに複数の VS Code ウィンドウから接続できる"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "Agent host", "type": "feature", "oneLine": "Agent Host Protocol に基づき、専用プロセスでエージェントを実行する仕組み。" },
+    { "term": "Agent Plugins", "type": "feature", "oneLine": "エージェントのカスタマイズをまとめ、1 手順で導入できる共通標準。" }
+  ],
+  "qa": [
+    { "q": "Claude セッションの課金はどうなりますか？", "a": "モデル ピッカーの Anthropic のモデルは API キーに、Copilot のモデルは Copilot サブスクリプションに課金されます。選んだモデルは次のターンで使われます。" },
+    { "q": "提供元を切り替えるのに再設定は必要ですか？", "a": "不要です。以前は Agent host の再設定が必要でしたが、今回からモデル ピッカーで両方のグループが表示され、ターンの間で切り替えられます。" },
+    { "q": "GitHub にサインインせずに Agents window を使えますか？", "a": "試験的な設定 chat.agentHost.allowSignedOutWhenUsable を有効にすると開けます。この版で対応するのは Claude のみで、Copilot の独自モデル キーと Codex は今後の対応予定です。" },
+    { "q": "Agent Plugins 標準では何が変わりますか？", "a": "plugin.json、skills/、mcp.json を持つ 1 つのパッケージを複数のクライアントで使えます。com.github.copilot 名前空間の内容は VS Code、Copilot CLI、Copilot アプリが読みます。" },
+    { "q": "いつ更新を受け取れますか？", "a": "VS Code は全ユーザーに順次展開されています。[Check for Updates] で今すぐ最新版を取得できます。" }
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.133",
+      "url": "https://code.visualstudio.com/updates/v1_133"
+    }
+  },
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_133"
+  ]
+}
