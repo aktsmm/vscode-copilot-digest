@@ -1,0 +1,107 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "6b18681068b67b05",
+  "title": {
+    "ja": "Slack の GitHub 連携で、Copilot のエージェント機能が使えるように",
+    "subtitleJa": "@GitHub で agent セッションを開始し、調査から PR 作成までを Slack 上で進められる",
+    "original": "The new GitHub Copilot experience in Slack"
+  },
+  "date": "2026-08-21",
+  "topic": "GitHub Copilot",
+  "status": "preview",
+  "statusEvidence": "now brings the agentic capabilities of GitHub Copilot CLI and the GitHub Copilot app into Slack in public preview",
+  "audience": {
+    "who": "Slack でチームの作業を調整している Copilot Business / Enterprise 組織の開発者と管理者",
+    "change": "DM・チャネル・スレッドで @GitHub にメンションすると、Copilot が調査・Issue 作成・実装・PR 作成まで担当する",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "使うなら、管理者が cloud agent ポリシーを有効にし、Slack 用 GitHub アプリを導入して GitHub アカウントを連携する"
+  },
+  "panels": [
+    {
+      "id": "availability",
+      "heading": "使える場所とプラン",
+      "priority": "core",
+      "items": [
+        "パブリック プレビュー。Copilot Business と Copilot Enterprise の組織が対象",
+        "利用分は既存の Copilot の利用枠に計上され、既存の cloud agent の予算で管理できる"
+      ]
+    },
+    {
+      "id": "usage",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "管理者が組織の Copilot cloud agent ポリシーを有効にする",
+        "Slack 用 GitHub アプリを導入または更新し、GitHub アカウントを連携する",
+        "DM・チャネル・スレッドで @GitHub にメンションして agent セッションを開始する",
+        "Slack Code チャネルで、計画や差分、HTML などの出力プレビューを確認しながら進める"
+      ]
+    },
+    {
+      "id": "limits",
+      "heading": "前提と制限",
+      "priority": "core",
+      "items": [
+        "変更の実行は、リポジトリへの書き込み権限を持つユーザーのみ。ゲストと外部コラボレーターはセッションを開始・誘導できない",
+        "共有コンテキストで作られた Issue / PR は Copilot アプリの ID に帰属し、既存の GitHub 権限の範囲内で動く"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "スレッド全体が依頼のコンテキストになる。範囲を絞るなら @GitHub への DM を使う",
+        "リポジトリ管理者は、Copilot アプリの ID に帰属する PR に追加の承認を必須にできる"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "Slack Code", "type": "product", "oneLine": "エージェント向けに設計された Slack の新しい種類のチャネル。" },
+    { "term": "コード チャネル", "type": "feature", "oneLine": "Copilot が作る専用チャネル。タスクごとに 1 つで、元の会話を乱さずに作業を進める。" }
+  ],
+  "suggestions": [
+    "プライベート / パブリック チャネルごとに既定のリポジトリを、チャネルで「@GitHub settings」と入力して設定できる"
+  ],
+  "qa": [
+    {
+      "q": "どのプランで使えますか。",
+      "a": "記事では、パブリック プレビューは GitHub Copilot Business と Copilot Enterprise の組織が対象です。利用分は既存の Copilot の利用枠に計上され、既存の cloud agent の予算で管理できます。"
+    },
+    {
+      "q": "使い始めるには何が必要ですか。",
+      "a": "管理者が組織の Copilot cloud agent ポリシーを有効にし、Slack 用 GitHub アプリを導入または更新します。その後 GitHub アカウントを連携し、会話で @GitHub にメンションします。"
+    },
+    {
+      "q": "誰でも Copilot に変更を実行させられますか。",
+      "a": "リポジトリへの書き込みアクセス権を持つユーザーのみが変更のために Copilot を起動できます。会話の参加者は入力を提供できますが、ワークスペースのゲストと外部コラボレーターはセッションを開始・誘導できません。"
+    },
+    {
+      "q": "作られた PR のレビューや承認はどうなりますか。",
+      "a": "共有コンテキストで作成された PR は Copilot アプリの ID に帰属します。リポジトリ管理者は、その PR のマージ前に追加の承認を必須にでき、人の確認を挟めます。"
+    },
+    {
+      "q": "スレッドの内容はどこまで Copilot に渡りますか。",
+      "a": "ドキュメントによると、Copilot はスレッド全体を依頼のコンテキストとして取得します。範囲を限定したい場合は、Slack の GitHub アプリに直接メッセージを送る方法があります。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "The new GitHub Copilot experience in Slack - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-08-21-the-new-github-copilot-experience-in-slack/"
+    },
+    "documents": [
+      {
+        "title": "Copilot クラウド エージェントと Slack の統合 - GitHubドキュメント",
+        "url": "https://docs.github.com/ja/copilot/how-tos/copilot-integrations/integrate-cloud-agent-with-slack"
+      }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-08-21-the-new-github-copilot-experience-in-slack/",
+    "https://docs.github.com/ja/copilot/how-tos/copilot-integrations/integrate-cloud-agent-with-slack"
+  ]
+}
