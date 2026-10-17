@@ -1,0 +1,94 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "539a4e5f39bd505f",
+  "title": {
+    "ja": "Copilot アプリのキャンバスで、エージェントの作業を可視化して操作する",
+    "subtitleJa": "チャットでなく共有の画面に状態を保持し、人が確認・承認しながらエージェントを進める",
+    "original": "How canvases make agentic workflows visible, steerable, and cost-efficient"
+  },
+  "date": "2026-08-17",
+  "topic": "GitHub Copilot",
+  "status": "unknown",
+  "audience": {
+    "who": "GitHub Copilot アプリで、繰り返しのあるエージェント作業を扱う開発者とチーム",
+    "change": "キャンバスで進捗・判断点・承認点を明示して保持でき、会話履歴を読み返さずに済む",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "繰り返す作業を 1 つ選び、/create-canvas で最小のキャンバスを作って試す"
+  },
+  "panels": [
+    {
+      "id": "what-canvas-is",
+      "heading": "キャンバスとは",
+      "priority": "core",
+      "items": [
+        "人とエージェントが同じ、永続する共有の画面で作業する",
+        "計画、判断点、検証、承認の状態を明示して保持する",
+        "チャットは意図を伝える場として使い、実行の状態はキャンバスに置く"
+      ]
+    },
+    {
+      "id": "how-to-use",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "awesome-copilot で公開の Java Modernization Studio と Site Studio を使える",
+        "自作は /create-canvas で、繰り返す作業 1 つに絞って作る",
+        "作ったキャンバスは awesome-copilot に還元できる"
+      ]
+    },
+    {
+      "id": "pattern",
+      "heading": "共通の設計パターン",
+      "priority": "core",
+      "items": [
+        "ワークフローの状態を明確に定義する",
+        "重要な判断を表に出す",
+        "進捗と下書きをすぐ保存する",
+        "人の承認点を明示する"
+      ]
+    },
+    {
+      "id": "cost",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "作成コストの例は、Site Studio が約 2,000、Java 移行が約 3,000 AI クレジット",
+        "繰り返す作業ほど、再指示や手戻りの削減で投資を回収できるとしている"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "キャンバス", "type": "feature", "oneLine": "人とエージェントが作業状態を共有する、永続的な画面。" },
+    { "term": "awesome-copilot", "type": "product", "oneLine": "キャンバスなどを公開・共有できるコミュニティの場。" }
+  ],
+  "qa": [
+    {
+      "q": "キャンバスはチャットと何が違いますか。",
+      "a": "チャットは意図を伝えるのに向きますが、作業が進むと計画や承認点が履歴に埋もれます。キャンバスは状態を明示して保持し、人は確認・誘導でき、エージェントは更新できます。"
+    },
+    {
+      "q": "すぐ試せるキャンバスはありますか。",
+      "a": "Java Modernization Studio と Site Studio が awesome-copilot で公開されています。そのまま使うことも、改変することも、参考にすることもできます。"
+    },
+    {
+      "q": "自分で作るにはどうしますか。",
+      "a": "/create-canvas を使います。繰り返す作業を 1 つ選んで最小のキャンバスを作り、実際の作業で試して改善することを勧めています。"
+    },
+    {
+      "q": "コストはどれくらいかかりますか。",
+      "a": "筆者の例では Site Studio が約 2,000 AI クレジット、Java 移行のキャンバスが約 3,000 AI クレジットでした。繰り返す作業では、再指示や手戻りが減って回収できるとしています。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "How canvases make agentic workflows visible, steerable, and cost-efficient - The GitHub Blog",
+      "url": "https://github.blog/ai-and-ml/github-copilot/how-canvases-make-agentic-workflows-visible-steerable-and-cost-efficient/"
+    }
+  },
+  "evidence": [
+    "https://github.blog/ai-and-ml/github-copilot/how-canvases-make-agentic-workflows-visible-steerable-and-cost-efficient/"
+  ]
+}
