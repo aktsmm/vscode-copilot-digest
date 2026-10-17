@@ -1,0 +1,89 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "79d906a3af1d4d74",
+  "title": {
+    "ja": "エンタープライズ管理設定で、任意のモデルを既定に指定可能に",
+    "subtitleJa": "新しい会話の既定モデルを管理設定で指定でき、エンタープライズ チームごとに変えられる",
+    "original": "Enterprise-managed settings support any default model"
+  },
+  "date": "2026-09-02",
+  "topic": "GitHub Copilot",
+  "status": "ga",
+  "statusEvidence": "Model defaults in managed settings are generally available with Copilot Business and Copilot Enterprise in the GitHub Copilot app, Copilot CLI, and Visual Studio Code.",
+  "audience": {
+    "who": "Copilot Business / Enterprise の管理者",
+    "change": "新しい会話の既定モデルを、エンタープライズ管理設定の model キーで選べる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "既定モデルを統一したい場合に、管理設定の model キーを設定する"
+  },
+  "panels": [
+    {
+      "id": "where-and-plans",
+      "heading": "使える場所とプラン",
+      "priority": "core",
+      "items": [
+        "Copilot Business と Copilot Enterprise が対象",
+        "GitHub Copilot app、Copilot CLI、Visual Studio Code で一般提供"
+      ]
+    },
+    {
+      "id": "how-to",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "model に優先モデルを設定し、新しい会話の既定にする",
+        "\"auto\" を設定すると、新しいセッションでモデルが自動選択される",
+        "model を overridable にし、team-mappings.json のチーム設定でチームごとの既定を指定できる"
+      ]
+    },
+    {
+      "id": "limits",
+      "heading": "前提と制限",
+      "priority": "detail",
+      "items": [
+        "ユーザーは会話ごとに別のモデルを選べる",
+        "チームで上書きしないユーザーは、エンタープライズの既定を引き継ぐ"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "team-mappings.json", "type": "term", "oneLine": "エンタープライズ チームごとの設定ファイルを割り当てる、チーム マッピングの構成ファイル。" }
+  ],
+  "qa": [
+    {
+      "q": "どのプランと環境で使えますか？",
+      "a": "Copilot Business と Copilot Enterprise で、GitHub Copilot app、Copilot CLI、Visual Studio Code の各環境で一般提供されています。"
+    },
+    {
+      "q": "チームごとに既定モデルを変えられますか？",
+      "a": "はい。model キーを overridable にし、team-mappings.json のチーム設定ファイルを更新すると、チーム メンバーが自分たちの既定モデルを選べます。それ以外のユーザーはエンタープライズの既定を引き継ぎます。"
+    },
+    {
+      "q": "ユーザーは既定モデルを変更できますか？",
+      "a": "既定は新しい会話に適用される値で、ユーザーは会話ごとに別のモデルを選択できます。"
+    },
+    {
+      "q": "モデルを自動選択にできますか？",
+      "a": "model を \"auto\" に設定すると、ユーザーが別のモデルを指定しない限り、新しいセッションでモデルが自動的に選択されます。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Enterprise-managed settings support any default model - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-09-02-enterprise-managed-settings-support-any-default-model/"
+    },
+    "documents": [
+      {
+        "title": "エンタープライズ管理設定 - GitHub Enterprise Cloud Docs",
+        "url": "https://docs.github.com/ja/enterprise-cloud@latest/copilot/reference/enterprise-administrators/enterprise-managed-settings"
+      }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-09-02-enterprise-managed-settings-support-any-default-model/",
+    "https://docs.github.com/ja/enterprise-cloud@latest/copilot/reference/enterprise-administrators/enterprise-managed-settings"
+  ]
+}
