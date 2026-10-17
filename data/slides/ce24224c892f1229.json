@@ -1,0 +1,90 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "ce24224c892f1229",
+  "title": {
+    "ja": "GitHub CopilotでxAIの推論モデルGrok 4.6が利用可能に",
+    "subtitleJa": "エージェント型コーディング向けGrok 4.6を、モデルピッカーで段階的に提供",
+    "original": "Grok 4.6 is now available in GitHub Copilot"
+  },
+  "date": "2026-08-14",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "Copilot Pro、Pro+、Max、Business、Enterpriseの利用者と、BusinessおよびEnterpriseの管理者",
+    "change": "複数ステップの複雑なワークフロー向けGrok 4.6をモデルピッカーで選べる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "BusinessとEnterpriseの管理者は、Copilot設定でGrok 4.6ポリシーを有効にする"
+  },
+  "panels": [
+    {
+      "id": "availability",
+      "heading": "使える場所とプラン",
+      "priority": "core",
+      "items": [
+        "対象はCopilot Pro、Pro+、Max、Business、Enterprise",
+        "モデルピッカーで選択: VS Code、Visual Studio、Copilot CLI、cloud agent、Copilot app",
+        "JetBrains、Xcode、Eclipseのモデルピッカーでも選択できる"
+      ]
+    },
+    {
+      "id": "setup",
+      "heading": "前提と制限",
+      "priority": "core",
+      "items": [
+        "BusinessとEnterpriseは管理者がGrok 4.6ポリシーを有効化する。既定はオフ",
+        "提供は段階的で、表示されない場合は後日再確認する",
+        "利用量ベース課金のもと、プロバイダーの定価で課金される"
+      ]
+    },
+    {
+      "id": "cautions",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "GitHubの社内テストでは、VS CodeとCopilot CLIのターミナル系コーディングタスクで良好な結果"
+      ]
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Grok 4.6 is now available in GitHub Copilot - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-08-14-grok-4-6-is-now-available-in-github-copilot/"
+    },
+    "documents": [
+      {
+        "title": "GitHub Copilot のモデルと価格設定 - GitHub Docs",
+        "url": "https://docs.github.com/ja/copilot/reference/copilot-billing/models-and-pricing"
+      },
+      {
+        "title": "GitHub Copilotでサポートされている AI モデル - GitHub Docs",
+        "url": "https://docs.github.com/ja/copilot/reference/ai-models/supported-models"
+      }
+    ]
+  },
+  "qa": [
+    {
+      "q": "どのプランで使えますか。",
+      "a": "Copilot Pro、Pro+、Max、Business、Enterpriseで利用できます。提供は段階的なため、まだ表示されない場合は後日確認してください。"
+    },
+    {
+      "q": "BusinessやEnterpriseで使うには何が必要ですか。",
+      "a": "管理者がCopilot設定でGrok 4.6ポリシーを有効にする必要があります。ポリシーは既定でオフです。"
+    },
+    {
+      "q": "どの環境で選べますか。",
+      "a": "VS Code、Visual Studio、Copilot CLI、cloud agent、Copilot app、JetBrains、Xcode、Eclipseのモデルピッカーで選べます。"
+    },
+    {
+      "q": "料金はどうなりますか。",
+      "a": "利用量ベース課金のもと、プロバイダーの定価で課金されます。詳細はモデルと価格設定のドキュメントに記載されています。"
+    }
+  ],
+  "evidence": [
+    "https://github.blog/changelog/2026-08-14-grok-4-6-is-now-available-in-github-copilot/",
+    "https://docs.github.com/ja/copilot/reference/copilot-billing/models-and-pricing",
+    "https://docs.github.com/ja/copilot/reference/ai-models/supported-models"
+  ]
+}
