@@ -32,8 +32,8 @@
       "heading": "対象モデルと後継",
       "priority": "core",
       "items": [
-        "Gemini 3.5 Flash／Gemini 3.6 Flash → Gemini 3.8 Flash",
-        "Kimi K2.7 Code → Kimi K3、Claude Opus 4.7 → Claude Opus 5",
+        "Gemini 3.5 Flash／3.6 Flash は Gemini 3.8 Flash へ移行",
+        "Kimi K2.7 Code は Kimi K3、Claude Opus 4.7 は Claude Opus 5 へ移行",
         "対象は Copilot Chat、インライン編集、ask／agent モード、コード補完を含む全体験"
       ]
     },
