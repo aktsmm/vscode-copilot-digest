@@ -1,0 +1,75 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "4a71e714207eacfa",
+  "title": {
+    "ja": "Copilot 週次リリース（8月31日週）：新モデル、コンテンツ除外、Agent Merge",
+    "subtitleJa": "新モデル 2 種が利用可能に。アプリと CLI がコンテンツ除外に対応",
+    "original": "GitHub Copilot weekly releases — August 31"
+  },
+  "date": "2026-09-04",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "Copilot のモデル選択、Copilot アプリ / CLI、JetBrains、VS Code 1.136 を使う開発者と管理者",
+    "change": "新モデルの追加、アプリと CLI のコンテンツ除外対応、JetBrains のハーネス GA、VS Code の Agent Merge などが入った",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "info",
+    "summary": "利用中のプランで使えるモデルと、VS Code 1.136 の新機能を確認する"
+  },
+  "panels": [
+    {
+      "id": "models",
+      "heading": "使える場所とプラン",
+      "priority": "core",
+      "items": [
+        "Claude Fable 5.1: Copilot Pro+、Max、Business、Enterprise で利用可能",
+        "Gemini 3.8 Flash: Pro、Pro+、Max、Business、Enterprise に展開中",
+        "Copilot アプリと CLI がコンテンツ除外に対応し、機密コードをエージェント作業の文脈に入れない"
+      ]
+    },
+    {
+      "id": "vscode-136",
+      "heading": "VS Code 1.136 の更新",
+      "priority": "core",
+      "items": [
+        "Agent Merge（パブリック プレビュー）: レビュー指摘、失敗したチェック、マージ競合を解消してマージ可能な状態にする",
+        "マルチルート ワークスペース（試験的）: Copilot と Claude のエージェント セッションを各フォルダーで使える",
+        "チャット背景（試験的）: Agents ウィンドウを組み込みパターンや独自画像で装飾できる"
+      ]
+    },
+    {
+      "id": "others",
+      "heading": "その他",
+      "priority": "detail",
+      "items": [
+        "JetBrains 向け Copilot で、GitHub Copilot ハーネスが一般提供（GA）に",
+        "チャット セッションが階層で整理され、対応が必要なものが分かる"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "Agent Merge", "type": "feature", "oneLine": "レビュー指摘、失敗したチェック、マージ競合を解消し、プル リクエストをマージ可能にする機能。" },
+    { "term": "コンテンツ除外", "type": "feature", "oneLine": "機密コードを Copilot の文脈に含めないための設定。" }
+  ],
+  "references": {
+    "source": {
+      "title": "GitHub Copilot weekly releases — August 31 - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-09-04-github-copilot-weekly-releases-august-31/"
+    },
+    "documents": [
+      { "title": "GitHub Copilotでサポートされている AI モデル - GitHubドキュメント", "url": "https://docs.github.com/ja/copilot/reference/ai-models/supported-models" }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-09-04-github-copilot-weekly-releases-august-31/",
+    "https://docs.github.com/ja/copilot/reference/ai-models/supported-models"
+  ],
+  "qa": [
+    { "q": "Claude Fable 5.1 はどのプランで使えますか", "a": "Copilot Pro+、Max、Business、Enterprise のユーザーが利用できます。" },
+    { "q": "Gemini 3.8 Flash はいつから使えますか", "a": "Pro、Pro+、Max、Business、Enterprise に展開中です。対応モデルの一覧は公式ドキュメントで確認できます。" },
+    { "q": "Agent Merge は何をしますか", "a": "VS Code 1.136 のパブリック プレビュー機能で、レビュー指摘、失敗したチェック、マージ競合を解消し、プル リクエストをマージできる状態にします。" },
+    { "q": "コンテンツ除外はどこで効くようになりましたか", "a": "Copilot アプリと Copilot CLI が対応し、エージェント作業の文脈に機密コードが入らないようになります。" }
+  ]
+}
