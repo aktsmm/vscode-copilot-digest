@@ -1,0 +1,88 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "fccca560f319bf46",
+  "title": {
+    "ja": "JetBrains の Copilot に、メモリと Ollama（BYOK）が登場",
+    "subtitleJa": "エージェント チャットをまたぐ記憶と Ollama 接続に加え、管理者向け設定も追加",
+    "original": "Copilot memory and Ollama in GitHub Copilot for JetBrains"
+  },
+  "date": "2026-08-11",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "JetBrains IDE で GitHub Copilot を使う開発者と、組織の Copilot 管理者",
+    "change": "チャット セッション間で情報を保持でき、Ollama を BYOK プロバイダーとして使える",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "最新の GitHub Copilot プラグインに更新し、必要に応じてメモリ設定を確認する"
+  },
+  "panels": [
+    {
+      "id": "new-features",
+      "heading": "使えるようになること",
+      "priority": "core",
+      "items": [
+        "Copilot memory が、エージェント チャット セッションをまたいで有用な情報を保持・想起する",
+        "Ollama を BYOK プロバイダーとして使え、プロバイダー設定とモデル選択に対応する",
+        "統合ターミナルから Copilot CLI を自動インストールできる（macOS・Linux・Windows）"
+      ]
+    },
+    {
+      "id": "how-to",
+      "heading": "使い方と前提",
+      "priority": "core",
+      "items": [
+        "メモリは Copilot 設定ポータルの「Copilot Memory」トグルで管理する",
+        "メモリは、すべての有料 Copilot プランで利用できる（公開プレビュー）",
+        "管理者は、プラグイン提供、MCP サーバー アクセス、権限バイパス、OpenTelemetry を管理設定で制御できる"
+      ]
+    },
+    {
+      "id": "other",
+      "heading": "その他の変更",
+      "priority": "detail",
+      "items": [
+        "Codex セッションがエージェント デバッグ ログに表示され、権限モードと instructions・skills に対応する",
+        "製品内の文言が「Copilot CLI」ではなく「Copilot」に変更された"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "BYOK", "type": "term", "oneLine": "Ollama など、自分で用意したモデル プロバイダーを Copilot で使う方式。" },
+    { "term": "Ollama", "type": "product", "oneLine": "BYOK プロバイダーとして、JetBrains 版 Copilot で使えるようになった。" },
+    { "term": "Copilot Memory", "type": "feature", "oneLine": "リポジトリに関する事実や個人の設定を保持し、後の作業で使う機能。" }
+  ],
+  "qa": [
+    {
+      "q": "Copilot memory は誰が使えますか？",
+      "a": "ドキュメントによると、すべての有料 Copilot プランで利用できます。現在は公開プレビューで、変更される可能性があります。"
+    },
+    {
+      "q": "メモリはどこで管理しますか？",
+      "a": "Copilot 設定ポータルの Copilot Memory トグルで管理します。"
+    },
+    {
+      "q": "メモリには何が保存されますか？",
+      "a": "ドキュメントでは、コーディング規則やビルド コマンドなどのリポジトリ レベルの事実と、Copilot とのやり取りに関するユーザー レベルの基本設定が保存されると説明されています。"
+    },
+    {
+      "q": "Ollama はどう使えますか？",
+      "a": "JetBrains 版 GitHub Copilot で BYOK プロバイダーとして使え、プロバイダー設定とモデル選択に対応します。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Copilot memory and Ollama in GitHub Copilot for JetBrains - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-08-11-copilot-memory-and-ollama-in-github-copilot-for-jetbrains/"
+    },
+    "documents": [
+      { "title": "GitHub Copilot Memory について - GitHubドキュメント", "url": "https://docs.github.com/ja/copilot/concepts/agents/copilot-memory" }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-08-11-copilot-memory-and-ollama-in-github-copilot-for-jetbrains/",
+    "https://docs.github.com/ja/copilot/concepts/agents/copilot-memory"
+  ]
+}
