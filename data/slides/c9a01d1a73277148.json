@@ -21,7 +21,7 @@
   "panels": [
     {
       "id": "app",
-      "heading": "Copilot アプリ",
+      "heading": "Copilot アプリの更新",
       "priority": "core",
       "items": [
         "Customize タブが GA。MCP サーバー、プラグイン、スキル、キャンバスを 1 か所に集約",
@@ -42,7 +42,7 @@
     },
     {
       "id": "ide",
-      "heading": "VS Code と Visual Studio",
+      "heading": "VS Code と VS の更新",
       "priority": "core",
       "items": [
         "VS Code 1.135: 他アプリの Copilot / Claude エージェント セッションを継続、単一ペインの Agents レイアウト、モデル別のチャット使用量表示",
