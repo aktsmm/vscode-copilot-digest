@@ -1,0 +1,100 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "7f375172e45967fd",
+  "title": {
+    "ja": "VS Code 1.138: Automations が既定で有効に、エクスポートとインポートで共有可能",
+    "subtitleJa": "chat.automations.enabled が既定で有効になり、.automation.md ファイルで共有できる",
+    "original": "Automations are now enabled by default and can be shared"
+  },
+  "date": "2026-10-18",
+  "topic": "VS Code",
+  "status": "update",
+  "audience": {
+    "who": "VS Code の Agents ウィンドウで定型作業を自動化したい開発者・チーム",
+    "change": "Automations が既定で有効になり、.automation.md への書き出しと取り込みで他の環境やチームと共有できる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "Automations が表示されない場合は、設定 chat.automations.enabled を確認する"
+  },
+  "panels": [
+    {
+      "id": "where-and-plans",
+      "heading": "使える場所と設定",
+      "priority": "core",
+      "items": [
+        "Agents ウィンドウのサイドバーの Automations から使う",
+        "設定 chat.automations.enabled が既定で有効になった",
+        "保存したプロンプト、セッション構成、スケジュールでエージェント タスクを実行する"
+      ]
+    },
+    {
+      "id": "how-to-share",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "書き出し: オートメーション カードの More Actions > Export で .automation.md を保存",
+        "取り込み: Automations ビューの Import Automation でファイルを選ぶ（ドラッグも可）",
+        "取り込み後に、ワークスペース、エージェント、モデル、権限、分離を選んで作成する"
+      ]
+    },
+    {
+      "id": "limits",
+      "heading": "前提と制限",
+      "priority": "core",
+      "items": [
+        "ファイルには名前、プロンプト、スケジュール、形式バージョン、識別子だけを含む",
+        "ワークスペース、モデル、権限、有効状態、実行履歴は含まれない",
+        "取り込み時の Enabled は既定でオフ。構成を確認してから有効にする"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "ドキュメントでは段階的に提供中で、表示されない場合は設定の有効化を確認する",
+        "非対応のファイルは、スケジュールの変更や権限の取り込みをせず拒否される"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "Automations", "type": "feature", "oneLine": "保存したプロンプト、セッション構成、スケジュールでエージェント タスクを実行する機能。" },
+    { "term": ".automation.md", "type": "term", "oneLine": "YAML フロントマター付きの Markdown で、オートメーションを持ち運ぶためのファイル。" }
+  ],
+  "suggestions": [
+    "最初は Schedule を Manual にして実行結果を確認してから、定期実行にする"
+  ],
+  "qa": [
+    {
+      "q": "Automations はどこで使えますか",
+      "a": "Agents ウィンドウのサイドバーにある Automations から使います。表示されない場合は、設定 chat.automations.enabled が有効か確認してください。ドキュメントでは段階的に提供中と説明されています。"
+    },
+    {
+      "q": "共有ファイルには何が含まれますか",
+      "a": "名前とプロンプト、手動・毎時・毎日・毎週のスケジュール、形式バージョン、識別子です。ワークスペース、プロバイダー、モデル、権限、有効状態、実行履歴は含まれません。"
+    },
+    {
+      "q": "共有されたオートメーションの取り込み方法は",
+      "a": "Automations ビューで Import Automation を選んで .automation.md を選びます。ファイルのドラッグでも取り込めます。その後、ワークスペースやエージェント、モデル、権限、分離を選んで作成します。"
+    },
+    {
+      "q": "取り込んだ直後に自動で実行されますか",
+      "a": "いいえ。Enabled チェックボックスは既定でオフで、構成全体を確認してからオンにします。非対応のファイルは拒否され、権限が取り込まれることもありません。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.138 - Automations are now enabled by default and can be shared",
+      "url": "https://code.visualstudio.com/updates/v1_138#_automations-are-now-enabled-by-default-and-can-be-shared"
+    },
+    "documents": [
+      { "title": "Create and manage agent automations", "url": "https://code.visualstudio.com/docs/agents/run/automations" }
+    ]
+  },
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_138#_automations-are-now-enabled-by-default-and-can-be-shared",
+    "https://code.visualstudio.com/docs/agents/run/automations"
+  ]
+}
