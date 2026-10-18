@@ -63,5 +63,27 @@
   "evidence": [
     "https://github.blog/changelog/2026-10-08-copilot-code-review-new-organization-billing-options-and-controls/",
     "https://docs.github.com/ja/copilot/concepts/agents/code-review"
+  ],
+  "qa": [
+    {
+      "q": "課金先の既定値は何ですか。",
+      "a": "既定は Member で、メンバー自身の Copilot 枠に請求されます。枠を使い切るとコードレビューは失敗します。"
+    },
+    {
+      "q": "組織課金にするには何が必要ですか。",
+      "a": "Organization を選ぶには、組織で AI Credits の有料利用が有効である必要があります。予算の設定は任意です。"
+    },
+    {
+      "q": "課金先の設定はどこにありますか。",
+      "a": "組織設定の Copilot > Policies にある「Choose how members with a Copilot license are billed」です。"
+    },
+    {
+      "q": "外部ライセンスでのレビュー依頼は止められますか。",
+      "a": "組織所有者とリポジトリ管理者が「Only allow Copilot code review to be triggered by authorized users」を有効にすると、個人ライセンスなど組織外のライセンスでは依頼できなくなります。"
+    },
+    {
+      "q": "組織で有効にした制限をリポジトリ側で外せますか。",
+      "a": "組織レベルで有効にした場合、リポジトリ管理者は無効にできません。"
+    }
   ]
 }
