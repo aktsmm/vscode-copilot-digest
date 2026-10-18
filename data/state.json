@@ -1053,10 +1053,6 @@
     },
     "vscode-release-notes-1-138": {
       "sectionHashes": {
-        "vscode-release-notes-1-138:Agents:Automations are now enabled by default and can be shared": "356a8fa31222b03bba7f847cbe600b3ff4a7fb7b4b4b3e04abd8489823180909",
-        "vscode-release-notes-1-138:Agents:Run agent sessions in local Dev Containers": "d0a8a22f20773ed9ed2332faed98b9ecde7931d2e6ebc526c56d46ea4be42a8e",
-        "vscode-release-notes-1-138:Agents:Expanded Codex support in the agent host": "9d0eb3906c3f849344a4908064a5aedf04edb174048b77c70c4066f9a7d6bd26",
-        "vscode-release-notes-1-138:Agents:Continue Codex quick chats in a workspace": "634f1b00010d46f9d07cdfb12dbbaf95243fa42e79b02d8a8142db430324d8d7",
         "vscode-release-notes-1-138:Agents:On-demand agent SDK downloads": "4e8a3bc5d8dc2c61c461de29370818e29cc7736ec2cef464a4692b8c7ce5f2f7",
         "vscode-release-notes-1-138:Agents:Create pull requests from agent sessions": "a989fd689293db4467daf18a56292215fb3c77897753ed3adbd7b5543aed64b5",
         "vscode-release-notes-1-138:Agents:Keep completed sessions organized (Preview)": "52fa144730a5b419de718f13468280fd94f02c96aa88571c3d0f30ba24fd41bf",
