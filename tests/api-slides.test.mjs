@@ -5,7 +5,7 @@ import { buildApiFiles, buildCoverage, itemId } from "../scripts/lib/api.mjs";
 import { validateSlide, validateDeck, orderSlides, SLIDE_SCHEMA_V1 as SLIDE_SCHEMA, SLIDE_SCHEMA_V2, DECK_SCHEMA } from "../scripts/lib/slides.mjs";
 import { coverHtml, endHtml, deckHtml, PDF_CSS } from "../scripts/lib/slide-html.mjs";
 import { newCryptoInfo, deriveKey, encryptPdf, decryptPdf } from "../scripts/lib/pdf-crypto.mjs";
-import { retentionStart } from "../scripts/build-slide-pdfs.mjs";
+import { retentionStart, sampleOrder } from "../scripts/build-slide-pdfs.mjs";
 import { FORBIDDEN_AZURE_TOKENS, GITHUB_PALETTE } from "../scripts/lib/theme.mjs";
 
 const event = {
@@ -129,4 +129,11 @@ if (await fs.stat(siteApi).then(() => true, () => false)) {
   assert.equal(slideIdFor(section("A feature that has no slide of its own")), null);
   assert.equal(clusterReaderEvents([section("Feature one"), section("Feature two")]).length, 2);
 }
+// The free sample is the slide whose source was published last, not just the first of a busy day.
+{
+  const slides = [{ id: "a", date: "2026-10-18" }, { id: "b", date: "2026-10-18" }, { id: "c", date: "2026-10-17" }];
+  assert.deepEqual(sampleOrder(slides, new Map([["a", "2026-09-30"], ["b", "2026-10-14"], ["c", "2026-10-17"]])), [2, 1, 0]);
+  assert.deepEqual(sampleOrder(slides), [0, 1, 2], "without publish dates the list order (date, then id) is kept");
+}
+
 console.log("api-slides tests passed");
