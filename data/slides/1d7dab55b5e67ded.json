@@ -59,5 +59,27 @@
     "https://github.blog/changelog/2026-10-13-enterprise-managed-settings-enforcement-updates/",
     "https://docs.github.com/ja/enterprise-cloud@latest/copilot/how-tos/administer-copilot/manage-for-enterprise/use-managed-settings/deploy-managed-settings#requiring-fresh-server-managed-settings-on-startup",
     "https://docs.github.com/ja/enterprise-cloud@latest/copilot/reference/enterprise-administrators/enterprise-managed-settings#minimum-client-version-enforcement-for-sandbox"
+  ],
+  "qa": [
+    {
+      "q": "どのクライアントで forceRemoteSettingsRefresh を使えますか?",
+      "a": "Copilot CLI、VS Code、GitHub Copilot app で使えます。サーバー管理、MDM 管理、ファイルベースのいずれの設定方法でも指定できます。"
+    },
+    {
+      "q": "サーバー管理で設定した場合、いつから強制されますか?",
+      "a": "サーバー管理の値は、クライアントが一度受け取った後の、以降の起動から更新が必須になります。MDM 管理とファイルベースは、初回サインインの前から必須にできます。"
+    },
+    {
+      "q": "最新の設定を取得できないとどうなりますか?",
+      "a": "有効な間はキャッシュでは要件を満たせません。現在のポリシーを確認できない場合は、古いポリシーのまま動かさず fail closed になります。"
+    },
+    {
+      "q": "この設定を使わない場合の挙動は変わりますか?",
+      "a": "変わりません。従来どおり通常の管理設定キャッシュを使い、起動の速さと一時的なサービス障害への耐性を保ちます。"
+    },
+    {
+      "q": "最小クライアントバージョンの強制は何に適用されますか?",
+      "a": "まず sandbox キーに適用されます。管理設定にこのキーを含めると、古いバージョンに固定した利用者は、更新しないと Copilot を使えなくなります。"
+    }
   ]
 }
