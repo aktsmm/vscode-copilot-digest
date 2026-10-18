@@ -1,0 +1,72 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "ebaea78efe8e3225",
+  "title": {
+    "ja": "Agents ウィンドウで、エージェント SDK の不足時にダウンロードを案内",
+    "subtitleJa": "Claude と Codex の SDK が未取得なら、サインイン済みでも通知でダウンロードを選べる",
+    "original": "On-demand agent SDK downloads"
+  },
+  "date": "2026-10-18",
+  "topic": "VS Code",
+  "status": "update",
+  "audience": {
+    "who": "Agents ウィンドウで Claude や Codex のエージェントを使う VS Code ユーザー",
+    "change": "SDK が未取得のときは常にダウンロードの通知が出て、続行に必要なことが分かる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "info",
+    "summary": "通知で Download を選ぶか、メッセージを送って SDK を取得する"
+  },
+  "beforeAfter": {
+    "before": "ダウンロードの案内はサインアウト状態のアカウント設定時のみ。サインイン済みなら最初のメッセージで取得",
+    "after": "SDK が未取得なら、いつでもダウンロードが必要という通知が出る"
+  },
+  "panels": [
+    {
+      "id": "where",
+      "heading": "使える場所と対象",
+      "priority": "core",
+      "items": [
+        "対象は Agents ウィンドウの Claude と Codex のエージェント",
+        "SDK は VS Code に同梱されず、最初に必要になったときにダウンロードされる"
+      ]
+    },
+    {
+      "id": "usage",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "そのエージェントのモデルが利用可能なとき、通知に 2 つの選択肢が出る",
+        "Download を選ぶか、メッセージを送ってそのターンの一部として SDK を取得する",
+        "通知の表示中にモデルが利用可能になると、文言がその場で更新される"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "Agents ウィンドウ", "type": "feature", "oneLine": "Claude や Codex などのエージェント セッションを扱う VS Code のウィンドウ。" }
+  ],
+  "qa": [
+    {
+      "q": "SDK はなぜダウンロードが必要なのですか。",
+      "a": "Agents ウィンドウの Claude と Codex のエージェントは、VS Code に同梱されない SDK を使います。最初に必要になったときにダウンロードされます。"
+    },
+    {
+      "q": "今回、何が変わりましたか。",
+      "a": "以前はダウンロードの案内がサインアウト状態のアカウント設定時にだけ出ており、サインイン済みなら最初のメッセージで取得されました。今は SDK が未取得なら常に通知が出ます。"
+    },
+    {
+      "q": "通知ではどんな操作ができますか。",
+      "a": "そのエージェントのモデルが利用可能なとき、Download を選ぶか、メッセージを送ってそのターンの一部として SDK をダウンロードするかを選べます。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.138",
+      "url": "https://code.visualstudio.com/updates/v1_138#_on-demand-agent-sdk-downloads"
+    }
+  },
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_138"
+  ]
+}
