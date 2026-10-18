@@ -60,5 +60,27 @@
     "https://docs.github.com/en/copilot/how-tos",
     "https://docs.github.com/ja/copilot/how-tos/copilot-cli/customize-copilot/use-byok-models",
     "https://docs.github.com/ja/copilot/how-tos/github-copilot-app/use-byok-models"
+  ],
+  "qa": [
+    {
+      "q": "CLIで外部モデルに接続するにはどう設定しますか？",
+      "a": "CLIの起動前に環境変数を設定します。COPILOT_PROVIDER_BASE_URLとCOPILOT_MODELは必須で、COPILOT_PROVIDER_TYPEで openai（既定）、azure、anthropic を選びます。--modelフラグでもモデルを指定できます。"
+    },
+    {
+      "q": "どんなモデルでも使えますか？",
+      "a": "ツール呼び出しとストリーミングに対応している必要があり、どちらかが非対応だとCopilot CLIはエラーを返します。最良の結果には128,000トークン以上のコンテキストウィンドウのモデルが推奨されています。"
+    },
+    {
+      "q": "Copilotアプリでは外部プロバイダーをどう追加しますか？",
+      "a": "アプリ設定の「モデル プロバイダー」で「プロバイダーの追加」を選び、プロバイダーと表示名、ベースURL、APIキーなどを入力して保存します。追加したモデルはモデルピッカーに表示されます。"
+    },
+    {
+      "q": "アプリで独自プロバイダーを使うのにCopilotプランは必要ですか？",
+      "a": "不要です。ただしGitHubアカウントでのサインインは必要です。Copilotプランがあれば、独自プロバイダーとGitHubホスト型モデルを同じアプリで使えます。"
+    },
+    {
+      "q": "アプリ側のBYOKは正式版ですか？",
+      "a": "ドキュメントでは、Copilotアプリで独自のモデルプロバイダーを使うサポートはパブリックプレビューで、変更される可能性があると説明されています。"
+    }
   ]
 }
