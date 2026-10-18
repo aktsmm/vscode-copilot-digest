@@ -1,0 +1,72 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "0d09c191ddd83bfd",
+  "title": {
+    "ja": "VS Code 1.140: Dev Container の自動クリーンアップ",
+    "subtitleJa": "Dev Container を使う全セッションが 5 分間非アクティブだとコンテナーを停止する",
+    "original": "Visual Studio Code 1.140: Automatic Dev Container cleanup"
+  },
+  "date": "2026-10-18",
+  "topic": "VS Code",
+  "status": "update",
+  "audience": {
+    "who": "VS Code の Agents ウィンドウで Dev Container セッションを使う開発者",
+    "change": "非アクティブな Dev Container は自動で停止し、作業を再開すると自動で再起動する",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "info",
+    "summary": "Dev Container セッションを使うなら、停止・再起動・削除の挙動を把握しておく"
+  },
+  "panels": [
+    {
+      "id": "behavior",
+      "heading": "動作",
+      "priority": "core",
+      "items": [
+        "Dev Container を使う全セッションが 5 分間非アクティブになると、VS Code がコンテナーを停止する",
+        "作業を続けると、コンテナーは自動で再起動する",
+        "最後のセッションを完了にするか削除すると、コンテナーは削除される"
+      ]
+    },
+    {
+      "id": "settings",
+      "heading": "設定と対象",
+      "priority": "core",
+      "items": [
+        "設定: chat.agentHost.devContainer.enabled、chat.agentHost.devContainer.idleTimeout",
+        "Agents ウィンドウでのみ使える"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "Dev Container", "type": "feature", "oneLine": "エージェントがプロジェクトのツールや依存関係を、分離された環境で使えるようにするセッション。" }
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.140",
+      "url": "https://code.visualstudio.com/updates/v1_140#_automatic-dev-container-cleanup"
+    }
+  },
+  "qa": [
+    {
+      "q": "コンテナーはいつ停止されますか。",
+      "a": "Dev Container を使うすべてのセッションが 5 分間非アクティブになったときに、VS Code がコンテナーを停止します。"
+    },
+    {
+      "q": "停止後、作業を続けるにはどうしますか。",
+      "a": "作業を続けると、コンテナーは自動で再起動します。手動での操作は必要ありません。"
+    },
+    {
+      "q": "コンテナーが削除されるのはどんなときですか。",
+      "a": "最後のセッションを完了にするか削除したときに、コンテナーが削除されます。"
+    },
+    {
+      "q": "どこで使えますか。関係する設定は何ですか。",
+      "a": "Agents ウィンドウでのみ使えます。設定は chat.agentHost.devContainer.enabled と chat.agentHost.devContainer.idleTimeout です。"
+    }
+  ],
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_140"
+  ]
+}
