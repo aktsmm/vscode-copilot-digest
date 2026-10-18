@@ -1,0 +1,84 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "e4e5d2785c590aa3",
+  "title": {
+    "ja": "Copilot Billing Previewアプリの提供終了",
+    "subtitleJa": "アプリは利用不可に。Copilotの支出は GitHub の課金設定で確認・管理する",
+    "original": "Retiring the Copilot Billing Preview app"
+  },
+  "date": "2026-08-04",
+  "topic": "GitHub Copilot",
+  "status": "retirement",
+  "statusEvidence": "We’ve retired the GitHub Copilot Billing Preview app, and it’s no longer available.",
+  "audience": {
+    "who": "Billing Previewアプリで請求を確認していたCopilot利用者と、組織・企業の管理者",
+    "change": "アプリは終了し、課金設定のAI usageページなどで支出を確認・管理する",
+    "changeNature": "neutral"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "今後の支出確認と予算設定は、課金設定（billing settings）で行う"
+  },
+  "panels": [
+    {
+      "id": "alternatives",
+      "heading": "代わりに使うもの",
+      "priority": "core",
+      "items": [
+        "課金設定のAI usageページで、AIクレジットのデータをグループ化・絞り込み・エクスポートできる",
+        "予算（budgets）を設定して支出に上限を設けられる",
+        "使用状況レポートと課金APIで、生の使用量データをいつでも取得できる"
+      ]
+    },
+    {
+      "id": "org-admin",
+      "heading": "組織・企業向け",
+      "priority": "core",
+      "items": [
+        "ユーザー単位の予算で、個人ごとの支出を管理・追跡できる"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "課金設定ではユーザー単位の予算、コストセンター、使用量プール配分も見られる（アプリのレポートでは見られなかった）"
+      ]
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Retiring the Copilot Billing Preview app - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-08-04-retiring-the-copilot-billing-preview-app/"
+    },
+    "documents": [
+      {
+        "title": "GitHub Copilot の請求と使用状況 - GitHubドキュメント",
+        "url": "https://docs.github.com/ja/copilot/concepts/billing-and-usage"
+      }
+    ]
+  },
+  "qa": [
+    {
+      "q": "Billing Previewアプリはまだ使えますか。",
+      "a": "いいえ。アプリは提供終了済みで、利用できません。"
+    },
+    {
+      "q": "代わりにどこで支出を確認しますか。",
+      "a": "GitHubの課金設定のAI usageページで、AIクレジットのデータをグループ化、絞り込み、エクスポートできます。"
+    },
+    {
+      "q": "支出に上限を設けられますか。",
+      "a": "予算を設定して支出を制限できます。組織・企業ではユーザー単位の予算で個人ごとの支出も管理できます。"
+    },
+    {
+      "q": "生の使用量データは取得できますか。",
+      "a": "使用状況レポートと課金APIから、いつでも取得できます。"
+    }
+  ],
+  "evidence": [
+    "https://github.blog/changelog/2026-08-04-retiring-the-copilot-billing-preview-app/",
+    "https://docs.github.com/ja/copilot/concepts/billing-and-usage"
+  ]
+}
