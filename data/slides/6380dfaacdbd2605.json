@@ -1,0 +1,106 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "6380dfaacdbd2605",
+  "title": {
+    "ja": "Copilot code reviewのレビュー深度(Lite/Balanced)、一般提供開始",
+    "subtitleJa": "PRの複雑さに応じてレビュー深度を選択。Low/MediumはLite/Balancedに改称",
+    "original": "Copilot code review effort levels are generally available"
+  },
+  "date": "2026-08-07",
+  "topic": "GitHub Copilot",
+  "status": "ga",
+  "statusEvidence": "Lite and Balanced effort levels for GitHub Copilot code review are now generally available.",
+  "audience": {
+    "who": "Copilot code reviewを使う開発者と、Copilot code reviewを管理する組織管理者",
+    "change": "レビューごとにLiteかBalancedを選べ、組織の既定値も設定できる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "組織管理者は必要に応じて、組織設定のCopilot code reviewで既定のレビュー深度を設定する"
+  },
+  "beforeAfter": {
+    "before": "公開プレビューではLowとMediumの名称だった",
+    "after": "LiteとBalancedに改称。既存の設定は新しい名称へ自動で引き継がれる"
+  },
+  "panels": [
+    {
+      "id": "availability",
+      "heading": "使える場所とプラン",
+      "priority": "core",
+      "items": [
+        "Copilot Pro、Pro+、Max、Business、Enterpriseの各プランで利用可能",
+        "Liteは単純な変更向け、Balancedは高い推論力のモデルでより深く分析"
+      ]
+    },
+    {
+      "id": "usage",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "レビュー依頼時にLiteかBalancedを選択。選択はそのレビューだけに適用され、既定値は変わらない",
+        "組織管理者は組織設定→Copilot→Copilot code reviewで既定値を設定",
+        "独自設定のないリポジトリは組織の既定値を継承"
+      ]
+    },
+    {
+      "id": "notes",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "タイムラインとPR概要コメントに、実行されたレビュー深度が表示される",
+        "AI creditsの目安はLiteで約0.05～1米ドル、Balancedで約0.25～5米ドル相当"
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Lite",
+      "type": "feature",
+      "oneLine": "文書更新や小さな修正など、単純な変更向けのレビュー深度"
+    },
+    {
+      "term": "Balanced",
+      "type": "feature",
+      "oneLine": "複雑・機微な変更向けに、高い推論力のモデルで深く分析するレビュー深度"
+    }
+  ],
+  "qa": [
+    {
+      "q": "LiteとBalancedはどのプランで使えますか?",
+      "a": "Copilot Pro、Pro+、Max、Business、Enterpriseの各プランで利用できます。"
+    },
+    {
+      "q": "プレビュー中のLow/Mediumの設定はどうなりますか?",
+      "a": "Low/MediumはLite/Balancedに改称されました。以前に設定したレビュー深度は新しい名称へ自動的に引き継がれます。"
+    },
+    {
+      "q": "組織の既定値はどこで設定しますか?",
+      "a": "組織管理者が、組織設定のCopilot、Copilot code reviewから設定します。独自設定のないリポジトリは組織の既定値を継承します。"
+    },
+    {
+      "q": "レビューごとの選択は既定値を変えますか?",
+      "a": "変えません。レビュー依頼時の選択はそのレビューにのみ適用され、リポジトリや組織の既定値は変更されません。"
+    },
+    {
+      "q": "利用量の目安はどのくらいですか?",
+      "a": "通常、Liteで約0.05～1米ドル、Balancedで約0.25～5米ドル相当のAI creditsを消費します。GitHub Actions分は含まれません。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Copilot code review effort levels are generally available - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-08-07-copilot-code-review-effort-levels-are-generally-available/"
+    },
+    "documents": [
+      {
+        "title": "GitHub Copilotによるコードレビューについて - GitHub Docs",
+        "url": "https://docs.github.com/ja/copilot/concepts/agents/code-review"
+      }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-08-07-copilot-code-review-effort-levels-are-generally-available/",
+    "https://docs.github.com/ja/copilot/concepts/agents/code-review"
+  ]
+}
