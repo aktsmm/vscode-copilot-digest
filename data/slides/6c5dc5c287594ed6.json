@@ -49,6 +49,28 @@
       ]
     }
   ],
+  "qa": [
+    {
+      "q": "プロンプトを集めずにユーザーを特定できますか。",
+      "a": "はい。telemetry.capture.identity は user.name、process.user.name、host.name を OpenTelemetry データに加える設定で、プロンプトや応答などの内容の収集とは別に制御します。"
+    },
+    {
+      "q": "既定では何が収集されますか。",
+      "a": "ID 属性と、prompts、responses、toolArguments、toolOutput、policyDetail の 5 クラスは、すべて既定でオフです。"
+    },
+    {
+      "q": "どのクライアントで細かい収集制御が使えますか。",
+      "a": "Copilot CLI、GitHub Copilot アプリ、Agent Host を使う VS Code セッションで利用できます。"
+    },
+    {
+      "q": "ユーザーがローカルで設定を変えたらどうなりますか。",
+      "a": "管理設定に明示した値は、ローカル設定、SDK 設定、環境変数より優先されます。"
+    },
+    {
+      "q": "従来の captureContent はどうなりますか。",
+      "a": "5 つのコンテンツ クラスの略式設定として引き続き使えますが、ID 属性の収集は有効になりません。"
+    }
+  ],
   "references": {
     "source": {
       "title": "Client telemetry user attribution and configurable capture - The GitHub Blog",
