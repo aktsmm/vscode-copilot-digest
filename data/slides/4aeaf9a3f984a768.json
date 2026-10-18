@@ -1,0 +1,79 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "4aeaf9a3f984a768",
+  "title": {
+    "ja": "VS Code 1.139: リモート ホスト上の Dev Container でエージェント セッションを実行",
+    "subtitleJa": "Dev Container セッションがローカル フォルダーから SSH・Tunnel・WSL 上のプロジェクトに拡張",
+    "original": "Visual Studio Code 1.139: Run agent sessions in Dev Containers on remote hosts"
+  },
+  "date": "2026-10-18",
+  "topic": "VS Code",
+  "status": "update",
+  "audience": {
+    "who": "SSH・Tunnel・WSL 上のプロジェクトでエージェントを使う VS Code ユーザー",
+    "change": "リモート プロジェクトでも Dev Container 内でエージェントにビルドとテストを実行させられる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "試すなら chat.agentHost.devContainer.enabled を有効にし、Agents ウィンドウで Dev Container を選ぶ"
+  },
+  "panels": [
+    {
+      "id": "how-to",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "設定 chat.agentHost.devContainer.enabled を有効にする",
+        "Agents ウィンドウのフォルダー メニューで「Use Dev Container」を選ぶ",
+        "対象はローカル フォルダーに加え、SSH・Tunnel・WSL ホスト上のプロジェクト"
+      ]
+    },
+    {
+      "id": "prerequisites",
+      "heading": "前提と制限",
+      "priority": "core",
+      "items": [
+        "リモート フォルダーに、対応する Dev Container 構成が必要",
+        "リモート ホストで Docker が利用できる必要がある",
+        "段階的に展開中のため、設定が既定で有効でない場合がある。手動で有効化して試せる"
+      ]
+    },
+    {
+      "id": "benefit",
+      "heading": "得られること",
+      "priority": "detail",
+      "items": [
+        "手元の PC にもリモート ホストにも、ツールチェーンを重複して用意せずに済む"
+      ]
+    }
+  ],
+  "glossary": [{"term":"Agent Host Protocol (AHP)","type":"term","oneLine":"エージェント ハーネスを専用プロセスで動かすためのプロトコル。複数の VS Code ウィンドウから同じセッションに接続できる。"}],
+  "qa": [
+    {
+      "q": "どのリモート環境で使えますか？",
+      "a": "SSH、Tunnel、WSL ホスト上のプロジェクトです。これまでのローカル フォルダーに加えて、Dev Container セッションがリモート ホストにも拡張されました。"
+    },
+    {
+      "q": "どうやって有効にしますか？",
+      "a": "設定 chat.agentHost.devContainer.enabled を有効にし、Agents ウィンドウのフォルダー メニューで「Use Dev Container」を選びます。"
+    },
+    {
+      "q": "利用の前提条件は何ですか？",
+      "a": "リモート フォルダーに対応する Dev Container 構成があること、そしてリモート ホストで Docker が利用できることです。"
+    },
+    {
+      "q": "設定が既定で有効になっていません。",
+      "a": "Dev Container セッションは段階的に展開中のため、既定では有効になっていない場合があります。設定を手動で有効にすれば、すぐに試せます。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.139",
+      "url": "https://code.visualstudio.com/updates/v1_139"
+    }
+  },
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_139"
+  ]
+}
