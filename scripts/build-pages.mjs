@@ -777,8 +777,8 @@ function renderSourceBadge(event, text) {
   return `<span class="pill source-badge source-badge--${escapeHtml(group)}"><span class="source-badge-mark">${escapeHtml(meta.short)}</span><span>${escapeHtml(meta.label)}</span></span>`;
 }
 
-function renderBadges(event, locale, text) {
-  return `<div class="badge-row">${renderSourceBadge(event, text)}${event.isFutureDated ? `<span class="pill pill-warning">${escapeHtml(text.futureBadge)}</span>` : ""}${buildHighlightTags(
+function renderBadges(event, locale, text, lead = "") {
+  return `<div class="badge-row">${lead}${renderSourceBadge(event, text)}${event.isFutureDated ? `<span class="pill pill-warning">${escapeHtml(text.futureBadge)}</span>` : ""}${buildHighlightTags(
     event,
     locale,
   )
@@ -1075,10 +1075,10 @@ function renderEventCard(event, locale, text, options = {}) {
 
   const slideId = options.pick ? slideIdFor(event) : null;
   const pickAttrs = options.pick ? ` data-card-date="${escapeHtml(String(event.digestDate ?? ""))}"${slideId ? ` data-slide-id="${escapeHtml(slideId)}"` : ""}` : "";
-  const pickBox = slideId ? `<label class="card-pick" title="${escapeHtml(locale === "ja" ? "ダウンロード（JSON / PDF / PPTX）の対象に含める" : "Include in the JSON / PDF / PPTX download")}"><input type="checkbox" data-card-pick value="${escapeHtml(slideId)}" checked><span>${escapeHtml(locale === "ja" ? "スライドあり・保存対象" : "Slide · include in download")}</span></label>` : "";
+  const pickLabel = locale === "ja" ? "スライドあり・ダウンロード（JSON / PDF / PPTX）の対象" : "Has a slide · include in the JSON / PDF / PPTX download";
+  const pickBox = slideId ? `<label class="card-pick" title="${escapeHtml(pickLabel)}"><input type="checkbox" data-card-pick value="${escapeHtml(slideId)}" aria-label="${escapeHtml(pickLabel)}" checked></label>` : "";
   return `<article class="${cardClass}"${pickAttrs} data-filter-card data-source-group="${escapeHtml(group)}" data-topic="${escapeHtml(topic)}" data-importance="${escapeHtml(importance)}" data-sort-date="${escapeHtml(String(sortDateValue(event)))}" data-sort-score="${escapeHtml(String(rankEvent(event)))}">
-    ${pickBox}
-    ${renderBadges(event, locale, text)}
+    ${renderBadges(event, locale, text, pickBox)}
     <h3${anchorId ? ` id="${escapeHtml(anchorId)}"` : ""}><a href="${escapeHtml(event.resources?.source?.url ?? event.url)}"${linkAttrs}${linkLabel}>${escapeHtml(titleText)}${isExternal ? ' <span class="ext-icon" aria-hidden="true">&#8599;</span>' : ""}</a></h3>
     ${rawTitle ? `<p class="original-title">${escapeHtml(text.originalTitleLabel)}: ${escapeHtml(rawTitle)}</p>` : ""}
     ${options.compact ? `<div class="meta-row"><span>${escapeHtml(formatDate(event.publishedAt, locale))}</span><span class="source-name-list">${escapeHtml((event.sourceNames ?? [event.sourceName]).join(" / "))}</span></div>` : `${renderDateMeta(event, locale, text)}
@@ -3223,7 +3223,9 @@ body { background: var(--bg); font-size: 15.5px; line-height: 1.6; }
 .update-card .source-meta { display: none; }
 .update-card .meta-row { display: flex; gap: 4px 16px; flex-wrap: wrap; font-size: 0.82rem; }
 .update-card .resource-links ul { display: flex; flex-wrap: wrap; gap: 4px 16px; padding: 0; margin: 4px 0 0; list-style: none; }
-.card-pick { display: inline-flex; align-items: center; gap: 6px; justify-self: start; font-size: 0.82rem; color: var(--accent-strong); background: var(--accent-soft); border-radius: 999px; padding: 2px 10px; cursor: pointer; }
+.card-pick { display: inline-flex; align-items: center; cursor: pointer; }
+.card-pick input { margin: 0; width: 16px; height: 16px; accent-color: var(--accent-strong); cursor: pointer; }
+.badge-row { align-items: center; }
 .mini-highlight.dl-out { display: none; }
 .mini-highlight.dl-unpicked { opacity: 0.55; }
 /* item numbers: hidden cards do not count, so filtering renumbers the list */
