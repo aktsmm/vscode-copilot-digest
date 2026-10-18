@@ -1,0 +1,83 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "65ae952e51f42f8a",
+  "title": {
+    "ja": "VS Code 1.139: 認証セッションにアクセス トークンの有効期間を追加（提案 API）",
+    "subtitleJa": "AuthenticationSession に任意の expiresAfter を追加し、トークンの残り有効期間を取得できる",
+    "original": "Visual Studio Code 1.139: Access token lifetime on authentication sessions"
+  },
+  "date": "2026-10-18",
+  "topic": "VS Code",
+  "status": "update",
+  "audience": {
+    "who": "認証トークンを独自のリフレッシュ処理を持つ SDK に渡す VS Code 拡張機能の開発者",
+    "change": "提案 API authSessionExpiration で、セッションのトークンの残り有効期間(ミリ秒)を expiresAfter で取得できる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "必要な拡張機能は提案 API を試し、フィードバックを API 提案の issue に送る"
+  },
+  "panels": [
+    {
+      "id": "what-changes",
+      "heading": "変わること",
+      "priority": "core",
+      "items": [
+        "従来は AuthenticationSession にトークンの有効期間の情報がなく、期限切れ間近かどうか区別できなかった",
+        "authSessionExpiration 提案が、任意の readonly expiresAfter?: number を追加する",
+        "値はセッション返却時点の残り有効期間(ミリ秒)で、絶対的な期限時刻ではない"
+      ]
+    },
+    {
+      "id": "limits",
+      "heading": "前提と制限",
+      "priority": "core",
+      "items": [
+        "提案 API のため、利用には提案 API の使い方に沿った開発が必要",
+        "トークンの期限が不明な場合、認証プロバイダーは値を未定義のままにする",
+        "組み込みの Microsoft アカウント プロバイダーはこの値を提供する"
+      ]
+    },
+    {
+      "id": "detail",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "拡張機能ホストとクライアントは別のマシンで動くことがあり、時計がずれうるため、絶対時刻にしていない",
+        "キャッシュ済みセッションを返すプロバイダーは、呼び出しごとに値を再計算する"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "expiresAfter", "type": "feature", "oneLine": "セッション返却時点でのアクセス トークンの残り有効期間(ミリ秒)。" },
+    { "term": "提案 API", "type": "term", "oneLine": "正式化前に試せる API。フィードバックを API 提案の issue に送る。" }
+  ],
+  "qa": [
+    {
+      "q": "expiresAfter は何を表す値ですか。",
+      "a": "セッションが返された時点でのアクセス トークンの残り有効期間(ミリ秒)です。絶対的な期限のタイムスタンプではありません。"
+    },
+    {
+      "q": "なぜ絶対時刻ではないのですか。",
+      "a": "拡張機能ホストがクライアントとは別のマシンで動くことがあり、2 つの時計がずれる場合があるためです。"
+    },
+    {
+      "q": "期限が分からないトークンではどうなりますか。",
+      "a": "認証プロバイダーはトークンの期限が不明な場合、値を未定義のままにします。"
+    },
+    {
+      "q": "どの認証プロバイダーが値を返しますか。",
+      "a": "組み込みの Microsoft アカウント プロバイダーがこの値を提供します。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.139 - Access token lifetime on authentication sessions",
+      "url": "https://code.visualstudio.com/updates/v1_139#_access-token-lifetime-on-authentication-sessions"
+    }
+  },
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_139"
+  ]
+}
