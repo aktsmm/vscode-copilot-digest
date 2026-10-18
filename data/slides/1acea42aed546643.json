@@ -1,0 +1,82 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "1acea42aed546643",
+  "title": {
+    "ja": "VS Code 1.138、エージェント ホストでの Codex サポートを拡張",
+    "subtitleJa": "Copilot か ChatGPT のサブスクリプションで Codex を使い、セッションを引き継げる",
+    "original": "Expanded Codex support in the agent host"
+  },
+  "date": "2026-10-18",
+  "topic": "VS Code",
+  "status": "update",
+  "audience": {
+    "who": "VS Code のエージェント ホストで Codex を使う開発者",
+    "change": "Copilot / ChatGPT のどちらのモデルでも Codex を使え、同じセッションを ChatGPT アプリと VS Code 間で移せる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "使うには chat.agentHost.codexAgent.enabled などの設定を確認する"
+  },
+  "panels": [
+    {
+      "id": "plans",
+      "heading": "使える場所とプラン",
+      "priority": "core",
+      "items": [
+        "GitHub Copilot または ChatGPT のサブスクリプションで Codex を使える",
+        "両方にサインインすると、モデル ピッカーで会話を保ったまま Copilot と ChatGPT のモデルを切り替えられる",
+        "Copilot 未サインインで ChatGPT のみ使う場合は chat.agentHost.allowSignedOutWhenUsable も有効にする"
+      ]
+    },
+    {
+      "id": "usage",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "同じ Codex セッションを ChatGPT アプリと VS Code の間で移して続けられる",
+        "ChatGPT アプリが computer use 用に設定済みなら、VS Code の Codex がその設定でデスクトップ アプリを操作できる",
+        "Codex は組み込み・拡張機能・MCP を含む VS Code の全ツールを使える"
+      ]
+    },
+    {
+      "id": "notes",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "関連設定は chat.agentHost.codexAgent.enabled と chat.editor.codex.preferAgentHost",
+        "画像生成ツールを直接使えるのは ChatGPT のモデルのとき"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "agent host", "type": "feature", "oneLine": "VS Code でエージェント セッションを動かす実行基盤。" }
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.138 - Expanded Codex support in the agent host",
+      "url": "https://code.visualstudio.com/updates/v1_138#_expanded-codex-support-in-the-agent-host"
+    }
+  },
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_138"
+  ],
+  "qa": [
+    {
+      "q": "Codex はどのサブスクリプションで使えますか。",
+      "a": "GitHub Copilot または ChatGPT のサブスクリプションで使えます。両方にサインインすれば、モデル ピッカーで会話を失わずにモデルを切り替えられます。"
+    },
+    {
+      "q": "Copilot にサインインしていなくても使えますか。",
+      "a": "ChatGPT のサブスクリプションだけで Codex を使う場合は、chat.agentHost.allowSignedOutWhenUsable も有効にする必要があります。"
+    },
+    {
+      "q": "Codex は VS Code のどのツールを使えますか。",
+      "a": "組み込み、拡張機能、MCP を含む VS Code が提供するツールをすべて使えます。ChatGPT のモデルでは画像生成ツールも直接使えます。"
+    },
+    {
+      "q": "ChatGPT アプリとの連携はできますか。",
+      "a": "同じ Codex セッションを ChatGPT アプリと VS Code の間で移せます。computer use が設定済みの ChatGPT アプリがあれば、その設定を再利用してデスクトップ アプリを操作できます。"
+    }
+  ]
+}
