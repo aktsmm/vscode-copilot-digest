@@ -1,0 +1,75 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "6f06d9482fbf2825",
+  "title": {
+    "ja": "VS Code 1.140: Dev Container の起動を高速化",
+    "subtitleJa": "新しいコンテナーで VS Code Server と CLI のダウンロード キャッシュを再利用し、セットアップ時間を短縮",
+    "original": "Faster Dev Container startup"
+  },
+  "date": "2026-10-18",
+  "topic": "VS Code",
+  "status": "update",
+  "audience": {
+    "who": "Agents ウィンドウで Dev Container セッションを使う VS Code ユーザー",
+    "change": "新しいコンテナーがキャッシュ済みの VS Code Server と CLI を再利用し、セットアップ時間と重複ダウンロードが減る",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "no",
+    "summary": "特別な対応は不要。Dev Container セッションを使うなら設定 chat.agentHost.devContainer.enabled を確認する"
+  },
+  "panels": [
+    {
+      "id": "what-changes",
+      "heading": "変わること",
+      "priority": "core",
+      "items": [
+        "新しいコンテナーが、キャッシュ済みの VS Code Server と CLI のダウンロードを再利用できる",
+        "セットアップ時間が短くなり、プロジェクトをまたいだ繰り返しのダウンロードが減る"
+      ]
+    },
+    {
+      "id": "prerequisites",
+      "heading": "前提と制限",
+      "priority": "core",
+      "items": [
+        "関連設定は chat.agentHost.devContainer.enabled（Agents ウィンドウのみ）",
+        "Dev Container セッションでは、エージェントがプロジェクトのツールと依存関係を隔離環境で使う"
+      ]
+    },
+    {
+      "id": "related",
+      "heading": "あわせて知る",
+      "priority": "detail",
+      "items": [
+        "同リリースでは、Dev Container を使うセッションがすべて 5 分間非アクティブだとコンテナーが停止し、作業再開時に自動で再起動する"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "Dev Container", "type": "feature", "oneLine": "プロジェクトのツールと依存関係を隔離環境で使うためのコンテナー。" }
+  ],
+  "qa": [
+    {
+      "q": "どの設定が関係しますか?",
+      "a": "リリース ノートでは chat.agentHost.devContainer.enabled が示されており、Agents ウィンドウのみの設定です。"
+    },
+    {
+      "q": "何が速くなるのですか?",
+      "a": "新しいコンテナーが、キャッシュ済みの VS Code Server と CLI のダウンロードを再利用でき、セットアップ時間とプロジェクトをまたいだ重複ダウンロードが減ります。"
+    },
+    {
+      "q": "Dev Container セッションとは何ですか?",
+      "a": "エージェントがプロジェクトのツールと依存関係を隔離された環境で使えるようにするセッションです。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.140",
+      "url": "https://code.visualstudio.com/updates/v1_140#_faster-dev-container-startup"
+    }
+  },
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_140"
+  ]
+}
