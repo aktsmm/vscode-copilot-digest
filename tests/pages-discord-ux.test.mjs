@@ -477,6 +477,10 @@ for (const [file, label] of [["about.html", "追跡中の更新"], ["en/about.ht
 }
 assert.ok(indexHtml.includes('href="./about.html"'), "the header must link to the About page");
 
+// Dark mode: the theme is applied before paint, every page has the toggle and the dark variables exist.
+assert.ok(indexHtml.includes("data-theme-toggle") && indexHtml.includes(`setAttribute("data-theme"`), "pages must carry the theme init script and the toggle");
+assert.ok(readSiteFile("assets/styles.css").includes(`html[data-theme="dark"]`), "the stylesheet must define the dark theme");
+
 console.log("pages-discord-ux.test.mjs: OK");
 
 function parseDryRunPayload(stdout) {
