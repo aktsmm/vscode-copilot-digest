@@ -1,0 +1,67 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "52f098336c27d801",
+  "title": {
+    "ja": "Agents ウィンドウに、画面を詰めて表示するコンパクト レイアウト密度",
+    "subtitleJa": "タイトル バーが低くなり、ワークベンチの隙間とペイン間隔が減って、より多くの内容を表示できる",
+    "original": "Visual Studio Code 1.141: Compact layout density"
+  },
+  "date": "2026-10-07",
+  "topic": "VS Code",
+  "status": "update",
+  "audience": {
+    "who": "VS Code の Agents ウィンドウで、1 画面に多くの内容を表示したい開発者",
+    "change": "Compact 密度で、タイトル バーが短くなり、ワークベンチ間の隙間とペイン間隔が減る",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "表示を詰めたい場合は、window.density.layout か View > Layout Density で Compact を選ぶ"
+  },
+  "panels": [
+    {
+      "id": "how-to",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "ユーザー レベルの設定 window.density.layout に従う。この設定はエディター ウィンドウにも適用される",
+        "Agents ウィンドウだけ別の密度にするには、Agents ウィンドウを開いて View > Layout Density で選ぶ",
+        "Compact 密度では、タイトル バーが短くなり、ワークベンチ各部の隙間がなくなり、ペイン間隔が狭くなる"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "Agents ウィンドウだけに設定しても、エディター ウィンドウの密度は変わらない"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "Agents ウィンドウ", "type": "feature", "oneLine": "VS Code 1.141 の更新情報で、セッションを並べて扱う画面として説明されているウィンドウ。" }
+  ],
+  "qa": [
+    {
+      "q": "Compact 密度では何が変わりますか？",
+      "a": "タイトル バーが短くなり、ワークベンチ各部の間の隙間がなくなり、ペイン間隔が狭くなります。Agents ウィンドウでより多くの内容を表示できます。"
+    },
+    {
+      "q": "どの設定で切り替えますか？",
+      "a": "既定ではユーザー レベルの window.density.layout 設定に従います。この設定はエディター ウィンドウにも適用されます。"
+    },
+    {
+      "q": "Agents ウィンドウだけ密度を変えられますか？",
+      "a": "できます。Agents ウィンドウを開いて View > Layout Density で選びます。エディター ウィンドウの密度は変わりません。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.141",
+      "url": "https://code.visualstudio.com/updates/v1_141#_compact-layout-density"
+    }
+  },
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_141"
+  ]
+}
