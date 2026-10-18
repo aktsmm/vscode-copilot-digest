@@ -1,15 +1,10 @@
 {
   "date": "2026-10-18",
-  "generatedAt": "2026-10-18T01:14:10.298Z",
+  "generatedAt": "2026-10-18T01:21:04.997Z",
   "latestRun": {
-    "generatedAt": "2026-10-18T01:14:10.298Z",
-    "newEventsCount": 4,
-    "newEventIds": [
-      "vscode-release-notes-1-138:section:356a8fa31222b03bba7f847cbe600b3ff4a7fb7b4b4b3e04abd8489823180909",
-      "vscode-release-notes-1-138:section:d0a8a22f20773ed9ed2332faed98b9ecde7931d2e6ebc526c56d46ea4be42a8e",
-      "vscode-release-notes-1-138:section:9d0eb3906c3f849344a4908064a5aedf04edb174048b77c70c4066f9a7d6bd26",
-      "vscode-release-notes-1-138:section:634f1b00010d46f9d07cdfb12dbbaf95243fa42e79b02d8a8142db430324d8d7"
-    ],
+    "generatedAt": "2026-10-18T01:21:04.997Z",
+    "newEventsCount": 0,
+    "newEventIds": [],
     "errorCount": 0,
     "skippedLowInformationEvents": []
   },
