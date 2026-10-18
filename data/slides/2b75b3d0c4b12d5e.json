@@ -1,0 +1,70 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "2b75b3d0c4b12d5e",
+  "title": {
+    "ja": "VS Code 1.141: Agents ウィンドウでセッションをグリッド配置",
+    "subtitleJa": "複数のエージェント セッションを、分割とリサイズで並べて比較・監視できる",
+    "original": "Visual Studio Code 1.141: Arrange sessions in a grid"
+  },
+  "date": "2026-10-07",
+  "topic": "VS Code",
+  "status": "update",
+  "audience": {
+    "who": "VS Code の Agents ウィンドウで複数のエージェント セッションを扱う開発者",
+    "change": "2 次元のセッション グリッドで、セッションを水平・垂直に分割して並べ、ペインをリサイズできる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "複数セッションを並行して使うなら、VS Code 1.141 で Agents ウィンドウのグリッドを試す"
+  },
+  "panels": [
+    {
+      "id": "usage",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "Agents ウィンドウで、セッションをドラッグして水平・垂直の分割に配置する",
+        "エディター ウィンドウと同様に、ペインをリサイズできる",
+        "集中したいときはセッションを最大化し、グリッドに戻って作業を続ける"
+      ]
+    },
+    {
+      "id": "use-cases",
+      "heading": "使える場面",
+      "priority": "core",
+      "items": [
+        "結果を並べて比較する",
+        "長時間タスクを監視する",
+        "関連する会話をまたいで、セッションを切り替えずに作業する"
+      ]
+    }
+  ],
+  "suggestions": [
+    "同じ課題を別のセッションで試し、結果を横並びで見比べる"
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.141",
+      "url": "https://code.visualstudio.com/updates/v1_141#_arrange-sessions-in-a-grid"
+    },
+    "documents": []
+  },
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_141#_arrange-sessions-in-a-grid"
+  ],
+  "qa": [
+    {
+      "q": "グリッドはどこで使えますか？",
+      "a": "記事では Agents ウィンドウの 2 次元セッション グリッドとして説明されています。エディター ウィンドウと同様に、セッションをドラッグして水平・垂直に分割できます。"
+    },
+    {
+      "q": "何ができるようになりましたか？",
+      "a": "セッションを水平または垂直の分割に並べ、ペインをリサイズできます。結果の比較や長時間タスクの監視に使えます。"
+    },
+    {
+      "q": "1 つのセッションに集中したいときは？",
+      "a": "セッションを最大化して集中し、必要なときにグリッドへ戻って、複数の会話をまたいだ作業を続けられます。"
+    }
+  ]
+}
