@@ -335,7 +335,7 @@ function discoverVsCodeReleaseNoteSources(indexSource, html) {
 
   const sortedReleases = [...releaseLinks.entries()]
     .sort((left, right) => compareVersionStrings(right[0], left[0]))
-    .slice(0, 4);
+    .slice(0, 5);
 
   return sortedReleases.map(([version, url]) => ({
     id: `vscode-release-notes-${version.replace(/\./g, "-")}`,
@@ -347,12 +347,14 @@ function discoverVsCodeReleaseNoteSources(indexSource, html) {
     maxDiffLines: 24,
     emitOnInitialSnapshot: true,
     eventTitleMode: "heading",
-    trackSections: version === currentStableVersion,
+    trackSections: true,
   }));
 }
 
 function parseReleaseDateFromText(text) {
-  const match = text.match(/Release date:\s*([A-Za-z]+ \d{1,2}, \d{4})/i);
+  const match = text.match(
+    /(?:Release date:|Released)\s*([A-Za-z]+ \d{1,2}, \d{4})/i,
+  );
   if (!match) {
     return null;
   }
@@ -362,6 +364,9 @@ function parseReleaseDateFromText(text) {
 }
 
 function isRelevantVsCodeReleaseSection(section) {
+  if (/^(?:downloads for|thank you)/i.test(section.parentHeading)) {
+    return false;
+  }
   const text =
     `${section.parentHeading} ${section.title} ${section.summary}`.toLowerCase();
   return /chat|copilot|agent|semantic|workspace search|#codebase|troubleshoot|session|mcp|claude|tool approval|approval|prompt|debug|github pull requests|extension api|extensions?/i.test(
@@ -424,7 +429,7 @@ function extractVsCodeReleaseSections(source, html) {
       .filter(
         (section) => section.summary && isRelevantVsCodeReleaseSection(section),
       )
-      .slice(0, 4),
+      .slice(0, 8),
   };
 }
 

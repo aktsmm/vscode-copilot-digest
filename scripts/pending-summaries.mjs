@@ -12,6 +12,8 @@ const option = (name, fallback) => {
   return index >= 0 ? args[index + 1] : fallback;
 };
 const normalizeUrl = (url) => String(url ?? "").replace(/\?[^#]*/, "").replace(/\/+(?=#|$)/, "");
+// Page changes and release-note sections have their own card even when the page already has a slide.
+const ownPage = (item) => item.sourceKind === "html_snapshot_change" || item.sourceKind === "vscode_release_note_section";
 
 export function selectNeedingSummary(items, { slideIds, slideUrls, written, months = 3, limit = 30, ids = null, skip = [], today = new Date() }) {
   const cutoff = retentionStart(months, today);
@@ -19,13 +21,13 @@ export function selectNeedingSummary(items, { slideIds, slideUrls, written, mont
     .filter((item) => item.sourceKind !== "html_snapshot_change" || item.changes?.length > 0)
     .filter((item) => !AGENT_UNREACHABLE.test(item.resources?.source?.url ?? item.urls?.source ?? ""))
     .filter((item) => !slideIds.has(item.id) && !written.has(item.id) && !skip.includes(item.id))
-    .filter((item) => item.sourceKind === "html_snapshot_change" || !slideUrls.has(normalizeUrl(item.resources?.source?.url ?? item.urls?.source)))
+    .filter((item) => ownPage(item) || !slideUrls.has(normalizeUrl(item.resources?.source?.url ?? item.urls?.source)))
     .filter((item) => (ids ? ids.includes(item.id) : item.digestDate >= cutoff))
     .sort((a, b) => a.digestDate.localeCompare(b.digestDate) || b.importance.score - a.importance.score || a.id.localeCompare(b.id))
     // The same article can arrive from two feeds on different days; one entry covers it (the earliest item).
     .filter((item, index, all) => {
       const url = normalizeUrl(item.resources?.source?.url ?? item.urls?.source);
-      return item.sourceKind === "html_snapshot_change" || !url || all.findIndex((o) => o.sourceKind !== "html_snapshot_change" && normalizeUrl(o.resources?.source?.url ?? o.urls?.source) === url) === index;
+      return ownPage(item) || !url || all.findIndex((o) => !ownPage(o) && normalizeUrl(o.resources?.source?.url ?? o.urls?.source) === url) === index;
     })
     .sort((a, b) => b.digestDate.localeCompare(a.digestDate) || b.importance.score - a.importance.score || a.id.localeCompare(b.id))
     .slice(0, limit);
