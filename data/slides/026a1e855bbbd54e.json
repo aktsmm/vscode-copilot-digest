@@ -69,5 +69,27 @@
     "https://docs.github.com/en/copilot/concepts/copilot-surfaces/copilot-cli",
     "https://docs.github.com/en/copilot/concepts/copilot-surfaces/copilot-on-github",
     "https://docs.github.com/en/copilot/concepts/copilot-surfaces/copilot-in-ides"
+  ],
+  "qa": [
+    {
+      "q": "コンピューターの使用はどこで使えますか?",
+      "a": "GitHub Copilot CLIと、macOS・Windowsの GitHub Copilot app で利用できます。パブリックプレビューで、内容は変更される可能性があります。"
+    },
+    {
+      "q": "既定で有効ですか?",
+      "a": "いいえ。既定では無効で、エージェントがツールを使う前に有効にする必要があります。利用可否は、セッションを実行するCopilotの画面のツール権限設定に従います。"
+    },
+    {
+      "q": "Copilotは何を操作できますか?",
+      "a": "アクセス可能なアプリの内容や画面の読み取り、コントロールのクリック、テキスト入力・編集、キー押下、スクロール、ドラッグ、アプリ間の移動ができます。"
+    },
+    {
+      "q": "許可の保存や取り消しはどうなりますか?",
+      "a": "「常に許可」はローカルに保存され、同じPC上のCLIとアプリの両方に適用されます。アプリで一覧を確認し削除できます。拒否ルールは自動承認や保存済み承認より優先されます。"
+    },
+    {
+      "q": "どんな作業に向いていますか?",
+      "a": "API・CLI・MCPを持たないレガシーやGUI専用ソフトでの作業に向きます。API等で直接実行できる場合は、そちらの方が構造化された情報と予測可能な結果を得られます。"
+    }
   ]
 }
