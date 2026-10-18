@@ -1,0 +1,42 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "0ea73c7bc1c2a13b",
+  "title": {
+    "ja": "VS Code 1.142 のチャットで、使用中のハーネス名がタイトルに表示",
+    "subtitleJa": "チャット タイトルに Copilot や Codex などのハーネス名が出て、ピッカーを開かずに判別できる",
+    "original": "Visual Studio Code 1.142: Quickly identify the active harness"
+  },
+  "date": "2026-10-18",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "VS Code のチャットで複数のハーネスを使い分けている開発者",
+    "change": "チャット タイトルにアクティブなハーネス名（Copilot、Codex など）が表示される",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "no",
+    "summary": "VS Code 1.142 に更新すれば、追加の設定なしでタイトルから確認できる"
+  },
+  "panels": [
+    {
+      "id": "what-changed",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "チャット タイトルに、アクティブなハーネス名（Copilot、Codex など）が表示される",
+        "ハーネス ピッカーを開かずに、使用中のハーネスを判別できる",
+        "セッション一覧でホバーしなくても確認できる"
+      ]
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.142",
+      "url": "https://code.visualstudio.com/updates/v1_142#_quickly-identify-the-active-harness"
+    }
+  },
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_142"
+  ]
+}
