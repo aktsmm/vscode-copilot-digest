@@ -1,0 +1,88 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "523bd208f5533805",
+  "title": {
+    "ja": "VS Code 1.141: ネストされたセッションごとに未読と最終更新を追跡",
+    "subtitleJa": "Agents ウィンドウで、会話ごとの未読状態と最終更新時刻が見える",
+    "original": "Visual Studio Code 1.141: Track activity across nested sessions"
+  },
+  "date": "2026-10-18",
+  "topic": "VS Code",
+  "status": "update",
+  "audience": {
+    "who": "Agents ウィンドウで関連作業を複数の会話に分けて進める VS Code ユーザー",
+    "change": "ネストされたセッションごとに未読状態と最終更新時刻が表示され、開かずに動きを把握できる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "info",
+    "summary": "Agents ウィンドウでネストされたセッションを使うなら、未読と更新時刻を目安に確認する"
+  },
+  "panels": [
+    {
+      "id": "how-it-works",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "Agents ウィンドウで、各ネストされたセッションに未読状態と最終更新時刻が表示される",
+        "ネストされたセッションを開くと、その会話だけが既読になる",
+        "セッション ツリー全体の未読を消すには、メイン セッションを右クリックして「Mark as Read」を選ぶ"
+      ]
+    },
+    {
+      "id": "behavior",
+      "heading": "前提と制限",
+      "priority": "core",
+      "items": [
+        "未読のネストされたセッションがあっても、メイン セッションは未読にならない",
+        "最終更新時刻は、その会話の動きだけを反映する（メインや他のセッションは含まない）",
+        "既読状態と最終更新時刻は、ウィンドウの再読み込みや VS Code の再起動後も保持される"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "「Mark as Read」の対象はそのセッション ツリーのみで、無関係なセッションには影響しない"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "ネストされたセッション", "type": "feature", "oneLine": "関連する作業を別々の会話に分けて進めるための仕組み。" }
+  ],
+  "qa": [
+    {
+      "q": "未読と最終更新時刻はどこに表示されますか？",
+      "a": "Agents ウィンドウで、各ネストされたセッションに未読状態と最終更新時刻が表示されます。会話を開かなくても、最近の動きや注意が必要な会話を見つけられます。"
+    },
+    {
+      "q": "ネストされたセッションが未読だと、メインも未読になりますか？",
+      "a": "なりません。未読のネストされたセッションがあっても、メイン セッションは未読として表示されません。状態は会話ごとに独立して追跡されます。"
+    },
+    {
+      "q": "まとめて既読にするにはどうしますか？",
+      "a": "メイン セッションを右クリックして「Mark as Read」を選ぶと、そのセッション ツリー全体の未読が消えます。無関係なセッションは影響を受けません。"
+    },
+    {
+      "q": "再起動すると既読状態は消えますか？",
+      "a": "消えません。既読状態と最終更新時刻は、ウィンドウの再読み込みや VS Code の再起動後も保持されます。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.141 - Track activity across nested sessions",
+      "url": "https://code.visualstudio.com/updates/v1_141#_track-activity-across-nested-sessions"
+    },
+    "documents": [
+      {
+        "title": "Manage agent sessions in VS Code",
+        "url": "https://code.visualstudio.com/docs/agents/run/sessions/manage-sessions#_run-multiple-chats-in-a-session"
+      }
+    ]
+  },
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_141#_track-activity-across-nested-sessions",
+    "https://code.visualstudio.com/docs/agents/run/sessions/manage-sessions#_run-multiple-chats-in-a-session"
+  ]
+}
