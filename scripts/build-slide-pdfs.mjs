@@ -55,6 +55,24 @@ export async function launchBrowser() {
   return null;
 }
 
+// Slides are listed newest-first by the day they were posted, but many can share a day (backfills). The free sample is
+// the one whose source was published most recently; ties keep the list order.
+export function sampleOrder(slides, publishedById = new Map()) {
+  return slides.map((slide, index) => index).sort((a, b) =>
+    String(publishedById.get(slides[b].id) ?? slides[b].date).localeCompare(String(publishedById.get(slides[a].id) ?? slides[a].date)) || a - b);
+}
+
+async function readPublishedDates() {
+  const map = new Map();
+  const dir = path.join(siteDir, "api", "v1", "months");
+  for (const name of (await fs.readdir(dir).catch(() => [])).filter((n) => n.endsWith(".json"))) {
+    try {
+      for (const item of JSON.parse(await fs.readFile(path.join(dir, name), "utf8")).items ?? []) if (item.id && item.publishedDate) map.set(item.id, item.publishedDate);
+    } catch { /* the API files are checked by their own tests */ }
+  }
+  return map;
+}
+
 async function main() {
   const since = retentionStart(retentionMonths);
   const slides = await readSlides(since);
@@ -86,7 +104,8 @@ async function main() {
   try {
     await fs.mkdir(path.join(siteDir, "pdf"), { recursive: true });
     const page = await browser.newPage({ viewport: { width: 1280, height: 720 } });
-    for (const [index, slide] of slides.entries()) {
+    for (const index of sampleOrder(slides, await readPublishedDates())) {
+      const slide = slides[index];
       try {
         const fontSize = await fitFontSize(page, slide);
         if (fontSize === null) throw new Error("content overflows at the smallest font size");
