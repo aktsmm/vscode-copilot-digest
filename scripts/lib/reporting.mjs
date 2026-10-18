@@ -48,11 +48,16 @@ export function cardPointsFor(event) {
   return slideSummaryFor(event)?.points ?? [];
 }
 
+// Page changes and release-note features are matched by their own id only: their URL is shared with other updates.
+function hasOwnPage(event) {
+  return event.kind === "html_snapshot_change" || event.kind === "vscode_release_note_section";
+}
+
 // The slide that covers this update (by its own id, or by the article it cites), or null.
 export function slideIdFor(event) {
   const id = createHash("sha256").update(eventKey(event)).digest("hex").slice(0, 16);
   if (slideSummaries.has(id)) return id;
-  if (event.kind === "html_snapshot_change") return null;
+  if (hasOwnPage(event)) return null;
   return slideSummariesByUrl.get(normalizeSourceUrl(event.url))?.slideId ?? null;
 }
 
@@ -61,7 +66,7 @@ function slideSummaryFor(event) {
   const id = createHash("sha256").update(eventKey(event)).digest("hex").slice(0, 16);
   const byId = slideSummaries.get(id);
   if (byId) return byId;
-  const byUrl = event.kind === "html_snapshot_change" ? null : slideSummariesByUrl.get(normalizeSourceUrl(event.url));
+  const byUrl = hasOwnPage(event) ? null : slideSummariesByUrl.get(normalizeSourceUrl(event.url));
   return byUrl ?? writtenSummaries.get(id) ?? null;
 }
 
@@ -3233,7 +3238,7 @@ export function clusterReaderEvents(events) {
   const clusters = new Map();
 
   for (const event of (events ?? []).filter(isReaderEvent)) {
-    const key = event.url || eventKey(event);
+    const key = event.kind === "vscode_release_note_section" ? eventKey(event) : event.url || eventKey(event);
     const existing = clusters.get(key);
     if (!existing) {
       clusters.set(key, { ...event, relatedEventCount: 1 });

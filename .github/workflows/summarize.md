@@ -98,6 +98,7 @@ For each update, open the `source` article itself with `node scripts/fetch-text.
 - `points`: 2 to 4 items of 8 to 90 characters each, concrete facts a reader can use directly (plans and environments, setting and command names, steps, prerequisites and limits, retirement dates, migration targets).
 - Do not write empty sentences that end in 「〜を確認できる」「〜を把握できる」「〜を解説している」. Do not use boilerplate such as 「原文の抜粋」「公開内容を追跡し」「確認したい更新です」, URLs, or internal-memo words (未確認, 要確認, 推定). Never reuse the same wording across updates.
 - A `page-change` update is a watched page's diff. The added lines in `changes` are the evidence; read the part of the page they belong to and write only the changed content (never "the page changed").
+- A release-note feature item has a `source` URL with a `#fragment` and a title such as "Visual Studio Code 1.138: <feature>": summarize only that feature's section of the release notes (and the documents it links to), not the whole release.
 - If you could not read an update's source, skip it and name its id and the reason in the pull request body. Do not stop the whole batch for one unreadable item.
 
 ## Finish

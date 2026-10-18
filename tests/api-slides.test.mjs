@@ -118,4 +118,15 @@ const siteApi = path.join(process.cwd(), "site", "api", "v1", "index.json");
 if (await fs.stat(siteApi).then(() => true, () => false)) {
   assert.equal(JSON.parse(await fs.readFile(siteApi, "utf8")).apiVersion, "v1");
 }
+// A release-note feature never inherits the slide of another feature (or of the release) that shares its page URL.
+{
+  const { slideIdFor, clusterReaderEvents } = await import("../scripts/lib/reporting.mjs");
+  const section = (title) => ({
+    eventId: `s:${title}`, sourceId: "vscode-release-notes-1-138", sourceName: "VS Code Release Notes 1.138", kind: "vscode_release_note_section",
+    publishedAt: "2026-09-16T00:00:00Z", title: `Visual Studio Code 1.138: ${title}`, url: "https://code.visualstudio.com/updates/v1_138",
+    summary: "Settings: chat.example.enabled lets you try the new behavior in the Agents window.", sectionHeading: "Agents", sectionTitle: title, score: 4,
+  });
+  assert.equal(slideIdFor(section("A feature that has no slide of its own")), null);
+  assert.equal(clusterReaderEvents([section("Feature one"), section("Feature two")]).length, 2);
+}
 console.log("api-slides tests passed");

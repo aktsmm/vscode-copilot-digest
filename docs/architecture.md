@@ -59,7 +59,7 @@
 
 - `feed_entry`: RSS / Atom から見つけた新着
 - `html_snapshot_change`: 単一 URL のスナップショット差分
-- `vscode_release_note_section`: 対象リリースの機能見出し単位の新着・変更
+- `vscode_release_note_section`: 直近 5 リリース（最大 8 見出し/リリース）の機能見出し単位の新着。1 機能が 1 件の更新（スライド・要約）になり、リンクは見出し（`#fragment`）まで指す
 
 イベントは最終的に `reporting.mjs` で dedupe と分類をかけ、GitHub Copilot、VS Code、GitHub Platform、周辺ニュースへ再編成して表示に使います。
 

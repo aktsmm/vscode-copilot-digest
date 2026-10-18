@@ -60,7 +60,8 @@ GitHub Copilot と VS Code 周辺の更新を毎日収集し、日次イベン�
 - GitHub Blog / GitHub Copilot
 - VS Code feed
 - VS Code Updates
-- VS Code Release Notes 1.109
+- VS Code Release Notes（直近 5 リリース。機能見出しごとに 1 件の更新として扱う）
+- VS Code Docs / agents（新規ページの検知と、automations などの主要ページの変更）
 - GitHub Copilot What's New
 - Publickey
 
