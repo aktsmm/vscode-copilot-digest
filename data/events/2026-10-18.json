@@ -1,31 +1,14 @@
 {
   "date": "2026-10-18",
-  "generatedAt": "2026-10-18T01:07:58.053Z",
+  "generatedAt": "2026-10-18T01:14:10.298Z",
   "latestRun": {
-    "generatedAt": "2026-10-18T01:07:58.053Z",
-    "newEventsCount": 21,
+    "generatedAt": "2026-10-18T01:14:10.298Z",
+    "newEventsCount": 4,
     "newEventIds": [
-      "vscode-release-notes-1-142:section:fa89f77a6bc53b37e15e86d96a68ff7188a164246017e58d15598a5f4a36a488",
-      "vscode-release-notes-1-142:section:bb12c2f4f808a5663ca6a96d2547555a2f7d97486edb73b13b37242480ea56a9",
-      "vscode-release-notes-1-142:section:536179e57fd59722662511fe5268f7ddab18ba9160b25b1fb75977bd3a81be89",
-      "vscode-release-notes-1-142:section:d0309584035901386c0608ed1933f809a96b9c33e1a6314528239d7bdfe449ca",
-      "vscode-release-notes-1-141:section:523f862cb4f6c40cc9722e1a4fc3b4e2be64673d86c5f6b0e1efaaa9c80b3a63",
-      "vscode-release-notes-1-141:section:1c625dc6acb56c756f6957a05a23a35d98e44de216d8739642585b33c75b169a",
-      "vscode-release-notes-1-141:section:39e1f1b175d9236575bf8e15045db16c90a719563f49b873cb1bac40f8bd761f",
-      "vscode-release-notes-1-141:section:880d5dabf543131d536fbffc137b5b7ae69b1055358501c50cbc7982cc298a84",
-      "vscode-release-notes-1-140:section:235731e1b5e8abeadf8051e33e3e8154e0706d53cfa4418a0b455647e92f2c5d",
-      "vscode-release-notes-1-140:section:28344e429554a0b8bfc6a3a54030772b4f7ef2ecf094b2835f410d6c73f66801",
-      "vscode-release-notes-1-140:section:ca6b618f37a675343accedf2dec9c1408906645a4aea3f579591a2413b40b41c",
-      "vscode-release-notes-1-140:section:0ba7fd8b111740397f041cbf76c69d5f9a331270493e5bf5d0b7b4bc9c972791",
-      "vscode-release-notes-1-139:section:2fb5de13ba57e44afac6934fa8ae507e92a510f2271b1e9b4515822d0db3ed60",
-      "vscode-release-notes-1-139:section:4a5dc8e3aaac3a4e5ccc22292505d31006bfa2f22481b38954badb4d8f18a0a0",
-      "vscode-release-notes-1-139:section:bbf6d9d300254e9519158cc27af26ea3404da9696dfd083b75d05ada25e98c11",
-      "vscode-release-notes-1-139:section:d00c78c2060f11d5c4dad73ccff5178da4e0ab871a73fe05e22689a05c144bd6",
-      "vscode-release-notes-1-139:section:f978a5fca1601c8fe2899362f1b5d41ff3f9336b20c2bf61cda416d61f16a955",
-      "vscode-release-notes-1-138:section:4e8a3bc5d8dc2c61c461de29370818e29cc7736ec2cef464a4692b8c7ce5f2f7",
-      "vscode-release-notes-1-138:section:a989fd689293db4467daf18a56292215fb3c77897753ed3adbd7b5543aed64b5",
-      "vscode-release-notes-1-138:section:52fa144730a5b419de718f13468280fd94f02c96aa88571c3d0f30ba24fd41bf",
-      "vscode-release-notes-1-138:section:b292d50d76274d6a461fb9ac7723b32377921441ce04946ffe29b57315306cac"
+      "vscode-release-notes-1-138:section:356a8fa31222b03bba7f847cbe600b3ff4a7fb7b4b4b3e04abd8489823180909",
+      "vscode-release-notes-1-138:section:d0a8a22f20773ed9ed2332faed98b9ecde7931d2e6ebc526c56d46ea4be42a8e",
+      "vscode-release-notes-1-138:section:9d0eb3906c3f849344a4908064a5aedf04edb174048b77c70c4066f9a7d6bd26",
+      "vscode-release-notes-1-138:section:634f1b00010d46f9d07cdfb12dbbaf95243fa42e79b02d8a8142db430324d8d7"
     ],
     "errorCount": 0,
     "skippedLowInformationEvents": []
@@ -428,6 +411,82 @@
       ],
       "sectionHeading": "Agents",
       "sectionTitle": "See which sessions need attention (Preview)",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-138:section:356a8fa31222b03bba7f847cbe600b3ff4a7fb7b4b4b3e04abd8489823180909",
+      "sourceId": "vscode-release-notes-1-138",
+      "sourceName": "VS Code Release Notes 1.138",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-10-18T01:14:10.293Z",
+      "publishedAt": "2026-09-16T00:00:00.000Z",
+      "title": "Visual Studio Code 1.138: Automations are now enabled by default and can be shared",
+      "url": "https://code.visualstudio.com/updates/v1_138",
+      "summary": "Settings: \n \n \n chat.automations.enabled\n \n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders\n \n (Agents window only) Automations are now enabled by default, making it easier to streamline repetitive tasks. You can also export and import automations to share them across different environments or with your team. Learn more about Automations in the VS Code docs.",
+      "categories": [
+        "release",
+        "section",
+        "Agents"
+      ],
+      "sectionHeading": "Agents",
+      "sectionTitle": "Automations are now enabled by default and can be shared",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-138:section:d0a8a22f20773ed9ed2332faed98b9ecde7931d2e6ebc526c56d46ea4be42a8e",
+      "sourceId": "vscode-release-notes-1-138",
+      "sourceName": "VS Code Release Notes 1.138",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-10-18T01:14:10.293Z",
+      "publishedAt": "2026-09-16T00:00:00.000Z",
+      "title": "Visual Studio Code 1.138: Run agent sessions in local Dev Containers",
+      "url": "https://code.visualstudio.com/updates/v1_138",
+      "summary": "Setting: \n \n \n chat.agentHost.devContainer.enabled\n \n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders\n \n (Agents window only) Keep agent work aligned with your project's toolchain by running a session inside a local folder's Dev Container. The agent uses the environment and dependencies configured for the project instead of those on your local machine. When the setting is enabled, local folders with a suppor...",
+      "categories": [
+        "release",
+        "section",
+        "Agents"
+      ],
+      "sectionHeading": "Agents",
+      "sectionTitle": "Run agent sessions in local Dev Containers",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-138:section:9d0eb3906c3f849344a4908064a5aedf04edb174048b77c70c4066f9a7d6bd26",
+      "sourceId": "vscode-release-notes-1-138",
+      "sourceName": "VS Code Release Notes 1.138",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-10-18T01:14:10.293Z",
+      "publishedAt": "2026-09-16T00:00:00.000Z",
+      "title": "Visual Studio Code 1.138: Expanded Codex support in the agent host",
+      "url": "https://code.visualstudio.com/updates/v1_138",
+      "summary": "Settings: \n \n \n chat.agentHost.codexAgent.enabled\n \n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders\n \n , \n \n \n chat.editor.codex.preferAgentHost\n \n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders This release expands Codex support in the agent host, so you can keep the same coding session while changing where and how you work. Choose your subscription: use Codex with a GitHub Copilot subscription or...",
+      "categories": [
+        "release",
+        "section",
+        "Agents"
+      ],
+      "sectionHeading": "Agents",
+      "sectionTitle": "Expanded Codex support in the agent host",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-138:section:634f1b00010d46f9d07cdfb12dbbaf95243fa42e79b02d8a8142db430324d8d7",
+      "sourceId": "vscode-release-notes-1-138",
+      "sourceName": "VS Code Release Notes 1.138",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-10-18T01:14:10.293Z",
+      "publishedAt": "2026-09-16T00:00:00.000Z",
+      "title": "Visual Studio Code 1.138: Continue Codex quick chats in a workspace",
+      "url": "https://code.visualstudio.com/updates/v1_138",
+      "summary": "Last release, we introduced continuing quick chats in a workspace for Copilot sessions. This release extends the same flow to Codex, so starting project-specific work no longer means abandoning a workspace-less Codex quick chat. Ask Codex to attach a local folder, then choose whether to use the folder directly or create an isolated worktree. After you confirm the change, the same chat and native Codex thread become...",
+      "categories": [
+        "release",
+        "section",
+        "Agents"
+      ],
+      "sectionHeading": "Agents",
+      "sectionTitle": "Continue Codex quick chats in a workspace",
       "score": 4
     }
   ],

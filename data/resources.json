@@ -23533,6 +23533,142 @@
         "Original article explicit links",
         "Feature-matched official documentation indexes"
       ]
+    },
+    "4570c6b734be8d88affc95bc5be88b2f871243eaa72eb8f357607f4999b0e383": {
+      "version": 6,
+      "checkedAt": "2026-10-18T01:14:10.832Z",
+      "inputUrl": "https://code.visualstudio.com/updates/v1_138",
+      "inputTitle": "Visual Studio Code 1.138: Automations are now enabled by default and can be shared",
+      "status": "verified",
+      "source": {
+        "url": "https://code.visualstudio.com/updates/v1_138#_automations-are-now-enabled-by-default-and-can-be-shared",
+        "status": "verified",
+        "reason": "Exact release heading: Automations are now enabled by default and can be shared",
+        "checkedAt": "2026-10-18T01:14:10.885Z",
+        "contentHash": "62ecfce17b6c75d0b11ba75e2480f53e2c951eec5f0d3f1b69596e94b5a21511"
+      },
+      "documents": [
+        {
+          "url": "https://code.visualstudio.com/docs/agents/run/automations",
+          "title": "Create and manage agent automations",
+          "language": "en",
+          "checkedAt": "2026-10-18T01:14:11.049Z",
+          "contentHash": "0e7c4ecf38a3d55bfd5a66d12d240971dcbc72d76f57a691143468eb09bfa5c9",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_138#_automations-are-now-enabled-by-default-and-can-be-shared",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "fc70da344824c049467278fa609c2e7125e226a1137b1d0273a3557012544156": {
+      "version": 6,
+      "checkedAt": "2026-10-18T01:14:11.110Z",
+      "inputUrl": "https://code.visualstudio.com/updates/v1_138",
+      "inputTitle": "Visual Studio Code 1.138: Run agent sessions in local Dev Containers",
+      "status": "verified",
+      "source": {
+        "url": "https://code.visualstudio.com/updates/v1_138#_run-agent-sessions-in-local-dev-containers",
+        "status": "verified",
+        "reason": "Exact release heading: Run agent sessions in local Dev Containers",
+        "checkedAt": "2026-10-18T01:14:10.885Z",
+        "contentHash": "62ecfce17b6c75d0b11ba75e2480f53e2c951eec5f0d3f1b69596e94b5a21511"
+      },
+      "documents": [
+        {
+          "url": "https://code.visualstudio.com/docs/agents/agents-tutorial",
+          "title": "Tutorial: Agentic coding in VS Code",
+          "language": "en",
+          "checkedAt": "2026-10-18T01:08:03.464Z",
+          "contentHash": "e4aefc29364b8c8beb76bb4181bf2c45ba8a1624cac28dbd782020f2a26aad1f",
+          "discoveryUrl": "https://code.visualstudio.com/docs",
+          "basis": "Matching feature terms in official documentation index",
+          "localization": "not_applicable",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "1a87ce00d7a8bc3353c5f6bcd803e8a72adf6d4c8c3e3998c9a3607b9594ccb1": {
+      "version": 6,
+      "checkedAt": "2026-10-18T01:14:11.128Z",
+      "inputUrl": "https://code.visualstudio.com/updates/v1_138",
+      "inputTitle": "Visual Studio Code 1.138: Expanded Codex support in the agent host",
+      "status": "verified",
+      "source": {
+        "url": "https://code.visualstudio.com/updates/v1_138#_expanded-codex-support-in-the-agent-host",
+        "status": "verified",
+        "reason": "Exact release heading: Expanded Codex support in the agent host",
+        "checkedAt": "2026-10-18T01:14:10.885Z",
+        "contentHash": "62ecfce17b6c75d0b11ba75e2480f53e2c951eec5f0d3f1b69596e94b5a21511"
+      },
+      "documents": [
+        {
+          "url": "https://code.visualstudio.com/docs/agents/concepts/tools",
+          "title": "Understand tools in AI agents",
+          "language": "en",
+          "checkedAt": "2026-10-18T01:14:12.719Z",
+          "contentHash": "f2a3e252adc8c868f5817452ba45960318e41a6f8a381f685ae683db1a55a2b6",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_138#_expanded-codex-support-in-the-agent-host",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "ea59ed5626148d0f13c14f009e055416e8f34b7dcab0b239618da2ff190e4df0": {
+      "version": 6,
+      "checkedAt": "2026-10-18T01:14:12.761Z",
+      "inputUrl": "https://code.visualstudio.com/updates/v1_138",
+      "inputTitle": "Visual Studio Code 1.138: Continue Codex quick chats in a workspace",
+      "status": "verified",
+      "source": {
+        "url": "https://code.visualstudio.com/updates/v1_138#_continue-codex-quick-chats-in-a-workspace",
+        "status": "verified",
+        "reason": "Exact release heading: Continue Codex quick chats in a workspace",
+        "checkedAt": "2026-10-18T01:14:10.885Z",
+        "contentHash": "62ecfce17b6c75d0b11ba75e2480f53e2c951eec5f0d3f1b69596e94b5a21511"
+      },
+      "documents": [
+        {
+          "url": "https://code.visualstudio.com/updates/v1_137#_continue-quick-chats-in-a-workspace",
+          "title": "Visual Studio Code 1.137",
+          "language": "en",
+          "checkedAt": "2026-10-18T01:14:14.562Z",
+          "contentHash": "c230920a6efc4e9595910a289d827fc763dc7423da6bbdcb35778f3db75907b5",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_138#_continue-codex-quick-chats-in-a-workspace",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "verified",
+          "kind": "release_notes",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
     }
   }
 }
