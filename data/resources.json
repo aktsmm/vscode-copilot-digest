@@ -22974,6 +22974,565 @@
         "Original article explicit links",
         "Feature-matched official documentation indexes"
       ]
+    },
+    "02b482fafba8f7fc0344392f49dd0600e0ef779ddba36c3ea358ebe5ab7fe398": {
+      "version": 6,
+      "checkedAt": "2026-10-18T01:07:58.611Z",
+      "inputUrl": "https://code.visualstudio.com/updates/v1_142",
+      "inputTitle": "Visual Studio Code 1.142: Customize the Agents window panel layout",
+      "status": "unconfirmed",
+      "source": {
+        "url": "https://code.visualstudio.com/updates/v1_142#_customize-the-agents-window-panel-layout",
+        "status": "verified",
+        "reason": "Exact release heading: Customize the Agents window panel layout",
+        "checkedAt": "2026-10-18T01:07:58.674Z",
+        "contentHash": "dbbeffec699e2768f16fe740bc644d423713b7691d83917bdec31cbfd86a4008"
+      },
+      "documents": [],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "bba229f17c3fcfe612597b3618da2f47943bf78ea2641e07a94dfeac15cec556": {
+      "version": 6,
+      "checkedAt": "2026-10-18T01:07:58.789Z",
+      "inputUrl": "https://code.visualstudio.com/updates/v1_142",
+      "inputTitle": "Visual Studio Code 1.142: Quickly identify the active harness",
+      "status": "unconfirmed",
+      "source": {
+        "url": "https://code.visualstudio.com/updates/v1_142#_quickly-identify-the-active-harness",
+        "status": "verified",
+        "reason": "Exact release heading: Quickly identify the active harness",
+        "checkedAt": "2026-10-18T01:07:58.674Z",
+        "contentHash": "dbbeffec699e2768f16fe740bc644d423713b7691d83917bdec31cbfd86a4008"
+      },
+      "documents": [],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "8e7f7668fd03151a5f43c4bc65e031db352c6597851214a105638b7f0e6a802f": {
+      "version": 6,
+      "checkedAt": "2026-10-18T01:07:58.801Z",
+      "inputUrl": "https://code.visualstudio.com/updates/v1_142",
+      "inputTitle": "Visual Studio Code 1.142: Stop background shells",
+      "status": "verified",
+      "source": {
+        "url": "https://code.visualstudio.com/updates/v1_142#_stop-background-shells",
+        "status": "verified",
+        "reason": "Exact release heading: Stop background shells",
+        "checkedAt": "2026-10-18T01:07:58.674Z",
+        "contentHash": "dbbeffec699e2768f16fe740bc644d423713b7691d83917bdec31cbfd86a4008"
+      },
+      "documents": [
+        {
+          "url": "https://code.visualstudio.com/updates/v1_141#_keep-track-of-background-shells",
+          "title": "Visual Studio Code 1.141",
+          "language": "en",
+          "checkedAt": "2026-10-14T18:07:17.084Z",
+          "contentHash": "7f3d5f2254401f40bd985fd594bc067389c86dc8b482036d47ae8b90611f111e",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_142#_stop-background-shells",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "verified",
+          "kind": "release_notes",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "4ea4e76c599472b7b9a5246c96cedb15fba41bde0da5ec551e717970aad4b465": {
+      "version": 6,
+      "checkedAt": "2026-10-18T01:07:58.815Z",
+      "inputUrl": "https://code.visualstudio.com/updates/v1_142",
+      "inputTitle": "Visual Studio Code 1.142: Stateful responses for BYOK custom endpoints",
+      "status": "verified",
+      "source": {
+        "url": "https://code.visualstudio.com/updates/v1_142#_stateful-responses-for-byok-custom-endpoints",
+        "status": "verified",
+        "reason": "Exact release heading: Stateful responses for BYOK custom endpoints",
+        "checkedAt": "2026-10-18T01:07:58.674Z",
+        "contentHash": "dbbeffec699e2768f16fe740bc644d423713b7691d83917bdec31cbfd86a4008"
+      },
+      "documents": [
+        {
+          "url": "https://code.visualstudio.com/docs/agent-customization/language-models",
+          "title": "AI language models in VS Code",
+          "language": "en",
+          "checkedAt": "2026-10-18T01:07:59.767Z",
+          "contentHash": "d76916646890db36b5cdab5dc1502cd1d4a689b21a2efa84edcf0cb286ac7a96",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_142#_stateful-responses-for-byok-custom-endpoints",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "Original anchor no longer exists; verified document body used: #stateful-responses-api-endpoints",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "e04c8fa28606547c3ec0343c2320008ac37e80b9450fcbd1ba9e8797f3a195a9": {
+      "version": 6,
+      "checkedAt": "2026-10-18T01:07:59.856Z",
+      "inputUrl": "https://code.visualstudio.com/updates/v1_141",
+      "inputTitle": "Visual Studio Code 1.141: Arrange sessions in a grid",
+      "status": "unconfirmed",
+      "source": {
+        "url": "https://code.visualstudio.com/updates/v1_141#_arrange-sessions-in-a-grid",
+        "status": "verified",
+        "reason": "Exact release heading: Arrange sessions in a grid",
+        "checkedAt": "2026-10-18T01:07:59.882Z",
+        "contentHash": "7f3d5f2254401f40bd985fd594bc067389c86dc8b482036d47ae8b90611f111e"
+      },
+      "documents": [],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "3b7673b8f600fbbaae0efc2fca76cd68d4511201ad7d7778ee77a626710b0879": {
+      "version": 6,
+      "checkedAt": "2026-10-18T01:07:59.940Z",
+      "inputUrl": "https://code.visualstudio.com/updates/v1_141",
+      "inputTitle": "Visual Studio Code 1.141: Compact layout density",
+      "status": "unconfirmed",
+      "source": {
+        "url": "https://code.visualstudio.com/updates/v1_141#_compact-layout-density",
+        "status": "verified",
+        "reason": "Exact release heading: Compact layout density",
+        "checkedAt": "2026-10-18T01:07:59.882Z",
+        "contentHash": "7f3d5f2254401f40bd985fd594bc067389c86dc8b482036d47ae8b90611f111e"
+      },
+      "documents": [],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "47c975956e5294216b2dc491dad8a2795e38a2bf695ff31d335650ddb7818c62": {
+      "version": 6,
+      "checkedAt": "2026-10-18T01:07:59.950Z",
+      "inputUrl": "https://code.visualstudio.com/updates/v1_141",
+      "inputTitle": "Visual Studio Code 1.141: Additional session-filtering options",
+      "status": "unconfirmed",
+      "source": {
+        "url": "https://code.visualstudio.com/updates/v1_141#_additional-session-filtering-options",
+        "status": "verified",
+        "reason": "Exact release heading: Additional session-filtering options",
+        "checkedAt": "2026-10-18T01:07:59.882Z",
+        "contentHash": "7f3d5f2254401f40bd985fd594bc067389c86dc8b482036d47ae8b90611f111e"
+      },
+      "documents": [],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "f8f0c63ed072bcc4b32897aa9c73a3afd91c0f278ef4ec7860bb6b9b3ba954d5": {
+      "version": 6,
+      "checkedAt": "2026-10-18T01:07:59.959Z",
+      "inputUrl": "https://code.visualstudio.com/updates/v1_141",
+      "inputTitle": "Visual Studio Code 1.141: Track activity across nested sessions",
+      "status": "verified",
+      "source": {
+        "url": "https://code.visualstudio.com/updates/v1_141#_track-activity-across-nested-sessions",
+        "status": "verified",
+        "reason": "Exact release heading: Track activity across nested sessions",
+        "checkedAt": "2026-10-18T01:07:59.882Z",
+        "contentHash": "7f3d5f2254401f40bd985fd594bc067389c86dc8b482036d47ae8b90611f111e"
+      },
+      "documents": [
+        {
+          "url": "https://code.visualstudio.com/docs/agents/run/sessions/manage-sessions#_run-multiple-chats-in-a-session",
+          "title": "Manage agent sessions in VS Code",
+          "language": "en",
+          "checkedAt": "2026-10-14T23:22:05.760Z",
+          "contentHash": "8b9007874d96c5aa6519569cf9bdd78adf467116dd6a70951469f2feb48e55dd",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_141#_track-activity-across-nested-sessions",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "verified",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "ffbba841c3a505fbdf24b2d5d846c4b957abf5625d2cf08d252c61e42a93bf40": {
+      "version": 6,
+      "checkedAt": "2026-10-18T01:07:59.974Z",
+      "inputUrl": "https://code.visualstudio.com/updates/v1_140",
+      "inputTitle": "Visual Studio Code 1.140: Automatic Dev Container cleanup",
+      "status": "unconfirmed",
+      "source": {
+        "url": "https://code.visualstudio.com/updates/v1_140#_automatic-dev-container-cleanup",
+        "status": "verified",
+        "reason": "Exact release heading: Automatic Dev Container cleanup",
+        "checkedAt": "2026-10-18T01:08:00.080Z",
+        "contentHash": "1249cf80cddea2ef00baa11faa3327424ea1f62045415ba1db957f16bee30fa3"
+      },
+      "documents": [],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "1fcd1847a281ac8a31c9c4d3b51f474ca0aa67d677ee2969cdeafa4a928162ed": {
+      "version": 6,
+      "checkedAt": "2026-10-18T01:08:00.124Z",
+      "inputUrl": "https://code.visualstudio.com/updates/v1_140",
+      "inputTitle": "Visual Studio Code 1.140: Faster Dev Container startup",
+      "status": "unconfirmed",
+      "source": {
+        "url": "https://code.visualstudio.com/updates/v1_140#_faster-dev-container-startup",
+        "status": "verified",
+        "reason": "Exact release heading: Faster Dev Container startup",
+        "checkedAt": "2026-10-18T01:08:00.080Z",
+        "contentHash": "1249cf80cddea2ef00baa11faa3327424ea1f62045415ba1db957f16bee30fa3"
+      },
+      "documents": [],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "b4992e910b79b96dc2bb6b4a110b8a018821fc05aec0239405bbebed7c0684ec": {
+      "version": 6,
+      "checkedAt": "2026-10-18T01:08:00.134Z",
+      "inputUrl": "https://code.visualstudio.com/updates/v1_140",
+      "inputTitle": "Visual Studio Code 1.140: Choose the session relationship and workspace for delegated work",
+      "status": "verified",
+      "source": {
+        "url": "https://code.visualstudio.com/updates/v1_140#_choose-the-session-relationship-and-workspace-for-delegated-work",
+        "status": "verified",
+        "reason": "Exact release heading: Choose the session relationship and workspace for delegated work",
+        "checkedAt": "2026-10-18T01:08:00.080Z",
+        "contentHash": "1249cf80cddea2ef00baa11faa3327424ea1f62045415ba1db957f16bee30fa3"
+      },
+      "documents": [
+        {
+          "url": "https://code.visualstudio.com/docs/agents/run/sessions/manage-sessions",
+          "title": "Manage agent sessions in VS Code",
+          "language": "en",
+          "checkedAt": "2026-10-14T23:22:05.760Z",
+          "contentHash": "8b9007874d96c5aa6519569cf9bdd78adf467116dd6a70951469f2feb48e55dd",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_140#_choose-the-session-relationship-and-workspace-for-delegated-work",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "Original anchor no longer exists; verified document body used: #_orchestrate-sessions-from-agent-host-sessions",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "6d08f9fbf7d421f910cc1494db5382b64276e89a84c88d6ae18e634a4af9cdd0": {
+      "version": 6,
+      "checkedAt": "2026-10-18T01:08:00.145Z",
+      "inputUrl": "https://code.visualstudio.com/updates/v1_140",
+      "inputTitle": "Visual Studio Code 1.140: Create workspace-less chats on remote agent hosts",
+      "status": "verified",
+      "source": {
+        "url": "https://code.visualstudio.com/updates/v1_140#_create-workspace-less-chats-on-remote-agent-hosts",
+        "status": "verified",
+        "reason": "Exact release heading: Create workspace-less chats on remote agent hosts",
+        "checkedAt": "2026-10-18T01:08:00.080Z",
+        "contentHash": "1249cf80cddea2ef00baa11faa3327424ea1f62045415ba1db957f16bee30fa3"
+      },
+      "documents": [
+        {
+          "url": "https://code.visualstudio.com/docs/agents/run/remote-agent-sessions",
+          "title": "Run and manage remote agent sessions",
+          "language": "en",
+          "checkedAt": "2026-10-18T01:08:00.288Z",
+          "contentHash": "823b07ac7ab87a6d561287414dde04a12e5e12b07f26a5a735427d1ef811df26",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_140#_create-workspace-less-chats-on-remote-agent-hosts",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "dbda68d555f124be36836399fec1efcfbaabf9e24fa864fb6491681e501ff81c": {
+      "version": 6,
+      "checkedAt": "2026-10-18T01:08:00.322Z",
+      "inputUrl": "https://code.visualstudio.com/updates/v1_139",
+      "inputTitle": "Visual Studio Code 1.139: Run agent sessions in Dev Containers on remote hosts",
+      "status": "verified",
+      "source": {
+        "url": "https://code.visualstudio.com/updates/v1_139#_run-agent-sessions-in-dev-containers-on-remote-hosts",
+        "status": "verified",
+        "reason": "Exact release heading: Run agent sessions in Dev Containers on remote hosts",
+        "checkedAt": "2026-10-18T01:08:00.470Z",
+        "contentHash": "00f34a4e802a7ba2a91a4a518013c8efb3a074e11cd7c4189bffafd5f2905e93"
+      },
+      "documents": [
+        {
+          "url": "https://docs.github.com/ja/copilot/concepts/agent-capabilities/agent-powered-workflows-and-operations/about-remote-control",
+          "title": "GitHub Copilot CLI セッションのリモート 制御",
+          "language": "ja",
+          "checkedAt": "2026-10-18T01:08:01.109Z",
+          "contentHash": "8dc09185143624de13110b3346ce918d581d16ec7469278d56368c3d5e6ad285",
+          "discoveryUrl": "https://docs.github.com/en/copilot/how-tos",
+          "basis": "Matching feature terms in official documentation index",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://code.visualstudio.com/docs/agents/agents-tutorial",
+          "title": "Tutorial: Agentic coding in VS Code",
+          "language": "en",
+          "checkedAt": "2026-10-18T01:08:03.464Z",
+          "contentHash": "e4aefc29364b8c8beb76bb4181bf2c45ba8a1624cac28dbd782020f2a26aad1f",
+          "discoveryUrl": "https://code.visualstudio.com/docs",
+          "basis": "Matching feature terms in official documentation index",
+          "localization": "not_applicable",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "af8198321d272ccc400fc46f1aa3b58de1a12c3fb61c97d9d785cb7787116f92": {
+      "version": 6,
+      "checkedAt": "2026-10-18T01:08:03.491Z",
+      "inputUrl": "https://code.visualstudio.com/updates/v1_139",
+      "inputTitle": "Visual Studio Code 1.139: Rename sessions and chats in place",
+      "status": "unconfirmed",
+      "source": {
+        "url": "https://code.visualstudio.com/updates/v1_139#_rename-sessions-and-chats-in-place",
+        "status": "verified",
+        "reason": "Exact release heading: Rename sessions and chats in place",
+        "checkedAt": "2026-10-18T01:08:00.470Z",
+        "contentHash": "00f34a4e802a7ba2a91a4a518013c8efb3a074e11cd7c4189bffafd5f2905e93"
+      },
+      "documents": [],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "ede20026ced468a3f0c3f8cfc98eff8bb702baa2d4176267de947f8418f74c8b": {
+      "version": 6,
+      "checkedAt": "2026-10-18T01:08:03.501Z",
+      "inputUrl": "https://code.visualstudio.com/updates/v1_139",
+      "inputTitle": "Visual Studio Code 1.139: Choose how chats appear in a session (Preview)",
+      "status": "verified",
+      "source": {
+        "url": "https://code.visualstudio.com/updates/v1_139#_choose-how-chats-appear-in-a-session-preview",
+        "status": "verified",
+        "reason": "Exact release heading: Choose how chats appear in a session (Preview)",
+        "checkedAt": "2026-10-18T01:08:00.470Z",
+        "contentHash": "00f34a4e802a7ba2a91a4a518013c8efb3a074e11cd7c4189bffafd5f2905e93"
+      },
+      "documents": [
+        {
+          "url": "https://code.visualstudio.com/docs/agents/run/sessions/manage-sessions#_run-multiple-chats-in-a-session",
+          "title": "Manage agent sessions in VS Code",
+          "language": "en",
+          "checkedAt": "2026-10-14T23:22:05.760Z",
+          "contentHash": "8b9007874d96c5aa6519569cf9bdd78adf467116dd6a70951469f2feb48e55dd",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_139#_choose-how-chats-appear-in-a-session-preview",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "verified",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "e775b12c1576c843f84eafd4c202db063695b2302a06379806af1718b1de622b": {
+      "version": 6,
+      "checkedAt": "2026-10-18T01:08:03.511Z",
+      "inputUrl": "https://code.visualstudio.com/updates/v1_139",
+      "inputTitle": "Visual Studio Code 1.139: Pet naming contest update (Experimental)",
+      "status": "verified",
+      "source": {
+        "url": "https://code.visualstudio.com/updates/v1_139#_pet-naming-contest-update-experimental",
+        "status": "verified",
+        "reason": "Exact release heading: Pet naming contest update (Experimental)",
+        "checkedAt": "2026-10-18T01:08:00.470Z",
+        "contentHash": "00f34a4e802a7ba2a91a4a518013c8efb3a074e11cd7c4189bffafd5f2905e93"
+      },
+      "documents": [
+        {
+          "url": "https://code.visualstudio.com/docs/agents/reference/chat-pet",
+          "title": "VS Code pet interactions and reactions",
+          "language": "en",
+          "checkedAt": "2026-10-18T01:08:05.125Z",
+          "contentHash": "e35b580a746d229345615545fceec8f484f6b9fe18279cd72f9a9a5361c95963",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_139#_pet-naming-contest-update-experimental",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "47b22f0cebd824774ccf800f165c5ab8a7e419f608288ed6643793fc4fc4f7a9": {
+      "version": 6,
+      "checkedAt": "2026-10-18T01:08:05.149Z",
+      "inputUrl": "https://code.visualstudio.com/updates/v1_139",
+      "inputTitle": "Visual Studio Code 1.139: Access token lifetime on authentication sessions",
+      "status": "unconfirmed",
+      "source": {
+        "url": "https://code.visualstudio.com/updates/v1_139#_access-token-lifetime-on-authentication-sessions",
+        "status": "verified",
+        "reason": "Exact release heading: Access token lifetime on authentication sessions",
+        "checkedAt": "2026-10-18T01:08:00.470Z",
+        "contentHash": "00f34a4e802a7ba2a91a4a518013c8efb3a074e11cd7c4189bffafd5f2905e93"
+      },
+      "documents": [],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "d05222bb150e7d5c026d27d5d57498bc85674888aec9c03a19020ea4d47e4510": {
+      "version": 6,
+      "checkedAt": "2026-10-18T01:08:05.160Z",
+      "inputUrl": "https://code.visualstudio.com/updates/v1_138",
+      "inputTitle": "Visual Studio Code 1.138: On-demand agent SDK downloads",
+      "status": "unconfirmed",
+      "source": {
+        "url": "https://code.visualstudio.com/updates/v1_138#_on-demand-agent-sdk-downloads",
+        "status": "verified",
+        "reason": "Exact release heading: On-demand agent SDK downloads",
+        "checkedAt": "2026-10-18T01:08:05.182Z",
+        "contentHash": "62ecfce17b6c75d0b11ba75e2480f53e2c951eec5f0d3f1b69596e94b5a21511"
+      },
+      "documents": [],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "71a89afb55b354dd405101542f5c0607bfa646bbf4374310d818f8ce5e883d54": {
+      "version": 6,
+      "checkedAt": "2026-10-18T01:08:05.211Z",
+      "inputUrl": "https://code.visualstudio.com/updates/v1_138",
+      "inputTitle": "Visual Studio Code 1.138: Create pull requests from agent sessions",
+      "status": "verified",
+      "source": {
+        "url": "https://code.visualstudio.com/updates/v1_138#_create-pull-requests-from-agent-sessions",
+        "status": "verified",
+        "reason": "Exact release heading: Create pull requests from agent sessions",
+        "checkedAt": "2026-10-18T01:08:05.182Z",
+        "contentHash": "62ecfce17b6c75d0b11ba75e2480f53e2c951eec5f0d3f1b69596e94b5a21511"
+      },
+      "documents": [
+        {
+          "url": "https://code.visualstudio.com/docs/agents/concepts/agent-host",
+          "title": "Agent Host architecture",
+          "language": "en",
+          "checkedAt": "2026-10-14T23:22:05.186Z",
+          "contentHash": "e442bd916195cfc93f833abb0529f165b7167c5d6f40a01b5fceb7174fff0d4c",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_138#_create-pull-requests-from-agent-sessions",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "ad2977e506672bbc332ed492abfc74cd3e3943c7a5303a2d2d787dd60c3d8b0f": {
+      "version": 6,
+      "checkedAt": "2026-10-18T01:08:05.221Z",
+      "inputUrl": "https://code.visualstudio.com/updates/v1_138",
+      "inputTitle": "Visual Studio Code 1.138: Keep completed sessions organized (Preview)",
+      "status": "unconfirmed",
+      "source": {
+        "url": "https://code.visualstudio.com/updates/v1_138#_keep-completed-sessions-organized-preview",
+        "status": "verified",
+        "reason": "Exact release heading: Keep completed sessions organized (Preview)",
+        "checkedAt": "2026-10-18T01:08:05.182Z",
+        "contentHash": "62ecfce17b6c75d0b11ba75e2480f53e2c951eec5f0d3f1b69596e94b5a21511"
+      },
+      "documents": [],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "5c8431546715660e852fd405348ddf139911cb24da97802d79fb5c652a8a2b18": {
+      "version": 6,
+      "checkedAt": "2026-10-18T01:08:05.230Z",
+      "inputUrl": "https://code.visualstudio.com/updates/v1_138",
+      "inputTitle": "Visual Studio Code 1.138: See which sessions need attention (Preview)",
+      "status": "unconfirmed",
+      "source": {
+        "url": "https://code.visualstudio.com/updates/v1_138#_see-which-sessions-need-attention-preview",
+        "status": "verified",
+        "reason": "Exact release heading: See which sessions need attention (Preview)",
+        "checkedAt": "2026-10-18T01:08:05.182Z",
+        "contentHash": "62ecfce17b6c75d0b11ba75e2480f53e2c951eec5f0d3f1b69596e94b5a21511"
+      },
+      "documents": [],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
     }
   }
 }

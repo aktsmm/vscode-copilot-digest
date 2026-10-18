@@ -1,13 +1,435 @@
 {
   "date": "2026-10-18",
-  "generatedAt": "2026-10-18T00:57:07.306Z",
+  "generatedAt": "2026-10-18T01:07:58.053Z",
   "latestRun": {
-    "generatedAt": "2026-10-18T00:57:07.306Z",
-    "newEventsCount": 0,
-    "newEventIds": [],
+    "generatedAt": "2026-10-18T01:07:58.053Z",
+    "newEventsCount": 21,
+    "newEventIds": [
+      "vscode-release-notes-1-142:section:fa89f77a6bc53b37e15e86d96a68ff7188a164246017e58d15598a5f4a36a488",
+      "vscode-release-notes-1-142:section:bb12c2f4f808a5663ca6a96d2547555a2f7d97486edb73b13b37242480ea56a9",
+      "vscode-release-notes-1-142:section:536179e57fd59722662511fe5268f7ddab18ba9160b25b1fb75977bd3a81be89",
+      "vscode-release-notes-1-142:section:d0309584035901386c0608ed1933f809a96b9c33e1a6314528239d7bdfe449ca",
+      "vscode-release-notes-1-141:section:523f862cb4f6c40cc9722e1a4fc3b4e2be64673d86c5f6b0e1efaaa9c80b3a63",
+      "vscode-release-notes-1-141:section:1c625dc6acb56c756f6957a05a23a35d98e44de216d8739642585b33c75b169a",
+      "vscode-release-notes-1-141:section:39e1f1b175d9236575bf8e15045db16c90a719563f49b873cb1bac40f8bd761f",
+      "vscode-release-notes-1-141:section:880d5dabf543131d536fbffc137b5b7ae69b1055358501c50cbc7982cc298a84",
+      "vscode-release-notes-1-140:section:235731e1b5e8abeadf8051e33e3e8154e0706d53cfa4418a0b455647e92f2c5d",
+      "vscode-release-notes-1-140:section:28344e429554a0b8bfc6a3a54030772b4f7ef2ecf094b2835f410d6c73f66801",
+      "vscode-release-notes-1-140:section:ca6b618f37a675343accedf2dec9c1408906645a4aea3f579591a2413b40b41c",
+      "vscode-release-notes-1-140:section:0ba7fd8b111740397f041cbf76c69d5f9a331270493e5bf5d0b7b4bc9c972791",
+      "vscode-release-notes-1-139:section:2fb5de13ba57e44afac6934fa8ae507e92a510f2271b1e9b4515822d0db3ed60",
+      "vscode-release-notes-1-139:section:4a5dc8e3aaac3a4e5ccc22292505d31006bfa2f22481b38954badb4d8f18a0a0",
+      "vscode-release-notes-1-139:section:bbf6d9d300254e9519158cc27af26ea3404da9696dfd083b75d05ada25e98c11",
+      "vscode-release-notes-1-139:section:d00c78c2060f11d5c4dad73ccff5178da4e0ab871a73fe05e22689a05c144bd6",
+      "vscode-release-notes-1-139:section:f978a5fca1601c8fe2899362f1b5d41ff3f9336b20c2bf61cda416d61f16a955",
+      "vscode-release-notes-1-138:section:4e8a3bc5d8dc2c61c461de29370818e29cc7736ec2cef464a4692b8c7ce5f2f7",
+      "vscode-release-notes-1-138:section:a989fd689293db4467daf18a56292215fb3c77897753ed3adbd7b5543aed64b5",
+      "vscode-release-notes-1-138:section:52fa144730a5b419de718f13468280fd94f02c96aa88571c3d0f30ba24fd41bf",
+      "vscode-release-notes-1-138:section:b292d50d76274d6a461fb9ac7723b32377921441ce04946ffe29b57315306cac"
+    ],
     "errorCount": 0,
     "skippedLowInformationEvents": []
   },
-  "events": [],
+  "events": [
+    {
+      "eventId": "vscode-release-notes-1-142:section:fa89f77a6bc53b37e15e86d96a68ff7188a164246017e58d15598a5f4a36a488",
+      "sourceId": "vscode-release-notes-1-142",
+      "sourceName": "VS Code Release Notes 1.142",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-10-18T01:07:56.459Z",
+      "publishedAt": "2026-10-14T00:00:00.000Z",
+      "title": "Visual Studio Code 1.142: Customize the Agents window panel layout",
+      "url": "https://code.visualstudio.com/updates/v1_142",
+      "summary": "You can now choose how the bottom panel is aligned in the Agents window. Right-click a panel tab, select Align Panel, and choose one of the following layouts: Center aligns the panel beneath the chat area, leaving more room for the side pane. Center aligns the panel beneath the chat area, leaving more room for the side pane. Justify extends the panel across the full width of the window. Justify extends the panel acr...",
+      "categories": [
+        "release",
+        "section",
+        "Agents"
+      ],
+      "sectionHeading": "Agents",
+      "sectionTitle": "Customize the Agents window panel layout",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-142:section:bb12c2f4f808a5663ca6a96d2547555a2f7d97486edb73b13b37242480ea56a9",
+      "sourceId": "vscode-release-notes-1-142",
+      "sourceName": "VS Code Release Notes 1.142",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-10-18T01:07:56.459Z",
+      "publishedAt": "2026-10-14T00:00:00.000Z",
+      "title": "Visual Studio Code 1.142: Quickly identify the active harness",
+      "url": "https://code.visualstudio.com/updates/v1_142",
+      "summary": "Chat titles show the active harness name, such as Copilot or Codex, so you can identify it without opening the harness picker or hovering over the session list.",
+      "categories": [
+        "release",
+        "section",
+        "Chat"
+      ],
+      "sectionHeading": "Chat",
+      "sectionTitle": "Quickly identify the active harness",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-142:section:536179e57fd59722662511fe5268f7ddab18ba9160b25b1fb75977bd3a81be89",
+      "sourceId": "vscode-release-notes-1-142",
+      "sourceName": "VS Code Release Notes 1.142",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-10-18T01:07:56.459Z",
+      "publishedAt": "2026-10-14T00:00:00.000Z",
+      "title": "Visual Studio Code 1.142: Stop background shells",
+      "url": "https://code.visualstudio.com/updates/v1_142",
+      "summary": "In Copilot harness sessions, the background shells pill above the chat input lists the commands that the agent is still running in the background. When one of those commands is no longer useful, for example a test run that you want to restart or a command that runs longer than expected, you can stop it instead of waiting for it to finish. Select the Background Shells pill, select a shell to open its details, and the...",
+      "categories": [
+        "release",
+        "section",
+        "Chat"
+      ],
+      "sectionHeading": "Chat",
+      "sectionTitle": "Stop background shells",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-142:section:d0309584035901386c0608ed1933f809a96b9c33e1a6314528239d7bdfe449ca",
+      "sourceId": "vscode-release-notes-1-142",
+      "sourceName": "VS Code Release Notes 1.142",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-10-18T01:07:56.459Z",
+      "publishedAt": "2026-10-14T00:00:00.000Z",
+      "title": "Visual Studio Code 1.142: Stateful responses for BYOK custom endpoints",
+      "url": "https://code.visualstudio.com/updates/v1_142",
+      "summary": "If your bring-your-own-key (BYOK) model uses a stateless Responses API, set \"statefulResponses\": false on its model entry in chatLanguageModels.json to send full conversation history with each request. See Custom Endpoint configuration for details.",
+      "categories": [
+        "release",
+        "section",
+        "Chat"
+      ],
+      "sectionHeading": "Chat",
+      "sectionTitle": "Stateful responses for BYOK custom endpoints",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-141:section:523f862cb4f6c40cc9722e1a4fc3b4e2be64673d86c5f6b0e1efaaa9c80b3a63",
+      "sourceId": "vscode-release-notes-1-141",
+      "sourceName": "VS Code Release Notes 1.141",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-10-18T01:07:57.098Z",
+      "publishedAt": "2026-10-07T00:00:00.000Z",
+      "title": "Visual Studio Code 1.141: Arrange sessions in a grid",
+      "url": "https://code.visualstudio.com/updates/v1_141",
+      "summary": "Compare results, monitor long-running tasks, or work across related conversations without repeatedly switching between sessions. Like in the editor window, the two-dimensional session grid in the Agents window lets you drag sessions into horizontal or vertical splits and resize the panes. Maximize a session when you need to focus, then return to the grid to continue working across conversations.",
+      "categories": [
+        "release",
+        "section",
+        "Agent UX"
+      ],
+      "sectionHeading": "Agent UX",
+      "sectionTitle": "Arrange sessions in a grid",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-141:section:1c625dc6acb56c756f6957a05a23a35d98e44de216d8739642585b33c75b169a",
+      "sourceId": "vscode-release-notes-1-141",
+      "sourceName": "VS Code Release Notes 1.141",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-10-18T01:07:57.098Z",
+      "publishedAt": "2026-10-07T00:00:00.000Z",
+      "title": "Visual Studio Code 1.141: Compact layout density",
+      "url": "https://code.visualstudio.com/updates/v1_141",
+      "summary": "Setting: \n \n \n window.density.layout\n \n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders Fit more content in the Agents window with the Compact layout density. Compact density uses a shorter title bar, removes the gaps between workbench parts, and reduces pane spacing. By default, the Agents window follows the user-level \n \n \n window.density.layout\n \n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders...",
+      "categories": [
+        "release",
+        "section",
+        "Agent UX"
+      ],
+      "sectionHeading": "Agent UX",
+      "sectionTitle": "Compact layout density",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-141:section:39e1f1b175d9236575bf8e15045db16c90a719563f49b873cb1bac40f8bd761f",
+      "sourceId": "vscode-release-notes-1-141",
+      "sourceName": "VS Code Release Notes 1.141",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-10-18T01:07:57.098Z",
+      "publishedAt": "2026-10-07T00:00:00.000Z",
+      "title": "Visual Studio Code 1.141: Additional session-filtering options",
+      "url": "https://code.visualstudio.com/updates/v1_141",
+      "summary": "Focus your sessions list on the work you care about. Open Filter Sessions to filter independently by: Environment: Where the session runs, such as locally, in the cloud, or on a remote host. Harness: Which agent harness the session uses. Created In: Which application created the session, such as VS Code, Copilot CLI, or the Copilot app. The menu also brings together ordering, grouping, Show Done, and Created Externa...",
+      "categories": [
+        "release",
+        "section",
+        "Agent UX"
+      ],
+      "sectionHeading": "Agent UX",
+      "sectionTitle": "Additional session-filtering options",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-141:section:880d5dabf543131d536fbffc137b5b7ae69b1055358501c50cbc7982cc298a84",
+      "sourceId": "vscode-release-notes-1-141",
+      "sourceName": "VS Code Release Notes 1.141",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-10-18T01:07:57.098Z",
+      "publishedAt": "2026-10-07T00:00:00.000Z",
+      "title": "Visual Studio Code 1.141: Track activity across nested sessions",
+      "url": "https://code.visualstudio.com/updates/v1_141",
+      "summary": "Nested sessions let you split related work across separate conversations. In the Agents window, each nested session shows its unread status and last-modified time, helping you find recent activity and conversations that need your attention without opening them individually. Status is tracked independently for each conversation: Opening a nested session marks only that conversation as read. An unread nested session d...",
+      "categories": [
+        "release",
+        "section",
+        "Agent UX"
+      ],
+      "sectionHeading": "Agent UX",
+      "sectionTitle": "Track activity across nested sessions",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-140:section:235731e1b5e8abeadf8051e33e3e8154e0706d53cfa4418a0b455647e92f2c5d",
+      "sourceId": "vscode-release-notes-1-140",
+      "sourceName": "VS Code Release Notes 1.140",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-10-18T01:07:57.466Z",
+      "publishedAt": "2026-09-30T00:00:00.000Z",
+      "title": "Visual Studio Code 1.140: Automatic Dev Container cleanup",
+      "url": "https://code.visualstudio.com/updates/v1_140",
+      "summary": "Settings: \n \n \n chat.agentHost.devContainer.enabled\n \n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders\n \n , \n \n \n chat.agentHost.devContainer.idleTimeout\n \n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders\n \n (Agents window only) When all sessions that use a Dev Container are inactive for five minutes, VS Code stops the container. It restarts automatically when you continue working. Marking as done or...",
+      "categories": [
+        "release",
+        "section",
+        "Agents"
+      ],
+      "sectionHeading": "Agents",
+      "sectionTitle": "Automatic Dev Container cleanup",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-140:section:28344e429554a0b8bfc6a3a54030772b4f7ef2ecf094b2835f410d6c73f66801",
+      "sourceId": "vscode-release-notes-1-140",
+      "sourceName": "VS Code Release Notes 1.140",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-10-18T01:07:57.466Z",
+      "publishedAt": "2026-09-30T00:00:00.000Z",
+      "title": "Visual Studio Code 1.140: Faster Dev Container startup",
+      "url": "https://code.visualstudio.com/updates/v1_140",
+      "summary": "Setting: \n \n \n chat.agentHost.devContainer.enabled\n \n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders\n \n (Agents window only) Dev Container sessions let agents use your project's tools and dependencies in an isolated environment. Fresh containers can reuse cached VS Code Server and CLI downloads, which reduces setup time and repeated downloads across projects.",
+      "categories": [
+        "release",
+        "section",
+        "Agents"
+      ],
+      "sectionHeading": "Agents",
+      "sectionTitle": "Faster Dev Container startup",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-140:section:ca6b618f37a675343accedf2dec9c1408906645a4aea3f579591a2413b40b41c",
+      "sourceId": "vscode-release-notes-1-140",
+      "sourceName": "VS Code Release Notes 1.140",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-10-18T01:07:57.466Z",
+      "publishedAt": "2026-09-30T00:00:00.000Z",
+      "title": "Visual Studio Code 1.140: Choose the session relationship and workspace for delegated work",
+      "url": "https://code.visualstudio.com/updates/v1_140",
+      "summary": "Make two separate decisions when you ask an agent to delegate work. First, decide whether the task belongs to the current session's plan or deliverable. Then specify a workspace only if the task needs repository files, and request a worktree only if file changes need isolation. Related work can still use a different workspace. Create a peer chat for related work: Ask the agent to create a peer chat in the current se...",
+      "categories": [
+        "release",
+        "section",
+        "Agents"
+      ],
+      "sectionHeading": "Agents",
+      "sectionTitle": "Choose the session relationship and workspace for delegated work",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-140:section:0ba7fd8b111740397f041cbf76c69d5f9a331270493e5bf5d0b7b4bc9c972791",
+      "sourceId": "vscode-release-notes-1-140",
+      "sourceName": "VS Code Release Notes 1.140",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-10-18T01:07:57.466Z",
+      "publishedAt": "2026-09-30T00:00:00.000Z",
+      "title": "Visual Studio Code 1.140: Create workspace-less chats on remote agent hosts",
+      "url": "https://code.visualstudio.com/updates/v1_140",
+      "summary": "Setting: \n \n \n sessions.chat.unifiedWorkspacePicker.enabled\n \n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders\n \n (Agents window only) Agent Host lets you run and track agent sessions on a remote host. This release adds support for running workspace-less chats on a remote host. Select a connected host from the unified workspace picker without choosing a workspace. The Chat entry identifies the selected host,...",
+      "categories": [
+        "release",
+        "section",
+        "Agents"
+      ],
+      "sectionHeading": "Agents",
+      "sectionTitle": "Create workspace-less chats on remote agent hosts",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-139:section:2fb5de13ba57e44afac6934fa8ae507e92a510f2271b1e9b4515822d0db3ed60",
+      "sourceId": "vscode-release-notes-1-139",
+      "sourceName": "VS Code Release Notes 1.139",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-10-18T01:07:57.631Z",
+      "publishedAt": "2026-09-23T00:00:00.000Z",
+      "title": "Visual Studio Code 1.139: Run agent sessions in Dev Containers on remote hosts",
+      "url": "https://code.visualstudio.com/updates/v1_139",
+      "summary": "Setting: \n \n \n chat.agentHost.devContainer.enabled\n \n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders\n \n (Agents window only) Let agents build and test your remote project with the right tools and dependencies, without duplicating toolchain setup on your laptop or the remote host. This release extends Dev Container sessions from local folders to projects on SSH, Tunnel, and WSL hosts. To get started, enable...",
+      "categories": [
+        "release",
+        "section",
+        "Agents"
+      ],
+      "sectionHeading": "Agents",
+      "sectionTitle": "Run agent sessions in Dev Containers on remote hosts",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-139:section:4a5dc8e3aaac3a4e5ccc22292505d31006bfa2f22481b38954badb4d8f18a0a0",
+      "sourceId": "vscode-release-notes-1-139",
+      "sourceName": "VS Code Release Notes 1.139",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-10-18T01:07:57.631Z",
+      "publishedAt": "2026-09-23T00:00:00.000Z",
+      "title": "Visual Studio Code 1.139: Rename sessions and chats in place",
+      "url": "https://code.visualstudio.com/updates/v1_139",
+      "summary": "Rename a session or nested chat directly in the sessions list. Double-click its title, use the Rename context menu action, or focus the row and press F2 for a session or F2 for a nested chat. Inline validation prevents blank titles, and canceling restores the previous title.",
+      "categories": [
+        "release",
+        "section",
+        "Agents"
+      ],
+      "sectionHeading": "Agents",
+      "sectionTitle": "Rename sessions and chats in place",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-139:section:bbf6d9d300254e9519158cc27af26ea3404da9696dfd083b75d05ada25e98c11",
+      "sourceId": "vscode-release-notes-1-139",
+      "sourceName": "VS Code Release Notes 1.139",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-10-18T01:07:57.631Z",
+      "publishedAt": "2026-09-23T00:00:00.000Z",
+      "title": "Visual Studio Code 1.139: Choose how chats appear in a session (Preview)",
+      "url": "https://code.visualstudio.com/updates/v1_139",
+      "summary": "Setting: \n \n \n sessions.showChatTabs\n \n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders\n \n (Agents window only) An agent session can contain multiple chats, each representing a different conversation or context. When a session contains multiple chats, choose the presentation that best fits your workflow from the session header menu: Multiple shows each chat on its own tab. Single shows only the active chat a...",
+      "categories": [
+        "release",
+        "section",
+        "Agents"
+      ],
+      "sectionHeading": "Agents",
+      "sectionTitle": "Choose how chats appear in a session (Preview)",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-139:section:d00c78c2060f11d5c4dad73ccff5178da4e0ab871a73fe05e22689a05c144bd6",
+      "sourceId": "vscode-release-notes-1-139",
+      "sourceName": "VS Code Release Notes 1.139",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-10-18T01:07:57.631Z",
+      "publishedAt": "2026-09-23T00:00:00.000Z",
+      "title": "Visual Studio Code 1.139: Pet naming contest update (Experimental)",
+      "url": "https://code.visualstudio.com/updates/v1_139",
+      "summary": "Thank you to everyone who submitted a name for the VS Code pet. The naming contest closed on September 17, 2026, and we're reviewing the eligible entries. We'll announce the winner and the pet's new name soon. While you wait, enter /vscode-pet in chat to meet your companion and explore all its interactions and reactions.",
+      "categories": [
+        "release",
+        "section",
+        "Chat"
+      ],
+      "sectionHeading": "Chat",
+      "sectionTitle": "Pet naming contest update (Experimental)",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-139:section:f978a5fca1601c8fe2899362f1b5d41ff3f9336b20c2bf61cda416d61f16a955",
+      "sourceId": "vscode-release-notes-1-139",
+      "sourceName": "VS Code Release Notes 1.139",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-10-18T01:07:57.631Z",
+      "publishedAt": "2026-09-23T00:00:00.000Z",
+      "title": "Visual Studio Code 1.139: Access token lifetime on authentication sessions",
+      "url": "https://code.visualstudio.com/updates/v1_139",
+      "summary": "AuthenticationSession exposes an access token but no information about how long that token stays valid. An extension that passes a credential to an SDK with its own refresh callback cannot distinguish between a token that never expires and one that is about to expire. As a result, the extension either refreshes the credential unnecessarily or lets a long-running operation fail when the token expires. The authSession...",
+      "categories": [
+        "release",
+        "section",
+        "Proposed APIs"
+      ],
+      "sectionHeading": "Proposed APIs",
+      "sectionTitle": "Access token lifetime on authentication sessions",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-138:section:4e8a3bc5d8dc2c61c461de29370818e29cc7736ec2cef464a4692b8c7ce5f2f7",
+      "sourceId": "vscode-release-notes-1-138",
+      "sourceName": "VS Code Release Notes 1.138",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-10-18T01:07:58.051Z",
+      "publishedAt": "2026-09-16T00:00:00.000Z",
+      "title": "Visual Studio Code 1.138: On-demand agent SDK downloads",
+      "url": "https://code.visualstudio.com/updates/v1_138",
+      "summary": "The Claude and Codex agents in the Agents window rely on an SDK that is not shipped with VS Code and is downloaded when you first need it. Previously, the offer to download it appeared only as part of signed-out account setup, so if you were signed in it would download at first message. The offer now appears whenever the SDK is missing for transparency that a download is needed to continue. When models are already a...",
+      "categories": [
+        "release",
+        "section",
+        "Agents"
+      ],
+      "sectionHeading": "Agents",
+      "sectionTitle": "On-demand agent SDK downloads",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-138:section:a989fd689293db4467daf18a56292215fb3c77897753ed3adbd7b5543aed64b5",
+      "sourceId": "vscode-release-notes-1-138",
+      "sourceName": "VS Code Release Notes 1.138",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-10-18T01:07:58.051Z",
+      "publishedAt": "2026-09-16T00:00:00.000Z",
+      "title": "Visual Studio Code 1.138: Create pull requests from agent sessions",
+      "url": "https://code.visualstudio.com/updates/v1_138",
+      "summary": "Setting: \n \n \n chat.agentMerge.enabled\n \n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders\n \n (optional, for agent merge only) Create pull requests from Agent Host sessions in the Agents window using one form to review and edit generated titles and descriptions, choose draft status, and configure available merge options. Create the pull request directly or send the request to your agent, with your preferred o...",
+      "categories": [
+        "release",
+        "section",
+        "Agents"
+      ],
+      "sectionHeading": "Agents",
+      "sectionTitle": "Create pull requests from agent sessions",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-138:section:52fa144730a5b419de718f13468280fd94f02c96aa88571c3d0f30ba24fd41bf",
+      "sourceId": "vscode-release-notes-1-138",
+      "sourceName": "VS Code Release Notes 1.138",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-10-18T01:07:58.051Z",
+      "publishedAt": "2026-09-16T00:00:00.000Z",
+      "title": "Visual Studio Code 1.138: Keep completed sessions organized (Preview)",
+      "url": "https://code.visualstudio.com/updates/v1_138",
+      "summary": "Settings: \n \n \n chat.agentSessions.archiveNudge.enabled\n \n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders\n \n , \n \n \n chat.agentSessions.autoMarkAsDoneMergedSessionsAfterDays\n \n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders\n \n , \n \n \n chat.agentSessions.autoDeleteArchivedMergedSessionsAfterDays\n \n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders\n \n , \n \n \n sessions.markAsDoneConfetti...",
+      "categories": [
+        "release",
+        "section",
+        "Agents"
+      ],
+      "sectionHeading": "Agents",
+      "sectionTitle": "Keep completed sessions organized (Preview)",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-138:section:b292d50d76274d6a461fb9ac7723b32377921441ce04946ffe29b57315306cac",
+      "sourceId": "vscode-release-notes-1-138",
+      "sourceName": "VS Code Release Notes 1.138",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-10-18T01:07:58.051Z",
+      "publishedAt": "2026-09-16T00:00:00.000Z",
+      "title": "Visual Studio Code 1.138: See which sessions need attention (Preview)",
+      "url": "https://code.visualstudio.com/updates/v1_138",
+      "summary": "Setting: \n \n \n sessions.showApplicationBadge\n \n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders\n \n (Agents window only) See when agent sessions need your attention without switching back to VS Code, with a badge on the macOS dock, Linux launcher, or Windows taskbar. The badge highlights sessions with new results, requests for input, or pull request checks that need attention. Enable the preview setting above...",
+      "categories": [
+        "release",
+        "section",
+        "Agents"
+      ],
+      "sectionHeading": "Agents",
+      "sectionTitle": "See which sessions need attention (Preview)",
+      "score": 4
+    }
+  ],
   "errors": []
 }
