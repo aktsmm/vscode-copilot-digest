@@ -1,0 +1,93 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "69d325234758adf4",
+  "title": {
+    "ja": "VS Code 1.142: バックグラウンド シェルを個別に停止",
+    "subtitleJa": "Background Shells の詳細から Stop Shell で、そのコマンドだけを終了できる",
+    "original": "Stop background shells"
+  },
+  "date": "2026-10-18",
+  "topic": "VS Code",
+  "status": "update",
+  "audience": {
+    "who": "VS Code の Copilot ハーネス セッションで、エージェントにコマンドを実行させる開発者",
+    "change": "エージェントが実行中のバックグラウンド コマンドを、完了を待たずに 1 つずつ停止できる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "info",
+    "summary": "不要になったコマンドは Background Shells ピルから停止する"
+  },
+  "panels": [
+    {
+      "id": "how-to",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "チャット入力欄の上の Background Shells ピルを選ぶ",
+        "停止したいシェルを選んで詳細を開き、コマンドの横の Stop Shell を選ぶ",
+        "そのコマンドだけが終了し、シェルは一覧から消える"
+      ]
+    },
+    {
+      "id": "prerequisites",
+      "heading": "前提と制限",
+      "priority": "core",
+      "items": [
+        "対象は Copilot ハーネス セッションのシェル",
+        "停止できるのは、エージェントが現在のリクエストの一部として実行する attached シェルのみ",
+        "detached シェルは独立して動くため、この画面からは停止できない"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "あわせて変わる点",
+      "priority": "detail",
+      "items": [
+        "シェル詳細に、一覧で省略される説明の全文がコマンドの上に表示される",
+        "長い出力が切れなくなり、過去の出力へスクロールして戻れる"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "Background Shells ピル", "type": "feature", "oneLine": "エージェントがバックグラウンドで実行中のコマンドを一覧するチャット入力欄上の表示。" },
+    { "term": "attached シェル", "type": "term", "oneLine": "エージェントが現在のリクエストの一部として実行するシェル。" }
+  ],
+  "suggestions": [
+    "テストの再実行など、想定より長引くコマンドは停止してやり直す"
+  ],
+  "qa": [
+    {
+      "q": "どのコマンドでも停止できますか？",
+      "a": "いいえ。停止できるのは、エージェントが現在のリクエストの一部として実行する attached シェルだけです。エージェントとは独立して動く detached シェルは、この画面から停止できません。"
+    },
+    {
+      "q": "停止するとほかのコマンドも止まりますか？",
+      "a": "いいえ。選んだコマンドだけが終了し、そのシェルが一覧から消えます。"
+    },
+    {
+      "q": "どこから操作しますか？",
+      "a": "チャット入力欄の上の Background Shells ピルを選び、対象のシェルを開いて、コマンドの横の Stop Shell を選びます。キーボードでも操作でき、停止はスクリーン リーダーで通知されます。"
+    },
+    {
+      "q": "Background Shells ピルはいつから使えますか？",
+      "a": "1.141 で、Copilot ハーネス セッションの入力欄上に実行中のシェルを一覧するピルが追加されました。1.142 で、その詳細から個別に停止できるようになりました。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.142 - Stop background shells",
+      "url": "https://code.visualstudio.com/updates/v1_142#_stop-background-shells"
+    },
+    "documents": [
+      {
+        "title": "Visual Studio Code 1.141 - Keep track of background shells",
+        "url": "https://code.visualstudio.com/updates/v1_141#_keep-track-of-background-shells"
+      }
+    ]
+  },
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_142#_stop-background-shells",
+    "https://code.visualstudio.com/updates/v1_141#_keep-track-of-background-shells"
+  ]
+}
