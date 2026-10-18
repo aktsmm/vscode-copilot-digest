@@ -1,0 +1,87 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "e9448311cf47159a",
+  "title": {
+    "ja": "VS Code 1.138: 完了したセッションの整理機能",
+    "subtitleJa": "PR がすべてマージ済みのセッションを、完了にする提案と自動クリーンアップで片付けられる",
+    "original": "Keep completed sessions organized (Preview)"
+  },
+  "date": "2026-10-18",
+  "topic": "VS Code",
+  "status": "preview",
+  "statusEvidence": "Keep completed sessions organized (Preview)",
+  "audience": {
+    "who": "VS Code のエージェントセッション（Agents ウィンドウ）を多用する開発者",
+    "change": "非アクティブなセッションの PR が全てマージされると、完了にする提案が出る。自動で完了・削除する設定も使える",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "提案を表示したい場合は chat.agentSessions.archiveNudge.enabled を有効にする"
+  },
+  "panels": [
+    {
+      "id": "usage",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "chat.agentSessions.archiveNudge.enabled を有効にすると、Mark as Done の提案が表示される",
+        "初回は、セッション一覧で Mark as Done の場所を示すガイドが表示される",
+        "提案の Configure Automatic Cleanup から、自動クリーンアップの 2 設定を有効化せずに開ける"
+      ]
+    },
+    {
+      "id": "settings",
+      "heading": "関連設定",
+      "priority": "core",
+      "items": [
+        "chat.agentSessions.autoMarkAsDoneMergedSessionsAfterDays: PR マージ後に非アクティブなセッションを完了にする",
+        "chat.agentSessions.autoDeleteArchivedMergedSessionsAfterDays: 別の猶予期間の後に削除する（任意）",
+        "sessions.markAsDoneConfetti: 完了時に紙吹雪を表示（Agents ウィンドウのみ、減らすモーション設定を尊重）"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "自動クリーンアップの 2 設定は、どちらも既定で無効",
+        "会話は、後で参照できるよう保持される"
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Mark as Done",
+      "type": "feature",
+      "oneLine": "完了したセッションを一覧から片付ける操作。会話は後で参照できる"
+    }
+  ],
+  "qa": [
+    {
+      "q": "どんなときに完了にする提案が出ますか？",
+      "a": "非アクティブなセッションに紐づく Pull Request がすべてマージされたときに、Agents ウィンドウが Mark as Done を提案します。表示するには chat.agentSessions.archiveNudge.enabled を有効にします。"
+    },
+    {
+      "q": "自動で完了や削除はされますか？",
+      "a": "自動クリーンアップを設定すると、PR のマージ後に非アクティブなセッションを完了にでき、別の猶予期間の後に削除することもできます。2 つの設定はどちらも既定で無効です。"
+    },
+    {
+      "q": "設定をまとめて開く方法はありますか？",
+      "a": "セッションの PR がすべてマージされたときの Mark as Done の提案で Configure Automatic Cleanup を選ぶと、2 つの設定が有効化されないまま開きます。"
+    },
+    {
+      "q": "完了にした会話は失われますか？",
+      "a": "リリースノートでは、作業を邪魔にならない場所へ移しつつ、会話を後で参照できるよう保持するとされています。削除は別の設定で任意に行います。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.138 - Keep completed sessions organized (Preview)",
+      "url": "https://code.visualstudio.com/updates/v1_138#_keep-completed-sessions-organized-preview"
+    }
+  },
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_138"
+  ]
+}
