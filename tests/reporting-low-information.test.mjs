@@ -239,6 +239,20 @@ assert.equal(
 );
 assert.equal(isReaderEvent(docsBreadcrumbSnapshot), false);
 
+const changelogFilterDialogSnapshot = {
+  kind: "html_snapshot_change",
+  sourceId: "copilot-whats-new",
+  diffSummary: {
+    additions: ["H1: Changelog", "H2: Filters (0 selected)", "Account management", "Actions", "Application Security", "Copilot"],
+  },
+};
+assert.equal(
+  editorialQuality(changelogFilterDialogSnapshot),
+  "audit-only",
+  "an embedded Changelog filter dialog is layout noise, not an update",
+);
+assert.equal(isReaderEvent(changelogFilterDialogSnapshot), false);
+
 const substantiveSnapshot = {
   kind: "html_snapshot_change",
   sourceId: "vscode-updates",
