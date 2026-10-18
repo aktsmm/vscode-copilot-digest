@@ -1,0 +1,60 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "4dd860356280d677",
+  "title": {
+    "ja": "VS Code 1.141: セッション一覧を環境・ハーネス・作成元で絞り込み",
+    "subtitleJa": "Filter Sessions で Environment / Harness / Created In を個別に絞り込める",
+    "original": "Visual Studio Code 1.141: Additional session-filtering options"
+  },
+  "date": "2026-10-18",
+  "topic": "VS Code",
+  "status": "update",
+  "audience": {
+    "who": "VS Code で多数のエージェント セッションを管理している開発者",
+    "change": "Filter Sessions で、環境・ハーネス・作成元アプリごとに独立してセッション一覧を絞り込める",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "セッションが増えてきたら、Filter Sessions を開いて条件を使い分ける"
+  },
+  "panels": [
+    {
+      "id": "how-to-use",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "Filter Sessions を開き、次の 3 つの条件を独立して指定する",
+        "Environment: セッションの実行場所（ローカル、クラウド、リモート ホストなど）",
+        "Harness: セッションが使うエージェント ハーネス",
+        "Created In: セッションを作成したアプリ（VS Code、Copilot CLI、Copilot アプリなど）"
+      ]
+    },
+    {
+      "id": "menu",
+      "heading": "メニューの構成",
+      "priority": "detail",
+      "items": [
+        "並べ替え、グループ化、Show Done、Created Externally の操作も同じメニューに集約された"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "Harness", "type": "term", "oneLine": "セッションが使うエージェントの実行基盤。Filter Sessions の絞り込み条件の 1 つ。" }
+  ],
+  "qa": [
+    { "q": "どこから絞り込めますか。", "a": "Filter Sessions を開くと、Environment、Harness、Created In の 3 つで個別に絞り込めます。" },
+    { "q": "Environment では何を区別できますか。", "a": "セッションが動いている場所で、ローカル、クラウド、リモート ホストなどです。" },
+    { "q": "Created In は何を表しますか。", "a": "セッションを作成したアプリで、VS Code、Copilot CLI、Copilot アプリなどです。" },
+    { "q": "ほかの操作もメニューにありますか。", "a": "並べ替え、グループ化、Show Done、Created Externally の操作も同じメニューにまとまっています。" }
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.141 - Additional session-filtering options",
+      "url": "https://code.visualstudio.com/updates/v1_141#_additional-session-filtering-options"
+    }
+  },
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_141#_additional-session-filtering-options"
+  ]
+}
