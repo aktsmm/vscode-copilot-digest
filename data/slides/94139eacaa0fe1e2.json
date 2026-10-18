@@ -1,0 +1,74 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "94139eacaa0fe1e2",
+  "title": {
+    "ja": "BYOK カスタム エンドポイントで、ステートレスな Responses API に対応",
+    "subtitleJa": "statefulResponses を false にすると、毎回会話履歴の全体を送信する",
+    "original": "Stateful responses for BYOK custom endpoints"
+  },
+  "date": "2026-10-18",
+  "topic": "VS Code",
+  "status": "update",
+  "audience": {
+    "who": "VS Code で Responses API のカスタム エンドポイントを BYOK で使う開発者",
+    "change": "モデル エントリに statefulResponses: false を設定すると、各リクエストで会話履歴の全体を送れる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "ステートレスな Responses API サーバーを使う場合だけ、モデル エントリに設定を追加する"
+  },
+  "panels": [
+    {
+      "id": "how-to",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "chatLanguageModels.json のモデル エントリに \"apiType\": \"responses\" と \"statefulResponses\": false を追加する",
+        "false にすると previous_response_id を送らず、ツール呼び出しと結果を含む全履歴を送る",
+        "既定は true で、新しい履歴だけを previous_response_id とともに送る"
+      ]
+    },
+    {
+      "id": "prerequisites",
+      "heading": "前提と制限",
+      "priority": "core",
+      "items": [
+        "Responses API にのみ適用される",
+        "ステートレスなサーバーで起きるツール呼び出しの欠落エラーを避けられる"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "この設定はサーバーの特性を示すもので、データ保持ポリシーは変わらない",
+        "zeroDataRetentionEnabled が true のときは設定が無視され、常に全履歴を送る"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "BYOK", "type": "term", "oneLine": "自分のキーで外部のモデル プロバイダーを使う方式（bring your own key）。" },
+    { "term": "statefulResponses", "type": "feature", "oneLine": "Responses API のサーバーが過去の応答を保持するかを示すモデル設定。" }
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.142 - Stateful responses for BYOK custom endpoints",
+      "url": "https://code.visualstudio.com/updates/v1_142#_stateful-responses-for-byok-custom-endpoints"
+    },
+    "documents": [
+      { "title": "AI language models in VS Code", "url": "https://code.visualstudio.com/docs/agent-customization/language-models" }
+    ]
+  },
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_142",
+    "https://code.visualstudio.com/docs/agent-customization/language-models"
+  ],
+  "qa": [
+    { "q": "どんな場合に false にしますか?", "a": "Responses API を使うカスタム エンドポイントがステートレスなサーバーの場合です。false にすると previous_response_id を省き、ツール呼び出しと結果を含む全履歴を送ります。" },
+    { "q": "既定の動作は?", "a": "Responses API のモデルは既定で statefulResponses: true で、新しい履歴だけを previous_response_id とともに送ります。" },
+    { "q": "Chat Completions や Messages API でも使えますか?", "a": "ドキュメントでは Responses API にのみ適用されると説明されています。" },
+    { "q": "データ保持ポリシーは変わりますか?", "a": "変わりません。この設定はサーバーの特性を表すだけです。zeroDataRetentionEnabled が true の場合は設定が無視され、全履歴が送られます。" }
+  ]
+}
