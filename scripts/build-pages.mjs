@@ -5,6 +5,7 @@ import { attachResources, httpUrl, resourceStats } from "./lib/resources.mjs";
 import { buildApiFiles } from "./lib/api.mjs";
 import { loadSlideSummaries } from "./lib/slide-summaries.mjs";
 import { downloadPanelHtml, downloadsCss, downloadsJs } from "./lib/downloads.mjs";
+import { ABOUT_CSS, aboutCopy, renderAboutBody } from "./lib/about-page.mjs";
 
 import {
   applyEditorialPolicy,
@@ -2207,6 +2208,7 @@ function renderLayout({
             <a href="${escapeHtml(weeklyHref)}">${escapeHtml(text.weeklyNav)}</a>
             <a href="${escapeHtml(homeHref.replace(/index\.html$/, "retirements.html"))}">${escapeHtml(locale === "ja" ? "提供終了・廃止" : "Retirements")}</a>
             <a href="${escapeHtml(searchHref)}">${escapeHtml(text.searchNav)}</a>
+            <a href="${escapeHtml(homeHref.replace(/index\.html$/, "about.html"))}">${escapeHtml(locale === "ja" ? "About" : "About")}</a>
             <a href="https://github.com/aktsmm/vscode-copilot-digest">${escapeHtml(text.repositoryNav)}</a>
             <button class="lang-toggle" type="button" data-href="${escapeHtml(langSwitchHref)}" aria-label="${escapeHtml(locale === "ja" ? "Switch to English" : "日本語に切り替え")}" aria-pressed="${locale === "en" ? "true" : "false"}">
               <span class="lang-toggle-track">
@@ -3409,7 +3411,7 @@ async function main() {
 
   await fs.writeFile(
     path.join(siteDir, "assets", "styles.css"),
-    stylesCss() + downloadsCss(),
+    stylesCss() + downloadsCss() + ABOUT_CSS,
     "utf8",
   );
   await fs.writeFile(
@@ -3431,12 +3433,45 @@ async function main() {
   for (const name of (await fs.readdir(slideDir).catch(() => [])).filter((n) => n.endsWith(".json"))) {
     try { apiSlides.push(JSON.parse(await fs.readFile(path.join(slideDir, name), "utf8"))); } catch { /* validate:slides reports it */ }
   }
+  let apiIndex = null;
   for (const file of buildApiFiles({ logs, events: searchableEvents, slides: apiSlides })) {
+    if (file.path === "api/v1/index.json") apiIndex = JSON.parse(file.content);
     const target = path.join(siteDir, ...file.path.split("/"));
     await fs.mkdir(path.dirname(target), { recursive: true });
     await fs.writeFile(target, file.content, "utf8");
   }
 
+  const readJsonSafe = async (...parts) => JSON.parse(await fs.readFile(path.join(workspaceRoot, ...parts), "utf8").catch(() => "null"));
+  const sourceConfigs = (await readJsonSafe("config", "sources.json")) ?? [];
+  const writtenSummaryCount = Object.keys((await readJsonSafe("data", "summaries-ja.json")) ?? {}).length;
+  const sourceStates = (await readJsonSafe("data", "state.json"))?.sources ?? {};
+  const checkedAt = Object.values(sourceStates).map((s) => s.lastCheckedAt).filter(Boolean).sort().at(-1) ?? null;
+  const aboutStats = {
+    tracked: allHighlights.length,
+    days: dailyDigests.length,
+    slides: apiSlides.length,
+    qa: apiSlides.filter((s) => Array.isArray(s.qa) && s.qa.length > 0).length,
+    summaries: writtenSummaryCount,
+    sources: sourceConfigs.filter((s) => !/^vscode-release-notes-/.test(s.id)).length,
+  };
+  for (const [locale, prefix, file] of [["ja", ".", "about.html"], ["en", "..", path.join("en", "about.html")]]) {
+    const copy = aboutCopy(locale);
+    const text = locale === "ja" ? buildText("ja") : buildText("en");
+    const page = renderLayout({
+      locale, text, title: copy.title, description: copy.description,
+      body: renderAboutBody(locale, {
+        stats: aboutStats,
+        sources: sourceConfigs.filter((s) => !/^vscode-release-notes-/.test(s.id)).map((s) => s.name),
+        latestDate: dailyDigests[0]?.date ?? "N/A",
+        coverage: apiIndex?.coverage ?? null,
+        checkedAt: checkedAt ? formatDate(checkedAt, locale) : "N/A",
+        assetPrefix: locale === "ja" ? "./" : "../",
+      }),
+      lastUpdatedAt: new Date(), relativePrefix: prefix, homeHref: "./index.html", weeklyHref: "./weeks/index.html",
+      langSwitchHref: locale === "ja" ? "./en/about.html" : "../about.html",
+    });
+    await fs.writeFile(path.join(siteDir, file), page, "utf8");
+  }
   const jaText = buildText("ja");
   const enText = buildText("en");
 

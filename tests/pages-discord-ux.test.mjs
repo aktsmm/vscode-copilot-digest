@@ -469,6 +469,14 @@ assert.doesNotMatch(
   "audit-only changes and future-dated Insiders releases must not be sent to Discord",
 );
 
+// The About page states what the site is and the live state of the data, in both languages, and every page links to it.
+for (const [file, label] of [["about.html", "追跡中の更新"], ["en/about.html", "Tracked updates"]]) {
+  const page = readSiteFile(file);
+  assert.ok(page.includes(label), `${file} must show the data state`);
+  assert.ok(/class="metric-value">\d/.test(page), `${file} must show numeric stats`);
+}
+assert.ok(indexHtml.includes('href="./about.html"'), "the header must link to the About page");
+
 console.log("pages-discord-ux.test.mjs: OK");
 
 function parseDryRunPayload(stdout) {
