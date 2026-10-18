@@ -2,67 +2,87 @@
   "schema": "vscode-copilot-digest/slide/v2",
   "id": "135e1b3475cd059a",
   "title": {
-    "ja": "Copilotのローカルサンドボックスが一般提供",
-    "subtitleJa": "CLI・Copilot app・VS CodeのAgent Hostセッションで、エージェントのアクセスを制限",
+    "ja": "Copilot 週次リリース（10月5日）：ローカル サンドボックスが GA、別アカウント利用など",
+    "subtitleJa": "ローカル サンドボックスが GA。Copilot アプリは別アカウント利用、CLI は Ollama を検出",
     "original": "GitHub Copilot weekly releases — October 5"
   },
   "date": "2026-10-09",
   "topic": "GitHub Copilot",
-  "status": "ga",
-  "statusEvidence": "Limit agents’ access to files, networks, and credentials with local sandboxing, now generally available in Copilot CLI, the Copilot app, and VS Code sessions using Agent Host.",
+  "status": "update",
   "audience": {
-    "who": "Copilot CLI、Copilot app、Agent Hostを使うVS Codeセッションでエージェントを実行する開発者",
-    "change": "ローカルサンドボックスが3つのクライアントで一般提供となり、ファイル・ネットワーク・資格情報へのアクセスを制限",
+    "who": "Copilot CLI・Copilot アプリ・VS Code でエージェントを使う開発者",
+    "change": "ローカル サンドボックスが GA になり、エージェントのファイル・ネットワーク・資格情報へのアクセスを制限できる",
     "changeNature": "benefit"
   },
   "action": {
     "required": "optional",
-    "summary": "VS Codeではchat.agent.sandbox.enabledを有効にするか、Permissionsメニューでセッションごとに設定する"
+    "summary": "エージェントのアクセスを絞りたい場合は、ローカル サンドボックスを有効にする"
   },
   "panels": [
     {
-      "id": "availability",
-      "heading": "使える場所",
+      "id": "sandbox",
+      "heading": "使える場所とプラン",
       "priority": "core",
       "items": [
-        "Copilot CLI、Copilot app、Agent Hostを使うVS Codeセッションで一般提供",
-        "Copilotに含まれ、追加料金なしで利用可能",
-        "ファイル、ネットワーク、資格情報へのエージェントのアクセスを制限"
+        "ローカル サンドボックスは Copilot CLI、Copilot アプリ、Agent Host を使う VS Code セッションで GA",
+        "Copilot に含まれ、追加料金なし",
+        "Claude Haiku 5.5 は Copilot Pro、Pro+、Max、Business、Enterprise で利用可能"
       ]
     },
     {
-      "id": "vscode",
-      "heading": "VS Codeでの設定",
+      "id": "other-updates",
+      "heading": "そのほかの更新",
       "priority": "core",
       "items": [
-        "すべてのセッションに適用するにはchat.agent.sandbox.enabledを有効化",
-        "個別セッションではPermissionsメニューのSandboxing for terminalを切り替え",
-        "ローカル接続のリモートセッションでは、エージェントが動くリモートホストで制限を適用"
+        "Copilot アプリ：Copilot ライセンス用と、リポジトリ用で別の GitHub アカウントを使える",
+        "Copilot CLI：/model が実行中の Ollama の対応モデルを一覧に表示する",
+        "VS Code 1.141：Agents ウィンドウでセッションをグリッドに並べて比較できる"
       ]
     },
     {
-      "id": "limits",
-      "heading": "前提と制限",
+      "id": "caution",
+      "heading": "注意点",
       "priority": "detail",
       "items": [
-        "サンドボックスは保護の層を追加するもので、エンドポイントセキュリティの代わりや単独のセキュリティ境界ではない"
+        "ローカル サンドボックスは既定でオフ。有効にするまでコマンドはユーザーと同じ権限で実行される",
+        "設定は Copilot CLI と Copilot アプリで個別。片方の有効化はもう片方に影響しない"
       ]
+    }
+  ],
+  "glossary": [
+    { "term": "ローカル サンドボックス", "type": "feature", "oneLine": "Copilot をコンピューター上で、ファイル・ネットワーク・システム機能へのアクセスを制限して実行する仕組み。" },
+    { "term": "Open worktree cleanup", "type": "feature", "oneLine": "非アクティブなセッションの作業ツリーが使うディスク容量を確認し、削除対象を選べる操作。" }
+  ],
+  "qa": [
+    {
+      "q": "ローカル サンドボックスは追加料金がかかりますか？",
+      "a": "Copilot に含まれ、追加料金なしで使えます。なお、クラウド サンドボックスは使用量に基づく課金で、別の機能です。"
+    },
+    {
+      "q": "ローカル サンドボックスはどこで使えますか？",
+      "a": "Copilot CLI、Copilot アプリ、Agent Host を使う VS Code セッションで GA です。"
+    },
+    {
+      "q": "既定で有効ですか？",
+      "a": "既定ではオフです。有効にするまで、シェル コマンドはユーザー アカウントと同じアクセス権でコンピューター上で直接実行されます。"
+    },
+    {
+      "q": "CLI で有効にすればアプリでも有効になりますか？",
+      "a": "なりません。ローカル サンドボックスの設定は Copilot CLI と Copilot アプリで個別に構成します。"
+    },
+    {
+      "q": "VS Code のセッション整理は何ができますか？",
+      "a": "1.141 では、Agents ウィンドウでセッションをグリッドに並べて比較できます。チャットの Open worktree cleanup で非アクティブなセッションの作業ツリーの容量を確認して削除できます。"
     }
   ],
   "references": {
     "source": {
-      "title": "GitHub Copilot weekly releases — October 5 - The GitHub Blog",
+      "title": "GitHub Copilot weekly releases — October 5 - GitHub Changelog",
       "url": "https://github.blog/changelog/2026-10-09-github-copilot-weekly-releases-october-5/"
     },
     "documents": [
-      {
-        "title": "クラウドサンドボックスとローカルサンドボックスについて GitHub Copilot - GitHub Docs",
-        "url": "https://docs.github.com/ja/copilot/concepts/security-governance-and-network-settings/about-cloud-and-local-sandboxes"
-      },
-      {
-        "title": "Visual Studio Code 1.141 - Visual Studio Code",
-        "url": "https://code.visualstudio.com/updates/v1_141"
-      }
+      { "title": "クラウドサンドボックスとローカルサンドボックスについて GitHub Copilot - GitHubドキュメント", "url": "https://docs.github.com/ja/copilot/concepts/security-governance-and-network-settings/about-cloud-and-local-sandboxes" },
+      { "title": "Visual Studio Code 1.141", "url": "https://code.visualstudio.com/updates/v1_141" }
     ]
   },
   "evidence": [
