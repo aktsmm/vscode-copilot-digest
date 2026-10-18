@@ -1,0 +1,83 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "bd7689a0a42fc984",
+  "title": {
+    "ja": "Windows Performance Analyzer MCP（WPA MCP）のアーリープレビュー",
+    "subtitleJa": "Copilot CLI から自然言語で指示して、WPA のトレースから遅さの原因を分析できる",
+    "original": "Windows Performance Analyzer MCP (WPA MCP)"
+  },
+  "date": "2026-08-04",
+  "topic": "周辺ニュース",
+  "status": "preview",
+  "statusEvidence": "「Windows Performance Analyzer MCP」（WPA MCP）のアーリープレビューを発表しました",
+  "audience": {
+    "who": "Windows アプリの遅延原因をトレースログから調べる開発者",
+    "change": "WPA のトレース分析に GitHub Copilot CLI を組み込み、自然言語の指示や質問で分析できる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "info",
+    "summary": "WPA での調査に使う場合は、プレビューとして内容を把握しておく"
+  },
+  "panels": [
+    {
+      "id": "overview",
+      "heading": "できること",
+      "priority": "core",
+      "items": [
+        "アプリが遅い原因（CPU・ファイル処理・ネットワーク入出力など）の調査をAIに依頼できる",
+        "プロンプトに基づいてトレースを分析し、関連データの特定とボトルネックの判断を支援する",
+        "WPA は Event Tracing for Windows のログ・トレースを分析するツール"
+      ]
+    },
+    {
+      "id": "usage",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "Copilot CLI へ「このトレースを分析して、なぜマシンが遅かったか」と指示する",
+        "ハングアップ、入力の応答遅延、CPU の枯渇、ディスク、メモリ負荷などを優先して分析させる例が紹介されている",
+        "システム全体の問題と単一のアプリやサービスの問題を区別し、レポート化できる"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "アーリープレビューの位置づけ",
+        "得られた情報から仮説を立て、関連情報を抽出して原因を絞り込む進め方"
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "WPA",
+      "type": "product",
+      "oneLine": "Windows Performance Analyzer。ログの記録とトレースを行う Event Tracing for Windows のデータを分析するツール"
+    }
+  ],
+  "qa": [
+    {
+      "q": "WPA MCP は何を解決しますか",
+      "a": "WPA で自在に分析するには知識と経験が必要ですが、WPA MCP は Copilot CLI を組み込み、自然言語の指示や質問でトレース分析ができるようにします。"
+    },
+    {
+      "q": "どんな指示を出せばよいですか",
+      "a": "Microsoft は、トレースを分析してマシンが遅かった理由を尋ね、ハングアップ、入力遅延、CPU の枯渇、ディスク、メモリ負荷などを優先して、分かりやすいレポートを作るサンプルプロンプトを紹介しています。"
+    },
+    {
+      "q": "提供状況はどうなっていますか",
+      "a": "記事ではアーリープレビューとして発表されたと説明されています。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "アプリが遅い原因をAIがトレースログから分析してくれる「Windows Performance Analyzer MCP」（WPA MCP）、マイクロソフトがプレビュー公開 － Publickey",
+      "url": "https://www.publickey1.jp/blog/26/aiwindows_performance_analyzer_mcpwpa_mcp.html"
+    }
+  },
+  "evidence": [
+    "https://www.publickey1.jp/blog/26/aiwindows_performance_analyzer_mcpwpa_mcp.html"
+  ]
+}
