@@ -1,0 +1,102 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "2d23a676efdc35dd",
+  "title": {
+    "ja": "GitHub Code Quality、Copilot をレビュー担当に自動追加しないように",
+    "subtitleJa": "有効化してもルールセットで Copilot レビューを自動要求しない。既存の設定は無効化済み",
+    "original": "GitHub Code Quality no longer adds Copilot as a reviewer"
+  },
+  "date": "2026-08-07",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "GitHub Enterprise Cloud / GitHub Team で GitHub Code Quality を使うリポジトリの管理者",
+    "change": "Code Quality を有効にしても、Copilot にレビューを自動要求するルールセットは作られない",
+    "changeNature": "neutral"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "Copilot の自動レビューを続けたい場合は、ルールセットで再度有効にする"
+  },
+  "beforeAfter": {
+    "before": "2026-07-20 の GA 以降、有効化すると「Code Quality Copilot review for default branch」ルールセットが作られた",
+    "after": "有効化してもルールセットは作られず、Copilot をレビュー担当にするかは利用者が選ぶ"
+  },
+  "panels": [
+    {
+      "id": "scope",
+      "heading": "使える場所とプラン",
+      "priority": "core",
+      "items": [
+        "対象は GitHub Enterprise Cloud と GitHub Team の Code Quality",
+        "Copilot code review 自体は変更なし。料金は引き続き Copilot プランに請求される"
+      ]
+    },
+    {
+      "id": "turned-off",
+      "heading": "無効化した設定",
+      "priority": "core",
+      "items": [
+        "Automatically request Copilot code review（全 PR で自動レビュー）",
+        "Review new pushes（push のたびに再レビュー）",
+        "Review draft pull requests（ドラフト PR でもレビュー）",
+        "作成時のままのルールセットだけ変更。編集済みや自作のルールセットは触らない"
+      ]
+    },
+    {
+      "id": "keep-review",
+      "heading": "自動レビューを続けるには",
+      "priority": "core",
+      "items": [
+        "ルールセットを追加または編集し、Automatically request Copilot code review を有効にする",
+        "対象ブランチを選べる。リポジトリ単位でも組織単位でも設定できる"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "ルールセットは設定オフのままリポジトリに残る。不要なら削除できる"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "GitHub Code Quality", "type": "product", "oneLine": "リポジトリのコード品質を扱う GitHub の機能。2026-07-20 に GA。" },
+    { "term": "ルールセット", "type": "feature", "oneLine": "リポジトリや組織のブランチに適用する規則の集まり。" }
+  ],
+  "references": {
+    "source": {
+      "title": "GitHub Code Quality no longer adds Copilot as a reviewer - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-08-07-github-code-quality-no-longer-adds-copilot-as-a-reviewer/"
+    },
+    "documents": [
+      {
+        "title": "GitHub Copilotによるコード レビューの構成 - GitHubドキュメント",
+        "url": "https://docs.github.com/ja/copilot/how-tos/copilot-on-github/set-up-copilot/configure-code-review"
+      }
+    ]
+  },
+  "qa": [
+    {
+      "q": "どのプランが対象ですか？",
+      "a": "GitHub Enterprise Cloud と GitHub Team の GitHub Code Quality が対象です。"
+    },
+    {
+      "q": "すでに作られたルールセットはどうなりますか？",
+      "a": "作成時のままの場合は、有効化されていた 3 つの設定を無効にしました。編集済みのルールセットや自作のルールセットは変更しません。ルールセット自体は残り、削除できます。"
+    },
+    {
+      "q": "Copilot の自動レビューを続けるには？",
+      "a": "ルールセットを追加または編集し、Automatically request Copilot code review を対象ブランチに対して有効にします。リポジトリ単位でも組織単位でも設定できます。"
+    },
+    {
+      "q": "Copilot code review の課金は変わりますか？",
+      "a": "Copilot code review 自体は変わらず、引き続き Copilot プランに請求されます。"
+    }
+  ],
+  "evidence": [
+    "https://github.blog/changelog/2026-08-07-github-code-quality-no-longer-adds-copilot-as-a-reviewer/",
+    "https://docs.github.com/ja/copilot/how-tos/copilot-on-github/set-up-copilot/configure-code-review"
+  ]
+}
