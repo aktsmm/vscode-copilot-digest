@@ -1,0 +1,72 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "a97952f78eb5db7a",
+  "title": {
+    "ja": "VS Code 1.139、セッションとチャットの名前を一覧上で直接変更",
+    "subtitleJa": "セッション一覧でタイトルをその場で編集でき、空のタイトルは入力時点で防がれる",
+    "original": "Rename sessions and chats in place"
+  },
+  "date": "2026-10-18",
+  "topic": "VS Code",
+  "status": "update",
+  "audience": {
+    "who": "VS Code のセッション一覧でエージェント セッションやチャットを管理する開発者",
+    "change": "セッションや入れ子のチャットの名前を、一覧上でそのまま変更できる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "no",
+    "summary": "対応は不要。名前を整理したいときに一覧上で変更する"
+  },
+  "panels": [
+    {
+      "id": "how-to-rename",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "セッションまたは入れ子のチャットのタイトルをダブルクリックする",
+        "コンテキスト メニューの「Rename」アクションを使う",
+        "行にフォーカスして F2 キーを押す"
+      ]
+    },
+    {
+      "id": "behavior",
+      "heading": "入力時の挙動",
+      "priority": "core",
+      "items": [
+        "インライン検証により、空のタイトルは付けられない",
+        "名前の変更をキャンセルすると、元のタイトルに戻る"
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "チャット",
+      "type": "term",
+      "oneLine": "エージェント セッション内の、それぞれ別の会話やコンテキストを表す単位。"
+    }
+  ],
+  "qa": [
+    {
+      "q": "どこで名前を変更できますか。",
+      "a": "セッション一覧上で、セッション本体と、その中に入れ子になっているチャットの両方の名前を直接変更できます。"
+    },
+    {
+      "q": "名前の変更方法は何がありますか。",
+      "a": "タイトルのダブルクリック、コンテキスト メニューの Rename アクション、行にフォーカスして F2 キーを押す方法の 3 つです。"
+    },
+    {
+      "q": "空の名前にしてしまったらどうなりますか。",
+      "a": "インライン検証により空のタイトルは付けられません。また、変更をキャンセルすると元のタイトルに戻ります。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.139",
+      "url": "https://code.visualstudio.com/updates/v1_139#_rename-sessions-and-chats-in-place"
+    }
+  },
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_139"
+  ]
+}
