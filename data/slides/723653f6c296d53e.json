@@ -1,0 +1,68 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "723653f6c296d53e",
+  "title": {
+    "ja": "VS Code 1.142、Agents ウィンドウのパネル配置を選べるように",
+    "subtitleJa": "下部パネルの配置を「中央」か「幅いっぱい」から選べ、設定はプロファイルごとに保存される",
+    "original": "Customize the Agents window panel layout"
+  },
+  "date": "2026-10-18",
+  "topic": "VS Code",
+  "status": "update",
+  "audience": {
+    "who": "VS Code の Agents ウィンドウで下部パネルを使う開発者",
+    "change": "パネル タブの右クリックから、下部パネルの配置を選べる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "好みに合わせて、パネル タブの [Align Panel] から配置を選ぶ"
+  },
+  "panels": [
+    {
+      "id": "how-to",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "パネル タブを右クリックし、[Align Panel] を選ぶ",
+        "Center: パネルをチャット領域の下に置き、サイド ペインの領域を広く残す",
+        "Justify: パネルをウィンドウの全幅に広げる"
+      ]
+    },
+    {
+      "id": "persistence",
+      "heading": "前提と制限",
+      "priority": "core",
+      "items": [
+        "選択はプロファイルごとに保存される",
+        "パネルを最大化・復元しても、選んだ配置は保たれる"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "Agents ウィンドウ", "type": "feature", "oneLine": "VS Code で、エージェントのセッションを扱うウィンドウ。" }
+  ],
+  "qa": [
+    {
+      "q": "パネルの配置はどこで変えますか。",
+      "a": "パネル タブを右クリックし、[Align Panel] から Center か Justify を選びます。"
+    },
+    {
+      "q": "Center と Justify は何が違いますか。",
+      "a": "Center はパネルをチャット領域の下に置き、サイド ペインに広い領域を残します。Justify はパネルをウィンドウの全幅に広げます。"
+    },
+    {
+      "q": "選んだ配置は保存されますか。",
+      "a": "はい。選択はプロファイルごとに保存され、パネルを最大化したり復元したりしても保たれます。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.142",
+      "url": "https://code.visualstudio.com/updates/v1_142#_customize-the-agents-window-panel-layout"
+    }
+  },
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_142"
+  ]
+}
