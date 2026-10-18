@@ -37,5 +37,19 @@
   },
   "evidence": [
     "https://code.visualstudio.com/updates/v1_141#release-downloads-heading"
+  ],
+  "qa": [
+    {
+      "q": "1.141.1では何が修正されましたか？",
+      "a": "リリースノートには「セキュリティ問題に対処する更新」と記載されています。個別の問題はGitHubのmicrosoft/vscodeリポジトリのマイルストーン1.141.1の issue 一覧にリンクされています。"
+    },
+    {
+      "q": "更新はどう入手しますか？",
+      "a": "インストール済みの場合はVS CodeのCheck for Updatesを使います。ダウンロードはリリースノートのDownloadsセクションから入手できます。"
+    },
+    {
+      "q": "1.141.2もありますか？",
+      "a": "はい。現在のDownloads見出しは1.141.2で、Update 1.141.2は「これらの問題に対処する」と記載されています。"
+    }
   ]
 }
