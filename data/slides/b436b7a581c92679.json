@@ -1,0 +1,75 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "b436b7a581c92679",
+  "title": {
+    "ja": "VS Code 1.138: 対応が必要なセッションをアプリのバッジで通知",
+    "subtitleJa": "エージェントセッションの結果・入力要求・PR チェックを OS のバッジで知らせるプレビュー機能",
+    "original": "See which sessions need attention (Preview)"
+  },
+  "date": "2026-09-16",
+  "topic": "VS Code",
+  "status": "preview",
+  "statusEvidence": "See which sessions need attention (Preview)",
+  "audience": {
+    "who": "VS Code のエージェントセッションを並行して使い、別ウィンドウで作業する開発者",
+    "change": "VS Code に切り替えなくても、対応が必要なセッションを OS のバッジで把握できる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "プレビュー設定 sessions.showApplicationBadge を有効にするとバッジが表示される"
+  },
+  "panels": [
+    {
+      "id": "availability",
+      "heading": "使える場所とプラン",
+      "priority": "core",
+      "items": [
+        "macOS の Dock、Linux のランチャー、Windows のタスクバーにバッジを表示",
+        "設定 `sessions.showApplicationBadge`（Agents window のみ）を有効にすると表示される"
+      ]
+    },
+    {
+      "id": "usage",
+      "heading": "バッジの対象",
+      "priority": "core",
+      "items": [
+        "新しい結果が出たセッション",
+        "入力を求めているセッション",
+        "対応が必要な pull request のチェックがあるセッション"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "プレビュー機能のため、既定では表示されず設定の有効化が必要"
+      ]
+    }
+  ],
+  "qa": [
+    {
+      "q": "どうやって有効にしますか？",
+      "a": "プレビュー設定 sessions.showApplicationBadge を有効にするとバッジが表示されます。この設定は Agents window 向けです。"
+    },
+    {
+      "q": "どの OS で使えますか？",
+      "a": "macOS の Dock、Linux のランチャー、Windows のタスクバーにバッジが表示されます。"
+    },
+    {
+      "q": "どんなときにバッジが出ますか？",
+      "a": "新しい結果があるセッション、入力を求めているセッション、pull request のチェックで対応が必要なセッションが対象です。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.138",
+      "url": "https://code.visualstudio.com/updates/v1_138#_see-which-sessions-need-attention-preview"
+    },
+    "documents": []
+  },
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_138"
+  ]
+}
