@@ -3032,7 +3032,8 @@ function sourceGroupFromSourceId(sourceId) {
     sourceId === "vscode-feed" ||
     sourceId === "vscode-updates" ||
     sourceId === "copilot-whats-new" ||
-    sourceId.startsWith("vscode-release-notes-")
+    sourceId.startsWith("vscode-release-notes-") ||
+    sourceId.startsWith("vscode-docs-")
   ) {
     return "vscode";
   }

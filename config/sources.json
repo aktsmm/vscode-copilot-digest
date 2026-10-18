@@ -130,5 +130,50 @@
     "stripOrdinalNavigation": true,
     "snapshotVersion": 2,
     "maxDiffLines": 24
+  },
+  {
+    "id": "vscode-docs-agents-nav",
+    "name": "VS Code Docs / Agents (new pages)",
+    "kind": "html_snapshot",
+    "url": "https://code.visualstudio.com/docs/agents/overview",
+    "rootSelector": "#docs-navbar",
+    "contentSelector": "a[href^=\"/docs/agents/\"]",
+    "maxDiffLines": 24
+  },
+  {
+    "id": "vscode-docs-agents-automations",
+    "name": "VS Code Docs / Agent automations",
+    "kind": "html_snapshot",
+    "url": "https://code.visualstudio.com/docs/agents/run/automations",
+    "rootSelector": ".docs-main-content",
+    "contentSelector": "h1, h2, h3, p, li",
+    "maxDiffLines": 24
+  },
+  {
+    "id": "vscode-docs-agents-window",
+    "name": "VS Code Docs / Agents window",
+    "kind": "html_snapshot",
+    "url": "https://code.visualstudio.com/docs/agents/run/agents-window",
+    "rootSelector": ".docs-main-content",
+    "contentSelector": "h1, h2, h3, p, li",
+    "maxDiffLines": 24
+  },
+  {
+    "id": "vscode-docs-agents-remote-sessions",
+    "name": "VS Code Docs / Remote agent sessions",
+    "kind": "html_snapshot",
+    "url": "https://code.visualstudio.com/docs/agents/run/remote-agent-sessions",
+    "rootSelector": ".docs-main-content",
+    "contentSelector": "h1, h2, h3, p, li",
+    "maxDiffLines": 24
+  },
+  {
+    "id": "vscode-docs-agents-cheat-sheet",
+    "name": "VS Code Docs / AI features cheat sheet",
+    "kind": "html_snapshot",
+    "url": "https://code.visualstudio.com/docs/agents/reference/ai-features-cheat-sheet",
+    "rootSelector": ".docs-main-content",
+    "contentSelector": "h1, h2, h3, p, li",
+    "maxDiffLines": 24
   }
 ]

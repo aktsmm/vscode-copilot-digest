@@ -45,9 +45,11 @@
       "heading": "Automations とセッション整理",
       "priority": "core",
       "items": [
-        "Automations (chat.automations.enabled) が既定で有効になり、書き出し・取り込みで共有できる",
-        "セッション整理 (Preview): PR がマージ済みのセッションを自動で完了にし、猶予後の削除も任意で設定できる",
-        "自動整理の 2 つの設定は既定で無効"
+        "Automations は保存したプロンプトとスケジュールでエージェント タスクを実行。実行場所はローカルか GitHub のクラウド",
+        "クラウド実行は実験的機能 (chat.automations.cloud.enabled)。ローカル実行は PC と VS Code を起動したままにする",
+        "最初は Schedule を Manual にして実行結果を確認し、問題なければ Hourly / Daily / Weekly に切り替える",
+        "chat.automations.enabled は段階的に展開中で、環境によっては設定が必要。書き出し・取り込みで共有できる",
+        "セッション整理 (Preview): マージ済み PR のセッションを自動で完了にでき、自動整理の 2 設定は既定で無効"
       ]
     },
     {
@@ -62,16 +64,20 @@
   ],
   "glossary": [
     { "term": "Agent Host", "type": "feature", "oneLine": "エージェント ハーネスを専用プロセスで実行し、複数の VS Code ウィンドウから同じセッションに接続できる仕組み。" },
-    { "term": "Automations", "type": "feature", "oneLine": "繰り返し作業を効率化する機能。書き出し・取り込みでチームと共有できる。" }
+    { "term": "Automations", "type": "feature", "oneLine": "保存したプロンプトとスケジュールでエージェント タスクを実行する。ローカルまたはクラウドで動かせる。" }
   ],
   "references": {
     "source": {
       "title": "Visual Studio Code 1.138",
       "url": "https://code.visualstudio.com/updates/v1_138"
-    }
+    },
+    "documents": [
+      { "title": "Create and manage agent automations", "url": "https://code.visualstudio.com/docs/agents/run/automations" }
+    ]
   },
   "evidence": [
-    "https://code.visualstudio.com/updates/v1_138"
+    "https://code.visualstudio.com/updates/v1_138",
+    "https://code.visualstudio.com/docs/agents/run/automations"
   ],
   "qa": [
     {
@@ -85,6 +91,10 @@
     {
       "q": "Codex は ChatGPT のみのサブスクリプションでも使えますか？",
       "a": "使えます。Copilot にサインインしていない場合は、chat.agentHost.allowSignedOutWhenUsable も有効にする必要があります。両方にサインインすればモデル ピッカーで切り替えられます。"
+    },
+    {
+      "q": "Automations はまず何から試せばよいですか？",
+      "a": "Schedule を Manual にして作成し、Run now で初回の結果を確認します。問題なければ Hourly、Daily、Weekly のいずれかに切り替えます。ローカル実行は PC と VS Code を起動したままにする必要があります。"
     },
     {
       "q": "セッション整理の自動削除は初めから動きますか？",
