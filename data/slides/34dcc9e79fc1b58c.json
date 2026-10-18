@@ -1,0 +1,101 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "34dcc9e79fc1b58c",
+  "title": {
+    "ja": "github.com の GitHub Spark、2026年8月31日に提供終了",
+    "subtitleJa": "8月4日から新規ユーザーとアプリ作成を停止、既存ユーザーは8月31日までエクスポート可能",
+    "original": "Upcoming deprecation of GitHub Spark on github.com"
+  },
+  "date": "2026-08-04",
+  "topic": "GitHub Copilot",
+  "status": "retirement",
+  "statusEvidence": "Beginning August 4, 2026, GitHub Spark no longer accepts new users or allows the creation of new apps.",
+  "audience": {
+    "who": "github.com の GitHub Spark でアプリを作成・利用している開発者",
+    "change": "8月4日から新規ユーザー受付とアプリ新規作成が止まり、既存ユーザーのアクセスは8月31日まで",
+    "changeNature": "breaking"
+  },
+  "action": {
+    "required": "yes",
+    "summary": "今後も編集するアプリは2026-08-31までにコードをエクスポートし、llm() を使う場合は他の推論プロバイダーへ置き換える",
+    "deadline": "2026-08-31"
+  },
+  "timeline": [
+    { "when": "2026-07-30", "label": "GitHub Models 廃止、llm() が動作停止" },
+    { "when": "2026-08-04", "label": "新規ユーザーとアプリ作成を停止" },
+    { "when": "2026-08-31", "label": "既存ユーザーのアクセス期限" }
+  ],
+  "panels": [
+    {
+      "id": "export",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "Spark ワークベンチでアプリを開き「…」→「Create repository」でコードをエクスポート",
+        "デプロイ済みのアプリは Spark 終了後も動作を継続",
+        "VS Code、Copilot CLI、GitHub Copilot app の Copilot で同様の開発が可能"
+      ]
+    },
+    {
+      "id": "llm",
+      "heading": "前提と制限",
+      "priority": "core",
+      "items": [
+        "Spark の llm() が使う GitHub Models は 2026-07-30 に廃止済みで、llm() 呼び出しは動作しない",
+        "確認方法: アプリのコードを llm() で検索し、ヒットしなければ対応不要",
+        "使う場合は別の推論プロバイダーに置き換え、API キーと課金は利用者が管理"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "対象は github.com 上の現行 GitHub Spark の体験"
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "GitHub Spark",
+      "type": "product",
+      "oneLine": "アイデアから動くアプリへ素早く移行するための github.com の体験"
+    },
+    {
+      "term": "GitHub Models",
+      "type": "product",
+      "oneLine": "Spark の llm() が使う推論サービス。2026-07-30 に廃止"
+    }
+  ],
+  "qa": [
+    {
+      "q": "いつまで Spark を使えますか。",
+      "a": "2026年8月4日から新規ユーザーとアプリ新規作成はできません。既存ユーザーは、作成済みアプリをエクスポートするため2026年8月31日までアクセスできます。"
+    },
+    {
+      "q": "アプリのコードはどう残せますか。",
+      "a": "Spark ワークベンチでアプリを開き、「…」を選んで「Create repository」を選びます。2026年8月31日までに行えば、今後も編集を続けられます。"
+    },
+    {
+      "q": "デプロイ済みのアプリは止まりますか。",
+      "a": "デプロイ済みのアプリは、GitHub Spark の終了後も動作を続けます。"
+    },
+    {
+      "q": "llm() を使うアプリはどうなりますか。",
+      "a": "GitHub Models が2026年7月30日に廃止され、llm() の呼び出しは動きません。別の推論プロバイダーに置き換えてください。API キーと課金は利用者側の管理になります。"
+    },
+    {
+      "q": "自分のアプリが影響を受けるか確認する方法は。",
+      "a": "Spark でアプリを開き、コード内を llm() で検索します。見つからなければ GitHub Models 廃止の影響はなく、対応は不要です。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Upcoming deprecation of GitHub Spark on github.com - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-08-04-upcoming-deprecation-of-github-spark-on-github-com/"
+    }
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-08-04-upcoming-deprecation-of-github-spark-on-github-com/"
+  ]
+}
