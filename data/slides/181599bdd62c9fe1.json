@@ -72,5 +72,27 @@
     "https://github.blog/changelog/2026-10-10-new-controls-and-chat-improvements-in-copilot-for-jetbrains/",
     "https://docs.github.com/ja/copilot/concepts/enterprise/mcp-management",
     "https://docs.github.com/ja/copilot/reference/enterprise-administrators/enterprise-managed-settings"
+  ],
+  "qa": [
+    {
+      "q": "JetBrains IDE 2025.1 では使えなくなりますか？",
+      "a": "はい。GitHub Copilot は JetBrains IDE 2025.1 のサポートを終了しており、プラグインの利用には JetBrains IDE 2025.2 以降が必要です。"
+    },
+    {
+      "q": "管理者は既定モデルをどう指定できますか？",
+      "a": "Enterprise 管理者は managed settings で、利用可能な Copilot agent model から新規会話の既定モデルを選べます。利用者が model picker で明示的に選んだモデルの選択は維持されます。"
+    },
+    {
+      "q": "診断の Fix 操作は何をしますか？",
+      "a": "診断の intention menu に Fix が加わりました。inline chat を開いて Copilot に修正を依頼します。agent mode が使えるときは agent mode、使えないときは ask mode で動きます。"
+    },
+    {
+      "q": "MCP サーバーの自動起動は止められますか？",
+      "a": "はい。新しい MCP の設定で、Copilot と Claude 向けのサーバー自動起動を無効にできます。設定済みのツールがいつ有効になるかを制御できます。"
+    },
+    {
+      "q": "チャット画面で使いやすくなった点は？",
+      "a": "メッセージがターンごとにまとまり、ターン間を素早く移動できます。ユーザーのメッセージにはコピーと編集の操作が加わり、アカウント表示の改善と Switch Account 操作も追加されました。"
+    }
   ]
 }
