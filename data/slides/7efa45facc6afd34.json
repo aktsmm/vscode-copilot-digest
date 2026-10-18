@@ -1,0 +1,87 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "7efa45facc6afd34",
+  "title": {
+    "ja": "GitHub の法務チームが Copilot CLI で業務を効率化した事例",
+    "subtitleJa": "非エンジニアの法務チームが、平易な言葉の指示で契約ドラフトや DMCA 対応のツールを自作",
+    "original": "How the GitHub legal team used Copilot CLI to streamline their workflows"
+  },
+  "date": "2026-08-04",
+  "topic": "GitHub Copilot",
+  "status": "unknown",
+  "audience": {
+    "who": "定型業務が多く、Copilot CLI で自分用のツールを作りたい非エンジニアを含むチーム",
+    "change": "平易な言葉の指示とリポジトリの文書だけで、契約ドラフトや法務ワークフローのツールを作れた事例",
+    "changeNature": "neutral"
+  },
+  "action": {
+    "required": "info",
+    "summary": "繰り返しで時間を取られる作業を 1 つ選び、Copilot CLI に自動化を相談してみる"
+  },
+  "panels": [
+    {
+      "id": "terms-ai",
+      "heading": "契約ドラフト ツール terms-ai",
+      "priority": "core",
+      "items": [
+        "指示・ドラフト資料・ワークフローをリポジトリに置き、1 か所で整理して版管理する",
+        "平易な言葉を重んじる社内ドラフト スタイル ガイドと、過去の契約書のライブラリを備える",
+        "ツールと一般的なワークフローはオープン ソース。契約書などの機密情報は含まない",
+        "筆者によると、レビューとドラフトの時間はおよそ半分になった"
+      ]
+    },
+    {
+      "id": "legal-workflows",
+      "heading": "法務ワークフローのツール",
+      "priority": "core",
+      "items": [
+        "DMCA 通知の評価から始まり、コード比較やライセンス確認などの定型作業を指示セットにした",
+        "中身は平易な言葉のファイル（指示セット、方針資料、レポートのテンプレート）",
+        "クライアント向けと弁護士向けの分析モードを用意し、外部データ ソースも連携した",
+        "デスクトップ アプリになり、契約レビューや NDA の仕分けなどにも広がった"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "法的判断の代わりではなく、人のレビューを中心に置く意思決定の支援として使う",
+        "デスクトップ アプリの開発には、多くのコードを書く作業が必要だった"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "DMCA", "type": "term", "oneLine": "Digital Millennium Copyright Act。記事では、通知を受けたソース コードの評価対象として登場する。" }
+  ],
+  "suggestions": [
+    "繰り返しの多い作業を 1 つ選び、Copilot CLI に自動化のしかたを相談してみる"
+  ],
+  "qa": [
+    {
+      "q": "プログラミング経験がなくても作れますか。",
+      "a": "記事の法務チームは弁護士、プログラム マネージャー、ビジネス担当者で、エンジニアではありません。中核は平易な言葉の指示ファイルでしたが、デスクトップ アプリの開発には多くのコードが必要だったと述べています。"
+    },
+    {
+      "q": "terms-ai では何を使って文書を管理していますか。",
+      "a": "プロジェクトを作成し、主要な文書をリポジトリに保存しています。指示、ドラフト資料、ワークフローを 1 か所で整理して版管理でき、プロンプト集のコピーと貼り付けが減ったと説明されています。"
+    },
+    {
+      "q": "機密性の高い契約書は公開されますか。",
+      "a": "ツールと一般的なワークフローはオープン ソースですが、契約書などの機密情報はリポジトリに含まれません。過去の契約書は、承認済みでアクセスが管理された社内環境にあるとされています。"
+    },
+    {
+      "q": "AI の出力をそのまま法的判断に使えますか。",
+      "a": "記事は、法務の Copilot は法的判断の代替ではなく、人のレビューを中心に置いた意思決定の支援システムだと述べています。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "How the GitHub legal team used Copilot CLI to streamline their workflows - The GitHub Blog",
+      "url": "https://github.blog/ai-and-ml/github-copilot/how-the-github-legal-team-used-copilot-cli-to-streamline-their-workflows/"
+    }
+  },
+  "evidence": [
+    "https://github.blog/ai-and-ml/github-copilot/how-the-github-legal-team-used-copilot-cli-to-streamline-their-workflows/"
+  ]
+}
