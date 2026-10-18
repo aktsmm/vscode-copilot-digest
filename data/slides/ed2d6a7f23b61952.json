@@ -65,5 +65,27 @@
   "evidence": [
     "https://github.blog/changelog/2026-10-07-local-sandboxing-for-github-copilot-now-generally-available/",
     "https://docs.github.com/ja/copilot/concepts/security-governance-and-network-settings/about-cloud-and-local-sandboxes"
+  ],
+  "qa": [
+    {
+      "q": "ローカル サンドボックスは誰が使えますか。追加料金は必要ですか。",
+      "a": "Copilot CLI、GitHub Copilot アプリ、Agent Host を使う VS Code セッションで一般提供されています。GitHub Copilot に含まれ、追加料金はかかりません。"
+    },
+    {
+      "q": "どうやって有効にしますか。既定でオンですか。",
+      "a": "既定ではオフです。Copilot CLI のセッションで /sandbox enable を実行すると有効になり、/sandbox disable を実行するまで今後のセッションでも使われます。"
+    },
+    {
+      "q": "サンドボックスは VM やコンテナーで実行されますか。",
+      "a": "いいえ。Microsoft eXecution Container (MXC) が OS ごとの分離機構でポリシーを適用する軽量な方式で、別の VM やコンテナー内でコマンドは実行されません。"
+    },
+    {
+      "q": "組織としてサンドボックスを必須にできますか。",
+      "a": "エンタープライズ管理設定で必須にでき、その場合は通常の設定や起動オプションでは無効にできません。開発者がポリシーを弱められないようにする運用が可能です。"
+    },
+    {
+      "q": "CLI と Copilot アプリで設定は共通ですか。",
+      "a": "共通ではありません。ローカル サンドボックスの設定は CLI と Copilot アプリで個別に構成され、一方で有効にしても他方は変わりません。"
+    }
   ]
 }
