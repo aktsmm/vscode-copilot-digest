@@ -1,0 +1,99 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "f6ad2d38813aa259",
+  "title": {
+    "ja": "エンタープライズ管理設定で、MCP サーバーの許可リストを一元管理",
+    "subtitleJa": "allowedMcpServers / deniedMcpServers で、実行できる MCP サーバーを制限できる",
+    "original": "MCP allowlists in enterprise managed settings"
+  },
+  "date": "2026-08-06",
+  "topic": "GitHub Copilot",
+  "status": "ga",
+  "statusEvidence": "This capability is generally available.",
+  "audience": {
+    "who": "Copilot の MCP サーバー利用を統制したいエンタープライズ オーナー",
+    "change": "許可する MCP サーバーと拒否する MCP サーバーを、エンタープライズ全体で一括して指定できる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "統制が必要なら、copilot/managed-settings.json に allowedMcpServers / deniedMcpServers を追加する"
+  },
+  "panels": [
+    {
+      "id": "where-and-how",
+      "heading": "使える場所と使い方",
+      "priority": "core",
+      "items": [
+        "適用先は GitHub Copilot app、Copilot CLI、VS Code",
+        "ソース組織の .github-private リポジトリで copilot/managed-settings.json にキーを追加し、既定ブランチにコミットする",
+        "どちらか一方、または両方のキーを使える"
+      ]
+    },
+    {
+      "id": "matchers",
+      "heading": "マッチャーの種類",
+      "priority": "core",
+      "items": [
+        "serverUrl: リモート (HTTP/SSE) サーバーに一致。* ワイルドカード対応で、回避を防ぐため URL を正規化する",
+        "serverCommand: ローカル (stdio) サーバーに、コマンドと引数の完全一致で一致する",
+        "serverName: ユーザーが付けたラベルに一致。名前は変更できるため、セキュリティ制御ではなく利便性のため"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "不正または検証できない構成は、許可されずにブロックされる (fail closed)",
+        "複数のレイヤーからポリシーが来る場合、サーバーはすべてのレイヤーを通る必要がある",
+        "拒否規則は許可規則より優先され、組み込みの GitHub ファーストパーティ サーバーはブロックできない"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "MCP", "type": "term", "oneLine": "Model Context Protocol。Copilot クライアントが外部のツールやデータに接続するためのプロトコル。" },
+    { "term": "fail closed", "type": "term", "oneLine": "不正または検証できない構成を、許可せずブロックする動作。" }
+  ],
+  "suggestions": [
+    "サーバー管理型のデプロイでは、両キーを上書き可能にして、チームごとの許可・拒否リストを基準の上に重ねられる"
+  ],
+  "qa": [
+    {
+      "q": "どのクライアントで許可リストが適用されますか？",
+      "a": "現時点では GitHub Copilot app、Copilot CLI、VS Code で適用されます。"
+    },
+    {
+      "q": "どこに設定を書けばよいですか？",
+      "a": "ソース組織の .github-private リポジトリにある copilot/managed-settings.json に allowedMcpServers や deniedMcpServers を追加し、既定ブランチにコミットします。"
+    },
+    {
+      "q": "許可リストと拒否リストが両方に一致した場合はどうなりますか？",
+      "a": "拒否規則は常に許可規則より優先され、拒否に一致したサーバーは allowedMcpServers にも一致していてもブロックされます。ただし組み込みの GitHub ファーストパーティ サーバーは拒否できません。"
+    },
+    {
+      "q": "allowedMcpServers を空や未設定にするとどうなりますか？",
+      "a": "キーを完全に省略すると、deniedMcpServers で拒否したもの以外はすべて許可されます。空の配列にすると、組み込みの既定サーバー以外がすべてブロックされます。"
+    },
+    {
+      "q": "serverName だけで制限して安全ですか？",
+      "a": "いいえ。ユーザーがサーバー名を変更できるため、serverName はセキュリティ制御ではなく利便性のためのものです。ID を強制するには serverUrl か serverCommand を使います。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "MCP allowlists in enterprise managed settings - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-08-06-mcp-allowlists-in-enterprise-managed-settings/"
+    },
+    "documents": [
+      {
+        "title": "エンタープライズ管理設定",
+        "url": "https://docs.github.com/ja/copilot/reference/enterprise-administrators/enterprise-managed-settings"
+      }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-08-06-mcp-allowlists-in-enterprise-managed-settings/",
+    "https://docs.github.com/ja/copilot/reference/enterprise-administrators/enterprise-managed-settings"
+  ]
+}
