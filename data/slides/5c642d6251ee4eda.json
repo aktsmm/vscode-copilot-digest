@@ -49,6 +49,28 @@
       ]
     }
   ],
+  "qa": [
+    {
+      "q": "既存の AI 検出アラートに追加料金はかかりますか？",
+      "a": "かかりません。既存の AI 検出シークレット アラートのスキャンは新モデルへ自動で切り替わり、GHSP と GHAS に含まれたままで、追加料金はありません。"
+    },
+    {
+      "q": "push protection の AI 検出は誰が使えますか？",
+      "a": "GitHub Enterprise Cloud か GitHub Teams で GHSP または GHAS を購入している顧客が対象で、現在は private preview です。管理者の有効化が必要で、組織や企業のポリシーに従います。"
+    },
+    {
+      "q": "/security-review の新しいチェックは自動で有効になりますか？",
+      "a": "なりません。既定でオフで、/security-review を実行しても有効にならず、プランとポリシーが許す範囲でオプトインが必要です。GHSP / GHAS のライセンスは不要です。"
+    },
+    {
+      "q": "AI クレジットは誰に請求されますか？",
+      "a": "push protection は、リポジトリを所有する組織に請求されます。/security-review のチェックは、有効な Copilot プランの請求アカウントに計上されます。"
+    },
+    {
+      "q": "GitHub Enterprise Server でも使えますか？",
+      "a": "GHES 3.23 では AI 検出アラートが public preview で提供される予定です。push protection と /security-review は、この Server リリースの対象外です。"
+    }
+  ],
   "references": {
     "source": {
       "title": "Purpose-built model for leaked secret detection - GitHub Changelog",
