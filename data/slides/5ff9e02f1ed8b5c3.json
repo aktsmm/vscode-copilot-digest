@@ -1,0 +1,99 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "5ff9e02f1ed8b5c3",
+  "title": {
+    "ja": "VS Code 1.139: セッション内のチャット表示方法を選択可能に",
+    "subtitleJa": "複数チャットを持つセッションで、タブ表示と単一表示をヘッダーメニューから切り替えられる",
+    "original": "Visual Studio Code 1.139: Choose how chats appear in a session (Preview)"
+  },
+  "date": "2026-10-18",
+  "topic": "VS Code",
+  "status": "preview",
+  "statusEvidence": "Choose how chats appear in a session (Preview)",
+  "audience": {
+    "who": "VS Code の Agents ウィンドウで、1 つのセッションに複数チャットを作って使う開発者",
+    "change": "セッションヘッダーのメニューで、各チャットをタブで並べるか、アクティブなチャットだけ表示するかを選べる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "必要に応じて sessions.showChatTabs またはヘッダーメニューで表示方法を切り替える"
+  },
+  "panels": [
+    {
+      "id": "usage",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "セッションヘッダーのメニューから表示方法を選ぶ。設定は `sessions.showChatTabs`",
+        "Multiple: 各チャットを個別のタブで表示。タブは分割グループに並べて見比べられる",
+        "Single: アクティブなチャットのみ表示し、タブバーを隠す",
+        "切り替えても、開いているチャットや会話の状態は保持される"
+      ]
+    },
+    {
+      "id": "prerequisites",
+      "heading": "前提と制限",
+      "priority": "core",
+      "items": [
+        "Agents ウィンドウで、複数チャット対応のハーネス（Copilot、Claude など）が対象",
+        "セッションに複数のチャットがあるときの表示方法の選択",
+        "新規チャットは空で始まり、他のチャットの履歴を引き継がない"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "Single でも、横に開いたチャットは独立したペインのまま残る",
+        "全チャットの変更は同じフォルダーまたはワークツリーに入る"
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "ピアチャット",
+      "type": "term",
+      "oneLine": "セッション内でメインチャットと並ぶ追加の対話型チャット。履歴・タイトル・モデルは個別"
+    }
+  ],
+  "qa": [
+    {
+      "q": "表示方法はどこで切り替えますか?",
+      "a": "セッションヘッダーのメニューから選べます。設定 sessions.showChatTabs でも指定できます。Agents ウィンドウが対象です。"
+    },
+    {
+      "q": "Multiple と Single の違いは?",
+      "a": "Multiple は各チャットを個別のタブで表示し、分割グループに並べて同時に見られます。Single はアクティブなチャットだけを表示し、タブバーを隠します。"
+    },
+    {
+      "q": "切り替えると開いているチャットは失われますか?",
+      "a": "失われません。開いているチャット、アクティブなチャット、会話の状態は保持されます。"
+    },
+    {
+      "q": "複数チャットはどのハーネスで使えますか?",
+      "a": "複数チャットに対応したハーネスで使えます。ドキュメントでは Copilot や Claude が例に挙がっています。クイックチャットやアーカイブ済みセッションでは使えません。"
+    },
+    {
+      "q": "新しいチャットは既存の会話を引き継ぎますか?",
+      "a": "引き継ぎません。新しいチャットは空で始まります。履歴を保ちたい場合は、新規チャットではなく会話のフォークを使います。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.139",
+      "url": "https://code.visualstudio.com/updates/v1_139#_choose-how-chats-appear-in-a-session-preview"
+    },
+    "documents": [
+      {
+        "title": "Manage agent sessions in VS Code",
+        "url": "https://code.visualstudio.com/docs/agents/run/sessions/manage-sessions#_run-multiple-chats-in-a-session"
+      }
+    ]
+  },
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_139",
+    "https://code.visualstudio.com/docs/agents/run/sessions/manage-sessions"
+  ]
+}
