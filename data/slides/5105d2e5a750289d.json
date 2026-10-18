@@ -1,0 +1,76 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "5105d2e5a750289d",
+  "title": {
+    "ja": "VS Code 1.140: 委任作業のセッション関係とワークスペースを選べるように",
+    "subtitleJa": "関連作業はピア チャット、無関係な作業は独立セッションとして、エージェントに委任できる",
+    "original": "Visual Studio Code 1.140: Choose the session relationship and workspace for delegated work"
+  },
+  "date": "2026-10-18",
+  "topic": "VS Code",
+  "status": "update",
+  "audience": {
+    "who": "VS Code でエージェントにタスクを委任して作業する開発者",
+    "change": "委任時に、現在のセッションとの関係とワークスペースを、プロンプトで分けて指定できる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "委任するときのプロンプトで、ピア チャットか独立セッションか、ワークスペースの有無を指定する"
+  },
+  "panels": [
+    {
+      "id": "peer-chat",
+      "heading": "関連作業はピア チャット",
+      "priority": "core",
+      "items": [
+        "現在のセッションの計画や成果物に属する作業は、ピア チャットの作成をエージェントに依頼する",
+        "現在のワークスペースとチェックアウトを再利用するなら、プロンプトにそう書く",
+        "チェックアウトを共有するため、調査・計画など、ファイル変更の分離が不要な作業に向く"
+      ]
+    },
+    {
+      "id": "independent-session",
+      "heading": "無関係な作業は独立セッション",
+      "priority": "core",
+      "items": [
+        "別の成果物でリポジトリのファイルが不要なら、ワークスペースなしの独立セッションを依頼する",
+        "新しいセッションは、元のフォルダーを引き継がない",
+        "リポジトリが必要ならプロジェクトやフォルダーを指定し、変更を分離したいときだけ worktree を明示的に依頼する"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "セッション関係とワークスペースは別々に決める。関連作業でも別のワークスペースを使える",
+        "ピア チャットの変更は、セッションと同じフォルダーまたは worktree に入る"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "ピア チャット", "type": "feature", "oneLine": "セッション内の追加のチャット。会話履歴は別で、ワークスペースと worktree は共有する。" }
+  ],
+  "suggestions": [
+    "調査だけの委任には「ファイルは変更しない」とプロンプトに添える"
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.140",
+      "url": "https://code.visualstudio.com/updates/v1_140#_choose-the-session-relationship-and-workspace-for-delegated-work"
+    },
+    "documents": [
+      { "title": "Manage agent sessions in VS Code", "url": "https://code.visualstudio.com/docs/agents/run/sessions/manage-sessions" }
+    ]
+  },
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_140",
+    "https://code.visualstudio.com/docs/agents/run/sessions/manage-sessions"
+  ],
+  "qa": [
+    { "q": "ピア チャットと独立セッションはどう使い分けますか。", "a": "現在のセッションの計画や成果物に属する関連作業はピア チャット、別の成果物で無関係な作業は独立セッションにします。" },
+    { "q": "ピア チャットでファイルを変更するとどうなりますか。", "a": "ピア チャットはセッションのワークスペースとチェックアウトを共有し、変更は同じフォルダーまたは worktree に入ります。変更を分離したいときは別の worktree のセッションを使います。" },
+    { "q": "独立セッションは元のフォルダーを引き継ぎますか。", "a": "引き継ぎません。リポジトリが必要な場合は、プロジェクトやフォルダーを指定し、変更の分離が必要なら worktree を明示的に依頼します。" }
+  ]
+}
