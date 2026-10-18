@@ -1,0 +1,66 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "ec26e9c8c461ad74",
+  "title": {
+    "ja": "Agents ウィンドウで、エージェント セッションから pull request を作成",
+    "subtitleJa": "1 つのフォームでタイトルと説明を確認・編集し、下書きやマージ オプションを選んで作成できる",
+    "original": "Create pull requests from agent sessions"
+  },
+  "date": "2026-10-18",
+  "topic": "VS Code",
+  "status": "update",
+  "audience": {
+    "who": "VS Code の Agents ウィンドウで Agent Host セッションを使う開発者",
+    "change": "生成されたタイトルと説明を編集し、下書きやマージ オプションを選んで、1 つのフォームから PR を作成できる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "Agent Merge を試すなら chat.agentMerge.enabled を有効にする"
+  },
+  "panels": [
+    {
+      "id": "how-it-works",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "Agents ウィンドウの Agent Host セッションで、1 つのフォームから PR を作成する",
+        "生成されたタイトルと説明を確認・編集し、下書き (draft) にするかを選ぶ",
+        "利用できるマージ オプションを設定できる",
+        "PR を直接作成するか、リクエストをエージェントに送る。選んだオプションは次回も保持される"
+      ]
+    },
+    {
+      "id": "prerequisites",
+      "heading": "前提と制限",
+      "priority": "core",
+      "items": [
+        "対象は Agents ウィンドウの Agent Host セッション",
+        "Agent Merge オプションは試験的で、設定 chat.agentMerge.enabled を有効にしたときだけ使える"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "Agent Host", "type": "product", "oneLine": "エージェント ハーネスを実行し、そのセッションを管理する専用プロセス。" },
+    { "term": "Agent Merge", "type": "feature", "oneLine": "PR 作成フォームのマージ オプション。試験的で、設定の有効化が必要。" }
+  ],
+  "qa": [
+    { "q": "どこで PR を作成できますか？", "a": "Agents ウィンドウの Agent Host セッションです。1 つのフォームで、生成されたタイトルと説明の確認・編集、下書きの選択、利用可能なマージ オプションの設定ができます。" },
+    { "q": "PR の作成方法は選べますか？", "a": "はい。PR を直接作成するか、リクエストをエージェントに送るかを選べます。選んだオプションは次回のために記憶されます。" },
+    { "q": "Agent Merge オプションはどう有効にしますか？", "a": "試験的な機能で、設定 chat.agentMerge.enabled を有効にしたときだけ使えます。" },
+    { "q": "Agent Host とは何ですか？", "a": "エージェント ハーネスを実行し、そのセッションを管理する専用プロセスです。ウィンドウとは独立してセッションを持ちます。" }
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.138",
+      "url": "https://code.visualstudio.com/updates/v1_138#_create-pull-requests-from-agent-sessions"
+    },
+    "documents": [
+      { "title": "Agent Host architecture", "url": "https://code.visualstudio.com/docs/agents/concepts/agent-host" }
+    ]
+  },
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_138",
+    "https://code.visualstudio.com/docs/agents/concepts/agent-host"
+  ]
+}
