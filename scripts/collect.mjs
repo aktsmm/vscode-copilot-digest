@@ -711,7 +711,7 @@ async function collectHtmlSnapshotSource(source, sourceState) {
     const knownSections = {
       ...(sourceState.sectionHashes ?? {}),
     };
-    const nextSectionHashes = {};
+    const nextSectionHashes = { ...knownSections };
 
     for (const section of sections) {
       const sectionKey = buildVsCodeSectionStateKey(
