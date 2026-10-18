@@ -1,0 +1,89 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "bdfb5fdb35cb4e56",
+  "title": {
+    "ja": "VS Code 1.140、リモート エージェント ホストでワークスペースなしのチャットを開始可能に",
+    "subtitleJa": "接続済みホストを、フォルダーを選ばずに選択して、そのホスト上でチャットを開始できる",
+    "original": "Create workspace-less chats on remote agent hosts"
+  },
+  "date": "2026-10-18",
+  "topic": "VS Code",
+  "status": "update",
+  "audience": {
+    "who": "Agents ウィンドウでリモート エージェント ホストを使う VS Code ユーザー",
+    "change": "統合ワークスペース ピッカーで接続済みホストを選ぶだけで、ワークスペースなしのチャットを実行できる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "使うなら sessions.chat.unifiedWorkspacePicker.enabled を有効にし、ホストを SSH か dev tunnel で接続する"
+  },
+  "panels": [
+    {
+      "id": "usage",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "[新規] を選ぶか Ctrl+N (macOS は ⌘N) で新しいエージェント セッションを開始する",
+        "ワークスペース ピッカーで、接続済みリモート ホストの Chat エントリをフォルダーを選ばずに選ぶ",
+        "エージェント ハーネスを選び、プロンプトを入力して Enter を押す"
+      ]
+    },
+    {
+      "id": "prerequisites",
+      "heading": "前提と制限",
+      "priority": "core",
+      "items": [
+        "設定 sessions.chat.unifiedWorkspacePicker.enabled を有効にする (Agents ウィンドウのみ)",
+        "ホストは SSH または dev tunnel で接続しておく",
+        "リポジトリが不要で、リモート ホストのリソースや環境が必要な作業向け"
+      ]
+    },
+    {
+      "id": "picker",
+      "heading": "ピッカーの変更",
+      "priority": "detail",
+      "items": [
+        "Chat エントリにホストが表示され、開始前に実行先を確認できる",
+        "リモート フォルダーもローカル フォルダーと並んでメイン ピッカーに表示される"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "Agent Host", "type": "feature", "oneLine": "リモート ホスト上でエージェント セッションを実行・追跡できる仕組み。" }
+  ],
+  "qa": [
+    {
+      "q": "ワークスペースなしのチャットは、どんなときに使うのか",
+      "a": "リモート ホストのリソースや環境が必要で、リポジトリは不要な作業に使います。既存のワークスペースが必要な場合は、メイン ピッカーに並ぶリモート フォルダーを選びます。"
+    },
+    {
+      "q": "利用に必要な設定と接続方法は",
+      "a": "sessions.chat.unifiedWorkspacePicker.enabled を有効にし、ホストを SSH または dev tunnel で接続します。設定は Agents ウィンドウのみが対象です。"
+    },
+    {
+      "q": "チャットがどのホストで動くかはどう確認するか",
+      "a": "ワークスペース ピッカーの Chat エントリに、選択したホストが表示されます。開始前に実行先を確認できます。"
+    },
+    {
+      "q": "リモートのフォルダーも選べるのか",
+      "a": "選べます。接続済みホストのフォルダーが、ローカル フォルダーと並んでメイン ピッカーに表示され、Remote サブメニューを開かずに選択できます。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.140 - Create workspace-less chats on remote agent hosts",
+      "url": "https://code.visualstudio.com/updates/v1_140#_create-workspace-less-chats-on-remote-agent-hosts"
+    },
+    "documents": [
+      {
+        "title": "Run and manage remote agent sessions",
+        "url": "https://code.visualstudio.com/docs/agents/run/remote-agent-sessions"
+      }
+    ]
+  },
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_140#_create-workspace-less-chats-on-remote-agent-hosts",
+    "https://code.visualstudio.com/docs/agents/run/remote-agent-sessions"
+  ]
+}
