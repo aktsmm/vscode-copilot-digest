@@ -49,6 +49,28 @@
       ]
     }
   ],
+  "qa": [
+    {
+      "q": "新しい分類器は誰がいつから使えますか？",
+      "a": "push protection への追加は現在プライベート プレビューです。今月中に、GitHub Secret Protection を使う Enterprise Cloud と GitHub Teams の組織に提供される予定です。AI Credits を消費します。"
+    },
+    {
+      "q": "すでに AI シークレット検出を使っている組織はどうなりますか？",
+      "a": "AI secret detection を使う組織は、記事の公開日から自動的に新しいモデルへ更新されます。push 後のスキャンで開かれるアラートは、シークレット スキャンの購入に含まれ、追加費用はかかりません。"
+    },
+    {
+      "q": "GitHub Secret Protection がなくても使えますか？",
+      "a": "Copilot CLI と Copilot アプリの /security-review コマンドに分類器を追加する予定で、組織の GitHub Secret Protection プランがなくても push 前にシークレットに対処できます。AI credit の利用分は GitHub Secret Protection として計上されます。"
+    },
+    {
+      "q": "GitHub Enterprise Server では使えますか？",
+      "a": "GitHub Enterprise Server 3.23 にこのモデルが同梱され、パブリック プレビューとして提供されます。エアギャップ環境の Secret Protection 利用者にも AI 検出アラートが届きます。"
+    },
+    {
+      "q": "誤検知で push が止まる心配はありませんか？",
+      "a": "記事によると、この分類器は既存の LLM ベースのパイプラインより精度が高く、候補のまとまりを 2 ミリ秒未満で評価します。誤検知は開発者の作業を中断するため、精度を重視して設計したと説明されています。"
+    }
+  ],
   "references": {
     "source": {
       "title": "Secret protection must scale with software - The GitHub Blog",
