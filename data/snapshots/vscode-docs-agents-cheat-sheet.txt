@@ -1,0 +1,47 @@
+H1: AI features cheat sheet
+Copy as Markdown
+View as Markdown
+Ask in VS Code
+Ask in VS Code Insiders
+Find the AI feature in Visual Studio Code that fits your task, from a focused edit to work you delegate to an agent. Use this reference for common tasks, useful controls, and shortcuts.
+New to agents? Complete your first task with an agent. Available features depend on your agent harness, model, account, and organization policies.
+H2: Choose a feature
+H2: Use agents
+Use the Chat view to work beside your code, or the Agents window to focus on assigning higher-level tasks and reviewing outcomes.
+For a complex change, plan, implement, verify, then review:
+Plan: Ask the Plan agent to research the change and identify risks. Review the approach before handing it to an implementation agent.
+Implement: Describe the intended behavior and constraints. The agent searches your code, edits files, and uses tools.
+Verify: Ask the agent to run relevant tests or exercise the app. Inspect what it actually checked.
+Review: Review the diff and validation results before committing or merging.
+For example, give the agent a concrete browser check:
+To organize larger tasks:
+Use separate sessions and worktrees for independent tasks that should not share code changes.
+Use subagents to delegate a focused part of a task in a separate context.
+Hand off a session when you want to continue work with another supported harness or the Cloud target.
+H2: Get better results
+H2: Stay in control
+Agents can save edits directly to the session's folder or worktree. Manual permissions does not ask for confirmation for every file edit. Review the security baseline before working on an existing project.
+H2: Customize your workflow
+Use the Agent Customizations editor to create and manage these options for your selected harness.
+H2: Debug and fix problems
+Combine the task, constraint, and verification in one request:
+See smart actions for tests and errors and debugging.
+H2: Essential keyboard shortcuts
+For spoken interaction, see Voice Mode 
+ 
+ Voice Mode is experimental and might change or be removed.
+ and built-in dictation 
+ 
+ Built-in dictation is experimental and might change or be removed.
+.
+H2: Chat reference
+H3: Chat tools
+Agents choose tools automatically. You do not need to name every tool in your prompt. Type # to browse available tools and context items, or reference a tool to direct the agent to a capability. See the Tools and context reference for individual names.
+H3: Slash commands
+Type / to see commands available in the current session. Availability depends on the chat surface, harness, role, and enabled features.
+For example, a skill in .github/skills/webapp-testing/SKILL.md can be invoked with /webapp-testing. For permission and Autopilot commands, see approvals and permissions.
+H3: Chat participants
+In chat surfaces that support participants, type @ to choose a specialist. Use @github for repositories, issues, and pull requests, @terminal for shell questions, or @vscode for editor features and settings. For example, @vscode /search generates a Search view query.
+H2: Next steps
+Apply AI best practices to your project.
+Look up AI settings.

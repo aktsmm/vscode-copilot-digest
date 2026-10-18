@@ -1,0 +1,61 @@
+Agents Quickstart
+AI Overview
+Agents Quickstart
+Find a Guide
+Agents Tutorial
+Best Practices
+Agents
+How Models Work
+Context
+Tools
+Sessions and Chats
+Trust & Safety
+Agent Customization
+Agent Harnesses
+Workspace Context
+Chat View and Layout
+Agents Window
+Choose an Agent Harness
+Configure the Agents Window
+Plan Work
+Use Tools
+Browser Tools
+Subagents
+Automations
+Manage Sessions
+Session History
+Remote Agent Sessions
+Memory
+Review & Revert Changes
+Artifacts
+Approvals & Permissions
+Agent Sandboxing
+AI Security
+Explore a Codebase
+Add a Feature
+Fix a Bug
+Refactor Safely
+Add Tests
+Test Web Apps
+Run Parallel Tasks
+Get Back on Track
+Adapt Agents to Your Project
+Context Engineering
+Test-Driven Development
+Jupyter Notebooks
+Reduce Credit Usage
+Prompt Examples
+Cheat Sheet
+Tools and Context
+Settings Reference
+VS Code Pet
+MCP Configuration
+Hooks Reference
+OpenTelemetry Monitoring
+Agent Host Architecture
+Troubleshooting
+Debug Chat Interactions
+Diagnose Prompt Caching
+FAQ
+Test-Driven Development
+Test Web Apps
