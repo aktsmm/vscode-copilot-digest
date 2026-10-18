@@ -6,6 +6,7 @@ import { buildApiFiles } from "./lib/api.mjs";
 import { loadSlideSummaries } from "./lib/slide-summaries.mjs";
 import { downloadPanelHtml, downloadsCss, downloadsJs } from "./lib/downloads.mjs";
 import { ABOUT_CSS, aboutCopy, renderAboutBody } from "./lib/about-page.mjs";
+import { DARK_CSS, THEME_INIT_SCRIPT, THEME_TOGGLE_SCRIPT, themeToggleHtml } from "./lib/theme-dark.mjs";
 
 import {
   applyEditorialPolicy,
@@ -2178,6 +2179,7 @@ function renderLayout({
     <title>${escapeHtml(title)}</title>
     <meta name="description" content="${escapeHtml(description)}" />
     <meta name="digest-search-version" content="${searchVersion}" />
+    <script>${THEME_INIT_SCRIPT}</script>
     <meta property="og:title" content="${escapeHtml(title)}" />
     <meta property="og:description" content="${escapeHtml(description)}" />
     <meta property="og:type" content="website" />
@@ -2210,6 +2212,7 @@ function renderLayout({
             <a href="${escapeHtml(searchHref)}">${escapeHtml(text.searchNav)}</a>
             <a href="${escapeHtml(homeHref.replace(/index\.html$/, "about.html"))}">${escapeHtml(locale === "ja" ? "About" : "About")}</a>
             <a href="https://github.com/aktsmm/vscode-copilot-digest">${escapeHtml(text.repositoryNav)}</a>
+            ${themeToggleHtml(locale)}
             <button class="lang-toggle" type="button" data-href="${escapeHtml(langSwitchHref)}" aria-label="${escapeHtml(locale === "ja" ? "Switch to English" : "日本語に切り替え")}" aria-pressed="${locale === "en" ? "true" : "false"}">
               <span class="lang-toggle-track">
                 <span class="lang-toggle-option${locale === "ja" ? " active" : ""}">JA</span>
@@ -2256,6 +2259,7 @@ function renderLayout({
         <span class="sr-only" role="status" aria-live="polite" aria-atomic="true" data-share-feedback></span>
       </footer>
     </div>
+    <script>${THEME_TOGGLE_SCRIPT}</script>
     ${body.includes("data-dl-panel") ? `<script src="${downloadsSrc}" defer></script>` : ""}
     <script>
     (function(){
@@ -3411,7 +3415,7 @@ async function main() {
 
   await fs.writeFile(
     path.join(siteDir, "assets", "styles.css"),
-    stylesCss() + downloadsCss() + ABOUT_CSS,
+    stylesCss() + downloadsCss() + ABOUT_CSS + DARK_CSS,
     "utf8",
   );
   await fs.writeFile(
