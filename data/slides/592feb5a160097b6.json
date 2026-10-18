@@ -49,6 +49,28 @@
       ]
     }
   ],
+  "qa": [
+    {
+      "q": "どのプランで使えますか？",
+      "a": "Copilot Pro、Pro+、Max、Business、Enterpriseの利用者が対象です。提供は段階的なので、まだ表示されない場合は後日あらためて確認します。"
+    },
+    {
+      "q": "どこで選べますか？",
+      "a": "VS Code、Visual Studio、Copilot CLI、cloud agent、Copilot app、github.com、GitHub Mobile、JetBrains IDE、Xcode、Eclipseのモデルピッカーで選べます。"
+    },
+    {
+      "q": "どんな用途に向いていますか？",
+      "a": "サブエージェント、短い編集、ターミナル作業など、高速・高頻度の作業向けです。初期テストでは多くのコーディング課題でClaude Sonnet 5に匹敵したと説明されています。"
+    },
+    {
+      "q": "課金はどうなりますか？",
+      "a": "使用量ベースの課金では、モデル提供元の定価で課金されます。詳しい価格は「GitHub Copilot のモデルと価格設定」を参照してください。"
+    },
+    {
+      "q": "管理者は利用を制御できますか？",
+      "a": "BusinessとEnterpriseの管理者は、Copilot設定のモデルポリシーでアクセスを管理できます。既定では、管理者が無効にしていなければ新モデルは自動で有効になります。"
+    }
+  ],
   "references": {
     "source": {
       "title": "Claude Haiku 5.5 in GitHub Copilot - GitHub Changelog",
