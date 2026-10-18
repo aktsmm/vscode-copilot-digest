@@ -52,9 +52,21 @@
     }
   ],
   "glossary": [
-    { "term": "Ollama", "type": "product", "oneLine": "ローカル マシンで言語モデルを動かすための実行環境。" },
-    { "term": "tool calling", "type": "feature", "oneLine": "モデルが外部のツールを呼び出して処理を進める機能。" },
-    { "term": "streaming", "type": "feature", "oneLine": "回答を生成しながら順次表示する出力方式。" }
+    {
+      "term": "Ollama",
+      "type": "product",
+      "oneLine": "ローカル マシンで言語モデルを動かすための実行環境。"
+    },
+    {
+      "term": "tool calling",
+      "type": "feature",
+      "oneLine": "モデルが外部のツールを呼び出して処理を進める機能。"
+    },
+    {
+      "term": "streaming",
+      "type": "feature",
+      "oneLine": "回答を生成しながら順次表示する出力方式。"
+    }
   ],
   "suggestions": [
     "Copilot アプリでは、[設定] > [モデル プロバイダー] でサポート対象のプロバイダーを追加できる",
@@ -66,12 +78,40 @@
       "url": "https://github.blog/changelog/2026-10-07-discover-local-models-in-github-copilot-cli/"
     },
     "documents": [
-      { "title": "GITHUB COPILOT CLI への LLM モデルの追加 - GitHubドキュメント", "url": "https://docs.github.com/ja/copilot/how-tos/copilot-cli/customize-copilot/use-byok-models" },
-      { "title": "GitHub Copilot アプリ への LLM モデルの追加 - GitHubドキュメント", "url": "https://docs.github.com/ja/copilot/how-tos/github-copilot-app/use-byok-models" }
+      {
+        "title": "GITHUB COPILOT CLI への LLM モデルの追加 - GitHubドキュメント",
+        "url": "https://docs.github.com/ja/copilot/how-tos/copilot-cli/customize-copilot/use-byok-models"
+      },
+      {
+        "title": "GitHub Copilot アプリ への LLM モデルの追加 - GitHubドキュメント",
+        "url": "https://docs.github.com/ja/copilot/how-tos/github-copilot-app/use-byok-models"
+      }
     ]
   },
   "evidence": [
     "https://github.blog/changelog/2026-10-07-discover-local-models-in-github-copilot-cli/",
     "https://docs.github.com/ja/copilot/how-tos/copilot-cli/customize-copilot/use-byok-models"
+  ],
+  "qa": [
+    {
+      "q": "いつから、どのバージョンで使えますか？",
+      "a": "Copilot CLI のバージョン 1.0.94-0 以降で、/model からローカルの Ollama のモデルを検出できます。"
+    },
+    {
+      "q": "検出したモデルは自動で追加されますか？",
+      "a": "自動では追加されません。検出したモデルを選び、プロバイダーとエンドポイントを確認してから「このセッションで追加して使う」か「切り替えずに追加」を選びます。CLI の再起動は不要です。"
+    },
+    {
+      "q": "Ollama やモデルの導入もこの操作で行えますか？",
+      "a": "できません。Ollama とモデルは事前にインストールが必要で、この操作ではランタイムの導入もモデルのダウンロードもしません。モデルは tool calling と streaming に対応している必要があります。"
+    },
+    {
+      "q": "ローカル モデルを選べばオフラインになりますか？",
+      "a": "なりません。ローカル モデルを選んでもオフライン モードは有効にならず、GitHub のテレメトリも無効になりません。オフライン モードは COPILOT_OFFLINE=true で明示的に有効にします。"
+    },
+    {
+      "q": "接続できないときはどうなりますか？",
+      "a": "プロバイダーへの接続失敗は、理由の説明つきでピッカーに表示されるため、何を直すべきか確認できます。"
+    }
   ]
 }
