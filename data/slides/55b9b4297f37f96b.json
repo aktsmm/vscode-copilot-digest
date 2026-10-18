@@ -1,0 +1,73 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "55b9b4297f37f96b",
+  "title": {
+    "ja": "VS Code 1.138: エージェント セッションをローカルの Dev Container で実行",
+    "subtitleJa": "プロジェクトの Dev Container 内でエージェントを動かし、ツールチェーンをそろえられる",
+    "original": "Run agent sessions in local Dev Containers"
+  },
+  "date": "2026-10-18",
+  "topic": "VS Code",
+  "status": "update",
+  "audience": {
+    "who": "VS Code のエージェント セッションを、プロジェクトの開発環境で実行したい開発者",
+    "change": "ローカル フォルダーの Dev Container 内でエージェント セッションを実行でき、環境と依存関係がプロジェクトの設定に従う",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "使うなら Docker を用意し、chat.agentHost.devContainer.enabled を有効にする"
+  },
+  "panels": [
+    {
+      "id": "how-to-use",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "設定 chat.agentHost.devContainer.enabled を有効にする",
+        "対応する Dev Container 構成のあるローカル フォルダーに、フォルダー メニューが自動表示される",
+        "メニューの「Use Dev Container」を選ぶと、そのフォルダーの Dev Container でセッションが動く"
+      ]
+    },
+    {
+      "id": "prerequisites",
+      "heading": "前提と制限",
+      "priority": "core",
+      "items": [
+        "ローカル マシンに Docker がインストールされている必要がある",
+        "エージェントは、ローカル マシンではなくプロジェクトに設定された環境と依存関係を使う",
+        "段階的に展開中で、設定が既定で有効になっていない場合は手動で有効にできる"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "Dev Container", "type": "feature", "oneLine": "プロジェクトのツールと依存関係を定義した、フォルダー単位の開発環境。" }
+  ],
+  "qa": [
+    {
+      "q": "どうやって有効にしますか。",
+      "a": "設定 chat.agentHost.devContainer.enabled を有効にします。対応する Dev Container 構成のあるローカル フォルダーにフォルダー メニューが表示され、「Use Dev Container」を選ぶとセッションがその Dev Container で動きます。"
+    },
+    {
+      "q": "必要なものは何ですか。",
+      "a": "ローカル マシンに Docker がインストールされている必要があります。対象は、対応する Dev Container 構成を持つローカル フォルダーです。"
+    },
+    {
+      "q": "自分の環境で最初から使えますか。",
+      "a": "ローカル Dev Container セッションは段階的に展開中のため、設定が既定で有効になっていない場合があります。その場合は設定を手動で有効にすると、すぐに試せます。"
+    },
+    {
+      "q": "エージェントはどの環境で動きますか。",
+      "a": "フォルダーの Dev Container で動き、ローカル マシンではなくプロジェクトに設定された環境と依存関係を使います。プロジェクトのツールチェーンに合わせて作業できます。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.138",
+      "url": "https://code.visualstudio.com/updates/v1_138#_run-agent-sessions-in-local-dev-containers"
+    }
+  },
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_138"
+  ]
+}
