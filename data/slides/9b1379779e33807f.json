@@ -1,0 +1,93 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "9b1379779e33807f",
+  "title": {
+    "ja": "VS Code 1.139: ペットの名前コンテスト結果は近日発表、/vscode-pet で操作を試せる",
+    "subtitleJa": "名前の募集は 2026-09-17 に終了。発表までは /vscode-pet でペットの反応を試せる",
+    "original": "Pet naming contest update (Experimental)"
+  },
+  "date": "2026-10-18",
+  "topic": "VS Code",
+  "status": "update",
+  "audience": {
+    "who": "VS Code のチャットに表示されるペットを試している利用者",
+    "change": "名前コンテストは審査中で、優勝者とペットの新しい名前は近日発表される",
+    "changeNature": "neutral"
+  },
+  "action": {
+    "required": "no",
+    "summary": "対応は不要。チャットで /vscode-pet を入力すると、ペットの操作と反応を確認できる"
+  },
+  "panels": [
+    {
+      "id": "status",
+      "heading": "コンテストの状況",
+      "priority": "core",
+      "items": [
+        "名前の募集は 2026 年 9 月 17 日に終了している",
+        "対象となる応募を審査中で、優勝者と新しい名前は近日発表される",
+        "この機能は Experimental として案内されている"
+      ]
+    },
+    {
+      "id": "usage",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "チャットで /vscode-pet を入力すると、ペットに会って操作と反応を試せる",
+        "ペットはチャット入力欄の上に表示され、現在の名前は Blobby",
+        "入力欄の操作に反応し、20 秒放置すると眠り、入力やクリックで起きる"
+      ]
+    },
+    {
+      "id": "interactions",
+      "heading": "反応の例",
+      "priority": "detail",
+      "items": [
+        "ドラッグ、左右キー、Shift+左右キーで動かせる",
+        "選択、または Enter / Space で、ランダムな反応が出る",
+        "実績の解除で金の星が 10 秒表示され、選ぶと実績を開ける"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "Blobby", "type": "product", "oneLine": "入力欄の上に表示され、エージェントの作業に反応する VS Code のペット。" }
+  ],
+  "suggestions": [
+    "コンテキスト メニューで、ペットの大きさや色を変えられる"
+  ],
+  "qa": [
+    {
+      "q": "名前コンテストはまだ参加できますか。",
+      "a": "いいえ。募集は 2026 年 9 月 17 日に終了しています。現在は対象となる応募を審査中で、優勝者とペットの新しい名前は近日発表される予定です。"
+    },
+    {
+      "q": "ペットはどうやって試せますか。",
+      "a": "チャットで /vscode-pet を入力すると、ペットに会えます。ペットはチャット入力欄の上に表示され、操作や反応をひととおり試せます。"
+    },
+    {
+      "q": "ペットの大きさや色は変えられますか。",
+      "a": "コンテキスト メニューから変更できます。大きさは 20% 刻みで拡大・縮小でき、40% まで縮小できます。色は Stable または Insiders を選べ、/blobby でプリセットやカスタム色も使えます。"
+    },
+    {
+      "q": "実績とは何ですか。",
+      "a": "実績を解除するとペットに金の星が 10 秒間表示されます。その間にペットを選ぶと実績画面が開き、解除済みと未解除の実績、アクセサリー報酬を確認できます。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.139",
+      "url": "https://code.visualstudio.com/updates/v1_139#_pet-naming-contest-update-experimental"
+    },
+    "documents": [
+      {
+        "title": "VS Code pet interactions and reactions",
+        "url": "https://code.visualstudio.com/docs/agents/reference/chat-pet"
+      }
+    ]
+  },
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_139",
+    "https://code.visualstudio.com/docs/agents/reference/chat-pet"
+  ]
+}
