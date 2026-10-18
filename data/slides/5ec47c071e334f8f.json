@@ -1,0 +1,97 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "5ec47c071e334f8f",
+  "title": {
+    "ja": "VS Code 1.138: Codex のクイック チャットをワークスペースで継続",
+    "subtitleJa": "ワークスペースなしの Codex クイック チャットを、同じ会話のままワークスペース セッションに変換できる",
+    "original": "Continue Codex quick chats in a workspace"
+  },
+  "date": "2026-10-18",
+  "topic": "VS Code",
+  "status": "update",
+  "audience": {
+    "who": "VS Code の Agents ウィンドウで Codex のクイック チャットを使う開発者",
+    "change": "Codex に ローカル フォルダーを関連付けさせ、同じチャットのままプロジェクト作業を続けられる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "プロジェクト固有の作業に移るときは、Codex にフォルダーの関連付けを依頼する"
+  },
+  "beforeAfter": {
+    "before": "Copilot セッションでのみ、クイック チャットをワークスペースで継続できた",
+    "after": "Codex でも同じ流れで、クイック チャットをワークスペース セッションにできる"
+  },
+  "panels": [
+    {
+      "id": "how-to",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "Codex にローカル フォルダーの関連付けを依頼する",
+        "フォルダーをそのまま使うか、分離された worktree を作るかを選ぶ",
+        "変更を確認すると、同じチャットとネイティブの Codex スレッドがワークスペース セッションになる"
+      ]
+    },
+    {
+      "id": "retained",
+      "heading": "引き継がれる内容",
+      "priority": "core",
+      "items": [
+        "タイトル、会話履歴、現在のリクエスト、選択中のモデル、権限モード",
+        "Codex はプロジェクト ファイルにアクセスしてリクエストを続ける"
+      ]
+    },
+    {
+      "id": "limits",
+      "heading": "前提と制限",
+      "priority": "core",
+      "items": [
+        "対象は Interactive モードで待機中の Codex クイック チャット",
+        "変換先は単一ルートのワークスペースのみ",
+        "取り消した場合や適用できない場合は、元のワークスペースなしのチャットが残る"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "クイック チャット", "type": "feature", "oneLine": "Agents ウィンドウで、ワークスペースに関連付けずに始められるチャット。" }
+  ],
+  "qa": [
+    {
+      "q": "どのチャットがワークスペースに変換できますか。",
+      "a": "Interactive モードで待機中の Codex クイック チャットです。変換先は単一ルートのワークスペースに限られます。"
+    },
+    {
+      "q": "変換すると会話や設定は失われますか。",
+      "a": "いいえ。タイトル、会話履歴、現在のリクエスト、選択中のモデル、権限モードが保持され、Codex はプロジェクト ファイルにアクセスして続行します。"
+    },
+    {
+      "q": "どうやってワークスペースに変換しますか。",
+      "a": "Codex にローカル フォルダーの関連付けを依頼し、フォルダーを直接使うか分離された worktree を作るかを選び、変更を確認します。"
+    },
+    {
+      "q": "変換を取り消したり失敗したりしたらどうなりますか。",
+      "a": "元のワークスペースなしのチャットがそのまま使えます。"
+    },
+    {
+      "q": "Copilot セッションでは以前から使えましたか。",
+      "a": "はい。前のリリース (1.137) で Copilot セッション向けに導入され、今回同じ流れが Codex に拡張されました。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.138",
+      "url": "https://code.visualstudio.com/updates/v1_138#_continue-codex-quick-chats-in-a-workspace"
+    },
+    "documents": [
+      {
+        "title": "Visual Studio Code 1.137",
+        "url": "https://code.visualstudio.com/updates/v1_137#_continue-quick-chats-in-a-workspace"
+      }
+    ]
+  },
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_138#_continue-codex-quick-chats-in-a-workspace",
+    "https://code.visualstudio.com/updates/v1_137#_continue-quick-chats-in-a-workspace"
+  ]
+}
