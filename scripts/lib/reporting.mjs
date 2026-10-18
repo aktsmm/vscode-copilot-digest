@@ -3163,6 +3163,12 @@ function isDateOnlyLabel(value) {
   );
 }
 
+// A page that embeds the Changelog filter dialog adds a "Filters (0 selected)" heading and its category labels, which is layout, not news.
+function isFilterDialogNoise(additions) {
+  if (!additions.some((line) => /^(?:H[1-3]:\s*)?Filters \(\d+ selected\)$/i.test(line))) return false;
+  return additions.every((line) => line.length <= 40 && !/[。.!?]$/.test(line));
+}
+
 function isDocsNavigationLabel(value) {
   return /^(?:GitHub Copilot|How-tos|Use Copilot agents|Concepts|Reference)$/i.test(
     normalizeWhitespace(value),
@@ -3199,7 +3205,7 @@ export function editorialQuality(event) {
     return "audit-only";
   }
 
-  if (additions.every(isDateOnlyLabel)) {
+  if (additions.every(isDateOnlyLabel) || isFilterDialogNoise(additions)) {
     return "audit-only";
   }
 
