@@ -22,6 +22,7 @@ const LABELS = {
     topicLabels: { "GitHub Copilot": "GitHub Copilot", "VS Code": "VS Code", "GitHub Platform": "GitHub Platform", "周辺ニュース": "周辺ニュース" },
     periodPrefix: "対象期間", countUnit: " 件",
     search: "タイトル・要約で絞り込み", pick: "個別に選ぶ", selectAll: "すべて選択", selectNone: "すべて解除", noItems: "条件に合うスライドはありません",
+    tooMany: (n, max) => `一度に保存できるのは ${max} 件までです（いま ${n} 件）。期間を狭める（過去7日など）か、「個別に選ぶ」で減らすか、カードのチェックを外してください。`,
   },
   en: {
     title: "Download slides", from: "From", to: "To", last30: "Last 30 days", last7: "Last 7 days", clear: "Clear",
@@ -37,6 +38,7 @@ const LABELS = {
     topicLabels: { "GitHub Copilot": "GitHub Copilot", "VS Code": "VS Code", "GitHub Platform": "GitHub Platform", "周辺ニュース": "Other news" },
     periodPrefix: "Period", countUnit: "",
     search: "Filter by title or summary", pick: "Pick individually", selectAll: "Select all", selectNone: "Clear selection", noItems: "No slides match the filters",
+    tooMany: (n, max) => `You can save up to ${max} slides at a time (${n} selected now). Narrow the dates (for example the last 7 days), or untick items under "Pick individually" or on the cards.`,
   },
 };
 
@@ -188,6 +190,10 @@ export function downloadsJs() {
     json.textContent = L.json + "（" + sel.length + "）"; json.disabled = sel.length === 0 || sel.length > MAX;
     pdf.textContent = L.pdf + "（" + withPdf.length + "）"; pdf.disabled = withPdf.length === 0 || withPdf.length > MAX;
     pptx.textContent = L.pptx + "（" + withPdf.length + "）"; pptx.disabled = withPdf.length === 0 || withPdf.length > MAX;
+    var st = $("[data-dl-status]"), over = Math.max(sel.length, withPdf.length) > MAX;
+    if (over) { st.textContent = L.tooMany(Math.max(sel.length, withPdf.length), MAX); st.className = "dl-status is-error"; }
+    else if (st.getAttribute("data-too-many")) { st.textContent = ""; st.className = "dl-status"; }
+    if (over) st.setAttribute("data-too-many", "1"); else st.removeAttribute("data-too-many");
   }
   function setRange(days) {
     var end = new Date(); var start = new Date(end.getTime() - (days - 1) * 86400000);
