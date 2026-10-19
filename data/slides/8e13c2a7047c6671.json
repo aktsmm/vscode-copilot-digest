@@ -1,0 +1,83 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "8e13c2a7047c6671",
+  "title": {
+    "ja": "VS Code ドキュメントに、エージェント向けの新しいページ群",
+    "subtitleJa": "概要、モデル、コンテキスト、ツール、セッション、安全性などを章立てで整理",
+    "original": "Build with AI in VS Code"
+  },
+  "date": "2026-10-19",
+  "topic": "VS Code",
+  "status": "update",
+  "audience": {
+    "who": "VS Code でエージェントを使い始める開発者、使い方を整理したい人",
+    "change": "Agents の目次に Overview や Trust & Safety など 12 のページが並び、使い方を順に調べられる",
+    "changeNature": "neutral"
+  },
+  "action": {
+    "required": "info",
+    "summary": "初めてなら Overview から読み、使用中の人は Trust & Safety を確認する"
+  },
+  "panels": [
+    {
+      "id": "new-pages",
+      "heading": "追加されたページ",
+      "priority": "core",
+      "items": [
+        "概要・ガイド選び: Overview、Find a Guide、Chat View & Layout、Manage MCP Servers",
+        "基本概念: Agents、How Models Work、Context、Tools、Sessions and Chats",
+        "安全性と拡張: Trust & Safety、Agent Customization、Agent Harnesses"
+      ]
+    },
+    {
+      "id": "overview",
+      "heading": "概要ページの内容",
+      "priority": "core",
+      "items": [
+        "エージェントは、複数ファイルにまたがる作業でコード探索、変更、チェックの実行を進める",
+        "日常の作業は Copilot ハーネスから始め、必要に応じて別のハーネスを選ぶ",
+        "Chat ビューはコードと並べて作業し、Agents ウィンドウはタスクの割り当てと確認に使う"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "変更はコミットやマージの前に差分を確認し、検証する",
+        "利用できるモデルやツールは、ハーネス、アカウント、組織のポリシーによって異なる"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "エージェント ハーネス", "type": "term", "oneLine": "モデルをツールにつなぎ、セッションを管理する仕組み。モデルの切り替えとは別の選択。" },
+    { "term": "セッション", "type": "term", "oneLine": "1 つのタスクの会話と作業。関連する文脈と変更をまとめて保持する。" }
+  ],
+  "references": {
+    "source": {
+      "title": "Build with AI in VS Code",
+      "url": "https://code.visualstudio.com/docs/agents/overview"
+    }
+  },
+  "evidence": [
+    "https://code.visualstudio.com/docs/agents/overview"
+  ],
+  "qa": [
+    {
+      "q": "最初にどのページから読めばよいですか。",
+      "a": "新しく始めるなら Overview です。VS Code とエディターの準備から始め、すでにエージェントを使っている人は経験者向けの手順に進めます。"
+    },
+    {
+      "q": "Chat ビューと Agents ウィンドウはどう使い分けますか。",
+      "a": "Chat ビューは開いているプロジェクトでコードと並べて作業するときに使います。Agents ウィンドウは複数プロジェクトのタスクを割り当てて結果を確認するときに使います。対応するセッションは両者の間で続けられます。"
+    },
+    {
+      "q": "ハーネスとモデルの違いは何ですか。",
+      "a": "ハーネスはモデルをツールにつなぎ、セッションを管理する仕組みです。そのため、ハーネスの変更はモデルの切り替えとは別の選択になります。"
+    },
+    {
+      "q": "エージェントが加えた変更はそのまま使えますか。",
+      "a": "いいえ。コミットやマージの前に差分を確認し、結果を検証します。権限と承認の設定で、確認が必要な操作を決められます。"
+    }
+  ]
+}
