@@ -12,11 +12,21 @@ const dryRun = process.env.DRY_RUN === "true";
 const MAX_MERGES = 12;
 
 const call = async (method, path, body) => {
-  const response = await fetch(`https://api.github.com/repos/${repo}${path}`, {
-    method,
-    headers: { authorization: `Bearer ${token}`, accept: "application/vnd.github+json", "content-type": "application/json" },
-    body: body ? JSON.stringify(body) : undefined,
-  });
+  // The merge call comes after a minute of checks, when an idle connection can drop ("fetch failed"); retry network errors.
+  let response;
+  for (let attempt = 1; ; attempt += 1) {
+    try {
+      response = await fetch(`https://api.github.com/repos/${repo}${path}`, {
+        method,
+        headers: { authorization: `Bearer ${token}`, accept: "application/vnd.github+json", "content-type": "application/json" },
+        body: body ? JSON.stringify(body) : undefined,
+      });
+      break;
+    } catch (error) {
+      if (attempt >= 4 || !(error instanceof TypeError)) throw error;
+      await new Promise((resolve) => setTimeout(resolve, attempt * 2000));
+    }
+  }
   const text = await response.text();
   if (!response.ok) throw Object.assign(new Error(`${method} ${path}: ${response.status} ${text.slice(0, 200)}`), { status: response.status });
   return text ? JSON.parse(text) : null;
