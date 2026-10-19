@@ -370,6 +370,16 @@ export function downloadsJs() {
       var pptx = new PptxGenJS(); pptx.layout = "LAYOUT_WIDE"; pptx.title = TEXT.title;
       var hex = function (c) { return c.replace("#", ""); };
       var F = "Yu Gothic";
+      // Text boxes have fixed sizes and PowerPoint does not shrink text on open, so the text height is estimated with the
+      // browser's own font metrics and the font is scaled down until it fits. Anything that still does not fit is
+      // recorded in window.__pptxOverflow (tests/pptx-fit.test.mjs fails on it).
+      var meas = document.createElement("canvas").getContext("2d"), widths = {};
+      window.__pptxOverflow = []; window.__pptxScales = [];
+      function sz(pt, scale) { return Math.max(6, Math.floor(pt * scale * 2) / 2); }
+      function cw(ch, pt, bold) { var k = (bold ? "b" : "n") + pt + ch; if (widths[k] === undefined) { meas.font = (bold ? "700 " : "400 ") + pt + "px " + FONT; widths[k] = meas.measureText(ch).width; } return widths[k]; }
+      function wrapLines(t, pt, bold, availPt) { var n = 0; String(t).split("\\n").forEach(function (part) { var cur = 0, k = 1; for (var i = 0; i < part.length; i++) { var w = cw(part[i], pt, bold) * 1.03; if (cur + w > availPt && cur > 0) { k++; cur = w; } else cur += w; } n += k; }); return n; }
+      function needIn(paras, w, m, scale) { var mx = m === undefined ? 7.2 : m, my = m === undefined ? 3.6 : m, availPt = w * 72 - 2 * mx, tot = 2 * my; paras.forEach(function (p) { var pt = sz(p.pt, scale); tot += wrapLines(p.t, pt, p.bold, availPt - (p.indent || 0)) * pt * 1.25; }); return tot / 72; }
+      function scaleFor(id, what, paras, w, h, m) { for (var st = 20; st >= 11; st--) { if (needIn(paras, w, m, st / 20) <= h + 0.001) { window.__pptxScales.push(st / 20); return st / 20; } } window.__pptxOverflow.push({ id: id, what: what }); return 0.55; }
       var W = 13.33, H = 7.5, PER_TOC = 13;
       var frame = function (s, left, right, dark) {
         s.addShape("rect", { x: 0, y: 0, w: W * 0.7, h: 0.15, fill: { color: hex(THEME.copilot) }, line: { color: hex(THEME.copilot), width: 0 } });
@@ -413,33 +423,40 @@ export function downloadsJs() {
       column("トピック別", tally(function (x) { return x.topic; }), 7.2);      slides.forEach(function (raw) {
         var s = JSON.parse(JSON.stringify(norm(raw)).replace(/\\u0060/g, "")); var sl = pptx.addSlide();
         var badgeColor = { ga: THEME.success, preview: THEME.done, retirement: THEME.danger, announcement: THEME.copilot, update: THEME.muted }[s.status];
-        sl.addText(s.title.ja, { x: 0.4, y: 0.25, w: s.status === "unknown" ? 12.5 : 10.9, h: 0.55, fontFace: F, fontSize: 22, bold: true, color: hex(THEME.dark), valign: "top", fit: "shrink" });
-        if (s.title.subtitleJa) sl.addText(s.title.subtitleJa, { x: 0.4, y: 0.8, w: 11, h: 0.35, fontFace: F, fontSize: 13, bold: true, color: hex(THEME.copilotDeep) });
-        sl.addText((s.title.original ? s.title.original + "　" : "") + "掲載 " + s.date, { x: 0.4, y: 1.15, w: 11, h: 0.25, fontFace: F, fontSize: 9, color: hex(THEME.muted) });
+        var tw = s.status === "unknown" ? 12.5 : 10.9, tk = scaleFor(s.id, "title", [{ t: s.title.ja, pt: 22, bold: true }], tw, 0.55);
+        sl.addText(s.title.ja, { x: 0.4, y: 0.25, w: tw, h: 0.55, fontFace: F, fontSize: sz(22, tk), bold: true, color: hex(THEME.dark), valign: "top" });
+        if (s.title.subtitleJa) sl.addText(s.title.subtitleJa, { x: 0.4, y: 0.8, w: 11, h: 0.35, fontFace: F, fontSize: sz(13, scaleFor(s.id, "subtitle", [{ t: s.title.subtitleJa, pt: 13, bold: true }], 11, 0.35)), bold: true, color: hex(THEME.copilotDeep) });
+        var origText = (s.title.original ? s.title.original + "　" : "") + "掲載 " + s.date;
+        sl.addText(origText, { x: 0.4, y: 1.15, w: 11, h: 0.3, fontFace: F, fontSize: sz(9, scaleFor(s.id, "original", [{ t: origText, pt: 9 }], 11, 0.3)), color: hex(THEME.muted) });
         if (s.status !== "unknown") sl.addText(STATUS_LABELS[s.status] || "", { x: 11.5, y: 0.3, w: 1.4, h: 0.45, fontFace: F, fontSize: 14, bold: true, color: "FFFFFF", align: "center", fill: { color: hex(badgeColor || THEME.muted) }, rectRadius: 0.2, shape: pptx.ShapeType.roundRect });
         var cards = [];
         if (s.audience) { cards.push(["誰に関係するか", s.audience.who, THEME.copilotTint, THEME.copilot]); cards.push(["変わること・使えること", s.audience.change, s.audience.changeNature === "breaking" ? "FDECEC" : "EAF6EE", s.audience.changeNature === "breaking" ? THEME.danger : THEME.success]); }
         if (s.action) cards.push(["対応　" + ({ yes: "要対応", optional: "任意", no: "対応不要", info: "情報" }[s.action.required] || "情報"), s.action.summary, s.action.required === "yes" ? "FDECEC" : "EAF3FF", s.action.required === "yes" ? THEME.danger : THEME.link]);
         var cw = cards.length ? (12.5 - 0.15 * (cards.length - 1)) / cards.length : 0;
-        cards.forEach(function (c, i) { sl.addText([{ text: c[0], options: { fontSize: 10, color: hex(THEME.muted), breakLine: true } }, { text: c[1], options: { fontSize: 14, color: hex(THEME.fg) } }], { x: 0.4 + i * (cw + 0.15), y: 1.5, w: cw, h: 0.95, fontFace: F, valign: "top", fill: { color: hex(c[2]) }, line: { color: hex(c[3]), width: 1 }, margin: 6 }); });
+        cards.forEach(function (c, i) { var ck = scaleFor(s.id, "card " + c[0], [{ t: c[0], pt: 10 }, { t: c[1], pt: 14 }], cw, 0.95, 6); sl.addText([{ text: c[0], options: { fontSize: sz(10, ck), color: hex(THEME.muted), breakLine: true } }, { text: c[1], options: { fontSize: sz(14, ck), color: hex(THEME.fg) } }], { x: 0.4 + i * (cw + 0.15), y: 1.5, w: cw, h: 0.95, fontFace: F, valign: "top", fill: { color: hex(c[2]) }, line: { color: hex(c[3]), width: 1 }, margin: 6 }); });
         var y = 2.6;
-        if (s.timeline) { sl.addText(s.timeline.map(function (t) { return t.when + " " + t.label; }).join("　→　"), { x: 0.4, y: y, w: 12.5, h: 0.3, fontFace: F, fontSize: 10, bold: true, color: hex(THEME.copilotDeep) }); y += 0.4; }
-        if (s.beforeAfter) { sl.addText("変更前　" + s.beforeAfter.before + "\\n変更後　" + s.beforeAfter.after, { x: 0.4, y: y, w: 8.3, h: 0.7, fontFace: F, fontSize: 10, color: hex(THEME.fg), fill: { color: hex(THEME.subtle) }, margin: 6 }); y += 0.8; }
+        if (s.timeline) { var tlText = s.timeline.map(function (t) { return t.when + " " + t.label; }).join("　→　"); var tlH = Math.max(0.3, needIn([{ t: tlText, pt: 10, bold: true }], 12.5, undefined, 1)); sl.addText(tlText, { x: 0.4, y: y, w: 12.5, h: tlH, fontFace: F, fontSize: 10, bold: true, color: hex(THEME.copilotDeep) }); y += tlH + 0.1; }
+        if (s.beforeAfter) { var baText = "変更前　" + s.beforeAfter.before + "\\n変更後　" + s.beforeAfter.after; var baH = Math.max(0.7, needIn([{ t: baText, pt: 10 }], 8.3, 6, 1)); sl.addText(baText, { x: 0.4, y: y, w: 8.3, h: baH, fontFace: F, fontSize: 10, color: hex(THEME.fg), fill: { color: hex(THEME.subtle) }, margin: 6 }); y += baH + 0.1; }
         var hasSide = (s.glossary && s.glossary.length) || (s.suggestions && s.suggestions.length);
         var mainW = hasSide ? 8.3 : 12.5, py = y, avail = 6.85 - y, total = s.panels.reduce(function (n, p) { return n + 1 + p.items.length; }, 0);
-        s.panels.forEach(function (p) {
-          var h = Math.max(0.6, avail * (1 + p.items.length) / total - 0.08), red = ["caution", "cautions", "constraints", "limits", "impact", "risks"].indexOf(p.id) >= 0;
-          sl.addText([{ text: p.heading, options: { bold: true, fontSize: 16, color: hex(red ? THEME.danger : THEME.copilotDeep), breakLine: true } }].concat(p.items.map(function (i) { return { text: i, options: { bullet: { indent: 14 }, fontSize: 13, color: hex(THEME.fg), breakLine: true } }; })), { x: 0.4, y: py, w: mainW, h: h, fontFace: F, valign: "top", fill: { color: red ? "FFF4F4" : p.priority === "core" ? hex(THEME.copilotTint) : "FFFFFF" }, line: { color: hex(red ? THEME.danger : THEME.border), width: 1 }, margin: 6, fit: "shrink" });
+        var panelParas = s.panels.map(function (p) { return [{ t: p.heading, pt: 16, bold: true }].concat(p.items.map(function (i) { return { t: i, pt: 13, indent: 14 }; })); });
+        var pk = 0.55, needs = [];
+        for (var pst = 20; pst >= 11; pst--) { needs = panelParas.map(function (ps) { return needIn(ps, mainW, 6, pst / 20); }); pk = pst / 20; window.__pptxScales.push(pk); if (needs.reduce(function (a, b) { return a + b; }, 0) + 0.08 * needs.length <= avail + 0.001) break; if (pst === 11) window.__pptxOverflow.push({ id: s.id, what: "panels" }); }
+        var spare = Math.max(0, avail - needs.reduce(function (a, b) { return a + b; }, 0) - 0.08 * needs.length);
+        s.panels.forEach(function (p, pi) {
+          var h = needs[pi] + spare * (1 + p.items.length) / total, red = ["caution", "cautions", "constraints", "limits", "impact", "risks"].indexOf(p.id) >= 0;
+          sl.addText([{ text: p.heading, options: { bold: true, fontSize: sz(16, pk), color: hex(red ? THEME.danger : THEME.copilotDeep), breakLine: true } }].concat(p.items.map(function (i) { return { text: i, options: { bullet: { indent: 14 }, fontSize: sz(13, pk), color: hex(THEME.fg), breakLine: true } }; })), { x: 0.4, y: py, w: mainW, h: h, fontFace: F, valign: "top", fill: { color: red ? "FFF4F4" : p.priority === "core" ? hex(THEME.copilotTint) : "FFFFFF" }, line: { color: hex(red ? THEME.danger : THEME.border), width: 1 }, margin: 6 });
           py += h + 0.08;
         });
         if (hasSide) {
           var sy = y;
-          if (s.glossary && s.glossary.length) { sl.addText([{ text: "用語ミニ解説", options: { bold: true, fontSize: 15, color: hex(THEME.copilotDeep), breakLine: true } }].concat(s.glossary.map(function (g) { return { text: g.term + "　" + g.oneLine, options: { fontSize: 12, color: hex(THEME.fg), breakLine: true } }; })), { x: 8.9, y: sy, w: 4.0, h: 2.6, fontFace: F, valign: "top", fill: { color: hex(THEME.subtle) }, line: { color: hex(THEME.border), width: 1 }, margin: 6, fit: "shrink" }); sy += 2.7; }
-          if (s.suggestions && s.suggestions.length) sl.addText([{ text: "こう使うと便利", options: { bold: true, fontSize: 15, color: hex(THEME.attention), breakLine: true } }].concat(s.suggestions.map(function (x) { return { text: x, options: { bullet: { indent: 14 }, fontSize: 12, color: hex(THEME.fg), breakLine: true } }; })), { x: 8.9, y: sy, w: 4.0, h: Math.max(1, 6.85 - sy), fontFace: F, valign: "top", fill: { color: "FFF8E8" }, line: { color: hex(THEME.attention), width: 1, dashType: "dash" }, margin: 6, fit: "shrink" });
+          if (s.glossary && s.glossary.length) { var gk = scaleFor(s.id, "glossary", [{ t: "用語ミニ解説", pt: 15, bold: true }].concat(s.glossary.map(function (g) { return { t: g.term + "　" + g.oneLine, pt: 12 }; })), 4.0, 2.6, 6); sl.addText([{ text: "用語ミニ解説", options: { bold: true, fontSize: sz(15, gk), color: hex(THEME.copilotDeep), breakLine: true } }].concat(s.glossary.map(function (g) { return { text: g.term + "　" + g.oneLine, options: { fontSize: sz(12, gk), color: hex(THEME.fg), breakLine: true } }; })), { x: 8.9, y: sy, w: 4.0, h: 2.6, fontFace: F, valign: "top", fill: { color: hex(THEME.subtle) }, line: { color: hex(THEME.border), width: 1 }, margin: 6 }); sy += 2.7; }
+          if (s.suggestions && s.suggestions.length) { var sh = Math.max(1, 6.85 - sy), sk = scaleFor(s.id, "suggestions", [{ t: "こう使うと便利", pt: 15, bold: true }].concat(s.suggestions.map(function (x) { return { t: x, pt: 12, indent: 14 }; })), 4.0, sh, 6); sl.addText([{ text: "こう使うと便利", options: { bold: true, fontSize: sz(15, sk), color: hex(THEME.attention), breakLine: true } }].concat(s.suggestions.map(function (x) { return { text: x, options: { bullet: { indent: 14 }, fontSize: sz(12, sk), color: hex(THEME.fg), breakLine: true } }; })), { x: 8.9, y: sy, w: 4.0, h: sh, fontFace: F, valign: "top", fill: { color: "FFF8E8" }, line: { color: hex(THEME.attention), width: 1, dashType: "dash" }, margin: 6 }); }
         }
         var refs = [{ text: "発表　", options: { bold: true, color: hex(THEME.fg) } }, { text: s.references.source.title || s.references.source.url, options: { hyperlink: { url: s.references.source.url }, color: hex(THEME.link) } }];
         (s.references.documents || []).forEach(function (d, i) { refs.push({ text: i === 0 ? "　　詳細　" : "　|　", options: { bold: i === 0, color: hex(THEME.fg) } }); refs.push({ text: d.title, options: { hyperlink: { url: d.url }, color: hex(THEME.link) } }); });
-        sl.addText(refs, { x: 0.4, y: 6.9, w: 9.4, h: 0.5, fontFace: F, fontSize: 9, valign: "top" });
+        var refText = refs.map(function (r) { return r.text; }).join("");
+        sl.addText(refs, { x: 0.4, y: 6.9, w: 9.4, h: 0.5, fontFace: F, fontSize: sz(9, scaleFor(s.id, "references", [{ t: refText, pt: 9 }], 9.4, 0.5)), valign: "top" });
         sl.addNotes(["発表: " + s.references.source.url].concat((s.references.documents || []).map(function (d) { return "詳細: " + d.url; }), (s.evidence || []).map(function (u) { return "根拠: " + u; }), (s.qa && s.qa.length ? ["", "【想定問答】"].concat(s.qa.map(function (x, i) { return "Q" + (i + 1) + ". " + x.q + "\\nA. " + x.a; })) : [])).join("\\n"));
         sl.addText("分類: " + s.topic + " ｜ ID " + s.id, { x: 9.9, y: 7.12, w: 3.0, h: 0.25, fontFace: F, fontSize: 8, color: hex(THEME.muted), align: "right" });
       });
