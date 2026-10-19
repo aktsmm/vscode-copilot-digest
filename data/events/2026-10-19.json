@@ -1,0 +1,120 @@
+{
+  "date": "2026-10-19",
+  "generatedAt": "2026-10-19T10:59:31.771Z",
+  "latestRun": {
+    "generatedAt": "2026-10-19T10:59:31.771Z",
+    "newEventsCount": 3,
+    "newEventIds": [
+      "docs-github-copilot:2e64a7765675100d369a745db202ffbbd0abda1ad898d39b6bca06057ca964d5",
+      "docs-github-copilot-howtos:5131ed9d73e5d819fc82816f728ed059a9a09b535faf93648be5a58f86141e38",
+      "docs-github-copilot-concepts:dcef66f3971af9c1c9874333e654bd1a6f7505a745e7aa762cd5b805acf2b134"
+    ],
+    "errorCount": 1,
+    "skippedLowInformationEvents": []
+  },
+  "events": [
+    {
+      "eventId": "docs-github-copilot:2e64a7765675100d369a745db202ffbbd0abda1ad898d39b6bca06057ca964d5",
+      "sourceId": "docs-github-copilot",
+      "sourceName": "GitHub Docs / Copilot",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-10-19T10:59:02.055Z",
+      "publishedAt": "2026-10-19T10:59:02.054Z",
+      "title": "GitHub Docs / Copilot changed",
+      "url": "https://docs.github.com/en/copilot",
+      "summary": "Detected 3 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 3,
+        "headings": [
+          "About enterprise-managed plugin standards"
+        ],
+        "additions": [
+          "An enterprise account lets you manage only Copilot Business licenses, without consuming GitHub Enterprise Cloud licenses.",
+          "H3: About enterprise-managed plugin standards",
+          "Enterprise administrators can centrally define plugin policies for users, ensuring consistent plugin availability."
+        ]
+      },
+      "headings": [
+        "GitHub Copilot documentation",
+        "Articles",
+        "About agent skills",
+        "About cloud and local sandboxes for GitHub Copilot",
+        "About computer use in GitHub Copilot",
+        "About Copilot auto model selection",
+        "About custom agents",
+        "About custom agents",
+        "About default availability of Copilot features and models",
+        "About enterprise accounts for Copilot Business",
+        "About enterprise-managed plugin standards"
+      ],
+      "score": 3
+    },
+    {
+      "eventId": "docs-github-copilot-concepts:dcef66f3971af9c1c9874333e654bd1a6f7505a745e7aa762cd5b805acf2b134",
+      "sourceId": "docs-github-copilot-concepts",
+      "sourceName": "GitHub Docs / Copilot concepts",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-10-19T10:59:04.225Z",
+      "publishedAt": "2026-10-19T10:59:04.224Z",
+      "title": "GitHub Docs / Copilot concepts changed",
+      "url": "https://docs.github.com/en/copilot/concepts",
+      "summary": "Detected 9 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 9,
+        "headings": [],
+        "additions": [
+          "Prompting and context for GitHub Copilot",
+          "Prompt engineering for GitHub Copilot",
+          "Managing context for GitHub Copilot",
+          "Custom instructions for GitHub Copilot",
+          "Prompt files for GitHub Copilot",
+          "Indexing repositories for GitHub Copilot",
+          "About GitHub Copilot Spaces",
+          "About GitHub Copilot Memory",
+          "Understanding filesystem policies for local sandboxing in GitHub Copilot CLI"
+        ]
+      },
+      "headings": [
+        "Concepts for GitHub Copilot"
+      ],
+      "score": 2
+    },
+    {
+      "eventId": "docs-github-copilot-howtos:5131ed9d73e5d819fc82816f728ed059a9a09b535faf93648be5a58f86141e38",
+      "sourceId": "docs-github-copilot-howtos",
+      "sourceName": "GitHub Docs / Copilot how-tos",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-10-19T10:59:02.978Z",
+      "publishedAt": "2026-10-19T10:59:02.978Z",
+      "title": "GitHub Docs / Copilot how-tos changed",
+      "url": "https://docs.github.com/en/copilot/how-tos",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [],
+        "additions": [
+          "Managing context for GitHub Copilot"
+        ]
+      },
+      "headings": [
+        "How-tos for GitHub Copilot"
+      ],
+      "score": 2
+    }
+  ],
+  "errors": [
+    {
+      "sourceId": "vscode-updates",
+      "message": "Failed to fetch https://code.visualstudio.com/updates/: 500 Internal Server Error"
+    }
+  ]
+}

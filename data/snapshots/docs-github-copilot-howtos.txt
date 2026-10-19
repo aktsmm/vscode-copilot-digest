@@ -31,7 +31,7 @@ Dynamic workflows
 About custom agents
 Remote control of GitHub Copilot CLI sessions
 Comparing GitHub Copilot CLI customization features
-Managing context in GitHub Copilot CLI
+Managing context for GitHub Copilot
 Loading tools on demand with tool search
 Delegating and parallelizing work with agents
 Using LSP servers with GitHub Copilot CLI

@@ -13,9 +13,9 @@ H3: About custom agents
 Custom agents enhance Copilot with assistance tailored to your needs.
 H3: About custom agents
 Custom agents enhance Copilot with assistance tailored to your needs.
-H3: About customizing GitHub Copilot responses
-Learn about customizing the behavior of GitHub Copilot to fit with your preferences and requirements.
 H3: About default availability of Copilot features and models
 Policies control whether unconfigured features and models default to enabled or disabled.
 H3: About enterprise accounts for Copilot Business
 An enterprise account lets you manage only Copilot Business licenses, without consuming GitHub Enterprise Cloud licenses.
+H3: About enterprise-managed plugin standards
+Enterprise administrators can centrally define plugin policies for users, ensuring consistent plugin availability.

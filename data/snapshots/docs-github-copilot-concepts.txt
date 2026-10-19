@@ -8,7 +8,6 @@ GitHub Copilot in IDEs
 Concepts for GitHub Copilot agents
 Concepts for GitHub Copilot cloud agent
 Concepts for GitHub Copilot CLI
-About GitHub Copilot Memory
 About hooks for GitHub Copilot
 About GitHub Copilot plugins
 About agent skills
@@ -16,13 +15,16 @@ Agent capabilities
 About agents
 Choosing and delegating agent work
 Agent-powered workflows and operations
-Concepts for prompting GitHub Copilot
-Prompt engineering for GitHub Copilot Chat
-About customizing GitHub Copilot responses
+Prompting and context for GitHub Copilot
+Prompt engineering for GitHub Copilot
+Managing context for GitHub Copilot
+Custom instructions for GitHub Copilot
+Prompt files for GitHub Copilot
+Indexing repositories for GitHub Copilot
+About GitHub Copilot Spaces
+About GitHub Copilot Memory
 Concepts for providing context to GitHub Copilot
 About Model Context Protocol (MCP)
-About GitHub Copilot Spaces
-Indexing repositories for GitHub Copilot
 Models for GitHub Copilot
 Models in GitHub Copilot
 About Copilot auto model selection
@@ -37,6 +39,7 @@ Security, governance, and network settings for GitHub Copilot
 Content exclusion for GitHub Copilot
 About GitHub Copilot session data
 About cloud and local sandboxes for GitHub Copilot
+Understanding filesystem policies for local sandboxing in GitHub Copilot CLI
 Risks and mitigations for GitHub Copilot cloud agent
 Network settings for GitHub Copilot
 Enterprise concepts for GitHub Copilot
