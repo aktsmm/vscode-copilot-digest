@@ -57,5 +57,27 @@
     "https://docs.github.com/en/copilot/reference",
     "https://docs.github.com/ja/copilot/reference/enterprise-administrators/mcp-private-registry-enforcement",
     "https://docs.github.com/en/copilot/reference/enterprise-administrators/mcp-private-registry-enforcement"
+  ],
+  "qa": [
+    {
+      "q": "この機能は正式版ですか？",
+      "a": "いいえ。パブリック プレビューで、MCPサーバーのアクセス制限の推奨方法ではありません。より安全な正式版の方法は、エンタープライズの managed-settings.json で設定を定義することです。"
+    },
+    {
+      "q": "どのCopilot利用面で使えますか？",
+      "a": "Copilot CLI、Copilot cloud agent、Eclipse、JetBrains、Visual Studio、VS Code、Xcode が対象です。例として VS Code は v1.109.3+、Visual Studio は v18.4.0+ です。"
+    },
+    {
+      "q": "ローカルのMCPサーバーも対象ですか？",
+      "a": "はい。リモートとローカルの両方が対象です。「Registry only」ではローカルサーバーもレジストリに登録し、インストール済みのサーバーIDと完全に一致させる必要があります。"
+    },
+    {
+      "q": "ユーザーが回避することはできますか？",
+      "a": "できる可能性があります。適用はサーバー名またはIDの照合のみに基づくため、設定ファイルの編集で回避されえます。ローカルで上書きできない厳格な適用は、まだ利用できません。"
+    },
+    {
+      "q": "複数のシートを持つユーザーのポリシーはどう決まりますか？",
+      "a": "親エンタープライズの設定が組織より優先されます。次に制限の強い「Registry only」が「Allow all」より優先され、同条件なら最後にアップロードされたレジストリが適用されます。"
+    }
   ]
 }
