@@ -52,6 +52,24 @@
       ]
     }
   ],
+  "qa": [
+    {
+      "q": "誰がこのレポートを取得できますか",
+      "a": "エンタープライズ所有者と請求マネージャー、組織所有者、および View Copilot Metrics 権限を付与したカスタムの組織ロールまたはエンタープライズロールを持つ人です。"
+    },
+    {
+      "q": "利用に前提条件はありますか",
+      "a": "Copilot 使用状況メトリクスのポリシーを有効にする必要があります。"
+    },
+    {
+      "q": "どのエンドポイントを使いますか",
+      "a": "エンタープライズ向けは /enterprises/{enterprise}/copilot/metrics/reports/repos-1-day、組織向けは /orgs/{org}/copilot/metrics/reports/repos-1-day で、day=YYYY-MM-DD を指定します。"
+    },
+    {
+      "q": "どんな指標が分かりますか",
+      "a": "Copilot coding agent が作成・マージした PR と、Copilot code review がレビューした PR です。後者はコメント種別ごとの提案数も含みます。"
+    }
+  ],
   "references": {
     "source": {
       "title": "Repository-level GitHub Copilot usage metrics generally available - GitHub Changelog",
