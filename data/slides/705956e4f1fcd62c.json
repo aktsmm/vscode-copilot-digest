@@ -63,6 +63,24 @@
       }
     ]
   },
+  "qa": [
+    {
+      "q": "どのモデルが廃止され、代替は何ですか？",
+      "a": "Gemini 3.5 Flash と Gemini 3.6 Flash は Gemini 3.8 Flash、Kimi K2.7 Code は Kimi K3、Claude Opus 4.7 は Claude Opus 5.5 が代替として案内されています。"
+    },
+    {
+      "q": "いつ廃止されましたか。どの機能が対象ですか？",
+      "a": "2026年10月2日付で廃止済みです。Copilot Chat、インライン編集、ask／agent モード、コード補完を含むすべての Copilot 体験が対象です。"
+    },
+    {
+      "q": "利用者や管理者は何をすればよいですか？",
+      "a": "ワークフローや連携で指定しているモデルを、サポート対象のモデルへ更新します。廃止済みモデルを削除する操作は不要です。"
+    },
+    {
+      "q": "Enterprise 管理者が確認することはありますか？",
+      "a": "代替モデルへのアクセスをモデルポリシーで有効にする必要がある場合があります。Copilot 設定で対象モデルのポリシーが有効か確認すると、VS Code と github.com のモデル選択に表示されます。"
+    }
+  ],
   "evidence": [
     "https://github.blog/changelog/2026-10-02-selected-models-in-github-copilot-deprecated/",
     "https://docs.github.com/ja/copilot/reference/ai-models/supported-models"
