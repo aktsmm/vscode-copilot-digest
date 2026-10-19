@@ -127,6 +127,7 @@ assert.ok(heal.includes("maintain.lock.yml") && heal.includes("21600") && heal.i
 assert.ok(watchdog.includes("agentic-workflows"), "the watchdog closes failure issues of workflows that recovered");
 assert.ok((await read("collect-updates.yml")).includes("group: data-write") && merger.includes("group: data-write"), "collect and the merger share a write lock");
 assert.ok((await import("node:fs")).readFileSync("scripts/merge-agent-prs.mjs", "utf8").includes("render-pdf.mjs"), "slides are render-checked before merge");
+assert.ok((await import("node:fs")).readFileSync("scripts/merge-agent-prs.mjs", "utf8").includes("pptx-fit.test.mjs"), "slides are PowerPoint-fit-checked before merge");
 assert.ok(slideSource.includes("examples/slides/"), "the slide agent reads real sample slides");
 // Anticipated Q&A (speaker notes) is optional, 3-5 Japanese pairs, and goes into the PPTX notes.
 const { validateSlide } = await import("../scripts/lib/slides.mjs");
