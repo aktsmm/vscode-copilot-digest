@@ -70,6 +70,24 @@
       "oneLine": "指示に基づいて 24 時間稼働し続ける AI エージェント。"
     }
   ],
+  "qa": [
+    {
+      "q": "どんなアプリを実行できますか。",
+      "a": "Copilot Home の一部である Copilot Cowork、Copilot Code、Copilot Studio で作ったアプリと、Copilot Managed Runtime SDK で開発したカスタム アプリです。"
+    },
+    {
+      "q": "権限や公開設定はどう管理されますか。",
+      "a": "実行ユーザーの権限は Microsoft 365 のユーザー ID と権限を参照します。公開・非公開の設定や状態把握は Microsoft 365 のアドミン コンソールで行います。"
+    },
+    {
+      "q": "アプリのデプロイはどう行いますか。",
+      "a": "デプロイなどの操作用に Copilot Managed Runtime CLI が用意されています。"
+    },
+    {
+      "q": "正式版ですか。",
+      "a": "いいえ、パブリックプレビューとして公開されています。"
+    }
+  ],
   "references": {
     "source": {
       "title": "マイクロソフト、企業内アプリの実行基盤「Copilot Managed Runtime」プレビュー公開。Microsoft 365と同じテナント内でコード実行、管理者による集中管理も － Publickey",
