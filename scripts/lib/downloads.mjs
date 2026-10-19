@@ -3,7 +3,7 @@ import { STATUS_LABELS } from "./slides.mjs";
 
 const esc = (v) => String(v).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
 
-export const MAX_MERGE = 50;
+export const MAX_MERGE = 100;
 const TOPICS = ["GitHub Copilot", "VS Code", "GitHub Platform", "周辺ニュース"];
 const KINDS = ["ga", "preview", "retirement", "announcement", "update"];
 
