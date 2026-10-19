@@ -76,5 +76,23 @@
   "evidence": [
     "https://github.blog/changelog/2026-09-25-enterprise-managed-settings-in-product-validator/",
     "https://docs.github.com/ja/enterprise-cloud@latest/copilot/how-tos/administer-copilot/manage-for-enterprise/use-managed-settings/get-started"
+  ],
+  "qa": [
+    {
+      "q": "どこでエラーを確認できますか？",
+      "a": "エンタープライズの AI コントロール ページの「Copilot settings validation」セクションです。ドキュメントでは、AI コントロールの [エージェント] タブにあります。各問題には対象ファイルと JSON パスが示されます。"
+    },
+    {
+      "q": "何がチェックされますか？",
+      "a": "copilot/managed-settings.json、copilot/team-mappings.json、およびチーム マッピングが参照するチーム設定ファイルです。不正な形式の JSON、サポートされていない構成、無効なチーム マッピングなどを検出します。"
+    },
+    {
+      "q": "エラーを直したらどうすればよいですか？",
+      "a": "影響を受けるファイルを修正し、.github-private リポジトリの既定ブランチにコミットします。その後 Agents ページを再読み込みして、検証結果で設定が有効になったことを確認します。"
+    },
+    {
+      "q": "問題がないとき、このセクションはどうなりますか？",
+      "a": "ドキュメントによると、検証で問題が見つからない場合は「Copilot設定の検証」セクションは表示されません。検証が一時的に使えない場合も既存の設定は引き続き適用され、後でページを再読み込みして確認します。"
+    }
   ]
 }
