@@ -1159,5 +1159,27 @@
       "Agent Mergeは実験的で、chat.agentMerge.enabledが必要",
       "対象はAgent HostセッションでAgentsウィンドウのみ"
     ]
+  },
+  "5e09805dda87945d": {
+    "title": "Copilotアプリのセッションを VS Code で継続できる",
+    "summary": "GitHub Copilotアプリのエージェントセッションを「Open in VS Code」でVS Codeに引き継ぐ手順を紹介。会話・計画・コード変更・セッションのworktreeがそのまま使え、差分レビュー、手動編集、ローカルテスト、PRへのpushまで続けられる。",
+    "why": "エージェントの作業を最終確認や手直しのためにエディタへ移したい開発者は、再説明なしで続行できる。",
+    "points": [
+      "セッション画面の「Open in VS Code」から開く",
+      "VS Codeはセッションと同じworktreeを開き、サイドバーに既存セッションを表示",
+      "ソース管理ビューで差分を行単位でレビューできる",
+      "前提: 同じGitHubアカウントでの接続とリポジトリへのpush権限"
+    ]
+  },
+  "8e13c2a7047c6671": {
+    "title": "VS Codeドキュメントにエージェント関連の新ページ群が追加",
+    "summary": "VS Codeドキュメントの「Agents」セクションに、Overview、Find a Guide、Chat View & Layout、Manage MCP Servers、How Models Work、Context、Tools、Sessions and Chats、Trust & Safety、Agent Customization、Agent Harnessesなどの新ページが並んだ。",
+    "why": "VS Codeでエージェントを使う人は、モデル、コンテキスト、ツール、安全性の各ページから必要な情報を探せる。",
+    "points": [
+      "Overviewは質問・インライン編集・エージェントの使い分けを案内",
+      "Copilotハーネスは VS Code、Copilot CLI、Copilotアプリで共通のランタイムを使う",
+      "Chatビューとエージェントウィンドウ間でセッションを引き継げる",
+      "Agent Harnessesで他のエージェントハーネスを比較できる"
+    ]
   }
 }
