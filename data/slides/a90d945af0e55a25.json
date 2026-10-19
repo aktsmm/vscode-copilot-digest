@@ -66,5 +66,27 @@
   "evidence": [
     "https://github.blog/changelog/2026-08-31-selected-github-copilot-models-deprecated/",
     "https://docs.github.com/ja/copilot/reference/ai-models/supported-models"
+  ],
+  "qa": [
+    {
+      "q": "いつ廃止されましたか。",
+      "a": "記事によると 2026年9月1日付で、Gemini 3.1 Pro、Claude Opus 4.5・4.6、Claude Sonnet 4.5・4.6、Raptor Mini の廃止日はいずれも 2026-09-01 です。"
+    },
+    {
+      "q": "どの体験が対象ですか。",
+      "a": "Copilot Chat、インライン編集、ask・agent モード、コード補完を含む、多くの GitHub Copilot 体験が対象です。"
+    },
+    {
+      "q": "代替モデルは何ですか。",
+      "a": "Gemini 3.1 Pro は Gemini 3.7 Flash、Claude Opus 4.5・4.6 は Claude Opus 4.7・4.8・5 のいずれか、Claude Sonnet 4.5・4.6 は Claude Sonnet 5、Raptor Mini は MAI-Code-1.1-Flash です。"
+    },
+    {
+      "q": "Claude Sonnet 4.6 は使えなくなりますか。",
+      "a": "個人向け GitHub Copilot の年間プラン契約者は、Claude Sonnet 4.6 を引き続き利用できます。"
+    },
+    {
+      "q": "管理者は何をすべきですか。",
+      "a": "Copilot Enterprise 管理者は、Copilot 設定のモデルポリシーで代替モデルを有効にする必要がある場合があります。有効にすると VS Code と github.com のモデル選択欄に表示されます。廃止モデルを削除する操作は不要です。"
+    }
   ]
 }
