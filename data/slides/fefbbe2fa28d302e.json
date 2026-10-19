@@ -82,6 +82,28 @@
   "suggestions": [
     "複数リポジトリにまたがる変更は、メイン チャットから各リポジトリ用のピア チャットを作らせる"
   ],
+  "qa": [
+    {
+      "q": "Copilot ハーネスはどう使い始めますか？",
+      "a": "チャット入力のハーネス ピッカーから選びます。このリリースでは既定で選択されている場合もあり、これまで通りに作業できます。Copilot SDK が基盤で、Copilot アプリや Copilot CLI と挙動が揃います。"
+    },
+    {
+      "q": "マルチフォルダー セッションはどう有効にしますか？",
+      "a": "試験的機能で既定は無効です。user の settings.json で、使うハーネスの設定（Copilot なら chat.agentHost.copilotAgent.multiRootEnabled）を true にしてセッションを作ります。"
+    },
+    {
+      "q": "チャットに別のフォルダーを割り当てるには？",
+      "a": "フォルダーを追加する UI はありません。メイン チャットにピア チャットの作成を依頼し、使うリポジトリや worktree を伝えます。"
+    },
+    {
+      "q": "リモート ホストへの委任を使うには？",
+      "a": "試験的機能です。chat.remoteAgentHostsEnabled と chat.remoteSessions.tools.enabled を有効にし、委任したいホストを接続します。ツールは既定でオフで、Agents ウィンドウで使います。"
+    },
+    {
+      "q": "リモート エージェントの結果はどう戻りますか？",
+      "a": "最終回答は自動転送されません。リモート側が send_remote_message で元のチャットに報告します。Agents ウィンドウは開いたまま接続しておく必要があります。"
+    }
+  ],
   "references": {
     "source": {
       "title": "Visual Studio Code 1.140",
