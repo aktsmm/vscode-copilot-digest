@@ -70,5 +70,27 @@
     "https://github.blog/changelog/2026-10-02-github-copilot-weekly-releases-september-28/",
     "https://docs.github.com/ja/copilot/how-tos/use-copilot-agents/use-dynamic-workflows",
     "https://docs.github.com/ja/copilot/concepts/agents/computer-use"
+  ],
+  "qa": [
+    {
+      "q": "動的ワークフローはどの環境で使えますか",
+      "a": "記事では、Copilot CLI、Copilot app、Copilot SDKでパブリックプレビューとされています。ドキュメントでは、CLIとCopilot appでの作成・実行・監視・再開の方法が説明されています。"
+    },
+    {
+      "q": "CLIで動的ワークフローを使うための前提は",
+      "a": "試験的な機能を有効にする必要があります。CLIを--experimentalオプションで起動するか、対話型セッションで/experimental onを実行します。"
+    },
+    {
+      "q": "動的ワークフローの実行でコストを抑える方法は",
+      "a": "ドキュメントの例では、実行を依頼するプロンプトでAI creditの上限（例: 500）を指定しています。制限の設定は省略可能ですが、AI creditsの過剰な消費を防ぐのに役立つとされています。"
+    },
+    {
+      "q": "コンピューターの使用はどのOSで使えますか",
+      "a": "Copilot CLIとCopilot appで、macOSとWindows向けにパブリックプレビューとして提供されています。API・CLI・MCP統合のないGUIのみのソフトウェアも対象になります。"
+    },
+    {
+      "q": "コンピューターの使用は最初から有効ですか",
+      "a": "いいえ。既定では無効で、エージェントがツールを使う前に有効にする必要があります。また記事では、Copilotがアプリを操作する前に利用者の承認を求めると説明されています。"
+    }
   ]
 }
