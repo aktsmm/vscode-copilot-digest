@@ -56,6 +56,24 @@
       "oneLine": "タスクの実行方法を定義するプログラム。"
     }
   ],
+  "qa": [
+    {
+      "q": "どのプランで使えますか。",
+      "a": "すべての Copilot プランで利用できます。Copilot CLI、GitHub Copilot アプリ、GitHub Copilot SDK が対象です。"
+    },
+    {
+      "q": "Copilot CLI ではどう有効にしますか。",
+      "a": "最新版の CLI を --experimental オプション付きで起動するか、対話セッションで /experimental on を実行します。更新は /update です。Copilot アプリでは設定不要です。"
+    },
+    {
+      "q": "/fleet とは何が違いますか。",
+      "a": "/fleet は Copilot がサブエージェントに作業を委任して並列に調整します。動的ワークフローは、コードで定義した手順を実行し、分析や判断が必要な部分をエージェントが担当します。"
+    },
+    {
+      "q": "正式版ですか。",
+      "a": "いいえ。パブリック プレビューで、変更される可能性があります。"
+    }
+  ],
   "references": {
     "source": {
       "title": "Dynamic workflows in Copilot CLI and the Copilot app - GitHub Changelog",
