@@ -69,5 +69,27 @@
     "https://github.blog/changelog/2026-10-09-github-copilot-weekly-releases-october-5/",
     "https://docs.github.com/ja/copilot/concepts/security-governance-and-network-settings/about-cloud-and-local-sandboxes",
     "https://code.visualstudio.com/updates/v1_141"
+  ],
+  "qa": [
+    {
+      "q": "ローカルサンドボックスは追加料金がかかりますか？",
+      "a": "かかりません。Copilotに含まれ、追加料金なしで使えます。なお、クラウドサンドボックスは別物で、使用量に基づいて課金されます。"
+    },
+    {
+      "q": "どのクライアントで使えますか？",
+      "a": "Copilot CLI、Copilot app、Agent Hostを使うVS Codeセッションで一般提供です。"
+    },
+    {
+      "q": "最初から有効になっていますか？",
+      "a": "ドキュメントでは、ローカルサンドボックスは既定でオフです。有効にするまで、シェルコマンドはユーザーアカウントと同じアクセス権で実行されます。"
+    },
+    {
+      "q": "VS Codeではどう有効にしますか？",
+      "a": "すべてのセッションに適用するにはchat.agent.sandbox.enabledを有効にします。個別セッションでは、PermissionsメニューのSandboxing for terminalで切り替えます。"
+    },
+    {
+      "q": "CLIとCopilot appで設定は共通ですか？",
+      "a": "共通ではありません。ローカルサンドボックスの設定はCopilot CLIとCopilot appで個別に構成され、一方の変更はもう一方に影響しません。"
+    }
   ]
 }
