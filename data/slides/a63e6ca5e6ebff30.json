@@ -78,6 +78,28 @@
   "suggestions": [
     "最初のレビューまでが長ければ、レビュー依頼の割り当てを見直す"
   ],
+  "qa": [
+    {
+      "q": "どのレポートで使えますか？",
+      "a": "Enterprise と組織の repos-1-day レポートで利用できます。各行の pull_request_review_times 配列に、レビュー段階ごとの中央値と 90 パーセンタイルが入ります。"
+    },
+    {
+      "q": "誰が参照できますか？",
+      "a": "Enterprise オーナー、課金マネージャー、組織オーナー、View Copilot Metrics 権限を付与したカスタム ロールの利用者です。Copilot 使用状況メトリクスのポリシーを有効にする必要があります。"
+    },
+    {
+      "q": "過去のデータも見られますか？",
+      "a": "いいえ。過去分の補完はなく、2026 年 9 月 21 日より前にレビュー準備完了となったプルリクエストは、このセクションの対象外です。pull_requests.total_merged には引き続き含まれます。"
+    },
+    {
+      "q": "Copilot コード レビューはどう扱われますか？",
+      "a": "計測するのは人によるレビューだけです。Copilot コード レビュー、他のボット、作成者のレビューは無視されます。人と Copilot の両方がレビューしたプルリクエストは対象に含まれます。"
+    },
+    {
+      "q": "total_merged が pull_requests のものより少ないのはなぜ？",
+      "a": "pull_request_review_times の total_merged は、人が作成し他の人がレビューしたものだけを数えます。pull_requests.total_merged はレビューなしでマージされたものも数えるため、通常は多くなります。"
+    }
+  ],
   "references": {
     "source": {
       "title": "Usage metrics API adds pull request review stages - GitHub Changelog",
