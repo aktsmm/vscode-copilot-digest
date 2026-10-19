@@ -1,24 +1,17 @@
 Agents Quickstart
-AI Overview
+Overview
 Agents Quickstart
-Find a Guide
 Agents Tutorial
 Best Practices
-Agents
-How Models Work
-Context
-Tools
-Sessions and Chats
-Trust & Safety
-Agent Customization
-Agent Harnesses
-Workspace Context
-Chat View and Layout
+Find a Guide
+Overview
+Chat View & Layout
 Agents Window
 Choose an Agent Harness
 Configure the Agents Window
 Plan Work
 Use Tools
+Manage MCP Servers
 Browser Tools
 Subagents
 Automations
@@ -31,6 +24,7 @@ Artifacts
 Approvals & Permissions
 Agent Sandboxing
 AI Security
+Find a Guide
 Explore a Codebase
 Add a Feature
 Fix a Bug
@@ -45,10 +39,21 @@ Test-Driven Development
 Jupyter Notebooks
 Reduce Credit Usage
 Prompt Examples
+Agents
+How Models Work
+Context
+Tools
+Sessions and Chats
+Trust & Safety
+Agent Customization
+Agent Harnesses
+Workspace Context
 Cheat Sheet
 Tools and Context
 Settings Reference
 VS Code Pet
+Custom Agent File Reference
+Agent Plugin Authoring Reference
 MCP Configuration
 Hooks Reference
 OpenTelemetry Monitoring

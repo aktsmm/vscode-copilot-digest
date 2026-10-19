@@ -3,8 +3,8 @@ Copy as Markdown
 View as Markdown
 Ask in VS Code
 Ask in VS Code Insiders
-When you delegate tasks across several projects, use the Agents window to track progress and review results in one place instead of switching between project windows. This dedicated Visual Studio Code window keeps the focus on assigning work and reviewing outcomes.
-If your task needs frequent editing, debugging, or testing in one project, use the Chat view beside your editor instead. This article shows how to start, monitor, review, and finish sessions in the Agents window. For conversation controls shared by both interfaces, see Use chat in VS Code.
+The Agents window runs agents in a dedicated Visual Studio Code window. Use it to assign higher-level tasks, coordinate work across projects, monitor multiple sessions, and review outcomes in one place.
+Both the Agents window and Chat view let you direct agents and review their work. Choose based on whether you want to focus on orchestrating tasks or collaborating over code alongside your editor. For guidance, see Run agents in VS Code. This article shows how to start, monitor, review, and finish sessions in the Agents window. For conversation controls shared by both interfaces, see Use chat in VS Code.
 H2: Prerequisites
 Visual Studio Code installed. Download VS Code.
 One of the following authentication options:

@@ -23729,6 +23729,46 @@
         "Original article explicit links",
         "Feature-matched official documentation indexes"
       ]
+    },
+    "28491ec9789814871a60de846fe4fab4ee5778451262562021d75acc758893bd": {
+      "version": 6,
+      "checkedAt": "2026-10-19T19:25:26.845Z",
+      "inputUrl": "https://github.blog/ai-and-ml/github-copilot/how-to-continue-a-github-copilot-app-session-in-vs-code/",
+      "inputTitle": "How to continue a GitHub Copilot app session in VS Code",
+      "status": "unconfirmed",
+      "source": {
+        "url": "https://github.blog/ai-and-ml/github-copilot/how-to-continue-a-github-copilot-app-session-in-vs-code/",
+        "status": "verified",
+        "reason": "Fetched original article",
+        "checkedAt": "2026-10-19T19:25:26.925Z",
+        "contentHash": "3089f086e24665d498c7d0b3ea2d722e7b08f73112794a33bd2ec0d22d7661b5"
+      },
+      "documents": [],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "6f54e2ab5e7f4a862b7fb68f8ad857612a1ae74230a5a27edec053358c166666": {
+      "version": 6,
+      "checkedAt": "2026-10-19T19:25:27.049Z",
+      "inputUrl": "https://code.visualstudio.com/docs/agents/overview",
+      "inputTitle": "VS Code Docs / Agents (new pages) changed",
+      "status": "unconfirmed",
+      "source": {
+        "url": "https://code.visualstudio.com/docs/agents/overview",
+        "status": "unconfirmed",
+        "reason": "Historical changed feature not identifiable in current page",
+        "checkedAt": "2026-10-19T19:25:27.094Z",
+        "contentHash": "02506415419fc4c968506fbc69db4bcd9fa2f7def1ad87b835694d3c97e2a653"
+      },
+      "documents": [],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
     }
   }
 }
