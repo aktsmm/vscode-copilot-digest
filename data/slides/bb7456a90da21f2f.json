@@ -62,6 +62,24 @@
       }
     ]
   },
+  "qa": [
+    {
+      "q": "どのモデルがいつ廃止されましたか？",
+      "a": "Gemini 2.5 Pro と Gemini 3 Flash が、2026年7月31日付で Copilot Chat、インライン編集、ask／agent モード、コード補完を含む全体験で廃止されました。"
+    },
+    {
+      "q": "代わりに何を使えばよいですか？",
+      "a": "提案されている代替は、Gemini 2.5 Pro には Gemini 3.1 Pro (Preview)、Gemini 3 Flash には Gemini 3.6 Flash です。ワークフローや連携のモデル指定を更新してください。"
+    },
+    {
+      "q": "Enterprise 管理者は何をする必要がありますか？",
+      "a": "代替モデルを使うには、Copilot 設定のモデルポリシーで有効化が必要な場合があります。有効にすると、VS Code と github.com の Copilot Chat のモデル選択欄に表示されます。"
+    },
+    {
+      "q": "廃止されたモデルを削除する作業は必要ですか？",
+      "a": "不要です。廃止モデルを取り除く操作は必要ないと案内されています。"
+    }
+  ],
   "evidence": [
     "https://github.blog/changelog/2026-07-31-gemini-2-5-pro-and-gemini-3-flash-deprecated/",
     "https://docs.github.com/ja/copilot/reference/ai-models/supported-models"
