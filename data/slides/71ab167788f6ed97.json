@@ -64,5 +64,23 @@
   "evidence": [
     "https://github.blog/changelog/2026-09-10-mai-code-1-flash-deprecated/",
     "https://docs.github.com/ja/copilot/reference/ai-models/supported-models"
+  ],
+  "qa": [
+    {
+      "q": "いつ廃止されましたか。",
+      "a": "2026年9月10日に、Copilot Chat、インライン編集、ask・agent モード、コード補完を含むすべての GitHub Copilot 体験で廃止されました。"
+    },
+    {
+      "q": "代わりにどのモデルを使えばよいですか。",
+      "a": "記事が示す代替モデルは MAI-Code-1.1-Flash です。ワークフローや連携のモデル指定を、サポートされているモデルに更新してください。"
+    },
+    {
+      "q": "Enterprise 管理者は何をする必要がありますか。",
+      "a": "Copilot Enterprise 管理者は、Copilot 設定のモデルポリシーで代替モデルを有効にする必要がある場合があります。有効にすると VS Code と github.com のモデル選択欄に表示されます。"
+    },
+    {
+      "q": "廃止されたモデルを削除する作業は必要ですか。",
+      "a": "不要です。記事に、廃止されたモデルを削除する操作は必要ないと書かれています。"
+    }
   ]
 }
