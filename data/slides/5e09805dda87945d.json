@@ -1,0 +1,85 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "5e09805dda87945d",
+  "title": {
+    "ja": "Copilot アプリのセッションを VS Code で引き継ぐ手順",
+    "subtitleJa": "「Open in VS Code」で、会話・差分・worktree をそのまま VS Code に持ち込める",
+    "original": "How to continue a GitHub Copilot app session in VS Code"
+  },
+  "date": "2026-10-19",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "Copilot アプリのセッションを、VS Code でレビュー・編集・ローカル テストしたい開発者",
+    "change": "セッションから VS Code を開くと、会話・変更差分・作業ツリーを保ったまま続きの作業ができる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "info",
+    "summary": "引き継ぎたいセッションで「Open in VS Code」を選び、レビューから push まで進める"
+  },
+  "panels": [
+    {
+      "id": "how-to",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "セッションで「Open in VS Code」を選ぶ。複数のエディターがある場合は使うものを選ぶ",
+        "セッションに紐づく worktree が VS Code で開き、Copilot サイドバーに既存のセッションが表示される",
+        "Source Control ビューで差分を行単位でレビューし、直接編集や Copilot への追加依頼ができる"
+      ]
+    },
+    {
+      "id": "prerequisites",
+      "heading": "前提と制限",
+      "priority": "core",
+      "items": [
+        "Copilot アプリにサインイン済みで、VS Code が同じ GitHub アカウントに接続されている",
+        "対象は、変更を含む Copilot アプリのセッション",
+        "セッションのリポジトリで作業し push できる権限が必要"
+      ]
+    },
+    {
+      "id": "finish",
+      "heading": "仕上げ",
+      "priority": "detail",
+      "items": [
+        "統合ターミナルで npm test や npm run lint など、リポジトリ標準の検証を実行する",
+        "コミットして push すると、セッションに紐づく既存のプル リクエストが更新される"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "worktree", "type": "term", "oneLine": "セッションが使った分離済みの作業ツリー。VS Code で同じものが開く。" }
+  ],
+  "suggestions": [
+    "手で修正した後に、Copilot へ「更新したラベルのテストを追加して」と頼むと、セッションの文脈で続けられる"
+  ],
+  "qa": [
+    {
+      "q": "セッションを VS Code で開くと、何が引き継がれますか？",
+      "a": "タスク、計画、会話からなるセッションの文脈と、エージェントが変更したファイルの差分、セッションが使った worktree が引き継がれます。新しいチャットに履歴を写す必要はありません。"
+    },
+    {
+      "q": "どうやって VS Code で開きますか？",
+      "a": "Copilot アプリでセッションを開き、「Open in VS Code」を選びます。複数の対応エディターや VS Code がある場合は、使うものを選びます。"
+    },
+    {
+      "q": "使うための前提条件は何ですか？",
+      "a": "Copilot アプリのインストールとサインイン、同じ GitHub アカウントに接続した VS Code、レビューしたい変更を含むセッション、リポジトリで作業し push できる権限が前提です。"
+    },
+    {
+      "q": "手で修正した内容は、プル リクエストに反映されますか？",
+      "a": "反映されます。VS Code はセッションに紐づくワークツリーとブランチを開くため、push すると、その作業を追跡している既存のプル リクエストが更新されます。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "How to continue a GitHub Copilot app session in VS Code - The GitHub Blog",
+      "url": "https://github.blog/ai-and-ml/github-copilot/how-to-continue-a-github-copilot-app-session-in-vs-code/"
+    }
+  },
+  "evidence": [
+    "https://github.blog/ai-and-ml/github-copilot/how-to-continue-a-github-copilot-app-session-in-vs-code/"
+  ]
+}
