@@ -21,7 +21,7 @@
     "pending:summaries": "node scripts/pending-summaries.mjs",
     "test:e2e": "node tests/slides-e2e.test.mjs",
     "test:data": "node tests/reporting-low-information.test.mjs && node tests/sources.test.mjs && node tests/resources.test.mjs && node tests/api-slides.test.mjs && node tests/slide-lane.test.mjs && node tests/summary-lane.test.mjs && node tests/slide-facts.test.mjs && node tests/workflow-lock.test.mjs",
-    "test:pages": "node tests/pages-discord-ux.test.mjs && node tests/resource-pages.test.mjs && node tests/card-boilerplate.test.mjs",
+    "test:pages": "node tests/pages-discord-ux.test.mjs && node tests/resource-pages.test.mjs && node tests/card-boilerplate.test.mjs && node tests/site-links.test.mjs",
     "test": "npm run test:data && npm run test:pages"
   },
   "dependencies": {
