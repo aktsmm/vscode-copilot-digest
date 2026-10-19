@@ -94,5 +94,27 @@
   "evidence": [
     "https://github.blog/ai-and-ml/github-copilot/github-copilot-app-for-beginners-how-to-build-custom-workflows-with-canvases/",
     "https://docs.github.com/ja/copilot/how-tos/github-copilot-app/working-with-canvas-extensions"
+  ],
+  "qa": [
+    {
+      "q": "キャンバスはどのプランで使えますか？",
+      "a": "GitHub Copilot アプリはすべての Copilot プランで使えると、ドキュメントに書かれています。キャンバス拡張機能はこのアプリの機能です。"
+    },
+    {
+      "q": "キャンバスはどうやって作りますか？",
+      "a": "エージェントセッションで /create-canvas スキルを入力し、支えたいワークフロー、利用者ができる操作、エージェントができる操作を説明します。完成すると右側のパネルで開きます。"
+    },
+    {
+      "q": "作ったキャンバスはチームで共有できますか？",
+      "a": "できます。プロジェクト スコープ（.github/extensions）ならリポジトリにコミットしてチームで共有でき、ユーザー スコープ（~/.copilot/extensions）なら自分のマシン用になります。"
+    },
+    {
+      "q": "最初の版が合わない場合は？",
+      "a": "エージェントに列やフィルターの追加などを依頼して、繰り返し改良できます。固定のレイアウトはなく、説明できるワークフローならキャンバスにできるとされています。"
+    },
+    {
+      "q": "既存のキャンバスを使うことはできますか？",
+      "a": "Awesome Copilot で共有されたキャンバス拡張機能を入れて、同様に改良できます。一部のキャンバスはプラグイン経由で、使う前にインストールが必要です。"
+    }
   ]
 }
