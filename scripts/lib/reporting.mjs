@@ -2283,8 +2283,10 @@ function summaryFromPatterns(event, locale = "ja") {
         return `VS Code ${release[1]} のリリースが案内された。新機能と変更点は、公式の release notes で確認できる。`;
       }
 
-      const sample = lines.slice(0, 3).map((line) => `「${trimText(line, 60)}」`);
-      const more = lines.length > sample.length ? `ほか ${lines.length - sample.length} 件` : "";
+      // Only whole headings are quoted: Docs tables of contents cut long ones with "...", and a quote must not be cut here.
+      const quotable = [...new Set(lines.filter((line) => line.length <= 60 && !/(?:\.{3}|…)$/.test(line)))];
+      const sample = quotable.slice(0, 3).map((line) => `「${line}」`);
+      const more = lines.length > sample.length ? (sample.length ? `ほか ${lines.length - sample.length} 件` : `${lines.length} 件の見出し`) : "";
       return `${event.sourceName ?? "監視対象ページ"} に ${sample.join("、")}${more} が追加された。`;
     }
 
