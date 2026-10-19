@@ -82,6 +82,28 @@
     "既存のタスクで他のモデルと同じ依頼を試し、ステップ数や速度を比べる",
     "管理者は、既定のモデル有効化の設定とこのモデルの個別設定を確認する"
   ],
+  "qa": [
+    {
+      "q": "どのプランで使えますか？",
+      "a": "Copilot Pro、Pro+、Max、Business、Enterprise のユーザーが対象です。"
+    },
+    {
+      "q": "どこで選べますか？",
+      "a": "VS Code、Visual Studio、Copilot CLI、コーディング エージェント、Copilot アプリ、github.com、GitHub Mobile、JetBrains IDE、Xcode、Eclipse のモデルピッカーで選べます。"
+    },
+    {
+      "q": "モデルピッカーに表示されないときは？",
+      "a": "提供は段階的に展開されています。表示されない場合は、少し待ってから再確認してください。"
+    },
+    {
+      "q": "管理者は利用を制御できますか？",
+      "a": "Business と Enterprise の管理者は、Copilot 設定のモデル ポリシーで管理できます。既定のモデル有効化では、管理者が無効にしていない限り新モデルは自動で有効になります。"
+    },
+    {
+      "q": "料金はどうなりますか？",
+      "a": "使用量ベースの課金で、プロバイダーの定価で請求されます。詳細は「GitHub Copilot のモデルと価格設定」で確認できます。"
+    }
+  ],
   "references": {
     "source": {
       "title": "Claude Sonnet 5.5 in GitHub Copilot - GitHub Changelog",
