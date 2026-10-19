@@ -51,6 +51,28 @@
       ]
     }
   ],
+  "qa": [
+    {
+      "q": "HydraFusion はどのプランで使えますか",
+      "a": "Copilot Pro、Pro+、Business、Enterprise で使えます。Business と Enterprise では、管理者がプレビュー機能を有効にする必要があります。研究プレビューのため、仕様は変更される可能性があります。"
+    },
+    {
+      "q": "VS Code で表示されない場合はどうしますか",
+      "a": "VS Code 1.140 以降または VS Code Insiders で、Copilot Chat のモデルピッカーから選びます。表示されなければ chat.copilot.hydraFusion.enabled を有効にします。組織経由の場合は管理者の許可が必要なことがあります。"
+    },
+    {
+      "q": "Copilot アプリではどう有効にしますか",
+      "a": "最新版に更新し、Settings で「HydraFusion」を検索してオンにします。その後、モデルピッカーから HydraFusion を選びます。"
+    },
+    {
+      "q": "Auto とは何が違いますか",
+      "a": "Auto は要求ごとにモデルを選びます。HydraFusion は、1 ターン内でワークフローを選び、複数モデルを調整する方法を探る研究プレビューです。"
+    },
+    {
+      "q": "Critique ワークフローでは何が行われますか",
+      "a": "1 つのモデルが下書きを作り、別のモデル系列の読み取り専用の批評役がレビューします。その後、下書きを作ったモデルが 1 回だけ修正します。Rubber Duck と同じレビューのパターンです。"
+    }
+  ],
   "references": {
     "source": {
       "title": "HydraFusion in VS Code and the GitHub Copilot app - GitHub Changelog",
