@@ -85,5 +85,27 @@
   "evidence": [
     "https://code.visualstudio.com/updates/v1_141",
     "https://code.visualstudio.com/docs/agents/concepts/agent-host"
+  ],
+  "qa": [
+    {
+      "q": "サンドボックスはどの OS で使えますか。",
+      "a": "Windows、macOS、Linux で使えます。Windows では必要な OS の更新を適用しておく必要があります。ローカルでもリモートでも動作し、リモートでは実行ホスト側で制限が適用されます。"
+    },
+    {
+      "q": "サンドボックスはどう有効にしますか。",
+      "a": "全セッションに適用するなら chat.agent.sandbox.enabled を有効にします。セッション単位では、Permissions メニューの Sandboxing for terminal で切り替えます。"
+    },
+    {
+      "q": "worktree を整理すると、セッションはどうなりますか。",
+      "a": "選んだセッションは完了扱いになり worktree が削除されますが、後でセッションを復元すれば worktree は再作成されます。実行中、入力待ち、ピン留めのセッションは整理されません。"
+    },
+    {
+      "q": "既存の github-enterprise.uri はどうなりますか。",
+      "a": "サインインは維持され、初回起動時に保存済みの認証情報が新しい設定に移されます。uri は非推奨で、両方が設定されている場合は github-enterprise.uris が優先されます。"
+    },
+    {
+      "q": "企業でサンドボックスを必須にできますか。",
+      "a": "統合マネージド設定で sandbox の enabled を true、allowBypass を false にすると必須にできます (Preview)。従来のサンドボックス設定とデバイスポリシーは非推奨です。"
+    }
   ]
 }
