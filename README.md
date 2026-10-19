@@ -212,7 +212,7 @@ Discord 通知は短い概要を本文に置き、主な更新は embed カー�
 ### スライド・要約・点検（agentic workflow）
 
 - スライド: `slide-dispatch.yml` が 1 日 4 回（各回最大 10 件）、スライド未作成の直近 3 か月の更新を新しい順に 1 件ずつ `slide.md` に渡す。読めない更新は `Slide skip` Issue に記録して依頼から外す。新しい更新が無いときの余力で、想定問答が無い既存スライドに `qa` を足す
-- 要約: `summarize-dispatch.yml` が 1 日 4 回、未処理があり `summaries:` の PR が開いていないときだけ `summarize.md` を起動する（最大 30 件）
+- 要約: `summarize-dispatch.yml` が 1 日 4 回、未処理があり `summaries:` の PR が開いていないときだけ `summarize.md` を起動する（最大 30 件）。対象はスライドと違い直近 6 か月で、古いカードの英語タイトル・抜粋のままの要約も新しい順に書き直す
 - 点検: 毎週月曜 04:00 JST を目安に `maintain.md` が動き、失敗を検知した `heal-on-failure.yml` からも起動する。健康チェック（`scripts/health-report.mjs`）を読み、原因を直す PR か、直せないものの Issue を作る
 - merge: `auto-merge-agent-prs.yml` が検証して merge する。スライドは `data/slides/{id}.json` 1 件だけ、要約は `data/summaries-ja.json` だけ、点検は `scripts/lib/maintenance-guard.mjs` の範囲だけ。1 ページに収まるか、事実が引用ページにあるかも確認する。検証に失敗したスライド・要約の PR は閉じて書き直させ、同じ更新で 2 回閉じられたら依頼から外す
 - `watchdog.yml`（毎日）が、トークンの期限の警告、固まった agent の run の取り消し、失敗した Pages デプロイの再実行、回復した `[aw]` 失敗 Issue のクローズを行い、`pipeline-status.yml`（毎日）が運用状況の Issue を更新する

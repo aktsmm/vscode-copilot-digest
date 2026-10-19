@@ -52,7 +52,7 @@ steps:
         echo "[]" > .work/pending-summaries.json
         echo "A summaries PR is still open."
       else
-        node scripts/pending-summaries.mjs --months 3 --limit "$LIMIT" > .work/pending-summaries.json
+        node scripts/pending-summaries.mjs --months 6 --limit "$LIMIT" > .work/pending-summaries.json
       fi
 post-steps:
   - uses: actions/setup-node@v4

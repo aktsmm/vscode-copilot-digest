@@ -1,5 +1,5 @@
 // Lists updates whose card still shows a source excerpt: no slide covers them and no summary is written.
-// Reads the generated static API (run `npm run build:pages` first). Usage: [--months 3] [--limit 30] [--skip a,b] [--ids a,b]
+// Reads the generated static API (run `npm run build:pages` first). Usage: [--months 3] (the workflows pass 6) [--limit 30] [--skip a,b] [--ids a,b]
 import fs from "node:fs/promises";
 import path from "node:path";
 import { retentionStart } from "./build-slide-pdfs.mjs";
