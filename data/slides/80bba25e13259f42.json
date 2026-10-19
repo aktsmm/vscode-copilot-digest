@@ -57,5 +57,27 @@
   "evidence": [
     "https://github.blog/changelog/2026-07-20-copilot-users-can-now-see-ai-credits-used-per-billing-cycle/",
     "https://docs.github.com/ja/enterprise-cloud@latest/copilot/concepts/billing-and-usage/organizations-and-enterprises/budgets"
+  ],
+  "qa": [
+    {
+      "q": "どのプランの利用者が対象ですか?",
+      "a": "Copilot Business と Copilot Enterprise の利用者が対象です。個人予算の有無にかかわらず、請求サイクル内に使用した AI クレジット数を確認できます。"
+    },
+    {
+      "q": "どこで確認できますか?",
+      "a": "GitHub 設定にある GitHub Copilot の使用状況ページ(usage page)で確認できます。"
+    },
+    {
+      "q": "個人予算がない場合は何が表示されますか?",
+      "a": "管理者が予算を設定していない場合は、そのサイクルで使用した AI クレジットの合計が表示されます。"
+    },
+    {
+      "q": "予算が設定されている場合はどう表示されますか?",
+      "a": "使用済みのクレジット数が、予算の総額に対する値として表示されます。"
+    },
+    {
+      "q": "以前の表示とどう違いますか?",
+      "a": "以前は予算に対する割合のみの表示でした。個人予算を持たない利用者は、月間の使用量を把握できませんでした。"
+    }
   ]
 }
