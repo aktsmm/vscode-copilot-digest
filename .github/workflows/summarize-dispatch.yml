@@ -35,7 +35,7 @@ jobs:
           if gh pr list --state open --limit 100 --json title -q '.[].title' | grep -Eq '^summaries:'; then
             echo "A summaries PR is still open."; exit 0
           fi
-          count=$(node scripts/pending-summaries.mjs --months 3 --limit 100 | jq 'length')
+          count=$(node scripts/pending-summaries.mjs --months 6 --limit 100 | jq 'length')
           echo "pending summaries: $count"
           if [ "$count" -gt 0 ]; then
             gh workflow run summarize.lock.yml -f limit=30
