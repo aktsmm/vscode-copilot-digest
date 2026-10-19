@@ -1,0 +1,35 @@
+name: Full tests
+
+# Runs the whole test suite on main once a day (and after a data change lands). Collect only runs the data tests, so a
+# problem that only the page tests see would otherwise wait for the next maintenance run. A failure here starts the
+# maintenance agent through heal-on-failure.
+on:
+  schedule:
+    - cron: "50 22 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: full-tests
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Install Chromium and Japanese fonts for the browser tests
+        run: |
+          npx playwright install --with-deps chromium
+          sudo apt-get install -y -qq fonts-noto-cjk
+      - run: npm run build:pages
+      - run: npm test
+      - run: npm run test:e2e

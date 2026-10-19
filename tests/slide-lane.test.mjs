@@ -151,5 +151,6 @@ assert.ok(maintenance.includes("workflow_dispatch") && maintenance.includes("0 1
 assert.ok(maintenance.includes("health-report.mjs") && maintenance.includes("protected-files: allowed"));
 const skipped = selectPending([item("x", "2026-10-12"), item("y", "2026-10-12")], new Set(), { skip: ["x"], today: new Date("2026-10-15") });
 assert.deepEqual(skipped.map((i) => i.id), ["y"]);
+assert.ok(heal.includes("Full tests") && (await read("full-tests.yml")).includes("npm test"), "the full suite runs daily and a failure starts maintenance");
 assert.ok(watchdog.includes("token-health") && watchdog.includes("github-authentication-token-expiration"), "the watchdog warns before the token expires");
 console.log("slide-lane tests passed");

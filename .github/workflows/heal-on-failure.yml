@@ -10,6 +10,7 @@ on:
       - "Auto-merge agent PRs"
       - "Dispatch slide authoring"
       - "Dispatch summaries"
+      - "Full tests"
       - "vscode-copilot-digest: one-update slide JSON"
       - "vscode-copilot-digest: Japanese card summaries"
     types: [completed]
