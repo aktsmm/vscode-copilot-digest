@@ -1,0 +1,84 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "806b1f92932cb664",
+  "title": {
+    "ja": "Java Champion 3 人が語る、Copilot を生産性向上に使う実践ポイント",
+    "subtitleJa": "計画・検証ゲート・再利用スキルで、AI の出力を信頼できるソフトウェアにする",
+    "original": "How 3 Java Champions are using GitHub Copilot for increased productivity"
+  },
+  "date": "2026-10-20",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "Copilot をエージェント的に使い、品質を保ちながら生産性を上げたい Java 開発者",
+    "change": "Java Champion の実例から、文脈・検証・スキル化で AI 出力を運用する具体策が分かる",
+    "changeNature": "neutral"
+  },
+  "action": {
+    "required": "info",
+    "summary": "自分の開発フローに、計画レビュー・検証ゲート・スキル化を取り入れる際の参考にする"
+  },
+  "panels": [
+    {
+      "id": "practices",
+      "heading": "実践のコツ",
+      "priority": "core",
+      "items": [
+        "一発指示をやめ、先にエージェントに質問させて前提を明らかにし、計画を確認してから実行する",
+        "「完了」はモデルの申告ではなく、テスト・スクリーンショット比較などタスク別の検証ゲートで判断する",
+        "学んだ教訓は Agent Skills に反映し、次回の同種タスクで再利用する"
+      ]
+    },
+    {
+      "id": "examples",
+      "heading": "事例",
+      "priority": "core",
+      "items": [
+        "Vlad Mihalcea 氏: IntelliJ IDEA で Copilot を使い、Optimizer のイベント履歴 Web アプリを実装",
+        "Patrick Baumgartner 氏: Reveal.js から Marp への講義スライド移行を、画像と PDF の比較で検証",
+        "Baumgartner 氏は「実行は任せても責任は任せない」を原則とし、成果物は自分が所有する"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "生成した計画とコードは必ずレビューし、満足できない回答には人が介入する",
+        "軽い作業には軽量なモデルを使い、深い検討が必要なときに高性能モデルを使い分ける"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "Agent Skills", "type": "feature", "oneLine": "学んだ手順や規約を再利用できる形で Copilot に持たせる仕組み。" },
+    { "term": "検証ゲート", "type": "term", "oneLine": "テストや画面比較など、作業完了を証拠で確認するための条件。" }
+  ],
+  "references": {
+    "source": {
+      "title": "How 3 Java Champions are using GitHub Copilot for increased productivity - The GitHub Blog",
+      "url": "https://github.blog/ai-and-ml/github-copilot/how-3-java-champions-are-using-github-copilot-for-increased-productivity/"
+    },
+    "documents": []
+  },
+  "evidence": [
+    "https://github.blog/ai-and-ml/github-copilot/how-3-java-champions-are-using-github-copilot-for-increased-productivity/"
+  ],
+  "qa": [
+    {
+      "q": "新機能の発表ですか。",
+      "a": "いいえ。Java Champion 3 人が Copilot を本番開発やオープンソースでどう使っているかを紹介する記事で、実践上のコツが中心です。"
+    },
+    {
+      "q": "検証ゲートとは何ですか。",
+      "a": "「完了」をモデルの申告にせず、テストの通過、対象ファイルの処理確認、ドキュメント更新、スクリーンショット比較などタスクごとに証拠で確認する考え方です。"
+    },
+    {
+      "q": "スキルはどう活用されていますか。",
+      "a": "Vlad Mihalcea 氏は自分の文体を反映するスキルを作成し、Patrick Baumgartner 氏は教訓を反映して更新する maintainer-audit などのスキルを運用しています。"
+    },
+    {
+      "q": "モデルはどう使い分けていますか。",
+      "a": "Vlad Mihalcea 氏は、深い検討には Opus と高い推論設定を使い、レポートやリリースノート作成などの単純作業には消費トークンの少ない軽量モデルを使っています。"
+    }
+  ]
+}
