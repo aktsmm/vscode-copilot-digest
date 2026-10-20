@@ -2,6 +2,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 
 import * as cheerio from "cheerio";
+import { loadSlideSummaries } from "./lib/slide-summaries.mjs";
 
 import {
   rankEvent,
@@ -9,6 +10,7 @@ import {
   localizedImportanceLabel,
   localizedSummary,
   localizedTitle,
+  jaCardTitleFor,
 } from "./lib/reporting.mjs";
 
 const workspaceRoot = process.cwd();
@@ -16,7 +18,7 @@ const eventsDir = path.join(workspaceRoot, "data", "events");
 const DISCORD_CONTENT_LIMIT = 1900;
 const DISCORD_DAILY_EVENT_LIMIT = 3;
 const DISCORD_WINDOW_EVENT_LIMIT = 3;
-const DISCORD_WEEKLY_EVENT_LIMIT = 3;
+const DISCORD_WEEKLY_EVENT_LIMIT = 8;
 const DISCORD_EMBED_LIMIT = 10;
 const DISCORD_EMBED_TOTAL_TEXT_LIMIT = 6000;
 const DISCORD_EMBED_TITLE_LIMIT = 256;
@@ -37,6 +39,7 @@ function parseArgs(argv) {
     cadenceDays: 1,
     anchorDate: null,
     includeOg: false,
+    importantOnly: false,
     threadId: null,
     threadName: null,
     mode: "daily",
@@ -57,6 +60,11 @@ function parseArgs(argv) {
 
     if (argument === "--force-preview") {
       options.forcePreview = true;
+      continue;
+    }
+
+    if (argument === "--important-only") {
+      options.importantOnly = true;
       continue;
     }
 
@@ -485,8 +493,8 @@ function discordColorForEvent(event) {
 async function buildEventEmbed(event, options = {}) {
   const mode = options.mode ?? "daily";
   const titleLimit = DISCORD_EMBED_TITLE_LIMIT - 16;
-  const summaryLimit = mode === "weekly" ? 360 : 320;
-  const title = localizedTitle(event);
+  const summaryLimit = mode === "weekly" ? 220 : 320;
+  const title = jaCardTitleFor(event) || localizedTitle(event);
   const summary = localizedSummary(event);
   const pagesUrl = options.pagesUrl ?? buildEventPagesUrl(event);
   const fields = [
@@ -552,13 +560,18 @@ async function buildPayload(date, datedLogs, options = {}) {
       newEventIds: [],
     };
     const candidateEvents =
-      options.forcePreview && latestRun.newEventsCount === 0
+      // A weekly summary covers everything of the week; a day's last run only knows what was new in that run.
+      isWeeklyMode || options.importantOnly || (options.forcePreview && latestRun.newEventsCount === 0)
         ? [...(eventLog.events ?? [])]
         : (eventLog.events ?? []).filter((event) =>
             latestRun.newEventIds.includes(event.eventId),
           );
+    // An update whose card still shows the English excerpt is left out: it is sent after its Japanese text exists.
     const rankedEvents = candidateEvents
+      .filter((event) => options.forcePreview || !localizedSummary(event).startsWith("（原文の抜粋）"))
       .filter((event) => !event.isFutureDated)
+      // The prompt notification carries only what may need action or opens something new: GA, preview, retirements.
+      .filter((event) => !options.importantOnly || ["GA", "Retired", "Preview"].includes(localizedImportanceLabel(event, "en")))
       .map((event) => ({ ...event, dateKey: entryDate }))
       .sort((left, right) => rankEvent(right) - rankEvent(left));
 
@@ -593,9 +606,11 @@ async function buildPayload(date, datedLogs, options = {}) {
   const selectedEvents = selectDiscordEvents(uniqueEvents, {
     maxEvents: isWeeklyMode
       ? DISCORD_WEEKLY_EVENT_LIMIT
-      : options.windowDays > 1
-        ? DISCORD_WINDOW_EVENT_LIMIT
-        : DISCORD_DAILY_EVENT_LIMIT,
+      : options.importantOnly
+        ? 5
+        : options.windowDays > 1
+          ? DISCORD_WINDOW_EVENT_LIMIT
+          : DISCORD_DAILY_EVENT_LIMIT,
   });
   const notificationCandidateCount = selectEditorialHighlights(
     uniqueEvents,
@@ -613,7 +628,9 @@ async function buildPayload(date, datedLogs, options = {}) {
         ? options.forcePreview && uniqueEvents.length === 0
           ? `GitHub Copilot / VS Code 週次 preview`
           : `GitHub Copilot / VS Code 週次まとめ`
-        : options.windowDays > 1
+        : options.importantOnly
+          ? `GitHub Copilot / VS Code 重要な更新`
+          : options.windowDays > 1
           ? options.forcePreview && uniqueEvents.length === 0
             ? `GitHub Copilot / VS Code ${options.windowDays}日分 preview`
             : `GitHub Copilot / VS Code 直近${options.windowDays}日分まとめ`
@@ -733,6 +750,8 @@ async function postWebhook(payload, dryRun, options = {}) {
 }
 
 async function main() {
+  // The cards on the site use the slide and the written summary; the notification must too.
+  await loadSlideSummaries(process.cwd());
   const options = parseArgs(process.argv.slice(2));
   const availableDates = await listEventLogDates();
   const anchorDate = resolveAnchorDate(
@@ -766,9 +785,13 @@ async function main() {
       eventLog: await readEventLog(date),
     })),
   );
+  const wholeWindow = options.mode === "weekly" || options.importantOnly;
   const totalNewEvents = datedLogs.reduce(
     (sum, { eventLog }) =>
-      sum + Number(eventLog.latestRun?.newEventsCount ?? 0),
+      sum +
+      (wholeWindow
+        ? (eventLog.events ?? []).length
+        : Number(eventLog.latestRun?.newEventsCount ?? 0)),
     0,
   );
 

@@ -25,6 +25,7 @@ on:
 
 permissions:
   contents: read
+  issues: write
 
 jobs:
   notify:
@@ -81,3 +82,18 @@ jobs:
             args+=(--thread-name "$THREAD_NAME")
           fi
           node scripts/notify-discord.mjs "${args[@]}"
+
+      - name: Report a failed notification
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          title="Discord notification failed"
+          existing=$(gh issue list --state open --search "\"$title\" in:title" --json number -q '.[0].number')
+          body="The weekly Discord notification failed: $RUN_URL. Check that the DISCORD_WEBHOOK_URL secret is valid and that the webhook still exists."
+          if [ -n "$existing" ]; then
+            gh issue comment "$existing" --body "$body"
+          else
+            gh issue create --title "$title" --body "$body"
+          fi
