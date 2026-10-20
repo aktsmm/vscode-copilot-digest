@@ -1,16 +1,10 @@
 {
   "date": "2026-10-20",
-  "generatedAt": "2026-10-20T00:28:05.055Z",
+  "generatedAt": "2026-10-20T10:12:31.853Z",
   "latestRun": {
-    "generatedAt": "2026-10-20T00:28:05.055Z",
-    "newEventsCount": 5,
-    "newEventIds": [
-      "github-changelog:https://github.blog/changelog/2026-10-19-copilot-model-policy-api-for-enterprise-orgs-and-teams",
-      "github-changelog:https://github.blog/changelog/2026-10-19-github-copilot-models-deprecated-on-october-19-2026",
-      "github-changelog-copilot:https://github.blog/changelog/2026-10-19-copilot-model-policy-api-for-enterprise-orgs-and-teams",
-      "github-changelog-copilot:https://github.blog/changelog/2026-10-19-github-copilot-models-deprecated-on-october-19-2026",
-      "copilot-whats-new:860b5b7055a0db34b212663fb0abafda5b3fbc3c890d48011cc9f02719540cef"
-    ],
+    "generatedAt": "2026-10-20T10:12:31.853Z",
+    "newEventsCount": 0,
+    "newEventIds": [],
     "errorCount": 0,
     "skippedLowInformationEvents": []
   },
