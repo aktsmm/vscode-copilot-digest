@@ -2140,5 +2140,322 @@
       "ファイルの編集やコマンド実行もローカル環境のまま繰り返せる、と記載されている",
       "ナビゲーションにはDesktop App、Agents on GitHub、Copilot CLIなどが並ぶ"
     ]
+  },
+  "85f2393c311f0153": {
+    "title": "JetBrains版CopilotにClaudeエージェントがプレビュー登場",
+    "summary": "JetBrains IDE向けGitHub Copilotで、Claude as agent providerがパブリックプレビューになった。あわせて組織・企業エージェントの利用、Copilot CLIセッションへの実行中メッセージ送信、Agent Debugのログ要約ビュー、ターンごとのAIクレジット表示が加わり、クラウドエージェントは一般提供となった。",
+    "why": "JetBrains IDEでCopilotを使う開発者と管理者は、組織エージェントの配布やClaude利用の設定を確認する。",
+    "points": [
+      "Claude利用にはClaude Code CLIのインストールとCLIパス設定が必要",
+      "設定場所は Settings > Tools > GitHub Copilot > Chat",
+      "Claudeエージェントはbypass permissionsモードで、編集とツール呼び出しが自動承認される",
+      "実行中は Add to Queue、Steer with Message、Stop and Send を選べる"
+    ]
+  },
+  "dc9a5eaa9fae8c82": {
+    "title": "Opus 4.6 (fast)が6月29日に廃止予定",
+    "summary": "Opus 4.6 (fast)は2026年6月29日に、Copilot Chat、インライン編集、askモード、agentモード、コード補完を含むすべてのCopilot体験で廃止される。推奨される代替モデルはOpus 4.8 (fast)で、廃止後にモデルを削除する作業は不要。",
+    "why": "このモデルを使うワークフローや連携は、廃止日までにOpus 4.8 (fast)へ切り替える必要がある。",
+    "points": [
+      "廃止日は2026年6月29日",
+      "代替モデルはOpus 4.8 (fast)",
+      "Enterprise管理者はモデルポリシーで代替モデルを有効化する必要がある場合がある",
+      "有効化するとVS Codeとgithub.comのモデル選択に表示される"
+    ]
+  },
+  "6ef2f6be909588b9": {
+    "title": "ユーザー別AIクレジット消費がメトリクスAPIに追加",
+    "summary": "Copilot usage metrics APIのユーザー単位レポートに、1日あたりのAIクレジット消費量を示すai_credits_usedフィールドが追加された。使用量ベース課金APIと同じ消費データを元にしており、ユーザーごとのCopilot活動全体の合計値を返す。",
+    "why": "エンタープライズ管理者や組織オーナーは、ユーザー別の消費傾向を見て予算計画に使える。",
+    "points": [
+      "対象は users-1-day と users-28-day のレポート",
+      "エンタープライズと組織の両レベルで利用できる",
+      "機能・モデル・サーフェス別の内訳はまだない",
+      "請求額そのものではなく分析用の指標なので、請求は課金側で確認する"
+    ]
+  },
+  "c58788e272ae5b3a": {
+    "title": "MAI-Code-1-FlashがCopilotの対応環境を拡大",
+    "summary": "Microsoftの小型コーディングモデルMAI-Code-1-Flashが、Copilot CLI、クラウドエージェント、Copilotアプリ、github.comのChat、Visual Studio、GitHub Mobile、JetBrains、Eclipse、Xcodeで使えるようになった。6月24日にクラウドエージェントが追記された。",
+    "why": "小型で軽量なモデルを試したいユーザーは、利用プランと展開状況を確認して選択肢に加える。",
+    "points": [
+      "Free、Student、Pro、Pro+、Maxプランが対象",
+      "最初は一部のユーザーに限定し、数週間かけて順次拡大",
+      "BusinessとEnterpriseは近日対応予定",
+      "GitHub Copilot向けに調整された小型モデル"
+    ]
+  },
+  "c5db11b3c7c31b73": {
+    "title": "Copilot CLIでEnterprise管理のBYOKモデルが選択可能に",
+    "summary": "Enterprise管理者が外部プロバイダーのAPIキーで構成したモデルが、Copilot CLIの/modelピッカーに表示されるようになった。管理者はカスタムモデルを開発者へ配布しやすくなる。個人が自分でローカルや外部プロバイダーのモデルを設定する方法も引き続き使える。",
+    "why": "Enterprise管理者は、自社のモデル構成をCLI利用者に配布できるか設定を確認する。",
+    "points": [
+      "管理者が構成したモデルは/modelピッカーに出る",
+      "個人でのクライアント側BYOK設定も引き続き利用可能",
+      "フィードバックはCLIセッションの/feedbackコマンドで送れる"
+    ]
+  },
+  "13e8a73808d21e34": {
+    "title": "author検索にCopilot作成のプルリクエストも含まれる",
+    "summary": "プルリクエスト検索でauthor:を使うと、Copilotクラウドエージェントがユーザーの指示で作成したPRも結果に含まれるようになった。author:@meでも同様で、github.com/pullsの「Created by me」などの既定ビューにも反映される。",
+    "why": "自分が責任を持つPRを一度の検索で漏れなく把握でき、複数クエリの組み合わせが不要になる。",
+    "points": [
+      "現時点の対象はgithub.comのUIとGitHub Mobile",
+      "REST APIとGraphQL APIには7月16日に展開予定",
+      "新しいグローバルPRダッシュボードではユーザー名がCopilotと共に作成者として表示される"
+    ]
+  },
+  "3c538b4fb66edae9": {
+    "title": "GitHub社内データ分析エージェントQubotの作り方",
+    "summary": "GitHubが社内向けに作ったCopilot搭載の分析エージェントQubotの構成を紹介している。Slack、VS Code、Copilot CLIから自然言語で質問でき、コンテキスト層、評価フレームワーク、KustoとTrinoのクエリエンジンで構成される。整備したコンテキストにより回答が3倍速くなったという。",
+    "why": "社内データ分析エージェントを作る場合、コンテキスト層と評価の設計が精度に効くという実例として参考になる。",
+    "points": [
+      "Slackでの質問はCopilotクラウドエージェントとして起動し、結果はPRにマークダウンで保存される",
+      "コンテキストはGitHub MCP Server経由でブロンズ・シルバー・ゴールドのデータ層ごとに読み込む",
+      "既定はKustoで、必要に応じて自動でTrinoに切り替える",
+      "変更ごとにオフライン評価で精度と遅延を測る"
+    ]
+  },
+  "49bbeff33d0dc47a": {
+    "title": "Copilotコードレビューがリポジトリ直下のAGENTS.mdに対応",
+    "summary": "Copilotコードレビューが、リポジトリのルートにあるAGENTS.mdを自動的に読み、関連する指示をレビューに反映するようになった。ドラフトPRではレビュアー選択にRequestボタンが表示され、タイムライン上のCopilotレビューイベントも折りたたまれる。いずれも一般提供。",
+    "why": "AGENTS.mdを置いているリポジトリでは、内容がレビュー指針として使われるため記述を見直しておく。",
+    "points": [
+      "読み込み対象はリポジトリルートのAGENTS.md",
+      "ドラフトPRではCopilotの横のRequestボタンから直接依頼できる",
+      "PRのConversationタブでCopilotレビューのイベントが集約される"
+    ]
+  },
+  "0badf82f3d5386bc": {
+    "title": "5行の評価を5万回回して分かったモデルの努力配分の差",
+    "summary": "VS Codeチームは「HELLO.txtにHELLOを書く」という単純な評価を30モデルで約5万回実行した。常に直接ファイルを作るモデルがある一方、計画や探索を挟むモデルが多く、出力トークンは約50から3,676まで開きがあった。",
+    "why": "使用量ベース課金では出力トークンが費用と時間になるため、タスクに合うモデル選びの目安になる。",
+    "points": [
+      "最少は約50出力トークンで、最大は平均3,676トークン",
+      "モデルの大きさは冗長さを予測せず、新しい世代ほど無駄が少ない傾向",
+      "長い作業では計画や探索が有効なので、削ることが目的ではない",
+      "ツール呼び出しの順序まで記録する小さな評価を常時回すことを推奨"
+    ]
+  },
+  "0ae90e621a47a9b0": {
+    "title": "Copilot個人プランの新規申し込みが順次再開",
+    "summary": "GitHub CopilotのStudent、Pro、Pro+、Maxプランの新規申し込みが、今後数週間かけて段階的に再開される。希望のプランがまだ表示されない場合は後日確認する。上限が近づくとアップグレードの案内が出て、従量課金で現プランのまま使い続けることもできる。",
+    "why": "新規に契約したい個人ユーザーは、再開状況を見て希望プランを選ぶ。",
+    "points": [
+      "アップグレードは差額のみ支払い、新プランの含有分から使用済み分を引いた量をすぐ使える",
+      "含有クレジットと追加支出の上限を使い切っても、消費分を支払えば現プランで継続可能",
+      "アップグレードと継続利用の変更は即日有効"
+    ]
+  },
+  "5034beef6813bcef": {
+    "title": "自動生成リリースノートにCopilot PRの依頼者も記載",
+    "summary": "リリースノートの自動生成で、Copilotクラウドエージェントが作成してマージされたPRに、依頼した開発者の名前が@copilotと並んで記載されるようになった。表記は「by @monalisa with @copilot」の形式になる。",
+    "why": "Copilotに任せた作業でも担当者の貢献がリリースノート上で正しく見える。",
+    "points": [
+      "従来表記は「by @copilot」のみ",
+      "新表記は「by @ユーザー with @copilot」",
+      "GitHub上の全リポジトリ、全プランで利用可能"
+    ]
+  },
+  "f7b895bc19c79c2f": {
+    "title": "Enterprise管理設定でバイパス権限モードを無効化可能に",
+    "summary": "Enterprise管理設定のsettings.jsonでdisableBypassPermissionsModeを\"disable\"にすると、Copilot CLIとVS Codeが権限確認を自動でスキップするモード（yoloモードや自動承認）を防げる。管理設定として初のガバナンス機能。",
+    "why": "Enterprise管理者は、自動承認を禁止したい場合に設定ファイルへ追加する。",
+    "points": [
+      "設定先は.github-private/.github/copilot/settings.json",
+      "対象はEnterprise経由でCopilot BusinessまたはEnterpriseのライセンスを持つユーザー",
+      "有効かどうかはEnterprise設定のAI controlsにあるAgentsページで確認する",
+      "VS Code 1.122以降がこのポリシーに対応"
+    ]
+  },
+  "2dd4ff8e6412d009": {
+    "title": "VS Codeで自分のモデルキー(BYOK)を使う手順",
+    "summary": "VS Codeでは、Azure、Anthropic、Gemini、OpenAIなどのAPIキーを追加するか、OllamaやFoundry Localのローカルモデルを使ってChatのモデルピッカーから選べる。設定はChat: Manage Language Modelsから行い、拡張機能で提供されるモデルプロバイダーも追加できる。",
+    "why": "GitHubアカウントなしで独自モデルを使いたい場合や、組織で使うプロバイダーに合わせたい場合に設定する。",
+    "points": [
+      "BYOKはチャットとユーティリティ用途で、通常のコード補完は対象外",
+      "プロバイダー経由の利用料は各プロバイダーが課金し、Copilotの枠に数えられない",
+      "サインインなしの場合はchat.utilityModelとchat.utilitySmallModelの設定が必要",
+      "拡張機能は@tag:language-modelsで検索できる"
+    ]
+  },
+  "43319f7816eec381": {
+    "title": "Copilotに必要なツールを探すAgent finderが利用可能に",
+    "summary": "GitHub Copilotがタスクの説明からMCPサーバー、スキル、キャンバス、エージェント、ツールを索引から探し、ランク付けして提案するAgent finderが使えるようになった。オープンなARD仕様に基づき、公開カタログや自社の非公開レジストリを指定できる。",
+    "why": "ツールを手作業で配線してコンテキストを圧迫している場合に、必要なものだけ取り込む運用へ切り替えられる。",
+    "points": [
+      "すべてのCopilotプランで利用可能",
+      "ARD(Agentic Resource Discovery)仕様を実装",
+      "管理設定で、発見を許可するリソースを制限できる",
+      "自動インストールはせず、接続するかどうかは利用者が決める"
+    ]
+  },
+  "52f22de4cdf92ee4": {
+    "title": "GitHub Copilotアプリがデスクトップ向けに一般提供",
+    "summary": "GitHub CopilotアプリがmacOS、Windows、Linuxで一般提供になった。Issue、PR、プロンプトからセッションを始め、リポジトリ横断で並列セッションをブランチとワークツリー単位で実行できる。技術プレビュー後にキャンバス、クラウドの定期実行、独自モデルとMCPツールの接続が加わった。",
+    "why": "BusinessやEnterpriseで使う場合は、管理者がポリシーでCopilot CLIを有効にしておく必要がある。",
+    "points": [
+      "差分確認、内蔵ターミナルとブラウザでの検証、PR作成まで一画面で行える",
+      "キャンバスでエージェントと同じ計画やPR、ターミナルを操作できる",
+      "Cloud automationsで定期的なエージェント作業をクラウドに任せられる"
+    ]
+  },
+  "1efc009be290fc46": {
+    "title": "VS Code 1.125：ブラウザ強化と拡張機能更新の制御",
+    "summary": "2026年6月17日公開のVS Code 1.125は、統合ブラウザのアドレスバー検索とリモート接続経由の閲覧、拡張機能の自動更新の遅延設定、Language Modelsエディターからのモデルプロバイダー導入、Copilot追加支出の表示、MDMによるCopilot管理設定の配布を加えた。",
+    "why": "管理者と開発者は、拡張機能の更新方針とCopilot関連の設定が変わるため新しい設定項目を確認する。",
+    "points": [
+      "workbench.browser.searchEngineで検索エンジンを選べる",
+      "extensions.autoUpdateDelayの既定は2時間",
+      "Language Server Protocol 3.18に対応するvscode-languageclient 10.0.0が公開",
+      "非推奨の機能と設定はなし"
+    ]
+  },
+  "494744637e5e3781": {
+    "title": "VS Code 1.125で拡張機能の自動更新設定がon/offに簡素化",
+    "summary": "extensions.autoUpdateの値がonとoffだけになり、従来のtrue、false、onlyEnabledExtensions、delayedは自動で移行される。自動更新が有効な間は有効な拡張機能だけが更新され、無効な拡張機能は次に有効化した時点で更新される。",
+    "why": "無効にした拡張機能が更新されなくなるため、有効化後のバージョンを意識しておく。",
+    "points": [
+      "設定名はextensions.autoUpdateで、値はonとoff",
+      "旧値は自動的に新しい値へ移行される",
+      "管理者はextensions.autoUpdateとextensions.autoUpdateDelayをエンタープライズポリシーで一括管理できる"
+    ]
+  },
+  "666b2ba32db57567": {
+    "title": "VS Code 1.125：転送ポートをエージェントが正しく開ける",
+    "summary": "リモートワークスペースでポートを転送している場合、ポート番号が変わるためエージェントがブラウザを開きにくかった。1.125では、転送済みのポートをエージェントが要求し、リモートプロキシが無効なとき、URLが書き換えられエージェントにも変更が通知される。",
+    "why": "リモート環境でエージェントにWebアプリを確認させる開発者は、手動でURLを直す手間が減る。",
+    "points": [
+      "対象はポート転送済みでリモートプロキシが無効の場合",
+      "URLを書き換えたうえでエージェントへ通知する",
+      "リモートプロキシはworkbench.browser.enableRemoteProxy(プレビュー)で有効化できる"
+    ]
+  },
+  "829db75c47a6b7a4": {
+    "title": "Copilot Chatのauto modeが全ユーザーに一般提供",
+    "summary": "Copilotの自動モデル選択が、github.comとGitHub Mobileで全プランのCopilot Chatに一般提供された。リクエストの複雑さとモデルの稼働状況から、Claude Sonnet 4.6、GPT-5.4 mini、GPT-5.4、Haiku 4.5などへ自動で振り分ける。有料契約者は10%割引で課金される。",
+    "why": "モデル選びを任せてトークン消費を抑えたい場合はautoを使い、必要なら応答単位で特定のモデルに切り替える。",
+    "points": [
+      "応答にカーソルを合わせると使われたモデルが分かる",
+      "ユーザーと管理者のモデル設定を尊重する",
+      "振り分け先のモデルは時間とともに変わる"
+    ]
+  },
+  "ab6f2a30b708d05a": {
+    "title": "VS Code 1.125：Language Modelsエディターからプロバイダー導入",
+    "summary": "Language Modelsエディターに「Install Model Providers」ボタンが加わった。押すと、モデルプロバイダーを提供する拡張機能に絞ったExtensionsビューが開く。従来はlanguage-modelsタグを知っていないと探しにくかった。導入後のモデルはモデルピッカーに並ぶ。",
+    "why": "BYOK以外のプロバイダー拡張からモデルを追加したい場合に、探す手間が減る。",
+    "points": [
+      "ボタン名はInstall Model Providers",
+      "拡張機能のプロバイダーはBYOKモデルとは別の追加経路",
+      "インストール後のモデルは他のモデルと同じピッカーに表示される"
+    ]
+  },
+  "e82dc2fd5c1a1bb7": {
+    "title": "VS CodeのCopilotステータスに追加支出の消費率を表示",
+    "summary": "VS Code 1.125では、Copilotステータスダッシュボードに、設定した追加予算のうち何パーセントを使ったかが表示される。上限に達する前に使い方を調整でき、詳細な使用量と追加支出の管理はCopilot設定から行える。",
+    "why": "超過料金を避けたい利用者は、ダッシュボードの消費率を見て上限前に利用を調整する。",
+    "points": [
+      "表示場所はCopilotステータスダッシュボード",
+      "追加予算に対する消費率をパーセントで示す",
+      "詳細確認と追加支出の管理はCopilot設定で行う"
+    ]
+  },
+  "092029380cc76d99": {
+    "title": "VS CodeのCopilotがキャッシュとツール検索でトークンを節約",
+    "summary": "VS Code版Copilotは、OpenAI向けの拡張プロンプトキャッシュ、ツール検索、WebSocket既定化と、Anthropic向けのキャッシュ配置見直しとツール検索で、トークン消費と遅延を減らした。使用量ベース課金での費用抑制が狙い。",
+    "why": "長いエージェントセッションを使う人は、モデルやツール構成を途中で変えるとキャッシュが効きにくくなる点に注意する。",
+    "points": [
+      "prompt_cache_retentionを24hにして、30〜40分後のキャッシュヒット率がGPT-5.4で+679%",
+      "OpenAIのツール検索でセッション全体のトークンが中央値で約9〜11%減",
+      "AnthropicのツールをDeferして、中央値ユーザーで約18%減",
+      "OpenAI GPT-5.2以降はWebSocketが既定の通信方式"
+    ]
+  },
+  "c657b6576b9758fc": {
+    "title": "Copilotの文脈処理とAutoでクレジット消費を抑える",
+    "summary": "GitHubは、VS Codeでのプロンプトキャッシュとツール検索による文脈の再利用に加え、タスク意図とモデルの稼働状況で選ぶAutoの仕組みを説明した。Autoはキャッシュを壊さないよう、最初のターンと圧縮後にだけモデルを切り替える。Copilot CLIやGitHubアプリへの拡大も予告している。",
+    "why": "クレジットを節約したい利用者は、Autoを既定にし、セッション途中でモデルや設定を変えない運用にする。",
+    "points": [
+      "ルーティングモデルHyDRAが推論の深さやデバッグ難度などを見て選ぶ",
+      "16言語ファミリーで学習し、英語との精度差は4ポイント以内",
+      "Auto with task intentはCopilot CLI、GitHubアプリ、追加のIDEへ拡大予定",
+      "管理者がAutoを既定または唯一の選択肢にする制御も予定"
+    ]
+  },
+  "2f0101a4921237ff": {
+    "title": "git worktreeの使い方とCopilotアプリでの活用",
+    "summary": "git worktreeは、stashやブランチ切り替えをせず別フォルダで並行作業するための機能で、2015年から存在する。AIエージェントの並列実行が増えたことで注目され、GitHub Copilotアプリでは新しいセッションの既定の実行先になっている。",
+    "why": "複数のエージェントやブランチを同時に扱う開発者は、worktreeの利点と注意点を把握して使い分ける。",
+    "points": [
+      "作成は git worktree add ../hotfix-workspace -b hotfix-bug main",
+      "不要になったら git worktree remove で削除する",
+      "各worktreeが依存関係を持つためディスク容量を使う",
+      "同じブランチを複数のworktreeで同時に開けない"
+    ]
+  },
+  "0ba3272de0f7841b": {
+    "title": "Copilot CLI入門：よく使うスラッシュコマンド",
+    "summary": "連載「Copilot CLI for Beginners」の回で、/modelでモデル切り替え、/contextと/compactでトークン管理、/clearでリセット、/resumeで過去セッション再開、/diffで変更確認、/cwdで作業ディレクトリ変更、/reset-allowed-toolsで権限リセットをする方法を紹介している。",
+    "why": "CLIを使い始めたばかりの人は、モデル選択とコンテキスト管理のコマンドから覚えると迷いにくい。",
+    "points": [
+      "/modelの一覧には各モデルのコスト倍率が表示される",
+      "/contextで残りトークン、/compactで会話の要約ができる",
+      "/resumeはローカルとリモートのセッションを再開できる"
+    ]
+  },
+  "9d3018ae36e005b8": {
+    "title": "Copilot利用メトリクスにサーバー側テレメトリのユーザーを追加",
+    "summary": "Copilot usage metricsのレポートが、クライアント側のテレメトリに加えサーバー側のテレメトリも使うようになった。クライアント側では届かなかったアクティブユーザーもEnterpriseの1日と28日のレポートに含まれ、DAUの把握が正確になる。",
+    "why": "レポート上のアクティブユーザー数が増えて見えるため、過去値との比較時にこの変更を考慮する。",
+    "points": [
+      "例として1,000人だった日次レポートが1,050人になりうる",
+      "新たに含まれたユーザーはtotals_by_ideやtotals_by_featureの内訳が空になる",
+      "既存ユーザーの合計と内訳は変わらない",
+      "今後、内訳の情報も順次追加される予定"
+    ]
+  },
+  "a4e98f8026414be2": {
+    "title": "Copilot CLIのサブエージェント委任を選択的にして失敗と待ち時間を削減",
+    "summary": "Copilot CLIのメインエージェントが、単純な作業は自分で処理し、独立した調査や並列化できる作業にだけサブエージェントへ委任するよう改善された。本番のA/Bテストでセッションあたりのツール失敗が23%減り、P95の待ち時間も5%短くなった。品質の低下はなかった。",
+    "why": "Copilot CLIを1.0.42以降へ更新すると、この改善の恩恵を受けられる。",
+    "points": [
+      "更新は/updateコマンドで、バージョン1.0.42以降が対象",
+      "検索ツールの失敗が27%、編集ツールの失敗が18%減少",
+      "待ち時間はP75で3%、P95で5%短縮",
+      "本番トラフィックの100%に展開済み"
+    ]
+  },
+  "ae1e1472e4fffcbf": {
+    "title": "Copilotコードレビューに組織ランナー制御と除外設定が追加",
+    "summary": "Copilotコードレビューに、組織単位のランナー設定と固定、Copilotコンテンツ除外の尊重、リポジトリカスタム指示の文字数上限撤廃が入った。これまでcopilot-instructions.mdと*.instructions.mdは4000文字で読み込みが止まっていた。",
+    "why": "組織管理者は、ランナー設定の一元化と除外パスの設定を見直し、長い指示ファイルも活用できる。",
+    "points": [
+      "設定場所は組織の Copilot -> Runner type -> Runner type configuration",
+      "ランナー設定はコードレビューとクラウドエージェントの両方に適用される",
+      "リポジトリ、組織、Enterpriseのコンテンツ除外設定が尊重される",
+      "指示ファイルの4000文字制限は撤廃"
+    ]
+  },
+  "7ed040dff3d78ca7": {
+    "title": "GitHub Agentic Workflowsがパブリックプレビューに",
+    "summary": "GitHub Agentic Workflowsがパブリックプレビューになった。Issueの振り分け、CIの失敗分析、ドキュメント更新といった判断を伴う作業を、Markdownに自然言語で書き、標準のActions YAMLへコンパイルしてGitHub Actions上でコーディングエージェントに任せられる。",
+    "why": "リポジトリの定型的な判断作業を自動化したいチームは、既存のランナーグループとポリシーのままで試せる。",
+    "points": [
+      "既存のランナーグループとポリシー制約をそのまま使える",
+      "既定は読み取り専用権限で、サンドボックス内のファイアウォール配下で実行",
+      "出力はsafe outputsで検証され、脅威検出ジョブが変更を走査する"
+    ]
+  },
+  "adc3896bc09d7c66": {
+    "title": "Agentic Workflowsで個人アクセストークンが不要に",
+    "summary": "GitHub Agentic WorkflowsをActionsの組み込みGITHUB_TOKENで使えるようになり、長期保存のPATが不要になった。組織所有のリポジトリで使う場合、ワークフローが消費したAIクレジットは組織に直接課金される。",
+    "why": "PATの管理負担と漏えいリスクを減らしたい組織は、ワークフローの権限設定を切り替える。",
+    "points": [
+      "組織のCopilotポリシー「Allow use of Copilot CLI billed to the organization」の有効化が必要",
+      "frontmatterのpermissionsにcopilot-requests: writeを追加し、ロックファイルを再コンパイルする",
+      "gh extension upgrade awでCLIを最新にする必要がある",
+      "コスト管理にはコストセンターとワークフロー単位のトークン上限を使う"
+    ]
   }
 }
