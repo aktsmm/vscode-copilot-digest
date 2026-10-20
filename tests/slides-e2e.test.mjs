@@ -160,7 +160,7 @@ try {
   const [pdfDownload] = await Promise.all([page.waitForEvent("download", { timeout: 180000 }), page.click('[data-dl="pdf"]')]);
   const pdfFile = process.env.E2E_PDF_OUT || path.join(tmp, "merged.pdf");
   await pdfDownload.saveAs(pdfFile);
-  assert.equal((await PDFDocument.load(await fs.readFile(pdfFile))).getPageCount(), 7, "cover + toc + summary + 3 slides + end");
+  assert.equal((await PDFDocument.load(await fs.readFile(pdfFile))).getPageCount(), 9, "cover + toc + summary + 2 section dividers + 3 slides + end");
 {
   // The merged PDF carries bookmarks for the cover, contents, overview, each section and the end.
   const merged = await PDFDocument.load(await fs.readFile(pdfFile));
