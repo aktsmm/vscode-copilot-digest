@@ -153,5 +153,6 @@ const skipped = selectPending([item("x", "2026-10-12"), item("y", "2026-10-12")]
 assert.deepEqual(skipped.map((i) => i.id), ["y"]);
 assert.ok(heal.includes("Full tests") && (await read("full-tests.yml")).includes("npm test"), "the full suite runs daily and a failure starts maintenance");
 assert.ok(watchdog.includes("auto-merge-agent-prs.yml") && watchdog.includes("collect-updates.yml") && watchdog.includes("gh workflow run"), "the watchdog restarts a merger and a collect that GitHub dropped");
+assert.ok((await read("collect-updates.yml")).includes("slide-dispatch.yml") && (await read("collect-updates.yml")).includes("summarize-dispatch.yml"), "a collect that commits new data starts the slide and summary lanes");
 assert.ok(watchdog.includes("token-health") && watchdog.includes("github-authentication-token-expiration"), "the watchdog warns before the token expires");
 console.log("slide-lane tests passed");

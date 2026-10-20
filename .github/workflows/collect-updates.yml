@@ -56,6 +56,7 @@ jobs:
         run: npm run test:data
 
       - name: Commit changes
+        id: commit
         run: |
           if git diff --quiet; then
             echo "No changes detected"
@@ -66,6 +67,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data summaries
           git commit -m "chore: collect daily updates"
+          echo "changed=true" >> "$GITHUB_OUTPUT"
           # main moves while a run is going (merged PRs), so a plain push can be rejected; rebase and retry.
           for attempt in 1 2 3 4; do
             if git push; then exit 0; fi
@@ -90,3 +92,16 @@ jobs:
               ref: 'main',
             });
             core.info('Dispatched Deploy GitHub Pages for the latest collected content.');
+
+      # New data can mean new slides and summaries: start both lanes now instead of waiting for their schedule.
+      # They look for pending work first and do nothing when there is none.
+      - name: Start the slide and summary lanes
+        if: ${{ !cancelled() && steps.commit.outputs.changed == 'true' }}
+        continue-on-error: true
+        uses: actions/github-script@v8
+        with:
+          script: |
+            for (const workflow_id of ['slide-dispatch.yml', 'summarize-dispatch.yml']) {
+              await github.rest.actions.createWorkflowDispatch({ owner: context.repo.owner, repo: context.repo.repo, workflow_id, ref: 'main' });
+              core.info(`Dispatched ${workflow_id}.`);
+            }
