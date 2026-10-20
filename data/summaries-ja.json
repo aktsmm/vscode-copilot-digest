@@ -1824,5 +1824,321 @@
       "診断したいセッションを選び、困りごとの質問や説明を添える",
       "チャットセッションのログを解析して挙動の洞察を返す"
     ]
+  },
+  "8b0c822892a42019": {
+    "title": "企業向けmanaged-settings.jsonが一般提供に",
+    "summary": "GitHub Enterprise Cloudで、選択した組織の.github-privateリポジトリに置くmanaged-settings.jsonにより、VS CodeやCopilot CLIなどへ企業共通のAI設定を適用できるようになった。対応キーを指定すると、ユーザーが各クライアントで設定した値より優先される。",
+    "why": "企業管理者は、プラグイン配布元やモデルなどの方針を一か所のファイルで全利用者に強制できる。",
+    "points": [
+      "対応キーはextraKnownMarketplaces、enabledPlugins、model、strictKnownMarketplaces等",
+      "配置先は.github-privateのcopilot/managed-settings.jsonで、既定ブランチへのコミットで有効になる",
+      "設定は認証のたびに取得され、1時間ごとに更新される",
+      "現在の適用対象はCopilot Business/EnterpriseライセンスのVS CodeとCopilot CLI"
+    ]
+  },
+  "9d118f9967085e7c": {
+    "title": "VS Codeの端末コマンドがサンドボックス実行に",
+    "summary": "VS Code 1.127で、macOSとLinuxのエージェントによる端末コマンドをサンドボックス内で実行する仕組みの展開が始まった。コマンドはネットワークアクセスが遮断され、ファイルアクセスも制限された状態で動き、承認の求められる回数が減る。",
+    "why": "エージェントに端末操作を任せる開発者は、毎回の承認操作を減らしつつ、影響範囲を抑えて作業できる。",
+    "points": [
+      "対象OSはmacOSとLinuxで、段階的に展開される",
+      "サンドボックス外での実行が必要なコマンドだけ承認を求められる",
+      "Permissionsドロップダウンからサンドボックスを無効にできる"
+    ]
+  },
+  "d55a85881a522bcf": {
+    "title": "VS Code 1.128、複数チャットや画像添付が正式版に",
+    "summary": "VS Code 1.128では、Claudeエージェントのセッションで複数チャットを並行利用でき、ワークスペースを開かずに質問できるクイックチャットが加わった。画像やPDFを貼り付けやドラッグで添付するCopilot Visionは一般提供となり、OS全体で効くキーボードショートカットにも対応した。",
+    "why": "Agentsウィンドウで複数の作業を並行させる人や、画像付きで質問したい人は、1.128へ更新すると新機能を使える。",
+    "points": [
+      "Claudeの複数チャットにはchat.agentHost.enabledとchat.agents.claude.preferAgentHostが必要",
+      "クイックチャットの開始はCtrl+K Ctrl+N（macOSは⌘K ⌘N）",
+      "統合ブラウザのタブは、現在のグループ・専用のサイドグループ・別ウィンドウから開く場所を選べる",
+      "1.128.1ではセキュリティ上の問題が修正された"
+    ]
+  },
+  "e6f68bbfd8109f93": {
+    "title": "VS Code 1.127、ブラウザツールが一般提供に",
+    "summary": "VS Code 1.127では、エージェントがページを開き、スクリーンショットを撮り、クリック操作で自分の成果物を検証できるブラウザツールが一般提供となった。サイト単位のブラウザ権限、セッションのグループ化、チャット入力欄のCI失敗バナー、サブエージェントのクレジット表示も加わった。",
+    "why": "Webアプリをエージェントに作らせる開発者は、ブラウザでの動作確認とPR対応をAgentsウィンドウ内で完結できる。",
+    "points": [
+      "バナーのFix ChecksでCI失敗の修正、Address Commentsでレビューコメントの対応をエージェントに任せられる",
+      "セッション一覧はグループ化とドラッグ＆ドロップで整理できる",
+      "組み込みのOllamaプロバイダーは非推奨で、公式拡張機能への移行が推奨される",
+      "端末コマンドのサンドボックス実行がmacOSとLinuxで始まった"
+    ]
+  },
+  "0a337adda878feca": {
+    "title": "コストセンターにAIクレジットプールの上限を設定可能に",
+    "summary": "企業が毎月持つ包含AIクレジットのうち、コストセンターが使える量に上限を設けられるようになった。上限は割り当て済みのCopilot BusinessとEnterpriseライセンスから自動計算される。現時点ではREST APIで利用でき、設定画面での管理は今後提供される。",
+    "why": "部門ごとに費用を配賦している管理者は、他部門のライセンス分の包含クレジットが使われるのを防げる。",
+    "points": [
+      "上限に達した際は、包含利用のブロックか追加支出としての継続を選べる",
+      "コストセンターの予算（従量課金分の上限）とは別物で、両方を併用できる",
+      "有効化には、ユーザーまたはエンタープライズチームが1つ以上含まれることが必要",
+      "対象はGitHub Enterprise CloudのCopilot BusinessとEnterprise"
+    ]
+  },
+  "9f657521837196a9": {
+    "title": "Copilotエージェントのセッション記録をストリーミング取得（プレビュー）",
+    "summary": "enterprise managed usersを使うGitHub Enterprise Cloudで、プロンプト、応答、ツール呼び出しといったCopilotエージェントのセッションデータを全クライアントから取得できるようになった。取得方法はSIEM等へのストリーミングとREST APIで、公開プレビューである。",
+    "why": "監査やAI利用管理を担う企業管理者は、CLI、VS Code、JetBrainsなど複数のクライアントの活動を一元的に把握できる。",
+    "points": [
+      "AI ControlsのCopilotページで2つの項目（Usage Records StreamingとAPI）をEnable everywhereにする",
+      "ストリーミング先にはMicrosoft Purviewも公開プレビューで対応する",
+      "APIはGET /enterprises/{enterprise}/copilot/usage-recordsで直近48時間分を取得する",
+      "対象はクラウドエージェント、CLI、VS Code、Visual Studio、JetBrains、Eclipseなど"
+    ]
+  },
+  "061b8fbfbe8e61e4": {
+    "title": "企業の既定モデルをautoに設定可能に",
+    "summary": "管理者が企業のmanaged-settings.jsonでmodelにautoを指定すると、新しい会話がCopilotの自動モデル選択で始まるようになった。利用者は会話ごとに別のモデルへ切り替えることもできる。設定はCopilot BusinessとEnterpriseの利用者へ自動で適用される。",
+    "why": "モデル選択を利用者任せにしたくない管理者は、既定の挙動を統一しつつ個別の切り替えも残せる。",
+    "points": [
+      "autoは.github-privateのcopilot/managed-settings.jsonに記載する",
+      "旧パスの.github/copilot/settings.jsonも後方互換で読み込まれる",
+      "このmodel設定が使えるのはVS Code 1.126以降"
+    ]
+  },
+  "634b575d6eda5190": {
+    "title": "Copilot利用状況メトリクスの集計漏れを修正",
+    "summary": "Copilot usage metrics APIで、CLIの提案行数、サーバー側テレメトリのみのユーザーのIDE情報、AIクレジット消費の3点が改善された。CLIのloc_suggested_to_add_sumとloc_suggested_to_delete_sumが0固定でなくなり、ai_credits_usedの合計が実消費により近づく。",
+    "why": "メトリクスをダッシュボードやコスト按分に使う管理者は、過去に取りこぼされた分が加算されて値が増える点に注意が必要。",
+    "points": [
+      "CLIの提案行数の報告はバージョン1.0.57以降、二重計上の排除は1.0.64以降",
+      "1.0.57から1.0.64の間は、CLIのコード生成がやや少なく出る場合がある",
+      "組織に紐づかないAIクレジット消費も正しい組織や企業へ計上される",
+      "すでに報告済みの値は変わらない"
+    ]
+  },
+  "c135c528fa5dd0b2": {
+    "title": "Copilot CLIでC++言語サーバーを導入、設定スキルも追加",
+    "summary": "Microsoft C++ Language Serverが、Copilot Pluginsマーケットプレイスのプラグインとして使えるようになった。言語サーバーに必要なcompile_commands.jsonを生成・更新するセットアップスキルが付属し、CMakeとMSBuildのプロジェクトで手作業なしに準備できる。",
+    "why": "C++プロジェクトでCopilot CLIを使う開発者は、従来のnpm経由の導入からプラグインへ移ると、設定と更新が簡単になる。",
+    "points": [
+      "導入は/plugin install cpp-language-server@copilot-pluginsを実行する",
+      "「regenerate compile commands」または「load project」と入力するとスキルが動く",
+      "CMakeでは-DCMAKE_EXPORT_COMPILE_COMMANDS=TRUEでも生成できる",
+      "compile_commands.jsonの変更は自動で検知され、再起動は不要"
+    ]
+  },
+  "c53fec5d48fc8b10": {
+    "title": "GPT-5.5のプロンプト調整で編集開始が速く、ツール呼び出しも減少",
+    "summary": "VS CodeがOpenAIと2週間実施した、GPT-5.5のシステムプロンプトのA/Bテスト結果。編集前後の手順を明示する案（Treatment B）で、ツール呼び出しが1ターンあたり8.54%減り、p50の初回編集までの時間が5.68%短縮された。この案が既定のプロンプトとして採用された。",
+    "why": "VS CodeでGPT-5.5を使う人は、探索を減らして早く編集・検証するエージェントの挙動を既定で得られる。",
+    "points": [
+      "テストは対照群とA・B案を各25%に割り当てて実施した",
+      "p95の1ターンあたりの総トークン数はB案で7.64%減った",
+      "10分後のコード残存率は0.44%低下したが、わずかな差だった",
+      "コミット残存率の変化は有意ではなかった"
+    ]
+  },
+  "3ab1311f879e64a8": {
+    "title": "Claude Opus 4.8の高速モードがプレビュー提供",
+    "summary": "Claude Opus 4.8のfast modeが、GitHub Copilotでプレビュー展開されている。知能は標準のOpus 4.8と同等のまま出力トークンの速度が大きく上がる。従量課金の下でプロバイダーの定価で請求され、過去のfast modeより安いが標準版よりは高い。",
+    "why": "応答速度を重視する対話的な開発では有効だが、BusinessとEnterpriseの管理者はポリシーを有効にしないと使えない。",
+    "points": [
+      "対象プランはCopilot Pro+、Max、Business、Enterprise",
+      "VS Code、Visual Studio、CLI、クラウドエージェント、JetBrains、Xcodeなどのモデルピッカーで選べる",
+      "BusinessとEnterpriseではfast modeのポリシーが既定でオフ",
+      "展開は段階的に行われる"
+    ]
+  },
+  "6e2df5f9b2bfe3e7": {
+    "title": "Microsoft TeamsからCopilotクラウドエージェントを利用（プレビュー）",
+    "summary": "TeamsのGitHub連携アプリから、Copilotクラウドエージェントにタスクを依頼できる。@GitHubに指示すると、会話の文脈をもとに調査、計画、コード作成、Issueやプルリクエストの作成を進める。進捗をTeams上で確認でき、機能は公開プレビューである。",
+    "why": "Teamsで議論している開発チームは、決定事項をそのままコードの変更につなげられるが、スレッド全体が文脈として使われる点に注意する。",
+    "points": [
+      "対象は有料のCopilotプランで、クラウドサンドボックスの有効化が前提",
+      "チャネルでの依頼は、アプリ自身のIDでPRが作られ、承認がもう1つ必要になる場合がある",
+      "リポジトリへの書き込み権限を持つユーザーだけがセッションを開始できる",
+      "@GitHub settingsでチャネルの既定リポジトリを設定できる"
+    ]
+  },
+  "f23c98563c9b3d10": {
+    "title": "AI導入フェーズ別のマージ総数がレポートに追加",
+    "summary": "組織・企業レポートのtotals_by_ai_adoption_phaseに、フェーズごとの1日あたりのマージ済みPR総数を示すtotal_pull_requests_mergedが追加された。従来の1人あたり平均avg_pull_requests_mergedと同じ集計基準で、1日と28日のレポートで利用できる。",
+    "why": "AI導入の進み具合とPRスループットの関係を分析する管理者は、各フェーズの貢献割合を計算できる。",
+    "points": [
+      "新フィールドはtotal_pull_requests_merged",
+      "既存のavg_pull_requests_mergedと帰属方法が同じで、値が整合する",
+      "REST APIでCopilot利用状況メトリクスを参照できる企業管理者と組織オーナーが対象"
+    ]
+  },
+  "90489b85fa53d76c": {
+    "title": "GitHub Desktop 3.6、worktree対応とCopilot強化",
+    "summary": "GitHub Desktop 3.6でGit worktreeに対応し、複数ブランチの並行作業ができるようになった。CopilotはCopilot SDK上で動くようになり、コミットメッセージ生成とマージコンフリクトの解消支援が強化された。すべてのCopilot機能にモデルピッカーが付き、BYOKも使える。",
+    "why": "複数ブランチやコーディングエージェントを並行で使う開発者は、stashや再クローンなしに作業できる。",
+    "points": [
+      "コミットメッセージは.github/copilot-instructions.mdとAGENTS.mdの指示を反映する",
+      "コンフリクトは変更内容の説明と解消案が示され、確認・編集して完了できる",
+      "対象OSはmacOSとWindowsで、更新は段階的に配信される",
+      "Copilot機能の利用にはCopilotへのアクセスが必要"
+    ]
+  },
+  "f3c67caad8443881": {
+    "title": "MAI-Code-1-FlashがBusiness/Enterpriseで一般提供に",
+    "summary": "Microsoft AIが開発したコーディング特化モデルMAI-Code-1-Flashが、Copilot BusinessとCopilot Enterpriseで一般提供となった。低遅延で高速に応答し、反復的なエージェント型のコーディングに向く。従量課金の下でプロバイダーの定価で請求される。",
+    "why": "BusinessとEnterpriseの管理者は、利用者が選べるようにするため、Copilot設定でMAI-Code-1-Flashのポリシーを有効にする必要がある。",
+    "points": [
+      "対象プランはCopilot BusinessとCopilot Enterprise",
+      "ポリシーは企業・組織のCopilot設定で有効化する",
+      "料金はモデルと請求の一覧ドキュメントで確認できる"
+    ]
+  },
+  "0d180708b9cf8116": {
+    "title": "Copilotエージェント基盤を他社基盤とベンチマークで比較",
+    "summary": "GitHubが、Copilot SDKの共通部品であるエージェントharnessの性能と効率を公開した。同じモデルとタスクで比較すると、タスク解決率はClaude CodeやCodex CLIなどの提供元の基盤と同等で、ほとんどの構成でトークン消費が少なかった。",
+    "why": "モデル選定やコスト比較をする開発者は、基盤が違っても解決率に大差がなく、トークン効率で差が出る点を判断材料にできる。",
+    "points": [
+      "評価対象はSWE-bench Verified/Pro、SkillsBench、TerminalBench、Win-Hill",
+      "比較モデルはClaude Sonnet 4.6、Opus 4.7、GPT-5.4、GPT-5.5",
+      "TerminalBench 2.0では各構成を5回以上実行し、ばらつきも示した",
+      "GPT、Claude、Gemini、MAIの20以上のモデルとBYOKに対応"
+    ]
+  },
+  "73a2b6a3cf09b4d5": {
+    "title": "VS CodeがTypeScript 7を導入し、型チェックが約7倍速に",
+    "summary": "VS CodeチームがGo製に移植されたTypeScript 7を段階的に採用した経緯の紹介。メインプロジェクトの型チェックは36秒から5秒に、npm run watchは約80秒から約20秒に短縮された。エディターの言語機能も速くなった。",
+    "why": "大規模なTypeScriptプロジェクトを持つ開発者は、移行手順と効果の目安として、ビルドの待ち時間短縮を見積もれる。",
+    "points": [
+      "tsgoでの型チェックは36秒から5秒で、7倍以上高速になった",
+      "組み込み拡張のほとんどは1秒未満、Copilot拡張は2.5秒で型チェックできる",
+      "TypeScript 6.0は5.9から7への橋渡しとなるバージョン",
+      "リスクを抑えるため、影響の小さい領域から順に導入した"
+    ]
+  },
+  "0c70c8e30a8ac7bb": {
+    "title": "Copilotコードレビューの探索ツールを刷新し、コストを約20%削減",
+    "summary": "Copilotコードレビューが、ファイル探索にCopilot CLIとSDKのgrep、rg、glob、viewを使うようになり、レビューの費用効率が上がった。品質は同等のままコストは約20%下がった。Medium分析深度のプレビューでは、組織の既定レベル設定と概要コメントへの表示が加わった。",
+    "why": "コードレビューを運用する組織は、既存の手順を変えずにコストが下がり、既定の深度を組織単位で設定できる。",
+    "points": [
+      "従来のカスタム探索ツールをCLI由来のツールに置き換えた",
+      "Medium分析深度で実行されたレビューは、PR概要コメントにその旨が表示される",
+      "組織の既定レベルは、各リポジトリ側で上書きできる",
+      "Medium分析深度は公開プレビューへの参加者が対象"
+    ]
+  },
+  "7b363c1ebde197cd": {
+    "title": "管理設定にstrictKnownMarketplacesを追加し、プラグイン導入元を制限",
+    "summary": "企業の管理設定にstrictKnownMarketplacesを追加すると、VS CodeとGitHub Copilot CLIで、明示的に指定したマーケットプレイス以外からのプラグインのインストールを禁止できる。公開プレビューで、Copilot BusinessとEnterpriseの利用者に自動で適用される。",
+    "why": "プラグインの安全性を管理したい企業管理者は、信頼できない配布元からの導入を、ツール実行の前に防げる。",
+    "points": [
+      "設定先はエンタープライズ管理設定のJSONファイル",
+      "VS CodeとCopilot CLIの両方が対象",
+      "既存のエンタープライズ管理プラグイン機能を拡張するもの"
+    ]
+  },
+  "85aefc4aba5c3eed": {
+    "title": "GitHub Copilot for Jiraが一般提供に",
+    "summary": "2026年3月に公開プレビューが始まったGitHub Copilot for Jiraが一般提供となった。エージェントの進捗がJiraのチケットへリアルタイムに流れ、ドラフトPR作成後はJiraのチャット欄から追加の指示を出せる。指示は同じPRに反映される。接続の設定手順も減った。",
+    "why": "Jiraでチケットを管理するチームは、GitHubへ移動せずにエージェントの作業を追跡・修正依頼できる。",
+    "points": [
+      "導入はAtlassian MarketplaceからGitHub Copilot for Jiraアプリをインストールする",
+      "既存ユーザーは最新バージョンに更新する",
+      "プレビュー中にモデル選択、MCP経由のConfluence連携、カスタムエージェントなどが追加された"
+    ]
+  },
+  "6cffa5521db6f63f": {
+    "title": "VS Codeでチャットセッション全体のコストを表示",
+    "summary": "VS Code 1.126から、個々のターンだけでなく、チャットセッション全体で消費したコストを確認できる。どのセッションがクレジットを多く使っているかを把握でき、高コストな会話を見つけて利用状況を管理しやすくなる。",
+    "why": "従量課金でCopilotを使う開発者は、クレジットを消費している会話を特定して、使い方を見直せる。",
+    "points": [
+      "対象はVS Code 1.126のチャットセッション",
+      "ターン単位に加え、セッション単位の合計が見られる"
+    ]
+  },
+  "8f7eb73aa21a8245": {
+    "title": "1つのCopilotセッションで複数のチャットを並行実行",
+    "summary": "VS Code 1.126のAgentsウィンドウで、エージェントホスト上のCopilotセッションが複数のチャットを同時に持てるようになった。メインのチャットが実装中でも、同じワークスペースで別チャットを開いてレビューやテスト作成を進められる。チャットはリロード後も復元される。",
+    "why": "待ち時間なしに複数の作業を並べたい開発者は、1つのセッション内で会話を分けて進められる。",
+    "points": [
+      "セッションツールバーのNew Chat (+)で新しいチャットを開く",
+      "タブをダブルクリック、またはコンテキストメニューのRenameで名前を変更できる",
+      "対象はエージェントホストで動くCopilotセッション"
+    ]
+  },
+  "9f8c7760d644c15b": {
+    "title": "新しいフォルダーを制限モードで開く既定動作に変更",
+    "summary": "VS Code 1.126で、新しいフォルダーはトラストの確認ダイアログを出さず、制限モードで開いてバナーだけを表示するようになった。security.workspace.trust.startupPromptの既定値がonceからneverに変わった。Workspace TrustエディターのTrust Parentボタンも削除された。",
+    "why": "見慣れないコードを開く開発者は、先に中身を確認し、準備ができてからフォルダーを信頼できる。",
+    "points": [
+      "従来の挙動に戻すには、security.workspace.trust.startupPromptをonceに設定する",
+      "Trust Parentは誤操作で多くのフォルダーを信頼するおそれがあるため削除された",
+      "親フォルダーはTrusted Folders & Workspacesの一覧にパスを追加して信頼できる"
+    ]
+  },
+  "e49df298e665b5a1": {
+    "title": "Agentsウィンドウのコードコメントをエージェントが直接扱える",
+    "summary": "VS Code 1.126のAgentsウィンドウで、生成コードへのコメントがエージェントホスト側に保存されるようになった。エージェントはlistCommentsやresolveCommentsなどのサーバー側ツールでコメントを扱え、クライアントが切断されても動作する。addCommentツールでコメントを付けることもできる。",
+    "why": "レビュー指摘をエージェントに処理させる開発者は、コメントを承認・削除してからまとめて修正を依頼できる。",
+    "points": [
+      "/code-reviewなどのレビュースキルは、コメントをインラインで追加する",
+      "PRレビューコメントを承認してエージェントへ送るか、一括で解決を依頼できる",
+      "未承認のPRコメントを解決させる場合は、先に閲覧の許可が求められる"
+    ]
+  },
+  "f3d1f96e1fa83dfd": {
+    "title": "VS Code 1.126、コスト表示とEditモードの廃止",
+    "summary": "VS Code 1.126では、チャットセッション全体のコスト表示、コンテキストサイズと推論強度を1つにまとめたモデルのカスタマイズピッカー、新しいフォルダーを制限モードで開く動作が加わった。組み込みのEditモードは非推奨となり、chat.editMode.hiddenの設定も削除された。",
+    "why": "Editモードを使っていた人は、同じ編集ができてタスクやツールも実行できるAgentモードか、カスタムエージェントへ移行する。",
+    "points": [
+      "Agent modeがポリシーで無効な場合は、従来のEditモードが引き続き表示される",
+      "Agent Host Protocolの採用で、同じセッションを複数のウィンドウから表示できる（Insidersで試用可）",
+      "ドキュメントの目次は「Agents」と「Editor」に再編された"
+    ]
+  },
+  "2912f4f88cf4030b": {
+    "title": "Free・Studentプランのモデル選択がautoのみに",
+    "summary": "Copilot FreeとStudentプランでは、Copilotの自動モデル選択（auto）が既定かつ唯一のモデル選択方法になった。autoはタスクごとに最適なモデルを選び、複数のモデルファミリーを使えるが、プランの制限は受ける。Microsoft製モデルから(Preview)表記も外された。",
+    "why": "FreeまたはStudentプランの利用者は、モデルを手動で指定できなくなるため、autoの選択結果に任せる使い方になる。",
+    "points": [
+      "手動のモデル選択はできなくなる",
+      "autoが使えるモデルは、プランの制限に従う",
+      "Microsoft製モデルの(Preview)ラベルは廃止された"
+    ]
+  },
+  "ec52701b95184b11": {
+    "title": "GitHub Copilotアプリが独自のAPIキー（BYOK）に対応",
+    "summary": "GitHub Copilotアプリで、OpenAI、Azure OpenAI、Microsoft Foundry、Anthropic、LM Studio、Ollama、OpenAI互換エンドポイントを使うBYOKが利用可能になった。追加したモデルはピッカーにCopilotのモデルと並び、セッションごとに選べる。キーはOSのキーチェーンに保存される。",
+    "why": "自社の契約やデータ境界を維持したい利用者は、自前のプロバイダーを通してエージェントセッションを実行できる。",
+    "points": [
+      "追加はSettings → Model Providersで、エンドポイントとAPIキーを入力する",
+      "LM StudioとOllamaはホストの指定のみで追加できる",
+      "BusinessとEnterpriseでは、管理者がポリシーでCopilot CLIを有効にしておく必要がある"
+    ]
+  },
+  "8276393f79c727d8": {
+    "title": "Copilot CLIの新ターミナルUIが一般提供に",
+    "summary": "Microsoft Build 2026で披露されたCopilot CLIの新しいターミナルUIが一般提供となった。Session、Gists、リポジトリ内のIssuesとPull requestsのタブで一覧を参照でき、/mcp add、/skills、/pluginなどでツールをセッション内から設定できる。テーマやスクリーンリーダー対応も強化された。",
+    "why": "CLIで作業する開発者は、ターミナルを離れずにIssueやPRを確認し、設定ファイルを編集せずにMCPやスキルを管理できる。",
+    "points": [
+      "Tabでタブを切り替え、cで参照をプロンプトへ挿入、oでブラウザーで開く",
+      "/mcp searchでGitHub MCP Registryを検索してインストールできる",
+      "/themeでdefault、dim、high-contrast、colorblindを選べる",
+      "更新はcopilot updateを実行する"
+    ]
+  },
+  "31da026976d6077c": {
+    "title": "Copilotアプリの自動化機能で上級管理職の業務を効率化した事例",
+    "summary": "GitHubの開発者関係部門の責任者が、Copilotアプリのオートメーション（スケジュール実行されるプロンプト）を約40個使い、会議の準備、通知のトリアージ、日々の成果の記録、約束事の追跡などを自動化した体験談。MCPサーバーや連携で、カレンダーやメール、メッセージ、GitHubを横断して参照する。",
+    "why": "Copilotアプリの自動化の使い道を知りたい人は、開発以外の業務にも定期実行を適用する実例として参考にできる。",
+    "points": [
+      "Copilotアプリはパソコン向けで、macOS、Windows、Linuxに対応する",
+      "Meeting PrepやDaily Triage Digestなどが、毎朝自動で実行される",
+      "Ship Decoderは直近24時間にGitHubが出荷した内容を平易に説明する",
+      "依存関係の更新やIssueのトリアージなど、開発ワークフローにも使える"
+    ]
+  },
+  "26dbf203ef7daa1b": {
+    "title": "What's Newページに「ターミナルでのエージェント機能」の紹介が追加",
+    "summary": "GitHub Copilotの What's New ページに、新しい見出し「Preview upcoming features for GitHub Copilot」と、ターミナル上でのコーディングエージェントを紹介する文が追加された。コードのローカルでの編集、デバッグ、リファクタリングを、環境を離れずに行えるという内容で、タブにはDesktop AppやCopilot CLIなどが並ぶ。",
+    "why": "Copilot CLIのエージェント機能を探している人は、ターミナル内で完結する作業の流れとして、この紹介文を参考にできる。",
+    "points": [
+      "追加された見出しは「Agentic power, now in your terminal」",
+      "ビルド、デバッグ、デプロイをターミナルを離れずに行える、という説明が追加された",
+      "ファイルの編集やコマンド実行もローカル環境のまま繰り返せる、と記載されている",
+      "ナビゲーションにはDesktop App、Agents on GitHub、Copilot CLIなどが並ぶ"
+    ]
   }
 }
