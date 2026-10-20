@@ -2457,5 +2457,312 @@
       "gh extension upgrade awでCLIを最新にする必要がある",
       "コスト管理にはコストセンターとワークフロー単位のトークン上限を使う"
     ]
+  },
+  "806b1f92932cb664": {
+    "title": "Java Champion 3人が語るCopilot活用の実践術",
+    "summary": "Vlad Mihalcea氏、Patrick Baumgartner氏、Frank Delporte氏の3人のJava Championが、本番開発やOSSでのGitHub Copilot活用例を紹介。Optimizer向けアプリを2日で実装、約900枚のスライド移行、Pi4Jの不具合調査などの事例と、結果への責任は人が持つという運用方針を語っている。",
+    "why": "Copilotを開発に取り入れるチームは、検証と責任を人が担う運用の具体例として参考にできる。",
+    "points": [
+      "用途に応じてモデルを切り替え、軽い作業は軽量モデルに任せる",
+      "調査を頼むときは対象ファイルを指定し、単体テストの追加も依頼する",
+      "修正の理由をCopilotに説明させ、PRやチケットに残す",
+      "生成コードは必ずレビューし、重複や保守性の低下を防ぐ"
+    ]
+  },
+  "ae1148bd9cd6a7d2": {
+    "title": "Copilot CLIの設定が/settingsに集約",
+    "summary": "Copilot CLIに新しいスラッシュコマンド/settingsが加わり、/themeや/streamer-modeや/experimentalなど分散していた設定と、設定ファイルの手編集が必要だった項目を一か所で扱える。ダイアログ操作、インライン指定、リセットの3通りで変更でき、保存前にスキーマ検証が行われる。",
+    "why": "CLIの設定を頻繁に変える人や、copilot -pで設定を自動化したい人は/settingsへ移行すると手間が減る。",
+    "points": [
+      "/settings autoUpdate true のように、ドット区切りのキーで値を直接設定できる",
+      "/settings reset で設定を初期値に戻せる",
+      "ダイアログでは / で検索、Ctrl+Rでリセット、Ctrl+Eで設定ファイルを開く",
+      "copilot updateで最新版にしてから使う"
+    ]
+  },
+  "ddac257da9809505": {
+    "title": "Copilot Chatがエージェントセッションを参照可能に",
+    "summary": "github.com上のCopilot Chatとクラウドエージェントの連携が改善され、チャットから開始したセッションの進行状況が表示される。完了後はチャットで追加質問や新規セッション開始ができ、Get agent logsとSession searchの2つのツールで過去の作業を調べられる。",
+    "why": "クラウドエージェントに作業を任せる人は、チャット上でログ確認や過去セッションの再開ができる。",
+    "points": [
+      "Get agent logsでPR上のエージェント作業ログを会話に取り込める",
+      "Session searchはトピック、タイトル、新しさで過去セッションを検索して要約する",
+      "セッションの作成、PR作成、リポジトリの詳細調査をチャットから開始できる"
+    ]
+  },
+  "17dc624a1f92602f": {
+    "title": "VS Code 1.124でセッション間をキーボードで移動",
+    "summary": "VS Code 1.124のAgents windowに、セッションを素早く探して切り替えるキーボード操作が加わった。Ctrl+Rの検索付きピッカー、訪問履歴での戻る/進む、前後のセッション移動、位置を指定した直接フォーカスが使える。",
+    "why": "多数のエージェントセッションを並行して扱う人は、ショートカットを覚えると切り替えが速くなる。",
+    "points": [
+      "Ctrl+R(macOSはCmd+R)でピッカーを開き、タイトルとフォルダーを検索",
+      "Ctrl+Tabで戻る、Ctrl+Shift+Tabで進む",
+      "Alt+Up/Alt+Downで前後のセッションへ移動",
+      "Ctrl+1〜Ctrl+9でグリッド内のN番目のセッションにフォーカス"
+    ]
+  },
+  "43c1b2709d4c5f0a": {
+    "title": "VS CodeのAgents windowが再読み込み後も状態を復元",
+    "summary": "VS Code 1.124では、Agents windowを再読み込みや再起動しても、直前のレイアウトとセッションの状態が自動で復元される。表示中のセッション配置、セッションごとのレイアウト、一覧のピン留めと既読状態が対象。",
+    "why": "Agents windowを日常的に使う人は、再読み込み後に作業環境を組み直す手間がなくなる。",
+    "points": [
+      "開いていたセッションの左右の順序、アクティブなセッション、固定セッションを復元",
+      "補助バーの表示やアクティブなビュー、各セッションで開いたエディターも復元",
+      "セッション一覧のピン留めと既読状態も保持される"
+    ]
+  },
+  "c5ff2ef6e04bad4e": {
+    "title": "VS CodeにCloseAllSessionsコマンドを追加",
+    "summary": "VS Code 1.124のAgents windowに、開いているセッションを一度に閉じるClose All Sessionsコマンドが追加された。エディターのClose Allに相当し、多数のセッションを閉じて新しいセッションへ切り替えたいときに使える。",
+    "why": "セッションを開きすぎた人は、1つずつ閉じず一括で片付けて次の作業へ移れる。",
+    "points": [
+      "セッションにフォーカスがある状態でCtrl+K Ctrl+W(macOSはCmd+K Cmd+W)を押す",
+      "コマンドパレットからも実行できる"
+    ]
+  },
+  "ca4682a724f9f466": {
+    "title": "VS Code 1.124:セッション操作とAutopilotが強化",
+    "summary": "VS Code 1.124(2026年6月10日)は、エージェントセッション間の移動を速くし、タスク完了の判定を賢くした。Autopilotが既定で有効になり、統合ブラウザーには閲覧履歴が加わった。企業向けにはCopilotプラグインのポリシー設定も入った。",
+    "why": "Agents windowやAutopilotを使う人は、既定動作の変更と新しい設定を確認して更新を進める。",
+    "points": [
+      "Alt+Enterで新規セッションの要求をバックグラウンド送信できる",
+      "chat.autopilot.advanced.enabledで、小型モデルが完了を判定する高度なAutopilotを試せる(最大3回ループ)",
+      "統合ブラウザーの履歴はworkbench.browser.maxHistoryEntriesで件数を調整",
+      "chat.plugins.enabledPluginsなどのポリシー設定でプラグインを組織管理できる(試験的)"
+    ]
+  },
+  "e2a8d7f7258e7a95": {
+    "title": "VS Codeで新規セッションをバックグラウンド送信",
+    "summary": "VS Code 1.124のAgents windowでは、新規セッションの画面でAlt+Enterを押すと、読み込みを待たずに要求を送信できる。画面は直ちにリセットされ、選択中のモデルやコンテキストは保持され、入力した文面だけが消える。",
+    "why": "複数のタスクを次々にエージェントへ依頼したい人は、待ち時間なしで連続して投入できる。",
+    "points": [
+      "Alt+Enter、またはAltを押しながらSendを選択して実行する",
+      "開始したセッションはコミット後にセッション一覧へ表示される",
+      "通常のEnter送信は従来どおり新しいセッションへ移動する"
+    ]
+  },
+  "c4a7f428da738696": {
+    "title": "Copilot CLIに/security-reviewが試験提供",
+    "summary": "Copilot CLIに、ローカルの変更を対象にしたセキュリティレビューを行う/security-reviewコマンドが試験的機能のパブリックプレビューとして追加された。重大度と信頼度を付けた確度の高い指摘と、端末で適用できる修正案を返す。インジェクション、XSS、ハードコードされた認証情報など11分類を検査する。",
+    "why": "コミット前に手軽な脆弱性チェックをしたい開発者は、実験モードを有効にして試せる。",
+    "points": [
+      "使うにはCopilot CLIで実験モードを有効にしてから実行する",
+      "GitHub code scanning、Dependabot、secret scanningには依存しない独立したスキャン",
+      "LLM連携コードへのクロスプロンプトインジェクション(XPIA)も検査対象"
+    ]
+  },
+  "b71b55ee3a5cc253": {
+    "title": "LSP Setupスキルで Copilot CLIに言語サーバーを導入",
+    "summary": "Awesome CopilotのLSP Setupスキルを使うと、Copilot CLIに言語サーバーを自動で導入、設定できる。14言語に対応し、型の解決や定義ジャンプ、参照検索、ホバー情報をエージェントが使えるようになり、JARの展開やgrepに頼る推測が不要になる。",
+    "why": "CLIのエージェントに正確なコード理解をさせたい人は、スキルを入れて言語サーバーを設定する。",
+    "points": [
+      "スキルのZIPを~/.copilot/skills/へ展開し、CLIを再起動して依頼する",
+      "設定は~/.copilot/lsp-config.json、またはリポジトリのlsp.jsonに置き、後者が優先",
+      "lspServersにcommand、args、fileExtensionsを記述する",
+      "導入後に/lspでサーバーの状態を確認できる"
+    ]
+  },
+  "5d4b933b44709abb": {
+    "title": "Claude Fable 5がCopilotで一般提供に",
+    "summary": "AnthropicのMythosクラス初のモデルClaude Fable 5が、GitHub Copilotで提供開始された。長時間の自律的なコーディング向けで、Pro+、Max、Business、Enterpriseが対象。6月12日に一時停止され、7月1日に再び有効化された。",
+    "why": "BusinessとEnterpriseの管理者は、30日間のデータ保持を理解したうえでポリシーを有効にするか判断する。",
+    "points": [
+      "管理者がポリシーを有効にするまでは利用できない(既定はオフ)",
+      "Anthropicが安全分類のためプロンプトと出力を最大30日保持し、学習には使わない",
+      "他のClaudeモデルはゼロデータ保持のまま",
+      "Usage Based Billingでプロバイダー定価で課金される"
+    ]
+  },
+  "1a110680177e5e3c": {
+    "title": "Copilot CLIのカスタムエージェントで作業を定型化",
+    "summary": "Copilot CLIのカスタムエージェントは、Markdownのエージェントプロファイルで役割、使えるツール、ガードレールを定義し、毎回同じ手順で実行できる仕組み。記事ではセキュリティ監査エージェントを例に、重大度別の集計とPRに貼れるチェックリストの出力を示している。",
+    "why": "同じ作業を繰り返すチームは、プロファイルをリポジトリに置いてレビューと共有を行える。",
+    "points": [
+      "プロファイルは.github/agentsに置き、.agent.mdで終わるファイル名にする",
+      "CLIで/agentを実行して使いたいエージェントを選ぶ",
+      "frontmatterでdescription、name、model、toolsを指定する"
+    ]
+  },
+  "3f90329447f77e33": {
+    "title": "サードパーティ製コーディングエージェントにも自動セキュリティ検証",
+    "summary": "ClaudeやOpenAI Codexなどのサードパーティ製コーディングエージェントが書いたコードにも、Copilotクラウドエージェントと同じ自動セキュリティ検証が適用され、一般提供になった。CodeQL、GitHub Advisory Databaseとの照合、secret scanningで検査し、問題があればエージェントが修正を試みる。",
+    "why": "外部エージェントを使うリポジトリの管理者は、既定で有効な検証がリポジトリ設定に従う点を押さえる。",
+    "points": [
+      "既定で有効で、使用する検証ツールはリポジトリのCopilot設定に従う",
+      "GitHub Advanced Securityのライセンスは不要",
+      "クラウドエージェントで有効化済みなら自動で同じ保護を受ける"
+    ]
+  },
+  "28ede0247b95214f": {
+    "title": "GPT-5.2とGPT-5.2-Codexを廃止",
+    "summary": "2026年6月5日付で、GPT-5.2とGPT-5.2-Codexが、Copilot Chat、インライン編集、askとagentモード、コード補完などの大半の機能で廃止された。GPT-5.2はCopilot code reviewでは引き続き使える。代替はGPT-5.5とGPT-5.3-Codex。",
+    "why": "これらのモデルを指定している人は、代替モデルへ切り替え、Enterprise管理者は代替のポリシーを有効にする。",
+    "points": [
+      "GPT-5.2の代替はGPT-5.5、GPT-5.2-Codexの代替はGPT-5.3-Codex",
+      "Enterprise管理者はCopilot設定で代替モデルのポリシーを有効にする",
+      "廃止モデルを取り除く作業は不要"
+    ]
+  },
+  "440379874332aaf2": {
+    "title": "VS Codeでエンタープライズ管理プラグインがパブリックプレビュー",
+    "summary": "Copilot CLIで先行していた、エンタープライズ管理者によるプラグイン配布が、VS Code 1.122以降でも使えるパブリックプレビューになった。管理者が設定した標準が、CLIとVS Codeの両方に適用され、カスタムエージェントやスキルを自動導入できる。",
+    "why": "Copilot BusinessやEnterpriseの管理者は、設定ファイルを用意して両クライアントに標準を配布できる。",
+    "points": [
+      "マーケットプレイスは.github-private/.github/copilot/settings.jsonで定義する",
+      "対象はCopilot BusinessまたはEnterprise経由でライセンスされたユーザー",
+      "常時有効にするフックとMCP設定も定義でき、ガバナンスを強化できる"
+    ]
+  },
+  "ebcbb60b0096c4f6": {
+    "title": "Agent tasks REST APIがPro・Pro+・Maxで利用可能に",
+    "summary": "Copilot Pro、Pro+、Maxのユーザーが、Agent tasks REST APIでクラウドエージェントのタスクを開始、進捗追跡できるようになった(パブリックプレビュー)。複数リポジトリへのリファクタリングの一斉実行や、毎週のリリース準備などの自動化に使える。",
+    "why": "クラウドエージェントをスクリプトや社内ポータルから呼び出したい人が、APIで自動化を組める。",
+    "points": [
+      "認証は個人アクセストークン(classic/fine-grained)とOAuthトークンに対応",
+      "タスク開始後もAPIで進捗を追跡できる",
+      "例としてリリースノートを含む週次リリース準備の自動化が挙げられている"
+    ]
+  },
+  "347dbda391fe9a5c": {
+    "title": "プルリクエスト向けCopilot Chatの文脈強化が一般提供に",
+    "summary": "github.com上でdiffやプルリクエストを扱うCopilot Chatの強化版が、パブリックプレビューから一般提供になった。Copilotライセンスがあれば誰でも使える。コードとチャットを並べて表示でき、PRの理解、レビュー、要約の機能で関連する文脈が自動で追加される。",
+    "why": "PRレビューでCopilotに質問したい人は、画面を切り替えずに差分へ直接質問できる。",
+    "points": [
+      "各diff上部のAsk about this diffボタンから開始できる",
+      "上部ナビゲーションのCopilotボタンからも利用可能",
+      "コード行を選択してドロップダウンのCopilotから質問する方法もある"
+    ]
+  },
+  "aeb08ae8321b2ecb": {
+    "title": "Copilotで100万トークンの文脈と推論レベル設定に対応",
+    "summary": "GitHub Copilotが100万トークンのコンテキストウィンドウと、推論レベルの調整に対応した。どちらもVS Code、Copilot CLI、GitHub Copilot appで使え、今後ほかの環境にも広がる。大規模なコードベースや難しい設計、デバッグ向け。",
+    "why": "大きな文脈や高い推論を選ぶとAIクレジットの消費が増えるため、用途に応じて使い分ける。",
+    "points": [
+      "対応モデルを選んでVS Code、CLI、Copilot appで試せる",
+      "日常の作業は既定の文脈量と推論レベルの利用が推奨されている",
+      "複数ファイルにまたがる複雑な課題で拡張設定を選ぶ"
+    ]
+  },
+  "bf1c77b4650317e6": {
+    "title": "失敗したActionsをFix with Copilotで修正(Pro系対応)",
+    "summary": "GitHub Actionsのジョブが失敗したとき、Copilot Pro、Pro+、Maxの契約者がワークフロー実行ログのページでFix with Copilotを押すと、クラウドエージェントが調査して修正をブランチへプッシュし、完了時にレビューを依頼する。",
+    "why": "テスト失敗やlint違反のような単純な修正は、1クリックでCopilotに任せられる。",
+    "points": [
+      "ボタンはワークフロー実行ログのページにある",
+      "Copilotはクラウド上の開発環境で作業する",
+      "完了するとあなたにレビュー依頼のタグが付く"
+    ]
+  },
+  "35f9cc308da1296b": {
+    "title": "Visual Studio 2026の5月更新:Planエージェントなど",
+    "summary": "Visual Studio 2026のGitHub Copilot 5月更新で、実装計画を先に作るPlanエージェント、スキルパネル、複数ファイルの変更サマリー差分、コンテキスト使用量リングなどが加わった。コミットをChatの文脈に添付する機能も追加された。",
+    "why": "Visual StudioでCopilotを使う人は、計画から実装への流れとコンテキスト管理の新機能を試せる。",
+    "points": [
+      "Planエージェントは計画を.copilot/plans/plan-{title}.mdに保存し、Implement planで実行へ引き継ぐ",
+      "コミット履歴で右クリックして複数のコミットをChatへ添付できる",
+      "コミットメッセージの指示は、リポジトリのCopilotカスタム指示ファイルへ移った",
+      "Summarize conversationで過去のやり取りを圧縮して空きを確保"
+    ]
+  },
+  "b497401da9e43dde": {
+    "title": "VS Codeの5月リリース(1.120〜1.123)総まとめ",
+    "summary": "VS Code 1.120から1.123までの変更をまとめた記事。Agents windowが安定版でプレビュー提供となり、SSHやDev Tunnelsでのリモートエージェント、セッション同期と/chronicle、ネットワークが必要なコマンドのサンドボックス内再試行が加わった。BYOKはエアギャップ環境にも対応した。",
+    "why": "VS Codeでエージェントを使う人や管理者は、新機能と設定の変更点を一覧で把握し更新に備える。",
+    "points": [
+      "リモートエージェントはSSHまたはDev Tunnels上で動き、切断後も継続する",
+      "Custom Endpointプロバイダーで、各種互換APIのエンドポイントを追加できる",
+      "VSCODE_AGENT環境変数でCLIがエージェント実行時の動作を切り替えられる",
+      "パスワードなどの機密入力はLLMに共有されずターミナルで入力する"
+    ]
+  },
+  "f3811c06d96a5830": {
+    "title": "GPT-4.1をCopilot全体で廃止",
+    "summary": "GPT-4.1が2026年6月1日付で、Copilot Chat、インライン編集、askとagentモード、コード補完を含むすべてのCopilot機能で廃止された。提案される代替モデルはGPT-5.5。",
+    "why": "GPT-4.1に依存するワークフローや連携は、GPT-5.5など対応モデルへの変更が必要になる。",
+    "points": [
+      "廃止日は2026年6月1日で、代替はGPT-5.5",
+      "Enterprise管理者はモデルポリシーで代替モデルを有効にする必要がある場合がある",
+      "廃止モデルを取り除く作業は不要"
+    ]
+  },
+  "07816895eb2916ed": {
+    "title": "VS Code 1.123:1Mコンテキストとセッション同期",
+    "summary": "VS Code 1.123(2026年6月3日)は、AnthropicとOpenAIモデルの100万トークンコンテキストに対応した。チャットセッションのアカウント同期、Agents windowでの複数セッション表示、/researchによる調査エージェント、統合ブラウザーのお気に入りやスクリーンショット機能も加わった。",
+    "why": "エージェントを日常的に使う人は、同期設定と大きな文脈のコスト増を意識して新機能を試す。",
+    "points": [
+      "chat.sessionSync.enabledでセッションをGitHubアカウントへ同期",
+      "Claude Opus 4.7やGPT-5.5などの対応モデルで1Mコンテキストを使える",
+      "大きな文脈はAIクレジット消費が増える点に注意"
+    ]
+  },
+  "26e6e608eef31d18": {
+    "title": "VS Code 1.123に調査用のresearch agentが登場",
+    "summary": "VS Code 1.123のresearch agentは、コードベース、関連するGitHubリポジトリ、Webの情報を集めて出典付きのMarkdownレポートを作る。速度より深さを重視し、読み取り専用でコードは変更しない。Insidersのcopilot CLI(ローカル)セッションで使えるプレビュー機能。",
+    "why": "未知のコードやライブラリの調査をしたい人は、チャット回答より詳しい調査レポートを得られる。",
+    "points": [
+      "Copilot CLI(ローカル)セッションの入力欄で/researchに続けてテーマを入力する",
+      "現時点ではInsidersのCopilot CLI(ローカル)セッションのみ対象",
+      "コードベース、GitHubリポジトリ、Webから情報を収集して統合する"
+    ]
+  },
+  "759f935052e84b7e": {
+    "title": "ネットワーク必須のコマンドをサンドボックス内で再試行",
+    "summary": "VS Code 1.123では、ローカルエージェントのターミナルコマンドが許可ドメイン外へのアクセスを要する場合、まずネットワーク制限を外したサンドボックス内で自動再試行する。それでも失敗するとサンドボックス外での実行にフォールバックする。",
+    "why": "サンドボックスを使うエージェント利用者は、git fetchなどが通りつつファイル保護が保たれる。",
+    "points": [
+      "設定名はchat.agent.sandbox.retryWithAllowNetworkRequests",
+      "再試行ではファイルシステムの保護は維持される",
+      "git fetchのようなネットワーク依存の操作が完了できる"
+    ]
+  },
+  "84958902aa960d62": {
+    "title": "VS Codeのチャットセッションを同期し/chronicleで検索",
+    "summary": "VS Code 1.123で、チャットセッションがGitHubアカウントへ自動同期され、マシンやワークスペースをまたぐ検索可能な履歴になった。会話、触れたファイル、リポジトリの文脈、参照したPRやissueなどが記録され、/chronicleで過去を問い合わせられる。",
+    "why": "複数の環境で作業する人は、設定を有効にして過去の作業を検索や日報に活用できる。ORG管理の設定もある。",
+    "points": [
+      "chat.sessionSync.enabledをオンにして有効化する",
+      "/chronicleで過去セッションの質問、standup報告、生産性のヒントを得られる",
+      "ステータスバーのCopilotステータスダッシュボードで同期状況を確認できる"
+    ]
+  },
+  "e6c06bb4fff74594": {
+    "title": "VS CodeのAgents windowで複数セッションを並べて表示",
+    "summary": "VS Code 1.123のAgents window(プレビュー)で、複数のセッションを同時に開いて並べられるようになった。アクティブなのは1つで、Terminal、Files、Changesの各ビューはそのセッションに連動する。ピン留めで入れ替わりを防ぎ、最大化で1つに集中できる。",
+    "why": "複数のエージェント作業を比較やレビューしたい人は、横並びで並行して確認できる。",
+    "points": [
+      "セッションのOpen to the Side、ドラッグ&ドロップ、Alt+クリックで横に開く",
+      "ピン留めしたビューは他のセッションを選んでも置き換わらない",
+      "最大化アクションで他を閉じずに1つのセッションを広く表示"
+    ]
+  },
+  "b864ab1a0eb4f24b": {
+    "title": "WindowsアプリのAI開発向けWindows Development Skills一般提供",
+    "summary": "MicrosoftがBuild 2026で、AIエージェントにWindowsアプリ開発の知識を与える「Windows Development Skills」の一般提供を始めた。プラグイン形式で、GitHub Copilot、Claude Code、OpenAI Codexに、WinUI 3とWindows App SDKによるネイティブアプリ開発の手順を教える。",
+    "why": "Windowsネイティブアプリを開発する人は、エージェントにプラグインを入れて開発を支援させられる。",
+    "points": [
+      "WinUI 3とWindows App SDKを使うネイティブ開発が対象",
+      "Scaffold→Design→Build→Run→Test→Package→Shipの工程を扱う",
+      "開発時のトークン利用の効率化にも役立つとされる"
+    ]
+  },
+  "f3907ed0519bca87": {
+    "title": "Copilot SDKが一般提供に、RustとJavaに対応",
+    "summary": "GitHub Copilot SDKが一般提供になった。Copilotのエージェント基盤(計画、ツール呼び出し、ファイル編集、ストリーミング、複数ターンのセッション)を、自作のアプリやツールへ組み込める。Node.js、Python、Go、.NETに加え、RustとJavaが新たに対応した。",
+    "why": "独自のエージェント機能を作りたい開発者は、安定したAPIと本番向けサポートで採用できる。",
+    "points": [
+      "インストールはnpm install @github/copilot-sdkやpip install github-copilot-sdkなど",
+      "カスタムツール、MCP接続、OpenTelemetryトレーシング、フック機能に対応",
+      "Copilot Freeを含む契約者と、BYOKを使う非契約者が利用できる"
+    ]
+  },
+  "925160946b440970": {
+    "title": "Gemini 3.1 ProとGemini 3.5 Flashの提供範囲が拡大",
+    "summary": "Gemini 3.1 Pro(Preview)とGemini 3.5 Flashが、Copilot CLI、クラウドエージェント、GitHub Copilot app(テクニカルプレビュー)、Copilot SDKで使えるようになった。BusinessとEnterpriseでは管理者のポリシー有効化が必要。",
+    "why": "対象プランの利用者は新しい環境でGeminiを選べ、管理者は対応するモデルポリシーを有効にする。",
+    "points": [
+      "Gemini 3.1 ProはStudent、Pro、Pro+、Business、Enterpriseが対象",
+      "Gemini 3.5 FlashはPro、Pro+、Business、Enterpriseが対象",
+      "BusinessとEnterpriseの管理者はCopilot設定でGeminiのポリシーを有効にする"
+    ]
   }
 }
