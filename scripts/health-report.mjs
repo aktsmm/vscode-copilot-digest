@@ -62,6 +62,7 @@ const probe = async (url) => {
 const siteBase = `https://${repo.split("/")[0]}.github.io/${repo.split("/")[1]}`;
 const site = { index: await probe(`${siteBase}/`), apiLatest: await probe(`${siteBase}/api/v1/latest.json`), enIndex: await probe(`${siteBase}/en/index.html`) };
 const lastDeploy = (await api("/actions/workflows/deploy-pages.yml/runs?status=success")).at(0)?.updated_at ?? null;
+const lastFullTests = (await api("/actions/workflows/full-tests.yml/runs?status=success")).at(0)?.updated_at ?? null;
 const newestEvent = fs.readdirSync("data/events").filter((n) => /^\d{4}-\d{2}-\d{2}\.json$/.test(n)).sort().at(-1)?.slice(0, 10) ?? null;
 const eventAgeDays = newestEvent ? Math.floor((Date.now() - Date.parse(newestEvent)) / 86400000) : null;
 const failureIssues = issues.filter((i) => i.labels.some((l) => l.name === "agentic-workflows")).map((i) => ({ number: i.number, title: i.title, opened: short(i.created_at) }));
@@ -70,6 +71,7 @@ const slidesPublished = fs.readdirSync("data/slides").filter((n) => n.endsWith("
 const flags = [];
 for (const [name, status] of Object.entries(site)) if (status !== 200) flags.push(`the live site check "${name}" returned ${status}`);
 if (!lastDeploy || Date.now() - Date.parse(lastDeploy) > 3 * 86400000) flags.push("no successful Pages deploy in the last 3 days");
+if (!lastFullTests || Date.now() - Date.parse(lastFullTests) > 3 * 86400000) flags.push("no successful full test run in the last 3 days");
 if (eventAgeDays !== null && eventAgeDays > 2) flags.push(`the newest event file is ${eventAgeDays} days old (collection may be stuck)`);
 if (failureIssues.length) flags.push(`${failureIssues.length} open agentic workflow failure issue(s)`);
 if (failures.length) flags.push(`${failures.length} failed workflow run(s) in the last 14 days`);
@@ -78,5 +80,5 @@ if (staleAutomationPrs.length) flags.push(`${staleAutomationPrs.length} automati
 if (needsHuman.length) flags.push(`${needsHuman.length} open issue(s) labelled needs-human-review`);
 
 fs.mkdirSync(".work", { recursive: true });
-fs.writeFileSync(".work/health.json", JSON.stringify({ generatedAt: new Date().toISOString(), flags, site, lastDeploy, newestEvent, slidesPublished, failureIssues, failures, closedUnmerged, waiting, staleAutomationPrs, needsHuman, slideSkips, backlog }, null, 2));
+fs.writeFileSync(".work/health.json", JSON.stringify({ generatedAt: new Date().toISOString(), flags, site, lastDeploy, lastFullTests, newestEvent, slidesPublished, failureIssues, failures, closedUnmerged, waiting, staleAutomationPrs, needsHuman, slideSkips, backlog }, null, 2));
 console.log(`health: ${flags.length} flag(s)`);
