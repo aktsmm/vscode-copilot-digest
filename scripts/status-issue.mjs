@@ -9,6 +9,7 @@ const rows = [
   ["サイト（トップ / API / 英語版）", `${h.site.index} / ${h.site.apiLatest} / ${h.site.enIndex}`, mark(h.site.index === 200 && h.site.apiLatest === 200 && h.site.enIndex === 200)],
   ["最新の更新データ", h.newestEvent ?? "-", mark(!h.flags.some((f) => f.includes("newest event")))],
   ["直近の Pages デプロイ", h.lastDeploy ?? "-", mark(!h.flags.some((f) => f.includes("deploy")))],
+  ["直近の全テスト成功", h.lastFullTests ?? "-", mark(!h.flags.some((f) => f.includes("full test")))],
   ["公開中のスライド（うち想定問答あり）", `${h.slidesPublished}（${withQa}）`, ""],
   ["書かれた要約", String(summaries), ""],
   ["スライド未作成", String(h.backlog.slidesWithoutSlide ?? "?"), ""],
