@@ -1,0 +1,74 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "ed64890568349a4e",
+  "title": {
+    "ja": "Copilot のモデル ポリシーを REST API で取得・更新できるように",
+    "subtitleJa": "企業・チーム・アプリ・組織の 4 階層で GET と PATCH が一般提供",
+    "original": "Copilot model policy API for enterprise, orgs, and teams"
+  },
+  "date": "2026-10-19",
+  "topic": "GitHub Copilot",
+  "status": "ga",
+  "statusEvidence": "GET and PATCH endpoints are now generally available for model policies at four levels",
+  "audience": {
+    "who": "Copilot のモデル可用性を管理するエンタープライズ所有者・管理者",
+    "change": "モデル ポリシーを 4 階層の REST エンドポイントで取得・更新でき、管理を自動化できる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "モデル可用性をスクリプトで管理したい場合は、REST API ドキュメントで各エンドポイントを確認する"
+  },
+  "panels": [
+    {
+      "id": "endpoints",
+      "heading": "エンドポイント",
+      "priority": "core",
+      "items": [
+        "企業: /enterprises/{enterprise}/copilot/model-policies",
+        "エンタープライズ チーム: /enterprises/{enterprise}/teams/{team_slug}/copilot/model-policies",
+        "エンタープライズ アプリ: /enterprises/{enterprise}/copilot/apps/model-policies",
+        "組織: /orgs/{org}/copilot/model-policies"
+      ]
+    },
+    {
+      "id": "delegation",
+      "heading": "委任モードとの関係",
+      "priority": "core",
+      "items": [
+        "企業のポリシーは、組織モードでは組織に、エンタープライズ チーム モードではチームとアプリにモデル制御を委任できる",
+        "対象は Copilot Enterprise または Copilot Business の企業で、操作はエンタープライズ所有者"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "エンタープライズ チーム モード", "type": "feature", "oneLine": "モデル アクセスをエンタープライズ チームを通じてのみ詳細に制御する、オプトイン プレビューのモード。" }
+  ],
+  "qa": [
+    {
+      "q": "どのエンドポイントで使えますか？",
+      "a": "企業、エンタープライズ チーム、エンタープライズ アプリ、組織の 4 階層で、それぞれ GET と PATCH が一般提供されています。パスは各 model-policies です。"
+    },
+    {
+      "q": "モデルの委任はどう扱われますか？",
+      "a": "企業ポリシーは、組織モードでは組織に、エンタープライズ チーム モードではチームとアプリにモデル制御を委任できます。"
+    },
+    {
+      "q": "画面からの設定とは別ですか？",
+      "a": "ドキュメントでは、AI コントロールの [Copilot] から [モデルの構成] で各モデルの状態を選べます。API は同じモデル可用性管理の取得・更新手段として提供されます。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Copilot model policy API for enterprise, orgs, and teams - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-10-19-copilot-model-policy-api-for-enterprise-orgs-and-teams/"
+    },
+    "documents": [
+      { "title": "企業でのモデルの可用性の管理 - GitHub Enterprise Cloud Docs", "url": "https://docs.github.com/ja/enterprise-cloud@latest/copilot/how-tos/administer-copilot/manage-for-enterprise/manage-availability-of-default-models" }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-10-19-copilot-model-policy-api-for-enterprise-orgs-and-teams/",
+    "https://docs.github.com/ja/enterprise-cloud@latest/copilot/how-tos/administer-copilot/manage-for-enterprise/manage-availability-of-default-models"
+  ]
+}
