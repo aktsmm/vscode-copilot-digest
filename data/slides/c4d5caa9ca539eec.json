@@ -1,0 +1,90 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "c4d5caa9ca539eec",
+  "title": {
+    "ja": "GitHub Copilotの6モデル、10月19日に廃止",
+    "subtitleJa": "Gemini 3.7 Flash、GPT-5.5ほか6モデルが廃止され、後継モデルへの切り替えが必要に",
+    "original": "GitHub Copilot models deprecated on October 19, 2026"
+  },
+  "date": "2026-10-19",
+  "topic": "GitHub Copilot",
+  "status": "retirement",
+  "statusEvidence": "As of today, October 19, 2026, we have deprecated the following models across most GitHub Copilot experiences",
+  "audience": {
+    "who": "対象モデルをワークフローや連携で指定している開発者と、Copilot Enterpriseの管理者",
+    "change": "6モデルが2026年10月19日に廃止された。ワークフローと連携は後継モデルへ切り替える",
+    "changeNature": "breaking"
+  },
+  "action": {
+    "required": "yes",
+    "summary": "ワークフローと連携先のモデル指定を、案内された後継モデルへ更新する"
+  },
+  "timeline": [
+    { "when": "2026-09-18", "label": "廃止を事前告知" },
+    { "when": "2026-10-19", "label": "対象モデルを廃止" }
+  ],
+  "panels": [
+    {
+      "id": "models",
+      "heading": "対象モデルと後継",
+      "priority": "core",
+      "items": [
+        "Gemini 3.7 Flash は Gemini 3.8 Flash へ移行",
+        "GPT-5.5／GPT-5.4 は GPT-6.1 Sol へ移行",
+        "GPT-5.4 mini／GPT-5 mini は GPT-6 Luna へ移行",
+        "Grok 4.5 は Grok 4.7 へ移行"
+      ]
+    },
+    {
+      "id": "admin-action",
+      "heading": "前提と制限",
+      "priority": "core",
+      "items": [
+        "対象はChat、インライン編集、ask／agentモード、コード補完を含むほとんどの体験",
+        "Enterprise管理者は、モデルポリシーで後継モデルを有効にする必要がある場合がある",
+        "有効化後、VS Codeとgithub.comのモデル選択に後継モデルが表示される"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "廃止済みモデルを削除する操作は不要"
+      ]
+    }
+  ],
+  "qa": [
+    {
+      "q": "どのモデルがいつ廃止されましたか。",
+      "a": "Gemini 3.7 Flash、GPT-5.5、GPT-5.4、GPT-5.4 mini、GPT-5 mini、Grok 4.5の6モデルが2026年10月19日に廃止されました。2026年9月18日に告知済みの内容です。"
+    },
+    {
+      "q": "代わりにどのモデルを使えばよいですか。",
+      "a": "Gemini 3.7 FlashはGemini 3.8 Flash、GPT-5.5とGPT-5.4はGPT-6.1 Sol、GPT-5.4 miniとGPT-5 miniはGPT-6 Luna、Grok 4.5はGrok 4.7が案内されています。"
+    },
+    {
+      "q": "Enterprise管理者は何をすればよいですか。",
+      "a": "後継モデルへのアクセスをモデルポリシーで有効にする必要がある場合があります。Copilot設定で対象モデルのポリシーが有効か確認してください。有効化するとVS Codeとgithub.comのモデル選択に表示されます。"
+    },
+    {
+      "q": "廃止されたモデルを手動で削除する必要はありますか。",
+      "a": "不要です。廃止済みモデルを取り除く操作は必要ないと案内されています。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "GitHub Copilot models deprecated on October 19, 2026 - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-10-19-github-copilot-models-deprecated-on-october-19-2026/"
+    },
+    "documents": [
+      {
+        "title": "GitHub Copilotでサポートされている AI モデル - GitHubドキュメント",
+        "url": "https://docs.github.com/ja/copilot/reference/ai-models/supported-models"
+      }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-10-19-github-copilot-models-deprecated-on-october-19-2026/"
+  ]
+}
