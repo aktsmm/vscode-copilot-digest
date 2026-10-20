@@ -388,8 +388,8 @@ assert.ok(
   "Discord content must include a search landing URL",
 );
 assert.ok(
-  payload.embeds.length <= 3,
-  "weekly Discord payload must contain at most three event cards",
+  payload.embeds.length <= 8,
+  "weekly Discord payload must contain at most eight event cards",
 );
 assert.ok(
   payload.embeds.every((embed) => embed.title !== "週次要約"),
@@ -437,8 +437,8 @@ assert.doesNotMatch(
   "Discord payload must use the Japanese title for the Copilot code review AGENTS.md update",
 );
 assert.ok(
-  japanesePayload.embeds.length <= 3,
-  "weekly payload must select no more than three reader-facing updates",
+  japanesePayload.embeds.length <= 8,
+  "weekly payload must select no more than eight reader-facing updates",
 );
 
 const qualityPayloadRun = spawnSync(
@@ -459,8 +459,8 @@ const qualityPayloadRun = spawnSync(
 assert.equal(qualityPayloadRun.status, 0, qualityPayloadRun.stderr);
 const qualityPayload = parseDryRunPayload(qualityPayloadRun.stdout);
 assert.ok(
-  qualityPayload.embeds.length <= 3,
-  "quality-filtered weekly payload must remain within the three-card limit",
+  qualityPayload.embeds.length <= 8,
+  "quality-filtered weekly payload must remain within the eight-card limit",
 );
 const qualityPayloadText = JSON.stringify(qualityPayload);
 assert.doesNotMatch(

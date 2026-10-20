@@ -30,6 +30,7 @@
 - 変更があった場合は `github-actions[bot]` が `data/**` と `summaries/**` を commit / push する
 - collect の最後に [deploy-pages.yml](../.github/workflows/deploy-pages.yml) を dispatch して、push 起点 workflow の非連鎖を補う
 - [notify-weekly-discord.yml](../.github/workflows/notify-weekly-discord.yml) は毎週水曜 06:00 JST 目安で実行し、直近 7 日分の週間要約を Discord Webhook へ送る
+- [notify-important-discord.yml](../.github/workflows/notify-important-discord.yml) は毎日 07:30 JST 目安で、前日の GA・Preview・廃止の更新だけを最大 5 件、日本語の見出し・要約つきで 1 通にまとめて送る（無い日は送らない。日本語化を待つため前日分）。週次は日本語化済みの更新を最大 8 件（その週の全更新から選ぶ）。どちらも、まだ英語の抜粋のままの更新は含めない。通知はスライドと書かれた要約（サイトのカードと同じ文面）を使う。Webhook が失敗すると `Discord notification failed` の Issue を作る
 
 ## Pages 公開の仕組み
 
@@ -88,6 +89,7 @@
 - [collect-updates.yml](../.github/workflows/collect-updates.yml): 毎日 3 回の収集と event / summary 更新
 - [deploy-pages.yml](../.github/workflows/deploy-pages.yml): Pages 再生成と公開
 - [notify-weekly-discord.yml](../.github/workflows/notify-weekly-discord.yml): 毎週水曜 06:00 JST の週間 Discord 要約通知。本文は短い概要に留め、主な更新は embed カードで表示する
+- [notify-important-discord.yml](../.github/workflows/notify-important-discord.yml): 毎日の重要な更新（GA / Preview / 廃止）の Discord 通知
 - [build-weekly-draft.yml](../.github/workflows/build-weekly-draft.yml): 毎週金曜 06:00 JST の週間ドラフト生成
 - [build-biweekly-draft.yml](../.github/workflows/build-biweekly-draft.yml): 手動の隔週ドラフト生成
 - [publish-qiita.yml](../.github/workflows/publish-qiita.yml): Qiita 投稿
