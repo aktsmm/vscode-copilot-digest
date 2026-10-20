@@ -1,21 +1,21 @@
 H1: GitHub Copilot documentation
 You can use GitHub Copilot to enhance your productivity and assist as you work on code.
 H2: Articles
-H3: About agent skills
-Skills allow Copilot to perform specialized tasks.
 H3: About cloud and local sandboxes for GitHub Copilot
 Cloud and local sandboxes provide isolated execution environments that let Copilot safely interact with code, tools, filesystem, and network resources securely on your local machine or in fully isolated cloud environments.
 H3: About computer use in GitHub Copilot
 Copilot can interact with desktop applications to automate tasks that cannot be completed with a more direct tool.
 H3: About Copilot auto model selection
 Automatically select the best model for each task.
-H3: About custom agents
-Custom agents enhance Copilot with assistance tailored to your needs.
-H3: About custom agents
-Custom agents enhance Copilot with assistance tailored to your needs.
 H3: About default availability of Copilot features and models
 Policies control whether unconfigured features and models default to enabled or disabled.
 H3: About enterprise accounts for Copilot Business
 An enterprise account lets you manage only Copilot Business licenses, without consuming GitHub Enterprise Cloud licenses.
 H3: About enterprise-managed plugin standards
 Enterprise administrators can centrally define plugin policies for users, ensuring consistent plugin availability.
+H3: About GitHub Copilot
+Understand how GitHub Copilot helps you ship software faster, how it works, and how to get access.
+H3: About GitHub Copilot agents
+Copilot agents use context and tools to plan and complete tasks. You can choose where and how you work with them.
+H3: About GitHub Copilot Memory
+Copilot Memory helps Copilot become more effective over time by remembering facts about your repositories and your personal coding preferences.

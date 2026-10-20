@@ -5,12 +5,6 @@ GitHub Copilot app
 GitHub Copilot CLI
 GitHub Copilot on GitHub.com
 GitHub Copilot in IDEs
-Concepts for GitHub Copilot agents
-Concepts for GitHub Copilot cloud agent
-Concepts for GitHub Copilot CLI
-About hooks for GitHub Copilot
-About GitHub Copilot plugins
-About agent skills
 Agent capabilities
 About agents
 Choosing and delegating agent work
@@ -23,8 +17,15 @@ Prompt files for GitHub Copilot
 Indexing repositories for GitHub Copilot
 About GitHub Copilot Spaces
 About GitHub Copilot Memory
-Concepts for providing context to GitHub Copilot
-About Model Context Protocol (MCP)
+Customizations for GitHub Copilot
+Comparing Copilot customization features
+Agent skills
+Custom agents
+Model Context Protocol (MCP)
+Hooks for GitHub Copilot
+Extensions for GitHub Copilot
+Plugins for GitHub Copilot
+Using LSP servers with GitHub Copilot CLI
 Models for GitHub Copilot
 Models in GitHub Copilot
 About Copilot auto model selection

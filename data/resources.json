@@ -23857,6 +23857,86 @@
         "Original article explicit links",
         "Feature-matched official documentation indexes"
       ]
+    },
+    "2439a4adaed9143242f33269fbac6c2f7c2957d2a887b87318b2b975e4345e5e": {
+      "version": 6,
+      "checkedAt": "2026-10-20T18:04:13.946Z",
+      "inputUrl": "https://github.blog/ai-and-ml/github-copilot/how-3-java-champions-are-using-github-copilot-for-increased-productivity/",
+      "inputTitle": "How 3 Java Champions are using GitHub Copilot for increased productivity",
+      "status": "unconfirmed",
+      "source": {
+        "url": "https://github.blog/ai-and-ml/github-copilot/how-3-java-champions-are-using-github-copilot-for-increased-productivity/",
+        "status": "verified",
+        "reason": "Fetched original article",
+        "checkedAt": "2026-10-20T18:04:14.104Z",
+        "contentHash": "64d07ab55006c8f4a08c3dceb376448b1c71bc00c9e9f5c1c7867ef7896e2224"
+      },
+      "documents": [],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "854baba476d0a2b2087b9484aeefa1cf11c75ccd0d0818f0849d46d454433c18": {
+      "version": 6,
+      "checkedAt": "2026-10-20T18:04:14.206Z",
+      "inputUrl": "https://docs.github.com/en/copilot",
+      "inputTitle": "GitHub Docs / Copilot changed",
+      "status": "unconfirmed",
+      "source": {
+        "url": "https://docs.github.com/en/copilot",
+        "status": "unconfirmed",
+        "reason": "Historical changed feature not identifiable in current page",
+        "checkedAt": "2026-10-20T18:04:14.277Z",
+        "contentHash": "c48282f82b8dabf7d7b99f493f1114c2c5bf4fc35d39e3bf0945d8b766551903"
+      },
+      "documents": [],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "58cf5cd031d34f287eb10d9a33fd73b4951c117c227b0d5e8a4a8415476fbe53": {
+      "version": 6,
+      "checkedAt": "2026-10-20T18:04:14.387Z",
+      "inputUrl": "https://docs.github.com/en/copilot/concepts",
+      "inputTitle": "GitHub Docs / Copilot concepts changed",
+      "status": "unconfirmed",
+      "source": {
+        "url": "https://docs.github.com/en/copilot/concepts",
+        "status": "unconfirmed",
+        "reason": "Historical changed feature not identifiable in current page",
+        "checkedAt": "2026-10-20T18:04:14.465Z",
+        "contentHash": "367582ce37cd8e14bdec6f9ea310016930c84adad52e692dff028bf3da03634c"
+      },
+      "documents": [],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "31d0e397375870d5d18604c66e0086c7df890d0afc1682ef4a431f994ad96cba": {
+      "version": 6,
+      "checkedAt": "2026-10-20T18:04:14.529Z",
+      "inputUrl": "https://docs.github.com/en/copilot/how-tos",
+      "inputTitle": "GitHub Docs / Copilot how-tos changed",
+      "status": "unconfirmed",
+      "source": {
+        "url": "https://docs.github.com/en/copilot/how-tos",
+        "status": "unconfirmed",
+        "reason": "Historical changed feature not identifiable in current page",
+        "checkedAt": "2026-10-20T18:04:14.630Z",
+        "contentHash": "97b13648de92915cce97e7dc504101b8796efbd5eadfea7a5b8ee46df406b09c"
+      },
+      "documents": [],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
     }
   }
 }

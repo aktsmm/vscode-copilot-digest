@@ -24,20 +24,20 @@ Automating tasks with Copilot CLI and GitHub Actions
 Quickstart for automating with GitHub Copilot CLI
 Running GitHub Copilot CLI programmatically
 Scheduling prompts in GitHub Copilot CLI
-About agent skills
-About GitHub Copilot plugins
+Agent skills
+Plugins for GitHub Copilot
 GitHub Copilot CLI
 Dynamic workflows
-About custom agents
+Custom agents
 Remote control of GitHub Copilot CLI sessions
-Comparing GitHub Copilot CLI customization features
+Comparing Copilot customization features
 Managing context for GitHub Copilot
 Loading tools on demand with tool search
 Delegating and parallelizing work with agents
 Using LSP servers with GitHub Copilot CLI
 Researching with GitHub Copilot CLI
 Getting a second opinion with the rubber duck agent
-About extensions for GitHub Copilot CLI
+Extensions for GitHub Copilot
 Using dynamic workflows
 Copilot CLI ACP server
 GitHub Copilot CLI command reference

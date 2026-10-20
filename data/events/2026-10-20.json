@@ -1,14 +1,37 @@
 {
   "date": "2026-10-20",
-  "generatedAt": "2026-10-20T10:12:31.853Z",
+  "generatedAt": "2026-10-20T18:04:13.538Z",
   "latestRun": {
-    "generatedAt": "2026-10-20T10:12:31.853Z",
-    "newEventsCount": 0,
-    "newEventIds": [],
+    "generatedAt": "2026-10-20T18:04:13.538Z",
+    "newEventsCount": 4,
+    "newEventIds": [
+      "github-copilot-blog:https://github.blog/?p=99538",
+      "docs-github-copilot:de4c5d5be6ecebc317484fa15a791d3224ada10f2ab34c3ad4ee9359c2ae1187",
+      "docs-github-copilot-howtos:ecfe7c1f1b730efbcea0fda722203cd5a0743599f25c5d1ea897b02d4f7c14b7",
+      "docs-github-copilot-concepts:b73f580f347f458615a2787fed93d2246aaed835b303d230d8e501e1b053a39e"
+    ],
     "errorCount": 0,
     "skippedLowInformationEvents": []
   },
   "events": [
+    {
+      "eventId": "github-copilot-blog:https://github.blog/?p=99538",
+      "sourceId": "github-copilot-blog",
+      "sourceName": "GitHub Blog / GitHub Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-10-20T18:04:02.657Z",
+      "publishedAt": "2026-10-20T16:05:03.000Z",
+      "title": "How 3 Java Champions are using GitHub Copilot for increased productivity",
+      "url": "https://github.blog/ai-and-ml/github-copilot/how-3-java-champions-are-using-github-copilot-for-increased-productivity/",
+      "summary": "Three Java Champions share how they use GitHub Copilot to solve problems, accelerate development, and keep humans responsible for the results.\nThe post How 3 Java Champions are using GitHub Copilot for increased productivity appeared first on The GitHub Blog.",
+      "categories": [
+        "AI & ML",
+        "GitHub Copilot",
+        "java"
+      ],
+      "isFutureDated": false,
+      "score": 1
+    },
     {
       "eventId": "copilot-whats-new:860b5b7055a0db34b212663fb0abafda5b3fbc3c890d48011cc9f02719540cef",
       "sourceId": "copilot-whats-new",
@@ -118,6 +141,113 @@
       ],
       "isFutureDated": false,
       "score": 5
+    },
+    {
+      "eventId": "docs-github-copilot:de4c5d5be6ecebc317484fa15a791d3224ada10f2ab34c3ad4ee9359c2ae1187",
+      "sourceId": "docs-github-copilot",
+      "sourceName": "GitHub Docs / Copilot",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-10-20T18:04:05.352Z",
+      "publishedAt": "2026-10-20T18:04:05.351Z",
+      "title": "GitHub Docs / Copilot changed",
+      "url": "https://docs.github.com/en/copilot",
+      "summary": "Detected 7 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 7,
+        "headings": [
+          "About GitHub Copilot",
+          "About GitHub Copilot agents",
+          "About GitHub Copilot Memory"
+        ],
+        "additions": [
+          "Enterprise administrators can centrally define plugin policies for users, ensuring consistent plugin availability.",
+          "H3: About GitHub Copilot",
+          "Understand how GitHub Copilot helps you ship software faster, how it works, and how to get access.",
+          "H3: About GitHub Copilot agents",
+          "Copilot agents use context and tools to plan and complete tasks. You can choose where and how you work with them.",
+          "H3: About GitHub Copilot Memory",
+          "Copilot Memory helps Copilot become more effective over time by remembering facts about your repositories and your personal coding preferences."
+        ]
+      },
+      "headings": [
+        "GitHub Copilot documentation",
+        "Articles",
+        "About cloud and local sandboxes for GitHub Copilot",
+        "About computer use in GitHub Copilot",
+        "About Copilot auto model selection",
+        "About default availability of Copilot features and models",
+        "About enterprise accounts for Copilot Business",
+        "About enterprise-managed plugin standards",
+        "About GitHub Copilot",
+        "About GitHub Copilot agents",
+        "About GitHub Copilot Memory"
+      ],
+      "score": 5
+    },
+    {
+      "eventId": "docs-github-copilot-concepts:b73f580f347f458615a2787fed93d2246aaed835b303d230d8e501e1b053a39e",
+      "sourceId": "docs-github-copilot-concepts",
+      "sourceName": "GitHub Docs / Copilot concepts",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-10-20T18:04:05.883Z",
+      "publishedAt": "2026-10-20T18:04:05.883Z",
+      "title": "GitHub Docs / Copilot concepts changed",
+      "url": "https://docs.github.com/en/copilot/concepts",
+      "summary": "Detected 9 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 9,
+        "headings": [],
+        "additions": [
+          "Customizations for GitHub Copilot",
+          "Comparing Copilot customization features",
+          "Agent skills",
+          "Custom agents",
+          "Model Context Protocol (MCP)",
+          "Hooks for GitHub Copilot",
+          "Extensions for GitHub Copilot",
+          "Plugins for GitHub Copilot",
+          "Using LSP servers with GitHub Copilot CLI"
+        ]
+      },
+      "headings": [
+        "Concepts for GitHub Copilot"
+      ],
+      "score": 2
+    },
+    {
+      "eventId": "docs-github-copilot-howtos:ecfe7c1f1b730efbcea0fda722203cd5a0743599f25c5d1ea897b02d4f7c14b7",
+      "sourceId": "docs-github-copilot-howtos",
+      "sourceName": "GitHub Docs / Copilot how-tos",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-10-20T18:04:05.500Z",
+      "publishedAt": "2026-10-20T18:04:05.500Z",
+      "title": "GitHub Docs / Copilot how-tos changed",
+      "url": "https://docs.github.com/en/copilot/how-tos",
+      "summary": "Detected 5 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 5,
+        "headings": [],
+        "additions": [
+          "Agent skills",
+          "Plugins for GitHub Copilot",
+          "Custom agents",
+          "Comparing Copilot customization features",
+          "Extensions for GitHub Copilot"
+        ]
+      },
+      "headings": [
+        "How-tos for GitHub Copilot"
+      ],
+      "score": 2
     }
   ],
   "errors": []
