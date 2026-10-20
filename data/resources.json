@@ -23769,6 +23769,94 @@
         "Original article explicit links",
         "Feature-matched official documentation indexes"
       ]
+    },
+    "7aadec9b026a5ba9bef54bb54950097d16023ed3c8049d3ec7036e4f3ddbff97": {
+      "version": 6,
+      "checkedAt": "2026-10-20T00:28:05.600Z",
+      "inputUrl": "https://github.com/features/copilot/whats-new",
+      "inputTitle": "GitHub Copilot What's New changed",
+      "status": "unconfirmed",
+      "source": {
+        "url": "https://github.blog/changelog/?label=copilot#changelog-item-meta-99606",
+        "status": "unconfirmed",
+        "reason": "Multiple changed date headings; linked observed archive item without inferring a feature",
+        "checkedAt": "2026-10-20T00:28:05.663Z",
+        "contentHash": "4d6d0bde2f9c30ccc5d87d0f5d737d94cd82e65cd083f27cb89121cb42e67414"
+      },
+      "documents": [],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "e948db45ae250d5391b8f000133564a0acfc173f46c3ea0321f7f7686301e28f": {
+      "version": 6,
+      "checkedAt": "2026-10-20T00:28:05.751Z",
+      "inputUrl": "https://github.blog/changelog/2026-10-19-copilot-model-policy-api-for-enterprise-orgs-and-teams",
+      "inputTitle": "Copilot model policy API for enterprise, orgs, and teams",
+      "status": "verified",
+      "source": {
+        "url": "https://github.blog/changelog/2026-10-19-copilot-model-policy-api-for-enterprise-orgs-and-teams/",
+        "status": "verified",
+        "reason": "Fetched original article",
+        "checkedAt": "2026-10-20T00:28:05.852Z",
+        "contentHash": "5c185b8997604ccaf0165e379ad24ceea3368274574a8d563568cb489bac1cda"
+      },
+      "documents": [
+        {
+          "url": "https://docs.github.com/ja/enterprise-cloud@latest/copilot/how-tos/administer-copilot/manage-for-enterprise/manage-availability-of-default-models",
+          "title": "企業でのモデルの可用性の管理",
+          "language": "ja",
+          "checkedAt": "2026-10-20T00:28:06.517Z",
+          "contentHash": "2d170d21def709a0ed8342975ff8538c25d8cc3ce4fc853fe12432f28a07a6fb",
+          "discoveryUrl": "https://github.blog/changelog/2026-10-19-copilot-model-policy-api-for-enterprise-orgs-and-teams/",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "ea453e92d53c8ea7abcca6a09e5a5770f0573a36e3c514e04f7d65ba252937c4": {
+      "version": 6,
+      "checkedAt": "2026-10-20T00:28:06.615Z",
+      "inputUrl": "https://github.blog/changelog/2026-10-19-github-copilot-models-deprecated-on-october-19-2026",
+      "inputTitle": "GitHub Copilot models deprecated on October 19, 2026",
+      "status": "verified",
+      "source": {
+        "url": "https://github.blog/changelog/2026-10-19-github-copilot-models-deprecated-on-october-19-2026/",
+        "status": "verified",
+        "reason": "Fetched original article",
+        "checkedAt": "2026-10-20T00:28:06.633Z",
+        "contentHash": "93b9043f4abd6a68193f4b22feb45639f07908ebb63526e3b003fe36772c6d68"
+      },
+      "documents": [
+        {
+          "url": "https://docs.github.com/ja/copilot/reference/ai-models/supported-models",
+          "title": "GitHub Copilotでサポートされている AI モデル",
+          "language": "ja",
+          "checkedAt": "2026-10-15T23:43:55.127Z",
+          "contentHash": "99966d8397658c7d6048ac4e10a08d27f8ceb8c06bf4d50d9ed98c00cc947306",
+          "discoveryUrl": "https://github.blog/changelog/2026-10-19-github-copilot-models-deprecated-on-october-19-2026/",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
     }
   }
 }

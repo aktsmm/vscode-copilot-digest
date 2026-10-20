@@ -1,0 +1,130 @@
+{
+  "date": "2026-10-20",
+  "generatedAt": "2026-10-20T00:28:05.055Z",
+  "latestRun": {
+    "generatedAt": "2026-10-20T00:28:05.055Z",
+    "newEventsCount": 5,
+    "newEventIds": [
+      "github-changelog:https://github.blog/changelog/2026-10-19-copilot-model-policy-api-for-enterprise-orgs-and-teams",
+      "github-changelog:https://github.blog/changelog/2026-10-19-github-copilot-models-deprecated-on-october-19-2026",
+      "github-changelog-copilot:https://github.blog/changelog/2026-10-19-copilot-model-policy-api-for-enterprise-orgs-and-teams",
+      "github-changelog-copilot:https://github.blog/changelog/2026-10-19-github-copilot-models-deprecated-on-october-19-2026",
+      "copilot-whats-new:860b5b7055a0db34b212663fb0abafda5b3fbc3c890d48011cc9f02719540cef"
+    ],
+    "errorCount": 0,
+    "skippedLowInformationEvents": []
+  },
+  "events": [
+    {
+      "eventId": "copilot-whats-new:860b5b7055a0db34b212663fb0abafda5b3fbc3c890d48011cc9f02719540cef",
+      "sourceId": "copilot-whats-new",
+      "sourceName": "GitHub Copilot What's New",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-10-20T00:28:01.898Z",
+      "publishedAt": "2026-10-20T00:28:01.897Z",
+      "title": "GitHub Copilot What's New changed",
+      "url": "https://github.com/features/copilot/whats-new",
+      "summary": "Detected 2 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 2,
+        "headings": [
+          "Oct.19 Improvement",
+          "Oct.19 Retired"
+        ],
+        "additions": [
+          "H3: Oct.19 Improvement",
+          "H3: Oct.19 Retired"
+        ]
+      },
+      "headings": [
+        "Changelog",
+        "Filters (0 selected)",
+        "October\n Oct\n 2026",
+        "Oct.19 Improvement",
+        "Oct.19 Retired",
+        "Oct.15 Improvement",
+        "Oct.15 Retired",
+        "Oct.15 Release",
+        "Oct.14 Release",
+        "Oct.13 Release",
+        "Oct.13 Improvement",
+        "Oct.12 Improvement"
+      ],
+      "score": 4
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-10-19-copilot-model-policy-api-for-enterprise-orgs-and-teams",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-10-20T00:28:00.549Z",
+      "publishedAt": "2026-10-19T21:32:18.000Z",
+      "title": "Copilot model policy API for enterprise, orgs, and teams",
+      "url": "https://github.blog/changelog/2026-10-19-copilot-model-policy-api-for-enterprise-orgs-and-teams",
+      "summary": "You can now use the REST API to retrieve and update Copilot model policies for enterprises, enterprise teams, enterprise apps, and organizations. What’s new GET and PATCH endpoints are now…\nThe post Copilot model policy API for enterprise, orgs, and teams appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "copilot",
+        "enterprise management tools"
+      ],
+      "isFutureDated": false,
+      "score": 2
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-10-19-copilot-model-policy-api-for-enterprise-orgs-and-teams",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-10-20T00:28:01.010Z",
+      "publishedAt": "2026-10-19T21:32:18.000Z",
+      "title": "Copilot model policy API for enterprise, orgs, and teams",
+      "url": "https://github.blog/changelog/2026-10-19-copilot-model-policy-api-for-enterprise-orgs-and-teams",
+      "summary": "You can now use the REST API to retrieve and update Copilot model policies for enterprises, enterprise teams, enterprise apps, and organizations. What’s new GET and PATCH endpoints are now…\nThe post Copilot model policy API for enterprise, orgs, and teams appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "copilot",
+        "enterprise management tools"
+      ],
+      "isFutureDated": false,
+      "score": 2
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-10-19-github-copilot-models-deprecated-on-october-19-2026",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-10-20T00:28:00.550Z",
+      "publishedAt": "2026-10-19T21:27:10.000Z",
+      "title": "GitHub Copilot models deprecated on October 19, 2026",
+      "url": "https://github.blog/changelog/2026-10-19-github-copilot-models-deprecated-on-october-19-2026",
+      "summary": "As of today, October 19, 2026, we have deprecated the following models across most GitHub Copilot experiences (including Copilot Chat, inline edits, ask and agent modes, and code completions). These…\nThe post GitHub Copilot models deprecated on October 19, 2026 appeared first on The GitHub Blog.",
+      "categories": [
+        "Retired",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 5
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-10-19-github-copilot-models-deprecated-on-october-19-2026",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-10-20T00:28:01.010Z",
+      "publishedAt": "2026-10-19T21:27:10.000Z",
+      "title": "GitHub Copilot models deprecated on October 19, 2026",
+      "url": "https://github.blog/changelog/2026-10-19-github-copilot-models-deprecated-on-october-19-2026",
+      "summary": "As of today, October 19, 2026, we have deprecated the following models across most GitHub Copilot experiences (including Copilot Chat, inline edits, ask and agent modes, and code completions). These…\nThe post GitHub Copilot models deprecated on October 19, 2026 appeared first on The GitHub Blog.",
+      "categories": [
+        "Retired",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 5
+    }
+  ],
+  "errors": []
+}
