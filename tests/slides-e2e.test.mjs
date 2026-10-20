@@ -6,7 +6,7 @@ import fs from "node:fs/promises";
 import http from "node:http";
 import os from "node:os";
 import path from "node:path";
-import { PDFDocument } from "pdf-lib";
+import { PDFDocument, PDFDict, PDFName } from "pdf-lib";
 import { SLIDE_SCHEMA_V1 as SLIDE_SCHEMA, validateDeck } from "../scripts/lib/slides.mjs";
 import { downloadPanelHtml, downloadsCss, downloadsJs } from "../scripts/lib/downloads.mjs";
 
@@ -161,6 +161,16 @@ try {
   const pdfFile = path.join(tmp, "merged.pdf");
   await pdfDownload.saveAs(pdfFile);
   assert.equal((await PDFDocument.load(await fs.readFile(pdfFile))).getPageCount(), 7, "cover + toc + summary + 3 slides + end");
+{
+  // The merged PDF carries bookmarks for the cover, contents, overview, each section and the end.
+  const merged = await PDFDocument.load(await fs.readFile(pdfFile));
+  const outlines = merged.catalog.lookup(PDFName.of("Outlines"), PDFDict);
+  assert.ok(outlines && outlines.get(PDFName.of("First")), "the merged PDF has an outline");
+  const titles = [];
+  for (let ref = outlines.get(PDFName.of("First")); ref;) { const node = merged.context.lookup(ref, PDFDict); titles.push(node.get(PDFName.of("Title")).decodeText()); ref = node.get(PDFName.of("Next")); }
+  assert.deepEqual(titles.slice(0, 3), ["表紙", "目次", "概要"]);
+  assert.ok(titles.includes("GA（一般提供）") && titles.includes("更新・お知らせ"), "section bookmarks: " + titles.join(","));
+}
 
   // PowerPoint is a zip with one slide per update plus cover, contents and end.
   const [pptxDownload] = await Promise.all([page.waitForEvent("download", { timeout: 180000 }), page.click('[data-dl="pptx"]')]);

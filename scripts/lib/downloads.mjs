@@ -181,7 +181,22 @@ export function downloadsJs() {
       label.appendChild(box); label.appendChild(date); label.appendChild(kind); label.appendChild(title); li.appendChild(label); list.appendChild(li);
     });
   }
-  function ordered(list) { return list.slice().sort(function (a, b) { return a.date.localeCompare(b.date) || a.id.localeCompare(b.id); }); }
+  // Slides are grouped by what they are (Preview, GA, update, retirement) and stay in date order inside each group.
+  var SECTIONS = [{ id: "preview", label: "Preview" }, { id: "ga", label: "GA（一般提供）" }, { id: "update", label: "更新・お知らせ" }, { id: "retirement", label: "廃止・提供終了" }];
+  function sectionIndex(s) { return s.status === "preview" ? 0 : s.status === "ga" ? 1 : s.status === "retirement" ? 3 : 2; }
+  function byDate(list) { return list.slice().sort(function (a, b) { return a.date.localeCompare(b.date) || a.id.localeCompare(b.id); }); }
+  function ordered(list) { return list.slice().sort(function (a, b) { return sectionIndex(a) - sectionIndex(b) || a.date.localeCompare(b.date) || a.id.localeCompare(b.id); }); }
+  // The table of contents rows: a heading row before each non-empty section, then its slides (n is the position in the list).
+  function tocRows(list, titleOf) {
+    var rows = [];
+    SECTIONS.forEach(function (sec, si) {
+      var members = [];
+      list.forEach(function (s, n) { if (sectionIndex(s) === si) members.push({ n: n, topic: s.topic, title: titleOf(s) }); });
+      if (members.length) { rows.push({ head: sec.label + "（" + members.length + "）", si: si }); members.forEach(function (m) { rows.push(m); }); }
+    });
+    return rows;
+  }
+  function sectionStarts(list) { var out = []; SECTIONS.forEach(function (sec, si) { var n = list.findIndex(function (s) { return sectionIndex(s) === si; }); if (n >= 0) out.push({ label: sec.label, n: n }); }); return out; }
   function refresh() {
     var sel = selection(), withPdf = sel.filter(function (s) { return s.pdf; });
     var json = $('[data-dl="json"]'), pdf = $('[data-dl="pdf"]'), pptx = $('[data-dl="pptx"]');
@@ -228,8 +243,8 @@ export function downloadsJs() {
     });
   }
   function download(blob, name) { var a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = name; a.click(); setTimeout(function () { URL.revokeObjectURL(a.href); }, 10000); }
-  function stem(list) { var o = ordered(list); return "copilot-vscode-digest-" + (o[0] ? o[0].date : "") + "_" + (o.length ? o[o.length - 1].date : ""); }
-  function periodOf(list) { var o = ordered(list); return o.length ? o[0].date + " 〜 " + o[o.length - 1].date : ""; }
+  function stem(list) { var o = byDate(list); return "copilot-vscode-digest-" + (o[0] ? o[0].date : "") + "_" + (o.length ? o[o.length - 1].date : ""); }
+  function periodOf(list) { var o = byDate(list); return o.length ? o[0].date + " 〜 " + o[o.length - 1].date : ""; }
   async function fetchSlideJson(list) {
     return Promise.all(list.map(async function (e) { var r = await fetch(new URL("slides/" + e.id + ".json", root)); if (!r.ok) throw new Error(e.id + " " + r.status); return r.json(); }));
   }
@@ -269,16 +284,17 @@ export function downloadsJs() {
     footer(ctx, "作成日 " + created + "（UTC）", TEXT.source);
     return { links: links };
   }
-  function drawToc(ctx, items, start, first, firstPage) {
+  function drawToc(ctx, rows, first, firstPage) {
     ctx.fillStyle = "#fff"; ctx.fillRect(0, 0, W, H); frame(ctx);
     var head = TEXT.tocTitle.split("・")[0];
     ctx.fillStyle = THEME.dark; ctx.font = "700 34px " + FONT; ctx.fillText(first ? head : head + "（続き）", 70, 80);
     ctx.fillStyle = THEME.copilot; ctx.fillRect(70, 94, 240, 4); ctx.font = "20px " + FONT;
-    items.forEach(function (item, i) {
+    rows.forEach(function (row, i) {
       var y = 150 + i * 36;
-      ctx.fillStyle = THEME.copilot; ctx.fillText(String(start + i + 1) + ".", 70, y);
-      ctx.fillStyle = THEME.fg; ctx.fillText(fitText(ctx, "【" + item.topic + "】" + item.title, W - 70 - 120 - 130), 120, y);
-      ctx.fillStyle = THEME.muted; ctx.textAlign = "right"; ctx.fillText(String(firstPage + start + i), W - 70, y); ctx.textAlign = "left";
+      if (row.head) { ctx.fillStyle = THEME.copilotDeep; ctx.font = "700 22px " + FONT; ctx.fillText(row.head, 70, y); ctx.font = "20px " + FONT; return; }
+      ctx.fillStyle = THEME.copilot; ctx.fillText(String(row.n + 1) + ".", 70, y);
+      ctx.fillStyle = THEME.fg; ctx.fillText(fitText(ctx, "【" + row.topic + "】" + row.title, W - 70 - 120 - 130), 120, y);
+      ctx.fillStyle = THEME.muted; ctx.textAlign = "right"; ctx.fillText(String(firstPage + row.n), W - 70, y); ctx.textAlign = "left";
     });
     footer(ctx, TEXT.title, TEXT.source);
   }
@@ -314,6 +330,20 @@ export function downloadsJs() {
     return { bytes: new Uint8Array(await blob.arrayBuffer()), result: result };
   }
 
+  // pdf-lib has no outline API, so the bookmark tree is written as plain PDF objects.
+  function addOutline(out, entries) {
+    var ctx = out.context, pages = out.getPages(), root = ctx.nextRef(), refs = entries.map(function () { return ctx.nextRef(); });
+    entries.forEach(function (e, i) {
+      var node = { Title: PDFLib.PDFHexString.fromText(e.title), Parent: root, Dest: [pages[e.page].ref, PDFLib.PDFName.of("Fit")] };
+      if (i > 0) node.Prev = refs[i - 1];
+      if (i < entries.length - 1) node.Next = refs[i + 1];
+      ctx.assign(refs[i], ctx.obj(node));
+    });
+    ctx.assign(root, ctx.obj({ Type: "Outlines", First: refs[0], Last: refs[refs.length - 1], Count: entries.length }));
+    out.catalog.set(PDFLib.PDFName.of("Outlines"), root);
+    out.catalog.set(PDFLib.PDFName.of("PageMode"), PDFLib.PDFName.of("UseOutlines"));
+  }
+
   async function mergePdf() {
     var list = ordered(selection().filter(function (s) { return s.pdf; }));
     var password = askPassword(list);
@@ -327,7 +357,7 @@ export function downloadsJs() {
         var r = await canvasPng(draw); var page = out.addPage([W * PT, H * PT]);
         page.drawImage(await out.embedPng(r.bytes), { x: 0, y: 0, width: W * PT, height: H * PT }); return { page: page, result: r.result };
       };
-      var tocPages = Math.max(1, Math.ceil(list.length / PER_TOC)), firstPage = 1 + tocPages + 1 + 1;
+      var rows = tocRows(list, function (s) { return s.title; }), tocPages = Math.max(1, Math.ceil(rows.length / PER_TOC)), firstPage = 1 + tocPages + 1 + 1;
       var addLinks = function (item) {
         item.result.links.forEach(function (r) {
           var a = out.context.obj({ Type: "Annot", Subtype: "Link", Rect: [r.x * PT, (H - r.top - r.h) * PT, (r.x + r.w) * PT, (H - r.top) * PT], Border: [0, 0, 0], A: { Type: "Action", S: "URI", URI: PDFString.of(r.url) } });
@@ -335,7 +365,7 @@ export function downloadsJs() {
         });
       };
       addLinks(await addImage(function (ctx) { return drawCover(ctx, list, periodOf(list), new Date().toISOString().slice(0, 10)); }));
-      for (var s = 0; s < list.length; s += PER_TOC) { await addImage(function (ctx) { drawToc(ctx, list.slice(s, s + PER_TOC), s, s === 0, firstPage); }); }
+      for (var s = 0; s < rows.length; s += PER_TOC) { await addImage(function (ctx) { drawToc(ctx, rows.slice(s, s + PER_TOC), s === 0, firstPage); }); }
       await addImage(function (ctx) { drawSummary(ctx, list); });
       var done = 0;
       for (var i = 0; i < list.length; i++) {
@@ -344,6 +374,7 @@ export function downloadsJs() {
         var pages = await out.copyPages(src, src.getPageIndices()); pages.forEach(function (p) { out.addPage(p); });
       }
       addLinks(await addImage(drawEnd));
+      addOutline(out, [{ title: "表紙", page: 0 }, { title: "目次", page: 1 }, { title: "概要", page: 1 + tocPages }].concat(sectionStarts(list).map(function (x) { return { title: x.label, page: firstPage - 1 + x.n }; }), [{ title: "裏表紙", page: out.getPageCount() - 1 }]));
       out.setTitle(TEXT.title);
       download(new Blob([await out.save()], { type: "application/pdf" }), stem(list) + ".pdf");
       setStatus(savedText(list.length));
@@ -389,26 +420,31 @@ export function downloadsJs() {
         s.addText(left, { x: 1, y: H - 0.52, w: 6, h: 0.46, fontFace: F, fontSize: 11, color: hex(THEME.onDark), valign: "middle", margin: 0 });
         s.addText(right, { x: W - 1 - 7, y: H - 0.52, w: 7, h: 0.46, fontFace: F, fontSize: 11, color: hex(THEME.onDark), valign: "middle", align: "right", margin: 0 });
       };
-      var cover = pptx.addSlide(); cover.background = { color: hex(THEME.dark) };
+      pptx.addSection({ title: "表紙・目次" });
+      SECTIONS.forEach(function (sec, si) { if (slides.some(function (x) { return sectionIndex(x) === si; })) pptx.addSection({ title: sec.label }); });
+      pptx.addSection({ title: "終わりに" });
+      var cover = pptx.addSlide({ sectionTitle: "表紙・目次" }); cover.background = { color: hex(THEME.dark) };
       cover.addShape("custGeom", { x: 0, y: 0.15, w: W, h: H - 0.73, fill: { color: hex(THEME.darkSubtle) }, line: { color: hex(THEME.darkSubtle), width: 0 }, points: [{ x: W * 0.7, y: 0 }, { x: W, y: 0 }, { x: W, y: H - 0.73 }, { x: W * 0.42, y: H - 0.73 }, { close: true }] });
       frame(cover, "作成日 " + new Date().toISOString().slice(0, 10) + "（UTC）", TEXT.source);
       cover.addText(TEXT.eyebrow, { x: 1, y: 2.0, w: 11, h: 0.45, fontFace: F, fontSize: 20, bold: true, color: hex(THEME.copilot), margin: 0 });
       cover.addText(TEXT.title, { x: 1, y: 2.55, w: 11.5, h: 1.0, fontFace: F, fontSize: 36, bold: true, color: "FFFFFF", margin: 0, fit: "shrink" });
       cover.addText([{ text: periodOf(list) ? "対象期間 " + periodOf(list) : "", options: { breakLine: true, fontSize: 24 } }, { text: list.length + " 件", options: { fontSize: 36, bold: true } }], { x: 1, y: 3.75, w: 11, h: 1.6, fontFace: F, color: hex(THEME.onDark), valign: "top", margin: 0 });
       cover.addText([{ text: "作成　", options: { color: hex(THEME.onDark) } }, { text: TEXT.authorLabel, options: { hyperlink: { url: TEXT.profileUrl }, color: "79C0FF", underline: { style: "sng" }, breakLine: true } }, { text: "リポジトリ　", options: { color: hex(THEME.onDark) } }, { text: TEXT.repoUrl, options: { hyperlink: { url: TEXT.repoUrl }, color: "79C0FF", underline: { style: "sng" } } }], { x: 1, y: 5.4, w: 11, h: 0.8, fontFace: F, fontSize: 13, valign: "top", margin: 0 });
-      var tocPages = Math.max(1, Math.ceil(slides.length / PER_TOC)), firstPage = 1 + tocPages + 1 + 1;
+      var rows = tocRows(slides, function (s) { return s.title.ja; }), tocPages = Math.max(1, Math.ceil(rows.length / PER_TOC)), firstPage = 1 + tocPages + 1 + 1;
       for (var t = 0; t < tocPages; t++) {
-        var toc = pptx.addSlide(); frame(toc, TEXT.title, TEXT.source);
+        var toc = pptx.addSlide({ sectionTitle: "表紙・目次" }); frame(toc, TEXT.title, TEXT.source);
         toc.addText(t === 0 ? "目次" : "目次（続き）", { x: 0.7, y: 0.4, w: 8, h: 0.7, fontFace: F, fontSize: 28, bold: true, color: hex(THEME.dark), margin: 0 });
         toc.addShape("rect", { x: 0.7, y: 1.12, w: 2.4, h: 0.05, fill: { color: hex(THEME.copilot) }, line: { color: hex(THEME.copilot), width: 0 } });
-        slides.slice(t * PER_TOC, (t + 1) * PER_TOC).forEach(function (s, i) {
-          var n = t * PER_TOC + i, y = 1.35 + i * 0.4;
+        rows.slice(t * PER_TOC, (t + 1) * PER_TOC).forEach(function (row, i) {
+          var y = 1.35 + i * 0.4;
+          if (row.head) { toc.addText(row.head, { x: 0.7, y: y, w: 10, h: 0.36, fontFace: F, fontSize: 16, bold: true, color: hex(THEME.copilotDeep), margin: 0 }); return; }
+          var n = row.n, s = slides[n];
           toc.addText(String(n + 1) + ".", { x: 0.7, y: y, w: 0.6, h: 0.36, fontFace: F, fontSize: 15, bold: true, color: hex(THEME.copilot), margin: 0 });
           toc.addText("【" + s.topic + "】" + s.title.ja, { x: 1.3, y: y, w: 10.4, h: 0.36, fontFace: F, fontSize: 15, color: hex(THEME.fg), margin: 0, fit: "shrink" });
           toc.addText(String(firstPage + n), { x: 11.8, y: y, w: 0.8, h: 0.36, fontFace: F, fontSize: 15, color: hex(THEME.muted), align: "right", margin: 0 });
         });
       }
-      var sum = pptx.addSlide(); frame(sum, TEXT.title, TEXT.source);
+      var sum = pptx.addSlide({ sectionTitle: "表紙・目次" }); frame(sum, TEXT.title, TEXT.source);
       sum.addText("概要", { x: 0.7, y: 0.4, w: 8, h: 0.7, fontFace: F, fontSize: 28, bold: true, color: hex(THEME.dark), margin: 0 });
       sum.addShape("rect", { x: 0.7, y: 1.12, w: 1.2, h: 0.05, fill: { color: hex(THEME.copilot) }, line: { color: hex(THEME.copilot), width: 0 } });
       var tally = function (key) { var m = {}; slides.forEach(function (x) { var k = key(x); m[k] = (m[k] || 0) + 1; }); return Object.keys(m).sort(function (a, b) { return m[b] - m[a]; }).map(function (k) { return [k, m[k]]; }); };
@@ -421,7 +457,7 @@ export function downloadsJs() {
       };
       column("種類別", tally(function (x) { return STATUS_LABELS[x.status] || "更新"; }), 0.9);
       column("トピック別", tally(function (x) { return x.topic; }), 7.2);      slides.forEach(function (raw) {
-        var s = JSON.parse(JSON.stringify(norm(raw)).replace(/\\u0060/g, "")); var sl = pptx.addSlide();
+        var s = JSON.parse(JSON.stringify(norm(raw)).replace(/\\u0060/g, "")); var sl = pptx.addSlide({ sectionTitle: SECTIONS[sectionIndex(s)].label });
         var badgeColor = { ga: THEME.success, preview: THEME.done, retirement: THEME.danger, announcement: THEME.copilot, update: THEME.muted }[s.status];
         var tw = s.status === "unknown" ? 12.5 : 10.9, tk = scaleFor(s.id, "title", [{ t: s.title.ja, pt: 22, bold: true }], tw, 0.55);
         sl.addText(s.title.ja, { x: 0.4, y: 0.25, w: tw, h: 0.55, fontFace: F, fontSize: sz(22, tk), bold: true, color: hex(THEME.dark), valign: "top" });
@@ -460,7 +496,7 @@ export function downloadsJs() {
         sl.addNotes(["発表: " + s.references.source.url].concat((s.references.documents || []).map(function (d) { return "詳細: " + d.url; }), (s.evidence || []).map(function (u) { return "根拠: " + u; }), (s.qa && s.qa.length ? ["", "【想定問答】"].concat(s.qa.map(function (x, i) { return "Q" + (i + 1) + ". " + x.q + "\\nA. " + x.a; })) : [])).join("\\n"));
         sl.addText("分類: " + s.topic + " ｜ ID " + s.id, { x: 9.9, y: 7.12, w: 3.0, h: 0.25, fontFace: F, fontSize: 8, color: hex(THEME.muted), align: "right" });
       });
-      var end = pptx.addSlide(); end.background = { color: hex(THEME.dark) };
+      var end = pptx.addSlide({ sectionTitle: "終わりに" }); end.background = { color: hex(THEME.dark) };
       end.addShape("custGeom", { x: 0, y: 0.15, w: W, h: H - 0.73, fill: { color: hex(THEME.darkSubtle) }, line: { color: hex(THEME.darkSubtle), width: 0 }, points: [{ x: W * 0.45, y: 0 }, { x: W, y: 0 }, { x: W, y: H - 0.73 }, { x: W * 0.2, y: H - 0.73 }, { close: true }] });
       frame(end, TEXT.copyright, TEXT.source);
       end.addText(TEXT.endTitle, { x: 0, y: 2.4, w: W, h: 1.1, fontFace: F, fontSize: 48, bold: true, color: "FFFFFF", align: "center", margin: 0 });
