@@ -186,15 +186,31 @@ export function downloadsJs() {
   function sectionIndex(s) { return s.status === "preview" ? 0 : s.status === "ga" ? 1 : s.status === "retirement" ? 3 : 2; }
   function byDate(list) { return list.slice().sort(function (a, b) { return a.date.localeCompare(b.date) || a.id.localeCompare(b.id); }); }
   function ordered(list) { return list.slice().sort(function (a, b) { return sectionIndex(a) - sectionIndex(b) || a.date.localeCompare(b.date) || a.id.localeCompare(b.id); }); }
+  // Badge colours follow the slide's top-right badge (kind) and the site's source colours (topic).
+  var KIND_BADGE = { ga: ["GA", "success"], preview: ["Preview", "done"], retirement: ["廃止", "danger"], announcement: ["お知らせ", "copilot"], update: ["更新", "muted"], unknown: ["更新", "muted"] };
+  var TOPIC_BADGE = { "GitHub Copilot": ["Copilot", "#24292f"], "VS Code": ["VS Code", "#0078d4"], "GitHub Platform": ["Platform", "#ea580c"], "周辺ニュース": ["周辺", "#8c959f"] };
+  function kindBadge(s) { var b = KIND_BADGE[s.status] || KIND_BADGE.update; return { text: b[0], color: THEME[b[1]] }; }
+  function topicBadge(s) { var b = TOPIC_BADGE[s.topic] || TOPIC_BADGE["周辺ニュース"]; return { text: b[0], color: b[1] }; }
   // The table of contents rows: a heading row before each non-empty section, then its slides (n is the position in the list).
   function tocRows(list, titleOf) {
     var rows = [];
     SECTIONS.forEach(function (sec, si) {
       var members = [];
-      list.forEach(function (s, n) { if (sectionIndex(s) === si) members.push({ n: n, topic: s.topic, title: titleOf(s) }); });
+      list.forEach(function (s, n) { if (sectionIndex(s) === si) members.push({ n: n, topic: s.topic, title: titleOf(s), kind: kindBadge(s), tag: topicBadge(s) }); });
       if (members.length) { rows.push({ head: sec.label + "（" + members.length + "）", si: si }); members.forEach(function (m) { rows.push(m); }); }
     });
     return rows;
+  }
+  // A section heading never ends a page: it moves to the next page together with its first slide.
+  function tocPages(rows, per) {
+    var pages = [], cur = [];
+    rows.forEach(function (row) {
+      if (cur.length === per - 1 && row.head) { pages.push(cur); cur = []; }
+      else if (cur.length === per) { pages.push(cur); cur = []; }
+      cur.push(row);
+    });
+    if (cur.length) pages.push(cur);
+    return pages.length ? pages : [[]];
   }
   function sectionStarts(list) { var out = []; SECTIONS.forEach(function (sec, si) { var n = list.findIndex(function (s) { return sectionIndex(s) === si; }); if (n >= 0) out.push({ label: sec.label, n: n }); }); return out; }
   function refresh() {
@@ -284,6 +300,11 @@ export function downloadsJs() {
     footer(ctx, "作成日 " + created + "（UTC）", TEXT.source);
     return { links: links };
   }
+  function tocBadge(ctx, b, x, y, w) {
+    var h = 24, top = y - 18, r = h / 2;
+    ctx.fillStyle = b.color; ctx.beginPath(); ctx.moveTo(x + r, top); ctx.arcTo(x + w, top, x + w, top + h, r); ctx.arcTo(x + w, top + h, x, top + h, r); ctx.arcTo(x, top + h, x, top, r); ctx.arcTo(x, top, x + w, top, r); ctx.closePath(); ctx.fill();
+    ctx.fillStyle = "#fff"; ctx.font = "700 15px " + FONT; ctx.textAlign = "center"; ctx.fillText(b.text, x + w / 2, y - 1); ctx.textAlign = "left";
+  }
   function drawToc(ctx, rows, first, firstPage) {
     ctx.fillStyle = "#fff"; ctx.fillRect(0, 0, W, H); frame(ctx);
     var head = TEXT.tocTitle.split("・")[0];
@@ -293,7 +314,8 @@ export function downloadsJs() {
       var y = 150 + i * 36;
       if (row.head) { ctx.fillStyle = THEME.copilotDeep; ctx.font = "700 22px " + FONT; ctx.fillText(row.head, 70, y); ctx.font = "20px " + FONT; return; }
       ctx.fillStyle = THEME.copilot; ctx.fillText(String(row.n + 1) + ".", 70, y);
-      ctx.fillStyle = THEME.fg; ctx.fillText(fitText(ctx, "【" + row.topic + "】" + row.title, W - 70 - 120 - 130), 120, y);
+      tocBadge(ctx, row.kind, 124, y, 78); tocBadge(ctx, row.tag, 210, y, 92);
+      ctx.fillStyle = THEME.fg; ctx.font = "20px " + FONT; ctx.fillText(fitText(ctx, row.title, W - 70 - 314 - 80), 314, y);
       ctx.fillStyle = THEME.muted; ctx.textAlign = "right"; ctx.fillText(String(firstPage + row.n), W - 70, y); ctx.textAlign = "left";
     });
     footer(ctx, TEXT.title, TEXT.source);
@@ -357,7 +379,7 @@ export function downloadsJs() {
         var r = await canvasPng(draw); var page = out.addPage([W * PT, H * PT]);
         page.drawImage(await out.embedPng(r.bytes), { x: 0, y: 0, width: W * PT, height: H * PT }); return { page: page, result: r.result };
       };
-      var rows = tocRows(list, function (s) { return s.title; }), tocPages = Math.max(1, Math.ceil(rows.length / PER_TOC)), firstPage = 1 + tocPages + 1 + 1;
+      var tocChunks = tocPages(tocRows(list, function (s) { return s.title; }), PER_TOC), tocCount = tocChunks.length, firstPage = 1 + tocCount + 1 + 1;
       var addLinks = function (item) {
         item.result.links.forEach(function (r) {
           var a = out.context.obj({ Type: "Annot", Subtype: "Link", Rect: [r.x * PT, (H - r.top - r.h) * PT, (r.x + r.w) * PT, (H - r.top) * PT], Border: [0, 0, 0], A: { Type: "Action", S: "URI", URI: PDFString.of(r.url) } });
@@ -365,7 +387,7 @@ export function downloadsJs() {
         });
       };
       addLinks(await addImage(function (ctx) { return drawCover(ctx, list, periodOf(list), new Date().toISOString().slice(0, 10)); }));
-      for (var s = 0; s < rows.length; s += PER_TOC) { await addImage(function (ctx) { drawToc(ctx, rows.slice(s, s + PER_TOC), s === 0, firstPage); }); }
+      for (var s = 0; s < tocChunks.length; s++) { await addImage(function (ctx) { drawToc(ctx, tocChunks[s], s === 0, firstPage); }); }
       await addImage(function (ctx) { drawSummary(ctx, list); });
       var done = 0;
       for (var i = 0; i < list.length; i++) {
@@ -374,7 +396,7 @@ export function downloadsJs() {
         var pages = await out.copyPages(src, src.getPageIndices()); pages.forEach(function (p) { out.addPage(p); });
       }
       addLinks(await addImage(drawEnd));
-      addOutline(out, [{ title: "表紙", page: 0 }, { title: "目次", page: 1 }, { title: "概要", page: 1 + tocPages }].concat(sectionStarts(list).map(function (x) { return { title: x.label, page: firstPage - 1 + x.n }; }), [{ title: "裏表紙", page: out.getPageCount() - 1 }]));
+      addOutline(out, [{ title: "表紙", page: 0 }, { title: "目次", page: 1 }, { title: "概要", page: 1 + tocCount }].concat(sectionStarts(list).map(function (x) { return { title: x.label, page: firstPage - 1 + x.n }; }), [{ title: "裏表紙", page: out.getPageCount() - 1 }]));
       out.setTitle(TEXT.title);
       download(new Blob([await out.save()], { type: "application/pdf" }), stem(list) + ".pdf");
       setStatus(savedText(list.length));
@@ -430,17 +452,19 @@ export function downloadsJs() {
       cover.addText(TEXT.title, { x: 1, y: 2.55, w: 11.5, h: 1.0, fontFace: F, fontSize: 36, bold: true, color: "FFFFFF", margin: 0, fit: "shrink" });
       cover.addText([{ text: periodOf(list) ? "対象期間 " + periodOf(list) : "", options: { breakLine: true, fontSize: 24 } }, { text: list.length + " 件", options: { fontSize: 36, bold: true } }], { x: 1, y: 3.75, w: 11, h: 1.6, fontFace: F, color: hex(THEME.onDark), valign: "top", margin: 0 });
       cover.addText([{ text: "作成　", options: { color: hex(THEME.onDark) } }, { text: TEXT.authorLabel, options: { hyperlink: { url: TEXT.profileUrl }, color: "79C0FF", underline: { style: "sng" }, breakLine: true } }, { text: "リポジトリ　", options: { color: hex(THEME.onDark) } }, { text: TEXT.repoUrl, options: { hyperlink: { url: TEXT.repoUrl }, color: "79C0FF", underline: { style: "sng" } } }], { x: 1, y: 5.4, w: 11, h: 0.8, fontFace: F, fontSize: 13, valign: "top", margin: 0 });
-      var rows = tocRows(slides, function (s) { return s.title.ja; }), tocPages = Math.max(1, Math.ceil(rows.length / PER_TOC)), firstPage = 1 + tocPages + 1 + 1;
-      for (var t = 0; t < tocPages; t++) {
+      var tocChunks = tocPages(tocRows(slides, function (s) { return s.title.ja; }), PER_TOC), firstPage = 1 + tocChunks.length + 1 + 1;
+      for (var t = 0; t < tocChunks.length; t++) {
         var toc = pptx.addSlide({ sectionTitle: "表紙・目次" }); frame(toc, TEXT.title, TEXT.source);
         toc.addText(t === 0 ? "目次" : "目次（続き）", { x: 0.7, y: 0.4, w: 8, h: 0.7, fontFace: F, fontSize: 28, bold: true, color: hex(THEME.dark), margin: 0 });
         toc.addShape("rect", { x: 0.7, y: 1.12, w: 2.4, h: 0.05, fill: { color: hex(THEME.copilot) }, line: { color: hex(THEME.copilot), width: 0 } });
-        rows.slice(t * PER_TOC, (t + 1) * PER_TOC).forEach(function (row, i) {
+        tocChunks[t].forEach(function (row, i) {
           var y = 1.35 + i * 0.4;
           if (row.head) { toc.addText(row.head, { x: 0.7, y: y, w: 10, h: 0.36, fontFace: F, fontSize: 16, bold: true, color: hex(THEME.copilotDeep), margin: 0 }); return; }
           var n = row.n, s = slides[n];
-          toc.addText(String(n + 1) + ".", { x: 0.7, y: y, w: 0.6, h: 0.36, fontFace: F, fontSize: 15, bold: true, color: hex(THEME.copilot), margin: 0 });
-          toc.addText("【" + s.topic + "】" + s.title.ja, { x: 1.3, y: y, w: 10.4, h: 0.36, fontFace: F, fontSize: 15, color: hex(THEME.fg), margin: 0, fit: "shrink" });
+          toc.addText(row.kind.text, { x: 1.25, y: y + 0.03, w: 0.85, h: 0.3, fontFace: F, fontSize: 11, bold: true, color: "FFFFFF", align: "center", valign: "middle", margin: 0, fill: { color: hex(row.kind.color) }, rectRadius: 0.15, shape: pptx.ShapeType.roundRect });
+          toc.addText(row.tag.text, { x: 2.2, y: y + 0.03, w: 1.0, h: 0.3, fontFace: F, fontSize: 11, bold: true, color: "FFFFFF", align: "center", valign: "middle", margin: 0, fill: { color: hex(row.tag.color) }, rectRadius: 0.15, shape: pptx.ShapeType.roundRect });
+          toc.addText(String(n + 1) + ".", { x: 0.7, y: y, w: 0.55, h: 0.36, fontFace: F, fontSize: 15, bold: true, color: hex(THEME.copilot), margin: 0 });
+          toc.addText(s.title.ja, { x: 3.35, y: y, w: 8.35, h: 0.36, fontFace: F, fontSize: 15, color: hex(THEME.fg), margin: 0, fit: "shrink" });
           toc.addText(String(firstPage + n), { x: 11.8, y: y, w: 0.8, h: 0.36, fontFace: F, fontSize: 15, color: hex(THEME.muted), align: "right", margin: 0 });
         });
       }

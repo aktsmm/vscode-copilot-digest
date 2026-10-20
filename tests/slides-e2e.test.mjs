@@ -158,7 +158,7 @@ try {
   await page.waitForFunction(() => document.querySelector("[data-dl-status]").textContent.includes("パスワードが違います"), null, { timeout: 120000 });
   password = "e2e-password";
   const [pdfDownload] = await Promise.all([page.waitForEvent("download", { timeout: 180000 }), page.click('[data-dl="pdf"]')]);
-  const pdfFile = path.join(tmp, "merged.pdf");
+  const pdfFile = process.env.E2E_PDF_OUT || path.join(tmp, "merged.pdf");
   await pdfDownload.saveAs(pdfFile);
   assert.equal((await PDFDocument.load(await fs.readFile(pdfFile))).getPageCount(), 7, "cover + toc + summary + 3 slides + end");
 {
