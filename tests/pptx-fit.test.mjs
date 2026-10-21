@@ -63,7 +63,7 @@ await new Promise((resolve) => server.listen(0, "127.0.0.1", resolve));
 const base = `http://127.0.0.1:${server.address().port}/`;
 
 const problems = [];
-const scales = [];
+const fits = [];
 let saved = false;
 try {
   const context = await browser.newContext({ acceptDownloads: true });
@@ -82,7 +82,7 @@ try {
     const [download] = await Promise.all([page.waitForEvent("download", { timeout: 240000 }), page.click('[data-dl="pptx"]')]);
     if (process.env.PPTX_OUT && !saved) { await download.saveAs(process.env.PPTX_OUT); saved = true; } else await download.path();
     problems.push(...await page.evaluate(() => window.__pptxOverflow ?? null));
-    scales.push(...await page.evaluate(() => window.__pptxScales ?? []));
+    fits.push(...await page.evaluate(() => window.__pptxFit ?? []));
   }
 } finally {
   await browser.close();
@@ -92,5 +92,11 @@ try {
 
 assert.ok(!problems.includes(null), "the builder did not report its overflow list");
 assert.equal(problems.length, 0, `text does not fit its box in the PowerPoint: ${problems.slice(0, 8).map((p) => `${p.id} (${p.what})`).join(", ")}${problems.length > 8 ? `, and ${problems.length - 8} more` : ""}`);
-const shrunk = scales.filter((k) => k < 1).length;
-console.log(`pptx-fit tests passed (${slides.length} slides; ${shrunk} of ${scales.length} text boxes needed a smaller font, smallest scale ${Math.min(...scales)})`);
+// A slide whose text would have to shrink below this is too crowded to read: it fails here (and in the slide merger),
+// so the slide is regenerated shorter instead of being published.
+const MIN_READABLE_SCALE = 0.6;
+const crowded = fits.filter((f) => f.k < MIN_READABLE_SCALE);
+assert.equal(crowded.length, 0, `too crowded to read in the PowerPoint (text below ${MIN_READABLE_SCALE * 100}%): ${[...new Set(crowded.map((f) => f.id))].slice(0, 8).join(", ")}`);
+const shrunk = fits.filter((f) => f.k < 1).length;
+const tight = [...new Set(fits.filter((f) => f.k < 0.75).map((f) => f.id))].length;
+console.log(`pptx-fit tests passed (${slides.length} slides; ${shrunk} of ${fits.length} text boxes needed a smaller font, smallest scale ${Math.min(...fits.map((f) => f.k))}; ${tight} slides below 75%)`);
