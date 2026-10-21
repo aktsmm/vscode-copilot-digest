@@ -1,0 +1,58 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "1760a15dd7dbe317",
+  "title": {
+    "ja": "Visual Studio Code 1.144 Insiders の更新点",
+    "subtitleJa": "新セッション コンポーザーの workspace 解除、Mermaid 操作、MCP の OAuth トークン分離",
+    "original": "Visual Studio Code 1.144 (Insiders)"
+  },
+  "date": "2026-10-21",
+  "topic": "VS Code",
+  "status": "update",
+  "audience": {
+    "who": "VS Code Insiders を使い、Agents window・Markdown エディター・MCP を試す開発者",
+    "change": "workspace なしでセッションを始められ、MCP サーバーごとに OAuth トークンが分かれる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "info",
+    "summary": "Insiders ビルドで挙動を試す。リリース ノートは新機能の追加に合わせて更新される"
+  },
+  "panels": [
+    {
+      "id": "changes",
+      "heading": "主な更新",
+      "priority": "core",
+      "items": [
+        "実験的な新セッション コンポーザーで、選択中の workspace を解除し、プロジェクトなしで開始、または別の workspace を選べる",
+        "リッチ Markdown エディターで、Mermaid 図のサイズ変更、エディター幅への拡大、全画面表示ができる",
+        "MCP サーバーごとに OAuth トークンを分けて保持する"
+      ]
+    },
+    {
+      "id": "experimental",
+      "heading": "実験的機能",
+      "priority": "detail",
+      "items": [
+        "フォルダーを開かずに複数のモデルを比較する実験的サポートが追加された"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "Insiders", "type": "product", "oneLine": "VS Code の先行ビルド。リリース ノートは新機能の追加に合わせて更新される。" }
+  ],
+  "qa": [
+    { "q": "これは安定版で使えますか？", "a": "このページは Insiders ビルドのリリース ノートです。新機能の追加に合わせて内容が更新されます。" },
+    { "q": "Mermaid 図ではどんな操作ができますか？", "a": "リッチ Markdown エディターで、図のサイズ変更、エディター幅への拡大、全画面表示ができます。" },
+    { "q": "MCP の認証はどう変わりますか？", "a": "OAuth トークンが MCP サーバーごとに分けて保持されます。" }
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.144 (Insiders)",
+      "url": "https://code.visualstudio.com/updates/v1_144"
+    }
+  },
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_144"
+  ]
+}
