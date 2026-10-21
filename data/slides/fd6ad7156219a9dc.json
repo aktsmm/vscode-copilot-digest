@@ -1,0 +1,92 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "fd6ad7156219a9dc",
+  "title": {
+    "ja": "VS Code 1.143: 複数モデルの結果を比較する Compare Models",
+    "subtitleJa": "同じタスクを複数モデルで並列実行し、結果を比較して 1 つの解にまとめられる",
+    "original": "Compare model results (Preview)"
+  },
+  "date": "2026-10-21",
+  "topic": "VS Code",
+  "status": "preview",
+  "statusEvidence": "Compare model results (Preview)",
+  "audience": {
+    "who": "Agents window で複数モデルの取り組み方を比べたい VS Code ユーザー",
+    "change": "モデルピッカーの Compare Models で、複数モデルを並列に走らせ、結果を比較・統合できる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "Agents window で sessions.chat.compareAgents.enabled を有効にして試す"
+  },
+  "panels": [
+    {
+      "id": "usage",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "Agents window で `sessions.chat.compareAgents.enabled` を有効化し、モデルピッカーで Compare Models を選ぶ",
+        "2 つ以上のモデルを選び、1 つのプロンプトで全ての試行を同時に開始する",
+        "Copilot・Claude・Codex のハーネスを混在でき、推論レベルも個別に設定できる"
+      ]
+    },
+    {
+      "id": "review",
+      "heading": "結果の評価と統合",
+      "priority": "core",
+      "items": [
+        "各試行は個別のセッションで動き、並べて進捗を比較。ワークツリーや変更をいつでも開ける",
+        "任意で Judge モデルを選ぶと、試行を評価して推奨案を提示する",
+        "スコアカードに時間とトークン使用量、根拠、検証結果、各試行へのリンクが出る"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "Preview 機能で、設定は Agents window のみが対象",
+        "Synthesize を選んだときだけ統合が始まる"
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Judge モデル",
+      "type": "feature",
+      "oneLine": "各試行を評価し、推奨する解を示すモデル。選択は任意"
+    },
+    {
+      "term": "Synthesize",
+      "type": "feature",
+      "oneLine": "推奨された試行を土台に、他の試行のアイデアを取り込んで作り直す操作"
+    }
+  ],
+  "qa": [
+    {
+      "q": "どうやって有効にしますか？",
+      "a": "Agents window で sessions.chat.compareAgents.enabled を有効にし、モデルピッカーで Compare Models を選びます。"
+    },
+    {
+      "q": "どのモデルを比較できますか？",
+      "a": "2 つ以上のモデルを選べます。Copilot、Claude、Codex のハーネスを混在でき、推論レベルも個別に設定できます。"
+    },
+    {
+      "q": "各試行はどう動きますか？",
+      "a": "1 つのプロンプトで全試行を同時に開始します。各試行は個別のセッションで動き、ワークツリーや変更をいつでも開けます。"
+    },
+    {
+      "q": "結果の評価や統合は自動ですか？",
+      "a": "Judge モデルの選択は任意で、選ぶと試行を評価して推奨案を示します。統合は Synthesize を選んだときだけ始まります。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.143",
+      "url": "https://code.visualstudio.com/updates/v1_143#_compare-model-results-preview"
+    }
+  },
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_143"
+  ]
+}
