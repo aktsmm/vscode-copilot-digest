@@ -24320,6 +24320,86 @@
         "Original article explicit links",
         "Feature-matched official documentation indexes"
       ]
+    },
+    "e93853caad62ebcebaf50f2142db410632d32f815f36521f2e83a286a60e4df4": {
+      "version": 6,
+      "checkedAt": "2026-10-21T20:46:33.143Z",
+      "inputUrl": "https://github.com/features/copilot/whats-new",
+      "inputTitle": "GitHub Copilot What's New changed",
+      "status": "unconfirmed",
+      "source": {
+        "url": "https://github.com/features/copilot/whats-new",
+        "status": "unconfirmed",
+        "reason": "Historical changed feature not identifiable in current page",
+        "checkedAt": "2026-10-21T20:46:33.402Z",
+        "contentHash": "85c37f0e42cc4a08bda13437b7420d73ea44f72a0f327010bcd02da3dcd233a8"
+      },
+      "documents": [],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "1d1d0e4ea8d95fdef77c72f5b6123fa48d4608c56a4ed172b1194cac187a513a": {
+      "version": 6,
+      "checkedAt": "2026-10-21T20:46:33.510Z",
+      "inputUrl": "https://code.visualstudio.com/updates/v1_143",
+      "inputTitle": "Visual Studio Code 1.143",
+      "status": "verified",
+      "source": {
+        "url": "https://code.visualstudio.com/updates/v1_143",
+        "status": "verified",
+        "reason": "Fetched original article",
+        "checkedAt": "2026-10-21T20:46:33.535Z",
+        "contentHash": "12f83f71f7da0723a9be0f4ff5743bfeef7dddedbbff5eb299888fbf322d3526"
+      },
+      "documents": [
+        {
+          "url": "https://code.visualstudio.com/docs/agents/concepts/agent-host",
+          "title": "Agent Host architecture",
+          "language": "en",
+          "checkedAt": "2026-10-14T23:22:05.186Z",
+          "contentHash": "e442bd916195cfc93f833abb0529f165b7167c5d6f40a01b5fceb7174fff0d4c",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_143",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://code.visualstudio.com/docs/agents/run/agent-harnesses",
+          "title": "Choose an agent harness",
+          "language": "en",
+          "checkedAt": "2026-10-14T23:22:04.985Z",
+          "contentHash": "61333e9e2da4f4b8402a1afcb904d30dda708588787a05836656862c22c9d5c9",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_143",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://code.visualstudio.com/docs/agents/run/agents-window",
+          "title": "Use the Agents window",
+          "language": "en",
+          "checkedAt": "2026-10-21T10:21:57.187Z",
+          "contentHash": "a82d7e7805311f960e340dda03bbd45a2922ce53d259bcbcde135c46cd0d8b8c",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_143",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
     }
   }
 }

@@ -1,34 +1,15 @@
 {
   "date": "2026-10-21",
-  "generatedAt": "2026-10-21T10:21:54.886Z",
+  "generatedAt": "2026-10-21T20:46:32.631Z",
   "latestRun": {
-    "generatedAt": "2026-10-21T10:21:54.886Z",
-    "newEventsCount": 12,
+    "generatedAt": "2026-10-21T20:46:32.631Z",
+    "newEventsCount": 2,
     "newEventIds": [
-      "vscode-updates:542dac5f61b9f17de8119002faef592acb57a7ff11ab2ed6941b0b16f9d3f83b",
-      "vscode-release-notes-1-109:0cf5569f8ac6d6b55551730721d0d9f6190e94076a73929d9231a04544b427da",
-      "vscode-docs-agents-nav:c3df7b654e4f95969d615dcc7d091d6355bf16e51f4f880f999f766c16046c64",
-      "vscode-docs-agents-window:787966cd1e543fd3a3669f07a397b7a654d274d13373a650456953a49f700eb5",
-      "vscode-release-notes-1-143:section:41fbd44772ae14a60aeeef4eaf50d8a1046bbc4858dfe32feb975378dbd68962",
-      "vscode-release-notes-1-143:section:eada4e9ff04634890837f75c33a6703aa545f688a2a5ecb268db30123939827f",
-      "vscode-release-notes-1-143:section:91b713b361259ad8b519355712eb732c7c02782f83f6e4211238738a9dd49173",
-      "vscode-release-notes-1-143:section:d2d318eaa63344b337a9d54c5cdb4bd686168caf560cd9ba6d7536fb28cc1f30",
-      "vscode-release-notes-1-143:section:f7fe810d1a764da6dcecece929eeb6b0cd544ef4c79b7d2b4bdcaa85701a62c7",
-      "vscode-release-notes-1-143:section:d6ab8b7cb6b15360064fe4ff48afc975dd5182c5cbeea9b549b37173a1e0bfdb",
-      "vscode-release-notes-1-143:section:8d888651acd42e37f54a073e162adbe2af791a709cbfc29bc5aeb457433de2a3",
-      "vscode-release-notes-1-143:section:0d07d1b4e8fc5fe7567ea68a19e100336f4bf8f85b1a3deb8e0df9a1d62c2d4a"
+      "vscode-feed:https://code.visualstudio.com/updates/v1_143",
+      "copilot-whats-new:a583bcb31064fd9f1e08019576cee8a96e014fce4c42accbe53732726a4db164"
     ],
     "errorCount": 0,
-    "skippedLowInformationEvents": [
-      {
-        "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_144",
-        "sourceId": "vscode-feed",
-        "title": "Visual Studio Code 1.144 (Insiders)",
-        "fallbackMarkers": [
-          "Visual Studio Code 関連の更新。日々の開発フローや agent 利用に効く変更点を確認しておきたい。"
-        ]
-      }
-    ]
+    "skippedLowInformationEvents": []
   },
   "events": [
     {
@@ -37,7 +18,7 @@
       "sourceName": "VS Code Release Notes 1.143",
       "kind": "vscode_release_note_section",
       "detectedAt": "2026-10-21T10:21:53.670Z",
-      "publishedAt": "2026-10-21T10:21:53.670Z",
+      "publishedAt": "2026-10-21T20:46:30.205Z",
       "title": "Visual Studio Code 1.143: Copilot harness as the default",
       "url": "https://code.visualstudio.com/updates/v1_143",
       "summary": "The Copilot harness is now the default for new sessions in VS Code. It's our latest harness, built on the Copilot SDK, a shared foundation that helps align behavior, capabilities, and improvements across Copilot products. When you start a new session, Copilot in the harness picker indicates that the session uses the Copilot harness: In VS Code, you can keep Copilot harness sessions running in the background and acce...",
@@ -56,7 +37,7 @@
       "sourceName": "VS Code Release Notes 1.143",
       "kind": "vscode_release_note_section",
       "detectedAt": "2026-10-21T10:21:53.670Z",
-      "publishedAt": "2026-10-21T10:21:53.670Z",
+      "publishedAt": "2026-10-21T20:46:30.205Z",
       "title": "Visual Studio Code 1.143: Discard changes from more changesets in the Agents window",
       "url": "https://code.visualstudio.com/updates/v1_143",
       "summary": "The Changes view in the Agents window lets you see all the modifications made by the agent. Until now, discarding pending changes was only available in the Uncommitted Changes changeset. In this release, the Branch Changes, Session Changes, and Last Turn Changes changesets also offer the possibility to discard changes. Select Discard Changes on a file in the Changes view or in the multi-file diff editor. What VS Cod...",
@@ -75,7 +56,7 @@
       "sourceName": "VS Code Release Notes 1.143",
       "kind": "vscode_release_note_section",
       "detectedAt": "2026-10-21T10:21:53.670Z",
-      "publishedAt": "2026-10-21T10:21:53.670Z",
+      "publishedAt": "2026-10-21T20:46:30.205Z",
       "title": "Visual Studio Code 1.143: Compare model results (Preview)",
       "url": "https://code.visualstudio.com/updates/v1_143",
       "summary": "Setting: \n \n \n sessions.chat.compareAgents.enabled\n \n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders\n \n (Agents window only) Compare how different models and harnesses approach the same coding task. Run attempts in parallel, review their results, and combine ideas into one solution. To get started, enable \n \n \n sessions.chat.compareAgents.enabled\n \n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders...",
@@ -94,7 +75,7 @@
       "sourceName": "VS Code Release Notes 1.143",
       "kind": "vscode_release_note_section",
       "detectedAt": "2026-10-21T10:21:53.670Z",
-      "publishedAt": "2026-10-21T10:21:53.670Z",
+      "publishedAt": "2026-10-21T20:46:30.205Z",
       "title": "Visual Studio Code 1.143: Tab shortcuts in an empty side pane",
       "url": "https://code.visualstudio.com/updates/v1_143",
       "summary": "When you closed every tab in the Agents window side pane, the editor area was left blank, and you had to find the Add Tab (+) menu to get back to your session's changes or files. The empty editor area now lists the tabs you can add, such as Changes, Files, Browser, and Search, each with its icon and keyboard shortcut. Select an entry to open that tab. If you have a canvas extension installed, a Canvas entry lists th...",
@@ -113,7 +94,7 @@
       "sourceName": "VS Code Release Notes 1.143",
       "kind": "vscode_release_note_section",
       "detectedAt": "2026-10-21T10:21:53.670Z",
-      "publishedAt": "2026-10-21T10:21:53.670Z",
+      "publishedAt": "2026-10-21T20:46:30.205Z",
       "title": "Visual Studio Code 1.143: Session Activity Bar (Experimental)",
       "url": "https://code.visualstudio.com/updates/v1_143",
       "summary": "Sessions: \n \n \n sessions.showSessionActivityBar\n \n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders\n \n , \n \n \n sessions.sessionActivityBar.showLayoutActions\n \n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders The Session Activity Bar brings a session's Changes, Files, Browser, and available canvases next to the side pane, keeping these editors and artifacts visually connected to where they open. You ca...",
@@ -132,7 +113,7 @@
       "sourceName": "VS Code Release Notes 1.143",
       "kind": "vscode_release_note_section",
       "detectedAt": "2026-10-21T10:21:53.670Z",
-      "publishedAt": "2026-10-21T10:21:53.670Z",
+      "publishedAt": "2026-10-21T20:46:30.205Z",
       "title": "Visual Studio Code 1.143: Find and create files from the empty Files tab (Experimental)",
       "url": "https://code.visualstudio.com/updates/v1_143",
       "summary": "Setting: \n \n \n sessions.experimental.emptyFileEditorActions\n \n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders In the Agents window, the Files tab was blank when no file was open, so you had to switch to the Files view to find or create a file in your session's folder. When you enable \n \n \n sessions.experimental.emptyFileEditorActions\n \n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders\n \n , the empty...",
@@ -151,7 +132,7 @@
       "sourceName": "VS Code Release Notes 1.143",
       "kind": "vscode_release_note_section",
       "detectedAt": "2026-10-21T10:21:53.670Z",
-      "publishedAt": "2026-10-21T10:21:53.670Z",
+      "publishedAt": "2026-10-21T20:46:30.205Z",
       "title": "Visual Studio Code 1.143: Improved performance when opening large chats",
       "url": "https://code.visualstudio.com/updates/v1_143",
       "summary": "Opening a long Agent Host chat in the Agents window used to freeze the window for up to half a minute while the chat's history was restored. In this release, history is restored in small slices instead of one long blocking task, so the window stays responsive. Opening, switching back to, and reloading large chats is significantly faster. Median of three runs on macOS, with real chats from day-to-day development. \"Co...",
@@ -170,7 +151,7 @@
       "sourceName": "VS Code Release Notes 1.143",
       "kind": "vscode_release_note_section",
       "detectedAt": "2026-10-21T10:21:53.670Z",
-      "publishedAt": "2026-10-21T10:21:53.670Z",
+      "publishedAt": "2026-10-21T20:46:30.205Z",
       "title": "Visual Studio Code 1.143: Reclaim storage from inactive worktrees (Experimental)",
       "url": "https://code.visualstudio.com/updates/v1_143",
       "summary": "Setting: \n \n \n chat.agentSessions.sessionStorageCleanupSuggestion.enabled\n \n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders\n \n (Agents window only) Worktrees are very useful for letting agents work on multiple features simultaneously without interfering with each other's changes. Over time, inactive worktrees can accumulate and consume significant disk space. Run Chat: Open Worktree Cleanup from the Command...",
@@ -181,6 +162,58 @@
       ],
       "sectionHeading": "Agents",
       "sectionTitle": "Reclaim storage from inactive worktrees (Experimental)",
+      "score": 4
+    },
+    {
+      "eventId": "copilot-whats-new:a583bcb31064fd9f1e08019576cee8a96e014fce4c42accbe53732726a4db164",
+      "sourceId": "copilot-whats-new",
+      "sourceName": "GitHub Copilot What's New",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-10-21T20:46:26.823Z",
+      "publishedAt": "2026-10-21T20:46:26.822Z",
+      "title": "GitHub Copilot What's New changed",
+      "url": "https://github.com/features/copilot/whats-new",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [],
+        "additions": [
+          "Universe ‘26"
+        ]
+      },
+      "headings": [
+        "Changelog",
+        "Filters (0 selected)",
+        "October\n Oct\n 2026",
+        "Oct.19 Improvement",
+        "Oct.19 Retired",
+        "Oct.15 Improvement",
+        "Oct.15 Retired",
+        "Oct.15 Release",
+        "Oct.14 Release",
+        "Oct.13 Release",
+        "Oct.13 Improvement",
+        "Oct.12 Improvement"
+      ],
+      "score": 2
+    },
+    {
+      "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_143",
+      "sourceId": "vscode-feed",
+      "sourceName": "VS Code Feed",
+      "kind": "feed_entry",
+      "detectedAt": "2026-10-21T20:46:25.446Z",
+      "publishedAt": "2026-10-21T17:00:00.000Z",
+      "title": "Visual Studio Code 1.143",
+      "url": "https://code.visualstudio.com/updates/v1_143",
+      "summary": "Learn what's new in Visual Studio Code 1.143\n Read the full article",
+      "categories": [
+        "release"
+      ],
+      "isFutureDated": false,
       "score": 4
     },
     {
@@ -250,6 +283,23 @@
         "Reclaim storage from inactive worktrees (Experimental)"
       ],
       "score": 18
+    },
+    {
+      "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_144",
+      "sourceId": "vscode-feed",
+      "sourceName": "vscode feed",
+      "kind": "feed_entry",
+      "detectedAt": "2026-10-21T10:21:54.886Z",
+      "publishedAt": "2026-10-21T00:00:00.000Z",
+      "title": "Visual Studio Code 1.144 (Insiders)",
+      "url": "https://code.visualstudio.com/updates/v1_144",
+      "summary": "Follow us on LinkedIn, X, Bluesky, Instagram | Follow Insiders Changelog on X or Bluesky Welcome to the 1.144 Insiders release of Visual Studio Code.",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
     },
     {
       "eventId": "vscode-release-notes-1-109:0cf5569f8ac6d6b55551730721d0d9f6190e94076a73929d9231a04544b427da",
@@ -350,23 +400,6 @@
       },
       "headings": [],
       "score": 2
-    },
-    {
-      "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_144",
-      "sourceId": "vscode-feed",
-      "sourceName": "vscode feed",
-      "kind": "feed_entry",
-      "detectedAt": "2026-10-21T10:21:54.886Z",
-      "publishedAt": "2026-10-21T00:00:00.000Z",
-      "title": "Visual Studio Code 1.144 (Insiders)",
-      "url": "https://code.visualstudio.com/updates/v1_144",
-      "summary": "Follow us on LinkedIn, X, Bluesky, Instagram | Follow Insiders Changelog on X or Bluesky Welcome to the 1.144 Insiders release of Visual Studio Code.",
-      "categories": [
-        "copilot"
-      ],
-      "isFutureDated": false,
-      "score": 3,
-      "backfilled": true
     }
   ],
   "errors": []
