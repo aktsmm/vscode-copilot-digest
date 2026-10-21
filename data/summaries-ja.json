@@ -3377,5 +3377,182 @@
       "推奨代替はGPT-5 miniとClaude Haiku 4.5",
       "Enterprise管理者はモデルポリシーで代替モデルを有効化する"
     ]
+  },
+  "cd17bd19729c373f": {
+    "title": "Copilot cloud agent専用のAgentsシークレットと変数が登場",
+    "summary": "Copilot cloud agentに専用の「Agents」シークレットと変数が追加された。Actions、Codespaces、Dependabotと並ぶ種類で、初めてOrganizationレベルで設定でき、任意のリポジトリや全リポジトリで共有できる。",
+    "why": "複数リポジトリでcloud agentを使う管理者は、共通トークンやMCP設定を組織単位に集約できる。",
+    "points": [
+      "従来はリポジトリごとのActions設定内のcopilot環境で設定していた",
+      "リポジトリ設定に専用の「Agents」セクションが追加された",
+      "各シークレットや変数にアクセスできるリポジトリを選べる",
+      "社内パッケージレジストリのトークンや共通MCPサーバーの配布に向く"
+    ]
+  },
+  "7335858f770a8d9d": {
+    "title": "使用状況メトリクスAPIでCopilotコードレビューの種別別集計が可能に",
+    "summary": "Copilot使用状況メトリクスAPIのpull_requests配下に、copilot_suggestions_by_comment_type配列が追加された。securityやbug_riskなどコメント種別ごとに、投稿された提案数と適用された提案数を取得できる。",
+    "why": "エンタープライズ管理者とOrganizationオーナーは、どの種類の指摘が実際に採用されているかを測れる。",
+    "points": [
+      "項目はcomment_type、total_copilot_suggestions、total_copilot_applied_suggestions",
+      "1日単位と28日ローリングのレポートで、EnterpriseとOrganizationの両方に対応",
+      "リポジトリ単位の内訳は現時点では取得できない",
+      "対象はCopilotコードレビューが投稿した提案のみ"
+    ]
+  },
+  "9efda109fcdd4210": {
+    "title": "Claude Sonnet 4がCopilotの全体験で廃止",
+    "summary": "Claude Sonnet 4が2026年5月6日付で、チャット、インライン編集、askとagentモード、コード補完を含むCopilotの全体験で廃止された。推奨される代替モデルはClaude Sonnet 4.6。",
+    "why": "このモデルに依存する連携は更新し、Enterprise管理者は代替モデルのポリシーが有効か確認する。",
+    "points": [
+      "廃止日は2026年5月6日、代替はClaude Sonnet 4.6",
+      "Enterpriseでは代替モデルをモデルポリシーで有効化する必要がある場合がある",
+      "有効化後はVS Codeとgithub.comのモデル選択に表示される",
+      "廃止モデルを削除する作業は不要"
+    ]
+  },
+  "be1017688a0667ca": {
+    "title": "GPT-4.1を2026年6月1日にCopilotで廃止予定",
+    "summary": "GPT-4.1は2026年6月1日に、チャット、インライン編集、askとagentモード、コード補完を含むCopilotの全体験で廃止される予定。推奨される代替モデルはGPT-5.5。",
+    "why": "GPT-4.1を前提にしたワークフローは期日までにGPT-5.5へ移し、管理者は利用可否を整える。",
+    "points": [
+      "廃止予定日は2026年6月1日、代替はGPT-5.5",
+      "Enterprise管理者はモデルポリシーでGPT-5.5を有効化する",
+      "廃止後のモデル削除作業は不要"
+    ]
+  },
+  "74f95f5ce84e2847": {
+    "title": "Agentic Workflowsのトークン消費を削る最適化手法",
+    "summary": "GitHubが自社リポジトリで2026年4月から進めた、Agentic Workflowsのトークン最適化の事例。APIプロキシで全実行のトークン使用量をtoken-usage.jsonlに記録し、監査用と最適化用の日次ワークフローで無駄を洗い出した。",
+    "why": "agentic workflowを運用する開発者は、未使用ツールの整理やデータ取得のCLI化でコストを下げられる。",
+    "points": [
+      "未使用のMCPツールを外すと、1回の呼び出しあたり8〜12KBのコンテキストを削減",
+      "PR差分などの取得はMCPではなくgh CLIの事前ダウンロードに置き換える",
+      "モデル差を補正するEffective Tokens指標で効率を比較する",
+      "Daily Token AuditorとDaily Token Optimizerが異常な消費を検出する"
+    ]
+  },
+  "8f8f685dbc52b8c3": {
+    "title": "VS Code 1.116〜1.119のCopilot変更をまとめて紹介",
+    "summary": "週次安定版に移行したVS Codeのv1.116〜1.119で出荷されたCopilot機能の総まとめ。全ワークスペースでのセマンティック検索、githubTextSearchツール、実験的な/chronicle、BYOKのBusiness/Enterprise対応などが含まれる。",
+    "why": "VS CodeでCopilotを使うチームは、BYOKポリシーやCLIのリモート操作など設定が必要な機能を把握して導入を検討できる。",
+    "points": [
+      "/chronicleはgithub.copilot.chat.localIndex.enabledで有効化する実験機能",
+      "BYOKはBusiness/Enterpriseで利用でき、管理者はBring Your Own Language Model Keyポリシーで制御",
+      "/remote onでCopilot CLIセッションをGitHub.comやモバイルから操作できる",
+      "エージェントが開いている任意のターミナルを読み書きできる"
+    ]
+  },
+  "30931581434ea58f": {
+    "title": "Copilot CLIのRubber DuckがGPTとClaudeの組み合わせに対応",
+    "summary": "Copilot CLIの別モデル系統レビューエージェントRubber Duckが拡張された。GPTを使うセッションではClaude製の批評エージェントが第二の意見を出し、Claudeセッションでは批評役にGPT-5.5を使う。",
+    "why": "CLIでセカンドオピニオンを得たい開発者は、/experimentalを有効にすればどちらのモデル系統でも使える。",
+    "points": [
+      "有効化はcopilotを起動して/experimental onに切り替える",
+      "GPTセッションではClaudeのRubber Duckが設計の見落としや細かなバグを指摘",
+      "Claudeセッションの批評役がGPT-5.5に強化された"
+    ]
+  },
+  "c1b956c6759f141a": {
+    "title": "Copilot CLIのエンタープライズ管理プラグインがパブリックプレビュー",
+    "summary": "管理者がEnterprise全体のCopilot CLIにプラグインを設定・配布できる機能がパブリックプレビューになった。プラグインのマーケットプレイスや自動インストール対象を定義でき、フックやMCP設定も常時有効にできる。",
+    "why": "Enterprise管理者は、カスタムエージェントやスキルの標準構成を全ユーザーへ配布してオンボーディングを短縮できる。",
+    "points": [
+      "設定は.github-private/.github/copilot/settings.jsonに記述する",
+      "対象はCopilot BusinessまたはEnterpriseのライセンスを持つユーザー",
+      "カスタムエージェント用の組織を設定済みなら同じ.github-privateを使う",
+      "有効状態はEnterprise設定のAI controlsにあるAgentsページで確認する"
+    ]
+  },
+  "00517e9920463688": {
+    "title": "エージェント生成PRをレビューするときの注意点",
+    "summary": "エージェントが作ったプルリクエストのレビュー指針。CIを弱める変更、既存ユーティリティを見落とした重複実装、動くが誤っているコードなどの危険信号を挙げ、GitHubではコードレビューの5件に1件超でエージェントが関与するとしている。",
+    "why": "エージェントPRを承認する立場の人は、CIの改変や重複コードを重点的に点検するとよい。",
+    "points": [
+      "カバレッジ閾値の変更やテストの削除・スキップはブロッカー扱い",
+      "新しいヘルパーは既存実装を検索し、同等品があれば統合を求める",
+      "作成者はPR本文を編集し、自分で先にレビューしてから依頼する"
+    ]
+  },
+  "3214e48fb63b8a6e": {
+    "title": "VS Code 1.119でエージェントセッションのOpenTelemetry計測に対応",
+    "summary": "VS Code 1.119で、ローカルエージェント、Copilot CLIバックグラウンドエージェント、Claudeエージェントがセッションのトレース、メトリクス、イベントをOpenTelemetryで出力する。モデルやトークン使用量、各ステップの所要時間を追える。",
+    "why": "エージェントのコストや遅延を調べたいチームは、設定を有効にしてOTLP対応のバックエンドへ送れる。",
+    "points": [
+      "github.copilot.chat.otel.enabledを有効にし、otlpEndpointに収集先を指定",
+      "invoke_agentのルートスパンの下にchat、execute_tool、execute_hookが入る",
+      "キャッシュ読み取りと作成を含むトークン使用量を記録",
+      "Aspire DashboardなどOTLP対応の基盤で確認できる"
+    ]
+  },
+  "b687e8014d6738a6": {
+    "title": "VS Code 1.119でブラウザタブをエージェントと共有可能に",
+    "summary": "VS Code 1.119では、統合ブラウザのタブをチャットに添付してエージェントに共有できる。エージェントが未共有タブの共有を求めることもでき、ユーザーが許可か拒否を選ぶ。共有していないタブにはエージェントが触れない。",
+    "why": "Web開発でエージェントに画面確認までさせたい人は、必要なタブだけ明示的に共有して使う。",
+    "points": [
+      "添付はコンテキスト候補、コンテキストピッカー、ドラッグ＆ドロップから行う",
+      "共有中はエージェントがページを読み取り操作でき、ブラウザの共有ボタンで停止",
+      "同一ドメインの未共有タブがあると、再利用するか確認するプロンプトが出る"
+    ]
+  },
+  "c1ca1a00bc3d0f26": {
+    "title": "VS Code 1.119リリース、エージェント操作と可観測性を強化",
+    "summary": "2026年5月6日公開のVS Code 1.119。エージェントによる統合ブラウザの利用要求、todo管理を軽量モデルに任せるトークン節約、OpenTelemetryによる計測、ネットワークや一時フォルダ書き込みの確認削減、Markdownのソース/プレビュー切り替えが含まれる。",
+    "why": "VS CodeのエージェントやCopilotを使う人は、追加された設定を確認して自分の運用に取り込める。",
+    "points": [
+      "todo管理の軽量モデル利用はgithub.copilot.chat.agent.backgroundTodoAgent.enabledの実験機能",
+      "Copilot CLIとClaudeエージェントの応答にモデル名と倍率が表示される",
+      "1.119.1でセキュリティ問題が修正された"
+    ]
+  },
+  "d091cb50a179c9b0": {
+    "title": "VS Code Agentsの新規セッション画面とモバイル対応が改善",
+    "summary": "VS Code Insiders限定のプレビュー機能Visual Studio Code Agentsが更新された。新規セッションのリポジトリ選択がローカルフォルダ、リポジトリ、リモートを切り替えやすくなり、サブセッションの管理やモバイルブラウザからの操作も改善された。",
+    "why": "並列セッション型の開発を試したい人は、Insiders版でこの更新を使って評価できる。",
+    "points": [
+      "利用できるのはVS Code Insidersのみで、現在はプレビュー",
+      "エージェント作業中は回転する進捗メッセージと入力欄の枠アニメーションで状況が見える",
+      "1.118で導入したAgentsのWebクライアントをモバイルでも使いやすくした"
+    ]
+  },
+  "f6c4eb7571d423de": {
+    "title": "VS CodeでCopilot CLIとClaudeの応答にモデル名を表示",
+    "summary": "VS Code 1.119から、チャットビューのCopilot CLIとClaudeエージェントの応答に使用モデルとその倍率が表示される。Auto選択時はautoではなく実際のモデル名（例: Claude Sonnet 4.6）が出る。",
+    "why": "コストや品質を管理したい人は、応答ごとのモデルと使用量への影響をその場で確認できる。",
+    "points": [
+      "設定github.copilot.chat.agent.modelDetails.enabledは既定で有効",
+      "表示はウィンドウの再読み込みなしで応答完了時に反映され、モデル切替にも追随",
+      "履歴からセッションを再構築しても解決済みモデルが保持される"
+    ]
+  },
+  "fa077056c8e5c708": {
+    "title": "非決定的なエージェント動作を結果で検証する手法",
+    "summary": "Copilot cloud agentのように実行経路が毎回変わるエージェントでは、手順どおりのテストが成功しても失敗と判定される誤検知が起きる。記事は手順ではなく必須の結果に注目し、独立した「Trust Layer」で検証する考え方を示す。",
+    "why": "CIでエージェントの動作を検証する担当者は、付随的なノイズと本当の失敗を分けて評価する設計にできる。",
+    "points": [
+      "読み込み画面の遅延など、環境ノイズによる偽陰性が課題",
+      "アサーション、録画再生、画像比較、MLオラクルはいずれも固定手順を前提に脆い",
+      "成功に必須の挙動と任意の挙動を区別して定義する"
+    ]
+  },
+  "f43806891f00ec8b": {
+    "title": "GitHub MCP Serverのシークレットスキャンが一般提供に",
+    "summary": "GitHub MCP Serverのシークレットスキャンが、2026年3月からのパブリックプレビューを経て一般提供になった。Copilot CLIやVS Codeなどから、コミットやPR作成の前に漏えいした認証情報を検出でき、push protectionのカスタマイズも反映される。",
+    "why": "GitHub Secret Protectionを有効にしているリポジトリの開発者は、エージェント経由でコミット前に秘密情報を点検できる。",
+    "points": [
+      "対象はGitHub Secret Protectionが有効なリポジトリ",
+      "CLIでは/plugin install advanced-security@copilot-pluginsで専用プラグインを導入できる",
+      "VS Codeではadvanced-securityプラグイン導入後、/secret-scanningで開始"
+    ]
+  },
+  "3e483be55bb45ecb": {
+    "title": "GPT-5.2とGPT-5.2-Codexを2026年6月5日に廃止予定",
+    "summary": "GPT-5.2とGPT-5.2-Codexは、Copilotのチャット、インライン編集、askとagentモード、コード補完で廃止される。当初の6月1日から6月5日に変更され、CopilotコードレビューでのGPT-5.2は対象外。代替はGPT-5.5とGPT-5.3-Codex。",
+    "why": "これらのモデルを使う連携は期日までに移行し、Enterprise管理者は代替モデルを有効化する。",
+    "points": [
+      "廃止日は2026年6月5日（初回告知の6月1日から変更）",
+      "GPT-5.2はGPT-5.5、GPT-5.2-CodexはGPT-5.3-Codexへ移行",
+      "Copilotコードレビューで使うGPT-5.2は廃止の例外"
+    ]
   }
 }
