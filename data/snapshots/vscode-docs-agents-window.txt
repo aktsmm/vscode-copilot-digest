@@ -17,6 +17,7 @@ Access to GitHub Copilot. Follow the steps in Set up GitHub Copilot in VS Code t
 A Claude API key or another supported bring-your-own-key (BYOK) configuration to use Claude without GitHub sign-in (Experimental).
 An existing ChatGPT sign-in for Codex to use Codex without GitHub sign-in (Experimental).
 A BYOK model configured for use in the Agents window.
+Claude and Codex harnesses are disabled when Copilot enterprise-managed settings apply, even with separate provider credentials. Existing sessions are not deleted by this restriction. Contact the IT team that deployed the settings to discuss access.
 H2: Open the Agents window
 The Agents window opens as a dedicated VS Code window alongside your main editor window. To open the Agents window, use one of the following methods:
 Select the Open in Agents button in the VS Code title bar
@@ -393,6 +394,8 @@ Open the Session Layout submenu from a session header or its overflow menu. From
 Use Maximize in the session header to expand the active session, and use Restore to return to the grid. These actions are separate from the Session Layout submenu.
 Press ⌘K ⌘W (Windows, Linux Ctrl+K Ctrl+W) while a session has focus to close all visible panes and return to the new-session view. This action does not delete or archive the sessions.
 The Agents window restores conversations, drafts, pane geometry, the active session, and the maximized state after a reload. At narrow or phone width, only the active session is shown. The grid returns when you widen the window.
+H3: Compare model results (Preview)
+Run the same prompt with multiple models or harnesses in isolated worktrees, then compare their approaches and results. You can optionally use a Judge to evaluate the attempts and request a synthesized solution. See Compare model results for prerequisites and the full workflow.
 H3: Work with multiple chats in a session
 With a harness that supports multiple chats, such as Copilot or Claude, use chat tabs and split groups to keep several conversations visible. Arrange interactive peer chats, side chats, and read-only subagent chats horizontally or vertically.
 The main chat and interactive peer chats are also available in the editor's Chat view, where you select them from the Sessions view rather than the Agents window chat tabs.

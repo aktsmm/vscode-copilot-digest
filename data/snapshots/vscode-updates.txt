@@ -1,4 +1,5 @@
 Insiders
+1.143
 1.142
 1.141
 1.140
@@ -12,33 +13,37 @@ Insiders
 1.132
 1.131
 View All Releases
-H1: Visual Studio Code 1.142
-Released October 14, 2026 Stable
-H2: Downloads for 1.142.0
+H1: Visual Studio Code 1.143
+Follow us on LinkedIn, X, Bluesky, Instagram
+Last updated: October 19, 2026
+Welcome to the 1.143 release of Visual Studio Code.
+H2: Downloads for 1.143.0
 Already installed? Use Check for Updates in VS Code. For upcoming features, use the Insiders build.
 H2: Release highlights
-This release adds shared canvases for agent workflows, lets you move chats without losing context, expands the Markdown editor, and gives administrators more control over agent permissions.
-Canvases (Preview): Collaborate with agents beyond chat using visual and interactive canvases.
-Canvases (Preview): Collaborate with agents beyond chat using visual and interactive canvases.
-Move chats: Continue a chat in another folder or a new Git worktree without losing conversation history.
-Move chats: Continue a chat in another folder or a new Git worktree without losing conversation history.
-Markdown editor: Work on Markdown files more efficiently with features like pasting images, renaming file links, or breadcrumb navigation.
-Markdown editor: Work on Markdown files more efficiently with features like pasting images, renaming file links, or breadcrumb navigation.
-Enterprise management: Enforce agent sandboxing and permission policies while controlling which permission modes developers can use.
-Enterprise management: Enforce agent sandboxing and permission policies while controlling which permission modes developers can use.
-Redesigned model picker: Quickly switch between Copilot and BYOK contributed models, and manage effort levels and context windows more intuitively.
-Redesigned model picker: Quickly switch between Copilot and BYOK contributed models, and manage effort levels and context windows more intuitively.
+This release makes the Copilot harness the default for new sessions and adds tools to compare models, reclaim storage, run models locally, and navigate file changes.
+Copilot harness by default: The default for new sessions, built on the Copilot SDK, lets you switch between editor and Agents window.
+Copilot harness by default: The default for new sessions, built on the Copilot SDK, lets you switch between editor and Agents window.
+Compare models (Preview): Run the same task with multiple models in the Agents window, then compare and combine their solutions.
+Compare models (Preview): Run the same task with multiple models in the Agents window, then compare and combine their solutions.
+Reclaim worktree storage (Experimental): Free disk space by reviewing and removing inactive agent session worktrees.
+Reclaim worktree storage (Experimental): Free disk space by reviewing and removing inactive agent session worktrees.
+On-device models (Experimental): Run MAI Code 1.1 Flash locally on your device for your agent tasks.
+On-device models (Experimental): Run MAI Code 1.1 Flash locally on your device for your agent tasks.
+Multi-diff file list (Experimental): Keep an overview of and jump between changed files in the multi-file diff editor.
+Multi-diff file list (Experimental): Keep an overview of and jump between changed files in the multi-file diff editor.
 H2: Agents
-H3: Copilot harness
-The Copilot harness is powered by the Copilot SDK, a shared foundation that helps align behavior, capabilities, and improvements across Copilot products. In VS Code, the Copilot harness runs sessions through the Agent Host, which lets sessions continue in the background and be accessed from both the VS Code editor window and the Agents window.
-The Copilot harness has been available from the harness picker in the chat input. Based on overwhelmingly positive and valuable feedback, we're progressively rolling it out as the default harness for new sessions in VS Code. When you start a new session, Copilot in the harness picker indicates that the session will use the Copilot harness.
-Thank you to everyone who has shared feedback. We're actively using it to shape the experience. One example is reintroducing Ask as a built-in agent in the Copilot harness. Your feedback showed that a dedicated read-only experience remains valuable. Select Ask from the agent picker to use it.
-Learn how to work with the Copilot harness, or explore the architecture and workflows in the agent host blog post. If you have feedback or requests, please file an issue.
-H3: Canvases (Preview)
+H3: Copilot harness as the default
+The Copilot harness is now the default for new sessions in VS Code. It's our latest harness, built on the Copilot SDK, a shared foundation that helps align behavior, capabilities, and improvements across Copilot products.
+When you start a new session, Copilot in the harness picker indicates that the session uses the Copilot harness:
+In VS Code, you can keep Copilot harness sessions running in the background and access them from both the VS Code editor window and the Agents window. These sessions run through the Agent Host.
+Thank you so much to everyone who has shared valuable feedback. This release includes more improvements shaped directly by your feedback.
+We're continuing to improve performance and reduce latency based on the scenarios and setups you share. For example, reports of long waits before chat responses helped us reduce delays caused by MCP servers that don't finish loading their tools.
+We're also continuing to make our documentation clearer based on the feedback and questions you've shared. Learn how to work with the Copilot harness, or explore the architecture and workflows in the agent host blog post.
+Please continue filing issues to let us know how the Copilot harness is working for you. Your feedback is a huge help and directly shapes the harness experience.
 Setting: 
  
  
- chat.canvases.enabled
+ chat.editor.workingSet.enabled
  
  
  
@@ -47,12 +52,11 @@ Setting:
  
  Open in VS Code
  Open in VS Code Insiders
-Canvases are interactive interfaces to collaborate with an agent. A canvas opens beside the chat, where you and the agent can inspect and update the same artifact instead of coordinating solely through prompts.
-For example, use a Kanban canvas to plan and track implementation work. You can create and move cards directly, while the agent can break a feature into tasks, update their status, or add newly discovered work. Canvases work in both the VS Code editor window and the Agents window, and canvas extensions are also supported in the GitHub Copilot app.
-Canvases are available in Preview in the VS Code desktop app for local sessions that use the Copilot harness. Enable 
+You gave us feedback that when using the Copilot harness, approving or rejecting agent edits in the editor was challenging. As of this release, we are introducing initial file-level working set support to help you manage and review changes more effectively.
+Copilot harness sessions in the editor window now support file-level Keep in the experimental working set above the chat input. Enable 
  
  
- chat.canvases.enabled
+ chat.editor.workingSet.enabled
  
  
  
@@ -62,26 +66,20 @@ Canvases are available in Preview in the VS Code desktop app for local sessions 
  Open in VS Code
  Open in VS Code Insiders
  
- , and then start a new session with the Copilot harness.
-Every canvas is provided by a canvas extension. To get started, you have two options:
-Create a canvas extension: Enter /create-canvas in the chat input and describe the user interface you want for your project. The skill then creates a canvas extension in your workspace and opens its canvas.
-Create a canvas extension: Enter /create-canvas in the chat input and describe the user interface you want for your project. The skill then creates a canvas extension in your workspace and opens its canvas.
-Install a chat plugin: For now, install a chat plugin that includes a canvas extension through the GitHub Copilot app. Then switch to VS Code and ask the agent to list the available canvases and have it open one.
-Install a chat plugin: For now, install a chat plugin that includes a canvas extension through the GitHub Copilot app. Then switch to VS Code and ask the agent to list the available canvases and have it open one.
-After you install a canvas extension, you can also open an available canvas in the Agents window from Add Tab (+) > Canvas.
-Explore and install sample canvas extensions from the community.
-Learn more about canvas support in the VS Code documentation.
-H3: Move chats between folders and worktrees
-Previously, if you started investigating a task in one folder and then wanted to implement it in a Git worktree, or continue in a different repository, you had to start a new chat and rebuild the context.
-In the Agents window, you can now ask the agent to move the current chat to another folder or into a new Git worktree, and it keeps the conversation history intact. Changing the workspace also works for chats that already have a workspace, and the agent can isolate work in a new worktree.
-Ask the agent with a natural-language prompt, for example:
-The agent finishes the current turn, moves the chat, and shows a notice when the workspace changes. Then it continues the task automatically in the new location. Edits and commands run in the new location while your original checkout stays unchanged.
-The move is available for agent sessions that use the Codex harness or Codex in Interactive mode, and that contain one chat and one local folder. For prerequisites and details about which files are available in the new location, see Move a chat to another folder or worktree.
-H3: Session-scoped layout in the Agents window (Experimental)
+ to try it.
+Select Keep on a file, or in the heading for all files, to mark changes as reviewed and remove them from the working set. The edits stay on disk, and files return if the agent changes them again.
+What's next: We plan to add file-level Undo to the working set and bring Keep and Undo back into the editor for individual changes. These are planned for later releases, landing in Insiders first, then Stable.
+H3: Discard changes from more changesets in the Agents window
+The Changes view in the Agents window lets you see all the modifications made by the agent. Until now, discarding pending changes was only available in the Uncommitted Changes changeset.
+In this release, the Branch Changes, Session Changes, and Last Turn Changes changesets also offer the possibility to discard changes. Select Discard Changes on a file in the Changes view or in the multi-file diff editor. What VS Code discards depends on the changeset:
+Branch Changes: restores the file to its version where the branch diverged from its base branch, and deletes files that the branch added.
+Session Changes: reverts the session's edits to the file and keeps changes made outside the session, such as your own edits.
+Last Turn Changes: reverts only the latest turn's edits to the file and keeps all other changes to it.
+H3: Compare model results (Preview)
 Setting: 
  
  
- sessions.experimental.layoutScope
+ sessions.chat.compareAgents.enabled
  
  
  
@@ -92,11 +90,11 @@ Setting:
  Open in VS Code Insiders
  
  (Agents window only)
-Previously, when you switched between sessions in the Agents window, VS Code shared layout settings such as editor visibility, details, and panel visibility across sessions. If you're used to VS Code remembering the layout for each workspace, sharing the layout across sessions can be disruptive.
-With the new experimental 
+Compare how different models and harnesses approach the same coding task. Run attempts in parallel, review their results, and combine ideas into one solution.
+To get started, enable 
  
  
- sessions.experimental.layoutScope
+ sessions.chat.compareAgents.enabled
  
  
  
@@ -106,55 +104,94 @@ With the new experimental
  Open in VS Code
  Open in VS Code Insiders
  
- setting, you can choose how much of the layout each session remembers. Reload the window after you change the setting. It supports the following values:
-session-shared (default): The current behavior. A session and its nested sessions share the same editors and selected panel views. Editor, details, and bottom panel visibility are shared across existing workspace sessions.
-session-shared (default): The current behavior. A session and its nested sessions share the same editors and selected panel views. Editor, details, and bottom panel visibility are shared across existing workspace sessions.
-chat-shared: A session and each of its nested sessions keep their own editors and selected panel views, while editor, details, and bottom panel visibility stay shared across existing workspace sessions.
-chat-shared: A session and each of its nested sessions keep their own editors and selected panel views, while editor, details, and bottom panel visibility stay shared across existing workspace sessions.
-chat: A session and each of its nested sessions also keep their own editor and details composition and bottom panel visibility.
-chat: A session and each of its nested sessions also keep their own editor and details composition and bottom panel visibility.
-Window geometry, pane sizes, and the sidebar currently remain shared across the window.
-H3: Customize the Agents window panel layout
-You can now choose how the bottom panel is aligned in the Agents window. Right-click a panel tab, select Align Panel, and choose one of the following layouts:
-Center aligns the panel beneath the chat area, leaving more room for the side pane.
-Center aligns the panel beneath the chat area, leaving more room for the side pane.
-Justify extends the panel across the full width of the window.
-Justify extends the panel across the full width of the window.
-Your selection is saved per profile and preserved when maximizing or restoring the panel.
-H2: Chat
-H3: Quickly identify the active harness
-Chat titles show the active harness name, such as Copilot or Codex, so you can identify it without opening the harness picker or hovering over the session list.
-H3: Stop background shells
-In Copilot harness sessions, the background shells pill above the chat input lists the commands that the agent is still running in the background. When one of those commands is no longer useful, for example a test run that you want to restart or a command that runs longer than expected, you can stop it instead of waiting for it to finish.
-Select the Background Shells pill, select a shell to open its details, and then select Stop Shell next to its command. Only that command ends, and the shell leaves the list. You can reach Stop Shell with the keyboard, and screen readers announce when the shell stops.
-Stopping a shell is only available for attached shells, which the agent runs as part of its current request. Detached shells run independently of the agent and can't be stopped from this interface.
-Shell details also show each shell's full description above its command, even when the list truncates it. Long output is no longer cut off, and you can scroll back through earlier output, both in the shell's details and in the terminal output in the chat response.
-H3: Stateful responses for BYOK custom endpoints
-If your bring-your-own-key (BYOK) model uses a stateless Responses API, set "statefulResponses": false on its model entry in chatLanguageModels.json to send full conversation history with each request.
-See Custom Endpoint configuration for details.
-H3: Windows sandboxing for Local harness is no longer supported
-Windows sandboxing for terminal commands in Local agent sessions has been deprecated. For sandboxed command execution on Windows, use an Agent Host session. See the Agent Host sandboxing documentation for details.
-H3: Redesigned model picker
-Copilot and bring-your-own-key (BYOK) providers offer many models, each with strengths for different tasks. The redesigned model picker makes it easier to choose and switch models as your work changes.
-The model picker uses a tabbed interface to separate Copilot and BYOK models.
-When you hover over a model in the list, you can further configure its thinking level and context window size.
-H2: Markdown editor
-H3: Editing mode closer to the Markdown source
-When you edit Markdown, each source line appears on a separate visual line, making the document structure easier to follow. Read-only mode continues to render Markdown as before.
-H3: Paste images
-To add an image, for example a screenshot, to your Markdown document, simply paste it directly into the Markdown editor, like you could already do in the text editor. This makes it easier to include visual content without having to save and insert files manually.
-H3: Rename file links
-The Markdown editor now supports Rename Symbol (F2), so you can rename file links in place and have the changes reflected throughout your document.
-H3: Outline and breadcrumbs
-The Markdown editor integrates with the Outline view and breadcrumbs, making it easier to inspect the heading structure and jump to a section.
-H3: Copy code blocks
-Like the Markdown preview, code blocks in the Markdown editor display a copy button on hover. This makes it easy to copy multiline code fragments without accidentally editing the content.
-H2: Editor experience
-H3: Merging document highlights from different providers
+ in the Agents window, then select Compare Models in the model picker.
+Choose the approaches to compare: Select two or more models to attempt your task independently. You can mix Copilot, Claude, and Codex harnesses and configure different reasoning levels.
+Choose the approaches to compare: Select two or more models to attempt your task independently. You can mix Copilot, Claude, and Codex harnesses and configure different reasoning levels.
+Run the attempts: Enter one prompt and start all selected attempts together.
+Run the attempts: Enter one prompt and start all selected attempts together.
+Follow progress side by side: Each attempt runs in its own session, so you can compare its approach and open the worktree or changes at any time.
+Follow progress side by side: Each attempt runs in its own session, so you can compare its approach and open the worktree or changes at any time.
+Evaluate and combine the results: Optionally select a Judge model to evaluate the attempts and recommend a solution. Its scorecard shows time and token usage, with expandable rationale, validation evidence, and links to each attempt. You can then select Synthesize to build on the recommended attempt with ideas from the others. Synthesis starts only when you request it.
+Evaluate and combine the results: Optionally select a Judge model to evaluate the attempts and recommend a solution. Its scorecard shows time and token usage, with expandable rationale, validation evidence, and links to each attempt. You can then select Synthesize to build on the recommended attempt with ideas from the others. Synthesis starts only when you request it.
+H3: Tab shortcuts in an empty side pane
+When you closed every tab in the Agents window side pane, the editor area was left blank, and you had to find the Add Tab (+) menu to get back to your session's changes or files.
+The empty editor area now lists the tabs you can add, such as Changes, Files, Browser, and Search, each with its icon and keyboard shortcut. Select an entry to open that tab. If you have a canvas extension installed, a Canvas entry lists the available canvases. When you switch to a session whose editor area is empty, VS Code shows this list instead of reopening the Changes and Files tabs automatically.
+H3: Session Activity Bar (Experimental)
+Sessions: 
+ 
+ 
+ sessions.showSessionActivityBar
+ 
+ 
+ 
+ 
+ 
+ 
+ Open in VS Code
+ Open in VS Code Insiders
+ 
+ , 
+ 
+ 
+ sessions.sessionActivityBar.showLayoutActions
+ 
+ 
+ 
+ 
+ 
+ 
+ Open in VS Code
+ Open in VS Code Insiders
+The Session Activity Bar brings a session's Changes, Files, Browser, and available canvases next to the side pane, keeping these editors and artifacts visually connected to where they open. You can still open session artifacts from the pills at the top of the session.
+The Session Activity Bar is a slim vertical strip of icons at the right edge of the active chat. Select an icon to open that tab in the side pane. If the side pane is closed, it opens with that tab active. If the tab is already open, VS Code focuses it instead of opening a second copy. If you have a canvas extension installed, a Canvas entry opens a submenu of the available canvases.
+You can drag the Session Activity Bar up or down by its grip to move it out of your way, and double-click the grip to reset its position. When you split the chat area, only the focused group shows the Activity Bar.
+To keep session-related layout actions together, right-click the Activity Bar and select Show Layout Actions. This moves the Toggle Side Panel and Toggle Panel actions from the title bar into the Activity Bar.
+The Session Activity Bar is off by default in Stable. Select View > Appearance > Session Activity Bar to turn it on. To hide it again, right-click the Activity Bar and select Hide Session Activity Bar.
+You can also configure these options with 
+ 
+ 
+ sessions.showSessionActivityBar
+ 
+ 
+ 
+ 
+ 
+ 
+ Open in VS Code
+ Open in VS Code Insiders
+ 
+ and 
+ 
+ 
+ sessions.sessionActivityBar.showLayoutActions
+ 
+ 
+ 
+ 
+ 
+ 
+ Open in VS Code
+ Open in VS Code Insiders
+ 
+ . If you previously set sessions.showSessionToolbar, VS Code carries your value over to 
+ 
+ 
+ sessions.showSessionActivityBar
+ 
+ 
+ 
+ 
+ 
+ 
+ Open in VS Code
+ Open in VS Code Insiders
+ 
+ .
+H3: Find and create files from the empty Files tab (Experimental)
 Setting: 
  
  
- editor.occurrencesHighlightFromAllProviders
+ sessions.experimental.emptyFileEditorActions
  
  
  
@@ -163,10 +200,96 @@ Setting:
  
  Open in VS Code
  Open in VS Code Insiders
+In the Agents window, the Files tab was blank when no file was open, so you had to switch to the Files view to find or create a file in your session's folder.
+When you enable 
+ 
+ 
+ sessions.experimental.emptyFileEditorActions
+ 
+ 
+ 
+ 
+ 
+ 
+ Open in VS Code
+ Open in VS Code Insiders
+ 
+ , the empty Files tab shows a search box and a New File action. The search works like Quick Open (⌘P (Windows, Linux Ctrl+P)), with the same ranking, highlights, and file icons, and it only finds files in the folders of the current session. Select a result to open it in the editor, or select New File to create a file in the session's folder. When you close the file, the search box returns.
+H3: Improved performance when opening large chats
+Opening a long Agent Host chat in the Agents window used to freeze the window for up to half a minute while the chat's history was restored. In this release, history is restored in small slices instead of one long blocking task, so the window stays responsive. Opening, switching back to, and reloading large chats is significantly faster.
+Median of three runs on macOS, with real chats from day-to-day development. "Cold open" means opening a chat for the first time after the window starts. "Re-open" means switching to another chat and back. "Window unresponsive" is the longest time the window could not respond to input during the open.
+H3: Reclaim storage from inactive worktrees (Experimental)
+Setting: 
+ 
+ 
+ chat.agentSessions.sessionStorageCleanupSuggestion.enabled
+ 
+ 
+ 
+ 
+ 
+ 
+ Open in VS Code
+ Open in VS Code Insiders
+ 
+ (Agents window only)
+Worktrees are very useful for letting agents work on multiple features simultaneously without interfering with each other's changes. Over time, inactive worktrees can accumulate and consume significant disk space.
+Run Chat: Open Worktree Cleanup from the Command Palette to see how much disk space inactive agent session worktrees use and remove the ones you no longer need. Filter sessions by how long they have been inactive, review each worktree's size, and select the worktrees to clean up.
+Cleaning up marks the selected sessions as done and deletes their worktrees. You can restore a session later to recreate its worktree. Active, running, needs-input, and pinned sessions are protected from cleanup.
+The cleanup editor lets you configure automatic cleanup for sessions with merged pull requests and control whether VS Code suggests cleanup when session storage grows large.
+When 
+ 
+ 
+ chat.agentSessions.sessionStorageCleanupSuggestion.enabled
+ 
+ 
+ 
+ 
+ 
+ 
+ Open in VS Code
+ Open in VS Code Insiders
+ 
+ is enabled, the Agents window notifies you when inactive worktrees accumulate or they use enough disk space to make cleanup worthwhile.
+H2: Models
+H3: Run Copilot models on your device (Experimental)
+Laptops such as the new Surface Laptop Ultra, powered by NVIDIA RTX Spark with up to 128 GB of unified memory, have enough GPU memory to run a capable coding model locally. On-device models let you use that hardware with Copilot: download MAI Code 1.1 Flash from the new On This Device tab in the model picker and chat with it in Copilot harness sessions, with model processing on your device.
+VS Code downloads and manages the model for you. Responses that run on your device are labeled On-device and don't use AI credits. To let Auto route suitable requests to the on-device model with cloud fallback, turn on Use in Auto on the model's details page.
+To get started:
+Install a llama.cpp build that supports the model
+Set 
+ 
+ 
+ chat.copilot.localModel.llamaServerPath
+ 
+ 
+ 
+ 
+ 
+ 
+ Open in VS Code
+ Open in VS Code Insiders
+ 
+ to its llama-server executable
 Enable 
  
  
- editor.occurrencesHighlightFromAllProviders
+ chat.copilot.localModel.enabled
+ 
+ 
+ 
+ 
+ 
+ 
+ Open in VS Code
+ Open in VS Code Insiders
+On-device models require GitHub sign-in and an NVIDIA GPU with 96 GB or more of GPU memory.
+Learn more about on-device models.
+H3: Bring your own OpenAI model to Voice Mode (Preview)
+Settings: 
+ 
+ 
+ agents.voice.enabled
  
  
  
@@ -176,108 +299,244 @@ Enable
  Open in VS Code
  Open in VS Code Insiders
  
- to merge document highlights from all providers. By default, VS Code uses highlights only from the highest-priority provider.
-H2: Languages
-H3: Python
-This release includes fixes for environment discovery, interpreter selection, and terminal activation in the Python Environments Extension.
-Environment discovery: Python installations managed by uv now appear under Global. Selecting an interpreter by path adds its virtual environment to the environment list, and deleting a virtual environment outside VS Code updates the selection.
-Environment discovery: Python installations managed by uv now appear under Global. Selecting an interpreter by path adds its virtual environment to the environment list, and deleting a virtual environment outside VS Code updates the selection.
-Project-specific environments: Automatic selection now prefers a project's own virtual environment over nested environments. Conda environment selection and Poetry package operations respect project scope, and background refreshes no longer overwrite newer interpreter selections.
-Project-specific environments: Automatic selection now prefers a project's own virtual environment over nested environments. Conda environment selection and Poetry package operations respect project scope, and background refreshes no longer overwrite newer interpreter selections.
-Interpreter configuration: Fixed resolution of ${workspaceFolder}, relative paths, and commands such as python3 in python.defaultInterpreterPath. The project-view environment selector now includes Enter Interpreter Path.
-Interpreter configuration: Fixed resolution of ${workspaceFolder}, relative paths, and commands such as python3 in python.defaultInterpreterPath. The project-view environment selector now includes Enter Interpreter Path.
-Terminal activation: Shell-startup activation now updates when the global interpreter changes and is preserved when environment files change. Environment-file notifications include Enable for Workspace or Enable for Folder actions.
-Terminal activation: Shell-startup activation now updates when the global interpreter changes and is preserved when environment files change. Environment-file notifications include Enable for Workspace or Enable for Folder actions.
-Python installation: When uv is required but missing, setup offers to install it and continues to Python version selection without requiring a PATH refresh.
-Python installation: When uv is required but missing, setup offers to install it and continues to Python version selection without requiring a PATH refresh.
+ , 
+ 
+ 
+ agents.voice.useBYOKVoiceModel
+ 
+ 
+ 
+ 
+ 
+ 
+ Open in VS Code
+ Open in VS Code Insiders
+Use your own OpenAI API key and live model for voice-driven coding conversations instead of the hosted Voice Mode backend. Add your OpenAI key in the Language Models editor, enable 
+ 
+ 
+ agents.voice.enabled
+ 
+ 
+ 
+ 
+ 
+ 
+ Open in VS Code
+ Open in VS Code Insiders
+ 
+ , and set 
+ 
+ 
+ agents.voice.useBYOKVoiceModel
+ 
+ 
+ 
+ 
+ 
+ 
+ Open in VS Code
+ Open in VS Code Insiders
+ 
+ to a live model ID, like gpt-live-1 that your key can access.
+H2: Sandboxing
+H3: Manage sandbox certificate trust
+Sandbox certificate trust management is available for agent hosts running Windows or macOS.
+The sandbox credential proxy lets tools authenticate to approved services without exposing real authentication tokens to sandboxed processes. It gives tools placeholder credentials, then substitutes the real credentials when forwarding requests to approved destinations. For HTTPS requests, this requires the proxy to present its own TLS certificates, which the tools must trust.
+Copilot supplies a certificate bundle for tools that support it. Some tools instead rely on the operating system's certificate trust store and can encounter certificate errors when the proxy's certificate authority (CA) isn't trusted. Installing the CA improves compatibility with these tools. Domain filtering alone does not require CA installation: the built-in local proxy can check destinations and tunnel HTTPS traffic without decrypting it.
+VS Code shows a dismissible Sandbox trusted CA is not installed notice with an Install option when trust is missing and installation is supported. Installation adds the locally generated CA's public certificate to the Windows machine-wide trust store or the macOS user's login Keychain and can require operating system authorization.
+You can also run Sandbox: Manage Trusted CA from the Command Palette to install, rotate, or remove trust for the last-focused chat's agent host, whether local or remote. Each operation asks for confirmation and identifies the target host. Remove removes operating system trust but keeps the stored certificate and private key. Running tools might need to restart after a certificate change.
+Installation is optional. Missing trust doesn't block chat startup or sending messages, and opening a chat never changes certificate trust.
+For more details, see Trust the sandbox CA certificate on Windows and macOS.
+H3: Change session sandboxing when policy permits
+If your organization's managed policy permits sandbox bypass, you can turn sandboxing off for an individual Copilot harness session without changing your global settings. Use the Sandboxing for terminal toggle in the session permissions menu in either the editor or the Agents window. Administrators can continue to require sandboxing by disallowing bypass, which keeps the toggle on and locked.
+Changes remain subject to approval by the agent runtime. If a change is rejected, VS Code shows an error and restores the last applied sandbox state. The collapsed permissions control and the reopened menu reflect that state.
+H2: Chat
+H3: Open canvases from the chat menu (Preview)
+Setting: 
+ 
+ 
+ chat.canvases.enabled
+ 
+ 
+ 
+ 
+ 
+ 
+ Open in VS Code
+ Open in VS Code Insiders
+VS Code 1.142 introduced canvases (Preview), which are shared, interactive surfaces for collaborating with agents.
+In this release, you can now open available canvases from New Chat (+) > Canvas in the editor window, without asking Copilot to open them.
+When canvas support is enabled and you have canvas extensions installed, the submenu appears after your first message in a Copilot harness session. You can also open canvases from the + menu in the Agents window.
+Learn about installing, creating, and using canvases with the Copilot harness.
+H3: See output from detached background shells
+In Copilot harness sessions, the agent can start commands that need to continue running after it responds in a detached background shell. A dev server or a file watcher are common examples of such commands.
+Previously, you couldn't view the output of detached background shells, for example to check whether a dev server started successfully. Detached shells now stream their output like attached shells. Select the Background Shells pill, and then select a detached shell to watch its output as the command runs. The shell's terminal output in the chat response also keeps updating after the agent finishes its response. When the command exits, the shell leaves the list, and the chat response keeps the command's output and exit status.
+You can now also stop detached shells, which was previously only available for attached shells. When you no longer need a dev server or watcher, select Stop Shell in the shell's details.
+H2: Editor Experience
+H3: Diagnostic highlight limits
+To improve diagnostic visibility in files with many reported problems, the editor highlight limit has increased from 500 to 5,000 diagnostics per file.
+A warning in the editor's language status indicator indicates when diagnostics or their highlights are limited for performance reasons:
+Diagnostic source limit: Each extension diagnostic collection can provide up to 1,000 diagnostics per file. If a collection exceeds this limit, the warning indicates that some diagnostics are not shown.
+Diagnostic source limit: Each extension diagnostic collection can provide up to 1,000 diagnostics per file. If a collection exceeds this limit, the warning indicates that some diagnostics are not shown.
+Editor highlight limit: The editor highlights up to 5,000 diagnostics per file across all sources. If this limit is exceeded, the warning indicates that only 5,000 diagnostics are highlighted.
+Editor highlight limit: The editor highlights up to 5,000 diagnostics per file across all sources. If this limit is exceeded, the warning indicates that only 5,000 diagnostics are highlighted.
+If both limits are reached, the warning reports both conditions. Hover over the language status indicator in the Status Bar to view the details.
+H2: Source Control
+H3: Multi-file diff editor file list (Experimental)
+Setting: 
+ 
+ 
+ multiDiffEditor.experimental.fileList
+ 
+ 
+ 
+ 
+ 
+ 
+ Open in VS Code
+ Open in VS Code Insiders
+Navigate changes from commits, stashes, and agent sessions with a file list beside the multi-file diff view. Enable 
+ 
+ 
+ multiDiffEditor.experimental.fileList
+ 
+ 
+ 
+ 
+ 
+ 
+ Open in VS Code
+ Open in VS Code Insiders
+ 
+ to try it.
+Each file in the list has a status letter: A (added), M (modified), D (deleted), or R (renamed). As you scroll, the list highlights the file you're viewing. Select a file in the list to jump to its diff. Open Files View & Position in the editor toolbar's More Actions (...) menu to choose View as List or View as Tree, and to place the files On the Left or On the Right of the diffs.
 H2: Enterprise
-H3: Automatically move policy-managed chats to Copilot Agent Host
-Enterprise managed settings let administrators govern agent permissions and sandboxing. When your organization configures a nonempty permissions object or sets sandbox.enabled to true, VS Code now requires the Copilot harness in Agent Host for full chat sessions, to be able to enforce these policies.
-Opening an existing, unarchived Local chat automatically moves it to Copilot, preserving the transcript and unsent draft, including attachments. Nothing is sent automatically. The new chat uses its normal model and permission defaults under current organization policy.
-VS Code archives the original chat only after the new chat opens successfully. If you switch away while the move is in progress, the original stays unchanged and the unopened destination is removed.
-While these policies apply, Claude, Codex, and terminal chat are unavailable. Editor inline chat remains available for limited read and edit tasks. An empty permissions object or legacy policy alone does not trigger this migration. Administrators can temporarily opt out of automatic migration.
-H3: Temporarily keep the Local harness
-Administrators who need more time to transition to Copilot Agent Host can set vscode.temporaryDefaultToLocalHarness to true in their unified managed settings:
-This keeps the Local harness available and stops automatic switching to Copilot, while preserving explicit, remembered, and current harness choices. Set the managed value to false or remove it to restore normal routing.
-Note: This temporary opt-out also overrides routing required by managed sandbox and permission settings. Local does not enforce those runtime-only rules. Enforcement in Copilot Agent Host sessions is unchanged.
-H3: Manage Copilot permission modes independently
-Administrators can permit Assisted while blocking Allow All, giving developers assisted approvals without bypassing permission checks. The Copilot permission picker reflects the modes permitted by your organization's managed settings.
-For example, merge this configuration into your unified managed settings:
-Use permissions.disableAssistedPermissionsMode to restrict Assisted independently. permissions.defaultMode supplies a starting default, not a restriction on the modes users can select.
-The legacy ChatToolsAutoApprove: false policy still blocks both Allow All and Assisted unless you configure explicit managed mode restrictions. Setting only permissions.defaultMode does not replace that legacy restriction.
-Note: Assisted Permissions is not currently compatible with permissions.{allow,ask,deny}.
-If you are using any of permissions.allow, permissions.ask, permissions.deny, please set "disableAssistedPermissionsMode": true.
-In the next release, both will be supported alongside one another.
-H3: Windows numeric policies support DWORD values
-On Windows, policies that accept numeric values support DWORDs and QWORDs.
-H2: Contributions to extensions
-H3: GitHub Pull Requests
-There has been more progress on the GitHub Pull Requests extension, which enables you to work on, create, and manage pull requests and issues. New features include:
-Stacked pull request support is enabled by default.
-Stacked pull request support is enabled by default.
-Conflict-free, locally checked-out pull requests can be updated.
-Conflict-free, locally checked-out pull requests can be updated.
-Review the changelog for the 0.170.0 release of the extension to learn about everything in the release.
+H3: Dynamic headers for managed OpenTelemetry
+Administrators can generate and refresh HTTP headers for OpenTelemetry (OTel) exports with the new telemetry.headersProvider managed setting. For example, use a helper to supply short-lived authentication tokens for your collector, without asking developers to update headers manually or opt in through personal OTel settings.
+This setting applies only to Copilot Agent Host sessions. Configure it in enterprise-managed settings, not user settings:
+The helper writes a JSON object of header names and string values to standard output.
+See Configure dynamic headers for helper requirements and further details.
+H3: Managed model defaults
+New Copilot harness chats use your organization's managed defaults, even when you configure 
+ 
+ 
+ chat.defaultModel
+ 
+ 
+ 
+ 
+ 
+ 
+ Open in VS Code
+ Open in VS Code Insiders
+ 
+ to another preference. The model picker and setting now explain which defaults apply. You can still change models and supported options per chat.
+For example, the following configuration defaults new chats to Auto with the Intelligence tier in enterprise-managed settings:
+H3: Why Local is disabled
+When enterprise policy requires the Copilot harness, the Local harness now stays visible but is disabled in the harness picker, with a Learn why link explaining the restriction.
+Copilot is required to enforce nonempty managed permissions.deny rules or sandbox.enabled: true, unless the temporary override below applies. Other permissions.* settings and an empty deny list do not trigger this requirement.
+Administrators can prohibit Local with these enterprise-managed settings, not user settings:
+When Copilot is required, opening unarchived Local chats moves them to Copilot. Editor inline chat and other Claude and Codex restrictions are unchanged.
+Note: These controls are temporary while Local is retired. Local cannot enforce runtime-only permission and sandbox controls. Do not enable the temporary Local override if you require those controls. If Copilot fails in your enterprise environment, report an issue.
+H3: Fewer interruptions while organization settings load
+Copilot harness sessions and model changes now wait for slow organization settings to load, with progress and a retry option on failure. You can still select Stop while you're waiting. Organization restrictions apply before requests run.
+H3: Fewer approval prompts for managed tools
+Assisted permissions no longer prompt again for eligible managed tool requests they approve. One-time limits, managed denials, and sandbox restrictions still apply.
+H3: Managed plugins install automatically
+Copilot harness sessions now install or update the agent plugins that your organization requires before using them.
+For example, require a plugin in enterprise-managed settings:
+Plugins enabled by a trusted repository's settings, and plugins your organization assigns to your team, install in the background without blocking chat.
+Managed settings take precedence, followed by trusted repository settings and then your own choices.
+Team assignments apply only when no other choice exists.
+Automatically installed plugins are enabled only for the session and aren't added to your user settings.
+H3: Claude and Codex sessions
+When policy requires the Copilot harness, existing Claude and Codex sessions remain visible in the sessions list, so you still can continue them with the Copilot harness. Creating new Claude or Codex sessions remains disabled in this scenario.
+H2: VS Code setup
+H3: Install GitHub Copilot CLI with VS Code
+We now make it easier for you to get started with the GitHub Copilot CLI by letting you install it with the VS Code installer.
+Note: Organizations can choose to disable this option via the Managed AI Settings.
+Windows
+The VS Code installer on Windows now includes an option to install GitHub Copilot CLI. If you already have it installed, this option is not presented. Find more details in Set up the copilot command on Windows.
+Windows
+The VS Code installer on Windows now includes an option to install GitHub Copilot CLI. If you already have it installed, this option is not presented. Find more details in Set up the copilot command on Windows.
+Linux
+The VS Code Linux installers add a copilot executable into the user path.
+If you run the copilot command in the terminal, it will either prompt you to install GitHub Copilot CLI if it's not installed, or run GitHub Copilot CLI if it is already installed.
+Linux
+The VS Code Linux installers add a copilot executable into the user path.
+If you run the copilot command in the terminal, it will either prompt you to install GitHub Copilot CLI if it's not installed, or run GitHub Copilot CLI if it is already installed.
+macOS
+On macOS, you are prompted to install GitHub Copilot CLI when you add VS Code to the $PATH environment variable via the Command Palette in VS Code.
+macOS
+On macOS, you are prompted to install GitHub Copilot CLI when you add VS Code to the $PATH environment variable via the Command Palette in VS Code.
 H2: Deprecated features and settings
-H3: New deprecations in this release
-Windows sandboxing for Local harness is no longer supported
+None
 H2: Thank you
 Contributions to vscode:
-@bluerose73 (Shengjie Ma): Copilot NES: add ExP toggle to omit max_tokens PR #340327
-@codelovingcat (Ürem Sancaktutan): Fix/issue 337524 multidiff order PR #337565
-@denizguney (Deniz Güney Yıldırım): Fix duration calculation for agent stop command PR #338278
-@na2co3-ftw (na2co3): Modern UI: Prevent vertical scrolling when dragging connected tabs (revised) PR #338180
-@rksharma-owg (RKS): Preserve newer debugger stop details during continued cleanup PR #339530
-@sgent-epic: agentHost: preserve BYOK state through tool continuations PR #331749
+@bstee615 (Benjamin Steenhoek): nes: Add prompt template which enables only low/medium eagerness modes PR #340404
+@davidfowl (David Fowler): Fix incomplete Mission Control sandbox session discovery PR #341823
+@denizguney (Deniz Güney Yıldırım): Add version validation check to getContextProviderAPI method PR #339523
+@KRRT7 (Kevin Turcios): Skip serializing bulk edits when debug logging is off PR #341765
+@matt-sorenson (Matt Sorenson): Mark variables in zsh integration functions as local PR #290298
+@mcumming (Michael Cummings (MSFT))
+
+Private Marketplace extension blocking: add gallery and install enforcement PR #333859
+Reject non-manifest 200 responses as extension gallery service index PR #331804
+Fix lost race leaving a signed-out user on an Available marketplace PR #331800
+Private Marketplace extension blocking: add gallery and install enforcement PR #333859
+Reject non-manifest 200 responses as extension gallery service index PR #331804
+Fix lost race leaving a signed-out user on an Available marketplace PR #331800
+@na2co3-ftw (na2co3): Modern UI: fix frosted glass menu background corners PR #339456
+@pwang347 (Paul)
+
+Allow retrying pending Copilot connectors PR #341081
+agentHost: enable SDK skill installation PR #340762
+Fix customization marketplace sign-in PR #341648
+Allow retrying pending Copilot connectors PR #341081
+agentHost: enable SDK skill installation PR #340762
+Fix customization marketplace sign-in PR #341648
+@rahadbhuiya (Rahad): cli: respect VSCODE_PORTABLE and make Quality parsing case-insensitive PR #341565
+@rksharma-owg (RKS): sessions: Stabilize approval row height during sticky scrolling PR #338210
 @SimonSiefke (Simon Siefke)
 
-fix: memory leak in document paste edits PR #338233
-fix: memory leak in native context menu dismissal PR #338214
-fix: memory leak in output channel disposal listeners PR #338240
-fix: memory leak in debug adapter descriptor factory PR #334103
-fix: release terminal command history when clearing the normal buffer PR #326931
-perf: reduce number of strings by 1200 PR #327689
-fix: memory leak in MainThreadDebugService PR #334102
-fix: memory leak in extHostTimeline PR #334098
-fix: memory leak in debug visualization registrations PR #340046
-fix: memory leak in hidden status bar command arguments PR #338238
-fix: memory leak in extension host language model providers PR #340579
-fix: memory leak in terminal disposal subscriptions PR #340037
-fix: memory leak in document paste edits PR #338233
-fix: memory leak in native context menu dismissal PR #338214
-fix: memory leak in output channel disposal listeners PR #338240
-fix: memory leak in debug adapter descriptor factory PR #334103
-fix: release terminal command history when clearing the normal buffer PR #326931
-perf: reduce number of strings by 1200 PR #327689
-fix: memory leak in MainThreadDebugService PR #334102
-fix: memory leak in extHostTimeline PR #334098
-fix: memory leak in debug visualization registrations PR #340046
-fix: memory leak in hidden status bar command arguments PR #338238
-fix: memory leak in extension host language model providers PR #340579
-fix: memory leak in terminal disposal subscriptions PR #340037
-@Tabisharaza (TABISH AYUB RAZA): mcp: read migrated local servers from workspace configuration PR #340034
-@tuanvtdeptre199: Disable Step Out action when the active thread has only one stack frame PR #336125
-@tyrielv (Tyrie Vella): Avoid unnecessary --numstat diff for incoming changes decorations PR #339008
-@yuezhang030: Update VSC model F prompt PR #340187
-Contributions to vscode-pull-request-github:
-@L4XB (Lukas ): Don't open two browser tabs when clicking the pull request number PR #8962
-@strawberry-little-bear: Fix malformed issue links in overview HTML PR #9025
-@vsharha (Viktor Sharha): Fix mergeability polling in pull request overview PR #8954
-H3: Issue tracking
-Contributions to our issue tracking:
-@gjsjohnmurray (John Murray)
-@RedCMD (RedCMD)
-@IllusionMH (Andrii Dieiev)
-@albertosantini (Alberto Santini)
+fix: memory leak in timeline providers PR #340881
+fix: memory leak in chat debug providers PR #340880
+fix: memory leak in language model removal notifications PR #340577
+fix: memory leak in canceled tree drag transfers PR #340845
+fix: memory leak in pending quick pick items PR #340846
+fix: guard notebook diff input lifecycle PR #339389
+fix: memory leak in terminal process startup PR #340582
+fix: memory leak in suggest enabled input PR #340913
+fix: memory leak in timeline providers PR #340881
+fix: memory leak in chat debug providers PR #340880
+fix: memory leak in language model removal notifications PR #340577
+fix: memory leak in canceled tree drag transfers PR #340845
+fix: memory leak in pending quick pick items PR #340846
+fix: guard notebook diff input lifecycle PR #339389
+fix: memory leak in terminal process startup PR #340582
+fix: memory leak in suggest enabled input PR #340913
+@sw23 (Spencer Williams): Scope content exclusion path rules to their repository PR #339415
+@VirajMishra1 (Viraj Mishra): fix: path, URI, JSON edit utility bugs PR #334259
+@vscodebot-pr (VS Code PR Bot)
+
+fix: tolerate post-close debug adapter messages (fixes #340511) PR #340519
+fix: guard webview find against disposed frame subtree (fixes #339314) PR #339331
+fix: guard Auto routing stream pushes against cancelled turns (fixes #341067) PR #341077
+fix: tolerate post-close debug adapter messages (fixes #340511) PR #340519
+fix: guard webview find against disposed frame subtree (fixes #339314) PR #339331
+fix: guard Auto routing stream pushes against cancelled turns (fixes #341067) PR #341077
+@wycats (Yehuda Katz): chat: preserve conversation ID for Agent Host BYOK requests PR #341450
+@yuki-nakano-520 (yuki nakano): fix: sort terminal type-ahead latencies numerically PR #341303
 We really appreciate people trying our new features as soon as they are ready, so check back here often and learn what's new.
 If you'd like to read release notes for previous VS Code versions, go to Updates on code.visualstudio.com.
 Release highlights
 Agents
+Models
+Sandboxing
 Chat
-Markdown editor
-Editor experience
-Languages
+Editor Experience
+Source Control
 Enterprise
-Contributions to extensions
+VS Code setup
 Deprecated features and settings
 Thank you

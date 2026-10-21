@@ -9,7 +9,9 @@ Chat View & Layout
 Agents Window
 Choose an Agent Harness
 Configure the Agents Window
+Review & Revert Changes
 Plan Work
+Compare Model Results
 Use Tools
 Manage MCP Servers
 Browser Tools
@@ -19,7 +21,6 @@ Manage Sessions
 Session History
 Remote Agent Sessions
 Memory
-Review & Revert Changes
 Artifacts
 Approvals & Permissions
 Agent Sandboxing
