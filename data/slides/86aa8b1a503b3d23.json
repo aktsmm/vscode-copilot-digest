@@ -1,0 +1,86 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "86aa8b1a503b3d23",
+  "title": {
+    "ja": "VS Code 1.143: 使っていない worktree のディスク領域を回収（試験機能）",
+    "subtitleJa": "Chat: Open Worktree Cleanup で、非アクティブなセッションの worktree をサイズ確認して削除",
+    "original": "Reclaim storage from inactive worktrees (Experimental)"
+  },
+  "date": "2026-10-21",
+  "topic": "VS Code",
+  "status": "update",
+  "audience": {
+    "who": "Agents ウィンドウで複数のエージェント セッション(worktree)を動かしている開発者",
+    "change": "非アクティブな worktree の使用量を確認し、不要なものをまとめて削除できる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "worktree が溜まってきたら、コマンド パレットからクリーンアップを実行する"
+  },
+  "panels": [
+    {
+      "id": "how-to-use",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "コマンド パレットで Chat: Open Worktree Cleanup を実行する",
+        "非アクティブな期間でセッションを絞り込み、各 worktree のサイズを見て対象を選ぶ",
+        "クリーンアップすると、選んだセッションを完了にして worktree を削除する"
+      ]
+    },
+    {
+      "id": "settings",
+      "heading": "設定と自動化",
+      "priority": "core",
+      "items": [
+        "設定 chat.agentSessions.sessionStorageCleanupSuggestion.enabled(Agents ウィンドウのみ)",
+        "有効にすると、非アクティブな worktree が溜まった時や容量が大きい時に Agents ウィンドウが通知する",
+        "クリーンアップ エディターで、マージ済み pull request のセッションの自動クリーンアップも設定できる"
+      ]
+    },
+    {
+      "id": "limits",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "アクティブ、実行中、入力待ち、ピン留めのセッションは削除から保護される",
+        "削除後も、セッションを復元すれば worktree を再作成できる"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "worktree", "type": "term", "oneLine": "エージェントが互いの変更に干渉せず複数の機能を同時に進めるための作業ディレクトリ。" }
+  ],
+  "qa": [
+    {
+      "q": "どこで使えますか。",
+      "a": "試験機能（Experimental）で、設定 chat.agentSessions.sessionStorageCleanupSuggestion.enabled は Agents ウィンドウのみが対象です。"
+    },
+    {
+      "q": "どうやって実行しますか。",
+      "a": "コマンド パレットから Chat: Open Worktree Cleanup を実行します。非アクティブ期間でセッションを絞り込み、各 worktree のサイズを確認して、削除するものを選びます。"
+    },
+    {
+      "q": "作業中のセッションが消えることはありますか。",
+      "a": "アクティブ、実行中、入力待ち、ピン留めのセッションはクリーンアップから保護されます。"
+    },
+    {
+      "q": "削除した worktree は元に戻せますか。",
+      "a": "クリーンアップは選んだセッションを完了にして worktree を削除します。後でセッションを復元すると、worktree が再作成されます。"
+    },
+    {
+      "q": "自動で整理することはできますか。",
+      "a": "クリーンアップ エディターで、マージ済み pull request のセッションの自動クリーンアップを設定できます。大きくなった時にクリーンアップを提案するかどうかも制御できます。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.143 - Reclaim storage from inactive worktrees (Experimental)",
+      "url": "https://code.visualstudio.com/updates/v1_143#_reclaim-storage-from-inactive-worktrees-experimental"
+    }
+  },
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_143#_reclaim-storage-from-inactive-worktrees-experimental"
+  ]
+}
