@@ -1,0 +1,79 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "5f09dd47f5529308",
+  "title": {
+    "ja": "Agents ウィンドウ: 空のサイド ペインに追加できるタブを一覧表示",
+    "subtitleJa": "全タブを閉じた後の空白に、Changes・Files などの追加タブがショートカット付きで並ぶ",
+    "original": "Tab shortcuts in an empty side pane"
+  },
+  "date": "2026-10-21",
+  "topic": "VS Code",
+  "status": "update",
+  "audience": {
+    "who": "VS Code の Agents ウィンドウでサイド ペインのタブを使うユーザー",
+    "change": "空のエディター領域から、Add Tab (+) メニューを探さずにタブを開ける",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "no",
+    "summary": "操作は不要。空のエディター領域の一覧から開きたいタブを選ぶ"
+  },
+  "beforeAfter": {
+    "before": "全タブを閉じると空白になり、Add Tab (+) メニューを探す必要があった",
+    "after": "空の領域に追加できるタブが、アイコンとショートカット付きで一覧表示される"
+  },
+  "panels": [
+    {
+      "id": "how-to-use",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "空のエディター領域に、Changes・Files・Browser・Search などの追加できるタブが並ぶ",
+        "各項目にアイコンとキーボード ショートカットが付き、選ぶとそのタブが開く",
+        "Canvas 拡張機能があれば、Canvas の項目に利用できるキャンバスが一覧される"
+      ]
+    },
+    {
+      "id": "behavior",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "エディター領域が空のセッションに切り替えても、Changes と Files のタブは自動で開き直されず、この一覧が表示される"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "Agents ウィンドウ", "type": "product", "oneLine": "エージェント セッションを扱う VS Code のウィンドウ。" }
+  ],
+  "qa": [
+    {
+      "q": "何が変わりましたか?",
+      "a": "Agents ウィンドウのサイド ペインのタブをすべて閉じると、以前は空白でした。今回は、追加できる Changes、Files、Browser、Search などがアイコンとショートカット付きで一覧表示され、選ぶだけで開けます。"
+    },
+    {
+      "q": "以前はどうやってタブを戻しましたか?",
+      "a": "Add Tab (+) メニューを探して、セッションの変更やファイルのタブを開く必要がありました。"
+    },
+    {
+      "q": "Canvas 拡張機能を入れている場合は?",
+      "a": "Canvas 拡張機能がインストールされていれば、一覧に Canvas の項目が表示され、利用できるキャンバスを選べます。"
+    },
+    {
+      "q": "空のセッションに切り替えたときの動作は?",
+      "a": "エディター領域が空のセッションに切り替えると、Changes と Files のタブを自動で開き直さず、この一覧を表示します。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.143 - Tab shortcuts in an empty side pane",
+      "url": "https://code.visualstudio.com/updates/v1_143#_tab-shortcuts-in-an-empty-side-pane"
+    },
+    "documents": [
+      { "title": "Use the Agents window", "url": "https://code.visualstudio.com/docs/agents/run/agents-window" }
+    ]
+  },
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_143",
+    "https://code.visualstudio.com/docs/agents/run/agents-window"
+  ]
+}
