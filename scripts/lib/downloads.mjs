@@ -445,12 +445,12 @@ export function downloadsJs() {
       // browser's own font metrics and the font is scaled down until it fits. Anything that still does not fit is
       // recorded in window.__pptxOverflow (tests/pptx-fit.test.mjs fails on it).
       var meas = document.createElement("canvas").getContext("2d"), widths = {};
-      window.__pptxOverflow = []; window.__pptxScales = [];
+      window.__pptxOverflow = []; window.__pptxFit = [];
       function sz(pt, scale) { return Math.max(6, Math.floor(pt * scale * 2) / 2); }
       function cw(ch, pt, bold) { var k = (bold ? "b" : "n") + pt + ch; if (widths[k] === undefined) { meas.font = (bold ? "700 " : "400 ") + pt + "px " + FONT; widths[k] = meas.measureText(ch).width; } return widths[k]; }
       function wrapLines(t, pt, bold, availPt) { var n = 0; String(t).split("\\n").forEach(function (part) { var cur = 0, k = 1; for (var i = 0; i < part.length; i++) { var w = cw(part[i], pt, bold) * 1.03; if (cur + w > availPt && cur > 0) { k++; cur = w; } else cur += w; } n += k; }); return n; }
       function needIn(paras, w, m, scale) { var mx = m === undefined ? 7.2 : m, my = m === undefined ? 3.6 : m, availPt = w * 72 - 2 * mx, tot = 2 * my; paras.forEach(function (p) { var pt = sz(p.pt, scale); tot += wrapLines(p.t, pt, p.bold, availPt - (p.indent || 0)) * pt * 1.25; }); return tot / 72; }
-      function scaleFor(id, what, paras, w, h, m) { for (var st = 20; st >= 11; st--) { if (needIn(paras, w, m, st / 20) <= h + 0.001) { window.__pptxScales.push(st / 20); return st / 20; } } window.__pptxOverflow.push({ id: id, what: what }); return 0.55; }
+      function scaleFor(id, what, paras, w, h, m) { for (var st = 20; st >= 11; st--) { if (needIn(paras, w, m, st / 20) <= h + 0.001) { window.__pptxFit.push({ id: id, what: what, k: st / 20 }); return st / 20; } } window.__pptxOverflow.push({ id: id, what: what }); return 0.55; }
       var W = 13.33, H = 7.5, PER_TOC = 13;
       var frame = function (s, left, right, dark) {
         s.addShape("rect", { x: 0, y: 0, w: W * 0.7, h: 0.15, fill: { color: hex(THEME.copilot) }, line: { color: hex(THEME.copilot), width: 0 } });
@@ -529,7 +529,8 @@ export function downloadsJs() {
         var mainW = hasSide ? 8.3 : 12.5, py = y, avail = 6.85 - y, total = s.panels.reduce(function (n, p) { return n + 1 + p.items.length; }, 0);
         var panelParas = s.panels.map(function (p) { return [{ t: p.heading, pt: 16, bold: true }].concat(p.items.map(function (i) { return { t: i, pt: 13, indent: 14 }; })); });
         var pk = 0.55, needs = [];
-        for (var pst = 20; pst >= 11; pst--) { needs = panelParas.map(function (ps) { return needIn(ps, mainW, 6, pst / 20); }); pk = pst / 20; window.__pptxScales.push(pk); if (needs.reduce(function (a, b) { return a + b; }, 0) + 0.08 * needs.length <= avail + 0.001) break; if (pst === 11) window.__pptxOverflow.push({ id: s.id, what: "panels" }); }
+        for (var pst = 20; pst >= 11; pst--) { needs = panelParas.map(function (ps) { return needIn(ps, mainW, 6, pst / 20); }); pk = pst / 20; if (needs.reduce(function (a, b) { return a + b; }, 0) + 0.08 * needs.length <= avail + 0.001) break; if (pst === 11) window.__pptxOverflow.push({ id: s.id, what: "panels" }); }
+        window.__pptxFit.push({ id: s.id, what: "panels", k: pk });
         var spare = Math.max(0, avail - needs.reduce(function (a, b) { return a + b; }, 0) - 0.08 * needs.length);
         s.panels.forEach(function (p, pi) {
           var h = needs[pi] + spare * (1 + p.items.length) / total, red = ["caution", "cautions", "constraints", "limits", "impact", "risks"].indexOf(p.id) >= 0;
