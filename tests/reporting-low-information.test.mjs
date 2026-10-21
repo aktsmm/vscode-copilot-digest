@@ -19,6 +19,7 @@ import {
   summarizeEventSet,
 } from "../scripts/lib/reporting.mjs";
 import { editorialOverrides } from "../scripts/lib/editorial-overrides.mjs";
+import { loadSlideSummaries } from "../scripts/lib/slide-summaries.mjs";
 
 assert.ok(
   Array.isArray(lowInformationFallbackMarkers),
@@ -537,6 +538,9 @@ for (const event of highExposureMappedEvents) {
   assertNoGenericJapaneseFallback(importanceReason(event), event.title);
 }
 
+// The site, the collector and the notifications render cards with the slide and written summaries loaded; so does this check.
+// (An Insiders post and the Stable release can share one URL, so they share the slide written for it.)
+await loadSlideSummaries(process.cwd());
 for (const file of fs
   .readdirSync("data/events")
   .filter((name) => /^\d{4}-\d{2}-\d{2}\.json$/.test(name))
