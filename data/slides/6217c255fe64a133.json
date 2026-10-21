@@ -1,0 +1,84 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "6217c255fe64a133",
+  "title": {
+    "ja": "セッション アクティビティ バー(試験的): Changes・Files・Browser を右端に集約",
+    "subtitleJa": "アクティブなチャットの右端に縦のアイコン帯を表示し、サイド ペインのタブを直接開ける",
+    "original": "Session Activity Bar (Experimental)"
+  },
+  "date": "2026-10-21",
+  "topic": "VS Code",
+  "status": "update",
+  "audience": {
+    "who": "VS Code のセッションで Changes・Files・Browser などを使う開発者",
+    "change": "チャット右端のアイコンから、セッションの成果物をサイド ペインのタブで開ける",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "Stable では既定でオフ。使うなら [表示] > [外観] > [セッション アクティビティ バー] で有効にする"
+  },
+  "panels": [
+    {
+      "id": "how-to-use",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "チャット右端の縦長のアイコン帯。アイコンを選ぶと、そのタブがサイド ペインで開く",
+        "サイド ペインが閉じていれば、そのタブをアクティブにして開く。開いているタブは重複せずフォーカスする",
+        "キャンバス拡張機能があれば、Canvas 項目から利用可能なキャンバスのサブメニューを開ける"
+      ]
+    },
+    {
+      "id": "settings",
+      "heading": "設定と既定値",
+      "priority": "core",
+      "items": [
+        "Stable では既定でオフ。View > Appearance > Session Activity Bar で有効にする",
+        "非表示は、バーを右クリックして Hide Session Activity Bar を選ぶ",
+        "設定: sessions.showSessionActivityBar、sessions.sessionActivityBar.showLayoutActions",
+        "sessions.showSessionToolbar の設定値は sessions.showSessionActivityBar に引き継がれる"
+      ]
+    },
+    {
+      "id": "layout",
+      "heading": "配置の操作",
+      "priority": "detail",
+      "items": [
+        "グリップをドラッグして上下に移動し、ダブルクリックで位置をリセットできる",
+        "Show Layout Actions で、Toggle Side Panel と Toggle Panel をタイトル バーからバーへ移せる"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "Session Activity Bar", "type": "feature", "oneLine": "セッションの Changes・Files・Browser・キャンバスをサイド ペインの横に並べる縦長のアイコン帯。" }
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.143",
+      "url": "https://code.visualstudio.com/updates/v1_143#_session-activity-bar-experimental"
+    },
+    "documents": []
+  },
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_143"
+  ],
+  "qa": [
+    {
+      "q": "既定で有効ですか。",
+      "a": "いいえ。Stable では既定でオフです。View > Appearance > Session Activity Bar を選ぶと有効になります。"
+    },
+    {
+      "q": "アイコンを選ぶと何が起きますか。",
+      "a": "そのタブがサイド ペインで開きます。サイド ペインが閉じていれば、そのタブをアクティブにして開きます。すでに開いているタブは、2 つ目を開かずフォーカスします。"
+    },
+    {
+      "q": "どうやって非表示に戻しますか。",
+      "a": "バーを右クリックして Hide Session Activity Bar を選びます。sessions.showSessionActivityBar でも設定できます。"
+    },
+    {
+      "q": "以前の設定はどうなりますか。",
+      "a": "sessions.showSessionToolbar を設定していた場合、その値は sessions.showSessionActivityBar に引き継がれます。"
+    }
+  ]
+}
