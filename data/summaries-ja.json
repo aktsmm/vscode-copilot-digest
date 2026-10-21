@@ -3554,5 +3554,105 @@
       "GPT-5.2はGPT-5.5、GPT-5.2-CodexはGPT-5.3-Codexへ移行",
       "Copilotコードレビューで使うGPT-5.2は廃止の例外"
     ]
+  },
+  "067cddabb04a5290": {
+    "title": "Agents windowで巨大なチャットを開いても固まらなくなった",
+    "summary": "VS Code 1.143では、Agents windowでAgent Hostの長いチャットを開く際、履歴を小さな単位で復元するようになった。従来は最大30秒ほどウィンドウが固まったが、開く・戻る・再読み込みが大幅に速くなった。",
+    "why": "長い会話を多用するAgents windowのユーザーは、1.143へ更新すると待ち時間が減る。",
+    "points": [
+      "約1,150リクエスト・約530MBのチャットAの初回表示は35.6秒から9.0秒へ",
+      "同チャットで応答しない時間は28.3秒から0.6秒へ短縮",
+      "履歴を一括ではなく小分けに復元してUIを止めない"
+    ]
+  },
+  "468ed61fd3101b6b": {
+    "title": "空のFilesタブからファイル検索と新規作成ができる（実験的）",
+    "summary": "Agents windowで開いているファイルがないとき、Filesタブに検索ボックスとNew Fileが表示されるようになった。検索はQuick Openと同様に動作し、現在のセッションのフォルダ内だけを対象にする。",
+    "why": "Agents windowでファイルを素早く開きたい人は、設定を有効にすると表示切替の手間を省ける。",
+    "points": [
+      "有効化: sessions.experimental.emptyFileEditorActions",
+      "検索結果を選ぶとエディターで開き、New Fileでセッションのフォルダに作成",
+      "ファイルを閉じると検索ボックスが再び表示される"
+    ]
+  },
+  "5f09dd47f5529308": {
+    "title": "サイドペインを空にするとタブ追加の一覧が表示される",
+    "summary": "Agents windowのサイドペインのタブをすべて閉じると、Changes、Files、Browser、Searchなど追加できるタブがアイコンとショートカット付きで一覧表示される。Canvas拡張機能があればCanvasの項目も並ぶ。",
+    "why": "サイドペインを閉じ切った後に、Add Tab (+)メニューを探さず目的のタブへ戻りたい人に役立つ。",
+    "points": [
+      "項目を選ぶとそのタブが開く",
+      "Canvas拡張機能を入れていると利用可能なキャンバスを一覧できる",
+      "空のセッションへ切り替えてもChangesとFilesは自動では開き直されない"
+    ]
+  },
+  "6217c255fe64a133": {
+    "title": "セッションのタブへ素早く移るSession Activity Bar（実験的）",
+    "summary": "Session Activity Barは、アクティブなチャットの右端に出る細い縦のアイコン列で、ChangesやFiles、Browser、Canvasをサイドペインで開ける。Stableでは既定でオフで、設定または表示メニューから有効にする。",
+    "why": "Agents windowでセッションの成果物を頻繁に切り替える人は、有効にするとタブ操作が短くなる。",
+    "points": [
+      "有効化: View > Appearance > Session Activity Bar、または sessions.showSessionActivityBar",
+      "右クリックのShow Layout Actionsでパネル切替操作をバーへ移せる",
+      "従来の sessions.showSessionToolbar の値は引き継がれる"
+    ]
+  },
+  "76cc305d50baeea9": {
+    "title": "Agents windowの変更破棄が3種類の変更セットでも可能に",
+    "summary": "Agents windowのChangesビューで、変更の破棄がUncommitted Changesだけでなく、Branch Changes、Session Changes、Last Turn Changesでも行えるようになった。破棄される範囲は変更セットごとに異なる。",
+    "why": "エージェントの編集を部分的に取り消したい人は、変更セットごとの破棄範囲を理解して使い分ける。",
+    "points": [
+      "Branch Changes: ブランチ分岐時点の状態に戻し、追加ファイルは削除",
+      "Session Changes: セッションの編集のみ戻し、自分の編集は残す",
+      "Last Turn Changes: 直近のターンの編集だけを戻す"
+    ]
+  },
+  "86aa8b1a503b3d23": {
+    "title": "使っていないworktreeのディスク容量を回収できる（実験的）",
+    "summary": "Agents windowでChat: Open Worktree Cleanupを実行すると、非アクティブなエージェントセッションのworktreeが使う容量を確認し、不要なものを削除できる。マージ済みPRのセッションの自動整理や、容量増加時の通知も設定できる。",
+    "why": "複数のworktreeで並行作業するユーザーは、溜まったディスク使用量を定期的に整理できる。",
+    "points": [
+      "実行中・入力待ち・ピン留めのセッションは整理の対象外",
+      "削除したworktreeは、セッションを復元すると再作成される",
+      "通知設定: chat.agentSessions.sessionStorageCleanupSuggestion.enabled"
+    ]
+  },
+  "bf716ac394439aa7": {
+    "title": "VS Codeの新規セッションでCopilot harnessが既定に",
+    "summary": "VS Code 1.143から、新規セッションの既定がCopilot harnessになった。Copilot SDKを土台とする最新のharnessで、harness pickerではCopilotと表示される。バックグラウンドでの実行もできる。",
+    "why": "新規セッションの挙動が変わるため、従来のharnessを使っていた人は選択状態を確認する。",
+    "points": [
+      "セッションはAgent Hostを通して実行される",
+      "エディターウィンドウとAgents windowの両方から利用できる",
+      "MCPサーバーのツール読み込みが終わらない場合の遅延も軽減"
+    ]
+  },
+  "fd6ad7156219a9dc": {
+    "title": "複数モデルの結果を並べて比べるCompare Models（プレビュー）",
+    "summary": "Agents windowで、同じタスクを複数のモデルやharnessに並行して試させ、結果を比較して一つの解決策にまとめられる。Copilot、Claude、Codexのharnessを混在でき、推論レベルも設定できる。",
+    "why": "モデルごとの出来を実作業で見比べたい人は、設定を有効にしてモデルピッカーから試せる。",
+    "points": [
+      "有効化: sessions.chat.compareAgents.enabled、モデルピッカーでCompare Models",
+      "各試行は別セッションで動き、worktreeや変更を随時開ける",
+      "Judgeモデルが採点し、Synthesizeを選んだ時だけ統合を開始"
+    ]
+  },
+  "1760a15dd7dbe317": {
+    "title": "VS Code 1.144 Insiders: MCPごとのOAuth分離などを追加",
+    "summary": "VS Code 1.144 Insidersのリリースノートに、新しいセッション作成画面でワークスペース選択を解除する機能や、Mermaid図のサイズ変更と全画面表示が載った。MCPサーバーごとにOAuthトークンを分けて保持する変更もある。",
+    "why": "複数のAtlassianサイトなどでMCPを使う人は、Insidersで認証の分離を試せる。",
+    "points": [
+      "Mermaid図はリッチMarkdownエディターで拡大や全画面表示が可能",
+      "フォルダを開かずにモデル比較する実験的対応を追加",
+      "リリースノートは進行中で、随時更新される"
+    ]
+  },
+  "dbef54c4b4638455": {
+    "title": "Agents windowのドキュメントにモデル比較とharness制限が追記",
+    "summary": "Agents windowのドキュメントに、同じプロンプトを複数のモデルやharnessで隔離したworktree上で実行して比較する節が追加された。Judgeで評価し、統合案を依頼することもできる。また、Copilotのenterprise管理設定が適用されると、Claude/Codex harnessは無効になる。",
+    "why": "企業管理環境でClaudeやCodexを使う人は、IT管理者に利用可否を相談する必要がある。",
+    "points": [
+      "Claude/Codex harnessは別の認証情報があっても無効になる",
+      "既存のセッションはこの制限で削除されない",
+      "モデル比較の前提条件は別ドキュメントCompare model resultsに記載"
+    ]
   }
 }
