@@ -1,0 +1,101 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "dbef54c4b4638455",
+  "title": {
+    "ja": "Agents ウィンドウのモデル比較（Preview）と企業管理設定時の制限",
+    "subtitleJa": "同じプロンプトを複数モデルで実行して比較でき、企業管理設定下では Claude・Codex ハーネスが無効",
+    "original": "Use the Agents window - Compare model results (Preview)"
+  },
+  "date": "2026-10-21",
+  "topic": "VS Code",
+  "status": "unknown",
+  "audience": {
+    "who": "VS Code の Agents ウィンドウでモデルやハーネスを比べたい開発者と、Copilot の企業管理設定を使う組織",
+    "change": "同じプロンプトを分離した worktree で複数モデルに実行して比較できる。企業管理設定下では Claude・Codex ハーネスは使えない",
+    "changeNature": "neutral"
+  },
+  "action": {
+    "required": "info",
+    "summary": "比較を試すには Agents ウィンドウで設定を有効にする。企業管理設定下で Claude・Codex を使いたい場合は IT 部門に相談する"
+  },
+  "panels": [
+    {
+      "id": "compare",
+      "heading": "モデル比較の使い方",
+      "priority": "core",
+      "items": [
+        "Agents ウィンドウのみ対応（Preview）。エディターの Chat ビューでは使えない",
+        "設定 `sessions.chat.compareAgents.enabled` を有効化し、モデルピッカーで Compare Models を選ぶ",
+        "2〜10 件の試行を追加。各試行は独立した Git worktree で同時に実行される"
+      ]
+    },
+    {
+      "id": "judge",
+      "heading": "Judge と統合",
+      "priority": "core",
+      "items": [
+        "Judge を設定すると、試行の完了後に自動で評価される",
+        "Synthesizer も設定すると、評価後に統合した実装を依頼できる。Judge が前提"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "企業管理設定下では、別のプロバイダー認証情報があっても Claude・Codex ハーネスは無効",
+        "既存のセッションはこの制限で削除されない"
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Judge",
+      "type": "feature",
+      "oneLine": "複数の試行を評価し、推奨を示すモデル"
+    },
+    {
+      "term": "Synthesizer",
+      "type": "feature",
+      "oneLine": "Judge の評価を踏まえ、新しい実装を作るモデル"
+    }
+  ],
+  "qa": [
+    {
+      "q": "モデル比較はどこで使えますか",
+      "a": "Preview として Agents ウィンドウでのみ使えます。エディターの Chat ビューでは使えません。"
+    },
+    {
+      "q": "有効にするにはどうしますか",
+      "a": "Agents ウィンドウの設定で sessions.chat.compareAgents.enabled を有効にし、New でリポジトリを選んで、モデルピッカーから Compare Models を選びます。既定ではオフです。"
+    },
+    {
+      "q": "いくつのモデルを比較できますか",
+      "a": "2 件から 10 件の試行を追加できます。Auto などのルーティング選択は比較では使えません。"
+    },
+    {
+      "q": "Judge や統合の実装は必須ですか",
+      "a": "いいえ。Judge がなければ手動で比較します。統合には Judge と Synthesizer の両方の設定が必要です。"
+    },
+    {
+      "q": "企業管理設定を使う場合の制限は何ですか",
+      "a": "Copilot の企業管理設定が適用されると、別のプロバイダー認証情報があっても Claude と Codex のハーネスは無効です。既存のセッションは削除されません。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Use the Agents window",
+      "url": "https://code.visualstudio.com/docs/agents/run/agents-window#_compare-model-results-preview"
+    },
+    "documents": [
+      {
+        "title": "Compare model results (Preview)",
+        "url": "https://code.visualstudio.com/docs/agents/run/compare-models"
+      }
+    ]
+  },
+  "evidence": [
+    "https://code.visualstudio.com/docs/agents/run/agents-window",
+    "https://code.visualstudio.com/docs/agents/run/compare-models"
+  ]
+}
