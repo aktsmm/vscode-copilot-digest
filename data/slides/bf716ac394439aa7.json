@@ -1,0 +1,90 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "bf716ac394439aa7",
+  "title": {
+    "ja": "VS Code 1.143、新しいセッションの既定が Copilot harness に",
+    "subtitleJa": "新規セッションは Copilot SDK ベースの Copilot harness で動き、バックグラウンドでも継続できる",
+    "original": "Copilot harness as the default"
+  },
+  "date": "2026-10-21",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "VS Code でエージェント セッションを使う開発者",
+    "change": "新しいセッションは Copilot harness で始まり、Agent Host 経由でエディターやAgents ウィンドウから扱える",
+    "changeNature": "neutral"
+  },
+  "action": {
+    "required": "info",
+    "summary": "ハーネス ピッカーで Copilot と表示されることを確認し、必要なら別のハーネスを選ぶ"
+  },
+  "panels": [
+    {
+      "id": "what-changes",
+      "heading": "変わること",
+      "priority": "core",
+      "items": [
+        "VS Code の新規セッションの既定が、Copilot SDK 上に構築された最新の Copilot harness になった",
+        "ハーネス ピッカーに「Copilot」と表示され、そのセッションが Copilot harness だと分かる",
+        "セッションはバックグラウンドで実行を続け、エディター ウィンドウと Agents ウィンドウの両方から開ける"
+      ]
+    },
+    {
+      "id": "usage",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "最初のプロンプトを送る前に、Session Target のコントロールでハーネスか Cloud を選ぶ",
+        "モデルやエージェントの役割を変えても、ハーネスは変わらない",
+        "Copilot harness の組み込みエージェントは Ask・Agent・Plan"
+      ]
+    },
+    {
+      "id": "limits",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "Agent Host のセッションを続けるには、デスクトップ版 VS Code のアプリを終了せず動かしておく",
+        "クライアントが提供するツールは、そのウィンドウが接続されている間だけ使える"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "Copilot harness", "type": "feature", "oneLine": "Copilot SDK を使い、Agent Host 上でエージェントを動かすハーネス。" },
+    { "term": "Agent Host", "type": "term", "oneLine": "エージェント ハーネスを実行し、セッションを管理する専用プロセス。" },
+    { "term": "エージェント ハーネス", "type": "term", "oneLine": "エージェントが使うモデル、コンテキスト、ツールを調整する仕組み。" }
+  ],
+  "qa": [
+    {
+      "q": "Copilot harness とは何ですか。",
+      "a": "Copilot SDK 上に構築された最新のハーネスです。SDK は Copilot 製品間で動作や機能、改善をそろえるための共通基盤です。エージェントは Agent Host で動きます。"
+    },
+    {
+      "q": "ウィンドウを閉じるとエージェントは止まりますか。",
+      "a": "Copilot harness のセッションは、エディター ウィンドウを閉じてもバックグラウンドで続けられます。ただし Agent Host が動き続ける必要があり、デスクトップ版では VS Code アプリを終了しないでください。"
+    },
+    {
+      "q": "モデルを変えるとハーネスも変わりますか。",
+      "a": "変わりません。たとえば Copilot harness のセッションで Claude モデルを選んでも、使われるのは Copilot harness です。エージェントの役割を切り替えても同じです。"
+    },
+    {
+      "q": "別のハーネスを使うにはどうしますか。",
+      "a": "最初のプロンプトを送る前に、Session Target のコントロールで利用可能なハーネスか Cloud を選びます。コントロールには、現在のウィンドウで要件を満たすものだけが表示されます。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.143 - Copilot harness as the default",
+      "url": "https://code.visualstudio.com/updates/v1_143#_copilot-harness-as-the-default"
+    },
+    "documents": [
+      { "title": "Choose an agent harness", "url": "https://code.visualstudio.com/docs/agents/run/agent-harnesses" },
+      { "title": "Agent Host architecture", "url": "https://code.visualstudio.com/docs/agents/concepts/agent-host" }
+    ]
+  },
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_143#_copilot-harness-as-the-default",
+    "https://code.visualstudio.com/docs/agents/run/agent-harnesses",
+    "https://code.visualstudio.com/docs/agents/concepts/agent-host"
+  ]
+}
