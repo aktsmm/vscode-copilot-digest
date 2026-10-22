@@ -24400,6 +24400,74 @@
         "Original article explicit links",
         "Feature-matched official documentation indexes"
       ]
+    },
+    "2bc2ad1ecbdee3ed89581dd5efbc78a885748d9551e357e5ede060447412b9f9": {
+      "version": 6,
+      "checkedAt": "2026-10-22T18:06:50.774Z",
+      "inputUrl": "https://github.com/features/copilot/whats-new",
+      "inputTitle": "GitHub Copilot What's New changed",
+      "status": "verified",
+      "source": {
+        "url": "https://github.blog/changelog/2026-10-22-industry-comparisons-in-the-copilot-impact-dashboard/",
+        "status": "verified",
+        "reason": "Snapshot observation, not a standalone feature: Oct.22 Improvement; explicit article: Industry comparisons in the Copilot impact dashboard",
+        "checkedAt": "2026-10-22T18:06:52.330Z",
+        "contentHash": "b86dc0b377554c04883dcd5e0f5071358189d2eaa7cc1f4bc0b1ac6742527f6e"
+      },
+      "documents": [
+        {
+          "url": "https://docs.github.com/ja/copilot/how-tos/administer-copilot/view-impact-dashboard",
+          "title": "Copilot影響ダッシュボードの表示",
+          "language": "ja",
+          "checkedAt": "2026-10-22T18:06:52.808Z",
+          "contentHash": "38deed8c0a725d5fa456b3975cdc4b8547e71547f076dd40a7f6ad25cd43123c",
+          "discoveryUrl": "https://github.blog/changelog/2026-10-22-industry-comparisons-in-the-copilot-impact-dashboard/",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "09b75cc95842ece417047b1cec4bb1d0d81a641b23d502bd60d8139f898485cd": {
+      "version": 6,
+      "checkedAt": "2026-10-22T18:06:52.871Z",
+      "inputUrl": "https://github.blog/changelog/2026-10-22-industry-comparisons-in-the-copilot-impact-dashboard",
+      "inputTitle": "Industry comparisons in the Copilot impact dashboard",
+      "status": "verified",
+      "source": {
+        "url": "https://github.blog/changelog/2026-10-22-industry-comparisons-in-the-copilot-impact-dashboard/",
+        "status": "verified",
+        "reason": "Fetched original article",
+        "checkedAt": "2026-10-22T18:06:52.330Z",
+        "contentHash": "b86dc0b377554c04883dcd5e0f5071358189d2eaa7cc1f4bc0b1ac6742527f6e"
+      },
+      "documents": [
+        {
+          "url": "https://docs.github.com/ja/copilot/how-tos/administer-copilot/view-impact-dashboard",
+          "title": "Copilot影響ダッシュボードの表示",
+          "language": "ja",
+          "checkedAt": "2026-10-22T18:06:52.808Z",
+          "contentHash": "38deed8c0a725d5fa456b3975cdc4b8547e71547f076dd40a7f6ad25cd43123c",
+          "discoveryUrl": "https://github.blog/changelog/2026-10-22-industry-comparisons-in-the-copilot-impact-dashboard/",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
     }
   }
 }

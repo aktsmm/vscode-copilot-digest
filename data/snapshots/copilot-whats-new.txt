@@ -16,6 +16,7 @@ Universe ‘26
 H2: October
  Oct
  2026
+H3: Oct.22 Improvement
 H3: Oct.19 Improvement
 H3: Oct.19 Retired
 H3: Oct.15 Improvement

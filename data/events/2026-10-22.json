@@ -1,13 +1,94 @@
 {
   "date": "2026-10-22",
-  "generatedAt": "2026-10-22T10:20:34.228Z",
+  "generatedAt": "2026-10-22T18:06:50.390Z",
   "latestRun": {
-    "generatedAt": "2026-10-22T10:20:34.228Z",
-    "newEventsCount": 0,
-    "newEventIds": [],
+    "generatedAt": "2026-10-22T18:06:50.390Z",
+    "newEventsCount": 3,
+    "newEventIds": [
+      "github-changelog:https://github.blog/changelog/2026-10-22-industry-comparisons-in-the-copilot-impact-dashboard",
+      "github-changelog-copilot:https://github.blog/changelog/2026-10-22-industry-comparisons-in-the-copilot-impact-dashboard",
+      "copilot-whats-new:fd59791f4b6efb720439deebba2d6ca6707fe7b16f82d99f3e64e10be09b0dd0"
+    ],
     "errorCount": 0,
     "skippedLowInformationEvents": []
   },
-  "events": [],
+  "events": [
+    {
+      "eventId": "copilot-whats-new:fd59791f4b6efb720439deebba2d6ca6707fe7b16f82d99f3e64e10be09b0dd0",
+      "sourceId": "copilot-whats-new",
+      "sourceName": "GitHub Copilot What's New",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-10-22T18:06:44.420Z",
+      "publishedAt": "2026-10-22T18:06:44.419Z",
+      "title": "GitHub Copilot What's New changed",
+      "url": "https://github.com/features/copilot/whats-new",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [
+          "Oct.22 Improvement"
+        ],
+        "additions": [
+          "H3: Oct.22 Improvement"
+        ]
+      },
+      "headings": [
+        "Changelog",
+        "Filters (0 selected)",
+        "October\n Oct\n 2026",
+        "Oct.22 Improvement",
+        "Oct.19 Improvement",
+        "Oct.19 Retired",
+        "Oct.15 Improvement",
+        "Oct.15 Retired",
+        "Oct.15 Release",
+        "Oct.14 Release",
+        "Oct.13 Release",
+        "Oct.13 Improvement"
+      ],
+      "score": 3
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-10-22-industry-comparisons-in-the-copilot-impact-dashboard",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-10-22T18:06:40.479Z",
+      "publishedAt": "2026-10-22T16:28:24.000Z",
+      "title": "Industry comparisons in the Copilot impact dashboard",
+      "url": "https://github.blog/changelog/2026-10-22-industry-comparisons-in-the-copilot-impact-dashboard",
+      "summary": "The Copilot impact dashboard now includes an “Industry comparison” section. Enterprises, and organizations that aren’t owned by an enterprise, can compare their Copilot agentic adoption and leverage with aggregated benchmarks…\nThe post Industry comparisons in the Copilot impact dashboard appeared first on The GitHub B...",
+      "categories": [
+        "Improvement",
+        "account management",
+        "copilot",
+        "enterprise management tools"
+      ],
+      "isFutureDated": false,
+      "score": 3
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-10-22-industry-comparisons-in-the-copilot-impact-dashboard",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-10-22T18:06:40.504Z",
+      "publishedAt": "2026-10-22T16:28:24.000Z",
+      "title": "Industry comparisons in the Copilot impact dashboard",
+      "url": "https://github.blog/changelog/2026-10-22-industry-comparisons-in-the-copilot-impact-dashboard",
+      "summary": "The Copilot impact dashboard now includes an “Industry comparison” section. Enterprises, and organizations that aren’t owned by an enterprise, can compare their Copilot agentic adoption and leverage with aggregated benchmarks…\nThe post Industry comparisons in the Copilot impact dashboard appeared first on The GitHub B...",
+      "categories": [
+        "Improvement",
+        "account management",
+        "copilot",
+        "enterprise management tools"
+      ],
+      "isFutureDated": false,
+      "score": 3
+    }
+  ],
   "errors": []
 }
