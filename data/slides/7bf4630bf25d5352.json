@@ -1,0 +1,100 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "7bf4630bf25d5352",
+  "title": {
+    "ja": "Copilot 影響ダッシュボードに、同業他社との比較を追加",
+    "subtitleJa": "エージェント活用度をピアの中央値と比較。参加はオプトインで、既定は無効",
+    "original": "Industry comparisons in the Copilot impact dashboard"
+  },
+  "date": "2026-10-22",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "Copilot 影響ダッシュボードを使う Enterprise と、Enterprise に属さない Organization の管理者",
+    "change": "「Industry comparison」セクションで、自社の Copilot 活用度を参加企業の集計値と比べられる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "比較したい場合は、ダッシュボードまたは Copilot ポリシーでオプトインする"
+  },
+  "panels": [
+    {
+      "id": "what-you-see",
+      "heading": "比較できる内容",
+      "priority": "core",
+      "items": [
+        "エージェント ファーストまたはマルチ エージェントのユーザー比率を比較する",
+        "エージェント利用ユーザーと非利用ユーザーの PR マージ率の差も比較する",
+        "28 日間の集計期間で、ピアの中央値や上位 10% と比べて順位が出る"
+      ]
+    },
+    {
+      "id": "how-to",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "ダッシュボード、または Enterprise / Organization の Copilot ポリシーからオプトインする",
+        "どちらも同じ「Copilot metrics industry comparison」ポリシーで、オフにすると提供と閲覧の両方が止まる",
+        "会社規模（1–999、1,000–4,999、5,000+ 人など）と 10 業種から選び、自業種と全業種を切り替える"
+      ]
+    },
+    {
+      "id": "limits",
+      "heading": "前提と制限",
+      "priority": "core",
+      "items": [
+        "設定とピア グループの指定は Enterprise オーナー、または Enterprise に属さない Organization のオーナー",
+        "Copilot 使用状況メトリクスのポリシーが有効であることが必要",
+        "Copilot Business ライセンス割り当て専用の Enterprise と、Enterprise 配下の Organization 単独では参加できない"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "ピアが少ないと、中央値のみ、広い比較対象、または順位なしになる",
+        "比較はダッシュボードのみで、使用状況メトリクス API、NDJSON、ダウンロードには含まれない"
+      ]
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Industry comparisons in the Copilot impact dashboard - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-10-22-industry-comparisons-in-the-copilot-impact-dashboard/"
+    },
+    "documents": [
+      {
+        "title": "Copilot影響ダッシュボードの表示 - GitHubドキュメント",
+        "url": "https://docs.github.com/ja/copilot/how-tos/administer-copilot/view-impact-dashboard"
+      }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-10-22-industry-comparisons-in-the-copilot-impact-dashboard/",
+    "https://docs.github.com/ja/copilot/how-tos/administer-copilot/view-impact-dashboard"
+  ],
+  "qa": [
+    {
+      "q": "誰が参加でき、誰が結果を見られますか。",
+      "a": "Enterprise と、Enterprise に属さない Organization が対象です。オプトインとピア グループの設定は、それらのオーナーが行います。結果は、Copilot 影響ダッシュボードを閲覧できる人なら誰でも見られます。Enterprise 配下の Organization は Enterprise 経由で参加します。"
+    },
+    {
+      "q": "既定で自社のデータが共有されますか。",
+      "a": "いいえ。参加はオプトインで、既定は無効です。オプトアウトすると比較は直ちに表示されなくなり、データは翌日の更新から除外されます。集計ベンチマークに識別情報は含まれず、30 日後に削除されます。"
+    },
+    {
+      "q": "順位が表示されないことはありますか。",
+      "a": "あります。十分な企業がオプトインするまで順位は出ず、特に開始直後は中央値のみ、または選択より広いピア グループになることがあります。全ユーザーがすでにエージェント ファーストかマルチ エージェントで、比較の基準となる非利用ユーザーがいない場合も表示されません。"
+    },
+    {
+      "q": "API やエクスポートでも取得できますか。",
+      "a": "できません。業界比較はダッシュボードにのみ表示され、Copilot 使用状況メトリクス API、NDJSON エクスポート、ダウンロードには含まれません。比較は毎日更新されます。"
+    },
+    {
+      "q": "データ所在地を指定した環境ではどうなりますか。",
+      "a": "GitHub Enterprise Cloud のデータ所在地では、同じリージョンの参加者とだけ比較されます。リージョンをまたいでデータが結合されることはありません。"
+    }
+  ]
+}
