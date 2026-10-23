@@ -3698,5 +3698,27 @@
       "BYOMは新Agent(Preview)のみ対応で、従来のAsk/Agentモードは非対応",
       "NuGet Audit警告の修正にはCopilotサインインとNuGet MCPサーバー有効化が必要"
     ]
+  },
+  "400d918642962961": {
+    "title": "Microsoft TeamsのGitHubアプリでCopilotが使える",
+    "summary": "Microsoft Teams向けの新しいGitHubアプリ(旧GitHub notifications)が、通知とGitHub Copilotを統合した。チャンネルやチャットで通知を受け取り、@githubにメンションすると、Issueの調査、バグ修正、プルリクエスト作成まで依頼できる。",
+    "why": "旧GitHubアプリの利用者は、Teams上でCopilotを使い続けるため統合版アプリへの移行が必要。",
+    "points": [
+      "通知はチャンネル、グループチャット、個人チャットで受け取れる",
+      "既存のGitHub notificationsはアプリを最新版に更新すれば従来機能もそのまま動く",
+      "旧GitHubアプリは「GitHub (deprecated)」に改名され11月16日に廃止",
+      "@GitHubにメンションし、案内に従ってアカウント連携とリポジトリ選択を行う"
+    ]
+  },
+  "dc1ed52c8837fe68": {
+    "title": "Copilot利用メトリクスAPIにOpenCode等のクライアント別集計",
+    "summary": "Copilot usage metrics APIに、ツール別の利用を示すtotals_by_client配列が追加された。OpenCodeなどIDE外のツールからのモデル利用も、サーバー側のリクエスト数で集計され、totals_by_ideでは見えなかった分を把握できる。",
+    "why": "Copilot管理者は、どのツールがCopilot利用を占めるかをサポート方針やガバナンスの判断材料にできる。",
+    "points": [
+      "enterprise/organization/各userの1日・28日レポートが対象",
+      "clientはopencode、claude_code、codex、vscodeなどで、未知のものはother",
+      "各clientにrequest_count、session_count、token_usage、モデル別内訳を含む",
+      "既存フィールドは変更なしで、request_countはプロンプト数ではなくモデル呼び出し数"
+    ]
   }
 }
