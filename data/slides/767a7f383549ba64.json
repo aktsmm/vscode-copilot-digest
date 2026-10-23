@@ -1,0 +1,101 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "767a7f383549ba64",
+  "title": {
+    "ja": "Copilot機能のグローバル既定ポリシー、適用開始",
+    "subtitleJa": "未構成のGA機能が10月26日までに順次、既定ポリシーの値に設定される",
+    "original": "Global default for Copilot features generally available"
+  },
+  "date": "2026-10-22",
+  "topic": "GitHub Copilot",
+  "status": "unknown",
+  "audience": {
+    "who": "Copilot BusinessまたはCopilot Enterpriseの企業・組織の管理者",
+    "change": "未構成のGA機能が、選択したグローバル既定（有効・無効・組織に決定させる）に一度だけ設定される",
+    "changeNature": "breaking"
+  },
+  "action": {
+    "required": "yes",
+    "summary": "AI Controls → Copilot → Default policy for new featuresで値を確認し、必要な機能は明示的に設定する"
+  },
+  "timeline": [
+    { "when": "10月22日", "label": "ポリシーの適用を順次開始" },
+    { "when": "10月26日", "label": "適用の展開が完了" }
+  ],
+  "panels": [
+    {
+      "id": "scope",
+      "heading": "使える場所とプラン",
+      "priority": "core",
+      "items": [
+        "対象はCopilot BusinessとCopilot Enterpriseのプラン",
+        "対象設定は「Features & clients」と「MCP servers in Copilot」の適用可能なもの",
+        "企業・組織ごとに適用時期が異なる場合がある"
+      ]
+    },
+    {
+      "id": "behavior",
+      "heading": "適用後の動作",
+      "priority": "core",
+      "items": [
+        "未構成のGA機能は、有効・無効・組織に決定させるのいずれかの既定値になる",
+        "一度きりの変更。以降に既定ポリシーを変えても、設定済みの機能は変わらない",
+        "管理者が明示的に有効・無効にした機能は維持される"
+      ]
+    },
+    {
+      "id": "cautions",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "プレビュー機能はオプトインのまま。選択済みならGA後も維持される",
+        "Copilot CLI、GHE.comの制限付きモデルポリシーなどは対象外"
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "組織に決定させる",
+      "type": "label",
+      "oneLine": "未設定のGA機能を、組織側で有効化・無効化できる状態"
+    }
+  ],
+  "qa": [
+    {
+      "q": "いつから適用されますか？",
+      "a": "10月22日から10月26日まで順次展開されます。企業や組織によって適用時期が異なる場合があります。"
+    },
+    {
+      "q": "既に設定した機能は変わりますか？",
+      "a": "変わりません。有効・無効を明示的に選んだ設定は維持されます。変更されるのは未構成の対象機能のみで、一度きりの変更です。"
+    },
+    {
+      "q": "プレビュー機能はどうなりますか？",
+      "a": "プレビュー機能はオプトインのままです。プレビューを有効にしていてGAになった場合は選択が維持され、そうでなければGAとして対象になった時点で既定ポリシーが適用されます。"
+    },
+    {
+      "q": "現在の設定はどこで確認できますか？",
+      "a": "AI Controls → Copilot → Default policy for new featuresで確認できます。対象は「Features & clients」と「MCP servers in Copilot」の適用可能な設定です。"
+    },
+    {
+      "q": "自動で有効になるのを防ぐには？",
+      "a": "既定ポリシーを無効にするか、個々の機能を明示的に無効にします。企業全体で設定することも、厳しい要件のある組織だけで無効にすることもできます。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Global default for Copilot features generally available - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-10-22-global-default-for-copilot-features-generally-available/"
+    },
+    "documents": [
+      {
+        "title": "Copilotの機能とモデルの既定の可用性について - GitHubドキュメント",
+        "url": "https://docs.github.com/ja/copilot/concepts/enterprise/default-availability"
+      }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-10-22-global-default-for-copilot-features-generally-available/",
+    "https://docs.github.com/ja/copilot/concepts/enterprise/default-availability"
+  ]
+}
