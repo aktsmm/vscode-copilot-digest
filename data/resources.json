@@ -24636,6 +24636,140 @@
         "Original article explicit links",
         "Feature-matched official documentation indexes"
       ]
+    },
+    "daaf24bfc998a84c0632df23f57c112ff5fa8beeaaca900553aca42f091deb1b": {
+      "version": 6,
+      "checkedAt": "2026-10-23T23:53:50.082Z",
+      "inputUrl": "https://github.com/features/copilot/whats-new",
+      "inputTitle": "GitHub Copilot What's New changed",
+      "status": "unconfirmed",
+      "source": {
+        "url": "https://github.blog/changelog/?label=copilot#changelog-item-meta-99712",
+        "status": "unconfirmed",
+        "reason": "Multiple changed date headings; linked observed archive item without inferring a feature",
+        "checkedAt": "2026-10-23T23:53:50.272Z",
+        "contentHash": "85c37f0e42cc4a08bda13437b7420d73ea44f72a0f327010bcd02da3dcd233a8"
+      },
+      "documents": [],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "6f89140ed7685a1638609df090512337ac69936c9c4a2ee1c94e4a35f88bcaac": {
+      "version": 6,
+      "checkedAt": "2026-10-23T23:53:50.393Z",
+      "inputUrl": "https://github.blog/changelog/2026-10-23-usage-metrics-api-adds-usage-from-tools-like-opencode",
+      "inputTitle": "Usage metrics API adds usage from tools like OpenCode",
+      "status": "verified",
+      "source": {
+        "url": "https://github.blog/changelog/2026-10-23-usage-metrics-api-adds-usage-from-tools-like-opencode/",
+        "status": "verified",
+        "reason": "Fetched original article",
+        "checkedAt": "2026-10-23T23:53:50.910Z",
+        "contentHash": "4b18f824835a5368bd730e5d293a67e3b7b17176b033e863c3e8c986ddbbf6e0"
+      },
+      "documents": [
+        {
+          "url": "https://docs.github.com/ja/copilot/how-tos/administer-copilot/view-usage-and-adoption",
+          "title": "Copilot 使用状況メトリック ダッシュボードの表示",
+          "language": "ja",
+          "checkedAt": "2026-10-23T00:02:44.576Z",
+          "contentHash": "8854573af15a9a757a2f5039732c89b331aa7179afd2d2200fdb44b66f380297",
+          "discoveryUrl": "https://docs.github.com/en/copilot/how-tos",
+          "basis": "Matching feature terms in official documentation index",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://docs.github.com/ja/copilot/concepts/billing-and-usage/copilot-usage-metrics",
+          "title": "GitHub Copilotの使用状況メトリクス",
+          "language": "ja",
+          "checkedAt": "2026-10-23T23:53:51.532Z",
+          "contentHash": "9c91e07fd4cd6c92e351f037f669158113776eb2c048431c37afe78f29a665d5",
+          "discoveryUrl": "https://docs.github.com/en/copilot/concepts",
+          "basis": "Matching feature terms in official documentation index",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://docs.github.com/ja/copilot/reference/copilot-usage-metrics",
+          "title": "GitHub Copilot の使用状況メトリクス",
+          "language": "ja",
+          "checkedAt": "2026-10-23T23:53:52.063Z",
+          "contentHash": "063b9243f70743a88ed4bc3b7813d04767b964d96421b449b0a7c254842496d4",
+          "discoveryUrl": "https://docs.github.com/en/copilot/reference",
+          "basis": "Matching feature terms in official documentation index",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "69dcbfeeaf7e99123c5b6940d098d37f6bac4db176c951a35b28d9bd380b380c": {
+      "version": 6,
+      "checkedAt": "2026-10-23T23:53:52.109Z",
+      "inputUrl": "https://github.blog/changelog/2026-10-23-turn-notifications-into-code-with-github-copilot-in-teams",
+      "inputTitle": "Turn notifications into code with GitHub Copilot in Teams",
+      "status": "unconfirmed",
+      "source": {
+        "url": "https://github.blog/changelog/2026-10-23-turn-notifications-into-code-with-github-copilot-in-teams/",
+        "status": "verified",
+        "reason": "Fetched original article",
+        "checkedAt": "2026-10-23T23:53:52.189Z",
+        "contentHash": "6e2dd4d5a5b6006e95964622bac0bb07a16bf404edabd15417e07fe8bcaacdf4"
+      },
+      "documents": [],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "fb65bb534a5076f6d6e4c9eefc954a21a5382c9b5f03a69346a72a495888e42c": {
+      "version": 6,
+      "checkedAt": "2026-10-23T23:53:52.219Z",
+      "inputUrl": "https://github.blog/changelog/2026-10-23-turn-notifications-into-code-with-github-copilot-in-teams",
+      "inputTitle": "Turn notifications into code with GitHub Copilot in Teams",
+      "status": "verified",
+      "source": {
+        "url": "https://github.blog/changelog/2026-10-23-turn-notifications-into-code-with-github-copilot-in-teams/",
+        "status": "verified",
+        "reason": "Fetched original article",
+        "checkedAt": "2026-10-23T23:53:52.189Z",
+        "contentHash": "6e2dd4d5a5b6006e95964622bac0bb07a16bf404edabd15417e07fe8bcaacdf4"
+      },
+      "documents": [
+        {
+          "url": "https://code.visualstudio.com/docs/agents/agents-tutorial",
+          "title": "Tutorial: Agentic coding in VS Code",
+          "language": "en",
+          "checkedAt": "2026-10-18T01:08:03.464Z",
+          "contentHash": "e4aefc29364b8c8beb76bb4181bf2c45ba8a1624cac28dbd782020f2a26aad1f",
+          "discoveryUrl": "https://code.visualstudio.com/docs",
+          "basis": "Matching feature terms in official documentation index",
+          "localization": "not_applicable",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
     }
   }
 }
