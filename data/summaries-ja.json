@@ -3687,5 +3687,16 @@
       "明示的に有効・無効にした設定は維持される",
       "プレビュー機能はオプトインのまま。確認はAI Controls → Copilot"
     ]
+  },
+  "a45f5dfbc3465c86": {
+    "title": "Visual Studio 2026のCopilotが9月更新、BYOMはAgent(Preview)必須に",
+    "summary": "Visual Studio 2026のGitHub Copilot 9月更新です。Gitエージェントでプルリクエストを要約でき、BYOMはプレビューで利用可能になりました。NuGet Auditの警告にはCopilotによる脆弱パッケージ修正アクションが追加されました。",
+    "why": "BYOMを使っている開発者は、新Agent(Preview)への移行とOllamaモデルの再登録が必要です。",
+    "points": [
+      "Gitエージェントは、Gitリポジトリウィンドウで添付したPRを要約しコメントやファイルへのリンクを示す",
+      "PR探索にはGitHubまたはAzure DevOpsのMCPサーバー接続が必要",
+      "BYOMは新Agent(Preview)のみ対応で、従来のAsk/Agentモードは非対応",
+      "NuGet Audit警告の修正にはCopilotサインインとNuGet MCPサーバー有効化が必要"
+    ]
   }
 }
