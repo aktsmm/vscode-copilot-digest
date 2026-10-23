@@ -1,0 +1,92 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "dea8ba729eb28582",
+  "title": {
+    "ja": "使用状況メトリクス API に、カスタム スキル・エージェント・MCP サーバーの名前を表示",
+    "subtitleJa": "other / custom にまとめられていた名前が表示され、各配列は最大 25 件に拡大",
+    "original": "Custom skills, agents, and MCP servers in usage metrics API"
+  },
+  "date": "2026-10-22",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "Copilot 使用状況メトリクスを見る組織・Enterprise の管理者",
+    "change": "自社で作成したスキル、カスタム エージェント、MCP サーバーなどが、設定された名前で集計に出る",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "no",
+    "summary": "対応は不要。名前を含むレポートを社外に共有する前に、名前の内容を確認する"
+  },
+  "panels": [
+    {
+      "id": "what-changed",
+      "heading": "変わること",
+      "priority": "core",
+      "items": [
+        "スキル、カスタム エージェント、MCP サーバー、スラッシュ コマンド、プラグインの名前が表示される",
+        "対象は totals_by_skill / custom_agent / mcp / slash_cmd / plugin の各配列",
+        "各 totals_by_* は 1 レコードあたり最大 25 件（従来は 5 件）。残りは末尾の other に集約"
+      ]
+    },
+    {
+      "id": "scope",
+      "heading": "使える場所と権限",
+      "priority": "core",
+      "items": [
+        "Enterprise と組織のレポート（ユーザー別の 1 日・28 日、集計の 1 日、28 日集計の day_totals）",
+        "Copilot CLI、GitHub Copilot アプリ、JetBrains などの ACP 連携、Copilot SDK から名前が報告される",
+        "閲覧できるのは Enterprise オーナー、課金マネージャー、組織オーナー、「View Copilot Metrics」権限を持つロール。Copilot 使用状況メトリクス ポリシーの有効化が必要"
+      ]
+    },
+    {
+      "id": "limits",
+      "heading": "前提と制限",
+      "priority": "detail",
+      "items": [
+        "プロンプト モード、アプリ、ACP は Copilot CLI 1.0.97 以降、SDK は v1.0.21 以降が必要",
+        "IDE のチャット テレメトリからは名前が報告されない。名前は 128 文字まで、ファイル パス風の名前は other / custom のまま",
+        "名前は、この リリース後に処理された日から表示。それ以前の日は other / custom のまま",
+        "クライアント テレメトリ由来のため過小計上がありうる。傾向把握向け"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "MCP", "type": "term", "oneLine": "Model Context Protocol。Copilot が外部ツールと連携するための仕組み。" },
+    { "term": "ACP", "type": "term", "oneLine": "Agent Client Protocol。JetBrains などの連携に使われるプロトコル。" }
+  ],
+  "suggestions": [
+    "新しい社内スキルや MCP サーバーを展開した後の、利用の広がりを追う"
+  ],
+  "qa": [
+    {
+      "q": "interaction_count などの数え方は変わりますか。",
+      "a": "変わりません。interaction_count と distinct_*_use_count は従来と同じ方法で計算され、変わるのは名前の表示と、配列の最大件数（5 件から 25 件）です。"
+    },
+    {
+      "q": "過去のレポートにも名前は反映されますか。",
+      "a": "反映されません。名前はこのリリース後に処理されたレポート日から表示され、それ以前の日は引き続き other または custom と表示されます。"
+    },
+    {
+      "q": "IDE の利用でも名前は出ますか。",
+      "a": "IDE のエージェント機能が Copilot SDK v1.0.21 以降で動く場合は名前が報告されます。IDE 組み込みのチャット テレメトリからは報告されません。"
+    },
+    {
+      "q": "誰がレポートを見られますか。",
+      "a": "Enterprise オーナーと課金マネージャー、組織オーナー、「View Copilot Metrics」権限を持つカスタム ロールの利用者です。Copilot 使用状況メトリクス ポリシーが有効である必要があります。"
+    },
+    {
+      "q": "名前を社外に共有しても問題ないですか。",
+      "a": "名前は設定されたとおりに（前後の空白を除き 128 文字まで）報告されるため、組織外に共有する前に名前の内容を確認するよう案内されています。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Custom skills, agents, and MCP servers in usage metrics API - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-10-22-custom-skills-agents-and-mcp-servers-in-usage-metrics-api/"
+    }
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-10-22-custom-skills-agents-and-mcp-servers-in-usage-metrics-api/"
+  ]
+}
