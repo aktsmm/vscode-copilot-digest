@@ -1,0 +1,107 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "6380dfaacdbd2605",
+  "title": {
+    "ja": "Copilot code reviewのLite/Balanced作業レベル、一般提供開始",
+    "subtitleJa": "PRの複雑さに合わせてレビューの深さを選択。Low/MediumはLite/Balancedへ名称変更",
+    "original": "Copilot code review effort levels are generally available"
+  },
+  "date": "2026-08-07",
+  "topic": "GitHub Copilot",
+  "status": "ga",
+  "statusEvidence": "Lite and Balanced effort levels for GitHub Copilot code review are now generally available.",
+  "audience": {
+    "who": "Copilot code reviewを使う開発者、リポジトリ管理者、組織の管理者",
+    "change": "レビューごとにLiteまたはBalancedを選べ、組織全体の既定値も設定できる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "必要に応じて組織設定で既定の作業レベルを設定し、レビュー依頼時にPRに合わせて選ぶ"
+  },
+  "beforeAfter": {
+    "before": "プレビュー中の作業レベル名はLowとMedium",
+    "after": "名称はLiteとBalancedに変更。設定済みの作業レベルは新しい名前に自動で引き継がれる"
+  },
+  "panels": [
+    {
+      "id": "availability",
+      "heading": "使える場所とプラン",
+      "priority": "core",
+      "items": [
+        "Copilot Pro、Pro+、Max、Business、Enterpriseの各プランで利用可能",
+        "Lite: 日常的な変更向け。バグ、脆弱性、スタイルの不整合に素早く的を絞って指摘",
+        "Balanced: 複雑なロジックやセキュリティ上重要な変更を、より高い推論モデルで分析（組み込みの既定）"
+      ]
+    },
+    {
+      "id": "usage",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "レビュー依頼時に選んだ作業レベルはそのレビューだけに適用され、既定値は変わらない",
+        "組織管理者は組織設定→Copilot→Copilot code reviewで組織の既定値を設定",
+        "個別に設定していないリポジトリは組織の既定値を継承。リポジトリ管理者は上書き可能",
+        "タイムラインイベントとPR概要コメントに、実行された作業レベルが表示される"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "BalancedはLiteよりAI creditsを多く消費し、GitHub Actions分もわずかに増える場合がある"
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Lite",
+      "type": "feature",
+      "oneLine": "標準のレビュー。一般的な問題に素早く的を絞ったフィードバックを返す作業レベル"
+    },
+    {
+      "term": "Balanced",
+      "type": "feature",
+      "oneLine": "より高い推論モデルで、複雑な変更やセキュリティ上重要なコードを深く分析する作業レベル"
+    }
+  ],
+  "qa": [
+    {
+      "q": "どのプランで使えますか？",
+      "a": "Copilot Pro、Pro+、Max、Business、Enterpriseの各プランでLiteとBalancedを利用できます。"
+    },
+    {
+      "q": "LowとMediumで設定済みの場合はどうなりますか？",
+      "a": "プレビュー中のLowとMediumは、LiteとBalancedに名称が変わりました。設定済みの作業レベルは自動的に新しい名前で引き継がれます。"
+    },
+    {
+      "q": "組織の既定値はどこで設定しますか？",
+      "a": "組織管理者が、組織設定のCopilot、Copilot code reviewから設定します。独自設定のないリポジトリは組織の既定値を継承します。"
+    },
+    {
+      "q": "レビュー依頼時に選ぶと既定値は変わりますか？",
+      "a": "変わりません。レビュー依頼時の選択はそのレビューだけに適用され、リポジトリや組織の既定値は変更されません。"
+    },
+    {
+      "q": "LiteとBalancedはどう使い分けますか？",
+      "a": "ドキュメント更新や小さな修正などはLite、複雑なロジックやセキュリティ上重要なコード、サービス間の変更はBalancedが向いています。BalancedはAI creditsを多く消費します。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Copilot code review effort levels are generally available - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-08-07-copilot-code-review-effort-levels-are-generally-available/"
+    },
+    "documents": [
+      {
+        "title": "GitHub Copilotによるコードレビューについて - GitHub Docs",
+        "url": "https://docs.github.com/ja/copilot/concepts/agents/code-review"
+      }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-08-07-copilot-code-review-effort-levels-are-generally-available/",
+    "https://docs.github.com/ja/copilot/concepts/agents/code-review"
+  ]
+}
