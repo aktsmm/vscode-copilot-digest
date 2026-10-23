@@ -24582,6 +24582,60 @@
         "Original article explicit links",
         "Feature-matched official documentation indexes"
       ]
+    },
+    "8beb97793c62db099cc9975697c2bdd730ac8d9679336e7efb552082141f991e": {
+      "version": 6,
+      "checkedAt": "2026-10-23T10:15:52.541Z",
+      "inputUrl": "https://github.com/features/copilot/whats-new",
+      "inputTitle": "GitHub Copilot What's New changed",
+      "status": "unconfirmed",
+      "source": {
+        "url": "https://github.blog/changelog/2026-10-22-github-copilot-in-visual-studio-september-update-2/",
+        "status": "verified",
+        "reason": "Snapshot observation, not a standalone feature: Oct.22 Release; explicit article: GitHub Copilot in Visual Studio — September update",
+        "checkedAt": "2026-10-23T10:15:53.276Z",
+        "contentHash": "f0c55fb57b11df91fecca2bc8e3df8e2738fdbc63337a267796fa76d6e2f64c2"
+      },
+      "documents": [],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "5bfd7987b6d3e15e01d1f49680ecb0cf2126ccb26f0761e53d9f19153802038f": {
+      "version": 6,
+      "checkedAt": "2026-10-23T10:15:53.311Z",
+      "inputUrl": "https://github.blog/changelog/2026-10-22-github-copilot-in-visual-studio-september-update-2",
+      "inputTitle": "GitHub Copilot in Visual Studio — September update",
+      "status": "verified",
+      "source": {
+        "url": "https://github.blog/changelog/2026-10-22-github-copilot-in-visual-studio-september-update-2/",
+        "status": "verified",
+        "reason": "Fetched original article",
+        "checkedAt": "2026-10-23T10:15:53.276Z",
+        "contentHash": "f0c55fb57b11df91fecca2bc8e3df8e2738fdbc63337a267796fa76d6e2f64c2"
+      },
+      "documents": [
+        {
+          "url": "https://code.visualstudio.com/docs/agents/agents-tutorial",
+          "title": "Tutorial: Agentic coding in VS Code",
+          "language": "en",
+          "checkedAt": "2026-10-18T01:08:03.464Z",
+          "contentHash": "e4aefc29364b8c8beb76bb4181bf2c45ba8a1624cac28dbd782020f2a26aad1f",
+          "discoveryUrl": "https://code.visualstudio.com/docs",
+          "basis": "Matching feature terms in official documentation index",
+          "localization": "not_applicable",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
     }
   }
 }

@@ -1,20 +1,91 @@
 {
   "date": "2026-10-23",
-  "generatedAt": "2026-10-23T00:02:37.881Z",
+  "generatedAt": "2026-10-23T10:15:52.116Z",
   "latestRun": {
-    "generatedAt": "2026-10-23T00:02:37.881Z",
-    "newEventsCount": 5,
+    "generatedAt": "2026-10-23T10:15:52.116Z",
+    "newEventsCount": 4,
     "newEventIds": [
-      "github-changelog:https://github.blog/changelog/2026-10-22-custom-skills-agents-and-mcp-servers-in-usage-metrics-api",
-      "github-changelog:https://github.blog/changelog/2026-10-22-global-default-for-copilot-features-generally-available",
-      "github-changelog-copilot:https://github.blog/changelog/2026-10-22-global-default-for-copilot-features-generally-available",
-      "vscode-updates:3a80664d3912dd0b335b1d9ff23b04447e9014c5d592685fb3ea2d291b9cd2bf",
-      "copilot-whats-new:ba10a59760fc86f736694c337441b163d04518238915125f3201045ba49e4cf3"
+      "github-changelog:https://github.blog/changelog/2026-10-22-github-copilot-in-visual-studio-september-update-2",
+      "github-changelog-copilot:https://github.blog/changelog/2026-10-22-github-copilot-in-visual-studio-september-update-2",
+      "github-changelog-copilot:https://github.blog/changelog/2026-10-22-custom-skills-agents-and-mcp-servers-in-usage-metrics-api",
+      "copilot-whats-new:95afde4631607ff9151073e71ee330ad74f4fe416ca585d24c017ac17de0a3b1"
     ],
     "errorCount": 0,
     "skippedLowInformationEvents": []
   },
   "events": [
+    {
+      "eventId": "copilot-whats-new:95afde4631607ff9151073e71ee330ad74f4fe416ca585d24c017ac17de0a3b1",
+      "sourceId": "copilot-whats-new",
+      "sourceName": "GitHub Copilot What's New",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-10-23T10:15:46.942Z",
+      "publishedAt": "2026-10-23T10:15:46.941Z",
+      "title": "GitHub Copilot What's New changed",
+      "url": "https://github.com/features/copilot/whats-new",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [
+          "Oct.22 Release"
+        ],
+        "additions": [
+          "H3: Oct.22 Release"
+        ]
+      },
+      "headings": [
+        "Changelog",
+        "Filters (0 selected)",
+        "October\n Oct\n 2026",
+        "Oct.22 Release",
+        "Oct.22 Improvement",
+        "Oct.22 Improvement",
+        "Oct.22 Improvement",
+        "Oct.19 Improvement",
+        "Oct.19 Retired",
+        "Oct.15 Improvement",
+        "Oct.15 Retired",
+        "Oct.15 Release"
+      ],
+      "score": 3
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-10-22-github-copilot-in-visual-studio-september-update-2",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-10-23T10:15:39.082Z",
+      "publishedAt": "2026-10-23T00:17:51.000Z",
+      "title": "GitHub Copilot in Visual Studio — September update",
+      "url": "https://github.blog/changelog/2026-10-22-github-copilot-in-visual-studio-september-update-2",
+      "summary": "September 2026 brought deeper visibility into your work: explore pull requests without leaving chat, bring the AI model your team trusts, and fix vulnerable packages the moment Visual Studio flags…\nThe post GitHub Copilot in Visual Studio — September update appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-10-22-github-copilot-in-visual-studio-september-update-2",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-10-23T10:15:39.091Z",
+      "publishedAt": "2026-10-23T00:17:51.000Z",
+      "title": "GitHub Copilot in Visual Studio — September update",
+      "url": "https://github.blog/changelog/2026-10-22-github-copilot-in-visual-studio-september-update-2",
+      "summary": "September 2026 brought deeper visibility into your work: explore pull requests without leaving chat, bring the AI model your team trusts, and fix vulnerable packages the moment Visual Studio flags…\nThe post GitHub Copilot in Visual Studio — September update appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
     {
       "eventId": "copilot-whats-new:ba10a59760fc86f736694c337441b163d04518238915125f3201045ba49e4cf3",
       "sourceId": "copilot-whats-new",
@@ -98,6 +169,25 @@
       "sourceName": "GitHub Changelog",
       "kind": "feed_entry",
       "detectedAt": "2026-10-23T00:02:31.445Z",
+      "publishedAt": "2026-10-22T22:19:17.000Z",
+      "title": "Custom skills, agents, and MCP servers in usage metrics API",
+      "url": "https://github.blog/changelog/2026-10-22-custom-skills-agents-and-mcp-servers-in-usage-metrics-api",
+      "summary": "Copilot usage metrics now show the names of the skills, custom agents, Model Context Protocol (MCP) servers, slash commands, and plugins that your organization creates, instead of grouping them under…\nThe post Custom skills, agents, and MCP servers in usage metrics API appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "account management",
+        "copilot",
+        "enterprise management tools"
+      ],
+      "isFutureDated": false,
+      "score": 3
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-10-22-custom-skills-agents-and-mcp-servers-in-usage-metrics-api",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-10-23T10:15:39.091Z",
       "publishedAt": "2026-10-22T22:19:17.000Z",
       "title": "Custom skills, agents, and MCP servers in usage metrics API",
       "url": "https://github.blog/changelog/2026-10-22-custom-skills-agents-and-mcp-servers-in-usage-metrics-api",
