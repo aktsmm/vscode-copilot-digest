@@ -1,15 +1,10 @@
 {
   "date": "2026-10-23",
-  "generatedAt": "2026-10-23T10:15:52.116Z",
+  "generatedAt": "2026-10-23T17:55:46.997Z",
   "latestRun": {
-    "generatedAt": "2026-10-23T10:15:52.116Z",
-    "newEventsCount": 4,
-    "newEventIds": [
-      "github-changelog:https://github.blog/changelog/2026-10-22-github-copilot-in-visual-studio-september-update-2",
-      "github-changelog-copilot:https://github.blog/changelog/2026-10-22-github-copilot-in-visual-studio-september-update-2",
-      "github-changelog-copilot:https://github.blog/changelog/2026-10-22-custom-skills-agents-and-mcp-servers-in-usage-metrics-api",
-      "copilot-whats-new:95afde4631607ff9151073e71ee330ad74f4fe416ca585d24c017ac17de0a3b1"
-    ],
+    "generatedAt": "2026-10-23T17:55:46.997Z",
+    "newEventsCount": 0,
+    "newEventIds": [],
     "errorCount": 0,
     "skippedLowInformationEvents": []
   },
