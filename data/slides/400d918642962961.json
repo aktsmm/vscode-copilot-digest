@@ -1,0 +1,91 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "400d918642962961",
+  "title": {
+    "ja": "Teams の GitHub アプリで、通知から Copilot がコード修正まで対応",
+    "subtitleJa": "@github にメンションすると、Issue の調査・修正・プルリクエスト作成まで実行",
+    "original": "Turn notifications into code with GitHub Copilot in Teams"
+  },
+  "date": "2026-10-23",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "Microsoft Teams で GitHub の通知を受け取り、Copilot に作業を任せたいチーム",
+    "change": "チャネル・グループ チャット・個人チャットで @GitHub にメンションし、通知を修正の PR に変えられる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "旧 GitHub アプリを使っている場合は、統合された GitHub アプリをインストールする",
+    "deadline": "2026-11-16"
+  },
+  "timeline": [
+    { "when": "2026-10-23", "label": "統合された GitHub アプリを案内" },
+    { "when": "11 月 16 日", "label": "旧 GitHub アプリを退役" }
+  ],
+  "panels": [
+    {
+      "id": "usage",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "Teams のチャネル、グループ チャット、個人チャットで通知を受け取る",
+        "@github が Issue を調査してバグを修正し、プルリクエストを作成する",
+        "チームがレビュー、テスト、マージして出荷する"
+      ]
+    },
+    {
+      "id": "prerequisites",
+      "heading": "前提と制限",
+      "priority": "core",
+      "items": [
+        "アプリ名は、以前の「GitHub notifications」から GitHub に変わった",
+        "GitHub notifications を導入済みなら、最新版に更新する。既存の通知機能は引き続き使える",
+        "@GitHub にメンションし、案内に従って GitHub アカウントを接続してリポジトリを選ぶ"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "旧 GitHub アプリは「GitHub (deprecated)」に名称変更され、11 月 16 日に退役する",
+        "Teams で Copilot を使い続けるには、統合された GitHub アプリが必要"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "GitHub (deprecated)", "type": "label", "oneLine": "旧 GitHub アプリの新しい名称。11 月 16 日に退役する。" }
+  ],
+  "qa": [
+    {
+      "q": "旧 GitHub アプリを使っていると、いつまで使える？",
+      "a": "旧 GitHub アプリは「GitHub (deprecated)」に名称変更され、11 月 16 日に退役します。Teams で Copilot を使い続けるには、統合された GitHub アプリをインストールしてください。"
+    },
+    {
+      "q": "GitHub notifications を使っている場合はどうする？",
+      "a": "アプリが GitHub に名称変更されています。最新版に更新してください。既存の通知機能は引き続き使えます。"
+    },
+    {
+      "q": "Teams ではどこで使える？",
+      "a": "チャネル、グループ チャット、個人チャットで通知を受け取り、@GitHub にメンションして操作できます。"
+    },
+    {
+      "q": "最初の設定は何が必要？",
+      "a": "統合された GitHub アプリで @GitHub にメンションし、案内に従って GitHub アカウントを接続し、リポジトリを選びます。"
+    },
+    {
+      "q": "Issue の通知からどこまで自動化される？",
+      "a": "@github が Issue を調査してバグを修正し、プルリクエストを作成します。レビュー、テスト、マージはチームが行います。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Turn notifications into code with GitHub Copilot in Teams - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-10-23-turn-notifications-into-code-with-github-copilot-in-teams/"
+    }
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-10-23-turn-notifications-into-code-with-github-copilot-in-teams/"
+  ]
+}
