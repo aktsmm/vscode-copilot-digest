@@ -1,0 +1,152 @@
+{
+  "date": "2026-10-23",
+  "generatedAt": "2026-10-23T00:02:37.881Z",
+  "latestRun": {
+    "generatedAt": "2026-10-23T00:02:37.881Z",
+    "newEventsCount": 5,
+    "newEventIds": [
+      "github-changelog:https://github.blog/changelog/2026-10-22-custom-skills-agents-and-mcp-servers-in-usage-metrics-api",
+      "github-changelog:https://github.blog/changelog/2026-10-22-global-default-for-copilot-features-generally-available",
+      "github-changelog-copilot:https://github.blog/changelog/2026-10-22-global-default-for-copilot-features-generally-available",
+      "vscode-updates:3a80664d3912dd0b335b1d9ff23b04447e9014c5d592685fb3ea2d291b9cd2bf",
+      "copilot-whats-new:ba10a59760fc86f736694c337441b163d04518238915125f3201045ba49e4cf3"
+    ],
+    "errorCount": 0,
+    "skippedLowInformationEvents": []
+  },
+  "events": [
+    {
+      "eventId": "copilot-whats-new:ba10a59760fc86f736694c337441b163d04518238915125f3201045ba49e4cf3",
+      "sourceId": "copilot-whats-new",
+      "sourceName": "GitHub Copilot What's New",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-10-23T00:02:32.577Z",
+      "publishedAt": "2026-10-23T00:02:32.577Z",
+      "title": "GitHub Copilot What's New changed",
+      "url": "https://github.com/features/copilot/whats-new",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [
+          "Oct.22 Improvement"
+        ],
+        "additions": [
+          "H3: Oct.22 Improvement"
+        ]
+      },
+      "headings": [
+        "Changelog",
+        "Filters (0 selected)",
+        "October\n Oct\n 2026",
+        "Oct.22 Improvement",
+        "Oct.22 Improvement",
+        "Oct.22 Improvement",
+        "Oct.19 Improvement",
+        "Oct.19 Retired",
+        "Oct.15 Improvement",
+        "Oct.15 Retired",
+        "Oct.15 Release",
+        "Oct.14 Release"
+      ],
+      "score": 3
+    },
+    {
+      "eventId": "vscode-updates:3a80664d3912dd0b335b1d9ff23b04447e9014c5d592685fb3ea2d291b9cd2bf",
+      "sourceId": "vscode-updates",
+      "sourceName": "VS Code Updates",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-10-23T00:02:31.878Z",
+      "publishedAt": "2026-10-23T00:02:31.877Z",
+      "title": "VS Code Updates changed",
+      "url": "https://code.visualstudio.com/updates/",
+      "summary": "Detected 2 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 2,
+        "headings": [
+          "Downloads for 1.143.1"
+        ],
+        "additions": [
+          "H2: Downloads for 1.143.1",
+          "Update 1.143.1: The update addresses these issues."
+        ]
+      },
+      "headings": [
+        "Visual Studio Code 1.143",
+        "Downloads for 1.143.1",
+        "Release highlights",
+        "Agents",
+        "Copilot harness as the default",
+        "Discard changes from more changesets in the Agents window",
+        "Compare model results (Preview)",
+        "Tab shortcuts in an empty side pane",
+        "Session Activity Bar (Experimental)",
+        "Find and create files from the empty Files tab (Experimental)",
+        "Improved performance when opening large chats",
+        "Reclaim storage from inactive worktrees (Experimental)"
+      ],
+      "score": 3
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-10-22-custom-skills-agents-and-mcp-servers-in-usage-metrics-api",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-10-23T00:02:31.445Z",
+      "publishedAt": "2026-10-22T22:19:17.000Z",
+      "title": "Custom skills, agents, and MCP servers in usage metrics API",
+      "url": "https://github.blog/changelog/2026-10-22-custom-skills-agents-and-mcp-servers-in-usage-metrics-api",
+      "summary": "Copilot usage metrics now show the names of the skills, custom agents, Model Context Protocol (MCP) servers, slash commands, and plugins that your organization creates, instead of grouping them under…\nThe post Custom skills, agents, and MCP servers in usage metrics API appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "account management",
+        "copilot",
+        "enterprise management tools"
+      ],
+      "isFutureDated": false,
+      "score": 3
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-10-22-global-default-for-copilot-features-generally-available",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-10-23T00:02:31.445Z",
+      "publishedAt": "2026-10-22T20:44:28.000Z",
+      "title": "Global default for Copilot features generally available",
+      "url": "https://github.blog/changelog/2026-10-22-global-default-for-copilot-features-generally-available",
+      "summary": "In September, we announced a global default policy for generally available GitHub Copilot features and supported client capabilities on Copilot Business and Copilot Enterprise plans. Starting today, we’re gradually rolling…\nThe post Global default for Copilot features generally available appeared first on The GitHub B...",
+      "categories": [
+        "Improvement",
+        "copilot",
+        "enterprise management tools"
+      ],
+      "isFutureDated": false,
+      "score": 1
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-10-22-global-default-for-copilot-features-generally-available",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-10-23T00:02:31.480Z",
+      "publishedAt": "2026-10-22T20:44:28.000Z",
+      "title": "Global default for Copilot features generally available",
+      "url": "https://github.blog/changelog/2026-10-22-global-default-for-copilot-features-generally-available",
+      "summary": "In September, we announced a global default policy for generally available GitHub Copilot features and supported client capabilities on Copilot Business and Copilot Enterprise plans. Starting today, we’re gradually rolling…\nThe post Global default for Copilot features generally available appeared first on The GitHub B...",
+      "categories": [
+        "Improvement",
+        "copilot",
+        "enterprise management tools"
+      ],
+      "isFutureDated": false,
+      "score": 1
+    }
+  ],
+  "errors": []
+}

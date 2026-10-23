@@ -15,10 +15,10 @@ Insiders
 View All Releases
 H1: Visual Studio Code 1.143
 Follow us on LinkedIn, X, Bluesky, Instagram
-Last updated: October 19, 2026
 Welcome to the 1.143 release of Visual Studio Code.
-H2: Downloads for 1.143.0
+H2: Downloads for 1.143.1
 Already installed? Use Check for Updates in VS Code. For upcoming features, use the Insiders build.
+Update 1.143.1: The update addresses these issues.
 H2: Release highlights
 This release makes the Copilot harness the default for new sessions and adds tools to compare models, reclaim storage, run models locally, and navigate file changes.
 Copilot harness by default: The default for new sessions, built on the Copilot SDK, lets you switch between editor and Agents window.

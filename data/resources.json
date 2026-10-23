@@ -24468,6 +24468,120 @@
         "Original article explicit links",
         "Feature-matched official documentation indexes"
       ]
+    },
+    "9883ac2b14f791406c6d2559b34c7df29b6531bc53856ed8a5744a8584d26c18": {
+      "version": 6,
+      "checkedAt": "2026-10-23T00:02:38.371Z",
+      "inputUrl": "https://code.visualstudio.com/updates/",
+      "inputTitle": "VS Code Updates changed",
+      "status": "unconfirmed",
+      "source": {
+        "url": "https://code.visualstudio.com/updates/v1_143#release-downloads-heading",
+        "status": "verified",
+        "reason": "Explicit release link for 1.143",
+        "checkedAt": "2026-10-23T00:02:41.985Z",
+        "contentHash": "9b3764abe63ad012f378a713780c6be13ec04ee8ae2de0ddc5f2fd613703f045"
+      },
+      "documents": [],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "e059101c1ea75014420ce9e5a982fe78a5e2c9ad2005ca42753dde8d3cedc048": {
+      "version": 6,
+      "checkedAt": "2026-10-23T00:02:42.095Z",
+      "inputUrl": "https://github.blog/changelog/2026-10-22-custom-skills-agents-and-mcp-servers-in-usage-metrics-api",
+      "inputTitle": "Custom skills, agents, and MCP servers in usage metrics API",
+      "status": "verified",
+      "source": {
+        "url": "https://github.blog/changelog/2026-10-22-custom-skills-agents-and-mcp-servers-in-usage-metrics-api/",
+        "status": "verified",
+        "reason": "Fetched original article",
+        "checkedAt": "2026-10-23T00:02:42.400Z",
+        "contentHash": "1adf21080bcc3963b1f8693a1a10f7efce1af914d9d583e898edc5562a076fa3"
+      },
+      "documents": [
+        {
+          "url": "https://docs.github.com/ja/copilot/how-tos/administer-copilot/manage-mcp-usage",
+          "title": "社内での MCP 使用状況の管理",
+          "language": "ja",
+          "checkedAt": "2026-10-23T00:02:44.063Z",
+          "contentHash": "8e3cd25806cd49937e91b85f55be8c97709d4e7dbcffe7ea707f7d15e9115367",
+          "discoveryUrl": "https://docs.github.com/en/copilot/how-tos",
+          "basis": "Matching feature terms in official documentation index",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://docs.github.com/ja/copilot/how-tos/administer-copilot/view-usage-and-adoption",
+          "title": "Copilot 使用状況メトリック ダッシュボードの表示",
+          "language": "ja",
+          "checkedAt": "2026-10-23T00:02:44.576Z",
+          "contentHash": "8854573af15a9a757a2f5039732c89b331aa7179afd2d2200fdb44b66f380297",
+          "discoveryUrl": "https://docs.github.com/en/copilot/how-tos",
+          "basis": "Matching feature terms in official documentation index",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://docs.github.com/ja/copilot/concepts/customizations/mcp",
+          "title": "モデル コンテキスト プロトコル (MCP)",
+          "language": "ja",
+          "checkedAt": "2026-10-23T00:02:45.261Z",
+          "contentHash": "373281268621eaa010c7185a5badce9dfeeb4d1fd154f85653019d95cc652ea1",
+          "discoveryUrl": "https://docs.github.com/en/copilot/concepts",
+          "basis": "Matching feature terms in official documentation index",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "cccdfffe30c9260a08c2c5d65c1f3b719f0c986547807553f3d8dfda92d6358c": {
+      "version": 6,
+      "checkedAt": "2026-10-23T00:02:45.323Z",
+      "inputUrl": "https://github.blog/changelog/2026-10-22-global-default-for-copilot-features-generally-available",
+      "inputTitle": "Global default for Copilot features generally available",
+      "status": "verified",
+      "source": {
+        "url": "https://github.blog/changelog/2026-10-22-global-default-for-copilot-features-generally-available/",
+        "status": "verified",
+        "reason": "Fetched original article",
+        "checkedAt": "2026-10-23T00:02:45.860Z",
+        "contentHash": "305f0b9d244fb770076132c46b5e1c5b8fb1353aa6f42e69c0bb82622578c841"
+      },
+      "documents": [
+        {
+          "url": "https://docs.github.com/ja/copilot/concepts/enterprise/default-availability",
+          "title": "Copilotの機能とモデルの既定の可用性について",
+          "language": "ja",
+          "checkedAt": "2026-10-23T00:02:46.557Z",
+          "contentHash": "d280e50d4f8f91568c9e3e0fa4bc8b2525daf51b6337f1bd76a1c9b642db92cf",
+          "discoveryUrl": "https://github.blog/changelog/2026-10-22-global-default-for-copilot-features-generally-available/",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
     }
   }
 }
