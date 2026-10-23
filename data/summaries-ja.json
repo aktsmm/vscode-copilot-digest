@@ -3665,5 +3665,27 @@
       "比較は毎日更新、集計データは30日で削除",
       "Copilot usage metrics APIやNDJSONには含まれない"
     ]
+  },
+  "dea8ba729eb28582": {
+    "title": "使用状況メトリクスAPIにスキル等の名前が表示に",
+    "summary": "Copilot usage metricsで、組織が作成したスキル、カスタムエージェント、MCPサーバー、スラッシュコマンド、プラグインが「other」「custom」にまとめられず設定名で報告されるようになった。各totals_by_*配列は5件から最大25件に拡大された。",
+    "why": "管理者は自社製スキルやMCPサーバーの利用状況を把握し、展開後の定着確認に使える。",
+    "points": [
+      "対象はtotals_by_skill、_custom_agent、_mcp、_slash_cmd、_plugin",
+      "名前の取得にはCopilot CLI 1.0.97以降、Copilot SDK v1.0.21以降が必要",
+      "名前は128文字まで。ファイルパス風の名前はother/customのまま",
+      "リリース後に処理された日から反映。過去日は従来表示"
+    ]
+  },
+  "767a7f383549ba64": {
+    "title": "Copilot機能のグローバル既定ポリシーを10月26日まで順次適用",
+    "summary": "Copilot BusinessとEnterpriseで、一般提供機能とMCPサーバー設定のうち未設定のものに、選択済みのグローバル既定（有効・無効・組織に委任）が適用される。適用は10月22日から26日にかけて順次行われ、組織ごとに時期が異なる。",
+    "why": "管理者は未設定の機能が既定値で変わる前に、AI Controlsで必要な設定を明示しておくべき。",
+    "points": [
+      "対象は「Features & clients」と「MCP servers in Copilot」の未設定項目",
+      "一度きりの変更で、後からの既定変更は設定済み項目に影響しない",
+      "明示的に有効・無効にした設定は維持される",
+      "プレビュー機能はオプトインのまま。確認はAI Controls → Copilot"
+    ]
   }
 }
