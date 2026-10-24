@@ -1,12 +1,10 @@
 {
   "date": "2026-10-24",
-  "generatedAt": "2026-10-24T09:38:28.198Z",
+  "generatedAt": "2026-10-24T16:49:11.608Z",
   "latestRun": {
-    "generatedAt": "2026-10-24T09:38:28.198Z",
-    "newEventsCount": 1,
-    "newEventIds": [
-      "github-changelog:https://github.blog/changelog/2026-10-23-usage-metrics-api-adds-usage-from-tools-like-opencode"
-    ],
+    "generatedAt": "2026-10-24T16:49:11.608Z",
+    "newEventsCount": 0,
+    "newEventIds": [],
     "errorCount": 0,
     "skippedLowInformationEvents": []
   },
