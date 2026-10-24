@@ -1,0 +1,92 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "dc1ed52c8837fe68",
+  "title": {
+    "ja": "使用状況メトリクス API に、OpenCode など外部ツールの利用を追加",
+    "subtitleJa": "新しい totals_by_client 配列で、ツール別のリクエスト数とトークン量を把握できる",
+    "original": "Usage metrics API adds usage from tools like OpenCode"
+  },
+  "date": "2026-10-23",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "Copilot 使用状況メトリクス API で利用状況を見る、Enterprise・組織の管理者",
+    "change": "エディターのテレメトリを送らないツールの利用も、サーバー側で数えてクライアント別に取得できる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "info",
+    "summary": "ツール別の利用を把握したいときは、レポートの totals_by_client を参照する"
+  },
+  "panels": [
+    {
+      "id": "what-is-reported",
+      "heading": "totals_by_client の内容",
+      "priority": "core",
+      "items": [
+        "client: 送信元のツール（opencode、claude_code、codex、zed、copilot_cli、vscode、jetbrains など）。不明なものは other",
+        "request_count（成功したモデル リクエスト数）と session_count（セッション数）、token_usage（プロンプト・出力・平均トークン）",
+        "totals_by_model でモデル別に分け、model_selection_mode は user_selected / auto / product_selected"
+      ]
+    },
+    {
+      "id": "scope-access",
+      "heading": "対象レポートと権限",
+      "priority": "core",
+      "items": [
+        "Enterprise・組織・Enterprise ユーザー・組織ユーザーの、1 日版と 28 日版のレポート",
+        "28 日版の集計レポートでは、各 day_totals に totals_by_client が入る",
+        "Enterprise のオーナーと課金マネージャー、組織オーナー、View Copilot Metrics 権限を持つカスタム ロールが対象",
+        "Copilot usage metrics ポリシーが有効であることが前提"
+      ]
+    },
+    {
+      "id": "cautions",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "request_count はモデル呼び出しの数で、プロンプト数ではない。プロンプトや操作の数とは直接比較しない",
+        "client は統合 ID に基づくベストエフォートの分類で、本人確認済みの識別ではない",
+        "Copilot コード レビューとクラウド エージェントは product_selected。コード レビューのモデルは unknown"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "totals_by_client", "type": "feature", "oneLine": "クライアント（ツール）ごとのリクエスト数・セッション数・トークン使用量の配列。" },
+    { "term": "model_selection_mode", "type": "term", "oneLine": "モデルが直接指定（user_selected）、auto、製品側の選択（product_selected）のどれかを示す値。" }
+  ],
+  "suggestions": [
+    "totals_by_ide に含まれなかったツールの利用量を、totals_by_client と比べてツールのサポートや運用方針の検討に使う"
+  ],
+  "qa": [
+    {
+      "q": "なぜ今回の追加が必要だったのですか？",
+      "a": "Copilot をモデル プロバイダーとして使う外部ツールは、エディターのテレメトリを送らないことが多く、totals_by_ide に含まれていませんでした。サーバー側で数えることでこの差を埋めます。"
+    },
+    {
+      "q": "誰がこの情報を見られますか？",
+      "a": "Enterprise のオーナーと課金マネージャー、組織オーナー、View Copilot Metrics 権限を含むカスタム ロールの利用者です。Copilot usage metrics ポリシーの有効化も必要です。"
+    },
+    {
+      "q": "既存のレポートを使っている場合、影響はありますか？",
+      "a": "追加のみの変更で、既存フィールドは変わりません。報告する利用がない場合、totals_by_client は空の配列になります。"
+    },
+    {
+      "q": "request_count はプロンプト数と同じですか？",
+      "a": "同じではありません。モデル呼び出しの数で、1 つのプロンプトが複数の呼び出しを生むことがあります。プロンプトや操作の数と直接比較しないでください。"
+    },
+    {
+      "q": "エージェント アプリのアクティビティとは何が違いますか？",
+      "a": "エージェント アプリのアクティビティは、Claude や Codex などが GitHub 上で開始したジョブを数えます。totals_by_client は、Copilot を使うあらゆるツールのモデル トラフィック（リクエストとトークン）を測ります。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Usage metrics API adds usage from tools like OpenCode - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-10-23-usage-metrics-api-adds-usage-from-tools-like-opencode/"
+    }
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-10-23-usage-metrics-api-adds-usage-from-tools-like-opencode/"
+  ]
+}
