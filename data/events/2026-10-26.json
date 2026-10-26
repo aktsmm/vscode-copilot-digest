@@ -1,0 +1,41 @@
+{
+  "date": "2026-10-26",
+  "generatedAt": "2026-10-26T11:18:45.087Z",
+  "latestRun": {
+    "generatedAt": "2026-10-26T11:18:45.087Z",
+    "newEventsCount": 1,
+    "newEventIds": [
+      "docs-github-copilot-howtos:f13d0822252e690555d19c96d02f96d87700dee207f0b0ed31e85f979b92e993"
+    ],
+    "errorCount": 0,
+    "skippedLowInformationEvents": []
+  },
+  "events": [
+    {
+      "eventId": "docs-github-copilot-howtos:f13d0822252e690555d19c96d02f96d87700dee207f0b0ed31e85f979b92e993",
+      "sourceId": "docs-github-copilot-howtos",
+      "sourceName": "GitHub Docs / Copilot how-tos",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-10-26T11:18:40.621Z",
+      "publishedAt": "2026-10-26T11:18:40.620Z",
+      "title": "GitHub Docs / Copilot how-tos changed",
+      "url": "https://docs.github.com/en/copilot/how-tos",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [],
+        "additions": [
+          "Rolling out Copilot CLI hooks for your teams"
+        ]
+      },
+      "headings": [
+        "How-tos for GitHub Copilot"
+      ],
+      "score": 2
+    }
+  ],
+  "errors": []
+}

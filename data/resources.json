@@ -24770,6 +24770,26 @@
         "Original article explicit links",
         "Feature-matched official documentation indexes"
       ]
+    },
+    "38f80c0e0b5a2b20fa8fd87300c84e43fda3c739d8967ec1f4a17a192dc8d77e": {
+      "version": 6,
+      "checkedAt": "2026-10-26T11:18:45.493Z",
+      "inputUrl": "https://docs.github.com/en/copilot/how-tos",
+      "inputTitle": "GitHub Docs / Copilot how-tos changed",
+      "status": "unconfirmed",
+      "source": {
+        "url": "https://docs.github.com/en/copilot/how-tos",
+        "status": "unconfirmed",
+        "reason": "Historical changed feature not identifiable in current page",
+        "checkedAt": "2026-10-26T11:18:45.588Z",
+        "contentHash": "dc95dcc8048b36d3007c72796c0236a0c406c8aac943f9ae48a83cb9473bb382"
+      },
+      "documents": [],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
     }
   }
 }

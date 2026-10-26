@@ -46,7 +46,7 @@ GitHub Copilot CLI programmatic reference
 About GitHub Copilot session data
 GitHub Copilot hooks reference
 Application card: GitHub Copilot Agents
-Using hooks with Copilot CLI for predictable, policy-compliant execution
+Rolling out Copilot CLI hooks for your teams
 Adding custom instructions for GitHub Copilot CLI
 Adding MCP servers for GitHub Copilot CLI
 Adding agent skills for GitHub Copilot CLI
