@@ -1,0 +1,98 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "256c7b6c72dd5aaa",
+  "title": {
+    "ja": "GPT-6.1 Terra、GitHub Copilotで一般提供開始",
+    "subtitleJa": "日常的なエージェント型コーディングとターミナル作業向けのOpenAIモデルが選択可能に",
+    "original": "GPT-6.1 Terra in GitHub Copilot"
+  },
+  "date": "2026-10-26",
+  "topic": "GitHub Copilot",
+  "status": "ga",
+  "statusEvidence": "GPT-6.1 Terra, OpenAI’s newest model, is now generally available in GitHub Copilot.",
+  "audience": {
+    "who": "Copilot Pro、Pro+、Max、Business、Enterpriseの利用者と、Business / Enterpriseの管理者",
+    "change": "GPT-6.1 Solより低コストなGPT-6.1 Terraをモデルピッカーで選べる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "必要に応じてモデルピッカーで選択。管理者はCopilot設定のモデルポリシーでアクセスを管理する"
+  },
+  "panels": [
+    {
+      "id": "availability",
+      "heading": "使える場所とプラン",
+      "priority": "core",
+      "items": [
+        "対象はCopilot Pro、Pro+、Max、Business、Enterprise",
+        "VS Code、Visual Studio、JetBrains、Xcode、Eclipse、CLI、cloud agent、github.com、Mobileなどで選択",
+        "ロールアウトは段階的。表示されない場合は後日確認"
+      ]
+    },
+    {
+      "id": "features",
+      "heading": "特徴と課金",
+      "priority": "core",
+      "items": [
+        "日常的なエージェント型コーディングとターミナル作業向けで、GPT-6.1 Solより低コスト",
+        "初期テストでは、ターミナルとC#のタスクをGPT-5.6 Terraより多く解決",
+        "範囲の明確なタスクでは、集約された焦点の絞られた手順で作業",
+        "利用量ベースの課金でプロバイダーの定価で請求"
+      ]
+    },
+    {
+      "id": "admin",
+      "heading": "管理者向け",
+      "priority": "detail",
+      "items": [
+        "BusinessとEnterpriseの管理者は、Copilot設定のモデルポリシーでアクセスを管理",
+        "既定のモデル有効化では、管理者がグローバル既定を無効にするか本モデルを明示的に無効化しない限り自動で有効"
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "モデルポリシー",
+      "type": "feature",
+      "oneLine": "Copilot設定で、BusinessとEnterpriseの管理者がモデルへのアクセスを管理する仕組み"
+    }
+  ],
+  "qa": [
+    {
+      "q": "どのプランで使えますか？",
+      "a": "Copilot Pro、Pro+、Max、Business、Enterpriseの利用者が対象です。ロールアウトは段階的で、表示されない場合は後日の確認が案内されています。"
+    },
+    {
+      "q": "どこで選択できますか？",
+      "a": "VS Code、Visual Studio、Copilot CLI、cloud agent、Copilot app、github.com、GitHub Mobile（iOS・Android）、JetBrains、Xcode、Eclipseのモデルピッカーで選べます。"
+    },
+    {
+      "q": "料金はどうなりますか？",
+      "a": "利用量ベースの課金で、プロバイダーの定価で請求されます。詳細は「Models and pricing for GitHub Copilot」に案内されています。"
+    },
+    {
+      "q": "組織で使わせたくない場合は？",
+      "a": "BusinessとEnterpriseの管理者がCopilot設定のモデルポリシーでアクセスを管理できます。既定のモデル有効化では、無効化しない限り新モデルは自動で有効になります。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "GPT-6.1 Terra in GitHub Copilot - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-10-26-gpt-6-1-terra-in-github-copilot/"
+    },
+    "documents": [
+      {
+        "title": "GitHub Copilot のモデルと価格設定",
+        "url": "https://docs.github.com/ja/copilot/reference/copilot-billing/models-and-pricing"
+      },
+      {
+        "title": "GitHub Copilotでサポートされている AI モデル",
+        "url": "https://docs.github.com/ja/copilot/reference/ai-models/supported-models"
+      }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-10-26-gpt-6-1-terra-in-github-copilot/"
+  ]
+}
