@@ -1,0 +1,90 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "f2d8a7a1dfa74ad3",
+  "title": {
+    "ja": "インライン提案の積極度を low / medium / high から選べる Configurable Eagerness",
+    "subtitleJa": "Copilot が提案を出す頻度と編集の大きさを、VS Code の設定メニューで 3 段階に調整できる",
+    "original": "Tune GitHub Copilot Inline Suggestions with Configurable Eagerness"
+  },
+  "date": "2026-10-26",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "VS Code で Copilot のインライン提案（Next Edit Suggestions など）を使う有料プランの開発者",
+    "change": "提案の頻度と編集サイズを、好みに合わせて low / medium / high で選べる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "VS Code を最新にして、Copilot の設定メニューから Eagerness を選ぶ"
+  },
+  "panels": [
+    {
+      "id": "availability",
+      "heading": "使える場所とプラン",
+      "priority": "core",
+      "items": [
+        "有料の GitHub Copilot 契約者が VS Code で利用できる",
+        "最新の VS Code に更新し、Next Edit Suggestions を有効にしておく（既定で有効）"
+      ]
+    },
+    {
+      "id": "how-to-use",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "Copilot の設定メニューを開き、Eagerness の設定を選ぶ",
+        "Low: 提案を減らし、小さく保守的な編集を優先する",
+        "Medium: 現在の既定と同じ水準の支援",
+        "High: 提案をより積極的に出し、適切なら大きな編集も含める"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "設定は挙動の目安で、提案の頻度やサイズを厳密に制限するものではない",
+        "A/B 実験では、Low は却下率が 29% 低く提案が 28% 短く、High は提案表示が 40% 多かった"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "Eagerness", "type": "feature", "oneLine": "提案を出す頻度と、1 回の編集の大きさで定義される積極度。" },
+    { "term": "Next Edit Suggestions", "type": "feature", "oneLine": "次に行うべき編集を提案する、インライン提案の機能。" }
+  ],
+  "suggestions": [
+    "慎重に書きたいロジックでは Low、定型的な実装では High を試す"
+  ],
+  "qa": [
+    {
+      "q": "どのプランで使えますか。",
+      "a": "記事では、有料の GitHub Copilot 契約者が VS Code で利用できるとしています。"
+    },
+    {
+      "q": "どうやって切り替えますか。",
+      "a": "最新の VS Code に更新し、Next Edit Suggestions が有効（既定で有効）であることを確認したうえで、Copilot の設定メニューから Eagerness を選びます。"
+    },
+    {
+      "q": "各設定の違いは何ですか。",
+      "a": "Low は提案を減らし小さく保守的な編集を優先し、Medium は現在の既定と同じ水準、High は提案をより積極的に出し、適切なら大きな編集も含めます。"
+    },
+    {
+      "q": "提案の数やサイズは厳密に制限されますか。",
+      "a": "されません。記事によると、これらの設定は挙動の目安であり、提案のタイミングやサイズを厳密に制限するものではありません。"
+    },
+    {
+      "q": "フィードバックはどこに送りますか。",
+      "a": "記事では、VS Code のリポジトリへのフィードバックを呼びかけています。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Tune GitHub Copilot Inline Suggestions with Configurable Eagerness",
+      "url": "https://code.visualstudio.com/blogs/2026/10/27/configurable-eagerness"
+    }
+  },
+  "evidence": [
+    "https://code.visualstudio.com/blogs/2026/10/27/configurable-eagerness"
+  ]
+}
