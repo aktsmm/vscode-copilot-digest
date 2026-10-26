@@ -23,6 +23,8 @@ export function extractClaims(slide) {
   for (const match of text.matchAll(IDENTIFIER)) {
     const token = match[0].replace(/[.\-/]+$/, "");
     if (token.length < 4 || IGNORED.has(token.toLowerCase()) || isUrlLike(token)) continue;
+    // "Low/Medium/High" is a list of options written with slashes, not one identifier: each option is checked on its own.
+    if (/^[A-Za-z]+(?:\/[A-Za-z]+)+$/.test(token)) { for (const part of token.split("/")) if (part.length >= 3) identifiers.add(part); continue; }
     identifiers.add(token);
   }
   for (const match of text.matchAll(QUANTITY)) quantities.add(match[0]);

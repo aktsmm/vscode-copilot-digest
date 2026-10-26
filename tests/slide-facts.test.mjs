@@ -22,6 +22,11 @@ assert.ok(checkClaims(extractClaims(withItems(["12月5日に廃止"])), corpus).
 assert.ok(checkClaims(extractClaims(withItems(["最大 37 件", "50 倍速い"])), corpus).some((p) => p.includes("numbers")));
 assert.deepEqual(checkClaims(extractClaims(withItems(["最大 37 件"])), corpus).filter((p) => p.includes("numbers")), []);
 
+// A slash-separated list of options is checked option by option, not as one identifier; an invented option still stops the slide.
+const optionsCorpus = "Reasoning effort can be Low, Medium or High.";
+assert.deepEqual(checkClaims(extractClaims(withItems(["強度は Low/Medium/High から選ぶ"])), optionsCorpus), []);
+assert.ok(checkClaims(extractClaims(withItems(["強度は Low/Medium/Turbo から選ぶ"])), optionsCorpus).some((p) => p.includes("Turbo")));
+
 // Q&A answers are checked too.
 const qa = [1, 2, 3].map((n) => ({ q: `質問${n}はどうなりますか`, a: n === 3 ? "version 8.8.8 が必要です。" : "記事に書かれています。" }));
 assert.ok(extractClaims({ ...base, qa }).identifiers.includes("8.8.8"));
