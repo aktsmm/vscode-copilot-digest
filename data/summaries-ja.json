@@ -3720,5 +3720,27 @@
       "各clientにrequest_count、session_count、token_usage、モデル別内訳を含む",
       "既存フィールドは変更なしで、request_countはプロンプト数ではなくモデル呼び出し数"
     ]
+  },
+  "256c7b6c72dd5aaa": {
+    "title": "GPT-6.1 TerraがCopilotで一般提供に",
+    "summary": "OpenAIの最新モデルGPT-6.1 TerraがGitHub Copilotで一般提供になった。日常的なエージェント型コーディングやターミナル作業向けで、GPT-6.1 Solより低コスト。初期テストではGPT-5.6 Terraよりターミナル課題とC#課題を多く解決した。",
+    "why": "Copilot利用者はモデルピッカーで選べ、BusinessとEnterpriseの管理者はモデルポリシーで可否を管理する。",
+    "points": [
+      "対象はCopilot Pro、Pro+、Max、Business、Enterprise",
+      "VS Code、Visual Studio、Copilot CLI、cloud agent、JetBrains、Xcodeなどで選択可能",
+      "使用量ベース課金のもとでプロバイダーの定価で請求される",
+      "管理者は既定で自動有効化。無効化はモデルポリシーで設定する"
+    ]
+  },
+  "f2d8a7a1dfa74ad3": {
+    "title": "Copilotのインライン提案の積極度を3段階で調整可能に",
+    "summary": "VS CodeのCopilotインライン提案に、積極度(eagerness)をLow・Medium・Highから選ぶ機能が加わった。Lowは提案を減らして小さな編集を優先し、Highはより積極的に大きな編集も提案する。Mediumは従来の既定動作。",
+    "why": "提案が多すぎる、または足りないと感じる有料ユーザーは、設定で自分に合う支援の強さに変えられる。",
+    "points": [
+      "対象はVS Codeの有料Copilot契約者",
+      "VS Codeを最新版に更新し、Next Edit Suggestionsが有効なことを確認する",
+      "Copilot設定メニューからEagernessを選ぶ",
+      "1つのモデルが制御タグで3つの挙動を切り替える"
+    ]
   }
 }
