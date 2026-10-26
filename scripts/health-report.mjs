@@ -48,7 +48,7 @@ const staleAutomationPrs = waiting.filter((p) => /^(slides|summaries|maint):/.te
 
 const backlog = {
   slidesWithoutSlide: count("scripts/pending-slides.mjs", ["--months", "3", "--limit", "1000", "--skip", slideSkips.map((t) => (t.match(/[0-9a-f]{16}/) || [])[0]).filter(Boolean).join(",")]),
-  summariesPending: count("scripts/pending-summaries.mjs", ["--months", "3", "--limit", "1000"]),
+  summariesPending: count("scripts/pending-summaries.mjs", ["--months", "6", "--limit", "1000"]),
 };
 
 const probe = async (url) => {
@@ -61,6 +61,9 @@ const probe = async (url) => {
 };
 const siteBase = `https://${repo.split("/")[0]}.github.io/${repo.split("/")[1]}`;
 const site = { index: await probe(`${siteBase}/`), apiLatest: await probe(`${siteBase}/api/v1/latest.json`), enIndex: await probe(`${siteBase}/en/index.html`) };
+// The live site must be as fresh as the data: a deploy that "succeeds" but publishes old content is caught here.
+let liveSnapshotAt = null;
+try { liveSnapshotAt = (await (await fetch(`${siteBase}/api/v1/index.json`)).json()).snapshotAt ?? null; } catch { /* reported through the site probes */ }
 const lastDeploy = (await api("/actions/workflows/deploy-pages.yml/runs?status=success")).at(0)?.updated_at ?? null;
 const lastFullTests = (await api("/actions/workflows/full-tests.yml/runs?status=success")).at(0)?.updated_at ?? null;
 const newestEvent = fs.readdirSync("data/events").filter((n) => /^\d{4}-\d{2}-\d{2}\.json$/.test(n)).sort().at(-1)?.slice(0, 10) ?? null;
@@ -72,6 +75,7 @@ const flags = [];
 for (const [name, status] of Object.entries(site)) if (status !== 200) flags.push(`the live site check "${name}" returned ${status}`);
 if (!lastDeploy || Date.now() - Date.parse(lastDeploy) > 3 * 86400000) flags.push("no successful Pages deploy in the last 3 days");
 if (!lastFullTests || Date.now() - Date.parse(lastFullTests) > 3 * 86400000) flags.push("no successful full test run in the last 3 days");
+if (!liveSnapshotAt || Date.now() - Date.parse(liveSnapshotAt) > 2 * 86400000) flags.push(`the live site was last built ${liveSnapshotAt ?? "at an unknown time"} (older than 2 days; deploy may be publishing stale content)`);
 if (eventAgeDays !== null && eventAgeDays > 2) flags.push(`the newest event file is ${eventAgeDays} days old (collection may be stuck)`);
 if (failureIssues.length) flags.push(`${failureIssues.length} open agentic workflow failure issue(s)`);
 if (failures.length) flags.push(`${failures.length} failed workflow run(s) in the last 14 days`);
@@ -80,5 +84,5 @@ if (staleAutomationPrs.length) flags.push(`${staleAutomationPrs.length} automati
 if (needsHuman.length) flags.push(`${needsHuman.length} open issue(s) labelled needs-human-review`);
 
 fs.mkdirSync(".work", { recursive: true });
-fs.writeFileSync(".work/health.json", JSON.stringify({ generatedAt: new Date().toISOString(), flags, site, lastDeploy, lastFullTests, newestEvent, slidesPublished, failureIssues, failures, closedUnmerged, waiting, staleAutomationPrs, needsHuman, slideSkips, backlog }, null, 2));
+fs.writeFileSync(".work/health.json", JSON.stringify({ generatedAt: new Date().toISOString(), flags, site, liveSnapshotAt, lastDeploy, lastFullTests, newestEvent, slidesPublished, failureIssues, failures, closedUnmerged, waiting, staleAutomationPrs, needsHuman, slideSkips, backlog }, null, 2));
 console.log(`health: ${flags.length} flag(s)`);

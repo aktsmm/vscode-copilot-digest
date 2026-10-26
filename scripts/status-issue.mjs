@@ -7,6 +7,7 @@ const summaries = Object.keys(JSON.parse(fs.readFileSync("data/summaries-ja.json
 const mark = (ok) => (ok ? "OK" : "要確認");
 const rows = [
   ["サイト（トップ / API / 英語版）", `${h.site.index} / ${h.site.apiLatest} / ${h.site.enIndex}`, mark(h.site.index === 200 && h.site.apiLatest === 200 && h.site.enIndex === 200)],
+  ["公開サイトの最終ビルド", h.liveSnapshotAt ?? "-", mark(!h.flags.some((f) => f.includes("live site was last built")))],
   ["最新の更新データ", h.newestEvent ?? "-", mark(!h.flags.some((f) => f.includes("newest event")))],
   ["直近の Pages デプロイ", h.lastDeploy ?? "-", mark(!h.flags.some((f) => f.includes("deploy")))],
   ["直近の全テスト成功", h.lastFullTests ?? "-", mark(!h.flags.some((f) => f.includes("full test")))],

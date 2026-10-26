@@ -2,9 +2,13 @@
 
 GitHub Copilot と VS Code 周辺の更新を毎日収集し、日次イベント、日次本文、週間・隔週ドラフト、GitHub Pages 用の静的サイト、更新ごとのスライド（JSON / PDF / PPTX）を自動生成するリポジトリです。GitHub Actions が収集と公開を回し、GitHub Agentic Workflows（gh-aw、モデルは Claude Sonnet 5.5）がスライド・日本語要約・点検を担当します。人手を介さず、失敗は自動で検知して直す構成です。
 
-現在の公開先:
+## 公開サイト
 
-- GitHub Pages: https://aktsmm.github.io/vscode-copilot-digest/
+**GitHub Pages: https://aktsmm.github.io/vscode-copilot-digest/**
+
+- 日本語トップ: https://aktsmm.github.io/vscode-copilot-digest/index.html ／ 英語: https://aktsmm.github.io/vscode-copilot-digest/en/index.html
+- About（収集元・つくり方・データの状態）: https://aktsmm.github.io/vscode-copilot-digest/about.html
+- 静的 JSON API: https://aktsmm.github.io/vscode-copilot-digest/api/v1/index.json
 
 ## できること
 
