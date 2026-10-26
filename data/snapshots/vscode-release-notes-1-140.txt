@@ -536,7 +536,7 @@ VS Code applies the telemetry block from only the highest-priority delivery chan
 Managed telemetry.resourceAttributes now take precedence over OTEL_RESOURCE_ATTRIBUTES.
 Note: Identity capture currently applies only to the Local harness. Support for the agent host is tracked in #337413.
 H2: Social media
-VS Code is now on Instagram! Follow @vscode.ig for VS Code updates, new features, tips, and more.
+VS Code is now on Instagram! Follow @vscode for VS Code updates, new features, tips, and more.
 H2: Proposed APIs
 H3: Authorization server on authentication sessions
 The authIssuers proposal lets an extension name the OAuth authorization server it wants to authenticate against, which VS Code introduced for MCP in the 1.101 release notes. This release adds the opposite direction, so a session can tell you which authorization server issued it.

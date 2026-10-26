@@ -1,16 +1,50 @@
 {
   "date": "2026-10-26",
-  "generatedAt": "2026-10-26T11:18:45.087Z",
+  "generatedAt": "2026-10-26T19:29:23.464Z",
   "latestRun": {
-    "generatedAt": "2026-10-26T11:18:45.087Z",
-    "newEventsCount": 1,
+    "generatedAt": "2026-10-26T19:29:23.464Z",
+    "newEventsCount": 2,
     "newEventIds": [
-      "docs-github-copilot-howtos:f13d0822252e690555d19c96d02f96d87700dee207f0b0ed31e85f979b92e993"
+      "github-changelog-copilot:https://github.blog/changelog/2026-10-23-gpt-6-1-terra-in-github-copilot",
+      "vscode-feed:https://code.visualstudio.com/blogs/2026/10/27/configurable-eagerness"
     ],
     "errorCount": 0,
     "skippedLowInformationEvents": []
   },
   "events": [
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-10-23-gpt-6-1-terra-in-github-copilot",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-10-26T19:29:19.044Z",
+      "publishedAt": "2026-10-26T19:15:53.000Z",
+      "title": "GPT-6.1 Terra in GitHub Copilot",
+      "url": "https://github.blog/changelog/2026-10-26-gpt-6-1-terra-in-github-copilot",
+      "summary": "GPT-6.1 Terra, OpenAI’s newest model, is now generally available in GitHub Copilot. It is designed for everyday agentic coding and terminal work at a lower cost than GPT-6.1 Sol. In…\nThe post GPT-6.1 Terra in GitHub Copilot appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 5
+    },
+    {
+      "eventId": "vscode-feed:https://code.visualstudio.com/blogs/2026/10/27/configurable-eagerness",
+      "sourceId": "vscode-feed",
+      "sourceName": "VS Code Feed",
+      "kind": "feed_entry",
+      "detectedAt": "2026-10-26T19:29:19.116Z",
+      "publishedAt": "2026-10-26T00:00:00.000Z",
+      "title": "Tune GitHub Copilot Inline Suggestions with Configurable Eagerness",
+      "url": "https://code.visualstudio.com/blogs/2026/10/27/configurable-eagerness",
+      "summary": "Choose how proactively Copilot offers inline suggestions.\n Read the full article",
+      "categories": [
+        "blog"
+      ],
+      "isFutureDated": false,
+      "score": 1
+    },
     {
       "eventId": "docs-github-copilot-howtos:f13d0822252e690555d19c96d02f96d87700dee207f0b0ed31e85f979b92e993",
       "sourceId": "docs-github-copilot-howtos",
