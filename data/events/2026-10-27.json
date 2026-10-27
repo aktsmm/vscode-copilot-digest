@@ -1,0 +1,72 @@
+{
+  "date": "2026-10-27",
+  "generatedAt": "2026-10-27T00:37:59.911Z",
+  "latestRun": {
+    "generatedAt": "2026-10-27T00:37:59.911Z",
+    "newEventsCount": 2,
+    "newEventIds": [
+      "github-changelog:https://github.blog/changelog/2026-10-23-gpt-6-1-terra-in-github-copilot",
+      "copilot-whats-new:87df99c1713178dc23b802cc1c20edeb52547c1de223ec30c967ef07ecd61fac"
+    ],
+    "errorCount": 0,
+    "skippedLowInformationEvents": []
+  },
+  "events": [
+    {
+      "eventId": "copilot-whats-new:87df99c1713178dc23b802cc1c20edeb52547c1de223ec30c967ef07ecd61fac",
+      "sourceId": "copilot-whats-new",
+      "sourceName": "GitHub Copilot What's New",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-10-27T00:37:58.280Z",
+      "publishedAt": "2026-10-27T00:37:58.279Z",
+      "title": "GitHub Copilot What's New changed",
+      "url": "https://github.com/features/copilot/whats-new",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [
+          "Oct.26 Release"
+        ],
+        "additions": [
+          "H3: Oct.26 Release"
+        ]
+      },
+      "headings": [
+        "Changelog",
+        "Filters (0 selected)",
+        "October\n Oct\n 2026",
+        "Oct.26 Release",
+        "Oct.23 Improvement",
+        "Oct.23 Improvement",
+        "Oct.22 Release",
+        "Oct.22 Improvement",
+        "Oct.22 Improvement",
+        "Oct.22 Improvement",
+        "Oct.19 Improvement",
+        "Oct.19 Retired"
+      ],
+      "score": 3
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-10-23-gpt-6-1-terra-in-github-copilot",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-10-27T00:37:57.846Z",
+      "publishedAt": "2026-10-26T19:15:53.000Z",
+      "title": "GPT-6.1 Terra in GitHub Copilot",
+      "url": "https://github.blog/changelog/2026-10-26-gpt-6-1-terra-in-github-copilot",
+      "summary": "GPT-6.1 Terra, OpenAI’s newest model, is now generally available in GitHub Copilot. It is designed for everyday agentic coding and terminal work at a lower cost than GPT-6.1 Sol. In…\nThe post GPT-6.1 Terra in GitHub Copilot appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 5
+    }
+  ],
+  "errors": []
+}

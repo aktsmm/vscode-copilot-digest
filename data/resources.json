@@ -24840,22 +24840,80 @@
     },
     "890ba100f4954d2ce101caeea13937937d6e2b6dfd658a03882462b014036a7a": {
       "version": 6,
-      "checkedAt": "2026-10-26T19:29:25.318Z",
+      "checkedAt": "2026-10-27T00:38:00.415Z",
       "inputUrl": "https://code.visualstudio.com/blogs/2026/10/27/configurable-eagerness",
       "inputTitle": "Tune GitHub Copilot Inline Suggestions with Configurable Eagerness",
-      "status": "fetch_failed",
+      "status": "verified",
       "source": {
         "url": "https://code.visualstudio.com/blogs/2026/10/27/configurable-eagerness",
-        "status": "fetch_failed",
-        "reason": "fetch failed"
+        "status": "verified",
+        "reason": "Fetched original article",
+        "checkedAt": "2026-10-27T00:38:00.609Z",
+        "contentHash": "6655ed9698a88108f1a3b1ce66ab821674e0043dcd94a8188e2a016fadf5f31a"
       },
-      "documents": [],
-      "errors": [
+      "documents": [
         {
-          "url": "https://code.visualstudio.com/blogs/2026/10/27/configurable-eagerness",
-          "message": "fetch failed"
+          "url": "https://code.visualstudio.com/docs/editing/ai-powered-suggestions#_next-edit-suggestions",
+          "title": "Inline suggestions from GitHub Copilot in VS Code",
+          "language": "en",
+          "checkedAt": "2026-10-27T00:38:00.753Z",
+          "contentHash": "b0c8c40de34fe125501244f335bb6554be5f6d6513d4964803659e64d0898284",
+          "discoveryUrl": "https://code.visualstudio.com/blogs/2026/10/27/configurable-eagerness",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "verified",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
         }
       ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "d926603546aa3eaf828270a7deb9fbc06e8c1a2ce7727d17a7391aa98b2f2079": {
+      "version": 6,
+      "checkedAt": "2026-10-27T00:38:00.815Z",
+      "inputUrl": "https://github.com/features/copilot/whats-new",
+      "inputTitle": "GitHub Copilot What's New changed",
+      "status": "verified",
+      "source": {
+        "url": "https://github.blog/changelog/2026-10-26-gpt-6-1-terra-in-github-copilot/",
+        "status": "verified",
+        "reason": "Snapshot observation, not a standalone feature: Oct.26 Release; explicit article: GPT-6.1 Terra in GitHub Copilot",
+        "checkedAt": "2026-10-27T00:38:01.672Z",
+        "contentHash": "80a8f429b72575c9ec021537442d9b10c6930a69a51749194ffeb1a56326663b"
+      },
+      "documents": [
+        {
+          "url": "https://docs.github.com/ja/copilot/reference/copilot-billing/models-and-pricing",
+          "title": "GitHub Copilot のモデルと価格設定",
+          "language": "ja",
+          "checkedAt": "2026-10-26T19:29:24.794Z",
+          "contentHash": "6631c2733b26d770d266aeeda4f0a2da558252ae81b0f678e5c0f85124196e89",
+          "discoveryUrl": "https://github.blog/changelog/2026-10-26-gpt-6-1-terra-in-github-copilot/",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://docs.github.com/ja/copilot/reference/ai-models/supported-models",
+          "title": "GitHub Copilotでサポートされている AI モデル",
+          "language": "ja",
+          "checkedAt": "2026-10-26T19:29:25.150Z",
+          "contentHash": "ca45253c0ace7b39550f9d440bcaf4ae9bc7c524d5d77801b281f35ebe7db2ad",
+          "discoveryUrl": "https://github.blog/changelog/2026-10-26-gpt-6-1-terra-in-github-copilot/",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
       "research": [
         "Original article explicit links",
         "Feature-matched official documentation indexes"
