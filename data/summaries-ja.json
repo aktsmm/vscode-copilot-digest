@@ -3742,5 +3742,16 @@
       "Copilot設定メニューからEagernessを選ぶ",
       "1つのモデルが制御タグで3つの挙動を切り替える"
     ]
+  },
+  "b26f70c790034ce0": {
+    "title": "Copilotの assisted permissions が一般提供に",
+    "summary": "GitHub Copilot CLI、GitHub Copilot app、Visual Studio Code で assisted permissions が一般提供になった。コマンド実行、ファイルパスへのアクセス、URLを開く要求を大規模言語モデルが評価し、明らかに安全と判定したものは自動で進み、それ以外は承認が求められる。",
+    "why": "承認操作の手間を減らしたい開発者と、権限モードを管理する企業管理者が設定を見直す対象。",
+    "points": [
+      "CLIは /permissions を実行して assisted を選ぶ",
+      "Copilot appはモードピッカーの Tool permissions で Assisted を選ぶ",
+      "VS Codeは権限ピッカーから Assisted permissions を選ぶ",
+      "管理者は Allow All をブロックしつつ Assisted を残す設定や、Assisted の個別無効化が可能"
+    ]
   }
 }
