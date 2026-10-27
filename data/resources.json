@@ -24918,6 +24918,73 @@
         "Original article explicit links",
         "Feature-matched official documentation indexes"
       ]
+    },
+    "5ade9ee05e8aefd818d59ef4b95cca961069e49e928edac426da8f1c2f526063": {
+      "version": 6,
+      "checkedAt": "2026-10-27T10:42:59.953Z",
+      "inputUrl": "https://github.blog/changelog/2026-10-26-github-copilot-assisted-permissions-generally-available",
+      "inputTitle": "GitHub Copilot assisted permissions generally available",
+      "status": "verified",
+      "source": {
+        "url": "https://github.blog/changelog/2026-10-26-github-copilot-assisted-permissions-generally-available/",
+        "status": "verified",
+        "reason": "Fetched original article",
+        "checkedAt": "2026-10-27T10:43:00.544Z",
+        "contentHash": "67dc71cfc3b0d7c8c53c03dadde2990a4b1b3018548f4a8a0700251e281e4473"
+      },
+      "documents": [
+        {
+          "url": "https://docs.github.com/ja/enterprise-cloud@latest/copilot/reference/enterprise-administrators/enterprise-managed-settings#permissions",
+          "title": "エンタープライズ管理設定",
+          "language": "ja",
+          "checkedAt": "2026-10-27T10:43:01.802Z",
+          "contentHash": "d5b125f5c6d7f484ef7e223b5d9987c46f71d2b9015ef0dd279487dde93d6443",
+          "discoveryUrl": "https://github.blog/changelog/2026-10-26-github-copilot-assisted-permissions-generally-available/",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "verified",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://docs.github.com/ja/copilot/concepts/customizations/allowing-safe-commands",
+          "title": "Allowing safe commands to run without manual approval",
+          "language": "ja",
+          "checkedAt": "2026-10-27T10:43:02.564Z",
+          "contentHash": "1757afe110ac5e8fe1ebee7b3b94710c21a72fb10dbdce43a7116e0f5aa46232",
+          "discoveryUrl": "https://github.blog/changelog/2026-10-26-github-copilot-assisted-permissions-generally-available/",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "3af2dc062c63242c117a9f963457ddc9441b3a9ffa2afd215786129d0812f63b": {
+      "version": 6,
+      "checkedAt": "2026-10-27T10:43:02.611Z",
+      "inputUrl": "https://docs.github.com/en/copilot/concepts",
+      "inputTitle": "GitHub Docs / Copilot concepts changed",
+      "status": "unconfirmed",
+      "source": {
+        "url": "https://docs.github.com/en/copilot/concepts",
+        "status": "unconfirmed",
+        "reason": "Historical changed feature not identifiable in current page",
+        "checkedAt": "2026-10-27T10:43:02.663Z",
+        "contentHash": "07f61f847f0c9d1a67f4be1d026121c9c7a719215240119e1eeaddccefb02325"
+      },
+      "documents": [],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
     }
   }
 }

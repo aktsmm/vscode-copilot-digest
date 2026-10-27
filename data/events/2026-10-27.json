@@ -1,17 +1,57 @@
 {
   "date": "2026-10-27",
-  "generatedAt": "2026-10-27T00:37:59.911Z",
+  "generatedAt": "2026-10-27T10:42:59.641Z",
   "latestRun": {
-    "generatedAt": "2026-10-27T00:37:59.911Z",
-    "newEventsCount": 2,
+    "generatedAt": "2026-10-27T10:42:59.641Z",
+    "newEventsCount": 4,
     "newEventIds": [
-      "github-changelog:https://github.blog/changelog/2026-10-23-gpt-6-1-terra-in-github-copilot",
-      "copilot-whats-new:87df99c1713178dc23b802cc1c20edeb52547c1de223ec30c967ef07ecd61fac"
+      "github-changelog:https://github.blog/changelog/2026-10-26-github-copilot-assisted-permissions-generally-available",
+      "github-changelog-copilot:https://github.blog/changelog/2026-10-26-github-copilot-assisted-permissions-generally-available",
+      "copilot-whats-new:af5c6dc8298e86bc7b134c42d4c0be5d33134df808274f51668e1232d6f826cd",
+      "docs-github-copilot-concepts:aa283a0c57cbac552b85e91321873ec127ab9c525b47399388a98bc320accfbc"
     ],
     "errorCount": 0,
     "skippedLowInformationEvents": []
   },
   "events": [
+    {
+      "eventId": "copilot-whats-new:af5c6dc8298e86bc7b134c42d4c0be5d33134df808274f51668e1232d6f826cd",
+      "sourceId": "copilot-whats-new",
+      "sourceName": "GitHub Copilot What's New",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-10-27T10:42:55.408Z",
+      "publishedAt": "2026-10-27T10:42:55.407Z",
+      "title": "GitHub Copilot What's New changed",
+      "url": "https://github.com/features/copilot/whats-new",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [
+          "Oct.26 Release"
+        ],
+        "additions": [
+          "H3: Oct.26 Release"
+        ]
+      },
+      "headings": [
+        "Changelog",
+        "Filters (0 selected)",
+        "October\n Oct\n 2026",
+        "Oct.26 Release",
+        "Oct.26 Release",
+        "Oct.23 Improvement",
+        "Oct.23 Improvement",
+        "Oct.22 Release",
+        "Oct.22 Improvement",
+        "Oct.22 Improvement",
+        "Oct.22 Improvement",
+        "Oct.19 Improvement"
+      ],
+      "score": 3
+    },
     {
       "eventId": "copilot-whats-new:87df99c1713178dc23b802cc1c20edeb52547c1de223ec30c967ef07ecd61fac",
       "sourceId": "copilot-whats-new",
@@ -51,6 +91,40 @@
       "score": 3
     },
     {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-10-26-github-copilot-assisted-permissions-generally-available",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-10-27T10:42:51.669Z",
+      "publishedAt": "2026-10-26T22:31:30.000Z",
+      "title": "GitHub Copilot assisted permissions generally available",
+      "url": "https://github.blog/changelog/2026-10-26-github-copilot-assisted-permissions-generally-available",
+      "summary": "Assisted permissions are now generally available in GitHub Copilot CLI, GitHub Copilot app, and Visual Studio Code. When Copilot requests permission to run a command, access a file system path,…\nThe post GitHub Copilot assisted permissions generally available appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 5
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-10-26-github-copilot-assisted-permissions-generally-available",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-10-27T10:42:52.177Z",
+      "publishedAt": "2026-10-26T22:31:30.000Z",
+      "title": "GitHub Copilot assisted permissions generally available",
+      "url": "https://github.blog/changelog/2026-10-26-github-copilot-assisted-permissions-generally-available",
+      "summary": "Assisted permissions are now generally available in GitHub Copilot CLI, GitHub Copilot app, and Visual Studio Code. When Copilot requests permission to run a command, access a file system path,…\nThe post GitHub Copilot assisted permissions generally available appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 5
+    },
+    {
       "eventId": "github-changelog:https://github.blog/changelog/2026-10-23-gpt-6-1-terra-in-github-copilot",
       "sourceId": "github-changelog",
       "sourceName": "GitHub Changelog",
@@ -66,6 +140,31 @@
       ],
       "isFutureDated": false,
       "score": 5
+    },
+    {
+      "eventId": "docs-github-copilot-concepts:aa283a0c57cbac552b85e91321873ec127ab9c525b47399388a98bc320accfbc",
+      "sourceId": "docs-github-copilot-concepts",
+      "sourceName": "GitHub Docs / Copilot concepts",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-10-27T10:42:56.094Z",
+      "publishedAt": "2026-10-27T10:42:56.094Z",
+      "title": "GitHub Docs / Copilot concepts changed",
+      "url": "https://docs.github.com/en/copilot/concepts",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [],
+        "additions": [
+          "Allowing safe commands to run without manual approval"
+        ]
+      },
+      "headings": [
+        "Concepts for GitHub Copilot"
+      ],
+      "score": 2
     }
   ],
   "errors": []

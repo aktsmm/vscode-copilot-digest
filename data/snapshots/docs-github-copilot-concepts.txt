@@ -20,6 +20,7 @@ About GitHub Copilot Memory
 Customizations for GitHub Copilot
 Comparing Copilot customization features
 Agent skills
+Allowing safe commands to run without manual approval
 Custom agents
 Model Context Protocol (MCP)
 Hooks for GitHub Copilot
