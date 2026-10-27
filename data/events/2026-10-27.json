@@ -1,15 +1,10 @@
 {
   "date": "2026-10-27",
-  "generatedAt": "2026-10-27T10:42:59.641Z",
+  "generatedAt": "2026-10-27T18:51:10.626Z",
   "latestRun": {
-    "generatedAt": "2026-10-27T10:42:59.641Z",
-    "newEventsCount": 4,
-    "newEventIds": [
-      "github-changelog:https://github.blog/changelog/2026-10-26-github-copilot-assisted-permissions-generally-available",
-      "github-changelog-copilot:https://github.blog/changelog/2026-10-26-github-copilot-assisted-permissions-generally-available",
-      "copilot-whats-new:af5c6dc8298e86bc7b134c42d4c0be5d33134df808274f51668e1232d6f826cd",
-      "docs-github-copilot-concepts:aa283a0c57cbac552b85e91321873ec127ab9c525b47399388a98bc320accfbc"
-    ],
+    "generatedAt": "2026-10-27T18:51:10.626Z",
+    "newEventsCount": 0,
+    "newEventIds": [],
     "errorCount": 0,
     "skippedLowInformationEvents": []
   },
