@@ -1,0 +1,98 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "b26f70c790034ce0",
+  "title": {
+    "ja": "Copilotのassisted permissions、一般提供開始",
+    "subtitleJa": "CLI・Copilot app・VS Codeで、安全と判断された操作が承認なしで進む",
+    "original": "GitHub Copilot assisted permissions generally available"
+  },
+  "date": "2026-10-26",
+  "topic": "GitHub Copilot",
+  "status": "ga",
+  "statusEvidence": "Assisted permissions are now generally available in GitHub Copilot CLI, GitHub Copilot app, and Visual Studio Code.",
+  "audience": {
+    "who": "GitHub Copilot CLI、Copilot app、VS Codeの利用者と、Copilotの権限ポリシーを管理するEnterprise管理者",
+    "change": "コマンド実行・パスアクセス・URL表示の許可要求をLLMが評価し、明らかに安全なものだけ自動で進む",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "利用者は権限モードでAssistedを選択。管理者はAllow Allの禁止やAssistedの無効化、既定モードを設定できる"
+  },
+  "panels": [
+    {
+      "id": "how-to",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "Copilot CLI: /permissions を実行してassistedを選択（/permissions assisted でも可）",
+        "Copilot app: モード選択で Tool permissions をクリックし Assisted を選択",
+        "VS Code: 権限ピッカーを開き Assisted permissions を選択"
+      ]
+    },
+    {
+      "id": "enterprise",
+      "heading": "管理者向け制御",
+      "priority": "core",
+      "items": [
+        "Enterprise管理設定で、Assistedを残したままAllow Allだけをブロックできる",
+        "Assistedだけを個別に無効化することも可能",
+        "新規セッションの既定の権限モードも選択できる"
+      ]
+    },
+    {
+      "id": "limits",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "安全と確信できない要求は、従来どおり承認が必要",
+        "既定モードが使えない、またはポリシーで禁止の場合、セッションは手動承認で開始"
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Assisted permissions",
+      "type": "feature",
+      "oneLine": "LLMで許可要求を評価し、安全と判断した操作を自動承認する、手動承認と全許可の中間の選択肢"
+    }
+  ],
+  "qa": [
+    {
+      "q": "どの製品で使えますか？",
+      "a": "GitHub Copilot CLI、GitHub Copilot app、Visual Studio Codeで一般提供されています。"
+    },
+    {
+      "q": "何が自動で承認されますか？",
+      "a": "コマンド実行、ファイルシステムパスへのアクセス、URLを開く要求をLLMが評価し、明らかに安全と分類されたものが自動で進みます。それ以外は利用者の承認が必要です。"
+    },
+    {
+      "q": "CLIではどう有効にしますか？",
+      "a": "/permissions を実行してassistedを選びます。/permissions assisted と直接入力することもできます。"
+    },
+    {
+      "q": "管理者は制限できますか？",
+      "a": "Enterprise管理設定で、Assistedを残したままAllow Allをブロックしたり、Assistedを個別に無効化したりできます。新規セッションの既定モードも選べます。"
+    },
+    {
+      "q": "既定モードが使えない場合は？",
+      "a": "既定モードが利用不可、またはポリシーで禁止されている場合、セッションは手動承認で開始します。ポリシーが許す範囲で別のモードも選べます。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "GitHub Copilot assisted permissions generally available - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-10-26-github-copilot-assisted-permissions-generally-available/"
+    },
+    "documents": [
+      {
+        "title": "Allowing safe commands to run without manual approval - GitHubドキュメント",
+        "url": "https://docs.github.com/ja/copilot/concepts/customizations/allowing-safe-commands"
+      }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-10-26-github-copilot-assisted-permissions-generally-available/",
+    "https://docs.github.com/ja/copilot/concepts/customizations/allowing-safe-commands"
+  ]
+}
