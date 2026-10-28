@@ -1,0 +1,80 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "29b3350fcf5dde8e",
+  "title": {
+    "ja": "VS Code 1.145 Insiders: Agents ウィンドウの自動化実行とワークツリー整理の強化",
+    "subtitleJa": "Chat: Run Automation... を追加し、ワークツリー整理は進捗表示と失敗時の再試行に対応",
+    "original": "Visual Studio Code 1.145 (Insiders)"
+  },
+  "date": "2026-10-28",
+  "topic": "VS Code",
+  "status": "update",
+  "audience": {
+    "who": "VS Code Insiders の Agents ウィンドウやチャット セッションを使う開発者",
+    "change": "保存済みの自動化をコマンド パレットから実行でき、一括ワークツリー整理の進捗確認と再試行ができる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "info",
+    "summary": "Insiders 版のリリース ノートで、実験的な設定を含む追加機能を把握する"
+  },
+  "panels": [
+    {
+      "id": "agents-window",
+      "heading": "Agents ウィンドウの更新",
+      "priority": "core",
+      "items": [
+        "コマンド パレットの Chat: Run Automation... で、保存済みの自動化を実行できる",
+        "一括ワークツリー整理は、進捗を追跡でき、完了結果が残り、失敗した整理を再試行できる",
+        "未変更のアイドル セッションは、Worktree Cleanup の再表示・更新時にサイズの見積もりが速く表示される"
+      ]
+    },
+    {
+      "id": "experimental",
+      "heading": "実験的な機能と設定",
+      "priority": "core",
+      "items": [
+        "chat.agentSessions.openInEditor を有効にすると、セッションを Chat ビューでなくエディターで開く",
+        "sessions.chat.experimental.agentsPickerInAttachContextMenu で、Agent ピッカーを Add Context に移す",
+        "リモート エージェント ホスト上の Web アプリを、Agents ウィンドウの統合ブラウザーでプレビューできる（Experimental）"
+      ]
+    },
+    {
+      "id": "others",
+      "heading": "その他の変更",
+      "priority": "detail",
+      "items": [
+        "言語がシンボルを提供する場合、未保存ファイルでもブレッドクラムを表示する",
+        "スクリーン リーダー モードで、MCP 認証のプロンプトをキーボードで操作できるよう修正"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "Insiders", "type": "product", "oneLine": "リリース ノートは Insiders ビルドを対象とし、新機能の追加に応じて更新される。" }
+  ],
+  "qa": [
+    {
+      "q": "保存済みの自動化はどう実行しますか？",
+      "a": "Agents ウィンドウのコマンド パレットから Chat: Run Automation... を実行します。"
+    },
+    {
+      "q": "セッションをエディターで開くにはどうしますか？",
+      "a": "実験的な設定 chat.agentSessions.openInEditor を有効にすると、Chat ビューではなくエディターでセッションが開きます。"
+    },
+    {
+      "q": "ワークツリー整理は何が改善されましたか？",
+      "a": "一括整理の進捗を追跡でき、完了した結果が表示されたままになり、失敗した整理を再試行できます。サイズ見積もりも、未変更のアイドル セッションで速く表示されます。"
+    },
+    {
+      "q": "リモートのエージェント ホスト上の Web アプリは確認できますか？",
+      "a": "Agents ウィンドウの統合ブラウザーでプレビューできます。ただし Experimental と記載されています。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.145 (Insiders)",
+      "url": "https://code.visualstudio.com/updates/v1_145"
+    }
+  },
+  "evidence": ["https://code.visualstudio.com/updates/v1_145"]
+}
