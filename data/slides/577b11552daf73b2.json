@@ -1,0 +1,75 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "577b11552daf73b2",
+  "title": {
+    "ja": "VS Code 1.144: Copilot の画像生成（Preview）",
+    "subtitleJa": "エージェントがプロンプトから画像を生成・編集できる。既定モデルは GPT Image 2.5 Flare",
+    "original": "Image generation in Copilot (Preview)"
+  },
+  "date": "2026-10-28",
+  "topic": "GitHub Copilot",
+  "status": "preview",
+  "statusEvidence": "Image generation (Preview): Create and edit images directly in chat.",
+  "audience": {
+    "who": "VS Code のチャットで Web サイト用画像やアイコン、ワイヤーフレームを作りたい開発者",
+    "change": "エージェントに依頼すると画像を生成でき、既存画像をチャットの文脈に追加して変更や派生も依頼できる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "試す場合はチャットで画像生成を依頼する。不要なら設定でオフにする"
+  },
+  "panels": [
+    {
+      "id": "usage",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "エージェントに Web サイト用画像、チャット背景、新しいアイコン、ワイヤーフレームの作成を依頼する",
+        "既存の画像をチャットのコンテキストに追加し、変更やバリエーション生成を依頼できる",
+        "既定の画像モデルは GPT Image 2.5 Flare"
+      ]
+    },
+    {
+      "id": "settings",
+      "heading": "設定と前提",
+      "priority": "core",
+      "items": [
+        "`chat.copilot.imageGeneration.model` を off にすると画像生成を無効化",
+        "選択したモデルへのアクセスが必要。会話モデルの分とは別に AI クレジットを消費する",
+        "`chat.copilot.imageGeneration.watermark` を true にすると「Made with AI」の透かしを追加"
+      ]
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.144 - Image generation in Copilot (Preview)",
+      "url": "https://code.visualstudio.com/updates/v1_144#_image-generation-in-copilot-preview"
+    }
+  },
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_144#_image-generation-in-copilot-preview"
+  ],
+  "qa": [
+    {
+      "q": "画像生成はどのモデルで行われますか。",
+      "a": "既定の画像モデルは GPT Image 2.5 Flare です。使うには選択したモデルへのアクセスが必要です。"
+    },
+    {
+      "q": "追加のコストはかかりますか。",
+      "a": "画像生成は、会話モデルで使う AI クレジットに加えて AI クレジットを使います。"
+    },
+    {
+      "q": "画像生成を無効にするには。",
+      "a": "設定 chat.copilot.imageGeneration.model を off にします。"
+    },
+    {
+      "q": "生成画像に透かしを入れられますか。",
+      "a": "chat.copilot.imageGeneration.watermark を true にすると、目に見える「Made with AI」の透かしが入ります。"
+    },
+    {
+      "q": "既存の画像も編集できますか。",
+      "a": "既存の画像をチャットのコンテキストに追加し、エージェントに変更やバリエーションの生成を依頼できます。"
+    }
+  ]
+}
