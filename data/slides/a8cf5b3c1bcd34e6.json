@@ -1,0 +1,93 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "a8cf5b3c1bcd34e6",
+  "title": {
+    "ja": "VS Code 1.144: リモート環境を 1 つのダイアログで管理",
+    "subtitleJa": "GitHub Environments、Dev Tunnels、WSL、SSH を一覧し、接続・切断・表示を切り替え",
+    "original": "Manage remote environments"
+  },
+  "date": "2026-10-28",
+  "topic": "VS Code",
+  "status": "update",
+  "audience": {
+    "who": "VS Code でリモート環境（SSH・Dev Tunnels・WSL・GitHub Environments）にエージェントを走らせる開発者",
+    "change": "Remote Environments ダイアログで各リモートの状態確認、接続・切断、ピッカーへの表示可否を一括管理できる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "複数のリモートを使うなら、Environment ピッカー下部の Manage Remote Environments から開く"
+  },
+  "panels": [
+    {
+      "id": "how-to-use",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "Environment ピッカー下部の Manage Remote Environments を選ぶ",
+        "コマンド パレットの Agents: Manage Remote Environments でも開ける",
+        "各リモートの状態を見て、接続・切断し、ピッカーに表示するリモートを選ぶ"
+      ]
+    },
+    {
+      "id": "prerequisites",
+      "heading": "前提と制限",
+      "priority": "core",
+      "items": [
+        "ドキュメント上は Experimental。Agents ウィンドウの Remote Environments エディターで操作する",
+        "sessions.chat.experimental.environmentPicker など 3 つの設定が必要で、いずれも既定でオン",
+        "GitHub Environments は Preview で、同じ GitHub アカウントでのサインインが前提"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "切断しても実行中のタスクは止まらない。更新は接続せずにマシンを探すだけ",
+        "名前変更・非表示は、そのクライアントだけに作用する"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "GitHub Environments", "type": "feature", "oneLine": "自分のマシンを登録し、他の Copilot クライアントからそのセッションに接続できる仕組み（Preview）。" }
+  ],
+  "qa": [
+    {
+      "q": "どのリモートが一覧に出ますか？",
+      "a": "既知の SSH ホスト、Dev Tunnels、Windows の WSL ディストリビューションが表にまとまります。GitHub Environments が利用可能で有効なら、オフラインを含む登録済みマシンも並びます。"
+    },
+    {
+      "q": "有効にするために設定は必要ですか？",
+      "a": "sessions.chat.experimental.environmentPicker、sessions.chat.experimental.environmentPickerManageRemotes、chat.remoteAgentHostsEnabled の 3 つが必要で、いずれも既定でオンです。"
+    },
+    {
+      "q": "どうやって開きますか？",
+      "a": "Environment ピッカー下部の Manage Remote Environments を選ぶか、コマンド パレットで Agents: Manage Remote Environments を実行します。"
+    },
+    {
+      "q": "切断すると実行中のタスクは止まりますか？",
+      "a": "止まりません。切断はそのクライアントの接続を終えるだけです。作業を止めるには、セッション内でエージェントのタスクを停止します。"
+    },
+    {
+      "q": "名前変更や非表示は他の端末にも影響しますか？",
+      "a": "影響しません。名前変更や非表示はそのクライアントだけに作用し、非表示にしても切断やセッションの削除は行われません。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.144 - Manage remote environments",
+      "url": "https://code.visualstudio.com/updates/v1_144#_manage-remote-environments"
+    },
+    "documents": [
+      {
+        "title": "Run and manage remote agent sessions",
+        "url": "https://code.visualstudio.com/docs/agents/run/remote-agent-sessions"
+      }
+    ]
+  },
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_144",
+    "https://code.visualstudio.com/docs/agents/run/remote-agent-sessions"
+  ]
+}
