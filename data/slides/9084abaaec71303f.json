@@ -1,0 +1,88 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "9084abaaec71303f",
+  "title": {
+    "ja": "GitHub Enterprise に Copilot へのアクセスが含まれるように",
+    "subtitleJa": "ライセンス済みの全ユーザーに Copilot を付与し、管理対象は企業予算に対する AI 使用量に一本化",
+    "original": "GitHub Enterprise now includes access to GitHub Copilot"
+  },
+  "date": "2026-10-28",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "GitHub Enterprise Cloud を使う企業の管理者（GitHub または Microsoft のアカウント チームと契約中の企業）",
+    "change": "Copilot が GitHub Enterprise に含まれ、AI 使用量は最初のリクエストから企業予算に計上される",
+    "changeNature": "neutral"
+  },
+  "action": {
+    "required": "info",
+    "summary": "新規企業アカウントの設定や既存アカウントの移行は、営業担当に相談する"
+  },
+  "panels": [
+    {
+      "id": "availability",
+      "heading": "使える場所とプラン",
+      "priority": "core",
+      "items": [
+        "アカウント チーム経由の企業は GitHub Enterprise Cloud で今すぐ利用可能",
+        "セルフサービス契約は現在利用不可。段階的に開放され、日程は数週間以内に案内される",
+        "GitHub Enterprise ライセンスのないユーザーは Copilot Standalone（1 ユーザー月額 $10）で同じアクセスを得る",
+        "Copilot Business と Copilot Enterprise も引き続き購入可能"
+      ]
+    },
+    {
+      "id": "what-you-manage",
+      "heading": "管理するもの",
+      "priority": "core",
+      "items": [
+        "機能とモデルは Copilot Enterprise と同じだが、席ごとの月間 AI クレジットは含まれない",
+        "AI 使用量は最初のリクエストから企業予算に対して計測され、既存のポリシー・アラート・帰属を使う",
+        "含まれる使用枠の管理や追加は不要"
+      ]
+    },
+    {
+      "id": "limits",
+      "heading": "予算がなくなった場合",
+      "priority": "detail",
+      "items": [
+        "コード補完と次の編集候補は、予算がなくても使える",
+        "Copilot Chat、コード レビュー、クラウド上の Copilot は利用可能な予算が必要",
+        "予算を使い切ってもアクセスは失われず、席と予算不要の機能は残る"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "Copilot Standalone", "type": "product", "oneLine": "GitHub Enterprise ライセンスのない企業ユーザー向けに、同じ Copilot アクセスを月額 $10 で提供する形態。" }
+  ],
+  "qa": [
+    {
+      "q": "セルフサービス契約でも使えますか？",
+      "a": "現在は利用できません。セルフサービス顧客向けに段階的に開放する予定で、日程は数週間以内に案内されます。現在のサブスクリプションには影響しません。"
+    },
+    {
+      "q": "GitHub Enterprise ライセンスがないユーザーはどうなりますか？",
+      "a": "企業アカウント内でそのようなユーザーは、Copilot Standalone を通じて 1 ユーザー月額 $10 で同じ Copilot アクセスを得られます。"
+    },
+    {
+      "q": "Copilot Business や Copilot Enterprise はなくなりますか？",
+      "a": "いいえ。新規・既存の企業ともに、引き続き購入できます。"
+    },
+    {
+      "q": "予算を使い切ったらどうなりますか？",
+      "a": "アクセスは失われません。コード補完と次の編集候補は使え、Copilot Chat、コード レビュー、クラウド上の Copilot は利用可能な予算が必要です。"
+    },
+    {
+      "q": "月間 AI クレジットは付きますか？",
+      "a": "付きません。機能とモデルは Copilot Enterprise と同じですが、席ごとの月間 AI クレジットは含まれず、最初のリクエストから企業予算で計測されます。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "GitHub Enterprise now includes access to GitHub Copilot - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-10-28-github-enterprise-now-includes-access-to-github-copilot/"
+    }
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-10-28-github-enterprise-now-includes-access-to-github-copilot/"
+  ]
+}
