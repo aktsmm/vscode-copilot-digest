@@ -1,0 +1,84 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "1965a859afa067d1",
+  "title": {
+    "ja": "VS Code 1.144: Agent Host Protocol の初版 v1.0 を公開",
+    "subtitleJa": "VS Code がエージェントとローカル・リモートで通信するプロトコルを公開。独自 UI やエージェント基盤を作れる",
+    "original": "Agent Host Protocol v1.0"
+  },
+  "date": "2026-10-28",
+  "topic": "VS Code",
+  "status": "update",
+  "audience": {
+    "who": "エージェント向けの独自 UI や、既存 UI に接続するエージェント基盤を作りたい開発者",
+    "change": "VS Code がエージェントと通信するプロトコルの初版が公開され、オープンで拡張可能な形で使える",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "info",
+    "summary": "独自クライアントやホストを作るなら、Agent Host Protocol のサイトで仕様を確認する"
+  },
+  "panels": [
+    {
+      "id": "what-is",
+      "heading": "公開された内容",
+      "priority": "core",
+      "items": [
+        "VS Code がエージェントとローカルやリモート マシン上で通信するためのプロトコルの初版を公開",
+        "クラウド オートメーションの通信にも使われている",
+        "オープンで拡張可能。エージェント用の独自 UI や、対応する任意の UI に接続するエージェント基盤を作れる"
+      ]
+    },
+    {
+      "id": "how-to-use",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "Agents ウィンドウで「Agents: Add Remote Agent Host...」を実行し、WebSocket ベースのエージェント ホストを追加できる",
+        "code agent endpoints を実行すると、エディターで動作中のエージェント ホストのエンドポイントを取得できる",
+        "6 言語のライブラリが提供されている"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "背景",
+      "priority": "detail",
+      "items": [
+        "Agent Host はエージェントをクライアント終了後も動かし続ける別プロセス",
+        "VS Code、Copilot CLI、GitHub Copilot App、github.com 間でセッションを引き継げる"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "Agent Host Protocol", "type": "feature", "oneLine": "任意のクライアントがエージェント セッションとやり取りするためのプロトコル。" },
+    { "term": "Agent Host", "type": "feature", "oneLine": "エージェントを動かし続ける別プロセス。ローカルでもリモートでも動かせる。" }
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.144",
+      "url": "https://code.visualstudio.com/updates/v1_144#_agent-host-protocol-v10"
+    },
+    "documents": []
+  },
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_144#_agent-host-protocol-v10"
+  ],
+  "qa": [
+    {
+      "q": "Agent Host Protocol とは何ですか？",
+      "a": "VS Code がエージェントとローカルやリモート マシン上で通信するためのプロトコルです。クラウド オートメーションでも使われ、オープンで拡張可能な設計です。"
+    },
+    {
+      "q": "リモートのエージェント ホストはどう追加しますか？",
+      "a": "Agents ウィンドウで「Agents: Add Remote Agent Host...」を実行すると、WebSocket ベースのエージェント ホストを VS Code に追加できます。"
+    },
+    {
+      "q": "エンドポイントはどう確認しますか？",
+      "a": "code agent endpoints を実行すると、エディターで動作中のエージェント ホストのエンドポイントを取得できます。"
+    },
+    {
+      "q": "使えるライブラリはありますか？",
+      "a": "6 言語のライブラリが公開されています。詳細は Agent Host Protocol のサイトで案内されています。"
+    }
+  ]
+}
