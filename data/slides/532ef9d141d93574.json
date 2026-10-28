@@ -1,0 +1,106 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "532ef9d141d93574",
+  "title": {
+    "ja": "GitHub Copilot アプリ向けのセキュリティ拡張機能（パブリック プレビュー）",
+    "subtitleJa": "コード スキャン アラートの確認・説明・修正を Copilot アプリ内で完結できる",
+    "original": "Security extension for the GitHub Copilot app"
+  },
+  "date": "2026-10-28",
+  "topic": "GitHub Copilot",
+  "status": "preview",
+  "statusEvidence": "The new GitHub security extension, now in public preview",
+  "audience": {
+    "who": "Copilot アプリでコード スキャン アラートに対応する開発者",
+    "change": "アラートの一覧・詳細・Explain / Fix・却下と、ローカル変更の /security-review をアプリ内で行える",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "使うなら github-security プラグインをインストールする。組織では Copilot アプリ ポリシーが必要"
+  },
+  "panels": [
+    {
+      "id": "how-to-use",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "コード スキャンの未解決アラートを重大度順に表示し、検索とフィルターで絞り込める",
+        "アラートを選んで Explain か Fix を実行。Fix はローカルの作業コピーだけを変更し、コミットも push もしない",
+        "/security-review で現在の変更を確認し、最後のレビュー後にコードが変わると通知される",
+        "不要なアラートは却下できる。委任された却下を使う組織では承認依頼として送られる"
+      ]
+    },
+    {
+      "id": "install",
+      "heading": "インストール",
+      "priority": "core",
+      "items": [
+        "ターミナルで copilot plugin install github-security@awesome-copilot を実行する",
+        "アプリでは Customize から github-security を検索し、+ Install を選ぶ",
+        "インストール後は自動で有効になり、セッションから Security キャンバスを開ける"
+      ]
+    },
+    {
+      "id": "prerequisites",
+      "heading": "前提と制限",
+      "priority": "core",
+      "items": [
+        "github.com と GitHub Enterprise Cloud（データ所在地）が対象。GitHub Enterprise Server は非対応",
+        "どのプランでもインストールとローカル変更の /security-review が可能。Business / Enterprise は管理者が Copilot アプリ ポリシーを有効にする",
+        "既存アラートの表示・修正・却下は、コード スキャンが有効でアラートの閲覧権限があるリポジトリが対象。プライベートは GitHub Code Security が必要"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "Explain・Fix・/security-review は選択中のモデルで AI クレジットを消費。閲覧と却下は AI を使わない",
+        "ローカルでの修正だけではアラートは閉じない。反映後のコード スキャンの再実行で判定される"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "Security キャンバス", "type": "feature", "oneLine": "拡張機能が提供する、アラートの操作とローカルのセキュリティ レビューを行う画面。" },
+    { "term": "委任された却下", "type": "term", "oneLine": "組織が設定する、アラートの却下に承認を求める仕組み。" }
+  ],
+  "qa": [
+    {
+      "q": "どのプランで使えますか？",
+      "a": "どの Copilot プランでも、拡張機能のインストールとローカル変更への /security-review を使えます。Copilot Business と Enterprise は、管理者が GitHub Copilot アプリ ポリシーを有効にする必要があります。"
+    },
+    {
+      "q": "既存のアラートを見るための条件は？",
+      "a": "コード スキャンが有効で、アラートを閲覧できる権限があるリポジトリが対象です。プライベート リポジトリでは GitHub Code Security が必要です。ローカル レビューにはどちらも不要です。"
+    },
+    {
+      "q": "Fix を押すとコードはどうなりますか？",
+      "a": "ローカルの作業コピーだけが変更され、コミット、push、pull request 作成は行われません。アプリで確認して調整し、準備ができたら自分で push します。"
+    },
+    {
+      "q": "インストール方法は？",
+      "a": "ターミナルで copilot plugin install github-security@awesome-copilot を実行するか、アプリの Customize で github-security を検索して + Install を選びます。インストール後は自動で有効になります。"
+    },
+    {
+      "q": "GitHub Enterprise Server でも使えますか？",
+      "a": "使えません。github.com と、データ所在地のある GitHub Enterprise Cloud が対象で、GitHub Enterprise Server は非対応です。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Security extension for the GitHub Copilot app - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-10-28-security-extension-for-the-github-copilot-app/"
+    },
+    "documents": [
+      {
+        "title": "Viewing and fixing security alerts in the GitHub Copilot app - GitHub Docs",
+        "url": "https://docs.github.com/en/copilot/how-tos/github-copilot-app/view-and-fix-security-alerts"
+      }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-10-28-security-extension-for-the-github-copilot-app/",
+    "https://docs.github.com/en/copilot/how-tos/github-copilot-app/view-and-fix-security-alerts"
+  ]
+}
