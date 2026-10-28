@@ -1,0 +1,98 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "811e37bb7ae00532",
+  "title": {
+    "ja": "VS Code 1.144: クラウドオートメーション（プレビュー）",
+    "subtitleJa": "Agents ウィンドウから、PC を切っていても GitHub 上で動くオートメーションを作成・管理できる",
+    "original": "Cloud Automations (Preview)"
+  },
+  "date": "2026-10-28",
+  "topic": "GitHub Copilot",
+  "status": "preview",
+  "statusEvidence": "Cloud automations is in preview and might change before it becomes generally available.",
+  "audience": {
+    "who": "リポジトリの定型作業やイベント対応を Copilot に任せたい VS Code ユーザー",
+    "change": "スケジュールや issue・pull request のイベントで動くオートメーションを、GitHub のインフラ上で実行できる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "Agents ウィンドウの Automations で作成する。チームでの共有は Owner を Repository にする"
+  },
+  "panels": [
+    {
+      "id": "usage",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "Agents ウィンドウの Automations で Create Automation を選ぶか、エージェントに作成を依頼する",
+        "作成フォームで Run in the Cloud をオンにし、対象の private リポジトリを選ぶ",
+        "Trigger は Manual、Daily、Weekly に加え、Issue・Pull Request のイベントを選べる"
+      ]
+    },
+    {
+      "id": "prerequisites",
+      "heading": "前提と制限",
+      "priority": "core",
+      "items": [
+        "write 権限のある適格な private リポジトリが必要。public リポジトリは非対応",
+        "Copilot のプランと組織がオートメーションを許可している必要がある",
+        "表示されない場合は `chat.automations.enabled` と `chat.automations.cloud.enabled` を確認する"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "許可ツールは既定で未選択。必要なツールだけを Configure allowed tools で許可する",
+        "Owner が Repository の場合は Copilot として実行され、write 権限のある人が編集・実行できる"
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Cloud automation",
+      "type": "feature",
+      "oneLine": "GitHub 上で、スケジュールまたはリポジトリイベントを契機に、PC が停止していても実行されるオートメーション"
+    }
+  ],
+  "qa": [
+    {
+      "q": "クラウドオートメーションは何ができますか？",
+      "a": "issue や pull request のイベントに反応して自動で動けます。たとえば自分に assign された issue のトリアージです。ツールを制限し、ラベルなどのフィルターで実行条件も絞れます。"
+    },
+    {
+      "q": "どのリポジトリで使えますか？",
+      "a": "write 権限のある GitHub.com アカウントで、適格な private リポジトリが必要です。public リポジトリは非対応です。Copilot のプランと組織がオートメーションを許可している必要があります。"
+    },
+    {
+      "q": "オンにするにはどうしますか？",
+      "a": "既定で有効です。Automations が見えない場合は chat.automations.enabled、作成フォームに Run in the Cloud が出ない場合は chat.automations.cloud.enabled を確認します。設定だけでは GitHub 側のアクセスは付与されません。"
+    },
+    {
+      "q": "チームで共有できますか？",
+      "a": "Owner を Repository にすると、リポジトリ所有となり Copilot として実行されます。read 権限があれば定義を閲覧でき、write 権限があれば編集・実行できます。作成後に Owner は変更できません。"
+    },
+    {
+      "q": "どのようなスケジュールを指定できますか？",
+      "a": "クラウドでは Manual、Daily、Weekly に対応します。日次・週次の時刻は分を 00、15、30、45 から選びます。スケジュールは UTC で保存されます。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.144",
+      "url": "https://code.visualstudio.com/updates/v1_144#_cloud-automations-preview"
+    },
+    "documents": [
+      {
+        "title": "Create and manage agent automations",
+        "url": "https://code.visualstudio.com/docs/agents/run/automations"
+      }
+    ]
+  },
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_144#_cloud-automations-preview",
+    "https://code.visualstudio.com/docs/agents/run/automations"
+  ]
+}
