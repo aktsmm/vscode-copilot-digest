@@ -1,0 +1,91 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "d6140e2e60dfd028",
+  "title": {
+    "ja": "VS Code 1.144: エージェントがデスクトップ アプリを操作できる Computer Use",
+    "subtitleJa": "ローカルの Copilot ハーネス セッションで、macOS / Windows のアプリを見て操作できる（Experimental）",
+    "original": "Let agents use desktop apps with computer use"
+  },
+  "date": "2026-10-28",
+  "topic": "VS Code",
+  "status": "update",
+  "audience": {
+    "who": "macOS / Windows で、コードやターミナル以外のデスクトップ アプリを伴う作業をエージェントに任せたい開発者",
+    "change": "エージェントがアプリのウィンドウを見て、クリック・入力・スクロールできる。既定は無効",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "使うなら chat.agentHost.computerUse.enabled を有効にして VS Code を再起動する"
+  },
+  "panels": [
+    {
+      "id": "availability",
+      "heading": "使える場所",
+      "priority": "core",
+      "items": [
+        "自分の macOS / Windows 上で動くローカルの Copilot ハーネス セッション",
+        "Local・Claude・Codex ハーネス、Linux、リモート / クラウド ホストでは使えない",
+        "Experimental で、既定はオフ"
+      ]
+    },
+    {
+      "id": "how-to",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "設定 chat.agentHost.computerUse.enabled を有効にし、VS Code を再起動する",
+        "新しいローカル Copilot チャットでアプリ操作を依頼し、「Turn on Computer Use?」で Turn On を選ぶか /computer on を実行",
+        "macOS では アクセシビリティと画面収録の権限を付与し、各アプリへのアクセスも承認する"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "有効化は現在のチャットに限らず、/computer off まで Copilot CLI を含め有効のまま",
+        "ワークスペース外のアプリの内容を読み書きできるため、必要なアプリだけ承認する",
+        "Web アプリにはブラウザー ツールを使う"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "Computer Use", "type": "feature", "oneLine": "GitHub の Computer Use プラグインで、エージェントがアプリのウィンドウを見てクリック・入力・スクロールする機能。" }
+  ],
+  "qa": [
+    {
+      "q": "どの環境で Computer Use を使えますか？",
+      "a": "自分の macOS または Windows 上で動くローカルの Copilot ハーネス セッションです。Local・Claude・Codex ハーネス、Linux、リモートやクラウドのホストでは使えません。"
+    },
+    {
+      "q": "どうやって有効にしますか？",
+      "a": "設定 chat.agentHost.computerUse.enabled を有効にして VS Code を再起動します。その後、新しいローカル Copilot チャットで依頼して Turn On を選ぶか、/computer on を実行します。"
+    },
+    {
+      "q": "macOS で必要な権限は何ですか？",
+      "a": "Copilot Computer Use ヘルパー アプリに、アプリ上でクリック・入力するためのアクセシビリティと、ウィンドウを見るための画面収録の権限が必要です。各アプリへのアクセスも承認します。"
+    },
+    {
+      "q": "一度オンにするとどこまで有効ですか？",
+      "a": "現在のチャットに限らず、Copilot CLI を含むこのコンピューター上の Copilot で /computer off を実行するまで有効です。"
+    },
+    {
+      "q": "Web アプリの操作にも使えますか？",
+      "a": "Web アプリにはブラウザー ツールを使うよう案内されています。Computer Use は、他のツールでは届かないデスクトップ アプリ向けです。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.144 - Visual Studio Code リリース ノート",
+      "url": "https://code.visualstudio.com/updates/v1_144#_let-agents-use-desktop-apps-with-computer-use"
+    },
+    "documents": [
+      { "title": "Use tools with agents - Visual Studio Code", "url": "https://code.visualstudio.com/docs/agents/run/tools" }
+    ]
+  },
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_144",
+    "https://code.visualstudio.com/docs/agents/run/tools"
+  ]
+}
