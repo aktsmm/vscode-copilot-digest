@@ -1,0 +1,92 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "6278a173860f7e41",
+  "title": {
+    "ja": "VS Code のリモート エージェント セッション、接続方法の選び方を整理",
+    "subtitleJa": "GitHub Environments、SSH、dev tunnels の使い分けと、ホストを動かし続ける前提を明記",
+    "original": "Run and manage remote agent sessions"
+  },
+  "date": "2026-10-28",
+  "topic": "VS Code",
+  "status": "update",
+  "audience": {
+    "who": "自分の開発マシン上のエージェント セッションを、別のアプリやデバイスから続けたい VS Code ユーザー",
+    "change": "接続方法を GitHub Environments (Preview)、SSH、dev tunnels から選べると整理され、ワークスペースとセッションはホスト側に残ると明記された",
+    "changeNature": "neutral"
+  },
+  "action": {
+    "required": "info",
+    "summary": "リモート接続を使うなら、用途に合う接続方法を選び、ホストを起動したままにする"
+  },
+  "panels": [
+    {
+      "id": "connections",
+      "heading": "接続方法の選び方",
+      "priority": "core",
+      "items": [
+        "GitHub Environments (Preview): マシンを登録し、VS Code、Copilot アプリ、CLI、GitHub.com、GitHub Mobile から接続する",
+        "SSH: Agents ウィンドウからリモート ホストへ SSH で接続する",
+        "dev tunnels: VS Code またはブラウザー版 Agents ウィンドウから、認証付きトンネルで接続する"
+      ]
+    },
+    {
+      "id": "prerequisites",
+      "heading": "前提と制限",
+      "priority": "core",
+      "items": [
+        "ファイルと開発ツールはエージェントが動くマシンに残り、電源と到達性、ホストの起動を保つ",
+        "接続してもセッションやワークスペースは移動せず、既存セッションは動いているホストへ接続して続ける",
+        "ホストに依存しない環境が必要なら cloud sessions を使う (experimental)"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "リモート ホストへの接続を止めるには chat.remoteAgentHostsEnabled をオフにする",
+        "管理リモート環境 (Experimental) は関連する 3 つの設定が必要で、いずれも既定でオン"
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "GitHub Environments",
+      "type": "feature",
+      "oneLine": "開発マシンを GitHub アカウントに登録し、対応する Copilot クライアントから使えるようにする仕組み。"
+    },
+    {
+      "term": "dev tunnels",
+      "type": "feature",
+      "oneLine": "認証付きトンネル経由でホストへ接続する方法。"
+    }
+  ],
+  "qa": [
+    {
+      "q": "GitHub Environments は何ができるのか",
+      "a": "開発マシンを登録すると、VS Code、GitHub Copilot アプリ、Copilot CLI、GitHub.com、GitHub Mobile などの対応クライアントから接続できます。使えるセッションの種類や操作はクライアントごとに異なります。"
+    },
+    {
+      "q": "接続するとセッションは手元に移動するのか",
+      "a": "移動しません。ローカル セッションの移動やワークスペースのコピーは行われず、既存のリモート セッションは、それが動いているホストに接続して続けます。"
+    },
+    {
+      "q": "ホストの電源を切っても使えるか",
+      "a": "使えません。マシンの電源と到達性、エージェント ホストの起動を保つ必要があります。ホストに依存しない管理されたコンピューティングが必要なら cloud sessions を使います (experimental)。"
+    },
+    {
+      "q": "リモート接続を無効にするには",
+      "a": "chat.remoteAgentHostsEnabled をオフにすると、このクライアントはリモート エージェント ホストに接続しません。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Run and manage remote agent sessions",
+      "url": "https://code.visualstudio.com/docs/agents/run/remote-agent-sessions"
+    },
+    "documents": []
+  },
+  "evidence": [
+    "https://code.visualstudio.com/docs/agents/run/remote-agent-sessions"
+  ]
+}
