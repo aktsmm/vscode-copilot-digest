@@ -1,0 +1,113 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "d48e37e09df5a7b1",
+  "title": {
+    "ja": "GitHub Agentic Workflows、一般提供開始",
+    "subtitleJa": "自然言語のMarkdownで書いた自動化をActions YAMLにコンパイルし、エージェントが実行",
+    "original": "GitHub Agentic Workflows generally available"
+  },
+  "date": "2026-10-28",
+  "topic": "GitHub Copilot",
+  "status": "ga",
+  "statusEvidence": "GitHub Agentic Workflows, an open source project from GitHub Next, is now generally available.",
+  "audience": {
+    "who": "github.comのGitHub Free、Team、Enterpriseで、Issue対応やCI分析などを自動化したい開発者と管理者",
+    "change": "プレビュー版だったエージェント型ワークフローが一般提供になり、ARC対応やモデルルーティングなどが加わった",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "クイックスタートに従ってCLI拡張をインストールし、最初のワークフローを実行する"
+  },
+  "panels": [
+    {
+      "id": "availability",
+      "heading": "使える場所とプラン",
+      "priority": "core",
+      "items": [
+        "github.com上のGitHub Free、Team、Enterpriseで一般提供",
+        "既定のGitHub Copilot CLIエンジンを使う場合はCopilotライセンスが必要",
+        "GitHub Copilot以外の任意のコーディングエージェントも利用可能"
+      ]
+    },
+    {
+      "id": "usage",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "Issueトリアージ、CI失敗分析、ドキュメント更新、テスト作成などを自然言語のMarkdownで定義",
+        "MarkdownはActionsの標準YAMLにコンパイルされ、既存のランナーグループとポリシー制約を再利用",
+        "gh aw add-wizardでワークフローテンプレートを追加できる"
+      ]
+    },
+    {
+      "id": "ga-additions",
+      "heading": "GAでの追加機能",
+      "priority": "core",
+      "items": [
+        "Actions Runner Controller（ARC）のセルフホストランナーでDocker-in-Dockerを利用可能",
+        "gh aw forecastが正式機能になり、脅威検出クレジットと月ごとの範囲を表示",
+        "タスクの種類と難易度に合わせたモデルルーターと、ワークフローごとのモデルプロバイダー選択"
+      ]
+    },
+    {
+      "id": "safeguards",
+      "heading": "組み込みの保護",
+      "priority": "detail",
+      "items": [
+        "既定は読み取り専用権限で、Agent Workflow Firewallの背後のサンドボックスコンテナで実行",
+        "出力はsafe outputsで検証し、脅威検出ジョブが変更適用前に走査"
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Agent Workflow Firewall",
+      "type": "feature",
+      "oneLine": "エージェントをサンドボックスコンテナ内で実行する際に通信を制御する保護の仕組み"
+    },
+    {
+      "term": "safe outputs",
+      "type": "feature",
+      "oneLine": "エージェントの出力を検証してから適用する仕組み"
+    }
+  ],
+  "qa": [
+    {
+      "q": "どのプランで使えますか。",
+      "a": "github.com上のGitHub Free、Team、Enterpriseで一般提供です。既定のGitHub Copilot CLIエンジンでワークフローを動かすにはCopilotライセンスが必要です。"
+    },
+    {
+      "q": "Copilot以外のエージェントも使えますか。",
+      "a": "使えます。GitHub Copilotまたは独自に用意したコーディングエージェントで各ワークフローを動かせます。"
+    },
+    {
+      "q": "自己ホストランナーでも動きますか。",
+      "a": "GAでActions Runner Controller（ARC）のセルフホストランナーでDocker-in-Dockerを使った実行に対応しました。"
+    },
+    {
+      "q": "安全性はどう担保されますか。",
+      "a": "エージェントは既定で読み取り専用権限、Agent Workflow Firewallの背後のサンドボックスで実行されます。出力はsafe outputsで検証され、脅威検出ジョブが変更適用前に走査します。"
+    },
+    {
+      "q": "使い始めるには何をしますか。",
+      "a": "クイックスタートに従ってCLI拡張をインストールし、最初のワークフローを実行します。githubnext/agenticsリポジトリにトリアージや依存関係管理などの既成ワークフローがあります。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "GitHub Agentic Workflows generally available - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-10-28-github-agentic-workflows-generally-available/"
+    },
+    "documents": [
+      {
+        "title": "GitHub エージェント型ワークフロー - GitHubドキュメント",
+        "url": "https://docs.github.com/ja/copilot/how-tos/github-agentic-workflows"
+      }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-10-28-github-agentic-workflows-generally-available/",
+    "https://docs.github.com/ja/copilot/how-tos/github-agentic-workflows"
+  ]
+}
