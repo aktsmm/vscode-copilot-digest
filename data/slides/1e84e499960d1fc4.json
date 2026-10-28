@@ -1,0 +1,91 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "1e84e499960d1fc4",
+  "title": {
+    "ja": "VS Code の Copilot、クラウド・リモート・スマホをまたぐセッション継続",
+    "subtitleJa": "Agent Host でセッションがウィンドウから独立し、各クライアントで同じセッションを続けられる",
+    "original": "GitHub Copilot in VS Code, Universe releases"
+  },
+  "date": "2026-10-28",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "VS Code でエージェントを使い、場所や端末を変えて作業を続けたい開発者と管理者",
+    "change": "Agent Host によりウィンドウを閉じても作業が続き、VS Code・GitHub Mobile・github.com などで同じセッションを扱える",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "使いたい機能に応じて設定やコマンドを試す。組織は preview 機能とプラグインの制御を確認する"
+  },
+  "panels": [
+    {
+      "id": "where-to-use",
+      "heading": "使える場所",
+      "priority": "core",
+      "items": [
+        "クラウド セッションは VS Code の Agents ウィンドウから開始し、GitHub 側の基盤で動く",
+        "同じセッションを VS Code、Copilot アプリ、GitHub Mobile、github.com、Copilot CLI で続けられる",
+        "Slack や Microsoft Teams の DM で始めたセッションも、これらのクライアントで続けられる"
+      ]
+    },
+    {
+      "id": "how-to-use",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "スマホから操作: 開発マシンで、プロジェクト フォルダーから code agent host --github-environment を実行する",
+        "コンピューター操作: macOS / Windows で chat.agentHost.computerUse.enabled を有効にし、再起動後に /computer on を実行",
+        "カスタマイズ: Agents ウィンドウのサイドバーの Customizations、または Chat: Open Customizations を開く"
+      ]
+    },
+    {
+      "id": "limits",
+      "heading": "前提と制限",
+      "priority": "detail",
+      "items": [
+        "リモートやスマホから使う間は、マシンと Agent Host を起動したままにする",
+        "コンピューター操作は experimental で、アプリごとに承認が必要。組織はポリシーで無効化できる",
+        "モデル比較と Customization Marketplace は preview。Business / Enterprise は Editor preview features の許可が必要"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "Agent Host", "type": "feature", "oneLine": "エージェントのハーネスとセッションを、個々のウィンドウから独立して動かす専用プロセス。" },
+    { "term": "AHP", "type": "term", "oneLine": "Agent Host Protocol。接続したクライアント間の同期と再接続後の追従を可能にするオープンなプロトコル。" }
+  ],
+  "suggestions": [
+    "外出先からは GitHub Mobile で進捗を確認し、指示を出す"
+  ],
+  "references": {
+    "source": {
+      "title": "GitHub Copilot in VS Code, Universe releases - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-10-28-github-copilot-in-vs-code-universe-releases/"
+    },
+    "documents": [
+      { "title": "Agent Host architecture", "url": "https://code.visualstudio.com/docs/agents/concepts/agent-host" }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-10-28-github-copilot-in-vs-code-universe-releases/",
+    "https://code.visualstudio.com/docs/agents/concepts/agent-host"
+  ],
+  "qa": [
+    {
+      "q": "ウィンドウを閉じてもエージェントは動き続けますか？",
+      "a": "Agent Host がセッションを個々の VS Code ウィンドウから独立させるため、プロジェクト フォルダーやウィンドウを閉じても作業は続きます。リモートで動かす場合は、リモート マシンと Agent Host を起動したままにする必要があります。"
+    },
+    {
+      "q": "スマホから開発マシンのエージェントを操作するには？",
+      "a": "開発マシンのターミナルでプロジェクト フォルダーから code agent host --github-environment を実行し、GitHub Mobile から進捗確認・指示・新規タスクの開始ができます。マシンと Agent Host は起動したままにします。"
+    },
+    {
+      "q": "コンピューター操作はどう有効にしますか？",
+      "a": "macOS または Windows で、設定の chat.agentHost.computerUse.enabled を有効にして VS Code を再起動し、Copilot セッションで /computer on を実行します。アプリごとに承認が必要で、experimental です。組織はポリシーで無効化できます。"
+    },
+    {
+      "q": "Customization Marketplace を使うための条件は？",
+      "a": "preview で、既定で有効です。Business と Enterprise では管理者が Editor preview features を許可する必要があります。"
+    }
+  ]
+}
