@@ -1,0 +1,105 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "6e5ebe8af36db950",
+  "title": {
+    "ja": "GitHub intelligence: Copilot Memory が GA、Dreaming はパブリック プレビュー",
+    "subtitleJa": "Memory が有料プランで GA。Dreaming（パブリック プレビュー）が記憶と指示を更新し、コード検索はリポジトリをまたぐ",
+    "original": "GitHub intelligence puts your code, context, and history to work"
+  },
+  "date": "2026-10-28",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "Copilot を使う開発者と、Copilot ポリシーを管理する組織・企業の管理者",
+    "change": "Copilot Memory が有料プランで GA になり、Dreaming がオプトインのパブリック プレビューとして加わった",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "Dreaming を使うなら、個人設定やリポジトリ設定、管理者ポリシーで有効にする"
+  },
+  "panels": [
+    {
+      "id": "availability",
+      "heading": "使える場所とプラン",
+      "priority": "core",
+      "items": [
+        "Copilot Memory は有料の Copilot プランで GA",
+        "Copilot アプリ、CLI、VS Code、クラウド エージェント、コード レビュー、Slack、Teams、GitHub Mobile で記憶を作成できる",
+        "Dreaming はパブリック プレビューで、オプトイン"
+      ]
+    },
+    {
+      "id": "how-it-works",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "「PR の説明は TL;DR から始めて」と伝えると、好みを複数の Copilot 体験で再利用する",
+        "個人の記憶は Copilot の設定で表示・削除できる",
+        "個人: 個人キュレーションは Copilot 設定、リポジトリ Dream は各リポジトリの設定で有効にする",
+        "組織・企業: 管理者が Copilot ポリシーで有効にする"
+      ]
+    },
+    {
+      "id": "dreams",
+      "heading": "Dreaming の種類と制限",
+      "priority": "core",
+      "items": [
+        "個人メモリのキュレーション、リポジトリのカスタマイズ、コード レビューのカスタマイズの 3 種類",
+        "記憶は追加・更新・削除でき、チェックイン済みのスキルや指示の変更は PR で提案される",
+        "Dream の実行は AI クレジットを消費する"
+      ]
+    },
+    {
+      "id": "code-search",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "コード検索で、ローカル クローンなしに組織のリポジトリ横断で検索できる（/research で利用）",
+        "組織では、利用者も自分の Copilot 設定で個人 Dreaming を有効にする必要がある"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "GitHub intelligence", "type": "term", "oneLine": "GitHub のデータのグラフを元にした、エージェント向けのコンテキストと学習の層。" },
+    { "term": "Copilot Memory", "type": "feature", "oneLine": "個人の好みやリポジトリの慣例をセッションをまたいで記憶する機能。" },
+    { "term": "Copilot dreaming", "type": "feature", "oneLine": "過去の作業を振り返り、今後のエージェント セッションを改善する機能。" }
+  ],
+  "suggestions": [
+    "Dreaming の前提条件、設定、費用は Dreaming のドキュメントで確認する"
+  ],
+  "qa": [
+    {
+      "q": "Copilot Memory はどのプランで使えますか？",
+      "a": "記事では、有料の Copilot プランで GA になったとされています。Dreaming はパブリック プレビューで、機能ごとに提供状況と設定が異なります。"
+    },
+    {
+      "q": "Dreaming はどうやって有効にしますか？",
+      "a": "オプトインです。個人は Copilot 設定で個人キュレーションを、各リポジトリの設定でリポジトリ Dream を有効にします。組織・企業は管理者が Copilot ポリシーで有効にします。"
+    },
+    {
+      "q": "Dreaming はコードを勝手に書き換えますか？",
+      "a": "個人・リポジトリの記憶は追加・更新・削除できます。チェックイン済みのスキルや指示ファイルの変更は PR で提案され、チームがレビューします。"
+    },
+    {
+      "q": "Dreaming に費用はかかりますか？",
+      "a": "Dream の実行は AI クレジットを消費します。前提条件、設定、費用の詳細は Dreaming のドキュメントを参照してください。"
+    },
+    {
+      "q": "組織で使う場合の注意点は？",
+      "a": "管理者が Copilot ポリシーで有効にし、エンタープライズ管理者は選択を組織管理者に委任できます。利用者も自分の設定で個人 Dreaming を有効にする必要があります。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "GitHub intelligence puts your code, context, and history to work - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-10-28-github-intelligence-puts-your-code-context-and-history-to-work/"
+    },
+    "documents": [
+      { "title": "個人用アカウントの Copilot メモリの管理 - GitHubドキュメント", "url": "https://docs.github.com/ja/copilot/how-tos/use-copilot-agents/copilot-memory/manage-for-yourself" }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-10-28-github-intelligence-puts-your-code-context-and-history-to-work/"
+  ]
+}
