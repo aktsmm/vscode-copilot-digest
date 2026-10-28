@@ -1,0 +1,90 @@
+{
+  "date": "2026-10-28",
+  "generatedAt": "2026-10-28T00:35:58.215Z",
+  "latestRun": {
+    "generatedAt": "2026-10-28T00:35:58.215Z",
+    "newEventsCount": 3,
+    "newEventIds": [
+      "github-changelog:https://github.blog/changelog/2026-10-27-github-copilot-supports-server-to-server-authentication",
+      "github-changelog-copilot:https://github.blog/changelog/2026-10-27-github-copilot-supports-server-to-server-authentication",
+      "copilot-whats-new:45fef121b049076859d57ed8a8b6b01eabbbeaf41fe72796bbfe44bd50b1cb56"
+    ],
+    "errorCount": 0,
+    "skippedLowInformationEvents": []
+  },
+  "events": [
+    {
+      "eventId": "copilot-whats-new:45fef121b049076859d57ed8a8b6b01eabbbeaf41fe72796bbfe44bd50b1cb56",
+      "sourceId": "copilot-whats-new",
+      "sourceName": "GitHub Copilot What's New",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-10-28T00:35:46.926Z",
+      "publishedAt": "2026-10-28T00:35:46.924Z",
+      "title": "GitHub Copilot What's New changed",
+      "url": "https://github.com/features/copilot/whats-new",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [
+          "Oct.27 Release"
+        ],
+        "additions": [
+          "H3: Oct.27 Release"
+        ]
+      },
+      "headings": [
+        "Changelog",
+        "Filters (0 selected)",
+        "October\n Oct\n 2026",
+        "Oct.27 Release",
+        "Oct.26 Release",
+        "Oct.26 Release",
+        "Oct.23 Improvement",
+        "Oct.23 Improvement",
+        "Oct.22 Release",
+        "Oct.22 Improvement",
+        "Oct.22 Improvement",
+        "Oct.22 Improvement"
+      ],
+      "score": 3
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-10-27-github-copilot-supports-server-to-server-authentication",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-10-28T00:35:45.050Z",
+      "publishedAt": "2026-10-27T21:36:55.000Z",
+      "title": "GitHub Copilot supports server-to-server authentication",
+      "url": "https://github.blog/changelog/2026-10-27-github-copilot-supports-server-to-server-authentication",
+      "summary": "GitHub Copilot now supports server-to-server authentication for GitHub Apps installed on organizations, available in public preview. Services and agents built with the GitHub Copilot SDK can now make requests on…\nThe post GitHub Copilot supports server-to-server authentication appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 8
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-10-27-github-copilot-supports-server-to-server-authentication",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-10-28T00:35:45.427Z",
+      "publishedAt": "2026-10-27T21:36:55.000Z",
+      "title": "GitHub Copilot supports server-to-server authentication",
+      "url": "https://github.blog/changelog/2026-10-27-github-copilot-supports-server-to-server-authentication",
+      "summary": "GitHub Copilot now supports server-to-server authentication for GitHub Apps installed on organizations, available in public preview. Services and agents built with the GitHub Copilot SDK can now make requests on…\nThe post GitHub Copilot supports server-to-server authentication appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 8
+    }
+  ],
+  "errors": []
+}

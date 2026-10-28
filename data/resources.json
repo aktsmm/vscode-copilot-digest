@@ -24985,6 +24985,100 @@
         "Original article explicit links",
         "Feature-matched official documentation indexes"
       ]
+    },
+    "d68b8ceee8798790ea03d7342acae9230684befc664888d85873fe051f54afc2": {
+      "version": 6,
+      "checkedAt": "2026-10-28T00:35:58.715Z",
+      "inputUrl": "https://github.com/features/copilot/whats-new",
+      "inputTitle": "GitHub Copilot What's New changed",
+      "status": "verified",
+      "source": {
+        "url": "https://github.blog/changelog/2026-10-27-github-copilot-supports-server-to-server-authentication/",
+        "status": "verified",
+        "reason": "Snapshot observation, not a standalone feature: Oct.27 Release; explicit article: GitHub Copilot supports server-to-server authentication",
+        "checkedAt": "2026-10-28T00:35:59.189Z",
+        "contentHash": "456170d6511068f11867d34c6182817eba4d46dd266a59c4bf34b7a70be7e6ab"
+      },
+      "documents": [
+        {
+          "url": "https://docs.github.com/ja/copilot/how-tos/copilot-sdk/auth/server-to-server-tokens",
+          "title": "サーバー間認証",
+          "language": "ja",
+          "checkedAt": "2026-10-28T00:35:59.883Z",
+          "contentHash": "e5d6bd230f0493b80ddf9f1296c03c9cb85fb8f8a507fb5fea7c8edd7bfa1624",
+          "discoveryUrl": "https://github.blog/changelog/2026-10-27-github-copilot-supports-server-to-server-authentication/",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://docs.github.com/ja/copilot/how-tos/administer-copilot/manage-for-organization/manage-app-copilot-access",
+          "title": "組織で使用する Copilot 向けの GitHub Apps を管理する",
+          "language": "ja",
+          "checkedAt": "2026-10-28T00:36:00.370Z",
+          "contentHash": "329876692b03b2c2a1443c5ef0f97426965158444823fbb62f7a31df4185bd42",
+          "discoveryUrl": "https://github.blog/changelog/2026-10-27-github-copilot-supports-server-to-server-authentication/",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "b59d1612241ce47b049b2784c5cf2f6a3e67db36ecabcc3dc674e16cd639e3f7": {
+      "version": 6,
+      "checkedAt": "2026-10-28T00:36:00.420Z",
+      "inputUrl": "https://github.blog/changelog/2026-10-27-github-copilot-supports-server-to-server-authentication",
+      "inputTitle": "GitHub Copilot supports server-to-server authentication",
+      "status": "verified",
+      "source": {
+        "url": "https://github.blog/changelog/2026-10-27-github-copilot-supports-server-to-server-authentication/",
+        "status": "verified",
+        "reason": "Fetched original article",
+        "checkedAt": "2026-10-28T00:35:59.189Z",
+        "contentHash": "456170d6511068f11867d34c6182817eba4d46dd266a59c4bf34b7a70be7e6ab"
+      },
+      "documents": [
+        {
+          "url": "https://docs.github.com/ja/copilot/how-tos/copilot-sdk/auth/server-to-server-tokens",
+          "title": "サーバー間認証",
+          "language": "ja",
+          "checkedAt": "2026-10-28T00:35:59.883Z",
+          "contentHash": "e5d6bd230f0493b80ddf9f1296c03c9cb85fb8f8a507fb5fea7c8edd7bfa1624",
+          "discoveryUrl": "https://github.blog/changelog/2026-10-27-github-copilot-supports-server-to-server-authentication/",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://docs.github.com/ja/copilot/how-tos/administer-copilot/manage-for-organization/manage-app-copilot-access",
+          "title": "組織で使用する Copilot 向けの GitHub Apps を管理する",
+          "language": "ja",
+          "checkedAt": "2026-10-28T00:36:00.370Z",
+          "contentHash": "329876692b03b2c2a1443c5ef0f97426965158444823fbb62f7a31df4185bd42",
+          "discoveryUrl": "https://github.blog/changelog/2026-10-27-github-copilot-supports-server-to-server-authentication/",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
     }
   }
 }
