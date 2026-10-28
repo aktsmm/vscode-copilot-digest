@@ -1,30 +1,33 @@
 Agents Quickstart
 Overview
+Find a Guide
 Agents Quickstart
 Agents Tutorial
+Cloud Continuity Tutorial
 Best Practices
-Find a Guide
-Overview
-Chat View & Layout
+Chat View
 Agents Window
-Choose an Agent Harness
-Configure the Agents Window
+Canvases
 Review & Revert Changes
+Configure the Agents Window
 Plan Work
-Compare Model Results
 Use Tools
-Manage MCP Servers
 Browser Tools
 Subagents
 Automations
 Manage Sessions
-Session History
-Remote Agent Sessions
 Memory
 Artifacts
 Approvals & Permissions
 Agent Sandboxing
 AI Security
+Choose an Agent Harness
+Compare Model Results
+Manage MCP Servers
+Continue a Session
+Remote Agent Sessions
+Cloud Sessions
+Session History
 Find a Guide
 Explore a Codebase
 Add a Feature
@@ -45,10 +48,10 @@ How Models Work
 Context
 Tools
 Sessions and Chats
-Trust & Safety
-Agent Customization
 Agent Harnesses
+Agent Customization
 Workspace Context
+Trust & Safety
 Cheat Sheet
 Tools and Context
 Settings Reference

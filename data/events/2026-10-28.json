@@ -1,14 +1,486 @@
 {
   "date": "2026-10-28",
-  "generatedAt": "2026-10-28T11:27:02.387Z",
+  "generatedAt": "2026-10-28T18:59:13.552Z",
   "latestRun": {
-    "generatedAt": "2026-10-28T11:27:02.387Z",
-    "newEventsCount": 0,
-    "newEventIds": [],
+    "generatedAt": "2026-10-28T18:59:13.552Z",
+    "newEventsCount": 36,
+    "newEventIds": [
+      "github-changelog:https://github.blog/changelog/2026-11-26-route-and-orchestrate-models-with-github-copilot-fusion",
+      "github-changelog:https://github.blog/changelog/2026-11-26-github-copilot-app-universe-releases",
+      "github-changelog:https://github.blog/changelog/2026-11-26-github-enterprise-now-includes-access-to-github-copilot",
+      "github-changelog:https://github.blog/changelog/2026-11-26-security-extension-for-the-github-copilot-app",
+      "github-changelog:https://github.blog/changelog/2026-11-26-github-intelligence-puts-your-code-context-and-history-to-work",
+      "github-changelog:https://github.blog/changelog/2026-11-26-build-shared-workflows-for-your-team-with-copilot-automations",
+      "github-changelog:https://github.blog/changelog/2026-10-27-github-copilot-in-vs-code-universe-releases",
+      "github-changelog:https://github.blog/changelog/2026-10-26-generate-and-edit-images-directly-in-copilot",
+      "github-changelog:https://github.blog/changelog/2026-10-26-github-copilot-fusion-now-supports-selection-of-local-models",
+      "github-changelog:https://github.blog/changelog/2026-10-27-github-agentic-workflows-generally-available",
+      "github-changelog-copilot:https://github.blog/changelog/2026-11-26-route-and-orchestrate-models-with-github-copilot-fusion",
+      "github-changelog-copilot:https://github.blog/changelog/2026-11-26-github-copilot-app-universe-releases",
+      "github-changelog-copilot:https://github.blog/changelog/2026-11-26-github-enterprise-now-includes-access-to-github-copilot",
+      "github-changelog-copilot:https://github.blog/changelog/2026-11-26-security-extension-for-the-github-copilot-app",
+      "github-changelog-copilot:https://github.blog/changelog/2026-11-26-github-intelligence-puts-your-code-context-and-history-to-work",
+      "github-changelog-copilot:https://github.blog/changelog/2026-11-26-build-shared-workflows-for-your-team-with-copilot-automations",
+      "github-changelog-copilot:https://github.blog/changelog/2026-10-27-github-copilot-in-vs-code-universe-releases",
+      "github-changelog-copilot:https://github.blog/changelog/2026-10-26-generate-and-edit-images-directly-in-copilot",
+      "github-changelog-copilot:https://github.blog/changelog/2026-10-26-github-copilot-fusion-now-supports-selection-of-local-models",
+      "github-changelog-copilot:https://github.blog/changelog/2026-10-27-github-agentic-workflows-generally-available",
+      "vscode-feed:https://code.visualstudio.com/updates/v1_144",
+      "vscode-feed:https://code.visualstudio.com/blogs/2026/10/28/vscode-wrapped",
+      "vscode-updates:e21992dabc12aeda5ed152159d13a04a20ba6fa8dedfa07d1407c44a473400ea",
+      "vscode-release-notes-1-109:b4115bbc614533a6e2f7e09bc1e7a2425587d677bab91034495c3303deffa9f0",
+      "copilot-whats-new:8e03e7c55597fb6ea29edec1aa35320d60d0ecba213832dc39ed97f7bc475e55",
+      "vscode-docs-agents-automations:82d0886da26ab93cc4ad97e37d70b3d30207b13a73ebc4aebf61f4c305c46203",
+      "vscode-docs-agents-window:180777aaacfa8a949b7b0f39a6adaf455c1bdbba8f45c43cb3146093aadfe7aa",
+      "vscode-docs-agents-remote-sessions:84d81551f2bd8b5721ee6a29d6435b0ffd91b5a34eee9454a39a0efc17f41cfc",
+      "vscode-release-notes-1-144:section:188aed8012de0d22fbba5a9a74197ed84ed0ae8587444b4fdeb201834e92d455",
+      "vscode-release-notes-1-144:section:8cf4937ce3399de0d2ef0cd569bbf85e1c7af508dcfc35c178a66e808f31d5aa",
+      "vscode-release-notes-1-144:section:8b0a09e796cd2a97501114a7a1173b7c545f9cecbce5495b679122be6d14d378",
+      "vscode-release-notes-1-144:section:898a8e545a46deb21c583c419d1ea0260f77e475e9f9f4e08391a19a45455f0c",
+      "vscode-release-notes-1-144:section:7153a5c3ad01b74b3c296f64f6400389eb56e9c9d8f5c4756fcffad1ac24e08e",
+      "vscode-release-notes-1-144:section:29a80b71cd56cf17e4e714403e94d71ef6867fffd684d2de4f790fcf1a2200e4",
+      "vscode-release-notes-1-144:section:08ed6c24d11f79793d9a920aec5724f48df4fb67f9f802959da774ba74205c55",
+      "vscode-release-notes-1-144:section:10163d44ac08ae19701de313dd014dc030b65ce23805efcb060b1d65479d78d5"
+    ],
     "errorCount": 0,
-    "skippedLowInformationEvents": []
+    "skippedLowInformationEvents": [
+      {
+        "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_145",
+        "sourceId": "vscode-feed",
+        "title": "Visual Studio Code 1.145 (Insiders)",
+        "fallbackMarkers": [
+          "Visual Studio Code 関連の更新。日々の開発フローや agent 利用に効く変更点を確認しておきたい。"
+        ]
+      }
+    ]
   },
   "events": [
+    {
+      "eventId": "copilot-whats-new:8e03e7c55597fb6ea29edec1aa35320d60d0ecba213832dc39ed97f7bc475e55",
+      "sourceId": "copilot-whats-new",
+      "sourceName": "GitHub Copilot What's New",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-10-28T18:59:10.055Z",
+      "publishedAt": "2026-10-28T18:59:10.055Z",
+      "title": "GitHub Copilot What's New changed",
+      "url": "https://github.com/features/copilot/whats-new",
+      "summary": "Detected 2 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 2,
+        "headings": [
+          "Oct.28 Release",
+          "Oct.28 Improvement"
+        ],
+        "additions": [
+          "H3: Oct.28 Release",
+          "H3: Oct.28 Improvement"
+        ]
+      },
+      "headings": [
+        "Changelog",
+        "Filters (0 selected)",
+        "October\n Oct\n 2026",
+        "Oct.28 Release",
+        "Oct.28 Release",
+        "Oct.28 Release",
+        "Oct.28 Release",
+        "Oct.28 Release",
+        "Oct.28 Improvement",
+        "Oct.28 Release",
+        "Oct.28 Release",
+        "Oct.28 Release"
+      ],
+      "score": 4
+    },
+    {
+      "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_144",
+      "sourceId": "vscode-feed",
+      "sourceName": "VS Code Feed",
+      "kind": "feed_entry",
+      "detectedAt": "2026-10-28T18:59:08.276Z",
+      "publishedAt": "2026-10-28T17:00:00.000Z",
+      "title": "Visual Studio Code 1.144",
+      "url": "https://code.visualstudio.com/updates/v1_144",
+      "summary": "Learn what's new in Visual Studio Code 1.144\n Read the full article",
+      "categories": [
+        "release"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-11-26-route-and-orchestrate-models-with-github-copilot-fusion",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-10-28T18:59:07.476Z",
+      "publishedAt": "2026-10-28T16:00:00.000Z",
+      "title": "Route and orchestrate models with GitHub Copilot Fusion",
+      "url": "https://github.blog/changelog/2026-10-28-route-and-orchestrate-models-with-github-copilot-fusion",
+      "summary": "GitHub Copilot Fusion is generally available. Instead of picking a model for each task, choose Copilot Fusion and let Copilot intelligently route and orchestrate which models it uses for you.…\nThe post Route and orchestrate models with GitHub Copilot Fusion appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot",
+        "enterprise management tools",
+        "universe26"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-11-26-route-and-orchestrate-models-with-github-copilot-fusion",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-10-28T18:59:08.184Z",
+      "publishedAt": "2026-10-28T16:00:00.000Z",
+      "title": "Route and orchestrate models with GitHub Copilot Fusion",
+      "url": "https://github.blog/changelog/2026-10-28-route-and-orchestrate-models-with-github-copilot-fusion",
+      "summary": "GitHub Copilot Fusion is generally available. Instead of picking a model for each task, choose Copilot Fusion and let Copilot intelligently route and orchestrate which models it uses for you.…\nThe post Route and orchestrate models with GitHub Copilot Fusion appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot",
+        "enterprise management tools",
+        "universe26"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-11-26-github-copilot-app-universe-releases",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-10-28T18:59:07.477Z",
+      "publishedAt": "2026-10-28T15:55:00.000Z",
+      "title": "GitHub Copilot app, Universe releases",
+      "url": "https://github.blog/changelog/2026-10-28-github-copilot-app-universe-releases",
+      "summary": "Work doesn’t always fit in a single repository or session. A feature can span several repositories. A launch plan can pull in specs, designs, and assets without touching a repository…\nThe post GitHub Copilot app, Universe releases appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot",
+        "universe26"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-11-26-github-copilot-app-universe-releases",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-10-28T18:59:08.184Z",
+      "publishedAt": "2026-10-28T15:55:00.000Z",
+      "title": "GitHub Copilot app, Universe releases",
+      "url": "https://github.blog/changelog/2026-10-28-github-copilot-app-universe-releases",
+      "summary": "Work doesn’t always fit in a single repository or session. A feature can span several repositories. A launch plan can pull in specs, designs, and assets without touching a repository…\nThe post GitHub Copilot app, Universe releases appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot",
+        "universe26"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-11-26-github-enterprise-now-includes-access-to-github-copilot",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-10-28T18:59:07.477Z",
+      "publishedAt": "2026-10-28T15:50:00.000Z",
+      "title": "GitHub Enterprise now includes access to GitHub Copilot",
+      "url": "https://github.blog/changelog/2026-10-28-github-enterprise-now-includes-access-to-github-copilot",
+      "summary": "Enterprises working with a GitHub or Microsoft account team can now get Copilot included with GitHub Enterprise for every licensed user. Previously, you had to manage two things: how many…\nThe post GitHub Enterprise now includes access to GitHub Copilot appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot",
+        "universe26"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-11-26-github-enterprise-now-includes-access-to-github-copilot",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-10-28T18:59:08.184Z",
+      "publishedAt": "2026-10-28T15:50:00.000Z",
+      "title": "GitHub Enterprise now includes access to GitHub Copilot",
+      "url": "https://github.blog/changelog/2026-10-28-github-enterprise-now-includes-access-to-github-copilot",
+      "summary": "Enterprises working with a GitHub or Microsoft account team can now get Copilot included with GitHub Enterprise for every licensed user. Previously, you had to manage two things: how many…\nThe post GitHub Enterprise now includes access to GitHub Copilot appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot",
+        "universe26"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-11-26-security-extension-for-the-github-copilot-app",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-10-28T18:59:07.477Z",
+      "publishedAt": "2026-10-28T15:45:00.000Z",
+      "title": "Security extension for the GitHub Copilot app",
+      "url": "https://github.blog/changelog/2026-10-28-security-extension-for-the-github-copilot-app",
+      "summary": "You can now work through your repository’s GitHub code scanning alerts without leaving the GitHub Copilot app. The new GitHub security extension, now in public preview, lets you find the…\nThe post Security extension for the GitHub Copilot app appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "application security",
+        "copilot",
+        "universe26"
+      ],
+      "isFutureDated": false,
+      "score": 5
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-11-26-security-extension-for-the-github-copilot-app",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-10-28T18:59:08.184Z",
+      "publishedAt": "2026-10-28T15:45:00.000Z",
+      "title": "Security extension for the GitHub Copilot app",
+      "url": "https://github.blog/changelog/2026-10-28-security-extension-for-the-github-copilot-app",
+      "summary": "You can now work through your repository’s GitHub code scanning alerts without leaving the GitHub Copilot app. The new GitHub security extension, now in public preview, lets you find the…\nThe post Security extension for the GitHub Copilot app appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "application security",
+        "copilot",
+        "universe26"
+      ],
+      "isFutureDated": false,
+      "score": 5
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-11-26-github-intelligence-puts-your-code-context-and-history-to-work",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-10-28T18:59:07.477Z",
+      "publishedAt": "2026-10-28T15:40:00.000Z",
+      "title": "GitHub intelligence puts your code, context, and history to work",
+      "url": "https://github.blog/changelog/2026-10-28-github-intelligence-puts-your-code-context-and-history-to-work",
+      "summary": "Agents should understand more than your codebase—they should understand how your team works. Your preferences, repository conventions, skills, and custom instructions guide how changes should be made, while code in…\nThe post GitHub intelligence puts your code, context, and history to work appeared first on The GitHub...",
+      "categories": [
+        "Release",
+        "copilot",
+        "universe26"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-11-26-github-intelligence-puts-your-code-context-and-history-to-work",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-10-28T18:59:08.184Z",
+      "publishedAt": "2026-10-28T15:40:00.000Z",
+      "title": "GitHub intelligence puts your code, context, and history to work",
+      "url": "https://github.blog/changelog/2026-10-28-github-intelligence-puts-your-code-context-and-history-to-work",
+      "summary": "Agents should understand more than your codebase—they should understand how your team works. Your preferences, repository conventions, skills, and custom instructions guide how changes should be made, while code in…\nThe post GitHub intelligence puts your code, context, and history to work appeared first on The GitHub...",
+      "categories": [
+        "Release",
+        "copilot",
+        "universe26"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-11-26-build-shared-workflows-for-your-team-with-copilot-automations",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-10-28T18:59:07.477Z",
+      "publishedAt": "2026-10-28T15:35:00.000Z",
+      "title": "Build shared workflows for your team with Copilot Automations",
+      "url": "https://github.blog/changelog/2026-10-28-build-shared-workflows-for-your-team-with-copilot-automations",
+      "summary": "Shared Copilot Automations are rolling out, enabling teams to build and maintain AI-powered workflows together. With Copilot Automations, you can combine prompts, triggers, and tools to design workflows around the…\nThe post Build shared workflows for your team with Copilot Automations appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "copilot",
+        "universe26"
+      ],
+      "isFutureDated": false,
+      "score": 1
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-11-26-build-shared-workflows-for-your-team-with-copilot-automations",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-10-28T18:59:08.184Z",
+      "publishedAt": "2026-10-28T15:35:00.000Z",
+      "title": "Build shared workflows for your team with Copilot Automations",
+      "url": "https://github.blog/changelog/2026-10-28-build-shared-workflows-for-your-team-with-copilot-automations",
+      "summary": "Shared Copilot Automations are rolling out, enabling teams to build and maintain AI-powered workflows together. With Copilot Automations, you can combine prompts, triggers, and tools to design workflows around the…\nThe post Build shared workflows for your team with Copilot Automations appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "copilot",
+        "universe26"
+      ],
+      "isFutureDated": false,
+      "score": 1
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-10-27-github-copilot-in-vs-code-universe-releases",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-10-28T18:59:07.477Z",
+      "publishedAt": "2026-10-28T15:33:00.000Z",
+      "title": "GitHub Copilot in VS Code, Universe releases",
+      "url": "https://github.blog/changelog/2026-10-28-github-copilot-in-vs-code-universe-releases",
+      "summary": "This year, we focused on giving you more choice in how you work with GitHub Copilot in Visual Studio Code: which models you use, where your agents run, and how…\nThe post GitHub Copilot in VS Code, Universe releases appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot",
+        "universe26",
+        "vs code"
+      ],
+      "isFutureDated": false,
+      "score": 6
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-10-27-github-copilot-in-vs-code-universe-releases",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-10-28T18:59:08.184Z",
+      "publishedAt": "2026-10-28T15:33:00.000Z",
+      "title": "GitHub Copilot in VS Code, Universe releases",
+      "url": "https://github.blog/changelog/2026-10-28-github-copilot-in-vs-code-universe-releases",
+      "summary": "This year, we focused on giving you more choice in how you work with GitHub Copilot in Visual Studio Code: which models you use, where your agents run, and how…\nThe post GitHub Copilot in VS Code, Universe releases appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot",
+        "universe26",
+        "vs code"
+      ],
+      "isFutureDated": false,
+      "score": 6
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-10-26-generate-and-edit-images-directly-in-copilot",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-10-28T18:59:07.477Z",
+      "publishedAt": "2026-10-28T15:30:55.000Z",
+      "title": "Generate and edit images directly in Copilot",
+      "url": "https://github.blog/changelog/2026-10-28-generate-and-edit-images-directly-in-copilot",
+      "summary": "You can now generate and edit images using natural language in GitHub Copilot. When you ask for an image, your selected reasoning model calls a dedicated image-generation tool powered by…\nThe post Generate and edit images directly in Copilot appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot",
+        "universe26"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-10-26-generate-and-edit-images-directly-in-copilot",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-10-28T18:59:08.184Z",
+      "publishedAt": "2026-10-28T15:30:55.000Z",
+      "title": "Generate and edit images directly in Copilot",
+      "url": "https://github.blog/changelog/2026-10-28-generate-and-edit-images-directly-in-copilot",
+      "summary": "You can now generate and edit images using natural language in GitHub Copilot. When you ask for an image, your selected reasoning model calls a dedicated image-generation tool powered by…\nThe post Generate and edit images directly in Copilot appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot",
+        "universe26"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-10-26-github-copilot-fusion-now-supports-selection-of-local-models",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-10-28T18:59:07.477Z",
+      "publishedAt": "2026-10-28T15:30:42.000Z",
+      "title": "GitHub Copilot Fusion now supports selection of local models",
+      "url": "https://github.blog/changelog/2026-10-28-github-copilot-fusion-now-supports-selection-of-local-models",
+      "summary": "Today we are shipping intelligent routing for local models into experimental preview. GitHub Copilot Fusion can now choose between supported on-device models and cloud models, enabling intelligent local model routing…\nThe post GitHub Copilot Fusion now supports selection of local models appeared first on The GitHub Bl...",
+      "categories": [
+        "Release",
+        "client apps",
+        "copilot",
+        "universe26"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-10-26-github-copilot-fusion-now-supports-selection-of-local-models",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-10-28T18:59:08.184Z",
+      "publishedAt": "2026-10-28T15:30:42.000Z",
+      "title": "GitHub Copilot Fusion now supports selection of local models",
+      "url": "https://github.blog/changelog/2026-10-28-github-copilot-fusion-now-supports-selection-of-local-models",
+      "summary": "Today we are shipping intelligent routing for local models into experimental preview. GitHub Copilot Fusion can now choose between supported on-device models and cloud models, enabling intelligent local model routing…\nThe post GitHub Copilot Fusion now supports selection of local models appeared first on The GitHub Bl...",
+      "categories": [
+        "Release",
+        "client apps",
+        "copilot",
+        "universe26"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-10-27-github-agentic-workflows-generally-available",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-10-28T18:59:07.477Z",
+      "publishedAt": "2026-10-28T15:30:15.000Z",
+      "title": "GitHub Agentic Workflows generally available",
+      "url": "https://github.blog/changelog/2026-10-28-github-agentic-workflows-generally-available",
+      "summary": "GitHub Agentic Workflows, an open source project from GitHub Next, is now generally available. With agentic workflows, you can automate reasoning-based tasks like issue triage, CI failure analysis, documentation updates,…\nThe post GitHub Agentic Workflows generally available appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "actions",
+        "copilot",
+        "universe26"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-10-27-github-agentic-workflows-generally-available",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-10-28T18:59:08.184Z",
+      "publishedAt": "2026-10-28T15:30:15.000Z",
+      "title": "GitHub Agentic Workflows generally available",
+      "url": "https://github.blog/changelog/2026-10-28-github-agentic-workflows-generally-available",
+      "summary": "GitHub Agentic Workflows, an open source project from GitHub Next, is now generally available. With agentic workflows, you can automate reasoning-based tasks like issue triage, CI failure analysis, documentation updates,…\nThe post GitHub Agentic Workflows generally available appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "actions",
+        "copilot",
+        "universe26"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
     {
       "eventId": "copilot-whats-new:45fef121b049076859d57ed8a8b6b01eabbbeaf41fe72796bbfe44bd50b1cb56",
       "sourceId": "copilot-whats-new",
@@ -48,6 +520,242 @@
       "score": 3
     },
     {
+      "eventId": "vscode-feed:https://code.visualstudio.com/blogs/2026/10/28/vscode-wrapped",
+      "sourceId": "vscode-feed",
+      "sourceName": "VS Code Feed",
+      "kind": "feed_entry",
+      "detectedAt": "2026-10-28T18:59:08.276Z",
+      "publishedAt": "2026-10-28T00:00:00.000Z",
+      "title": "VS Code Wrapped: GitHub Universe 2026",
+      "url": "https://code.visualstudio.com/blogs/2026/10/28/vscode-wrapped",
+      "summary": "Explore how VS Code evolved between GitHub Universe 2025 and 2026, with new ways to code, collaborate with agents, and manage work across tools and environments.\n Read the full article",
+      "categories": [
+        "blog"
+      ],
+      "isFutureDated": false,
+      "score": 1
+    },
+    {
+      "eventId": "vscode-updates:e21992dabc12aeda5ed152159d13a04a20ba6fa8dedfa07d1407c44a473400ea",
+      "sourceId": "vscode-updates",
+      "sourceName": "VS Code Updates",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-10-28T18:59:09.127Z",
+      "publishedAt": "2026-10-28T00:00:00.000Z",
+      "title": "VS Code Updates changed",
+      "url": "https://code.visualstudio.com/updates/",
+      "summary": "Detected 283 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 283,
+        "headings": [
+          "Visual Studio Code 1.144",
+          "Downloads for 1.144.0",
+          "Release recap",
+          "Session continuity",
+          "Run and continue Copilot tasks in the cloud",
+          "Manage remote environments",
+          "Cloud Automations (Preview)",
+          "Agent Host Protocol v1.0",
+          "Models",
+          "Route and orchestrate models with GitHub Copilot Fusion",
+          "Compare models and harnesses by default and in more projects",
+          "Image generation in Copilot (Preview)",
+          "Agent integration",
+          "Let agents use desktop apps with computer use",
+          "Canvases (Preview)",
+          "Agents"
+        ],
+        "additions": [
+          "1.144",
+          "H1: Visual Studio Code 1.144",
+          "Release date: October 28, 2026 Stable",
+          "H2: Downloads for 1.144.0",
+          "H2: Release recap",
+          "The road to GitHub Universe (join us virtually!) is paved with lots of pull requests! So, let's take a step back and look at what we've shipped recently.",
+          "Remember when agent sessions would stop as soon as you closed your client? We built the Agent Host, a separate process that keeps your agents running, on your local machine or remotely.",
+          "With language servers in mind, we designed the Agent Host Protocol (AHP) to allow any client to interact with agent sessions. All of sudden, session continuity across VS Code, Copilot CLI, GitHub Copilot App, and github.com lets you pick up right where you left off.",
+          "The Agents window lets you manage your agents across workspaces and environments from a single interface, whether you kick off things yourself or use automations to handle repetitive tasks.",
+          "By default, agents are now powered by the Copilot harness, the same harness used in Copilot Code Review, the Copilot CLI, the Copilot App, and Copilot Cloud sessions. Write agent customizations once and use them consistently across all these experiences.",
+          "If you prefer Anthropic's Claude Code harness or the one from OpenAI Codex, just use those instead with your Copilot subscription and enjoy the familiar VS Code developer experience.",
+          "As we continue to offer new models from different providers, how do you decide which one is best suited for your task? With model comparisons (aka Agent Bake-Off), run the same prompt against multiple models and harnesses to see which performs best. Prefer a hands-off approach? Use Copilot Fusion to choose the best model and orchestrate multiple models to work together for your task.",
+          "We've had vision capabilities for a while, but you kept asking for more. The wait is over, and now you can also prompt the agent to generate images directly in chat.",
+          "Chat is not always the best interface for every task. With canvas support, you can create rich, interactive UI to interact with your agents and visualize their outputs.",
+          "Coding with agents can be more than just writing code. Let agents interact with the browser to validate their results, or let them drive apps on your computer for automation and task execution.",
+          "If you need it, build it! So, we created a beautiful new Markdown editor. Instead of editing the raw Markdown, you can edit the rendered Markdown directly. And, of course, you can still edit the source if you prefer."
+        ]
+      },
+      "headings": [
+        "Visual Studio Code 1.144",
+        "Downloads for 1.144.0",
+        "Release recap",
+        "Release highlights",
+        "Session continuity",
+        "Run and continue Copilot tasks in the cloud",
+        "Manage remote environments",
+        "Cloud Automations (Preview)",
+        "Agent Host Protocol v1.0",
+        "Models",
+        "Route and orchestrate models with GitHub Copilot Fusion",
+        "Compare models and harnesses by default and in more projects"
+      ],
+      "score": 18
+    },
+    {
+      "eventId": "vscode-release-notes-1-144:section:188aed8012de0d22fbba5a9a74197ed84ed0ae8587444b4fdeb201834e92d455",
+      "sourceId": "vscode-release-notes-1-144",
+      "sourceName": "VS Code Release Notes 1.144",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-10-28T18:59:12.339Z",
+      "publishedAt": "2026-10-28T00:00:00.000Z",
+      "title": "Visual Studio Code 1.144: Run and continue Copilot tasks in the cloud",
+      "url": "https://code.visualstudio.com/updates/v1_144",
+      "summary": "Cloud sessions let you run Copilot tasks from VS Code without keeping your development machine online. Your repository and tools run in a managed environment on GitHub's infrastructure. From the Chat view in the editor window or the Agents window, you can: Select Cloud and choose a GitHub repository to start a task. Send follow-up instructions, respond to approval requests, and review the agent's changes. Reopen an...",
+      "categories": [
+        "release",
+        "section",
+        "Session continuity"
+      ],
+      "sectionHeading": "Session continuity",
+      "sectionTitle": "Run and continue Copilot tasks in the cloud",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-144:section:8cf4937ce3399de0d2ef0cd569bbf85e1c7af508dcfc35c178a66e808f31d5aa",
+      "sourceId": "vscode-release-notes-1-144",
+      "sourceName": "VS Code Release Notes 1.144",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-10-28T18:59:12.339Z",
+      "publishedAt": "2026-10-28T00:00:00.000Z",
+      "title": "Visual Studio Code 1.144: Manage remote environments",
+      "url": "https://code.visualstudio.com/updates/v1_144",
+      "summary": "VS Code lets you run agents and perform development tasks across different (remote) environments. To make it easier to manage these environments, we're introducing the Remote Environments dialog, which brings your GitHub Environments, Dev Tunnels, WSL distributions, and SSH hosts together in one place. Select Manage Remote Environments at the bottom of the Environment picker to see the status of each remote, connect...",
+      "categories": [
+        "release",
+        "section",
+        "Session continuity"
+      ],
+      "sectionHeading": "Session continuity",
+      "sectionTitle": "Manage remote environments",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-144:section:8b0a09e796cd2a97501114a7a1173b7c545f9cecbce5495b679122be6d14d378",
+      "sourceId": "vscode-release-notes-1-144",
+      "sourceName": "VS Code Release Notes 1.144",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-10-28T18:59:12.339Z",
+      "publishedAt": "2026-10-28T00:00:00.000Z",
+      "title": "Visual Studio Code 1.144: Cloud Automations (Preview)",
+      "url": "https://code.visualstudio.com/updates/v1_144",
+      "summary": "Setting: \n \n \n chat.automations.cloud.enabled\n \n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders Create and manage Copilot cloud automations directly in the Agents window. Enabled by default, they run on GitHub infrastructure on a schedule or in response to repository events, even when your computer is off. To create a cloud automation, you can ask an agent to set one up for you, or use the Create Automation...",
+      "categories": [
+        "release",
+        "section",
+        "Session continuity"
+      ],
+      "sectionHeading": "Session continuity",
+      "sectionTitle": "Cloud Automations (Preview)",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-144:section:898a8e545a46deb21c583c419d1ea0260f77e475e9f9f4e08391a19a45455f0c",
+      "sourceId": "vscode-release-notes-1-144",
+      "sourceName": "VS Code Release Notes 1.144",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-10-28T18:59:12.339Z",
+      "publishedAt": "2026-10-28T00:00:00.000Z",
+      "title": "Visual Studio Code 1.144: Agent Host Protocol v1.0",
+      "url": "https://code.visualstudio.com/updates/v1_144",
+      "summary": "We've published the first version of the Agent Host Protocol, the protocol that VS Code uses to communicate with its agents locally and on remote machines, including for cloud automations. It's an open, extensible protocol designed to be an easy way to build custom UI's for your agents, or build agent platforms that plug into any UI that speaks it. You can add a websocket-based agent host to your VS Code instance vi...",
+      "categories": [
+        "release",
+        "section",
+        "Session continuity"
+      ],
+      "sectionHeading": "Session continuity",
+      "sectionTitle": "Agent Host Protocol v1.0",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-144:section:7153a5c3ad01b74b3c296f64f6400389eb56e9c9d8f5c4756fcffad1ac24e08e",
+      "sourceId": "vscode-release-notes-1-144",
+      "sourceName": "VS Code Release Notes 1.144",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-10-28T18:59:12.339Z",
+      "publishedAt": "2026-10-28T00:00:00.000Z",
+      "title": "Visual Studio Code 1.144: Route and orchestrate models with GitHub Copilot Fusion",
+      "url": "https://code.visualstudio.com/updates/v1_144",
+      "summary": "Instead of picking a model for each task, select Copilot Fusion in the model picker and let Copilot intelligently route requests and orchestrate models for you. Copilot Fusion brings together Project HydraFusion's multi-model orchestration and Copilot auto model selection's task-aware model selection to balance performance and cost efficiency. For each request, Copilot Fusion chooses the models, reasoning effort, an...",
+      "categories": [
+        "release",
+        "section",
+        "Models"
+      ],
+      "sectionHeading": "Models",
+      "sectionTitle": "Route and orchestrate models with GitHub Copilot Fusion",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-144:section:29a80b71cd56cf17e4e714403e94d71ef6867fffd684d2de4f790fcf1a2200e4",
+      "sourceId": "vscode-release-notes-1-144",
+      "sourceName": "VS Code Release Notes 1.144",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-10-28T18:59:12.339Z",
+      "publishedAt": "2026-10-28T00:00:00.000Z",
+      "title": "Visual Studio Code 1.144: Compare models and harnesses by default and in more projects",
+      "url": "https://code.visualstudio.com/updates/v1_144",
+      "summary": "Setting: \n \n \n sessions.chat.compareAgents.enabled\n \n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders Model comparisons run the same prompt across models for side-by-side review. They are enabled by default for eligible new sessions in the Agents window, unless overridden by user settings or experiments. In this release, we expanded model comparison to more scenarios: Explore ideas without a project: Run ind...",
+      "categories": [
+        "release",
+        "section",
+        "Models"
+      ],
+      "sectionHeading": "Models",
+      "sectionTitle": "Compare models and harnesses by default and in more projects",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-144:section:08ed6c24d11f79793d9a920aec5724f48df4fb67f9f802959da774ba74205c55",
+      "sourceId": "vscode-release-notes-1-144",
+      "sourceName": "VS Code Release Notes 1.144",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-10-28T18:59:12.339Z",
+      "publishedAt": "2026-10-28T00:00:00.000Z",
+      "title": "Visual Studio Code 1.144: Image generation in Copilot (Preview)",
+      "url": "https://code.visualstudio.com/updates/v1_144",
+      "summary": "Setting: \n \n \n chat.copilot.imageGeneration.model\n \n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders\n \n , \n \n \n chat.copilot.imageGeneration.watermark\n \n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders\n \n . Agents can generate images from your prompts with GPT Image 2.5 Flare. Ask the agent to create an image for your website, a chat background, a new icon, or a website wireframe. You can also add an...",
+      "categories": [
+        "release",
+        "section",
+        "Models"
+      ],
+      "sectionHeading": "Models",
+      "sectionTitle": "Image generation in Copilot (Preview)",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-144:section:10163d44ac08ae19701de313dd014dc030b65ce23805efcb060b1d65479d78d5",
+      "sourceId": "vscode-release-notes-1-144",
+      "sourceName": "VS Code Release Notes 1.144",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-10-28T18:59:12.339Z",
+      "publishedAt": "2026-10-28T00:00:00.000Z",
+      "title": "Visual Studio Code 1.144: Let agents use desktop apps with computer use",
+      "url": "https://code.visualstudio.com/updates/v1_144",
+      "summary": "Setting: \n \n \n chat.agentHost.computerUse.enabled\n \n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders Some tasks happen in desktop apps rather than in your code or the terminal. With Computer Use, the agent can see and control apps on your computer. Computer Use works in Copilot harness sessions that run on your own macOS or Windows machine. When a task needs Computer Use, the agent asks you to allow turning...",
+      "categories": [
+        "release",
+        "section",
+        "Agent integration"
+      ],
+      "sectionHeading": "Agent integration",
+      "sectionTitle": "Let agents use desktop apps with computer use",
+      "score": 4
+    },
+    {
       "eventId": "github-changelog:https://github.blog/changelog/2026-10-27-github-copilot-supports-server-to-server-authentication",
       "sourceId": "github-changelog",
       "sourceName": "GitHub Changelog",
@@ -80,6 +788,268 @@
       ],
       "isFutureDated": false,
       "score": 8
+    },
+    {
+      "eventId": "vscode-release-notes-1-109:b4115bbc614533a6e2f7e09bc1e7a2425587d677bab91034495c3303deffa9f0",
+      "sourceId": "vscode-release-notes-1-109",
+      "sourceName": "VS Code Release Notes 1.109",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-10-28T18:59:09.335Z",
+      "publishedAt": "2026-02-04T00:00:00.000Z",
+      "title": "VS Code Release Notes 1.109 changed",
+      "url": "https://code.visualstudio.com/updates/v1_109",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [],
+        "additions": [
+          "1.144"
+        ]
+      },
+      "headings": [
+        "January 2026 (version 1.109)",
+        "Downloads for 1.109.5",
+        "Upcoming events",
+        "Agent Sessions Day",
+        "Chat UX",
+        "Message steering and queueing (Experimental)",
+        "Anthropic models now show thinking tokens",
+        "Mermaid diagrams in chat responses",
+        "Ask Questions tool (Experimental)",
+        "Plan agent",
+        "Context window details",
+        "Inline chat UX revamp (Preview)"
+      ],
+      "score": 2
+    },
+    {
+      "eventId": "vscode-docs-agents-remote-sessions:84d81551f2bd8b5721ee6a29d6435b0ffd91b5a34eee9454a39a0efc17f41cfc",
+      "sourceId": "vscode-docs-agents-remote-sessions",
+      "sourceName": "VS Code Docs / Remote agent sessions",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-10-28T18:59:12.288Z",
+      "publishedAt": "2026-10-28T18:59:12.284Z",
+      "title": "VS Code Docs / Remote agent sessions changed",
+      "url": "https://code.visualstudio.com/docs/agents/run/remote-agent-sessions",
+      "summary": "Detected 115 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 115,
+        "headings": [
+          "Choose how to connect",
+          "Manage remote environments (Experimental)",
+          "Open remote environment management",
+          "Find and organize remote machines",
+          "GitHub Environments (Preview)",
+          "Register your machine",
+          "Connect from another client",
+          "Disconnect or stop sharing",
+          "Troubleshoot GitHub Environments",
+          "Connect via SSH",
+          "Connect via dev tunnel",
+          "Continue an existing remote session",
+          "Start a chat without a workspace on a remote host",
+          "Run a session in a remote Dev Container",
+          "Delegate tasks to remote machines (Experimental)"
+        ],
+        "additions": [
+          "Continue agent work from another app or device while your workspace, tools, and running sessions stay on your development machine. Use GitHub Environments to make that machine available across supported Copilot clients, or use SSH and dev tunnels to connect from VS Code.",
+          "This guide helps you choose a connection, share a host, manage remote environments, and continue an existing remote session without starting over.",
+          "To prevent this client from connecting to remote agent hosts, turn off",
+          "chat.remoteAgentHostsEnabled",
+          ".",
+          "H2: Choose how to connect",
+          "Choose based on where you want to interact with the session and how you can reach its host:",
+          "SSH and dev tunnels provide VS Code-specific client-to-host access in these workflows. GitHub Environments provides machine registration for access across supported Copilot surfaces, not just another VS Code instance.",
+          "The files and development tools stay on the machine where the agent runs. Keep that machine powered on and reachable, and keep its agent host running. For a session hosted by desktop VS Code, keep the application running.",
+          "Connecting doesn't move a local session or copy its workspace to another machine. To continue an existing remote session, connect to the host where it already runs. For managed compute that doesn't depend on keeping your own host online, use cloud sessions",
+          "Cloud sessions is experimental and might change or be removed.",
+          "H2: Manage remote environments (Experimental)",
+          "Use the Remote Environments editor in the Agents window to find and manage your remote machines in one place. The table groups known SSH hosts, dev tunnels, and WSL distributions on Windows. When GitHub Environments is available and enabled, the Environments group also lists your registered machines, including offline ones. These are user-shared machines, not the managed environments used by cloud sessions.",
+          "Remote environment management requires",
+          "sessions.chat.experimental.environmentPicker",
+          "Open in VS Code",
+          "Open in VS Code Insiders",
+          ",",
+          "sessions.chat.experimental.environmentPickerManageRemotes",
+          ", and",
+          ". All three settings are on by default.",
+          "H3: Open remote environment management",
+          "Run Agents: Manage Remote Environments from the Command Palette (⇧⌘P (Windows, Linux Ctrl+Shift+P)), or select Manage Remote Environments from the sessions list More Actions (...) menu.",
+          "If the experimental new-session composer layout is enabled ("
+        ]
+      },
+      "headings": [
+        "Run and manage remote agent sessions",
+        "Choose how to connect",
+        "Manage remote environments (Experimental)",
+        "Open remote environment management",
+        "Find and organize remote machines",
+        "GitHub Environments (Preview)",
+        "Register your machine",
+        "Connect from another client",
+        "Disconnect or stop sharing",
+        "Troubleshoot GitHub Environments",
+        "Connect via SSH",
+        "Connect via dev tunnel"
+      ],
+      "score": 17
+    },
+    {
+      "eventId": "vscode-docs-agents-window:180777aaacfa8a949b7b0f39a6adaf455c1bdbba8f45c43cb3146093aadfe7aa",
+      "sourceId": "vscode-docs-agents-window",
+      "sourceName": "VS Code Docs / Agents window",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-10-28T18:59:11.695Z",
+      "publishedAt": "2026-10-28T18:59:11.690Z",
+      "title": "VS Code Docs / Agents window changed",
+      "url": "https://code.visualstudio.com/docs/agents/run/agents-window",
+      "summary": "Detected 93 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 93,
+        "headings": [
+          "Start an agent session",
+          "Choose where an agent makes changes",
+          "Work with multiple sessions",
+          "Arrange sessions in a grid",
+          "Compare model results (Preview)",
+          "Work with multiple chats in a session",
+          "Continue in another interface",
+          "Other ways to start a session",
+          "Open without GitHub sign-in (Experimental)"
+        ],
+        "additions": [
+          "Start with one task, then add independent tasks as needed. This guide shows how to choose where agents make changes, monitor sessions, and review each result. If you prefer to work beside your editor, you can continue a supported session in the Chat view. Both interfaces let you direct agents and review their work.",
+          "H2: Start an agent session",
+          "If this is your first agent task, follow the agents quickstart for a complete example with recommended settings. For work in your own project, choose a task with a clear outcome and checks you can run to verify it.",
+          "Start a session for a local folder, GitHub repository, or remote workspace. You can attach other projects, issues, and pull requests as context before you send the first prompt. For work that doesn't belong to a project, start a quick chat.",
+          "To connect to and organize remote machines in one place, use remote environment management (Experimental).",
+          "For interactive work on managed compute, start a cloud session",
+          "Cloud sessions is experimental and might change or be removed.",
+          ". The cloud environment runs the task independently of your local machine. To continue it later, reopen the existing session rather than starting another task.",
+          "To start a new agent session in the Agents window:",
+          "Select New at the top of the sidebar or press ⌘N (Windows, Linux Ctrl+N). To start directly in a specific workspace, hover over the workspace in the sessions list and select + (New Session).",
+          "Select Folder or Repository to choose the primary execution workspace for the session. The first folder or repository you select determines where the agent runs and changes files.",
+          "To connect through SSH or a dev tunnel, select Remote Setup. If the workspace isn't trusted, review the Workspace Trust prompt before you continue.",
+          "Optionally, attach more context to the request:",
+          "Select Folder or Repository to attach more projects as context without adding workspace roots.",
+          "Select Add Context, and then select Issue... or Pull Request.... If multiple GitHub repositories are available, select a repository before you choose the issue or pull request.",
+          "Paste a GitHub issue or pull request URL directly into the prompt. The URL remains in the prompt, and VS Code automatically adds the item as a context attachment.",
+          "Choose an available agent harness, and optionally configure the agent, language model, permission level, and isolation mode. For folder isolation in a local Git repository, you can also select an existing local branch to check out before the session starts. The available options depend on the workspace. Learn how to compare agent harnesses and choose where the agent makes changes.",
+          "Type a prompt that describes what you want to accomplish, and press Enter to submit it to the agent.",
+          "Tip",
+          "To start a session in the background without leaving the current session, press Alt+Enter or hold Alt and select Send. The new session appears in the sessions list after you send the prompt.",
+          "The sessions list shows the session's status and change statistics while it works. Review questions and approval requests as they appear, then review and validate the result before integrating changes. For shared conversation controls, including how to steer or stop a request, see Use chat.",
+          "H3: Choose where an agent makes changes",
+          "For a workspace session in the Agents window, choose whether the agent edits your current folder or works in a separate Git worktree. Use a worktree to keep an agent's changes separate from your active workspace, especially when you run tasks in parallel.",
+          "Code isolation controls where the agent applies file changes. The permission level controls which actions require your approval. A worktree keeps changes out of your active workspace, but it does not restrict commands, network access, or access to files outside the worktree."
+        ]
+      },
+      "headings": [
+        "Use the Agents window",
+        "Prerequisites",
+        "Open the Agents window",
+        "Start an agent session",
+        "Choose where an agent makes changes",
+        "Work with multiple sessions",
+        "Arrange sessions in a grid",
+        "Compare model results (Preview)",
+        "Work with multiple chats in a session",
+        "Continue in another interface",
+        "Agents window interface overview",
+        "Understand the active session"
+      ],
+      "score": 11
+    },
+    {
+      "eventId": "vscode-docs-agents-automations:82d0886da26ab93cc4ad97e37d70b3d30207b13a73ebc4aebf61f4c305c46203",
+      "sourceId": "vscode-docs-agents-automations",
+      "sourceName": "VS Code Docs / Agent automations",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-10-28T18:59:11.611Z",
+      "publishedAt": "2026-10-28T18:59:11.607Z",
+      "title": "VS Code Docs / Agent automations changed",
+      "url": "https://code.visualstudio.com/docs/agents/run/automations",
+      "summary": "Detected 90 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 90,
+        "headings": [
+          "Create an automation",
+          "Create an automation from chat",
+          "Run on repository events",
+          "Cloud automation security and usage",
+          "Troubleshoot cloud automations"
+        ],
+        "additions": [
+          "Automations run agent tasks from a saved prompt and session configuration. Use them for work such as summarizing repository changes or triaging issues without starting each session manually. Run an automation on demand, on a recurring schedule, or, for cloud automations, in response to supported repository events. You can also start from a template or share an automation as a reusable file.",
+          "Cloud automations is in preview and might change before it becomes generally available. Share feedback about Cloud automations (opens in new tab).",
+          "For cloud automations",
+          ", sign in with a GitHub.com account that has write access to an eligible private repository. Your Copilot plan and organization must allow automations. See GitHub automation availability and permissions.",
+          "Automations and cloud automation management are on by default. If Automations isn't visible in the sidebar, check that",
+          "is on. If Run in the Cloud isn't available in the creation form, also check",
+          ". Turning on these settings doesn't grant access to the GitHub service.",
+          "You can choose to run an automation locally or in the cloud based on your needs:",
+          "GitHub service plans, permissions, billing, security, and supported triggers can change independently of VS Code. Review GitHub Copilot automations before enabling unattended cloud runs.",
+          "Automations start a run when a trigger fires. They are different from cloud sessions, where you start an interactive task and reopen the same session to continue it. Creating a cloud session doesn't create an automation or schedule.",
+          "H2: Create an automation",
+          "Choose local or cloud execution:",
+          "Create a new automation or select one of the starter templates. Starting from a template prepopulates the prompt and schedule fields.",
+          "Leave Run in the Cloud off.",
+          "Choose the workspace where the agent should work, or Chat for a task that doesn't need project files. The available agents depend on this choice.",
+          "Choose an available agent and review other configuration options like the model and permissions. For a Git workspace, you can select New Worktree and a base branch when the agent supports isolation. Learn how to choose an agent and code isolation.",
+          "Configure the Trigger to specify when the automation should run.",
+          "You can choose between Manual or a recurring schedule.",
+          "Optionally, in the advanced settings, enable or disable the use of customizations.",
+          "Review your automation settings, and then select Create.",
+          "In the Agents window sidebar, select Automations.",
+          "Turn on Run in the Cloud.",
+          "Choose an eligible private GitHub.com repository in the workspace picker. You can use a local clone or select a repository without cloning it to your machine. Public repositories aren't supported.",
+          "Enter a descriptive Name and Prompt. Make the task, scope, expected output, and safety constraints explicit. For example, name the automation 'Daily repository summary' and use:"
+        ]
+      },
+      "headings": [
+        "Create and manage agent automations",
+        "Prerequisites",
+        "Choose where an automation runs",
+        "Create an automation",
+        "Create an automation from chat",
+        "Start from a template",
+        "Run and review an automation",
+        "Set a recurring schedule",
+        "Run on repository events",
+        "Share an automation",
+        "Export an automation",
+        "Import an automation"
+      ],
+      "score": 7
+    },
+    {
+      "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_145",
+      "sourceId": "vscode-feed",
+      "sourceName": "vscode feed",
+      "kind": "feed_entry",
+      "detectedAt": "2026-10-28T18:59:13.552Z",
+      "publishedAt": "2026-10-28T00:00:00.000Z",
+      "title": "Visual Studio Code 1.145 (Insiders)",
+      "url": "https://code.visualstudio.com/updates/v1_145",
+      "summary": "Follow us on LinkedIn, X, Bluesky, Instagram | Follow Insiders Changelog on X or Bluesky Welcome to the 1.145 Insiders release of Visual Studio Code.",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
     }
   ],
   "errors": []

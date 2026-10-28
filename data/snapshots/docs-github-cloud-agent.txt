@@ -1,27 +1,27 @@
 H1: GitHub Copilot cloud agent
 Find out how Copilot can research a repository, plan and make code changes, and create pull requests for you to review.
-These articles provide how-to information for using Copilot cloud agent. For an overview of Copilot cloud agent, see GitHub Copilot on GitHub.com.
+These articles provide how-to information for using Copilot cloud agent. For an overview of Copilot cloud agent, see GitHub Copilot on GitHub.com and GitHub Mobile.
 H2: Starting GitHub Copilot sessions
 Starting GitHub Copilot sessions
 Choose your preferred way to start Copilot cloud agent sessions.
 H2: Creating automations with Copilot cloud agent
 Creating automations with Copilot cloud agent
-Create and manage automations to run Copilot cloud agent on a schedule or in response to events.
+Create and manage automations to run Copilot cloud agent on a schedule, in response to events in a repository, or programmatically via the API.
 H2: Managing rationale, confidence, and approvals for issues
 Managing rationale, confidence, and approvals for issues
-Set up and manage rationale, confidence, and approvals for issues handled by automation.
+Set up and manage rationale, confidence, and approvals for issues handled by automations.
 H2: Changing the AI model for GitHub Copilot cloud agent
 Changing the AI model for GitHub Copilot cloud agent
 In supported entrypoints, when starting a task with Copilot cloud agent, you can select the model used, and, for supported models, the reasoning level.
-H2: Configuring settings for GitHub Copilot cloud agent
-Configuring settings for GitHub Copilot cloud agent
-Learn how to configure settings for Copilot cloud agent
-H2: Using Copilot cloud agent on GitHub
-Using Copilot cloud agent on GitHub
-Start Copilot cloud agent sessions directly on GitHub, then iterate on the results without leaving your browser.
-H2: Using Copilot cloud agent on GitHub Mobile
-Using Copilot cloud agent on GitHub Mobile
-Start and track Copilot cloud agent sessions from the GitHub Mobile app.
+H2: Configuring settings for GitHub Copilot in the cloud
+Configuring settings for GitHub Copilot in the cloud
+Learn how to configure settings for Copilot in the cloud
+H2: Using Copilot in the cloud on GitHub
+Using Copilot in the cloud on GitHub
+Start Copilot in the cloud sessions directly on GitHub, then iterate on the results without leaving your browser.
+H2: Using Copilot in the cloud on GitHub Mobile
+Using Copilot in the cloud on GitHub Mobile
+Start and track Copilot in the cloud sessions from the GitHub Mobile app.
 H2: Using agent apps
 Using agent apps
 Start a partner-built agent from an issue, a pull request comment, or the Agents UI on GitHub.

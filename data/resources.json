@@ -25079,6 +25079,1166 @@
         "Original article explicit links",
         "Feature-matched official documentation indexes"
       ]
+    },
+    "3b28f26407f9cf315c99e85479c7149d9a400b600a6c2bfb8b8533c1409b0a58": {
+      "version": 6,
+      "checkedAt": "2026-10-28T18:59:13.965Z",
+      "inputUrl": "https://github.com/features/copilot/whats-new",
+      "inputTitle": "GitHub Copilot What's New changed",
+      "status": "unconfirmed",
+      "source": {
+        "url": "https://github.blog/changelog/?label=copilot#changelog-item-meta-99793",
+        "status": "unconfirmed",
+        "reason": "Multiple changed date headings; linked observed archive item without inferring a feature",
+        "checkedAt": "2026-10-28T18:59:14.931Z",
+        "contentHash": "85c37f0e42cc4a08bda13437b7420d73ea44f72a0f327010bcd02da3dcd233a8"
+      },
+      "documents": [],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "1e4181f0921ca074cda37728cec3e79876e99975a6cd1c86382b43dbc5f199e7": {
+      "version": 6,
+      "checkedAt": "2026-10-28T18:59:15.054Z",
+      "inputUrl": "https://code.visualstudio.com/updates/v1_144",
+      "inputTitle": "Visual Studio Code 1.144",
+      "status": "verified",
+      "source": {
+        "url": "https://code.visualstudio.com/updates/v1_144",
+        "status": "verified",
+        "reason": "Fetched original article",
+        "checkedAt": "2026-10-28T18:59:15.081Z",
+        "contentHash": "33fce4deab7767b8854b67f10aa14ef892105b416e43e12c35ab9fcd218e2558"
+      },
+      "documents": [
+        {
+          "url": "https://code.visualstudio.com/docs/agents/concepts/agent-host",
+          "title": "Agent Host architecture",
+          "language": "en",
+          "checkedAt": "2026-10-28T18:59:15.280Z",
+          "contentHash": "a983ab47f425fd21bf47a85fb0c21c49f93490cceaf5fc4735394ff6ad1b3e62",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_144",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://code.visualstudio.com/docs/agents/run/automations",
+          "title": "Create and manage agent automations",
+          "language": "en",
+          "checkedAt": "2026-10-28T18:59:15.465Z",
+          "contentHash": "f11c5fc747dc14f14c120395c5fabed7df0c2054274880a76bfc3a8cbb920ac8",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_144",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://code.visualstudio.com/docs/agents/run/agent-harnesses",
+          "title": "Choose an agent harness",
+          "language": "en",
+          "checkedAt": "2026-10-28T18:59:15.688Z",
+          "contentHash": "938c58f9cb5b9778b2c360c63c26d7775623b93913d66cdbdc6f46279a160a62",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_144",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "c8ed68a3be98eabbde5f87f4c95ee73a4650e8dabbb6e8923eacdd8d131b6b61": {
+      "version": 6,
+      "checkedAt": "2026-10-28T18:59:15.783Z",
+      "inputUrl": "https://github.blog/changelog/2026-10-28-route-and-orchestrate-models-with-github-copilot-fusion",
+      "inputTitle": "Route and orchestrate models with GitHub Copilot Fusion",
+      "status": "verified",
+      "source": {
+        "url": "https://github.blog/changelog/2026-10-28-route-and-orchestrate-models-with-github-copilot-fusion/",
+        "status": "verified",
+        "reason": "Fetched original article",
+        "checkedAt": "2026-10-28T18:59:15.938Z",
+        "contentHash": "1c4f5aba055c154e7cb20a8f3920d4c702b4cb7d394a9387e9f1c75305688bde"
+      },
+      "documents": [
+        {
+          "url": "https://docs.github.com/ja/copilot/concepts/models/copilot-fusion",
+          "title": "About GitHub Copilot Fusion",
+          "language": "ja",
+          "checkedAt": "2026-10-28T18:59:16.629Z",
+          "contentHash": "f6479b54a2b59044b73b9f11fbdb26b644453f97c251589b47a82d6edafb2286",
+          "discoveryUrl": "https://github.blog/changelog/2026-10-28-route-and-orchestrate-models-with-github-copilot-fusion/",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://docs.github.com/ja/copilot/concepts/models/auto-model-selection",
+          "title": "について GitHub Copilotauto model selection",
+          "language": "ja",
+          "checkedAt": "2026-10-28T18:59:17.068Z",
+          "contentHash": "a0ce4bf4606e3a03718480171a7962a9a9635a8781af35bedc126fda3ce7a57e",
+          "discoveryUrl": "https://github.blog/changelog/2026-10-28-route-and-orchestrate-models-with-github-copilot-fusion/",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://docs.github.com/ja/copilot/how-tos/administer-copilot/manage-for-enterprise/manage-availability-of-default-models#configuring-models-available-for-copilot-fusion",
+          "title": "企業でのモデルの可用性の管理",
+          "language": "ja",
+          "checkedAt": "2026-10-28T18:59:17.979Z",
+          "contentHash": "2d170d21def709a0ed8342975ff8538c25d8cc3ce4fc853fe12432f28a07a6fb",
+          "discoveryUrl": "https://github.blog/changelog/2026-10-28-route-and-orchestrate-models-with-github-copilot-fusion/",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "verified",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "4778fcaf5c04e2a85ba2e60b4cfa26c67e088d783a1bb8bac2193f327f7ff4ee": {
+      "version": 6,
+      "checkedAt": "2026-10-28T18:59:18.100Z",
+      "inputUrl": "https://github.blog/changelog/2026-10-28-github-copilot-app-universe-releases",
+      "inputTitle": "GitHub Copilot app, Universe releases",
+      "status": "verified",
+      "source": {
+        "url": "https://github.blog/changelog/2026-10-28-github-copilot-app-universe-releases/",
+        "status": "verified",
+        "reason": "Fetched original article",
+        "checkedAt": "2026-10-28T18:59:18.545Z",
+        "contentHash": "964d1870450040fa9ad55dd6a920d89fcfb9b6e8c18782a75648aa35ef9514cf"
+      },
+      "documents": [
+        {
+          "url": "https://docs.github.com/en/copilot/how-tos/github-copilot-app/working-with-projects",
+          "title": "Working with projects in the GitHub Copilot app",
+          "language": "en",
+          "checkedAt": "2026-10-28T18:59:18.918Z",
+          "contentHash": "11aac7cd381192cfa633a049574fbc2bf1669b00306d2738685704e95acea1be",
+          "discoveryUrl": "https://github.blog/changelog/2026-10-28-github-copilot-app-universe-releases/",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "english_body",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://docs.github.com/ja/copilot/how-tos/github-copilot-app/computer-use",
+          "title": "GitHub Copilot アプリを使用したデスクトップ アプリケーションの操作",
+          "language": "ja",
+          "checkedAt": "2026-10-28T18:59:20.048Z",
+          "contentHash": "977e02fa672c64b6aee12509fede0649de020953167e5e7484c3ed0c8f4d4e8d",
+          "discoveryUrl": "https://github.blog/changelog/2026-10-28-github-copilot-app-universe-releases/",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "8b8d637550e47c282860f4dff33c04b1257d7c32320e37e8c5aa262b3dda953e": {
+      "version": 6,
+      "checkedAt": "2026-10-28T18:59:20.092Z",
+      "inputUrl": "https://github.blog/changelog/2026-10-28-github-enterprise-now-includes-access-to-github-copilot",
+      "inputTitle": "GitHub Enterprise now includes access to GitHub Copilot",
+      "status": "verified",
+      "source": {
+        "url": "https://github.blog/changelog/2026-10-28-github-enterprise-now-includes-access-to-github-copilot/",
+        "status": "verified",
+        "reason": "Fetched original article",
+        "checkedAt": "2026-10-28T18:59:20.197Z",
+        "contentHash": "72819002855f98144bd77e4bc4109c90f0c420de89e0e36a06ec321ff3430a7a"
+      },
+      "documents": [
+        {
+          "url": "https://docs.github.com/ja/copilot/concepts/billing-and-usage/organizations-and-enterprises/billing",
+          "title": "組織と企業の使用量ベースの課金",
+          "language": "ja",
+          "checkedAt": "2026-10-28T18:59:22.105Z",
+          "contentHash": "d0147dcf907624b9f10fe893c4770b270d88445bfb2e2cc7694dbb847acf7712",
+          "discoveryUrl": "https://github.blog/changelog/2026-10-28-github-enterprise-now-includes-access-to-github-copilot/",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "578bfc86e4f5e9c86106921d7243270c7a4b386c6fa7862d5694579a42f8b09c": {
+      "version": 6,
+      "checkedAt": "2026-10-28T18:59:22.146Z",
+      "inputUrl": "https://github.blog/changelog/2026-10-28-security-extension-for-the-github-copilot-app",
+      "inputTitle": "Security extension for the GitHub Copilot app",
+      "status": "verified",
+      "source": {
+        "url": "https://github.blog/changelog/2026-10-28-security-extension-for-the-github-copilot-app/",
+        "status": "verified",
+        "reason": "Fetched original article",
+        "checkedAt": "2026-10-28T18:59:22.250Z",
+        "contentHash": "96c3fdb369e61561dce5767abd2dcf7b33a8c2cc0931d05cf9eb835c0e46ef59"
+      },
+      "documents": [
+        {
+          "url": "https://docs.github.com/en/copilot/how-tos/github-copilot-app/view-and-fix-security-alerts",
+          "title": "Viewing and fixing security alerts in the GitHub Copilot app",
+          "language": "en",
+          "checkedAt": "2026-10-28T18:59:22.628Z",
+          "contentHash": "289fd271ff25c85c4586db5603a20474cebb7994179eae56dfad0a24026f8bd9",
+          "discoveryUrl": "https://github.blog/changelog/2026-10-28-security-extension-for-the-github-copilot-app/",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "english_body",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "5b335f0ae5a9055b97b9ec2ad7c78753ba4314ec7b26f6a9b8583e02175b58b6": {
+      "version": 6,
+      "checkedAt": "2026-10-28T18:59:22.998Z",
+      "inputUrl": "https://github.blog/changelog/2026-10-28-github-intelligence-puts-your-code-context-and-history-to-work",
+      "inputTitle": "GitHub intelligence puts your code, context, and history to work",
+      "status": "verified",
+      "source": {
+        "url": "https://github.blog/changelog/2026-10-28-github-intelligence-puts-your-code-context-and-history-to-work/",
+        "status": "verified",
+        "reason": "Fetched original article",
+        "checkedAt": "2026-10-28T18:59:23.607Z",
+        "contentHash": "b7ea8bc0821716b253bc057637d51ea3189528052a7c7352cd3e51838e37c963"
+      },
+      "documents": [
+        {
+          "url": "https://docs.github.com/ja/copilot/concepts/prompting-and-context/copilot-memory",
+          "title": "GitHub Copilot Memory について",
+          "language": "ja",
+          "checkedAt": "2026-10-28T18:59:24.073Z",
+          "contentHash": "2bae70d1083d1dbaeeb4e233dc17975b4e751de23ffad84749105bde38e8a96f",
+          "discoveryUrl": "https://github.blog/changelog/2026-10-28-github-intelligence-puts-your-code-context-and-history-to-work/",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://docs.github.com/ja/copilot/how-tos/use-copilot-agents/copilot-memory/manage-for-yourself",
+          "title": "個人用アカウントの Copilot メモリの管理",
+          "language": "ja",
+          "checkedAt": "2026-10-28T18:59:24.991Z",
+          "contentHash": "a3e0ee55de23007cdeca7832642681c5b76ab9dfe4611f7cb7854d2b21efd822",
+          "discoveryUrl": "https://github.blog/changelog/2026-10-28-github-intelligence-puts-your-code-context-and-history-to-work/",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "Localized anchor not found; verified Japanese document body used: #enabling-copilot-dreaming-for-your-personal-account",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://docs.github.com/ja/copilot/how-tos/use-copilot-agents/copilot-memory/manage-as-administrator#enabling-copilot-dreaming",
+          "title": "組織または企業のCopilot メモリの管理",
+          "language": "ja",
+          "checkedAt": "2026-10-28T18:59:26.035Z",
+          "contentHash": "b42e37e424aff285a7dca744fff8b1f1912601e3635b60736b08991b57db5339",
+          "discoveryUrl": "https://github.blog/changelog/2026-10-28-github-intelligence-puts-your-code-context-and-history-to-work/",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "verified",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "ef3a27a82125ca4b95620f31498a5b380eeae79c77f4f256916450f5ffeaf2bf": {
+      "version": 6,
+      "checkedAt": "2026-10-28T18:59:26.093Z",
+      "inputUrl": "https://github.blog/changelog/2026-10-28-build-shared-workflows-for-your-team-with-copilot-automations",
+      "inputTitle": "Build shared workflows for your team with Copilot Automations",
+      "status": "verified",
+      "source": {
+        "url": "https://github.blog/changelog/2026-10-28-build-shared-workflows-for-your-team-with-copilot-automations/",
+        "status": "verified",
+        "reason": "Fetched original article",
+        "checkedAt": "2026-10-28T18:59:26.142Z",
+        "contentHash": "f8f9ea3eed36eb7c60f0b40777813f87984edcbedea98865d9a9481bc911232e"
+      },
+      "documents": [
+        {
+          "url": "https://docs.github.com/ja/copilot/concepts/agent-capabilities/agent-powered-workflows-and-operations/about-automations#personal-and-shared-automations",
+          "title": "Copilot自動化",
+          "language": "ja",
+          "checkedAt": "2026-10-28T18:59:27.416Z",
+          "contentHash": "c3e89e8a2e5bab1820548e446f340e37cbc2c0ff2bd9f025740ae257e123c37b",
+          "discoveryUrl": "https://github.blog/changelog/2026-10-28-build-shared-workflows-for-your-team-with-copilot-automations/",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "verified",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "de0ad6079fee5d3abaedccad63d60e82150634bdc3e3ac1d288c524bfcf87e8b": {
+      "version": 6,
+      "checkedAt": "2026-10-28T18:59:27.455Z",
+      "inputUrl": "https://github.blog/changelog/2026-10-28-github-copilot-in-vs-code-universe-releases",
+      "inputTitle": "GitHub Copilot in VS Code, Universe releases",
+      "status": "verified",
+      "source": {
+        "url": "https://github.blog/changelog/2026-10-28-github-copilot-in-vs-code-universe-releases/",
+        "status": "verified",
+        "reason": "Fetched original article",
+        "checkedAt": "2026-10-28T18:59:27.961Z",
+        "contentHash": "bf016b084e5b5201c7e6ccc6263b37d94582e12b0f6ecd0be142ccc0857ca3c7"
+      },
+      "documents": [
+        {
+          "url": "https://code.visualstudio.com/docs/agents/concepts/agent-host",
+          "title": "Agent Host architecture",
+          "language": "en",
+          "checkedAt": "2026-10-28T18:59:15.280Z",
+          "contentHash": "a983ab47f425fd21bf47a85fb0c21c49f93490cceaf5fc4735394ff6ad1b3e62",
+          "discoveryUrl": "https://github.blog/changelog/2026-10-28-github-copilot-in-vs-code-universe-releases/",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://code.visualstudio.com/docs/configure/settings#_settings-editor",
+          "title": "User and workspace settings",
+          "language": "en",
+          "checkedAt": "2026-10-28T18:59:28.033Z",
+          "contentHash": "8f5bf04a7b317d88ca262fa4a3f50f3fe0c2b961beb07122228e015ebfa6c4a0",
+          "discoveryUrl": "https://github.blog/changelog/2026-10-28-github-copilot-in-vs-code-universe-releases/",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "verified",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://code.visualstudio.com/docs/agent-customization/overview",
+          "title": "Customize agents for your workflow",
+          "language": "en",
+          "checkedAt": "2026-10-28T18:59:28.215Z",
+          "contentHash": "c6175f1a475cf952b0a202aed4ea6411fc580a4b7259c91726f9c2eb3fcf78cc",
+          "discoveryUrl": "https://github.blog/changelog/2026-10-28-github-copilot-in-vs-code-universe-releases/",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "b73b7b331fd7b4627f1368772a7aee260296943c5459a7dca0b4332257992210": {
+      "version": 6,
+      "checkedAt": "2026-10-28T18:59:28.244Z",
+      "inputUrl": "https://github.blog/changelog/2026-10-28-generate-and-edit-images-directly-in-copilot",
+      "inputTitle": "Generate and edit images directly in Copilot",
+      "status": "verified",
+      "source": {
+        "url": "https://github.blog/changelog/2026-10-28-generate-and-edit-images-directly-in-copilot/",
+        "status": "verified",
+        "reason": "Fetched original article",
+        "checkedAt": "2026-10-28T18:59:29.430Z",
+        "contentHash": "fa89afcbafcc9f7cdc1dfbc98bc6fdee557bce46a737751c55339c8dbc100aed"
+      },
+      "documents": [
+        {
+          "url": "https://docs.github.com/ja/copilot/concepts/enterprise/policies",
+          "title": "企業と組織のGitHub Copilotポリシー",
+          "language": "ja",
+          "checkedAt": "2026-10-28T18:59:29.916Z",
+          "contentHash": "06d826fdde88d3d15eaf6d2f3f4f624a637026392814076c1fa8a8286450c54b",
+          "discoveryUrl": "https://github.blog/changelog/2026-10-28-generate-and-edit-images-directly-in-copilot/",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "40ea15f53746a64746db9ab78c2cdfbbfafd75493b44fafdf55e2f90657392cc": {
+      "version": 6,
+      "checkedAt": "2026-10-28T18:59:29.961Z",
+      "inputUrl": "https://github.blog/changelog/2026-10-28-github-copilot-fusion-now-supports-selection-of-local-models",
+      "inputTitle": "GitHub Copilot Fusion now supports selection of local models",
+      "status": "verified",
+      "source": {
+        "url": "https://github.blog/changelog/2026-10-28-github-copilot-fusion-now-supports-selection-of-local-models/",
+        "status": "verified",
+        "reason": "Fetched original article",
+        "checkedAt": "2026-10-28T18:59:30.441Z",
+        "contentHash": "c4b333e3de4a5138cedc52c3bb5492b9933a135ec0613476c6f3009063f01cba"
+      },
+      "documents": [
+        {
+          "url": "https://docs.github.com/ja/copilot/concepts/models/auto-model-selection",
+          "title": "について GitHub Copilotauto model selection",
+          "language": "ja",
+          "checkedAt": "2026-10-28T18:59:17.068Z",
+          "contentHash": "a0ce4bf4606e3a03718480171a7962a9a9635a8781af35bedc126fda3ce7a57e",
+          "discoveryUrl": "https://github.blog/changelog/2026-10-28-github-copilot-fusion-now-supports-selection-of-local-models/",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "Original anchor no longer exists; verified document body used: #auto-selecting-local-models",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://docs.github.com/ja/copilot/concepts/models/copilot-fusion",
+          "title": "About GitHub Copilot Fusion",
+          "language": "ja",
+          "checkedAt": "2026-10-28T18:59:16.629Z",
+          "contentHash": "f6479b54a2b59044b73b9f11fbdb26b644453f97c251589b47a82d6edafb2286",
+          "discoveryUrl": "https://github.blog/changelog/2026-10-28-github-copilot-fusion-now-supports-selection-of-local-models/",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://docs.github.com/ja/copilot/how-tos/copilot-cli/customize-copilot/add-llm-models",
+          "title": "Adding LLM models to GitHub Copilot CLI",
+          "language": "ja",
+          "checkedAt": "2026-10-28T18:59:31.065Z",
+          "contentHash": "d0b96dab1f72e67941eae47255c1c65ccbbb2b94685688ce71720eabf8cd3371",
+          "discoveryUrl": "https://github.blog/changelog/2026-10-28-github-copilot-fusion-now-supports-selection-of-local-models/",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "03832a796e6dda336d5f7bf698b65ac5ef1e6c7e01020652541d135368198c16": {
+      "version": 6,
+      "checkedAt": "2026-10-28T18:59:31.118Z",
+      "inputUrl": "https://github.blog/changelog/2026-10-28-github-agentic-workflows-generally-available",
+      "inputTitle": "GitHub Agentic Workflows generally available",
+      "status": "verified",
+      "source": {
+        "url": "https://github.blog/changelog/2026-10-28-github-agentic-workflows-generally-available/",
+        "status": "verified",
+        "reason": "Fetched original article",
+        "checkedAt": "2026-10-28T18:59:31.152Z",
+        "contentHash": "4694f568e028a52707ff946cbdb9115b9e53d2414f1d441775acc7fc82208546"
+      },
+      "documents": [
+        {
+          "url": "https://docs.github.com/ja/copilot/how-tos/github-agentic-workflows",
+          "title": "GitHub エージェント型ワークフロー",
+          "language": "ja",
+          "checkedAt": "2026-10-28T18:59:31.826Z",
+          "contentHash": "3aedbdc67c1c48ec72f6ed9aa348acfc66f3f94c09889a8c9edc09023184ccb5",
+          "discoveryUrl": "https://docs.github.com/en/copilot/how-tos",
+          "basis": "Matching feature terms in official documentation index",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://docs.github.com/ja/copilot/how-tos/github-agentic-workflows/quickstart",
+          "title": "最初のエージェント型ワークフロー",
+          "language": "ja",
+          "checkedAt": "2026-10-28T18:59:32.245Z",
+          "contentHash": "e3cec0a8911a51e29f0e3a1f6e1ab80d6d5ed433d8809318d105707c3ca19cff",
+          "discoveryUrl": "https://docs.github.com/en/copilot/how-tos",
+          "basis": "Matching feature terms in official documentation index",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://docs.github.com/ja/copilot/how-tos/github-agentic-workflows/creating-github-agentic-workflows",
+          "title": "GitHubのエージェント型ワークフローの作成",
+          "language": "ja",
+          "checkedAt": "2026-10-28T18:59:33.126Z",
+          "contentHash": "a8bc9978630e7c8df88d23ac131fdfc613a95b8a7b3e811c080759ebb42b2f7f",
+          "discoveryUrl": "https://docs.github.com/en/copilot/how-tos",
+          "basis": "Matching feature terms in official documentation index",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "34065cf69a896f6957bccc3a1d6db5c73eda8ab1874c4bf10f6a5914e4fd12a0": {
+      "version": 6,
+      "checkedAt": "2026-10-28T18:59:33.166Z",
+      "inputUrl": "https://code.visualstudio.com/blogs/2026/10/28/vscode-wrapped",
+      "inputTitle": "VS Code Wrapped: GitHub Universe 2026",
+      "status": "verified",
+      "source": {
+        "url": "https://code.visualstudio.com/blogs/2026/10/28/vscode-wrapped",
+        "status": "verified",
+        "reason": "Fetched original article",
+        "checkedAt": "2026-10-28T18:59:33.192Z",
+        "contentHash": "273d8840139be96080a0f4dacde53a3cc88c10759652ed767eb1c61ec85756e9"
+      },
+      "documents": [
+        {
+          "url": "https://code.visualstudio.com/updates/v1_106",
+          "title": "October 2025 (version 1.106)",
+          "language": "en",
+          "checkedAt": "2026-10-28T18:59:33.672Z",
+          "contentHash": "43539cf03945172fd696d1d43d0b924567283682176009a20319149deaea500a",
+          "discoveryUrl": "https://code.visualstudio.com/blogs/2026/10/28/vscode-wrapped",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "none",
+          "kind": "release_notes",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://code.visualstudio.com/docs/agents/concepts/agent-harnesses",
+          "title": "Understand agent harnesses",
+          "language": "en",
+          "checkedAt": "2026-10-28T18:59:35.413Z",
+          "contentHash": "70592ee865eeecf65e411f0b84b639417488d7b053d831595546ee2cf9bdca81",
+          "discoveryUrl": "https://code.visualstudio.com/blogs/2026/10/28/vscode-wrapped",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://code.visualstudio.com/docs/agent-customization/language-models",
+          "title": "AI language models in VS Code",
+          "language": "en",
+          "checkedAt": "2026-10-28T18:59:35.452Z",
+          "contentHash": "f19d70fb2d29161903e01dde8a68f1c7b208746601aa77ed7e8eab4b6c593b39",
+          "discoveryUrl": "https://code.visualstudio.com/blogs/2026/10/28/vscode-wrapped",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "633886f00cbd8130eb6e933b4172a46fe5b6b6c3ca20306581c0af13d1022e76": {
+      "version": 6,
+      "checkedAt": "2026-10-28T18:59:35.500Z",
+      "inputUrl": "https://code.visualstudio.com/updates/",
+      "inputTitle": "VS Code Updates changed",
+      "status": "verified",
+      "source": {
+        "url": "https://code.visualstudio.com/updates/v1_144#release-downloads-heading",
+        "status": "verified",
+        "reason": "Explicit release link for 1.144",
+        "checkedAt": "2026-10-28T18:59:15.081Z",
+        "contentHash": "33fce4deab7767b8854b67f10aa14ef892105b416e43e12c35ab9fcd218e2558"
+      },
+      "documents": [
+        {
+          "url": "https://code.visualstudio.com/docs/agents/concepts/agent-host",
+          "title": "Agent Host architecture",
+          "language": "en",
+          "checkedAt": "2026-10-28T18:59:15.280Z",
+          "contentHash": "a983ab47f425fd21bf47a85fb0c21c49f93490cceaf5fc4735394ff6ad1b3e62",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_144#release-downloads-heading",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://code.visualstudio.com/docs/agents/run/automations",
+          "title": "Create and manage agent automations",
+          "language": "en",
+          "checkedAt": "2026-10-28T18:59:15.465Z",
+          "contentHash": "f11c5fc747dc14f14c120395c5fabed7df0c2054274880a76bfc3a8cbb920ac8",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_144#release-downloads-heading",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://code.visualstudio.com/docs/agents/run/agent-harnesses",
+          "title": "Choose an agent harness",
+          "language": "en",
+          "checkedAt": "2026-10-28T18:59:15.688Z",
+          "contentHash": "938c58f9cb5b9778b2c360c63c26d7775623b93913d66cdbdc6f46279a160a62",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_144#release-downloads-heading",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "a4ea1be9681fd3d030fc63f40d4b77f397bbbdef71b0934689a1d2472ff947e1": {
+      "version": 6,
+      "checkedAt": "2026-10-28T18:59:36.094Z",
+      "inputUrl": "https://code.visualstudio.com/updates/v1_144",
+      "inputTitle": "Visual Studio Code 1.144: Run and continue Copilot tasks in the cloud",
+      "status": "verified",
+      "source": {
+        "url": "https://code.visualstudio.com/updates/v1_144#_run-and-continue-copilot-tasks-in-the-cloud",
+        "status": "verified",
+        "reason": "Exact release heading: Run and continue Copilot tasks in the cloud",
+        "checkedAt": "2026-10-28T18:59:15.081Z",
+        "contentHash": "33fce4deab7767b8854b67f10aa14ef892105b416e43e12c35ab9fcd218e2558"
+      },
+      "documents": [
+        {
+          "url": "https://code.visualstudio.com/docs/agents/agents-tutorial",
+          "title": "Tutorial: Agentic coding in VS Code",
+          "language": "en",
+          "checkedAt": "2026-10-28T18:59:36.349Z",
+          "contentHash": "d3ae220c6ec709d503b3a1f5cf89cd89eda64b057d127ea3f3cf0c554844baca",
+          "discoveryUrl": "https://code.visualstudio.com/docs",
+          "basis": "Matching feature terms in official documentation index",
+          "localization": "not_applicable",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "ab8dd0c879c6546d5b248d64842e25a89d68a9393f01ea97d06fc16b49439877": {
+      "version": 6,
+      "checkedAt": "2026-10-28T18:59:36.367Z",
+      "inputUrl": "https://code.visualstudio.com/updates/v1_144",
+      "inputTitle": "Visual Studio Code 1.144: Manage remote environments",
+      "status": "verified",
+      "source": {
+        "url": "https://code.visualstudio.com/updates/v1_144#_manage-remote-environments",
+        "status": "verified",
+        "reason": "Exact release heading: Manage remote environments",
+        "checkedAt": "2026-10-28T18:59:15.081Z",
+        "contentHash": "33fce4deab7767b8854b67f10aa14ef892105b416e43e12c35ab9fcd218e2558"
+      },
+      "documents": [
+        {
+          "url": "https://code.visualstudio.com/docs/agents/run/remote-agent-sessions",
+          "title": "Run and manage remote agent sessions",
+          "language": "en",
+          "checkedAt": "2026-10-28T18:59:36.472Z",
+          "contentHash": "7d3bc6431e4fd97601c3ebf751ca93ee5832d81bef1b2a42406e2085cf1b5e79",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_144#_manage-remote-environments",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "c48e421a5322e4dfd97ff9a58a317d56ed3649480667878f9a4a528fcb53ff44": {
+      "version": 6,
+      "checkedAt": "2026-10-28T18:59:36.496Z",
+      "inputUrl": "https://code.visualstudio.com/updates/v1_144",
+      "inputTitle": "Visual Studio Code 1.144: Cloud Automations (Preview)",
+      "status": "verified",
+      "source": {
+        "url": "https://code.visualstudio.com/updates/v1_144#_cloud-automations-preview",
+        "status": "verified",
+        "reason": "Exact release heading: Cloud Automations (Preview)",
+        "checkedAt": "2026-10-28T18:59:15.081Z",
+        "contentHash": "33fce4deab7767b8854b67f10aa14ef892105b416e43e12c35ab9fcd218e2558"
+      },
+      "documents": [
+        {
+          "url": "https://code.visualstudio.com/docs/agents/run/automations",
+          "title": "Create and manage agent automations",
+          "language": "en",
+          "checkedAt": "2026-10-28T18:59:15.465Z",
+          "contentHash": "f11c5fc747dc14f14c120395c5fabed7df0c2054274880a76bfc3a8cbb920ac8",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_144#_cloud-automations-preview",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "b708fd3003e6b91ac53ea564bf203b94d2497bec665338d848ff9543e3d40fdf": {
+      "version": 6,
+      "checkedAt": "2026-10-28T18:59:36.506Z",
+      "inputUrl": "https://code.visualstudio.com/updates/v1_144",
+      "inputTitle": "Visual Studio Code 1.144: Agent Host Protocol v1.0",
+      "status": "unconfirmed",
+      "source": {
+        "url": "https://code.visualstudio.com/updates/v1_144#_agent-host-protocol-v10",
+        "status": "verified",
+        "reason": "Exact release heading: Agent Host Protocol v1.0",
+        "checkedAt": "2026-10-28T18:59:15.081Z",
+        "contentHash": "33fce4deab7767b8854b67f10aa14ef892105b416e43e12c35ab9fcd218e2558"
+      },
+      "documents": [],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "ff2b83af81619eae85f435aa33c9de8afff5c5c145d303ad8b1ddfbdae730aec": {
+      "version": 6,
+      "checkedAt": "2026-10-28T18:59:36.518Z",
+      "inputUrl": "https://code.visualstudio.com/updates/v1_144",
+      "inputTitle": "Visual Studio Code 1.144: Route and orchestrate models with GitHub Copilot Fusion",
+      "status": "verified",
+      "source": {
+        "url": "https://code.visualstudio.com/updates/v1_144#_route-and-orchestrate-models-with-github-copilot-fusion",
+        "status": "verified",
+        "reason": "Exact release heading: Route and orchestrate models with GitHub Copilot Fusion",
+        "checkedAt": "2026-10-28T18:59:15.081Z",
+        "contentHash": "33fce4deab7767b8854b67f10aa14ef892105b416e43e12c35ab9fcd218e2558"
+      },
+      "documents": [
+        {
+          "url": "https://docs.github.com/ja/copilot/concepts/models/auto-model-selection",
+          "title": "について GitHub Copilotauto model selection",
+          "language": "ja",
+          "checkedAt": "2026-10-28T18:59:17.068Z",
+          "contentHash": "a0ce4bf4606e3a03718480171a7962a9a9635a8781af35bedc126fda3ce7a57e",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_144#_route-and-orchestrate-models-with-github-copilot-fusion",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "49d4eae8e83eb206935420c6520e4eab021aa3e71b1aa4e37fe0053fcd8e90d3": {
+      "version": 6,
+      "checkedAt": "2026-10-28T18:59:36.527Z",
+      "inputUrl": "https://code.visualstudio.com/updates/v1_144",
+      "inputTitle": "Visual Studio Code 1.144: Compare models and harnesses by default and in more projects",
+      "status": "verified",
+      "source": {
+        "url": "https://code.visualstudio.com/updates/v1_144#_compare-models-and-harnesses-by-default-and-in-more-projects",
+        "status": "verified",
+        "reason": "Exact release heading: Compare models and harnesses by default and in more projects",
+        "checkedAt": "2026-10-28T18:59:15.081Z",
+        "contentHash": "33fce4deab7767b8854b67f10aa14ef892105b416e43e12c35ab9fcd218e2558"
+      },
+      "documents": [
+        {
+          "url": "https://code.visualstudio.com/docs/agents/run/compare-models",
+          "title": "Compare model results (Preview)",
+          "language": "en",
+          "checkedAt": "2026-10-28T18:59:36.615Z",
+          "contentHash": "6d7946371296d12f484f85df63366afc5e13cdebf51972e79d1962977affb918",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_144#_compare-models-and-harnesses-by-default-and-in-more-projects",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "dbdc51bb50d00737be3cfa6751051d58b3633be0d42ce50fa60c48610565301d": {
+      "version": 6,
+      "checkedAt": "2026-10-28T18:59:36.631Z",
+      "inputUrl": "https://code.visualstudio.com/updates/v1_144",
+      "inputTitle": "Visual Studio Code 1.144: Image generation in Copilot (Preview)",
+      "status": "unconfirmed",
+      "source": {
+        "url": "https://code.visualstudio.com/updates/v1_144#_image-generation-in-copilot-preview",
+        "status": "verified",
+        "reason": "Exact release heading: Image generation in Copilot (Preview)",
+        "checkedAt": "2026-10-28T18:59:15.081Z",
+        "contentHash": "33fce4deab7767b8854b67f10aa14ef892105b416e43e12c35ab9fcd218e2558"
+      },
+      "documents": [],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "274a778595634ba5260bc253c088e368ced3bcbf81bb45e47fe6de387cb1efc1": {
+      "version": 6,
+      "checkedAt": "2026-10-28T18:59:36.643Z",
+      "inputUrl": "https://code.visualstudio.com/updates/v1_144",
+      "inputTitle": "Visual Studio Code 1.144: Let agents use desktop apps with computer use",
+      "status": "verified",
+      "source": {
+        "url": "https://code.visualstudio.com/updates/v1_144#_let-agents-use-desktop-apps-with-computer-use",
+        "status": "verified",
+        "reason": "Exact release heading: Let agents use desktop apps with computer use",
+        "checkedAt": "2026-10-28T18:59:15.081Z",
+        "contentHash": "33fce4deab7767b8854b67f10aa14ef892105b416e43e12c35ab9fcd218e2558"
+      },
+      "documents": [
+        {
+          "url": "https://code.visualstudio.com/docs/agents/run/tools#_control-desktop-applications-experimental",
+          "title": "Use tools with agents",
+          "language": "en",
+          "checkedAt": "2026-10-28T18:59:37.038Z",
+          "contentHash": "6a48d004a4f5189d0a47cf5582c14641ebfc7e7e6ab69052d0204bdd93d33cb5",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_144#_let-agents-use-desktop-apps-with-computer-use",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "verified",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://code.visualstudio.com/docs/agents/run/agent-harnesses",
+          "title": "Choose an agent harness",
+          "language": "en",
+          "checkedAt": "2026-10-28T18:59:15.688Z",
+          "contentHash": "938c58f9cb5b9778b2c360c63c26d7775623b93913d66cdbdc6f46279a160a62",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_144#_let-agents-use-desktop-apps-with-computer-use",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "294171acf858bf9dc83b362af26f987d548a432d51e25b9bafab47feb7bbcdc0": {
+      "version": 6,
+      "checkedAt": "2026-10-28T18:59:37.066Z",
+      "inputUrl": "https://code.visualstudio.com/updates/v1_109",
+      "inputTitle": "VS Code Release Notes 1.109 changed",
+      "status": "unconfirmed",
+      "source": {
+        "url": "https://code.visualstudio.com/updates/v1_109",
+        "status": "unconfirmed",
+        "reason": "Historical changed feature not identifiable in current page",
+        "checkedAt": "2026-10-28T18:59:37.105Z",
+        "contentHash": "9175441fbd05b250660e4637869af16764337b35c900c52a780540bd677a07af"
+      },
+      "documents": [],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "c79762518c6290e34f5fff7b22ab4b76499c4bf20b216c779471cda3c6c17655": {
+      "version": 6,
+      "checkedAt": "2026-10-28T18:59:37.245Z",
+      "inputUrl": "https://code.visualstudio.com/docs/agents/run/remote-agent-sessions",
+      "inputTitle": "VS Code Docs / Remote agent sessions changed",
+      "status": "verified",
+      "source": {
+        "url": "https://code.visualstudio.com/docs/agents/run/remote-agent-sessions#_choose-how-to-connect",
+        "status": "verified",
+        "reason": "Observed changed heading(s): Choose how to connect; Manage remote environments (Experimental); Open remote environment management; Find and organize remote machines; GitHub Environments (Preview); Register your machine; Connect from another client; Disconnect or stop sharing; Troubleshoot GitHub Environments; Connect via SSH; Connect via dev tunnel; Continue an existing remote session; Start a chat without a workspace on a remote host; Run a session in a remote Dev Container; Delegate tasks to remote machines (Experimental)",
+        "checkedAt": "2026-10-28T18:59:36.472Z",
+        "contentHash": "7d3bc6431e4fd97601c3ebf751ca93ee5832d81bef1b2a42406e2085cf1b5e79"
+      },
+      "documents": [
+        {
+          "url": "https://code.visualstudio.com/docs/agents/run/cloud-sandbox-sessions",
+          "title": "Run agent sessions in the cloud",
+          "language": "en",
+          "checkedAt": "2026-10-28T18:59:37.557Z",
+          "contentHash": "de27ff8159f22a7a0c8cb9df083dec38b17f82b00a794d5d3088071278db3e09",
+          "discoveryUrl": "https://code.visualstudio.com/docs/agents/run/remote-agent-sessions#_choose-how-to-connect",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://code.visualstudio.com/docs/agents/run/security#_remote-connections-and-github-environments",
+          "title": "Secure AI-assisted development in VS Code",
+          "language": "en",
+          "checkedAt": "2026-10-28T18:59:38.574Z",
+          "contentHash": "6b5c3fcd18868a79b63ae6fb7143cf8e3c748c59c31ad18b2c49f39273b59d9f",
+          "discoveryUrl": "https://code.visualstudio.com/docs/agents/run/remote-agent-sessions#_choose-how-to-connect",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "verified",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://code.visualstudio.com/docs/agents/run/sessions/manage-sessions",
+          "title": "Manage agent sessions in VS Code",
+          "language": "en",
+          "checkedAt": "2026-10-28T18:59:38.627Z",
+          "contentHash": "80fea9f00474c0f39fe89dd16c8946e993703d69d32e8fe0284f68c0385f000e",
+          "discoveryUrl": "https://code.visualstudio.com/docs/agents/run/remote-agent-sessions#_choose-how-to-connect",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "Original anchor no longer exists; verified document body used: #_sessions-list",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "d85908cc4806d659fc0590a63a8fefd8f61b269a45639f5b724ff0243633dfe8": {
+      "version": 6,
+      "checkedAt": "2026-10-28T18:59:38.655Z",
+      "inputUrl": "https://code.visualstudio.com/docs/agents/run/agents-window",
+      "inputTitle": "VS Code Docs / Agents window changed",
+      "status": "verified",
+      "source": {
+        "url": "https://code.visualstudio.com/docs/agents/run/agents-window#_start-an-agent-session",
+        "status": "verified",
+        "reason": "Observed changed heading(s): Start an agent session; Choose where an agent makes changes; Work with multiple sessions; Arrange sessions in a grid; Compare model results (Preview); Work with multiple chats in a session; Continue in another interface; Other ways to start a session; Open without GitHub sign-in (Experimental)",
+        "checkedAt": "2026-10-28T18:59:38.930Z",
+        "contentHash": "d925f45c71d211ff2de6ac56d235e8555c7d60e197997e230539011f32e65b7c"
+      },
+      "documents": [
+        {
+          "url": "https://code.visualstudio.com/docs/agents/quickstart",
+          "title": "Quickstart: Complete your first task with an agent",
+          "language": "en",
+          "checkedAt": "2026-10-28T18:59:39.022Z",
+          "contentHash": "e718b39f9ee839c7ca9b96d2805fb232e302a83ef331946bc4c2365bfe92c678",
+          "discoveryUrl": "https://code.visualstudio.com/docs/agents/run/agents-window#_start-an-agent-session",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://code.visualstudio.com/docs/agents/run/remote-agent-sessions",
+          "title": "Run and manage remote agent sessions",
+          "language": "en",
+          "checkedAt": "2026-10-28T18:59:36.472Z",
+          "contentHash": "7d3bc6431e4fd97601c3ebf751ca93ee5832d81bef1b2a42406e2085cf1b5e79",
+          "discoveryUrl": "https://code.visualstudio.com/docs/agents/run/agents-window#_start-an-agent-session",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://code.visualstudio.com/docs/agents/run/cloud-sandbox-sessions#_start-a-cloud-session",
+          "title": "Run agent sessions in the cloud",
+          "language": "en",
+          "checkedAt": "2026-10-28T18:59:37.557Z",
+          "contentHash": "de27ff8159f22a7a0c8cb9df083dec38b17f82b00a794d5d3088071278db3e09",
+          "discoveryUrl": "https://code.visualstudio.com/docs/agents/run/agents-window#_start-an-agent-session",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "verified",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "fd68c1a3bf4a8d7864f8a451ebbab746bbc7b68c7bb9b22458e2c63fc07e323a": {
+      "version": 6,
+      "checkedAt": "2026-10-28T18:59:39.042Z",
+      "inputUrl": "https://code.visualstudio.com/docs/agents/run/automations",
+      "inputTitle": "VS Code Docs / Agent automations changed",
+      "status": "verified",
+      "source": {
+        "url": "https://code.visualstudio.com/docs/agents/run/automations#_create-an-automation",
+        "status": "verified",
+        "reason": "Observed changed heading(s): Create an automation; Create an automation from chat; Run on repository events; Cloud automation security and usage; Troubleshoot cloud automations",
+        "checkedAt": "2026-10-28T18:59:15.465Z",
+        "contentHash": "f11c5fc747dc14f14c120395c5fabed7df0c2054274880a76bfc3a8cbb920ac8"
+      },
+      "documents": [
+        {
+          "url": "https://code.visualstudio.com/docs/agents/run/agent-harnesses",
+          "title": "Choose an agent harness",
+          "language": "en",
+          "checkedAt": "2026-10-28T18:59:15.688Z",
+          "contentHash": "938c58f9cb5b9778b2c360c63c26d7775623b93913d66cdbdc6f46279a160a62",
+          "discoveryUrl": "https://code.visualstudio.com/docs/agents/run/automations#_create-an-automation",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://code.visualstudio.com/docs/agents/run/approvals#_permission-levels",
+          "title": "Manage approvals and permissions",
+          "language": "en",
+          "checkedAt": "2026-10-28T18:59:39.220Z",
+          "contentHash": "6d92be8bfd5f4b7c360a9a01898d5bed6f6df949c160946dda10d6f41849ac1e",
+          "discoveryUrl": "https://code.visualstudio.com/docs/agents/run/automations#_create-an-automation",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "verified",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://docs.github.com/ja/copilot/concepts/agent-capabilities/agent-powered-workflows-and-operations/about-automations",
+          "title": "Copilot自動化",
+          "language": "ja",
+          "checkedAt": "2026-10-28T18:59:27.416Z",
+          "contentHash": "c3e89e8a2e5bab1820548e446f340e37cbc2c0ff2bd9f025740ae257e123c37b",
+          "discoveryUrl": "https://code.visualstudio.com/docs/agents/run/automations#_create-an-automation",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "Localized anchor not found; verified Japanese document body used: #security-and-safety",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "59356ebcd0da908b73acd548418ab24a7461d06b66b96752d764fddabd68e862": {
+      "version": 6,
+      "checkedAt": "2026-10-28T18:59:41.583Z",
+      "inputUrl": "https://code.visualstudio.com/updates/v1_145",
+      "inputTitle": "Visual Studio Code 1.145 (Insiders)",
+      "status": "unconfirmed",
+      "source": {
+        "url": "https://code.visualstudio.com/updates/v1_145",
+        "status": "verified",
+        "reason": "Fetched original article",
+        "checkedAt": "2026-10-28T18:59:41.651Z",
+        "contentHash": "9c5cb6d5c06a993a610360e9bd76c677278545b789acdd155922b7b79db72ae6"
+      },
+      "documents": [],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
     }
   }
 }

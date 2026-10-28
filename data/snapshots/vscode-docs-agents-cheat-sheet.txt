@@ -17,7 +17,7 @@ For example, give the agent a concrete browser check:
 To organize larger tasks:
 Use separate sessions and worktrees for independent tasks that should not share code changes.
 Use subagents to delegate a focused part of a task in a separate context.
-Hand off a session when you want to continue work with another supported harness or the Cloud target.
+Hand off a session when you want to continue work with another supported harness. For cloud execution, start a cloud session.
 H2: Get better results
 H2: Stay in control
 Agents can save edits directly to the session's folder or worktree. Manual permissions does not ask for confirmation for every file edit. Review the security baseline before working on an existing project.
