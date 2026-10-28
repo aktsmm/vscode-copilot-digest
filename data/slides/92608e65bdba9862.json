@@ -1,0 +1,97 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "92608e65bdba9862",
+  "title": {
+    "ja": "Copilot SDK で、GitHub App によるサーバー間認証が可能に",
+    "subtitleJa": "組織にインストールした App の短期トークンで、ユーザー不在でも Copilot を呼び出せる",
+    "original": "GitHub Copilot supports server-to-server authentication"
+  },
+  "date": "2026-10-27",
+  "topic": "GitHub Copilot",
+  "status": "preview",
+  "statusEvidence": "available in public preview",
+  "audience": {
+    "who": "Copilot SDK でエージェントや自動化サービスを作る開発者と、組織オーナー",
+    "change": "サインイン中のユーザーの資格情報なしで、組織に代わって Copilot 要求を行える",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "利用するなら、App に Copilot Requests 権限を付与して組織にインストールする"
+  },
+  "panels": [
+    {
+      "id": "how-to-use",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "GitHub App に Copilot Requests の organization 権限を「読み取り専用」で付与する",
+        "使用状況の帰属先・請求先にしたい組織にインストールする",
+        "インストール アクセス トークン（ghs_）を SDK の gitHubToken などのオプションに渡す"
+      ]
+    },
+    {
+      "id": "prerequisites",
+      "heading": "前提と制限",
+      "priority": "core",
+      "items": [
+        "対象は組織にインストールした App。個人アカウントとエンタープライズのインストールは使えない",
+        "トークンは 1 時間で期限切れになるため、期限前に新しく作成する",
+        "組織のモデル ポリシーと支出管理が適用され、App 単位の予算は作れない"
+      ]
+    },
+    {
+      "id": "admin",
+      "heading": "管理者の操作",
+      "priority": "detail",
+      "items": [
+        "AI 使用状況の CSV レポートの app_client_id で App 経由の使用量を確認する",
+        "アクセスを止めるには、組織で App を一時停止またはアンインストールする"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "インストール アクセス トークン", "type": "term", "oneLine": "GitHub App のインストールが発行する有効期間の短いトークン。" },
+    { "term": "app_client_id", "type": "label", "oneLine": "AI 使用状況 CSV で、App に帰属する使用量を示す列。" }
+  ],
+  "suggestions": [
+    "GitHub Actions 内では、App の代わりに組み込みの GITHUB_TOKEN を使う方法がある"
+  ],
+  "qa": [
+    {
+      "q": "誰が、どの環境で使えますか？",
+      "a": "組織にインストールした GitHub App が対象です。個人アカウントとエンタープライズのインストールではこの認証方法を使えません。管理ドキュメントでは Copilot Enterprise または Copilot Business の組織が対象と記載されています。"
+    },
+    {
+      "q": "読み取り専用の権限でも費用は発生しますか？",
+      "a": "発生します。この権限は、App が組織の AI credits を消費する要求を行えるようにするものです。使用量は App のインストールを所有する組織に帰属し、請求されます。"
+    },
+    {
+      "q": "利用額を抑えるにはどうしますか？",
+      "a": "組織の Copilot 予算とモデル ポリシーが適用されます。1 つの App やインストールだけの予算は作れません。上限到達後に止めるには「予算上限に達したときに使用を停止」を有効にします。"
+    },
+    {
+      "q": "トークンの有効期限は？",
+      "a": "インストール トークンは 1 時間で期限切れになります。期限前に新しいトークンを作成し、新しいトークンで SDK クライアントを再起動します。"
+    },
+    {
+      "q": "問題のある App のアクセスを止めるには？",
+      "a": "組織で対象の App を一時停止するか、アンインストールします。これにより、そのインストールによる他の組織リソースへのアクセスも止まります。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "GitHub Copilot supports server-to-server authentication - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-10-27-github-copilot-supports-server-to-server-authentication/"
+    },
+    "documents": [
+      { "title": "サーバー間認証 - GitHubドキュメント", "url": "https://docs.github.com/ja/copilot/how-tos/copilot-sdk/auth/server-to-server-tokens" },
+      { "title": "組織で使用する Copilot 向けの GitHub Apps を管理する - GitHubドキュメント", "url": "https://docs.github.com/ja/copilot/how-tos/administer-copilot/manage-for-organization/manage-app-copilot-access" }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-10-27-github-copilot-supports-server-to-server-authentication/",
+    "https://docs.github.com/ja/copilot/how-tos/copilot-sdk/auth/server-to-server-tokens",
+    "https://docs.github.com/ja/copilot/how-tos/administer-copilot/manage-for-organization/manage-app-copilot-access"
+  ]
+}
