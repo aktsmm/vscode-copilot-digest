@@ -1,0 +1,102 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "af8e72e013cbe8cf",
+  "title": {
+    "ja": "GitHub Copilot Fusion が GA。タスクごとにモデルを自動で選び、組み合わせる",
+    "subtitleJa": "モデル ピッカーで Fusion を選ぶと、プロンプトごとに使うモデルと実行パターンを Copilot が決める",
+    "original": "Route and orchestrate models with GitHub Copilot Fusion"
+  },
+  "date": "2026-10-28",
+  "topic": "GitHub Copilot",
+  "status": "ga",
+  "statusEvidence": "GitHub Copilot Fusion is generally available.",
+  "audience": {
+    "who": "Copilot でモデルを選ぶ手間を減らしたい開発者と、モデル ポリシーを管理する管理者",
+    "change": "モデルを個別に選ばず Copilot Fusion を選ぶだけで、タスクごとにモデルの選択と組み合わせを任せられる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "試すなら、クライアントを更新してモデル ピッカーで Copilot Fusion と effort level を選ぶ"
+  },
+  "panels": [
+    {
+      "id": "availability",
+      "heading": "使える場所とプラン",
+      "priority": "core",
+      "items": [
+        "すべての Copilot プランで、Visual Studio Code、GitHub Copilot app、GitHub Copilot CLI、JetBrains IDE で利用できる",
+        "他のクライアントへの対応は今後予定されている",
+        "有料プランは、期間限定で Fusion 利用時のモデル コストが 30% 割引になる"
+      ]
+    },
+    {
+      "id": "how-to-use",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "モデル ピッカーで Copilot Fusion を選び、effort level を選ぶ",
+        "Fusion Standard は日常のコーディング、Fusion High は難しいタスクや深い推論、Fusion Max は最も負荷の高いタスク向け",
+        "必要に応じて Single、Cascade、Critique のいずれかの実行パターンを Copilot が選ぶ"
+      ]
+    },
+    {
+      "id": "admin",
+      "heading": "前提と制限",
+      "priority": "core",
+      "items": [
+        "Fusion が使うのは、Enterprise と組織のモデル ポリシーで有効なモデルだけ",
+        "管理者は Fusion 用にだけモデルを無効にでき、Enterprise managed settings で Fusion を既定のモデルにできる"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "課金は、Fusion が使った各モデルの標準料金で発生する",
+        "リサーチ プレビューで auto、HydraFusion、HydraFusion Max を有効にしていた場合は、対応する Fusion の effort level に自動で移行する"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "Single", "type": "feature", "oneLine": "1 つのモデルがタスクを直接解く実行パターン。" },
+    { "term": "Cascade", "type": "feature", "oneLine": "効率的なモデルが下書きし、品質チェックで受け入れるか強いモデルに引き上げる実行パターン。" },
+    { "term": "Critique", "type": "feature", "oneLine": "1 つのモデルの下書きを別のモデルがレビューし、元のモデルが修正する実行パターン。" }
+  ],
+  "qa": [
+    {
+      "q": "どのプランとクライアントで使えますか。",
+      "a": "すべての Copilot プランで、Visual Studio Code、GitHub Copilot app、GitHub Copilot CLI、JetBrains IDE で使えます。その他のクライアントへの対応は今後予定されています。"
+    },
+    {
+      "q": "どうやって使い始めますか。",
+      "a": "クライアントを更新し、モデル ピッカーで Copilot Fusion を選んで effort level（Standard、High、Max）を選びます。"
+    },
+    {
+      "q": "料金はどうなりますか。",
+      "a": "Fusion が使った各モデルの標準料金で課金されます。期間限定で、有料の Copilot プランのユーザーはモデル コストが 30% 割引になります。"
+    },
+    {
+      "q": "管理者は何を制御できますか。",
+      "a": "Fusion は Enterprise と組織のモデル ポリシーで有効なモデルだけを使います。管理者は Fusion 用にだけモデルを無効にでき、Enterprise managed settings で Fusion を既定にできます。"
+    },
+    {
+      "q": "リサーチ プレビューの設定はどうなりますか。",
+      "a": "auto、HydraFusion、HydraFusion Max を有効にしていた場合、選択は対応する Copilot Fusion の effort level に自動で移行します。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Route and orchestrate models with GitHub Copilot Fusion - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-10-28-route-and-orchestrate-models-with-github-copilot-fusion/"
+    },
+    "documents": [
+      { "title": "About GitHub Copilot Fusion - GitHubドキュメント", "url": "https://docs.github.com/ja/copilot/concepts/models/copilot-fusion" }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-10-28-route-and-orchestrate-models-with-github-copilot-fusion/",
+    "https://docs.github.com/ja/copilot/concepts/models/copilot-fusion"
+  ]
+}
