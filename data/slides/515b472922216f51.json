@@ -1,0 +1,100 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "515b472922216f51",
+  "title": {
+    "ja": "Copilot アプリに、Projects とデスクトップ操作（Computer use）が登場",
+    "subtitleJa": "複数リポジトリにまたがる作業を Projects でまとめ、API のないデスクトップ アプリも Copilot が操作",
+    "original": "GitHub Copilot app, Universe releases"
+  },
+  "date": "2026-10-28",
+  "topic": "GitHub Copilot",
+  "status": "preview",
+  "statusEvidence": "Copilot Projects are now in public preview.",
+  "audience": {
+    "who": "GitHub Copilot アプリで複数リポジトリや、コード以外を含む作業を進めたい開発者",
+    "change": "Projects が目標・コンテキスト・エージェント・結果を 1 か所にまとめ、Computer use が macOS / Windows のアプリを操作する",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "Copilot アプリを更新し、Projects を作成するか、設定で Computer Use を有効にして試す"
+  },
+  "panels": [
+    {
+      "id": "projects",
+      "heading": "Projects の使い方",
+      "priority": "core",
+      "items": [
+        "目標を書き、リポジトリ、デザイン モック、Slack スレッド、メモなどのコンテキストを追加する",
+        "モデルとツールを選ぶと、Copilot が必要な数のエージェントを動かし、PR などの結果を返す",
+        "繰り返す作業は、プロジェクトの自動化で実行できる"
+      ]
+    },
+    {
+      "id": "computer-use",
+      "heading": "Computer use の有効化",
+      "priority": "core",
+      "items": [
+        "macOS と Windows でパブリック プレビュー。アプリ内容の読み取り、クリック、入力、アプリ間の移動ができる",
+        "[Settings] > [Computer Use] で Enable Computer Use をオンにする",
+        "macOS ではユーザー補助と画面収録の権限を付与する"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "アプリを操作する前に、Copilot が承認を求める",
+        "組織は管理設定で Computer use を無効にできる"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "Projects", "type": "feature", "oneLine": "目標に向けた関連作業を、コンテキスト・エージェント・結果とともに 1 か所にまとめる機能。" },
+    { "term": "Computer use", "type": "feature", "oneLine": "Copilot がデスクトップ アプリのコントロールをクリックし、テキストを入力して操作する機能。" }
+  ],
+  "suggestions": [
+    "1 つのリポジトリ内の単発作業は、従来どおりそのリポジトリからセッションを開始する",
+    "初回は「値を変更しない」などの制約を添えて、状況の読み取りから試す"
+  ],
+  "qa": [
+    {
+      "q": "Projects や Computer use はどのプランで使えますか。",
+      "a": "公式ドキュメントでは、GitHub Copilot アプリはすべての Copilot プランで使用できるとされています。Projects と Computer use はいずれもパブリック プレビューで、変更される可能性があります。"
+    },
+    {
+      "q": "Projects は通常のセッションと何が違いますか。",
+      "a": "Projects は複数のリポジトリやセッション、繰り返す作業にまたがる広い目標を Copilot に調整させる場です。単一リポジトリの個別タスクは、そのリポジトリから直接セッションを始められます。"
+    },
+    {
+      "q": "Computer use はどう有効にしますか。",
+      "a": "アプリの設定で Computer Use を開き、Enable Computer Use をオンにします。macOS ではユーザー補助と画面収録の権限が必要です。セッションで /computer on を使う方法もあります。"
+    },
+    {
+      "q": "勝手にアプリを操作されませんか。",
+      "a": "Copilot はアプリを操作する前に承認を求めます。実行中の操作は、停止ボタンか Esc キーで中断できます。組織は管理設定でこの機能を無効にできます。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "GitHub Copilot app, Universe releases - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-10-28-github-copilot-app-universe-releases/"
+    },
+    "documents": [
+      {
+        "title": "Working with projects in the GitHub Copilot app - GitHub Docs",
+        "url": "https://docs.github.com/en/copilot/how-tos/github-copilot-app/working-with-projects"
+      },
+      {
+        "title": "GitHub Copilot アプリを使用したデスクトップ アプリケーションの操作 - GitHubドキュメント",
+        "url": "https://docs.github.com/ja/copilot/how-tos/github-copilot-app/computer-use"
+      }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-10-28-github-copilot-app-universe-releases/",
+    "https://docs.github.com/en/copilot/how-tos/github-copilot-app/working-with-projects",
+    "https://docs.github.com/ja/copilot/how-tos/github-copilot-app/computer-use"
+  ]
+}
