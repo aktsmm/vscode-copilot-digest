@@ -1,0 +1,90 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "9b8813450318139f",
+  "title": {
+    "ja": "VS Code 1.144: GitHub Copilot Fusion がモデルを選び、組み合わせて実行",
+    "subtitleJa": "モデルピッカーで Copilot Fusion を選ぶと、モデル・推論の強さ・実行方法を自動で決める",
+    "original": "Route and orchestrate models with GitHub Copilot Fusion"
+  },
+  "date": "2026-10-28",
+  "topic": "GitHub Copilot",
+  "status": "ga",
+  "statusEvidence": "GitHub Copilot Fusion is now generally available, with Copilot Fusion High and Max offered on Copilot Pro+, Max, Business, and Enterprise plans.",
+  "audience": {
+    "who": "VS Code でタスクごとのモデル選択を Copilot に任せたい開発者",
+    "change": "モデルピッカーの Copilot Fusion が、依頼ごとにモデルと実行パターンを選び、複数モデルを連携させる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "モデルピッカーで Copilot Fusion を選び、作業に合う Effort レベルを試す"
+  },
+  "panels": [
+    {
+      "id": "how-to-use",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "モデルピッカーで Copilot Fusion を選ぶと、依頼ごとに Copilot がモデル・推論の強さ・実行パターンを選ぶ",
+        "簡単な作業は 1 つのモデルが完了し、難しい作業は 1 つが案を作り他のモデルがレビューや批評をする",
+        "応答の下の Effort レベルにホバーすると、使われたモデルを確認できる"
+      ]
+    },
+    {
+      "id": "effort",
+      "heading": "Effort レベルとプラン",
+      "priority": "core",
+      "items": [
+        "Standard は日常のコーディング、High はより難しい作業、Max は最も複雑な作業向け",
+        "Copilot Fusion High と Max は Copilot Pro+、Max、Business、Enterprise プランで提供"
+      ]
+    },
+    {
+      "id": "cost",
+      "heading": "課金と割引",
+      "priority": "detail",
+      "items": [
+        "Copilot Fusion が使った各モデルが、標準の料金で課金される",
+        "2026 年 11 月 30 日まで、有料プランは Copilot Fusion の利用で 30% 割引"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "Copilot Fusion", "type": "feature", "oneLine": "Project HydraFusion のマルチモデル連携と、auto model selection のタスク別モデル選択を組み合わせた機能。" },
+    { "term": "auto model selection", "type": "feature", "oneLine": "各タスクに最適なモデルを自動的に選択する仕組み。" }
+  ],
+  "qa": [
+    {
+      "q": "Copilot Fusion は何をしてくれる機能ですか。",
+      "a": "依頼ごとに、モデル、推論の強さ、実行パターンを Copilot が選びます。簡単な作業は 1 つのモデルで完了し、難しい作業では 1 つのモデルが案を作り、他のモデルがレビューや批評をします。"
+    },
+    {
+      "q": "どのプランで使えますか。",
+      "a": "Copilot Fusion は一般提供です。Copilot Fusion High と Max は Copilot Pro+、Max、Business、Enterprise プランで提供されます。"
+    },
+    {
+      "q": "どう有効にしますか。",
+      "a": "VS Code のモデルピッカーで Copilot Fusion を選びます。応答の下にある Effort レベルにホバーすると、使われたモデルを確認できます。"
+    },
+    {
+      "q": "料金はどうなりますか。",
+      "a": "Copilot Fusion が使った各モデルが標準の料金で課金されます。2026 年 11 月 30 日まで、有料プランは Copilot Fusion の利用で 30% 割引です。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.144: Route and orchestrate models with GitHub Copilot Fusion",
+      "url": "https://code.visualstudio.com/updates/v1_144#_route-and-orchestrate-models-with-github-copilot-fusion"
+    },
+    "documents": [
+      {
+        "title": "について GitHub Copilotauto model selection - GitHubドキュメント",
+        "url": "https://docs.github.com/ja/copilot/concepts/models/auto-model-selection"
+      }
+    ]
+  },
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_144",
+    "https://docs.github.com/ja/copilot/concepts/models/auto-model-selection"
+  ]
+}
