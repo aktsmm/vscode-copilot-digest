@@ -3764,5 +3764,93 @@
       "組織のモデルポリシー、予算、支出管理がそのまま適用される",
       "AI利用量CSVの app_client_id で利用を特定でき、停止はアプリの一時停止かアンインストール"
     ]
+  },
+  "532ef9d141d93574": {
+    "title": "Copilotアプリでコードスキャン警告を修正できるsecurity拡張が公開プレビュー",
+    "summary": "GitHub Copilotアプリ向けのGitHub security拡張が公開プレビューになった。code scanningの未対応アラートを重大度順に一覧し、選択したアラートについてCopilotにExplainやFixを依頼できる。修正はローカルの作業コピーにのみ反映され、commitやpushは行われない。",
+    "why": "code scanningを使うリポジトリの開発者は、Copilotアプリ内でアラートの調査から修正までを進められる。",
+    "points": [
+      "導入は copilot plugin install github-security@awesome-copilot、またはアプリのCustomizeから",
+      "/security-review で現在の変更の指摘を既存アラートと並べて確認できる",
+      "Explain・Fix・/security-review はAIクレジットを消費し、閲覧と却下は消費しない",
+      "GitHub Enterprise Serverは非対応。BusinessとEnterpriseは管理者のGitHub Copilot appポリシー有効化が必要"
+    ]
+  },
+  "d6140e2e60dfd028": {
+    "title": "VS Code 1.144でエージェントがデスクトップアプリを操作可能に",
+    "summary": "VS Code 1.144にComputer Useが追加された。自分のmacOSまたはWindows上で動くCopilot harnessセッションで、エージェントが画面上のアプリを見て操作できる。必要な場面ではエージェントが有効化の許可を求め、/computer on でも手動で有効にできる。",
+    "why": "ブラウザやコードだけでは完結しないデスクトップアプリ作業をエージェントに任せたい人が対象。",
+    "points": [
+      "設定名は chat.agentHost.computerUse.enabled",
+      "有効化後は /computer off を実行するまでCopilotで有効のまま",
+      "対象はローカルのmacOS・Windowsで動くCopilot harnessセッション",
+      "リリースノート上の位置づけは Experimental"
+    ]
+  },
+  "f48a388f03b95e78": {
+    "title": "Copilot Fusionがローカルモデルとクラウドモデルを自動で使い分け",
+    "summary": "GitHub Copilot Fusionが、対応するオンデバイスモデルとクラウドモデルを選んで振り分けるローカルモデルルーティングを実験的プレビューとして開始した。Copilot CLI、Copilotアプリ、VS Codeで使え、オプトインで有効にする。",
+    "why": "手元のPCの計算資源を使いたい開発者は、モデルを毎回切り替えずにFusionへ任せられる。",
+    "points": [
+      "WindowsではWindows MLプロバイダー経由でMAI Code 1.1 Flashをダウンロードして設定できる",
+      "VS Codeでは chat.copilot.localModel.enabled を有効にする",
+      "CLIはOpenAI互換サーバー経由の手動設定で、Windows・macOS・Linuxに対応",
+      "ルーティング判断はクラウドで行われ、ローカル推論でもオフラインにはならない"
+    ]
+  },
+  "29b3350fcf5dde8e": {
+    "title": "VS Code 1.145 Insiders:Chat: Run Automationなどを追加",
+    "summary": "VS Code 1.145 Insidersの更新。Agents windowのコマンドパレットに保存済みautomationを実行するChat: Run Automation...が加わった。ほかに一括worktreeクリーンアップの進捗表示と再試行、リモートエージェントホスト上のWebアプリのプレビュー、未保存ファイルのパンくずが入った。",
+    "why": "Insidersでエージェント機能を試す人は、automationの実行やworktree整理の改善を確認しておきたい。",
+    "points": [
+      "Agents windowで Chat: Run Automation... から保存済みautomationを実行",
+      "リモートエージェントホストのWebアプリを統合ブラウザでプレビュー(Experimental)",
+      "chat.agentSessions.openInEditor でセッションをエディターで開ける(Experimental)",
+      "シンボルを持つ言語の未保存ファイルでもbreadcrumbsを表示"
+    ]
+  },
+  "6278a173860f7e41": {
+    "title": "リモートエージェントセッションの接続方法と環境管理の手引きが追加",
+    "summary": "VS Codeのドキュメントに、開発マシン上のセッションを別のアプリやデバイスから続ける接続方法の説明が追加された。GitHub Environments(Preview)、SSH、dev tunnelsの使い分けと、Remote Environmentsエディターでのマシン管理(Experimental)を扱う。",
+    "why": "手元のマシンで動くエージェントを他端末から操作したい人は、接続方式と前提条件を選ぶ際に参照したい。",
+    "points": [
+      "GitHub Environmentsは、VS Code、Copilotアプリ、CLI、GitHub.com、GitHub Mobileからの接続用にマシンを登録する",
+      "SSHはAgents window、dev tunnelsはVS Codeまたはブラウザ版Agents windowから接続する",
+      "ファイルとツールは実行マシン側に残るため、ホストは起動・到達可能にしておく",
+      "接続を止めるには chat.remoteAgentHostsEnabled をオフにする"
+    ]
+  },
+  "a955f30c253781dc": {
+    "title": "エージェントのautomationをローカルまたはクラウドで実行する手順を追加",
+    "summary": "VS Codeのドキュメントに、保存したプロンプトとセッション設定でエージェントを動かすautomationの説明が追加された。手動実行や定期実行に加え、クラウド実行(Preview)ではリポジトリのイベントでも起動できる。ローカルとクラウドの使い分けと作成手順を載せている。",
+    "why": "定期的なリポジトリ作業を自動化したい人は、実行場所の選択と必要な権限を事前に確認したい。",
+    "points": [
+      "クラウド実行には、eligibleなprivateリポジトリへの書き込み権限を持つGitHub.comアカウントが必要",
+      "メニューに出ないときは chat.automations.enabled と chat.automations.cloud.enabled を確認",
+      "ローカル実行は、スケジュール時にPCとエージェントを稼働させておく必要がある",
+      "cloud sessionsとは別物で、cloud sessionを作ってもautomationは作成されない"
+    ]
+  },
+  "8498dcc26b7abf49": {
+    "title": "VS Code Wrapped:Universe 2026までの1年でエージェント機能が拡大",
+    "summary": "VS Codeチームが前回のGitHub Universeからの1年を振り返った。Agent Host Protocolが1.0になり、Copilot harnessが新規セッションの既定になった。Agents window、automations、Copilot Fusion、canvases、experimentalなcomputer useなどを紹介している。",
+    "why": "VS Codeのエージェント機能の現状を把握し、導入や設定の優先順位を決めたい人向けの総括。",
+    "points": [
+      "Copilot harnessはエディターとAgents windowの両方で新規セッションの既定",
+      "Claude・Codex harnessもAgent Host経由でVS Code内で使える",
+      "Copilot connectorsは全Copilotプランで利用可。Business/Enterpriseは管理者がエディターのプレビュー機能を許可する必要がある",
+      "computer useはmacOS・Windows対応で、組織はポリシーで無効化できる"
+    ]
+  },
+  "e825f4123d0c16bf": {
+    "title": "Copilot Automationsにチーム共有型が登場",
+    "summary": "チームで作成・保守できるShared Copilot Automationsの提供が始まった。共有automationは、読み取り権限があれば閲覧でき、書き込み権限があれば編集できる。AIクレジットはリポジトリ所有者に課金され、操作はCopilotの名義で実行される。",
+    "why": "チームで使う自動化を個人のautomationに頼っていた組織は、共有型への移行を検討したい。",
+    "points": [
+      "作成時にTypeでSharedを選ぶ。作成後に種類は変更できない",
+      "組織所有のリポジトリでは「Allow use of Copilot cloud agent billed to the organization」ポリシーの有効化が必要",
+      "対象はCopilot Pro、Pro+、Max、Business、Enterprise。提供は段階的",
+      "作成者が離れても実行が続き、変更履歴で更新内容を追える"
+    ]
   }
 }
