@@ -1,0 +1,80 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "d2bf283bdc6453aa",
+  "title": {
+    "ja": "VS Code 1.144: Copilot のタスクをクラウドで実行し、続きから再開",
+    "subtitleJa": "Cloud セッションで、手元のマシンをオフにしたままタスクを実行・再開できる",
+    "original": "Run and continue Copilot tasks in the cloud"
+  },
+  "date": "2026-10-28",
+  "topic": "VS Code",
+  "status": "update",
+  "audience": {
+    "who": "VS Code で Copilot のタスクを、開発マシンを起動し続けずに実行したい開発者",
+    "change": "リポジトリとツールが GitHub のマネージド環境で動き、既存セッションを一覧から再開できる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "利用するなら有料の Copilot プランと組織ポリシーを確認し、Cloud を選んで開始する"
+  },
+  "panels": [
+    {
+      "id": "how-to-use",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "Chat ビューまたは Agents ウィンドウで Cloud を選び、GitHub リポジトリを選んで開始",
+        "追加の指示の送信、承認要求への応答、エージェントの変更のレビューができる",
+        "セッション一覧から既存の Cloud セッションを開き、同じ会話を続けられる"
+      ]
+    },
+    {
+      "id": "where",
+      "heading": "使える場所とプラン",
+      "priority": "core",
+      "items": [
+        "新しい Cloud 体験には有料の Copilot プランが必要で、組織のポリシーが適用される",
+        "GitHub.com や GitHub Mobile アプリなど他のクライアントからも進捗を確認し、VS Code で再開できる"
+      ]
+    },
+    {
+      "id": "limits",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "Cloud セッションは別のワークスペースを使い、ローカルの未コミットの変更は自動ではコピーされない"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "Cloud セッション", "type": "feature", "oneLine": "開発マシンを起動し続けずに、GitHub のインフラ上で Copilot のタスクを実行する仕組み。" }
+  ],
+  "qa": [
+    {
+      "q": "Cloud セッションを使うのにプランは必要ですか？",
+      "a": "新しい Cloud 体験には有料の Copilot プランが必要です。また、組織のポリシーの対象になります。"
+    },
+    {
+      "q": "どうやって開始しますか？",
+      "a": "エディター ウィンドウの Chat ビュー、または Agents ウィンドウで Cloud を選び、GitHub リポジトリを選んでタスクを開始します。"
+    },
+    {
+      "q": "ローカルで編集中の変更は反映されますか？",
+      "a": "反映されません。Cloud セッションは別のワークスペースを使い、ローカルの未コミットの変更は自動ではコピーされません。"
+    },
+    {
+      "q": "VS Code 以外から進捗を見られますか？",
+      "a": "できます。Cloud セッションは他の Copilot クライアントからも使え、GitHub.com や GitHub Mobile アプリで進捗を確認し、VS Code に戻って続けられます。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.144",
+      "url": "https://code.visualstudio.com/updates/v1_144#_run-and-continue-copilot-tasks-in-the-cloud"
+    }
+  },
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_144"
+  ]
+}
