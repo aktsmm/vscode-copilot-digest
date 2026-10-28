@@ -3764,5 +3764,242 @@
       "組織のモデルポリシー、予算、支出管理がそのまま適用される",
       "AI利用量CSVの app_client_id で利用を特定でき、停止はアプリの一時停止かアンインストール"
     ]
+  },
+  "1e84e499960d1fc4": {
+    "title": "VS Codeでクラウドセッションと複数端末連携が拡充",
+    "summary": "Universeに合わせ、VS Codeで開始したクラウドエージェントのセッションをVS Code、Copilotアプリ、GitHub Mobile、github.com、Copilot CLIで継続できるようになった。Agent Hostによるバックグラウンド実行、リモートSSH、Copilotハーネスの既定化、モデル比較、コンピューター操作なども紹介されている。",
+    "why": "複数のマシンや端末でエージェント作業を引き継ぎたい開発者は、Agents windowとAgent Hostの設定を見直したい。",
+    "points": [
+      "スマホからは開発マシンで code agent host --github-environment を実行して操作する",
+      "Copilotハーネスが新規セッションの既定になり、CLIやアプリと挙動が揃う",
+      "コンピューター操作は chat.agentHost.computerUse.enabled で有効化し、/computer on で開始（実験的）",
+      "Customization Marketplaceはプレビューで既定有効、Business/Enterpriseは管理者がエディタープレビュー機能の許可を要する"
+    ]
+  },
+  "532ef9d141d93574": {
+    "title": "Copilotアプリでコードスキャン警告の修正が可能に",
+    "summary": "GitHub Copilotアプリ向けのGitHub securityエクステンションがパブリックプレビューになった。リポジトリの未解決のcode scanningアラートを重大度順に一覧し、Copilotに説明や修正を依頼できる。修正はローカルの作業コピーにのみ反映され、コミットやプッシュは行われない。",
+    "why": "コードスキャン警告の対応でgithub.comとエディターを往復している開発者は、導入して作業を一か所にまとめられる。",
+    "points": [
+      "導入は copilot plugin install github-security@awesome-copilot、またはアプリのCustomizeから",
+      "現在の変更には /security-review を実行でき、既存アラートと並べて表示される",
+      "Explain、Fix、/security-review はAIクレジットを消費し、閲覧と却下は消費しない",
+      "GitHub Enterprise Serverは非対応。プライベートリポジトリではGitHub Code Securityが必要"
+    ]
+  },
+  "069e214b554c7d8b": {
+    "title": "VS Code 1.144でモデル比較が既定有効に、対象も拡大",
+    "summary": "VS Code 1.144では、同じプロンプトを複数モデルで実行して並べて確認するモデル比較が、Agents windowの対象となる新規セッションで既定有効になった。プロジェクトなしのフォルダーレスChatや、Gitリモート・初回コミットがないリポジトリでも使える。",
+    "why": "モデルごとの結果を比べたい開発者は、設定 sessions.chat.compareAgents.enabled と新しい起動方法を把握しておきたい。",
+    "points": [
+      "フォルダーレスChatでは、Gitリポジトリ・Judge・Synthesizerなしで独立した試行を実行する",
+      "コミットのないリポジトリでは、無視されない作業ファイルのスナップショットから各試行が始まる",
+      "比較設定はCtrl+Alt+M（macOSは⌥⌘M）で開ける",
+      "Dev Containersでは非対応"
+    ]
+  },
+  "1965a859afa067d1": {
+    "title": "Agent Host Protocol v1.0が公開、独自クライアント開発が可能に",
+    "summary": "VS Codeがローカルやリモートのエージェントとの通信に使うAgent Host Protocolの初版v1.0が公開された。エージェント用の独自UIや、このプロトコルに対応するUIにつなぐエージェント基盤を作るためのオープンで拡張可能な仕様で、6言語のライブラリも提供される。",
+    "why": "エージェント用の独自クライアントやホストを作りたい開発者は、プロトコルの仕様とライブラリを試せる。",
+    "points": [
+      "Agents windowの Agents: Add Remote Agent Host... でWebSocket経由のホストを追加できる",
+      "code agent endpoints でエディターの稼働中エージェントホストのエンドポイントを取得する",
+      "クラウド自動化を含め、VS Codeのエージェント通信に使われている"
+    ]
+  },
+  "515b472922216f51": {
+    "title": "Copilotアプリにプロジェクト機能とコンピューター操作が登場",
+    "summary": "GitHub Copilotアプリで、複数リポジトリや仕様書・デザインなどをまとめて扱うProjectsがパブリックプレビューになった。目標とコンテキストを渡すとCopilotが必要な数のエージェントを動かし、プルリクエストなどを返す。macOSとWindowsではコンピューター操作も使える。",
+    "why": "複数リポジトリにまたがる作業やデスクトップアプリ操作を任せたい人は、アプリを更新して設定を確認したい。",
+    "points": [
+      "リポジトリ、デザインモック、Slackスレッドなどをプロジェクトのコンテキストに追加できる",
+      "プロジェクト自動化で、機能の完成時にプロモ動画を作るような定型作業を回せる",
+      "Settings > Computer Use で Enable Computer Use をオンにし、macOSでは権限を付与する",
+      "アプリの操作前に承認が求められ、組織は管理設定で無効化できる"
+    ]
+  },
+  "535be6664def3f05": {
+    "title": "Copilotで自然言語による画像生成・編集がプレビュー開始",
+    "summary": "Copilotのチャットで、自然言語から画像を生成・編集できるようになった。選択中の推論モデルがGPT Image 2.5 Flareを使う画像生成ツールを呼び出し、結果をインラインでプレビューしてプロジェクトに保存する。VS Code、Copilotアプリ、Copilot CLIで使える。",
+    "why": "組織やEnterpriseの管理者は、課金と利用可否のポリシーを確認し、不要なら画像生成モデルを無効にしたい。",
+    "points": [
+      "Copilot Pro、Pro+、Business、Enterpriseでパブリックプレビュー",
+      "チャットモデルとは別に、画像トークン分のAIクレジットが消費される",
+      "Copilotモデルポリシーで画像生成モデルを無効にできる",
+      "「Made with AI」透かしは任意で、既定ではオフ"
+    ]
+  },
+  "577b11552daf73b2": {
+    "title": "VS Code 1.144でエージェントによる画像生成をプレビュー提供",
+    "summary": "VS Code 1.144で、エージェントがGPT Image 2.5 Flareを使ってプロンプトから画像を生成できるようになった。Webサイト用画像、アイコン、ワイヤーフレームの作成のほか、チャットに追加した既存画像の修正やバリエーション生成も依頼できる。",
+    "why": "画像生成を使いたい人は設定を確認し、AIクレジットの追加消費を理解したうえで有効化したい。",
+    "points": [
+      "既定の画像モデルはGPT Image 2.5 Flare。無効化は chat.copilot.imageGeneration.model を off にする",
+      "選択したモデルへのアクセスが必要で、会話モデルとは別にAIクレジットを使う",
+      "chat.copilot.imageGeneration.watermark を true にすると「Made with AI」透かしが付く"
+    ]
+  },
+  "6e5ebe8af36db950": {
+    "title": "Copilot Memoryが一般提供、Dreamingがプレビュー開始",
+    "summary": "GitHub Copilot Memoryが有料プランで一般提供になり、個人の好みやリポジトリの慣習をセッションやクライアントをまたいで記憶する。過去の作業を振り返ってメモリやスキルを改善するCopilot dreamingはパブリックプレビューで、コード検索を使った関連リポジトリの参照も紹介された。",
+    "why": "管理者は dreaming を有効にするか判断し、利用者は個人設定とリポジトリ設定の両方でのオプトインを検討したい。",
+    "points": [
+      "dreamingは個人メモリの整理、リポジトリのカスタマイズ、コードレビューのカスタマイズの3種類",
+      "チェックイン済みのスキルや指示ファイルの変更は、プルリクエストで提案される",
+      "組織・Enterpriseでは管理者がCopilotポリシーで有効化し、利用者も個人設定でオンにする",
+      "dreamの実行はAIクレジットを消費する"
+    ]
+  },
+  "811e37bb7ae00532": {
+    "title": "VS Code 1.144でクラウド自動化をプレビュー提供",
+    "summary": "VS Code 1.144のAgents windowで、Copilotクラウド自動化を作成・管理できるようになった。GitHubのインフラ上でスケジュールやリポジトリイベントに応じて、PCの電源が切れていても実行される。設定 chat.automations.cloud.enabled により既定で有効。",
+    "why": "issueやPRの定型対応を自動化したいチームは、Automationsビューから作成を試したい。",
+    "points": [
+      "エージェントに依頼するか、AutomationsビューのCreate Automationで作成する",
+      "issueやPRのイベント、たとえば自分へのassignをきっかけに実行できる",
+      "許可ツールの制限とフィルターで、実行条件と権限を絞れる",
+      "リポジトリにアクセスできる全員に見える共有自動化も作れ、Copilotとして動作する"
+    ]
+  },
+  "9084abaaec71303f": {
+    "title": "GitHub EnterpriseにCopilotが含まれる提供形態を開始",
+    "summary": "GitHubやMicrosoftのアカウントチームと進める企業では、GitHub Enterpriseの全ライセンスユーザーにCopilotを含める形態が利用可能になった。AI利用量は最初のリクエストからEnterpriseの予算に対して計測され、ライセンスのないユーザーはCopilot Standaloneで月額10ドルになる。",
+    "why": "Copilotのシート数と利用量を管理している管理者は、予算ベースの運用への移行が自社に合うか営業窓口に相談したい。",
+    "points": [
+      "機能とモデルはCopilot Enterpriseと同じだが、シートごとの月間AIクレジットは含まれない",
+      "コード補完とNext Edit Suggestionsは予算がなくても使える",
+      "Copilot Chat、コードレビュー、クラウドでの利用には予算が必要",
+      "セルフサーブは段階的に開放予定で、現在の契約は影響を受けない"
+    ]
+  },
+  "9b8813450318139f": {
+    "title": "VS Code 1.144でCopilot Fusionが一般提供に",
+    "summary": "VS Code 1.144で、モデルピッカーのCopilot Fusionが一般提供になった。タスクごとにモデル、推論の強さ、実行パターンをCopilotが選び、難しい作業では一つのモデルの案を別のモデルがレビューする。強さはStandard、High、Maxから選べる。",
+    "why": "モデル選択の手間を減らしたい開発者は、コストと品質に合わせた強さの選択と課金条件を確認したい。",
+    "points": [
+      "HighとMaxはCopilot Pro+、Max、Business、Enterpriseで提供される",
+      "使われた各モデルの標準料金で課金される",
+      "2026年11月30日まで、有料プランはモデル費用が30%割引",
+      "応答の下にある強さの表示にカーソルを置くと使用モデルを確認できる"
+    ]
+  },
+  "a8cf5b3c1bcd34e6": {
+    "title": "VS Codeにリモート環境をまとめて管理するダイアログが追加",
+    "summary": "VS Code 1.144に、GitHub Environments、Dev Tunnels、WSL、SSHホストを一か所で扱うRemote Environmentsダイアログが追加された。Environmentピッカー下部のManage Remote Environmentsから、各リモートの状態確認や接続・切断ができる。",
+    "why": "複数のリモート環境でエージェントを動かす開発者は、ピッカーに表示するリモートを整理して選択を簡単にできる。",
+    "points": [
+      "対象はGitHub Environments、Dev Tunnels、WSLディストリビューション、SSHホスト",
+      "入口はEnvironmentピッカー下部のManage Remote Environments",
+      "ピッカーに表示するリモートを選べる"
+    ]
+  },
+  "af8e72e013cbe8cf": {
+    "title": "Copilot Fusionが一般提供、モデルを自動で選択・組み合わせ",
+    "summary": "GitHub Copilot Fusionが一般提供になった。モデルピッカーで選ぶと、タスクごとに使うモデルと組み合わせ方をCopilotが決める。Single、Cascade、Critiqueの実行パターンがあり、Artificial AnalysisのCoding Agent IndexでFusion Maxは60点だった。",
+    "why": "管理者はFusionが使えるモデルとEnterprise既定設定を決め、利用者は用途に合う強さを選びたい。",
+    "points": [
+      "強さはStandard（日常）、High（難題）、Max（最難関）の3段階",
+      "Fusionが使うのは、Enterpriseと組織のモデルポリシーで有効なモデルのみ",
+      "管理者はFusionをEnterprise管理設定で既定モデルにでき、モデルごとにFusion用の無効化もできる",
+      "各モデルの標準料金で課金され、期間限定で有料プランは30%割引"
+    ]
+  },
+  "d2bf283bdc6453aa": {
+    "title": "VS Codeからクラウドでタスクを実行して継続できるように",
+    "summary": "VS Code 1.144で、開発マシンをオンのままにせず、GitHubのインフラ上でCopilotのタスクを実行できるクラウドセッションが使える。エディターのChatビューやAgents windowからCloudとリポジトリを選んで開始し、追従指示や承認、変更のレビューもできる。",
+    "why": "長いタスクを手元の端末から切り離したい開発者は、未コミット変更が引き継がれない点に注意して利用したい。",
+    "points": [
+      "既存セッションはセッション一覧から開き直して会話を続けられる",
+      "GitHub.comやGitHub Mobileからも進捗を確認できる",
+      "クラウドセッションは別のワークスペースで、ローカルの未コミット変更は自動コピーされない",
+      "有料Copilotプランが必要で、組織ポリシーに従う"
+    ]
+  },
+  "d48e37e09df5a7b1": {
+    "title": "GitHub Agentic Workflowsが一般提供に",
+    "summary": "GitHub Next発のオープンソースGitHub Agentic Workflowsが一般提供になった。自然言語のMarkdownで定義した自動化が標準のActions YAMLにコンパイルされ、issue分類、CI失敗の分析、ドキュメント更新などをコーディングエージェントで実行できる。",
+    "why": "Actionsで推論を伴う自動化を試したいチームは、gh aw のCLIで導入し、必要なCopilotライセンスを確認したい。",
+    "points": [
+      "github.comのFree、Team、Enterpriseで利用可能。既定のCopilot CLIエンジンにはCopilotライセンスが必要",
+      "既定は読み取り専用権限で、サンドボックスとAgent Workflow Firewall内で実行される",
+      "gh aw forecast は実験扱いを終え、脅威検出クレジットと月次範囲も表示する",
+      "ARCのDocker-in-Docker対応や、gh aw add-wizard のテンプレートが追加"
+    ]
+  },
+  "d6140e2e60dfd028": {
+    "title": "VS Code 1.144でエージェントがデスクトップアプリを操作可能に",
+    "summary": "VS Code 1.144で、エージェントがコードやターミナルの外にあるデスクトップアプリを見て操作できるComputer Useが使える。自分のmacOSまたはWindowsマシンで動くCopilotハーネスのセッションで利用でき、設定は chat.agentHost.computerUse.enabled。",
+    "why": "GUIアプリを含む作業をエージェントに任せたい人は、設定と /computer のオンオフ操作を覚えておきたい。",
+    "points": [
+      "必要になるとエージェントが有効化の許可を求めるほか、/computer on でも有効にできる",
+      "/computer off を実行するまで、Copilotでは有効のまま",
+      "対象はmacOSまたはWindows上のCopilotハーネスのセッション"
+    ]
+  },
+  "f48a388f03b95e78": {
+    "title": "Copilot Fusionがローカルモデルへのルーティングを実験提供",
+    "summary": "Copilot Fusionが、対応するオンデバイスモデルとクラウドモデルを自動で使い分けるルーティングを、オプトインの実験的プレビューとして開始した。Copilot CLI、Copilotアプリ、VS Codeで利用でき、Windowsでは MAI Code 1.1 Flash をWindows ML経由で導入できる。",
+    "why": "手元の計算資源を活かしたい開発者は、環境ごとの有効化手順と、ルーティング判断がクラウドで行われる点を把握したい。",
+    "points": [
+      "VS Codeでは chat.copilot.localModel.enabled を有効にし、FusionでStandardを選ぶ",
+      "Copilotアプリは Settings > Experiments の Local model auto routing を有効にして新規セッションを開始",
+      "CLIは手動設定のローカルモデルでWindows、macOS、Linuxに対応し、OpenAI互換サーバーを使う",
+      "アプリのルーティングはWindows MLの管理モデルのみ対応"
+    ]
+  },
+  "29b3350fcf5dde8e": {
+    "title": "VS Code 1.145 Insiders、Agents windowの自動化実行などを追加",
+    "summary": "VS Code 1.145 Insidersの更新ノートに、Agents windowの機能追加が並んだ。保存済みの自動化をコマンドパレットから実行する Chat: Run Automation... や、リモートエージェントホスト上のWebアプリをプレビューする実験機能、ワークツリー一括クリーンアップの進捗表示と再試行が含まれる。",
+    "why": "Insiders版を使う人は、自動化の実行方法やセッションの開き方が変わる点を試して確認したい。",
+    "points": [
+      "Chat: Run Automation... で保存済みの自動化を実行できる",
+      "リモートAHPホスト上のWebアプリを統合ブラウザーでプレビューできる（実験的）",
+      "chat.agentSessions.openInEditor でセッションをChatビューでなくエディターで開く（実験的）",
+      "未保存ファイルでも、言語がシンボルを提供すればパンくずリストが使える"
+    ]
+  },
+  "6278a173860f7e41": {
+    "title": "VS Codeリモートエージェントセッションの接続方法の案内が追加",
+    "summary": "VS Codeのリモートエージェントセッションのドキュメントに、接続方法の選び方が追加された。GitHub Environmentsは対応する複数のCopilotクライアントからマシンを使える登録方式で、SSHとdev tunnelsはVS Codeからの接続に使う。ファイルやツールは実行マシン側に残る。",
+    "why": "別の端末からエージェント作業を続けたい人は、ホストを起動したままにする前提で、接続方式を選びたい。",
+    "points": [
+      "ホストの電源と到達性を保ち、エージェントホストを起動し続ける必要がある",
+      "接続してもローカルセッションやワークスペースは別マシンに移らない",
+      "接続を止めるには設定 chat.remoteAgentHostsEnabled をオフにする",
+      "ホストに依存しない実行にはクラウドセッションを使う（実験的）"
+    ]
+  },
+  "a955f30c253781dc": {
+    "title": "VS Code自動化ドキュメントにクラウド自動化の前提条件が追加",
+    "summary": "VS Codeの自動化のドキュメントに、保存したプロンプトとセッション設定からエージェントタスクを実行する仕組みの説明が追加された。オンデマンド、定期実行、クラウド自動化ではリポジトリイベントで実行できる。クラウド自動化はプレビューで、利用条件も示されている。",
+    "why": "クラウド自動化を試す人は、アカウント権限とCopilotプラン、組織ポリシーの条件を先に確認したい。",
+    "points": [
+      "クラウド自動化には、適格なプライベートリポジトリへの書き込み権限を持つGitHub.comアカウントが必要",
+      "自動化の管理は既定で有効。ただし設定を有効にしてもGitHubサービスへのアクセス権は付与されない",
+      "実行先はローカルかクラウドから選べ、テンプレートや共有ファイルから始められる",
+      "クラウドセッションとは別物で、セッションを作っても自動化やスケジュールは作られない"
+    ]
+  },
+  "8498dcc26b7abf49": {
+    "title": "VS Code Wrapped、1年のエージェント機能の進化を総括",
+    "summary": "VS Codeの公式ブログが、2025年のUniverseからの1年を振り返った。Agent Host Protocolの1.0化、Copilotハーネスの新規セッション既定化、Claude・Codexハーネスの利用、Copilot Fusionとモデル比較、Agents windowでの並列作業管理などが紹介されている。",
+    "why": "VS Codeでエージェントを使う開発者は、ハーネスやモデルの選択肢と、アプリ間でセッションを引き継ぐ仕組みの全体像を把握したい。",
+    "points": [
+      "Local VS CodeハーネスとCopilot CLIハーネスを統合したCopilotハーネスが既定になった",
+      "ClaudeとCodexのハーネスもAgent Host経由で使え、セッションを一か所で管理できる",
+      "Agents windowで複数のエージェントセッションを並列実行し、変更をまとめて確認できる"
+    ]
+  },
+  "e825f4123d0c16bf": {
+    "title": "Copilot Automationsにチーム共有の自動化が登場",
+    "summary": "Copilot Automationsで、チームが共同で作成・保守できる共有自動化が順次提供される。リポジトリの読み取り権限があれば閲覧でき、書き込み権限があれば編集できる。AIクレジットはリポジトリ所有者に課金され、操作はCopilotとして記録される。",
+    "why": "チームの定型作業を自動化したい管理者は、組織所有リポジトリ向けのクラウドエージェント課金ポリシーを有効にしたい。",
+    "points": [
+      "作成時にTypeでSharedを選ぶ。作成後は種類を変更できない",
+      "組織所有のリポジトリでは「Allow use of Copilot cloud agent billed to the organization」ポリシーが必要",
+      "Pro、Pro+、Max、Business、Enterpriseに順次提供され、書き込み権限のあるリポジトリで作成できる",
+      "変更履歴でツール、トリガー、プロンプトの変遷を確認でき、作成者が抜けても動作し続ける"
+    ]
   }
 }
