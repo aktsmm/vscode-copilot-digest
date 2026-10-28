@@ -1,0 +1,99 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "535be6664def3f05",
+  "title": {
+    "ja": "Copilot で画像の生成・編集が可能に",
+    "subtitleJa": "チャットで指示すると画像を生成し、インラインで表示してプロジェクトに保存する",
+    "original": "Generate and edit images directly in Copilot"
+  },
+  "date": "2026-10-28",
+  "topic": "GitHub Copilot",
+  "status": "preview",
+  "statusEvidence": "Image generation is in public preview for Copilot Pro, Copilot Pro+, Copilot Business, and Copilot Enterprise.",
+  "audience": {
+    "who": "Copilot Pro / Pro+ / Business / Enterprise で画像素材が必要な開発者と、管理者",
+    "change": "Copilot チャットの自然言語で画像を生成・編集でき、結果はインライン表示されワークスペースに保存される",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "試すなら Copilot チャットで画像を依頼する。組織・Enterprise の管理者は必要に応じてモデル ポリシーを設定する"
+  },
+  "panels": [
+    {
+      "id": "where-and-plans",
+      "heading": "使える場所とプラン",
+      "priority": "core",
+      "items": [
+        "パブリック プレビュー。Copilot Pro、Pro+、Business、Enterprise が対象",
+        "VS Code、GitHub Copilot アプリ、Copilot CLI の Copilot チャットで利用できる"
+      ]
+    },
+    {
+      "id": "how-to-use",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "どのチャット セッションでも、欲しい画像を会話形式で説明する",
+        "選択中の推論モデルが、GPT Image 2.5 Flare による画像生成ツールを呼び出す",
+        "生成された画像はインラインでプレビューされ、ワークスペースに直接保存される"
+      ]
+    },
+    {
+      "id": "limits",
+      "heading": "前提と制限",
+      "priority": "core",
+      "items": [
+        "チャット モデルとは別に課金され、画像トークンに基づき プランの AI クレジットに計上される",
+        "「Made with AI」の透かしは任意で有効化できる。既定ではオフ"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "組織・Enterprise のオーナーは、Copilot モデル ポリシーで画像生成モデルを無効にして停止できる"
+      ]
+    }
+  ],
+  "beforeAfter": {
+    "before": "画像が必要なとき、別ツールで説明し直して生成し、手作業でプロジェクトに取り込んでいた",
+    "after": "Copilot 内で依頼するだけで、画像の生成からプロジェクトへの保存まで完結する"
+  },
+  "glossary": [
+    { "term": "GPT Image 2.5 Flare", "type": "product", "oneLine": "画像生成ツールを動かすモデル。" },
+    { "term": "Made with AI", "type": "label", "oneLine": "生成・編集した画像に付けられる、目に見える透かし。" }
+  ],
+  "references": {
+    "source": {
+      "title": "Generate and edit images directly in Copilot - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-10-28-generate-and-edit-images-directly-in-copilot/"
+    }
+  },
+  "qa": [
+    {
+      "q": "どのプランで使えますか?",
+      "a": "パブリック プレビューとして、Copilot Pro、Copilot Pro+、Copilot Business、Copilot Enterprise で利用できます。"
+    },
+    {
+      "q": "どこから使えますか?",
+      "a": "VS Code、GitHub Copilot アプリ、Copilot CLI の Copilot チャットで、欲しい画像を説明すると生成されます。"
+    },
+    {
+      "q": "料金はどうなりますか?",
+      "a": "チャット モデルとは別に、画像トークンに基づいて課金され、プランの AI クレジットに計上されます。"
+    },
+    {
+      "q": "組織として無効にできますか?",
+      "a": "はい。組織・Enterprise のオーナーは、Copilot モデル ポリシーで画像生成モデルを無効にすることで停止できます。"
+    },
+    {
+      "q": "画像に透かしを入れられますか?",
+      "a": "「Made with AI」の透かしを任意で有効にできます。既定ではオフです。"
+    }
+  ],
+  "evidence": [
+    "https://github.blog/changelog/2026-10-28-generate-and-edit-images-directly-in-copilot/"
+  ]
+}
