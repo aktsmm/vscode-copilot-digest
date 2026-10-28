@@ -1,0 +1,95 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "069e214b554c7d8b",
+  "title": {
+    "ja": "VS Code 1.144: モデル比較が既定で有効になり、フォルダーなし・空のリポジトリでも使える",
+    "subtitleJa": "Agents ウィンドウの新規セッションで比較が既定オン。Git リモートや初回コミットは不要に",
+    "original": "Compare models and harnesses by default and in more projects"
+  },
+  "date": "2026-10-28",
+  "topic": "VS Code",
+  "status": "update",
+  "audience": {
+    "who": "VS Code の Agents ウィンドウで、同じプロンプトを複数のモデルに試したい開発者",
+    "change": "対象の新規セッションでモデル比較が既定で有効になり、フォルダーなしや空のリポジトリでも実行できる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "比較が表示されない場合は sessions.chat.compareAgents.enabled が有効か確認する"
+  },
+  "panels": [
+    {
+      "id": "where-available",
+      "heading": "使える場所と範囲",
+      "priority": "core",
+      "items": [
+        "Agents ウィンドウの対象の新規セッションで既定で有効（ユーザー設定や実験で上書きされる場合がある）",
+        "フォルダーなしのチャットでは、Git リポジトリ・judge・synthesizer なしで独立した試行を実行できる",
+        "ローカルや空のリポジトリでは Git リモートと初回コミットが不要。コミットがない場合は無視されない作業ファイルのスナップショットから開始する"
+      ]
+    },
+    {
+      "id": "how-to",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "対象のチャット入力やモデル ピッカーで ⌥⌘M（Windows、Linux は Ctrl+Alt+M）を押すと比較の設定を開く",
+        "モデル ピッカーの Compare Models から 2〜10 個のモデルを追加し、Run N Attempts で実行する",
+        "設定画面のボタンは Configure Judge、Configure Attempts、Configure Synthesis のように移動先の名前になった"
+      ]
+    },
+    {
+      "id": "limits",
+      "heading": "前提と制限",
+      "priority": "detail",
+      "items": [
+        "Dev Containers では比較に対応しない",
+        "エディターの Chat ビューでは使えず、Agents ウィンドウのみ（Preview）"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "モデル比較", "type": "feature", "oneLine": "同じプロンプトを複数のモデルで実行し、結果を並べて確認する機能。" },
+    { "term": "judge", "type": "term", "oneLine": "リポジトリ比較で、各試行を自動で評価するモデル。" },
+    { "term": "synthesizer", "type": "term", "oneLine": "各試行の良い部分から新しい実装を作るモデル。" }
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.144",
+      "url": "https://code.visualstudio.com/updates/v1_144#_compare-models-and-harnesses-by-default-and-in-more-projects"
+    },
+    "documents": [
+      {
+        "title": "Compare model results (Preview)",
+        "url": "https://code.visualstudio.com/docs/agents/run/compare-models"
+      }
+    ]
+  },
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_144",
+    "https://code.visualstudio.com/docs/agents/run/compare-models"
+  ],
+  "qa": [
+    {
+      "q": "モデル比較はどこで使えますか。",
+      "a": "Agents ウィンドウで使えます。エディターの Chat ビューでは使えません。Dev Containers でも比較には対応していません。"
+    },
+    {
+      "q": "設定を変えないと有効になりませんか。",
+      "a": "対象の新規セッションでは既定で有効です。ユーザー設定や実験で上書きされる場合があります。表示されないときは sessions.chat.compareAgents.enabled を確認してください。"
+    },
+    {
+      "q": "Git リポジトリがなくても比較できますか。",
+      "a": "はい。フォルダーなしのチャットでは、Git リポジトリ、judge、synthesizer なしで独立した試行を実行できます。"
+    },
+    {
+      "q": "空のリポジトリでも使えますか。",
+      "a": "使えます。Git リモートと初回コミットは不要になりました。コミットがない場合、各試行は無視されない作業ファイルのスナップショットから始まり、元のブランチやインデックスは変わりません。"
+    },
+    {
+      "q": "比較の設定をキーボードで開けますか。",
+      "a": "対象のチャット入力またはモデル ピッカーで ⌥⌘M（Windows、Linux は Ctrl+Alt+M）を押します。"
+    }
+  ]
+}
