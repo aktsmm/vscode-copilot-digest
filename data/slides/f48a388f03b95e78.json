@@ -1,0 +1,87 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "f48a388f03b95e78",
+  "title": {
+    "ja": "Copilot Fusion がローカル モデルとクラウド モデルを自動で使い分け",
+    "subtitleJa": "CLI・アプリ・VS Code で、オンデバイス モデルへのルーティングを試験提供",
+    "original": "GitHub Copilot Fusion now supports selection of local models"
+  },
+  "date": "2026-10-28",
+  "topic": "GitHub Copilot",
+  "status": "preview",
+  "statusEvidence": "Today we are shipping intelligent routing for local models into experimental preview.",
+  "audience": {
+    "who": "Copilot CLI・Copilot アプリ・VS Code で、手元のデバイスの計算資源も使いたい開発者",
+    "change": "Fusion で Standard を選ぶと、対応するローカル モデルとクラウド モデルを Copilot が選ぶ",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "試すなら、各環境でオプトインの設定を有効にし、Fusion で Standard を選ぶ"
+  },
+  "panels": [
+    {
+      "id": "how-to-use",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "Windows 対応デバイスでは、Windows ML プロバイダー経由で MAI Code 1.1 Flash をダウンロードして設定できる",
+        "CLI: 試験モードを有効にして /model を開き、案内に従う。VS Code: chat.copilot.localModel.enabled を有効にする",
+        "アプリ: Model providers で Windows ML を設定し、Experiments で Local model auto routing を有効化",
+        "準備ができたら Copilot Fusion で Standard を選ぶ。ローカル モデルを直接選ぶこともできる"
+      ]
+    },
+    {
+      "id": "prerequisites",
+      "heading": "前提と制限",
+      "priority": "core",
+      "items": [
+        "自動ダウンロードは Windows のみ。CLI は手動設定のモデルなら Windows・macOS・Linux で動く",
+        "手動設定では MAI Code 1.1 Flash か Qwen3.8 Flash Next を、OpenAI 互換のローカル サーバー経由で設定する",
+        "ダウンロードと推論の実行環境は自分で管理し、デバイスに十分な性能が必要",
+        "アプリのルーティングは、Windows ML のマネージド モデルのみ対応"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "ローカル推論でもオフラインにはならず、ルーティングの判断はクラウドで行われる",
+        "BYOK で追加・検出したモデルは、自動では Fusion の対象にならない",
+        "ローカル モデルの安全対策は、Copilot 提供のクラウド モデルと異なる場合がある"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "Copilot Fusion", "type": "product", "oneLine": "対応するオンデバイス モデルとクラウド モデルから、Copilot が選ぶルーティング機能。" },
+    { "term": "BYOK", "type": "term", "oneLine": "自分のキーでモデルを追加する構成。" }
+  ],
+  "qa": [
+    {
+      "q": "どの環境で使えますか？",
+      "a": "Copilot CLI、Copilot アプリ、Visual Studio Code で、オプトインの試験プレビューとして使えます。自動ダウンロードは Windows のみで、CLI の手動設定モデルは Windows・macOS・Linux で使えます。"
+    },
+    {
+      "q": "VS Code ではどう有効にしますか？",
+      "a": "chat.copilot.localModel.enabled を有効にします。モデルの準備ができたら Copilot Fusion で Standard を選ぶと、Copilot がローカルとクラウドを選びます。"
+    },
+    {
+      "q": "自分で用意したローカル モデルも使えますか？",
+      "a": "CLI では使えます。MAI Code 1.1 Flash か Qwen3.8 Flash Next を OpenAI 互換のローカル サーバーで設定し、試験的なローカル ルーティングを有効にします。BYOK で追加しただけでは Fusion の対象になりません。"
+    },
+    {
+      "q": "ローカル モデルならオフラインで使えますか？",
+      "a": "いいえ。ローカルで推論してもセッションはオフラインにならず、Fusion のルーティング判断はクラウドで行われます。また、ローカル モデルの安全対策はクラウド モデルと異なる場合があります。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "GitHub Copilot Fusion now supports selection of local models - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-10-28-github-copilot-fusion-now-supports-selection-of-local-models/"
+    }
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-10-28-github-copilot-fusion-now-supports-selection-of-local-models/"
+  ]
+}
