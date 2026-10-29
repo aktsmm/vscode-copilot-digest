@@ -1,13 +1,10 @@
 {
   "date": "2026-10-29",
-  "generatedAt": "2026-10-29T01:06:12.366Z",
+  "generatedAt": "2026-10-29T11:37:39.039Z",
   "latestRun": {
-    "generatedAt": "2026-10-29T01:06:12.366Z",
-    "newEventsCount": 2,
-    "newEventIds": [
-      "docs-github-copilot-howtos:e1fe674f70251dd8738aa3fd1e928ee58dc8a5059bc27eedbac5848cc5333811",
-      "docs-github-copilot-concepts:590f92fd92d7dfb0be7b3cbea9e1f67f9780729802f712c98b6d9129be220c0b"
-    ],
+    "generatedAt": "2026-10-29T11:37:39.039Z",
+    "newEventsCount": 0,
+    "newEventIds": [],
     "errorCount": 0,
     "skippedLowInformationEvents": []
   },
