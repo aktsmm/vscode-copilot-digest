@@ -1,0 +1,97 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "a955f30c253781dc",
+  "title": {
+    "ja": "VS Code のエージェント自動化: ローカル実行とクラウド実行の作成手順",
+    "subtitleJa": "保存したプロンプトを手動・定期・リポジトリイベントで実行。クラウド実行はプレビュー",
+    "original": "Create and manage agent automations"
+  },
+  "date": "2026-10-28",
+  "topic": "VS Code",
+  "status": "preview",
+  "statusEvidence": "Cloud automations is in preview and might change before it becomes generally available.",
+  "audience": {
+    "who": "定型のリポジトリ作業（変更の要約、Issue の振り分けなど）を自動化したい VS Code ユーザー",
+    "change": "保存したプロンプトとセッション設定から、オンデマンド・定期・（クラウドのみ）リポジトリイベントでエージェントタスクを実行できる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "ローカルかクラウドかを選び、Automations からテンプレートまたは新規で作成する"
+  },
+  "panels": [
+    {
+      "id": "availability",
+      "heading": "使える場所とプラン",
+      "priority": "core",
+      "items": [
+        "ローカル: 開発環境が必要な作業向け。スケジュール実行中はマシンを起動したままにする",
+        "クラウド: GitHub 上で実行され、PC の電源が切れていても継続。GitHub.com アカウントと、書き込み権限のある対象の非公開リポジトリが必要",
+        "Copilot のプランと組織が自動化を許可している必要がある。公開リポジトリは非対応"
+      ]
+    },
+    {
+      "id": "usage",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "名前とプロンプトを入力し、Trigger を設定して Create。テンプレートならプロンプトとスケジュールが入力済み",
+        "クラウドは作成フォームで Run in the Cloud をオンにし、リポジトリを選ぶ",
+        "Trigger: ローカルは手動・定期、クラウドは手動・毎日・毎週に加え Issue / Pull Request のイベント",
+        "まず手動で結果を確認してから定期スケジュールを設定する"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "サイドバーに Automations が出ない場合は `chat.automations.enabled`、クラウドは `chat.automations.cloud.enabled` を確認",
+        "クラウド実行はローカルの作業ツリーや未コミットの変更を使わない"
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "クラウド自動化",
+      "type": "feature",
+      "oneLine": "GitHub 上で定期またはリポジトリイベントを契機にエージェントタスクを実行する自動化。"
+    },
+    {
+      "term": "クラウドセッション",
+      "type": "feature",
+      "oneLine": "対話的にタスクを開始し、同じセッションを開き直して続ける方式。自動化やスケジュールは作成されない。"
+    }
+  ],
+  "qa": [
+    {
+      "q": "ローカル実行とクラウド実行はどう使い分けますか。",
+      "a": "ローカルはローカルのワークスペースやツールが必要な作業向けです。クラウドは GitHub 上で実行され、PC の電源が切れていてもスケジュールやイベントによる無人のリポジトリ作業を続けられます。"
+    },
+    {
+      "q": "クラウド自動化の前提条件は何ですか。",
+      "a": "書き込み権限のある対象の非公開 GitHub.com リポジトリと、サインイン済みの GitHub.com アカウントが必要です。Copilot のプランと組織が自動化を許可している必要があり、公開リポジトリは非対応です。"
+    },
+    {
+      "q": "クラウドで使えるトリガーは何ですか。",
+      "a": "手動、毎日、毎週の各スケジュールと、Issue や Pull Request のイベントです。毎日・毎週は分を 00、15、30、45 から選びます。クラウドのスケジュールは UTC で保存されます。"
+    },
+    {
+      "q": "Automations がサイドバーに表示されない場合はどうしますか。",
+      "a": "`chat.automations.enabled` がオンか確認します。作成フォームに Run in the Cloud が出ない場合は `chat.automations.cloud.enabled` も確認します。設定をオンにしても GitHub サービスへのアクセス権は付与されません。"
+    },
+    {
+      "q": "自動化は他のマシンに共有できますか。",
+      "a": "ローカルの自動化は .automation.md ファイルとしてエクスポートでき、ワークスペースやモデルなどは取り込む側が選びます。クラウドの自動化にエクスポートはなく、GitHub 上で管理します。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Create and manage agent automations",
+      "url": "https://code.visualstudio.com/docs/agents/run/automations"
+    }
+  },
+  "evidence": [
+    "https://code.visualstudio.com/docs/agents/run/automations"
+  ]
+}
