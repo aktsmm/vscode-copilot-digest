@@ -1,0 +1,98 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "11dab8e53a50e1d6",
+  "title": {
+    "ja": "リポジトリのプラグイン既定設定とEnterprise向けプラグイン制御、一般提供開始",
+    "subtitleJa": "リポジトリ既定のプラグインを配布し、管理者が必須化・ブロック・マーケットプレイス制限を実施",
+    "original": "Repository plugin defaults and enterprise plugin controls generally available"
+  },
+  "date": "2026-10-28",
+  "topic": "GitHub Copilot",
+  "status": "ga",
+  "statusEvidence": "Repository plugin defaults and enterprise-managed plugin controls are now generally available in VS Code, Copilot CLI, and the GitHub Copilot app.",
+  "audience": {
+    "who": "VS Code、Copilot CLI、GitHub Copilot appを使うリポジトリ管理者、Enterprise管理者、コントリビューター",
+    "change": "リポジトリでプラグインの既定を定義でき、Enterpriseは管理設定でプラグインを必須化・ブロックできる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "メンテナーは既定プラグインとマーケットプレイスを定義し、管理者は承認済みマーケットプレイスと必須・ブロック対象を設定する"
+  },
+  "panels": [
+    {
+      "id": "availability",
+      "heading": "使える場所とプラン",
+      "priority": "core",
+      "items": [
+        "VS Code、Copilot CLI、GitHub Copilot appで一般提供",
+        "リポジトリの既定は、個人のCopilot利用者とCopilot Business / Copilot Enterprise利用者が対象",
+        "管理制御はGitHub Enterprise Cloudで、Enterprise またはその組織が付与したCopilot Business / Enterpriseライセンスの利用者が対象"
+      ]
+    },
+    {
+      "id": "usage",
+      "heading": "できること",
+      "priority": "core",
+      "items": [
+        "メンテナーがプラグインのマーケットプレイスと既定プラグインを定義し、信頼済みリポジトリで導入・有効化",
+        "コントリビューターはポリシーが許す範囲でリポジトリ既定を無効化できる",
+        "管理者は承認済みマーケットプレイスの提供、プラグインの必須化・ブロック、インストール元の制限が可能"
+      ]
+    },
+    {
+      "id": "limits",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "必須プラグインは自動でインストール・有効化され、利用者は無効化できない",
+        "管理設定はリポジトリや個人の選択より優先される"
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "プラグイン",
+      "type": "feature",
+      "oneLine": "再利用可能なエージェント、スキル、フック、統合でCopilotを拡張するインストール可能なパッケージ"
+    }
+  ],
+  "qa": [
+    {
+      "q": "リポジトリの既定プラグインはどのプランで使えますか？",
+      "a": "個人のCopilot利用者と、Copilot BusinessまたはCopilot Enterpriseの利用者が対象です。VS Code、Copilot CLI、GitHub Copilot appで一般提供されています。"
+    },
+    {
+      "q": "Enterprise向けの管理制御は誰が使えますか？",
+      "a": "GitHub Enterprise Cloudで、Enterpriseまたはその組織が付与したCopilot BusinessまたはCopilot Enterpriseライセンスを持つ利用者が対象です。"
+    },
+    {
+      "q": "コントリビューターは既定のプラグインを無効にできますか？",
+      "a": "ポリシーが許す範囲で、リポジトリの既定を無効化できます。ただし管理者が必須にしたプラグインは無効化できません。"
+    },
+    {
+      "q": "管理設定とリポジトリ設定が食い違うとどうなりますか？",
+      "a": "管理設定がリポジトリや個人の選択より優先されます。必須プラグインは自動でインストール・有効化されます。"
+    },
+    {
+      "q": "管理者は何を制御できますか？",
+      "a": "管理設定で承認済みマーケットプレイスの提供、プラグインの必須化とブロック、承認済みマーケットプレイスへのインストール制限ができます。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Repository plugin defaults and enterprise plugin controls generally available - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-10-28-repository-plugin-defaults-and-enterprise-plugin-controls-generally-available/"
+    },
+    "documents": [
+      {
+        "title": "GitHub Copilot 用のプラグイン - GitHubドキュメント",
+        "url": "https://docs.github.com/ja/copilot/concepts/customizations/plugins"
+      }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-10-28-repository-plugin-defaults-and-enterprise-plugin-controls-generally-available/",
+    "https://docs.github.com/ja/copilot/concepts/customizations/plugins"
+  ]
+}
