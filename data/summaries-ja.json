@@ -3764,5 +3764,49 @@
       "組織のモデルポリシー、予算、支出管理がそのまま適用される",
       "AI利用量CSVの app_client_id で利用を特定でき、停止はアプリの一時停止かアンインストール"
     ]
+  },
+  "532ef9d141d93574": {
+    "title": "Copilotアプリにセキュリティ拡張がパブリックプレビュー",
+    "summary": "GitHub Copilotアプリで、コードスキャンのアラートを離れずに扱えるGitHub security extensionがパブリックプレビューになった。重大度順の一覧、詳細表示、Copilotによる説明と修正、却下ができ、/security-reviewの結果も並べて見られる。",
+    "why": "コードスキャンを使うチームは、アラートの調査から修正までCopilotアプリ内で進められる。",
+    "points": [
+      "導入は copilot plugin install github-security@awesome-copilot か、アプリのCustomizeから",
+      "Fixは作業コピーのみ変更し、コミットやプッシュはしない",
+      "Explain・Fix・/security-reviewはAIクレジットを消費し、閲覧と却下は消費しない",
+      "GitHub Enterprise Serverは非対応。プライベートリポジトリはCode Securityが必要"
+    ]
+  },
+  "a955f30c253781dc": {
+    "title": "VS CodeのAutomationsにローカル/クラウド実行の手順が追加",
+    "summary": "VS Codeの公式ドキュメントに、保存したプロンプトとセッション設定でエージェント作業を実行するAutomationsの説明が追加された。オンデマンド、定期、クラウドではリポジトリイベントで実行でき、クラウド版はプレビュー。作成手順やテンプレートも載っている。",
+    "why": "定型作業を自動化したい人は、ローカルかクラウドかを選んで作成手順と前提条件を確認する。",
+    "points": [
+      "クラウド実行にはGitHub.comアカウントと適格なプライベートリポジトリの書き込み権限が必要",
+      "Agents windowのサイドバーでAutomationsを選び、Run in the Cloudのオン/オフで実行先を選ぶ",
+      "テンプレートから作るとプロンプトとスケジュールが入力済みになる",
+      "テンプレート由来の作成時、Enabledは初期状態でオフ"
+    ]
+  },
+  "8498dcc26b7abf49": {
+    "title": "VS Codeの1年を振り返る：エージェント連携が標準に",
+    "summary": "GitHub Universe 2025からの1年で、VS Codeはエージェントを中心とした環境になった。Agent Host Protocolが1.0になり、新しいCopilotハーネスが既定になったほか、ClaudeやCodexのハーネス、Copilot Fusion、Agents windowも紹介された。",
+    "why": "複数エージェントを使う開発者は、新しい既定のハーネスやセッション引き継ぎの仕組みを把握しておくとよい。",
+    "points": [
+      "Agent Host Protocol(AHP)が1.0に到達し、独自クライアントも作れる",
+      "Copilotハーネスがエディターとエージェントウィンドウの新規セッションで既定に",
+      "Claude・CodexのハーネスをAgent Host経由で利用できる",
+      "Compare Modelsはプレビューで、複数モデルの結果を並べて比較できる"
+    ]
+  },
+  "e825f4123d0c16bf": {
+    "title": "Copilot Automationsにチーム共有型が登場",
+    "summary": "Copilot Automationsに、リポジトリ単位で共有できるSharedタイプが加わり、順次展開されている。読み取り権限があれば閲覧、書き込み権限があれば編集でき、AIクレジットはリポジトリ所有者に課金され、操作はCopilotの名義で行われる。",
+    "why": "チームで使う定型ワークフローを持たせたい場合、Sharedで作成し、組織の管理者はポリシーを有効にする。",
+    "points": [
+      "作成時にTypeでSharedを選び、後から変更はできない",
+      "組織所有のリポジトリでは「Allow use of Copilot cloud agent billed to the organization」の有効化が必要",
+      "Copilot Pro、Pro+、Max、Business、Enterpriseで展開中",
+      "作成者が退任しても動作し、変更履歴も確認できる"
+    ]
   }
 }
