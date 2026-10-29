@@ -26239,6 +26239,46 @@
         "Original article explicit links",
         "Feature-matched official documentation indexes"
       ]
+    },
+    "e01074e34f14b958aceb796d10157f82031ffdfac0b19da1edba03837747e091": {
+      "version": 6,
+      "checkedAt": "2026-10-29T01:06:12.897Z",
+      "inputUrl": "https://docs.github.com/en/copilot/concepts",
+      "inputTitle": "GitHub Docs / Copilot concepts changed",
+      "status": "unconfirmed",
+      "source": {
+        "url": "https://docs.github.com/en/copilot/concepts",
+        "status": "unconfirmed",
+        "reason": "Historical changed feature not identifiable in current page",
+        "checkedAt": "2026-10-29T01:06:12.955Z",
+        "contentHash": "2386ef7bffe79a44fc7744bc3e92561d33f65d654357888fba797f9a5501a32a"
+      },
+      "documents": [],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "46dcf29721996bf4cf9dc35f50bc257a99a8f575b473985beafe08a3211bdf28": {
+      "version": 6,
+      "checkedAt": "2026-10-29T01:06:13.101Z",
+      "inputUrl": "https://docs.github.com/en/copilot/how-tos",
+      "inputTitle": "GitHub Docs / Copilot how-tos changed",
+      "status": "unconfirmed",
+      "source": {
+        "url": "https://docs.github.com/en/copilot/how-tos",
+        "status": "unconfirmed",
+        "reason": "Historical changed feature not identifiable in current page",
+        "checkedAt": "2026-10-29T01:06:13.136Z",
+        "contentHash": "8d22a523db8ade7e0174a1510a3e24a799733e7a0aa8ed5a688b14ce41a43bb7"
+      },
+      "documents": [],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
     }
   }
 }

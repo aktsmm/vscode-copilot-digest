@@ -55,7 +55,6 @@ Changing settings with the /settings command
 Overview of customizing GitHub Copilot CLI
 Creating a plugin for GitHub Copilot CLI
 Finding and installing plugins for GitHub Copilot CLI
-Creating a plugin marketplace for GitHub Copilot CLI
 Adding LLM models to GitHub Copilot CLI
 Using hooks with GitHub Copilot CLI
 Adding LSP servers for GitHub Copilot CLI
@@ -80,15 +79,22 @@ Speeding up task completion with the /fleet command
 Steering agents in GitHub Copilot CLI
 Steering a GitHub Copilot CLI session from another device
 Setting an AI credit session limit in GitHub Copilot CLI
+Asking a side question in GitHub Copilot CLI
+Choosing a model in GitHub Copilot CLI
+Using GitHub Copilot CLI to interact with desktop applications
+Working with multiple GitHub Copilot CLI sessions
 Cloud and local sandboxes for GitHub Copilot
-Enabling or disabling cloud sandboxes for your organization or enterprise
+Managing cloud sandboxes for your organization or enterprise
 Using local sandboxing
 Configuring local sandbox settings
 GitHub Copilot app
 Customizing the GitHub Copilot app
 Working with agent sessions in the GitHub Copilot app
+Choosing a model in the Copilot app
+Working with projects in the GitHub Copilot app
 Using the GitHub Copilot app to interact with desktop applications
 Working with canvas extensions in the GitHub Copilot app
+Viewing and fixing security alerts in the GitHub Copilot app
 Managing issues and pull requests with the GitHub Copilot app
 Using automations in the GitHub Copilot app
 Adding LLM models to the GitHub Copilot app

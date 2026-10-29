@@ -3,7 +3,7 @@ Learn the core concepts that you'll need to understand GitHub Copilot.
 GitHub Copilot surfaces
 GitHub Copilot app
 GitHub Copilot CLI
-GitHub Copilot on GitHub.com
+GitHub Copilot on GitHub.com and GitHub Mobile
 GitHub Copilot in IDEs
 Agent capabilities
 About agents
@@ -13,23 +13,26 @@ Prompting and context for GitHub Copilot
 Prompt engineering for GitHub Copilot
 Managing context for GitHub Copilot
 Custom instructions for GitHub Copilot
+About GitHub Copilot Memory
+About GitHub Copilot Dreaming
 Prompt files for GitHub Copilot
 Indexing repositories for GitHub Copilot
 About GitHub Copilot Spaces
-About GitHub Copilot Memory
 Customizations for GitHub Copilot
 Comparing Copilot customization features
 Agent skills
 Allowing safe commands to run without manual approval
 Custom agents
 Model Context Protocol (MCP)
+Copilot connectors
 Hooks for GitHub Copilot
 Extensions for GitHub Copilot
 Plugins for GitHub Copilot
 Using LSP servers with GitHub Copilot CLI
 Models for GitHub Copilot
 Models in GitHub Copilot
-About Copilot auto model selection
+About GitHub Copilot Fusion
+About GitHub Copilot auto model selection
 Bring your own key for GitHub Copilot
 Utility models
 Base and long-term support (LTS) models
@@ -40,8 +43,9 @@ GitHub Copilot usage metrics
 Security, governance, and network settings for GitHub Copilot
 Content exclusion for GitHub Copilot
 About GitHub Copilot session data
-About cloud and local sandboxes for GitHub Copilot
+About local sandboxing for GitHub Copilot
 Understanding filesystem policies for local sandboxing in GitHub Copilot CLI
+About cloud sandboxes for GitHub Copilot
 Risks and mitigations for GitHub Copilot cloud agent
 Network settings for GitHub Copilot
 Enterprise concepts for GitHub Copilot
@@ -49,9 +53,7 @@ GitHub Copilot policies for enterprises and organizations
 About default availability of Copilot features and models
 FedRAMP-compliant models for GitHub Copilot
 Learning about new features and models
-Agent management for enterprises
 MCP server usage in your company
 About enterprise-managed plugin standards
 OpenTelemetry for agent monitoring
-Managing access to GitHub Copilot cloud agent
 About enterprise accounts for Copilot Business
