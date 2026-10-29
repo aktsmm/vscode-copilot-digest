@@ -1,0 +1,101 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "e825f4123d0c16bf",
+  "title": {
+    "ja": "Copilot Automations に、チームで共有・編集できる共有オートメーション",
+    "subtitleJa": "リポジトリに属し、読み取り権限で閲覧、書き込み権限で編集。課金はリポジトリ所有者",
+    "original": "Build shared workflows for your team with Copilot Automations"
+  },
+  "date": "2026-10-28",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "チームで共通のワークフローを Copilot Automations で運用したい開発者・管理者",
+    "change": "個人用だった automation を、リポジトリに属する共有 automation として作成・保守できる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "チーム用の automation は、作成時に Type で Shared を選ぶ。組織リポジトリでは管理者のポリシー有効化が必要"
+  },
+  "beforeAfter": {
+    "before": "automation は個人用で、自分だけが閲覧・編集でき、自分の ID と AI クレジットを使っていた",
+    "after": "共有 automation はチームで閲覧・編集でき、Copilot として動作し、リポジトリ所有者に課金される"
+  },
+  "panels": [
+    {
+      "id": "plans-and-places",
+      "heading": "使える場所とプラン",
+      "priority": "core",
+      "items": [
+        "Copilot Pro、Pro+、Max、Business、Enterprise プランに展開中（提供状況は展開に応じて異なる）",
+        "書き込みアクセス権のあるリポジトリで作成できる",
+        "github.com、GitHub Copilot app、Visual Studio Code から作成できる"
+      ]
+    },
+    {
+      "id": "how-it-works",
+      "heading": "共有 automation の仕組み",
+      "priority": "core",
+      "items": [
+        "読み取りアクセス権があれば閲覧、書き込みアクセス権があれば編集できる",
+        "AI クレジットは、作成者ではなくリポジトリを所有する組織またはユーザーに課金される",
+        "操作は特定のユーザーではなく Copilot の行為として記録され、作成者が退任しても動き続ける"
+      ]
+    },
+    {
+      "id": "limits",
+      "heading": "前提と注意点",
+      "priority": "detail",
+      "items": [
+        "組織所有のリポジトリでは、管理者が「Allow use of Copilot cloud agent billed to the organization」ポリシーを有効にする必要がある",
+        "作成後に automation の Type は変更できない"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "共有 automation", "type": "feature", "oneLine": "リポジトリに属し、チームで閲覧・編集できる automation。" },
+    { "term": "個人用 automation", "type": "feature", "oneLine": "作成者だけが閲覧・編集でき、作成者の ID と AI クレジットを使う automation。" }
+  ],
+  "suggestions": [
+    "Change history で、ツール・トリガー・プロンプトの変遷をチームで確認できる"
+  ],
+  "qa": [
+    {
+      "q": "共有 automation は誰が見られて、誰が編集できますか？",
+      "a": "リポジトリへの読み取りアクセス権があれば閲覧でき、書き込みアクセス権があれば編集できます。"
+    },
+    {
+      "q": "AI クレジットは誰に課金されますか？",
+      "a": "作成者ではなく、リポジトリを所有する組織またはユーザーに課金されます。"
+    },
+    {
+      "q": "どのプランで使えますか？",
+      "a": "Copilot Pro、Pro+、Max、Business、Enterprise プランに展開中です。展開の進行に応じて提供状況は異なる場合があります。"
+    },
+    {
+      "q": "組織のリポジトリで使うのに必要な設定はありますか？",
+      "a": "管理者が「Allow use of Copilot cloud agent billed to the organization」ポリシーを有効にする必要があります。"
+    },
+    {
+      "q": "作成後に個人用と共有を切り替えられますか？",
+      "a": "できません。作成時に Type で Shared か個人用を選び、作成後に Type は変更できません。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Build shared workflows for your team with Copilot Automations - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-10-28-build-shared-workflows-for-your-team-with-copilot-automations/"
+    },
+    "documents": [
+      {
+        "title": "Copilot自動化 - GitHubドキュメント",
+        "url": "https://docs.github.com/ja/copilot/concepts/agent-capabilities/agent-powered-workflows-and-operations/about-automations"
+      }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-10-28-build-shared-workflows-for-your-team-with-copilot-automations/",
+    "https://docs.github.com/ja/copilot/concepts/agent-capabilities/agent-powered-workflows-and-operations/about-automations"
+  ]
+}
