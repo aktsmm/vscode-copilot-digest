@@ -26279,6 +26279,60 @@
         "Original article explicit links",
         "Feature-matched official documentation indexes"
       ]
+    },
+    "5f24c022945179a82dfddcf2dcd5c7929ae27fc8783872ff96b1e210b8ffb860": {
+      "version": 6,
+      "checkedAt": "2026-10-29T19:06:44.209Z",
+      "inputUrl": "https://github.com/features/copilot/whats-new",
+      "inputTitle": "GitHub Copilot What's New changed",
+      "status": "unconfirmed",
+      "source": {
+        "url": "https://github.blog/changelog/?label=copilot#changelog-item-meta-99838",
+        "status": "unconfirmed",
+        "reason": "Multiple changed date headings; linked observed archive item without inferring a feature",
+        "checkedAt": "2026-10-29T19:06:44.461Z",
+        "contentHash": "85c37f0e42cc4a08bda13437b7420d73ea44f72a0f327010bcd02da3dcd233a8"
+      },
+      "documents": [],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "3431dc7309f76c1f529dc96b337c7dc05574d2ff3035354596556f5f71f8bf62": {
+      "version": 6,
+      "checkedAt": "2026-10-29T19:06:44.582Z",
+      "inputUrl": "https://github.blog/changelog/2026-10-28-repository-plugin-defaults-and-enterprise-plugin-controls-generally-available",
+      "inputTitle": "Repository plugin defaults and enterprise plugin controls generally available",
+      "status": "verified",
+      "source": {
+        "url": "https://github.blog/changelog/2026-10-28-repository-plugin-defaults-and-enterprise-plugin-controls-generally-available/",
+        "status": "verified",
+        "reason": "Fetched original article",
+        "checkedAt": "2026-10-29T19:06:45.276Z",
+        "contentHash": "e4bed56b70dd8d26107eba462812197c1724265fc027b2e0230c48bbce52f283"
+      },
+      "documents": [
+        {
+          "url": "https://docs.github.com/ja/copilot/concepts/customizations/plugins",
+          "title": "GitHub Copilot 用のプラグイン",
+          "language": "ja",
+          "checkedAt": "2026-10-29T19:06:46.172Z",
+          "contentHash": "d14540e785daa48578840caabecad2b0283473a2bcf27ff8be4a8c416374e6f7",
+          "discoveryUrl": "https://github.blog/changelog/2026-10-28-repository-plugin-defaults-and-enterprise-plugin-controls-generally-available/",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
     }
   }
 }

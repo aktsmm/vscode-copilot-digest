@@ -1,14 +1,92 @@
 {
   "date": "2026-10-29",
-  "generatedAt": "2026-10-29T11:37:39.039Z",
+  "generatedAt": "2026-10-29T19:06:43.799Z",
   "latestRun": {
-    "generatedAt": "2026-10-29T11:37:39.039Z",
-    "newEventsCount": 0,
-    "newEventIds": [],
+    "generatedAt": "2026-10-29T19:06:43.799Z",
+    "newEventsCount": 3,
+    "newEventIds": [
+      "github-changelog:https://github.blog/changelog/2026-11-28-repository-plugin-defaults-and-enterprise-plugin-controls-generally-available",
+      "github-changelog-copilot:https://github.blog/changelog/2026-11-28-repository-plugin-defaults-and-enterprise-plugin-controls-generally-available",
+      "copilot-whats-new:f8e0463a11aac03758a5b2eb250e394424eb9f765085e21af8555502a7efb3d7"
+    ],
     "errorCount": 0,
     "skippedLowInformationEvents": []
   },
   "events": [
+    {
+      "eventId": "copilot-whats-new:f8e0463a11aac03758a5b2eb250e394424eb9f765085e21af8555502a7efb3d7",
+      "sourceId": "copilot-whats-new",
+      "sourceName": "GitHub Copilot What's New",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-10-29T19:06:37.534Z",
+      "publishedAt": "2026-10-29T19:06:37.533Z",
+      "title": "GitHub Copilot What's New changed",
+      "url": "https://github.com/features/copilot/whats-new",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [
+          "Oct.28 Improvement"
+        ],
+        "additions": [
+          "H3: Oct.28 Improvement"
+        ]
+      },
+      "headings": [
+        "Changelog",
+        "Filters (0 selected)",
+        "October\n Oct\n 2026",
+        "Oct.28 Release",
+        "Oct.28 Release",
+        "Oct.28 Release",
+        "Oct.28 Release",
+        "Oct.28 Release",
+        "Oct.28 Improvement",
+        "Oct.28 Improvement",
+        "Oct.28 Release",
+        "Oct.28 Release"
+      ],
+      "score": 3
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-11-28-repository-plugin-defaults-and-enterprise-plugin-controls-generally-available",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-10-29T19:06:35.532Z",
+      "publishedAt": "2026-10-28T15:33:00.000Z",
+      "title": "Repository plugin defaults and enterprise plugin controls generally available",
+      "url": "https://github.blog/changelog/2026-10-28-repository-plugin-defaults-and-enterprise-plugin-controls-generally-available",
+      "summary": "Repository plugin defaults and enterprise-managed plugin controls are now generally available in VS Code, Copilot CLI, and the GitHub Copilot app. Trusted repositories can install and enable default plugins for…\nThe post Repository plugin defaults and enterprise plugin controls generally available appeared first on Th...",
+      "categories": [
+        "Improvement",
+        "copilot",
+        "universe26"
+      ],
+      "isFutureDated": false,
+      "score": 1
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-11-28-repository-plugin-defaults-and-enterprise-plugin-controls-generally-available",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-10-29T19:06:36.138Z",
+      "publishedAt": "2026-10-28T15:33:00.000Z",
+      "title": "Repository plugin defaults and enterprise plugin controls generally available",
+      "url": "https://github.blog/changelog/2026-10-28-repository-plugin-defaults-and-enterprise-plugin-controls-generally-available",
+      "summary": "Repository plugin defaults and enterprise-managed plugin controls are now generally available in VS Code, Copilot CLI, and the GitHub Copilot app. Trusted repositories can install and enable default plugins for…\nThe post Repository plugin defaults and enterprise plugin controls generally available appeared first on Th...",
+      "categories": [
+        "Improvement",
+        "copilot",
+        "universe26"
+      ],
+      "isFutureDated": false,
+      "score": 1
+    },
     {
       "eventId": "docs-github-copilot-concepts:590f92fd92d7dfb0be7b3cbea9e1f67f9780729802f712c98b6d9129be220c0b",
       "sourceId": "docs-github-copilot-concepts",
