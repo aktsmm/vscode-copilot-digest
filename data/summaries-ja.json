@@ -3764,5 +3764,16 @@
       "組織のモデルポリシー、予算、支出管理がそのまま適用される",
       "AI利用量CSVの app_client_id で利用を特定でき、停止はアプリの一時停止かアンインストール"
     ]
+  },
+  "532ef9d141d93574": {
+    "title": "Copilotアプリにセキュリティ拡張がパブリックプレビュー",
+    "summary": "GitHub Copilotアプリ向けのGitHub security extensionがパブリックプレビューになった。コードスキャンのアラートを重大度順に閲覧し、CopilotにExplainやFixを依頼できる。修正はローカルの作業コピーにのみ反映され、コミットやプッシュはされない。",
+    "why": "コードスキャンを使うチームは、github.comとエディターを往復せずアラート対応を進められる。",
+    "points": [
+      "導入は copilot plugin install github-security@awesome-copilot か、アプリのCustomizeから",
+      "/security-review で未PRの変更の指摘を既存アラートと並べて確認できる",
+      "Explain・Fix・/security-review はAIクレジットを消費し、閲覧と却下は消費しない",
+      "GitHub Enterprise Serverは非対応。プライベートリポジトリはCode Securityが必要"
+    ]
   }
 }
