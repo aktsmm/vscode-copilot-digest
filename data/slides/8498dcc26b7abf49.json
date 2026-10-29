@@ -1,0 +1,94 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "8498dcc26b7abf49",
+  "title": {
+    "ja": "VS Code の 1 年: エージェント中心の機能を総括",
+    "subtitleJa": "Copilot ハーネスが新規セッションの既定に。Agent Host Protocol は 1.0 に到達",
+    "original": "VS Code Wrapped: GitHub Universe 2026"
+  },
+  "date": "2026-10-28",
+  "topic": "VS Code",
+  "status": "update",
+  "audience": {
+    "who": "VS Code でエージェントを使う開発者と、組織の管理者",
+    "change": "Copilot ハーネスが既定になり、Claude・Codex ハーネスや Agents ウィンドウも使える",
+    "changeNature": "neutral"
+  },
+  "action": {
+    "required": "info",
+    "summary": "新機能の全体像を把握し、Preview の機能は必要に応じて試す"
+  },
+  "panels": [
+    {
+      "id": "agents",
+      "heading": "エージェントの実行と選択",
+      "priority": "core",
+      "items": [
+        "Agent Host Protocol (AHP) が 1.0 に。クラウド セッションはノート PC を閉じても続き、別のクライアントで再開できる",
+        "Local VS Code ハーネスと Copilot CLI ハーネスを統合した Copilot ハーネスが、エディターと Agents ウィンドウの新規セッションの既定",
+        "Claude・Codex ハーネスも Agent Host 経由で VS Code から利用できる"
+      ]
+    },
+    {
+      "id": "parallel",
+      "heading": "並行作業とモデル",
+      "priority": "core",
+      "items": [
+        "Agents ウィンドウで複数のセッションを並行実行し、進捗と変更を 1 か所で確認。エディターとも同じセッションを共有",
+        "worktree でエージェント間の変更を分離。SSH・dev tunnel 上やクラウドのセッションにも接続できる",
+        "Copilot Fusion がモデルを自動選択または組み合わせる。Compare Models は Preview"
+      ]
+    },
+    {
+      "id": "preview",
+      "heading": "Preview・試験的機能と前提",
+      "priority": "core",
+      "items": [
+        "Copilot コネクタ (Preview): Slack・Notion・Microsoft Learn 等の文脈を MCP サーバー無しで利用。全 Copilot プランで利用可",
+        "Business・Enterprise では、管理者がエディターのプレビュー機能を許可する必要がある",
+        "Canvases は Preview。コンピューター使用 (macOS・Windows) は試験的で、組織はポリシーで無効化できる"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "Claude・Codex ハーネスは各提供元の実行環境で動き、機能は Copilot ハーネスと同一ではない",
+        "リモート エージェントは、マシンとホストが動いている間だけ切断後も動作する"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "Agent Host Protocol", "type": "term", "oneLine": "エージェントのセッションを独立したプロセスで管理し、クライアントが接続して同期するための公開プロトコル。" },
+    { "term": "エージェント ハーネス", "type": "term", "oneLine": "エージェント ループを制御し、モデルをコンテキストやツールにつなぐ仕組み。" },
+    { "term": "Agents ウィンドウ", "type": "feature", "oneLine": "全ワークスペースと環境のエージェントを管理する専用の画面。" }
+  ],
+  "qa": [
+    {
+      "q": "Copilot ハーネスとは何で、何が変わりますか?",
+      "a": "Local VS Code ハーネスと Copilot CLI ハーネスを統合したものです。エディターと Agents ウィンドウの新規セッションの既定になり、VS Code・Copilot CLI・GitHub Copilot アプリで挙動が揃います。カスタマイズも修正なしで再利用できます。"
+    },
+    {
+      "q": "Claude や Codex のハーネスも使えますか?",
+      "a": "はい。Agent Host 経由で VS Code から使え、セッションを 1 か所で管理できます。各提供元の実行環境と機能で動くため、すべてのエージェントが同じ動作になるわけではありません。"
+    },
+    {
+      "q": "Copilot コネクタはどのプランで使えますか?",
+      "a": "Preview で、全 Copilot プランで利用でき、Copilot ハーネスで動作します。Business・Enterprise では管理者がエディターのプレビュー機能を許可する必要があります。"
+    },
+    {
+      "q": "PC を閉じたらエージェントは止まりますか?",
+      "a": "クラウド セッションは GitHub のインフラで動くため止まりません。VS Code、Copilot アプリ、GitHub Mobile、github.com、Copilot CLI から同じセッションを続けられます。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "VS Code Wrapped: GitHub Universe 2026",
+      "url": "https://code.visualstudio.com/blogs/2026/10/28/vscode-wrapped"
+    }
+  },
+  "evidence": [
+    "https://code.visualstudio.com/blogs/2026/10/28/vscode-wrapped"
+  ]
+}
