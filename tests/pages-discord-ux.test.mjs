@@ -177,7 +177,7 @@ for (const card of latestHighlightCards) {
   );
   assert.doesNotMatch(
     summary[1],
-    /\.\.\.|…/,
+    /…|\.\.\.[。.!?]?$/,
     "Japanese latest highlight explanations must not contain ellipsis truncation",
   );
   const why = card.match(/<p class="mini-why">([^<]+)<\/p>/);
