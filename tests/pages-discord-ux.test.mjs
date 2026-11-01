@@ -189,7 +189,7 @@ for (const card of latestHighlightCards) {
     );
     assert.doesNotMatch(
       why[1],
-      /\.\.\.|…/,
+      /…|\.\.\.[。.!?]?$/,
       "Japanese latest highlight importance text must not contain ellipsis truncation",
     );
   }
@@ -216,9 +216,10 @@ for (const card of englishLatestHighlightCards) {
     /[.!?]$/,
     "English latest highlight explanations must end at a sentence boundary",
   );
+  // Only a trailing ellipsis is truncation; a command name such as "Chat: Run Automation..." legitimately contains "...".
   assert.doesNotMatch(
     summary[1],
-    /\.\.\.|…/,
+    /…|\.\.\.[。.!?]?$/,
     "English latest highlight explanations must not contain ellipsis truncation",
   );
 }
@@ -264,7 +265,7 @@ for (const card of homeDigestCards) {
   );
   assert.doesNotMatch(
     summary[1],
-    /\.\.\.|…/,
+    /…|\.\.\.[。.!?]?$/,
     "Japanese home card explanations must not contain ellipsis truncation",
   );
 }
@@ -300,7 +301,7 @@ for (const card of englishHomeDigestCards) {
   );
   assert.doesNotMatch(
     summary[1],
-    /\.\.\.|…/,
+    /…|\.\.\.[。.!?]?$/,
     "English home card explanations must not contain ellipsis truncation",
   );
 }
@@ -351,7 +352,7 @@ for (const summary of weeklyArchiveSummaries) {
   );
   assert.doesNotMatch(
     summary,
-    /\.\.\.|…/,
+    /…|\.\.\.[。.!?]?$/,
     "weekly archive explanations must not contain ellipsis truncation",
   );
 }
