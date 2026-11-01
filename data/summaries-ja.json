@@ -3786,5 +3786,16 @@
       "管理設定はリポジトリ設定や個人設定より優先される",
       "企業向け制御は GitHub Enterprise Cloud の Business / Enterprise ライセンス対象"
     ]
+  },
+  "c878a086d349ac45": {
+    "title": "Copilot Fusionが正式リリース、タスクごとに最適なモデルを自動選択",
+    "summary": "GitHubはGitHub Universe 2026でGitHub Copilot Fusionの正式リリースを発表した。タスクの性質に応じて単一または複数のAIモデルを組み合わせ、Single・Cascade・Critiqueの3パターンから実行方式を選ぶ。性能とコストの両立を狙う。",
+    "why": "モデル選択を個別に管理している開発者は、モデルピッカーでFusionを選ぶだけでルーティングを任せられる。",
+    "points": [
+      "実行パターンはSingle、Cascade、Critiqueの3種",
+      "負荷レベルはStandard、High、Max、Fast（Fastはユーザー指定不可）",
+      "Standardは日常業務向け、Maxは最も深い推論が必要な作業向け",
+      "公式ドキュメントでは全Copilotプランで利用可能と記載"
+    ]
   }
 }
