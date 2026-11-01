@@ -1,0 +1,105 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "c878a086d349ac45",
+  "title": {
+    "ja": "Copilot Fusion の正式リリース。タスクに応じて最適なモデルと実行パターンを自動選択",
+    "subtitleJa": "単一または複数モデルの組み合わせを自動で選び、性能とコストのバランスを取る",
+    "original": "GitHub、「Copilot Fusion」正式リリース。タスクに応じて最適なAIモデル選択で高性能かつ低コストに。GitHub Universe 2026"
+  },
+  "date": "2026-11-01",
+  "topic": "GitHub Copilot",
+  "status": "ga",
+  "statusEvidence": "新機能「GitHub Copilot Fusion」の正式リリースを発表しました。",
+  "audience": {
+    "who": "Copilot でモデルの選択や使い分けを手動で管理している開発者",
+    "change": "モデル ピッカーで Copilot Fusion を選ぶと、タスクごとにモデルと実行パターンが自動で選ばれる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "モデル ピッカーで Copilot Fusion を選び、作業レベルを試す"
+  },
+  "panels": [
+    {
+      "id": "where-and-plans",
+      "heading": "使える場所とプラン",
+      "priority": "core",
+      "items": [
+        "Visual Studio Code、Copilot CLI、GitHub Copilot app、JetBrains IDEs で正式提供",
+        "すべての GitHub Copilot プランで利用できる",
+        "2026 年 11 月 30 日まで、有料 Copilot プランはモデル コストが 30% 割引"
+      ]
+    },
+    {
+      "id": "how-it-works",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "モデル ピッカーで Copilot Fusion を選ぶ。要求ごとに実行パターン、推論作業、モデルが選ばれる",
+        "実行パターンは、シングル、カスケード、批評の 3 種類",
+        "作業レベルは Fusion Standard（日常業務）、High、Max。Fusion Fast は選択できない"
+      ]
+    },
+    {
+      "id": "limits",
+      "heading": "前提と制限",
+      "priority": "core",
+      "items": [
+        "使うモデルごとに標準料金で課金され、Copilot Fusion 自体の料金は別にかからない",
+        "下書きが破棄されても、ファイル編集などの変更は自動では元に戻らない。コミット前に確認する"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "High と Max は複数モデルを使うため、Standard より AI credits を多く消費することがある",
+        "ローカル モデル（MAI Code 1.1 Flash、Qwen3.8 Flash Next）の利用はパブリック プレビューで、Fusion Standard のみ"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "Copilot Fusion", "type": "product", "oneLine": "タスクに応じてモデルと実行パターンを選び、1 つの応答を返すモデル ルーター兼オーケストレーター。" },
+    { "term": "カスケード", "type": "term", "oneLine": "効率的なモデルが下書きし、判定役が受け入れるか高性能モデルに回すかを決める。" },
+    { "term": "批評", "type": "term", "oneLine": "1 つのモデルが下書きし、複数のモデルが並列でレビューして、元のモデルが修正する。" }
+  ],
+  "references": {
+    "source": {
+      "title": "GitHub、「Copilot Fusion」正式リリース。タスクに応じて最適なAIモデル選択で高性能かつ低コストに。GitHub Universe 2026 － Publickey",
+      "url": "https://www.publickey1.jp/blog/26/githubcopilot_fusionaigithub_universe_2026.html"
+    },
+    "documents": [
+      {
+        "title": "GitHub Copilot Fusion の概要 - GitHubドキュメント",
+        "url": "https://docs.github.com/ja/copilot/concepts/models/copilot-fusion"
+      }
+    ]
+  },
+  "evidence": [
+    "https://www.publickey1.jp/blog/26/githubcopilot_fusionaigithub_universe_2026.html",
+    "https://docs.github.com/ja/copilot/concepts/models/copilot-fusion"
+  ],
+  "qa": [
+    {
+      "q": "どのプランで使えますか？",
+      "a": "ドキュメントでは、すべての GitHub Copilot プランで利用できるとされています。ただし、プランで使えないモデルや管理者ポリシーで除外されたモデルは Fusion の対象になりません。"
+    },
+    {
+      "q": "どうやって使い始めますか？",
+      "a": "モデル ピッカーで特定のモデルではなく Copilot Fusion を選びます。以降は要求ごとに、実行パターン、推論作業のレベル、モデルが自動で選ばれます。"
+    },
+    {
+      "q": "追加料金はかかりますか？",
+      "a": "Copilot Fusion 自体の料金は別にかからず、使ったモデルごとに標準料金で課金されます。2026 年 11 月 30 日まで、有料プランはモデル コストが 30% 割引です。"
+    },
+    {
+      "q": "使うときの注意点は？",
+      "a": "下書きが破棄されても、ワークスペースに行われたファイル編集は自動で元に戻りません。コミット前に変更を確認してください。Fusion はサブエージェントを開始しません。"
+    },
+    {
+      "q": "ローカル モデルも使えますか？",
+      "a": "パブリック プレビューとして、MAI Code 1.1 Flash または Qwen3.8 Flash Next をローカルにインストールすると、Fusion Standard で使われる場合があります。実験的機能の有効化が必要です。"
+    }
+  ]
+}
