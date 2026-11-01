@@ -26333,6 +26333,40 @@
         "Original article explicit links",
         "Feature-matched official documentation indexes"
       ]
+    },
+    "224eb1f7cb30eac1ffe89ac9896dd0cbebb04bf3af19c1607a9c6de87c55811c": {
+      "version": 6,
+      "checkedAt": "2026-11-01T18:29:05.174Z",
+      "inputUrl": "https://www.publickey1.jp/blog/26/githubcopilot_fusionaigithub_universe_2026.html",
+      "inputTitle": "GitHub、「Copilot Fusion」正式リリース。タスクに応じて最適なAIモデル選択で高性能かつ低コストに。GitHub Universe 2026",
+      "status": "verified",
+      "source": {
+        "url": "https://www.publickey1.jp/blog/26/githubcopilot_fusionaigithub_universe_2026.html",
+        "status": "verified",
+        "reason": "Fetched original article",
+        "checkedAt": "2026-11-01T18:29:05.787Z",
+        "contentHash": "8a1cf49aca0612b483c46ae5c390e7439de151106db9fab35599587e35e8bac0"
+      },
+      "documents": [
+        {
+          "url": "https://docs.github.com/ja/copilot/concepts/models/copilot-fusion",
+          "title": "About GitHub Copilot Fusion",
+          "language": "ja",
+          "checkedAt": "2026-10-28T18:59:16.629Z",
+          "contentHash": "f6479b54a2b59044b73b9f11fbdb26b644453f97c251589b47a82d6edafb2286",
+          "discoveryUrl": "https://www.publickey1.jp/blog/26/githubcopilot_fusionaigithub_universe_2026.html",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
     }
   }
 }
