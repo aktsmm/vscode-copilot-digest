@@ -2501,6 +2501,11 @@ function stylesCss() {
   --source-platform: #ea580c;
   --source-platform-soft: rgba(234, 88, 12, 0.14);
   --source-other: #4b5563;
+  /* Text colours for the source badges: the brand colours above are too light for text on their own tinted background (WCAG AA 4.5:1). */
+  --source-github-text: #754dcf;
+  --source-vscode-text: #0067b6;
+  --source-platform-text: #b24309;
+  --source-other-text: #4b5563;
   --source-other-soft: rgba(75, 85, 99, 0.14);
   --shadow: 0 20px 60px rgba(31, 26, 23, 0.08);
 }
@@ -3032,19 +3037,19 @@ h1 { margin: 0 0 16px; font-size: clamp(1.5rem, 2.4vw, 2.2rem); line-height: 1.1
 }
 .source-badge--github {
   background: var(--source-github-soft);
-  color: var(--source-github);
+  color: var(--source-github-text);
 }
 .source-badge--vscode {
   background: var(--source-vscode-soft);
-  color: var(--source-vscode);
+  color: var(--source-vscode-text);
 }
 .source-badge--platform {
   background: var(--source-platform-soft);
-  color: var(--source-platform);
+  color: var(--source-platform-text);
 }
 .source-badge--other {
   background: var(--source-other-soft);
-  color: var(--source-other);
+  color: var(--source-other-text);
 }
 .why-it-matters { margin-top: 12px; padding-top: 12px; border-top: 1px dashed var(--line); }
 .original-title { margin: 0; color: var(--muted); font-size: 0.86rem; }
