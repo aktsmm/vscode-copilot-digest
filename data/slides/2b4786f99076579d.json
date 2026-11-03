@@ -1,0 +1,85 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "2b4786f99076579d",
+  "title": {
+    "ja": "JetBrains Air で GitHub Copilot が利用可能に",
+    "subtitleJa": "Air のエージェント選択から Copilot を選び、ローカル・クラウドのタスクを既存の契約で実行できる",
+    "original": "GitHub Copilot is now available in JetBrains Air"
+  },
+  "date": "2026-11-03",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "JetBrains Air で Copilot にコーディング タスクを任せたい開発者",
+    "change": "Air のエージェント ピッカーで GitHub Copilot を選び、既存の Copilot サブスクリプションで使える",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "使うなら Air で GitHub Copilot を選び、Copilot アカウントを接続する"
+  },
+  "panels": [
+    {
+      "id": "where-and-how",
+      "heading": "使える場所と使い方",
+      "priority": "core",
+      "items": [
+        "Agent Client Protocol (ACP) を使い、JetBrains IDE 内またはクラウドでタスクを実行する",
+        "ローカル: IDE に Air を入れ、GitHub Copilot を選んで Copilot アカウントを接続する",
+        "クラウド(ブラウザ): Settings > VCS Providers で GitHub を接続し、リポジトリとブランチを選んで送信する",
+        "クラウド(IDE): Air プラグインの環境セレクターで Cloud を選ぶ"
+      ]
+    },
+    {
+      "id": "prerequisites",
+      "heading": "前提と制限",
+      "priority": "core",
+      "items": [
+        "クラウド タスクには、Air Teams 有効な組織の JetBrains アカウント、Copilot サブスクリプション、管理者による Copilot の有効化が必要",
+        "クラウド タスクは JetBrains AI クレジットではなく Copilot プランを使う",
+        "個人プランと組織プランのどちらを使うかは、タスクごとに選べない"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "サブスクリプションやクレジットが使えないと、タスクは失敗しセッションにエラーが出る",
+        "Air のガバナンスと分析に Copilot の利用は含まれず、Air 側で支出上限は設定できない"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "ACP", "type": "term", "oneLine": "Agent Client Protocol。Air が Copilot と連携するために使うプロトコル。" },
+    { "term": "Air Teams", "type": "product", "oneLine": "Air のクラウド タスクを組織で使うための環境。" }
+  ],
+  "references": {
+    "source": {
+      "title": "GitHub Copilot is now available in JetBrains Air - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-11-03-github-copilot-is-now-available-in-jetbrains-air/"
+    },
+    "documents": []
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-11-03-github-copilot-is-now-available-in-jetbrains-air/"
+  ],
+  "qa": [
+    {
+      "q": "Air で Copilot を使うには何が必要ですか？",
+      "a": "ローカル タスクは、JetBrains IDE に Air を入れ、GitHub Copilot を選んで Copilot アカウントを接続します。既存の Copilot サブスクリプションを使います。"
+    },
+    {
+      "q": "クラウド タスクの前提条件は？",
+      "a": "Air Teams が有効な business 組織の JetBrains アカウント、GitHub Copilot サブスクリプション、Air 管理者による Copilot の有効化が必要です。"
+    },
+    {
+      "q": "クラウド タスクの課金はどうなりますか？",
+      "a": "JetBrains AI クレジットではなく Copilot プランを使います。個人プランか組織プランかはタスクごとに選べません。"
+    },
+    {
+      "q": "Copilot の利用状況や支出は Air で管理できますか？",
+      "a": "Air のガバナンスと分析に Copilot の利用は含まれません。管理者はポリシーで Copilot を無効にできますが、Air 内で支出上限は設定できません。"
+    }
+  ]
+}
