@@ -3797,5 +3797,27 @@
       "Standardは日常業務向け、Maxは最も深い推論が必要な作業向け",
       "公式ドキュメントでは全Copilotプランで利用可能と記載"
     ]
+  },
+  "2b4786f99076579d": {
+    "title": "JetBrains AirでGitHub Copilotが利用可能に",
+    "summary": "JetBrains Airで、Agent Client Protocol(ACP)経由でGitHub Copilotにコーディングタスクを任せ、実行を誘導し結果をレビューできるようになった。JetBrains IDE上のローカルタスクに加え、Air Teams経由のクラウドタスクにも対応する。",
+    "why": "既存のCopilotサブスクリプションでAirを使いたい開発者と、Air管理者が対象。",
+    "points": [
+      "ローカル: IDEにAirを入れ、エージェント選択でGitHub Copilotを選び連携",
+      "クラウドタスクはJetBrainsアカウントとAir Teams有効な組織が必要",
+      "クラウドの消費はJetBrains AIクレジットでなくCopilotプラン",
+      "管理者はガバナンスポリシーで無効化可能だが支出上限は設定不可"
+    ]
+  },
+  "1511d0f78259a4f4": {
+    "title": "Copilot Code Review Maxがパブリックプレビューに",
+    "summary": "GitHub Universe 2026で、Copilot Code Reviewに新しいエフォートレベル「Max」が加わると発表された。複数のAIモデルによる独立したレビューエージェントの結果を集約エージェントが調整し、正確性を再確認して報告する。",
+    "why": "AIエージェント経由のPRが増えるチームは、より深いレビューを試すか検討できる。",
+    "points": [
+      "既存のエフォートレベルはLiteとBalanced、これにMaxが追加",
+      "複数モデルのレビューエージェントを集約エージェントが統合",
+      "ReviewBenchの重大な問題検出でF1スコア最高と発表",
+      "現在はパブリックプレビューとして提供"
+    ]
   }
 }
