@@ -26367,6 +26367,66 @@
         "Original article explicit links",
         "Feature-matched official documentation indexes"
       ]
+    },
+    "f9fee1f7dd12b57d28a5ae75d8774812229b18e5cca26cae207ffca97ff79a8e": {
+      "version": 6,
+      "checkedAt": "2026-11-03T20:13:32.116Z",
+      "inputUrl": "https://github.com/features/copilot/whats-new",
+      "inputTitle": "GitHub Copilot What's New changed",
+      "status": "unconfirmed",
+      "source": {
+        "url": "https://github.blog/changelog/?label=copilot#changelog-item-meta-99973",
+        "status": "verified",
+        "reason": "Observed changed heading(s): Nov.03 Release",
+        "checkedAt": "2026-11-03T20:13:32.336Z",
+        "contentHash": "85c37f0e42cc4a08bda13437b7420d73ea44f72a0f327010bcd02da3dcd233a8"
+      },
+      "documents": [],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "61f68dfc38d7a1df5f53956e3eb7227d670ba5ba4b30fe104488711cfa768637": {
+      "version": 6,
+      "checkedAt": "2026-11-03T20:13:32.507Z",
+      "inputUrl": "https://github.blog/changelog/2026-11-03-github-copilot-is-now-available-in-jetbrains-air",
+      "inputTitle": "GitHub Copilot is now available in JetBrains Air",
+      "status": "unconfirmed",
+      "source": {
+        "url": "https://github.blog/changelog/2026-11-03-github-copilot-is-now-available-in-jetbrains-air/",
+        "status": "verified",
+        "reason": "Fetched original article",
+        "checkedAt": "2026-11-03T20:13:32.582Z",
+        "contentHash": "36ab73eb5a8928eade0c158936c6e961105f441c822df2953ec9f6d83d435ebe"
+      },
+      "documents": [],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "255552bf2cf885c16fd777449a4f5d52b8d629c9aa7fb1ae7e057124a7ae8235": {
+      "version": 6,
+      "checkedAt": "2026-11-03T20:13:32.632Z",
+      "inputUrl": "https://www.publickey1.jp/blog/26/githubcopilot_code_review_maxgithub_universe_2026.html",
+      "inputTitle": "GitHub、より高度なコードレビューを行う「Copilot Code Review Max」発表。GitHub Universe 2026",
+      "status": "unconfirmed",
+      "source": {
+        "url": "https://www.publickey1.jp/blog/26/githubcopilot_code_review_maxgithub_universe_2026.html",
+        "status": "verified",
+        "reason": "Fetched original article",
+        "checkedAt": "2026-11-03T20:13:33.222Z",
+        "contentHash": "69e439b51cea6af7ebc468ca438b65cb9f812436d93d938002f0f6786c82a84a"
+      },
+      "documents": [],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
     }
   }
 }

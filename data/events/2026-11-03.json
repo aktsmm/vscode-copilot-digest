@@ -1,13 +1,97 @@
 {
   "date": "2026-11-03",
-  "generatedAt": "2026-11-03T12:54:14.972Z",
+  "generatedAt": "2026-11-03T20:13:31.558Z",
   "latestRun": {
-    "generatedAt": "2026-11-03T12:54:14.972Z",
-    "newEventsCount": 0,
-    "newEventIds": [],
+    "generatedAt": "2026-11-03T20:13:31.558Z",
+    "newEventsCount": 3,
+    "newEventIds": [
+      "github-changelog:https://github.blog/changelog/2026-11-03-github-copilot-is-now-available-in-jetbrains-air",
+      "copilot-whats-new:5a87f4d64587ad36791cc65a338cb4e63143ab63604db50141df4566e14dad4c",
+      "publickey:tag:www.publickey1.jp,2026://2.8750"
+    ],
     "errorCount": 0,
     "skippedLowInformationEvents": []
   },
-  "events": [],
+  "events": [
+    {
+      "eventId": "copilot-whats-new:5a87f4d64587ad36791cc65a338cb4e63143ab63604db50141df4566e14dad4c",
+      "sourceId": "copilot-whats-new",
+      "sourceName": "GitHub Copilot What's New",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-11-03T20:13:20.442Z",
+      "publishedAt": "2026-11-03T20:13:20.441Z",
+      "title": "GitHub Copilot What's New changed",
+      "url": "https://github.com/features/copilot/whats-new",
+      "summary": "Detected 4 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 4,
+        "headings": [
+          "November",
+          "Nov.03 Release"
+        ],
+        "additions": [
+          "H2: November",
+          "Nov",
+          "2026",
+          "H3: Nov.03 Release"
+        ]
+      },
+      "headings": [
+        "Changelog",
+        "Filters (0 selected)",
+        "November\n Nov\n 2026",
+        "Nov.03 Release",
+        "October\n Oct\n 2026",
+        "Oct.28 Release",
+        "Oct.28 Release",
+        "Oct.28 Release",
+        "Oct.28 Release",
+        "Oct.28 Release",
+        "Oct.28 Improvement",
+        "Oct.28 Improvement"
+      ],
+      "score": 4
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-11-03-github-copilot-is-now-available-in-jetbrains-air",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-11-03T20:13:19.200Z",
+      "publishedAt": "2026-11-03T15:11:46.000Z",
+      "title": "GitHub Copilot is now available in JetBrains Air",
+      "url": "https://github.blog/changelog/2026-11-03-github-copilot-is-now-available-in-jetbrains-air",
+      "summary": "You can now delegate coding tasks, guide execution, and review results with GitHub Copilot in JetBrains Air. The integration uses the Agent Client Protocol (ACP) and supports tasks in your…\nThe post GitHub Copilot is now available in JetBrains Air appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 6
+    },
+    {
+      "eventId": "publickey:tag:www.publickey1.jp,2026://2.8750",
+      "sourceId": "publickey",
+      "sourceName": "Publickey",
+      "kind": "feed_entry",
+      "detectedAt": "2026-11-03T20:13:20.723Z",
+      "publishedAt": "2026-11-03T13:21:05.000Z",
+      "title": "GitHub、より高度なコードレビューを行う「Copilot Code Review Max」発表。GitHub Universe 2026",
+      "url": "https://www.publickey1.jp/blog/26/githubcopilot_code_review_maxgithub_universe_2026.html",
+      "summary": "GitHubは、米サンフランシスコで10月28日と29日の2日間開催した年次イベント「GitHub Universe 2026」で、より高度なコードレビューを行う新機能「Copilot Code Review Max」を発表しました。 GitHub Copilotは以前からコードレビューのための機能「Copilot Code Review」を提供しており、バグの検出などのコードレビューを行い、結果を開発者に提供してきました。 しかしAIエージェントを活用したコードの生成やプル……",
+      "categories": [
+        "ソフトウェアテスト・品質",
+        "機械学習・AI",
+        "開発ツール",
+        "github",
+        "microsoft"
+      ],
+      "isFutureDated": false,
+      "score": 1
+    }
+  ],
   "errors": []
 }
