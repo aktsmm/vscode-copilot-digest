@@ -1,0 +1,103 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "1511d0f78259a4f4",
+  "title": {
+    "ja": "Copilot Code Review に最上位のレビュー強度「Max」",
+    "subtitleJa": "複数モデルの独立レビューを集約する Max がパブリックプレビュー、承認機能は GA",
+    "original": "Copilot code review: Merge with confidence with Max and approvals"
+  },
+  "date": "2026-11-03",
+  "topic": "GitHub Copilot",
+  "status": "preview",
+  "statusEvidence": "Copilot Code Review Max は現在パブリックプレビューとして提供されています。",
+  "audience": {
+    "who": "重要な変更のプルリクエストを Copilot にレビューさせたい開発者と管理者",
+    "change": "Lite・Balanced に加え、複数モデルで最も網羅的にレビューする Max を選べる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "リスクの高い PR で Max を選ぶ。承認を使う場合は管理者が有効化する"
+  },
+  "panels": [
+    {
+      "id": "availability",
+      "heading": "使える場所とプラン",
+      "priority": "core",
+      "items": [
+        "Copilot Pro、Pro+、Max、Business、Enterprise で利用可能",
+        "Max は公開プレビュー。Copilot の承認機能は GA",
+        "Max は Lite・Balanced より時間がかかり、AI クレジットを多く使う"
+      ]
+    },
+    {
+      "id": "usage",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "PR 単位では「Reviewers」バーから Max を選択",
+        "リポジトリ・組織・エンタープライズの既定にも設定でき、下位が上位を上書き",
+        "承認は既定でオフ。管理者が各レベルで有効化し、承認可能なファイルパスを選べる"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "管理者は最大レビュー強度を設定でき、上限を超える強度は使えない",
+        "承認後に新しいコミットを push すると承認は取り消され、再レビューが必要"
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Max",
+      "type": "feature",
+      "oneLine": "複数プロバイダーのモデルによる独立レビューを集約エージェントがまとめる、最上位のレビュー強度"
+    },
+    {
+      "term": "Copilot approvals",
+      "type": "feature",
+      "oneLine": "Copilot が PR を承認でき、必須承認数に数えられる機能"
+    }
+  ],
+  "qa": [
+    {
+      "q": "Max はどのプランで使えますか？",
+      "a": "Copilot Pro、Pro+、Max、Business、Enterprise の各プランで利用できます。Max レビュー自体は現在パブリックプレビューです。"
+    },
+    {
+      "q": "Max はどう選びますか？",
+      "a": "PR ごとに「Reviewers」バーから選ぶか、リポジトリ・組織・エンタープライズの既定のレビュー強度として設定します。下位の設定が上位を上書きします。"
+    },
+    {
+      "q": "Max のコストや所要時間は？",
+      "a": "Max は 1 回のレビューでより多くの作業をするため、Lite や Balanced より時間がかかり、AI クレジットも多く使います。"
+    },
+    {
+      "q": "Copilot の承認は初めから有効ですか？",
+      "a": "既定ではオフです。管理者がエンタープライズ・組織・リポジトリで有効化でき、リポジトリ管理者は承認させるファイルパスを選べます。"
+    },
+    {
+      "q": "承認後にコミットを追加するとどうなりますか？",
+      "a": "人間のレビュアーと同様に承認は取り消されます。再度レビューを依頼すると新しい承認を得られます。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "GitHub、より高度なコードレビューを行う「Copilot Code Review Max」発表。GitHub Universe 2026 － Publickey",
+      "url": "https://www.publickey1.jp/blog/26/githubcopilot_code_review_maxgithub_universe_2026.html"
+    },
+    "documents": [
+      {
+        "title": "Copilot code review: Merge with confidence with Max and approvals - GitHub Changelog",
+        "url": "https://github.blog/changelog/2026-10-28-copilot-code-review-merge-with-confidence-with-max-and-approvals/"
+      }
+    ]
+  },
+  "evidence": [
+    "https://www.publickey1.jp/blog/26/githubcopilot_code_review_maxgithub_universe_2026.html",
+    "https://github.blog/changelog/2026-10-28-copilot-code-review-merge-with-confidence-with-max-and-approvals/"
+  ]
+}
