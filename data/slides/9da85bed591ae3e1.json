@@ -1,0 +1,88 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "9da85bed591ae3e1",
+  "title": {
+    "ja": "VS Code 1.145: 必須のサンドボックスが使えない時の案内を改善",
+    "subtitleJa": "警告バナーが、端末コマンドがブロックされる理由と解決手順へのリンクを表示する",
+    "original": "Improved guidance when required sandboxing is unavailable"
+  },
+  "date": "2026-11-04",
+  "topic": "VS Code",
+  "status": "update",
+  "audience": {
+    "who": "組織がサンドボックスを必須にしているのに、手元のマシンで実行できない VS Code ユーザー",
+    "change": "警告バナーに具体的な原因が表示され、トラブルシューティングへのリンクが付く",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "info",
+    "summary": "バナーに出た原因を確認し、リンク先の手順で解決する。解決できなければクラウド セッションも検討する"
+  },
+  "panels": [
+    {
+      "id": "what-changed",
+      "heading": "表示される内容",
+      "priority": "core",
+      "items": [
+        "組織が、サンドボックスの回避を許可しない管理設定で必須にしている場合が対象",
+        "マシンで実行できないとき、バナーが端末コマンドがブロックされる理由と解決方法を説明する",
+        "依存関係の不足など具体的な原因を示し、トラブルシューティングの手順へリンクする"
+      ]
+    },
+    {
+      "id": "prerequisites",
+      "heading": "前提と制限",
+      "priority": "core",
+      "items": [
+        "エージェント サンドボックスは、端末コマンドがアクセスできるファイル システムとネットワークを制限する",
+        "クラウド セッション (Experimental) は、アカウントと組織が対応している場合に代替として使える",
+        "Linux は非特権のユーザーおよびネットワーク名前空間と /dev/net/tun の読み書きが必要"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "sandbox.allowBypass が false または未設定だと、サンドボックスはオンのまま固定される",
+        "/sandbox policy で、組織の管理制限を含む有効なポリシーを確認できる"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "エージェント サンドボックス", "type": "feature", "oneLine": "端末コマンドがアクセスできるファイル システムやネットワークを制限する仕組み。" },
+    { "term": "クラウド セッション", "type": "feature", "oneLine": "エージェント ツールを、マネージドなクラウド環境で実行するセッション (Experimental)。" }
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.145 (October 2026)",
+      "url": "https://code.visualstudio.com/updates/v1_145#_improved-guidance-when-required-sandboxing-is-unavailable"
+    },
+    "documents": [
+      { "title": "Sandbox Copilot agent sessions", "url": "https://code.visualstudio.com/docs/agents/run/agent-sandboxing" },
+      { "title": "Run agent sessions in the cloud", "url": "https://code.visualstudio.com/docs/agents/run/cloud-sandbox-sessions" }
+    ]
+  },
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_145",
+    "https://code.visualstudio.com/docs/agents/run/agent-sandboxing"
+  ],
+  "qa": [
+    {
+      "q": "誰にこの案内が表示されますか？",
+      "a": "組織が、サンドボックスの回避を許可しない管理設定で必須にしているのに、手元のマシンでサンドボックスを実行できない場合です。"
+    },
+    {
+      "q": "バナーには何が表示されますか？",
+      "a": "端末コマンドがブロックされる理由と解決方法が説明され、依存関係の不足など具体的な原因と、トラブルシューティング手順へのリンクが示されます。"
+    },
+    {
+      "q": "自分でサンドボックスをオフにできますか？",
+      "a": "組織の管理ポリシーで有効化されている場合、sandbox.allowBypass が true なら現在のセッションでオフにできます。false または未設定ならオンのまま固定されます。"
+    },
+    {
+      "q": "マシンで解決できない場合の代替策は？",
+      "a": "アカウントと組織がクラウド セッション (Experimental) に対応していれば、エージェント ツールをクラウドで実行することを検討できます。"
+    }
+  ]
+}
