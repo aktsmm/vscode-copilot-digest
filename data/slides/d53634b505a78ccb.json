@@ -1,0 +1,83 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "d53634b505a78ccb",
+  "title": {
+    "ja": "XcodeのコーディングアシスタントでGitHub Copilotが利用可能に",
+    "subtitleJa": "Xcode 27.3 betaの標準コーディングアシスタントでCopilotをパブリックプレビュー提供",
+    "original": "GitHub Copilot is now available in Xcode's coding assistant"
+  },
+  "date": "2026-11-04",
+  "topic": "GitHub Copilot",
+  "status": "preview",
+  "statusEvidence": "The integration is now in public preview, available starting with Xcode 27.3 beta.",
+  "audience": {
+    "who": "Xcodeでアプリを開発し、GitHub Copilotを使いたいMac上の開発者",
+    "change": "Xcode内蔵のコーディングアシスタントから、ネイティブなワークフローでCopilotを使える",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "Xcode 27.3 betaを入れ、Settings > IntelligenceでCopilotを設定する"
+  },
+  "panels": [
+    {
+      "id": "availability",
+      "heading": "使える場所とプラン",
+      "priority": "core",
+      "items": [
+        "Xcode 27.3 beta以降の内蔵コーディングアシスタントで、パブリックプレビューとして提供",
+        "動作環境はmacOS Tahoe 26.6以降のMac",
+        "すべてのCopilotプランに対応"
+      ]
+    },
+    {
+      "id": "setup",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "Apple Developer DownloadsからXcode 27.3 betaをダウンロード",
+        "Xcode > Settings > Intelligenceで、コーディングアシスタントにGitHub Copilotを設定"
+      ]
+    },
+    {
+      "id": "notes",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "既存のGitHub Copilot for Xcode拡張機能は別の選択肢として引き続き利用可能",
+        "フィードバックはGitHub Copilot for XcodeリポジトリかApple Feedback Assistantへ"
+      ]
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "GitHub Copilot is now available in Xcode's coding assistant - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-11-04-github-copilot-is-now-available-in-xcodes-coding-assistant/"
+    }
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-11-04-github-copilot-is-now-available-in-xcodes-coding-assistant/"
+  ],
+  "qa": [
+    {
+      "q": "どのバージョンのXcodeで使えますか？",
+      "a": "Xcode 27.3 beta以降で、内蔵コーディングアシスタント上のパブリックプレビューです。macOS Tahoe 26.6以降のMacが必要です。"
+    },
+    {
+      "q": "どのCopilotプランで使えますか？",
+      "a": "すべてのCopilotプランに対応しています。"
+    },
+    {
+      "q": "どこで設定しますか？",
+      "a": "Xcodeの Xcode > Settings > Intelligence で、コーディングアシスタントにGitHub Copilotを設定します。"
+    },
+    {
+      "q": "既存のGitHub Copilot for Xcode拡張機能はどうなりますか？",
+      "a": "別の選択肢として引き続き利用できます。ワークフローに合う方を選べます。"
+    },
+    {
+      "q": "フィードバックはどこに送りますか？",
+      "a": "GitHub Copilot for XcodeリポジトリまたはApple Feedback Assistantで受け付けています。"
+    }
+  ]
+}
