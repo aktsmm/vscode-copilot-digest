@@ -26507,6 +26507,556 @@
         "Original article explicit links",
         "Feature-matched official documentation indexes"
       ]
+    },
+    "dc7b5812cfe2a9419b311f1f0922f3752bcc84a465079531ab52f6d9d068a6f0": {
+      "version": 6,
+      "checkedAt": "2026-11-04T13:07:46.215Z",
+      "inputUrl": "https://code.visualstudio.com/updates/",
+      "inputTitle": "VS Code Updates changed",
+      "status": "verified",
+      "source": {
+        "url": "https://code.visualstudio.com/updates/v1_145#release-downloads-heading",
+        "status": "verified",
+        "reason": "Explicit release link for 1.145",
+        "checkedAt": "2026-11-04T13:07:47.668Z",
+        "contentHash": "6b713ec46816c847295e4f62b9493324ca551a39e480d81aacb63177969d8968"
+      },
+      "documents": [
+        {
+          "url": "https://code.visualstudio.com/docs/agents/run/remote-agent-sessions",
+          "title": "Run and manage remote agent sessions",
+          "language": "en",
+          "checkedAt": "2026-10-28T18:59:36.472Z",
+          "contentHash": "7d3bc6431e4fd97601c3ebf751ca93ee5832d81bef1b2a42406e2085cf1b5e79",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_145#release-downloads-heading",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://code.visualstudio.com/updates/v1_125#_browse-over-remote-connections-preview",
+          "title": "Visual Studio Code 1.125",
+          "language": "en",
+          "checkedAt": "2026-11-04T13:07:48.818Z",
+          "contentHash": "f4a28826795f31fba648e4bfaaf6738ed4b822e49753b12e55fe305d0c7f5b00",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_145#release-downloads-heading",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "verified",
+          "kind": "release_notes",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://code.visualstudio.com/docs/agents/run/canvases",
+          "title": "Use canvases with agents",
+          "language": "en",
+          "checkedAt": "2026-11-04T13:07:48.878Z",
+          "contentHash": "ca08a39f97381017ca6d812dd2036277da98fb35cdc718af97bffa9039963268",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_145#release-downloads-heading",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "a3a150e933f6e4029ef56e15db77003409675084a0ae93f6b256c915b16723e5": {
+      "version": 6,
+      "checkedAt": "2026-11-04T13:07:48.929Z",
+      "inputUrl": "https://code.visualstudio.com/updates/v1_145",
+      "inputTitle": "Visual Studio Code 1.145: Browse over remote agent host connections (Preview)",
+      "status": "verified",
+      "source": {
+        "url": "https://code.visualstudio.com/updates/v1_145#_browse-over-remote-agent-host-connections-preview",
+        "status": "verified",
+        "reason": "Exact release heading: Browse over remote agent host connections (Preview)",
+        "checkedAt": "2026-11-04T13:07:47.668Z",
+        "contentHash": "6b713ec46816c847295e4f62b9493324ca551a39e480d81aacb63177969d8968"
+      },
+      "documents": [
+        {
+          "url": "https://code.visualstudio.com/docs/agents/run/remote-agent-sessions",
+          "title": "Run and manage remote agent sessions",
+          "language": "en",
+          "checkedAt": "2026-10-28T18:59:36.472Z",
+          "contentHash": "7d3bc6431e4fd97601c3ebf751ca93ee5832d81bef1b2a42406e2085cf1b5e79",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_145#_browse-over-remote-agent-host-connections-preview",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://code.visualstudio.com/updates/v1_125#_browse-over-remote-connections-preview",
+          "title": "Visual Studio Code 1.125",
+          "language": "en",
+          "checkedAt": "2026-11-04T13:07:48.818Z",
+          "contentHash": "f4a28826795f31fba648e4bfaaf6738ed4b822e49753b12e55fe305d0c7f5b00",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_145#_browse-over-remote-agent-host-connections-preview",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "verified",
+          "kind": "release_notes",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "ff57d190064f789995e7315da64c5897b25fe533283ca8e1c3b3b5ea12636dc9": {
+      "version": 6,
+      "checkedAt": "2026-11-04T13:07:48.944Z",
+      "inputUrl": "https://code.visualstudio.com/updates/v1_145",
+      "inputTitle": "Visual Studio Code 1.145: Remote canvases (Preview)",
+      "status": "verified",
+      "source": {
+        "url": "https://code.visualstudio.com/updates/v1_145#_remote-canvases-preview",
+        "status": "verified",
+        "reason": "Exact release heading: Remote canvases (Preview)",
+        "checkedAt": "2026-11-04T13:07:47.668Z",
+        "contentHash": "6b713ec46816c847295e4f62b9493324ca551a39e480d81aacb63177969d8968"
+      },
+      "documents": [
+        {
+          "url": "https://code.visualstudio.com/docs/agents/run/canvases",
+          "title": "Use canvases with agents",
+          "language": "en",
+          "checkedAt": "2026-11-04T13:07:48.878Z",
+          "contentHash": "ca08a39f97381017ca6d812dd2036277da98fb35cdc718af97bffa9039963268",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_145#_remote-canvases-preview",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "fcb21409a9b921b217971cbc826ea0304631892b362f5ae96212f01a476607f6": {
+      "version": 6,
+      "checkedAt": "2026-11-04T13:07:48.957Z",
+      "inputUrl": "https://code.visualstudio.com/updates/v1_145",
+      "inputTitle": "Visual Studio Code 1.145: Mix and match agent harnesses in one session (Preview)",
+      "status": "verified",
+      "source": {
+        "url": "https://code.visualstudio.com/updates/v1_145#_mix-and-match-agent-harnesses-in-one-session-preview",
+        "status": "verified",
+        "reason": "Exact release heading: Mix and match agent harnesses in one session (Preview)",
+        "checkedAt": "2026-11-04T13:07:47.668Z",
+        "contentHash": "6b713ec46816c847295e4f62b9493324ca551a39e480d81aacb63177969d8968"
+      },
+      "documents": [
+        {
+          "url": "https://code.visualstudio.com/docs/agents/run/sessions/manage-sessions#_run-multiple-chats-in-a-session",
+          "title": "Manage agent sessions in VS Code",
+          "language": "en",
+          "checkedAt": "2026-10-28T18:59:38.627Z",
+          "contentHash": "80fea9f00474c0f39fe89dd16c8946e993703d69d32e8fe0284f68c0385f000e",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_145#_mix-and-match-agent-harnesses-in-one-session-preview",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "verified",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "f6c7065d5844a3112335ac860b0919c0d40ed4f4ab6b2335a5220fbdcba867be": {
+      "version": 6,
+      "checkedAt": "2026-11-04T13:07:48.974Z",
+      "inputUrl": "https://code.visualstudio.com/updates/v1_145",
+      "inputTitle": "Visual Studio Code 1.145: Cron schedules and custom agents for local automations",
+      "status": "verified",
+      "source": {
+        "url": "https://code.visualstudio.com/updates/v1_145#_cron-schedules-and-custom-agents-for-local-automations",
+        "status": "verified",
+        "reason": "Exact release heading: Cron schedules and custom agents for local automations",
+        "checkedAt": "2026-11-04T13:07:47.668Z",
+        "contentHash": "6b713ec46816c847295e4f62b9493324ca551a39e480d81aacb63177969d8968"
+      },
+      "documents": [
+        {
+          "url": "https://code.visualstudio.com/docs/agents/run/automations",
+          "title": "Create and manage agent automations",
+          "language": "en",
+          "checkedAt": "2026-10-28T18:59:15.465Z",
+          "contentHash": "f11c5fc747dc14f14c120395c5fabed7df0c2054274880a76bfc3a8cbb920ac8",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_145#_cron-schedules-and-custom-agents-for-local-automations",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "cb86cde2ec10a3df0d96fadb2ce90d8c32fde0a9254bacf26be7925aa14faed0": {
+      "version": 6,
+      "checkedAt": "2026-11-04T13:07:48.990Z",
+      "inputUrl": "https://code.visualstudio.com/updates/v1_145",
+      "inputTitle": "Visual Studio Code 1.145: Pin canvases to sidebar (Experimental)",
+      "status": "unconfirmed",
+      "source": {
+        "url": "https://code.visualstudio.com/updates/v1_145#_pin-canvases-to-sidebar-experimental",
+        "status": "verified",
+        "reason": "Exact release heading: Pin canvases to sidebar (Experimental)",
+        "checkedAt": "2026-11-04T13:07:47.668Z",
+        "contentHash": "6b713ec46816c847295e4f62b9493324ca551a39e480d81aacb63177969d8968"
+      },
+      "documents": [],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "8531a9ce675af8fad18079ffca3fc0fcb4c22c7fcafc0e9d572041797a0a7982": {
+      "version": 6,
+      "checkedAt": "2026-11-04T13:07:49.003Z",
+      "inputUrl": "https://code.visualstudio.com/updates/v1_145",
+      "inputTitle": "Visual Studio Code 1.145: Copilot harness",
+      "status": "verified",
+      "source": {
+        "url": "https://code.visualstudio.com/updates/v1_145#_copilot-harness",
+        "status": "verified",
+        "reason": "Exact release heading: Copilot harness",
+        "checkedAt": "2026-11-04T13:07:47.668Z",
+        "contentHash": "6b713ec46816c847295e4f62b9493324ca551a39e480d81aacb63177969d8968"
+      },
+      "documents": [
+        {
+          "url": "https://code.visualstudio.com/docs/agents/run/move-to-copilot",
+          "title": "Move from the Local to the Copilot harness",
+          "language": "en",
+          "checkedAt": "2026-11-04T13:07:49.751Z",
+          "contentHash": "3156d94daa1ba4ffbd6131f96cde767b0912829af1491bac14cc00983d71c6fc",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_145#_copilot-harness",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://code.visualstudio.com/docs/agents/run/agent-harnesses",
+          "title": "Choose an agent harness",
+          "language": "en",
+          "checkedAt": "2026-10-28T18:59:15.688Z",
+          "contentHash": "938c58f9cb5b9778b2c360c63c26d7775623b93913d66cdbdc6f46279a160a62",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_145#_copilot-harness",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://code.visualstudio.com/docs/agents/concepts/agent-host",
+          "title": "Agent Host architecture",
+          "language": "en",
+          "checkedAt": "2026-10-28T18:59:15.280Z",
+          "contentHash": "a983ab47f425fd21bf47a85fb0c21c49f93490cceaf5fc4735394ff6ad1b3e62",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_145#_copilot-harness",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "399a3e830019325da390b54077b1faefcc32945cd575a6bdf3ff0855dbd40380": {
+      "version": 6,
+      "checkedAt": "2026-11-04T13:07:49.802Z",
+      "inputUrl": "https://code.visualstudio.com/updates/v1_145",
+      "inputTitle": "Visual Studio Code 1.145: Working set improvements (Experimental)",
+      "status": "verified",
+      "source": {
+        "url": "https://code.visualstudio.com/updates/v1_145#_working-set-improvements-experimental",
+        "status": "verified",
+        "reason": "Exact release heading: Working set improvements (Experimental)",
+        "checkedAt": "2026-11-04T13:07:47.668Z",
+        "contentHash": "6b713ec46816c847295e4f62b9493324ca551a39e480d81aacb63177969d8968"
+      },
+      "documents": [
+        {
+          "url": "https://code.visualstudio.com/docs/agents/run/review-code-edits#_review-pending-edits-with-the-working-set",
+          "title": "Review and revert agent changes",
+          "language": "en",
+          "checkedAt": "2026-11-04T13:07:50.058Z",
+          "contentHash": "ba2b5c51fd95cc2d2154ca48761e6c7bfd69cb6d30b7aaa62def8ef6746145d2",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_145#_working-set-improvements-experimental",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "verified",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "4374a42d6d24139da5d5fb08b9b015cf64d697ac1866e8a6bc34a2b937685a68": {
+      "version": 6,
+      "checkedAt": "2026-11-04T13:07:50.093Z",
+      "inputUrl": "https://code.visualstudio.com/updates/v1_145",
+      "inputTitle": "Visual Studio Code 1.145: Improved guidance when required sandboxing is unavailable",
+      "status": "verified",
+      "source": {
+        "url": "https://code.visualstudio.com/updates/v1_145#_improved-guidance-when-required-sandboxing-is-unavailable",
+        "status": "verified",
+        "reason": "Exact release heading: Improved guidance when required sandboxing is unavailable",
+        "checkedAt": "2026-11-04T13:07:47.668Z",
+        "contentHash": "6b713ec46816c847295e4f62b9493324ca551a39e480d81aacb63177969d8968"
+      },
+      "documents": [
+        {
+          "url": "https://code.visualstudio.com/docs/agents/run/agent-sandboxing",
+          "title": "Sandbox Copilot agent sessions",
+          "language": "en",
+          "checkedAt": "2026-11-04T13:07:50.355Z",
+          "contentHash": "19d2da166a5d79909ecb49d35ee72c25088777f71baf17aaaea2ad3ce5b76695",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_145#_improved-guidance-when-required-sandboxing-is-unavailable",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://code.visualstudio.com/docs/agents/run/cloud-sandbox-sessions",
+          "title": "Run agent sessions in the cloud",
+          "language": "en",
+          "checkedAt": "2026-11-04T13:07:50.886Z",
+          "contentHash": "de27ff8159f22a7a0c8cb9df083dec38b17f82b00a794d5d3088071278db3e09",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_145#_improved-guidance-when-required-sandboxing-is-unavailable",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "eac4dd2230c35c97de4471bd18903fd82864fc466b54447edabd8bf502c3266c": {
+      "version": 6,
+      "checkedAt": "2026-11-04T13:07:50.911Z",
+      "inputUrl": "https://code.visualstudio.com/updates/v1_109",
+      "inputTitle": "VS Code Release Notes 1.109 changed",
+      "status": "verified",
+      "source": {
+        "url": "https://code.visualstudio.com/updates/v1_109#_edit-mode-is-now-hidden-experimental",
+        "status": "verified",
+        "reason": "Observed changed heading(s): Edit mode is now hidden (Experimental); Agent session management; Agent customization; Agent extensibility; Agent optimizations; Agent security and trust",
+        "checkedAt": "2026-11-04T13:07:51.617Z",
+        "contentHash": "9175441fbd05b250660e4637869af16764337b35c900c52a780540bd677a07af"
+      },
+      "documents": [
+        {
+          "url": "https://code.visualstudio.com/docs/agents/overview",
+          "title": "Build with AI in VS Code",
+          "language": "en",
+          "checkedAt": "2026-11-04T13:07:51.852Z",
+          "contentHash": "8c6257901ebcb895b9f85114f0610322f091ff57f578f761789fc82b0508685f",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_109#_edit-mode-is-now-hidden-experimental",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "Original anchor no longer exists; verified document body used: #_types-of-agents",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://code.visualstudio.com/docs/agents/run/subagents",
+          "title": "Use subagents in Visual Studio Code",
+          "language": "en",
+          "checkedAt": "2026-11-04T13:08:01.309Z",
+          "contentHash": "98e68163cbddd03b70690cb69a7aec827ffdcb7939861f5b6cc9faaa837c72c1",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_109#_edit-mode-is-now-hidden-experimental",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://code.visualstudio.com/docs/agents/run/agent-harnesses",
+          "title": "Choose an agent harness",
+          "language": "en",
+          "checkedAt": "2026-11-04T13:08:01.811Z",
+          "contentHash": "0192d2b375d1291712b613bd735d14440591d5ae6cc483839353c17c2981ca9c",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_109#_edit-mode-is-now-hidden-experimental",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "5dde4ad47ab0bde3aad7095ad207d7e6367b4dbb8b3d578c2c32b05270c5f91b": {
+      "version": 6,
+      "checkedAt": "2026-11-04T13:08:01.846Z",
+      "inputUrl": "https://code.visualstudio.com/docs/agents/run/remote-agent-sessions",
+      "inputTitle": "VS Code Docs / Remote agent sessions changed",
+      "status": "verified",
+      "source": {
+        "url": "https://code.visualstudio.com/docs/agents/run/remote-agent-sessions#_run-a-session-in-a-remote-dev-container",
+        "status": "verified",
+        "reason": "Observed changed heading(s): Run a session in a remote Dev Container; Run a session in a remote Dev Container; Preview a remote web app",
+        "checkedAt": "2026-11-04T13:08:03.025Z",
+        "contentHash": "6588a02c16be72c1cf206b7a0a0d55c2366c8d685dca9ced5bc2608b9318af64"
+      },
+      "documents": [
+        {
+          "url": "https://code.visualstudio.com/docs/debugtest/integrated-browser#_browse-through-a-remote-agent-host",
+          "title": "Integrated browser",
+          "language": "en",
+          "checkedAt": "2026-11-04T13:08:04.306Z",
+          "contentHash": "ac2632e27252dcf915bfb894080f74061b9b64165f3790ef860b8df016411335",
+          "discoveryUrl": "https://code.visualstudio.com/docs/agents/run/remote-agent-sessions#_run-a-session-in-a-remote-dev-container",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "verified",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://code.visualstudio.com/docs/devcontainers/create-dev-container",
+          "title": "Create a Dev Container",
+          "language": "en",
+          "checkedAt": "2026-11-04T13:08:05.220Z",
+          "contentHash": "0c9a0ab22cef411331b2ad6aef194fbd03ce0bb113f7d6a2938304c53f373732",
+          "discoveryUrl": "https://code.visualstudio.com/docs/agents/run/remote-agent-sessions#_run-a-session-in-a-remote-dev-container",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://code.visualstudio.com/docs/agents/run/agents-window#_run-a-session-in-a-dev-container",
+          "title": "Use the Agents window",
+          "language": "en",
+          "checkedAt": "2026-10-28T18:59:38.930Z",
+          "contentHash": "d925f45c71d211ff2de6ac56d235e8555c7d60e197997e230539011f32e65b7c",
+          "discoveryUrl": "https://code.visualstudio.com/docs/agents/run/remote-agent-sessions#_run-a-session-in-a-remote-dev-container",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "verified",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "276e8472c466ec65a824112498e8174ad0129d68dd7ad01e3b49ac85ef241c69": {
+      "version": 6,
+      "checkedAt": "2026-11-04T13:08:05.252Z",
+      "inputUrl": "https://code.visualstudio.com/docs/agents/run/automations",
+      "inputTitle": "VS Code Docs / Agent automations changed",
+      "status": "unconfirmed",
+      "source": {
+        "url": "https://code.visualstudio.com/docs/agents/run/automations#_use-a-cron-schedule",
+        "status": "verified",
+        "reason": "Observed changed heading(s): Use a cron schedule",
+        "checkedAt": "2026-11-04T13:08:05.296Z",
+        "contentHash": "9e4899b1079e946e4e26cb8edd6e7321337d73d9a803f81c0b4f8de6139f2adc"
+      },
+      "documents": [],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "fcb17be92f808586baadca40e332ea1272d73c2848b74c1449f00005e71923b7": {
+      "version": 6,
+      "checkedAt": "2026-11-04T13:08:05.362Z",
+      "inputUrl": "https://code.visualstudio.com/docs/agents/run/agents-window",
+      "inputTitle": "VS Code Docs / Agents window changed",
+      "status": "unconfirmed",
+      "source": {
+        "url": "https://code.visualstudio.com/docs/agents/run/agents-window",
+        "status": "unconfirmed",
+        "reason": "Historical changed feature not identifiable in current page",
+        "checkedAt": "2026-11-04T13:08:05.515Z",
+        "contentHash": "618ab14ab1854e6f8d1068a1e6f06cf1b6f8f43d6ac4efb5884a56c1c8fa85ee"
+      },
+      "documents": [],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "6827f9935396f6438021f31e44d63cb5fdc835863728abc4f9fc1375bedd56bc": {
+      "version": 6,
+      "checkedAt": "2026-11-04T13:08:08.073Z",
+      "inputUrl": "https://code.visualstudio.com/updates/v1_146",
+      "inputTitle": "Visual Studio Code 1.146 (Insiders)",
+      "status": "unconfirmed",
+      "source": {
+        "url": "https://code.visualstudio.com/updates/v1_146",
+        "status": "verified",
+        "reason": "Fetched original article",
+        "checkedAt": "2026-11-04T13:08:08.120Z",
+        "contentHash": "e7da16c12ae2d8d467a80200efe4548c791257c52d2ba13688dd5e3693ae17c0"
+      },
+      "documents": [],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
     }
   }
 }

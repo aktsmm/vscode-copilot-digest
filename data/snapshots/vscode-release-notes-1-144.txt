@@ -1,4 +1,5 @@
 Insiders
+1.145
 1.144
 1.143
 1.142
@@ -339,6 +340,10 @@ Extensions can run and be enabled or disabled directly from the Agents window. T
  Open in VS Code Insiders
  
  to be set to true.
+H3: GitHub Environments
+There is a new option for sharing your local agents with your other devices. The radio tower button in the upper right corner of the agents window previously shared your local agents over dev tunnels, but now you have the option to share with GitHub Environments as well.
+What's the difference? Your GitHub Environment can be accessed from all GitHub Copilot apps, so you can start a session on your computer and continue it on the GitHub iOS app, or the Copilot desktop app, or https://github.com/copilot, even the Copilot CLI. You can also access it in VS Code from another device, by selecting the GitHub Environments option in the Agents Window picker.
+You can also register a GitHub Environment from the code CLI with a command like this: code agent host --github-environment.
 H2: Agent customizations
 H3: Connect services with Copilot connectors (Preview)
 Bring the Slack discussion behind a change, project context from Notion, or API documentation from Microsoft Learn into your agent sessions. Copilot connectors are GitHub-managed MCP servers that connect your agent to these services without local server setup or MCP configuration.
@@ -355,7 +360,7 @@ Models: The model attribute offers Copilot model IDs as a single value or an ord
 Tools: The tools attribute offers Copilot tool aliases, such as read, edit, and execute, alongside qualified client and extension tools.
 Skills: The skills attribute offers available skills, with descriptions and source information in completions and hovers.
 Configuration validation: Copilot-specific attributes and nested structures, including hooks and agent-scoped MCP servers, have completions, hovers, and validation. Unknown models, tools, and skills are only flagged after discovery has finished, so valid values aren't marked as errors while inventories are still loading.
-Body features: In GitHub Copilot agent files, placeholders such as and are recognized and show hovers. Unknown placeholders and Local-only #tool: and #file: references are flagged.
+Body features: In GitHub Copilot agent files, placeholders such as {{cwd}} and {{shellToolName}} are recognized and show hovers. Unknown placeholders and Local-only #tool: and #file: references are flagged.
 H3: Harness-aware defaults for custom agent editing
 When your .agent.md file has no target attribute, the editor now uses the active customization harness to provide matching completions, hovers, and diagnostics. Switching harnesses refreshes this guidance without reopening the file. An explicit target: vscode or target: github-copilot continues to override the default.
 H3: Share links to plugins and customizations

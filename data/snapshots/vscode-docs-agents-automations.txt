@@ -116,6 +116,8 @@ The cloud service runs the prompt in the selected repository. It doesn't use you
 H2: Create an automation from chat
 You can also create an automation by asking in a normal chat in the Agents window. Describe the task, where it should run, and its schedule. For example:
 The agent creates the automation through the normal tool-approval flow. Review any approval request before allowing creation. Then open Automations to review the saved prompt, execution environment, schedule, and permissions before enabling scheduled runs.
+For a custom cadence, specify a cron expression and the time zone:
+Cron schedules require a local Agent Host and aren't supported for cloud automations. Review the cron schedule and syntax guidance before enabling the automation.
 H2: Start from a template
 Automation templates provide a starting name, prompt, and schedule that you can review and adapt:
 Built-in Templates contains templates included with VS Code.
@@ -138,6 +140,26 @@ Keep the machine that runs the automation awake and its agent available. Agent H
 After an interruption, a missed schedule can trigger a catch-up run. Don't rely on every missed occurrence being replayed.
 An automation runs one session at a time. Another scheduled occurrence doesn't start a parallel run of the same automation.
 Cloud schedules run on GitHub rather than through your local scheduler. You can close the Agents window or turn off your computer without stopping the schedule.
+H3: Use a cron schedule
+Use a cron schedule when a preset doesn't fit, such as running twice each weekday or on the first day of each month. Cron schedules are not supported for cloud automations.
+Create or edit a local automation and select Cron in Trigger.
+Create or edit a local automation and select Cron in Trigger.
+Enter the expression in the five fields, or paste a complete five-field expression.
+Enter the expression in the five fields, or paste a complete five-field expression.
+Review the schedule explanation and time zone shown in the form. An incomplete or invalid expression keeps Create or Save unavailable.
+Review the schedule explanation and time zone shown in the form. An incomplete or invalid expression keeps Create or Save unavailable.
+Select Create or Save. Keep Enabled cleared until you have reviewed the automation and checked its first run.
+Select Create or Save. Keep Enabled cleared until you have reviewed the automation and checked its first run.
+New cron schedules use your local time zone. When you edit an existing cron schedule, the form shows its saved time zone rather than replacing it.
+After saving, the schedule remains Cron, even if its cadence matches a preset. To switch to a preset, select it explicitly in Trigger.
+Use exactly five fields, separated by spaces, in this order:
+Each field supports:
+* for every value.
+Comma-separated lists, such as 9,17.
+Ascending ranges, such as MON-FRI.
+Positive steps on * or a range, such as */30 or 0-59/15.
+Steps from a single starting value, such as 5/15, aren't supported. Don't include a seconds field or aliases such as @daily.
+When both the day of month and day of week are restricted, either can match. The month field still applies to both. For example, 0 9 1 * MON runs at 9:00 AM on the first day of each month and on Mondays, not only when the first day is a Monday.
 H2: Run on repository events
 Instead of a schedule, a cloud automation can respond to events advertised by GitHub for your account and repository:
 Create or edit a cloud automation and set Trigger to Issue or Pull Request, when available.
@@ -176,8 +198,9 @@ If an existing automation uses triggers or fields that the editor doesn't suppor
 H2: Share an automation
 Export a local automation as a .automation.md file to reuse it on another machine or share it with someone else. The file is readable Markdown with YAML frontmatter and contains only portable information:
 Name and prompt.
-Manual, hourly, daily, or weekly schedule.
+Manual, hourly, daily, weekly, or cron schedule.
 File format version and portable identifier.
+Exported cron schedules use timeZone: local, so the importing machine uses its own local time zone. A cron schedule whose configured time zone differs from your current local time zone can't be exported.
 The file doesn't include the workspace, provider, model, permissions, enabled state, or run history. The person who imports the file chooses these options locally.
 Cloud automations don't offer Export. Manage their definitions and triggers on GitHub rather than relying on an exported .automation.md file to reproduce them.
 H3: Export an automation

@@ -22,6 +22,7 @@ Approvals & Permissions
 Agent Sandboxing
 AI Security
 Choose an Agent Harness
+Move from Local to Copilot
 Compare Model Results
 Manage MCP Servers
 Continue a Session
@@ -57,6 +58,7 @@ Tools and Context
 Settings Reference
 VS Code Pet
 Custom Agent File Reference
+Custom Instructions Reference
 Agent Plugin Authoring Reference
 MCP Configuration
 Hooks Reference

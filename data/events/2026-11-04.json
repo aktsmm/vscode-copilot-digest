@@ -1,16 +1,36 @@
 {
   "date": "2026-11-04",
-  "generatedAt": "2026-11-04T01:31:03.574Z",
+  "generatedAt": "2026-11-04T13:07:43.800Z",
   "latestRun": {
-    "generatedAt": "2026-11-04T01:31:03.574Z",
-    "newEventsCount": 3,
+    "generatedAt": "2026-11-04T13:07:43.800Z",
+    "newEventsCount": 14,
     "newEventIds": [
-      "github-changelog:https://github.blog/changelog/2026-11-03-byok-and-enterprise-custom-models-in-the-copilot-usage-api",
-      "github-changelog-copilot:https://github.blog/changelog/2026-11-03-github-copilot-is-now-available-in-jetbrains-air",
-      "copilot-whats-new:01d8e96fbeaceacf2091120302427d5d28c205c61999051dd60011f3dc040d07"
+      "github-changelog-copilot:https://github.blog/changelog/2026-11-03-byok-and-enterprise-custom-models-in-the-copilot-usage-api",
+      "vscode-updates:b54395ffcde1a80b4f96101211555b28f242019402f013b9e00fb9041ebbfaf4",
+      "vscode-release-notes-1-109:29864e76b676f7a2d142e87d560f3e322fa5cbfa38a8e1489f677bd4e20803e2",
+      "vscode-docs-agents-automations:ff821767d13c054dd1c20fff58161c429cda9737cd210b44e6e2b8b83b218e89",
+      "vscode-docs-agents-window:d361580edb9683e38f241b1a47594affb3e35b4813a83f903ed342e8981c91d6",
+      "vscode-docs-agents-remote-sessions:ca21190fa0c14f02cebcaa446b13bd6fbbaf7e8fa032a810c2d8a1b5b553be3b",
+      "vscode-release-notes-1-145:section:678646e6b3942ce83afa32e878912bc8e8b607695f70738873b416feb8ab6126",
+      "vscode-release-notes-1-145:section:290eba904d50d16ce97fac5dcdc1118ca9b093caea700e0bc06006d6f381feb1",
+      "vscode-release-notes-1-145:section:d47106f242fc45044770305ae42cfa868b45a703804f51a9bf54446008c41b3f",
+      "vscode-release-notes-1-145:section:8f2d2a814fccc0f3949df5df3758121d7245472160b60ec650d82e83308d2dfd",
+      "vscode-release-notes-1-145:section:c9dc1d6f9eb340a86cb9739d0289601e7fc18d36b0452a3f035c1dabf669e662",
+      "vscode-release-notes-1-145:section:2a203377ac823ee671259b389996b84d303863ed59d1703bd7cabb7a50299e2c",
+      "vscode-release-notes-1-145:section:7e3540f4869d3ea88530ac6494f0bd1a08426c89d12b7b6ea70825d9af58e238",
+      "vscode-release-notes-1-145:section:587328ff8716389671bf24096bf9674d85f7347889363d35d8f0b2ca062bd8db"
     ],
     "errorCount": 0,
-    "skippedLowInformationEvents": []
+    "skippedLowInformationEvents": [
+      {
+        "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_146",
+        "sourceId": "vscode-feed",
+        "title": "Visual Studio Code 1.146 (Insiders)",
+        "fallbackMarkers": [
+          "Visual Studio Code 関連の更新。日々の開発フローや agent 利用に効く変更点を確認しておきたい。"
+        ]
+      }
+    ]
   },
   "events": [
     {
@@ -71,6 +91,245 @@
       "score": 1
     },
     {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-11-03-byok-and-enterprise-custom-models-in-the-copilot-usage-api",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-11-04T13:07:32.459Z",
+      "publishedAt": "2026-11-04T00:32:19.000Z",
+      "title": "BYOK and enterprise custom models in the Copilot usage API",
+      "url": "https://github.blog/changelog/2026-11-03-byok-and-enterprise-custom-models-in-the-copilot-usage-api",
+      "summary": "The Copilot usage metrics API now shows bring your own key (BYOK) usage across GitHub Copilot, so you can separate it from Copilot-hosted model usage. Reports cover two kinds of…\nThe post BYOK and enterprise custom models in the Copilot usage API appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "account management",
+        "copilot",
+        "enterprise management tools"
+      ],
+      "isFutureDated": false,
+      "score": 1
+    },
+    {
+      "eventId": "vscode-updates:b54395ffcde1a80b4f96101211555b28f242019402f013b9e00fb9041ebbfaf4",
+      "sourceId": "vscode-updates",
+      "sourceName": "VS Code Updates",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-11-04T13:07:34.052Z",
+      "publishedAt": "2026-11-04T00:00:00.000Z",
+      "title": "VS Code Updates changed",
+      "url": "https://code.visualstudio.com/updates/",
+      "summary": "Detected 153 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 153,
+        "headings": [
+          "Visual Studio Code 1.145",
+          "Downloads for 1.145.0",
+          "Remote agents",
+          "Browse over remote agent host connections (Preview)",
+          "Remote canvases (Preview)",
+          "Agents",
+          "Mix and match agent harnesses in one session (Preview)",
+          "Cron schedules and custom agents for local automations",
+          "Pin canvases to sidebar (Experimental)",
+          "Copilot harness",
+          "Working set improvements (Experimental)",
+          "Improved guidance when required sandboxing is unavailable",
+          "Chat",
+          "Choose agent verbosity (Experimental)",
+          "Chat performance improvements",
+          "Inline chat attachments (Experimental)"
+        ],
+        "additions": [
+          "1.145",
+          "H1: Visual Studio Code 1.145",
+          "Release date: November 4, 2026 Stable",
+          "H2: Downloads for 1.145.0",
+          "This week, your remote agent sessions feel a bit more local. Preview apps and use canvases right in VS Code, fine-tune automation schedules with cron, and turn down the noise in chat. And when you need a break, Blobby is ready to play.",
+          "Remote agents: Preview apps and use interactive canvases from remote agent sessions without leaving the Agents window.",
+          "Automations: Run recurring agent tasks on custom schedules beyond the built-in presets with cron.",
+          "Agent verbosity: Keep chats concise or see the full details of the agent's reasoning and tool calls, your choice.",
+          "File exclusions: Exclude folders while keeping the files you need visible and searchable.",
+          "Fun: Take a short break with a platform-jumping game starring Blobby, the VS Code pet.",
+          "H2: Remote agents",
+          "H3: Browse over remote agent host connections (Preview)",
+          "workbench.browser.enableRemoteProxy",
+          "When an agent session runs on a remote agent host, the integrated browser in the Agents window now loads pages through that host, as it already does in remote workspaces. When the agent starts a dev server on the remote machine, you can open it right in the Agents window to preview the app, validate the agent's changes, and give it feedback, as you would in a local session.",
+          "Enable",
+          "to try it out, and file any issues you encounter in the VS Code repository."
+        ]
+      },
+      "headings": [
+        "Visual Studio Code 1.145",
+        "Downloads for 1.145.0",
+        "Release highlights",
+        "Remote agents",
+        "Browse over remote agent host connections (Preview)",
+        "Remote canvases (Preview)",
+        "Agents",
+        "Mix and match agent harnesses in one session (Preview)",
+        "Cron schedules and custom agents for local automations",
+        "Pin canvases to sidebar (Experimental)",
+        "Copilot harness",
+        "Working set improvements (Experimental)"
+      ],
+      "score": 18
+    },
+    {
+      "eventId": "vscode-release-notes-1-145:section:678646e6b3942ce83afa32e878912bc8e8b607695f70738873b416feb8ab6126",
+      "sourceId": "vscode-release-notes-1-145",
+      "sourceName": "VS Code Release Notes 1.145",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-11-04T13:07:43.044Z",
+      "publishedAt": "2026-11-04T00:00:00.000Z",
+      "title": "Visual Studio Code 1.145: Browse over remote agent host connections (Preview)",
+      "url": "https://code.visualstudio.com/updates/v1_145",
+      "summary": "Setting: \n \n \n workbench.browser.enableRemoteProxy\n \n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders When an agent session runs on a remote agent host, the integrated browser in the Agents window now loads pages through that host, as it already does in remote workspaces. When the agent starts a dev server on the remote machine, you can open it right in the Agents window to preview the app, validate the agen...",
+      "categories": [
+        "release",
+        "section",
+        "Remote agents"
+      ],
+      "sectionHeading": "Remote agents",
+      "sectionTitle": "Browse over remote agent host connections (Preview)",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-145:section:290eba904d50d16ce97fac5dcdc1118ca9b093caea700e0bc06006d6f381feb1",
+      "sourceId": "vscode-release-notes-1-145",
+      "sourceName": "VS Code Release Notes 1.145",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-11-04T13:07:43.044Z",
+      "publishedAt": "2026-11-04T00:00:00.000Z",
+      "title": "Visual Studio Code 1.145: Remote canvases (Preview)",
+      "url": "https://code.visualstudio.com/updates/v1_145",
+      "summary": "Settings: \n \n \n workbench.browser.enableRemoteProxy\n \n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders\n \n , \n \n \n chat.canvases.enabled\n \n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders Thanks to the remote agent host connections support, you can now also use canvases that are hosted on a remote agent host. Enable \n \n \n chat.canvases.enabled\n \n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders...",
+      "categories": [
+        "release",
+        "section",
+        "Remote agents"
+      ],
+      "sectionHeading": "Remote agents",
+      "sectionTitle": "Remote canvases (Preview)",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-145:section:d47106f242fc45044770305ae42cfa868b45a703804f51a9bf54446008c41b3f",
+      "sourceId": "vscode-release-notes-1-145",
+      "sourceName": "VS Code Release Notes 1.145",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-11-04T13:07:43.044Z",
+      "publishedAt": "2026-11-04T00:00:00.000Z",
+      "title": "Visual Studio Code 1.145: Mix and match agent harnesses in one session (Preview)",
+      "url": "https://code.visualstudio.com/updates/v1_145",
+      "summary": "Setting: \n \n \n chat.agentHost.multipleChatProviders.enabled\n \n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders Nested sessions let you keep related conversations together within a single main chat session. Previously, every nested session inherited its parent session's harness. If you wanted a second opinion from another agent, you had to start a separate session and lose that grouping. In this release, nest...",
+      "categories": [
+        "release",
+        "section",
+        "Agents"
+      ],
+      "sectionHeading": "Agents",
+      "sectionTitle": "Mix and match agent harnesses in one session (Preview)",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-145:section:8f2d2a814fccc0f3949df5df3758121d7245472160b60ec650d82e83308d2dfd",
+      "sourceId": "vscode-release-notes-1-145",
+      "sourceName": "VS Code Release Notes 1.145",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-11-04T13:07:43.044Z",
+      "publishedAt": "2026-11-04T00:00:00.000Z",
+      "title": "Visual Studio Code 1.145: Cron schedules and custom agents for local automations",
+      "url": "https://code.visualstudio.com/updates/v1_145",
+      "summary": "Instead of manually running agent tasks one by one, you can use automations to schedule and run them automatically, either on demand or on a set schedule. This release gives you more flexibility for local automations and keeps the Automations view focused on active work: Use cron schedules: Select Cron to enter a five-field cron expression when the other schedule presets aren't precise enough. The dialog validates t...",
+      "categories": [
+        "release",
+        "section",
+        "Agents"
+      ],
+      "sectionHeading": "Agents",
+      "sectionTitle": "Cron schedules and custom agents for local automations",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-145:section:c9dc1d6f9eb340a86cb9739d0289601e7fc18d36b0452a3f035c1dabf669e662",
+      "sourceId": "vscode-release-notes-1-145",
+      "sourceName": "VS Code Release Notes 1.145",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-11-04T13:07:43.044Z",
+      "publishedAt": "2026-11-04T00:00:00.000Z",
+      "title": "Visual Studio Code 1.145: Pin canvases to sidebar (Experimental)",
+      "url": "https://code.visualstudio.com/updates/v1_145",
+      "summary": "Setting: \n \n \n chat.canvases.enabled\n \n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders To make it easier to access frequently used canvases, you can now pin a canvas to appear in the left sidebar. To pin a canvas, open it and select the Add to Sidebar button above the canvas. Pinned canvases remain accessible in the sidebar even when you navigate away from them.",
+      "categories": [
+        "release",
+        "section",
+        "Agents"
+      ],
+      "sectionHeading": "Agents",
+      "sectionTitle": "Pin canvases to sidebar (Experimental)",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-145:section:2a203377ac823ee671259b389996b84d303863ed59d1703bd7cabb7a50299e2c",
+      "sourceId": "vscode-release-notes-1-145",
+      "sourceName": "VS Code Release Notes 1.145",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-11-04T13:07:43.044Z",
+      "publishedAt": "2026-11-04T00:00:00.000Z",
+      "title": "Visual Studio Code 1.145: Copilot harness",
+      "url": "https://code.visualstudio.com/updates/v1_145",
+      "summary": "The Copilot harness continues to be the default for new sessions in VS Code. It's our latest harness, built on the Copilot SDK, a shared foundation that helps align behavior, capabilities, and improvements across Copilot products. When you start a new session, Copilot in the harness picker indicates that the session uses the Copilot harness. In VS Code, you can keep Copilot harness sessions running in the background...",
+      "categories": [
+        "release",
+        "section",
+        "Agents"
+      ],
+      "sectionHeading": "Agents",
+      "sectionTitle": "Copilot harness",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-145:section:7e3540f4869d3ea88530ac6494f0bd1a08426c89d12b7b6ea70825d9af58e238",
+      "sourceId": "vscode-release-notes-1-145",
+      "sourceName": "VS Code Release Notes 1.145",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-11-04T13:07:43.044Z",
+      "publishedAt": "2026-11-04T00:00:00.000Z",
+      "title": "Visual Studio Code 1.145: Working set improvements (Experimental)",
+      "url": "https://code.visualstudio.com/updates/v1_145",
+      "summary": "Setting: \n \n \n chat.editor.workingSet.enabled\n \n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders Last release, we introduced the working set for Copilot harness sessions, letting you review pending agent edits. You can keep or undo changes, as you could do with the Local harness. We are further improving the working set experience in Copilot harness sessions: Files in WSL, Dev Containers, and SSH workspaces...",
+      "categories": [
+        "release",
+        "section",
+        "Agents"
+      ],
+      "sectionHeading": "Agents",
+      "sectionTitle": "Working set improvements (Experimental)",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-145:section:587328ff8716389671bf24096bf9674d85f7347889363d35d8f0b2ca062bd8db",
+      "sourceId": "vscode-release-notes-1-145",
+      "sourceName": "VS Code Release Notes 1.145",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-11-04T13:07:43.045Z",
+      "publishedAt": "2026-11-04T00:00:00.000Z",
+      "title": "Visual Studio Code 1.145: Improved guidance when required sandboxing is unavailable",
+      "url": "https://code.visualstudio.com/updates/v1_145",
+      "summary": "Agent sandboxing limits what terminal commands can access, like the file system and network resources. Your organization can require it with managed settings that disallow bypassing the sandbox. If your organization requires sandboxing but your machine can't run it, the warning banner explains why terminal commands are blocked and how to resolve the problem. It shows the specific cause, such as a missing dependency,...",
+      "categories": [
+        "release",
+        "section",
+        "Agents"
+      ],
+      "sectionHeading": "Agents",
+      "sectionTitle": "Improved guidance when required sandboxing is unavailable",
+      "score": 4
+    },
+    {
       "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-11-03-github-copilot-is-now-available-in-jetbrains-air",
       "sourceId": "github-changelog-copilot",
       "sourceName": "GitHub Changelog / Copilot",
@@ -86,6 +345,235 @@
       ],
       "isFutureDated": false,
       "score": 6
+    },
+    {
+      "eventId": "vscode-release-notes-1-109:29864e76b676f7a2d142e87d560f3e322fa5cbfa38a8e1489f677bd4e20803e2",
+      "sourceId": "vscode-release-notes-1-109",
+      "sourceName": "VS Code Release Notes 1.109",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-11-04T13:07:34.404Z",
+      "publishedAt": "2026-02-04T00:00:00.000Z",
+      "title": "VS Code Release Notes 1.109 changed",
+      "url": "https://code.visualstudio.com/updates/v1_109",
+      "summary": "Detected 12 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 12,
+        "headings": [
+          "Edit mode is now hidden (Experimental)",
+          "Agent session management",
+          "Agent customization",
+          "Agent extensibility",
+          "Agent optimizations",
+          "Agent security and trust"
+        ],
+        "additions": [
+          "1.145",
+          "H3: Edit mode is now hidden (Experimental)",
+          "H2: Agent session management",
+          "H2: Agent customization",
+          "H2: Agent extensibility",
+          "H2: Agent optimizations",
+          "H2: Agent security and trust",
+          "Agent session management",
+          "Agent customization",
+          "Agent extensibility",
+          "Agent optimizations",
+          "Agent security and trust"
+        ]
+      },
+      "headings": [
+        "January 2026 (version 1.109)",
+        "Downloads for 1.109.5",
+        "Upcoming events",
+        "Agent Sessions Day",
+        "Chat UX",
+        "Message steering and queueing (Experimental)",
+        "Anthropic models now show thinking tokens",
+        "Mermaid diagrams in chat responses",
+        "Ask Questions tool (Experimental)",
+        "Plan agent",
+        "Context window details",
+        "Inline chat UX revamp (Preview)"
+      ],
+      "score": 8
+    },
+    {
+      "eventId": "vscode-docs-agents-remote-sessions:ca21190fa0c14f02cebcaa446b13bd6fbbaf7e8fa032a810c2d8a1b5b553be3b",
+      "sourceId": "vscode-docs-agents-remote-sessions",
+      "sourceName": "VS Code Docs / Remote agent sessions",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-11-04T13:07:40.221Z",
+      "publishedAt": "2026-11-04T13:07:40.219Z",
+      "title": "VS Code Docs / Remote agent sessions changed",
+      "url": "https://code.visualstudio.com/docs/agents/run/remote-agent-sessions",
+      "summary": "Detected 35 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 35,
+        "headings": [
+          "Run a session in a remote Dev Container",
+          "Preview a remote web app"
+        ],
+        "additions": [
+          "In the Agents window, ask the agent to delegate a task to a connected remote machine. Enable both",
+          "chat.remoteAgentHostsEnabled",
+          "Open in VS Code",
+          "Open in VS Code Insiders",
+          "and",
+          "chat.remoteSessions.tools.enabled",
+          ", and connect the machines that the agent can use. You don't need to select the target machine in the workspace picker.",
+          "The remote delegation tools let an agent:",
+          "Use list_agent_hosts to discover connected remote machines, available models, resource capacity, and session load.",
+          "Use create_remote_session to start a session on a specific remote machine or choose a target automatically. For automatic placement, specify criteria such as Windows, Linux, or macOS, minimum memory, logical CPU count, and an optional model. Among matching machines, placement favors the machine with the fewest running sessions and pending session creations. If no connected machine meets all the criteria, the tool reports an error instead of selecting a nonmatching machine.",
+          "Use get_remote_session to check a remote session's status and latest response.",
+          "Use send_remote_message to send follow-up work or report results and questions to the exact originating chat. If that chat is busy, the message waits in its queue.",
+          "For repository work, specify an existing trusted folder on the target machine, either directly or in a new Git worktree. The tools don't clone or copy the coordinating session's workspace to the remote machine. If you don't specify a workspace, the remote session starts without one.",
+          "Normal approval requirements still apply to delegated work and messages. Review the selected host, folder, and worktree before you approve a tool call, especially when the agent uses automatic placement.",
+          "Keep the coordinating Agents window open and connected while delegated work runs so messages can flow between sessions. A remote session's final response isn't forwarded automatically. Ask the remote agent to use send_remote_message to report its result.",
+          "Turning off",
+          "removes the remote delegation tools, but doesn't disconnect remote machines or stop remote sessions that are already running.",
+          "H2: Run a session in a remote Dev Container",
+          "Run agents inside your remote project's Dev Container to use its configured tools and dependencies without installing them directly on the remote machine. Starting in VS Code 1.139, this is supported for SSH, Tunnel, and WSL connections in the desktop Agents window.",
+          "Before you start, enable",
+          "chat.agentHost.devContainer.enabled",
+          ". Docker must be installed and running on the remote host, and the project must contain a Dev Container configuration.",
+          "To run a session in a remote Dev Container:",
+          "Connect over SSH, through a tunnel, or to WSL, and select the project folder in the workspace picker."
+        ]
+      },
+      "headings": [
+        "Run and manage remote agent sessions",
+        "Choose how to connect",
+        "Manage remote environments (Experimental)",
+        "Open remote environment management",
+        "Find and organize remote machines",
+        "GitHub Environments (Preview)",
+        "Register your machine",
+        "Connect from another client",
+        "Disconnect or stop sharing",
+        "Troubleshoot GitHub Environments",
+        "Connect via SSH",
+        "Connect via dev tunnel"
+      ],
+      "score": 4
+    },
+    {
+      "eventId": "vscode-docs-agents-automations:ff821767d13c054dd1c20fff58161c429cda9737cd210b44e6e2b8b83b218e89",
+      "sourceId": "vscode-docs-agents-automations",
+      "sourceName": "VS Code Docs / Agent automations",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-11-04T13:07:36.608Z",
+      "publishedAt": "2026-11-04T13:07:36.607Z",
+      "title": "VS Code Docs / Agent automations changed",
+      "url": "https://code.visualstudio.com/docs/agents/run/automations",
+      "summary": "Detected 20 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 20,
+        "headings": [
+          "Use a cron schedule"
+        ],
+        "additions": [
+          "For a custom cadence, specify a cron expression and the time zone:",
+          "Cron schedules require a local Agent Host and aren't supported for cloud automations. Review the cron schedule and syntax guidance before enabling the automation.",
+          "H3: Use a cron schedule",
+          "Use a cron schedule when a preset doesn't fit, such as running twice each weekday or on the first day of each month. Cron schedules are not supported for cloud automations.",
+          "Create or edit a local automation and select Cron in Trigger.",
+          "Enter the expression in the five fields, or paste a complete five-field expression.",
+          "Review the schedule explanation and time zone shown in the form. An incomplete or invalid expression keeps Create or Save unavailable.",
+          "Select Create or Save. Keep Enabled cleared until you have reviewed the automation and checked its first run.",
+          "New cron schedules use your local time zone. When you edit an existing cron schedule, the form shows its saved time zone rather than replacing it.",
+          "After saving, the schedule remains Cron, even if its cadence matches a preset. To switch to a preset, select it explicitly in Trigger.",
+          "Use exactly five fields, separated by spaces, in this order:",
+          "Each field supports:",
+          "* for every value.",
+          "Comma-separated lists, such as 9,17.",
+          "Ascending ranges, such as MON-FRI.",
+          "Positive steps on * or a range, such as */30 or 0-59/15.",
+          "Steps from a single starting value, such as 5/15, aren't supported. Don't include a seconds field or aliases such as @daily.",
+          "When both the day of month and day of week are restricted, either can match. The month field still applies to both. For example, 0 9 1 * MON runs at 9:00 AM on the first day of each month and on Mondays, not only when the first day is a Monday.",
+          "Manual, hourly, daily, weekly, or cron schedule.",
+          "Exported cron schedules use timeZone: local, so the importing machine uses its own local time zone. A cron schedule whose configured time zone differs from your current local time zone can't be exported."
+        ]
+      },
+      "headings": [
+        "Create and manage agent automations",
+        "Prerequisites",
+        "Choose where an automation runs",
+        "Create an automation",
+        "Create an automation from chat",
+        "Start from a template",
+        "Run and review an automation",
+        "Set a recurring schedule",
+        "Use a cron schedule",
+        "Run on repository events",
+        "Share an automation",
+        "Export an automation"
+      ],
+      "score": 3
+    },
+    {
+      "eventId": "vscode-docs-agents-window:d361580edb9683e38f241b1a47594affb3e35b4813a83f903ed342e8981c91d6",
+      "sourceId": "vscode-docs-agents-window",
+      "sourceName": "VS Code Docs / Agents window",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-11-04T13:07:39.880Z",
+      "publishedAt": "2026-11-04T13:07:39.880Z",
+      "title": "VS Code Docs / Agents window changed",
+      "url": "https://code.visualstudio.com/docs/agents/run/agents-window",
+      "summary": "Detected 4 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 4,
+        "headings": [],
+        "additions": [
+          "Select + (New Nested Session) on a session's row to start a nested session. Keep the preselected folder, or choose another folder, New Worktree, or No Workspace, where supported. The nested session uses the parent's harness by default and stays on the same host. To choose another harness, enable mixed-harness chats",
+          "Mixed-harness chats is experimental and might change or be removed. Share feedback about Mixed-harness chats (opens in new tab).",
+          ".",
+          "To sandbox terminal commands inside the container, see Use sandboxing in Dev Containers."
+        ]
+      },
+      "headings": [
+        "Use the Agents window",
+        "Prerequisites",
+        "Open the Agents window",
+        "Start an agent session",
+        "Choose where an agent makes changes",
+        "Work with multiple sessions",
+        "Arrange sessions in a grid",
+        "Compare model results (Preview)",
+        "Work with multiple chats in a session",
+        "Continue in another interface",
+        "Agents window interface overview",
+        "Understand the active session"
+      ],
+      "score": 2
+    },
+    {
+      "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_146",
+      "sourceId": "vscode-feed",
+      "sourceName": "vscode feed",
+      "kind": "feed_entry",
+      "detectedAt": "2026-11-04T13:07:43.800Z",
+      "publishedAt": "2026-11-04T00:00:00.000Z",
+      "title": "Visual Studio Code 1.146 (Insiders)",
+      "url": "https://code.visualstudio.com/updates/v1_146",
+      "summary": "Follow us on LinkedIn, X, Bluesky, Instagram | Follow Insiders Changelog on X or Bluesky Welcome to the 1.146 Insiders release of Visual Studio Code.",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
     }
   ],
   "errors": []
