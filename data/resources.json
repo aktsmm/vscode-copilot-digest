@@ -26427,6 +26427,86 @@
         "Original article explicit links",
         "Feature-matched official documentation indexes"
       ]
+    },
+    "2eb529fd24ba1631ff03763d1d55a77c2cc6b3af7828734f652d5d994b32bda9": {
+      "version": 6,
+      "checkedAt": "2026-11-04T01:31:04.111Z",
+      "inputUrl": "https://github.com/features/copilot/whats-new",
+      "inputTitle": "GitHub Copilot What's New changed",
+      "status": "unconfirmed",
+      "source": {
+        "url": "https://github.blog/changelog/2026-11-03-byok-and-enterprise-custom-models-in-the-copilot-usage-api/",
+        "status": "verified",
+        "reason": "Snapshot observation, not a standalone feature: Nov.03 Improvement; explicit article: BYOK and enterprise custom models in the Copilot usage API",
+        "checkedAt": "2026-11-04T01:31:04.621Z",
+        "contentHash": "cb20788198a7fa1e9fa99d75a1852d5f3d96a97701d12d6684c380bb0d1bf957"
+      },
+      "documents": [],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "1061686f876284d4abf11f7ebb7dad5fe9c03530200886c61a4fb44f57fc9aec": {
+      "version": 6,
+      "checkedAt": "2026-11-04T01:31:04.674Z",
+      "inputUrl": "https://github.blog/changelog/2026-11-03-byok-and-enterprise-custom-models-in-the-copilot-usage-api",
+      "inputTitle": "BYOK and enterprise custom models in the Copilot usage API",
+      "status": "verified",
+      "source": {
+        "url": "https://github.blog/changelog/2026-11-03-byok-and-enterprise-custom-models-in-the-copilot-usage-api/",
+        "status": "verified",
+        "reason": "Fetched original article",
+        "checkedAt": "2026-11-04T01:31:04.621Z",
+        "contentHash": "cb20788198a7fa1e9fa99d75a1852d5f3d96a97701d12d6684c380bb0d1bf957"
+      },
+      "documents": [
+        {
+          "url": "https://docs.github.com/ja/copilot/how-tos/administer-copilot/view-usage-and-adoption",
+          "title": "Copilot 使用状況メトリック ダッシュボードの表示",
+          "language": "ja",
+          "checkedAt": "2026-11-04T01:31:05.221Z",
+          "contentHash": "8854573af15a9a757a2f5039732c89b331aa7179afd2d2200fdb44b66f380297",
+          "discoveryUrl": "https://docs.github.com/en/copilot/how-tos",
+          "basis": "Matching feature terms in official documentation index",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://docs.github.com/ja/copilot/concepts/models/bring-your-own-key",
+          "title": "GitHub Copilot用の独自のキーを持ち込む",
+          "language": "ja",
+          "checkedAt": "2026-11-04T01:31:05.721Z",
+          "contentHash": "8ce123d0328339ba5c50a613085f0b48d8a7fcdeb93d7673ce0dc5c51802d599",
+          "discoveryUrl": "https://docs.github.com/en/copilot/concepts",
+          "basis": "Matching feature terms in official documentation index",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://docs.github.com/ja/copilot/concepts/billing-and-usage/copilot-usage-metrics",
+          "title": "GitHub Copilotの使用状況メトリクス",
+          "language": "ja",
+          "checkedAt": "2026-11-04T01:31:06.329Z",
+          "contentHash": "907ecc7327bf609b9bf62c1da0aacaa684f5158e06c0a71d46c80d83d02cb31f",
+          "discoveryUrl": "https://docs.github.com/en/copilot/concepts",
+          "basis": "Matching feature terms in official documentation index",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
     }
   }
 }
