@@ -1,0 +1,66 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "49ed234b5cb8bbe5",
+  "title": {
+    "ja": "VS Code 1.145: キャンバスを左サイドバーにピン留め（試験的）",
+    "subtitleJa": "キャンバス上の「Add to Sidebar」で、よく使うキャンバスを左サイドバーに固定できる",
+    "original": "Pin canvases to sidebar (Experimental)"
+  },
+  "date": "2026-11-04",
+  "topic": "VS Code",
+  "status": "update",
+  "audience": {
+    "who": "VS Code でキャンバスを頻繁に使う開発者",
+    "change": "開いたキャンバスを左サイドバーにピン留めでき、移動した後もサイドバーから開ける",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "試したい場合は chat.canvases.enabled を有効にして、キャンバスをピン留めする"
+  },
+  "panels": [
+    {
+      "id": "how-to",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "ピン留めしたいキャンバスを開く",
+        "キャンバス上部の「Add to Sidebar」ボタンを選ぶ",
+        "ピン留めしたキャンバスは、別の画面に移動してもサイドバーから開ける"
+      ]
+    },
+    {
+      "id": "prerequisites",
+      "heading": "前提と制限",
+      "priority": "core",
+      "items": [
+        "試験的（Experimental）な機能",
+        "関連する設定: chat.canvases.enabled",
+        "ピン留め先は左サイドバー"
+      ]
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.145",
+      "url": "https://code.visualstudio.com/updates/v1_145#_pin-canvases-to-sidebar-experimental"
+    }
+  },
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_145"
+  ],
+  "qa": [
+    {
+      "q": "どうやってキャンバスをピン留めするのか",
+      "a": "ピン留めしたいキャンバスを開き、キャンバス上部にある「Add to Sidebar」ボタンを選びます。"
+    },
+    {
+      "q": "ピン留めすると何が便利になるのか",
+      "a": "ピン留めしたキャンバスは、そこから別の場所へ移動しても左サイドバーからアクセスできるため、よく使うキャンバスを開き直さずに済みます。"
+    },
+    {
+      "q": "この機能は正式版か",
+      "a": "リリース ノートでは「Experimental」と記載されています。関連する設定は chat.canvases.enabled です。"
+    }
+  ]
+}
