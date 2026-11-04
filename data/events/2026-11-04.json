@@ -1,38 +1,89 @@
 {
   "date": "2026-11-04",
-  "generatedAt": "2026-11-04T13:07:43.800Z",
+  "generatedAt": "2026-11-04T20:29:45.023Z",
   "latestRun": {
-    "generatedAt": "2026-11-04T13:07:43.800Z",
-    "newEventsCount": 14,
+    "generatedAt": "2026-11-04T20:29:45.023Z",
+    "newEventsCount": 3,
     "newEventIds": [
-      "github-changelog-copilot:https://github.blog/changelog/2026-11-03-byok-and-enterprise-custom-models-in-the-copilot-usage-api",
-      "vscode-updates:b54395ffcde1a80b4f96101211555b28f242019402f013b9e00fb9041ebbfaf4",
-      "vscode-release-notes-1-109:29864e76b676f7a2d142e87d560f3e322fa5cbfa38a8e1489f677bd4e20803e2",
-      "vscode-docs-agents-automations:ff821767d13c054dd1c20fff58161c429cda9737cd210b44e6e2b8b83b218e89",
-      "vscode-docs-agents-window:d361580edb9683e38f241b1a47594affb3e35b4813a83f903ed342e8981c91d6",
-      "vscode-docs-agents-remote-sessions:ca21190fa0c14f02cebcaa446b13bd6fbbaf7e8fa032a810c2d8a1b5b553be3b",
-      "vscode-release-notes-1-145:section:678646e6b3942ce83afa32e878912bc8e8b607695f70738873b416feb8ab6126",
-      "vscode-release-notes-1-145:section:290eba904d50d16ce97fac5dcdc1118ca9b093caea700e0bc06006d6f381feb1",
-      "vscode-release-notes-1-145:section:d47106f242fc45044770305ae42cfa868b45a703804f51a9bf54446008c41b3f",
-      "vscode-release-notes-1-145:section:8f2d2a814fccc0f3949df5df3758121d7245472160b60ec650d82e83308d2dfd",
-      "vscode-release-notes-1-145:section:c9dc1d6f9eb340a86cb9739d0289601e7fc18d36b0452a3f035c1dabf669e662",
-      "vscode-release-notes-1-145:section:2a203377ac823ee671259b389996b84d303863ed59d1703bd7cabb7a50299e2c",
-      "vscode-release-notes-1-145:section:7e3540f4869d3ea88530ac6494f0bd1a08426c89d12b7b6ea70825d9af58e238",
-      "vscode-release-notes-1-145:section:587328ff8716389671bf24096bf9674d85f7347889363d35d8f0b2ca062bd8db"
+      "github-changelog-copilot:https://github.blog/changelog/2026-11-04-github-copilot-is-now-available-in-xcodes-coding-assistant",
+      "vscode-feed:https://code.visualstudio.com/updates/v1_145",
+      "copilot-whats-new:c7a8cbc3949cd2b022c653e898707a02c93b70db4bdb9b6a35d7ef8931415f5f"
     ],
     "errorCount": 0,
-    "skippedLowInformationEvents": [
-      {
-        "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_146",
-        "sourceId": "vscode-feed",
-        "title": "Visual Studio Code 1.146 (Insiders)",
-        "fallbackMarkers": [
-          "Visual Studio Code 関連の更新。日々の開発フローや agent 利用に効く変更点を確認しておきたい。"
-        ]
-      }
-    ]
+    "skippedLowInformationEvents": []
   },
   "events": [
+    {
+      "eventId": "copilot-whats-new:c7a8cbc3949cd2b022c653e898707a02c93b70db4bdb9b6a35d7ef8931415f5f",
+      "sourceId": "copilot-whats-new",
+      "sourceName": "GitHub Copilot What's New",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-11-04T20:29:41.388Z",
+      "publishedAt": "2026-11-04T20:29:41.387Z",
+      "title": "GitHub Copilot What's New changed",
+      "url": "https://github.com/features/copilot/whats-new",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [
+          "Nov.04 Release"
+        ],
+        "additions": [
+          "H3: Nov.04 Release"
+        ]
+      },
+      "headings": [
+        "Changelog",
+        "Filters (0 selected)",
+        "November\n Nov\n 2026",
+        "Nov.04 Release",
+        "Nov.03 Improvement",
+        "Nov.03 Release",
+        "October\n Oct\n 2026",
+        "Oct.28 Release",
+        "Oct.28 Release",
+        "Oct.28 Release",
+        "Oct.28 Release",
+        "Oct.28 Release"
+      ],
+      "score": 3
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-11-04-github-copilot-is-now-available-in-xcodes-coding-assistant",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-11-04T20:29:38.773Z",
+      "publishedAt": "2026-11-04T19:10:40.000Z",
+      "title": "GitHub Copilot is now available in Xcode&#8217;s coding assistant",
+      "url": "https://github.blog/changelog/2026-11-04-github-copilot-is-now-available-in-xcodes-coding-assistant",
+      "summary": "You can now work with GitHub Copilot directly in Xcode’s built-in coding assistant, bringing Copilot into your native Xcode workflow. The integration is now in public preview, available starting with…\nThe post GitHub Copilot is now available in Xcode’s coding assistant appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 5
+    },
+    {
+      "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_145",
+      "sourceId": "vscode-feed",
+      "sourceName": "VS Code Feed",
+      "kind": "feed_entry",
+      "detectedAt": "2026-11-04T20:29:39.957Z",
+      "publishedAt": "2026-11-04T17:00:00.000Z",
+      "title": "Visual Studio Code 1.145",
+      "url": "https://code.visualstudio.com/updates/v1_145",
+      "summary": "Learn what's new in Visual Studio Code 1.145\n Read the full article",
+      "categories": [
+        "release"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
     {
       "eventId": "copilot-whats-new:01d8e96fbeaceacf2091120302427d5d28c205c61999051dd60011f3dc040d07",
       "sourceId": "copilot-whats-new",
@@ -330,6 +381,23 @@
       "score": 4
     },
     {
+      "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_146",
+      "sourceId": "vscode-feed",
+      "sourceName": "vscode feed",
+      "kind": "feed_entry",
+      "detectedAt": "2026-11-04T13:07:43.800Z",
+      "publishedAt": "2026-11-04T00:00:00.000Z",
+      "title": "Visual Studio Code 1.146 (Insiders)",
+      "url": "https://code.visualstudio.com/updates/v1_146",
+      "summary": "Follow us on LinkedIn, X, Bluesky, Instagram | Follow Insiders Changelog on X or Bluesky Welcome to the 1.146 Insiders release of Visual Studio Code.",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
+    },
+    {
       "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-11-03-github-copilot-is-now-available-in-jetbrains-air",
       "sourceId": "github-changelog-copilot",
       "sourceName": "GitHub Changelog / Copilot",
@@ -557,23 +625,6 @@
         "Understand the active session"
       ],
       "score": 2
-    },
-    {
-      "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_146",
-      "sourceId": "vscode-feed",
-      "sourceName": "vscode feed",
-      "kind": "feed_entry",
-      "detectedAt": "2026-11-04T13:07:43.800Z",
-      "publishedAt": "2026-11-04T00:00:00.000Z",
-      "title": "Visual Studio Code 1.146 (Insiders)",
-      "url": "https://code.visualstudio.com/updates/v1_146",
-      "summary": "Follow us on LinkedIn, X, Bluesky, Instagram | Follow Insiders Changelog on X or Bluesky Welcome to the 1.146 Insiders release of Visual Studio Code.",
-      "categories": [
-        "copilot"
-      ],
-      "isFutureDated": false,
-      "score": 3,
-      "backfilled": true
     }
   ],
   "errors": []

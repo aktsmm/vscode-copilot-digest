@@ -27057,6 +27057,106 @@
         "Original article explicit links",
         "Feature-matched official documentation indexes"
       ]
+    },
+    "828f2064bf73b4b1c986b3137a09e8d2ddf1a2630b960b85f1e43ea64e954b15": {
+      "version": 6,
+      "checkedAt": "2026-11-04T20:29:45.568Z",
+      "inputUrl": "https://github.com/features/copilot/whats-new",
+      "inputTitle": "GitHub Copilot What's New changed",
+      "status": "unconfirmed",
+      "source": {
+        "url": "https://github.blog/changelog/2026-11-04-github-copilot-is-now-available-in-xcodes-coding-assistant/",
+        "status": "verified",
+        "reason": "Snapshot observation, not a standalone feature: Nov.04 Release; explicit article: GitHub Copilot is now available in Xcode’s coding assistant",
+        "checkedAt": "2026-11-04T20:29:45.825Z",
+        "contentHash": "e8f3e4f7c15068aa873663695969685937e76cfe579c2d9fb2a0439afa838ea6"
+      },
+      "documents": [],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "9381d75adcba02b9c19b31136dd1402c6f0caff10af4189843477abb6e24abf4": {
+      "version": 6,
+      "checkedAt": "2026-11-04T20:29:45.875Z",
+      "inputUrl": "https://github.blog/changelog/2026-11-04-github-copilot-is-now-available-in-xcodes-coding-assistant",
+      "inputTitle": "GitHub Copilot is now available in Xcode&#8217;s coding assistant",
+      "status": "unconfirmed",
+      "source": {
+        "url": "https://github.blog/changelog/2026-11-04-github-copilot-is-now-available-in-xcodes-coding-assistant/",
+        "status": "verified",
+        "reason": "Fetched original article",
+        "checkedAt": "2026-11-04T20:29:45.825Z",
+        "contentHash": "e8f3e4f7c15068aa873663695969685937e76cfe579c2d9fb2a0439afa838ea6"
+      },
+      "documents": [],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "ae92ab3e7feeb961a2eecdcdcac869a3b0a33f33478dd87b8c322eeac43f42c0": {
+      "version": 6,
+      "checkedAt": "2026-11-04T20:29:45.889Z",
+      "inputUrl": "https://code.visualstudio.com/updates/v1_145",
+      "inputTitle": "Visual Studio Code 1.145",
+      "status": "verified",
+      "source": {
+        "url": "https://code.visualstudio.com/updates/v1_145",
+        "status": "verified",
+        "reason": "Fetched original article",
+        "checkedAt": "2026-11-04T20:29:46.020Z",
+        "contentHash": "6b713ec46816c847295e4f62b9493324ca551a39e480d81aacb63177969d8968"
+      },
+      "documents": [
+        {
+          "url": "https://code.visualstudio.com/docs/agents/run/remote-agent-sessions",
+          "title": "Run and manage remote agent sessions",
+          "language": "en",
+          "checkedAt": "2026-11-04T13:08:03.025Z",
+          "contentHash": "6588a02c16be72c1cf206b7a0a0d55c2366c8d685dca9ced5bc2608b9318af64",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_145",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://code.visualstudio.com/updates/v1_125#_browse-over-remote-connections-preview",
+          "title": "Visual Studio Code 1.125",
+          "language": "en",
+          "checkedAt": "2026-11-04T13:07:48.818Z",
+          "contentHash": "f4a28826795f31fba648e4bfaaf6738ed4b822e49753b12e55fe305d0c7f5b00",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_145",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "verified",
+          "kind": "release_notes",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://code.visualstudio.com/docs/agents/run/canvases",
+          "title": "Use canvases with agents",
+          "language": "en",
+          "checkedAt": "2026-11-04T13:07:48.878Z",
+          "contentHash": "ca08a39f97381017ca6d812dd2036277da98fb35cdc718af97bffa9039963268",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_145",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
     }
   }
 }
