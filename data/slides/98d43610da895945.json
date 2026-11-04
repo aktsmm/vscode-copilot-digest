@@ -1,0 +1,94 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "98d43610da895945",
+  "title": {
+    "ja": "VS Code 1.145 のリモートエージェントホスト上のキャンバス",
+    "subtitleJa": "リモートエージェントホストが提供するキャンバスを Agents ウィンドウで使える",
+    "original": "Remote canvases (Preview)"
+  },
+  "date": "2026-11-04",
+  "topic": "VS Code",
+  "status": "preview",
+  "statusEvidence": "Remote canvases (Preview)",
+  "audience": {
+    "who": "リモートエージェントホストに接続して VS Code でエージェントを使う開発者",
+    "change": "リモートエージェントホスト上のキャンバスを、ホスト経由で接続して使えるようになった",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "chat.canvases.enabled と workbench.browser.enableRemoteProxy を有効にして試す"
+  },
+  "panels": [
+    {
+      "id": "availability",
+      "heading": "使える場所とプラン",
+      "priority": "core",
+      "items": [
+        "Agents ウィンドウで、接続済みのリモートエージェントホストのキャンバスを開ける",
+        "VS Code デスクトップアプリの Copilot ハーネスのセッションが対象",
+        "リモートエージェントホストへの接続サポートにより利用可能"
+      ]
+    },
+    {
+      "id": "usage",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "`chat.canvases.enabled` と `workbench.browser.enableRemoteProxy` を有効化",
+        "リモートホストに接続し、Copilot ハーネスの新規セッションでメッセージを送る",
+        "そのホストで使える拡張機能のキャンバスを開くようエージェントに依頼する"
+      ]
+    },
+    {
+      "id": "limits",
+      "heading": "前提と制限",
+      "priority": "detail",
+      "items": [
+        "キャンバスはエージェントセッションが必要で、単独では開けない",
+        "Claude、Codex、Local ハーネスのセッション、ブラウザークライアントは非対応"
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "キャンバス",
+      "type": "feature",
+      "oneLine": "VS Code でユーザーとエージェントが一緒に使う対話型のビジュアル画面。キャンバス拡張機能が提供する"
+    }
+  ],
+  "qa": [
+    {
+      "q": "リモートのキャンバスを使うには何を有効にしますか。",
+      "a": "chat.canvases.enabled と workbench.browser.enableRemoteProxy の 2 つの設定を VS Code で有効にします。問題があれば VS Code リポジトリに issue を登録するよう案内されています。"
+    },
+    {
+      "q": "どのセッションで使えますか。",
+      "a": "Copilot ハーネスのセッションで使えます。Claude、Codex、Local ハーネスのセッション、ブラウザークライアント、補助ウィンドウでは非対応です。"
+    },
+    {
+      "q": "リモートのキャンバスはどう開きますか。",
+      "a": "リモートホストに接続し、Copilot ハーネスの新規セッションを始めてメッセージを送ります。その後、ホストで使える拡張機能が提供するキャンバスを開くようエージェントに依頼します。"
+    },
+    {
+      "q": "キャンバスが表示されないときは何を確認しますか。",
+      "a": "chat.canvases.enabled がオンか、新しい Copilot セッションを始めたかを確認します。リモートホストでは workbench.browser.enableRemoteProxy も確認します。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.145 - Remote canvases (Preview)",
+      "url": "https://code.visualstudio.com/updates/v1_145#_remote-canvases-preview"
+    },
+    "documents": [
+      {
+        "title": "Use canvases with agents",
+        "url": "https://code.visualstudio.com/docs/agents/run/canvases"
+      }
+    ]
+  },
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_145#_remote-canvases-preview",
+    "https://code.visualstudio.com/docs/agents/run/canvases"
+  ]
+}
