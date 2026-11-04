@@ -1,0 +1,98 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "2a86d6edeb5dc109",
+  "title": {
+    "ja": "VS Code 1.145: 1 つのセッションで複数のエージェントハーネスを併用",
+    "subtitleJa": "入れ子セッションごとに別のハーネスを選び、同じセッション内で Claude や Codex と並べて使える",
+    "original": "Mix and match agent harnesses in one session (Preview)"
+  },
+  "date": "2026-11-04",
+  "topic": "VS Code",
+  "status": "preview",
+  "statusEvidence": "Mix and match agent harnesses in one session (Preview)",
+  "audience": {
+    "who": "VS Code で複数のエージェントに同じ作業を任せたり、相互レビューさせたい開発者",
+    "change": "入れ子セッションが親セッションと異なるハーネスを使えるようになり、別セッションを作らずに比較できる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "試す場合は設定 chat.agentHost.multipleChatProviders.enabled を有効にする"
+  },
+  "beforeAfter": {
+    "before": "入れ子セッションは親セッションのハーネスを引き継いでいた",
+    "after": "新しい入れ子セッションでハーネスピッカーから別のハーネスを選べる"
+  },
+  "panels": [
+    {
+      "id": "usage",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "`chat.agentHost.multipleChatProviders.enabled` を有効にする",
+        "Agents ウィンドウで親セッションの + (New Nested Session)、またはコンテキストメニュー、Ctrl+T（macOS は ⌘T）で作成",
+        "入力欄上のハーネスピッカーで別のハーネスを選ぶ。作業フォルダーより先に選ぶ"
+      ]
+    },
+    {
+      "id": "behavior",
+      "heading": "チャットごとの動作",
+      "priority": "core",
+      "items": [
+        "各チャットはハーネスに基づく独自のモデル・エージェント・権限レベルを持ち、他のチャットに影響しない",
+        "チャットを移動しても履歴と選択したハーネスを保つ。入れ子セッションをフォークすると同じ構成で続く",
+        "親と異なるハーネスのチャットは、タブやセッション一覧にホバーするとハーネス名が表示される"
+      ]
+    },
+    {
+      "id": "limits",
+      "heading": "前提と制限",
+      "priority": "detail",
+      "items": [
+        "ハーネスが複数チャットに対応し、親セッションがアーカイブされていないこと",
+        "セッション間のチャット移動は、既定では同じハーネスのセッション同士のみ"
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "入れ子セッション",
+      "type": "feature",
+      "oneLine": "既存セッションにまとめられる、履歴を引き継がない独立した対話"
+    }
+  ],
+  "qa": [
+    {
+      "q": "どうすれば使えるようになりますか？",
+      "a": "設定 chat.agentHost.multipleChatProviders.enabled を有効にします。その後、新しい入れ子セッションを作成するときに、入力欄上のハーネスピッカーから別のハーネスを選べます。"
+    },
+    {
+      "q": "どんな使い方が想定されていますか？",
+      "a": "例として、Copilot のチャットが書いた計画を Claude にレビューさせたり、同じタスクを Codex にも与えて同じセッション内で並べて確認したりする使い方が挙げられています。"
+    },
+    {
+      "q": "チャットごとにモデルや権限は共有されますか？",
+      "a": "共有されません。各チャットはハーネスに基づく独自のモデル、エージェント、権限レベルを持ち、1 つのチャットで変更しても他のチャットには影響しません。"
+    },
+    {
+      "q": "異なるハーネスのセッション間でチャットを移動できますか？",
+      "a": "既定では同じハーネスである必要があります。混在ハーネスのチャットを有効にすると移動でき、移動したチャットは元のハーネス、モデル、権限設定を保ちます。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.145 - Mix and match agent harnesses in one session (Preview)",
+      "url": "https://code.visualstudio.com/updates/v1_145#_mix-and-match-agent-harnesses-in-one-session-preview"
+    },
+    "documents": [
+      {
+        "title": "Manage agent sessions in VS Code",
+        "url": "https://code.visualstudio.com/docs/agents/run/sessions/manage-sessions#_run-multiple-chats-in-a-session"
+      }
+    ]
+  },
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_145",
+    "https://code.visualstudio.com/docs/agents/run/sessions/manage-sessions"
+  ]
+}
