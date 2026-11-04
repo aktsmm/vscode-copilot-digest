@@ -3913,5 +3913,16 @@
       "原因の例として依存関係の不足が表示される",
       "クラウドセッション（試験運用）が使える場合はクラウドで実行する選択肢もある"
     ]
+  },
+  "d53634b505a78ccb": {
+    "title": "XcodeのコーディングアシスタントでCopilotがパブリックプレビューに",
+    "summary": "GitHub Copilotを、Xcodeに組み込まれたコーディングアシスタントから直接使えるようになりました。Xcode 27.3 betaからのパブリックプレビューで、既存のGitHub Copilot for Xcode拡張機能も別の選択肢として引き続き使えます。",
+    "why": "Xcodeで開発するチームは、標準のコーディングアシスタント経由でCopilotを試せるか検討できます。",
+    "points": [
+      "対象はXcode 27.3 beta、macOS Tahoe 26.6以降のMacが必要",
+      "設定は Xcode > Settings > Intelligence から行う",
+      "すべてのCopilotプランが対象",
+      "フィードバックはCopilotForXcodeリポジトリかApple Feedback Assistantへ"
+    ]
   }
 }
