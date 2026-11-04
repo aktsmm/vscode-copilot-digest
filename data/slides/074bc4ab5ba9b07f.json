@@ -1,0 +1,75 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "074bc4ab5ba9b07f",
+  "title": {
+    "ja": "ローカル オートメーションで cron スケジュールとカスタム エージェントを利用可能に",
+    "subtitleJa": "5 フィールドの cron 式で実行時刻を指定でき、ワークスペースのカスタム エージェントも選べる",
+    "original": "Cron schedules and custom agents for local automations"
+  },
+  "date": "2026-11-04",
+  "topic": "VS Code",
+  "status": "update",
+  "audience": {
+    "who": "VS Code のローカル オートメーションでエージェント タスクを定期実行している開発者",
+    "change": "cron 式でスケジュールを細かく指定でき、カスタム エージェントも選択でき、無効な自動化は折りたたまれる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "プリセットでは足りない場合、ローカル オートメーションで Cron を選んで cron 式を設定する"
+  },
+  "panels": [
+    {
+      "id": "usage",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "スケジュール プリセットで足りないときは Cron を選び、5 フィールドの cron 式を入力する",
+        "ダイアログが式を検証し、結果のスケジュールを説明する",
+        "ローカル オートメーションの作成・編集時に、選択したワークスペースのカスタム エージェントを選べる"
+      ]
+    },
+    {
+      "id": "limits",
+      "heading": "前提と制限",
+      "priority": "core",
+      "items": [
+        "Cron スケジュールはクラウド オートメーションでは使えない",
+        "ローカルの定期実行には、コンピューターをスリープさせず、エージェントを利用可能にしておく必要がある",
+        "オートメーションが無い場合は chat.automations.enabled が有効か確認する"
+      ]
+    },
+    {
+      "id": "view",
+      "heading": "一覧表示の変更",
+      "priority": "detail",
+      "items": [
+        "無効なオートメーションは、折りたたまれた「Disabled automations」に表示され、実行履歴や有効なものを隠さない"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "オートメーション", "type": "feature", "oneLine": "保存したプロンプトとセッション設定から、オンデマンドまたは定期的にエージェント タスクを実行する機能。" },
+    { "term": "cron 式", "type": "term", "oneLine": "5 つのフィールドで実行スケジュールを指定する式。" }
+  ],
+  "qa": [
+    { "q": "cron スケジュールはクラウド オートメーションでも使えますか？", "a": "使えません。記事によると、Cron スケジュールはクラウド オートメーションでは利用できず、ローカル オートメーションが対象です。" },
+    { "q": "cron 式はどのように設定しますか？", "a": "スケジュールのプリセットで足りない場合に Cron を選び、5 フィールドの cron 式を入力します。ダイアログが式を検証し、結果のスケジュールを説明します。" },
+    { "q": "カスタム エージェントはどこから選びますか？", "a": "ローカル オートメーションの作成時または編集時に、選択したワークスペースのカスタム エージェントを選べます。" },
+    { "q": "ローカルの定期実行で気をつけることは？", "a": "ドキュメントでは、スケジュール実行のために、コンピューターをスリープさせず、エージェントを利用可能にしておく必要があるとされています。" },
+    { "q": "無効にしたオートメーションはどう表示されますか？", "a": "折りたたまれた「Disabled automations」セクションに表示され、実行履歴や有効なオートメーションを隠さないようになりました。" }
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.145",
+      "url": "https://code.visualstudio.com/updates/v1_145#_cron-schedules-and-custom-agents-for-local-automations"
+    },
+    "documents": [
+      { "title": "Create and manage agent automations", "url": "https://code.visualstudio.com/docs/agents/run/automations" }
+    ]
+  },
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_145",
+    "https://code.visualstudio.com/docs/agents/run/automations"
+  ]
+}
