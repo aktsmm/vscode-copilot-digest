@@ -1,0 +1,98 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "3120cb53fbc5954e",
+  "title": {
+    "ja": "Copilot 使用状況 API で、BYOK とエンタープライズのカスタム モデルを区別可能に",
+    "subtitleJa": "ローカル BYOK と企業のカスタム モデルの利用を、Copilot ホスト モデルと分けて集計できる",
+    "original": "BYOK and enterprise custom models in the Copilot usage API"
+  },
+  "date": "2026-11-03",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "Copilot の使用状況メトリクス API を使う Enterprise / Organization の管理者",
+    "change": "BYOK の利用が Copilot ホスト モデルの集計と分かれて、レポートに現れる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "BYOK ポリシーの確認やコスト把握に使うなら、使用状況メトリクス API のレポートで新しい項目を確認する"
+  },
+  "panels": [
+    {
+      "id": "fields",
+      "heading": "追加された項目",
+      "priority": "core",
+      "items": [
+        "ローカル BYOK: used_local_byok、totals_by_local_byok、アクティブなローカル BYOK ユーザー数",
+        "エンタープライズ カスタム モデル: totals_by_client の is_custom_enterprise_model（true で該当）",
+        "Enterprise と Organization のレポートで、ユーザー単位・集計単位、1 日・28 日レポートに対応"
+      ]
+    },
+    {
+      "id": "scope",
+      "heading": "使える場所とプラン",
+      "priority": "core",
+      "items": [
+        "ローカル BYOK は開発者が自分のクライアントで設定。Copilot CLI / Copilot アプリから自分のキーやローカル モデルへ直接送る",
+        "カスタム モデルは管理者が GitHub の設定で構成し、リクエストは GitHub 経由でプロバイダーへ送られる",
+        "対象は Enterprise owner、billing manager、Organization owner、View Copilot Metrics 権限を持つカスタム ロール"
+      ]
+    },
+    {
+      "id": "limits",
+      "heading": "前提と制限",
+      "priority": "core",
+      "items": [
+        "Copilot usage metrics ポリシーの有効化が必要",
+        "ローカル BYOK はクライアント テレメトリ依存で、無効だと過小になる。トークン数も過小になりうる",
+        "リリース前の日付のレポートには is_custom_enterprise_model が含まれない"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "既存の合計は変わらない。BYOK の利用は従来から集計に含まれていた",
+        "ローカル BYOK はモデル名別には分けられない。未認識のカスタム モデル名は unknown になる"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "BYOK", "type": "term", "oneLine": "bring your own key。開発者や組織が自分のプロバイダー キーやモデルを使う方式。" },
+    { "term": "byok_kind", "type": "label", "oneLine": "local_managed、local_user、local_auto、remote_user の区分。" },
+    { "term": "is_custom_enterprise_model", "type": "label", "oneLine": "Enterprise や Organization のカスタム モデルのリクエストで true になる値。" }
+  ],
+  "suggestions": [
+    "BYOK を使っているユーザーを抽出し、自社の BYOK ポリシーと突き合わせる",
+    "Copilot ホスト分と自社プロバイダー課金分を分けて、ユーザーあたりのコストを見る"
+  ],
+  "qa": [
+    {
+      "q": "ローカル BYOK とカスタム モデルの違いは？",
+      "a": "ローカル BYOK は開発者が自分のクライアントで設定し、Copilot CLI や Copilot アプリから自分のプロバイダー キーやローカル モデルへ直接送ります。カスタム モデルは管理者が GitHub の設定で構成し、リクエストは GitHub 経由でプロバイダーに届きます。"
+    },
+    {
+      "q": "誰がこのデータを見られますか？",
+      "a": "Enterprise owner、Enterprise billing manager、Organization owner、および View Copilot Metrics 権限を持つカスタム ロールの利用者です。Copilot usage metrics ポリシーが有効である必要があります。"
+    },
+    {
+      "q": "既存の集計値は変わりますか？",
+      "a": "変わりません。BYOK の利用はすでに集計に含まれており、今回それを区別して見られるようになりました。ただしリリース前の日付のレポートには is_custom_enterprise_model は含まれません。"
+    },
+    {
+      "q": "ローカル BYOK の数値は正確ですか？",
+      "a": "クライアント テレメトリに依存するため、テレメトリが無効だと過小になります。一部のローカル プロバイダーはトークン使用量を報告しないため、トークン数も過小になりえます。カスタム モデルはサーバー側で観測されるため、この制限はありません。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "BYOK and enterprise custom models in the Copilot usage API - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-11-03-byok-and-enterprise-custom-models-in-the-copilot-usage-api/"
+    }
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-11-03-byok-and-enterprise-custom-models-in-the-copilot-usage-api/"
+  ]
+}
