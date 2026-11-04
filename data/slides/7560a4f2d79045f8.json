@@ -1,0 +1,93 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "7560a4f2d79045f8",
+  "title": {
+    "ja": "VS Code 1.145: リモートエージェントホスト経由のブラウザー表示",
+    "subtitleJa": "Agents ウィンドウの統合ブラウザーが、リモートホスト経由でページを読み込める",
+    "original": "Browse over remote agent host connections (Preview)"
+  },
+  "date": "2026-11-04",
+  "topic": "VS Code",
+  "status": "preview",
+  "statusEvidence": "Browse over remote agent host connections (Preview)",
+  "audience": {
+    "who": "リモートエージェントホストでエージェントセッションを実行する VS Code ユーザー",
+    "change": "リモートで起動した開発サーバーを Agents ウィンドウで開き、アプリの確認やエージェントへのフィードバックができる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "試す場合は workbench.browser.enableRemoteProxy を有効にする"
+  },
+  "panels": [
+    {
+      "id": "usage",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "設定 `workbench.browser.enableRemoteProxy` を有効にする",
+        "`workbench.browser.dataStorage` は既定のままにし、アプリの元の localhost URL を開く",
+        "「Share with Agent」でエージェントにページ操作を任せられる"
+      ]
+    },
+    {
+      "id": "scope",
+      "heading": "使える場所とプラン",
+      "priority": "core",
+      "items": [
+        "リモートエージェントホスト上のセッションで、Agents ウィンドウの統合ブラウザーが対象",
+        "ホスト経由でページを読み込む。ポートの転送は不要",
+        "リモートワークスペースでは、すでに同様に読み込まれていた"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "Preview 機能。問題は VS Code リポジトリに報告できる"
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Share with Agent",
+      "type": "feature",
+      "oneLine": "エージェントがページを操作できるようにする操作"
+    }
+  ],
+  "qa": [
+    {
+      "q": "どの設定を有効にすれば使えますか?",
+      "a": "`workbench.browser.enableRemoteProxy` を有効にします。`workbench.browser.dataStorage` は既定のままにし、アプリの元の localhost URL を開きます。"
+    },
+    {
+      "q": "ポートの転送は必要ですか?",
+      "a": "不要です。Agents ウィンドウの統合ブラウザーは、セッションのリモートホスト経由でページを読み込みます。"
+    },
+    {
+      "q": "エージェントにページを操作させるには?",
+      "a": "「Share with Agent」を選ぶと、エージェントがページを操作できます。アプリを開いてユーザーフローを検証するよう依頼することもできます。"
+    },
+    {
+      "q": "正式版ですか?",
+      "a": "いいえ。リリースノートでは Preview と記載されています。問題は VS Code リポジトリに報告できます。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.145",
+      "url": "https://code.visualstudio.com/updates/v1_145#_browse-over-remote-agent-host-connections-preview"
+    },
+    "documents": [
+      {
+        "title": "Run and manage remote agent sessions",
+        "url": "https://code.visualstudio.com/docs/agents/run/remote-agent-sessions"
+      }
+    ]
+  },
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_145",
+    "https://code.visualstudio.com/docs/agents/run/remote-agent-sessions"
+  ]
+}
