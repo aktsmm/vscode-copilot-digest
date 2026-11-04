@@ -3819,5 +3819,16 @@
       "ReviewBenchの重大な問題検出でF1スコア最高と発表",
       "現在はパブリックプレビューとして提供"
     ]
+  },
+  "3120cb53fbc5954e": {
+    "title": "Copilot利用状況APIでBYOKと独自モデルを区別可能に",
+    "summary": "Copilot usage metrics APIのレポートに、BYOK(自前のキー)利用が表示されるようになった。Copilot CLIやCopilotアプリでのローカルBYOKと、管理者が設定したエンタープライズ カスタムモデルを、Copilotホスト型モデルと分けて集計できる。",
+    "why": "Enterpriseや組織の管理者は、BYOKポリシーの遵守状況やプロバイダー課金分の切り分けに使える。",
+    "points": [
+      "ローカルBYOKはused_local_byokとtotals_by_local_byokで確認",
+      "カスタムモデルはtotals_by_clientのis_custom_enterprise_modelで判別",
+      "1日・28日レポート、ユーザー別と集計の両方に対応",
+      "ローカル分はテレメトリ依存で過少集計あり。リリース前の日は遡及なし"
+    ]
   }
 }
