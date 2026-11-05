@@ -3924,5 +3924,16 @@
       "すべてのCopilotプランが対象",
       "フィードバックはCopilotForXcodeリポジトリかApple Feedback Assistantへ"
     ]
+  },
+  "4c0f71dc47d14de2": {
+    "title": "VS Code 1.146 Insidersで、MCPのスキルをCopilotが利用可能に",
+    "summary": "VS Code 1.146 Insiders版のリリースノートでは、新しいCopilot agent hostセッションで、MCPサーバーが提供するAgent Skillsを使えるようにする対応が追加された。あわせて、Worktree Cleanupでは進捗と結果を別セクションではなく一覧内で確認する形に変わる。",
+    "why": "MCPサーバーでスキルを配布しているチームは、Insiders版でCopilotからの利用を試せます。",
+    "points": [
+      "MCP Skills Extension（SEP-2640）をGitHub Copilotでサポート",
+      "対象は新しいCopilot agent hostセッション",
+      "Worktree Cleanupは一覧内で進捗と結果を表示",
+      "結果セクションを別に設ける構成を廃止"
+    ]
   }
 }
