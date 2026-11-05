@@ -1,0 +1,118 @@
+{
+  "date": "2026-11-05",
+  "generatedAt": "2026-11-05T01:33:26.712Z",
+  "latestRun": {
+    "generatedAt": "2026-11-05T01:33:26.712Z",
+    "newEventsCount": 2,
+    "newEventIds": [
+      "github-changelog:https://github.blog/changelog/2026-11-04-github-copilot-is-now-available-in-xcodes-coding-assistant",
+      "vscode-docs-agents-window:e9ad5b95d41d0d7f22b7c1c431c83f47c6c13000590c12797e787344a6d46b99"
+    ],
+    "errorCount": 0,
+    "skippedLowInformationEvents": []
+  },
+  "events": [
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-11-04-github-copilot-is-now-available-in-xcodes-coding-assistant",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-11-05T01:33:21.116Z",
+      "publishedAt": "2026-11-04T19:10:40.000Z",
+      "title": "GitHub Copilot is now available in Xcode&#8217;s coding assistant",
+      "url": "https://github.blog/changelog/2026-11-04-github-copilot-is-now-available-in-xcodes-coding-assistant",
+      "summary": "You can now work with GitHub Copilot directly in Xcode’s built-in coding assistant, bringing Copilot into your native Xcode workflow. The integration is now in public preview, available starting with…\nThe post GitHub Copilot is now available in Xcode’s coding assistant appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 5
+    },
+    {
+      "eventId": "vscode-docs-agents-window:e9ad5b95d41d0d7f22b7c1c431c83f47c6c13000590c12797e787344a6d46b99",
+      "sourceId": "vscode-docs-agents-window",
+      "sourceName": "VS Code Docs / Agents window",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-11-05T01:33:25.389Z",
+      "publishedAt": "2026-11-05T01:33:25.374Z",
+      "title": "VS Code Docs / Agents window changed",
+      "url": "https://code.visualstudio.com/docs/agents/run/agents-window",
+      "summary": "Detected 171 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 171,
+        "headings": [
+          "Agents window interface overview",
+          "Understand the active session",
+          "Choose where an agent makes changes",
+          "Work with multiple sessions",
+          "Arrange sessions in a grid",
+          "Review and finish an agent session",
+          "Inspect workspace files and changes",
+          "Validate changes",
+          "Commit changes",
+          "Integrate the result",
+          "Create a pull request",
+          "Remove a pull request from a session",
+          "Other ways to start a session",
+          "Start a quick chat",
+          "Open without GitHub sign-in (Experimental)",
+          "Run in another environment",
+          "Run a session in a Dev Container",
+          "Start a session from a pull request",
+          "Compare model results (Preview)",
+          "Automate follow-up work",
+          "Finish a pull request with agent merge",
+          "Schedule recurring tasks",
+          "Configure the Agents window",
+          "Configure isolation defaults"
+        ],
+        "additions": [
+          "The Agents window provides an agent-first interface in Visual Studio Code for delegating and coordinating tasks across projects. Run independent tasks in parallel, monitor their progress, and review results in one place. Use chat in the editor when you want to collaborate with an agent alongside the code you're editing or debugging.",
+          "This guide follows the workflow from choosing where an agent makes changes to monitoring, validating, and integrating its work. Start with one task, then add independent tasks as needed. If you're new to agent-assisted coding, first complete the agents quickstart.",
+          "Select Open in Agents in the VS Code title bar, or run Chat: Open Agents window from the Command Palette (⇧⌘P (Windows, Linux Ctrl+Shift+P)). The window opens alongside your main editor window.",
+          "If you're already signed in to GitHub in VS Code, you'll also be signed in when the Agents window opens. From the command line, use code --agents.",
+          "H2: Agents window interface overview",
+          "The Agents window separates managing work across projects from working on an individual task. Use the Primary Side Bar to organize sessions and access automations and customizations, the central session area to collaborate with agents, and the Secondary Side Bar to inspect and validate the active session's work.",
+          "The available tools depend on the session and enabled features.",
+          "H3: Understand the active session",
+          "Selecting a session makes it the active session and determines which project and conversation the session tools apply to. When several session panes are visible, select a pane to make it active. The active session is highlighted in the sessions list.",
+          "Before you send feedback or run a command, confirm which session is active. Terminal commands and tasks run in that session's folder or worktree, and browser tabs belong to the session where you open them.",
+          "Quick chats have no project workspace, so they don't show workspace-specific files and changes.",
+          "Choose a task with a clear outcome and checks you can run to verify it. The following steps start a session in a local project. For other environments or tasks without a project, see Other ways to start a session.",
+          "Select New Session at the top of the sidebar or press ⌘N (Windows, Linux Ctrl+N). To start directly in a specific workspace, hover over the workspace in the sessions list and select + (New Session).",
+          "Select This Computer from the environment picker above the input. In the workspace picker, select a recent folder or Open Folder.",
+          "If the workspace isn't trusted, review the Workspace Trust prompt before you continue.",
+          "For a Git repository, choose Branch to work in your current folder or New Worktree to keep changes separate. Review the isolation choices and requirements before you send the prompt.",
+          "Review the permission level in the input toolbar. It controls which actions need your approval and is separate from file isolation. Learn about permission levels.",
+          "Describe the outcome you want, any constraints, and how the agent should check its work. Press Enter to submit the prompt.",
+          "For additional context, select Add Context (+). If prompted, select a repository first. Pasting an issue or pull request URL into the prompt also adds it as a context attachment.",
+          "You can optionally change the agent harness, agent, or model.",
+          "To start a session in the background without navigating into it, press Alt+Enter or hold Alt and select Send. The session appears in the sessions list after you send the prompt.",
+          "H3: Choose where an agent makes changes",
+          "For a Git workspace you can choose between applying changes in the current branch or a new worktree. Use the isolation dropdown above the input to choose where the agent edits files.",
+          "Choosing a base branch for New Worktree doesn't switch the branch in your active workspace."
+        ]
+      },
+      "headings": [
+        "Use the Agents window",
+        "Open the Agents window",
+        "Agents window interface overview",
+        "Understand the active session",
+        "Start an agent session",
+        "Choose where an agent makes changes",
+        "Work with multiple sessions",
+        "Arrange sessions in a grid",
+        "Review and finish an agent session",
+        "Inspect workspace files and changes",
+        "Validate changes",
+        "Commit changes"
+      ],
+      "score": 26
+    }
+  ],
+  "errors": []
+}

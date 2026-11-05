@@ -27157,6 +27157,66 @@
         "Original article explicit links",
         "Feature-matched official documentation indexes"
       ]
+    },
+    "45ec8eb18efe35de1649114bef09c58f7e0831d5a5a871be645f4ff447d95438": {
+      "version": 6,
+      "checkedAt": "2026-11-05T01:33:27.355Z",
+      "inputUrl": "https://code.visualstudio.com/docs/agents/run/agents-window",
+      "inputTitle": "VS Code Docs / Agents window changed",
+      "status": "verified",
+      "source": {
+        "url": "https://code.visualstudio.com/docs/agents/run/agents-window#_agents-window-interface-overview",
+        "status": "verified",
+        "reason": "Observed changed heading(s): Agents window interface overview; Understand the active session; Choose where an agent makes changes; Work with multiple sessions; Arrange sessions in a grid; Review and finish an agent session; Inspect workspace files and changes; Validate changes; Commit changes; Integrate the result; Create a pull request; Remove a pull request from a session; Other ways to start a session; Start a quick chat; Open without GitHub sign-in (Experimental); Run in another environment; Run a session in a Dev Container; Start a session from a pull request; Compare model results (Preview); Automate follow-up work; Finish a pull request with agent merge; Schedule recurring tasks; Configure the Agents window; Configure isolation defaults",
+        "checkedAt": "2026-11-05T01:33:29.586Z",
+        "contentHash": "8e4da5f6025600d208a317278f777a1e77c9f6236524d70c2a4d8c94594eb120"
+      },
+      "documents": [
+        {
+          "url": "https://code.visualstudio.com/docs/agents/run/remote-agent-sessions#_use-the-agents-window-in-the-browser",
+          "title": "Run and manage remote agent sessions",
+          "language": "en",
+          "checkedAt": "2026-11-04T13:08:03.025Z",
+          "contentHash": "6588a02c16be72c1cf206b7a0a0d55c2366c8d685dca9ced5bc2608b9318af64",
+          "discoveryUrl": "https://code.visualstudio.com/docs/agents/run/agents-window#_agents-window-interface-overview",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "verified",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://code.visualstudio.com/docs/agents/run/agents-window-configuration",
+          "title": "Configure the Agents window",
+          "language": "en",
+          "checkedAt": "2026-11-05T01:33:29.907Z",
+          "contentHash": "f0b68c0169c2dcab86c00747308d9dac2ea1d4ceb141a11fbde3303a11e69e9c",
+          "discoveryUrl": "https://code.visualstudio.com/docs/agents/run/agents-window#_agents-window-interface-overview",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://code.visualstudio.com/docs/sourcecontrol/branches-worktrees#_understanding-worktrees",
+          "title": "Git branches and worktrees in VS Code",
+          "language": "en",
+          "checkedAt": "2026-11-05T01:33:29.989Z",
+          "contentHash": "3cff9febac464ca8fef4098a06fa31028564517ff094533a0aa361b821ee081c",
+          "discoveryUrl": "https://code.visualstudio.com/docs/agents/run/agents-window#_agents-window-interface-overview",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "verified",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
     }
   }
 }
