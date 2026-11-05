@@ -1,13 +1,10 @@
 {
   "date": "2026-11-05",
-  "generatedAt": "2026-11-05T01:33:26.712Z",
+  "generatedAt": "2026-11-05T13:20:36.085Z",
   "latestRun": {
-    "generatedAt": "2026-11-05T01:33:26.712Z",
-    "newEventsCount": 2,
-    "newEventIds": [
-      "github-changelog:https://github.blog/changelog/2026-11-04-github-copilot-is-now-available-in-xcodes-coding-assistant",
-      "vscode-docs-agents-window:e9ad5b95d41d0d7f22b7c1c431c83f47c6c13000590c12797e787344a6d46b99"
-    ],
+    "generatedAt": "2026-11-05T13:20:36.085Z",
+    "newEventsCount": 0,
+    "newEventIds": [],
     "errorCount": 0,
     "skippedLowInformationEvents": []
   },
