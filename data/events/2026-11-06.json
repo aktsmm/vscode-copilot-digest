@@ -1,15 +1,10 @@
 {
   "date": "2026-11-06",
-  "generatedAt": "2026-11-06T13:04:02.534Z",
+  "generatedAt": "2026-11-06T20:01:21.895Z",
   "latestRun": {
-    "generatedAt": "2026-11-06T13:04:02.534Z",
-    "newEventsCount": 4,
-    "newEventIds": [
-      "github-changelog-copilot:https://github.blog/changelog/2026-11-05-usage-metrics-api-adds-code-review-details-and-addressed-rate",
-      "github-changelog-copilot:https://github.blog/changelog/2026-11-05-usage-metrics-api-flags-telemetry-and-version-gaps",
-      "vscode-updates:fc72b75e8a5f8f1323d4084559de83d7dd7e5b76636d7c120b53b27a1fa9f812",
-      "vscode-docs-agents-remote-sessions:89a75d251d73254a3bdb798eb622b2b2aee81b586af3e396398cccc5f87fd034"
-    ],
+    "generatedAt": "2026-11-06T20:01:21.895Z",
+    "newEventsCount": 0,
+    "newEventIds": [],
     "errorCount": 0,
     "skippedLowInformationEvents": []
   },
