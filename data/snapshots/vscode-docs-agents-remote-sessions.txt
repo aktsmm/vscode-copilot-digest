@@ -71,20 +71,7 @@ Remote environment management requires
  . All three settings are on by default.
 H3: Open remote environment management
 Run Agents: Manage Remote Environments from the Command Palette (⇧⌘P (Windows, Linux Ctrl+Shift+P)), or select Manage Remote Environments from the sessions list More Actions (...) menu.
-If the experimental new-session composer layout is enabled (
- 
- 
- sessions.chat.experimental.newSessionComposerLayout
- 
- 
- 
- 
- 
- 
- Open in VS Code
- Open in VS Code Insiders
- 
- ), you can also open the editor from the Environment picker:
+You can also open the editor from the Environment picker:
 Create a new chat or session in the Agents window.
 Create a new chat or session in the Agents window.
 Open the Environment picker and select Manage.

@@ -27351,6 +27351,46 @@
         "Original article explicit links",
         "Feature-matched official documentation indexes"
       ]
+    },
+    "5cfe9afb22ee88b9b2a1e685fd4bdc2d6bff9669a261bcec5bf610f403de6053": {
+      "version": 6,
+      "checkedAt": "2026-11-06T13:04:03.130Z",
+      "inputUrl": "https://code.visualstudio.com/updates/",
+      "inputTitle": "VS Code Updates changed",
+      "status": "unconfirmed",
+      "source": {
+        "url": "https://code.visualstudio.com/updates/v1_145#release-downloads-heading",
+        "status": "verified",
+        "reason": "Explicit release link for 1.145",
+        "checkedAt": "2026-11-06T13:04:04.819Z",
+        "contentHash": "e85806f98cedfe7419f6e1a089499f126692598aeabf92dc7e9fc5ba71e93141"
+      },
+      "documents": [],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "ed8016981f599a86d6d616887c7830aa7f9821c4514a9dce93249dc52e54c423": {
+      "version": 6,
+      "checkedAt": "2026-11-06T13:04:04.895Z",
+      "inputUrl": "https://code.visualstudio.com/docs/agents/run/remote-agent-sessions",
+      "inputTitle": "VS Code Docs / Remote agent sessions changed",
+      "status": "unconfirmed",
+      "source": {
+        "url": "https://code.visualstudio.com/docs/agents/run/remote-agent-sessions",
+        "status": "unconfirmed",
+        "reason": "Historical changed feature not identifiable in current page",
+        "checkedAt": "2026-11-06T13:04:05.047Z",
+        "contentHash": "36c54a2ef64769d4513030b98d243ba8745c8e2a95f6620b31c71cdfb817ef98"
+      },
+      "documents": [],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
     }
   }
 }
