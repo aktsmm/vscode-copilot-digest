@@ -1,0 +1,134 @@
+{
+  "date": "2026-11-06",
+  "generatedAt": "2026-11-06T01:40:22.812Z",
+  "latestRun": {
+    "generatedAt": "2026-11-06T01:40:22.812Z",
+    "newEventsCount": 4,
+    "newEventIds": [
+      "github-changelog:https://github.blog/changelog/2026-11-05-usage-metrics-api-adds-code-review-details-and-addressed-rate",
+      "github-changelog:https://github.blog/changelog/2026-11-05-usage-metrics-api-flags-telemetry-and-version-gaps",
+      "vscode-updates:f642acd8699681c13988e76d6fa6c317de7c4c572dac24a0921fab31b462c9e0",
+      "copilot-whats-new:d7ecd4803cd5840b2c4dd652005674351c0497187e770289351267c5d47df24d"
+    ],
+    "errorCount": 0,
+    "skippedLowInformationEvents": []
+  },
+  "events": [
+    {
+      "eventId": "copilot-whats-new:d7ecd4803cd5840b2c4dd652005674351c0497187e770289351267c5d47df24d",
+      "sourceId": "copilot-whats-new",
+      "sourceName": "GitHub Copilot What's New",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-11-06T01:40:20.292Z",
+      "publishedAt": "2026-11-06T01:40:20.291Z",
+      "title": "GitHub Copilot What's New changed",
+      "url": "https://github.com/features/copilot/whats-new",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [
+          "Nov.05 Improvement"
+        ],
+        "additions": [
+          "H3: Nov.05 Improvement"
+        ]
+      },
+      "headings": [
+        "Changelog",
+        "Filters (0 selected)",
+        "November\n Nov\n 2026",
+        "Nov.05 Improvement",
+        "Nov.05 Improvement",
+        "Nov.04 Release",
+        "Nov.03 Improvement",
+        "Nov.03 Release",
+        "October\n Oct\n 2026",
+        "Oct.28 Release",
+        "Oct.28 Release",
+        "Oct.28 Release"
+      ],
+      "score": 3
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-11-05-usage-metrics-api-adds-code-review-details-and-addressed-rate",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-11-06T01:40:18.555Z",
+      "publishedAt": "2026-11-06T00:19:07.000Z",
+      "title": "Usage metrics API adds code review details and addressed rate",
+      "url": "https://github.blog/changelog/2026-11-05-usage-metrics-api-adds-code-review-details-and-addressed-rate",
+      "summary": "The enterprise and organization repository-level Copilot usage metrics reports now show what happens to Copilot code review feedback. A new copilot_code_review object on each repos-1-day row reports how many Copilot-reviewed…\nThe post Usage metrics API adds code review details and addressed rate appeared first on The...",
+      "categories": [
+        "Improvement",
+        "account management",
+        "copilot",
+        "enterprise management tools"
+      ],
+      "isFutureDated": false,
+      "score": 2
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-11-05-usage-metrics-api-flags-telemetry-and-version-gaps",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-11-06T01:40:18.555Z",
+      "publishedAt": "2026-11-06T00:08:31.000Z",
+      "title": "Usage metrics API flags telemetry and version gaps",
+      "url": "https://github.blog/changelog/2026-11-05-usage-metrics-api-flags-telemetry-and-version-gaps",
+      "summary": "The Copilot usage metrics API now shows which users are missing client telemetry or are running IDE or extension versions below the usage metrics minimums. New per-user fields appear in…\nThe post Usage metrics API flags telemetry and version gaps appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "account management",
+        "copilot",
+        "enterprise management tools"
+      ],
+      "isFutureDated": false,
+      "score": 2
+    },
+    {
+      "eventId": "vscode-updates:f642acd8699681c13988e76d6fa6c317de7c4c572dac24a0921fab31b462c9e0",
+      "sourceId": "vscode-updates",
+      "sourceName": "VS Code Updates",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-11-06T01:40:19.188Z",
+      "publishedAt": "2026-11-04T00:00:00.000Z",
+      "title": "VS Code Updates changed",
+      "url": "https://code.visualstudio.com/updates/",
+      "summary": "Detected 2 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 2,
+        "headings": [
+          "Downloads for 1.145.1"
+        ],
+        "additions": [
+          "Update 1.145.1: The update addresses these issues.",
+          "H2: Downloads for 1.145.1"
+        ]
+      },
+      "headings": [
+        "Visual Studio Code 1.145",
+        "Downloads for 1.145.1",
+        "Release highlights",
+        "Remote agents",
+        "Browse over remote agent host connections (Preview)",
+        "Remote canvases (Preview)",
+        "Agents",
+        "Mix and match agent harnesses in one session (Preview)",
+        "Cron schedules and custom agents for local automations",
+        "Pin canvases to sidebar (Experimental)",
+        "Copilot harness",
+        "Working set improvements (Experimental)"
+      ],
+      "score": 3
+    }
+  ],
+  "errors": []
+}

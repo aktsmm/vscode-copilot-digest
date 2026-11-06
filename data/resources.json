@@ -27217,6 +27217,140 @@
         "Original article explicit links",
         "Feature-matched official documentation indexes"
       ]
+    },
+    "0d75c4c6f60d1866914dcf7eba0e0e5ea8de9585ed365f9f110c555be679c222": {
+      "version": 6,
+      "checkedAt": "2026-11-06T01:40:23.253Z",
+      "inputUrl": "https://github.com/features/copilot/whats-new",
+      "inputTitle": "GitHub Copilot What's New changed",
+      "status": "unconfirmed",
+      "source": {
+        "url": "https://github.blog/changelog/?label=copilot#changelog-item-meta-100028",
+        "status": "unconfirmed",
+        "reason": "Multiple changed date headings; linked observed archive item without inferring a feature",
+        "checkedAt": "2026-11-06T01:40:23.482Z",
+        "contentHash": "85c37f0e42cc4a08bda13437b7420d73ea44f72a0f327010bcd02da3dcd233a8"
+      },
+      "documents": [],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "4a788dc6b4e1c420e5d1b2c1c1f324b47ca309331dbdee6cd1d1587723b84f02": {
+      "version": 6,
+      "checkedAt": "2026-11-06T01:40:23.623Z",
+      "inputUrl": "https://github.blog/changelog/2026-11-05-usage-metrics-api-adds-code-review-details-and-addressed-rate",
+      "inputTitle": "Usage metrics API adds code review details and addressed rate",
+      "status": "verified",
+      "source": {
+        "url": "https://github.blog/changelog/2026-11-05-usage-metrics-api-adds-code-review-details-and-addressed-rate/",
+        "status": "verified",
+        "reason": "Fetched original article",
+        "checkedAt": "2026-11-06T01:40:23.687Z",
+        "contentHash": "f64e3ec17c9a04e3e8e713da7719d688e36059dc2deaab82632d3cf03c129f9d"
+      },
+      "documents": [
+        {
+          "url": "https://docs.github.com/ja/copilot/how-tos/administer-copilot/view-usage-and-adoption",
+          "title": "Copilot 使用状況メトリック ダッシュボードの表示",
+          "language": "ja",
+          "checkedAt": "2026-11-04T01:31:05.221Z",
+          "contentHash": "8854573af15a9a757a2f5039732c89b331aa7179afd2d2200fdb44b66f380297",
+          "discoveryUrl": "https://docs.github.com/en/copilot/how-tos",
+          "basis": "Matching feature terms in official documentation index",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://docs.github.com/ja/copilot/concepts/billing-and-usage/copilot-usage-metrics",
+          "title": "GitHub Copilotの使用状況メトリクス",
+          "language": "ja",
+          "checkedAt": "2026-11-04T01:31:06.329Z",
+          "contentHash": "907ecc7327bf609b9bf62c1da0aacaa684f5158e06c0a71d46c80d83d02cb31f",
+          "discoveryUrl": "https://docs.github.com/en/copilot/concepts",
+          "basis": "Matching feature terms in official documentation index",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://docs.github.com/ja/copilot/reference/copilot-usage-metrics",
+          "title": "GitHub Copilot の使用状況メトリクス",
+          "language": "ja",
+          "checkedAt": "2026-11-06T01:40:24.353Z",
+          "contentHash": "4f3e3d774d5f97f5e639cc10335aa0078f021388191098ad38b8933bdcfaf2a2",
+          "discoveryUrl": "https://docs.github.com/en/copilot/reference",
+          "basis": "Matching feature terms in official documentation index",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "0407d550ad240e1dfd88b91b25c2feb7858d95a56ab3453a36844a1601d2baf8": {
+      "version": 6,
+      "checkedAt": "2026-11-06T01:40:24.414Z",
+      "inputUrl": "https://github.blog/changelog/2026-11-05-usage-metrics-api-flags-telemetry-and-version-gaps",
+      "inputTitle": "Usage metrics API flags telemetry and version gaps",
+      "status": "verified",
+      "source": {
+        "url": "https://github.blog/changelog/2026-11-05-usage-metrics-api-flags-telemetry-and-version-gaps/",
+        "status": "verified",
+        "reason": "Fetched original article",
+        "checkedAt": "2026-11-06T01:40:24.829Z",
+        "contentHash": "ef5407831dcc1b917a1fc6e1b052293555e0ae83ed59e50ec87dea3c51756cf1"
+      },
+      "documents": [
+        {
+          "url": "https://docs.github.com/ja/copilot/concepts/billing-and-usage/copilot-usage-metrics/copilot-metrics#supported-ides",
+          "title": "GitHub Copilotの使用状況メトリクス",
+          "language": "ja",
+          "checkedAt": "2026-11-06T01:40:25.727Z",
+          "contentHash": "71e87fb26203416180ac7cb09330a8fe2d7c0da178cb3421eaa323f71f44ae11",
+          "discoveryUrl": "https://github.blog/changelog/2026-11-05-usage-metrics-api-flags-telemetry-and-version-gaps/",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "verified",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "c116b8a5e866180cc5b18b7a793fc3eba31dcf9de2e0060ab741cc11f60e6690": {
+      "version": 6,
+      "checkedAt": "2026-11-06T01:40:25.790Z",
+      "inputUrl": "https://code.visualstudio.com/updates/",
+      "inputTitle": "VS Code Updates changed",
+      "status": "unconfirmed",
+      "source": {
+        "url": "https://code.visualstudio.com/updates/v1_145#release-downloads-heading",
+        "status": "verified",
+        "reason": "Explicit release link for 1.145",
+        "checkedAt": "2026-11-06T01:40:26.092Z",
+        "contentHash": "815bcd3b40c666a522d91a561c562e571cc28944ce49dfd48a857716e8aa1233"
+      },
+      "documents": [],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
     }
   }
 }

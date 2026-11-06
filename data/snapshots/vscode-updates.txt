@@ -17,7 +17,8 @@ Insiders
 View All Releases
 H1: Visual Studio Code 1.145
 Release date: November 4, 2026 Stable
-H2: Downloads for 1.145.0
+Update 1.145.1: The update addresses these issues.
+H2: Downloads for 1.145.1
 H2: Release highlights
 This week, your remote agent sessions feel a bit more local. Preview apps and use canvases right in VS Code, fine-tune automation schedules with cron, and turn down the noise in chat. And when you need a break, Blobby is ready to play.
 Remote agents: Preview apps and use interactive canvases from remote agent sessions without leaving the Agents window.

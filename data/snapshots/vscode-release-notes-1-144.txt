@@ -17,7 +17,7 @@ Insiders
 View All Releases
 H1: Visual Studio Code 1.144
 Release date: October 28, 2026 Stable
-H2: Downloads for 1.144.0
+H2: Downloads for 1.144.1
 H2: Release recap
 The road to GitHub Universe (join us virtually!) is paved with lots of pull requests! So, let's take a step back and look at what we've shipped recently.
 Remember when agent sessions would stop as soon as you closed your client? We built the Agent Host, a separate process that keeps your agents running, on your local machine or remotely.
