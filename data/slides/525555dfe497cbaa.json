@@ -1,0 +1,95 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "525555dfe497cbaa",
+  "title": {
+    "ja": "使用状況メトリクス API に、コード レビューの詳細と対応率を追加",
+    "subtitleJa": "リポジトリ別レポートで、Copilot のレビュー コメントに開発者が対応したかを集計できる",
+    "original": "Usage metrics API adds code review details and addressed rate"
+  },
+  "date": "2026-11-05",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "Copilot の使用状況メトリクスを見る Enterprise・組織の管理者",
+    "change": "repos-1-day の各行に copilot_code_review オブジェクトが加わり、リポジトリ別の対応率を算出できる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "info",
+    "summary": "total_comments_addressed を total_comments_evaluated で割り、対応率を追う"
+  },
+  "panels": [
+    {
+      "id": "fields",
+      "heading": "追加された項目",
+      "priority": "core",
+      "items": [
+        "total_comments_evaluated: 開発者が対応したか確認したコメント数",
+        "total_comments_addressed: 提案の適用、Copilot への修正依頼、コード編集、後続 PR で直すという返信で対応したコメント数",
+        "total_merged_no_human_change_request_after_review: 最初のレビュー後に人が変更を要求せずマージされた PR 数"
+      ]
+    },
+    {
+      "id": "breakdown",
+      "heading": "内訳",
+      "priority": "core",
+      "items": [
+        "重大度、レビュー ティア（lite / balanced / max）、コメント種別（bug / security / custom）、カスタマイズ別に集計できる",
+        "カスタマイズは custom instructions、skills、MCP servers、なしで分かれる"
+      ]
+    },
+    {
+      "id": "limits",
+      "heading": "前提と制限",
+      "priority": "core",
+      "items": [
+        "対象は Enterprise と組織の repos-1-day レポートの全行。活動がない日は 0 と空配列",
+        "コメントは PR のマージ時に評価され、マージ日に計上される",
+        "アクセスは Enterprise オーナー、課金マネージャー、組織オーナー、View Copilot Metrics 権限を持つロールで、使用状況メトリクス ポリシーが有効なとき"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "bot が作成した PR（Copilot cloud agent など）のコメントは通常評価されないが、マージ数には含まれる",
+        "pull_requests.total_copilot_applied_suggestions は適用された提案のみで、新しい件数とは別"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "対応率", "type": "term", "oneLine": "total_comments_addressed を total_comments_evaluated で割った値。" }
+  ],
+  "qa": [
+    {
+      "q": "どのレポートで使えますか。",
+      "a": "Enterprise と組織の repos-1-day レポートの全行に、copilot_code_review オブジェクトが含まれます。Copilot コード レビューの活動がない日は、件数が 0、配列が空になります。"
+    },
+    {
+      "q": "対応率はどう計算しますか。",
+      "a": "total_comments_addressed を total_comments_evaluated で割ります。対応には、提案の適用、Copilot への修正依頼、コードの編集、後続 PR で直すという返信が含まれます。"
+    },
+    {
+      "q": "誰が見られますか。",
+      "a": "Enterprise オーナー、Enterprise 課金マネージャー、組織オーナー、View Copilot Metrics 権限を付与したカスタム ロールを持つ人です。Copilot 使用状況メトリクス ポリシーの有効化が必要です。"
+    },
+    {
+      "q": "コメントはいつの日付で数えられますか。",
+      "a": "コメントは PR のマージ時に評価されるため、Copilot が投稿した日ではなくマージ日に計上されます。"
+    },
+    {
+      "q": "既存の適用済み提案の数と何が違いますか。",
+      "a": "total_copilot_applied_suggestions は適用された提案だけを数えます。新しい件数は評価したすべてのコメントを対象に、対応の方法を問わず対応済みとして数えます。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Usage metrics API adds code review details and addressed rate - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-11-05-usage-metrics-api-adds-code-review-details-and-addressed-rate/"
+    }
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-11-05-usage-metrics-api-adds-code-review-details-and-addressed-rate/"
+  ]
+}
