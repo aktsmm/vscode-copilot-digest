@@ -3935,5 +3935,27 @@
       "Worktree Cleanupは一覧内で進捗と結果を表示",
       "結果セクションを別に設ける構成を廃止"
     ]
+  },
+  "0778fb85d9153ba6": {
+    "title": "Usage metrics APIでテレメトリ欠落とバージョン不足を検出",
+    "summary": "Copilot usage metrics APIに、クライアントテレメトリが届いていないユーザーや、IDE・拡張機能が最低バージョン未満のユーザーを示す項目が追加された。ユーザー別レポートにはclient_telemetry_presentとusage_metrics_requirements、日次レポートには該当ユーザー数が加わる。",
+    "why": "レポートの詳細が欠けているユーザーを特定し、サポート依頼なしでエディタ更新やテレメトリ設定の是正を進められる。",
+    "points": [
+      "client_telemetry_presentがfalseでも、そのユーザーはアクティブとして数えられる",
+      "usage_metrics_requirementsは各IDE・拡張機能をmet/unmet/unknownで示す",
+      "missing_client_telemetry_user_countとbelow_usage_metrics_minimum_user_countは合算不可",
+      "利用にはView Copilot Metrics権限とusage metricsポリシーの有効化が必要"
+    ]
+  },
+  "525555dfe497cbaa": {
+    "title": "Usage metrics APIにコードレビュー指摘の対応率を追加",
+    "summary": "enterprise・organizationのリポジトリ別usage metrics(repos-1-day)の各行に、copilot_code_reviewオブジェクトが追加された。評価されたCopilotレビューコメント数と対応済み数、人による変更要求なしでマージされたPR数が取得でき、リポジトリごとの対応率を算出できる。",
+    "why": "Copilot code reviewの指摘が実際に反映されているかをリポジトリ単位で測りたい管理者が、対応率を直接計算できる。",
+    "points": [
+      "対応率はtotal_comments_addressedをtotal_comments_evaluatedで割って算出する",
+      "重大度・レビュー階層・コメント種別・カスタマイズ別の内訳も提供される",
+      "コメントはPRのマージ日に集計され、投稿日ではない",
+      "botが作成したPRではコメントは通常評価されない"
+    ]
   }
 }
