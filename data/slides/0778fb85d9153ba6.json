@@ -1,0 +1,92 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "0778fb85d9153ba6",
+  "title": {
+    "ja": "使用状況メトリクス API で、テレメトリ欠落とバージョン不足のユーザーを把握可能に",
+    "subtitleJa": "ユーザー別の 2 項目と日次の該当ユーザー数 2 項目が追加され、データ欠落の原因を特定できる",
+    "original": "Usage metrics API flags telemetry and version gaps"
+  },
+  "date": "2026-11-05",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "Copilot の使用状況メトリクスを管理する Enterprise / Organization の管理者",
+    "change": "テレメトリが届かないユーザーや、最小バージョン未満の IDE・拡張機能のユーザーを API で確認できる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "レポートの詳細が欠けるユーザーを、新しい項目で洗い出して対応する"
+  },
+  "panels": [
+    {
+      "id": "new-fields",
+      "heading": "追加された項目",
+      "priority": "core",
+      "items": [
+        "client_telemetry_present: その日クライアント テレメトリを受信したか。false は活動は見えるが、エディターからのイベントが届いていない",
+        "usage_metrics_requirements: ユーザーの各 IDE・拡張機能を最小バージョンに対し met / unmet / unknown で示す",
+        "missing_client_telemetry_user_count: その日 client_telemetry_present が false のユーザー数",
+        "below_usage_metrics_minimum_user_count: 最小バージョン未満の IDE または拡張機能を持つユーザー数"
+      ]
+    },
+    {
+      "id": "scope",
+      "heading": "対象とアクセス",
+      "priority": "core",
+      "items": [
+        "ユーザー項目は Enterprise と Organization のユーザー レポート（1 日・28 日）に表示される",
+        "件数は 1 日レポートと、28 日レポートの各 day_totals に表示される",
+        "Enterprise owner、Enterprise billing manager、Organization owner、View Copilot Metrics 権限を持つカスタム ロールが対象"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "2 つの件数は重複しうるため合算せず、日をまたいだ合算でユニーク ユーザー数も出さない",
+        "null や省略は「データなし」で、false や 0 ではない。リリース前の日は値がない",
+        "最小バージョンを満たしていてもプロキシなどでテレメトリが欠けることがある"
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "クライアント テレメトリ",
+      "type": "term",
+      "oneLine": "エディターから届く使用イベント。無いと行数や機能・モデル別の内訳が欠ける。"
+    }
+  ],
+  "qa": [
+    {
+      "q": "テレメトリが届かないユーザーはアクティブ扱いにならないのですか？",
+      "a": "アクティブとして数えられますが、レポートにコード行数、機能別、モデル別などの詳細が欠けます。"
+    },
+    {
+      "q": "テレメトリが欠ける主な原因は何ですか？",
+      "a": "古いエディターや拡張機能、IDE のテレメトリ無効化、イベントを遮断するプロキシやファイアウォールなどが挙げられています。"
+    },
+    {
+      "q": "誰がこのデータを見られますか？",
+      "a": "Enterprise owner、Enterprise billing manager、Organization owner、View Copilot Metrics 権限を持つカスタム ロールのユーザーです。Copilot usage metrics ポリシーの有効化が必要です。"
+    },
+    {
+      "q": "2 つの件数を足してよいですか？",
+      "a": "足せません。同じユーザーが両方に数えられることがあります。日をまたいだ合算でもユニーク ユーザー数にはなりません。"
+    },
+    {
+      "q": "リリース前の日のデータはどうなりますか？",
+      "a": "リリース前の日には値がありません。null や省略はデータなしを意味し、false や 0 ではありません。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Usage metrics API flags telemetry and version gaps - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-11-05-usage-metrics-api-flags-telemetry-and-version-gaps/"
+    }
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-11-05-usage-metrics-api-flags-telemetry-and-version-gaps/"
+  ]
+}
