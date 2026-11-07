@@ -1,0 +1,75 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "353c4d26111c8c91",
+  "title": {
+    "ja": "GitHub Copilot 週次リリース（11月2日）：JetBrains Air と Xcode に対応",
+    "subtitleJa": "Copilot が JetBrains Air と Xcode で使え、Copilot アプリ・CLI・VS Code 1.145 も更新",
+    "original": "GitHub Copilot weekly releases — November 2"
+  },
+  "date": "2026-11-06",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "Copilot アプリ、CLI、JetBrains、Xcode、VS Code で Copilot を使う開発者",
+    "change": "JetBrains Air と Xcode で Copilot が使え、アプリは Agent Merge など、CLI は /settings が更新された",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "使っている環境の更新を確認し、必要なものを試す"
+  },
+  "panels": [
+    {
+      "id": "where-available",
+      "heading": "使える場所とプラン",
+      "priority": "core",
+      "items": [
+        "JetBrains Air：既存の Copilot サブスクリプションで、複数のエージェント セッションを追跡できる",
+        "JetBrains Air：タスクはローカルの JetBrains IDE か、Air Teams 経由のクラウドで実行できる",
+        "Xcode：内蔵のコーディング アシスタントで Copilot が使える。パブリック プレビューで Xcode 27.3 beta 以降"
+      ]
+    },
+    {
+      "id": "app-cli",
+      "heading": "Copilot アプリと CLI",
+      "priority": "core",
+      "items": [
+        "アプリ：プル リクエストから Agent Merge を設定でき、必須チェックやルールが保留中でも有効のまま",
+        "アプリ：コンテキスト上限に達したら、エラーから会話の圧縮や使用状況の確認ができる",
+        "CLI：/settings がプラグインや MCP サーバーなどを 1 か所で管理するダッシュボードになり、設定を横断検索できる"
+      ]
+    },
+    {
+      "id": "vscode-145",
+      "heading": "VS Code 1.145 の更新",
+      "priority": "detail",
+      "items": [
+        "チャット ビューの表示モード（試験的）で、推論やツール呼び出しを折りたたみ・展開できる",
+        "ローカル オートメーションが cron 式とワークスペースのカスタム エージェントに対応",
+        "Add Context > Files でファイルを追加できる。クラウド セッションは画像のみ"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "Agent Merge", "type": "feature", "oneLine": "準備ができたプル リクエストを Copilot がマージする機能。" },
+    { "term": "JetBrains Air", "type": "product", "oneLine": "複数のエージェント セッションを追跡し、ローカルやクラウドでタスクを実行できる環境。" }
+  ],
+  "qa": [
+    { "q": "Xcode では Copilot をいつから使えますか？", "a": "Xcode 内蔵のコーディング アシスタントで Copilot を使え、統合はパブリック プレビューです。Xcode 27.3 beta 以降で利用できます。" },
+    { "q": "JetBrains Air で追加の契約は必要ですか？", "a": "記事では、既存の Copilot サブスクリプションを使うと説明されています。タスクはローカルの JetBrains IDE か、Air Teams 経由のクラウドで実行できます。" },
+    { "q": "Agent Merge は保留中のチェックがあると無効になりますか？", "a": "いいえ。必須のチェックやルールが保留中でも有効のままになります。プル リクエストから設定でき、準備ができた時点で Copilot がマージします。" },
+    { "q": "CLI の /settings では何が変わりましたか？", "a": "プラグインや MCP サーバーなどを 1 か所で管理する統合ダッシュボードが開き、すべての設定を横断して検索できます。" }
+  ],
+  "references": {
+    "source": {
+      "title": "GitHub Copilot weekly releases — November 2 - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-11-06-github-copilot-weekly-releases-november-2/"
+    },
+    "documents": [
+      { "title": "Visual Studio Code 1.145", "url": "https://code.visualstudio.com/updates/v1_145" }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-11-06-github-copilot-weekly-releases-november-2/"
+  ]
+}
