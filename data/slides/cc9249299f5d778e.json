@@ -1,0 +1,98 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "cc9249299f5d778e",
+  "title": {
+    "ja": "Copilot code review の設定を API で管理、レビュー概要は簡潔に",
+    "subtitleJa": "REST / GraphQL API で企業からリポジトリまで設定を読み書きでき、概要コメントも compact に",
+    "original": "Copilot code review: API management and review overview updates"
+  },
+  "date": "2026-11-06",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "Copilot code review の設定を管理する企業・組織・リポジトリの管理者",
+    "change": "REST と GraphQL の API で code review 設定を役割ごとに読み書きでき、レビュー概要が compact になった",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "API で設定を管理するなら、権限とトークンの種類を確認して利用を始める"
+  },
+  "panels": [
+    {
+      "id": "plans-and-roles",
+      "heading": "使える場所とプラン",
+      "priority": "core",
+      "items": [
+        "Copilot Pro、Pro+、Max、Business、Enterprise プランで利用できる",
+        "企業管理者: 全組織の code review の有効・無効、または組織管理者への委任",
+        "組織管理者: 有効化、既定のレビュー工数、runner 構成。企業が管理する設定は上書き不可",
+        "リポジトリ管理者: レビュー工数、カスタム指示と MCP ツールを使うか"
+      ]
+    },
+    {
+      "id": "overview",
+      "heading": "レビュー概要の変更",
+      "priority": "core",
+      "items": [
+        "レビュー工数とアンケートは下部の compact なフッターに移動",
+        "スキップ・除外されたファイルは「Files not reviewed」に集約し、理由へのリンクを付ける",
+        "空のセクションは省略し、長い一覧は超過件数を表示する",
+        "👎 の後に Add a reason で問題点を選んで送れる"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "企業・組織の設定エンドポイント（組織の runner 含む）は GitHub Apps と fine-grained PAT 非対応",
+        "リポジトリの設定エンドポイントは両方対応。読み取りは Administration: read、更新は write が必要"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "レビュー工数", "type": "feature", "oneLine": "Copilot が要求されたレビューに費やす作業レベル。API は Web と同じレベルを受け付ける。" }
+  ],
+  "suggestions": [
+    "API の応答の帰属フィールドで、Copilot のレビューとコメントを識別できる"
+  ],
+  "qa": [
+    {
+      "q": "どのプランで使えますか。",
+      "a": "Copilot Pro、Pro+、Max、Business、Enterprise の各プランで利用できます。"
+    },
+    {
+      "q": "API で誰が何を設定できますか。",
+      "a": "企業管理者は全組織の有効・無効か組織への委任、組織管理者は有効化・既定のレビュー工数・runner 構成、リポジトリ管理者はレビュー工数とカスタム指示・MCP ツールの利用を設定できます。企業が管理する設定は上書きできません。"
+    },
+    {
+      "q": "GitHub Apps や fine-grained PAT は使えますか。",
+      "a": "企業と組織の設定エンドポイント（組織の runner を含む）は非対応です。リポジトリの設定エンドポイントは両方対応で、読み取りは Administration: read、更新は Administration: write が必要です。クラシック PAT はリポジトリ管理者権限が必要です。"
+    },
+    {
+      "q": "API で Copilot の出力を識別できますか。",
+      "a": "明示的な帰属フィールドでレビューとコメントを識別でき、利用したレビュー工数や、コメントの根拠として報告されたスキル、MCP サーバー、カスタム指示も取得できます。"
+    },
+    {
+      "q": "レビュー概要へのフィードバックはどう送りますか。",
+      "a": "概要に 👎 を付けた後、Add a reason を選び、承認判断への不同意、冗長なコメント、不正確な指摘などから主な問題を選びます。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Copilot code review: API management and review overview updates - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-11-06-copilot-code-review-api-management-and-review-overview-updates/"
+    },
+    "documents": [
+      {
+        "title": "GitHub Copilotによるコード レビューの構成 - GitHubドキュメント",
+        "url": "https://docs.github.com/ja/copilot/how-tos/copilot-on-github/set-up-copilot/configure-code-review"
+      }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-11-06-copilot-code-review-api-management-and-review-overview-updates/",
+    "https://docs.github.com/ja/copilot/how-tos/copilot-on-github/set-up-copilot/configure-code-review"
+  ]
+}
