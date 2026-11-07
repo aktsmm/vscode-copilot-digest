@@ -1,0 +1,92 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "a5fcc1255202f357",
+  "title": {
+    "ja": "Copilot 影響ダッシュボードに、Chat と VS Code Agents ウィンドウの利用状況を追加",
+    "subtitleJa": "Agent adoption チャートが 9 機能に拡張され、「Passive users」は「Chat-first users」に名称変更",
+    "original": "Copilot impact dashboard adds chat and VS Code agent usage"
+  },
+  "date": "2026-11-06",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "Copilot 影響ダッシュボードや 28 日間の使用状況メトリクスを見る管理者",
+    "change": "Chat と VS Code Agents ウィンドウの利用が表示され、chat 中心のユーザーが Chat-first users と呼ばれる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "no",
+    "summary": "API で集計している場合は、totals_by_feature に chat と vscode_agent が増える点を把握しておく"
+  },
+  "panels": [
+    {
+      "id": "whats-new",
+      "heading": "変更点",
+      "priority": "core",
+      "items": [
+        "Agent adoption チャートに Copilot Chat と VS Code Agents ウィンドウが加わり、計 9 機能になる",
+        "「Passive users」コホートは「Chat-first users」に名称変更。API では引き続き No Cohort の値",
+        "エンタープライズ・組織の 28 日間レポートの copilot_feature_engagement.totals_by_feature に chat と vscode_agent が加わる"
+      ]
+    },
+    {
+      "id": "access",
+      "heading": "使える人と前提",
+      "priority": "core",
+      "items": [
+        "エンタープライズ所有者、課金マネージャー、組織所有者、View Copilot Metrics 権限を持つカスタム ロールのユーザー",
+        "Copilot usage metrics ポリシーが有効であること",
+        "確認は Insights タブ、左サイドバーの Copilot「影響」から"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "採用フェーズは変更なし。Chat と VS Code Agents ウィンドウはフェーズに数えない",
+        "28 日間で 2 日以上使うと、その機能でエンゲージ済み。複数の機能に数えられうる",
+        "この変更前の期間のレポートは、従来の 7 機能のみ"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "Chat-first users", "type": "term", "oneLine": "Copilot は使うが、28 日間のうち 2 日以上使った対象機能がなく、採用フェーズに入らないユーザー。" },
+    { "term": "totals_by_feature", "type": "feature", "oneLine": "28 日間レポートの copilot_feature_engagement に含まれる、機能ごとの集計。" }
+  ],
+  "references": {
+    "source": {
+      "title": "Copilot impact dashboard adds chat and VS Code agent usage - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-11-06-copilot-impact-dashboard-adds-chat-and-vs-code-agent-usage/"
+    },
+    "documents": [
+      { "title": "Copilot影響ダッシュボードの表示 - GitHubドキュメント", "url": "https://docs.github.com/ja/copilot/how-tos/administer-copilot/view-impact-dashboard" }
+    ]
+  },
+  "qa": [
+    {
+      "q": "誰がこのデータを見られますか。",
+      "a": "エンタープライズ所有者と課金マネージャー、組織所有者、View Copilot Metrics 権限を付与したカスタム ロールのユーザーです。Copilot usage metrics ポリシーが有効である必要があります。"
+    },
+    {
+      "q": "Chat と VS Code Agents ウィンドウは採用フェーズに影響しますか。",
+      "a": "影響しません。採用フェーズは変わらず、この 2 つは機能のエンゲージメントとして報告されるだけで、採用フェーズには数えられません。"
+    },
+    {
+      "q": "「Passive users」は何に変わりましたか。API 値は。",
+      "a": "「Chat-first users」に変わりました。API では引き続き No Cohort の値で、コホートの人数も変わりません。"
+    },
+    {
+      "q": "エンゲージしたとみなす条件は。",
+      "a": "他の機能と同じく、28 日間のうち 2 日以上その機能を使った場合です。1 人が複数の機能に数えられることがあり、Chat には agent mode も含まれます。"
+    },
+    {
+      "q": "過去のレポートにも反映されますか。",
+      "a": "この変更前の期間のレポートには、従来の 7 機能のみが含まれます。2 機能とも、エンタープライズと組織の 28 日間レポートのみで報告されます。"
+    }
+  ],
+  "evidence": [
+    "https://github.blog/changelog/2026-11-06-copilot-impact-dashboard-adds-chat-and-vs-code-agent-usage/",
+    "https://docs.github.com/ja/copilot/how-tos/administer-copilot/view-impact-dashboard"
+  ]
+}
