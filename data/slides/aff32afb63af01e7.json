@@ -1,0 +1,87 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "aff32afb63af01e7",
+  "title": {
+    "ja": "計画・構築・検証・運用観測の全工程に Copilot を使うエージェント開発の指針",
+    "subtitleJa": "コード生成の先へ。Plan・Build・Verify・Observe の 4 段階で Copilot の機能を使い分ける",
+    "original": "Beyond code generation: A developer's guide to agentic engineering"
+  },
+  "date": "2026-11-07",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "Copilot でコード生成は進んだが、レビューや運用の負担が残っている開発者",
+    "change": "計画から運用観測までの各段階で使える Copilot の機能が、一連の流れとして整理された",
+    "changeNature": "neutral"
+  },
+  "action": {
+    "required": "info",
+    "summary": "まず負担の大きい作業を 1 つ選び、その段階にエージェントを当てて広げる"
+  },
+  "panels": [
+    {
+      "id": "plan-build",
+      "heading": "Plan と Build",
+      "priority": "core",
+      "items": [
+        "Plan: Slack や Teams の Copilot で要件を詰め、Issue の作成や Plan Mode での計画レビューまで進める",
+        "Build: セッション継続で別の端末から再開でき、クラウド サンドボックスで閉じた後も実行が続く",
+        "Copilot アプリのセッションはリポジトリの独立したコピーを使い、リポジトリ指示と共有メモリで規約を引き継ぐ"
+      ]
+    },
+    {
+      "id": "verify-observe",
+      "heading": "Verify と Observe",
+      "priority": "core",
+      "items": [
+        "Verify: スタック PR、Code Quality、Copilot コード レビュー、AI Scan で人のレビュー前に定型の確認を済ませる",
+        "Agent Merge が失敗したチェック、レビュー コメント、競合に対応し、設定すれば検証通過後にマージする",
+        "Observe: コネクタ経由で観測データを調べ、証拠と受け入れ条件付きの Issue を下書きさせる"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "GitHub パッケージ ファイアウォールは npm 向けのパブリック プレビュー",
+        "Copilot Fusion ではモデルと推論の深さを選べ、品質・コスト・応答時間のバランスを取る"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "Plan Mode", "type": "feature", "oneLine": "方法を比較して実装計画を詰め、承認後に Copilot へ引き渡す機能。" },
+    { "term": "Copilot Dreaming", "type": "feature", "oneLine": "セッションと PR のフィードバックを見直し、メモリや指示・スキルの更新を提案する。" },
+    { "term": "Agent Merge", "type": "feature", "oneLine": "失敗チェック、レビュー コメント、競合に対応して PR のマージ準備を進める。" }
+  ],
+  "suggestions": [
+    "今週いちばん負担に感じる作業を 1 つ選び、まずそこにエージェントを使う"
+  ],
+  "qa": [
+    {
+      "q": "なぜ今、コード生成の先が重要なのですか。",
+      "a": "記事によると、今年 10 月の 1 週間で GitHub のコミットは 12 億件を超え、前年から 400% 以上増えました。一方、AI 導入が低から高に進んだチームではレビュー待ちが 441% 長くなったという調査も紹介されています。"
+    },
+    {
+      "q": "レビューの待ち時間を減らすには何をしますか。",
+      "a": "変更を小さく保つためにスタック PR を使い、Code Quality や Copilot コード レビューで定型の指摘を事前に片付けます。Agent Merge で失敗チェックやレビュー コメントへの対応も任せられます。"
+    },
+    {
+      "q": "どこから始めればよいですか。",
+      "a": "プロセス全体を一度に変える必要はありません。今週いちばん困っている作業にエージェントを当て、そこから他の段階に広げるのが記事の提案です。"
+    },
+    {
+      "q": "別の端末で作業を続けられますか。",
+      "a": "セッション継続により、複数のクライアントをまたいで同じ Copilot セッションを続けられます。Copilot はクラウド サンドボックスでタスクを実行するため、ノート PC を閉じても作業は進みます。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Beyond code generation: A developer's guide to agentic engineering - The GitHub Blog",
+      "url": "https://github.blog/ai-and-ml/github-copilot/beyond-code-generation-a-developers-guide-to-agentic-engineering/"
+    }
+  },
+  "evidence": [
+    "https://github.blog/ai-and-ml/github-copilot/beyond-code-generation-a-developers-guide-to-agentic-engineering/"
+  ]
+}
