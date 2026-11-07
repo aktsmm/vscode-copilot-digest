@@ -1,0 +1,78 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "2b1caf305a698efd",
+  "title": {
+    "ja": "SlackとTeamsの@GitHub、一般提供開始。TeamsはCanvasに対応",
+    "subtitleJa": "会話からバグ調査・Issue作成・実装・PR作成まで実行でき、TeamsではCanvasで共同レビュー",
+    "original": "@GitHub in Slack and Teams is generally available and more"
+  },
+  "date": "2026-11-06",
+  "topic": "GitHub Copilot",
+  "status": "ga",
+  "statusEvidence": "@GitHub in Slack and Teams is generally available and more",
+  "audience": {
+    "who": "SlackまたはTeamsでチーム会話しながら開発する開発者",
+    "change": "会話を離れずにバグ調査、Issue作成、変更の実装、PR作成ができ、Teamsでは実装計画も共同レビューできる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "SlackまたはTeamsで@GitHubを試す"
+  },
+  "panels": [
+    {
+      "id": "canvas",
+      "heading": "TeamsのCanvas",
+      "priority": "core",
+      "items": [
+        "Teams上で実装計画・コード変更・プレビューを会話の横でレビューできる",
+        "チームメンバーと議論しフィードバックを出し合い、Teamsを離れずに実装を改善できる"
+      ]
+    },
+    {
+      "id": "improvements",
+      "heading": "使い始めやすさの改善",
+      "priority": "core",
+      "items": [
+        "@GitHubがメッセージからリポジトリを特定し、再選択なしでセッションを開始",
+        "未サインイン、既定リポジトリなし、リポジトリ切替、アプリ権限が必要な場合の開始も容易に",
+        "フォローアップ メッセージに応答されない問題を修正"
+      ]
+    },
+    {
+      "id": "attribution",
+      "heading": "作成物の記録",
+      "priority": "detail",
+      "items": [
+        "@GitHubが作るIssueとPRの説明に「Created from a Slack/Teams conversation with @username」が入る"
+      ]
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "@GitHub in Slack and Teams is generally available and more - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-11-06-github-copilot-in-slack-and-teams-is-generally-available/"
+    }
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-11-06-github-copilot-in-slack-and-teams-is-generally-available/"
+  ],
+  "qa": [
+    {
+      "q": "@GitHubで何ができますか？",
+      "a": "SlackやTeamsの会話から、バグの調査、Issueの作成、変更の実装、プルリクエストの作成まで、会話を離れずに実行できます。"
+    },
+    {
+      "q": "Canvasとは何ですか？",
+      "a": "Teamsで実装計画、コード変更、プレビューを会話の横でレビューできる機能です。チームメンバーと議論し、フィードバックを共有しながら実装を改善できます。"
+    },
+    {
+      "q": "開始手順は簡単になりましたか？",
+      "a": "はい。@GitHubがメッセージからリポジトリを特定し、選び直さずにセッションを開始します。未サインインや既定リポジトリなし、リポジトリ切替、アプリ権限が必要な場合も始めやすくなりました。"
+    },
+    {
+      "q": "作成されたIssueやPRはどう見分けますか？",
+      "a": "@GitHubが作成したIssueとPRの説明に「Created from a Slack/Teams conversation with @username」と入ります。"
+    }
+  ]
+}
