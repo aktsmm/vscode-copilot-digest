@@ -1,0 +1,225 @@
+{
+  "date": "2026-11-07",
+  "generatedAt": "2026-11-07T01:00:16.176Z",
+  "latestRun": {
+    "generatedAt": "2026-11-07T01:00:16.176Z",
+    "newEventsCount": 10,
+    "newEventIds": [
+      "github-changelog:https://github.blog/changelog/2026-11-06-copilot-code-review-api-management-and-review-overview-updates",
+      "github-changelog:https://github.blog/changelog/2026-11-06-copilot-impact-dashboard-adds-chat-and-vs-code-agent-usage",
+      "github-changelog:https://github.blog/changelog/2026-11-06-github-copilot-weekly-releases-november-2",
+      "github-changelog:https://github.blog/changelog/2026-11-06-github-copilot-in-slack-and-teams-is-generally-available",
+      "github-changelog-copilot:https://github.blog/changelog/2026-11-06-copilot-code-review-api-management-and-review-overview-updates",
+      "github-changelog-copilot:https://github.blog/changelog/2026-11-06-copilot-impact-dashboard-adds-chat-and-vs-code-agent-usage",
+      "github-changelog-copilot:https://github.blog/changelog/2026-11-06-github-copilot-weekly-releases-november-2",
+      "github-changelog-copilot:https://github.blog/changelog/2026-11-06-github-copilot-in-slack-and-teams-is-generally-available",
+      "github-copilot-blog:https://github.blog/?p=100047",
+      "copilot-whats-new:561d34177e44532a5faf534e93d92547575d3f750b56c7c3ac0aec6b33518d67"
+    ],
+    "errorCount": 0,
+    "skippedLowInformationEvents": []
+  },
+  "events": [
+    {
+      "eventId": "copilot-whats-new:561d34177e44532a5faf534e93d92547575d3f750b56c7c3ac0aec6b33518d67",
+      "sourceId": "copilot-whats-new",
+      "sourceName": "GitHub Copilot What's New",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-11-07T01:00:08.041Z",
+      "publishedAt": "2026-11-07T01:00:08.040Z",
+      "title": "GitHub Copilot What's New changed",
+      "url": "https://github.com/features/copilot/whats-new",
+      "summary": "Detected 2 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 2,
+        "headings": [
+          "Nov.06 Improvement",
+          "Nov.06 Release"
+        ],
+        "additions": [
+          "H3: Nov.06 Improvement",
+          "H3: Nov.06 Release"
+        ]
+      },
+      "headings": [
+        "Changelog",
+        "Filters (0 selected)",
+        "November\n Nov\n 2026",
+        "Nov.06 Improvement",
+        "Nov.06 Improvement",
+        "Nov.06 Release",
+        "Nov.06 Release",
+        "Nov.05 Improvement",
+        "Nov.05 Improvement",
+        "Nov.04 Release",
+        "Nov.03 Improvement",
+        "Nov.03 Release"
+      ],
+      "score": 4
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-11-06-copilot-code-review-api-management-and-review-overview-updates",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-11-07T01:00:05.307Z",
+      "publishedAt": "2026-11-07T00:27:19.000Z",
+      "title": "Copilot code review: API management and review overview updates",
+      "url": "https://github.blog/changelog/2026-11-06-copilot-code-review-api-management-and-review-overview-updates",
+      "summary": "You can now manage GitHub Copilot code review settings through the REST and GraphQL APIs, from enterprise policy down to individual repositories. Copilot’s review overview comment is now more compact,…\nThe post Copilot code review: API management and review overview updates appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 1
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-11-06-copilot-code-review-api-management-and-review-overview-updates",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-11-07T01:00:06.310Z",
+      "publishedAt": "2026-11-07T00:27:19.000Z",
+      "title": "Copilot code review: API management and review overview updates",
+      "url": "https://github.blog/changelog/2026-11-06-copilot-code-review-api-management-and-review-overview-updates",
+      "summary": "You can now manage GitHub Copilot code review settings through the REST and GraphQL APIs, from enterprise policy down to individual repositories. Copilot’s review overview comment is now more compact,…\nThe post Copilot code review: API management and review overview updates appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 1
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-11-06-copilot-impact-dashboard-adds-chat-and-vs-code-agent-usage",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-11-07T01:00:05.307Z",
+      "publishedAt": "2026-11-06T22:17:28.000Z",
+      "title": "Copilot impact dashboard adds chat and VS Code agent usage",
+      "url": "https://github.blog/changelog/2026-11-06-copilot-impact-dashboard-adds-chat-and-vs-code-agent-usage",
+      "summary": "The Agent adoption chart in the Copilot impact dashboard now includes Copilot Chat and the VS Code Agents window, so you can see engagement across nine Copilot experiences. The adoption…\nThe post Copilot impact dashboard adds chat and VS Code agent usage appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "account management",
+        "copilot",
+        "enterprise management tools"
+      ],
+      "isFutureDated": false,
+      "score": 3
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-11-06-copilot-impact-dashboard-adds-chat-and-vs-code-agent-usage",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-11-07T01:00:06.310Z",
+      "publishedAt": "2026-11-06T22:17:28.000Z",
+      "title": "Copilot impact dashboard adds chat and VS Code agent usage",
+      "url": "https://github.blog/changelog/2026-11-06-copilot-impact-dashboard-adds-chat-and-vs-code-agent-usage",
+      "summary": "The Agent adoption chart in the Copilot impact dashboard now includes Copilot Chat and the VS Code Agents window, so you can see engagement across nine Copilot experiences. The adoption…\nThe post Copilot impact dashboard adds chat and VS Code agent usage appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "account management",
+        "copilot",
+        "enterprise management tools"
+      ],
+      "isFutureDated": false,
+      "score": 3
+    },
+    {
+      "eventId": "github-copilot-blog:https://github.blog/?p=100047",
+      "sourceId": "github-copilot-blog",
+      "sourceName": "GitHub Blog / GitHub Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-11-07T01:00:06.362Z",
+      "publishedAt": "2026-11-06T22:15:59.000Z",
+      "title": "Beyond code generation: A developer&#8217;s guide to agentic engineering",
+      "url": "https://github.blog/ai-and-ml/github-copilot/beyond-code-generation-a-developers-guide-to-agentic-engineering/",
+      "summary": "Writing code got faster. The work around it didn't. See how you can plan, write code, review changes, and investigate production issues with GitHub Copilot, and what work still needs your judgment.\nThe post Beyond code generation: A developer’s guide to agentic engineering appeared first on The GitHub Blog.",
+      "categories": [
+        "AI & ML",
+        "GitHub Copilot",
+        "GitHub Universe"
+      ],
+      "isFutureDated": false,
+      "score": 3
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-11-06-github-copilot-weekly-releases-november-2",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-11-07T01:00:05.307Z",
+      "publishedAt": "2026-11-06T21:00:26.000Z",
+      "title": "GitHub Copilot weekly releases — November 2",
+      "url": "https://github.blog/changelog/2026-11-06-github-copilot-weekly-releases-november-2",
+      "summary": "This week, Copilot comes to JetBrains Air and Xcode’s coding assistant, with updates to help you manage pull requests, settings, and agent sessions. GitHub Copilot app Set up Agent Merge…\nThe post GitHub Copilot weekly releases — November 2 appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 5
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-11-06-github-copilot-weekly-releases-november-2",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-11-07T01:00:06.310Z",
+      "publishedAt": "2026-11-06T21:00:26.000Z",
+      "title": "GitHub Copilot weekly releases — November 2",
+      "url": "https://github.blog/changelog/2026-11-06-github-copilot-weekly-releases-november-2",
+      "summary": "This week, Copilot comes to JetBrains Air and Xcode’s coding assistant, with updates to help you manage pull requests, settings, and agent sessions. GitHub Copilot app Set up Agent Merge…\nThe post GitHub Copilot weekly releases — November 2 appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 5
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-11-06-github-copilot-in-slack-and-teams-is-generally-available",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-11-07T01:00:05.307Z",
+      "publishedAt": "2026-11-06T20:31:08.000Z",
+      "title": "@GitHub in Slack and Teams is generally available and more",
+      "url": "https://github.blog/changelog/2026-11-06-github-copilot-in-slack-and-teams-is-generally-available",
+      "summary": "Turn conversations into code with @GitHub in Slack and Teams! Investigate bugs, create issues, implement changes, and open pull requests—all without leaving your conversation. What’s new Build and review together…\nThe post @GitHub in Slack and Teams is generally available and more appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "client apps",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-11-06-github-copilot-in-slack-and-teams-is-generally-available",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-11-07T01:00:06.310Z",
+      "publishedAt": "2026-11-06T20:31:08.000Z",
+      "title": "@GitHub in Slack and Teams is generally available and more",
+      "url": "https://github.blog/changelog/2026-11-06-github-copilot-in-slack-and-teams-is-generally-available",
+      "summary": "Turn conversations into code with @GitHub in Slack and Teams! Investigate bugs, create issues, implement changes, and open pull requests—all without leaving your conversation. What’s new Build and review together…\nThe post @GitHub in Slack and Teams is generally available and more appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "client apps",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    }
+  ],
+  "errors": []
+}

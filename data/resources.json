@@ -27391,6 +27391,222 @@
         "Original article explicit links",
         "Feature-matched official documentation indexes"
       ]
+    },
+    "1feca9fd663affbf643caadc9c2b54eee556a33fba94bd1c3351db07669086a3": {
+      "version": 6,
+      "checkedAt": "2026-11-07T01:00:16.584Z",
+      "inputUrl": "https://github.com/features/copilot/whats-new",
+      "inputTitle": "GitHub Copilot What's New changed",
+      "status": "unconfirmed",
+      "source": {
+        "url": "https://github.blog/changelog/?label=copilot#changelog-item-meta-100061",
+        "status": "unconfirmed",
+        "reason": "Multiple changed date headings; linked observed archive item without inferring a feature",
+        "checkedAt": "2026-11-07T01:00:17.421Z",
+        "contentHash": "85c37f0e42cc4a08bda13437b7420d73ea44f72a0f327010bcd02da3dcd233a8"
+      },
+      "documents": [],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "ae5b6456d898389a3aa8f391e1969eca0ceb209e4e0789b7746fabb2ac004e14": {
+      "version": 6,
+      "checkedAt": "2026-11-07T01:00:17.547Z",
+      "inputUrl": "https://github.blog/changelog/2026-11-06-copilot-code-review-api-management-and-review-overview-updates",
+      "inputTitle": "Copilot code review: API management and review overview updates",
+      "status": "verified",
+      "source": {
+        "url": "https://github.blog/changelog/2026-11-06-copilot-code-review-api-management-and-review-overview-updates/",
+        "status": "verified",
+        "reason": "Fetched original article",
+        "checkedAt": "2026-11-07T01:00:17.660Z",
+        "contentHash": "84617a6139a2e9795f8e1c3b4ee44e49edd6b1757f16cb48d7282bd106365d64"
+      },
+      "documents": [
+        {
+          "url": "https://docs.github.com/ja/copilot/how-tos/copilot-on-github/set-up-copilot/configure-code-review",
+          "title": "GitHub Copilotによるコード レビューの構成",
+          "language": "ja",
+          "checkedAt": "2026-11-07T01:00:18.639Z",
+          "contentHash": "b18d1386287877edea8441f46a7607c844d12d0802f8016f975d14f54ee9b763",
+          "discoveryUrl": "https://github.blog/changelog/2026-11-06-copilot-code-review-api-management-and-review-overview-updates/",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "Localized anchor not found; verified Japanese document body used: #configuring-copilot-code-review-with-the-api",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "df5a508ffc2120ca6fb42dd8b9abbff49db12faeababee39e33978b4013e38bc": {
+      "version": 6,
+      "checkedAt": "2026-11-07T01:00:18.733Z",
+      "inputUrl": "https://github.blog/changelog/2026-11-06-copilot-impact-dashboard-adds-chat-and-vs-code-agent-usage",
+      "inputTitle": "Copilot impact dashboard adds chat and VS Code agent usage",
+      "status": "verified",
+      "source": {
+        "url": "https://github.blog/changelog/2026-11-06-copilot-impact-dashboard-adds-chat-and-vs-code-agent-usage/",
+        "status": "verified",
+        "reason": "Fetched original article",
+        "checkedAt": "2026-11-07T01:00:18.761Z",
+        "contentHash": "54026bfbfa879a9d424559bd414dd4aae9db9dcaf4470b5ac1728fdc7aac781b"
+      },
+      "documents": [
+        {
+          "url": "https://docs.github.com/ja/copilot/how-tos/administer-copilot/view-impact-dashboard",
+          "title": "Copilot影響ダッシュボードの表示",
+          "language": "ja",
+          "checkedAt": "2026-11-07T01:00:19.464Z",
+          "contentHash": "a924ee4405f70cdb0bdd1518e10f170cccd161f2a209dfe9a39132d0e08fff82",
+          "discoveryUrl": "https://github.blog/changelog/2026-11-06-copilot-impact-dashboard-adds-chat-and-vs-code-agent-usage/",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "1a40f218e3c59b7324230042e04bc554c3aa2d0aee1dc82fd2e7943b7ac7d03c": {
+      "version": 6,
+      "checkedAt": "2026-11-07T01:00:19.502Z",
+      "inputUrl": "https://github.blog/ai-and-ml/github-copilot/beyond-code-generation-a-developers-guide-to-agentic-engineering/",
+      "inputTitle": "Beyond code generation: A developer&#8217;s guide to agentic engineering",
+      "status": "verified",
+      "source": {
+        "url": "https://github.blog/ai-and-ml/github-copilot/beyond-code-generation-a-developers-guide-to-agentic-engineering/",
+        "status": "verified",
+        "reason": "Fetched original article",
+        "checkedAt": "2026-11-07T01:00:19.518Z",
+        "contentHash": "d711ee659bd41c2f6b69b6c3d6269587572342c6eda02fcde95325b4d89284cf"
+      },
+      "documents": [
+        {
+          "url": "https://docs.github.com/ja/copilot/how-tos/copilot-integrations",
+          "title": "GitHub Copilot の統合",
+          "language": "ja",
+          "checkedAt": "2026-11-07T01:00:21.349Z",
+          "contentHash": "8ae323b0448d688a3f590425941fd987d087d95ccbde9d1c2c678ff9f94dc918",
+          "discoveryUrl": "https://github.blog/ai-and-ml/github-copilot/beyond-code-generation-a-developers-guide-to-agentic-engineering/",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://docs.github.com/ja/copilot/how-tos/copilot-on-github/copilot-for-github-tasks/use-copilot-to-create-or-update-issues",
+          "title": "GitHub Copilotを使用して問題を作成または更新する",
+          "language": "ja",
+          "checkedAt": "2026-11-07T01:00:21.848Z",
+          "contentHash": "c4eb619f15e740459bf5739a771b8ef9ac2eee0ba0727b10500c289d7aad6d72",
+          "discoveryUrl": "https://github.blog/ai-and-ml/github-copilot/beyond-code-generation-a-developers-guide-to-agentic-engineering/",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://docs.github.com/ja/copilot/how-tos/copilot-on-github/use-copilot-agents/research-plan-iterate",
+          "title": "Copilotを使用してコードの変更を調査し、計画し、反復します。",
+          "language": "ja",
+          "checkedAt": "2026-11-07T01:00:22.129Z",
+          "contentHash": "fd134f617c47ca64d84299cd39325a50dabd23eeb6b7885eb91be35b4e6cdd75",
+          "discoveryUrl": "https://github.blog/ai-and-ml/github-copilot/beyond-code-generation-a-developers-guide-to-agentic-engineering/",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "36b00a1a6b4837760f3a234751cd81ca88748e615d2751f3a777d4d8059dd884": {
+      "version": 6,
+      "checkedAt": "2026-11-07T01:00:22.168Z",
+      "inputUrl": "https://github.blog/changelog/2026-11-06-github-copilot-weekly-releases-november-2",
+      "inputTitle": "GitHub Copilot weekly releases — November 2",
+      "status": "verified",
+      "source": {
+        "url": "https://github.blog/changelog/2026-11-06-github-copilot-weekly-releases-november-2/",
+        "status": "verified",
+        "reason": "Fetched original article",
+        "checkedAt": "2026-11-07T01:00:22.320Z",
+        "contentHash": "15ebe7c70ca7c83f1889d4a32ad8454b861fea4d744b63cbb1ddc30c868febd7"
+      },
+      "documents": [
+        {
+          "url": "https://code.visualstudio.com/updates/v1_145",
+          "title": "Visual Studio Code 1.145",
+          "language": "en",
+          "checkedAt": "2026-11-06T13:04:04.819Z",
+          "contentHash": "e85806f98cedfe7419f6e1a089499f126692598aeabf92dc7e9fc5ba71e93141",
+          "discoveryUrl": "https://github.blog/changelog/2026-11-06-github-copilot-weekly-releases-november-2/",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "none",
+          "kind": "release_notes",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "6a3246276f3ee82c5c942e210ec3c454f0c2c55c17fd35d048e36d61d4c16c64": {
+      "version": 6,
+      "checkedAt": "2026-11-07T01:00:22.345Z",
+      "inputUrl": "https://github.blog/changelog/2026-11-06-github-copilot-in-slack-and-teams-is-generally-available",
+      "inputTitle": "@GitHub in Slack and Teams is generally available and more",
+      "status": "verified",
+      "source": {
+        "url": "https://github.blog/changelog/2026-11-06-github-copilot-in-slack-and-teams-is-generally-available/",
+        "status": "verified",
+        "reason": "Fetched original article",
+        "checkedAt": "2026-11-07T01:00:23.002Z",
+        "contentHash": "d5198d67dd7b12231ed72b8cd8a58b7c653585af83bf909e716b685bf945f0b9"
+      },
+      "documents": [
+        {
+          "url": "https://code.visualstudio.com/docs/agents/agents-tutorial",
+          "title": "Tutorial: Agentic coding in VS Code",
+          "language": "en",
+          "checkedAt": "2026-11-07T01:00:23.185Z",
+          "contentHash": "d3ae220c6ec709d503b3a1f5cf89cd89eda64b057d127ea3f3cf0c554844baca",
+          "discoveryUrl": "https://code.visualstudio.com/docs",
+          "basis": "Matching feature terms in official documentation index",
+          "localization": "not_applicable",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
     }
   }
 }
