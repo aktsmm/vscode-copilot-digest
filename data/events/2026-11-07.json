@@ -1,21 +1,10 @@
 {
   "date": "2026-11-07",
-  "generatedAt": "2026-11-07T01:00:16.176Z",
+  "generatedAt": "2026-11-07T11:49:51.944Z",
   "latestRun": {
-    "generatedAt": "2026-11-07T01:00:16.176Z",
-    "newEventsCount": 10,
-    "newEventIds": [
-      "github-changelog:https://github.blog/changelog/2026-11-06-copilot-code-review-api-management-and-review-overview-updates",
-      "github-changelog:https://github.blog/changelog/2026-11-06-copilot-impact-dashboard-adds-chat-and-vs-code-agent-usage",
-      "github-changelog:https://github.blog/changelog/2026-11-06-github-copilot-weekly-releases-november-2",
-      "github-changelog:https://github.blog/changelog/2026-11-06-github-copilot-in-slack-and-teams-is-generally-available",
-      "github-changelog-copilot:https://github.blog/changelog/2026-11-06-copilot-code-review-api-management-and-review-overview-updates",
-      "github-changelog-copilot:https://github.blog/changelog/2026-11-06-copilot-impact-dashboard-adds-chat-and-vs-code-agent-usage",
-      "github-changelog-copilot:https://github.blog/changelog/2026-11-06-github-copilot-weekly-releases-november-2",
-      "github-changelog-copilot:https://github.blog/changelog/2026-11-06-github-copilot-in-slack-and-teams-is-generally-available",
-      "github-copilot-blog:https://github.blog/?p=100047",
-      "copilot-whats-new:561d34177e44532a5faf534e93d92547575d3f750b56c7c3ac0aec6b33518d67"
-    ],
+    "generatedAt": "2026-11-07T11:49:51.944Z",
+    "newEventsCount": 0,
+    "newEventIds": [],
     "errorCount": 0,
     "skippedLowInformationEvents": []
   },
