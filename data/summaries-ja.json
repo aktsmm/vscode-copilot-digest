@@ -3957,5 +3957,59 @@
       "コメントはPRのマージ日に集計され、投稿日ではない",
       "botが作成したPRではコメントは通常評価されない"
     ]
+  },
+  "353c4d26111c8c91": {
+    "title": "Copilotが JetBrains Air と Xcode に対応、Copilot appも更新",
+    "summary": "GitHub Copilot の週次リリースで、JetBrains Air と Xcode の組み込みコーディングアシスタントでの利用が始まった。Copilot app では Agent Merge の設定、CLI では /settings の統合ダッシュボード、VS Code 1.145 ではチャット表示モードなどが加わった。",
+    "why": "JetBrains Air や Xcode を使う開発者、Copilot app と CLI の利用者は、新しい導入手順と設定画面を試せる。",
+    "points": [
+      "Xcode 連携はパブリックプレビューで、Xcode 27.3 beta 以降が対象",
+      "JetBrains Air では複数のエージェントセッションを追跡し、ローカルまたは Air Teams のクラウドで実行できる",
+      "Copilot CLI の /settings でプラグインや MCP サーバーをまとめて管理できる",
+      "VS Code 1.145 のローカル自動化は cron 式とワークスペースのカスタムエージェントに対応"
+    ]
+  },
+  "2b1caf305a698efd": {
+    "title": "Slack と Teams の @GitHub が一般提供に、Teams に Canvas も追加",
+    "summary": "Slack と Teams から @GitHub を呼び出し、バグ調査、Issue 作成、変更の実装、PR 作成を会話の中で行える機能が一般提供になった。Teams では Canvas で実装計画やコード変更、プレビューを会話の横でレビューできる。",
+    "why": "チャットで議論してそのままコード化したいチームは、Slack または Teams で @GitHub を導入して試せる。",
+    "points": [
+      "メッセージからリポジトリを自動判別してセッションを開始する",
+      "フォローアップ返信が届かない問題を修正",
+      "@GitHub が作る Issue と PR の説明に、元の Slack/Teams 会話と起点ユーザーが記載される"
+    ]
+  },
+  "a5fcc1255202f357": {
+    "title": "Copilot impact dashboard に Chat と VS Code Agents window を追加",
+    "summary": "Copilot impact dashboard の Agent adoption チャートに Copilot Chat と VS Code Agents window が加わり、計9機能のエンゲージメントを確認できる。「Passive users」は「Chat-first users」に改名され、28日間の使用状況レポートにも同じ2機能が入った。",
+    "why": "Copilot の利用状況を見る管理者は、チャット中心のユーザーも集計に含まれる新しい指標で分析できる。",
+    "points": [
+      "API の copilot_feature_engagement.totals_by_feature に chat と vscode_agent が追加",
+      "Chat と Agents window は adoption phase には数えられない",
+      "28日間で2日以上使うと利用ありとなり、複数機能に重複して数えられる",
+      "閲覧には View Copilot Metrics 権限と usage metrics ポリシーの有効化が必要"
+    ]
+  },
+  "aff32afb63af01e7": {
+    "title": "計画から運用まで、Copilot で進めるエージェント開発の流れ",
+    "summary": "GitHub が、Plan・Build・Verify・Observe の4段階で Copilot を使う開発の進め方を紹介した。AI でコード生成が速くなる一方、レビュー待ちが増える問題に対し、スタック PR、Code Quality、Agent Merge などでの負担軽減を示している。",
+    "why": "AI 導入後にレビューや運用調査が詰まっている開発者は、自分の作業のどこへエージェントを足すか検討できる。",
+    "points": [
+      "Plan は Slack/Teams 連携、Plan Mode、Agentic Workflows での Issue 整理",
+      "Build はクラウドサンドボックスと分離されたセッションで並行作業",
+      "Verify はスタック PR、AI Scan、ライセンスチェック、Agent Merge を活用",
+      "Observe は Fabric などのコネクタで調査し、Issue 化や Dreaming で知見を反映"
+    ]
+  },
+  "cc9249299f5d778e": {
+    "title": "Copilot code review の設定を API で管理、概要コメントも簡潔に",
+    "summary": "Copilot code review の設定を REST と GraphQL API で、エンタープライズから組織、リポジトリまで管理できるようになった。レビュー概要コメントはレビュー強度などをフッターにまとめた簡潔な形式になり、課金や自動レビューの不具合も修正された。",
+    "why": "Copilot code review を管理する管理者は、API 経由の設定変更と対応するトークン種別を確認して運用に取り込める。",
+    "points": [
+      "エンタープライズ・組織の設定エンドポイントは GitHub Apps と fine-grained PAT に非対応",
+      "リポジトリの設定は Administration の read/write 権限で読み書きできる",
+      "未レビューのファイルは「Files not reviewed」セクションに集約される",
+      "Balanced effort のレビューは3つのレビューモデルと統合モデルを使う"
+    ]
   }
 }
