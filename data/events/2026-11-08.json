@@ -1,18 +1,13 @@
 {
   "date": "2026-11-08",
-  "generatedAt": "2026-11-08T12:03:17.422Z",
+  "generatedAt": "2026-11-08T18:25:53.066Z",
   "latestRun": {
-    "generatedAt": "2026-11-08T12:03:17.422Z",
+    "generatedAt": "2026-11-08T18:25:53.066Z",
     "newEventsCount": 0,
     "newEventIds": [],
-    "errorCount": 1,
+    "errorCount": 0,
     "skippedLowInformationEvents": []
   },
   "events": [],
-  "errors": [
-    {
-      "sourceId": "copilot-whats-new",
-      "message": "Failed to fetch https://github.com/features/copilot/whats-new: 504 Gateway Timeout"
-    }
-  ]
+  "errors": []
 }
