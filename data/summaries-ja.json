@@ -4011,5 +4011,16 @@
       "未レビューのファイルは「Files not reviewed」セクションに集約される",
       "Balanced effort のレビューは3つのレビューモデルと統合モデルを使う"
     ]
+  },
+  "a3eb4dc7ae89c15a": {
+    "title": "Claude Fable 5.2がCopilotで一般提供に",
+    "summary": "Anthropicの最新Fableモデル「Claude Fable 5.2」がGitHub Copilotで一般提供になった。大規模コードベースでの複雑な多段階タスク向けで、初期テストではFable 5.1より少ないステップとツール呼び出しで多くのタスクを解決した。提供は段階的。",
+    "why": "BusinessとEnterpriseの管理者は、データ保持の要件を理解したうえでポリシーを有効化するか判断する必要がある。",
+    "points": [
+      "対象はCopilot Pro+、Max、Business、Enterpriseで、VS CodeやCLI、github.comなどのモデルピッカーから選べる",
+      "BusinessとEnterpriseではCopilot設定のClaude Fable 5.2ポリシーがデフォルトでオフ",
+      "Anthropicが安全分類器のためプロンプトと出力を保持する。学習には使われない",
+      "対象の企業はゼロデータ保持を年末まで利用可能。以降はEFSが必要"
+    ]
   }
 }
