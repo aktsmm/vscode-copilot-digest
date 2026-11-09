@@ -185,7 +185,10 @@ H3: Compare model results (Preview)
 Run the same prompt with multiple models or harnesses to compare responses or isolated code changes. See Compare model results for setup, judging, and synthesis options.
 H2: Continue in another interface
 To edit or debug alongside a supported project conversation, select Open in Editor in the title bar. To return, select Open in Agents, then select the existing session. Check the supported session types and continuation requirements.
-For continuity across apps and devices, use GitHub Environments (Preview). For VS Code-specific remote access, use SSH or dev tunnels. Keep the host and its required application or service running.
+For continuity across apps and devices, use GitHub environments 
+ 
+ GitHub environments is in preview and might change before it becomes generally available.
+. For VS Code-specific remote access, use SSH or dev tunnels. Keep the host and its required application or service running.
 H2: Automate follow-up work
 H3: Finish a pull request with agent merge
 Agent merge monitors a session's pull request and asks the agent to address blockers. It can address reviews, fix failed required checks, resolve conflicts or update a branch, and optionally merge the result. It requires 

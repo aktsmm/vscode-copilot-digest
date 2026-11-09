@@ -27607,6 +27607,200 @@
         "Original article explicit links",
         "Feature-matched official documentation indexes"
       ]
+    },
+    "ae4e8f9bd6077510eadbebee1b237fecf87083c7bddcca16a78bf834673bf0d5": {
+      "version": 6,
+      "checkedAt": "2026-11-09T23:05:40.505Z",
+      "inputUrl": "https://github.com/features/copilot/whats-new",
+      "inputTitle": "GitHub Copilot What's New changed",
+      "status": "verified",
+      "source": {
+        "url": "https://github.blog/changelog/2026-11-09-claude-fable-5-2-in-github-copilot/",
+        "status": "verified",
+        "reason": "Snapshot observation, not a standalone feature: Nov.09 Release; explicit article: Claude Fable 5.2 in GitHub Copilot",
+        "checkedAt": "2026-11-09T23:05:40.936Z",
+        "contentHash": "5225ad7489fd5ea48469ae20860d8e685b6f5392cd248bf8fd452a711861339a"
+      },
+      "documents": [
+        {
+          "url": "https://docs.github.com/ja/copilot/reference/copilot-billing/models-and-pricing",
+          "title": "GitHub Copilot のモデルと価格設定",
+          "language": "ja",
+          "checkedAt": "2026-11-09T23:05:41.751Z",
+          "contentHash": "df2b4887fc1761bb7b4ff53537f5ac6809b874dda04fc9211a4fbc405891a25e",
+          "discoveryUrl": "https://github.blog/changelog/2026-11-09-claude-fable-5-2-in-github-copilot/",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://docs.github.com/ja/copilot/reference/ai-models/supported-models",
+          "title": "GitHub Copilotでサポートされている AI モデル",
+          "language": "ja",
+          "checkedAt": "2026-11-09T23:05:43.433Z",
+          "contentHash": "29579ecaa96c4f6710f1f6ae290e77ae1022fa260641d467d3bb60890db2a5e0",
+          "discoveryUrl": "https://github.blog/changelog/2026-11-09-claude-fable-5-2-in-github-copilot/",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "2cac18061b336dad7bb5c2788077201fa462060ab2fd77e18738699b7d3d1433": {
+      "version": 6,
+      "checkedAt": "2026-11-09T23:05:43.591Z",
+      "inputUrl": "https://github.blog/changelog/2026-11-09-claude-fable-5-2-in-github-copilot",
+      "inputTitle": "Claude Fable 5.2 in GitHub Copilot",
+      "status": "verified",
+      "source": {
+        "url": "https://github.blog/changelog/2026-11-09-claude-fable-5-2-in-github-copilot/",
+        "status": "verified",
+        "reason": "Fetched original article",
+        "checkedAt": "2026-11-09T23:05:40.936Z",
+        "contentHash": "5225ad7489fd5ea48469ae20860d8e685b6f5392cd248bf8fd452a711861339a"
+      },
+      "documents": [
+        {
+          "url": "https://docs.github.com/ja/copilot/reference/copilot-billing/models-and-pricing",
+          "title": "GitHub Copilot のモデルと価格設定",
+          "language": "ja",
+          "checkedAt": "2026-11-09T23:05:41.751Z",
+          "contentHash": "df2b4887fc1761bb7b4ff53537f5ac6809b874dda04fc9211a4fbc405891a25e",
+          "discoveryUrl": "https://github.blog/changelog/2026-11-09-claude-fable-5-2-in-github-copilot/",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://docs.github.com/ja/copilot/reference/ai-models/supported-models",
+          "title": "GitHub Copilotでサポートされている AI モデル",
+          "language": "ja",
+          "checkedAt": "2026-11-09T23:05:43.433Z",
+          "contentHash": "29579ecaa96c4f6710f1f6ae290e77ae1022fa260641d467d3bb60890db2a5e0",
+          "discoveryUrl": "https://github.blog/changelog/2026-11-09-claude-fable-5-2-in-github-copilot/",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "d9d7ddba5aff2527fc9185a6197b9178ef890b92d1d74095a31613e792dac824": {
+      "version": 6,
+      "checkedAt": "2026-11-09T23:05:43.605Z",
+      "inputUrl": "https://code.visualstudio.com/docs/agents/run/remote-agent-sessions",
+      "inputTitle": "VS Code Docs / Remote agent sessions changed",
+      "status": "verified",
+      "source": {
+        "url": "https://code.visualstudio.com/docs/agents/run/remote-agent-sessions#_make-a-host-available-for-remote-access",
+        "status": "verified",
+        "reason": "Observed changed heading(s): Make a host available for remote access; Continue an existing remote session; GitHub environments; Start a remote session; Connect via SSH; Connect via dev tunnel; Use the Agents window in the browser; Set up a dev tunnel; Host management; Use remote sessions in the Chat view; Work in a remote workspace; Share this machine from the Chat view; Manage remote connections; Disconnect or stop sharing; Manage remote environments (Experimental); Other remote workflows; Start a chat without a workspace on a remote host; Run a session in a remote Dev Container; Preview a remote web app; Delegate tasks to remote machines (Experimental); Troubleshoot remote sessions; Troubleshoot GitHub environments",
+        "checkedAt": "2026-11-09T23:05:43.991Z",
+        "contentHash": "2554865fb6287c4ac18ef885f76a370aa3f9c2cfae30a8c74ee32e1ccaf82f6f"
+      },
+      "documents": [
+        {
+          "url": "https://code.visualstudio.com/docs/agent-customization/overview#_manage-customizations-for-remote-sessions",
+          "title": "Customize agents for your workflow",
+          "language": "en",
+          "checkedAt": "2026-11-09T23:05:45.007Z",
+          "contentHash": "84f7d8f7f4762cc7e04b34c964b9fb9b82d67b8efee311ec9f1a29bd725e4dd8",
+          "discoveryUrl": "https://code.visualstudio.com/docs/agents/run/remote-agent-sessions#_make-a-host-available-for-remote-access",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "verified",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://code.visualstudio.com/docs/agents/run/security#_remote-connections-and-github-environments",
+          "title": "Secure AI-assisted development in VS Code",
+          "language": "en",
+          "checkedAt": "2026-11-09T23:05:45.169Z",
+          "contentHash": "644d092007823ebff07c242dd9406fd3a2d3ab924e4154f5f7448d5c51803b44",
+          "discoveryUrl": "https://code.visualstudio.com/docs/agents/run/remote-agent-sessions#_make-a-host-available-for-remote-access",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "verified",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://code.visualstudio.com/docs/agents/run/sessions/manage-sessions#_find-and-resume-a-session",
+          "title": "Manage agent sessions in VS Code",
+          "language": "en",
+          "checkedAt": "2026-11-09T23:05:45.363Z",
+          "contentHash": "a641d3747be538640a5a232d41325d72910e62431023de072a0339e316b0bd0f",
+          "discoveryUrl": "https://code.visualstudio.com/docs/agents/run/remote-agent-sessions#_make-a-host-available-for-remote-access",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "verified",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "7f7c85ae3c8eb24a407321d34ff0cd372aa62cdc0eaa8962477f3335cbe28fbe": {
+      "version": 6,
+      "checkedAt": "2026-11-09T23:05:45.403Z",
+      "inputUrl": "https://code.visualstudio.com/docs/agents/run/agents-window",
+      "inputTitle": "VS Code Docs / Agents window changed",
+      "status": "unconfirmed",
+      "source": {
+        "url": "https://code.visualstudio.com/docs/agents/run/agents-window",
+        "status": "unconfirmed",
+        "reason": "Historical changed feature not identifiable in current page",
+        "checkedAt": "2026-11-09T23:05:46.435Z",
+        "contentHash": "ca257a495b75d9432385123b527339e27b001dab7cfa1f04eccee3b89ec1b865"
+      },
+      "documents": [],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "880b64a4abf461e39441cb863cdb703e3af45bc89891db42d959c20c44cafec1": {
+      "version": 6,
+      "checkedAt": "2026-11-09T23:05:46.483Z",
+      "inputUrl": "https://docs.github.com/en/copilot/reference",
+      "inputTitle": "GitHub Docs / Copilot reference changed",
+      "status": "unconfirmed",
+      "source": {
+        "url": "https://docs.github.com/en/copilot/reference",
+        "status": "unconfirmed",
+        "reason": "Historical changed feature not identifiable in current page",
+        "checkedAt": "2026-11-09T23:05:46.492Z",
+        "contentHash": "4c389c9ebd854bf7010be78fa80880ade7393d391cf7b230dd5145b1c72abfec"
+      },
+      "documents": [],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
     }
   }
 }

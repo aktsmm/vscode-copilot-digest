@@ -1,13 +1,239 @@
 {
   "date": "2026-11-09",
-  "generatedAt": "2026-11-09T14:05:51.418Z",
+  "generatedAt": "2026-11-09T23:05:39.946Z",
   "latestRun": {
-    "generatedAt": "2026-11-09T14:05:51.418Z",
-    "newEventsCount": 0,
-    "newEventIds": [],
+    "generatedAt": "2026-11-09T23:05:39.946Z",
+    "newEventsCount": 6,
+    "newEventIds": [
+      "github-changelog:https://github.blog/changelog/2026-11-09-claude-fable-5-5-in-github-copilot",
+      "github-changelog-copilot:https://github.blog/changelog/2026-11-09-claude-fable-5-5-in-github-copilot",
+      "copilot-whats-new:f6e7a240cd7adc174fc68acdbe9e5d44a99128ea17fe4ad08c0fa70e830e020d",
+      "docs-github-copilot-reference:8ba4cf5a238a0d13f0405327b805dbe378498bbf0676af4fbf80609a1deef20d",
+      "vscode-docs-agents-window:e009dc22a286a66185d37dbf9d4129530f7201744e4482c19af846c0fbc69a49",
+      "vscode-docs-agents-remote-sessions:93dc9d22fc6c7aa56d6a8595f807e4cff2771bf6c178eff6b810bf8cd83e621d"
+    ],
     "errorCount": 0,
     "skippedLowInformationEvents": []
   },
-  "events": [],
+  "events": [
+    {
+      "eventId": "copilot-whats-new:f6e7a240cd7adc174fc68acdbe9e5d44a99128ea17fe4ad08c0fa70e830e020d",
+      "sourceId": "copilot-whats-new",
+      "sourceName": "GitHub Copilot What's New",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-11-09T23:05:34.548Z",
+      "publishedAt": "2026-11-09T23:05:34.547Z",
+      "title": "GitHub Copilot What's New changed",
+      "url": "https://github.com/features/copilot/whats-new",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [
+          "Nov.09 Release"
+        ],
+        "additions": [
+          "H3: Nov.09 Release"
+        ]
+      },
+      "headings": [
+        "Changelog",
+        "Filters (0 selected)",
+        "November\n Nov\n 2026",
+        "Nov.09 Release",
+        "Nov.06 Improvement",
+        "Nov.06 Improvement",
+        "Nov.06 Release",
+        "Nov.06 Release",
+        "Nov.05 Improvement",
+        "Nov.05 Improvement",
+        "Nov.04 Release",
+        "Nov.03 Improvement"
+      ],
+      "score": 3
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-11-09-claude-fable-5-5-in-github-copilot",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-11-09T23:05:28.236Z",
+      "publishedAt": "2026-11-09T16:46:43.000Z",
+      "title": "Claude Fable 5.2 in GitHub Copilot",
+      "url": "https://github.blog/changelog/2026-11-09-claude-fable-5-2-in-github-copilot",
+      "summary": "Claude Fable 5.2, Anthropic’s newest Fable model, is now generally available in GitHub Copilot. You can use it for complex, multistep coding tasks across large codebases. In early testing, Fable…\nThe post Claude Fable 5.2 in GitHub Copilot appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-11-09-claude-fable-5-5-in-github-copilot",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-11-09T23:05:28.878Z",
+      "publishedAt": "2026-11-09T16:46:43.000Z",
+      "title": "Claude Fable 5.2 in GitHub Copilot",
+      "url": "https://github.blog/changelog/2026-11-09-claude-fable-5-2-in-github-copilot",
+      "summary": "Claude Fable 5.2, Anthropic’s newest Fable model, is now generally available in GitHub Copilot. You can use it for complex, multistep coding tasks across large codebases. In early testing, Fable…\nThe post Claude Fable 5.2 in GitHub Copilot appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
+    {
+      "eventId": "vscode-docs-agents-remote-sessions:93dc9d22fc6c7aa56d6a8595f807e4cff2771bf6c178eff6b810bf8cd83e621d",
+      "sourceId": "vscode-docs-agents-remote-sessions",
+      "sourceName": "VS Code Docs / Remote agent sessions",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-11-09T23:05:36.923Z",
+      "publishedAt": "2026-11-09T23:05:36.900Z",
+      "title": "VS Code Docs / Remote agent sessions changed",
+      "url": "https://code.visualstudio.com/docs/agents/run/remote-agent-sessions",
+      "summary": "Detected 141 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 141,
+        "headings": [
+          "Make a host available for remote access",
+          "Continue an existing remote session",
+          "GitHub environments",
+          "Start a remote session",
+          "Connect via SSH",
+          "Connect via dev tunnel",
+          "Use the Agents window in the browser",
+          "Set up a dev tunnel",
+          "Host management",
+          "Use remote sessions in the Chat view",
+          "Work in a remote workspace",
+          "Share this machine from the Chat view",
+          "Manage remote connections",
+          "Disconnect or stop sharing",
+          "Manage remote environments (Experimental)",
+          "Other remote workflows",
+          "Start a chat without a workspace on a remote host",
+          "Run a session in a remote Dev Container",
+          "Preview a remote web app",
+          "Delegate tasks to remote machines (Experimental)",
+          "Troubleshoot remote sessions",
+          "Troubleshoot GitHub environments"
+        ],
+        "additions": [
+          "Use remote agent sessions to run tasks on another machine and interact with them from your current device. Connect to a host from the Agents window, then start a new task or continue an existing conversation.",
+          "The machines have two roles:",
+          "Host machine: Runs the agent and contains the project, tools, and session.",
+          "Client machine: Runs the application you use to connect and interact with the session.",
+          "Keep the host machine awake, online, and its Agent Host or owning application running. Connecting doesn't transfer the session or copy the project to the client machine.",
+          "Make a host available for remote access, then connect to an existing session or start a new remote session. To edit and debug the remote project alongside chat, see Use remote sessions in the Chat view.",
+          "Choose the workflow that matches what you want to do:",
+          "Opening a remote project in the editor is a separate workflow, described under Use remote sessions in the Chat view.",
+          "H2: Make a host available for remote access",
+          "Enable remote access to start or continue agent sessions from another device while the project, tools, and execution stay on the host machine. Remote clients can access its Agent Host-backed sessions, such as a Copilot session. Local harness sessions and older extension-host sessions aren't shared this way.",
+          "Run these steps on the host machine to make it available for remote access.",
+          "On the host machine, open the Agents window, or use an Agent Host-backed session in the Chat view in an editor window.",
+          "Open Remote Connections (antenna icon) in the Agents window title bar or the Chat view input area.",
+          "Choose a connection method to start sharing.",
+          "GitHub Environments",
+          "GitHub environments is in preview and might change before it becomes generally available.",
+          ": Register the host as a GitHub environment for access from supported Copilot clients.",
+          "Dev Tunnels: Allow remote access from VS Code or the browser-based Agents window.",
+          "Complete any sign-in or confirmation prompts.",
+          "From the client machine, continue an existing session or start a remote session for a new task. To stop remote access, select Off in the same Remote Connections menu. This doesn't stop running agent tasks.",
+          "Remote connections enable access to the host's supported sessions, tools, and workspace resources, not just the current conversation. With GitHub environments, session actions are mirrored to GitHub for catalog and history storage, and conversation content is not end-to-end encrypted. Review remote connection security before enabling access.",
+          "H2: Continue an existing remote session",
+          "Connect to the host that owns the session through GitHub environments, SSH, or a dev tunnel. After connecting, select the existing session from the Agents window sessions list.",
+          "Connecting to a host doesn't by itself reopen a conversation. To continue a task, select its existing session rather than submitting the task as a new prompt."
+        ]
+      },
+      "headings": [
+        "Run and manage remote agent sessions",
+        "Choose how to connect",
+        "Make a host available for remote access",
+        "Continue an existing remote session",
+        "GitHub environments",
+        "Start a remote session",
+        "Connect via SSH",
+        "Connect via dev tunnel",
+        "Use the Agents window in the browser",
+        "Set up a dev tunnel",
+        "Host management",
+        "Use remote sessions in the Chat view"
+      ],
+      "score": 24
+    },
+    {
+      "eventId": "vscode-docs-agents-window:e009dc22a286a66185d37dbf9d4129530f7201744e4482c19af846c0fbc69a49",
+      "sourceId": "vscode-docs-agents-window",
+      "sourceName": "VS Code Docs / Agents window",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-11-09T23:05:36.768Z",
+      "publishedAt": "2026-11-09T23:05:36.767Z",
+      "title": "VS Code Docs / Agents window changed",
+      "url": "https://code.visualstudio.com/docs/agents/run/agents-window",
+      "summary": "Detected 3 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 3,
+        "headings": [],
+        "additions": [
+          "For continuity across apps and devices, use GitHub environments",
+          "GitHub environments is in preview and might change before it becomes generally available.",
+          ". For VS Code-specific remote access, use SSH or dev tunnels. Keep the host and its required application or service running."
+        ]
+      },
+      "headings": [
+        "Use the Agents window",
+        "Open the Agents window",
+        "Agents window interface overview",
+        "Understand the active session",
+        "Start an agent session",
+        "Choose where an agent makes changes",
+        "Work with multiple sessions",
+        "Arrange sessions in a grid",
+        "Review and finish an agent session",
+        "Inspect workspace files and changes",
+        "Validate changes",
+        "Commit changes"
+      ],
+      "score": 2
+    },
+    {
+      "eventId": "docs-github-copilot-reference:8ba4cf5a238a0d13f0405327b805dbe378498bbf0676af4fbf80609a1deef20d",
+      "sourceId": "docs-github-copilot-reference",
+      "sourceName": "GitHub Docs / Copilot reference",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-11-09T23:05:35.605Z",
+      "publishedAt": "2026-11-09T23:05:35.604Z",
+      "title": "GitHub Docs / Copilot reference changed",
+      "url": "https://docs.github.com/en/copilot/reference",
+      "summary": "Detected 2 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 2,
+        "headings": [],
+        "additions": [
+          "Coverage and requirements for Copilot usage metrics",
+          "Industry comparisons for Copilot usage metrics"
+        ]
+      },
+      "headings": [
+        "Reference for GitHub Copilot"
+      ],
+      "score": 2
+    }
+  ],
   "errors": []
 }

@@ -36,6 +36,8 @@ GitHub Copilot request-based billing for annual plan subscribers (legacy)
 Files excluded from GitHub Copilot code review
 GitHub Copilot usage metrics
 Data available in Copilot usage metrics
+Coverage and requirements for Copilot usage metrics
+Industry comparisons for Copilot usage metrics
 Interpreting usage and adoption metrics for GitHub Copilot
 Reconciling Copilot usage metrics across dashboards, APIs, and reports
 Lines of Code metrics
