@@ -1,0 +1,98 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "a3eb4dc7ae89c15a",
+  "title": {
+    "ja": "GitHub Copilot で Claude Fable 5.2 が一般提供開始",
+    "subtitleJa": "Pro+・Max・Business・Enterprise で利用可能。データ保持が既定で必須",
+    "original": "Claude Fable 5.2 in GitHub Copilot"
+  },
+  "date": "2026-11-09",
+  "topic": "GitHub Copilot",
+  "status": "ga",
+  "statusEvidence": "Claude Fable 5.2, Anthropic’s newest Fable model, is now generally available in GitHub Copilot.",
+  "audience": {
+    "who": "Copilot Pro+・Max・Business・Enterprise のユーザーと、Business / Enterprise の管理者",
+    "change": "大規模コードベースの複雑な複数ステップのコーディング作業にモデルピッカーから使える",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "Business / Enterprise の管理者は、使わせる場合に Copilot 設定でポリシーを有効にする"
+  },
+  "panels": [
+    {
+      "id": "availability",
+      "heading": "使える場所とプラン",
+      "priority": "core",
+      "items": [
+        "Copilot Pro+、Max、Business、Enterprise のユーザーが対象",
+        "モデルピッカーで選択: VS Code、Visual Studio、CLI、github.com、Mobile、JetBrains、Xcode、Eclipse ほか",
+        "展開は段階的。表示されない場合は後で再確認する"
+      ]
+    },
+    {
+      "id": "enable",
+      "heading": "有効化の手順",
+      "priority": "core",
+      "items": [
+        "Business / Enterprise の管理者が Copilot 設定で Claude Fable 5.2 ポリシーを有効にする（既定はオフ）",
+        "ポリシーを有効にすると、データ保持の要件を承認したことになる",
+        "オフのままなら、組織ではモデルを利用できない"
+      ]
+    },
+    {
+      "id": "limits",
+      "heading": "前提と制限",
+      "priority": "core",
+      "items": [
+        "既定でデータ保持が必須。安全性分類器のため Anthropic が保持し、学習には使わない",
+        "課金は、使用量ベース課金でプロバイダーの定価",
+        "一部の対象企業はゼロ データ保持で利用可能。承認だけでは自動で有効にならない"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "ゼロ データ保持は、暦年末までの期間限定の免除措置。以降の継続利用には EFS が必要",
+        "対象かどうかは GitHub のアカウント チームに問い合わせる。GitHub Support は判断できない"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "ZDR", "type": "term", "oneLine": "ゼロ データ保持。他の Claude モデルは、Fable 5 系を除きこの方式で動作する。" },
+    { "term": "EFS", "type": "term", "oneLine": "Enterprise Frontier Safeguards。自動の安全性監視と、データ保持の選択肢を提供する仕組み。" }
+  ],
+  "qa": [
+    {
+      "q": "どのプランで使えますか。",
+      "a": "Copilot Pro+、Max、Business、Enterprise のユーザーが対象です。展開は段階的なので、表示されない場合は後で再確認してください。"
+    },
+    {
+      "q": "Business / Enterprise ではどう有効にしますか。",
+      "a": "管理者が Copilot 設定で Claude Fable 5.2 ポリシーを有効にします。既定はオフで、オフのままだと組織では利用できません。"
+    },
+    {
+      "q": "データはどう扱われますか。",
+      "a": "既定でデータ保持が必須です。Anthropic が安全性分類器の運用のためにプロンプトと出力を保持しますが、モデルの学習には使われません。"
+    },
+    {
+      "q": "ゼロ データ保持で使えますか。",
+      "a": "一部の対象エンタープライズは、暦年末まで期間限定の免除で利用できます。対象かどうかは GitHub のアカウント チームに問い合わせます。承認後もポリシーの有効化は必要です。"
+    },
+    {
+      "q": "料金はどうなりますか。",
+      "a": "使用量ベース課金のもとで、プロバイダーの定価で課金されます。詳細は Copilot のモデルと価格設定のドキュメントに記載されています。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Claude Fable 5.2 in GitHub Copilot - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-11-09-claude-fable-5-2-in-github-copilot/"
+    }
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-11-09-claude-fable-5-2-in-github-copilot/"
+  ]
+}
