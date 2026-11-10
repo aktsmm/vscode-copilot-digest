@@ -1027,8 +1027,10 @@ function cardWhy(event, locale) {
 // A page-change event has no article, so the added lines are what tells the reader what changed.
 function renderSnapshotChanges(event, locale, limit) {
   if (event.kind !== "html_snapshot_change") return "";
-  const lines = meaningfulSnapshotAdditions(event).map((line) => line.replace(/^H[1-3]:\s*/, ""));
+  const lines = meaningfulSnapshotAdditions(event).map((line) => line.replace(/^H[1-3]:\s*/, "").replace(/^[.\s]+/, ""));
   if (lines.length === 0) return "";
+  // English-only lines are noise on a Japanese card that already has a written Japanese summary.
+  if (locale === "ja" && !lines.some((line) => /[\u3040-\u30ff\u4e00-\u9fff]/.test(line)) && jaCardTitleFor(event)) return "";
   const label = locale === "ja" ? "ページに追加された内容" : "Added to the page";
   const more = lines.length > limit ? `<li>${escapeHtml(locale === "ja" ? `ほか ${lines.length - limit} 件` : `and ${lines.length - limit} more`)}</li>` : "";
   return `<div class="snapshot-changes"><p class="resource-label">${escapeHtml(label)}</p><ul>${lines.slice(0, limit).map((line) => `<li>${escapeHtml(trimText(line, 140))}</li>`).join("")}${more}</ul></div>`;
