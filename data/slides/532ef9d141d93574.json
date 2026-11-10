@@ -1,0 +1,100 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "532ef9d141d93574",
+  "title": {
+    "ja": "GitHub Copilot アプリのセキュリティ拡張機能（パブリック プレビュー）",
+    "subtitleJa": "コード スキャン アラートの確認・説明・修正を、アプリ内で完結できる",
+    "original": "Security extension for the GitHub Copilot app"
+  },
+  "date": "2026-10-28",
+  "topic": "GitHub Copilot",
+  "status": "preview",
+  "statusEvidence": "The new GitHub security extension, now in public preview",
+  "audience": {
+    "who": "GitHub Copilot アプリで code scanning のアラートに対応する開発者",
+    "change": "アラートを重大度順に見て、Copilot に説明・修正を依頼でき、PR 前にローカル変更も確認できる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "使うなら github-security プラグインをインストールする"
+  },
+  "panels": [
+    {
+      "id": "how-to-use",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "導入: copilot plugin install github-security@awesome-copilot、またはアプリの Customize で検索して + Install",
+        "インストール後は自動で有効になり、セッションから Security キャンバスを開ける",
+        "未解決アラートを重大度順に表示。選択して Explain / Fix を依頼できる",
+        "/security-review で、PR 前の現在の変更をレビューできる"
+      ]
+    },
+    {
+      "id": "plans",
+      "heading": "使える場所とプラン",
+      "priority": "core",
+      "items": [
+        "github.com と GitHub Enterprise Cloud（データ所在地）で利用可。GitHub Enterprise Server は非対応",
+        "どの Copilot プランでも、拡張機能の導入とローカル変更の /security-review が可能",
+        "Business / Enterprise は管理者が GitHub Copilot アプリのポリシーを有効にする"
+      ]
+    },
+    {
+      "id": "limits",
+      "heading": "前提と制限",
+      "priority": "detail",
+      "items": [
+        "既存アラートの表示・修正・却下は、code scanning が有効で閲覧権限があるリポジトリが対象。プライベートは GitHub Code Security が必要",
+        "Fix はローカルの作業コピーのみ変更し、コミットやプッシュはしない",
+        "Explain / Fix / /security-review は AI クレジットを消費。閲覧と却下は消費しない"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "Security キャンバス", "type": "feature", "oneLine": "セッションから開く、アラートとローカル レビューの作業画面。" },
+    { "term": "委任アラート却下", "type": "term", "oneLine": "組織で有効な場合、アラートの却下が承認依頼として送られる仕組み。" }
+  ],
+  "suggestions": [
+    "アラートに紐づく PR を見て、すでに誰かが修正中か確認してから Fix を依頼する"
+  ],
+  "qa": [
+    {
+      "q": "どのプランで使えますか？",
+      "a": "どの Copilot プランでも拡張機能の導入とローカル変更への /security-review は使えます。Business / Enterprise では管理者が GitHub Copilot アプリのポリシーを有効にする必要があります。"
+    },
+    {
+      "q": "既存のアラートを見るための条件は？",
+      "a": "code scanning が有効で、アラートの閲覧権限があるリポジトリが対象です。プライベート リポジトリでは GitHub Code Security が必要です。"
+    },
+    {
+      "q": "Fix を押すと自動でコミットされますか？",
+      "a": "いいえ。Copilot はローカルの作業コピーだけを変更し、コミットやプッシュはしません。アプリで確認し、準備ができたらプッシュします。"
+    },
+    {
+      "q": "GitHub Enterprise Server でも使えますか？",
+      "a": "使えません。パブリック プレビューとして github.com と、データ所在地のある GitHub Enterprise Cloud で提供されています。"
+    },
+    {
+      "q": "AI クレジットは消費されますか？",
+      "a": "Explain、Fix、/security-review はアプリで選択したモデルを使い、通常のプロンプトと同様に AI クレジットを消費します。アラートの閲覧と却下は AI を使いません。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Security extension for the GitHub Copilot app - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-10-28-security-extension-for-the-github-copilot-app/"
+    },
+    "documents": [
+      {
+        "title": "Viewing and fixing security alerts in the GitHub Copilot app - GitHub Docs",
+        "url": "https://docs.github.com/en/copilot/how-tos/github-copilot-app/view-and-fix-security-alerts"
+      }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-10-28-security-extension-for-the-github-copilot-app/",
+    "https://docs.github.com/en/copilot/how-tos/github-copilot-app/view-and-fix-security-alerts"
+  ]
+}
