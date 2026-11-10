@@ -4022,5 +4022,27 @@
       "Anthropicが安全分類器のためプロンプトと出力を保持する。学習には使われない",
       "対象の企業はゼロデータ保持を年末まで利用可能。以降はEFSが必要"
     ]
+  },
+  "e09c77a9ac2bb834": {
+    "title": "Gemini 4 CarbonがCopilotで一般提供に",
+    "summary": "Googleの最新モデルGemini 4 CarbonがGitHub Copilotで一般提供となった。複雑なコーディング、エージェント作業、推論タスク向けで、安全なコード生成やセキュリティ関連の作業に重点を置く。段階的に展開され、利用料金は使用量ベース課金のプロバイダー定価で請求される。",
+    "why": "BusinessとEnterpriseの管理者は、モデルポリシーで利用可否を確認し、必要なら制御する。",
+    "points": [
+      "対象はCopilot Pro+、Max、Business、Enterpriseのユーザー",
+      "VS Code、Visual Studio、CLI、JetBrains、Xcode、Eclipseなどのモデルピッカーで選択",
+      "既定ではモデルは自動で有効になる。管理者はCopilot設定のモデルポリシーで無効化できる",
+      "展開は段階的で、表示されない場合は後で再確認する"
+    ]
+  },
+  "ce169ea5d1f169f1": {
+    "title": "C++言語サーバーがMSBuild構成を自動設定",
+    "summary": "Copilot CLI向けMicrosoft C++ Language Serverに、MSBuildのcompile commands抽出機能が同梱され、起動時に自動実行されるようになった。従来のcompile_commands.json用意や設定スキルの探索が不要になり、セットアップ時間とトークン消費が減る。",
+    "why": "MSBuildベースのC++プロジェクトを使う人は、プラグインを導入するだけで正確なコードインテリジェンスを得られる。",
+    "points": [
+      "プロジェクトを開く際に抽出ツールが自動で呼び出され、コンパイルデータベースを生成",
+      "MSBuildプロジェクトのコンパイルデータベース生成は決定的で、トークン消費を抑える",
+      "CMakeではCopilot CLIに「load project」と依頼して生成スキルを使う",
+      "利用にはGitHub Copilotの有効なサブスクリプションとEULAへの同意が必要"
+    ]
   }
 }
