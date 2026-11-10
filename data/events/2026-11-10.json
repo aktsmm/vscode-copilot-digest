@@ -1,13 +1,41 @@
 {
   "date": "2026-11-10",
-  "generatedAt": "2026-11-10T03:40:18.166Z",
+  "generatedAt": "2026-11-10T13:38:24.320Z",
   "latestRun": {
-    "generatedAt": "2026-11-10T03:40:18.166Z",
-    "newEventsCount": 0,
-    "newEventIds": [],
+    "generatedAt": "2026-11-10T13:38:24.320Z",
+    "newEventsCount": 1,
+    "newEventIds": [
+      "docs-github-copilot-reference:71539a39ae60a8b2a44a41d4b08803481d924505017c9f588159cdce88335b77"
+    ],
     "errorCount": 0,
     "skippedLowInformationEvents": []
   },
-  "events": [],
+  "events": [
+    {
+      "eventId": "docs-github-copilot-reference:71539a39ae60a8b2a44a41d4b08803481d924505017c9f588159cdce88335b77",
+      "sourceId": "docs-github-copilot-reference",
+      "sourceName": "GitHub Docs / Copilot reference",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-11-10T13:38:20.160Z",
+      "publishedAt": "2026-11-10T13:38:20.159Z",
+      "title": "GitHub Docs / Copilot reference changed",
+      "url": "https://docs.github.com/en/copilot/reference",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [],
+        "additions": [
+          "OpenTelemetry reference"
+        ]
+      },
+      "headings": [
+        "Reference for GitHub Copilot"
+      ],
+      "score": 2
+    }
+  ],
   "errors": []
 }

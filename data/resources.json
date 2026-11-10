@@ -27801,6 +27801,26 @@
         "Original article explicit links",
         "Feature-matched official documentation indexes"
       ]
+    },
+    "05a3dac71a276c99c5711ad0b2432846cfc87bd26cc09061b1d89be8fe80f6bf": {
+      "version": 6,
+      "checkedAt": "2026-11-10T13:38:24.851Z",
+      "inputUrl": "https://docs.github.com/en/copilot/reference",
+      "inputTitle": "GitHub Docs / Copilot reference changed",
+      "status": "unconfirmed",
+      "source": {
+        "url": "https://docs.github.com/en/copilot/reference",
+        "status": "unconfirmed",
+        "reason": "Historical changed feature not identifiable in current page",
+        "checkedAt": "2026-11-10T13:38:24.923Z",
+        "contentHash": "748f66d5eb98102e5812e1480de28007e4372e1d25d32d4a4c6880ac4bcef100"
+      },
+      "documents": [],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
     }
   }
 }

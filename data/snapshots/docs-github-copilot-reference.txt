@@ -48,4 +48,5 @@ Available filters for agent sessions
 Audit log events for agents
 Enterprise managed settings
 MCP private registry enforcement
+OpenTelemetry reference
 Feature availability when GitHub Copilot policies conflict in organizations
