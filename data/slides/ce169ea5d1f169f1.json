@@ -1,0 +1,89 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "ce169ea5d1f169f1",
+  "title": {
+    "ja": "C++ 言語サーバーが MSBuild ビルドを自動構成",
+    "subtitleJa": "抽出ツールを同梱し、プロジェクトを開くと自動実行。設定用スキルが不要に",
+    "original": "C++ language server now auto-configures MSBuild builds"
+  },
+  "date": "2026-11-10",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "Copilot CLI で MSBuild ベースの C++ プロジェクトを扱う開発者",
+    "change": "compile commands 抽出ツールが同梱され、起動時に自動実行されて、手動やスキルでの設定が不要になる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "未導入なら、クイックスタートに従いプラグインをインストールして EULA に同意する"
+  },
+  "beforeAfter": {
+    "before": "compile_commands.json を自分で用意するか、設定スキルを探して実行する必要があった",
+    "after": "言語サーバー起動時に抽出ツールが自動で呼ばれ、コンパイル データベースが生成される"
+  },
+  "panels": [
+    {
+      "id": "what-changed",
+      "heading": "変わったこと",
+      "priority": "core",
+      "items": [
+        "compile commands 抽出ツールが C++ 言語サーバーに同梱され、常に使える",
+        "プロジェクトを開いて言語サーバーを起動するときに Copilot が自動で呼び出す",
+        "MSBuild プロジェクトのコンパイル データベース生成は決定的で、設定に使うトークンが減る"
+      ]
+    },
+    {
+      "id": "prerequisites",
+      "heading": "前提と制限",
+      "priority": "core",
+      "items": [
+        "有効な GitHub Copilot サブスクリプションが必要",
+        "プラグインのインストールと EULA への同意が必要"
+      ]
+    },
+    {
+      "id": "other-builds",
+      "heading": "他のビルド システム",
+      "priority": "detail",
+      "items": [
+        "CMake は Copilot CLI に「load project」と依頼し、compile commands 生成スキルを使う",
+        "独自のビルドは compile_commands.json を用意するか、カスタム抽出スキルを作る"
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "compile_commands.json",
+      "type": "term",
+      "oneLine": "コンパイル データベース。言語サーバーが定義へ移動や参照検索を行うために使う。"
+    }
+  ],
+  "qa": [
+    {
+      "q": "誰が使えるようになりますか。",
+      "a": "Copilot CLI 向け Microsoft C++ 言語サーバーで MSBuild ベースの C++ プロジェクトを扱う人です。有効な GitHub Copilot サブスクリプションが必要です。"
+    },
+    {
+      "q": "どう有効にしますか。",
+      "a": "クイックスタートに従ってプラグインをインストールし、EULA に同意します。リポジトリに MSBuild ベースの C++ プロジェクトがあれば、必要なコンパイル データベースが自動生成されます。"
+    },
+    {
+      "q": "以前と何が違いますか。",
+      "a": "以前は compile_commands.json を自分で用意するか、Copilot が設定スキルを探して実行する必要がありました。今は抽出ツールが同梱され、プロジェクトを開くときに自動で呼び出されます。"
+    },
+    {
+      "q": "CMake など他のビルド システムはどうなりますか。",
+      "a": "自動構成の対象は MSBuild です。CMake は Copilot CLI に「load project」と依頼して生成スキルを使います。独自のビルドは compile_commands.json を用意するか、カスタム抽出スキルを作ります。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "C++ language server now auto-configures MSBuild builds - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-11-10-c-language-server-now-auto-configures-msbuild-builds/"
+    }
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-11-10-c-language-server-now-auto-configures-msbuild-builds/"
+  ]
+}
