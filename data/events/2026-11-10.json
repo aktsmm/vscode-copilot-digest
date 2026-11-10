@@ -1,16 +1,132 @@
 {
   "date": "2026-11-10",
-  "generatedAt": "2026-11-10T13:38:24.320Z",
+  "generatedAt": "2026-11-10T20:32:25.761Z",
   "latestRun": {
-    "generatedAt": "2026-11-10T13:38:24.320Z",
-    "newEventsCount": 1,
+    "generatedAt": "2026-11-10T20:32:25.761Z",
+    "newEventsCount": 4,
     "newEventIds": [
-      "docs-github-copilot-reference:71539a39ae60a8b2a44a41d4b08803481d924505017c9f588159cdce88335b77"
+      "github-changelog:https://github.blog/changelog/2026-11-10-c-language-server-now-auto-configures-msbuild-builds",
+      "github-changelog:https://github.blog/changelog/2026-11-09-gemini-4-carbon-in-github-copilot",
+      "vscode-updates:9835512d66da5a8ec1c156ccf5c399fd3569f3c8e05ddcb5b810a6d77af6adfd",
+      "copilot-whats-new:c5758384d131466ac01013822586b1b52194486e380d42388fd2cface9df8ea0"
     ],
     "errorCount": 0,
     "skippedLowInformationEvents": []
   },
   "events": [
+    {
+      "eventId": "copilot-whats-new:c5758384d131466ac01013822586b1b52194486e380d42388fd2cface9df8ea0",
+      "sourceId": "copilot-whats-new",
+      "sourceName": "GitHub Copilot What's New",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-11-10T20:32:22.508Z",
+      "publishedAt": "2026-11-10T20:32:22.508Z",
+      "title": "GitHub Copilot What's New changed",
+      "url": "https://github.com/features/copilot/whats-new",
+      "summary": "Detected 2 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 2,
+        "headings": [
+          "Nov.10 Improvement",
+          "Nov.09 Release"
+        ],
+        "additions": [
+          "H3: Nov.10 Improvement",
+          "H3: Nov.09 Release"
+        ]
+      },
+      "headings": [
+        "Changelog",
+        "Filters (0 selected)",
+        "November\n Nov\n 2026",
+        "Nov.10 Improvement",
+        "Nov.09 Release",
+        "Nov.09 Release",
+        "Nov.06 Improvement",
+        "Nov.06 Improvement",
+        "Nov.06 Release",
+        "Nov.06 Release",
+        "Nov.05 Improvement",
+        "Nov.05 Improvement"
+      ],
+      "score": 4
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-11-10-c-language-server-now-auto-configures-msbuild-builds",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-11-10T20:32:19.506Z",
+      "publishedAt": "2026-11-10T17:04:10.000Z",
+      "title": "C++ language server now auto-configures MSBuild builds",
+      "url": "https://github.blog/changelog/2026-11-10-c-language-server-now-auto-configures-msbuild-builds",
+      "summary": "The Microsoft C++ Language Server for GitHub Copilot CLI now bundles its MSBuild compile commands extractor and invokes it automatically. An agent no longer needs to discover and run a…\nThe post C++ language server now auto-configures MSBuild builds appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 2
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-11-09-gemini-4-carbon-in-github-copilot",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-11-10T20:32:19.506Z",
+      "publishedAt": "2026-11-10T02:26:51.000Z",
+      "title": "Gemini 4 Carbon in GitHub Copilot",
+      "url": "https://github.blog/changelog/2026-11-09-gemini-4-carbon-in-github-copilot",
+      "summary": "Gemini 4 Carbon, Google’s latest model, is now generally available in GitHub Copilot. It is designed for complex coding, agentic, and reasoning tasks, with a focus on secure code generation…\nThe post Gemini 4 Carbon in GitHub Copilot appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 5
+    },
+    {
+      "eventId": "vscode-updates:9835512d66da5a8ec1c156ccf5c399fd3569f3c8e05ddcb5b810a6d77af6adfd",
+      "sourceId": "vscode-updates",
+      "sourceName": "VS Code Updates",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-11-10T20:32:21.179Z",
+      "publishedAt": "2026-11-04T00:00:00.000Z",
+      "title": "VS Code Updates changed",
+      "url": "https://code.visualstudio.com/updates/",
+      "summary": "Detected 2 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 2,
+        "headings": [
+          "Downloads for 1.145.3"
+        ],
+        "additions": [
+          "Update 1.145.3: The update addresses these security issues.",
+          "H2: Downloads for 1.145.3"
+        ]
+      },
+      "headings": [
+        "Visual Studio Code 1.145",
+        "Downloads for 1.145.3",
+        "Release highlights",
+        "Remote agents",
+        "Browse over remote agent host connections (Preview)",
+        "Remote canvases (Preview)",
+        "Agents",
+        "Mix and match agent harnesses in one session (Preview)",
+        "Cron schedules and custom agents for local automations",
+        "Pin canvases to sidebar (Experimental)",
+        "Copilot harness",
+        "Working set improvements (Experimental)"
+      ],
+      "score": 3
+    },
     {
       "eventId": "docs-github-copilot-reference:71539a39ae60a8b2a44a41d4b08803481d924505017c9f588159cdce88335b77",
       "sourceId": "docs-github-copilot-reference",
