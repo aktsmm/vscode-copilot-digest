@@ -28473,6 +28473,66 @@
         "Original article explicit links",
         "Feature-matched official documentation indexes"
       ]
+    },
+    "1b5ddb1672df499b3a843211f3ce60f044b3501f9ad5bace4da48f44795f21c1": {
+      "version": 6,
+      "checkedAt": "2026-11-11T20:17:42.559Z",
+      "inputUrl": "https://code.visualstudio.com/updates/v1_146",
+      "inputTitle": "Visual Studio Code 1.146",
+      "status": "verified",
+      "source": {
+        "url": "https://code.visualstudio.com/updates/v1_146",
+        "status": "verified",
+        "reason": "Fetched original article",
+        "checkedAt": "2026-11-11T20:17:42.845Z",
+        "contentHash": "0cdfcdea62b0eda4d07c29f53fc5bef48196ed0d91d7dbe7af7c99277f3e8785"
+      },
+      "documents": [
+        {
+          "url": "https://code.visualstudio.com/updates/v1_143#_copilot-harness-as-the-default",
+          "title": "Visual Studio Code 1.143",
+          "language": "en",
+          "checkedAt": "2026-11-11T12:50:25.926Z",
+          "contentHash": "9b3764abe63ad012f378a713780c6be13ec04ee8ae2de0ddc5f2fd613703f045",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_146",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "verified",
+          "kind": "release_notes",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://code.visualstudio.com/docs/agents/concepts/agent-host",
+          "title": "Agent Host architecture",
+          "language": "en",
+          "checkedAt": "2026-11-11T12:50:26.127Z",
+          "contentHash": "3114bb8a456bc445a5fc56b92e4c6798194278cc0d45862fe568bb4a223d1f78",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_146",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://code.visualstudio.com/docs/enterprise/manage-ai-settings#_keep-local-harness-as-default",
+          "title": "Manage AI settings in enterprise environments",
+          "language": "en",
+          "checkedAt": "2026-11-11T12:50:26.668Z",
+          "contentHash": "8d08998139405568c55ca1e6c171490b35a40b6d37971a5da962038d382b5fd8",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_146",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "verified",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
     }
   }
 }

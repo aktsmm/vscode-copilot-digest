@@ -1,38 +1,32 @@
 {
   "date": "2026-11-11",
-  "generatedAt": "2026-11-11T12:50:24.105Z",
+  "generatedAt": "2026-11-11T20:17:40.410Z",
   "latestRun": {
-    "generatedAt": "2026-11-11T12:50:24.105Z",
-    "newEventsCount": 14,
+    "generatedAt": "2026-11-11T20:17:40.410Z",
+    "newEventsCount": 1,
     "newEventIds": [
-      "github-changelog-copilot:https://github.blog/changelog/2026-11-06-github-app-support-for-enterprise-copilot-seat-management",
-      "vscode-updates:244db3ab73cd0182ac2340b3ae2f079afa96ca039ce1be0002b63144943fb430",
-      "vscode-release-notes-1-109:3a231a6ed24dfddcf6783312da6a2283726e85fd336dfe9d718c4fb1d33a1849",
-      "vscode-docs-agents-nav:1ccb8a010a3f6a7813bace4cc9d12e591a19f5ab24fc9dfcc4e5fdf6e573da46",
-      "vscode-docs-agents-window:1890548741ab28a4a56fa5c6cdf336bb5ecfe08be16b334ddd8df476bf818d50",
-      "vscode-docs-agents-remote-sessions:39bb367be25b5026e31e0e574dd7b7e44e69583aa2899cc8e71e159cd1097b70",
-      "vscode-release-notes-1-146:section:ee372328348473682300978a6f6edad09afca7c1469ebe54c0e47bcd89498cc5",
-      "vscode-release-notes-1-146:section:8174e20b27422417b400b11469e62c8393f34bb40d34039643404e41e4e655e3",
-      "vscode-release-notes-1-146:section:66e3d5cb35e69ca4a31b486a5bac70f5a75ff807686909a45ced0d0aa0fdd44a",
-      "vscode-release-notes-1-146:section:fea8f082a871b9a3344cda40f343a75e313893ef9ec037eb8755a226be8c175f",
-      "vscode-release-notes-1-146:section:bdccc0c9e2fec8c21015d5bfd2485db4eba64d91b8267049804ea766b92ecae0",
-      "vscode-release-notes-1-146:section:fa27cbf80e8ff3bf5a18513b63285c4a812928350d7251e12ae3292d983b2bac",
-      "vscode-release-notes-1-146:section:74b7ec0eacc59b9a586b1a398bc498291068b7a34576480d3e4a27c2e9c231ca",
-      "vscode-release-notes-1-146:section:fa4531cc2585902a6c881fde91307e36ae724229170d237d2fe4c6e4e1c4ee0c"
+      "vscode-feed:https://code.visualstudio.com/updates/v1_146"
     ],
     "errorCount": 0,
-    "skippedLowInformationEvents": [
-      {
-        "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_147",
-        "sourceId": "vscode-feed",
-        "title": "Visual Studio Code 1.147 (Insiders)",
-        "fallbackMarkers": [
-          "Visual Studio Code 関連の更新。日々の開発フローや agent 利用に効く変更点を確認しておきたい。"
-        ]
-      }
-    ]
+    "skippedLowInformationEvents": []
   },
   "events": [
+    {
+      "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_146",
+      "sourceId": "vscode-feed",
+      "sourceName": "VS Code Feed",
+      "kind": "feed_entry",
+      "detectedAt": "2026-11-11T20:17:34.783Z",
+      "publishedAt": "2026-11-11T17:00:00.000Z",
+      "title": "Visual Studio Code 1.146",
+      "url": "https://code.visualstudio.com/updates/v1_146",
+      "summary": "Learn what's new in Visual Studio Code 1.146\n Read the full article",
+      "categories": [
+        "release"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
     {
       "eventId": "copilot-whats-new:5f80878704bd40a8261d6b3c5d242feac2d9656d66867695bd1cdd8a1df6d6dc",
       "sourceId": "copilot-whats-new",
@@ -330,6 +324,23 @@
       "score": 4
     },
     {
+      "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_147",
+      "sourceId": "vscode-feed",
+      "sourceName": "vscode feed",
+      "kind": "feed_entry",
+      "detectedAt": "2026-11-11T12:50:24.105Z",
+      "publishedAt": "2026-11-11T00:00:00.000Z",
+      "title": "Visual Studio Code 1.147 (Insiders)",
+      "url": "https://code.visualstudio.com/updates/v1_147",
+      "summary": "Follow us on LinkedIn, X, Bluesky, Instagram | Follow Insiders Changelog on X or Bluesky Welcome to the 1.147 Insiders release of Visual Studio Code.",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
+    },
+    {
       "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-11-09-gemini-4-carbon-in-github-copilot",
       "sourceId": "github-changelog-copilot",
       "sourceName": "GitHub Changelog / Copilot",
@@ -523,23 +534,6 @@
       },
       "headings": [],
       "score": 2
-    },
-    {
-      "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_147",
-      "sourceId": "vscode-feed",
-      "sourceName": "vscode feed",
-      "kind": "feed_entry",
-      "detectedAt": "2026-11-11T12:50:24.105Z",
-      "publishedAt": "2026-11-11T00:00:00.000Z",
-      "title": "Visual Studio Code 1.147 (Insiders)",
-      "url": "https://code.visualstudio.com/updates/v1_147",
-      "summary": "Follow us on LinkedIn, X, Bluesky, Instagram | Follow Insiders Changelog on X or Bluesky Welcome to the 1.147 Insiders release of Visual Studio Code.",
-      "categories": [
-        "copilot"
-      ],
-      "isFutureDated": false,
-      "score": 3,
-      "backfilled": true
     }
   ],
   "errors": []
