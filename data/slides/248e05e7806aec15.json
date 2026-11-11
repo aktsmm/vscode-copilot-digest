@@ -1,0 +1,90 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "248e05e7806aec15",
+  "title": {
+    "ja": "VS Code 1.146: Agents ウィンドウで拡張機能をインストール・管理（試験的）",
+    "subtitleJa": "エディター ウィンドウへ切り替えず、Agents ウィンドウ内で拡張機能を検索・追加・削除できる",
+    "original": "Install and manage extensions in the Agents window (Experimental)"
+  },
+  "date": "2026-11-11",
+  "topic": "VS Code",
+  "status": "update",
+  "audience": {
+    "who": "VS Code の Agents ウィンドウで拡張機能を使いたい開発者",
+    "change": "Agents ウィンドウから Marketplace の拡張機能を探してインストール・アンインストールできる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "必要なら Agent Customizations の Extensions セクションで拡張機能を追加する"
+  },
+  "beforeAfter": {
+    "before": "拡張機能を追加するには、エディター ウィンドウに切り替えてインストールする必要があった",
+    "after": "Agents ウィンドウを離れずに、検索・インストール・アンインストールができる"
+  },
+  "panels": [
+    {
+      "id": "how-to-use",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "Agent Customizations の Extensions セクションで、Agents ウィンドウで動かす拡張機能を選ぶ",
+        "検索すると Marketplace の未導入の拡張機能も、発行元・インストール数・評価付きで表示される",
+        "インストールすると VS Code に追加され、Agents ウィンドウで有効になる",
+        "プレリリースなど別バージョンは、Install 横のドロップダウンから選ぶ"
+      ]
+    },
+    {
+      "id": "shortcut",
+      "heading": "開き方",
+      "priority": "core",
+      "items": [
+        "⇧⌘X（Windows、Linux は Ctrl+Shift+X）か、Extensions: Manage Extensions を実行する",
+        "エディター ウィンドウの Extensions ビューのショートカットを変更していても、そのショートカットが使える"
+      ]
+    },
+    {
+      "id": "cautions",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "Agents ウィンドウ対応を宣言せずビュー、デバッガー、ステータス バー項目、ウォークスルーを提供する拡張機能は、非対応機能の警告が出る",
+        "組織が許可していないなどインストールできない拡張機能は、その理由が表示される"
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Agents ウィンドウ",
+      "type": "feature",
+      "oneLine": "エディター ウィンドウとは別に、エージェント作業を行う VS Code のウィンドウ。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.146 リリース ノート - Install and manage extensions in the Agents window (Experimental)",
+      "url": "https://code.visualstudio.com/updates/v1_146#_install-and-manage-extensions-in-the-agents-window-experimental"
+    }
+  },
+  "qa": [
+    {
+      "q": "何が変わりましたか。",
+      "a": "これまでは拡張機能の追加にエディター ウィンドウへの切り替えが必要でした。1.146 では Agents ウィンドウ内で拡張機能の検索、インストール、アンインストールができます。"
+    },
+    {
+      "q": "インストールした拡張機能はどこで有効になりますか。",
+      "a": "インストールすると VS Code に追加され、Agents ウィンドウで有効になります。Agent Customizations の Extensions セクションでは、エディター ウィンドウでの有効状態を変えずに、Agents ウィンドウで動かす拡張機能を選べます。"
+    },
+    {
+      "q": "対応していない拡張機能はどうなりますか。",
+      "a": "Agents ウィンドウ対応を宣言せずにビュー、デバッガー、ステータス バー項目、ウォークスルーを提供する拡張機能は、非対応機能を列挙した警告が出ます。組織が許可していない場合は、インストールできない理由が表示されます。"
+    },
+    {
+      "q": "どうやって開きますか。",
+      "a": "⇧⌘X（Windows、Linux は Ctrl+Shift+X）か、Extensions: Manage Extensions の実行で Extensions セクションが開きます。エディター側のショートカットを変更していれば、それも使えます。"
+    }
+  ],
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_146"
+  ]
+}
