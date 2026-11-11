@@ -1,0 +1,72 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "3c7f21bdcd185f11",
+  "title": {
+    "ja": "Agents ウィンドウのセッション一覧に、チェック修正とコメント対応のインライン操作",
+    "subtitleJa": "sessions.list.inlineActions を有効にすると、一覧の各行から直接修正を依頼できる",
+    "original": "Session list inline actions (Experimental)"
+  },
+  "date": "2026-11-11",
+  "topic": "VS Code",
+  "status": "update",
+  "audience": {
+    "who": "VS Code の Agents ウィンドウで複数のセッションを扱う開発者",
+    "change": "一覧の行から、セッションを開かずに失敗したチェックの修正やレビュー コメントへの対応を依頼できる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "試す場合は sessions.list.inlineActions を有効にする（既定はオフ）"
+  },
+  "panels": [
+    {
+      "id": "usage",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "設定 sessions.list.inlineActions を有効にする（既定はオフ）",
+        "チェックの修正、コメントへの対応、またはその両方のインライン操作を一覧に表示できる",
+        "各操作は、その行のセッションまたは入れ子のセッションへ、開かずにバックグラウンドで要求を送る"
+      ]
+    },
+    {
+      "id": "limits",
+      "heading": "前提と制限",
+      "priority": "core",
+      "items": [
+        "Experimental の機能で、設定は既定でオフ",
+        "この設定で Agent Merge は有効にならず、操作の権限も変わらない"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "Agents ウィンドウ", "type": "feature", "oneLine": "セッションの一覧から、複数のエージェント セッションを扱うウィンドウ。" }
+  ],
+  "qa": [
+    {
+      "q": "この機能はどう有効にしますか。",
+      "a": "設定 sessions.list.inlineActions を有効にします。既定ではオフです。有効にすると、チェックの修正、コメントへの対応、またはその両方のインライン操作が一覧に表示されます。"
+    },
+    {
+      "q": "操作するとセッションが開きますか。",
+      "a": "開きません。各操作は、その行のセッションまたは入れ子のセッションへ、開かずにバックグラウンドで要求を送ります。"
+    },
+    {
+      "q": "Agent Merge も使えるようになりますか。",
+      "a": "なりません。この設定は Agent Merge を有効にせず、操作の権限も変更しません。"
+    },
+    {
+      "q": "正式な機能ですか。",
+      "a": "リリース ノートでは Experimental と記載されています。設定は既定でオフなので、試す場合に有効にします。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.146 - Session list inline actions (Experimental)",
+      "url": "https://code.visualstudio.com/updates/v1_146#_session-list-inline-actions-experimental"
+    }
+  },
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_146#_session-list-inline-actions-experimental"
+  ]
+}
