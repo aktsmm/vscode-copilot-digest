@@ -13,7 +13,10 @@ H2: Choose how to connect
 Choose the workflow that matches what you want to do:
 Opening a remote project in the editor is a separate workflow, described under Use remote sessions in the Chat view.
 H2: Make a host available for remote access
-Enable remote access to start or continue agent sessions from another device while the project, tools, and execution stay on the host machine. Remote clients can access its Agent Host-backed sessions, such as a Copilot session. Local harness sessions and older extension-host sessions aren't shared this way.
+Enable remote access to start or continue agent sessions from another device while the project, tools, and execution stay on the host machine. Remote clients can access its Agent Host-backed sessions, such as a Copilot session. Local harness sessions 
+ 
+ The Local harness is deprecated and will be removed in February 2027. Move your workflows to the Copilot harness before then. Learn more about Local harness deprecation.
+ and older extension-host sessions aren't shared this way.
 Run these steps on the host machine to make it available for remote access.
 On the host machine, open the Agents window, or use an Agent Host-backed session in the Chat view in an editor window.
 On the host machine, open the Agents window, or use an Agent Host-backed session in the Chat view in an editor window.
@@ -172,6 +175,20 @@ In the installed Agents window, discovering a machine doesn't connect to it for 
  on, previously connected online environments can reconnect for the same profile and account. Explicitly disconnecting suppresses automatic reconnection until you connect manually again.
 H3: Manage remote environments (Experimental)
 Use the Remote Environments editor in the installed Agents window to find and manage your remote machines in one place. This editor is optional; you don't need to open it to follow the connection steps above.
+To also manage how this computer is shared, enable 
+ 
+ 
+ sessions.chat.experimental.remoteEnvironmentsThisComputer
+ 
+ 
+ 
+ 
+ 
+ 
+ Open in VS Code
+ Open in VS Code Insiders
+ 
+ . In This Computer, choose GitHub Environments (when available), Dev Tunnels, or Off, or select Rename Sharing Name to change the name other clients see. Local sessions continue to run on this computer whether sharing is on or off.
 The table groups known SSH hosts, dev tunnels, and WSL distributions on Windows. When support for GitHub environments is available and enabled, the Environments group also lists your registered machines, including offline ones. These are user-shared machines, not the managed environments used by cloud sessions.
 Remote environment management requires 
  

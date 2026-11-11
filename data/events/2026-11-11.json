@@ -1,17 +1,36 @@
 {
   "date": "2026-11-11",
-  "generatedAt": "2026-11-11T01:20:09.016Z",
+  "generatedAt": "2026-11-11T12:50:24.105Z",
   "latestRun": {
-    "generatedAt": "2026-11-11T01:20:09.016Z",
-    "newEventsCount": 4,
+    "generatedAt": "2026-11-11T12:50:24.105Z",
+    "newEventsCount": 14,
     "newEventIds": [
-      "github-changelog:https://github.blog/changelog/2026-11-06-github-app-support-for-enterprise-copilot-seat-management",
-      "github-changelog-copilot:https://github.blog/changelog/2026-11-09-gemini-4-carbon-in-github-copilot",
-      "github-changelog-copilot:https://github.blog/changelog/2026-11-10-c-language-server-now-auto-configures-msbuild-builds",
-      "copilot-whats-new:5f80878704bd40a8261d6b3c5d242feac2d9656d66867695bd1cdd8a1df6d6dc"
+      "github-changelog-copilot:https://github.blog/changelog/2026-11-06-github-app-support-for-enterprise-copilot-seat-management",
+      "vscode-updates:244db3ab73cd0182ac2340b3ae2f079afa96ca039ce1be0002b63144943fb430",
+      "vscode-release-notes-1-109:3a231a6ed24dfddcf6783312da6a2283726e85fd336dfe9d718c4fb1d33a1849",
+      "vscode-docs-agents-nav:1ccb8a010a3f6a7813bace4cc9d12e591a19f5ab24fc9dfcc4e5fdf6e573da46",
+      "vscode-docs-agents-window:1890548741ab28a4a56fa5c6cdf336bb5ecfe08be16b334ddd8df476bf818d50",
+      "vscode-docs-agents-remote-sessions:39bb367be25b5026e31e0e574dd7b7e44e69583aa2899cc8e71e159cd1097b70",
+      "vscode-release-notes-1-146:section:ee372328348473682300978a6f6edad09afca7c1469ebe54c0e47bcd89498cc5",
+      "vscode-release-notes-1-146:section:8174e20b27422417b400b11469e62c8393f34bb40d34039643404e41e4e655e3",
+      "vscode-release-notes-1-146:section:66e3d5cb35e69ca4a31b486a5bac70f5a75ff807686909a45ced0d0aa0fdd44a",
+      "vscode-release-notes-1-146:section:fea8f082a871b9a3344cda40f343a75e313893ef9ec037eb8755a226be8c175f",
+      "vscode-release-notes-1-146:section:bdccc0c9e2fec8c21015d5bfd2485db4eba64d91b8267049804ea766b92ecae0",
+      "vscode-release-notes-1-146:section:fa27cbf80e8ff3bf5a18513b63285c4a812928350d7251e12ae3292d983b2bac",
+      "vscode-release-notes-1-146:section:74b7ec0eacc59b9a586b1a398bc498291068b7a34576480d3e4a27c2e9c231ca",
+      "vscode-release-notes-1-146:section:fa4531cc2585902a6c881fde91307e36ae724229170d237d2fe4c6e4e1c4ee0c"
     ],
     "errorCount": 0,
-    "skippedLowInformationEvents": []
+    "skippedLowInformationEvents": [
+      {
+        "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_147",
+        "sourceId": "vscode-feed",
+        "title": "Visual Studio Code 1.147 (Insiders)",
+        "fallbackMarkers": [
+          "Visual Studio Code 関連の更新。日々の開発フローや agent 利用に効く変更点を確認しておきたい。"
+        ]
+      }
+    ]
   },
   "events": [
     {
@@ -73,6 +92,244 @@
       "score": 1
     },
     {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-11-06-github-app-support-for-enterprise-copilot-seat-management",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-11-11T12:50:20.253Z",
+      "publishedAt": "2026-11-11T00:10:31.000Z",
+      "title": "GitHub App support for Enterprise Copilot seat management",
+      "url": "https://github.blog/changelog/2026-11-10-github-app-support-for-enterprise-copilot-seat-management",
+      "summary": "Enterprise GitHub Apps can now call the enterprise-level Copilot seat management APIs to control which users and enterprise teams are assigned Copilot seats. The Copilot seat management APIs are accessible…\nThe post GitHub App support for Enterprise Copilot seat management appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "copilot",
+        "enterprise management tools"
+      ],
+      "isFutureDated": false,
+      "score": 1
+    },
+    {
+      "eventId": "vscode-updates:244db3ab73cd0182ac2340b3ae2f079afa96ca039ce1be0002b63144943fb430",
+      "sourceId": "vscode-updates",
+      "sourceName": "VS Code Updates",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-11-11T12:50:20.550Z",
+      "publishedAt": "2026-11-11T00:00:00.000Z",
+      "title": "VS Code Updates changed",
+      "url": "https://code.visualstudio.com/updates/",
+      "summary": "Detected 169 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 169,
+        "headings": [
+          "Visual Studio Code 1.146",
+          "Downloads for 1.146.0",
+          "Agents",
+          "Copilot harness and deprecation of the Local harness",
+          "Inbox mode for sessions (Experimental)",
+          "Session list inline actions (Experimental)",
+          "Chat windows (Preview)",
+          "Install and manage extensions in the Agents window (Experimental)",
+          "Model comparison improvements (Preview)",
+          "Canvases improvements (Preview)",
+          "Configure computer sharing (Experimental)",
+          "Agent Host support for virtual repositories",
+          "Continue a Copilot CLI session in VS Code (Experimental)",
+          "Configurable shortcut for the background send action",
+          "MCP",
+          "Skills over MCP (Preview)"
+        ],
+        "additions": [
+          "1.146",
+          "H1: Visual Studio Code 1.146",
+          "Release date: November 11, 2026 Stable",
+          "H2: Downloads for 1.146.0",
+          "Save your brainpower for the work that needs it. Inbox mode keeps the right sessions on your radar while agents take on model comparisons. Shape your agent workspace around the task with chat windows and extensions.",
+          "Inbox mode (Experimental): Focus on sessions that need your attention across all your projects, and snooze others for later.",
+          "Model comparison (Preview): Compare results with Copilot Fusion in the mix, or let an agent run comparisons for you.",
+          "Chat windows (Preview): Give chats their own windows and rearrange chats, editors, and terminals to fit the task.",
+          "Extensions in the Agents window (Experimental): Find and install extensions for a richer agent experience.",
+          "Local harness deprecation: Move to the Copilot harness before the Local harness is removed in February 2027.",
+          "Happy coding!",
+          "H2: Agents",
+          "H3: Copilot harness and deprecation of the Local harness",
+          "The Copilot harness is our latest agent harness and has been the default for new sessions since VS Code 1.143. It's built on the Copilot SDK, a shared foundation that helps align behavior, capabilities, and improvements across Copilot products. Copilot harness sessions run through the Agent Host, so you can keep them running in the background and access them from both the VS Code editor window and the Agents window. For organizations, the Copilot harness also enforces managed sandbox and permission policies that the Local harness doesn't.",
+          "Thank you to everyone who has shared feedback on using the Copilot harness as your default. Your feedback has shaped the harness experience, and it will continue to guide us through this next step. As of this release, the Local harness is deprecated and will be removed in three months (February 2027):",
+          "Next three months: You can still use the Local harness while you move your workflows, but it's functionally frozen. New features and improvements will focus on the Copilot harness and are not guaranteed to be supported by the Local harness."
+        ]
+      },
+      "headings": [
+        "Visual Studio Code 1.146",
+        "Downloads for 1.146.0",
+        "Release highlights",
+        "Agents",
+        "Copilot harness and deprecation of the Local harness",
+        "Inbox mode for sessions (Experimental)",
+        "Session list inline actions (Experimental)",
+        "Chat windows (Preview)",
+        "Install and manage extensions in the Agents window (Experimental)",
+        "Model comparison improvements (Preview)",
+        "Canvases improvements (Preview)",
+        "Configure computer sharing (Experimental)"
+      ],
+      "score": 18
+    },
+    {
+      "eventId": "vscode-release-notes-1-146:section:ee372328348473682300978a6f6edad09afca7c1469ebe54c0e47bcd89498cc5",
+      "sourceId": "vscode-release-notes-1-146",
+      "sourceName": "VS Code Release Notes 1.146",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-11-11T12:50:23.805Z",
+      "publishedAt": "2026-11-11T00:00:00.000Z",
+      "title": "Visual Studio Code 1.146: Copilot harness and deprecation of the Local harness",
+      "url": "https://code.visualstudio.com/updates/v1_146",
+      "summary": "The Copilot harness is our latest agent harness and has been the default for new sessions since VS Code 1.143. It's built on the Copilot SDK, a shared foundation that helps align behavior, capabilities, and improvements across Copilot products. Copilot harness sessions run through the Agent Host, so you can keep them running in the background and access them from both the VS Code editor window and the Agents window....",
+      "categories": [
+        "release",
+        "section",
+        "Agents"
+      ],
+      "sectionHeading": "Agents",
+      "sectionTitle": "Copilot harness and deprecation of the Local harness",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-146:section:8174e20b27422417b400b11469e62c8393f34bb40d34039643404e41e4e655e3",
+      "sourceId": "vscode-release-notes-1-146",
+      "sourceName": "VS Code Release Notes 1.146",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-11-11T12:50:23.806Z",
+      "publishedAt": "2026-11-11T00:00:00.000Z",
+      "title": "Visual Studio Code 1.146: Inbox mode for sessions (Experimental)",
+      "url": "https://code.visualstudio.com/updates/v1_146",
+      "summary": "Setting: \n \n \n sessions.list.inboxEnabled\n \n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders Keep track of your agents without checking each workspace. Inbox mode gives you one view of what needs your attention, what's still running, and what's ready to merge. Enable the \n \n \n sessions.list.inboxEnabled\n \n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders\n \n setting (off by default), and then select Gr...",
+      "categories": [
+        "release",
+        "section",
+        "Agents"
+      ],
+      "sectionHeading": "Agents",
+      "sectionTitle": "Inbox mode for sessions (Experimental)",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-146:section:66e3d5cb35e69ca4a31b486a5bac70f5a75ff807686909a45ced0d0aa0fdd44a",
+      "sourceId": "vscode-release-notes-1-146",
+      "sourceName": "VS Code Release Notes 1.146",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-11-11T12:50:23.806Z",
+      "publishedAt": "2026-11-11T00:00:00.000Z",
+      "title": "Visual Studio Code 1.146: Session list inline actions (Experimental)",
+      "url": "https://code.visualstudio.com/updates/v1_146",
+      "summary": "Setting: \n \n \n sessions.list.inlineActions\n \n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders Fix failing checks and address review comments directly from the Agents window's sessions list. Enable this setting (off by default) to show inline actions for fixing checks, addressing comments, or both. Each action sends a request to that row's session or nested session in the background without opening it. The se...",
+      "categories": [
+        "release",
+        "section",
+        "Agents"
+      ],
+      "sectionHeading": "Agents",
+      "sectionTitle": "Session list inline actions (Experimental)",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-146:section:fea8f082a871b9a3344cda40f343a75e313893ef9ec037eb8755a226be8c175f",
+      "sourceId": "vscode-release-notes-1-146",
+      "sourceName": "VS Code Release Notes 1.146",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-11-11T12:50:23.806Z",
+      "publishedAt": "2026-11-11T00:00:00.000Z",
+      "title": "Visual Studio Code 1.146: Chat windows (Preview)",
+      "url": "https://code.visualstudio.com/updates/v1_146",
+      "summary": "Setting: \n \n \n sessions.chatWindows.enabled\n \n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders When several chats run at once, keeping them all in one Agents window means switching between them and losing sight of the one you are waiting on. With chat windows, you can open a chat in a window of its own, and arrange that window so that the chat, its editors, and its terminals fit the task. To try this preview...",
+      "categories": [
+        "release",
+        "section",
+        "Agents"
+      ],
+      "sectionHeading": "Agents",
+      "sectionTitle": "Chat windows (Preview)",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-146:section:bdccc0c9e2fec8c21015d5bfd2485db4eba64d91b8267049804ea766b92ecae0",
+      "sourceId": "vscode-release-notes-1-146",
+      "sourceName": "VS Code Release Notes 1.146",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-11-11T12:50:23.806Z",
+      "publishedAt": "2026-11-11T00:00:00.000Z",
+      "title": "Visual Studio Code 1.146: Install and manage extensions in the Agents window (Experimental)",
+      "url": "https://code.visualstudio.com/updates/v1_146",
+      "summary": "The Extensions section of Agent Customizations lets you choose which installed extensions run in the Agents window without changing their enablement in editor windows. Previously, adding an extension meant switching to an editor window to install it. In this release, you can find, install, and uninstall extensions without leaving the Agents window: Install from the Marketplace: Searching also queries the Marketplace...",
+      "categories": [
+        "release",
+        "section",
+        "Agents"
+      ],
+      "sectionHeading": "Agents",
+      "sectionTitle": "Install and manage extensions in the Agents window (Experimental)",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-146:section:fa27cbf80e8ff3bf5a18513b63285c4a812928350d7251e12ae3292d983b2bac",
+      "sourceId": "vscode-release-notes-1-146",
+      "sourceName": "VS Code Release Notes 1.146",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-11-11T12:50:23.806Z",
+      "publishedAt": "2026-11-11T00:00:00.000Z",
+      "title": "Visual Studio Code 1.146: Model comparison improvements (Preview)",
+      "url": "https://code.visualstudio.com/updates/v1_146",
+      "summary": "Setting: \n \n \n sessions.chat.compareAgents.tools.enabled\n \n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders Compare Models in the Agents window lets you run the same prompt across models, evaluate their results with a judge, and combine their strengths with a synthesizer. This release makes comparisons easier to configure, organize, and automate: Judge and synthesize chat-only responses: Add a judge and synt...",
+      "categories": [
+        "release",
+        "section",
+        "Agents"
+      ],
+      "sectionHeading": "Agents",
+      "sectionTitle": "Model comparison improvements (Preview)",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-146:section:74b7ec0eacc59b9a586b1a398bc498291068b7a34576480d3e4a27c2e9c231ca",
+      "sourceId": "vscode-release-notes-1-146",
+      "sourceName": "VS Code Release Notes 1.146",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-11-11T12:50:23.806Z",
+      "publishedAt": "2026-11-11T00:00:00.000Z",
+      "title": "Visual Studio Code 1.146: Canvases improvements (Preview)",
+      "url": "https://code.visualstudio.com/updates/v1_146",
+      "summary": "Setting: \n \n \n chat.canvases.enabled\n \n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders Canvases are shared, interactive surfaces where you and Copilot work together on plans, dashboards, and other artifacts. This release adds permission prompts and improves canvas discovery and continuity: Permissions for canvas extensions: In Copilot harness sessions, canvas extensions ask for your approval before initiali...",
+      "categories": [
+        "release",
+        "section",
+        "Agents"
+      ],
+      "sectionHeading": "Agents",
+      "sectionTitle": "Canvases improvements (Preview)",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-146:section:fa4531cc2585902a6c881fde91307e36ae724229170d237d2fe4c6e4e1c4ee0c",
+      "sourceId": "vscode-release-notes-1-146",
+      "sourceName": "VS Code Release Notes 1.146",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-11-11T12:50:23.806Z",
+      "publishedAt": "2026-11-11T00:00:00.000Z",
+      "title": "Visual Studio Code 1.146: Configure computer sharing (Experimental)",
+      "url": "https://code.visualstudio.com/updates/v1_146",
+      "summary": "Setting: \n \n \n sessions.chat.experimental.remoteEnvironmentsThisComputer\n \n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders The Remote Environments editor in the Agents window is a central place for managing remote connections. In this release, you can now manage how this computer is shared with other clients. Regardless of whether sharing is enabled, local sessions continue to run directly on this computer....",
+      "categories": [
+        "release",
+        "section",
+        "Agents"
+      ],
+      "sectionHeading": "Agents",
+      "sectionTitle": "Configure computer sharing (Experimental)",
+      "score": 4
+    },
+    {
       "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-11-09-gemini-4-carbon-in-github-copilot",
       "sourceId": "github-changelog-copilot",
       "sourceName": "GitHub Changelog / Copilot",
@@ -105,6 +362,184 @@
       ],
       "isFutureDated": false,
       "score": 2
+    },
+    {
+      "eventId": "vscode-release-notes-1-109:3a231a6ed24dfddcf6783312da6a2283726e85fd336dfe9d718c4fb1d33a1849",
+      "sourceId": "vscode-release-notes-1-109",
+      "sourceName": "VS Code Release Notes 1.109",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-11-11T12:50:20.645Z",
+      "publishedAt": "2026-02-04T00:00:00.000Z",
+      "title": "VS Code Release Notes 1.109 changed",
+      "url": "https://code.visualstudio.com/updates/v1_109",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [],
+        "additions": [
+          "1.146"
+        ]
+      },
+      "headings": [
+        "January 2026 (version 1.109)",
+        "Downloads for 1.109.5",
+        "Upcoming events",
+        "Agent Sessions Day",
+        "Chat UX",
+        "Message steering and queueing (Experimental)",
+        "Anthropic models now show thinking tokens",
+        "Mermaid diagrams in chat responses",
+        "Ask Questions tool (Experimental)",
+        "Plan agent",
+        "Context window details",
+        "Inline chat UX revamp (Preview)"
+      ],
+      "score": 2
+    },
+    {
+      "eventId": "vscode-docs-agents-window:1890548741ab28a4a56fa5c6cdf336bb5ecfe08be16b334ddd8df476bf818d50",
+      "sourceId": "vscode-docs-agents-window",
+      "sourceName": "VS Code Docs / Agents window",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-11-11T12:50:23.603Z",
+      "publishedAt": "2026-11-11T12:50:23.602Z",
+      "title": "VS Code Docs / Agents window changed",
+      "url": "https://code.visualstudio.com/docs/agents/run/agents-window",
+      "summary": "Detected 19 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 19,
+        "headings": [
+          "Open chats in separate windows",
+          "Compare model results"
+        ],
+        "additions": [
+          "To start a session in the background without navigating into it, press Alt+Enter or hold Alt and select Send. Focus stays in the composer so you can start another task. Select Open Session in the confirmation to open the sent conversation. With the Inbox mode setting enabled, you can also press Ctrl+Enter (Cmd+Enter on macOS).",
+          "Confirm the active session before sending feedback or running commands. For steering and stopping requests, see Use chat. To group, pin, or prioritize sessions that need attention, see Organize and triage sessions.",
+          "H3: Open chats in separate windows",
+          "To keep a conversation and its files on another display, enable",
+          "sessions.chatWindows.enabled",
+          "Open in VS Code",
+          "Open in VS Code Insiders",
+          ", then right-click a session or chat in the sessions list and select Open in > New Window. The setting is on by default in Insiders.",
+          "You can also drag a chat tab or session title out of the window to open it separately, or into another chat window to move it there.",
+          "Use Configure Layout in the new window's title bar to show chat and editors side by side or stacked. In the stacked layout, run Agents: Toggle Chat Conversation from the Command Palette to hide the conversation and keep only the input visible.",
+          "To rearrange content, hover over the top edge of a chat, editor, or terminal area to reveal its layout handle. Drag the handle to an edge of another area, using the placement preview to choose its new position.",
+          "To move the window's chats and editors back to the main window, select More Actions (...) > Move to Main Window in the chat header.",
+          "Mixed-harness chats is experimental and might change or be removed.",
+          "H3: Compare model results",
+          "Cloud automations is in preview and might change before it becomes generally available.",
+          "Canvases is in preview and might change before it becomes generally available.",
+          "Sessions that use the experimental Codex integration can run in both the Agents window and the main VS Code window. Local harness sessions",
+          "The Local harness is deprecated and will be removed in February 2027. Move your workflows to the Copilot harness before then. Learn more about Local harness deprecation.",
+          "and Codex sessions from the OpenAI extension run only in the main VS Code window."
+        ]
+      },
+      "headings": [
+        "Use the Agents window",
+        "Open the Agents window",
+        "Agents window interface overview",
+        "Understand the active session",
+        "Start an agent session",
+        "Choose where an agent makes changes",
+        "Work with multiple sessions",
+        "Arrange sessions in a grid",
+        "Open chats in separate windows",
+        "Review and finish an agent session",
+        "Inspect workspace files and changes",
+        "Validate changes"
+      ],
+      "score": 4
+    },
+    {
+      "eventId": "vscode-docs-agents-remote-sessions:39bb367be25b5026e31e0e574dd7b7e44e69583aa2899cc8e71e159cd1097b70",
+      "sourceId": "vscode-docs-agents-remote-sessions",
+      "sourceName": "VS Code Docs / Remote agent sessions",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-11-11T12:50:23.675Z",
+      "publishedAt": "2026-11-11T12:50:23.674Z",
+      "title": "VS Code Docs / Remote agent sessions changed",
+      "url": "https://code.visualstudio.com/docs/agents/run/remote-agent-sessions",
+      "summary": "Detected 8 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 8,
+        "headings": [],
+        "additions": [
+          "Enable remote access to start or continue agent sessions from another device while the project, tools, and execution stay on the host machine. Remote clients can access its Agent Host-backed sessions, such as a Copilot session. Local harness sessions",
+          "The Local harness is deprecated and will be removed in February 2027. Move your workflows to the Copilot harness before then. Learn more about Local harness deprecation.",
+          "and older extension-host sessions aren't shared this way.",
+          "To also manage how this computer is shared, enable",
+          "sessions.chat.experimental.remoteEnvironmentsThisComputer",
+          "Open in VS Code",
+          "Open in VS Code Insiders",
+          ". In This Computer, choose GitHub Environments (when available), Dev Tunnels, or Off, or select Rename Sharing Name to change the name other clients see. Local sessions continue to run on this computer whether sharing is on or off."
+        ]
+      },
+      "headings": [
+        "Run and manage remote agent sessions",
+        "Choose how to connect",
+        "Make a host available for remote access",
+        "Continue an existing remote session",
+        "GitHub environments",
+        "Start a remote session",
+        "Connect via SSH",
+        "Connect via dev tunnel",
+        "Use the Agents window in the browser",
+        "Set up a dev tunnel",
+        "Host management",
+        "Use remote sessions in the Chat view"
+      ],
+      "score": 2
+    },
+    {
+      "eventId": "vscode-docs-agents-nav:1ccb8a010a3f6a7813bace4cc9d12e591a19f5ab24fc9dfcc4e5fdf6e573da46",
+      "sourceId": "vscode-docs-agents-nav",
+      "sourceName": "VS Code Docs / Agents (new pages)",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-11-11T12:50:23.282Z",
+      "publishedAt": "2026-11-11T12:50:23.282Z",
+      "title": "VS Code Docs / Agents (new pages) changed",
+      "url": "https://code.visualstudio.com/docs/agents/overview",
+      "summary": "Detected 3 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 3,
+        "headings": [],
+        "additions": [
+          "Organize & Triage Sessions",
+          "Trust & Safety",
+          "Workspace Context"
+        ]
+      },
+      "headings": [],
+      "score": 2
+    },
+    {
+      "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_147",
+      "sourceId": "vscode-feed",
+      "sourceName": "vscode feed",
+      "kind": "feed_entry",
+      "detectedAt": "2026-11-11T12:50:24.105Z",
+      "publishedAt": "2026-11-11T00:00:00.000Z",
+      "title": "Visual Studio Code 1.147 (Insiders)",
+      "url": "https://code.visualstudio.com/updates/v1_147",
+      "summary": "Follow us on LinkedIn, X, Bluesky, Instagram | Follow Insiders Changelog on X or Bluesky Welcome to the 1.147 Insiders release of Visual Studio Code.",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
     }
   ],
   "errors": []

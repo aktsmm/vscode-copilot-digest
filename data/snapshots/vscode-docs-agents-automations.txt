@@ -6,14 +6,14 @@ Ask in VS Code Insiders
 Automations run agent tasks from a saved prompt and session configuration. Use them for work such as summarizing repository changes or triaging issues without starting each session manually. Run an automation on demand, on a recurring schedule, or, for cloud automations, in response to supported repository events. You can also start from a template or share an automation as a reusable file.
 Run an automation locally when the task needs your development environment. Run it in GitHub's cloud 
  
- Cloud automations is in preview and might change before it becomes generally available. Share feedback about Cloud automations (opens in new tab).
+ Cloud automations is in preview and might change before it becomes generally available.
  when you want recurring repository work to continue while VS Code and your computer are off.
 This article explains how to choose between local and cloud automations, and how to create, monitor, and safely manage them.
 H2: Prerequisites
 Set up and open the Agents window with an available agent.
 For cloud automations 
  
- Cloud automations is in preview and might change before it becomes generally available. Share feedback about Cloud automations (opens in new tab).
+ Cloud automations is in preview and might change before it becomes generally available.
 , sign in with a GitHub.com account that has write access to an eligible private repository. Your Copilot plan and organization must allow automations. See GitHub automation availability and permissions.
 Automations and cloud automation management are on by default. If Automations isn't visible in the sidebar, check that 
  

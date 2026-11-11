@@ -33,7 +33,7 @@ You can optionally change the agent harness, agent, or model.
 Describe the outcome you want, any constraints, and how the agent should check its work. Press Enter to submit the prompt.
 For additional context, select Add Context (+). If prompted, select a repository first. Pasting an issue or pull request URL into the prompt also adds it as a context attachment.
 You can optionally change the agent harness, agent, or model.
-To start a session in the background without navigating into it, press Alt+Enter or hold Alt and select Send. The session appears in the sessions list after you send the prompt.
+To start a session in the background without navigating into it, press Alt+Enter or hold Alt and select Send. Focus stays in the composer so you can start another task. Select Open Session in the confirmation to open the sent conversation. With the Inbox mode setting enabled, you can also press Ctrl+Enter (Cmd+Enter on macOS).
 H3: Choose where an agent makes changes
 For a Git workspace you can choose between applying changes in the current branch or a new worktree. Use the isolation dropdown above the input to choose where the agent edits files.
 Choosing a base branch for New Worktree doesn't switch the branch in your active workspace.
@@ -49,12 +49,31 @@ Use the sessions list to check status and change statistics. Select a session to
 If it needs input, answer its question or review the approval request.
 While it works, check that its changes stay within the task's scope. Send corrections to that session, not another task's conversation.
 When it finishes, review and validate the result. A completed response isn't proof that the task is correct.
-Confirm the active session before sending feedback or running commands. For steering and stopping requests, see Use chat. To group, pin, or find sessions, see Organize sessions.
+Confirm the active session before sending feedback or running commands. For steering and stopping requests, see Use chat. To group, pin, or prioritize sessions that need attention, see Organize and triage sessions.
 H3: Arrange sessions in a grid
 To keep two sessions visible, right-click a session in the list and select Open to the Side. To start another session without replacing the current pane, hold Alt (Option on macOS) and select New Session.
 Drag a session to the top, bottom, left, or right edge of another session to create a horizontal or vertical split. A placement preview shows where the session appears.
 Only one pane is active at a time. Selecting another session in the list replaces an unpinned active view.
 When multiple panes are visible, use the session header's Session Layout menu to arrange or resize them. Maximize expands one pane, and Restore Size returns to the grid. These actions are separate from Session Layout.
+H3: Open chats in separate windows
+To keep a conversation and its files on another display, enable 
+ 
+ 
+ sessions.chatWindows.enabled
+ 
+ 
+ 
+ 
+ 
+ 
+ Open in VS Code
+ Open in VS Code Insiders
+ 
+ , then right-click a session or chat in the sessions list and select Open in > New Window. The setting is on by default in Insiders.
+You can also drag a chat tab or session title out of the window to open it separately, or into another chat window to move it there.
+Use Configure Layout in the new window's title bar to show chat and editors side by side or stacked. In the stacked layout, run Agents: Toggle Chat Conversation from the Command Palette to hide the conversation and keep only the input visible.
+To rearrange content, hover over the top edge of a chat, editor, or terminal area to reveal its layout handle. Drag the handle to an edge of another area, using the placement preview to choose its new position.
+To move the window's chats and editors back to the main window, select More Actions (...) > Move to Main Window in the chat header.
 H2: Review and finish an agent session
 When an agent finishes a task, use the Agents window to review its changes, request revisions, and validate the result. Once the work meets your requirements, commit the changes and integrate them into your project, either locally or through a pull request.
 Select the session you want to review to make its files, changes, and tools active.
@@ -179,9 +198,9 @@ H3: Work with multiple chats in a session
 For related conversations, select + (New Nested Session) on a supported session's row. Keep its folder, or choose another folder, New Worktree, or No Workspace, where supported. The nested session uses the parent's harness by default and stays on the same host.
 For shared context, chat tabs, side chats, and moving conversations, see Run multiple chats in a session. To choose another harness, see mixed-harness chats 
  
- Mixed-harness chats is experimental and might change or be removed. Share feedback about Mixed-harness chats (opens in new tab).
+ Mixed-harness chats is experimental and might change or be removed.
 .
-H3: Compare model results (Preview)
+H3: Compare model results
 Run the same prompt with multiple models or harnesses to compare responses or isolated code changes. See Compare model results for setup, judging, and synthesis options.
 H2: Continue in another interface
 To edit or debug alongside a supported project conversation, select Open in Editor in the title bar. To return, select Open in Agents, then select the existing session. Check the supported session types and continuation requirements.
@@ -251,7 +270,7 @@ To stop monitoring the pull request, select Agent merge in the title bar, and th
 H3: Schedule recurring tasks
 Automations run saved agent tasks on a schedule or, for cloud automations 
  
- Cloud automations is in preview and might change before it becomes generally available. Share feedback about Cloud automations (opens in new tab).
+ Cloud automations is in preview and might change before it becomes generally available.
 , in response to supported repository events. Select Automations in the sidebar to get started. Learn how to create and manage agent automations.
 H2: Configure the Agents window
 You can personalize chat, adjust the window layout, configure settings and extensions, and choose how Markdown files open. See Configure the Agents window for all window-specific options.
@@ -260,7 +279,7 @@ For other interaction options, use Voice Mode
  Voice Mode is experimental and might change or be removed.
  or canvases 
  
- Canvases is in preview and might change before it becomes generally available. Share feedback about Canvases (opens in new tab).
+ Canvases is in preview and might change before it becomes generally available.
  where supported.
 By default, the Chats group remains visible even when empty. Set 
  
@@ -319,8 +338,14 @@ Use
  
  (Experimental) can symlink a folder instead. Changes through the symlink affect the original folder, so don't use it for files that must stay isolated.
 H2: Limitations
-Sessions that use the experimental Codex integration can run in both the Agents window and the main VS Code window. Local harness sessions and Codex sessions from the OpenAI extension run only in the main VS Code window.
-Sessions that use the experimental Codex integration can run in both the Agents window and the main VS Code window. Local harness sessions and Codex sessions from the OpenAI extension run only in the main VS Code window.
+Sessions that use the experimental Codex integration can run in both the Agents window and the main VS Code window. Local harness sessions 
+ 
+ The Local harness is deprecated and will be removed in February 2027. Move your workflows to the Copilot harness before then. Learn more about Local harness deprecation.
+ and Codex sessions from the OpenAI extension run only in the main VS Code window.
+Sessions that use the experimental Codex integration can run in both the Agents window and the main VS Code window. Local harness sessions 
+ 
+ The Local harness is deprecated and will be removed in February 2027. Move your workflows to the Copilot harness before then. Learn more about Local harness deprecation.
+ and Codex sessions from the OpenAI extension run only in the main VS Code window.
 Copilot Cloud sessions are only supported for GitHub-backed repositories. For non-GitHub projects, you can still use Copilot in the Agents window.
 Copilot Cloud sessions are only supported for GitHub-backed repositories. For non-GitHub projects, you can still use Copilot in the Agents window.
 The agents dropdown currently doesn't have the plan agent. You can use the /plan command in a Copilot or Claude agent session. In Copilot harness sessions, the plan agent is also automatically invoked when you ask it to create a plan.

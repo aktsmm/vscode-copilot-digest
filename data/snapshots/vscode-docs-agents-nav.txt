@@ -16,6 +16,7 @@ Browser Tools
 Subagents
 Automations
 Manage Sessions
+Organize & Triage Sessions
 Memory
 Artifacts
 Approvals & Permissions
@@ -48,12 +49,12 @@ How Models Work
 Context
 Tools
 Sessions and Chats
+Trust & Safety
 Agent Harnesses
 Agent Customization
-Workspace Context
-Trust & Safety
 Cheat Sheet
 Tools and Context
+Workspace Context
 Settings Reference
 VS Code Pet
 Custom Agent File Reference
