@@ -1,0 +1,85 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "78c954e9f04a3e5c",
+  "title": {
+    "ja": "GitHub CopilotでGemini 4 Carbonが一般提供開始",
+    "subtitleJa": "Copilot Pro+・Max・Business・Enterpriseでモデルピッカーから選択可能に",
+    "original": "Gemini 4 Carbon in GitHub Copilot"
+  },
+  "date": "2026-11-10",
+  "topic": "GitHub Copilot",
+  "status": "ga",
+  "statusEvidence": "Gemini 4 Carbon, Google’s latest model, is now generally available in GitHub Copilot.",
+  "audience": {
+    "who": "Copilot Pro+・Max・Business・Enterpriseの利用者と、BusinessおよびEnterpriseの管理者",
+    "change": "Googleの最新モデルGemini 4 Carbonを、複雑なコーディングやエージェント、推論タスクで選べる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "利用者はモデルピッカーで選択。管理者はCopilot設定のモデルポリシーでアクセスを管理する"
+  },
+  "panels": [
+    {
+      "id": "availability",
+      "heading": "使える場所とプラン",
+      "priority": "core",
+      "items": [
+        "対象プランはCopilot Pro+、Max、Business、Enterprise",
+        "VS Code、Visual Studio、CLI、coding agent、Copilot app、github.com、モバイル、JetBrains、Xcode、Eclipseで選択",
+        "ロールアウトは段階的。表示されない場合は後で再確認する"
+      ]
+    },
+    {
+      "id": "admin",
+      "heading": "管理者向け設定",
+      "priority": "core",
+      "items": [
+        "BusinessとEnterpriseの管理者はCopilot設定のモデルポリシーでアクセスを管理",
+        "既定では新モデルは自動で有効。全体の既定オフか、このモデルの明示的な無効化がある場合は除く"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "従量課金のもとで、プロバイダーの定価で課金される"
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "モデルポリシー",
+      "type": "feature",
+      "oneLine": "BusinessとEnterpriseの管理者がCopilot設定でモデルへのアクセスを管理する仕組み"
+    }
+  ],
+  "qa": [
+    {
+      "q": "どのプランで使えますか?",
+      "a": "Copilot Pro+、Max、Business、Enterpriseの利用者が対象です。ロールアウトは段階的なので、表示されない場合は後で再確認してください。"
+    },
+    {
+      "q": "どこで選択できますか?",
+      "a": "VS Code、Visual Studio、Copilot CLI、coding agent、Copilot app、github.com、GitHub Mobile(iOS・Android)、JetBrains、Xcode、Eclipseのモデルピッカーで選べます。"
+    },
+    {
+      "q": "管理者は利用をどう制御しますか?",
+      "a": "BusinessとEnterpriseの管理者がCopilot設定のモデルポリシーで管理します。既定のモデル有効化では新モデルは自動で有効になり、全体の既定をオフにするか、このモデルを明示的に無効化すると有効になりません。"
+    },
+    {
+      "q": "料金はどうなりますか?",
+      "a": "従量課金のもとで、プロバイダーの定価で課金されます。詳細はGitHub Copilotのモデルと価格設定のドキュメントで確認できます。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Gemini 4 Carbon in GitHub Copilot - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-11-10-gemini-4-carbon-in-github-copilot/"
+    }
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-11-10-gemini-4-carbon-in-github-copilot/"
+  ]
+}
