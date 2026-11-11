@@ -1,0 +1,82 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "7b88645aea03f733",
+  "title": {
+    "ja": "VS Code 1.146: エージェント セッションを一覧する Inbox モード（試験的）",
+    "subtitleJa": "要対応のセッションを一覧の最上部に集め、後回しにできるものは保留やスヌーズで退ける",
+    "original": "Inbox mode for sessions (Experimental)"
+  },
+  "date": "2026-11-11",
+  "topic": "VS Code",
+  "status": "update",
+  "audience": {
+    "who": "VS Code の Agents ウィンドウで複数のエージェント セッションを動かす開発者",
+    "change": "セッション一覧のグループ化に Inbox モードが加わり、注意が必要なものが最上部に表示される",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "試すなら sessions.list.inboxEnabled を有効にして、グループ化を Inbox モードにする"
+  },
+  "panels": [
+    {
+      "id": "how-to",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "sessions.list.inboxEnabled を有効にする（既定はオフ）",
+        "Agents ウィンドウのセッション一覧で、Grouping > Inbox Mode を選ぶ",
+        "要対応のセッションが最上部、その下に Working、Ready to merge、On hold、Done の各グループが並ぶ"
+      ]
+    },
+    {
+      "id": "triage",
+      "heading": "後回しにする操作",
+      "priority": "core",
+      "items": [
+        "待てるセッションは Dismiss from Inbox、Put on Hold、Snooze で退ける",
+        "考えが変わったら Undo を選ぶ"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "Dismiss してもセッションはアーカイブされない",
+        "アーカイブするには Mark Session as Done を選ぶ"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "Inbox mode", "type": "feature", "oneLine": "対応が必要なセッションを一つの一覧で把握するための表示モード。" }
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.146",
+      "url": "https://code.visualstudio.com/updates/v1_146#_inbox-mode-for-sessions-experimental"
+    },
+    "documents": []
+  },
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_146#_inbox-mode-for-sessions-experimental"
+  ],
+  "qa": [
+    {
+      "q": "Inbox モードはどう有効にしますか。",
+      "a": "sessions.list.inboxEnabled 設定を有効にします（既定はオフ）。その後、Agents ウィンドウのセッション一覧で Grouping > Inbox Mode を選びます。"
+    },
+    {
+      "q": "Inbox モードではセッションはどう並びますか。",
+      "a": "注意が必要なセッションが最上部に表示され、その下に Working、Ready to merge、On hold、Done のグループが続きます。"
+    },
+    {
+      "q": "後回しにしたいセッションはどうしますか。",
+      "a": "Dismiss from Inbox、Put on Hold、Snooze のいずれかで退けられます。考えが変わった場合は Undo を選びます。"
+    },
+    {
+      "q": "Dismiss したセッションはアーカイブされますか。",
+      "a": "いいえ。アーカイブするには Mark Session as Done を選びます。"
+    }
+  ]
+}
