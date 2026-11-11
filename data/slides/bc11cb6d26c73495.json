@@ -1,0 +1,79 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "bc11cb6d26c73495",
+  "title": {
+    "ja": "VS Code 1.146: このコンピューターの共有方法を設定（試験的）",
+    "subtitleJa": "Remote Environments エディターで、GitHub Environments / Dev Tunnels / オフを選べる",
+    "original": "Configure computer sharing (Experimental)"
+  },
+  "date": "2026-11-11",
+  "topic": "VS Code",
+  "status": "update",
+  "audience": {
+    "who": "Agents ウィンドウで、このコンピューターを他のクライアントから使いたい開発者",
+    "change": "共有方法の選択・オフ・共有名の変更を、Remote Environments エディターで管理できる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "試すなら、試験的な設定 sessions.chat.experimental.remoteEnvironmentsThisComputer を有効にする"
+  },
+  "panels": [
+    {
+      "id": "how-to",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "設定 sessions.chat.experimental.remoteEnvironmentsThisComputer を有効にする",
+        "Environment picker の Manage Remote Environments かコマンド パレットから開く",
+        "タイトル バーの Remote Connections（アンテナ アイコン）にも同じ共有オプションがある",
+        "This Computer で GitHub Environments、Dev Tunnels、オフを選び、共有名も変更できる"
+      ]
+    },
+    {
+      "id": "prerequisites",
+      "heading": "前提と制限",
+      "priority": "core",
+      "items": [
+        "管理には sessions.chat.experimental.environmentPicker など 3 つの設定が必要で、いずれも既定で有効",
+        "共有の有無にかかわらず、ローカル セッションはこのコンピューター上で直接実行される",
+        "共有はホストの Agent Host ベースのセッション向けで、Local harness などは対象外"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "オフにしても実行中のエージェント タスクは止まらない",
+        "GitHub Environments では会話内容が GitHub に保存され、エンドツーエンド暗号化されない"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "Remote Environments", "type": "feature", "oneLine": "Agents ウィンドウで、リモート接続を一元管理するエディター。" },
+    { "term": "Dev Tunnels", "type": "feature", "oneLine": "VS Code やブラウザー版 Agents ウィンドウからのリモート アクセスを許可する接続方法。" }
+  ],
+  "qa": [
+    { "q": "どうすれば使えますか？", "a": "試験的な設定 sessions.chat.experimental.remoteEnvironmentsThisComputer を有効にし、Remote Environments エディターの This Computer で共有方法を選びます。" },
+    { "q": "選べる共有方法は何ですか？", "a": "GitHub Environments、Dev Tunnels、オフの 3 つです。Rename Sharing Name で、他のクライアントに見えるコンピューター名も変更できます。" },
+    { "q": "共有をオフにするとタスクは止まりますか？", "a": "止まりません。オフにしても実行中のエージェント タスクは停止しないため、止めたい場合は該当セッションでタスクを停止します。" },
+    { "q": "ローカル セッションへの影響は？", "a": "共有の有無にかかわらず、ローカル セッションはこのコンピューター上で直接実行され続けます。" }
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.146",
+      "url": "https://code.visualstudio.com/updates/v1_146#_configure-computer-sharing-experimental"
+    },
+    "documents": [
+      {
+        "title": "Run and manage remote agent sessions",
+        "url": "https://code.visualstudio.com/docs/agents/run/remote-agent-sessions"
+      }
+    ]
+  },
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_146",
+    "https://code.visualstudio.com/docs/agents/run/remote-agent-sessions"
+  ]
+}
