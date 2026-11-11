@@ -1,0 +1,99 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "3bbd2b7aded80bc1",
+  "title": {
+    "ja": "VS Code 1.146: Agents ウィンドウのモデル比較を改善",
+    "subtitleJa": "ワークスペース不要の judge と synthesizer、Fusion の比較、エージェントによる比較実行に対応",
+    "original": "Model comparison improvements (Preview)"
+  },
+  "date": "2026-11-11",
+  "topic": "VS Code",
+  "status": "preview",
+  "statusEvidence": "Model comparison improvements (Preview)",
+  "audience": {
+    "who": "Agents ウィンドウで同じプロンプトを複数モデルで比較・評価したい VS Code ユーザー",
+    "change": "チャットのみの応答にも judge と synthesizer を使え、Fusion も比較対象にでき、エージェントに比較を実行させられる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "Agents ウィンドウのモデルピッカーで Compare Models を選んで試す。エージェント実行は設定を有効にする"
+  },
+  "panels": [
+    {
+      "id": "improvements",
+      "heading": "今回の改善点",
+      "priority": "core",
+      "items": [
+        "ワークスペース未選択でも judge と synthesizer を追加できる。Synthesize で新しいチャットを作り、元の試行は変更しない",
+        "試行・judge・synthesizer に Copilot Fusion と対応する effort 階層を選べる",
+        "エージェントがモデルを探し、比較を起動し、結果を読んで複数シナリオの所見を要約できる（Experimental）"
+      ]
+    },
+    {
+      "id": "usage",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "Agents ウィンドウでモデルピッカーから Compare Models（天秤アイコン）を選び、2〜10 個のモデルを追加",
+        "Configure Judge で評価モデル、Configure Synthesis で統合モデルを実行前に設定。統合には judge も必要",
+        "Run N Attempts で全試行が独立セッションとして同時に始まる"
+      ]
+    },
+    {
+      "id": "limits",
+      "heading": "前提と制限",
+      "priority": "detail",
+      "items": [
+        "エージェント用ツールは既定でオフ。`sessions.chat.compareAgents.tools.enabled` と Compare Models の有効化が必要",
+        "モデル比較は Agents ウィンドウ専用で、エディターの Chat ビューでは使えない"
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Judge",
+      "type": "feature",
+      "oneLine": "試行の結果を自動評価するモデル。スコアカードに推奨と根拠が出る"
+    },
+    {
+      "term": "Synthesizer",
+      "type": "feature",
+      "oneLine": "judge の評価と各試行の長所から、新しい統合結果を作るモデル"
+    }
+  ],
+  "qa": [
+    {
+      "q": "ワークスペースを開かずに比較できますか",
+      "a": "はい。今回、ワークスペースを選ばずに judge と synthesizer を追加できるようになりました。Synthesize を選ぶと新しいチャットが作られ、元の試行は変更されません。"
+    },
+    {
+      "q": "エージェントに比較を実行させるには",
+      "a": "`sessions.chat.compareAgents.tools.enabled` を有効にします。既定はオフで、Compare Models の有効化も必要です。Experimental の機能です。無効でも手動の比較は使えます。"
+    },
+    {
+      "q": "比較できるモデルの数は",
+      "a": "ドキュメントでは 2〜10 個のモデルを追加できます。Auto は比較に使えません。thinking effort に対応するモデルは、effort を変えて複数回追加できます。"
+    },
+    {
+      "q": "Synthesize を使う条件は",
+      "a": "judge と synthesizer の両方を、比較の実行前に設定しておく必要があります。judge がない場合は手動で比較します。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.146 - Model comparison improvements (Preview)",
+      "url": "https://code.visualstudio.com/updates/v1_146#_model-comparison-improvements-preview"
+    },
+    "documents": [
+      {
+        "title": "Compare model results",
+        "url": "https://code.visualstudio.com/docs/agents/run/compare-models"
+      }
+    ]
+  },
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_146",
+    "https://code.visualstudio.com/docs/agents/run/compare-models"
+  ]
+}
