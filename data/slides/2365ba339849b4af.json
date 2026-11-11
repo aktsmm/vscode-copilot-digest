@@ -1,0 +1,103 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "2365ba339849b4af",
+  "title": {
+    "ja": "VS Code 1.146 のチャットウィンドウ（Preview）",
+    "subtitleJa": "チャットを独立ウィンドウで開き、チャット・エディター・ターミナルを自由に配置できる",
+    "original": "Chat windows (Preview)"
+  },
+  "date": "2026-11-11",
+  "topic": "VS Code",
+  "status": "preview",
+  "statusEvidence": "Chat windows (Preview)",
+  "audience": {
+    "who": "Agents ウィンドウで複数のチャットを同時に走らせる VS Code ユーザー",
+    "change": "チャットを専用ウィンドウで開き、チャット・エディター・ターミナルの配置をタスクに合わせて変えられる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "Stable で試すには sessions.chatWindows.enabled を有効にする"
+  },
+  "panels": [
+    {
+      "id": "availability",
+      "heading": "使える場所とプラン",
+      "priority": "core",
+      "items": [
+        "プレビュー機能。Stable では既定オフ、VS Code Insiders では既定オン",
+        "Stable では `sessions.chatWindows.enabled` を有効にして試す"
+      ]
+    },
+    {
+      "id": "usage",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "セッション一覧で右クリックし Open in > New Window、またはチャットをドラッグして新規ウィンドウ化",
+        "Move to Main Window コマンドで Agents ウィンドウへ戻せる",
+        "1 つのウィンドウに複数セッションのチャットを置け、再起動後もチャットとエディターが復元される"
+      ]
+    },
+    {
+      "id": "layout",
+      "heading": "配置の変更",
+      "priority": "core",
+      "items": [
+        "パーツはカード上端のつまみでドラッグ、または Move Part Left/Right/Up/Down で移動",
+        "ターミナルは Under Editor・Under Chat・Full Width の位置を選べる",
+        "Configure Layout でチャットとエディターを横並び・縦積みに切り替え"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "Developer: Reset Chat Window Layout で初期配置に戻せる",
+        "縦積みでは Agents: Toggle Chat Conversation で入力欄だけを残せる"
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Agents ウィンドウ",
+      "type": "feature",
+      "oneLine": "複数のエージェントセッションを扱う、メインエディターと並んで開く専用ウィンドウ"
+    }
+  ],
+  "qa": [
+    {
+      "q": "Stable でチャットウィンドウを使うには？",
+      "a": "プレビュー機能で Stable では既定オフです。`sessions.chatWindows.enabled` を有効にすると試せます。VS Code Insiders では既定で有効です。"
+    },
+    {
+      "q": "チャットを別ウィンドウで開く方法は？",
+      "a": "セッション一覧でセッションまたはチャットを右クリックし Open in > New Window を選ぶか、チャットを Agents ウィンドウの外へドラッグします。"
+    },
+    {
+      "q": "別ウィンドウにしたチャットを元に戻せる？",
+      "a": "Move to Main Window コマンドでメインウィンドウへ戻せます。別のチャットウィンドウへドラッグして移すこともできます。"
+    },
+    {
+      "q": "再起動すると配置は消える？",
+      "a": "チャットウィンドウはチャットとエディターを保持したまま再起動後に開き直されます。配置を初期化したいときは Developer: Reset Chat Window Layout を使います。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.146 - Chat windows (Preview)",
+      "url": "https://code.visualstudio.com/updates/v1_146#_chat-windows-preview"
+    },
+    "documents": [
+      {
+        "title": "Use the Agents window",
+        "url": "https://code.visualstudio.com/docs/agents/run/agents-window"
+      }
+    ]
+  },
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_146#_chat-windows-preview",
+    "https://code.visualstudio.com/docs/agents/run/agents-window"
+  ]
+}
