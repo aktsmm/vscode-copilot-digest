@@ -1,0 +1,111 @@
+{
+  "date": "2026-11-11",
+  "generatedAt": "2026-11-11T01:20:09.016Z",
+  "latestRun": {
+    "generatedAt": "2026-11-11T01:20:09.016Z",
+    "newEventsCount": 4,
+    "newEventIds": [
+      "github-changelog:https://github.blog/changelog/2026-11-06-github-app-support-for-enterprise-copilot-seat-management",
+      "github-changelog-copilot:https://github.blog/changelog/2026-11-09-gemini-4-carbon-in-github-copilot",
+      "github-changelog-copilot:https://github.blog/changelog/2026-11-10-c-language-server-now-auto-configures-msbuild-builds",
+      "copilot-whats-new:5f80878704bd40a8261d6b3c5d242feac2d9656d66867695bd1cdd8a1df6d6dc"
+    ],
+    "errorCount": 0,
+    "skippedLowInformationEvents": []
+  },
+  "events": [
+    {
+      "eventId": "copilot-whats-new:5f80878704bd40a8261d6b3c5d242feac2d9656d66867695bd1cdd8a1df6d6dc",
+      "sourceId": "copilot-whats-new",
+      "sourceName": "GitHub Copilot What's New",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-11-11T01:20:06.306Z",
+      "publishedAt": "2026-11-11T01:20:06.306Z",
+      "title": "GitHub Copilot What's New changed",
+      "url": "https://github.com/features/copilot/whats-new",
+      "summary": "Detected 2 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 2,
+        "headings": [
+          "Nov.10 Release",
+          "Nov.10 Improvement"
+        ],
+        "additions": [
+          "H3: Nov.10 Release",
+          "H3: Nov.10 Improvement"
+        ]
+      },
+      "headings": [
+        "Changelog",
+        "Filters (0 selected)",
+        "November\n Nov\n 2026",
+        "Nov.10 Improvement",
+        "Nov.10 Release",
+        "Nov.10 Improvement",
+        "Nov.09 Release",
+        "Nov.06 Improvement",
+        "Nov.06 Improvement",
+        "Nov.06 Release",
+        "Nov.06 Release",
+        "Nov.05 Improvement"
+      ],
+      "score": 4
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-11-06-github-app-support-for-enterprise-copilot-seat-management",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-11-11T01:19:59.551Z",
+      "publishedAt": "2026-11-11T00:10:31.000Z",
+      "title": "GitHub App support for Enterprise Copilot seat management",
+      "url": "https://github.blog/changelog/2026-11-10-github-app-support-for-enterprise-copilot-seat-management",
+      "summary": "Enterprise GitHub Apps can now call the enterprise-level Copilot seat management APIs to control which users and enterprise teams are assigned Copilot seats. The Copilot seat management APIs are accessible…\nThe post GitHub App support for Enterprise Copilot seat management appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "copilot",
+        "enterprise management tools"
+      ],
+      "isFutureDated": false,
+      "score": 1
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-11-09-gemini-4-carbon-in-github-copilot",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-11-11T01:19:59.577Z",
+      "publishedAt": "2026-11-10T19:26:51.000Z",
+      "title": "Gemini 4 Carbon in GitHub Copilot",
+      "url": "https://github.blog/changelog/2026-11-10-gemini-4-carbon-in-github-copilot",
+      "summary": "Gemini 4 Carbon, Google’s latest model, is now generally available in GitHub Copilot. It is designed for complex coding, agentic, and reasoning tasks, with a focus on secure code generation…\nThe post Gemini 4 Carbon in GitHub Copilot appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 5
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-11-10-c-language-server-now-auto-configures-msbuild-builds",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-11-11T01:19:59.577Z",
+      "publishedAt": "2026-11-10T17:04:10.000Z",
+      "title": "C++ language server now auto-configures MSBuild builds",
+      "url": "https://github.blog/changelog/2026-11-10-c-language-server-now-auto-configures-msbuild-builds",
+      "summary": "The Microsoft C++ Language Server for GitHub Copilot CLI now bundles its MSBuild compile commands extractor and invokes it automatically. An agent no longer needs to discover and run a…\nThe post C++ language server now auto-configures MSBuild builds appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 2
+    }
+  ],
+  "errors": []
+}
