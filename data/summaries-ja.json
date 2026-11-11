@@ -4065,5 +4065,101 @@
       "対象はEnterpriseレベルのCopilotシート管理API",
       "割り当て対象はユーザーとEnterpriseチーム"
     ]
+  },
+  "2365ba339849b4af": {
+    "title": "チャットを独立ウィンドウで開ける chat windows がプレビュー",
+    "summary": "VS Codeのエージェントウィンドウで、チャットを専用ウィンドウに切り出せるchat windowsがプレビュー提供された。チャット、エディター、ターミナルを部品として自由に配置でき、1つのウィンドウに複数セッションのチャットも置ける。再起動後も内容は復元される。",
+    "why": "複数のチャットを並行実行する人は、待っているチャットを見失わない配置にできる。",
+    "points": [
+      "Stableではsessions.chatWindows.enabledを有効化、Insidersは既定で有効",
+      "セッション一覧の右クリックからOpen in > New Windowで開く",
+      "Developer: Reset Chat Window Layoutでレイアウトを初期化",
+      "ターミナルは Under Editor / Under Chat / Full Width に配置可能"
+    ]
+  },
+  "248e05e7806aec15": {
+    "title": "エージェントウィンドウ内で拡張機能の導入と管理が可能に",
+    "summary": "Agent CustomizationsのExtensionsセクションから、エディターウィンドウへ切り替えずにMarketplaceの拡張機能を検索・インストール・アンインストールできるようになった。エージェントウィンドウで動かす拡張機能を、エディター側の有効状態と別に選べる。実験的機能。",
+    "why": "エージェント用の拡張機能を整えたい人は、作業画面を離れずに導入と対応可否の確認ができる。",
+    "points": [
+      "Extensions: Manage Extensionsまたは Ctrl+Shift+X で開く",
+      "プレリリース版はInstallのドロップダウンから選択",
+      "未対応のビューやデバッガーを持つ拡張機能には警告が出る",
+      "組織が許可しない拡張機能は導入できない理由が表示される"
+    ]
+  },
+  "3bbd2b7aded80bc1": {
+    "title": "モデル比較にCopilot Fusion対応とエージェント実行を追加",
+    "summary": "エージェントウィンドウのCompare Modelsが強化された。ワークスペース不要でチャットのみの回答を判定・統合でき、試行・審査・統合の各役にCopilot Fusionと対応する推論強度を選べる。エージェントが比較を起動し結果を読む実験的ツールも加わった。",
+    "why": "モデルの出力を比べて評価する人は、設定の手間を減らし比較を自動化できる。",
+    "points": [
+      "統合はSynthesizeを選ぶと新しいチャットが作られ、元の試行は変わらない",
+      "エージェント用ツールはsessions.chat.compareAgents.tools.enabledで有効化",
+      "ツールは既定オフで、Compare Modelsの有効化が前提",
+      "ツールを無効にしても手動比較は使える"
+    ]
+  },
+  "3c7f21bdcd185f11": {
+    "title": "セッション一覧からチェック修正やコメント対応を実行可能に",
+    "summary": "エージェントウィンドウのセッション一覧に、失敗したチェックの修正とレビューコメントへの対応を行うインラインアクションを表示できる。設定で片方または両方を選べ、各操作は行のセッションへセッションを開かずバックグラウンドで送られる。実験的機能で既定はオフ。",
+    "why": "PRを複数抱える人は、セッションを開かずに修正依頼を出して時間を節約できる。",
+    "points": [
+      "設定名はsessions.list.inlineActions",
+      "Agent Mergeの有効化や操作権限は変わらない",
+      "ネストされたセッションの行にも依頼を送れる"
+    ]
+  },
+  "509ee8a93c5c9908": {
+    "title": "Local harnessを廃止予定に、2027年2月までにCopilot harnessへ",
+    "summary": "VS Code 1.146でLocal harnessが非推奨となり、2027年2月に削除される。Copilot harnessは1.143から新規セッションの既定で、Agent Host経由でバックグラウンド実行でき、組織のサンドボックスと権限ポリシーも適用される。移行期間中のLocal harnessは機能が凍結される。",
+    "why": "Local harnessを使い続けている個人や組織は、2027年2月までにCopilot harnessへ移行する必要がある。",
+    "points": [
+      "削除まで約3カ月は利用できるが新機能は追加されない",
+      "vscode.temporaryDefaultToLocalHarnessの企業管理設定も削除される",
+      "新規セッションのharnessピッカーでCopilotを選んでいるか確認",
+      "移行ガイドにカスタマイズ互換性と組織展開の手順がある"
+    ]
+  },
+  "7b88645aea03f733": {
+    "title": "全プロジェクトのセッションをまとめて見るInboxモードが登場",
+    "summary": "エージェントウィンドウのセッション一覧にInboxモードが加わった。対応が必要なセッションが最上部に並び、その下にWorking、Ready to merge、On hold、Doneのグループが続く。後回しにできるセッションは非表示や保留、スヌーズができる。実験的機能。",
+    "why": "複数のワークスペースでエージェントを動かす人は、確認が必要なものだけを一覧で追える。",
+    "points": [
+      "sessions.list.inboxEnabledを有効にする（既定オフ）",
+      "Grouping > Inbox Modeを選んで切り替える",
+      "Dismiss from Inbox、Put on Hold、Snoozeで後回しにできる",
+      "操作はUndoで取り消せる"
+    ]
+  },
+  "bc11cb6d26c73495": {
+    "title": "このコンピューターの共有方法を設定できるように",
+    "summary": "エージェントウィンドウのRemote Environmentsエディターで、このコンピューターを他のクライアントへ共有する方法を設定できるようになった。GitHub EnvironmentsかDev Tunnelsで共有するか、共有をオフにでき、他の端末から見えるコンピューター名も変更できる。",
+    "why": "自分のマシンへリモート接続させたい人は、共有経路を選び不要なら止められる。",
+    "points": [
+      "設定名はsessions.chat.experimental.remoteEnvironmentsThisComputer",
+      "環境ピッカーのManage Remote Environmentsから開く",
+      "共有の有無にかかわらずローカルセッションはこのPCで直接動く"
+    ]
+  },
+  "f78fe05811568531": {
+    "title": "Canvasesに権限確認と再開・探索の改善が入る",
+    "summary": "CopilotとユーザーがともにプランやダッシュボードをつくるCanvasesが改善された。Copilot harnessではcanvas拡張がフックなど特権機能の初期化前に承認を求める。実行中と作成可能なcanvasが区別され、非アクティブなセッションに戻ってもメッセージ送信なしで復元される。",
+    "why": "Canvasesを使う人は権限承認の流れを把握し、管理者は拡張の導入元を制御できる。",
+    "points": [
+      "設定名はchat.canvases.enabled",
+      "エージェントウィンドウでは作成・導入操作がDiscover Moreにまとまる",
+      "別のチャットウィンドウではチャットを離れるとcanvasタブが閉じる",
+      "strictPluginOnlyCustomizationで単体のcanvas拡張もブロックされる"
+    ]
+  },
+  "092d312dd2f17011": {
+    "title": "VS Code 1.147 Insiders、Inboxモードとモデル比較を改良",
+    "summary": "VS Code 1.147 Insidersの11月10日分では、Inboxモードで保留中セッションをワークスペース別にまとめ、空のカテゴリーを隠せるようになった。マージ可能なセッションにはPull Requestのマージ操作がインラインで出る。Compare Modelsの親チャットにマウスを重ねると元の設定が見られる。",
+    "why": "Insidersでエージェントウィンドウを試している人は、次の安定版に入りうる変更を先に確認できる。",
+    "points": [
+      "Inboxモードの変更は実験的機能として提供",
+      "ワークツリー削除の確認メッセージが短縮された",
+      "Add Contextにカスタムエージェントの案内が一度だけ表示される"
+    ]
   }
 }
