@@ -1,0 +1,113 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "509ee8a93c5c9908",
+  "title": {
+    "ja": "VS Code 1.146: Local harnessを非推奨化、2027年2月に削除",
+    "subtitleJa": "Copilot harnessが標準となり、Local harnessは機能凍結・3か月後に利用不可",
+    "original": "Copilot harness and deprecation of the Local harness"
+  },
+  "date": "2026-11-11",
+  "topic": "VS Code",
+  "status": "retirement",
+  "statusEvidence": "As of this release, the Local harness is deprecated and will be removed in three months (February 2027)",
+  "audience": {
+    "who": "VS CodeのエージェントでLocal harnessを使い続けている開発者と、組織の管理者",
+    "change": "Local harnessは非推奨となり2027年2月に削除。以後の新機能はCopilot harnessが対象",
+    "changeNature": "breaking"
+  },
+  "action": {
+    "required": "yes",
+    "summary": "2027年2月までにワークフローをCopilot harnessへ移行する",
+    "deadline": "2027-02"
+  },
+  "beforeAfter": {
+    "before": "Local harnessを既定に保つ企業管理設定を利用できた",
+    "after": "Local harnessは機能凍結、2027年2月に削除され、この設定も削除される"
+  },
+  "timeline": [
+    { "when": "VS Code 1.143", "label": "Copilot harnessが新規セッションの既定" },
+    { "when": "VS Code 1.146", "label": "Local harnessを非推奨化" },
+    { "when": "2027-02", "label": "Local harnessを削除" }
+  ],
+  "panels": [
+    {
+      "id": "timeline-impact",
+      "heading": "今後3か月と削除後",
+      "priority": "core",
+      "items": [
+        "今後3か月はLocal harnessを使えるが機能は凍結され、新機能は保証されない",
+        "3か月後にLocal harnessは利用不可になる",
+        "vscode.temporaryDefaultToLocalHarness（1.142で導入）も削除される"
+      ]
+    },
+    {
+      "id": "how-to",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "新規セッション開始時にharness pickerでCopilotを選ぶと確認できる",
+        "Session TargetでCopilotを選び、モデルとエージェントを指定する",
+        "Chat: Open Customizations の Migrations で移行対象を確認する"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "Copilot選択ですべてのカスタマイズが変換されるわけではない",
+        "個人設定はクライアント間で自動同期されない"
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Copilot harness",
+      "type": "feature",
+      "oneLine": "Copilot SDK上に構築された最新のエージェントharness。Agent Host経由で実行される"
+    },
+    {
+      "term": "Local harness",
+      "type": "feature",
+      "oneLine": "従来のエディター固有のharness実装。非推奨"
+    }
+  ],
+  "qa": [
+    {
+      "q": "Local harnessはいつまで使えますか?",
+      "a": "VS Code 1.146で非推奨となり、3か月後の2027年2月に削除されます。それまでは使えますが機能は凍結され、新機能や改善はCopilot harnessが対象です。"
+    },
+    {
+      "q": "新たに何か対応が必要ですか?",
+      "a": "Copilot harnessは1.143から新規セッションの既定なので、新たな対応は不要な場合があります。Local harnessを使っている場合は2027年2月までに完全移行してください。"
+    },
+    {
+      "q": "Copilot harnessを使っているか確認するには?",
+      "a": "新規セッション開始時のharness pickerでCopilotが選ばれているかを確認します。"
+    },
+    {
+      "q": "企業向けの設定はどうなりますか?",
+      "a": "Local harnessを既定に保つためVS Code 1.142で導入されたvscode.temporaryDefaultToLocalHarness設定も、3か月後に削除されます。"
+    },
+    {
+      "q": "移行の手順はどこにありますか?",
+      "a": "Local-to-Copilot harness移行ガイドに、カスタマイズの互換性、既存のLocal会話の継続、組織への展開と検証がまとまっています。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.146 - Copilot harness and deprecation of the Local harness",
+      "url": "https://code.visualstudio.com/updates/v1_146#_copilot-harness-and-deprecation-of-the-local-harness"
+    },
+    "documents": [
+      {
+        "title": "Move from the Local to the Copilot harness",
+        "url": "https://code.visualstudio.com/docs/agents/run/move-to-copilot"
+      }
+    ]
+  },
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_146",
+    "https://code.visualstudio.com/docs/agents/run/move-to-copilot"
+  ]
+}
