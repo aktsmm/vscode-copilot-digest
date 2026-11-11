@@ -4044,5 +4044,26 @@
       "CMakeではCopilot CLIに「load project」と依頼して生成スキルを使う",
       "利用にはGitHub Copilotの有効なサブスクリプションとEULAへの同意が必要"
     ]
+  },
+  "78c954e9f04a3e5c": {
+    "title": "Gemini 4 CarbonがCopilotで一般提供に",
+    "summary": "Googleの最新モデルGemini 4 Carbonが、GitHub Copilotで一般提供になった。複雑なコーディング、エージェント作業、推論タスク向けで、安全なコード生成やセキュリティ関連の作業に重点がある。展開は段階的に行われる。",
+    "why": "Copilot Pro+/Max/Business/Enterpriseの利用者はモデルピッカーで選べ、管理者はモデルポリシーで可否を決める。",
+    "points": [
+      "対象はCopilot Pro+、Max、Business、Enterprise",
+      "VS Code、Visual Studio、Copilot CLI、github.com、JetBrains、Xcode、Eclipseなどで選択可能",
+      "利用量課金ではプロバイダーの定価で請求される",
+      "既定のモデル有効化設定では新モデルは自動で有効になる"
+    ]
+  },
+  "b5d37a4739ec4800": {
+    "title": "Enterprise GitHub AppでCopilotシート管理が可能に",
+    "summary": "Enterprise GitHub Appから、企業レベルのCopilotシート管理APIを呼び出せるようになった。Copilotシートを割り当てるユーザーやEnterpriseチームを、Appから制御できる。",
+    "why": "シート割り当てを自動化したい管理者は、個人トークンの代わりにAppで運用できる。",
+    "points": [
+      "新しい企業向けのきめ細かい権限「Enterprise Copilot license management」が追加",
+      "対象はEnterpriseレベルのCopilotシート管理API",
+      "割り当て対象はユーザーとEnterpriseチーム"
+    ]
   }
 }
