@@ -1,0 +1,69 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "b5d37a4739ec4800",
+  "title": {
+    "ja": "Enterprise の Copilot シート管理 API を GitHub App から呼び出し可能に",
+    "subtitleJa": "新しい Enterprise 用の細かい権限で、App がシートの割り当てを制御できる",
+    "original": "GitHub App support for Enterprise Copilot seat management"
+  },
+  "date": "2026-11-10",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "Enterprise の Copilot シート割り当てを自動化したい管理者・開発者",
+    "change": "Enterprise の GitHub App が、シート管理 API でユーザーと Enterprise チームへの割り当てを制御できる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "App で自動化するなら、権限「Enterprise Copilot license management」を付与する"
+  },
+  "panels": [
+    {
+      "id": "permission",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "Enterprise の GitHub App が、Enterprise 単位の Copilot シート管理 API を呼び出せる",
+        "必要な権限は、App 向けの新しい Enterprise 細かい権限「Enterprise Copilot license management」",
+        "対象は、シートが割り当てられるユーザーと Enterprise チーム"
+      ]
+    },
+    {
+      "id": "prerequisites",
+      "heading": "前提と制限",
+      "priority": "core",
+      "items": [
+        "トークンは GitHub App ユーザー アクセス トークンか、インストール アクセス トークン",
+        "シート一覧の取得は同権限の read、チームの追加は write が必要（Enterprise administration でも可）",
+        "これらのエンドポイントはパブリック プレビューで、変更されることがある"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "Enterprise Copilot license management", "type": "feature", "oneLine": "Enterprise の Copilot シート管理 API に使う、App 向けの Enterprise 細かい権限。" }
+  ],
+  "qa": [
+    { "q": "どの権限を App に付ければよいですか", "a": "App 向けの新しい Enterprise 細かい権限「Enterprise Copilot license management」です。ドキュメントでは、シート一覧は read、Enterprise チームの追加は write が必要とされています。" },
+    { "q": "何を操作できるようになりますか", "a": "Enterprise 単位の Copilot シート管理 API で、どのユーザーと Enterprise チームに Copilot シートを割り当てるかを GitHub App から制御できます。" },
+    { "q": "どの種類のトークンで使えますか", "a": "ドキュメントでは、GitHub App ユーザー アクセス トークンと GitHub App インストール アクセス トークンが対象です。" },
+    { "q": "Enterprise administration 権限でも使えますか", "a": "はい。ドキュメントでは、Enterprise Copilot license management か Enterprise administration のどちらかの権限（read または write）が必要とされています。" },
+    { "q": "これらの API は安定版ですか", "a": "ドキュメントでは、これらのエンドポイントはパブリック プレビューで、変更される可能性があるとされています。" }
+  ],
+  "references": {
+    "source": {
+      "title": "GitHub App support for Enterprise Copilot seat management - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-11-10-github-app-support-for-enterprise-copilot-seat-management/"
+    },
+    "documents": [
+      {
+        "title": "REST API endpoints for Copilot user management - GitHub Enterprise Cloud Docs",
+        "url": "https://docs.github.com/enterprise-cloud@latest/rest/copilot/copilot-user-management?apiVersion=2026-03-10"
+      }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-11-10-github-app-support-for-enterprise-copilot-seat-management/",
+    "https://docs.github.com/enterprise-cloud@latest/rest/copilot/copilot-user-management?apiVersion=2026-03-10"
+  ]
+}
