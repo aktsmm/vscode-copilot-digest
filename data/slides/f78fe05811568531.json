@@ -1,0 +1,94 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "f78fe05811568531",
+  "title": {
+    "ja": "VS Code 1.146: Canvases の権限確認と再開性の改善",
+    "subtitleJa": "Canvas 拡張が権限の承認を求め、セッション再開やウィンドウ再読み込み後も Canvas が復元される",
+    "original": "Canvases improvements (Preview)"
+  },
+  "date": "2026-11-11",
+  "topic": "VS Code",
+  "status": "preview",
+  "statusEvidence": "Canvases improvements (Preview)",
+  "audience": {
+    "who": "VS Code の Copilot harness セッションで Canvas を使う開発者",
+    "change": "権限の承認プロンプトが加わり、Canvas の検索・再オープン・復元が改善された",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "chat.canvases.enabled を有効にして Copilot harness セッションで試す。拡張の権限要求は信頼できる場合のみ承認する"
+  },
+  "panels": [
+    {
+      "id": "usage",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "設定 `chat.canvases.enabled` を有効にし、新しいセッションで Copilot harness を選ぶ",
+        "Canvas メニューは実行中の Running と、新規作成できる Available を区別して表示",
+        "Agents ウィンドウでは Discover More から Canvas の作成・インストールができる"
+      ]
+    },
+    {
+      "id": "continuity",
+      "heading": "再開と復元",
+      "priority": "core",
+      "items": [
+        "非アクティブな Copilot harness セッションに戻ると、追加メッセージなしで Canvas が復元される",
+        "Canvas プロバイダーの再起動中は、最後の画像と再接続中の表示が残る",
+        "別チャットウィンドウでは、チャットが離れると Canvas タブも閉じ、チャットと一緒に再度開ける"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "Copilot harness セッションで、Canvas 拡張が hooks などの特権機能の初期化前に承認を求める",
+        "Claude・Codex・Local harness のセッションとブラウザークライアントは非対応"
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Canvas",
+      "type": "feature",
+      "oneLine": "計画やダッシュボードなどを、ユーザーと Copilot が共同で扱う対話的な画面"
+    }
+  ],
+  "qa": [
+    {
+      "q": "Canvas を使うための前提は?",
+      "a": "chat.canvases.enabled を有効にし、新しいセッションで Copilot harness を選びます。設定の変更は新規セッションに適用され、最初のメッセージを送ってから Canvas メニューを使います。"
+    },
+    {
+      "q": "権限の承認とは何ですか?",
+      "a": "Copilot harness セッションで、Canvas 拡張が hooks などの特権機能を初期化する前に承認を求めます。信頼できる拡張で、要求内容を確認できる場合のみ承認します。"
+    },
+    {
+      "q": "セッションに戻ったときの Canvas はどうなりますか?",
+      "a": "非アクティブな Copilot harness セッションに戻ると、追加メッセージを送らずに Canvas が復元されます。ウィンドウ再読み込み後もフォーカスを奪わずに復元されます。"
+    },
+    {
+      "q": "Claude や Local harness でも使えますか?",
+      "a": "使えません。ドキュメントによると、Canvas は Claude、Codex、Local harness のセッションとブラウザークライアントでは非対応です。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.146 - Canvases improvements (Preview)",
+      "url": "https://code.visualstudio.com/updates/v1_146#_canvases-improvements-preview"
+    },
+    "documents": [
+      {
+        "title": "Use canvases with agents",
+        "url": "https://code.visualstudio.com/docs/agents/run/canvases"
+      }
+    ]
+  },
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_146",
+    "https://code.visualstudio.com/docs/agents/run/canvases"
+  ]
+}
