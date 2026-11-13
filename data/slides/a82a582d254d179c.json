@@ -1,0 +1,97 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "a82a582d254d179c",
+  "title": {
+    "ja": "Copilot アプリで GitHub Enterprise Server が一般提供に",
+    "subtitleJa": "GHES アカウントを追加し、リモート リポジトリ・issue・pull request を扱える",
+    "original": "GitHub Enterprise Server support in the GitHub Copilot app"
+  },
+  "date": "2026-11-13",
+  "topic": "GitHub Copilot",
+  "status": "ga",
+  "statusEvidence": "This feature was previously an opt-in preview, and is now generally available.",
+  "audience": {
+    "who": "GitHub Enterprise Server を使い、GitHub Copilot アプリで作業したい開発者",
+    "change": "GHES のリモート リポジトリ、issue、pull request を Copilot アプリに取り込める",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "GHES で使うなら、アプリを 1.2.0 以降にして GHES アカウントを追加する"
+  },
+  "beforeAfter": {
+    "before": "オプトインのプレビュー機能だった",
+    "after": "一般提供になった"
+  },
+  "panels": [
+    {
+      "id": "how-to",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "先に GitHub.com または GHE.com のアカウントでサインインする",
+        "Settings > Accounts > Add account で GitHub Enterprise Server を選ぶ",
+        "画面の案内に従い、ブラウザーを開いてアプリを承認する"
+      ]
+    },
+    {
+      "id": "prerequisites",
+      "heading": "前提と制限",
+      "priority": "core",
+      "items": [
+        "GitHub Copilot アプリ 1.2.0 以降で利用できる",
+        "GHES ではクラウド セッションは利用できない",
+        "依頼を始めるには、Copilot ライセンスのあるクラウド アカウントにもサインインする"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "独自のモデル プロバイダーを設定して使う方法もある"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "GHES", "type": "product", "oneLine": "GitHub Enterprise Server。自社環境でホストする GitHub。" }
+  ],
+  "qa": [
+    {
+      "q": "GHES アカウントはどう追加しますか？",
+      "a": "先に GitHub.com または GHE.com のアカウントでサインインします。その後 Settings > Accounts > Add account で GitHub Enterprise Server を選び、ブラウザーでアプリを承認します。"
+    },
+    {
+      "q": "どのバージョンのアプリで使えますか？",
+      "a": "GitHub Copilot アプリ 1.2.0 以降で利用できます。"
+    },
+    {
+      "q": "GHES でクラウド セッションは使えますか？",
+      "a": "使えません。記事に、GHES ではクラウド セッションは利用できないと書かれています。"
+    },
+    {
+      "q": "以前のプレビューとの違いは何ですか？",
+      "a": "この機能はオプトインのプレビューでしたが、一般提供になりました。"
+    },
+    {
+      "q": "GHES にサインインすれば Copilot の依頼もできますか？",
+      "a": "依頼を始めるには、Copilot ライセンスのあるクラウド アカウントにもサインインしている必要があります。独自のモデル プロバイダーを設定する方法もあります。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "GitHub Enterprise Server support in the GitHub Copilot app - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-11-13-github-enterprise-server-support-in-the-github-copilot-app/"
+    },
+    "documents": [
+      {
+        "title": "Signing in to GitHub Enterprise Server in the GitHub Copilot app - GitHub Enterprise Server 3.22 Docs",
+        "url": "https://docs.github.com/enterprise-server@latest/copilot/copilot-on-ghes/sign-in-on-copilot-app"
+      }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-11-13-github-enterprise-server-support-in-the-github-copilot-app/",
+    "https://docs.github.com/enterprise-server@latest/copilot/copilot-on-ghes/sign-in-on-copilot-app"
+  ]
+}
