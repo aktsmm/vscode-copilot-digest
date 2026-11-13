@@ -1,11 +1,11 @@
 Agents Quickstart
 Overview
 Find a Guide
+Choose an AI Feature
 Agents Quickstart
 Agents Tutorial
-Cloud Continuity Tutorial
 Best Practices
-Chat View
+Chat View and Layout
 Agents Window
 Canvases
 Review & Revert Changes
@@ -26,6 +26,7 @@ Choose an Agent Harness
 Move from Local to Copilot
 Compare Model Results
 Manage MCP Servers
+Cloud Continuity Tutorial
 Remote Agent Sessions
 Cloud Sessions
 Session History

@@ -1,14 +1,127 @@
 {
   "date": "2026-11-13",
-  "generatedAt": "2026-11-13T13:15:38.268Z",
+  "generatedAt": "2026-11-13T20:36:13.025Z",
   "latestRun": {
-    "generatedAt": "2026-11-13T13:15:38.268Z",
-    "newEventsCount": 0,
-    "newEventIds": [],
+    "generatedAt": "2026-11-13T20:36:13.025Z",
+    "newEventsCount": 6,
+    "newEventIds": [
+      "github-changelog:https://github.blog/changelog/2026-11-13-github-enterprise-server-support-in-the-github-copilot-app",
+      "github-changelog:https://github.blog/changelog/2026-11-13-gemini-4-hydrogen-in-github-copilot",
+      "github-changelog-copilot:https://github.blog/changelog/2026-11-13-github-enterprise-server-support-in-the-github-copilot-app",
+      "github-changelog-copilot:https://github.blog/changelog/2026-11-13-gemini-4-hydrogen-in-github-copilot",
+      "copilot-whats-new:82664a2bcec6bf563c5b7fa4bb433d9c56e9f3b81defd46028bf19aeff1aae6f",
+      "vscode-docs-agents-nav:063089a3839d5581120507fb18dbd5cdbea56dcb19ca620a0b8144e03f7245c5"
+    ],
     "errorCount": 0,
     "skippedLowInformationEvents": []
   },
   "events": [
+    {
+      "eventId": "copilot-whats-new:82664a2bcec6bf563c5b7fa4bb433d9c56e9f3b81defd46028bf19aeff1aae6f",
+      "sourceId": "copilot-whats-new",
+      "sourceName": "GitHub Copilot What's New",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-11-13T20:36:03.484Z",
+      "publishedAt": "2026-11-13T20:36:03.483Z",
+      "title": "GitHub Copilot What's New changed",
+      "url": "https://github.com/features/copilot/whats-new",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [
+          "Nov.13 Release"
+        ],
+        "additions": [
+          "H3: Nov.13 Release"
+        ]
+      },
+      "headings": [
+        "Changelog",
+        "Filters (0 selected)",
+        "November\n Nov\n 2026",
+        "Nov.13 Release",
+        "Nov.13 Release",
+        "Nov.10 Improvement",
+        "Nov.10 Release",
+        "Nov.10 Improvement",
+        "Nov.09 Release",
+        "Nov.06 Improvement",
+        "Nov.06 Improvement",
+        "Nov.06 Release"
+      ],
+      "score": 3
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-11-13-github-enterprise-server-support-in-the-github-copilot-app",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-11-13T20:36:01.014Z",
+      "publishedAt": "2026-11-13T18:27:13.000Z",
+      "title": "GitHub Enterprise Server support in the GitHub Copilot app",
+      "url": "https://github.blog/changelog/2026-11-13-github-enterprise-server-support-in-the-github-copilot-app",
+      "summary": "You can now bring your work on GitHub Enterprise Server (GHES) into the GitHub Copilot app. Add your GHES account to work with remote repositories, issues, and pull requests. This…\nThe post GitHub Enterprise Server support in the GitHub Copilot app appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-11-13-github-enterprise-server-support-in-the-github-copilot-app",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-11-13T20:36:01.493Z",
+      "publishedAt": "2026-11-13T18:27:13.000Z",
+      "title": "GitHub Enterprise Server support in the GitHub Copilot app",
+      "url": "https://github.blog/changelog/2026-11-13-github-enterprise-server-support-in-the-github-copilot-app",
+      "summary": "You can now bring your work on GitHub Enterprise Server (GHES) into the GitHub Copilot app. Add your GHES account to work with remote repositories, issues, and pull requests. This…\nThe post GitHub Enterprise Server support in the GitHub Copilot app appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-11-13-gemini-4-hydrogen-in-github-copilot",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-11-13T20:36:01.014Z",
+      "publishedAt": "2026-11-13T18:23:48.000Z",
+      "title": "Gemini 4 Hydrogen in GitHub Copilot",
+      "url": "https://github.blog/changelog/2026-11-13-gemini-4-hydrogen-in-github-copilot",
+      "summary": "Gemini 4 Hydrogen, Google’s latest Flash model, is now generally available in GitHub Copilot. It is designed for fast, efficient agentic coding, tool use, and multistep workflows, with improved instruction…\nThe post Gemini 4 Hydrogen in GitHub Copilot appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 5
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-11-13-gemini-4-hydrogen-in-github-copilot",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-11-13T20:36:01.493Z",
+      "publishedAt": "2026-11-13T18:23:48.000Z",
+      "title": "Gemini 4 Hydrogen in GitHub Copilot",
+      "url": "https://github.blog/changelog/2026-11-13-gemini-4-hydrogen-in-github-copilot",
+      "summary": "Gemini 4 Hydrogen, Google’s latest Flash model, is now generally available in GitHub Copilot. It is designed for fast, efficient agentic coding, tool use, and multistep workflows, with improved instruction…\nThe post Gemini 4 Hydrogen in GitHub Copilot appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 5
+    },
     {
       "eventId": "github-copilot-blog:https://github.blog/?p=100122",
       "sourceId": "github-copilot-blog",
@@ -26,6 +139,31 @@
       ],
       "isFutureDated": false,
       "score": 1
+    },
+    {
+      "eventId": "vscode-docs-agents-nav:063089a3839d5581120507fb18dbd5cdbea56dcb19ca620a0b8144e03f7245c5",
+      "sourceId": "vscode-docs-agents-nav",
+      "sourceName": "VS Code Docs / Agents (new pages)",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-11-13T20:36:07.511Z",
+      "publishedAt": "2026-11-13T20:36:07.511Z",
+      "title": "VS Code Docs / Agents (new pages) changed",
+      "url": "https://code.visualstudio.com/docs/agents/overview",
+      "summary": "Detected 3 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 3,
+        "headings": [],
+        "additions": [
+          "Choose an AI Feature",
+          "Chat View and Layout",
+          "Cloud Continuity Tutorial"
+        ]
+      },
+      "headings": [],
+      "score": 2
     }
   ],
   "errors": []

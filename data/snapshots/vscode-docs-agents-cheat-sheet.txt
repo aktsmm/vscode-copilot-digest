@@ -3,30 +3,24 @@ Copy as Markdown
 View as Markdown
 Ask in VS Code
 Ask in VS Code Insiders
-Find the AI feature in Visual Studio Code that fits your task, from a focused edit to work you delegate to an agent. Use this reference for common tasks, useful controls, and shortcuts.
-New to agents? Complete your first task with an agent. Available features depend on your agent harness, model, account, and organization policies.
+Find the AI feature in Visual Studio Code that fits your task, take the first action, and follow the linked guide when you need more detail.
+The agent examples use the Copilot harness in the Chat view, unless noted otherwise. New to agents? Complete your first task with recommended defaults. Available features depend on your model, account, and organization policies.
+Jump to:
+Choose a feature.
+Review and recover.
+Shortcuts and commands.
+Improve responses.
+Customize and scale up.
 H2: Choose a feature
-H2: Use agents
-Use the Chat view to work beside your code, or the Agents window to focus on assigning higher-level tasks and reviewing outcomes.
-For a complex change, plan, implement, verify, then review:
-Plan: Ask the Plan agent to research the change and identify risks. Review the approach before handing it to an implementation agent.
-Implement: Describe the intended behavior and constraints. The agent searches your code, edits files, and uses tools.
-Verify: Ask the agent to run relevant tests or exercise the app. Inspect what it actually checked.
-Review: Review the diff and validation results before committing or merging.
-For example, give the agent a concrete browser check:
-To organize larger tasks:
-Use separate sessions and worktrees for independent tasks that should not share code changes.
-Use subagents to delegate a focused part of a task in a separate context.
-Hand off a session when you want to continue work with another supported harness. For cloud execution, start a cloud session.
-H2: Get better results
+Select Ask or Agent in chat, type /plan to plan a change, or select code and press ⌘I (Windows, Linux Ctrl+I) for inline chat. Adapt the examples to your project and attach relevant code or error output.
+For assistance without writing a prompt:
+Complete code as you type: Review inline suggestions, then press Tab to accept or Escape to dismiss them.
+Write a commit message: Select the sparkle beside the Source Control message input to generate a message, then review it.
 H2: Stay in control
-Agents can save edits directly to the session's folder or worktree. Manual permissions does not ask for confirmation for every file edit. Review the security baseline before working on an existing project.
-H2: Customize your workflow
-Use the Agent Customizations editor to create and manage these options for your selected harness.
-H2: Debug and fix problems
-Combine the task, constraint, and verification in one request:
-See smart actions for tests and errors and debugging.
-H2: Essential keyboard shortcuts
+Agents can save edits directly to your project. Manual permissions does not ask for confirmation for every file edit. Review the security baseline before working on an existing project.
+Stopping doesn't undo completed work. Checkpoints don't reverse terminal commands or changes to external services. If you're unsure how to recover, follow Get an agent back on track.
+H2: Shortcuts and common commands
+H3: Keyboard shortcuts
 For spoken interaction, see Voice Mode 
  
  Voice Mode is experimental and might change or be removed.
@@ -34,14 +28,20 @@ For spoken interaction, see Voice Mode
  
  Built-in dictation is experimental and might change or be removed.
 .
-H2: Chat reference
-H3: Chat tools
-Agents choose tools automatically. You do not need to name every tool in your prompt. Type # to browse available tools and context items, or reference a tool to direct the agent to a capability. See the Tools and context reference for individual names.
 H3: Slash commands
-Type / to see commands available in the current session. Availability depends on the chat surface, harness, role, and enabled features.
-For example, a skill in .github/skills/webapp-testing/SKILL.md can be invoked with /webapp-testing. For permission and Autopilot commands, see approvals and permissions.
-H3: Chat participants (deprecated)
-Chat participants are not supported in the Copilot harness. Ask the agent directly and attach relevant context, or use a plugin with skills and MCP tools for a domain-specific workflow. See Replace chat participants.
+These commands work in Copilot harness sessions. Type / in the chat input to see available commands and installed skills.
+H2: Get better results
+Combine the task, constraints, and verification in one request:
+Agents can search your workspace and choose tools automatically. See workspace context for what they can find, and AI credit usage guidance to manage conversation cost.
+To search yourself without exact keywords, use semantic code search (Preview) or AI settings search.
+H2: Customize and scale up
+H3: Tailor agents to your project
+Run Chat: Open Customizations to open the Agent Customizations editor for your selected session. Start with a recurring need, rather than configuring every option.
+H3: Coordinate and continue work
+For unattended repository work, cloud automations 
+ 
+ Cloud automations is in preview and might change before it becomes generally available.
+ run on GitHub without keeping your computer online.
 H2: Next steps
-Apply AI best practices to your project.
-Look up AI settings.
+Find a step-by-step guide for your task.
+Adapt a prompt example to your project.

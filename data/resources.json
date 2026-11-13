@@ -18055,16 +18055,16 @@
     },
     "03418006058230a1cc9778707bad4f0d4230fcaddb654781ef0bfe5cc81113d3": {
       "version": 6,
-      "checkedAt": "2026-10-14T18:07:16.752Z",
+      "checkedAt": "2026-11-13T20:36:13.589Z",
       "inputUrl": "https://code.visualstudio.com/updates/",
       "inputTitle": "VS Code Updates changed",
       "status": "unconfirmed",
       "source": {
-        "url": "https://code.visualstudio.com/updates/v1_141#release-downloads-heading",
-        "status": "verified",
-        "reason": "Explicit release link for 1.141",
-        "checkedAt": "2026-10-14T18:07:17.084Z",
-        "contentHash": "7f3d5f2254401f40bd985fd594bc067389c86dc8b482036d47ae8b90611f111e"
+        "url": "https://code.visualstudio.com/updates/",
+        "status": "unconfirmed",
+        "reason": "Historical release cannot be identified from explicit links",
+        "checkedAt": "2026-11-11T12:50:24.875Z",
+        "contentHash": "0cdfcdea62b0eda4d07c29f53fc5bef48196ed0d91d7dbe7af7c99277f3e8785"
       },
       "documents": [],
       "errors": [],
@@ -28548,6 +28548,127 @@
           "scope": "Current documentation; historical availability remains defined by the original announcement"
         }
       ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "51bccce6abdada30c7ad79c822f62dde683075614e574980fc458fd96f3ce93e": {
+      "version": 6,
+      "checkedAt": "2026-11-13T20:36:13.610Z",
+      "inputUrl": "https://github.com/features/copilot/whats-new",
+      "inputTitle": "GitHub Copilot What's New changed",
+      "status": "unconfirmed",
+      "source": {
+        "url": "https://github.blog/changelog/?label=copilot#changelog-item-meta-100150",
+        "status": "unconfirmed",
+        "reason": "Multiple changed date headings; linked observed archive item without inferring a feature",
+        "checkedAt": "2026-11-13T20:36:13.700Z",
+        "contentHash": "85c37f0e42cc4a08bda13437b7420d73ea44f72a0f327010bcd02da3dcd233a8"
+      },
+      "documents": [],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "f1cfeed02112141802e160612d09d93cf9a7416af2d9eda72257ba20632519b6": {
+      "version": 6,
+      "checkedAt": "2026-11-13T20:36:13.898Z",
+      "inputUrl": "https://github.blog/changelog/2026-11-13-github-enterprise-server-support-in-the-github-copilot-app",
+      "inputTitle": "GitHub Enterprise Server support in the GitHub Copilot app",
+      "status": "verified",
+      "source": {
+        "url": "https://github.blog/changelog/2026-11-13-github-enterprise-server-support-in-the-github-copilot-app/",
+        "status": "verified",
+        "reason": "Fetched original article",
+        "checkedAt": "2026-11-13T20:36:14.377Z",
+        "contentHash": "916c885a5432be7874a4a7b623fc54854cb373690fd46dcc706b40a21b45b026"
+      },
+      "documents": [
+        {
+          "url": "https://docs.github.com/ja/copilot/how-tos/github-copilot-app/managing-issues-and-pull-requests",
+          "title": "GitHub Copilot アプリを使用した問題と pull request の管理",
+          "language": "ja",
+          "checkedAt": "2026-11-13T20:36:16.889Z",
+          "contentHash": "53bcefa93a586679ea579cc8ee23a03c61bbffbac5a4387a2ebf23c25c98326e",
+          "discoveryUrl": "https://docs.github.com/en/copilot/how-tos",
+          "basis": "Matching feature terms in official documentation index",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "482bb8db45bca663438eb1decf3dd830f13f5ec599b5ae66155f3c4db8b949c8": {
+      "version": 6,
+      "checkedAt": "2026-11-13T20:36:16.958Z",
+      "inputUrl": "https://github.blog/changelog/2026-11-13-gemini-4-hydrogen-in-github-copilot",
+      "inputTitle": "Gemini 4 Hydrogen in GitHub Copilot",
+      "status": "verified",
+      "source": {
+        "url": "https://github.blog/changelog/2026-11-13-gemini-4-hydrogen-in-github-copilot/",
+        "status": "verified",
+        "reason": "Fetched original article",
+        "checkedAt": "2026-11-13T20:36:17.499Z",
+        "contentHash": "7ca59d64e7ce3dd0cc2a8c5a83aa3d79b2dcd847de9bf639fed606e6de618365"
+      },
+      "documents": [
+        {
+          "url": "https://docs.github.com/ja/copilot/reference/copilot-billing/models-and-pricing",
+          "title": "GitHub Copilot のモデルと価格設定",
+          "language": "ja",
+          "checkedAt": "2026-11-09T23:05:41.751Z",
+          "contentHash": "df2b4887fc1761bb7b4ff53537f5ac6809b874dda04fc9211a4fbc405891a25e",
+          "discoveryUrl": "https://github.blog/changelog/2026-11-13-gemini-4-hydrogen-in-github-copilot/",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://docs.github.com/ja/copilot/reference/ai-models/supported-models",
+          "title": "GitHub Copilotでサポートされている AI モデル",
+          "language": "ja",
+          "checkedAt": "2026-11-09T23:05:43.433Z",
+          "contentHash": "29579ecaa96c4f6710f1f6ae290e77ae1022fa260641d467d3bb60890db2a5e0",
+          "discoveryUrl": "https://github.blog/changelog/2026-11-13-gemini-4-hydrogen-in-github-copilot/",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "e3f370980dbe2c1d4108a21708368b344e247b468fd6422edcd51a7d33dd3d7d": {
+      "version": 6,
+      "checkedAt": "2026-11-13T20:36:17.538Z",
+      "inputUrl": "https://code.visualstudio.com/docs/agents/overview",
+      "inputTitle": "VS Code Docs / Agents (new pages) changed",
+      "status": "unconfirmed",
+      "source": {
+        "url": "https://code.visualstudio.com/docs/agents/overview",
+        "status": "unconfirmed",
+        "reason": "Historical changed feature not identifiable in current page",
+        "checkedAt": "2026-11-13T20:36:17.597Z",
+        "contentHash": "702aa62f4e1d6074c4f370f17ae37466bb603de02b077e9c8c7d8f760ff27041"
+      },
+      "documents": [],
       "errors": [],
       "research": [
         "Original article explicit links",
