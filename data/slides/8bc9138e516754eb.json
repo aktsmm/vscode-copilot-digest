@@ -1,0 +1,99 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "8bc9138e516754eb",
+  "title": {
+    "ja": "エージェント スキルを一度作って複数のエージェントで使う実践ガイド",
+    "subtitleJa": "SKILL.md を中心に、役割分担・設定の分離・承認点・クライアント別の配布を整理",
+    "original": "Build once, run on any agent: A practical guide to agent skills"
+  },
+  "date": "2026-11-13",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "繰り返しの作業をエージェント スキルとして共有・再利用したい開発者とチーム",
+    "change": "スキルの作り方、複数スキルの連携、複数クライアントへの配布と検証の進め方が示された",
+    "changeNature": "neutral"
+  },
+  "action": {
+    "required": "info",
+    "summary": "毎回説明している作業を 1 つ選び、SKILL.md にして別のエージェントでも試す"
+  },
+  "panels": [
+    {
+      "id": "design",
+      "heading": "スキルの作り方",
+      "priority": "core",
+      "items": [
+        "スキルは SKILL.md を中心にしたバージョン管理されるディレクトリで、繰り返す作業の「いつ・どう」を書く",
+        "1 つのスキルに明確な役割・入力・出力を持たせ、frontmatter に名前と目的を書く",
+        "プロジェクト固有の名前やスキーマはマニフェスト 1 か所に置き、各スキルが読む"
+      ]
+    },
+    {
+      "id": "workflow",
+      "heading": "連携・承認・配布",
+      "priority": "core",
+      "items": [
+        "関連スキルは同じ実行経路（例: forge-dbx）を共有し、接続やクエリの実装を重複させない",
+        "判断が必要な箇所に人の承認を置き、テストや CI のチェックで検証する",
+        "skills/*/SKILL.md を元に、スクリプトで Claude Code・Cursor・Copilot 向けファイルを生成する",
+        "インストール後は、スキルの認識・参照の読み込み・ツール利用・根拠の返却を確認する"
+      ]
+    },
+    {
+      "id": "limits",
+      "heading": "前提と制限",
+      "priority": "detail",
+      "items": [
+        "スキルはツール・認証情報・権限を与えない。それらは環境側が用意する",
+        "共有状態や監査証跡、モデル外での権限強制が必要なら、アプリケーションが向く"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "SKILL.md", "type": "feature", "oneLine": "繰り返す作業をいつ・どう行うかを記述する、スキルの中心ファイル。" },
+    { "term": "マニフェスト", "type": "term", "oneLine": "プロジェクト、ストア、プラットフォームなどの設定をまとめ、各スキルが読むファイル。" },
+    { "term": "Proof Agent", "type": "product", "oneLine": "別の検証役がエージェントの変更を元の依頼と照合し、PASS・FAIL・PARTIAL を返す例。" }
+  ],
+  "suggestions": [
+    "Proof Agent の例では block-on-fail: false にして、最初は指摘を助言扱いにできる"
+  ],
+  "qa": [
+    {
+      "q": "スキルとは何ですか。",
+      "a": "SKILL.md を中心とするバージョン管理されたディレクトリで、繰り返す作業をいつ・どう行うかを記述します。エージェント間で指示を共有できますが、ツールや認証情報、権限は環境側が提供します。"
+    },
+    {
+      "q": "スキルを置く場所はどこですか。",
+      "a": "ドキュメントでは、リポジトリ固有なら .github/skills、.claude/skills、.agents/skills、個人用なら ~/.copilot/skills または ~/.agents/skills に、小文字とハイフンの名前でサブディレクトリを作るとされています。"
+    },
+    {
+      "q": "スキルでデータベースにアクセスできますか。",
+      "a": "できません。スキルはデータベースの照会方法を記述できますが、アクセス権は与えません。DuckDB CLI の導入やアクセス許可は、環境と利用者の準備になります。"
+    },
+    {
+      "q": "複数のクライアントに配る方法は？",
+      "a": "例では skills/*/SKILL.md を元に、パッケージ化スクリプトで Claude Code、Cursor、GitHub Copilot 向けファイルを生成し、CI では node scripts/package.mjs --check で確認しています。"
+    },
+    {
+      "q": "どんな作業がスキルに向きますか。",
+      "a": "チェックリスト、リリース、移行、メトリクス パイプラインなど、再利用できる判断が役立つ範囲の定型作業です。安定したインターフェイスや長時間の制御が必要なら、アプリケーションが向きます。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Build once, run on any agent: A practical guide to agent skills - The GitHub Blog",
+      "url": "https://github.blog/ai-and-ml/github-copilot/build-once-run-on-any-agent-a-practical-guide-to-agent-skills/"
+    },
+    "documents": [
+      {
+        "title": "GitHub Copilot のスキルを追加する - GitHubドキュメント",
+        "url": "https://docs.github.com/ja/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/add-skills"
+      }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/ai-and-ml/github-copilot/build-once-run-on-any-agent-a-practical-guide-to-agent-skills/",
+    "https://docs.github.com/ja/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/add-skills"
+  ]
+}
