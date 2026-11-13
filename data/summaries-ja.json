@@ -4172,5 +4172,27 @@
       "skills/*/SKILL.mdを元に、Claude Code・Cursor・Copilot向けファイルを生成",
       "マージを止めたい検証はリポジトリのルールやCIで設定する"
     ]
+  },
+  "dde13a6350f0c89d": {
+    "title": "Gemini 4 Hydrogenが一般提供に",
+    "summary": "Googleの最新Flashモデル「Gemini 4 Hydrogen」がGitHub Copilotで一般提供になった。高速で効率的なエージェント型コーディングやツール利用、複数ステップの作業向けで、Gemini 3.8 Flashより指示への追従が改善されている。",
+    "why": "Copilotの管理者は、モデルポリシーで利用可否を確認し、必要なら設定を調整する。",
+    "points": [
+      "対象はCopilot Pro、Pro+、Max、Business、Enterprise",
+      "VS Code、Copilot CLI、coding agent、github.comなどのモデルピッカーで選択",
+      "利用料金は従量課金のプロバイダー定価で請求",
+      "BusinessとEnterpriseはCopilot設定のモデルポリシーで管理、展開は段階的"
+    ]
+  },
+  "a82a582d254d179c": {
+    "title": "Copilotアプリが GitHub Enterprise Serverに対応",
+    "summary": "GitHub Copilotアプリで、GitHub Enterprise Server(GHES)アカウントを追加してリモートリポジトリ、issue、プルリクエストを扱えるようになった。これまでオプトインのプレビューだった機能が一般提供になった。",
+    "why": "GHESで開発しているチームは、Copilotアプリを1.2.0以降に更新して利用を始められる。",
+    "points": [
+      "先にGitHub.comまたはGHE.comのアカウントでサインインが必要",
+      "Settings > Accounts > Add accountでGitHub Enterprise Serverを選択",
+      "Copilotアプリ1.2.0以降で利用可能",
+      "GHESではクラウドセッションは使えない"
+    ]
   }
 }
