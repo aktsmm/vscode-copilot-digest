@@ -28533,6 +28533,40 @@
         "Original article explicit links",
         "Feature-matched official documentation indexes"
       ]
+    },
+    "95ea166925cdeed53fde52fca25e532eb211f38bc22049370d96380f5c35252c": {
+      "version": 6,
+      "checkedAt": "2026-11-13T01:59:15.820Z",
+      "inputUrl": "https://github.blog/ai-and-ml/github-copilot/build-once-run-on-any-agent-a-practical-guide-to-agent-skills/",
+      "inputTitle": "Build once, run on any agent: A practical guide to agent skills",
+      "status": "verified",
+      "source": {
+        "url": "https://github.blog/ai-and-ml/github-copilot/build-once-run-on-any-agent-a-practical-guide-to-agent-skills/",
+        "status": "verified",
+        "reason": "Fetched original article",
+        "checkedAt": "2026-11-13T01:59:15.889Z",
+        "contentHash": "0625fc26113291d824c4916b72630be471fac2b75ac427144804cce6a6910b1a"
+      },
+      "documents": [
+        {
+          "url": "https://docs.github.com/ja/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/add-skills",
+          "title": "GitHub Copilot のスキルを追加する",
+          "language": "ja",
+          "checkedAt": "2026-11-13T01:59:16.509Z",
+          "contentHash": "5c88f198cff37ee09c9cf43e680d200eff494e5508a9d253213b60bc46652e3a",
+          "discoveryUrl": "https://github.blog/ai-and-ml/github-copilot/build-once-run-on-any-agent-a-practical-guide-to-agent-skills/",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
     }
   }
 }
