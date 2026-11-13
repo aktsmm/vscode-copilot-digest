@@ -1,0 +1,90 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "dde13a6350f0c89d",
+  "title": {
+    "ja": "Gemini 4 Hydrogen が GitHub Copilot で一般提供",
+    "subtitleJa": "Google の Flash モデルが Pro から Enterprise までのモデル ピッカーで選べる",
+    "original": "Gemini 4 Hydrogen in GitHub Copilot"
+  },
+  "date": "2026-11-13",
+  "topic": "GitHub Copilot",
+  "status": "ga",
+  "statusEvidence": "Gemini 4 Hydrogen, Google’s latest Flash model, is now generally available in GitHub Copilot.",
+  "audience": {
+    "who": "Copilot Pro / Pro+ / Max / Business / Enterprise で新しいモデルを使いたい開発者と管理者",
+    "change": "高速で効率的なエージェント型コーディング向けの Gemini 4 Hydrogen を、モデル ピッカーで選べる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "試すならモデル ピッカーで選ぶ。Business / Enterprise の管理者はモデル ポリシーを確認する"
+  },
+  "panels": [
+    {
+      "id": "availability",
+      "heading": "使える場所とプラン",
+      "priority": "core",
+      "items": [
+        "対象は Copilot Pro、Pro+、Max、Business、Enterprise",
+        "モデル ピッカーで選択: VS Code、Visual Studio、Copilot CLI、coding agent、Copilot アプリ",
+        "ほか github.com、GitHub Mobile、JetBrains、Xcode、Eclipse、Copilot SDK",
+        "提供は段階的で、表示されない場合は後で再確認する"
+      ]
+    },
+    {
+      "id": "admin",
+      "heading": "管理者の設定",
+      "priority": "core",
+      "items": [
+        "Business / Enterprise の管理者は、Copilot 設定のモデル ポリシーでアクセスを管理できる",
+        "既定のモデル有効化では、管理者が無効にしない限り新モデルは自動で有効になる"
+      ]
+    },
+    {
+      "id": "limits",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "従量課金では、プロバイダーの定価で課金される"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "Gemini 4 Hydrogen", "type": "product", "oneLine": "Google の最新 Flash モデル。高速で効率的なエージェント型コーディング、ツール利用、複数ステップの作業向け。" }
+  ],
+  "qa": [
+    {
+      "q": "どのプランで使えますか？",
+      "a": "Copilot Pro、Pro+、Max、Business、Enterprise のユーザーが対象です。"
+    },
+    {
+      "q": "どこで選べますか？",
+      "a": "VS Code、Visual Studio、Copilot CLI、coding agent、Copilot アプリ、github.com、GitHub Mobile、JetBrains、Xcode、Eclipse、Copilot SDK のモデル ピッカーで選べます。"
+    },
+    {
+      "q": "モデルが表示されない場合は？",
+      "a": "提供は段階的に行われるため、表示されない場合は少し時間をおいて再確認してください。"
+    },
+    {
+      "q": "組織で使えるようにするには？",
+      "a": "Business / Enterprise の管理者は Copilot 設定のモデル ポリシーで管理します。既定のモデル有効化では、管理者が無効にしない限り新モデルは自動で有効になります。"
+    },
+    {
+      "q": "料金はどうなりますか？",
+      "a": "従量課金のもとで、プロバイダーの定価で課金されます。詳細は「モデルと価格設定」のドキュメントを参照します。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Gemini 4 Hydrogen in GitHub Copilot - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-11-13-gemini-4-hydrogen-in-github-copilot/"
+    },
+    "documents": [
+      { "title": "GitHub Copilot のモデルと価格設定", "url": "https://docs.github.com/ja/copilot/reference/copilot-billing/models-and-pricing" },
+      { "title": "GitHub Copilotでサポートされている AI モデル", "url": "https://docs.github.com/ja/copilot/reference/ai-models/supported-models" }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-11-13-gemini-4-hydrogen-in-github-copilot/"
+  ]
+}
