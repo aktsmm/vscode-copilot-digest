@@ -4194,5 +4194,16 @@
       "Copilotアプリ1.2.0以降で利用可能",
       "GHESではクラウドセッションは使えない"
     ]
+  },
+  "995c4a805a2dae47": {
+    "title": "Copilotの6モデルを12月14日に廃止予定",
+    "summary": "GitHub Copilotの全体験(Chat、インライン編集、askとagentモード、コード補完)で、Claude Fable 5、Claude Haiku 4.5、Gemini 3.8 Flash、Gemini 4 Argon、Grok 4.6、Kimi K3が2026年12月14日に廃止される。",
+    "why": "これらのモデルをワークフローや連携で使っている利用者と管理者は、廃止日までに代替モデルへ切り替える必要がある。",
+    "points": [
+      "代替モデルはFable 5.2、Haiku 5.5、Grok 4.7などで、Kimi K3は未定",
+      "Gemini系はGemini 3.8 FlashがGemini 4 Hydrogen、Gemini 4 ArgonがGemini 4 Carbonへ移行",
+      "Haiku 4.5は年額プランの個人利用者には引き続き提供",
+      "Enterprise/Businessは既定設定なら代替が自動有効、無効化済みならモデルポリシーで有効化"
+    ]
   }
 }
