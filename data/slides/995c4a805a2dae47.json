@@ -1,0 +1,95 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "995c4a805a2dae47",
+  "title": {
+    "ja": "GitHub Copilotの6モデル、12月14日廃止予定",
+    "subtitleJa": "Claude Fable 5 や Gemini 3.8 Flash など6モデルが廃止され、後継モデルへの移行が必要に",
+    "original": "Upcoming deprecation of selected GitHub Copilot models in December"
+  },
+  "date": "2026-11-13",
+  "topic": "GitHub Copilot",
+  "status": "retirement",
+  "statusEvidence": "We will deprecate the following models across all GitHub Copilot experiences (including Copilot Chat, inline edits, ask and agent modes, and code completions) on December 14, 2026",
+  "audience": {
+    "who": "対象モデルをワークフローや連携で指定している開発者と、組織のCopilot管理者",
+    "change": "6モデルが2026年12月14日にCopilot全体で廃止され、案内された後継モデルへ移行する",
+    "changeNature": "breaking"
+  },
+  "action": {
+    "required": "yes",
+    "summary": "2026-12-14までにワークフローと連携先のモデル指定を後継モデルへ切り替える",
+    "deadline": "2026-12-14"
+  },
+  "timeline": [
+    { "when": "2026-12-14", "label": "対象モデルを廃止" }
+  ],
+  "panels": [
+    {
+      "id": "models",
+      "heading": "対象モデルと後継",
+      "priority": "core",
+      "items": [
+        "Claude Fable 5 は Fable 5.2、Claude Haiku 4.5 は Haiku 5.5 へ移行",
+        "Gemini 3.8 Flash は Gemini 4 Hydrogen、Gemini 4 Argon は Gemini 4 Carbon へ",
+        "Grok 4.6 は Grok 4.7 へ。Kimi K3 の後継は後日案内"
+      ]
+    },
+    {
+      "id": "admin-action",
+      "heading": "切り替えの準備",
+      "priority": "core",
+      "items": [
+        "対象は Copilot Chat、インライン編集、ask／agent モード、コード補完を含む全体験",
+        "Enterprise／Business では既定設定により後継モデルが自動で有効になる",
+        "全体の既定をオフにした管理者は、Copilot設定のモデルポリシーで有効化する"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "Claude Haiku 4.5 は年額プランの個人加入者には引き続き提供",
+        "廃止後にモデルを削除する操作は不要"
+      ]
+    }
+  ],
+  "qa": [
+    {
+      "q": "いつ廃止されますか。",
+      "a": "対象の6モデルは、Copilot Chat、インライン編集、ask／agent モード、コード補完を含むすべての Copilot 体験で2026年12月14日に廃止されます。"
+    },
+    {
+      "q": "後継モデルは自動で有効になりますか。",
+      "a": "既定のモデル有効化の設定では、Copilot Enterprise と Business で後継モデルが自動で有効になります。管理者が全体の既定をオフにした場合や、モデルを明示的に無効にした場合は対象外です。"
+    },
+    {
+      "q": "既定をオフにしている場合はどうしますか。",
+      "a": "Copilot設定のモデルポリシーから後継モデルへのアクセスを有効にします。有効になると、対応する体験の Copilot Chat のモデル選択に表示されます。"
+    },
+    {
+      "q": "Claude Haiku 4.5 は誰も使えなくなりますか。",
+      "a": "年額プランの個人 GitHub Copilot 加入者は引き続き利用でき、廃止は適用されません。"
+    },
+    {
+      "q": "廃止後にモデルを削除する必要はありますか。",
+      "a": "いいえ。廃止後にモデルを削除する操作は不要です。ただし、ワークフローや連携は廃止日までに対応モデルへ更新してください。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Upcoming deprecation of selected GitHub Copilot models in December - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-11-13-upcoming-deprecation-of-selected-github-copilot-models-in-december/"
+    },
+    "documents": [
+      {
+        "title": "GitHub Copilotでサポートされている AI モデル - GitHubドキュメント",
+        "url": "https://docs.github.com/ja/copilot/reference/ai-models/supported-models"
+      }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-11-13-upcoming-deprecation-of-selected-github-copilot-models-in-december/",
+    "https://docs.github.com/ja/copilot/reference/ai-models/supported-models"
+  ]
+}
