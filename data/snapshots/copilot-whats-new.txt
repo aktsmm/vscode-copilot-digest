@@ -35,59 +35,6 @@ H3: Nov.03 Release
 H2: October
  Oct
  2026
-H3: Oct.28 Release
-H3: Oct.28 Release
-H3: Oct.28 Release
-H3: Oct.28 Release
-H3: Oct.28 Release
-H3: Oct.28 Improvement
-H3: Oct.28 Improvement
-H3: Oct.28 Release
-H3: Oct.28 Release
-H3: Oct.28 Release
-H3: Oct.28 Release
-H3: Oct.28 Release
-H3: Oct.28 Release
-H3: Oct.28 Release
-H3: Oct.28 Release
-H3: Oct.28 Improvement
-H3: Oct.28 Improvement
-H3: Oct.28 Improvement
-H3: Oct.28 Release
-H3: Oct.28 Release
-H3: Oct.28 Improvement
-H3: Oct.27 Release
-H3: Oct.26 Release
-H3: Oct.26 Release
-H3: Oct.23 Improvement
-H3: Oct.23 Improvement
-H3: Oct.22 Release
-H3: Oct.22 Improvement
-H3: Oct.22 Improvement
-H3: Oct.22 Improvement
-H3: Oct.19 Improvement
-H3: Oct.19 Retired
-H3: Oct.15 Improvement
-H3: Oct.15 Retired
-H3: Oct.15 Release
-H3: Oct.14 Release
-H3: Oct.13 Release
-H3: Oct.13 Improvement
-H3: Oct.12 Improvement
-H3: Oct.10 Release
-H3: Oct.09 Release
-H3: Oct.08 Improvement
-H3: Oct.07 Release
-H3: Oct.07 Release
-H3: Oct.07 Release
-H3: Oct.07 Improvement
-H3: Oct.06 Improvement
-H3: Oct.02 Improvement
-H3: Oct.02 Retired
-H3: Oct.02 Release
-H3: Oct.01 Release
-H3: Oct.01 Release
-H3: Oct.01 Release
 H2: September
  Sep
  2026

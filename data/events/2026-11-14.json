@@ -1,16 +1,50 @@
 {
   "date": "2026-11-14",
-  "generatedAt": "2026-11-14T12:20:48.730Z",
+  "generatedAt": "2026-11-14T18:48:20.673Z",
   "latestRun": {
-    "generatedAt": "2026-11-14T12:20:48.730Z",
+    "generatedAt": "2026-11-14T18:48:20.673Z",
     "newEventsCount": 1,
     "newEventIds": [
-      "github-changelog-copilot:https://github.blog/changelog/2026-11-12-upcoming-deprecation-of-selected-github-copilot-models-in-december"
+      "copilot-whats-new:c263c2b7f303f305fa53ba5334bac707118c587662a1635ccf0fdf6d5dba7d6b"
     ],
     "errorCount": 0,
     "skippedLowInformationEvents": []
   },
   "events": [
+    {
+      "eventId": "copilot-whats-new:c263c2b7f303f305fa53ba5334bac707118c587662a1635ccf0fdf6d5dba7d6b",
+      "sourceId": "copilot-whats-new",
+      "sourceName": "GitHub Copilot What's New",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-11-14T18:48:17.601Z",
+      "publishedAt": "2026-11-14T18:48:17.598Z",
+      "title": "GitHub Copilot What's New changed",
+      "url": "https://github.com/features/copilot/whats-new",
+      "summary": "Detected 0 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 0,
+        "headings": [],
+        "additions": []
+      },
+      "headings": [
+        "Changelog",
+        "Filters (0 selected)",
+        "November\n Nov\n 2026",
+        "Nov.13 Retired",
+        "Nov.13 Release",
+        "Nov.13 Release",
+        "Nov.10 Improvement",
+        "Nov.10 Release",
+        "Nov.10 Improvement",
+        "Nov.09 Release",
+        "Nov.06 Improvement",
+        "Nov.06 Improvement"
+      ],
+      "score": 2
+    },
     {
       "eventId": "copilot-whats-new:3ad55b853ccead0f126773bdecf498c26da5a2b2103055372efd016f00e26c08",
       "sourceId": "copilot-whats-new",
