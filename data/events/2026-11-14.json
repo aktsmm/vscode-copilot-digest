@@ -1,12 +1,11 @@
 {
   "date": "2026-11-14",
-  "generatedAt": "2026-11-14T01:31:16.454Z",
+  "generatedAt": "2026-11-14T12:20:48.730Z",
   "latestRun": {
-    "generatedAt": "2026-11-14T01:31:16.454Z",
-    "newEventsCount": 2,
+    "generatedAt": "2026-11-14T12:20:48.730Z",
+    "newEventsCount": 1,
     "newEventIds": [
-      "github-changelog:https://github.blog/changelog/2026-11-12-upcoming-deprecation-of-selected-github-copilot-models-in-december",
-      "copilot-whats-new:3ad55b853ccead0f126773bdecf498c26da5a2b2103055372efd016f00e26c08"
+      "github-changelog-copilot:https://github.blog/changelog/2026-11-12-upcoming-deprecation-of-selected-github-copilot-models-in-december"
     ],
     "errorCount": 0,
     "skippedLowInformationEvents": []
@@ -56,6 +55,23 @@
       "sourceName": "GitHub Changelog",
       "kind": "feed_entry",
       "detectedAt": "2026-11-14T01:31:08.904Z",
+      "publishedAt": "2026-11-13T20:40:05.000Z",
+      "title": "Upcoming deprecation of selected GitHub Copilot models in December",
+      "url": "https://github.blog/changelog/2026-11-13-upcoming-deprecation-of-selected-github-copilot-models-in-december",
+      "summary": "We will deprecate the following models across all GitHub Copilot experiences (including Copilot Chat, inline edits, ask and agent modes, and code completions) on December 14, 2026: Model Deprecation date…\nThe post Upcoming deprecation of selected GitHub Copilot models in December appeared first on The GitHub Blog.",
+      "categories": [
+        "Retired",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 5
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-11-12-upcoming-deprecation-of-selected-github-copilot-models-in-december",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-11-14T12:20:33.318Z",
       "publishedAt": "2026-11-13T20:40:05.000Z",
       "title": "Upcoming deprecation of selected GitHub Copilot models in December",
       "url": "https://github.blog/changelog/2026-11-13-upcoming-deprecation-of-selected-github-copilot-models-in-december",
