@@ -1,0 +1,108 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "fd96ccdd509bd958",
+  "title": {
+    "ja": "Copilot 週次リリース（11月9日分）：GHES 対応の Copilot アプリと VS Code 1.146",
+    "subtitleJa": "Copilot アプリが GHES に GA 対応。VS Code に Inbox モード追加、Local は 2027年2月削除",
+    "original": "GitHub Copilot weekly releases — November 9"
+  },
+  "date": "2026-11-16",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "Copilot アプリや VS Code のエージェント機能を使う開発者と、Copilot の管理者",
+    "change": "GHES のリポジトリを Copilot アプリで扱え、新モデル 2 種が使える。VS Code に Inbox モードなどが入った",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "Local ハーネスを使っているなら、2027年2月の削除前に Copilot ハーネスへ移行する"
+  },
+  "panels": [
+    {
+      "id": "models",
+      "heading": "使える場所とプラン",
+      "priority": "core",
+      "items": [
+        "Claude Fable 5.2 と Gemini 4 Carbon は Copilot Pro+、Max、Business、Enterprise で利用可",
+        "Claude Fable 5.2 は既定でデータ保持が必要。Business / Enterprise は管理者がポリシーを有効にする（既定はオフ）",
+        "GitHub Enterprise Server のリポジトリ、Issue、PR を Copilot アプリで扱える（GA）"
+      ]
+    },
+    {
+      "id": "vscode",
+      "heading": "VS Code 1.146 の追加",
+      "priority": "core",
+      "items": [
+        "Agents ウィンドウの Inbox モードで、全ワークスペースのセッションを一覧し、対応が要るものを先頭に表示（試験的）",
+        "Compare Models を有効にしてエージェント ツールを設定でオンにすると、エージェントがモデル比較を実行（試験的）",
+        "チャットを別ウィンドウに移せる（Chat windows はプレビュー）"
+      ]
+    },
+    {
+      "id": "app",
+      "heading": "Copilot アプリの更新",
+      "priority": "detail",
+      "items": [
+        "Project の自動化を分単位や cron 形式でスケジュール設定できる",
+        "カスタム フィールド（例：Project の Size）で Issue と PR を絞り込める",
+        "高コントラストと色フィルターを組み合わせられ、GitHub Dimmed テーマを選べる"
+      ]
+    },
+    {
+      "id": "limits",
+      "heading": "前提と制限",
+      "priority": "detail",
+      "items": [
+        "GHES の利用にも GitHub.com または GHE.com のアカウントが必要。GHES ではクラウド セッションは使えない",
+        "Local ハーネスは 2027年2月に削除。新規セッションの既定は Copilot ハーネス"
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Copilot ハーネス",
+      "type": "feature",
+      "oneLine": "Copilot CLI と Copilot アプリの背後にある共通のコーディング エージェント ランタイム。"
+    },
+    {
+      "term": "Local ハーネス",
+      "type": "feature",
+      "oneLine": "従来のハーネス。非推奨で、2027年2月に削除される。"
+    }
+  ],
+  "qa": [
+    {
+      "q": "Claude Fable 5.2 はどのプランで使えますか。",
+      "a": "Copilot Pro+、Max、Business、Enterprise で使えます。既定でデータ保持が必要で、Business と Enterprise では管理者がポリシーを有効にする必要があります（既定はオフ）。"
+    },
+    {
+      "q": "GHES のリポジトリは Copilot アプリでどう扱えますか。",
+      "a": "リポジトリ、Issue、PR を Copilot アプリで扱え、GA です。GitHub.com か GHE.com のアカウントが必要で、GHES ではクラウド セッションは使えません。"
+    },
+    {
+      "q": "Local ハーネスはいつまで使えますか。",
+      "a": "2027年2月に削除されます。Copilot ハーネスは新規セッションの既定になっており、移行ガイドで残りのワークフローの移行方法を確認できます。"
+    },
+    {
+      "q": "VS Code の Inbox モードとは何ですか。",
+      "a": "Agents ウィンドウのセッション一覧で、全ワークスペースのセッションを一つのビューで追跡する機能です。対応が必要なものが先頭に出て、残りは破棄・保留・スヌーズできます。試験的機能です。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "GitHub Copilot weekly releases — November 9 - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-11-16-github-copilot-weekly-releases-november-9/"
+    },
+    "documents": [
+      {
+        "title": "Move from the Local to the Copilot harness",
+        "url": "https://code.visualstudio.com/docs/agents/run/move-to-copilot"
+      }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-11-16-github-copilot-weekly-releases-november-9/",
+    "https://code.visualstudio.com/docs/agents/run/move-to-copilot"
+  ]
+}
