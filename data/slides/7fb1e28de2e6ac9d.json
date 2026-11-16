@@ -1,0 +1,67 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "7fb1e28de2e6ac9d",
+  "title": {
+    "ja": "GitHub Mobile が iPhone Duo に対応",
+    "subtitleJa": "展開時にレイアウトが変わり、縦のタブで Copilot や Pull Requests などへ移動できる",
+    "original": "Take GitHub Mobile with you on iPhone Duo"
+  },
+  "date": "2026-11-16",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "iPhone Duo で GitHub Mobile を使いたい開発者",
+    "change": "iPhone Duo を展開するとレイアウトが適応し、縦のタブで主要な領域を行き来できる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "info",
+    "summary": "iOS 版 GitHub Mobile で利用できる。今後、大きな画面をより活かす改良が続く"
+  },
+  "panels": [
+    {
+      "id": "where",
+      "heading": "使える場所",
+      "priority": "core",
+      "items": [
+        "iOS 版の GitHub Mobile で、iPhone Duo に対応した",
+        "展開したときに、画面に合わせてレイアウトが適応する"
+      ]
+    },
+    {
+      "id": "how-to-use",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "縦のタブで、Copilot、Pull Requests、Issues、Notifications の各領域に移動する",
+        "アクティビティの確認やリポジトリの操作を、外出先から行える"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "GitHub Mobile", "type": "product", "oneLine": "iOS で GitHub のアクティビティやリポジトリを扱うモバイル アプリ。" }
+  ],
+  "references": {
+    "source": {
+      "title": "Take GitHub Mobile with you on iPhone Duo - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-11-16-take-github-mobile-with-you-on-iphone-duo/"
+    }
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-11-16-take-github-mobile-with-you-on-iphone-duo/"
+  ],
+  "qa": [
+    {
+      "q": "どこで使えますか？",
+      "a": "iOS 版の GitHub Mobile で、iPhone Duo に対応しました。この更新は iOS 向けの GitHub Mobile で提供されています。"
+    },
+    {
+      "q": "何が変わりましたか？",
+      "a": "展開したときにレイアウトが適応し、縦のタブで Copilot、Pull Requests、Issues、Notifications などの主要な領域へ移動しやすくなりました。"
+    },
+    {
+      "q": "今後の対応は？",
+      "a": "大きな画面をより活かせるよう、今後もこのサポートの拡充とアプリの改良を続けると案内されています。"
+    }
+  ]
+}
