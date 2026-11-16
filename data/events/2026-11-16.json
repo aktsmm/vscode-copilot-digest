@@ -1,17 +1,146 @@
 {
   "date": "2026-11-16",
-  "generatedAt": "2026-11-16T13:51:10.062Z",
+  "generatedAt": "2026-11-16T22:58:43.049Z",
   "latestRun": {
-    "generatedAt": "2026-11-16T13:51:10.062Z",
-    "newEventsCount": 2,
+    "generatedAt": "2026-11-16T22:58:43.049Z",
+    "newEventsCount": 6,
     "newEventIds": [
-      "docs-github-copilot-concepts:8376b5612fe751087f6aec587fed164e5b8cafdba48c001ac2c887471158cd5d",
-      "vscode-docs-agents-nav:11e9611a000e04cd8ac56d09f5982622795e5f538c8d98d5e259846320ed0da6"
+      "github-changelog:https://github.blog/changelog/2026-11-16-github-copilot-weekly-releases-november-9",
+      "github-changelog:https://github.blog/changelog/2026-11-16-github-copilot-models-deprecated-on-november-16-2026",
+      "github-changelog:https://github.blog/changelog/2026-11-16-take-github-mobile-with-you-on-iphone-duo",
+      "github-changelog-copilot:https://github.blog/changelog/2026-11-16-github-copilot-weekly-releases-november-9",
+      "github-changelog-copilot:https://github.blog/changelog/2026-11-16-github-copilot-models-deprecated-on-november-16-2026",
+      "copilot-whats-new:6dba3ea02b57a327e21b451ea80689457a5d058d54ebfaff419e5cc754f8ce0c"
     ],
     "errorCount": 0,
     "skippedLowInformationEvents": []
   },
   "events": [
+    {
+      "eventId": "copilot-whats-new:6dba3ea02b57a327e21b451ea80689457a5d058d54ebfaff419e5cc754f8ce0c",
+      "sourceId": "copilot-whats-new",
+      "sourceName": "GitHub Copilot What's New",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-11-16T22:58:39.128Z",
+      "publishedAt": "2026-11-16T22:58:39.126Z",
+      "title": "GitHub Copilot What's New changed",
+      "url": "https://github.com/features/copilot/whats-new",
+      "summary": "Detected 2 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 2,
+        "headings": [
+          "Nov.16 Release",
+          "Nov.16 Retired"
+        ],
+        "additions": [
+          "H3: Nov.16 Release",
+          "H3: Nov.16 Retired"
+        ]
+      },
+      "headings": [
+        "Changelog",
+        "Filters (0 selected)",
+        "November\n Nov\n 2026",
+        "Nov.16 Release",
+        "Nov.16 Retired",
+        "Nov.13 Retired",
+        "Nov.13 Release",
+        "Nov.13 Release",
+        "Nov.10 Improvement",
+        "Nov.10 Release",
+        "Nov.10 Improvement",
+        "Nov.09 Release"
+      ],
+      "score": 4
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-11-16-github-copilot-weekly-releases-november-9",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-11-16T22:58:35.985Z",
+      "publishedAt": "2026-11-16T21:34:53.000Z",
+      "title": "GitHub Copilot weekly releases — November 9",
+      "url": "https://github.blog/changelog/2026-11-16-github-copilot-weekly-releases-november-9",
+      "summary": "This week, bring GitHub Enterprise Server repositories into the Copilot app and see which agent sessions need you first in VS Code. You can also try two new models, Claude…\nThe post GitHub Copilot weekly releases — November 9 appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 5
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-11-16-github-copilot-weekly-releases-november-9",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-11-16T22:58:36.664Z",
+      "publishedAt": "2026-11-16T21:34:53.000Z",
+      "title": "GitHub Copilot weekly releases — November 9",
+      "url": "https://github.blog/changelog/2026-11-16-github-copilot-weekly-releases-november-9",
+      "summary": "This week, bring GitHub Enterprise Server repositories into the Copilot app and see which agent sessions need you first in VS Code. You can also try two new models, Claude…\nThe post GitHub Copilot weekly releases — November 9 appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 5
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-11-16-github-copilot-models-deprecated-on-november-16-2026",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-11-16T22:58:35.985Z",
+      "publishedAt": "2026-11-16T20:25:20.000Z",
+      "title": "GitHub Copilot models deprecated on November 16, 2026",
+      "url": "https://github.blog/changelog/2026-11-16-github-copilot-models-deprecated-on-november-16-2026",
+      "summary": "As of today, November 16, 2026, we have deprecated the following models across most GitHub Copilot experiences (including Copilot Chat, inline edits, ask and agent modes, and code completions). Note…\nThe post GitHub Copilot models deprecated on November 16, 2026 appeared first on The GitHub Blog.",
+      "categories": [
+        "Retired",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 5
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-11-16-github-copilot-models-deprecated-on-november-16-2026",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-11-16T22:58:36.664Z",
+      "publishedAt": "2026-11-16T20:25:20.000Z",
+      "title": "GitHub Copilot models deprecated on November 16, 2026",
+      "url": "https://github.blog/changelog/2026-11-16-github-copilot-models-deprecated-on-november-16-2026",
+      "summary": "As of today, November 16, 2026, we have deprecated the following models across most GitHub Copilot experiences (including Copilot Chat, inline edits, ask and agent modes, and code completions). Note…\nThe post GitHub Copilot models deprecated on November 16, 2026 appeared first on The GitHub Blog.",
+      "categories": [
+        "Retired",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 5
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-11-16-take-github-mobile-with-you-on-iphone-duo",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-11-16T22:58:35.985Z",
+      "publishedAt": "2026-11-16T14:30:07.000Z",
+      "title": "Take GitHub Mobile with you on iPhone Duo",
+      "url": "https://github.blog/changelog/2026-11-16-take-github-mobile-with-you-on-iphone-duo",
+      "summary": "GitHub Mobile now supports iPhone Duo, with a layout that adapts when unfolded and vertical tabs to help you move between key areas like Copilot, Pull Requests, Issues, and Notifications.…\nThe post Take GitHub Mobile with you on iPhone Duo appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "client apps"
+      ],
+      "isFutureDated": false,
+      "score": 1
+    },
     {
       "eventId": "vscode-docs-agents-nav:11e9611a000e04cd8ac56d09f5982622795e5f538c8d98d5e259846320ed0da6",
       "sourceId": "vscode-docs-agents-nav",

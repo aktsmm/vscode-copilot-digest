@@ -28808,6 +28808,114 @@
         "Original article explicit links",
         "Feature-matched official documentation indexes"
       ]
+    },
+    "5dfaf9b9ad7fd4ff5979d9d4963cce3a71d90a6d7225883ec201238c6f032530": {
+      "version": 6,
+      "checkedAt": "2026-11-16T22:58:43.607Z",
+      "inputUrl": "https://github.com/features/copilot/whats-new",
+      "inputTitle": "GitHub Copilot What's New changed",
+      "status": "unconfirmed",
+      "source": {
+        "url": "https://github.blog/changelog/?label=copilot#changelog-item-meta-100208",
+        "status": "unconfirmed",
+        "reason": "Multiple changed date headings; linked observed archive item without inferring a feature",
+        "checkedAt": "2026-11-16T22:58:44.176Z",
+        "contentHash": "85c37f0e42cc4a08bda13437b7420d73ea44f72a0f327010bcd02da3dcd233a8"
+      },
+      "documents": [],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "fe1f00df2426a93dc496dcaac16828cc198b3f55ca81562ea69e7d4f5ce4f275": {
+      "version": 6,
+      "checkedAt": "2026-11-16T22:58:44.284Z",
+      "inputUrl": "https://github.blog/changelog/2026-11-16-github-copilot-weekly-releases-november-9",
+      "inputTitle": "GitHub Copilot weekly releases — November 9",
+      "status": "verified",
+      "source": {
+        "url": "https://github.blog/changelog/2026-11-16-github-copilot-weekly-releases-november-9/",
+        "status": "verified",
+        "reason": "Fetched original article",
+        "checkedAt": "2026-11-16T22:58:44.319Z",
+        "contentHash": "9ccd05efd04477d67861fcaacce5cb5605a4bed02bb3a27edcf892e8f14d4f90"
+      },
+      "documents": [
+        {
+          "url": "https://code.visualstudio.com/docs/agents/run/move-to-copilot",
+          "title": "Move from the Local to the Copilot harness",
+          "language": "en",
+          "checkedAt": "2026-11-16T22:58:45.466Z",
+          "contentHash": "0a3e027a2fee442166e7a67ce9e0ed19feb9dbaa4920c77c717598a056a98a05",
+          "discoveryUrl": "https://github.blog/changelog/2026-11-16-github-copilot-weekly-releases-november-9/",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "d0568a605ff7161ed9878de92b0e071db2736e8ef0e5fe50027ad37cc0fd806d": {
+      "version": 6,
+      "checkedAt": "2026-11-16T22:58:45.536Z",
+      "inputUrl": "https://github.blog/changelog/2026-11-16-github-copilot-models-deprecated-on-november-16-2026",
+      "inputTitle": "GitHub Copilot models deprecated on November 16, 2026",
+      "status": "verified",
+      "source": {
+        "url": "https://github.blog/changelog/2026-11-16-github-copilot-models-deprecated-on-november-16-2026/",
+        "status": "verified",
+        "reason": "Fetched original article",
+        "checkedAt": "2026-11-16T22:58:45.548Z",
+        "contentHash": "3dc15aa46e7296dcb108da687b6e5820db0881d0e0712ecfee44568a0343cc0b"
+      },
+      "documents": [
+        {
+          "url": "https://docs.github.com/ja/copilot/reference/ai-models/supported-models",
+          "title": "GitHub Copilotでサポートされている AI モデル",
+          "language": "ja",
+          "checkedAt": "2026-11-09T23:05:43.433Z",
+          "contentHash": "29579ecaa96c4f6710f1f6ae290e77ae1022fa260641d467d3bb60890db2a5e0",
+          "discoveryUrl": "https://github.blog/changelog/2026-11-16-github-copilot-models-deprecated-on-november-16-2026/",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "db8d111ae8900071282db827adfc52778af057aa44ec45960ca993dc2d776fcc": {
+      "version": 6,
+      "checkedAt": "2026-11-16T22:58:45.581Z",
+      "inputUrl": "https://github.blog/changelog/2026-11-16-take-github-mobile-with-you-on-iphone-duo",
+      "inputTitle": "Take GitHub Mobile with you on iPhone Duo",
+      "status": "unconfirmed",
+      "source": {
+        "url": "https://github.blog/changelog/2026-11-16-take-github-mobile-with-you-on-iphone-duo/",
+        "status": "verified",
+        "reason": "Fetched original article",
+        "checkedAt": "2026-11-16T22:58:45.748Z",
+        "contentHash": "ceedaba56954cdbefae67e00e7feee26d76420a9d1c88a3925013ee4541039f7"
+      },
+      "documents": [],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
     }
   }
 }
