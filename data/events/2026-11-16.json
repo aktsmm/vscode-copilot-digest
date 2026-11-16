@@ -1,13 +1,70 @@
 {
   "date": "2026-11-16",
-  "generatedAt": "2026-11-16T01:12:16.474Z",
+  "generatedAt": "2026-11-16T13:51:10.062Z",
   "latestRun": {
-    "generatedAt": "2026-11-16T01:12:16.474Z",
-    "newEventsCount": 0,
-    "newEventIds": [],
+    "generatedAt": "2026-11-16T13:51:10.062Z",
+    "newEventsCount": 2,
+    "newEventIds": [
+      "docs-github-copilot-concepts:8376b5612fe751087f6aec587fed164e5b8cafdba48c001ac2c887471158cd5d",
+      "vscode-docs-agents-nav:11e9611a000e04cd8ac56d09f5982622795e5f538c8d98d5e259846320ed0da6"
+    ],
     "errorCount": 0,
     "skippedLowInformationEvents": []
   },
-  "events": [],
+  "events": [
+    {
+      "eventId": "vscode-docs-agents-nav:11e9611a000e04cd8ac56d09f5982622795e5f538c8d98d5e259846320ed0da6",
+      "sourceId": "vscode-docs-agents-nav",
+      "sourceName": "VS Code Docs / Agents (new pages)",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-11-16T13:51:02.361Z",
+      "publishedAt": "2026-11-16T13:51:02.360Z",
+      "title": "VS Code Docs / Agents (new pages) changed",
+      "url": "https://code.visualstudio.com/docs/agents/overview",
+      "summary": "Detected 6 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 6,
+        "headings": [],
+        "additions": [
+          "Compare Models Side by Side",
+          "Guide: Choose the Right Model",
+          "Fix an API Bug",
+          "Compare and Choose Models",
+          "Test-Driven Development",
+          "Add Tests"
+        ]
+      },
+      "headings": [],
+      "score": 2
+    },
+    {
+      "eventId": "docs-github-copilot-concepts:8376b5612fe751087f6aec587fed164e5b8cafdba48c001ac2c887471158cd5d",
+      "sourceId": "docs-github-copilot-concepts",
+      "sourceName": "GitHub Docs / Copilot concepts",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-11-16T13:51:02.229Z",
+      "publishedAt": "2026-11-16T13:51:02.228Z",
+      "title": "GitHub Docs / Copilot concepts changed",
+      "url": "https://docs.github.com/en/copilot/concepts",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [],
+        "additions": [
+          "Governance controls for GitHub Copilot"
+        ]
+      },
+      "headings": [
+        "Concepts for GitHub Copilot"
+      ],
+      "score": 2
+    }
+  ],
   "errors": []
 }

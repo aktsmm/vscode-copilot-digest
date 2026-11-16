@@ -24,7 +24,8 @@ Agent Sandboxing
 AI Security
 Choose an Agent Harness
 Move from Local to Copilot
-Compare Model Results
+Compare Models Side by Side
+Guide: Choose the Right Model
 Manage MCP Servers
 Cloud Continuity Tutorial
 Remote Agent Sessions
@@ -33,15 +34,16 @@ Session History
 Find a Guide
 Explore a Codebase
 Add a Feature
-Fix a Bug
+Fix an API Bug
 Refactor Safely
+Compare and Choose Models
 Add Tests
 Test Web Apps
+Test-Driven Development
 Run Parallel Tasks
 Get Back on Track
 Adapt Agents to Your Project
 Context Engineering
-Test-Driven Development
 Jupyter Notebooks
 Reduce Credit Usage
 Prompt Examples
@@ -69,5 +71,7 @@ Troubleshooting
 Debug Chat Interactions
 Diagnose Prompt Caching
 FAQ
+Fix an API Bug
+Add Tests
 Test-Driven Development
 Test Web Apps

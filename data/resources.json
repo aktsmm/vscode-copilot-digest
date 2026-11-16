@@ -28768,6 +28768,46 @@
         "Original article explicit links",
         "Feature-matched official documentation indexes"
       ]
+    },
+    "46ca7cd686c3af8c234d7ecc8b609f1986588039a6179fedc51856935d6336a7": {
+      "version": 6,
+      "checkedAt": "2026-11-16T13:51:10.442Z",
+      "inputUrl": "https://code.visualstudio.com/docs/agents/overview",
+      "inputTitle": "VS Code Docs / Agents (new pages) changed",
+      "status": "unconfirmed",
+      "source": {
+        "url": "https://code.visualstudio.com/docs/agents/overview",
+        "status": "unconfirmed",
+        "reason": "Historical changed feature not identifiable in current page",
+        "checkedAt": "2026-11-16T13:51:11.529Z",
+        "contentHash": "702aa62f4e1d6074c4f370f17ae37466bb603de02b077e9c8c7d8f760ff27041"
+      },
+      "documents": [],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "d40ce0280ee889ae85612cc036f1f203ba782f9d78e4c3a799ee73f0b800bcba": {
+      "version": 6,
+      "checkedAt": "2026-11-16T13:51:11.593Z",
+      "inputUrl": "https://docs.github.com/en/copilot/concepts",
+      "inputTitle": "GitHub Docs / Copilot concepts changed",
+      "status": "unconfirmed",
+      "source": {
+        "url": "https://docs.github.com/en/copilot/concepts",
+        "status": "unconfirmed",
+        "reason": "Historical changed feature not identifiable in current page",
+        "checkedAt": "2026-11-16T13:51:11.663Z",
+        "contentHash": "37464fd2ab4ff962441b6e5879d17c6a7726b82300abacdb5d74a4684341bb99"
+      },
+      "documents": [],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
     }
   }
 }
