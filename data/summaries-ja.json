@@ -4205,5 +4205,37 @@
       "Haiku 4.5は年額プランの個人利用者には引き続き提供",
       "Enterprise/Businessは既定設定なら代替が自動有効、無効化済みならモデルポリシーで有効化"
     ]
+  },
+  "ff1caf51baeac277": {
+    "title": "Claude Opus 4.8など3モデルがCopilotで廃止に",
+    "summary": "2026年11月16日付で、Claude Opus 4.8、Claude Opus 5、GPT-5.6 TerraがCopilot Chat、インライン編集、askとagentモード、コード補完などの大半の体験で廃止された。10月15日の予告どおりの実施。",
+    "why": "これらのモデルを使うワークフローや連携は、代替モデルへ切り替える必要がある。",
+    "points": [
+      "代替はOpus 4.8/5がClaude Opus 5.5、GPT-5.6 TerraがGPT-6.1 SolまたはGPT-6 Luna",
+      "Opus 4.8は年額プランの個人利用者には引き続き提供",
+      "Opus 5はモデルピッカーから外れ、拒否時のフォールバック用途のみ残る",
+      "既定設定ならBusiness/Enterpriseは代替が自動で有効化、無効化済みならモデルポリシーで有効化"
+    ]
+  },
+  "fd96ccdd509bd958": {
+    "title": "Copilotアプリ、GHES対応が一般提供に（11月9日週）",
+    "summary": "Copilotアプリで GitHub Enterprise Server のリポジトリ、Issue、PRを扱えるようになり一般提供となった。VS Code 1.146ではAgentsウィンドウのInboxモードが実験的に加わり、Claude Fable 5.2とGemini 4 Carbonも利用可能になった。",
+    "why": "GHES利用組織やVS Codeのエージェント利用者は、Local harness廃止前にCopilot harnessへ移行しておきたい。",
+    "points": [
+      "GHES利用にはGitHub.comまたはGHE.comのアカウントが必要で、クラウドセッションは非対応",
+      "Claude Fable 5.2はデータ保持が既定で必要、BusinessとEnterpriseは管理者がポリシーを有効化",
+      "VS CodeのInboxモードは要対応のセッションを先頭に表示（実験的）",
+      "Local harnessは2027年2月に削除、Copilot harnessは新規セッションの既定"
+    ]
+  },
+  "7fb1e28de2e6ac9d": {
+    "title": "GitHub MobileがiPhone Duoに対応",
+    "summary": "iOS版GitHub MobileがiPhone Duoに対応した。展開時にレイアウトが切り替わり、縦型タブでCopilot、Pull Requests、Issues、Notificationsへ移動できる。今後も大画面向けの改善を続ける。",
+    "why": "iPhone Duoでリポジトリや通知を扱う開発者は、アプリを更新すれば新レイアウトを使える。",
+    "points": [
+      "対象はiOS版GitHub Mobile",
+      "展開すると画面に合わせてレイアウトが変わる",
+      "縦型タブでCopilot、PR、Issue、通知を切り替え"
+    ]
   }
 }
