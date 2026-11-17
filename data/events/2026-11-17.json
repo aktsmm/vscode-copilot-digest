@@ -1,0 +1,130 @@
+{
+  "date": "2026-11-17",
+  "generatedAt": "2026-11-17T04:02:03.958Z",
+  "latestRun": {
+    "generatedAt": "2026-11-17T04:02:03.958Z",
+    "newEventsCount": 5,
+    "newEventIds": [
+      "github-changelog:https://github.blog/changelog/2026-11-16-control-where-github-copilot-customizations-come-from",
+      "github-changelog:https://github.blog/changelog/2026-11-16-vs-code-retires-the-local-harness-in-february-2027",
+      "github-changelog-copilot:https://github.blog/changelog/2026-11-16-control-where-github-copilot-customizations-come-from",
+      "github-changelog-copilot:https://github.blog/changelog/2026-11-16-vs-code-retires-the-local-harness-in-february-2027",
+      "copilot-whats-new:3c79125f9e3d3e57c2c6d4e5bf8ac2c7e5d55592f9b9f14af1a09ad2b4a85fb7"
+    ],
+    "errorCount": 0,
+    "skippedLowInformationEvents": []
+  },
+  "events": [
+    {
+      "eventId": "copilot-whats-new:3c79125f9e3d3e57c2c6d4e5bf8ac2c7e5d55592f9b9f14af1a09ad2b4a85fb7",
+      "sourceId": "copilot-whats-new",
+      "sourceName": "GitHub Copilot What's New",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-11-17T04:01:58.946Z",
+      "publishedAt": "2026-11-17T04:01:58.944Z",
+      "title": "GitHub Copilot What's New changed",
+      "url": "https://github.com/features/copilot/whats-new",
+      "summary": "Detected 2 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 2,
+        "headings": [
+          "Nov.16 Improvement",
+          "Nov.16 Retired"
+        ],
+        "additions": [
+          "H3: Nov.16 Improvement",
+          "H3: Nov.16 Retired"
+        ]
+      },
+      "headings": [
+        "Changelog",
+        "Filters (0 selected)",
+        "November\n Nov\n 2026",
+        "Nov.16 Release",
+        "Nov.16 Retired",
+        "Nov.16 Improvement",
+        "Nov.16 Retired",
+        "Nov.13 Retired",
+        "Nov.13 Release",
+        "Nov.13 Release",
+        "Nov.10 Improvement",
+        "Nov.10 Release"
+      ],
+      "score": 4
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-11-16-control-where-github-copilot-customizations-come-from",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-11-17T04:01:51.887Z",
+      "publishedAt": "2026-11-16T19:48:33.000Z",
+      "title": "Control where GitHub Copilot customizations come from",
+      "url": "https://github.blog/changelog/2026-11-16-control-where-github-copilot-customizations-come-from",
+      "summary": "As an enterprise administrator, you can now require selected GitHub Copilot customizations to come from plugins or managed settings, rather than standalone user or project configuration. Combined with marketplace restrictions,…\nThe post Control where GitHub Copilot customizations come from appeared first on The GitHub...",
+      "categories": [
+        "Improvement",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 1
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-11-16-control-where-github-copilot-customizations-come-from",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-11-17T04:01:52.297Z",
+      "publishedAt": "2026-11-16T19:48:33.000Z",
+      "title": "Control where GitHub Copilot customizations come from",
+      "url": "https://github.blog/changelog/2026-11-16-control-where-github-copilot-customizations-come-from",
+      "summary": "As an enterprise administrator, you can now require selected GitHub Copilot customizations to come from plugins or managed settings, rather than standalone user or project configuration. Combined with marketplace restrictions,…\nThe post Control where GitHub Copilot customizations come from appeared first on The GitHub...",
+      "categories": [
+        "Improvement",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 1
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-11-16-vs-code-retires-the-local-harness-in-february-2027",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-11-17T04:01:51.887Z",
+      "publishedAt": "2026-11-16T19:22:56.000Z",
+      "title": "VS Code retires the Local harness in February 2027",
+      "url": "https://github.blog/changelog/2026-11-16-vs-code-retires-the-local-harness-in-february-2027",
+      "summary": "Visual Studio Code 1.146 deprecates the Local harness, the older software that coordinates the model, context, and tools for GitHub Copilot agent sessions in the editor. The Local harness will…\nThe post VS Code retires the Local harness in February 2027 appeared first on The GitHub Blog.",
+      "categories": [
+        "Retired",
+        "client apps",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 6
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-11-16-vs-code-retires-the-local-harness-in-february-2027",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-11-17T04:01:52.297Z",
+      "publishedAt": "2026-11-16T19:22:56.000Z",
+      "title": "VS Code retires the Local harness in February 2027",
+      "url": "https://github.blog/changelog/2026-11-16-vs-code-retires-the-local-harness-in-february-2027",
+      "summary": "Visual Studio Code 1.146 deprecates the Local harness, the older software that coordinates the model, context, and tools for GitHub Copilot agent sessions in the editor. The Local harness will…\nThe post VS Code retires the Local harness in February 2027 appeared first on The GitHub Blog.",
+      "categories": [
+        "Retired",
+        "client apps",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 6
+    }
+  ],
+  "errors": []
+}

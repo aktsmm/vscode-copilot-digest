@@ -18,6 +18,8 @@ H2: November
  2026
 H3: Nov.16 Release
 H3: Nov.16 Retired
+H3: Nov.16 Improvement
+H3: Nov.16 Retired
 H3: Nov.13 Retired
 H3: Nov.13 Release
 H3: Nov.13 Release
