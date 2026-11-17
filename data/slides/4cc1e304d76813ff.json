@@ -1,0 +1,101 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "4cc1e304d76813ff",
+  "title": {
+    "ja": "Copilot のエージェント アクティビティを Microsoft Agent 365 に送信",
+    "subtitleJa": "監査ログのストリーミングで、各 Copilot クライアントの利用を Agent 365 で確認できる",
+    "original": "Monitor GitHub Copilot activity through Microsoft Agent 365"
+  },
+  "date": "2026-11-17",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "Enterprise Managed Users を使う GitHub Enterprise Cloud の管理者",
+    "change": "Copilot のエージェント アクティビティを Microsoft Agent 365 へストリーミングし、他の AI ワークロードと並べて確認できる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "Agent 365 で Copilot を監視したい場合は、エンタープライズの監査ログ ストリーミングを設定する"
+  },
+  "panels": [
+    {
+      "id": "scope",
+      "heading": "使える場所とプラン",
+      "priority": "core",
+      "items": [
+        "GitHub Enterprise Cloud で Enterprise Managed Users を使う顧客が対象",
+        "クラウド エージェント、Copilot CLI、VS Code、Visual Studio、JetBrains・Eclipse などの活動が対象"
+      ]
+    },
+    {
+      "id": "what-you-see",
+      "heading": "確認できる内容",
+      "priority": "core",
+      "items": [
+        "ユーザー セッションのプロンプト、応答、ツール呼び出しと、利用傾向を Agent 365 で確認",
+        "Microsoft Purview と Defender で、追加のリスク情報を調査・軽減に使える"
+      ]
+    },
+    {
+      "id": "setup",
+      "heading": "設定の流れ",
+      "priority": "core",
+      "items": [
+        "エンタープライズの「AI controls」>「Copilot」の「Billing & usage」で Copilot Usage Records Streaming ポリシーを有効にする",
+        "ストリーミング先に Microsoft Agent 365 を設定する（Copilot エージェント セッション イベントのみ）"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "ドキュメントでは、エージェント セッションのストリーミングはパブリック プレビューと記載",
+        "EMU の GitHub.com、またはデータ所在地のある GitHub Enterprise Cloud が対象"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "Microsoft Agent 365", "type": "product", "oneLine": "Microsoft と他社のエージェントを一元的に見られる AI のオブザーバビリティ プラットフォーム。" }
+  ],
+  "qa": [
+    {
+      "q": "誰が使えますか。",
+      "a": "GitHub Enterprise Cloud で Enterprise Managed Users を使う顧客が対象です。ドキュメントでは、EMU の GitHub.com、またはデータ所在地のある GitHub Enterprise Cloud と記載されています。"
+    },
+    {
+      "q": "どのクライアントの利用が見えますか。",
+      "a": "GitHub.com のクラウド エージェント、Copilot CLI、Visual Studio Code、Visual Studio、JetBrains や Eclipse などのパートナー IDE の活動です。"
+    },
+    {
+      "q": "どう有効にしますか。",
+      "a": "エンタープライズの AI controls > Copilot の Billing & usage で Copilot Usage Records Streaming ポリシーを有効にし、ストリーミング先を設定します。設定は監査ログのストリーミングのドキュメントに従います。"
+    },
+    {
+      "q": "Agent 365 では何が確認できますか。",
+      "a": "プロンプト、応答、ツール呼び出しを含むユーザー セッションと、利用傾向を確認できます。Microsoft Purview と Defender では追加のリスク情報を参照できます。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Monitor GitHub Copilot activity through Microsoft Agent 365 - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-11-17-monitor-github-copilot-activity-through-microsoft-agent-365/"
+    },
+    "documents": [
+      {
+        "title": "Streaming the audit log for your enterprise - GitHub Enterprise Cloud Docs",
+        "url": "https://docs.github.com/enterprise-cloud@latest/admin/monitoring-activity-in-your-enterprise/reviewing-audit-logs-for-your-enterprise/streaming-the-audit-log-for-your-enterprise"
+      },
+      {
+        "title": "Overview of Microsoft Agent 365 | Microsoft Learn",
+        "url": "https://learn.microsoft.com/microsoft-agent-365/overview"
+      }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-11-17-monitor-github-copilot-activity-through-microsoft-agent-365/",
+    "https://docs.github.com/enterprise-cloud@latest/admin/monitoring-activity-in-your-enterprise/reviewing-audit-logs-for-your-enterprise/streaming-the-audit-log-for-your-enterprise",
+    "https://learn.microsoft.com/microsoft-agent-365/overview"
+  ]
+}
