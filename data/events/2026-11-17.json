@@ -1,16 +1,10 @@
 {
   "date": "2026-11-17",
-  "generatedAt": "2026-11-17T04:02:03.958Z",
+  "generatedAt": "2026-11-17T14:42:57.947Z",
   "latestRun": {
-    "generatedAt": "2026-11-17T04:02:03.958Z",
-    "newEventsCount": 5,
-    "newEventIds": [
-      "github-changelog:https://github.blog/changelog/2026-11-16-control-where-github-copilot-customizations-come-from",
-      "github-changelog:https://github.blog/changelog/2026-11-16-vs-code-retires-the-local-harness-in-february-2027",
-      "github-changelog-copilot:https://github.blog/changelog/2026-11-16-control-where-github-copilot-customizations-come-from",
-      "github-changelog-copilot:https://github.blog/changelog/2026-11-16-vs-code-retires-the-local-harness-in-february-2027",
-      "copilot-whats-new:3c79125f9e3d3e57c2c6d4e5bf8ac2c7e5d55592f9b9f14af1a09ad2b4a85fb7"
-    ],
+    "generatedAt": "2026-11-17T14:42:57.947Z",
+    "newEventsCount": 0,
+    "newEventIds": [],
     "errorCount": 0,
     "skippedLowInformationEvents": []
   },
