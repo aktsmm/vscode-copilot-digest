@@ -4259,5 +4259,110 @@
       "対象はCopilot BusinessまたはEnterpriseのライセンスを持つメンバー",
       "GitHub Enterprise Cloudで設定する"
     ]
+  },
+  "1811a0441af94992": {
+    "title": "Copilot Evalsがパブリックプレビューに",
+    "summary": "GitHub Copilot Evalsがパブリックプレビューになった。スキル、カスタムエージェント、MCPツールの挙動を繰り返し検証する eval を作成・実行でき、/eval コマンドか自然な依頼で使える。評価エンジンはローカル実行のVallyで、Individual・Business・Enterpriseが対象。",
+    "why": "スキルやMCPを変更するたびに同じevalを再実行し、退行がないか確かめたい人向けの機能。",
+    "points": [
+      "VS Code拡張、Copilot CLIプラグイン、Copilot appのgithub/evalsマーケットプレイスから導入",
+      "実行は毎回承認してから開始され、合否チェックの失敗理由も確認できる",
+      "変更前後の実行結果を比較して改善の有無を判断できる"
+    ]
+  },
+  "4cc1e304d76813ff": {
+    "title": "CopilotのアクティビティをAgent 365に連携可能に",
+    "summary": "企業はGitHub Copilotエージェントの監査データをMicrosoft Agent 365へストリーミングできるようになった。cloud agent、CLI、VS Code、Visual Studio、JetBrains、Eclipseの活動を、プロンプト・応答・ツール呼び出しを含むセッション単位で確認できる。",
+    "why": "Enterprise Managed Usersを使うGitHub Enterprise Cloud管理者は、他のAI業務と並べてCopilotを監視できる。",
+    "points": [
+      "対象はEnterprise Managed Usersを使うGitHub Enterprise Cloud",
+      "設定は「Streaming the audit log for your enterprise」の手順で行う",
+      "Microsoft PurviewとDefenderでリスク情報を追加調査できる"
+    ]
+  },
+  "57e7781a892d4960": {
+    "title": "GPT-6.2 AstraとGPT-6.2 Solが一般提供に",
+    "summary": "OpenAIのGPT-6.2 AstraとGPT-6.2 SolがGitHub Copilotで一般提供になった。どちらもエージェント型コーディングとコードレビュー向けで、初期テストでは従来のGPT-6系より実際の問題を多く検出しトークン消費も少なかった。展開は段階的に進む。",
+    "why": "Pro+・Max・Business・Enterpriseの利用者はモデルピッカーで選べ、管理者はモデルポリシーで可否を管理する。",
+    "points": [
+      "Astraは端末作業向け、Solは複雑なコーディングと詳細レビュー向け",
+      "プロバイダーの定価で従量課金される",
+      "VS Code、CLI、JetBrains、Xcode、Eclipse、モバイルなどで選択可能",
+      "新モデルは既定で有効だが管理者が無効化できる"
+    ]
+  },
+  "8420186bd2fe274e": {
+    "title": "Copilot CLIでMicrosoft Entraサインインがプレビュー",
+    "summary": "Copilot CLIがMicrosoft Entra認証のパブリックプレビューに対応した。EMUのGitHubアカウントへのサイレントSSOや、Microsoft 365 Copilotライセンスでのモデル利用が可能になる。WindowsとmacOSで利用でき、Linuxは今後対応する。",
+    "why": "EMUやMicrosoft 365 Copilotを使う組織は、CLIを1.0.113以降に更新すれば別途GitHubサインインなしで使える。",
+    "points": [
+      "EMU向けSSOはOIDC利用のEMUで、Business/Enterpriseライセンスとポリシー有効化が必要",
+      "M365利用はFrontier組織で使用量ベース課金のライセンスが前提",
+      "M365の場合はMicrosoft 365推論を使い、GitHubアカウントは不要",
+      "更新は copilot update を実行する"
+    ]
+  },
+  "453bf04922152159": {
+    "title": "JetBrains版Copilotにリモートアクセスと音声入力が追加",
+    "summary": "JetBrains向けCopilotにクラウドサンドボックス、リモートアクセス、ブラウザ操作、オンデバイス音声入力がパブリックプレビューで加わった。分割モードのリモート開発にも対応し、レビューはCopilotエージェントのレビューエンジンを使う。",
+    "why": "JetBrains利用者は、チャットをVS Codeなど他クライアントで続けたり、作業を隔離環境で並列実行したりできる。",
+    "points": [
+      "ブラウザ操作は GitHub Copilot > Chat > Enable Browser Use で有効化",
+      "分割モードではローカルとリモート両方にプラグインが必要",
+      "Enterキーで実行中セッションを誘導、Ctrl+Enterで追加依頼をキュー",
+      "企業管理設定ではClaudeとCodexが既定で無効になる"
+    ]
+  },
+  "467e19c06d56952c": {
+    "title": "MAI Code 2とMAI Code 2 FlashがCopilotに登場",
+    "summary": "Microsoft AIの新しいコーディングモデルMAI Code 2とMAI Code 2 FlashがGitHub Copilotで使えるようになった。前者は深いデバッグやリポジトリ全体の推論向け、後者は軽量で日常的な修正や説明向け。従量課金で、年額プランの対象者が使える。",
+    "why": "作業の重さに応じてモデルを選びたい利用者に有用で、管理者はモデルポリシーでアクセスを制御できる。",
+    "points": [
+      "MAI Code 2はPro、Pro+、Max、Business、Enterprise",
+      "MAI Code 2 FlashはFreeやStudentを含む全プランで利用可能",
+      "VS Code、CLI、JetBrains、Xcode、Eclipseなどのモデルピッカーで選択"
+    ]
+  },
+  "6beb5088ff95eeea": {
+    "title": "Copilotコードレビューにアダプティブ強度とシークレット検出",
+    "summary": "Copilotコードレビューに、PRの複雑さとリスクに応じLite・Balanced・Maxを自動選択するAdaptiveが追加された。関連する公開リポジトリを参照するクロスリポジトリ文脈とシークレット検出もプレビュー提供され、Azure Reposのレビューは一般提供になった。",
+    "why": "レビュー強度を手動で選ぶ手間を減らしたいチームは、設定で既定値をAdaptiveにでき、管理者は上限も制御できる。",
+    "points": [
+      "Adaptiveは設定した最大レビュー強度を超えない。既定はBalancedのまま",
+      "シークレット検出は500種類超の既知形式とAI検出に対応",
+      "有効化はリポジトリまたはOrganization設定のCopilot > Code review",
+      "Azure DevOps向けコードレビューは一般提供に移行"
+    ]
+  },
+  "7be142154dd5bd1a": {
+    "title": "リポジトリごとのCopilotレビュー成果を可視化",
+    "summary": "各リポジトリのInsightsタブ先頭に「Repository insights」が追加され、Copilotコードレビューの指摘が対応された割合などを確認できる。対応済みコメント、高重大度コメント、後続の変更要求がないPR、Copilot未レビューのマージ済みPRを示す。",
+    "why": "レビューの浸透度を測り、Copilotのカバー漏れがあるリポジトリを見つけて導入を進めたい管理者に役立つ。",
+    "points": [
+      "リポジトリの読み取り権限があれば閲覧可能",
+      "同じ指標はCopilot usage metrics APIのrepos-1-dayレポートでも取得できる",
+      "APIにはView Copilot Metrics権限とusage metricsポリシーの有効化が必要"
+    ]
+  },
+  "c381f1f20c433e7d": {
+    "title": "Copilot appがAzure DevOpsとGHESに対応",
+    "summary": "GitHub Copilot appでAzure DevOpsリポジトリの扱いがパブリックプレビューになり、ブラウザ操作もプレビューで追加された。GitHub Enterprise Server対応は一般提供となった。ブランチ作成からPR完了までをアプリ内で進められる。",
+    "why": "Azure DevOpsやGHESを使う開発者は、アプリを更新して設定を有効にすれば同じ環境でエージェントを活用できる。",
+    "points": [
+      "Azure DevOpsは Settings > Experimental で有効化し、Accountsから追加",
+      "GHES利用にはCopilot app 1.2.0以降が必要",
+      "ブラウザ操作は既定でオフ。Chrome拡張を入れてComputer Use設定で有効化",
+      "Azure DevOpsとGHESではクラウドセッションは使えない"
+    ]
+  },
+  "75073ab854943bd9": {
+    "title": "Copilot Fusionがweb・モバイル・Visual Studioに拡大",
+    "summary": "Copilot Fusionがgithub.com、Visual Studio、GitHub Mobileベータ版のモデルピッカーで選べるようになった。Terminal-Bench 4.1ではFusion Maxが解決率71.2%を記録。Fusionの各ティアにClaude Sonnet 5.5、GPT-6.1 Terra、MAI-Code-2も追加された。",
+    "why": "Fusionを複数の環境で使いたい利用者は、最新版に更新すればモデル選択と協調をCopilotに任せられる。",
+    "points": [
+      "Fusion MaxにClaude Sonnet 5.5、HighにGPT-6.1 Terra、StandardにMAI-Code-2",
+      "Fusion Maxは公式発表でOpus 5.5より5.4ポイント高く、コストは57%低い",
+      "製品版のGitHub Mobileへの対応は近日予定"
+    ]
   }
 }
