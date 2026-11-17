@@ -1,0 +1,84 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "453bf04922152159",
+  "title": {
+    "ja": "JetBrains 版 Copilot に、リモート アクセスと音声入力などを追加",
+    "subtitleJa": "クラウド サンドボックス、ブラウザー操作、音声入力が Public Preview。IDE 2025.2 は終了",
+    "original": "GitHub Copilot in JetBrains, Ignite releases"
+  },
+  "date": "2026-11-17",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "JetBrains IDE で GitHub Copilot を使う開発者と管理者",
+    "change": "リモート アクセス、ブラウザー操作、音声入力が追加され、IDE 2025.2 のサポートが終了した",
+    "changeNature": "neutral"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "新機能は必要に応じて試す。IDE 2025.2 を使っているなら 2025.3 以降に更新する"
+  },
+  "panels": [
+    {
+      "id": "new-features",
+      "heading": "新機能 (Public Preview)",
+      "priority": "core",
+      "items": [
+        "クラウド サンドボックス: GitHub がホストする隔離環境でセッションを実行し、並列実行できる (段階的に展開)",
+        "リモート アクセス: オプトインで、Copilot チャットを VS Code や Copilot アプリなど他のクライアントから使える (段階的に展開)",
+        "ブラウザー操作: GitHub Copilot in Chrome と組み合わせ、ページの閲覧やフォーム操作ができる"
+      ]
+    },
+    {
+      "id": "how-to-use",
+      "heading": "使い方と前提",
+      "priority": "core",
+      "items": [
+        "ブラウザー操作は GitHub Copilot > Chat > Enable Browser Use で有効にする",
+        "音声入力は Editor Preview を有効にした対応パッケージで、オプトインしてモデルをダウンロードする",
+        "分割モードのリモート開発は、ローカルとリモート バックエンドの両方にプラグインが必要"
+      ]
+    },
+    {
+      "id": "changes",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "JetBrains IDE 2025.2 のサポートは終了。2025.3 以降が必要で、2026.2 以降を推奨",
+        "エンタープライズ管理の設定では、管理者ポリシーで例外を許可しない限り Claude と Codex が無効になる",
+        "Maven プロジェクトを開くと、依存関係の座標を GitHub Advisories に送って脆弱性を確認する"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "クラウド サンドボックス", "type": "feature", "oneLine": "Copilot のセッションを、自分のコンピューターではなく GitHub がホストする隔離環境で実行する機能。" },
+    { "term": "分割モード", "type": "term", "oneLine": "チャットとエディターの UI をローカルで動かし、Copilot の処理をリモート バックエンドで実行する JetBrains の方式。" }
+  ],
+  "qa": [
+    {
+      "q": "音声入力はどのように使い始めますか",
+      "a": "対応するネイティブ プラグイン パッケージで Editor Preview を有効にし、オプトインしてモデルをダウンロードします。文字起こしは、Send を選ぶまで編集できる下書きのままです。"
+    },
+    {
+      "q": "ブラウザー操作はどこで有効にしますか",
+      "a": "GitHub Copilot > Chat > Enable Browser Use で有効にします。GitHub Copilot in Chrome と組み合わせて使い、Public Preview です。"
+    },
+    {
+      "q": "IDE 2025.2 を使っていたらどうなりますか",
+      "a": "2025.2 のサポートは終了しました。更新を受け取り続けるには 2025.3 以降へ上げる必要があり、2026.2 以降が推奨です。"
+    },
+    {
+      "q": "リモート アクセスはすぐ全員が使えますか",
+      "a": "オプトインで、段階的に展開中です。有効にすると、Copilot チャットを VS Code や Copilot アプリなど他のクライアントで開けます。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "GitHub Copilot in JetBrains, Ignite releases - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-11-17-github-copilot-in-jetbrains-ignite-releases/"
+    }
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-11-17-github-copilot-in-jetbrains-ignite-releases/"
+  ]
+}
