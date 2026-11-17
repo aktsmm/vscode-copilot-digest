@@ -1,0 +1,99 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "8420186bd2fe274e",
+  "title": {
+    "ja": "GitHub Copilot CLI に Microsoft Entra サインイン（パブリックプレビュー）",
+    "subtitleJa": "Entra アカウントで EMU アカウントへ自動認証、または Microsoft 365 Copilot ライセンスを利用可能に",
+    "original": "GitHub Copilot CLI adds Microsoft Entra sign-in as a preview"
+  },
+  "date": "2026-11-17",
+  "topic": "GitHub Copilot",
+  "status": "preview",
+  "statusEvidence": "GitHub Copilot CLI now supports Microsoft Entra authentication in public preview.",
+  "audience": {
+    "who": "EMU（OIDC）を使う企業の Copilot CLI 利用者、Microsoft 365 Copilot ライセンスを持つ組織の利用者",
+    "change": "Microsoft Entra アカウントで Copilot CLI にサインインし、別途の GitHub サインインなしで利用できる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "CLI を 1.0.113 以降に更新し、組織の権限に応じて Entra 認証を試す"
+  },
+  "panels": [
+    {
+      "id": "availability",
+      "heading": "使える場所とプラン",
+      "priority": "core",
+      "items": [
+        "EMU・Microsoft 365 Copilot とも Windows と macOS で対応。Linux は今後対応",
+        "EMU: OIDC 利用の企業向け。Copilot Business / Enterprise ライセンスと Copilot CLI ポリシーの有効化が必要",
+        "EMU の場合は GitHub の推論を使い、利用は組織の Copilot プランで管理される"
+      ]
+    },
+    {
+      "id": "m365",
+      "heading": "M365 Copilot ライセンス",
+      "priority": "core",
+      "items": [
+        "Frontier の組織で、従量課金の Microsoft 365 Copilot ライセンスがある場合に利用可能",
+        "Microsoft Copilot 経由のモデルを端末から利用でき、GitHub アカウントは不要",
+        "Microsoft 365 の推論を使い、モデルと利用上限は Microsoft 365 Copilot の設定で管理"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "前提と制限",
+      "priority": "detail",
+      "items": [
+        "CLI 1.0.113 以降が必要。`copilot update` で更新",
+        "EMU のこの SSO は Copilot CLI と VS Code に限定"
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "EMU",
+      "type": "term",
+      "oneLine": "GitHub Enterprise Managed User。企業が管理する GitHub アカウント"
+    },
+    {
+      "term": "Work IQ MCP サーバー",
+      "type": "feature",
+      "oneLine": "Microsoft 365 の業務データを Copilot にコンテキストとして渡せる MCP サーバー"
+    }
+  ],
+  "qa": [
+    {
+      "q": "どのプラットフォームで使えますか？",
+      "a": "EMU と Microsoft 365 Copilot のどちらの Entra 認証も、現在は Windows と macOS に対応しています。Linux 対応は今後の予定です。"
+    },
+    {
+      "q": "EMU で使うための条件は？",
+      "a": "OIDC で EMU を使う企業で、Copilot Business または Copilot Enterprise のライセンスが割り当てられ、組織で Copilot CLI ポリシーが有効であることが必要です。"
+    },
+    {
+      "q": "Microsoft 365 Copilot ライセンスで使うと何が変わりますか？",
+      "a": "Frontier の組織で従量課金の Microsoft 365 Copilot ライセンスがあれば、GitHub アカウントなしで Microsoft Copilot のモデルを使えます。モデルと利用上限は Microsoft 365 Copilot の設定で管理されます。"
+    },
+    {
+      "q": "必要な CLI のバージョンと更新方法は？",
+      "a": "GitHub Copilot CLI 1.0.113 以降が必要です。ターミナルで copilot update を実行すると更新できます。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "GitHub Copilot CLI adds Microsoft Entra sign-in as a preview - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-11-17-github-copilot-cli-adds-microsoft-entra-sign-in-as-a-preview/"
+    },
+    "documents": [
+      {
+        "title": "GitHub Copilot CLI の認証 - GitHubドキュメント",
+        "url": "https://docs.github.com/ja/copilot/how-tos/copilot-cli/set-up-copilot-cli/authenticate-copilot-cli"
+      }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-11-17-github-copilot-cli-adds-microsoft-entra-sign-in-as-a-preview/",
+    "https://docs.github.com/ja/copilot/how-tos/copilot-cli/set-up-copilot-cli/authenticate-copilot-cli"
+  ]
+}
