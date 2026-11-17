@@ -1,0 +1,99 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "a06076806a0e698d",
+  "title": {
+    "ja": "Copilot のカスタマイズの取得元を、プラグインと管理設定に限定できるように",
+    "subtitleJa": "strictPluginOnlyCustomization で、ユーザー／プロジェクト単独の構成をカテゴリ別にブロック",
+    "original": "Control where GitHub Copilot customizations come from"
+  },
+  "date": "2026-11-16",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "GitHub Enterprise Cloud で Copilot を管理するエンタープライズ管理者",
+    "change": "選んだカスタマイズを、プラグインか管理設定経由に限定でき、承認済みの MCP ツールなどを共有配布できる",
+    "changeNature": "neutral"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "制限したいカテゴリを決め、strictPluginOnlyCustomization を管理設定に設定する"
+  },
+  "panels": [
+    {
+      "id": "scope-and-plan",
+      "heading": "使える場所とプラン",
+      "priority": "core",
+      "items": [
+        "GitHub Enterprise Cloud が対象",
+        "エンタープライズまたはその組織が発行した Copilot Business / Enterprise ライセンスのメンバーに適用できる"
+      ]
+    },
+    {
+      "id": "how-to",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "管理設定 strictPluginOnlyCustomization で、ユーザー／プロジェクト由来の単独カスタマイズをブロックする",
+        "対象は skills、custom agents、hooks、MCP servers、実行可能な Copilot extensions の 5 カテゴリ。全部も個別も選べる",
+        "例: MCP servers と extensions だけ制限し、skills、agents、hooks は許可したままにできる"
+      ]
+    },
+    {
+      "id": "prerequisites",
+      "heading": "前提と制限",
+      "priority": "core",
+      "items": [
+        "対象のプラグインと管理設定は、他のポリシーの範囲で引き続き許可される",
+        "マーケットプレースの許可リストではない。strictKnownMarketplaces と併用して取得元を絞る",
+        "ここでの extensions は実行可能な canvas プロバイダーを含み、VS Code Marketplace の拡張機能は含まない"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "プラグインのみは「エンタープライズ管理のプラグインのみ」を意味しない"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "strictPluginOnlyCustomization", "type": "feature", "oneLine": "ユーザー／プロジェクト由来の単独カスタマイズをブロックする管理設定。" },
+    { "term": "strictKnownMarketplaces", "type": "feature", "oneLine": "インストールを指定ソースのマーケットプレースに制限する設定。組み込みのマーケットプレースも無効になる。" },
+    { "term": "enabledPlugins", "type": "feature", "oneLine": "特定のプラグインを必須（true）またはブロック（false）にする管理設定。" }
+  ],
+  "qa": [
+    {
+      "q": "誰が、どのプランで使えますか？",
+      "a": "GitHub Enterprise Cloud で、エンタープライズまたはその組織が発行した Copilot Business か Copilot Enterprise のライセンスを持つメンバーに対して、管理者が設定できます。"
+    },
+    {
+      "q": "どのカスタマイズが制限の対象ですか？",
+      "a": "skills、custom agents、hooks、MCP servers、実行可能な Copilot extensions の 5 カテゴリです。すべてでも一部でも選べます。VS Code Marketplace の拡張機能は対象外です。"
+    },
+    {
+      "q": "プラグインを許可するだけでマーケットプレースも制限されますか？",
+      "a": "されません。プラグインのみはマーケットプレースの許可リストではないため、strictKnownMarketplaces と組み合わせて、使える取得元を制限します。"
+    },
+    {
+      "q": "特定のプラグインを必須やブロックにするには？",
+      "a": "管理設定の enabledPlugins に PLUGIN-NAME@MARKETPLACE-NAME 形式のキーを書き、必須は true、ブロックは false にします。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Control where GitHub Copilot customizations come from - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-11-16-control-where-github-copilot-customizations-come-from/"
+    },
+    "documents": [
+      {
+        "title": "エンタープライズ管理設定を使用したプラグインマーケットプレースとプラグインの管理 - GitHub Enterprise Cloud Docs",
+        "url": "https://docs.github.com/ja/enterprise-cloud@latest/copilot/how-tos/administer-copilot/manage-for-enterprise/use-managed-settings/manage-plugin-marketplaces-and-plugins"
+      }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-11-16-control-where-github-copilot-customizations-come-from/",
+    "https://docs.github.com/ja/enterprise-cloud@latest/copilot/how-tos/administer-copilot/manage-for-enterprise/use-managed-settings/manage-plugin-marketplaces-and-plugins"
+  ]
+}
