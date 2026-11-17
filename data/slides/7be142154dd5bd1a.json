@@ -1,0 +1,90 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "7be142154dd5bd1a",
+  "title": {
+    "ja": "Repository insights で、Copilot コードレビューの成果をリポジトリ別に把握",
+    "subtitleJa": "Insights タブに新ページ。指摘の対応状況やレビューされていないマージを確認できる",
+    "original": "Track Copilot code review outcomes in Repository insights"
+  },
+  "date": "2026-11-17",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "Copilot コードレビューを導入しているリポジトリの開発者・管理者",
+    "change": "Insights タブの先頭に Repository insights が加わり、レビューの成果を 1 か所で見られる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "カバレッジの穴を探すなら、Insights の Repository insights を開く"
+  },
+  "panels": [
+    {
+      "id": "signals",
+      "heading": "表示される指標",
+      "priority": "core",
+      "items": [
+        "対応済みのコメント数と、重大度の高い対応済みコメント数",
+        "後から人間のレビュアーによる変更要求がなかった、Copilot レビュー済み PR",
+        "Copilot のレビューを受けずにマージされた PR",
+        "対応率とそのトレンド、コメントのカテゴリも確認できる"
+      ]
+    },
+    {
+      "id": "where-plan",
+      "heading": "使える場所と権限",
+      "priority": "core",
+      "items": [
+        "リポジトリの Insights タブの先頭項目。リポジトリへの読み取りアクセスで閲覧できる",
+        "同じ指標は Copilot usage metrics API の repos-1-day レポートでも取得できる",
+        "API は Enterprise のオーナーと課金マネージャー、Organization のオーナー、View Copilot Metrics 権限を持つロールが対象"
+      ]
+    },
+    {
+      "id": "limits",
+      "heading": "前提と制限",
+      "priority": "detail",
+      "items": [
+        "Copilot usage metrics ポリシーの有効化が必要",
+        "Copilot コードレビューの欄は、Copilot code review ポリシーも有効な組織で表示される"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "対応率", "type": "term", "oneLine": "評価できるコメントのうち、対応されたものの割合。" }
+  ],
+  "references": {
+    "source": {
+      "title": "Track Copilot code review outcomes in Repository insights - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-11-17-track-copilot-code-review-outcomes-in-repository-insights/"
+    },
+    "documents": [
+      {
+        "title": "Viewing repository insights - GitHubドキュメント",
+        "url": "https://docs.github.com/ja/copilot/how-tos/administer-copilot/view-repository-insights"
+      }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-11-17-track-copilot-code-review-outcomes-in-repository-insights/",
+    "https://docs.github.com/ja/copilot/how-tos/administer-copilot/view-repository-insights"
+  ],
+  "qa": [
+    {
+      "q": "誰が Repository insights を見られますか。",
+      "a": "リポジトリへの読み取りアクセスがあれば Insights タブの Repository insights で見られます。ドキュメントでは Organization 所有のリポジトリが対象です。"
+    },
+    {
+      "q": "Copilot コードレビューの欄が表示されないのはなぜですか。",
+      "a": "Organization で Copilot usage metrics ポリシーと Copilot code review ポリシーの両方が有効な場合にだけ、Copilot コードレビューの欄が表示されます。"
+    },
+    {
+      "q": "API でも同じ指標を取得できますか。",
+      "a": "Enterprise と Organization のリポジトリ 1 日レポート（repos-1-day）で取得できます。Enterprise のオーナーと課金マネージャー、Organization のオーナー、View Copilot Metrics 権限を持つロールが対象です。"
+    },
+    {
+      "q": "「Waiting on your data」と表示されたらどうしますか。",
+      "a": "データが揃うまで数日待ちます。この表示は、リポジトリに活動がなかったという意味ではありません。"
+    }
+  ]
+}
