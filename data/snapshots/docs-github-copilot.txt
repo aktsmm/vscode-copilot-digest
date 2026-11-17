@@ -1,6 +1,8 @@
 H1: GitHub Copilot documentation
 You can use GitHub Copilot to enhance your productivity and assist as you work on code.
 H2: Articles
+H3: About browser use in GitHub Copilot
+Copilot can interact with your browser to help you test web applications and complete browser-based tasks.
 H3: About cloud sandboxes for GitHub Copilot
 Cloud sandboxes are isolated environments that GitHub hosts, where Copilot runs your cloud sessions without using your machine.
 H3: About computer use in GitHub Copilot
@@ -17,5 +19,3 @@ H3: About GitHub Copilot agents
 Copilot agents use context and tools to plan and complete tasks. You can choose where and how you work with them.
 H3: About GitHub Copilot auto model selection
 Automatically select the best model for each task.
-H3: About GitHub Copilot Dreaming
-Learn how Copilot Dreaming updates Copilot's context, how to enable it, and how to review run results.

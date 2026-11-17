@@ -1,14 +1,431 @@
 {
   "date": "2026-11-17",
-  "generatedAt": "2026-11-17T14:42:57.947Z",
+  "generatedAt": "2026-11-17T21:52:02.691Z",
   "latestRun": {
-    "generatedAt": "2026-11-17T14:42:57.947Z",
-    "newEventsCount": 0,
-    "newEventIds": [],
+    "generatedAt": "2026-11-17T21:52:02.691Z",
+    "newEventsCount": 24,
+    "newEventIds": [
+      "github-changelog:https://github.blog/changelog/2026-11-17-openais-gpt-6-2-astra-and-gpt-6-2-sol-now-available",
+      "github-changelog:https://github.blog/changelog/2026-11-16-github-copilot-fusion-updates-more-availability-benchmarks-and-models",
+      "github-changelog:https://github.blog/changelog/2026-11-16-github-copilot-app-microsoft-ignite-releases",
+      "github-changelog:https://github.blog/changelog/2026-11-16-copilot-code-review-adaptive-effort-secret-detection-and-more",
+      "github-changelog:https://github.blog/changelog/2026-11-17-mai-code-2-and-mai-code-2-flash-in-github-copilot",
+      "github-changelog:https://github.blog/changelog/2026-11-13-github-copilot-in-jetbrains-ignite-releases",
+      "github-changelog:https://github.blog/changelog/2026-11-16-monitor-github-copilot-activity-through-microsoft-agent-365",
+      "github-changelog:https://github.blog/changelog/2026-11-16-github-copilot-cli-adds-microsoft-entra-sign-in-as-a-preview",
+      "github-changelog:https://github.blog/changelog/2026-11-16-track-copilot-code-review-outcomes-in-repository-insights",
+      "github-changelog:https://github.blog/changelog/2026-11-16-github-copilot-evals-is-now-in-public-preview",
+      "github-changelog-copilot:https://github.blog/changelog/2026-11-17-openais-gpt-6-2-astra-and-gpt-6-2-sol-now-available",
+      "github-changelog-copilot:https://github.blog/changelog/2026-11-16-github-copilot-fusion-updates-more-availability-benchmarks-and-models",
+      "github-changelog-copilot:https://github.blog/changelog/2026-11-16-github-copilot-app-microsoft-ignite-releases",
+      "github-changelog-copilot:https://github.blog/changelog/2026-11-16-copilot-code-review-adaptive-effort-secret-detection-and-more",
+      "github-changelog-copilot:https://github.blog/changelog/2026-11-17-mai-code-2-and-mai-code-2-flash-in-github-copilot",
+      "github-changelog-copilot:https://github.blog/changelog/2026-11-13-github-copilot-in-jetbrains-ignite-releases",
+      "github-changelog-copilot:https://github.blog/changelog/2026-11-16-monitor-github-copilot-activity-through-microsoft-agent-365",
+      "github-changelog-copilot:https://github.blog/changelog/2026-11-16-github-copilot-cli-adds-microsoft-entra-sign-in-as-a-preview",
+      "github-changelog-copilot:https://github.blog/changelog/2026-11-16-track-copilot-code-review-outcomes-in-repository-insights",
+      "github-changelog-copilot:https://github.blog/changelog/2026-11-16-github-copilot-evals-is-now-in-public-preview",
+      "copilot-whats-new:7395e06c39ed130768bc3877edc56593d386bfdfc9031618c09c3a3e3021f3fa",
+      "docs-github-copilot:198e688a72e67996c2fb14d202feeef99b857296f4aae036c1dc1f24ae46022e",
+      "docs-github-copilot-howtos:96373c3742ba72e24b1764e49a2ec067e2bc758562ccf7c86858624e5ececf83",
+      "docs-github-copilot-reference:29c28184b53da6a3ad7ad4a81663b6345709e8b71558bd5005475f6679b11fe4"
+    ],
     "errorCount": 0,
     "skippedLowInformationEvents": []
   },
   "events": [
+    {
+      "eventId": "copilot-whats-new:7395e06c39ed130768bc3877edc56593d386bfdfc9031618c09c3a3e3021f3fa",
+      "sourceId": "copilot-whats-new",
+      "sourceName": "GitHub Copilot What's New",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-11-17T21:51:53.953Z",
+      "publishedAt": "2026-11-17T21:51:53.952Z",
+      "title": "GitHub Copilot What's New changed",
+      "url": "https://github.com/features/copilot/whats-new",
+      "summary": "Detected 3 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 3,
+        "headings": [
+          "Nov.17 Release",
+          "Nov.17 Improvement",
+          "Nov.17 Retired"
+        ],
+        "additions": [
+          "H3: Nov.17 Release",
+          "H3: Nov.17 Improvement",
+          "H3: Nov.17 Retired"
+        ]
+      },
+      "headings": [
+        "Changelog",
+        "Filters (0 selected)",
+        "November\n Nov\n 2026",
+        "Nov.17 Release",
+        "Nov.17 Improvement",
+        "Nov.17 Release",
+        "Nov.17 Release",
+        "Nov.17 Release",
+        "Nov.17 Release",
+        "Nov.17 Release",
+        "Nov.17 Release",
+        "Nov.17 Release"
+      ],
+      "score": 5
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-11-17-openais-gpt-6-2-astra-and-gpt-6-2-sol-now-available",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-11-17T21:51:49.196Z",
+      "publishedAt": "2026-11-17T20:20:29.000Z",
+      "title": "OpenAI&#8217;s GPT-6.2 Astra and GPT-6.2 Sol now available",
+      "url": "https://github.blog/changelog/2026-11-17-openais-gpt-6-2-astra-and-gpt-6-2-sol-now-available",
+      "summary": "OpenAI’s GPT-6.2 Astra and GPT-6.2 Sol are now generally available in GitHub Copilot. Both models are designed for agentic coding and code review, with stronger coding judgment than earlier GPT-6…\nThe post OpenAI’s GPT-6.2 Astra and GPT-6.2 Sol now available appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 5
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-11-17-openais-gpt-6-2-astra-and-gpt-6-2-sol-now-available",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-11-17T21:51:50.013Z",
+      "publishedAt": "2026-11-17T20:20:29.000Z",
+      "title": "OpenAI&#8217;s GPT-6.2 Astra and GPT-6.2 Sol now available",
+      "url": "https://github.blog/changelog/2026-11-17-openais-gpt-6-2-astra-and-gpt-6-2-sol-now-available",
+      "summary": "OpenAI’s GPT-6.2 Astra and GPT-6.2 Sol are now generally available in GitHub Copilot. Both models are designed for agentic coding and code review, with stronger coding judgment than earlier GPT-6…\nThe post OpenAI’s GPT-6.2 Astra and GPT-6.2 Sol now available appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 5
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-11-16-github-copilot-fusion-updates-more-availability-benchmarks-and-models",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-11-17T21:51:49.196Z",
+      "publishedAt": "2026-11-17T18:04:48.000Z",
+      "title": "GitHub Copilot Fusion updates: more availability, benchmarks, and models",
+      "url": "https://github.blog/changelog/2026-11-17-github-copilot-fusion-updates-more-availability-benchmarks-and-models",
+      "summary": "Today, we’re expanding GitHub Copilot Fusion with new models, available on more Copilot surfaces, and results on two public Terminal-Bench leaderboards, giving you more ways to use Fusion and compare…\nThe post GitHub Copilot Fusion updates: more availability, benchmarks, and models appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 1
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-11-16-github-copilot-fusion-updates-more-availability-benchmarks-and-models",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-11-17T21:51:50.013Z",
+      "publishedAt": "2026-11-17T18:04:48.000Z",
+      "title": "GitHub Copilot Fusion updates: more availability, benchmarks, and models",
+      "url": "https://github.blog/changelog/2026-11-17-github-copilot-fusion-updates-more-availability-benchmarks-and-models",
+      "summary": "Today, we’re expanding GitHub Copilot Fusion with new models, available on more Copilot surfaces, and results on two public Terminal-Bench leaderboards, giving you more ways to use Fusion and compare…\nThe post GitHub Copilot Fusion updates: more availability, benchmarks, and models appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 1
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-11-16-github-copilot-app-microsoft-ignite-releases",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-11-17T21:51:49.196Z",
+      "publishedAt": "2026-11-17T18:03:42.000Z",
+      "title": "GitHub Copilot app, Microsoft Ignite releases",
+      "url": "https://github.blog/changelog/2026-11-17-github-copilot-app-microsoft-ignite-releases",
+      "summary": "Copilot is most useful when it can work where you do. The GitHub Copilot app now supports your Azure DevOps repositories, your GitHub Enterprise Server instance, and the browser you’re…\nThe post GitHub Copilot app, Microsoft Ignite releases appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-11-16-github-copilot-app-microsoft-ignite-releases",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-11-17T21:51:50.013Z",
+      "publishedAt": "2026-11-17T18:03:42.000Z",
+      "title": "GitHub Copilot app, Microsoft Ignite releases",
+      "url": "https://github.blog/changelog/2026-11-17-github-copilot-app-microsoft-ignite-releases",
+      "summary": "Copilot is most useful when it can work where you do. The GitHub Copilot app now supports your Azure DevOps repositories, your GitHub Enterprise Server instance, and the browser you’re…\nThe post GitHub Copilot app, Microsoft Ignite releases appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-11-16-copilot-code-review-adaptive-effort-secret-detection-and-more",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-11-17T21:51:49.196Z",
+      "publishedAt": "2026-11-17T18:02:05.000Z",
+      "title": "Copilot code review: Adaptive effort, secret detection, and more",
+      "url": "https://github.blog/changelog/2026-11-17-copilot-code-review-adaptive-effort-secret-detection-and-more",
+      "summary": "GitHub Copilot code review now helps you catch more issues earlier, with less effort. Adaptive matches review depth to each pull request, so routine changes get a quick pass and…\nThe post Copilot code review: Adaptive effort, secret detection, and more appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-11-16-copilot-code-review-adaptive-effort-secret-detection-and-more",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-11-17T21:51:50.013Z",
+      "publishedAt": "2026-11-17T18:02:05.000Z",
+      "title": "Copilot code review: Adaptive effort, secret detection, and more",
+      "url": "https://github.blog/changelog/2026-11-17-copilot-code-review-adaptive-effort-secret-detection-and-more",
+      "summary": "GitHub Copilot code review now helps you catch more issues earlier, with less effort. Adaptive matches review depth to each pull request, so routine changes get a quick pass and…\nThe post Copilot code review: Adaptive effort, secret detection, and more appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-11-17-mai-code-2-and-mai-code-2-flash-in-github-copilot",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-11-17T21:51:49.196Z",
+      "publishedAt": "2026-11-17T18:01:45.000Z",
+      "title": "MAI Code 2 and MAI Code 2 Flash in GitHub Copilot",
+      "url": "https://github.blog/changelog/2026-11-17-mai-code-2-and-mai-code-2-flash-in-github-copilot",
+      "summary": "The next generation of Microsoft AI (MAI) coding models has arrived in GitHub Copilot. Introducing MAI Code 2 and MAI Code 2 Flash, two new models that represent a major…\nThe post MAI Code 2 and MAI Code 2 Flash in GitHub Copilot appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-11-17-mai-code-2-and-mai-code-2-flash-in-github-copilot",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-11-17T21:51:50.013Z",
+      "publishedAt": "2026-11-17T18:01:45.000Z",
+      "title": "MAI Code 2 and MAI Code 2 Flash in GitHub Copilot",
+      "url": "https://github.blog/changelog/2026-11-17-mai-code-2-and-mai-code-2-flash-in-github-copilot",
+      "summary": "The next generation of Microsoft AI (MAI) coding models has arrived in GitHub Copilot. Introducing MAI Code 2 and MAI Code 2 Flash, two new models that represent a major…\nThe post MAI Code 2 and MAI Code 2 Flash in GitHub Copilot appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-11-13-github-copilot-in-jetbrains-ignite-releases",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-11-17T21:51:49.196Z",
+      "publishedAt": "2026-11-17T18:00:59.000Z",
+      "title": "GitHub Copilot in JetBrains, Ignite releases",
+      "url": "https://github.blog/changelog/2026-11-17-github-copilot-in-jetbrains-ignite-releases",
+      "summary": "This update brings remote access, on-device voice dictation, and browser use controls to GitHub Copilot for JetBrains. Copilot users in JetBrains IDEs also get context usage shortcuts, historical diffs, simpler…\nThe post GitHub Copilot in JetBrains, Ignite releases appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "client apps",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-11-16-monitor-github-copilot-activity-through-microsoft-agent-365",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-11-17T21:51:49.196Z",
+      "publishedAt": "2026-11-17T18:00:59.000Z",
+      "title": "Monitor GitHub Copilot activity through Microsoft Agent 365",
+      "url": "https://github.blog/changelog/2026-11-17-monitor-github-copilot-activity-through-microsoft-agent-365",
+      "summary": "Enterprises can now stream GitHub Copilot agent activity directly into Microsoft Agent 365. This lets you bring audit data from across GitHub Copilot clients into Microsoft’s agent control plane, where…\nThe post Monitor GitHub Copilot activity through Microsoft Agent 365 appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 5
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-11-13-github-copilot-in-jetbrains-ignite-releases",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-11-17T21:51:50.013Z",
+      "publishedAt": "2026-11-17T18:00:59.000Z",
+      "title": "GitHub Copilot in JetBrains, Ignite releases",
+      "url": "https://github.blog/changelog/2026-11-17-github-copilot-in-jetbrains-ignite-releases",
+      "summary": "This update brings remote access, on-device voice dictation, and browser use controls to GitHub Copilot for JetBrains. Copilot users in JetBrains IDEs also get context usage shortcuts, historical diffs, simpler…\nThe post GitHub Copilot in JetBrains, Ignite releases appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "client apps",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-11-16-monitor-github-copilot-activity-through-microsoft-agent-365",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-11-17T21:51:50.013Z",
+      "publishedAt": "2026-11-17T18:00:59.000Z",
+      "title": "Monitor GitHub Copilot activity through Microsoft Agent 365",
+      "url": "https://github.blog/changelog/2026-11-17-monitor-github-copilot-activity-through-microsoft-agent-365",
+      "summary": "Enterprises can now stream GitHub Copilot agent activity directly into Microsoft Agent 365. This lets you bring audit data from across GitHub Copilot clients into Microsoft’s agent control plane, where…\nThe post Monitor GitHub Copilot activity through Microsoft Agent 365 appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 5
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-11-16-github-copilot-cli-adds-microsoft-entra-sign-in-as-a-preview",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-11-17T21:51:49.196Z",
+      "publishedAt": "2026-11-17T18:00:35.000Z",
+      "title": "GitHub Copilot CLI adds Microsoft Entra sign-in as a preview",
+      "url": "https://github.blog/changelog/2026-11-17-github-copilot-cli-adds-microsoft-entra-sign-in-as-a-preview",
+      "summary": "GitHub Copilot CLI now supports Microsoft Entra authentication in public preview. You can sign in with your Microsoft Entra account to silently authenticate to a linked GitHub Enterprise Managed User…\nThe post GitHub Copilot CLI adds Microsoft Entra sign-in as a preview appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "client apps",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 5
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-11-16-track-copilot-code-review-outcomes-in-repository-insights",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-11-17T21:51:49.196Z",
+      "publishedAt": "2026-11-17T18:00:35.000Z",
+      "title": "Track Copilot code review outcomes in Repository insights",
+      "url": "https://github.blog/changelog/2026-11-17-track-copilot-code-review-outcomes-in-repository-insights",
+      "summary": "You can now see how Copilot code review feedback lands in each repository. A new “Repository insights” page, the first item in a repository’s Insights tab, brings Copilot code review…\nThe post Track Copilot code review outcomes in Repository insights appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "account management",
+        "copilot",
+        "enterprise management tools"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-11-16-github-copilot-cli-adds-microsoft-entra-sign-in-as-a-preview",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-11-17T21:51:50.013Z",
+      "publishedAt": "2026-11-17T18:00:35.000Z",
+      "title": "GitHub Copilot CLI adds Microsoft Entra sign-in as a preview",
+      "url": "https://github.blog/changelog/2026-11-17-github-copilot-cli-adds-microsoft-entra-sign-in-as-a-preview",
+      "summary": "GitHub Copilot CLI now supports Microsoft Entra authentication in public preview. You can sign in with your Microsoft Entra account to silently authenticate to a linked GitHub Enterprise Managed User…\nThe post GitHub Copilot CLI adds Microsoft Entra sign-in as a preview appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "client apps",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 5
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-11-16-track-copilot-code-review-outcomes-in-repository-insights",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-11-17T21:51:50.013Z",
+      "publishedAt": "2026-11-17T18:00:35.000Z",
+      "title": "Track Copilot code review outcomes in Repository insights",
+      "url": "https://github.blog/changelog/2026-11-17-track-copilot-code-review-outcomes-in-repository-insights",
+      "summary": "You can now see how Copilot code review feedback lands in each repository. A new “Repository insights” page, the first item in a repository’s Insights tab, brings Copilot code review…\nThe post Track Copilot code review outcomes in Repository insights appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "account management",
+        "copilot",
+        "enterprise management tools"
+      ],
+      "isFutureDated": false,
+      "score": 4
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-11-16-github-copilot-evals-is-now-in-public-preview",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-11-17T21:51:49.196Z",
+      "publishedAt": "2026-11-17T18:00:33.000Z",
+      "title": "GitHub Copilot Evals is now in public preview",
+      "url": "https://github.blog/changelog/2026-11-17-github-copilot-evals-is-now-in-public-preview",
+      "summary": "You can now use GitHub Copilot Evals to optimize GitHub Copilot for yourself. As your prompts, models, skills, and tools change, are you still getting the most out of Copilot?…\nThe post GitHub Copilot Evals is now in public preview appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "client apps",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 5
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-11-16-github-copilot-evals-is-now-in-public-preview",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-11-17T21:51:50.013Z",
+      "publishedAt": "2026-11-17T18:00:33.000Z",
+      "title": "GitHub Copilot Evals is now in public preview",
+      "url": "https://github.blog/changelog/2026-11-17-github-copilot-evals-is-now-in-public-preview",
+      "summary": "You can now use GitHub Copilot Evals to optimize GitHub Copilot for yourself. As your prompts, models, skills, and tools change, are you still getting the most out of Copilot?…\nThe post GitHub Copilot Evals is now in public preview appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "client apps",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 5
+    },
     {
       "eventId": "copilot-whats-new:3c79125f9e3d3e57c2c6d4e5bf8ac2c7e5d55592f9b9f14af1a09ad2b4a85fb7",
       "sourceId": "copilot-whats-new",
@@ -118,6 +535,97 @@
       ],
       "isFutureDated": false,
       "score": 6
+    },
+    {
+      "eventId": "docs-github-copilot:198e688a72e67996c2fb14d202feeef99b857296f4aae036c1dc1f24ae46022e",
+      "sourceId": "docs-github-copilot",
+      "sourceName": "GitHub Docs / Copilot",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-11-17T21:51:54.360Z",
+      "publishedAt": "2026-11-17T21:51:54.359Z",
+      "title": "GitHub Docs / Copilot changed",
+      "url": "https://docs.github.com/en/copilot",
+      "summary": "Detected 3 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 3,
+        "headings": [
+          "About browser use in GitHub Copilot"
+        ],
+        "additions": [
+          "H3: About browser use in GitHub Copilot",
+          "Copilot can interact with your browser to help you test web applications and complete browser-based tasks.",
+          "Automatically select the best model for each task."
+        ]
+      },
+      "headings": [
+        "GitHub Copilot documentation",
+        "Articles",
+        "About browser use in GitHub Copilot",
+        "About cloud sandboxes for GitHub Copilot",
+        "About computer use in GitHub Copilot",
+        "About default availability of Copilot features and models",
+        "About enterprise accounts for Copilot Business",
+        "About enterprise-managed plugin standards",
+        "About GitHub Copilot",
+        "About GitHub Copilot agents",
+        "About GitHub Copilot auto model selection"
+      ],
+      "score": 3
+    },
+    {
+      "eventId": "docs-github-copilot-howtos:96373c3742ba72e24b1764e49a2ec067e2bc758562ccf7c86858624e5ececf83",
+      "sourceId": "docs-github-copilot-howtos",
+      "sourceName": "GitHub Docs / Copilot how-tos",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-11-17T21:51:54.658Z",
+      "publishedAt": "2026-11-17T21:51:54.657Z",
+      "title": "GitHub Docs / Copilot how-tos changed",
+      "url": "https://docs.github.com/en/copilot/how-tos",
+      "summary": "Detected 3 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 3,
+        "headings": [],
+        "additions": [
+          "Using the GitHub Copilot app to interact with your browser",
+          "Managing Azure DevOps work with the GitHub Copilot app",
+          "Viewing repository insights"
+        ]
+      },
+      "headings": [
+        "How-tos for GitHub Copilot"
+      ],
+      "score": 2
+    },
+    {
+      "eventId": "docs-github-copilot-reference:29c28184b53da6a3ad7ad4a81663b6345709e8b71558bd5005475f6679b11fe4",
+      "sourceId": "docs-github-copilot-reference",
+      "sourceName": "GitHub Docs / Copilot reference",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-11-17T21:51:58.531Z",
+      "publishedAt": "2026-11-17T21:51:58.531Z",
+      "title": "GitHub Docs / Copilot reference changed",
+      "url": "https://docs.github.com/en/copilot/reference",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [],
+        "additions": [
+          "Repository insights metrics"
+        ]
+      },
+      "headings": [
+        "Reference for GitHub Copilot"
+      ],
+      "score": 2
     }
   ],
   "errors": []

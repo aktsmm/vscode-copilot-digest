@@ -39,6 +39,7 @@ Data available in Copilot usage metrics
 Coverage and requirements for Copilot usage metrics
 Industry comparisons for Copilot usage metrics
 Interpreting usage and adoption metrics for GitHub Copilot
+Repository insights metrics
 Reconciling Copilot usage metrics across dashboards, APIs, and reports
 Lines of Code metrics
 Team-level Copilot usage metrics

@@ -92,10 +92,12 @@ Customizing the GitHub Copilot app
 Working with agent sessions in the GitHub Copilot app
 Choosing a model in the Copilot app
 Working with projects in the GitHub Copilot app
+Using the GitHub Copilot app to interact with your browser
 Using the GitHub Copilot app to interact with desktop applications
 Working with canvas extensions in the GitHub Copilot app
 Viewing and fixing security alerts in the GitHub Copilot app
 Managing issues and pull requests with the GitHub Copilot app
+Managing Azure DevOps work with the GitHub Copilot app
 Using automations in the GitHub Copilot app
 Adding LLM models to the GitHub Copilot app
 Using deep links to open the GitHub Copilot app
@@ -139,6 +141,7 @@ Managing requests for additional Copilot budget
 Managing MCP usage in your company
 Downloading a GitHub Copilot activity report for your organization or enterprise
 Viewing the Copilot usage metrics dashboard
+Viewing repository insights
 Viewing the code generation dashboard
 Viewing the Copilot impact dashboard
 Troubleshoot GitHub Copilot
