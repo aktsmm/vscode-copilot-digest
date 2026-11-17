@@ -4237,5 +4237,27 @@
       "展開すると画面に合わせてレイアウトが変わる",
       "縦型タブでCopilot、PR、Issue、通知を切り替え"
     ]
+  },
+  "c04e20070f0fc9a3": {
+    "title": "VS CodeのLocal harnessが2027年2月に廃止へ",
+    "summary": "VS Code 1.146でLocal harnessが非推奨になり、2027年2月に削除される。後継のMicrosoft Copilot harnessはVS Code 1.143から新規セッションの既定になっており、今後の新機能や改善はこちらに集中する。移行期間の約3か月は、組織のポリシーが許す範囲でLocal harnessも使える。",
+    "why": "Local harnessを使う開発者と管理者は、2027年2月までにCopilot harnessへ移り、カスタマイズの互換性を確かめる必要がある。",
+    "points": [
+      "新規セッションでSession TargetのCopilotを選ぶ",
+      "切り替えてもカスタマイズは自動変換されない",
+      "管理者はvscode.temporaryDefaultToLocalHarnessの例外設定を見直す",
+      "この例外設定もLocal harnessと共に削除される"
+    ]
+  },
+  "a06076806a0e698d": {
+    "title": "Copilotのカスタマイズをプラグイン経由に限定可能に",
+    "summary": "Enterprise管理者が、strictPluginOnlyCustomization管理設定により、ユーザーやプロジェクトの単独設定によるカスタマイズを禁止し、プラグインか管理設定由来のものだけに限定できるようになった。スキル、カスタムエージェント、フック、MCPサーバー、実行型Copilot拡張の5分類から対象を選べる。",
+    "why": "承認済みのMCPツールやキャンバスを共有プラグインで配布したい管理者は、この設定とマーケットプレイス制限の併用を検討したい。",
+    "points": [
+      "5分類すべて、または一部のみ制限できる",
+      "strictKnownMarketplacesで利用可能なマーケットプレイスを絞る",
+      "対象はCopilot BusinessまたはEnterpriseのライセンスを持つメンバー",
+      "GitHub Enterprise Cloudで設定する"
+    ]
   }
 }
