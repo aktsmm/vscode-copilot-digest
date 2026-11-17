@@ -1,0 +1,87 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "75073ab854943bd9",
+  "title": {
+    "ja": "Copilot Fusion が web・モバイル・Visual Studio に対応、モデルも追加",
+    "subtitleJa": "モデル ピッカーで Fusion を選べる場所が増え、Max/High/Standard に新モデルが入る",
+    "original": "GitHub Copilot Fusion updates: more availability, benchmarks, and models"
+  },
+  "date": "2026-11-17",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "モデル ピッカーから Copilot Fusion を使う開発者",
+    "change": "github.com、Visual Studio、GitHub Mobile ベータで Fusion を選べ、各レベルにモデルが追加された",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "使いたい環境を最新版にして、モデル ピッカーで Copilot Fusion を選ぶ"
+  },
+  "panels": [
+    {
+      "id": "where",
+      "heading": "使える場所とプラン",
+      "priority": "core",
+      "items": [
+        "最新版の github.com、Visual Studio、iOS / Android の GitHub Mobile ベータ アプリで選べる",
+        "製品版の GitHub Mobile アプリへの対応は近日中の予定",
+        "Copilot Fusion はすべての GitHub Copilot プランで利用できる"
+      ]
+    },
+    {
+      "id": "models",
+      "heading": "追加されたモデル",
+      "priority": "core",
+      "items": [
+        "Fusion Max に Claude Sonnet 5.5",
+        "Fusion High に GPT-6.1 Terra",
+        "Fusion Standard に MAI-Code-2"
+      ]
+    },
+    {
+      "id": "benchmark",
+      "heading": "ベンチマーク結果",
+      "priority": "detail",
+      "items": [
+        "公開リーダーボードに掲載。Fusion Max の解決率は 71.2%",
+        "Opus 5.5 と Fable 5.2 を 5.4 ポイント上回り、コストは Fable 5.2 比 88%、Opus 5.5 比 57% 低い"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "Terminal-Bench 4.1", "type": "term", "oneLine": "ターミナル上の難しく現実的なタスクを AI エージェントがどれだけ解けるかを測る指標。" },
+    { "term": "Copilot Fusion", "type": "product", "oneLine": "タスクに応じてモデルと実行パターンを選び、1 つの応答を返すモデル ルーター兼オーケストレーター。" }
+  ],
+  "qa": [
+    {
+      "q": "Copilot Fusion はどのプランで使えますか。",
+      "a": "公式ドキュメントでは、Copilot Fusion はすべての GitHub Copilot プランで利用できると説明されています。"
+    },
+    {
+      "q": "どこで Fusion を選べるようになりましたか。",
+      "a": "最新版の github.com、Visual Studio、iOS と Android の GitHub Mobile ベータ アプリです。製品版の GitHub Mobile アプリへの対応は近日中とされています。"
+    },
+    {
+      "q": "使い方を教えてください。",
+      "a": "モデル ピッカーで Copilot Fusion を選びます。モデルの選択と連携は Fusion が行い、利用者は作業レベル（労力レベル）を設定します。"
+    },
+    {
+      "q": "どのモデルが追加されましたか。",
+      "a": "Fusion Max に Claude Sonnet 5.5、Fusion High に GPT-6.1 Terra、Fusion Standard に MAI-Code-2 が追加されました。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "GitHub Copilot Fusion updates: more availability, benchmarks, and models - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-11-17-github-copilot-fusion-updates-more-availability-benchmarks-and-models/"
+    },
+    "documents": [
+      { "title": "GitHub Copilot Fusion の概要 - GitHubドキュメント", "url": "https://docs.github.com/ja/copilot/concepts/models/copilot-fusion" }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-11-17-github-copilot-fusion-updates-more-availability-benchmarks-and-models/",
+    "https://docs.github.com/ja/copilot/concepts/models/copilot-fusion"
+  ]
+}
