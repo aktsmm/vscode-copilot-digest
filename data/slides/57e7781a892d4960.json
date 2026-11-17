@@ -1,0 +1,99 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "57e7781a892d4960",
+  "title": {
+    "ja": "OpenAI GPT-6.2 AstraとGPT-6.2 Sol、Copilotで一般提供開始",
+    "subtitleJa": "エージェント型コーディングとコードレビュー向けの2モデルをモデルピッカーで選択可能",
+    "original": "OpenAI's GPT-6.2 Astra and GPT-6.2 Sol now available"
+  },
+  "date": "2026-11-17",
+  "topic": "GitHub Copilot",
+  "status": "ga",
+  "statusEvidence": "OpenAI’s GPT-6.2 Astra and GPT-6.2 Sol are now generally available in GitHub Copilot.",
+  "audience": {
+    "who": "Copilot Pro+、Max、Business、Enterpriseの利用者と、BusinessおよびEnterpriseの管理者",
+    "change": "GPT-6.2 AstraとGPT-6.2 Solを各クライアントのモデルピッカーから選べる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "モデルピッカーで選択する。管理者はCopilot設定のモデルポリシーでアクセスを管理できる"
+  },
+  "panels": [
+    {
+      "id": "availability",
+      "heading": "使える場所とプラン",
+      "priority": "core",
+      "items": [
+        "対象プランはCopilot Pro+、Max、Business、Enterprise",
+        "VS Code、Visual Studio、JetBrains、Xcode、Eclipse、Copilot CLI、coding agent、github.com、モバイルで選択可能",
+        "ロールアウトは段階的。表示されない場合は後で再確認する"
+      ]
+    },
+    {
+      "id": "models",
+      "heading": "2モデルの位置づけ",
+      "priority": "core",
+      "items": [
+        "GPT-6.2 Astra：エージェント型コーディングとターミナル作業向け",
+        "GPT-6.2 Sol：複雑なエージェント型コーディングと詳細なコードレビュー向け",
+        "料金は従量課金でプロバイダーのリスト価格"
+      ]
+    },
+    {
+      "id": "admin",
+      "heading": "管理者向けの注意点",
+      "priority": "detail",
+      "items": [
+        "BusinessとEnterpriseの管理者はモデルポリシーでアクセスを管理",
+        "既定のモデル有効化では、無効化しない限り新モデルは自動で有効になる"
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "モデルポリシー",
+      "type": "feature",
+      "oneLine": "Copilot設定で、BusinessとEnterpriseの管理者がモデルへのアクセスを管理する仕組み"
+    }
+  ],
+  "qa": [
+    {
+      "q": "どのプランで使えますか",
+      "a": "Copilot Pro+、Max、Business、Enterpriseの利用者が対象です。"
+    },
+    {
+      "q": "どこで選べますか",
+      "a": "VS Code、Visual Studio、Copilot CLI、coding agent、Copilotアプリ、github.com、GitHub Mobile、JetBrains IDE、Xcode、Eclipseのモデルピッカーで選べます。ロールアウトは段階的です。"
+    },
+    {
+      "q": "料金はどうなりますか",
+      "a": "従量課金のもとで、プロバイダーのリスト価格で課金されます。詳細はCopilotのモデルと価格設定のページにあります。"
+    },
+    {
+      "q": "組織で使わせたくない場合は",
+      "a": "BusinessとEnterpriseの管理者は、Copilot設定のモデルポリシーで管理できます。既定のモデル有効化では、管理者が無効にしない限り新モデルは自動で有効になります。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "OpenAI's GPT-6.2 Astra and GPT-6.2 Sol now available - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-11-17-openais-gpt-6-2-astra-and-gpt-6-2-sol-now-available/"
+    },
+    "documents": [
+      {
+        "title": "GitHub Copilot のモデルと価格設定 - GitHubドキュメント",
+        "url": "https://docs.github.com/ja/copilot/reference/copilot-billing/models-and-pricing"
+      },
+      {
+        "title": "GitHub Copilotでサポートされている AI モデル - GitHubドキュメント",
+        "url": "https://docs.github.com/ja/copilot/reference/ai-models/supported-models"
+      }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-11-17-openais-gpt-6-2-astra-and-gpt-6-2-sol-now-available/",
+    "https://docs.github.com/ja/copilot/reference/copilot-billing/models-and-pricing",
+    "https://docs.github.com/ja/copilot/reference/ai-models/supported-models"
+  ]
+}
