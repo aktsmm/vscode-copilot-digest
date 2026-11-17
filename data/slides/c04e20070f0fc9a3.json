@@ -1,0 +1,119 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "c04e20070f0fc9a3",
+  "title": {
+    "ja": "VS CodeのLocalハーネス、2027年2月に廃止",
+    "subtitleJa": "VS Code 1.146でLocalハーネスが非推奨となり、Copilotハーネスへの移行が必要に",
+    "original": "VS Code retires the Local harness in February 2027"
+  },
+  "date": "2026-11-16",
+  "topic": "GitHub Copilot",
+  "status": "retirement",
+  "statusEvidence": "The Local harness will be removed in February 2027.",
+  "audience": {
+    "who": "VS CodeのエージェントセッションでLocalハーネスを使っている開発者と、VS Codeの管理者",
+    "change": "Localハーネスは2027年2月に削除され、今後の新機能はCopilotハーネスに集中する",
+    "changeNature": "breaking"
+  },
+  "action": {
+    "required": "yes",
+    "summary": "2027年2月までにセッションをCopilotハーネスへ移し、カスタマイズの互換性を確認する",
+    "deadline": "2027-02"
+  },
+  "timeline": [
+    { "when": "VS Code 1.143", "label": "Copilotハーネスが新規セッションの既定に" },
+    { "when": "VS Code 1.146", "label": "Localハーネスを非推奨化" },
+    { "when": "2027年2月", "label": "Localハーネスを削除" }
+  ],
+  "panels": [
+    {
+      "id": "how-to-move",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "VS Codeで新しいセッションを開始し、Session Targetで Copilot を選ぶ",
+        "移行後もVS Code上・手元のマシンでエージェントコマンドを実行でき、ファイルはクラウドへ移らない",
+        "2027年2月までにカスタマイズの互換性を確認する"
+      ]
+    },
+    {
+      "id": "plans",
+      "heading": "使える場所とプラン",
+      "priority": "core",
+      "items": [
+        "GitHub Copilot経由でモデルを使う場合、Copilot Freeを含む既存プランのまま利用できる",
+        "機能やFusionのティアは、プラン・設定・組織ポリシーによって異なる",
+        "移行期間の3か月は、組織のポリシーが許す範囲でLocalハーネスも利用できる"
+      ]
+    },
+    {
+      "id": "admin",
+      "heading": "管理者の対応",
+      "priority": "core",
+      "items": [
+        "vscode.temporaryDefaultToLocalHarness の例外設定を見直す",
+        "この設定もLocalハーネスと共に削除され、残してもLocalは使えない",
+        "必要なワークフロー・権限制御・サンドボックス設定をCopilotハーネスで検証する"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "切り替えてもカスタマイズがすべて自動変換されるわけではない",
+        "Copilotハーネスを選ぶだけではサンドボックスは有効にならない"
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Localハーネス",
+      "type": "feature",
+      "oneLine": "VS CodeでCopilotエージェントセッションのモデル・コンテキスト・ツールを調整する従来の仕組み"
+    },
+    {
+      "term": "Copilotハーネス",
+      "type": "feature",
+      "oneLine": "VS Codeに組み込まれた後継。Copilot CLIやGitHub Copilot appとエージェントランタイムを共有する"
+    }
+  ],
+  "qa": [
+    {
+      "q": "Localハーネスはいつ使えなくなりますか。",
+      "a": "VS Code 1.146で非推奨となり、2027年2月に削除されます。3か月の移行期間中は、組織のポリシーが許す範囲でLocalハーネスを利用できます。"
+    },
+    {
+      "q": "移行するとファイルはクラウドへ移りますか。",
+      "a": "いいえ。Copilotハーネスを選んでも、VS Code上で作業し、手元のマシンでエージェントコマンドを実行できます。ファイルがクラウドへ移ることはありません。"
+    },
+    {
+      "q": "具体的な移行手順は。",
+      "a": "VS Codeで新しいセッションを開始し、Session Targetで Copilot を選びます。カスタマイズは自動変換されない場合があるため、2月までに互換性を確認してください。"
+    },
+    {
+      "q": "管理者の例外設定を残せばLocalを使い続けられますか。",
+      "a": "いいえ。vscode.temporaryDefaultToLocalHarness はLocalハーネスと共に削除されるため、設定を残してもLocalは使えません。事前にCopilotハーネスで運用を検証してください。"
+    },
+    {
+      "q": "Copilot Freeでも使えますか。",
+      "a": "GitHub Copilot経由でモデルを使う場合は、Copilot Freeを含む既存プランのまま使えます。ただし個別の機能やFusionのティアは、プラン・設定・組織ポリシーに依存します。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "VS Code retires the Local harness in February 2027 - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-11-16-vs-code-retires-the-local-harness-in-february-2027/"
+    },
+    "documents": [
+      {
+        "title": "Move from the Local to the Copilot harness",
+        "url": "https://code.visualstudio.com/docs/agents/run/move-to-copilot"
+      }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-11-16-vs-code-retires-the-local-harness-in-february-2027/",
+    "https://code.visualstudio.com/docs/agents/run/move-to-copilot"
+  ]
+}
