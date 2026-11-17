@@ -1,0 +1,97 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "1811a0441af94992",
+  "title": {
+    "ja": "GitHub Copilot Evals がパブリックプレビューに",
+    "subtitleJa": "スキル・エージェント・MCP ツールの挙動を繰り返し検証する eval を、/eval コマンドで作成・実行できる",
+    "original": "GitHub Copilot Evals is now in public preview"
+  },
+  "date": "2026-11-17",
+  "topic": "GitHub Copilot",
+  "status": "preview",
+  "statusEvidence": "GitHub Copilot Evals is in public preview for Copilot Individual, Copilot Business, and Copilot Enterprise plans.",
+  "audience": {
+    "who": "Copilot のスキル、カスタムエージェント、MCP ツールを自分の環境向けに改善したい開発者",
+    "change": "eval（繰り返し実行できる AI 挙動のテスト）を作成・実行し、カスタマイズ変更の前後を比較できる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "VS Code・Copilot CLI・Copilot アプリのいずれかに Evals を導入して試す"
+  },
+  "panels": [
+    {
+      "id": "availability",
+      "heading": "使える場所とプラン",
+      "priority": "core",
+      "items": [
+        "Copilot Individual、Business、Enterprise の各プランでパブリックプレビュー",
+        "VS Code: Visual Studio Marketplace の GitHub Copilot Evals 拡張機能を導入",
+        "Copilot CLI: GitHub Copilot Evals プラグインを導入",
+        "Copilot アプリ: Customize で github/evals マーケットプレースを追加してプラグインを導入"
+      ]
+    },
+    {
+      "id": "usage",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "自然言語または /eval コマンドで、スキル・カスタムエージェント・MCP ツールの eval を作成",
+        "実行は毎回承認してから開始し、成功・失敗したチェックを確認",
+        "失敗の理由を調べ、変更前後の実行を比較して改善の効果を確認"
+      ]
+    },
+    {
+      "id": "notes",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "eval は現実的なタスクと期待する結果を定義し、結果と過程の両方を検査する",
+        "評価エンジンはローカルの拡張可能な eval ツール Vally"
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "eval",
+      "type": "term",
+      "oneLine": "AI の挙動を確認する繰り返し可能なテスト。結果と、そこに至る過程を検査する"
+    },
+    {
+      "term": "Vally",
+      "type": "product",
+      "oneLine": "GitHub Copilot Evals が評価エンジンに使う、拡張可能なローカル eval ツール"
+    }
+  ],
+  "qa": [
+    {
+      "q": "どのプランで使えますか？",
+      "a": "Copilot Individual、Copilot Business、Copilot Enterprise の各プランで、パブリックプレビューとして利用できます。"
+    },
+    {
+      "q": "どこにインストールしますか？",
+      "a": "VS Code では Visual Studio Marketplace の拡張機能、Copilot CLI ではプラグイン、Copilot アプリでは Customize から github/evals マーケットプレースを追加してプラグインを導入します。"
+    },
+    {
+      "q": "何を評価できますか？",
+      "a": "プロジェクト内のスキル、カスタムエージェント、MCP ツールです。eval を作成して実行し、どのチェックが成功・失敗したかを確認できます。"
+    },
+    {
+      "q": "勝手に実行されますか？",
+      "a": "いいえ。各実行は開始前に利用者が承認します。"
+    },
+    {
+      "q": "eval は何のために繰り返しますか？",
+      "a": "AI の出力は実行ごとに変わるため、スキルやエージェント、MCP の変更後に同じ eval を再実行して、挙動の退行を確認するためです。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "GitHub Copilot Evals is now in public preview - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-11-17-github-copilot-evals-is-now-in-public-preview/"
+    }
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-11-17-github-copilot-evals-is-now-in-public-preview/"
+  ]
+}
