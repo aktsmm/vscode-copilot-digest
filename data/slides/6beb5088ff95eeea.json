@@ -1,0 +1,105 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "6beb5088ff95eeea",
+  "title": {
+    "ja": "Copilot コード レビューに Adaptive、複数リポジトリの文脈、シークレット検出",
+    "subtitleJa": "PR ごとに Lite / Balanced / Max を自動選択し、露出したシークレットもレビューで指摘",
+    "original": "Copilot code review: Adaptive effort, secret detection, and more"
+  },
+  "date": "2026-11-17",
+  "topic": "GitHub Copilot",
+  "status": "preview",
+  "statusEvidence": "Adaptive is now in public preview.",
+  "audience": {
+    "who": "Copilot コード レビューを使う開発者と、リポジトリ・組織・Enterprise の管理者",
+    "change": "PR の複雑さとリスクに応じて、レビューの工数レベルを Copilot が自動で選ぶ",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "試す場合は、既定のレビュー工数を Adaptive にするか、PR の Reviewers バーで選ぶ"
+  },
+  "panels": [
+    {
+      "id": "plans",
+      "heading": "使える場所とプラン",
+      "priority": "core",
+      "items": [
+        "Adaptive、複数リポジトリの文脈、シークレット検出は Copilot Pro、Pro+、Max、Business、Enterprise で利用できる",
+        "3 機能とも public preview で、変更される場合がある",
+        "Azure Repos 向けの Copilot コード レビューは、preview から GA になった"
+      ]
+    },
+    {
+      "id": "usage",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "Adaptive は PR の複雑さとリスクを見て Lite、Balanced、Max のいずれかで実施し、選んだレベルが各レビューに表示される",
+        "Reviewers バーで PR 単位に選ぶか、個人・リポジトリ・組織・Enterprise の設定で既定にする。Balanced が引き続き既定値",
+        "シークレット検出は、リポジトリまたは組織の設定で Copilot、Code review の順に選んで有効にする"
+      ]
+    },
+    {
+      "id": "limits",
+      "heading": "前提と制限",
+      "priority": "core",
+      "items": [
+        "Adaptive は、Enterprise・組織・リポジトリで設定した最大レビュー工数レベルを超えて選ばない",
+        "複数リポジトリの文脈は、公開リポジトリが対象の public preview"
+      ]
+    },
+    {
+      "id": "more",
+      "heading": "ほかの変更",
+      "priority": "detail",
+      "items": [
+        "複数リポジトリの文脈で、関連する公開リポジトリのコードやドキュメント、カスタム指示、スキルを参照できる",
+        "シークレットは、既知の形式（500 種類超）と、形式が定まらないものを AI/ML で検出する",
+        "リポジトリの Insights タブの Repository insights で、レビュー指摘の対応状況を確認できる"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "Adaptive", "type": "feature", "oneLine": "PR の複雑さとリスクに応じて、Lite、Balanced、Max のいずれかを選ぶレビュー工数の設定。" },
+    { "term": "複数リポジトリの文脈", "type": "feature", "oneLine": "レビュー中に関連する公開リポジトリを読み、依存するコードや文書を探す機能。" }
+  ],
+  "qa": [
+    {
+      "q": "Adaptive は誰が使えますか？",
+      "a": "Copilot Pro、Pro+、Max、Business、Enterprise の各プランで、public preview として使えます。Adaptive、複数リポジトリの文脈、シークレット検出が同じ対象です。"
+    },
+    {
+      "q": "Adaptive はどう選びますか？",
+      "a": "PR の Reviewers バーから単一の PR に選べるほか、個人・リポジトリ・組織・Enterprise の設定で既定のレビュー工数にできます。既定値は引き続き Balanced です。"
+    },
+    {
+      "q": "Adaptive が Max を選ぶと、上限設定は無視されますか？",
+      "a": "無視されません。Enterprise・組織・リポジトリに設定した最大レビュー工数レベルを超えるレベルは選ばれません。最大値が選択肢を決めます。"
+    },
+    {
+      "q": "シークレット検出はどう有効にしますか？",
+      "a": "リポジトリまたは組織の設定で Copilot を選び、Code review を開いて有効にします。既知の形式は正規表現などで、形式が不明なものは LLM と専用モデルで検出します。"
+    },
+    {
+      "q": "複数リポジトリの文脈は何を参照しますか？",
+      "a": "レビュー中に関連する公開リポジトリを読み、変更に依存するコードのほか、ほかのリポジトリにあるドキュメント、カスタム指示、スキルなどを探します。公開リポジトリ向けの public preview です。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Copilot code review: Adaptive effort, secret detection, and more - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-11-17-copilot-code-review-adaptive-effort-secret-detection-and-more/"
+    },
+    "documents": [
+      {
+        "title": "GitHub Copilotによるコード レビューの構成",
+        "url": "https://docs.github.com/ja/copilot/how-tos/copilot-on-github/set-up-copilot/configure-code-review"
+      }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-11-17-copilot-code-review-adaptive-effort-secret-detection-and-more/",
+    "https://docs.github.com/ja/copilot/how-tos/copilot-on-github/set-up-copilot/configure-code-review"
+  ]
+}
