@@ -1,0 +1,90 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "5089ce0bb867b374",
+  "title": {
+    "ja": "VS Code 1.147 のモデルルーター（実験的機能）",
+    "subtitleJa": "用途ごとのモデルを YAML で定義し、判定モデルが依頼に合う経路を選んでチャットを実行",
+    "original": "Decision model-based model routers (Experimental)"
+  },
+  "date": "2026-11-18",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "VS Code の Copilot ハーネスのセッションで、作業の種類ごとに使うモデルを切り替えたい開発者",
+    "change": "ルーターに作業別のモデルを記述すると、判定モデルが依頼を経路に振り分け、その経路のモデルでチャットが動く",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "試す場合は設定で有効化し、/model-router でルーターを作成してモデルピッカーから選ぶ"
+  },
+  "panels": [
+    {
+      "id": "usage",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "ユーザーの settings.json に `\"chat.copilot.modelRouter.enabled\": true` を追加",
+        "Copilot ハーネスのチャットで `/model-router` と入力し、振り分け方を説明してルーターを作成",
+        "作成したルーターをモデルピッカーで選択する"
+      ]
+    },
+    {
+      "id": "mechanism",
+      "heading": "仕組み",
+      "priority": "core",
+      "items": [
+        "判定モデル gpt-6-luna-decisions が、依頼をルーターの経路のひとつに対応づける",
+        "ルーターは `~/.agents/model-routers/` の YAML ファイルで、Copilot ハーネスのモデルピッカーに表示される",
+        "経路は `model` と `when` で記述（例: 複数ステップのコード変更は opus、簡単な質問は gpt-6-luna）"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "モデルルーターは初期段階の実験的機能で、フィードバックを募集している"
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "モデルルーター",
+      "type": "feature",
+      "oneLine": "どの作業にどのモデルを使うかを記述し、依頼ごとにモデルを振り分ける仕組み"
+    },
+    {
+      "term": "判定モデル",
+      "type": "term",
+      "oneLine": "依頼をルーターの経路に対応づけるモデル。gpt-6-luna-decisions"
+    }
+  ],
+  "qa": [
+    {
+      "q": "モデルルーターはどうやって有効にしますか？",
+      "a": "ユーザーの settings.json に \"chat.copilot.modelRouter.enabled\": true を追加します。"
+    },
+    {
+      "q": "ルーターはどう作りますか？",
+      "a": "Copilot ハーネスのチャットで /model-router と入力し、希望の振り分け方を説明します。作成後はモデルピッカーで選択します。"
+    },
+    {
+      "q": "ルーターの定義はどこに置かれますか？",
+      "a": "~/.agents/model-routers/ にある YAML ファイルです。Copilot ハーネスのセッションのモデルピッカーに表示されます。"
+    },
+    {
+      "q": "正式機能ですか？",
+      "a": "いいえ。実験的機能で初期段階にあり、うまくいく点・いかない点は issue で報告するよう案内されています。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.147",
+      "url": "https://code.visualstudio.com/updates/v1_147#_decision-model-based-model-routers-experimental"
+    }
+  },
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_147#_decision-model-based-model-routers-experimental"
+  ]
+}
