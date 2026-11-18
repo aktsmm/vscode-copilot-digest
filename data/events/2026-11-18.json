@@ -1,12 +1,13 @@
 {
   "date": "2026-11-18",
-  "generatedAt": "2026-11-18T17:31:33.498Z",
+  "generatedAt": "2026-11-18T21:30:44.408Z",
   "latestRun": {
-    "generatedAt": "2026-11-18T17:31:33.498Z",
-    "newEventsCount": 2,
+    "generatedAt": "2026-11-18T21:30:44.408Z",
+    "newEventsCount": 3,
     "newEventIds": [
-      "vscode-feed:https://code.visualstudio.com/updates/v1_147",
-      "vscode-feed:https://code.visualstudio.com/blogs/2026/11/18/copilot-harness"
+      "github-changelog:https://github.blog/changelog/2026-11-18-customize-github-copilot-for-your-team",
+      "github-changelog-copilot:https://github.blog/changelog/2026-11-18-customize-github-copilot-for-your-team",
+      "copilot-whats-new:96f16aaf105bddafad9b969c81a16d80635d8d6248c82341901aed9545588a60"
     ],
     "errorCount": 0,
     "skippedLowInformationEvents": []
@@ -29,6 +30,44 @@
       "score": 5
     },
     {
+      "eventId": "copilot-whats-new:96f16aaf105bddafad9b969c81a16d80635d8d6248c82341901aed9545588a60",
+      "sourceId": "copilot-whats-new",
+      "sourceName": "GitHub Copilot What's New",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-11-18T21:30:38.058Z",
+      "publishedAt": "2026-11-18T21:30:38.057Z",
+      "title": "GitHub Copilot What's New changed",
+      "url": "https://github.com/features/copilot/whats-new",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [
+          "Nov.18 Release"
+        ],
+        "additions": [
+          "H3: Nov.18 Release"
+        ]
+      },
+      "headings": [
+        "Changelog",
+        "Filters (0 selected)",
+        "November\n Nov\n 2026",
+        "Nov.18 Release",
+        "Nov.17 Release",
+        "Nov.17 Improvement",
+        "Nov.17 Release",
+        "Nov.17 Release",
+        "Nov.17 Release",
+        "Nov.17 Release",
+        "Nov.17 Release",
+        "Nov.17 Release"
+      ],
+      "score": 3
+    },
+    {
       "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_147",
       "sourceId": "vscode-feed",
       "sourceName": "VS Code Feed",
@@ -43,6 +82,40 @@
       ],
       "isFutureDated": false,
       "score": 4
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-11-18-customize-github-copilot-for-your-team",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-11-18T21:30:34.773Z",
+      "publishedAt": "2026-11-18T16:00:13.000Z",
+      "title": "Customize GitHub Copilot for your team",
+      "url": "https://github.blog/changelog/2026-11-18-customize-github-copilot-for-your-team",
+      "summary": "You can now share the GitHub Copilot plugins your team relies on without asking every member to repeat the same setup. Team customizations are generally available for organization teams. Team…\nThe post Customize GitHub Copilot for your team appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 5
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-11-18-customize-github-copilot-for-your-team",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-11-18T21:30:35.622Z",
+      "publishedAt": "2026-11-18T16:00:13.000Z",
+      "title": "Customize GitHub Copilot for your team",
+      "url": "https://github.blog/changelog/2026-11-18-customize-github-copilot-for-your-team",
+      "summary": "You can now share the GitHub Copilot plugins your team relies on without asking every member to repeat the same setup. Team customizations are generally available for organization teams. Team…\nThe post Customize GitHub Copilot for your team appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 5
     },
     {
       "eventId": "vscode-updates:36c24dc66607880de6d9a51cb4ed2e3ff947aee5c420120ceaf49749e25d755c",

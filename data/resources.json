@@ -23717,7 +23717,7 @@
     },
     "28491ec9789814871a60de846fe4fab4ee5778451262562021d75acc758893bd": {
       "version": 6,
-      "checkedAt": "2026-10-19T19:25:26.845Z",
+      "checkedAt": "2026-11-18T21:30:45.157Z",
       "inputUrl": "https://github.blog/ai-and-ml/github-copilot/how-to-continue-a-github-copilot-app-session-in-vs-code/",
       "inputTitle": "How to continue a GitHub Copilot app session in VS Code",
       "status": "unconfirmed",
@@ -23725,7 +23725,7 @@
         "url": "https://github.blog/ai-and-ml/github-copilot/how-to-continue-a-github-copilot-app-session-in-vs-code/",
         "status": "verified",
         "reason": "Fetched original article",
-        "checkedAt": "2026-10-19T19:25:26.925Z",
+        "checkedAt": "2026-11-18T21:30:45.247Z",
         "contentHash": "3089f086e24665d498c7d0b3ea2d722e7b08f73112794a33bd2ec0d22d7661b5"
       },
       "documents": [],
@@ -23737,7 +23737,7 @@
     },
     "6f54e2ab5e7f4a862b7fb68f8ad857612a1ae74230a5a27edec053358c166666": {
       "version": 6,
-      "checkedAt": "2026-10-19T19:25:27.049Z",
+      "checkedAt": "2026-11-18T21:30:45.304Z",
       "inputUrl": "https://code.visualstudio.com/docs/agents/overview",
       "inputTitle": "VS Code Docs / Agents (new pages) changed",
       "status": "unconfirmed",
@@ -23745,8 +23745,8 @@
         "url": "https://code.visualstudio.com/docs/agents/overview",
         "status": "unconfirmed",
         "reason": "Historical changed feature not identifiable in current page",
-        "checkedAt": "2026-10-19T19:25:27.094Z",
-        "contentHash": "02506415419fc4c968506fbc69db4bcd9fa2f7def1ad87b835694d3c97e2a653"
+        "checkedAt": "2026-11-16T13:51:11.529Z",
+        "contentHash": "702aa62f4e1d6074c4f370f17ae37466bb603de02b077e9c8c7d8f760ff27041"
       },
       "documents": [],
       "errors": [],
@@ -29991,6 +29991,74 @@
           "localization": "not_applicable",
           "fragmentVerification": "verified",
           "kind": "release_notes",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "6306f448bda904d427f7df5c35bfccd90502a0dbf04c446ff98774d9ee995b30": {
+      "version": 6,
+      "checkedAt": "2026-11-18T21:30:45.315Z",
+      "inputUrl": "https://github.com/features/copilot/whats-new",
+      "inputTitle": "GitHub Copilot What's New changed",
+      "status": "verified",
+      "source": {
+        "url": "https://github.blog/changelog/2026-11-18-customize-github-copilot-for-your-team/",
+        "status": "verified",
+        "reason": "Snapshot observation, not a standalone feature: Nov.18 Release; explicit article: Customize GitHub Copilot for your team",
+        "checkedAt": "2026-11-18T21:30:46.212Z",
+        "contentHash": "cfe50695341d997c0c07d0a22d65d62608a0fafcaafce2ea4dece28a423b327f"
+      },
+      "documents": [
+        {
+          "url": "https://docs.github.com/ja/copilot/concepts/customizations/plugins",
+          "title": "GitHub Copilot 用のプラグイン",
+          "language": "ja",
+          "checkedAt": "2026-11-14T01:31:41.559Z",
+          "contentHash": "cc0719d5c550cebb9c8a2d8516d31623b43d743f1fc77878267821ba68956cc2",
+          "discoveryUrl": "https://github.blog/changelog/2026-11-18-customize-github-copilot-for-your-team/",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "6cd71dab980af31d4bd452c3320de63f5e10c0c18fec1560a25536e5f24be320": {
+      "version": 6,
+      "checkedAt": "2026-11-18T21:30:46.501Z",
+      "inputUrl": "https://github.blog/changelog/2026-11-18-customize-github-copilot-for-your-team",
+      "inputTitle": "Customize GitHub Copilot for your team",
+      "status": "verified",
+      "source": {
+        "url": "https://github.blog/changelog/2026-11-18-customize-github-copilot-for-your-team/",
+        "status": "verified",
+        "reason": "Fetched original article",
+        "checkedAt": "2026-11-18T21:30:46.212Z",
+        "contentHash": "cfe50695341d997c0c07d0a22d65d62608a0fafcaafce2ea4dece28a423b327f"
+      },
+      "documents": [
+        {
+          "url": "https://docs.github.com/ja/copilot/concepts/customizations/plugins",
+          "title": "GitHub Copilot 用のプラグイン",
+          "language": "ja",
+          "checkedAt": "2026-11-14T01:31:41.559Z",
+          "contentHash": "cc0719d5c550cebb9c8a2d8516d31623b43d743f1fc77878267821ba68956cc2",
+          "discoveryUrl": "https://github.blog/changelog/2026-11-18-customize-github-copilot-for-your-team/",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "none",
+          "kind": "documentation",
           "scope": "Current documentation; historical availability remains defined by the original announcement"
         }
       ],
