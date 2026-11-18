@@ -1,24 +1,12 @@
 {
   "date": "2026-11-18",
-  "generatedAt": "2026-11-18T14:21:28.880Z",
+  "generatedAt": "2026-11-18T17:31:33.498Z",
   "latestRun": {
-    "generatedAt": "2026-11-18T14:21:28.880Z",
-    "newEventsCount": 14,
+    "generatedAt": "2026-11-18T17:31:33.498Z",
+    "newEventsCount": 2,
     "newEventIds": [
-      "vscode-feed:https://code.visualstudio.com/updates/v1_148",
-      "vscode-updates:36c24dc66607880de6d9a51cb4ed2e3ff947aee5c420120ceaf49749e25d755c",
-      "vscode-release-notes-1-109:6859b982d90173c235e1c49fbc9b14ad84bbff553e7d63c1e3f3e482dee9be72",
-      "vscode-docs-agents-automations:b50b9f0177cabe7e516225ee29d2eb2a8de34950865624f8c16de6fd01fe3097",
-      "vscode-docs-agents-window:4d05c21b6e5b5829018ade580f5f26ebc54783e45bd95400e6fe5737c574f185",
-      "vscode-docs-agents-remote-sessions:00e4e165940d68d10994be1542c805599cd128b9abfe4d0a7f4ec191b5cb7360",
-      "vscode-release-notes-1-147:section:59cde1240946793c59ed7232108d33da88a8f6ca1e12eee45050f12d88493978",
-      "vscode-release-notes-1-147:section:a47b885544fd513a4a20c2cff2a6cd19c9d38d3917a45253cf99ff34c363f107",
-      "vscode-release-notes-1-147:section:529c30d13c2239c74d36bc10103c5f6abdae3c8282e48b0162878177fd2076ca",
-      "vscode-release-notes-1-147:section:a32c96fc8ce104b29652b4f76c3e56076c3c2cf10b22ba45507433cafa002e0d",
-      "vscode-release-notes-1-147:section:f3ce3a192571fc46dde7326533792e9da77510b006769f3357ac016631f4cfbc",
-      "vscode-release-notes-1-147:section:c4009bab8ca8017e950ee88514d8a65f5edbee52ab4547f49c680bedbd29ba19",
-      "vscode-release-notes-1-147:section:37d18f995fce3bde59fee485543b18ad8ce8007d257afe7c10a8bfe432ff7e03",
-      "vscode-release-notes-1-147:section:bd1c62fa54390d5bb57eb4e8cfcc2006dad1a3c6d9041878480778d79c25a79e"
+      "vscode-feed:https://code.visualstudio.com/updates/v1_147",
+      "vscode-feed:https://code.visualstudio.com/blogs/2026/11/18/copilot-harness"
     ],
     "errorCount": 0,
     "skippedLowInformationEvents": []
@@ -39,6 +27,22 @@
       ],
       "isFutureDated": true,
       "score": 5
+    },
+    {
+      "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_147",
+      "sourceId": "vscode-feed",
+      "sourceName": "VS Code Feed",
+      "kind": "feed_entry",
+      "detectedAt": "2026-11-18T17:31:26.163Z",
+      "publishedAt": "2026-11-18T17:00:00.000Z",
+      "title": "Visual Studio Code 1.147",
+      "url": "https://code.visualstudio.com/updates/v1_147",
+      "summary": "Learn what's new in Visual Studio Code 1.147\n Read the full article",
+      "categories": [
+        "release"
+      ],
+      "isFutureDated": false,
+      "score": 4
     },
     {
       "eventId": "vscode-updates:36c24dc66607880de6d9a51cb4ed2e3ff947aee5c420120ceaf49749e25d755c",
@@ -259,6 +263,22 @@
       "sectionHeading": "Agent experience",
       "sectionTitle": "HTML previews and native visuals in agent responses",
       "score": 4
+    },
+    {
+      "eventId": "vscode-feed:https://code.visualstudio.com/blogs/2026/11/18/copilot-harness",
+      "sourceId": "vscode-feed",
+      "sourceName": "VS Code Feed",
+      "kind": "feed_entry",
+      "detectedAt": "2026-11-18T17:31:26.163Z",
+      "publishedAt": "2026-11-18T00:00:00.000Z",
+      "title": "The Copilot harness: Building on a shared foundation",
+      "url": "https://code.visualstudio.com/blogs/2026/11/18/copilot-harness",
+      "summary": "Learn why VS Code is moving from the Local harness to the Copilot harness, guided by data and user feedback.\n Read the full article",
+      "categories": [
+        "blog"
+      ],
+      "isFutureDated": false,
+      "score": 1
     },
     {
       "eventId": "vscode-release-notes-1-109:6859b982d90173c235e1c49fbc9b14ad84bbff553e7d63c1e3f3e482dee9be72",

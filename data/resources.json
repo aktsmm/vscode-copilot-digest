@@ -29879,6 +29879,126 @@
         "Original article explicit links",
         "Feature-matched official documentation indexes"
       ]
+    },
+    "3a89af26df9852f9eebf769930ff81f77d0b62d786b83695144241e62922a9ca": {
+      "version": 6,
+      "checkedAt": "2026-11-18T17:31:33.870Z",
+      "inputUrl": "https://code.visualstudio.com/updates/v1_147",
+      "inputTitle": "Visual Studio Code 1.147",
+      "status": "verified",
+      "source": {
+        "url": "https://code.visualstudio.com/updates/v1_147",
+        "status": "verified",
+        "reason": "Fetched original article",
+        "checkedAt": "2026-11-18T17:31:35.613Z",
+        "contentHash": "c4d6c07a022577697ebf8eb9a1dec418480d3e37b11f6ef5c39b5624e7e394ec"
+      },
+      "documents": [
+        {
+          "url": "https://code.visualstudio.com/docs/agents/run/agents-window#_send-a-request-later",
+          "title": "Use the Agents window",
+          "language": "en",
+          "checkedAt": "2026-11-18T14:21:32.154Z",
+          "contentHash": "25e02cad1312bfd13fed9ab47d8724e72a6effab12ac37e501f798e1123df07f",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_147",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "verified",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://code.visualstudio.com/docs/agents/run/remote-agent-sessions",
+          "title": "Run and manage remote agent sessions",
+          "language": "en",
+          "checkedAt": "2026-11-18T14:21:32.342Z",
+          "contentHash": "3c5eff0188a8d11f182f7f87877e61fbdc6799d29af6b246eedeac0c9ed035d7",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_147",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://code.visualstudio.com/docs/agents/run/agent-harnesses#_copilot",
+          "title": "Choose an agent harness",
+          "language": "en",
+          "checkedAt": "2026-11-13T13:16:32.302Z",
+          "contentHash": "3a43c35b4c4e1ad55a213b3450f68820eda48e18eec6baf8cd399262913422af",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_147",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "verified",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "0df6ebe3d93d8e7d1018bc8d0a4a50ffefe4e85e3867ab81d624cc03cb71e911": {
+      "version": 6,
+      "checkedAt": "2026-11-18T17:31:35.705Z",
+      "inputUrl": "https://code.visualstudio.com/blogs/2026/11/18/copilot-harness",
+      "inputTitle": "The Copilot harness: Building on a shared foundation",
+      "status": "verified",
+      "source": {
+        "url": "https://code.visualstudio.com/blogs/2026/11/18/copilot-harness",
+        "status": "verified",
+        "reason": "Fetched original article",
+        "checkedAt": "2026-11-18T17:31:35.956Z",
+        "contentHash": "456d3150c7421f70e3043802bf9a5e603cefe650384ff82fb8d65980c9bd2914"
+      },
+      "documents": [
+        {
+          "url": "https://code.visualstudio.com/docs/agents/concepts/agent-harnesses",
+          "title": "Understand agent harnesses",
+          "language": "en",
+          "checkedAt": "2026-11-18T17:31:36.425Z",
+          "contentHash": "dbaec9221594fd27e3ccd9205ef493a0836e1ca5a30836252973620fcdb11ed8",
+          "discoveryUrl": "https://code.visualstudio.com/blogs/2026/11/18/copilot-harness",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://code.visualstudio.com/docs/agents/run/move-to-copilot",
+          "title": "Move from the Local to the Copilot harness",
+          "language": "en",
+          "checkedAt": "2026-11-16T22:58:45.466Z",
+          "contentHash": "0a3e027a2fee442166e7a67ce9e0ed19feb9dbaa4920c77c717598a056a98a05",
+          "discoveryUrl": "https://code.visualstudio.com/blogs/2026/11/18/copilot-harness",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://code.visualstudio.com/updates/v1_146#_copilot-harness-and-deprecation-of-the-local-harness",
+          "title": "Visual Studio Code 1.146",
+          "language": "en",
+          "checkedAt": "2026-11-11T20:17:42.845Z",
+          "contentHash": "0cdfcdea62b0eda4d07c29f53fc5bef48196ed0d91d7dbe7af7c99277f3e8785",
+          "discoveryUrl": "https://code.visualstudio.com/blogs/2026/11/18/copilot-harness",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "verified",
+          "kind": "release_notes",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
     }
   }
 }
