@@ -1,0 +1,84 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "fbb5fe93a400e53d",
+  "title": {
+    "ja": "VS Code 1.147: 未送信リクエストを下書きとして保存・再開",
+    "subtitleJa": "新規セッションの未送信リクエストを複数、設定ごと下書きに保存できる（試験的機能）",
+    "original": "Visual Studio Code 1.147: Save and resume drafts (Experimental)"
+  },
+  "date": "2026-11-18",
+  "topic": "VS Code",
+  "status": "unknown",
+  "audience": {
+    "who": "VS Code の Agents ウィンドウで、送信前のリクエストを複数並行して準備したい開発者",
+    "change": "従来は 1 件だけだった未送信リクエストを、複数の下書きとして保持し、後から開き直せる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "試す場合は設定 sessions.drafts.enabled を有効にする"
+  },
+  "beforeAfter": {
+    "before": "新規セッションの入力欄は未送信リクエストを 1 件しか保持できなかった",
+    "after": "ワークスペース・エージェント・設定が別々の未送信リクエストを複数保持できる"
+  },
+  "panels": [
+    {
+      "id": "usage",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "設定 `sessions.drafts.enabled` を有効にする",
+        "内容のある新規セッションから離れると、セッション一覧の Drafts に保存。送信もセッション開始もされない",
+        "通知の「Open Draft」で、すぐ元の下書きに戻れる"
+      ]
+    },
+    {
+      "id": "saved",
+      "heading": "下書きに保存される内容",
+      "priority": "core",
+      "items": [
+        "テキスト、添付、インライン参照、ワークスペース、エージェント、モデル、その他の設定",
+        "再読み込みや再起動後も残る",
+        "Drafts 一覧からプレビュー・オープン・削除ができる"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "試験的（Experimental）機能",
+        "下書きはリクエストが受理されて初めて削除され、送信失敗でも失われない",
+        "設定を無効にすると Drafts は非表示になるが、保存済みの下書きは残る"
+      ]
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.147",
+      "url": "https://code.visualstudio.com/updates/v1_147#_save-and-resume-drafts-experimental"
+    }
+  },
+  "qa": [
+    {
+      "q": "下書き機能はどう有効にしますか？",
+      "a": "設定 sessions.drafts.enabled を有効にします。試験的（Experimental）機能です。"
+    },
+    {
+      "q": "下書きにはどこまで保存されますか？",
+      "a": "テキスト、添付、インライン参照、ワークスペース、エージェント、モデル、その他の設定が保存され、再読み込みや再起動後も残ります。"
+    },
+    {
+      "q": "下書きを送信して失敗したらどうなりますか？",
+      "a": "下書きはリクエストが受理された後に初めて削除されるため、送信に失敗しても内容は失われません。"
+    },
+    {
+      "q": "設定を無効にすると下書きは消えますか？",
+      "a": "消えません。Drafts セクションが非表示になるだけで、保存済みの下書きは保持されます。"
+    }
+  ],
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_147#_save-and-resume-drafts-experimental"
+  ]
+}
