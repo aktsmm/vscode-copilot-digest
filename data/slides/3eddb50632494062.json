@@ -1,0 +1,74 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "3eddb50632494062",
+  "title": {
+    "ja": "VS Code 1.147: Agents ウィンドウの Inbox モード改善（試験的）",
+    "subtitleJa": "対応済みセッションを確認済みにして Inbox から外し、ワークスペース単位で絞り込める",
+    "original": "Inbox mode improvements (Experimental)"
+  },
+  "date": "2026-11-18",
+  "topic": "VS Code",
+  "status": "update",
+  "audience": {
+    "who": "Agents ウィンドウで多数のセッションを並行して扱う VS Code ユーザー",
+    "change": "セッションを確認済みにして Inbox から外せ、ワークスペースや環境でセッション一覧を絞り込める",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "Inbox モードを使うなら、セッション一覧の Grouping > Inbox Mode で切り替える"
+  },
+  "panels": [
+    {
+      "id": "how-to-use",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "セッション一覧の Grouping > Inbox Mode でいつでも切り替えられる",
+        "sessions.list.inboxEnabled 設定で、Inbox モードを既定のグループ化にできる",
+        "注意が必要でなく未完了のセッションは、目のアイコンで確認済みにできる。複数選択して一括も可能"
+      ]
+    },
+    {
+      "id": "behavior",
+      "heading": "動作と制限",
+      "priority": "core",
+      "items": [
+        "確認済みにすると、Inbox から Acknowledged セクションへ移る",
+        "既読・完了・アーカイブ・クローズにはならず、新しい動きがあると Inbox に戻る",
+        "一覧上部のワークスペースと環境のピッカーで表示を絞り込める。フィルターはピン留めやアーカイブ済みを含む全セクションに適用され、再読み込み後も保持される"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "Inbox モード", "type": "feature", "oneLine": "Agents ウィンドウのセッションを、注意が必要かどうかでグループ化する表示。" },
+    { "term": "Acknowledged", "type": "label", "oneLine": "確認済みにしたセッションが移るセクション。" }
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.147",
+      "url": "https://code.visualstudio.com/updates/v1_147#_inbox-mode-improvements-experimental"
+    }
+  },
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_147"
+  ],
+  "qa": [
+    {
+      "q": "Inbox モードはどうやって有効にしますか？",
+      "a": "セッション一覧の Grouping > Inbox Mode でいつでも切り替えられます。常に既定にしたい場合は sessions.list.inboxEnabled 設定を使います。"
+    },
+    {
+      "q": "セッションを確認済みにすると、完了扱いになりますか？",
+      "a": "なりません。既読・完了・アーカイブ・クローズのいずれにもならず、Inbox から Acknowledged セクションへ移るだけです。新しい動きがあると Inbox に戻ります。"
+    },
+    {
+      "q": "複数のセッションをまとめて確認済みにできますか？",
+      "a": "できます。複数のセッションを選択して、まとめて確認済みにできます。"
+    },
+    {
+      "q": "ワークスペースの絞り込みはどこまで効きますか？",
+      "a": "一覧上部のワークスペースと環境のピッカーで絞り込めます。ピン留めやアーカイブ済みを含む全セクションに適用され、再読み込み後も保持されます。"
+    }
+  ]
+}
