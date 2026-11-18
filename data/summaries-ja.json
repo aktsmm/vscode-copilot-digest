@@ -4451,5 +4451,16 @@
       "送信は受理された後にだけドラフトが削除される",
       "設定をオフにしても保存済みドラフトは残る"
     ]
+  },
+  "c45f234325084410": {
+    "title": "VS Codeの新規エージェントセッションはCopilot harnessが既定に",
+    "summary": "Copilot SDK上に構築されたCopilot harnessが、VS Codeの新規エージェントセッションの既定になった。従来のLocal harnessは非推奨となり、3か月の移行期間を経て2027年2月に削除される(組織が利用を制限する場合を除く)。",
+    "why": "Local harnessを使うチームは、2027年2月の削除までにCopilot harnessへ移行する準備が必要。",
+    "points": [
+      "Local harnessは2027年2月に削除予定",
+      "Business/Enterpriseの比較でトークン使用量が14.2%減",
+      "DeepSWE 112タスクでエラー終了が5.3%から1.9%に低下",
+      "Copilot Fusionと企業向け権限・サンドボックスポリシーに対応"
+    ]
   }
 }
