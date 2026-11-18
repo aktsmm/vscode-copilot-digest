@@ -1,0 +1,98 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "6e93a4cc09914f56",
+  "title": {
+    "ja": "チーム向け Copilot カスタマイズ、組織のチームでプラグインを既定に設定可能",
+    "subtitleJa": "チーム管理者が承認済みプラグインをチームの既定にでき、メンバーごとの設定が不要になる",
+    "original": "Customize GitHub Copilot for your team"
+  },
+  "date": "2026-11-18",
+  "topic": "GitHub Copilot",
+  "status": "ga",
+  "statusEvidence": "Team customizations are generally available for organization teams.",
+  "audience": {
+    "who": "Copilot Business / Enterprise の組織で、チーム メンテナーや組織オーナーを務める人とチームのメンバー",
+    "change": "チームの [Customize Copilot] タブで選んだプラグインが、直接のメンバーに既定で有効になる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "チームで共通利用するプラグインがあれば、チームの [Customize Copilot] タブで既定に追加する"
+  },
+  "panels": [
+    {
+      "id": "where-and-plan",
+      "heading": "使える場所とプラン",
+      "priority": "core",
+      "items": [
+        "対象は Copilot Business と Copilot Enterprise の組織のチーム",
+        "選んだプラグインは、チームの直接のメンバーに VS Code、GitHub Copilot app、Copilot CLI で既定で有効になる",
+        "子チームのメンバーには継承されない"
+      ]
+    },
+    {
+      "id": "how-to",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "チーム メンテナーか組織オーナーが、github.com で組織のチームを開き [Customize Copilot] タブを選ぶ",
+        "Copilot 組み込み、エンタープライズ、チームが追加したマーケットプレースからプラグインを探して追加する",
+        "プラグイン マーケットプレースを含む GitHub リポジトリを追加して、そのプラグインを探せるようにできる"
+      ]
+    },
+    {
+      "id": "limits",
+      "heading": "前提と制限",
+      "priority": "detail",
+      "items": [
+        "エンタープライズと組織のポリシーが優先され、許可マーケットプレースや必須・ブロックのプラグインの制御は上書きされない",
+        "チームの既定は任意で、ポリシーが許す範囲でメンバーは自分のクライアントでオフにできる"
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "プラグイン",
+      "type": "feature",
+      "oneLine": "関連するカスタマイズをパッケージ化し、対応する環境にまとめてインストールできるもの。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Customize GitHub Copilot for your team - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-11-18-customize-github-copilot-for-your-team/"
+    },
+    "documents": [
+      {
+        "title": "GitHub Copilot 用のプラグイン - GitHubドキュメント",
+        "url": "https://docs.github.com/ja/copilot/concepts/customizations/plugins"
+      }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-11-18-customize-github-copilot-for-your-team/",
+    "https://docs.github.com/ja/copilot/concepts/customizations/plugins"
+  ],
+  "qa": [
+    {
+      "q": "どのプランで使えますか?",
+      "a": "チームのカスタマイズは Copilot Business と Copilot Enterprise で利用できます。対象は組織のチームで、GA として提供されています。"
+    },
+    {
+      "q": "誰が設定できますか?",
+      "a": "チーム メンテナーと組織オーナーです。github.com で組織のチームを開き、[Customize Copilot] タブからプラグインを閲覧して追加します。"
+    },
+    {
+      "q": "どのクライアントでプラグインが有効になりますか?",
+      "a": "チームの直接のメンバーに対し、VS Code、GitHub Copilot app、Copilot CLI で既定で有効になります。子チームのメンバーには継承されません。"
+    },
+    {
+      "q": "メンバーはチームの既定を無効にできますか?",
+      "a": "チームの既定は任意で、ポリシーが許す範囲でメンバーは自分の Copilot クライアントでチームのプラグインをオフにできます。"
+    },
+    {
+      "q": "組織のポリシーとの関係は?",
+      "a": "エンタープライズと組織のポリシーが優先されます。許可するマーケットプレースや、必須・ブロックのプラグインの制御は、チームの既定では上書きされません。"
+    }
+  ]
+}
