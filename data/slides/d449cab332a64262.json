@@ -1,0 +1,91 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "d449cab332a64262",
+  "title": {
+    "ja": "VS Code 1.147: エージェントの応答に HTML プレビューとネイティブ ビジュアルを表示",
+    "subtitleJa": "Agents ウィンドウで、応答内に図表やモックアップをインライン表示できる",
+    "original": "HTML previews and native visuals in agent responses"
+  },
+  "date": "2026-11-18",
+  "topic": "VS Code",
+  "status": "update",
+  "audience": {
+    "who": "Agents ウィンドウでエージェントの応答を視覚的に確認したい開発者",
+    "change": "応答内に HTML プレビューやネイティブ ビジュアル（実験的）を表示できる。どちらも既定はオフ",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "使うなら設定を有効にして、/html-preview または /vscode-ui を依頼に添える"
+  },
+  "panels": [
+    {
+      "id": "html-preview",
+      "heading": "HTML プレビュー",
+      "priority": "core",
+      "items": [
+        "レポート、図、モックアップ向け。HTML、CSS、表、インライン SVG、展開セクションを表示",
+        "chat.htmlPreview.enabled を有効にし、組み込みの /html-preview スキルを依頼に使う",
+        "例: /html-preview compare the two caching approaches"
+      ]
+    },
+    {
+      "id": "native-visuals",
+      "heading": "ネイティブ ビジュアル（実験的）",
+      "priority": "core",
+      "items": [
+        "主要な数値や比較などのデータ向け。メトリクス、バッジ、表、棒グラフ、展開詳細を VS Code が描画",
+        "chat.nativeComponents.enabled を有効にし、組み込みの /vscode-ui スキルを使う（Agents ウィンドウのみ）",
+        "テーマに合わせて表示され、ハイ コントラスト テーマにも対応"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "HTML プレビューはスクリプト、フォーム、外部リンク、外部リソースに非対応",
+        "右クリックの Show Source でマークアップを確認。プレビューは Open Preview で拡大、Save HTML で書き出せる"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "HTML プレビュー", "type": "feature", "oneLine": "自由なレイアウトの HTML を、応答内にインライン表示する機能。" },
+    { "term": "ネイティブ ビジュアル", "type": "feature", "oneLine": "メトリクスや棒グラフなどを VS Code 自身が描画する表示。実験的。" }
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.147",
+      "url": "https://code.visualstudio.com/updates/v1_147#_html-previews-and-native-visuals-in-agent-responses"
+    },
+    "documents": [
+      { "title": "Use the Agents window", "url": "https://code.visualstudio.com/docs/agents/run/agents-window" }
+    ]
+  },
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_147",
+    "https://code.visualstudio.com/docs/agents/run/agents-window"
+  ],
+  "qa": [
+    {
+      "q": "どこで使えますか。",
+      "a": "どちらも Agents ウィンドウでエージェントが応答内に表示します。ネイティブ ビジュアルは Agents ウィンドウのみの機能です。"
+    },
+    {
+      "q": "既定で有効ですか。",
+      "a": "いいえ。それぞれ設定があり、既定はオフです。HTML プレビューは chat.htmlPreview.enabled、ネイティブ ビジュアルは chat.nativeComponents.enabled を有効にします。"
+    },
+    {
+      "q": "どう呼び出しますか。",
+      "a": "依頼に組み込みスキルを使います。HTML プレビューは /html-preview、ネイティブ ビジュアルは /vscode-ui です。"
+    },
+    {
+      "q": "HTML プレビューの制限は。",
+      "a": "HTML、CSS、表、インライン SVG、展開セクションを表示できます。スクリプト、フォーム、外部リンク、外部リソースには対応していません。"
+    },
+    {
+      "q": "表示した内容を保存できますか。",
+      "a": "HTML プレビューは Open Preview で拡大表示でき、Save HTML で自己完結した HTML ファイルとして書き出せます。Show Source でマークアップも確認できます。"
+    }
+  ]
+}
