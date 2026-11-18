@@ -1,0 +1,105 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "c45f234325084410",
+  "title": {
+    "ja": "VS Code のエージェント基盤が Copilot harness に統一、Local harness は廃止へ",
+    "subtitleJa": "新規セッションの既定が Copilot harness に。Local harness は 2027 年 2 月に削除",
+    "original": "The Copilot harness: Building on a shared foundation"
+  },
+  "date": "2026-11-18",
+  "topic": "VS Code",
+  "status": "retirement",
+  "statusEvidence": "The Local harness is now deprecated and remains available during a three-month transition period before removal in February 2027",
+  "audience": {
+    "who": "VS Code でエージェント セッションを使う開発者と、その組織の管理者",
+    "change": "新規エージェント セッションは Copilot harness が既定になり、Local harness は 2027 年 2 月に削除される",
+    "changeNature": "breaking"
+  },
+  "action": {
+    "required": "yes",
+    "summary": "2027 年 2 月までに、カスタマイズや連携を Copilot harness へ移行する",
+    "deadline": "2027-02"
+  },
+  "beforeAfter": {
+    "before": "VS Code 専用の Local harness でエージェントを実行していた",
+    "after": "Copilot SDK 上の共有ランタイムである Copilot harness が既定になった"
+  },
+  "timeline": [
+    { "when": "2026-11", "label": "Local harness が非推奨に" },
+    { "when": "2027-02", "label": "Local harness を削除" }
+  ],
+  "panels": [
+    {
+      "id": "scope",
+      "heading": "変わること",
+      "priority": "core",
+      "items": [
+        "Copilot harness は Copilot SDK 上で動き、Copilot CLI や GitHub Copilot アプリと同じランタイムを共有する",
+        "ランタイムは VS Code に含まれ、既存の Copilot プランで使える",
+        "ローカル プロジェクトでは、引き続き自分のマシン上の VS Code で動く"
+      ]
+    },
+    {
+      "id": "migration",
+      "heading": "移行の確認点",
+      "priority": "core",
+      "items": [
+        "カスタマイズは自動移行されない。定型のプロンプト ファイルはスキルへの変換が必要な場合がある",
+        "Chat: Open Customizations で Migrations を選ぶと、対応が必要な項目を確認できる",
+        "BYOK とローカル提供モデルは使える。SSH・WSL・Dev Containers のリモート BYOK は対応を進めている"
+      ]
+    },
+    {
+      "id": "admin",
+      "heading": "組織の管理者向け",
+      "priority": "detail",
+      "items": [
+        "Managed permissions と Managed sandboxing は、Local harness では強制できない",
+        "必要な連携やセキュリティ ポリシーの移行は、管理者との調整が必要な場合がある"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "Copilot harness", "type": "product", "oneLine": "Copilot SDK を使い、Copilot 製品間で共有されるエージェント ランタイム。" },
+    { "term": "Local harness", "type": "product", "oneLine": "VS Code 専用の従来のエージェント実装。非推奨になった。" },
+    { "term": "Agent Host", "type": "term", "oneLine": "Copilot セッションを実行するプロセス。" }
+  ],
+  "qa": [
+    {
+      "q": "Local harness はいつまで使えますか?",
+      "a": "非推奨となり、3 か月の移行期間のあと 2027 年 2 月に削除されます。組織が利用を制限している場合を除き、それまでは使えます。"
+    },
+    {
+      "q": "Copilot harness を使うと、コードがクラウドに移りますか?",
+      "a": "いいえ。ローカル プロジェクトでは、Copilot harness は引き続き自分のマシン上の VS Code で動きます。"
+    },
+    {
+      "q": "既存のカスタマイズは自動で移行されますか?",
+      "a": "自動では移行されません。定型のプロンプト ファイルはスキルへの変換が必要な場合があります。Chat: Open Customizations の Migrations で対象を確認できます。"
+    },
+    {
+      "q": "BYOK やローカル モデルは使えますか?",
+      "a": "サポートされるローカル構成では使えます。Chat: Manage Language Models で設定します。SSH・WSL・Dev Containers でのリモート BYOK は対応を進めています。"
+    },
+    {
+      "q": "組織にとっての利点は何ですか?",
+      "a": "ランタイムが強制する Managed permissions と Managed sandboxing により、禁止する操作のブロックや、ファイル システムとネットワークの境界設定ができます。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "The Copilot harness: Building on a shared foundation",
+      "url": "https://code.visualstudio.com/blogs/2026/11/18/copilot-harness"
+    },
+    "documents": [
+      {
+        "title": "Move from the Local to the Copilot harness",
+        "url": "https://code.visualstudio.com/docs/agents/run/move-to-copilot"
+      }
+    ]
+  },
+  "evidence": [
+    "https://code.visualstudio.com/blogs/2026/11/18/copilot-harness",
+    "https://code.visualstudio.com/docs/agents/run/move-to-copilot"
+  ]
+}
