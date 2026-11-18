@@ -1,0 +1,70 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "cf98f656c0c24097",
+  "title": {
+    "ja": "Dev Container の再構築後も、チャット セッションを保持（実験的）",
+    "subtitleJa": "2 つの設定を有効にすると、Dev Container の状態を Docker ボリュームに保存する",
+    "original": "Keep chat sessions across Dev Container rebuilds (Experimental)"
+  },
+  "date": "2026-11-18",
+  "topic": "VS Code",
+  "status": "update",
+  "audience": {
+    "who": "Dev Container 内で Copilot チャットを使う VS Code ユーザー",
+    "change": "再構築で消えていたチャット セッションを、Docker ボリュームに保存して残せる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "2 つの設定を有効にし、Dev Container を 1 回再構築する"
+  },
+  "beforeAfter": {
+    "before": "Dev Container を再構築すると、内部に保存した Copilot チャット セッションが削除されていた",
+    "after": "設定を有効にすると、再構築してもチャット セッションが保持される"
+  },
+  "panels": [
+    {
+      "id": "how-to",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "dev.containers.stateVolume.enabled を有効にする",
+        "chat.agentHost.devContainer.stateVolume.enabled を有効にする",
+        "新しい Dev Container のユーザーとエージェントの状態が Docker ボリュームに保存される"
+      ]
+    },
+    {
+      "id": "prerequisites",
+      "heading": "前提と制限",
+      "priority": "core",
+      "items": [
+        "ボリュームは、設定を有効にして作成されたコンテナーだけに付く",
+        "セッションの保持を始めるには、一度再構築が必要",
+        "Experimental の機能"
+      ]
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.147",
+      "url": "https://code.visualstudio.com/updates/v1_147#_keep-chat-sessions-across-dev-container-rebuilds-experimental"
+    }
+  },
+  "qa": [
+    {
+      "q": "どの設定を有効にすればよいですか。",
+      "a": "dev.containers.stateVolume.enabled と chat.agentHost.devContainer.stateVolume.enabled の 2 つです。有効にすると、新しい Dev Container のユーザーとエージェントの状態が Docker ボリュームに保存されます。"
+    },
+    {
+      "q": "既存のコンテナーでもすぐ効きますか。",
+      "a": "いいえ。ボリュームは設定を有効にして作成されたコンテナーにだけ付くため、一度再構築してからセッションの保持が始まります。"
+    },
+    {
+      "q": "今までは再構築するとどうなっていましたか。",
+      "a": "Dev Container の内部に保存された Copilot チャット セッションが、再構築で削除されていました。"
+    }
+  ],
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_147"
+  ]
+}
