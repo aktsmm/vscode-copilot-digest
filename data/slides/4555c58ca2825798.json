@@ -1,0 +1,95 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "4555c58ca2825798",
+  "title": {
+    "ja": "接続済みのリモートを GitHub Environment として共有",
+    "subtitleJa": "SSH・WSL・Dev Tunnel のリモートを共有し、別デバイスから同じアカウントでセッションを再開できる",
+    "original": "Share remote environments as GitHub Environments"
+  },
+  "date": "2026-11-18",
+  "topic": "VS Code",
+  "status": "preview",
+  "statusEvidence": "GitHub environments is in preview and might change before it becomes generally available.",
+  "audience": {
+    "who": "SSH ホスト、WSL、Dev Tunnel のリモートでエージェント セッションを使う VS Code ユーザー",
+    "change": "接続済みのリモートを GitHub Environment として共有し、別デバイスや対応 Copilot アプリからセッションを続けられる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "別デバイスからセッションを使いたいリモートで、Agents ウィンドウから共有を有効にする"
+  },
+  "panels": [
+    {
+      "id": "how-to",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "Agents ウィンドウの Remote Environments エディターを開く",
+        "対象リモートの行で「Share as GitHub Environment」(GitHub アイコン) を選ぶ",
+        "共有中のリモートは、名前の後ろに GitHub アイコンが表示される",
+        "同じ操作をもう一度選ぶと、共有を停止できる"
+      ]
+    },
+    {
+      "id": "scope",
+      "heading": "対象と前提",
+      "priority": "core",
+      "items": [
+        "対象は接続済みの SSH ホスト、WSL ディストリビューション、Dev Tunnel",
+        "クライアント側は、ホストの登録に使ったのと同じ GitHub アカウントでサインインする"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "GitHub environments は Preview で、一般提供までに変更される可能性がある",
+        "GitHub 環境ではセッション操作が GitHub にミラーされ、会話内容はエンドツーエンド暗号化されない"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "GitHub Environment", "type": "feature", "oneLine": "ホストを GitHub アカウント経由で見つけられるようにして、他のデバイスから使えるようにする仕組み。" },
+    { "term": "Dev Tunnel", "type": "feature", "oneLine": "リモートからのアクセスを許可する接続方法の 1 つ。" }
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.147 - Share remote environments as GitHub Environments",
+      "url": "https://code.visualstudio.com/updates/v1_147#_share-remote-environments-as-github-environments"
+    },
+    "documents": [
+      {
+        "title": "Run and manage remote agent sessions - Visual Studio Code",
+        "url": "https://code.visualstudio.com/docs/agents/run/remote-agent-sessions"
+      }
+    ]
+  },
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_147#_share-remote-environments-as-github-environments",
+    "https://code.visualstudio.com/docs/agents/run/remote-agent-sessions"
+  ],
+  "qa": [
+    {
+      "q": "どのリモートを共有できますか？",
+      "a": "接続済みの SSH ホスト、WSL ディストリビューション、Dev Tunnel です。Agents ウィンドウの Remote Environments エディターで、対象リモートの行から共有します。"
+    },
+    {
+      "q": "共有の操作方法は？",
+      "a": "Remote Environments エディターで対象リモートの行の「Share as GitHub Environment」(GitHub アイコン) を選びます。共有中は名前の後ろに GitHub アイコンが出ます。"
+    },
+    {
+      "q": "共有をやめるには？",
+      "a": "同じアクションをもう一度選ぶと、共有を停止できます。"
+    },
+    {
+      "q": "別デバイスから使うときの前提は？",
+      "a": "ホストの登録に使ったのと同じ GitHub アカウントで、クライアント側もサインインします。"
+    },
+    {
+      "q": "セキュリティ面の注意はありますか？",
+      "a": "GitHub environments では、セッション操作が GitHub にミラーされてカタログと履歴が保存され、会話内容はエンドツーエンド暗号化されません。有効化の前に、リモート接続のセキュリティを確認してください。"
+    }
+  ]
+}
