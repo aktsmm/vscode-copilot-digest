@@ -1,0 +1,91 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "467e19c06d56952c",
+  "title": {
+    "ja": "GitHub Copilot に MAI Code 2 と MAI Code 2 Flash が登場",
+    "subtitleJa": "Microsoft AI の新コーディング モデル 2 種を、モデル ピッカーから選べる",
+    "original": "MAI Code 2 and MAI Code 2 Flash in GitHub Copilot"
+  },
+  "date": "2026-11-17",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "Copilot の対象プランで、タスクに合わせてモデルを選びたい開発者と管理者",
+    "change": "複雑な作業向けの MAI Code 2 と、日常作業向けで低コストの MAI Code 2 Flash が選べる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "モデル ピッカーで選んで試す。Business / Enterprise の管理者はモデル ポリシーを確認する"
+  },
+  "panels": [
+    {
+      "id": "plans-and-places",
+      "heading": "使える場所とプラン",
+      "priority": "core",
+      "items": [
+        "MAI Code 2 は Copilot Pro、Pro+、Max、Business、Enterprise で利用可",
+        "MAI Code 2 Flash は Copilot Free、Student、Pro、Pro+、Max、Business、Enterprise で利用可",
+        "モデル ピッカーで選択: VS Code、Visual Studio、CLI、cloud agent、app、github.com、Mobile、JetBrains、Xcode、Eclipse"
+      ]
+    },
+    {
+      "id": "model-roles",
+      "heading": "モデルの特徴",
+      "priority": "core",
+      "items": [
+        "MAI Code 2: 汎用の高性能モデル。深いデバッグ、複数ファイル実装、リファクタリング向け",
+        "MAI Code 2 Flash: 軽量で低コスト。コードの説明、的を絞った編集、定型の修正向け"
+      ]
+    },
+    {
+      "id": "limits",
+      "heading": "前提と制限",
+      "priority": "detail",
+      "items": [
+        "年額プランの対象ユーザーが利用できる",
+        "従量課金（usage-based billing）で請求される",
+        "Business / Enterprise はモデル ポリシーで管理。既定では自動で有効になる"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "MAI Code 2", "type": "product", "oneLine": "複雑なタスク向けの、汎用のコーディング モデル。" },
+    { "term": "MAI Code 2 Flash", "type": "product", "oneLine": "日常の開発作業向けの、軽量で低コストなコーディング モデル。" }
+  ],
+  "references": {
+    "source": {
+      "title": "MAI Code 2 and MAI Code 2 Flash in GitHub Copilot - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-11-17-mai-code-2-and-mai-code-2-flash-in-github-copilot/"
+    },
+    "documents": [
+      { "title": "GitHub Copilot のモデルと価格設定", "url": "https://docs.github.com/ja/copilot/reference/copilot-billing/models-and-pricing" },
+      { "title": "GitHub Copilotでサポートされている AI モデル", "url": "https://docs.github.com/ja/copilot/reference/ai-models/supported-models" }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-11-17-mai-code-2-and-mai-code-2-flash-in-github-copilot/"
+  ],
+  "qa": [
+    {
+      "q": "どのプランで使えますか。",
+      "a": "MAI Code 2 は Pro、Pro+、Max、Business、Enterprise。MAI Code 2 Flash はそれに加えて Free と Student でも使えます。年額プランの対象ユーザーが利用できます。"
+    },
+    {
+      "q": "どこで選べますか。",
+      "a": "VS Code、Visual Studio、Copilot CLI、cloud agent、Copilot app、github.com、GitHub Mobile、JetBrains、Xcode、Eclipse のモデル ピッカーで選べます。"
+    },
+    {
+      "q": "2 つのモデルはどう使い分けますか。",
+      "a": "MAI Code 2 は深いデバッグや複数ファイルの実装、リファクタリングなど複雑な作業向けです。MAI Code 2 Flash は説明、的を絞った編集、定型の修正など日常作業向けです。"
+    },
+    {
+      "q": "管理者は利用を制御できますか。",
+      "a": "Business と Enterprise の管理者は、Copilot 設定のモデル ポリシーで管理できます。既定のモデル有効化では、管理者が無効にしない限り新モデルは自動で有効になります。"
+    },
+    {
+      "q": "課金はどうなりますか。",
+      "a": "どちらのモデルも従量課金で請求されます。詳細は「GitHub Copilot のモデルと価格設定」を参照してください。"
+    }
+  ]
+}
