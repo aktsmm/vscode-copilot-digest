@@ -1,0 +1,98 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "ed8fe1ce85c49081",
+  "title": {
+    "ja": "VS Code 1.147 のモデル比較の改善",
+    "subtitleJa": "比較がチャット配下に表示され、ホバーで設定内容を確認できる",
+    "original": "Model comparison improvements (Preview)"
+  },
+  "date": "2026-11-18",
+  "topic": "VS Code",
+  "status": "preview",
+  "statusEvidence": "Model comparison improvements (Preview)",
+  "audience": {
+    "who": "Agents ウィンドウで同じプロンプトを複数モデルに実行して比較している開発者",
+    "change": "エージェントに依頼した比較がチャット配下に並び、Open Comparison で結果へ移動、ホバーで設定を確認できる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "Agents ウィンドウでエージェントにモデル比較を依頼して試す"
+  },
+  "panels": [
+    {
+      "id": "usage",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "エージェントに比較を依頼すると、セッション一覧のそのチャットの下に比較が表示される",
+        "エージェントの応答の Open Comparison から結果へ直接移動できる",
+        "セッション一覧で比較にホバーすると、元の設定が表示される"
+      ]
+    },
+    {
+      "id": "settings",
+      "heading": "前提と制限",
+      "priority": "core",
+      "items": [
+        "モデル比較は Agents ウィンドウのみ。エディターの Chat ビューでは使えない",
+        "依頼での比較には sessions.chat.compareAgents.tools.enabled(既定オフ)と sessions.chat.compareAgents.enabled が必要",
+        "比較は 2〜10 モデル。Auto は比較に使えない"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "ホバーで見られる設定: リポジトリ、分離、ベースブランチ、各試行のモデルと effort、judge、synthesizer"
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Judge",
+      "type": "feature",
+      "oneLine": "選んだモデルが各試行を自動で評価する。実行前に設定する"
+    },
+    {
+      "term": "Synthesizer",
+      "type": "feature",
+      "oneLine": "judge の評価を使い、試行の良い部分を組み合わせた結果を作る"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.147",
+      "url": "https://code.visualstudio.com/updates/v1_147#_model-comparison-improvements-preview"
+    },
+    "documents": [
+      {
+        "title": "Compare model results",
+        "url": "https://code.visualstudio.com/docs/agents/run/compare-models"
+      }
+    ]
+  },
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_147",
+    "https://code.visualstudio.com/docs/agents/run/compare-models"
+  ],
+  "qa": [
+    {
+      "q": "モデル比較はどこで使えますか？",
+      "a": "Agents ウィンドウのみです。エディターの Chat ビューでは使えません。"
+    },
+    {
+      "q": "エージェントに比較を依頼するには何を有効にしますか？",
+      "a": "sessions.chat.compareAgents.tools.enabled(既定ではオフ)と sessions.chat.compareAgents.enabled を有効にします。比較は会話のワークスペースと権限を引き継ぎます。"
+    },
+    {
+      "q": "比較結果はどこから開けますか？",
+      "a": "比較はセッション一覧の該当チャットの下に表示されます。エージェントの応答にある Open Comparison からも直接開けます。"
+    },
+    {
+      "q": "比較できるモデル数に制限はありますか？",
+      "a": "2〜10 モデルを追加できます。Auto は比較では使えません。"
+    }
+  ]
+}
