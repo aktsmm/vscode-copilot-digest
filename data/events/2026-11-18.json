@@ -1,13 +1,480 @@
 {
   "date": "2026-11-18",
-  "generatedAt": "2026-11-18T02:59:01.474Z",
+  "generatedAt": "2026-11-18T14:21:28.880Z",
   "latestRun": {
-    "generatedAt": "2026-11-18T02:59:01.474Z",
-    "newEventsCount": 0,
-    "newEventIds": [],
+    "generatedAt": "2026-11-18T14:21:28.880Z",
+    "newEventsCount": 14,
+    "newEventIds": [
+      "vscode-feed:https://code.visualstudio.com/updates/v1_148",
+      "vscode-updates:36c24dc66607880de6d9a51cb4ed2e3ff947aee5c420120ceaf49749e25d755c",
+      "vscode-release-notes-1-109:6859b982d90173c235e1c49fbc9b14ad84bbff553e7d63c1e3f3e482dee9be72",
+      "vscode-docs-agents-automations:b50b9f0177cabe7e516225ee29d2eb2a8de34950865624f8c16de6fd01fe3097",
+      "vscode-docs-agents-window:4d05c21b6e5b5829018ade580f5f26ebc54783e45bd95400e6fe5737c574f185",
+      "vscode-docs-agents-remote-sessions:00e4e165940d68d10994be1542c805599cd128b9abfe4d0a7f4ec191b5cb7360",
+      "vscode-release-notes-1-147:section:59cde1240946793c59ed7232108d33da88a8f6ca1e12eee45050f12d88493978",
+      "vscode-release-notes-1-147:section:a47b885544fd513a4a20c2cff2a6cd19c9d38d3917a45253cf99ff34c363f107",
+      "vscode-release-notes-1-147:section:529c30d13c2239c74d36bc10103c5f6abdae3c8282e48b0162878177fd2076ca",
+      "vscode-release-notes-1-147:section:a32c96fc8ce104b29652b4f76c3e56076c3c2cf10b22ba45507433cafa002e0d",
+      "vscode-release-notes-1-147:section:f3ce3a192571fc46dde7326533792e9da77510b006769f3357ac016631f4cfbc",
+      "vscode-release-notes-1-147:section:c4009bab8ca8017e950ee88514d8a65f5edbee52ab4547f49c680bedbd29ba19",
+      "vscode-release-notes-1-147:section:37d18f995fce3bde59fee485543b18ad8ce8007d257afe7c10a8bfe432ff7e03",
+      "vscode-release-notes-1-147:section:bd1c62fa54390d5bb57eb4e8cfcc2006dad1a3c6d9041878480778d79c25a79e"
+    ],
     "errorCount": 0,
     "skippedLowInformationEvents": []
   },
-  "events": [],
+  "events": [
+    {
+      "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_148",
+      "sourceId": "vscode-feed",
+      "sourceName": "VS Code Feed",
+      "kind": "feed_entry",
+      "detectedAt": "2026-11-18T14:21:23.997Z",
+      "publishedAt": "2026-11-25T17:00:00.000Z",
+      "title": "Visual Studio Code 1.148 (Insiders)",
+      "url": "https://code.visualstudio.com/updates/v1_148",
+      "summary": "Learn what is new in the latest Visual Studio Code Insiders build, including agent session management and editor tab improvements.\n Read the full article",
+      "categories": [
+        "release"
+      ],
+      "isFutureDated": true,
+      "score": 5
+    },
+    {
+      "eventId": "vscode-updates:36c24dc66607880de6d9a51cb4ed2e3ff947aee5c420120ceaf49749e25d755c",
+      "sourceId": "vscode-updates",
+      "sourceName": "VS Code Updates",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-11-18T14:21:24.889Z",
+      "publishedAt": "2026-11-18T00:00:00.000Z",
+      "title": "VS Code Updates changed",
+      "url": "https://code.visualstudio.com/updates/",
+      "summary": "Detected 244 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 244,
+        "headings": [
+          "Visual Studio Code 1.147",
+          "Downloads for 1.147.0",
+          "Agent sessions",
+          "Send Later for chat requests (Experimental)",
+          "Save and resume drafts (Experimental)",
+          "Share remote environments as GitHub Environments",
+          "Keep chat sessions across Dev Container rebuilds (Experimental)",
+          "Inbox mode improvements (Experimental)",
+          "Agent experience",
+          "Decision model-based model routers (Experimental)",
+          "HTML previews and native visuals in agent responses",
+          "Automations",
+          "More context for assisted permissions",
+          "Arrange the Details panel around the editor (Experimental)",
+          "View extension info",
+          "Chat"
+        ],
+        "additions": [
+          "1.147",
+          "H1: Visual Studio Code 1.147",
+          "Release date: November 18, 2026 Stable",
+          "H2: Downloads for 1.147.0",
+          "Have a task in mind but not ready to send it? This week, save requests as drafts or schedule them for later. When you're ready, let a model router match the task to your preferred model. And when a result is easier to show than explain, ask for a chart or mockup.",
+          "Send later (Experimental): Schedule local agent requests and follow-ups for later in the Agents window.",
+          "Browser integration (Preview): Let agents control your default browser, and preview remote HTML files without copying them to your machine.",
+          "Draft requests (Experimental): Keep multiple unsent requests with their context and configuration in the Agents window, ready to send when you are.",
+          "Customize assisted permissions: Tell the permission reviewer which actions you consider safe and which should need your approval.",
+          "Visual chat responses: Review reports, mockups, and charts inline in the Agents window with HTML previews and experimental native visuals.",
+          "Model routers (Experimental): Let a model router choose from your preferred models for different tasks.",
+          "H2: Agent sessions",
+          "H3: Send Later for chat requests (Experimental)",
+          "sessions.sendLater.enabled",
+          "(Agents window only)",
+          "Sometimes you want an agent to run a request after some time has passed. You might want to check a build after it finishes, or follow up on a review in the morning. With the Send Later feature, you can postpone sending a chat request until a specific time."
+        ]
+      },
+      "headings": [
+        "Visual Studio Code 1.147",
+        "Downloads for 1.147.0",
+        "Release highlights",
+        "Agent sessions",
+        "Send Later for chat requests (Experimental)",
+        "Save and resume drafts (Experimental)",
+        "Share remote environments as GitHub Environments",
+        "Keep chat sessions across Dev Container rebuilds (Experimental)",
+        "Inbox mode improvements (Experimental)",
+        "Agent experience",
+        "Decision model-based model routers (Experimental)",
+        "Model comparison improvements (Preview)"
+      ],
+      "score": 18
+    },
+    {
+      "eventId": "vscode-release-notes-1-147:section:59cde1240946793c59ed7232108d33da88a8f6ca1e12eee45050f12d88493978",
+      "sourceId": "vscode-release-notes-1-147",
+      "sourceName": "VS Code Release Notes 1.147",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-11-18T14:21:28.234Z",
+      "publishedAt": "2026-11-18T00:00:00.000Z",
+      "title": "Visual Studio Code 1.147: Send Later for chat requests (Experimental)",
+      "url": "https://code.visualstudio.com/updates/v1_147",
+      "summary": "Setting: \n \n \n sessions.sendLater.enabled\n \n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders\n \n (Agents window only) Sometimes you want an agent to run a request after some time has passed. You might want to check a build after it finishes, or follow up on a review in the morning. With the Send Later feature, you can postpone sending a chat request until a specific time. You can schedule a chat request by us...",
+      "categories": [
+        "release",
+        "section",
+        "Agent sessions"
+      ],
+      "sectionHeading": "Agent sessions",
+      "sectionTitle": "Send Later for chat requests (Experimental)",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-147:section:a47b885544fd513a4a20c2cff2a6cd19c9d38d3917a45253cf99ff34c363f107",
+      "sourceId": "vscode-release-notes-1-147",
+      "sourceName": "VS Code Release Notes 1.147",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-11-18T14:21:28.234Z",
+      "publishedAt": "2026-11-18T00:00:00.000Z",
+      "title": "Visual Studio Code 1.147: Save and resume drafts (Experimental)",
+      "url": "https://code.visualstudio.com/updates/v1_147",
+      "summary": "Setting: \n \n \n sessions.drafts.enabled\n \n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders Previously, the new-session input held a single unsent request at a time. With drafts, you can keep several unsent requests side by side, each with its own workspace, agent, and configuration, and come back to any of them later. When you leave a new session that has content, VS Code saves it to the Drafts section of the...",
+      "categories": [
+        "release",
+        "section",
+        "Agent sessions"
+      ],
+      "sectionHeading": "Agent sessions",
+      "sectionTitle": "Save and resume drafts (Experimental)",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-147:section:529c30d13c2239c74d36bc10103c5f6abdae3c8282e48b0162878177fd2076ca",
+      "sourceId": "vscode-release-notes-1-147",
+      "sourceName": "VS Code Release Notes 1.147",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-11-18T14:21:28.234Z",
+      "publishedAt": "2026-11-18T00:00:00.000Z",
+      "title": "Visual Studio Code 1.147: Share remote environments as GitHub Environments",
+      "url": "https://code.visualstudio.com/updates/v1_147",
+      "summary": "Share a remote as a GitHub Environment to pick up its agent sessions from another device or supported Copilot app, using your GitHub account. To share a connected SSH host, WSL distribution, or Dev Tunnel, open the Remote Environments editor in the Agents window and select Share as GitHub Environment (GitHub icon) on the remote's row. A shared remote stays in its group and shows a GitHub icon after its name. Select...",
+      "categories": [
+        "release",
+        "section",
+        "Agent sessions"
+      ],
+      "sectionHeading": "Agent sessions",
+      "sectionTitle": "Share remote environments as GitHub Environments",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-147:section:a32c96fc8ce104b29652b4f76c3e56076c3c2cf10b22ba45507433cafa002e0d",
+      "sourceId": "vscode-release-notes-1-147",
+      "sourceName": "VS Code Release Notes 1.147",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-11-18T14:21:28.234Z",
+      "publishedAt": "2026-11-18T00:00:00.000Z",
+      "title": "Visual Studio Code 1.147: Keep chat sessions across Dev Container rebuilds (Experimental)",
+      "url": "https://code.visualstudio.com/updates/v1_147",
+      "summary": "Settings: \n \n \n dev.containers.stateVolume.enabled\n \n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders\n \n , \n \n \n chat.agentHost.devContainer.stateVolume.enabled\n \n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders Rebuilding a Dev Container used to remove the Copilot chat sessions stored inside it. When you enable these settings, VS Code stores the user and agent state of a new Dev Container on a Docke...",
+      "categories": [
+        "release",
+        "section",
+        "Agent sessions"
+      ],
+      "sectionHeading": "Agent sessions",
+      "sectionTitle": "Keep chat sessions across Dev Container rebuilds (Experimental)",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-147:section:f3ce3a192571fc46dde7326533792e9da77510b006769f3357ac016631f4cfbc",
+      "sourceId": "vscode-release-notes-1-147",
+      "sourceName": "VS Code Release Notes 1.147",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-11-18T14:21:28.234Z",
+      "publishedAt": "2026-11-18T00:00:00.000Z",
+      "title": "Visual Studio Code 1.147: Inbox mode improvements (Experimental)",
+      "url": "https://code.visualstudio.com/updates/v1_147",
+      "summary": "Setting: \n \n \n sessions.list.inboxEnabled\n \n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders Inbox mode groups your Agents window sessions by what needs your attention. You can switch to Inbox mode at any time with Grouping > Inbox Mode in the sessions list. The \n \n \n sessions.list.inboxEnabled\n \n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders\n \n setting makes it the default grouping. This release b...",
+      "categories": [
+        "release",
+        "section",
+        "Agent sessions"
+      ],
+      "sectionHeading": "Agent sessions",
+      "sectionTitle": "Inbox mode improvements (Experimental)",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-147:section:c4009bab8ca8017e950ee88514d8a65f5edbee52ab4547f49c680bedbd29ba19",
+      "sourceId": "vscode-release-notes-1-147",
+      "sourceName": "VS Code Release Notes 1.147",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-11-18T14:21:28.234Z",
+      "publishedAt": "2026-11-18T00:00:00.000Z",
+      "title": "Visual Studio Code 1.147: Decision model-based model routers (Experimental)",
+      "url": "https://code.visualstudio.com/updates/v1_147",
+      "summary": "Setting: chat.copilot.modelRouter.enabled With a model router, you describe which model you want for which kind of work. A decision model, gpt-6-luna-decisions, then matches your request to one of your routes, and VS Code runs the chat on that route's model. A router is a YAML file in ~/.agents/model-routers/ that appears in the model picker in Copilot harness sessions. Model routers are at an early stage, and your...",
+      "categories": [
+        "release",
+        "section",
+        "Agent experience"
+      ],
+      "sectionHeading": "Agent experience",
+      "sectionTitle": "Decision model-based model routers (Experimental)",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-147:section:37d18f995fce3bde59fee485543b18ad8ce8007d257afe7c10a8bfe432ff7e03",
+      "sourceId": "vscode-release-notes-1-147",
+      "sourceName": "VS Code Release Notes 1.147",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-11-18T14:21:28.234Z",
+      "publishedAt": "2026-11-18T00:00:00.000Z",
+      "title": "Visual Studio Code 1.147: Model comparison improvements (Preview)",
+      "url": "https://code.visualstudio.com/updates/v1_147",
+      "summary": "Model comparison lets you run the same prompt across models in the Agents window, so you can review, judge, and combine their results. This release makes comparisons easier to find and understand: Comparisons stay with their chat: When you ask an agent to run a comparison, it appears beneath that chat in the sessions list. The agent's response includes an Open Comparison action to go straight to the results. Compari...",
+      "categories": [
+        "release",
+        "section",
+        "Agent experience"
+      ],
+      "sectionHeading": "Agent experience",
+      "sectionTitle": "Model comparison improvements (Preview)",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-147:section:bd1c62fa54390d5bb57eb4e8cfcc2006dad1a3c6d9041878480778d79c25a79e",
+      "sourceId": "vscode-release-notes-1-147",
+      "sourceName": "VS Code Release Notes 1.147",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-11-18T14:21:28.234Z",
+      "publishedAt": "2026-11-18T00:00:00.000Z",
+      "title": "Visual Studio Code 1.147: HTML previews and native visuals in agent responses",
+      "url": "https://code.visualstudio.com/updates/v1_147",
+      "summary": "Settings: \n \n \n chat.htmlPreview.enabled\n \n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders\n \n , \n \n \n chat.nativeComponents.enabled\n \n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders\n \n (Agents window only) Some agent responses are easier to review as a visual or a chart than as text, such as a comparison of approaches, a mockup, or build times before and after a change. In the Agents window, agents...",
+      "categories": [
+        "release",
+        "section",
+        "Agent experience"
+      ],
+      "sectionHeading": "Agent experience",
+      "sectionTitle": "HTML previews and native visuals in agent responses",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-109:6859b982d90173c235e1c49fbc9b14ad84bbff553e7d63c1e3f3e482dee9be72",
+      "sourceId": "vscode-release-notes-1-109",
+      "sourceName": "VS Code Release Notes 1.109",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-11-18T14:21:25.081Z",
+      "publishedAt": "2026-02-04T00:00:00.000Z",
+      "title": "VS Code Release Notes 1.109 changed",
+      "url": "https://code.visualstudio.com/updates/v1_109",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [],
+        "additions": [
+          "1.147"
+        ]
+      },
+      "headings": [
+        "January 2026 (version 1.109)",
+        "Downloads for 1.109.5",
+        "Upcoming events",
+        "Agent Sessions Day",
+        "Chat UX",
+        "Message steering and queueing (Experimental)",
+        "Anthropic models now show thinking tokens",
+        "Mermaid diagrams in chat responses",
+        "Ask Questions tool (Experimental)",
+        "Plan agent",
+        "Context window details",
+        "Inline chat UX revamp (Preview)"
+      ],
+      "score": 2
+    },
+    {
+      "eventId": "vscode-docs-agents-window:4d05c21b6e5b5829018ade580f5f26ebc54783e45bd95400e6fe5737c574f185",
+      "sourceId": "vscode-docs-agents-window",
+      "sourceName": "VS Code Docs / Agents window",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-11-18T14:21:27.775Z",
+      "publishedAt": "2026-11-18T14:21:27.773Z",
+      "title": "VS Code Docs / Agents window changed",
+      "url": "https://code.visualstudio.com/docs/agents/run/agents-window",
+      "summary": "Detected 45 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 45,
+        "headings": [
+          "Save and resume drafts",
+          "Send a request later",
+          "Change or cancel a scheduled request",
+          "Ask the agent to schedule a follow-up"
+        ],
+        "additions": [
+          "To start a session in the background without navigating into it, press Alt+Enter or hold Alt and select Send. Focus stays in the composer so you can start another task. Select Open Session in the confirmation to open the sent conversation. With Inbox grouping selected, you can also press Ctrl+Enter (Cmd+Enter on macOS).",
+          "H3: Save and resume drafts",
+          "Prepare requests for several tasks and return to them when you're ready to send them. In the Agents window, drafts save unsent New Session requests without starting an agent session.",
+          "Open Settings (⌘, (Windows, Linux Ctrl+,)) and enable",
+          "sessions.drafts.enabled",
+          "Open in VS Code",
+          "Open in VS Code Insiders",
+          ". The setting is off by default.",
+          "Select New Session and compose a request, including any context attachments and session options.",
+          "Navigate to another conversation. When the new-session input is no longer visible, the request is saved in Drafts in the sidebar.",
+          "Select Resume Draft beside a saved draft, or Open Draft in the notification. Review or edit the request, then send it when you're ready.",
+          "Each draft keeps its text, attachments, inline references, workspace, agent, model, and configuration. Saved drafts remain available after restarting the window. To save a new draft, navigate away from the input first. Restarting alone doesn't add it to Drafts.",
+          "The draft is removed from the list after the request is accepted. To discard one without sending it, select Delete Draft.",
+          "Turning off",
+          "hides saved drafts and stops saving new ones, but doesn't delete them. Turn it back on to access them again.",
+          "H2: Send a request later",
+          "Use Send Later to start a new task or send a follow-up to an existing conversation at a future time. For tasks that repeat, create an automation instead.",
+          "Enable",
+          "sessions.sendLater.enabled",
+          ", which is off by default, and keep",
+          "chat.automations.enabled",
+          "enabled. Send Later currently only works on the local machine and not for remote agent sessions.",
+          "Compose a request in New Session or an existing conversation. For a new session, choose its workspace, agent, model, and other session options.",
+          "Open the Send dropdown and select Send Later."
+        ]
+      },
+      "headings": [
+        "Use the Agents window",
+        "Open the Agents window",
+        "Agents window interface overview",
+        "Understand the active session",
+        "Start an agent session",
+        "Choose where an agent makes changes",
+        "Save and resume drafts",
+        "Send a request later",
+        "Change or cancel a scheduled request",
+        "Ask the agent to schedule a follow-up",
+        "Work with multiple sessions",
+        "Arrange sessions in a grid"
+      ],
+      "score": 6
+    },
+    {
+      "eventId": "vscode-docs-agents-automations:b50b9f0177cabe7e516225ee29d2eb2a8de34950865624f8c16de6fd01fe3097",
+      "sourceId": "vscode-docs-agents-automations",
+      "sourceName": "VS Code Docs / Agent automations",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-11-18T14:21:26.389Z",
+      "publishedAt": "2026-11-18T14:21:26.389Z",
+      "title": "VS Code Docs / Agent automations changed",
+      "url": "https://code.visualstudio.com/docs/agents/run/automations",
+      "summary": "Detected 34 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 34,
+        "headings": [
+          "Set an end date"
+        ],
+        "additions": [
+          "Automations run agent tasks from a saved prompt and session configuration. Use them for work such as summarizing repository changes or triaging issues without starting each session manually. Run an automation on demand, on a recurring schedule, or, for cloud automations, in response to supported repository events. You can ask an agent to create an automation, start from a template, or share an automation as a reusable file.",
+          "For a one-time request in a new session or an existing conversation, use Send Later",
+          "Send Later in the Agents window is experimental and might change or be removed.",
+          ".",
+          "For guided setup, create an automation from chat with the built-in /automate skill. To enter the configuration yourself, follow the steps for local or cloud execution:",
+          "Select the dropdown next to Create with Agent, and then select Create Manually. Alternatively, select one of the starter templates to prepopulate the prompt and schedule fields.",
+          "Optionally, expand Advanced Settings to choose customizations or set an end date.",
+          "Use the built-in /automate skill in the Agents window to turn a completed task or a new idea into a recurring automation. The agent helps draft a reusable prompt and configuration for you to review before saving.",
+          "Start in any of these ways:",
+          "Reuse a completed task: Enter /automate in the same chat. The agent uses the relevant goal, inputs, scope, and expected result, rather than saving the entire conversation. Add instructions after /automate to adjust what should repeat.",
+          "Start from a new idea: In a new chat, enter /automate followed by the task you want to repeat. If you enter /automate without context, the agent suggests examples and helps you define a task.",
+          "Start from the Automations view: Select Automations in the sidebar, and then select Create with Agent. This opens a new-session page with /automate prefilled. Add your task description and send the prompt.",
+          "For example, start a new chat with:",
+          "Answer questions about missing task or schedule details. The agent uses relevant information from the conversation instead of asking you to repeat it.",
+          "Review the proposed name, exact prompt, execution environment, workspace, schedule, time zone, and any end date. Check any proposed permissions and constraints before proceeding.",
+          "Ask for changes, or say Create it to save the reviewed automation. Invoking /automate alone doesn't confirm creation. Normal tool approvals and organization policies still apply.",
+          "Open Automations to review the saved configuration, then run and review the automation before enabling recurring work.",
+          "For an explicit one-time scheduling request, you don't need a separate Create it message. Normal tool approvals still apply.",
+          "You can also ask the agent to change or remove an existing automation's end date. Review the resolved date and time zone before confirming the change. End dates stop future scheduled runs, not a run already in progress.",
+          "You can also ask for an automation in ordinary chat without invoking /automate. For a custom cadence, specify a cron expression and the time zone:",
+          "H3: Set an end date",
+          "Set an end date for temporary work, such as a daily release summary that should run for two weeks. End dates are supported for automations on local or remote Agent Hosts, but not GitHub cloud automations.",
+          "Create or edit an automation, and expand Advanced Settings.",
+          "Under Disables after, select Days, Weeks, or Months, and enter a positive whole number."
+        ]
+      },
+      "headings": [
+        "Create and manage agent automations",
+        "Prerequisites",
+        "Choose where an automation runs",
+        "Create an automation",
+        "Create an automation from chat",
+        "Start from a template",
+        "Run and review an automation",
+        "Set a recurring schedule",
+        "Set an end date",
+        "Use a cron schedule",
+        "Run on repository events",
+        "Share an automation"
+      ],
+      "score": 3
+    },
+    {
+      "eventId": "vscode-docs-agents-remote-sessions:00e4e165940d68d10994be1542c805599cd128b9abfe4d0a7f4ec191b5cb7360",
+      "sourceId": "vscode-docs-agents-remote-sessions",
+      "sourceName": "VS Code Docs / Remote agent sessions",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-11-18T14:21:27.919Z",
+      "publishedAt": "2026-11-18T14:21:27.919Z",
+      "title": "VS Code Docs / Remote agent sessions changed",
+      "url": "https://code.visualstudio.com/docs/agents/run/remote-agent-sessions",
+      "summary": "Detected 19 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 19,
+        "headings": [],
+        "additions": [
+          "If you're already connected to an SSH host, WSL distribution, or dev tunnel, you can instead share that remote as a GitHub environment from the client machine.",
+          "For an SSH, WSL, or tunnel remote shared as a GitHub environment, you can keep sharing when you disconnect to continue its sessions through that environment.",
+          "Share an SSH host, WSL distribution, or dev tunnel to continue its agent sessions through GitHub environments, including from another machine. Sharing requires GitHub environments to be enabled and available for your account, and a remote Agent Host that supports sharing.",
+          "In Manage Remote Environments, connect to the remote.",
+          "On its row, select Share <name> as GitHub Environment (Octocat icon). Complete any sign-in prompts.",
+          "When you disconnect from the shared remote, choose what should happen:",
+          "Choice",
+          "Effect",
+          "Keep Sharing",
+          "End the direct connection but keep the remote Agent Host running and available as a GitHub environment.",
+          "Stop Sharing",
+          "Stop sharing the remote as a GitHub environment, then disconnect.",
+          "Cancel",
+          "Keep the direct connection.",
+          "With Keep Sharing, the remote appears under GitHub Environments in remote environment management and the environment picker. Continue its existing sessions without starting new conversations. Their pins and groups are preserved. On another machine, sign in with the same GitHub account.",
+          "When you reconnect directly, the same sessions return to that connection and the separate GitHub environment entry is hidden. Sessions aren't duplicated.",
+          "To stop sharing while directly connected, select Stop Sharing <name> as GitHub Environment on the remote's row.",
+          "Keep the remote machine running and reachable. Keep Sharing doesn't move execution to managed cloud compute. Sharing grants access to the host's supported sessions, tools, and workspace resources. Review remote connection security before enabling it.",
+          "You can also preview remote HTML files directly without starting a web server."
+        ]
+      },
+      "headings": [
+        "Run and manage remote agent sessions",
+        "Choose how to connect",
+        "Make a host available for remote access",
+        "Continue an existing remote session",
+        "GitHub environments",
+        "Start a remote session",
+        "Connect via SSH",
+        "Connect via dev tunnel",
+        "Use the Agents window in the browser",
+        "Set up a dev tunnel",
+        "Host management",
+        "Use remote sessions in the Chat view"
+      ],
+      "score": 2
+    }
+  ],
   "errors": []
 }

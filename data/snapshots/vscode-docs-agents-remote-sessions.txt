@@ -18,6 +18,7 @@ Enable remote access to start or continue agent sessions from another device whi
  The Local harness is deprecated and will be removed in February 2027. Move your workflows to the Copilot harness before then. Learn more about Local harness deprecation.
  and older extension-host sessions aren't shared this way.
 Run these steps on the host machine to make it available for remote access.
+If you're already connected to an SSH host, WSL distribution, or dev tunnel, you can instead share that remote as a GitHub environment from the client machine.
 On the host machine, open the Agents window, or use an Agent Host-backed session in the Chat view in an editor window.
 On the host machine, open the Agents window, or use an Agent Host-backed session in the Chat view in an editor window.
 Open Remote Connections (antenna icon) in the Agents window title bar or the Chat view input area.
@@ -139,6 +140,7 @@ H3: Share this machine from the Chat view
 The Remote Connections control in the Chat view enables access to the machine running the agent. It doesn't connect the editor to another machine. In a local editor window with an Agent Host-backed session, follow Make a host available for remote access to use GitHub environments or dev tunnels.
 H2: Manage remote connections
 H3: Disconnect or stop sharing
+For an SSH, WSL, or tunnel remote shared as a GitHub environment, you can keep sharing when you disconnect to continue its sessions through that environment.
 Disconnect a client to end that client's connection. This doesn't stop the host or its running tasks.
 Disconnect a client to end that client's connection. This doesn't stop the host or its running tasks.
 Stop sharing the host by opening Remote Connections on the host and selecting Off. This stops sharing without changing the preferred connection method.
@@ -236,6 +238,29 @@ Create a new chat or session in the Agents window.
 Create a new chat or session in the Agents window.
 Open the Environment picker and select Manage.
 Open the Environment picker and select Manage.
+Share an SSH host, WSL distribution, or dev tunnel to continue its agent sessions through GitHub environments, including from another machine. Sharing requires GitHub environments to be enabled and available for your account, and a remote Agent Host that supports sharing.
+In Manage Remote Environments, connect to the remote.
+In Manage Remote Environments, connect to the remote.
+On its row, select Share <name> as GitHub Environment (Octocat icon). Complete any sign-in prompts.
+On its row, select Share <name> as GitHub Environment (Octocat icon). Complete any sign-in prompts.
+When you disconnect from the shared remote, choose what should happen:
+
+Choice
+Effect
+
+Keep Sharing
+End the direct connection but keep the remote Agent Host running and available as a GitHub environment.
+
+Stop Sharing
+Stop sharing the remote as a GitHub environment, then disconnect.
+
+Cancel
+Keep the direct connection.
+When you disconnect from the shared remote, choose what should happen:
+With Keep Sharing, the remote appears under GitHub Environments in remote environment management and the environment picker. Continue its existing sessions without starting new conversations. Their pins and groups are preserved. On another machine, sign in with the same GitHub account.
+When you reconnect directly, the same sessions return to that connection and the separate GitHub environment entry is hidden. Sessions aren't duplicated.
+To stop sharing while directly connected, select Stop Sharing <name> as GitHub Environment on the remote's row.
+Keep the remote machine running and reachable. Keep Sharing doesn't move execution to managed cloud compute. Sharing grants access to the host's supported sessions, tools, and workspace resources. Review remote connection security before enabling it.
 Use the table to search, connect, and organize your remote machines. Keep these behaviors in mind:
 Disconnecting doesn't stop running tasks. Refreshing discovers machines without connecting.
 Disconnecting doesn't stop running tasks. Refreshing discovers machines without connecting.
@@ -320,6 +345,7 @@ In the installed Agents window, use the integrated browser to preview a web app 
  Open in VS Code Insiders
  
  at default, and open the app's original localhost URL. Check that the remote indicator in the address bar identifies the intended host.
+You can also preview remote HTML files directly without starting a web server.
 Select Share with Agent to let the agent interact with your page, or ask it to open the app and validate a user flow. See browsing through a remote agent host for supported hosts, storage behavior, and connection troubleshooting.
 H3: Delegate tasks to remote machines (Experimental)
 Ask an agent in the installed Agents window to run work on another connected machine, such as testing a project on a different operating system. This starts remote work rather than resuming a session from the sessions list.

@@ -3,12 +3,16 @@ Copy as Markdown
 View as Markdown
 Ask in VS Code
 Ask in VS Code Insiders
-Automations run agent tasks from a saved prompt and session configuration. Use them for work such as summarizing repository changes or triaging issues without starting each session manually. Run an automation on demand, on a recurring schedule, or, for cloud automations, in response to supported repository events. You can also start from a template or share an automation as a reusable file.
+Automations run agent tasks from a saved prompt and session configuration. Use them for work such as summarizing repository changes or triaging issues without starting each session manually. Run an automation on demand, on a recurring schedule, or, for cloud automations, in response to supported repository events. You can ask an agent to create an automation, start from a template, or share an automation as a reusable file.
 Run an automation locally when the task needs your development environment. Run it in GitHub's cloud 
  
  Cloud automations is in preview and might change before it becomes generally available.
  when you want recurring repository work to continue while VS Code and your computer are off.
 This article explains how to choose between local and cloud automations, and how to create, monitor, and safely manage them.
+For a one-time request in a new session or an existing conversation, use Send Later 
+ 
+ Send Later in the Agents window is experimental and might change or be removed.
+.
 H2: Prerequisites
 Set up and open the Agents window with an available agent.
 For cloud automations 
@@ -47,11 +51,11 @@ You can choose to run an automation locally or in the cloud based on your needs:
 GitHub service plans, permissions, billing, security, and supported triggers can change independently of VS Code. Review GitHub Copilot automations before enabling unattended cloud runs.
 Automations start a run when a trigger fires. They are different from cloud sessions, where you start an interactive task and reopen the same session to continue it. Creating a cloud session doesn't create an automation or schedule.
 H2: Create an automation
-Choose local or cloud execution:
+For guided setup, create an automation from chat with the built-in /automate skill. To enter the configuration yourself, follow the steps for local or cloud execution:
 In the Agents window sidebar, select Automations.
 In the Agents window sidebar, select Automations.
-Create a new automation or select one of the starter templates. Starting from a template prepopulates the prompt and schedule fields.
-Create a new automation or select one of the starter templates. Starting from a template prepopulates the prompt and schedule fields.
+Select the dropdown next to Create with Agent, and then select Create Manually. Alternatively, select one of the starter templates to prepopulate the prompt and schedule fields.
+Select the dropdown next to Create with Agent, and then select Create Manually. Alternatively, select one of the starter templates to prepopulate the prompt and schedule fields.
 Leave Run in the Cloud off.
 Leave Run in the Cloud off.
 Enter a descriptive Name and a Prompt. Specify the task, its scope, and the output you expect. For example:
@@ -71,15 +75,15 @@ Configure the Trigger to specify when the automation should run.
 You can choose between Manual or a recurring schedule.
 Configure the Trigger to specify when the automation should run.
 You can choose between Manual or a recurring schedule.
-Optionally, in the advanced settings, enable or disable the use of customizations.
-Optionally, in the advanced settings, enable or disable the use of customizations.
+Optionally, expand Advanced Settings to choose customizations or set an end date.
+Optionally, expand Advanced Settings to choose customizations or set an end date.
 Review your automation settings, and then select Create.
 Review your automation settings, and then select Create.
 An automation can read files, run commands, and make changes according to its agent's permissions. Review the permission level before scheduling unattended work. Saving an automation doesn't bypass organization policies or guarantee that future runs won't need your approval.
 In the Agents window sidebar, select Automations.
 In the Agents window sidebar, select Automations.
-Create a new automation or select one of the starter templates. Starting from a template prepopulates the prompt and schedule fields.
-Create a new automation or select one of the starter templates. Starting from a template prepopulates the prompt and schedule fields.
+Select the dropdown next to Create with Agent, and then select Create Manually. Alternatively, select one of the starter templates to prepopulate the prompt and schedule fields.
+Select the dropdown next to Create with Agent, and then select Create Manually. Alternatively, select one of the starter templates to prepopulate the prompt and schedule fields.
 Turn on Run in the Cloud.
 Turn on Run in the Cloud.
 Choose an eligible private GitHub.com repository in the workspace picker. You can use a local clone or select a repository without cloning it to your machine. Public repositories aren't supported.
@@ -114,9 +118,23 @@ Review your automation settings, and then select Create.
 For the summary example, compare the cited commits with the repository history, confirm the summary covers the requested time window, and check that no files or issues changed. After this check, set a recurring schedule.
 The cloud service runs the prompt in the selected repository. It doesn't use your local working tree, uncommitted changes, or local development environment.
 H2: Create an automation from chat
-You can also create an automation by asking in a normal chat in the Agents window. Describe the task, where it should run, and its schedule. For example:
-The agent creates the automation through the normal tool-approval flow. Review any approval request before allowing creation. Then open Automations to review the saved prompt, execution environment, schedule, and permissions before enabling scheduled runs.
-For a custom cadence, specify a cron expression and the time zone:
+Use the built-in /automate skill in the Agents window to turn a completed task or a new idea into a recurring automation. The agent helps draft a reusable prompt and configuration for you to review before saving.
+Start in any of these ways:
+Reuse a completed task: Enter /automate in the same chat. The agent uses the relevant goal, inputs, scope, and expected result, rather than saving the entire conversation. Add instructions after /automate to adjust what should repeat.
+Start from a new idea: In a new chat, enter /automate followed by the task you want to repeat. If you enter /automate without context, the agent suggests examples and helps you define a task.
+Start from the Automations view: Select Automations in the sidebar, and then select Create with Agent. This opens a new-session page with /automate prefilled. Add your task description and send the prompt.
+For example, start a new chat with:
+Answer questions about missing task or schedule details. The agent uses relevant information from the conversation instead of asking you to repeat it.
+Answer questions about missing task or schedule details. The agent uses relevant information from the conversation instead of asking you to repeat it.
+Review the proposed name, exact prompt, execution environment, workspace, schedule, time zone, and any end date. Check any proposed permissions and constraints before proceeding.
+Review the proposed name, exact prompt, execution environment, workspace, schedule, time zone, and any end date. Check any proposed permissions and constraints before proceeding.
+Ask for changes, or say Create it to save the reviewed automation. Invoking /automate alone doesn't confirm creation. Normal tool approvals and organization policies still apply.
+Ask for changes, or say Create it to save the reviewed automation. Invoking /automate alone doesn't confirm creation. Normal tool approvals and organization policies still apply.
+Open Automations to review the saved configuration, then run and review the automation before enabling recurring work.
+Open Automations to review the saved configuration, then run and review the automation before enabling recurring work.
+For an explicit one-time scheduling request, you don't need a separate Create it message. Normal tool approvals still apply.
+You can also ask the agent to change or remove an existing automation's end date. Review the resolved date and time zone before confirming the change. End dates stop future scheduled runs, not a run already in progress.
+You can also ask for an automation in ordinary chat without invoking /automate. For a custom cadence, specify a cron expression and the time zone:
 Cron schedules require a local Agent Host and aren't supported for cloud automations. Review the cron schedule and syntax guidance before enabling the automation.
 H2: Start from a template
 Automation templates provide a starting name, prompt, and schedule that you can review and adapt:
@@ -140,6 +158,18 @@ Keep the machine that runs the automation awake and its agent available. Agent H
 After an interruption, a missed schedule can trigger a catch-up run. Don't rely on every missed occurrence being replayed.
 An automation runs one session at a time. Another scheduled occurrence doesn't start a parallel run of the same automation.
 Cloud schedules run on GitHub rather than through your local scheduler. You can close the Agents window or turn off your computer without stopping the schedule.
+H3: Set an end date
+Set an end date for temporary work, such as a daily release summary that should run for two weeks. End dates are supported for automations on local or remote Agent Hosts, but not GitHub cloud automations.
+Create or edit an automation, and expand Advanced Settings.
+Create or edit an automation, and expand Advanced Settings.
+Under Disables after, select Days, Weeks, or Months, and enter a positive whole number.
+Under Disables after, select Days, Weeks, or Months, and enter a positive whole number.
+Review the estimated end date and time, and then select Create or Save.
+Review the estimated end date and time, and then select Create or Save.
+The duration is converted to a fixed end date when you save, using your local calendar. Reopening the form or editing unrelated fields doesn't extend it. Changing the duration calculates a new end date from the time you save.
+When the end date is reached, the automation disables future scheduled runs, including catch-up runs. It doesn't stop an active run or prevent you from selecting Run now.
+To remove the end date, select Never under Disables after and save, or select More Actions > Remove end date on the automation card. Removing the end date doesn't re-enable a disabled automation.
+To resume scheduled runs, set a future end date or remove it, and then enable the automation. If you enable an expired automation from its card, Remove expiration and enable removes the cutoff and resumes scheduling without an end date.
 H3: Use a cron schedule
 Use a cron schedule when a preset doesn't fit, such as running twice each weekday or on the first day of each month. Cron schedules are not supported for cloud automations.
 Create or edit a local automation and select Cron in Trigger.
@@ -199,8 +229,10 @@ H2: Share an automation
 Export a local automation as a .automation.md file to reuse it on another machine or share it with someone else. The file is readable Markdown with YAML frontmatter and contains only portable information:
 Name and prompt.
 Manual, hourly, daily, weekly, or cron schedule.
+An optional end date.
 File format version and portable identifier.
 Exported cron schedules use timeZone: local, so the importing machine uses its own local time zone. A cron schedule whose configured time zone differs from your current local time zone can't be exported.
+Files with an end date use format version 2 and preserve the fixed cutoff, not a duration that restarts on import. Review or change the end date before enabling an imported automation.
 The file doesn't include the workspace, provider, model, permissions, enabled state, or run history. The person who imports the file chooses these options locally.
 Cloud automations don't offer Export. Manage their definitions and triggers on GitHub rather than relying on an exported .automation.md file to reproduce them.
 H3: Export an automation
@@ -212,15 +244,15 @@ You can open the exported file in an editor to review its prompt and schedule be
 H3: Import an automation
 Select Import Automation in the Automations view, and then choose a .automation.md file. You can also drag one .automation.md file anywhere over the view.
 Select Import Automation in the Automations view, and then choose a .automation.md file. You can also drag one .automation.md file anywhere over the view.
-In the New Automation dialog, review the imported name, prompt, and schedule.
-In the New Automation dialog, review the imported name, prompt, and schedule.
+In the New Automation dialog, review the imported name, prompt, schedule, and any end date.
+In the New Automation dialog, review the imported name, prompt, schedule, and any end date.
 Choose the workspace, agent, model, permissions, and isolation for the automation.
 Choose the workspace, agent, model, permissions, and isolation for the automation.
 The Enabled checkbox is cleared by default. Select it only after you review the complete configuration, and then select Create.
 The Enabled checkbox is cleared by default. Select it only after you review the complete configuration, and then select Create.
 VS Code rejects unsupported files instead of silently changing their schedule or importing execution permissions.
 H2: Manage an automation
-Edit: select the automation's name, update its supported fields, and select Save. A cloud automation's repository and Owner can't change after creation. Create another automation to use a different repository or owner, and disable the original if it should no longer run.
+Edit: select the automation's name, update its supported fields, and select Save. For time-limited work, set or change an end date. A cloud automation's repository and Owner can't change after creation. Create another automation to use a different repository or owner, and disable the original if it should no longer run.
 Enable or disable future runs: select More Actions > Enable or Disable. Disabling an automation doesn't stop a run already in progress.
 Duplicate: select More Actions > Duplicate, review the copy in the New Automation dialog, and select Create. Duplicate event-triggered cloud automations on GitHub to preserve their complete configuration.
 Stop an active run: select Stop for the run in History when available. This requests cancellation, not a rollback of completed actions.
@@ -264,6 +296,7 @@ H2: Cloud automation limitations
 Cloud automation support in VS Code currently has these limitations:
 Available repositories, event types, filters, models, and tools depend on GitHub service support and your account's permissions.
 A cloud automation uses the cloud model and tool configuration. It doesn't accept local mode or approval settings, custom agents, or local MCP configuration.
+Cloud automations don't support end dates. Disable or delete the automation when scheduled or event-triggered work should stop.
 Unsupported trigger configuration must be managed on GitHub. It isn't replaced when you edit other supported fields.
 H2: Next steps
 Manage agent sessions

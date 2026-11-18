@@ -23657,7 +23657,7 @@
     },
     "ad190ab13a3b7f9c69c766f60f5a013618221c0512d61274f86fb0b973c3c0c5": {
       "version": 6,
-      "checkedAt": "2026-10-19T10:59:32.123Z",
+      "checkedAt": "2026-11-18T14:21:29.343Z",
       "inputUrl": "https://docs.github.com/en/copilot",
       "inputTitle": "GitHub Docs / Copilot changed",
       "status": "unconfirmed",
@@ -23665,8 +23665,8 @@
         "url": "https://docs.github.com/en/copilot",
         "status": "unconfirmed",
         "reason": "Historical changed feature not identifiable in current page",
-        "checkedAt": "2026-10-19T10:59:32.228Z",
-        "contentHash": "c48282f82b8dabf7d7b99f493f1114c2c5bf4fc35d39e3bf0945d8b766551903"
+        "checkedAt": "2026-11-17T21:52:12.587Z",
+        "contentHash": "9e4654f51ee30465b7e089d39acb1ad3170cfa480647c793574a6c2556e6d7cb"
       },
       "documents": [],
       "errors": [],
@@ -23677,7 +23677,7 @@
     },
     "ae767e2a1d60a58fdd4da3d237880c13d38b56c089af42f2541768da083f2184": {
       "version": 6,
-      "checkedAt": "2026-10-19T10:59:32.346Z",
+      "checkedAt": "2026-11-18T14:21:29.359Z",
       "inputUrl": "https://docs.github.com/en/copilot/concepts",
       "inputTitle": "GitHub Docs / Copilot concepts changed",
       "status": "unconfirmed",
@@ -23685,8 +23685,8 @@
         "url": "https://docs.github.com/en/copilot/concepts",
         "status": "unconfirmed",
         "reason": "Historical changed feature not identifiable in current page",
-        "checkedAt": "2026-10-19T10:59:32.380Z",
-        "contentHash": "e23ff57620b7d93ccb071310bc6b664790dad513bbc6794ef1017f1532a7a6fb"
+        "checkedAt": "2026-11-16T13:51:11.663Z",
+        "contentHash": "37464fd2ab4ff962441b6e5879d17c6a7726b82300abacdb5d74a4684341bb99"
       },
       "documents": [],
       "errors": [],
@@ -29400,6 +29400,478 @@
         "reason": "Historical changed feature not identifiable in current page",
         "checkedAt": "2026-11-17T21:52:12.987Z",
         "contentHash": "fa228f911d2d40daf9799f554b85da7f71d62360674864f86fe2701c0faf97ed"
+      },
+      "documents": [],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "04e948f3cd759307ded0a8df5427672206fdb026abc3a188d583dce4a74ee404": {
+      "version": 6,
+      "checkedAt": "2026-11-18T14:21:29.428Z",
+      "inputUrl": "https://code.visualstudio.com/updates/v1_148",
+      "inputTitle": "Visual Studio Code 1.148 (Insiders)",
+      "status": "unconfirmed",
+      "source": {
+        "url": "https://code.visualstudio.com/updates/v1_148",
+        "status": "verified",
+        "reason": "Fetched original article",
+        "checkedAt": "2026-11-18T14:21:30.856Z",
+        "contentHash": "684dd4400d270960bec0f66ea6e8eb25db4be29cb9862bdc952f823eb5e56442"
+      },
+      "documents": [],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "7684afd03b20ebba0b1a91d080f71679162c2a87b77f06cebbb534811f6165ae": {
+      "version": 6,
+      "checkedAt": "2026-11-18T14:21:30.908Z",
+      "inputUrl": "https://code.visualstudio.com/updates/",
+      "inputTitle": "VS Code Updates changed",
+      "status": "verified",
+      "source": {
+        "url": "https://code.visualstudio.com/updates/v1_147#release-downloads-heading",
+        "status": "verified",
+        "reason": "Explicit release link for 1.147",
+        "checkedAt": "2026-11-18T14:21:31.805Z",
+        "contentHash": "c4d6c07a022577697ebf8eb9a1dec418480d3e37b11f6ef5c39b5624e7e394ec"
+      },
+      "documents": [
+        {
+          "url": "https://code.visualstudio.com/docs/agents/run/agents-window#_send-a-request-later",
+          "title": "Use the Agents window",
+          "language": "en",
+          "checkedAt": "2026-11-18T14:21:32.154Z",
+          "contentHash": "25e02cad1312bfd13fed9ab47d8724e72a6effab12ac37e501f798e1123df07f",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_147#release-downloads-heading",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "verified",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://code.visualstudio.com/docs/agents/run/remote-agent-sessions",
+          "title": "Run and manage remote agent sessions",
+          "language": "en",
+          "checkedAt": "2026-11-18T14:21:32.342Z",
+          "contentHash": "3c5eff0188a8d11f182f7f87877e61fbdc6799d29af6b246eedeac0c9ed035d7",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_147#release-downloads-heading",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://code.visualstudio.com/docs/agents/run/agent-harnesses#_copilot",
+          "title": "Choose an agent harness",
+          "language": "en",
+          "checkedAt": "2026-11-13T13:16:32.302Z",
+          "contentHash": "3a43c35b4c4e1ad55a213b3450f68820eda48e18eec6baf8cd399262913422af",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_147#release-downloads-heading",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "verified",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "35b5dd2c0e1289c0e815f7373401503e05f6ed23a1bee021e8b58e93d1255140": {
+      "version": 6,
+      "checkedAt": "2026-11-18T14:21:32.381Z",
+      "inputUrl": "https://code.visualstudio.com/updates/v1_147",
+      "inputTitle": "Visual Studio Code 1.147: Send Later for chat requests (Experimental)",
+      "status": "verified",
+      "source": {
+        "url": "https://code.visualstudio.com/updates/v1_147#_send-later-for-chat-requests-experimental",
+        "status": "verified",
+        "reason": "Exact release heading: Send Later for chat requests (Experimental)",
+        "checkedAt": "2026-11-18T14:21:31.805Z",
+        "contentHash": "c4d6c07a022577697ebf8eb9a1dec418480d3e37b11f6ef5c39b5624e7e394ec"
+      },
+      "documents": [
+        {
+          "url": "https://code.visualstudio.com/docs/agents/run/agents-window#_send-a-request-later",
+          "title": "Use the Agents window",
+          "language": "en",
+          "checkedAt": "2026-11-18T14:21:32.154Z",
+          "contentHash": "25e02cad1312bfd13fed9ab47d8724e72a6effab12ac37e501f798e1123df07f",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_147#_send-later-for-chat-requests-experimental",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "verified",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "5a9f4d7d9e4e00ef771da6f1722b09da81f9bf2b3150de9fb0ec9af50d14690a": {
+      "version": 6,
+      "checkedAt": "2026-11-18T14:21:32.394Z",
+      "inputUrl": "https://code.visualstudio.com/updates/v1_147",
+      "inputTitle": "Visual Studio Code 1.147: Save and resume drafts (Experimental)",
+      "status": "unconfirmed",
+      "source": {
+        "url": "https://code.visualstudio.com/updates/v1_147#_save-and-resume-drafts-experimental",
+        "status": "verified",
+        "reason": "Exact release heading: Save and resume drafts (Experimental)",
+        "checkedAt": "2026-11-18T14:21:31.805Z",
+        "contentHash": "c4d6c07a022577697ebf8eb9a1dec418480d3e37b11f6ef5c39b5624e7e394ec"
+      },
+      "documents": [],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "4ba060ae54a9c599d2606d51647cf2551c56a092a5c38e046c082e49b55ec000": {
+      "version": 6,
+      "checkedAt": "2026-11-18T14:21:32.514Z",
+      "inputUrl": "https://code.visualstudio.com/updates/v1_147",
+      "inputTitle": "Visual Studio Code 1.147: Share remote environments as GitHub Environments",
+      "status": "verified",
+      "source": {
+        "url": "https://code.visualstudio.com/updates/v1_147#_share-remote-environments-as-github-environments",
+        "status": "verified",
+        "reason": "Exact release heading: Share remote environments as GitHub Environments",
+        "checkedAt": "2026-11-18T14:21:31.805Z",
+        "contentHash": "c4d6c07a022577697ebf8eb9a1dec418480d3e37b11f6ef5c39b5624e7e394ec"
+      },
+      "documents": [
+        {
+          "url": "https://code.visualstudio.com/docs/agents/run/remote-agent-sessions",
+          "title": "Run and manage remote agent sessions",
+          "language": "en",
+          "checkedAt": "2026-11-18T14:21:32.342Z",
+          "contentHash": "3c5eff0188a8d11f182f7f87877e61fbdc6799d29af6b246eedeac0c9ed035d7",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_147#_share-remote-environments-as-github-environments",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "9cb11b8c6beb1e5d50b8c423e1bcc915995a3413a3a35af707b59521db978c7c": {
+      "version": 6,
+      "checkedAt": "2026-11-18T14:21:32.525Z",
+      "inputUrl": "https://code.visualstudio.com/updates/v1_147",
+      "inputTitle": "Visual Studio Code 1.147: Keep chat sessions across Dev Container rebuilds (Experimental)",
+      "status": "verified",
+      "source": {
+        "url": "https://code.visualstudio.com/updates/v1_147#_keep-chat-sessions-across-dev-container-rebuilds-experimental",
+        "status": "verified",
+        "reason": "Exact release heading: Keep chat sessions across Dev Container rebuilds (Experimental)",
+        "checkedAt": "2026-11-18T14:21:31.805Z",
+        "contentHash": "c4d6c07a022577697ebf8eb9a1dec418480d3e37b11f6ef5c39b5624e7e394ec"
+      },
+      "documents": [
+        {
+          "url": "https://code.visualstudio.com/updates/v1_146",
+          "title": "Visual Studio Code 1.146",
+          "language": "en",
+          "checkedAt": "2026-11-11T20:17:42.845Z",
+          "contentHash": "0cdfcdea62b0eda4d07c29f53fc5bef48196ed0d91d7dbe7af7c99277f3e8785",
+          "discoveryUrl": "https://code.visualstudio.com/docs",
+          "basis": "Matching feature terms in official documentation index",
+          "localization": "not_applicable",
+          "fragmentVerification": "none",
+          "kind": "release_notes",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "b4fb1484d571941d2d3a0c4369c8e67da0ddc8cfc3877a61b8b6cfd8be6137f2": {
+      "version": 6,
+      "checkedAt": "2026-11-18T14:21:32.539Z",
+      "inputUrl": "https://code.visualstudio.com/updates/v1_147",
+      "inputTitle": "Visual Studio Code 1.147: Inbox mode improvements (Experimental)",
+      "status": "verified",
+      "source": {
+        "url": "https://code.visualstudio.com/updates/v1_147#_inbox-mode-improvements-experimental",
+        "status": "verified",
+        "reason": "Exact release heading: Inbox mode improvements (Experimental)",
+        "checkedAt": "2026-11-18T14:21:31.805Z",
+        "contentHash": "c4d6c07a022577697ebf8eb9a1dec418480d3e37b11f6ef5c39b5624e7e394ec"
+      },
+      "documents": [
+        {
+          "url": "https://code.visualstudio.com/updates/v1_146",
+          "title": "Visual Studio Code 1.146",
+          "language": "en",
+          "checkedAt": "2026-11-11T20:17:42.845Z",
+          "contentHash": "0cdfcdea62b0eda4d07c29f53fc5bef48196ed0d91d7dbe7af7c99277f3e8785",
+          "discoveryUrl": "https://code.visualstudio.com/docs",
+          "basis": "Matching feature terms in official documentation index",
+          "localization": "not_applicable",
+          "fragmentVerification": "none",
+          "kind": "release_notes",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "cc8ef3821ddd4b2e3505201f361e58b1135901b50cbc600444ae90347d467caf": {
+      "version": 6,
+      "checkedAt": "2026-11-18T14:21:32.551Z",
+      "inputUrl": "https://code.visualstudio.com/updates/v1_147",
+      "inputTitle": "Visual Studio Code 1.147: Decision model-based model routers (Experimental)",
+      "status": "verified",
+      "source": {
+        "url": "https://code.visualstudio.com/updates/v1_147#_decision-model-based-model-routers-experimental",
+        "status": "verified",
+        "reason": "Exact release heading: Decision model-based model routers (Experimental)",
+        "checkedAt": "2026-11-18T14:21:31.805Z",
+        "contentHash": "c4d6c07a022577697ebf8eb9a1dec418480d3e37b11f6ef5c39b5624e7e394ec"
+      },
+      "documents": [
+        {
+          "url": "https://code.visualstudio.com/docs/agents/run/agent-harnesses#_copilot",
+          "title": "Choose an agent harness",
+          "language": "en",
+          "checkedAt": "2026-11-13T13:16:32.302Z",
+          "contentHash": "3a43c35b4c4e1ad55a213b3450f68820eda48e18eec6baf8cd399262913422af",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_147#_decision-model-based-model-routers-experimental",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "verified",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://code.visualstudio.com/docs/configure/settings#_settings-json-file",
+          "title": "User and workspace settings",
+          "language": "en",
+          "checkedAt": "2026-11-18T14:21:32.700Z",
+          "contentHash": "cfafda7a1fa213c2b338271301ae1bc06a2f3f1e4f98378d3ebee765551feb79",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_147#_decision-model-based-model-routers-experimental",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "verified",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "ecb83b319c69bb72ec7139709722e9c4d5df410d6a4e9c38b1761763906402e8": {
+      "version": 6,
+      "checkedAt": "2026-11-18T14:21:32.734Z",
+      "inputUrl": "https://code.visualstudio.com/updates/v1_147",
+      "inputTitle": "Visual Studio Code 1.147: Model comparison improvements (Preview)",
+      "status": "verified",
+      "source": {
+        "url": "https://code.visualstudio.com/updates/v1_147#_model-comparison-improvements-preview",
+        "status": "verified",
+        "reason": "Exact release heading: Model comparison improvements (Preview)",
+        "checkedAt": "2026-11-18T14:21:31.805Z",
+        "contentHash": "c4d6c07a022577697ebf8eb9a1dec418480d3e37b11f6ef5c39b5624e7e394ec"
+      },
+      "documents": [
+        {
+          "url": "https://code.visualstudio.com/docs/agents/run/compare-models",
+          "title": "Compare model results",
+          "language": "en",
+          "checkedAt": "2026-11-18T14:21:34.571Z",
+          "contentHash": "56bda9a28b5877fe7eee0c089f8aa144845ea4e01e69ad3ca608b5a8d90cdf60",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_147#_model-comparison-improvements-preview",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "631f71ea6dcdf4e7acc145df4b115ed77c95007949570a0f75bfe63fe2666f58": {
+      "version": 6,
+      "checkedAt": "2026-11-18T14:21:34.588Z",
+      "inputUrl": "https://code.visualstudio.com/updates/v1_147",
+      "inputTitle": "Visual Studio Code 1.147: HTML previews and native visuals in agent responses",
+      "status": "verified",
+      "source": {
+        "url": "https://code.visualstudio.com/updates/v1_147#_html-previews-and-native-visuals-in-agent-responses",
+        "status": "verified",
+        "reason": "Exact release heading: HTML previews and native visuals in agent responses",
+        "checkedAt": "2026-11-18T14:21:31.805Z",
+        "contentHash": "c4d6c07a022577697ebf8eb9a1dec418480d3e37b11f6ef5c39b5624e7e394ec"
+      },
+      "documents": [
+        {
+          "url": "https://code.visualstudio.com/docs/agents/run/agents-window",
+          "title": "Use the Agents window",
+          "language": "en",
+          "checkedAt": "2026-11-18T14:21:32.154Z",
+          "contentHash": "25e02cad1312bfd13fed9ab47d8724e72a6effab12ac37e501f798e1123df07f",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_147#_html-previews-and-native-visuals-in-agent-responses",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://code.visualstudio.com/docs/agent-customization/agent-skills",
+          "title": "Use Agent Skills in VS Code",
+          "language": "en",
+          "checkedAt": "2026-11-13T13:16:29.027Z",
+          "contentHash": "d0304428752aca5968d026936dd1717f4929e7961b703af7161c403bf7b30353",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_147#_html-previews-and-native-visuals-in-agent-responses",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "fce3012891e4c5f09fb40c3784fb4d69368d2401133d87b661988a12e597daf0": {
+      "version": 6,
+      "checkedAt": "2026-11-18T14:21:34.599Z",
+      "inputUrl": "https://code.visualstudio.com/updates/v1_109",
+      "inputTitle": "VS Code Release Notes 1.109 changed",
+      "status": "unconfirmed",
+      "source": {
+        "url": "https://code.visualstudio.com/updates/v1_109",
+        "status": "unconfirmed",
+        "reason": "Historical changed feature not identifiable in current page",
+        "checkedAt": "2026-11-18T14:21:34.751Z",
+        "contentHash": "9175441fbd05b250660e4637869af16764337b35c900c52a780540bd677a07af"
+      },
+      "documents": [],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "fe7e795cfe8559be63a54a43e34c7610b19fb54f56f60cc7472798c3390b34b5": {
+      "version": 6,
+      "checkedAt": "2026-11-18T14:21:34.904Z",
+      "inputUrl": "https://code.visualstudio.com/docs/agents/run/agents-window",
+      "inputTitle": "VS Code Docs / Agents window changed",
+      "status": "verified",
+      "source": {
+        "url": "https://code.visualstudio.com/docs/agents/run/agents-window#_save-and-resume-drafts",
+        "status": "verified",
+        "reason": "Observed changed heading(s): Save and resume drafts; Send a request later; Change or cancel a scheduled request; Ask the agent to schedule a follow-up",
+        "checkedAt": "2026-11-18T14:21:32.154Z",
+        "contentHash": "25e02cad1312bfd13fed9ab47d8724e72a6effab12ac37e501f798e1123df07f"
+      },
+      "documents": [
+        {
+          "url": "https://code.visualstudio.com/docs/agents/run/automations",
+          "title": "Create and manage agent automations",
+          "language": "en",
+          "checkedAt": "2026-11-14T01:32:09.051Z",
+          "contentHash": "044a0486c49ecb7b56664203042893cad03fb979e41ac7258d0cb1ccef150b7c",
+          "discoveryUrl": "https://code.visualstudio.com/docs/agents/run/agents-window#_save-and-resume-drafts",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "679c4a066616e9c0ce0fcbcfbb34d168ca341ea1f65af641d8cc1db83ff0ea44": {
+      "version": 6,
+      "checkedAt": "2026-11-18T14:21:35.297Z",
+      "inputUrl": "https://code.visualstudio.com/docs/agents/run/automations",
+      "inputTitle": "VS Code Docs / Agent automations changed",
+      "status": "verified",
+      "source": {
+        "url": "https://code.visualstudio.com/docs/agents/run/automations#_set-an-end-date",
+        "status": "verified",
+        "reason": "Observed changed heading(s): Set an end date",
+        "checkedAt": "2026-11-18T14:21:35.411Z",
+        "contentHash": "6ec18b64df22af868b48df31fe6829cbd2d0f0f21a4caa9a10004d11d659e648"
+      },
+      "documents": [
+        {
+          "url": "https://code.visualstudio.com/docs/agents/run/remote-agent-sessions",
+          "title": "Run and manage remote agent sessions",
+          "language": "en",
+          "checkedAt": "2026-11-18T14:21:32.342Z",
+          "contentHash": "3c5eff0188a8d11f182f7f87877e61fbdc6799d29af6b246eedeac0c9ed035d7",
+          "discoveryUrl": "https://code.visualstudio.com/docs/agents/run/automations#_set-an-end-date",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "0cab26cd655628edb09b1f12fa14e0d953fdd0ceac4b91eaabfa320020e17349": {
+      "version": 6,
+      "checkedAt": "2026-11-18T14:21:35.448Z",
+      "inputUrl": "https://code.visualstudio.com/docs/agents/run/remote-agent-sessions",
+      "inputTitle": "VS Code Docs / Remote agent sessions changed",
+      "status": "unconfirmed",
+      "source": {
+        "url": "https://code.visualstudio.com/docs/agents/run/remote-agent-sessions",
+        "status": "unconfirmed",
+        "reason": "Historical changed feature not identifiable in current page",
+        "checkedAt": "2026-11-18T14:21:32.342Z",
+        "contentHash": "3c5eff0188a8d11f182f7f87877e61fbdc6799d29af6b246eedeac0c9ed035d7"
       },
       "documents": [],
       "errors": [],

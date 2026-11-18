@@ -33,13 +33,127 @@ You can optionally change the agent harness, agent, or model.
 Describe the outcome you want, any constraints, and how the agent should check its work. Press Enter to submit the prompt.
 For additional context, select Add Context (+). If prompted, select a repository first. Pasting an issue or pull request URL into the prompt also adds it as a context attachment.
 You can optionally change the agent harness, agent, or model.
-To start a session in the background without navigating into it, press Alt+Enter or hold Alt and select Send. Focus stays in the composer so you can start another task. Select Open Session in the confirmation to open the sent conversation. With the Inbox mode setting enabled, you can also press Ctrl+Enter (Cmd+Enter on macOS).
+To start a session in the background without navigating into it, press Alt+Enter or hold Alt and select Send. Focus stays in the composer so you can start another task. Select Open Session in the confirmation to open the sent conversation. With Inbox grouping selected, you can also press Ctrl+Enter (Cmd+Enter on macOS).
 H3: Choose where an agent makes changes
 For a Git workspace you can choose between applying changes in the current branch or a new worktree. Use the isolation dropdown above the input to choose where the agent edits files.
 Choosing a base branch for New Worktree doesn't switch the branch in your active workspace.
 Git-ignored files, including dependencies and local configuration, are also absent from new worktrees by default. Run your project's setup or configure which ignored files to include.
 Dev Container sessions work directly in the container workspace and don't support New Worktree. See Run a session in a Dev Container.
 Worktrees isolate working files, not the agent's access to your machine or external services. Either isolation mode supports the permission levels offered by your harness. For operating system-level restrictions, configure agent sandboxing or use cloud sessions.
+H3: Save and resume drafts
+Prepare requests for several tasks and return to them when you're ready to send them. In the Agents window, drafts save unsent New Session requests without starting an agent session.
+Open Settings (⌘, (Windows, Linux Ctrl+,)) and enable 
+ 
+ 
+ sessions.drafts.enabled
+ 
+ 
+ 
+ 
+ 
+ 
+ Open in VS Code
+ Open in VS Code Insiders
+ 
+ . The setting is off by default.
+Open Settings (⌘, (Windows, Linux Ctrl+,)) and enable 
+ 
+ 
+ sessions.drafts.enabled
+ 
+ 
+ 
+ 
+ 
+ 
+ Open in VS Code
+ Open in VS Code Insiders
+ 
+ . The setting is off by default.
+Select New Session and compose a request, including any context attachments and session options.
+Select New Session and compose a request, including any context attachments and session options.
+Navigate to another conversation. When the new-session input is no longer visible, the request is saved in Drafts in the sidebar.
+Navigate to another conversation. When the new-session input is no longer visible, the request is saved in Drafts in the sidebar.
+Select Resume Draft beside a saved draft, or Open Draft in the notification. Review or edit the request, then send it when you're ready.
+Select Resume Draft beside a saved draft, or Open Draft in the notification. Review or edit the request, then send it when you're ready.
+Each draft keeps its text, attachments, inline references, workspace, agent, model, and configuration. Saved drafts remain available after restarting the window. To save a new draft, navigate away from the input first. Restarting alone doesn't add it to Drafts.
+The draft is removed from the list after the request is accepted. To discard one without sending it, select Delete Draft.
+Turning off 
+ 
+ 
+ sessions.drafts.enabled
+ 
+ 
+ 
+ 
+ 
+ 
+ Open in VS Code
+ Open in VS Code Insiders
+ 
+ hides saved drafts and stops saving new ones, but doesn't delete them. Turn it back on to access them again.
+H2: Send a request later
+Use Send Later to start a new task or send a follow-up to an existing conversation at a future time. For tasks that repeat, create an automation instead.
+Enable 
+ 
+ 
+ sessions.sendLater.enabled
+ 
+ 
+ 
+ 
+ 
+ 
+ Open in VS Code
+ Open in VS Code Insiders
+ 
+ , which is off by default, and keep 
+ 
+ 
+ chat.automations.enabled
+ 
+ 
+ 
+ 
+ 
+ 
+ Open in VS Code
+ Open in VS Code Insiders
+ 
+ enabled. Send Later currently only works on the local machine and not for remote agent sessions.
+Compose a request in New Session or an existing conversation. For a new session, choose its workspace, agent, model, and other session options.
+Compose a request in New Session or an existing conversation. For a new session, choose its workspace, agent, model, and other session options.
+Open the Send dropdown and select Send Later.
+Open the Send dropdown and select Send Later.
+Choose a preset, such as In 5 Minutes or Tomorrow Morning (9 AM the next day). Each preset shows its exact local send time.
+For a custom time, select Choose Date and Time, choose a future date and time, and select Schedule. The time dropdown uses 15-minute steps. Select Exact Time to choose a precise minute. Review the date, time, and time zone before scheduling.
+Choose a preset, such as In 5 Minutes or Tomorrow Morning (9 AM the next day). Each preset shows its exact local send time.
+For a custom time, select Choose Date and Time, choose a future date and time, and select Schedule. The time dropdown uses 15-minute steps. Select Exact Time to choose a precise minute. Review the date, time, and time zone before scheduling.
+A scheduled new-session request appears under Drafts. Use Preview to check its prompt, time, workspace, and model. A scheduled follow-up appears inside its original conversation, including a nested chat, rather than as a new sidebar draft.
+At the scheduled time, a follow-up uses that conversation's current configuration. If the conversation is busy, the request joins its queue without interrupting or steering the active turn.
+Keep your computer awake and the Agent Host running for on-time delivery. Scheduling doesn't wake a sleeping computer or start a stopped host. Pending requests survive window reloads, and a missed send catches up once when the host becomes available.
+H3: Change or cancel a scheduled request
+To update or manage a scheduled request, right-click a scheduled chat request and select an action.
+Recovery doesn't overwrite other unsent input. If cancellation reports an uncertain outcome, check Automations before sending the request again.
+Turning off 
+ 
+ 
+ sessions.sendLater.enabled
+ 
+ 
+ 
+ 
+ 
+ 
+ Open in VS Code
+ Open in VS Code Insiders
+ 
+ doesn't cancel accepted schedules. Manage those requests in Automations.
+To view the list of scheduled requests, select the Scheduled Only filter option in the sessions list.
+H3: Ask the agent to schedule a follow-up
+You can ask the agent to schedule a text-only request in the same conversation:
+An explicit one-time request doesn't require a separate Create it message. Review the scheduling tool approval if prompted. Scheduling doesn't approve future tool actions.
+The request targets the exact calling conversation unless you explicitly ask for a new session. You can also ask the agent to reschedule, cancel, or send a pending request now. Use the chat UI for requests with attachments.
 H2: Work with multiple sessions
 You can run multiple agent sessions in parallel, either in the same project or across different projects. Each session has its own conversation and task context, so you can delegate independent work and review one result while another session continues. For example, one session can implement a feature in one project while another investigates a bug in a different project.
 Use separate sessions for independent tasks you want to track and review separately. For related conversations you want to keep together, work with multiple chats in a session.
@@ -136,7 +250,7 @@ On desktop, you can run sessions using supported provider credentials instead of
 Follow the Claude BYOK setup for a supported API key or provider configuration.
 Follow the Codex setup to use a ChatGPT sign-in.
 Configure a supported BYOK model for the Agents window.
-Claude and Codex harnesses are disabled when enterprise-managed settings apply, even with separate credentials. Existing sessions aren't deleted. Contact the IT team that deployed the settings to discuss access.
+Claude and Codex harnesses are disabled when enterprise-managed settings apply, unless your administrator explicitly permits them. Separate credentials don't override that restriction. Existing sessions aren't deleted. Contact the IT team that deployed the settings to discuss access.
 If no provider is configured, select Add Models or Sign In in the window. Models and operations that require GitHub authentication prompt you when needed. The browser-based Agents window requires GitHub sign-in.
 H3: Run in another environment
 For a GitHub repository, select Work in Repository in the workspace picker. To work on another machine, select SSH or Dev Tunnels from the environment picker and follow the remote session setup.
@@ -183,6 +297,23 @@ Idle containers stop after five minutes when no session is working, waiting for 
  Open in VS Code Insiders
  
  (300 seconds by default, 0 to turn off automatic shutdown). Marking sessions as done or deleting them can still remove the container.
+Restarting an existing container is different from rebuilding or replacing it. To keep container-stored chat sessions across replacements, enable 
+ 
+ 
+ chat.agentHost.devContainer.stateVolume.enabled
+ 
+ 
+ 
+ 
+ 
+ 
+ Open in VS Code
+ Open in VS Code Insiders
+ 
+ before creating the container. See Preserve chat sessions across rebuilds 
+ 
+ Dev Container state volumes is experimental and might change or be removed.
+, especially the warning about the first rebuild of an existing container.
 H3: Start a session from a pull request
 For a local GitHub-backed workspace, start from an existing pull request to ask questions or continue its changes. The session includes the pull request details, changes, and comments, and uses an isolated worktree that tracks its branch.
 Group the sessions list by workspace.
@@ -271,7 +402,7 @@ H3: Schedule recurring tasks
 Automations run saved agent tasks on a schedule or, for cloud automations 
  
  Cloud automations is in preview and might change before it becomes generally available.
-, in response to supported repository events. Select Automations in the sidebar to get started. Learn how to create and manage agent automations.
+, in response to supported repository events. To turn a completed task into an automation, enter /automate in its chat. To start from a new idea, select Automations in the sidebar, and then select Create with Agent. Follow the chat-based creation workflow to review the proposal, save it, and check a first run.
 H2: Configure the Agents window
 You can personalize chat, adjust the window layout, configure settings and extensions, and choose how Markdown files open. See Configure the Agents window for all window-specific options.
 For other interaction options, use Voice Mode 
