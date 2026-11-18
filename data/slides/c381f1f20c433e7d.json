@@ -1,0 +1,112 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "c381f1f20c433e7d",
+  "title": {
+    "ja": "Copilot アプリが Azure DevOps・ブラウザー操作・GHES に対応",
+    "subtitleJa": "Azure DevOps とブラウザー使用は公開プレビュー、GHES は一般提供になった",
+    "original": "GitHub Copilot app, Microsoft Ignite releases"
+  },
+  "date": "2026-11-17",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "GitHub Copilot アプリで Azure DevOps や GHES のリポジトリ、ブラウザー作業を扱いたい開発者",
+    "change": "Azure DevOps のリポジトリと PR をアプリ内で扱え、ブラウザー操作も Copilot に任せられる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "使う機能の設定を有効にする。GHES は アプリ 1.2.0 以降に更新する"
+  },
+  "panels": [
+    {
+      "id": "azure-devops",
+      "heading": "Azure DevOps（プレビュー）",
+      "priority": "core",
+      "items": [
+        "[Experimental] で Azure DevOps integration をオン、[Accounts] > [Add account] で Microsoft アカウントにサインイン",
+        "リポジトリを clone し、エージェントがブランチ作成・コード変更・PR 作成まで実行。状況はサイドバーで確認",
+        "レビュー コメントの Fix で対応を依頼。agent merge で CI 失敗の修正と PR の完了も任せられる",
+        "Azure DevOps リポジトリではクラウド セッションは使えない"
+      ]
+    },
+    {
+      "id": "browser-use",
+      "heading": "ブラウザー使用（公開プレビュー）",
+      "priority": "core",
+      "items": [
+        "Chrome や Edge など Chromium 系で、GitHub Copilot extension for Chrome を入れて使う。分離されたタブ グループで動作",
+        "既定はオフ。[設定] > [Computer Use] で Enable Computer Use と Enable Browser Use の両方をオン",
+        "Copilot CLI、VS Code、JetBrains IDE でも利用できる"
+      ]
+    },
+    {
+      "id": "ghes",
+      "heading": "GHES（一般提供）",
+      "priority": "core",
+      "items": [
+        "アプリ 1.2.0 以降で利用。GitHub.com か GHE.com でサインイン後、[Settings] > [Accounts] > [Add account] で選択",
+        "リモート リポジトリ、Issue、PR を扱える。GHES ではクラウド セッションは使えない"
+      ]
+    },
+    {
+      "id": "limits",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "Azure DevOps の操作には Azure DevOps 側の権限が適用され、連携で追加の権限は付与されない",
+        "Agent Merge は PR ごとに有効化。有効化後は確認なしで完了できる"
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Agent Merge",
+      "type": "feature",
+      "oneLine": "エージェントがレビュー対応や CI 失敗の修正を行い、チェックとポリシー通過後に PR を完了させる機能。"
+    },
+    {
+      "term": "GHES",
+      "type": "product",
+      "oneLine": "GitHub Enterprise Server。自社環境で運用する GitHub。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "GitHub Copilot app, Microsoft Ignite releases - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-11-17-github-copilot-app-microsoft-ignite-releases/"
+    },
+    "documents": [
+      {
+        "title": "Managing Azure DevOps work with the GitHub Copilot app - GitHub Docs",
+        "url": "https://docs.github.com/en/copilot/how-tos/github-copilot-app/manage-azure-devops-work"
+      }
+    ]
+  },
+  "qa": [
+    {
+      "q": "Azure DevOps 連携はどのプランで使えますか。",
+      "a": "ドキュメントでは Copilot Business、Copilot Enterprise、Copilot Individual が対象です。Business と Enterprise では、管理者が GitHub Copilot アプリのポリシーを有効にしておく必要があります。"
+    },
+    {
+      "q": "Azure DevOps 連携を有効にする手順は。",
+      "a": "アプリの [設定] > [Experimental] で Azure DevOps integration をオンにし、[Accounts] > [Add account] で Azure DevOps 用の Microsoft アカウントにサインインします。既定では無効です。"
+    },
+    {
+      "q": "Azure DevOps でクラウド セッションは使えますか。",
+      "a": "使えません。Azure DevOps リポジトリではクラウド セッションは利用できないと、記事とドキュメントの両方に書かれています。"
+    },
+    {
+      "q": "ブラウザー使用はどう有効にしますか。",
+      "a": "GitHub Copilot extension for Chrome を入れ、[設定] > [Computer Use] で Enable Computer Use と Enable Browser Use の両方をオンにします。既定ではオフで、権限レベルは拡張機能の設定で管理できます。"
+    },
+    {
+      "q": "GHES 対応を使うための条件は。",
+      "a": "GitHub Copilot アプリ 1.2.0 以降が必要です。GitHub.com か GHE.com でサインインし、[Settings] > [Accounts] > [Add account] で GitHub Enterprise Server を選びます。"
+    }
+  ],
+  "evidence": [
+    "https://github.blog/changelog/2026-11-17-github-copilot-app-microsoft-ignite-releases/",
+    "https://docs.github.com/en/copilot/how-tos/github-copilot-app/manage-azure-devops-work"
+  ]
+}
