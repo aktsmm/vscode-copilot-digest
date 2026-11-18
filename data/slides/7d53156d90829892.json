@@ -1,0 +1,89 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "7d53156d90829892",
+  "title": {
+    "ja": "Agents ウィンドウで、チャット リクエストの送信を後に予約できる Send Later",
+    "subtitleJa": "ローカル エージェントへの依頼やフォローアップを、指定した時刻に送信できる（試験的）",
+    "original": "Send Later for chat requests (Experimental)"
+  },
+  "date": "2026-11-18",
+  "topic": "VS Code",
+  "status": "update",
+  "audience": {
+    "who": "VS Code の Agents ウィンドウでローカル エージェントを使う開発者",
+    "change": "送信ボタンの Send Later から、新規セッションの依頼や既存チャットの続きを後の時刻に予約できる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "使うなら sessions.sendLater.enabled を有効にし、chat.automations.enabled も有効のままにする"
+  },
+  "panels": [
+    {
+      "id": "how-to-use",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "チャットの送信ボタンの Send Later メニューから、プリセットか Choose Date and Time で日時を選ぶ",
+        "Choose Date and Time は日付と時刻を選んで Schedule。時刻は 15 分刻みで、Exact Time なら分まで指定できる",
+        "「Check the build in 10 minutes.」のように、自然な文でエージェントに予約を頼むこともできる"
+      ]
+    },
+    {
+      "id": "where-waits",
+      "heading": "予約後の表示と管理",
+      "priority": "core",
+      "items": [
+        "新規セッションの依頼は、セッション一覧の Drafts に表示される",
+        "既存チャットでは、そのチャットの Scheduled 領域に送信時刻つきで表示される",
+        "ホバーして編集・即時送信・再予約・キャンセルができ、Scheduled Only フィルターで一覧できる"
+      ]
+    },
+    {
+      "id": "prerequisites",
+      "heading": "前提と制限",
+      "priority": "core",
+      "items": [
+        "設定 sessions.sendLater.enabled が必要で、既定は無効。chat.automations.enabled も有効にする",
+        "対象は This Computer のセッションのみ。リモート エージェント セッションでは使えない",
+        "送信時刻にローカルのエージェント ホストが起動している必要がある。スリープ中のコンピューターは起こさない"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "エージェントが処理中の場合、予約した依頼は割り込まず順番を待つ",
+        "送信を逃した依頼は、ホストが使える状態に戻ってから処理される"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "Send Later", "type": "feature", "oneLine": "チャット リクエストの送信を、指定した時刻まで延期する機能。" },
+    { "term": "Drafts", "type": "feature", "oneLine": "未送信の依頼をセッション一覧に保存しておくセクション。" }
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.147 - Visual Studio Code",
+      "url": "https://code.visualstudio.com/updates/v1_147#_send-later-for-chat-requests-experimental"
+    },
+    "documents": [
+      {
+        "title": "Use the Agents window",
+        "url": "https://code.visualstudio.com/docs/agents/run/agents-window#_send-a-request-later"
+      }
+    ]
+  },
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_147",
+    "https://code.visualstudio.com/docs/agents/run/agents-window"
+  ],
+  "qa": [
+    { "q": "Send Later はどう有効にしますか。", "a": "設定 sessions.sendLater.enabled を有効にします。既定では無効です。あわせて chat.automations.enabled も有効のままにする必要があります。" },
+    { "q": "リモートやクラウドのセッションでも使えますか。", "a": "使えません。This Computer のセッションだけが対象で、リモート エージェント セッションでは動作しません。" },
+    { "q": "パソコンがスリープしていても送信されますか。", "a": "されません。送信時刻にローカルのエージェント ホストが起動している必要があります。逃した依頼は、ホストが使える状態に戻ってから処理されます。" },
+    { "q": "予約した依頼はどこで確認・変更できますか。", "a": "新規セッションの依頼は Drafts、既存チャットの依頼はそのチャットの Scheduled 領域に表示されます。ホバーして編集・即時送信・再予約・キャンセルができ、Scheduled Only フィルターで一覧できます。" },
+    { "q": "エージェントが作業中の時刻になったらどうなりますか。", "a": "予約した依頼は割り込まず、順番を待ってから送信されます。" }
+  ]
+}
