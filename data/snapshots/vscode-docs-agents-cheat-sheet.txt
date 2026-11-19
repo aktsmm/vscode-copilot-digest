@@ -14,7 +14,7 @@ Customize and scale up.
 H2: Choose a feature
 Select Ask or Agent in chat, type /plan to plan a change, or select code and press ⌘I (Windows, Linux Ctrl+I) for inline chat. Adapt the examples to your project and attach relevant code or error output.
 For assistance without writing a prompt:
-Complete code as you type: Review inline suggestions, then press Tab to accept or Escape to dismiss them.
+Complete code as you type: Review inline suggestions, then press Tab to accept or Escape to dismiss them. Next edit suggestions propose related changes based on edits you make.
 Write a commit message: Select the sparkle beside the Source Control message input to generate a message, then review it.
 H2: Stay in control
 Agents can save edits directly to your project. Manual permissions does not ask for confirmation for every file edit. Review the security baseline before working on an existing project.

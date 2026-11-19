@@ -1,33 +1,33 @@
 Agents Quickstart
 Overview
 Find a Guide
-Choose an AI Feature
+AI Features Cheat Sheet
 Agents Quickstart
 Agents Tutorial
 Best Practices
-Chat View and Layout
+Use the Chat View
 Agents Window
 Canvases
-Review & Revert Changes
+Review and Undo Changes
 Configure the Agents Window
 Plan Work
 Use Tools
-Browser Tools
-Subagents
+Use Browser Tools
+Use Subagents
 Automations
 Manage Sessions
-Organize & Triage Sessions
+Organize and Triage Sessions
 Memory
 Artifacts
-Approvals & Permissions
-Agent Sandboxing
-AI Security
+Approvals and Permissions
+Configure Agent Sandboxing
+Secure Development with AI
 Choose an Agent Harness
 Move from Local to Copilot
 Compare Models Side by Side
 Guide: Choose the Right Model
 Manage MCP Servers
-Cloud Continuity Tutorial
+Tutorial: Agent Continuity
 Remote Agent Sessions
 Cloud Sessions
 Session History
@@ -43,8 +43,8 @@ Test-Driven Development
 Run Parallel Tasks
 Get Back on Track
 Adapt Agents to Your Project
-Context Engineering
-Jupyter Notebooks
+Context Engineering Workflow
+Work with Jupyter Notebooks
 Reduce Credit Usage
 Prompt Examples
 Agents
@@ -52,13 +52,13 @@ How Models Work
 Context
 Tools
 Sessions and Chats
-Trust & Safety
+Trust and Safety
 Agent Harnesses
 Agent Customization
-Cheat Sheet
-Tools and Context
+AI Features Cheat Sheet
+Tool Names and Context References
 Workspace Context
-Settings Reference
+AI Settings
 VS Code Pet
 Custom Agent File Reference
 Custom Instructions Reference

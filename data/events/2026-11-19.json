@@ -1,10 +1,13 @@
 {
   "date": "2026-11-19",
-  "generatedAt": "2026-11-19T14:33:01.255Z",
+  "generatedAt": "2026-11-19T21:43:02.175Z",
   "latestRun": {
-    "generatedAt": "2026-11-19T14:33:01.255Z",
-    "newEventsCount": 0,
-    "newEventIds": [],
+    "generatedAt": "2026-11-19T21:43:02.175Z",
+    "newEventsCount": 2,
+    "newEventIds": [
+      "vscode-updates:9c63ac54706c8ea171e7bd6b70f827c643657282832711b3c553263fc448081d",
+      "vscode-docs-agents-nav:8b520c2cf17402786c56ce025358da327bdd81df415e2de9c56f4168fd566864"
+    ],
     "errorCount": 0,
     "skippedLowInformationEvents": []
   },
@@ -116,6 +119,91 @@
       ],
       "isFutureDated": false,
       "score": 5
+    },
+    {
+      "eventId": "vscode-updates:9c63ac54706c8ea171e7bd6b70f827c643657282832711b3c553263fc448081d",
+      "sourceId": "vscode-updates",
+      "sourceName": "VS Code Updates",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-11-19T21:42:57.378Z",
+      "publishedAt": "2026-11-18T00:00:00.000Z",
+      "title": "VS Code Updates changed",
+      "url": "https://code.visualstudio.com/updates/",
+      "summary": "Detected 10 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 10,
+        "headings": [
+          "MCP",
+          "Skills over MCP"
+        ],
+        "additions": [
+          "H2: MCP",
+          "H3: Skills over MCP",
+          "Skills over MCP (SEP-2640) is now enabled by default, allowing MCP servers to automatically provide skills to the model.",
+          "The first time you connect to an MCP server that provides skills, you are asked to allow them into your model context. Afterwards, the model can interact with these skills and you can see them on the Skills tab of the Agent Customizations editor.",
+          "You can opt out of skills over MCP by disabling the",
+          "chat.agentHost.mcpSkills.enabled",
+          "Open in VS Code",
+          "Open in VS Code Insiders",
+          "setting.",
+          "MCP"
+        ]
+      },
+      "headings": [
+        "Visual Studio Code 1.147",
+        "Downloads for 1.147.0",
+        "Release highlights",
+        "Agent sessions",
+        "Send Later for chat requests (Experimental)",
+        "Save and resume drafts (Experimental)",
+        "Share remote environments as GitHub Environments",
+        "Keep chat sessions across Dev Container rebuilds (Experimental)",
+        "Inbox mode improvements (Experimental)",
+        "Agent experience",
+        "Decision model-based model routers (Experimental)",
+        "Model comparison improvements (Preview)"
+      ],
+      "score": 4
+    },
+    {
+      "eventId": "vscode-docs-agents-nav:8b520c2cf17402786c56ce025358da327bdd81df415e2de9c56f4168fd566864",
+      "sourceId": "vscode-docs-agents-nav",
+      "sourceName": "VS Code Docs / Agents (new pages)",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-11-19T21:43:00.284Z",
+      "publishedAt": "2026-11-19T21:43:00.284Z",
+      "title": "VS Code Docs / Agents (new pages) changed",
+      "url": "https://code.visualstudio.com/docs/agents/overview",
+      "summary": "Detected 15 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 15,
+        "headings": [],
+        "additions": [
+          "AI Features Cheat Sheet",
+          "Use the Chat View",
+          "Review and Undo Changes",
+          "Use Browser Tools",
+          "Use Subagents",
+          "Organize and Triage Sessions",
+          "Approvals and Permissions",
+          "Configure Agent Sandboxing",
+          "Secure Development with AI",
+          "Tutorial: Agent Continuity",
+          "Context Engineering Workflow",
+          "Work with Jupyter Notebooks",
+          "Trust and Safety",
+          "Tool Names and Context References",
+          "AI Settings"
+        ]
+      },
+      "headings": [],
+      "score": 2
     }
   ],
   "errors": []

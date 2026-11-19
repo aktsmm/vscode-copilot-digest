@@ -385,6 +385,24 @@ Rearrange pills by dragging: Drag a pill to a new position in the same chat inpu
 Clearer sent requests: Sent requests show attached images as thumbnails above the text, in addition to the inline pills. Pills and slash commands line up with the surrounding text. Image and GitHub pills are restored after you reload the window, instead of appearing as plain links.
 Clearer sent requests: Sent requests show attached images as thumbnails above the text, in addition to the inline pills. Pills and slash commands line up with the surrounding text. Image and GitHub pills are restored after you reload the window, instead of appearing as plain links.
 Inline attachments are enabled by default in Insiders and off by default in Stable.
+H2: MCP
+H3: Skills over MCP
+Skills over MCP (SEP-2640) is now enabled by default, allowing MCP servers to automatically provide skills to the model.
+The first time you connect to an MCP server that provides skills, you are asked to allow them into your model context. Afterwards, the model can interact with these skills and you can see them on the Skills tab of the Agent Customizations editor.
+You can opt out of skills over MCP by disabling the 
+ 
+ 
+ chat.agentHost.mcpSkills.enabled
+ 
+ 
+ 
+ 
+ 
+ 
+ Open in VS Code
+ Open in VS Code Insiders
+ 
+ setting.
 H2: Browser integration
 H3: Let agents use your browser with browser use (Preview)
 Setting: 
@@ -696,6 +714,7 @@ Release highlights
 Agent sessions
 Agent experience
 Chat
+MCP
 Browser integration
 Sandboxing
 Accessibility

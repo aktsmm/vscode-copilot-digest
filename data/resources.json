@@ -23845,7 +23845,7 @@
     },
     "2439a4adaed9143242f33269fbac6c2f7c2957d2a887b87318b2b975e4345e5e": {
       "version": 6,
-      "checkedAt": "2026-10-20T18:04:13.946Z",
+      "checkedAt": "2026-11-19T21:43:02.632Z",
       "inputUrl": "https://github.blog/ai-and-ml/github-copilot/how-3-java-champions-are-using-github-copilot-for-increased-productivity/",
       "inputTitle": "How 3 Java Champions are using GitHub Copilot for increased productivity",
       "status": "unconfirmed",
@@ -23853,7 +23853,7 @@
         "url": "https://github.blog/ai-and-ml/github-copilot/how-3-java-champions-are-using-github-copilot-for-increased-productivity/",
         "status": "verified",
         "reason": "Fetched original article",
-        "checkedAt": "2026-10-20T18:04:14.104Z",
+        "checkedAt": "2026-11-19T21:43:02.722Z",
         "contentHash": "64d07ab55006c8f4a08c3dceb376448b1c71bc00c9e9f5c1c7867ef7896e2224"
       },
       "documents": [],
@@ -23865,7 +23865,7 @@
     },
     "854baba476d0a2b2087b9484aeefa1cf11c75ccd0d0818f0849d46d454433c18": {
       "version": 6,
-      "checkedAt": "2026-10-20T18:04:14.206Z",
+      "checkedAt": "2026-11-19T21:43:02.822Z",
       "inputUrl": "https://docs.github.com/en/copilot",
       "inputTitle": "GitHub Docs / Copilot changed",
       "status": "unconfirmed",
@@ -23873,8 +23873,8 @@
         "url": "https://docs.github.com/en/copilot",
         "status": "unconfirmed",
         "reason": "Historical changed feature not identifiable in current page",
-        "checkedAt": "2026-10-20T18:04:14.277Z",
-        "contentHash": "c48282f82b8dabf7d7b99f493f1114c2c5bf4fc35d39e3bf0945d8b766551903"
+        "checkedAt": "2026-11-17T21:52:12.587Z",
+        "contentHash": "9e4654f51ee30465b7e089d39acb1ad3170cfa480647c793574a6c2556e6d7cb"
       },
       "documents": [],
       "errors": [],
@@ -23885,7 +23885,7 @@
     },
     "58cf5cd031d34f287eb10d9a33fd73b4951c117c227b0d5e8a4a8415476fbe53": {
       "version": 6,
-      "checkedAt": "2026-10-20T18:04:14.387Z",
+      "checkedAt": "2026-11-19T21:43:02.832Z",
       "inputUrl": "https://docs.github.com/en/copilot/concepts",
       "inputTitle": "GitHub Docs / Copilot concepts changed",
       "status": "unconfirmed",
@@ -23893,8 +23893,8 @@
         "url": "https://docs.github.com/en/copilot/concepts",
         "status": "unconfirmed",
         "reason": "Historical changed feature not identifiable in current page",
-        "checkedAt": "2026-10-20T18:04:14.465Z",
-        "contentHash": "367582ce37cd8e14bdec6f9ea310016930c84adad52e692dff028bf3da03634c"
+        "checkedAt": "2026-11-16T13:51:11.663Z",
+        "contentHash": "37464fd2ab4ff962441b6e5879d17c6a7726b82300abacdb5d74a4684341bb99"
       },
       "documents": [],
       "errors": [],
@@ -23905,7 +23905,7 @@
     },
     "31d0e397375870d5d18604c66e0086c7df890d0afc1682ef4a431f994ad96cba": {
       "version": 6,
-      "checkedAt": "2026-10-20T18:04:14.529Z",
+      "checkedAt": "2026-11-19T21:43:02.844Z",
       "inputUrl": "https://docs.github.com/en/copilot/how-tos",
       "inputTitle": "GitHub Docs / Copilot how-tos changed",
       "status": "unconfirmed",
@@ -23913,8 +23913,8 @@
         "url": "https://docs.github.com/en/copilot/how-tos",
         "status": "unconfirmed",
         "reason": "Historical changed feature not identifiable in current page",
-        "checkedAt": "2026-10-20T18:04:14.630Z",
-        "contentHash": "97b13648de92915cce97e7dc504101b8796efbd5eadfea7a5b8ee46df406b09c"
+        "checkedAt": "2026-11-17T21:52:12.859Z",
+        "contentHash": "a3d39a77b8b33f421d5f45529e7302ed5106c00bc615bdb1b56e357da2793bd4"
       },
       "documents": [],
       "errors": [],
@@ -30176,6 +30176,46 @@
           "scope": "Current documentation; historical availability remains defined by the original announcement"
         }
       ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "1bb98ba3f74b1bfde1cb87628c7bf00d1fbf855a06bc67528722e9d305058cfe": {
+      "version": 6,
+      "checkedAt": "2026-11-19T21:43:02.856Z",
+      "inputUrl": "https://code.visualstudio.com/updates/",
+      "inputTitle": "VS Code Updates changed",
+      "status": "unconfirmed",
+      "source": {
+        "url": "https://code.visualstudio.com/updates/v1_147#_mcp",
+        "status": "verified",
+        "reason": "Explicit release link for 1.147",
+        "checkedAt": "2026-11-19T21:43:04.796Z",
+        "contentHash": "f078452f7910572b9d6a1e6a874be5f363bfdd183737322a4e4082910d843770"
+      },
+      "documents": [],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "58d3e051aa9e2ccea5998f03e6b02bd08ddb697e0c4382ae654575ea6c805571": {
+      "version": 6,
+      "checkedAt": "2026-11-19T21:43:04.852Z",
+      "inputUrl": "https://code.visualstudio.com/docs/agents/overview",
+      "inputTitle": "VS Code Docs / Agents (new pages) changed",
+      "status": "unconfirmed",
+      "source": {
+        "url": "https://code.visualstudio.com/docs/agents/overview",
+        "status": "unconfirmed",
+        "reason": "Historical changed feature not identifiable in current page",
+        "checkedAt": "2026-11-19T21:43:05.028Z",
+        "contentHash": "702aa62f4e1d6074c4f370f17ae37466bb603de02b077e9c8c7d8f760ff27041"
+      },
+      "documents": [],
       "errors": [],
       "research": [
         "Original article explicit links",
