@@ -1,16 +1,10 @@
 {
   "date": "2026-11-19",
-  "generatedAt": "2026-11-19T02:41:06.469Z",
+  "generatedAt": "2026-11-19T14:33:01.255Z",
   "latestRun": {
-    "generatedAt": "2026-11-19T02:41:06.469Z",
-    "newEventsCount": 5,
-    "newEventIds": [
-      "github-changelog:https://github.blog/changelog/2026-11-18-connect-supabase-clickup-buildkite-and-more-to-copilot",
-      "github-changelog:https://github.blog/changelog/2026-11-18-gemini-4-neon-in-github-copilot",
-      "github-changelog-copilot:https://github.blog/changelog/2026-11-18-connect-supabase-clickup-buildkite-and-more-to-copilot",
-      "github-changelog-copilot:https://github.blog/changelog/2026-11-18-gemini-4-neon-in-github-copilot",
-      "copilot-whats-new:d9c12f8b4d761597f4e2f51c0e1e94155e6730da02ec50fa93a01aa6019e1dba"
-    ],
+    "generatedAt": "2026-11-19T14:33:01.255Z",
+    "newEventsCount": 0,
+    "newEventIds": [],
     "errorCount": 0,
     "skippedLowInformationEvents": []
   },
