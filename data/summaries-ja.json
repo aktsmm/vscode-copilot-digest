@@ -4473,5 +4473,27 @@
       "子チームのメンバーには継承されず、ポリシーが許す範囲でメンバーはオフにできる",
       "企業・組織のポリシーが優先され、許可マーケットプレイスや必須・禁止設定は上書きされない"
     ]
+  },
+  "362ee7bc4f192047": {
+    "title": "Gemini 4 Neon が GitHub Copilot で一般提供に",
+    "summary": "Gemini 4 Neon が GitHub Copilot で一般提供になりました。エージェント型コーディングや複数ステップのツール利用向けで、Google によれば Gemini 4 Carbon に近い品質を、タスクあたり低いトークンコストで提供します。課金はプロバイダーの定価ベースの従量課金です。",
+    "why": "Pro+・Max・Business・Enterprise の利用者はモデルピッカーで選択でき、管理者はモデルポリシーで可否を管理します。",
+    "points": [
+      "対象は Copilot Pro+、Max、Business、Enterprise",
+      "VS Code、Visual Studio、Copilot CLI、JetBrains、Xcode、Eclipse、github.com、モバイルで選択可能",
+      "ロールアウトは段階的で、表示されない場合は後日再確認",
+      "Business/Enterprise は既定で自動有効化され、モデルポリシーで無効化できる"
+    ]
+  },
+  "8e2ce054ff040c2d": {
+    "title": "Copilot のコネクタに Supabase や Box など8サービスが追加",
+    "summary": "GitHub 検証済みの MCP サーバー(コネクタ)として、Box、Buildkite、Calendly、ClickUp、Mixpanel、Supabase、Webflow、Wix の8サービスがパブリックプレビューで追加されました。既存の25以上のサービスに加わり、一度接続すれば Copilot 全体で使えます。",
+    "why": "Business/Enterprise では管理者による有効化が必要なため、利用したい組織は事前に設定を確認してください。",
+    "points": [
+      "Copilot CLI は /mcp の Connectors タブから Connect を選択",
+      "Copilot アプリは Customize、VS Code は Agents ウィンドウの Customizations から接続",
+      "Business/Enterprise は Editor preview features ポリシーの有効化が必要",
+      "MCP許可リストで個別指定している場合は新コネクタの追加が必要"
+    ]
   }
 }
