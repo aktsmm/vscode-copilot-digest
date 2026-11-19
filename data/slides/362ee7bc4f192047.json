@@ -1,0 +1,99 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "362ee7bc4f192047",
+  "title": {
+    "ja": "Gemini 4 NeonがGitHub Copilotで一般提供開始",
+    "subtitleJa": "Pro+・Max・Business・EnterpriseでモデルピッカーからGemini 4 Neonを選択可能",
+    "original": "Gemini 4 Neon in GitHub Copilot"
+  },
+  "date": "2026-11-18",
+  "topic": "GitHub Copilot",
+  "status": "ga",
+  "statusEvidence": "Gemini 4 Neon is now generally available in GitHub Copilot.",
+  "audience": {
+    "who": "Copilot Pro+、Max、Business、Enterpriseの利用者と、BusinessおよびEnterpriseのプラン管理者",
+    "change": "エージェント型コーディングや複数ステップのツール利用向けモデルを、各環境のモデルピッカーで選べる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "管理者はCopilot設定のモデルポリシーで、このモデルの利用可否を確認する"
+  },
+  "panels": [
+    {
+      "id": "availability",
+      "heading": "使える場所とプラン",
+      "priority": "core",
+      "items": [
+        "対象プランはCopilot Pro+、Max、Business、Enterprise",
+        "VS Code、Visual Studio、Copilot CLI、コーディングエージェント、Copilotアプリ、github.comで選択可能",
+        "GitHub Mobile（iOS/Android）、JetBrains、Xcode、Eclipseのモデルピッカーでも選択可能",
+        "ロールアウトは段階的で、表示されない場合は後で再確認"
+      ]
+    },
+    {
+      "id": "admin",
+      "heading": "管理者の設定",
+      "priority": "core",
+      "items": [
+        "BusinessとEnterpriseの管理者は、Copilot設定のモデルポリシーでアクセスを管理",
+        "既定のモデル有効化では、全体既定を無効にするか個別に無効化しない限り自動で有効になる"
+      ]
+    },
+    {
+      "id": "billing",
+      "heading": "料金と特長",
+      "priority": "detail",
+      "items": [
+        "従量課金のもとで、プロバイダーの定価で課金される",
+        "Googleによると、Gemini 4 Carbonに近い品質をタスクあたり低いトークンコストで提供"
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "モデルポリシー",
+      "type": "feature",
+      "oneLine": "BusinessとEnterpriseの管理者がCopilot設定でモデルへのアクセスを管理する仕組み"
+    }
+  ],
+  "qa": [
+    {
+      "q": "どのプランで使えますか。",
+      "a": "Copilot Pro+、Max、Business、Enterpriseの利用者が対象です。ロールアウトは段階的なので、表示されない場合は少し待ってから再確認してください。"
+    },
+    {
+      "q": "どの環境で選べますか。",
+      "a": "VS Code、Visual Studio、Copilot CLI、コーディングエージェント、Copilotアプリ、github.com、GitHub Mobile、JetBrains、Xcode、Eclipseのモデルピッカーで選べます。"
+    },
+    {
+      "q": "組織で使わせたくない場合はどうしますか。",
+      "a": "BusinessとEnterpriseの管理者は、Copilot設定のモデルポリシーでアクセスを管理できます。既定では新モデルは自動で有効になりますが、個別に無効化できます。"
+    },
+    {
+      "q": "料金はどうなりますか。",
+      "a": "従量課金のもとで、プロバイダーの定価で課金されます。詳細はGitHub Copilotのモデルと価格設定のドキュメントで確認できます。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Gemini 4 Neon in GitHub Copilot - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-11-18-gemini-4-neon-in-github-copilot/"
+    },
+    "documents": [
+      {
+        "title": "GitHub Copilot のモデルと価格設定 - GitHubドキュメント",
+        "url": "https://docs.github.com/ja/copilot/reference/copilot-billing/models-and-pricing"
+      },
+      {
+        "title": "GitHub Copilotでサポートされている AI モデル - GitHubドキュメント",
+        "url": "https://docs.github.com/ja/copilot/reference/ai-models/supported-models"
+      }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-11-18-gemini-4-neon-in-github-copilot/",
+    "https://docs.github.com/ja/copilot/reference/copilot-billing/models-and-pricing",
+    "https://docs.github.com/ja/copilot/reference/ai-models/supported-models"
+  ]
+}
