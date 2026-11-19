@@ -1,0 +1,100 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "8e2ce054ff040c2d",
+  "title": {
+    "ja": "Copilot に Supabase・Box・Calendly など 8 サービスのコネクタが追加",
+    "subtitleJa": "GitHub 検証済み MCP サーバー（コネクタ）に 8 サービスが加わり、パブリックプレビューで利用可能",
+    "original": "Connect Supabase, Box, Calendly, and more to Copilot"
+  },
+  "date": "2026-11-18",
+  "topic": "GitHub Copilot",
+  "status": "preview",
+  "statusEvidence": "eight more services to Copilot using GitHub-verified MCP servers, or connectors, available in public preview",
+  "audience": {
+    "who": "Copilot から外部サービスを操作したい開発者と、コネクタを管理する Copilot Business / Enterprise の管理者",
+    "change": "Box、Buildkite、Calendly、ClickUp、Mixpanel、Supabase、Webflow、Wix を Copilot に接続できる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "使いたいサービスを接続する。Business・Enterprise は管理者がポリシーと許可リストを確認する"
+  },
+  "panels": [
+    {
+      "id": "availability",
+      "heading": "使える場所とプラン",
+      "priority": "core",
+      "items": [
+        "パブリックプレビューで、すべての Copilot プランが対象",
+        "追加は Box、Buildkite、Calendly、ClickUp、Mixpanel、Supabase、Webflow、Wix の 8 サービス",
+        "Slack、Figma、Sentry など 25 以上のサービスは、すでに接続できる"
+      ]
+    },
+    {
+      "id": "usage",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "Copilot アプリ: Customize を開き、サービスの Connect を選択",
+        "Copilot CLI: `/mcp` で Connectors タブに切り替え、Connect を選択",
+        "VS Code: Agents ウィンドウの Customizations から接続",
+        "github.com: Copilot customization ページでサービスを選択"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "Business・Enterprise は管理者が Editor preview features ポリシーを有効にする",
+        "MCP 許可リストでコネクタを個別指定している場合は、管理者が新コネクタを追加する",
+        "Box など、サービス側で管理者の許可（Box MCP access）が必要なものがある"
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "コネクタ",
+      "type": "feature",
+      "oneLine": "GitHub 検証済みの MCP サーバー。一度接続すれば Copilot 全体で使える"
+    }
+  ],
+  "suggestions": [
+    "Buildkite のビルド失敗の原因を Copilot に尋ね、同じセッションでコードを修正させる",
+    "Supabase のスキーマを確認させてから、マイグレーションを書かせる"
+  ],
+  "qa": [
+    {
+      "q": "どのプランで使えますか？",
+      "a": "パブリックプレビューとして、すべての Copilot プランで利用できます。Copilot Business と Enterprise では、管理者が Editor preview features ポリシーを有効にする必要があります。"
+    },
+    {
+      "q": "どうやって接続しますか？",
+      "a": "Copilot アプリでは Customize から Connect、CLI では /mcp の Connectors タブから Connect、VS Code では Agents ウィンドウの Customizations から接続します。github.com の Copilot customization ページからも選べます。"
+    },
+    {
+      "q": "企業の MCP 許可リストへの影響は？",
+      "a": "許可リストでコネクタを個別に列挙している場合は、管理者が新しいコネクタを追加する必要があります。ワイルドカードで指定している場合の追加作業は、記事には書かれていません。"
+    },
+    {
+      "q": "サービス側の設定は必要ですか？",
+      "a": "サービスによっては、サービス側で管理者の有効化が必要です。例として Box の MCP アクセスの許可が挙げられています。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Connect Supabase, Box, Calendly, and more to Copilot - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-11-18-connect-supabase-box-calendly-and-more-to-copilot/"
+    },
+    "documents": [
+      {
+        "title": "サポート対象のCopilotコネクタ - GitHubドキュメント",
+        "url": "https://docs.github.com/ja/copilot/reference/supported-connectors"
+      }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-11-18-connect-supabase-box-calendly-and-more-to-copilot/",
+    "https://docs.github.com/ja/copilot/reference/supported-connectors"
+  ]
+}
