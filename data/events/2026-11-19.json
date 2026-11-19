@@ -1,0 +1,128 @@
+{
+  "date": "2026-11-19",
+  "generatedAt": "2026-11-19T02:41:06.469Z",
+  "latestRun": {
+    "generatedAt": "2026-11-19T02:41:06.469Z",
+    "newEventsCount": 5,
+    "newEventIds": [
+      "github-changelog:https://github.blog/changelog/2026-11-18-connect-supabase-clickup-buildkite-and-more-to-copilot",
+      "github-changelog:https://github.blog/changelog/2026-11-18-gemini-4-neon-in-github-copilot",
+      "github-changelog-copilot:https://github.blog/changelog/2026-11-18-connect-supabase-clickup-buildkite-and-more-to-copilot",
+      "github-changelog-copilot:https://github.blog/changelog/2026-11-18-gemini-4-neon-in-github-copilot",
+      "copilot-whats-new:d9c12f8b4d761597f4e2f51c0e1e94155e6730da02ec50fa93a01aa6019e1dba"
+    ],
+    "errorCount": 0,
+    "skippedLowInformationEvents": []
+  },
+  "events": [
+    {
+      "eventId": "copilot-whats-new:d9c12f8b4d761597f4e2f51c0e1e94155e6730da02ec50fa93a01aa6019e1dba",
+      "sourceId": "copilot-whats-new",
+      "sourceName": "GitHub Copilot What's New",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-11-19T02:41:04.276Z",
+      "publishedAt": "2026-11-19T02:41:04.275Z",
+      "title": "GitHub Copilot What's New changed",
+      "url": "https://github.com/features/copilot/whats-new",
+      "summary": "Detected 2 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 2,
+        "headings": [
+          "Nov.18 Improvement",
+          "Nov.18 Release"
+        ],
+        "additions": [
+          "H3: Nov.18 Improvement",
+          "H3: Nov.18 Release"
+        ]
+      },
+      "headings": [
+        "Changelog",
+        "Filters (0 selected)",
+        "November\n Nov\n 2026",
+        "Nov.18 Improvement",
+        "Nov.18 Release",
+        "Nov.18 Release",
+        "Nov.17 Release",
+        "Nov.17 Improvement",
+        "Nov.17 Release",
+        "Nov.17 Release",
+        "Nov.17 Release",
+        "Nov.17 Release"
+      ],
+      "score": 4
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-11-18-connect-supabase-clickup-buildkite-and-more-to-copilot",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-11-19T02:41:02.735Z",
+      "publishedAt": "2026-11-18T22:04:50.000Z",
+      "title": "Connect Supabase, Box, Calendly, and more to Copilot",
+      "url": "https://github.blog/changelog/2026-11-18-connect-supabase-box-calendly-and-more-to-copilot",
+      "summary": "You can now connect eight more services to Copilot using GitHub-verified MCP servers, or connectors, available in public preview. They join more than 25 services you can already connect, like…\nThe post Connect Supabase, Box, Calendly, and more to Copilot appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 2
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-11-18-connect-supabase-clickup-buildkite-and-more-to-copilot",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-11-19T02:41:03.379Z",
+      "publishedAt": "2026-11-18T22:04:50.000Z",
+      "title": "Connect Supabase, Box, Calendly, and more to Copilot",
+      "url": "https://github.blog/changelog/2026-11-18-connect-supabase-box-calendly-and-more-to-copilot",
+      "summary": "You can now connect eight more services to Copilot using GitHub-verified MCP servers, or connectors, available in public preview. They join more than 25 services you can already connect, like…\nThe post Connect Supabase, Box, Calendly, and more to Copilot appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 2
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-11-18-gemini-4-neon-in-github-copilot",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-11-19T02:41:02.735Z",
+      "publishedAt": "2026-11-18T21:49:21.000Z",
+      "title": "Gemini 4 Neon in GitHub Copilot",
+      "url": "https://github.blog/changelog/2026-11-18-gemini-4-neon-in-github-copilot",
+      "summary": "Gemini 4 Neon is now generally available in GitHub Copilot. It is designed for agentic coding, multistep tool use, and knowledge work. According to Google, Gemini 4 Neon delivers quality…\nThe post Gemini 4 Neon in GitHub Copilot appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 5
+    },
+    {
+      "eventId": "github-changelog-copilot:https://github.blog/changelog/2026-11-18-gemini-4-neon-in-github-copilot",
+      "sourceId": "github-changelog-copilot",
+      "sourceName": "GitHub Changelog / Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-11-19T02:41:03.379Z",
+      "publishedAt": "2026-11-18T21:49:21.000Z",
+      "title": "Gemini 4 Neon in GitHub Copilot",
+      "url": "https://github.blog/changelog/2026-11-18-gemini-4-neon-in-github-copilot",
+      "summary": "Gemini 4 Neon is now generally available in GitHub Copilot. It is designed for agentic coding, multistep tool use, and knowledge work. According to Google, Gemini 4 Neon delivers quality…\nThe post Gemini 4 Neon in GitHub Copilot appeared first on The GitHub Blog.",
+      "categories": [
+        "Release",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 5
+    }
+  ],
+  "errors": []
+}

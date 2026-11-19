@@ -23757,16 +23757,16 @@
     },
     "7aadec9b026a5ba9bef54bb54950097d16023ed3c8049d3ec7036e4f3ddbff97": {
       "version": 6,
-      "checkedAt": "2026-10-20T00:28:05.600Z",
+      "checkedAt": "2026-11-19T02:41:06.919Z",
       "inputUrl": "https://github.com/features/copilot/whats-new",
       "inputTitle": "GitHub Copilot What's New changed",
       "status": "unconfirmed",
       "source": {
-        "url": "https://github.blog/changelog/?label=copilot#changelog-item-meta-99606",
+        "url": "https://github.com/features/copilot/whats-new",
         "status": "unconfirmed",
-        "reason": "Multiple changed date headings; linked observed archive item without inferring a feature",
-        "checkedAt": "2026-10-20T00:28:05.663Z",
-        "contentHash": "4d6d0bde2f9c30ccc5d87d0f5d737d94cd82e65cd083f27cb89121cb42e67414"
+        "reason": "Date/filter headings only; no identifiable product feature",
+        "checkedAt": "2026-11-18T21:30:46.042Z",
+        "contentHash": "85c37f0e42cc4a08bda13437b7420d73ea44f72a0f327010bcd02da3dcd233a8"
       },
       "documents": [],
       "errors": [],
@@ -23777,7 +23777,7 @@
     },
     "e948db45ae250d5391b8f000133564a0acfc173f46c3ea0321f7f7686301e28f": {
       "version": 6,
-      "checkedAt": "2026-10-20T00:28:05.751Z",
+      "checkedAt": "2026-11-19T02:41:06.938Z",
       "inputUrl": "https://github.blog/changelog/2026-10-19-copilot-model-policy-api-for-enterprise-orgs-and-teams",
       "inputTitle": "Copilot model policy API for enterprise, orgs, and teams",
       "status": "verified",
@@ -23785,16 +23785,16 @@
         "url": "https://github.blog/changelog/2026-10-19-copilot-model-policy-api-for-enterprise-orgs-and-teams/",
         "status": "verified",
         "reason": "Fetched original article",
-        "checkedAt": "2026-10-20T00:28:05.852Z",
-        "contentHash": "5c185b8997604ccaf0165e379ad24ceea3368274574a8d563568cb489bac1cda"
+        "checkedAt": "2026-11-19T02:41:07.559Z",
+        "contentHash": "d557b836b8ac4c40ed27affe192d69e06e87e29eccebc09d678246d97ae177c6"
       },
       "documents": [
         {
           "url": "https://docs.github.com/ja/enterprise-cloud@latest/copilot/how-tos/administer-copilot/manage-for-enterprise/manage-availability-of-default-models",
           "title": "企業でのモデルの可用性の管理",
           "language": "ja",
-          "checkedAt": "2026-10-20T00:28:06.517Z",
-          "contentHash": "2d170d21def709a0ed8342975ff8538c25d8cc3ce4fc853fe12432f28a07a6fb",
+          "checkedAt": "2026-11-14T01:31:32.603Z",
+          "contentHash": "45282345db565f2f0a34c7c34e22091b660995cd19d60029fb9f007003f7e3f3",
           "discoveryUrl": "https://github.blog/changelog/2026-10-19-copilot-model-policy-api-for-enterprise-orgs-and-teams/",
           "basis": "Explicit link in original article/feature section",
           "localization": "japanese_body_verified",
@@ -23811,7 +23811,7 @@
     },
     "ea453e92d53c8ea7abcca6a09e5a5770f0573a36e3c514e04f7d65ba252937c4": {
       "version": 6,
-      "checkedAt": "2026-10-20T00:28:06.615Z",
+      "checkedAt": "2026-11-19T02:41:07.625Z",
       "inputUrl": "https://github.blog/changelog/2026-10-19-github-copilot-models-deprecated-on-october-19-2026",
       "inputTitle": "GitHub Copilot models deprecated on October 19, 2026",
       "status": "verified",
@@ -23819,7 +23819,7 @@
         "url": "https://github.blog/changelog/2026-10-19-github-copilot-models-deprecated-on-october-19-2026/",
         "status": "verified",
         "reason": "Fetched original article",
-        "checkedAt": "2026-10-20T00:28:06.633Z",
+        "checkedAt": "2026-11-19T02:41:07.645Z",
         "contentHash": "93b9043f4abd6a68193f4b22feb45639f07908ebb63526e3b003fe36772c6d68"
       },
       "documents": [
@@ -23827,8 +23827,8 @@
           "url": "https://docs.github.com/ja/copilot/reference/ai-models/supported-models",
           "title": "GitHub Copilotでサポートされている AI モデル",
           "language": "ja",
-          "checkedAt": "2026-10-15T23:43:55.127Z",
-          "contentHash": "99966d8397658c7d6048ac4e10a08d27f8ceb8c06bf4d50d9ed98c00cc947306",
+          "checkedAt": "2026-11-17T21:52:07.563Z",
+          "contentHash": "253e9f6f49fb41236dd64fbde77e549cb6987f71dcc1fd914d7f63f46c13a24c",
           "discoveryUrl": "https://github.blog/changelog/2026-10-19-github-copilot-models-deprecated-on-october-19-2026/",
           "basis": "Explicit link in original article/feature section",
           "localization": "japanese_body_verified",
@@ -30055,6 +30055,120 @@
           "checkedAt": "2026-11-14T01:31:41.559Z",
           "contentHash": "cc0719d5c550cebb9c8a2d8516d31623b43d743f1fc77878267821ba68956cc2",
           "discoveryUrl": "https://github.blog/changelog/2026-11-18-customize-github-copilot-for-your-team/",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "c3835a2e833220170296e06404d93a2efb333fa234c9a9a2f0ac2323fd501c74": {
+      "version": 6,
+      "checkedAt": "2026-11-19T02:41:07.675Z",
+      "inputUrl": "https://github.com/features/copilot/whats-new",
+      "inputTitle": "GitHub Copilot What's New changed",
+      "status": "unconfirmed",
+      "source": {
+        "url": "https://github.blog/changelog/?label=copilot#changelog-item-meta-100383",
+        "status": "unconfirmed",
+        "reason": "Multiple changed date headings; linked observed archive item without inferring a feature",
+        "checkedAt": "2026-11-19T02:41:07.869Z",
+        "contentHash": "85c37f0e42cc4a08bda13437b7420d73ea44f72a0f327010bcd02da3dcd233a8"
+      },
+      "documents": [],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "6f731d130f9e4a23f94140c4a0d0ec551949ba2239c6c274f63ebdb176a93760": {
+      "version": 6,
+      "checkedAt": "2026-11-19T02:41:07.937Z",
+      "inputUrl": "https://github.blog/changelog/2026-11-18-connect-supabase-box-calendly-and-more-to-copilot",
+      "inputTitle": "Connect Supabase, Box, Calendly, and more to Copilot",
+      "status": "verified",
+      "source": {
+        "url": "https://github.blog/changelog/2026-11-18-connect-supabase-box-calendly-and-more-to-copilot/",
+        "status": "verified",
+        "reason": "Fetched original article",
+        "checkedAt": "2026-11-19T02:41:08.614Z",
+        "contentHash": "c414ea03513bdc1f5fdda463cbf83ea1a7efce59636afb71ab91eda66a746c6a"
+      },
+      "documents": [
+        {
+          "url": "https://docs.github.com/ja/enterprise-cloud@latest/copilot/how-tos/administer-copilot/manage-mcp-usage/configure-enterprise-allowlist#allowing-copilot-connectors",
+          "title": "企業向けの MCP サーバー許可リストの構成",
+          "language": "ja",
+          "checkedAt": "2026-11-19T02:41:09.280Z",
+          "contentHash": "255ce6d0b02cb582bbcbf0d865b29846434389945d49c1b339f88d218d75b782",
+          "discoveryUrl": "https://github.blog/changelog/2026-11-18-connect-supabase-box-calendly-and-more-to-copilot/",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "verified",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://docs.github.com/ja/copilot/reference/supported-connectors",
+          "title": "サポート対象のCopilotコネクタ",
+          "language": "ja",
+          "checkedAt": "2026-11-19T02:41:09.742Z",
+          "contentHash": "8f5b8ec8cb3481e17f46307decaad492bc61478204980efe83e39401fdad2fe6",
+          "discoveryUrl": "https://github.blog/changelog/2026-11-18-connect-supabase-box-calendly-and-more-to-copilot/",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "bff6f95890ff29900c607e733dcb50cafb05babf282954274c965bddfcb50a1c": {
+      "version": 6,
+      "checkedAt": "2026-11-19T02:41:09.794Z",
+      "inputUrl": "https://github.blog/changelog/2026-11-18-gemini-4-neon-in-github-copilot",
+      "inputTitle": "Gemini 4 Neon in GitHub Copilot",
+      "status": "verified",
+      "source": {
+        "url": "https://github.blog/changelog/2026-11-18-gemini-4-neon-in-github-copilot/",
+        "status": "verified",
+        "reason": "Fetched original article",
+        "checkedAt": "2026-11-19T02:41:09.812Z",
+        "contentHash": "e1dcea4b3c3b88aebcfc03619a08b03bd05cf969c7b8773997cb07c28b75fddd"
+      },
+      "documents": [
+        {
+          "url": "https://docs.github.com/ja/copilot/reference/copilot-billing/models-and-pricing",
+          "title": "GitHub Copilot のモデルと価格設定",
+          "language": "ja",
+          "checkedAt": "2026-11-17T21:52:07.224Z",
+          "contentHash": "aee57e0dbf364d640ba6ffbdac25cd8542caec634a733c808df3c72576769765",
+          "discoveryUrl": "https://github.blog/changelog/2026-11-18-gemini-4-neon-in-github-copilot/",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://docs.github.com/ja/copilot/reference/ai-models/supported-models",
+          "title": "GitHub Copilotでサポートされている AI モデル",
+          "language": "ja",
+          "checkedAt": "2026-11-17T21:52:07.563Z",
+          "contentHash": "253e9f6f49fb41236dd64fbde77e549cb6987f71dcc1fd914d7f63f46c13a24c",
+          "discoveryUrl": "https://github.blog/changelog/2026-11-18-gemini-4-neon-in-github-copilot/",
           "basis": "Explicit link in original article/feature section",
           "localization": "japanese_body_verified",
           "fragmentVerification": "none",
