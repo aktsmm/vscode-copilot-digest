@@ -23925,7 +23925,7 @@
     },
     "1e48a151a5ae3627f378c944560e5a0f4ecb282daef91623d71acc1f542a7ff8": {
       "version": 6,
-      "checkedAt": "2026-10-21T10:21:55.743Z",
+      "checkedAt": "2026-11-20T14:11:41.213Z",
       "inputUrl": "https://code.visualstudio.com/updates/v1_143",
       "inputTitle": "Visual Studio Code 1.143: Copilot harness as the default",
       "status": "verified",
@@ -23933,16 +23933,16 @@
         "url": "https://code.visualstudio.com/updates/v1_143#_copilot-harness-as-the-default",
         "status": "verified",
         "reason": "Exact release heading: Copilot harness as the default",
-        "checkedAt": "2026-10-21T10:21:55.888Z",
-        "contentHash": "12f83f71f7da0723a9be0f4ff5743bfeef7dddedbbff5eb299888fbf322d3526"
+        "checkedAt": "2026-11-20T14:11:42.710Z",
+        "contentHash": "9b3764abe63ad012f378a713780c6be13ec04ee8ae2de0ddc5f2fd613703f045"
       },
       "documents": [
         {
           "url": "https://code.visualstudio.com/docs/agents/run/agent-harnesses",
           "title": "Choose an agent harness",
           "language": "en",
-          "checkedAt": "2026-10-14T23:22:04.985Z",
-          "contentHash": "61333e9e2da4f4b8402a1afcb904d30dda708588787a05836656862c22c9d5c9",
+          "checkedAt": "2026-11-20T14:11:43.092Z",
+          "contentHash": "f4c30a8866f05ab925a5b96dae6decb8726d7da49064ba481b0077c6e9a4b559",
           "discoveryUrl": "https://code.visualstudio.com/updates/v1_143#_copilot-harness-as-the-default",
           "basis": "Explicit link in original article/feature section",
           "localization": "not_applicable",
@@ -23954,8 +23954,8 @@
           "url": "https://code.visualstudio.com/docs/agents/concepts/agent-host",
           "title": "Agent Host architecture",
           "language": "en",
-          "checkedAt": "2026-10-14T23:22:05.186Z",
-          "contentHash": "e442bd916195cfc93f833abb0529f165b7167c5d6f40a01b5fceb7174fff0d4c",
+          "checkedAt": "2026-11-20T14:11:43.762Z",
+          "contentHash": "97f1cb11fe741e120c0d4d049e7bc4bb806f59e462bf35383296641e8011f9a0",
           "discoveryUrl": "https://code.visualstudio.com/updates/v1_143#_copilot-harness-as-the-default",
           "basis": "Explicit link in original article/feature section",
           "localization": "not_applicable",
@@ -23972,7 +23972,7 @@
     },
     "508fec9ddce8765146f616b611d80b24a761bd03ce12a52612f86a5747b08305": {
       "version": 6,
-      "checkedAt": "2026-10-21T10:21:55.965Z",
+      "checkedAt": "2026-11-20T14:11:43.789Z",
       "inputUrl": "https://code.visualstudio.com/updates/v1_143",
       "inputTitle": "Visual Studio Code 1.143: Discard changes from more changesets in the Agents window",
       "status": "unconfirmed",
@@ -23980,8 +23980,8 @@
         "url": "https://code.visualstudio.com/updates/v1_143#_discard-changes-from-more-changesets-in-the-agents-window",
         "status": "verified",
         "reason": "Exact release heading: Discard changes from more changesets in the Agents window",
-        "checkedAt": "2026-10-21T10:21:55.888Z",
-        "contentHash": "12f83f71f7da0723a9be0f4ff5743bfeef7dddedbbff5eb299888fbf322d3526"
+        "checkedAt": "2026-11-20T14:11:42.710Z",
+        "contentHash": "9b3764abe63ad012f378a713780c6be13ec04ee8ae2de0ddc5f2fd613703f045"
       },
       "documents": [],
       "errors": [],
@@ -23992,7 +23992,7 @@
     },
     "ed03aa9eeaca109cf83304d0b8677130502bd42c22f32d87ccb243221c3dda27": {
       "version": 6,
-      "checkedAt": "2026-10-21T10:21:55.978Z",
+      "checkedAt": "2026-11-20T14:11:43.804Z",
       "inputUrl": "https://code.visualstudio.com/updates/v1_143",
       "inputTitle": "Visual Studio Code 1.143: Compare model results (Preview)",
       "status": "unconfirmed",
@@ -24000,8 +24000,8 @@
         "url": "https://code.visualstudio.com/updates/v1_143#_compare-model-results-preview",
         "status": "verified",
         "reason": "Exact release heading: Compare model results (Preview)",
-        "checkedAt": "2026-10-21T10:21:55.888Z",
-        "contentHash": "12f83f71f7da0723a9be0f4ff5743bfeef7dddedbbff5eb299888fbf322d3526"
+        "checkedAt": "2026-11-20T14:11:42.710Z",
+        "contentHash": "9b3764abe63ad012f378a713780c6be13ec04ee8ae2de0ddc5f2fd613703f045"
       },
       "documents": [],
       "errors": [],
@@ -24012,7 +24012,7 @@
     },
     "a6a13ed3e9107e612a88c0722ea712d0a61e8f6794583c993e0cc3d7712b76a4": {
       "version": 6,
-      "checkedAt": "2026-10-21T10:21:55.989Z",
+      "checkedAt": "2026-11-20T14:11:43.812Z",
       "inputUrl": "https://code.visualstudio.com/updates/v1_143",
       "inputTitle": "Visual Studio Code 1.143: Tab shortcuts in an empty side pane",
       "status": "verified",
@@ -24020,16 +24020,16 @@
         "url": "https://code.visualstudio.com/updates/v1_143#_tab-shortcuts-in-an-empty-side-pane",
         "status": "verified",
         "reason": "Exact release heading: Tab shortcuts in an empty side pane",
-        "checkedAt": "2026-10-21T10:21:55.888Z",
-        "contentHash": "12f83f71f7da0723a9be0f4ff5743bfeef7dddedbbff5eb299888fbf322d3526"
+        "checkedAt": "2026-11-20T14:11:42.710Z",
+        "contentHash": "9b3764abe63ad012f378a713780c6be13ec04ee8ae2de0ddc5f2fd613703f045"
       },
       "documents": [
         {
           "url": "https://code.visualstudio.com/docs/agents/run/agents-window",
           "title": "Use the Agents window",
           "language": "en",
-          "checkedAt": "2026-10-14T23:22:05.963Z",
-          "contentHash": "d6e08e3d98a16b095624b105f2de7cd7a1ca0ef8b0f09436a281b2e9ac0573f1",
+          "checkedAt": "2026-11-18T14:21:32.154Z",
+          "contentHash": "25e02cad1312bfd13fed9ab47d8724e72a6effab12ac37e501f798e1123df07f",
           "discoveryUrl": "https://code.visualstudio.com/updates/v1_143#_tab-shortcuts-in-an-empty-side-pane",
           "basis": "Explicit link in original article/feature section",
           "localization": "not_applicable",
@@ -24046,7 +24046,7 @@
     },
     "3b1c0ca244acb58b5acc741367423dc7954d4691f79822462bd0659187c831e4": {
       "version": 6,
-      "checkedAt": "2026-10-21T10:21:56.008Z",
+      "checkedAt": "2026-11-20T14:11:43.823Z",
       "inputUrl": "https://code.visualstudio.com/updates/v1_143",
       "inputTitle": "Visual Studio Code 1.143: Session Activity Bar (Experimental)",
       "status": "unconfirmed",
@@ -24054,8 +24054,8 @@
         "url": "https://code.visualstudio.com/updates/v1_143#_session-activity-bar-experimental",
         "status": "verified",
         "reason": "Exact release heading: Session Activity Bar (Experimental)",
-        "checkedAt": "2026-10-21T10:21:55.888Z",
-        "contentHash": "12f83f71f7da0723a9be0f4ff5743bfeef7dddedbbff5eb299888fbf322d3526"
+        "checkedAt": "2026-11-20T14:11:42.710Z",
+        "contentHash": "9b3764abe63ad012f378a713780c6be13ec04ee8ae2de0ddc5f2fd613703f045"
       },
       "documents": [],
       "errors": [],
@@ -24066,7 +24066,7 @@
     },
     "b3b9219fd2ec90babc84bf3415af35bc26668fe47e89091c402bfd99ae4b67a1": {
       "version": 6,
-      "checkedAt": "2026-10-21T10:21:56.020Z",
+      "checkedAt": "2026-11-20T14:11:43.835Z",
       "inputUrl": "https://code.visualstudio.com/updates/v1_143",
       "inputTitle": "Visual Studio Code 1.143: Find and create files from the empty Files tab (Experimental)",
       "status": "verified",
@@ -24074,15 +24074,15 @@
         "url": "https://code.visualstudio.com/updates/v1_143#_find-and-create-files-from-the-empty-files-tab-experimental",
         "status": "verified",
         "reason": "Exact release heading: Find and create files from the empty Files tab (Experimental)",
-        "checkedAt": "2026-10-21T10:21:55.888Z",
-        "contentHash": "12f83f71f7da0723a9be0f4ff5743bfeef7dddedbbff5eb299888fbf322d3526"
+        "checkedAt": "2026-11-20T14:11:42.710Z",
+        "contentHash": "9b3764abe63ad012f378a713780c6be13ec04ee8ae2de0ddc5f2fd613703f045"
       },
       "documents": [
         {
           "url": "https://code.visualstudio.com/docs/editing/getting-started/tips-and-tricks#_quick-open",
           "title": "Visual Studio Code tips and tricks",
           "language": "en",
-          "checkedAt": "2026-10-21T10:21:56.440Z",
+          "checkedAt": "2026-11-20T14:11:44.099Z",
           "contentHash": "ea5b052754a498ff2fe6cb0cbc1143a7dce263cb49fddd326c6ea0967ad20c31",
           "discoveryUrl": "https://code.visualstudio.com/updates/v1_143#_find-and-create-files-from-the-empty-files-tab-experimental",
           "basis": "Explicit link in original article/feature section",
@@ -24100,7 +24100,7 @@
     },
     "dd69b829dfc029f0e15b9ec38b4f0c06ff1e7a5c82b6466789005b36828abf7c": {
       "version": 6,
-      "checkedAt": "2026-10-21T10:21:56.598Z",
+      "checkedAt": "2026-11-20T14:11:44.180Z",
       "inputUrl": "https://code.visualstudio.com/updates/v1_143",
       "inputTitle": "Visual Studio Code 1.143: Improved performance when opening large chats",
       "status": "verified",
@@ -24108,16 +24108,16 @@
         "url": "https://code.visualstudio.com/updates/v1_143#_improved-performance-when-opening-large-chats",
         "status": "verified",
         "reason": "Exact release heading: Improved performance when opening large chats",
-        "checkedAt": "2026-10-21T10:21:55.888Z",
-        "contentHash": "12f83f71f7da0723a9be0f4ff5743bfeef7dddedbbff5eb299888fbf322d3526"
+        "checkedAt": "2026-11-20T14:11:42.710Z",
+        "contentHash": "9b3764abe63ad012f378a713780c6be13ec04ee8ae2de0ddc5f2fd613703f045"
       },
       "documents": [
         {
           "url": "https://code.visualstudio.com/docs/agents/concepts/agent-host",
           "title": "Agent Host architecture",
           "language": "en",
-          "checkedAt": "2026-10-14T23:22:05.186Z",
-          "contentHash": "e442bd916195cfc93f833abb0529f165b7167c5d6f40a01b5fceb7174fff0d4c",
+          "checkedAt": "2026-11-20T14:11:43.762Z",
+          "contentHash": "97f1cb11fe741e120c0d4d049e7bc4bb806f59e462bf35383296641e8011f9a0",
           "discoveryUrl": "https://code.visualstudio.com/updates/v1_143#_improved-performance-when-opening-large-chats",
           "basis": "Explicit link in original article/feature section",
           "localization": "not_applicable",
@@ -24134,7 +24134,7 @@
     },
     "edbb89c4acc3e8dac7bdc294d4fc71fb14e81b36b5f386e7b0d83cb6b49f7dda": {
       "version": 6,
-      "checkedAt": "2026-10-21T10:21:56.610Z",
+      "checkedAt": "2026-11-20T14:11:44.191Z",
       "inputUrl": "https://code.visualstudio.com/updates/v1_143",
       "inputTitle": "Visual Studio Code 1.143: Reclaim storage from inactive worktrees (Experimental)",
       "status": "unconfirmed",
@@ -24142,8 +24142,8 @@
         "url": "https://code.visualstudio.com/updates/v1_143#_reclaim-storage-from-inactive-worktrees-experimental",
         "status": "verified",
         "reason": "Exact release heading: Reclaim storage from inactive worktrees (Experimental)",
-        "checkedAt": "2026-10-21T10:21:55.888Z",
-        "contentHash": "12f83f71f7da0723a9be0f4ff5743bfeef7dddedbbff5eb299888fbf322d3526"
+        "checkedAt": "2026-11-20T14:11:42.710Z",
+        "contentHash": "9b3764abe63ad012f378a713780c6be13ec04ee8ae2de0ddc5f2fd613703f045"
       },
       "documents": [],
       "errors": [],
@@ -24154,58 +24154,18 @@
     },
     "8b92fa2f1c05cc27bf1149482fd53bcf29e03d120f8c5c630c9b09a5b256e554": {
       "version": 6,
-      "checkedAt": "2026-10-21T10:21:56.622Z",
+      "checkedAt": "2026-11-20T14:11:44.215Z",
       "inputUrl": "https://code.visualstudio.com/updates/",
       "inputTitle": "VS Code Updates changed",
-      "status": "verified",
+      "status": "unconfirmed",
       "source": {
-        "url": "https://code.visualstudio.com/updates/v1_143#release-downloads-heading",
-        "status": "verified",
-        "reason": "Explicit release link for 1.143",
-        "checkedAt": "2026-10-21T10:21:55.888Z",
-        "contentHash": "12f83f71f7da0723a9be0f4ff5743bfeef7dddedbbff5eb299888fbf322d3526"
+        "url": "https://code.visualstudio.com/updates/",
+        "status": "unconfirmed",
+        "reason": "Historical release cannot be identified from explicit links",
+        "checkedAt": "2026-11-19T21:43:04.665Z",
+        "contentHash": "f078452f7910572b9d6a1e6a874be5f363bfdd183737322a4e4082910d843770"
       },
-      "documents": [
-        {
-          "url": "https://code.visualstudio.com/docs/agents/concepts/agent-host",
-          "title": "Agent Host architecture",
-          "language": "en",
-          "checkedAt": "2026-10-14T23:22:05.186Z",
-          "contentHash": "e442bd916195cfc93f833abb0529f165b7167c5d6f40a01b5fceb7174fff0d4c",
-          "discoveryUrl": "https://code.visualstudio.com/updates/v1_143#release-downloads-heading",
-          "basis": "Explicit link in original article/feature section",
-          "localization": "not_applicable",
-          "fragmentVerification": "none",
-          "kind": "documentation",
-          "scope": "Current documentation; historical availability remains defined by the original announcement"
-        },
-        {
-          "url": "https://code.visualstudio.com/docs/agents/run/agent-harnesses",
-          "title": "Choose an agent harness",
-          "language": "en",
-          "checkedAt": "2026-10-14T23:22:04.985Z",
-          "contentHash": "61333e9e2da4f4b8402a1afcb904d30dda708588787a05836656862c22c9d5c9",
-          "discoveryUrl": "https://code.visualstudio.com/updates/v1_143#release-downloads-heading",
-          "basis": "Explicit link in original article/feature section",
-          "localization": "not_applicable",
-          "fragmentVerification": "none",
-          "kind": "documentation",
-          "scope": "Current documentation; historical availability remains defined by the original announcement"
-        },
-        {
-          "url": "https://code.visualstudio.com/docs/agents/run/agents-window",
-          "title": "Use the Agents window",
-          "language": "en",
-          "checkedAt": "2026-10-14T23:22:05.963Z",
-          "contentHash": "d6e08e3d98a16b095624b105f2de7cd7a1ca0ef8b0f09436a281b2e9ac0573f1",
-          "discoveryUrl": "https://code.visualstudio.com/updates/v1_143#release-downloads-heading",
-          "basis": "Explicit link in original article/feature section",
-          "localization": "not_applicable",
-          "fragmentVerification": "none",
-          "kind": "documentation",
-          "scope": "Current documentation; historical availability remains defined by the original announcement"
-        }
-      ],
+      "documents": [],
       "errors": [],
       "research": [
         "Original article explicit links",
@@ -24214,7 +24174,7 @@
     },
     "d5799f7a1561e43f590058c6f211b4a21fa9771550f3a610f73fb94e41f23c3d": {
       "version": 6,
-      "checkedAt": "2026-10-21T10:21:56.937Z",
+      "checkedAt": "2026-11-20T14:11:44.416Z",
       "inputUrl": "https://code.visualstudio.com/updates/v1_109",
       "inputTitle": "VS Code Release Notes 1.109 changed",
       "status": "unconfirmed",
@@ -24222,7 +24182,7 @@
         "url": "https://code.visualstudio.com/updates/v1_109",
         "status": "unconfirmed",
         "reason": "Historical changed feature not identifiable in current page",
-        "checkedAt": "2026-10-21T10:21:56.973Z",
+        "checkedAt": "2026-11-18T14:21:34.751Z",
         "contentHash": "9175441fbd05b250660e4637869af16764337b35c900c52a780540bd677a07af"
       },
       "documents": [],
@@ -24234,32 +24194,18 @@
     },
     "71eb065f5714bbb3ce50fe474adadb91ed7454be9a1a6fccc9e961dcb39c24e7": {
       "version": 6,
-      "checkedAt": "2026-10-21T10:21:57.157Z",
+      "checkedAt": "2026-11-20T14:11:44.427Z",
       "inputUrl": "https://code.visualstudio.com/docs/agents/run/agents-window",
       "inputTitle": "VS Code Docs / Agents window changed",
-      "status": "verified",
+      "status": "unconfirmed",
       "source": {
-        "url": "https://code.visualstudio.com/docs/agents/run/agents-window#_compare-model-results-preview",
-        "status": "verified",
-        "reason": "Observed changed heading(s): Compare model results (Preview)",
-        "checkedAt": "2026-10-21T10:21:57.187Z",
-        "contentHash": "a82d7e7805311f960e340dda03bbd45a2922ce53d259bcbcde135c46cd0d8b8c"
+        "url": "https://code.visualstudio.com/docs/agents/run/agents-window",
+        "status": "unconfirmed",
+        "reason": "Historical changed feature not identifiable in current page",
+        "checkedAt": "2026-11-18T14:21:32.154Z",
+        "contentHash": "25e02cad1312bfd13fed9ab47d8724e72a6effab12ac37e501f798e1123df07f"
       },
-      "documents": [
-        {
-          "url": "https://code.visualstudio.com/docs/agents/run/compare-models",
-          "title": "Compare model results (Preview)",
-          "language": "en",
-          "checkedAt": "2026-10-21T10:21:57.385Z",
-          "contentHash": "54c1adfad3a65a1303ee188f47eb2c7e94474f92e5c8a4816794c07fcf4703bc",
-          "discoveryUrl": "https://code.visualstudio.com/docs/agents/run/agents-window#_compare-model-results-preview",
-          "basis": "Explicit link in original article/feature section",
-          "localization": "not_applicable",
-          "fragmentVerification": "none",
-          "kind": "documentation",
-          "scope": "Current documentation; historical availability remains defined by the original announcement"
-        }
-      ],
+      "documents": [],
       "errors": [],
       "research": [
         "Original article explicit links",
@@ -24268,7 +24214,7 @@
     },
     "133f46317c31707f69c2ebb6bae974ea9b6a1dfc99dfb842e38e2d58033572c3": {
       "version": 6,
-      "checkedAt": "2026-10-21T10:21:57.404Z",
+      "checkedAt": "2026-11-20T14:11:44.439Z",
       "inputUrl": "https://code.visualstudio.com/docs/agents/overview",
       "inputTitle": "VS Code Docs / Agents (new pages) changed",
       "status": "unconfirmed",
@@ -24276,8 +24222,8 @@
         "url": "https://code.visualstudio.com/docs/agents/overview",
         "status": "unconfirmed",
         "reason": "Historical changed feature not identifiable in current page",
-        "checkedAt": "2026-10-21T10:21:57.570Z",
-        "contentHash": "02506415419fc4c968506fbc69db4bcd9fa2f7def1ad87b835694d3c97e2a653"
+        "checkedAt": "2026-11-19T21:43:05.028Z",
+        "contentHash": "702aa62f4e1d6074c4f370f17ae37466bb603de02b077e9c8c7d8f760ff27041"
       },
       "documents": [],
       "errors": [],
@@ -24288,18 +24234,58 @@
     },
     "85e6c1a8afaaffb0b95692b1662eb7a8708ef4b6411a54bbd4dcbda79d51b3b1": {
       "version": 6,
-      "checkedAt": "2026-10-21T10:21:59.683Z",
+      "checkedAt": "2026-11-20T14:11:44.225Z",
       "inputUrl": "https://code.visualstudio.com/updates/v1_144",
       "inputTitle": "Visual Studio Code 1.144 (Insiders)",
-      "status": "unconfirmed",
+      "status": "verified",
       "source": {
         "url": "https://code.visualstudio.com/updates/v1_144",
         "status": "verified",
         "reason": "Fetched original article",
-        "checkedAt": "2026-10-21T10:21:59.723Z",
-        "contentHash": "c7a945a625162d625db0fda10427e984e6eaa4d24f0bac1a2ec32ecd807ca77e"
+        "checkedAt": "2026-11-20T14:11:44.362Z",
+        "contentHash": "c1e76a76884f98892b63d6cbf53820857610a2ac6f6f50af5229daad5986620d"
       },
-      "documents": [],
+      "documents": [
+        {
+          "url": "https://code.visualstudio.com/docs/agents/concepts/agent-host",
+          "title": "Agent Host architecture",
+          "language": "en",
+          "checkedAt": "2026-11-20T14:11:43.762Z",
+          "contentHash": "97f1cb11fe741e120c0d4d049e7bc4bb806f59e462bf35383296641e8011f9a0",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_144",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://code.visualstudio.com/docs/agents/run/automations",
+          "title": "Create and manage agent automations",
+          "language": "en",
+          "checkedAt": "2026-11-18T14:21:35.411Z",
+          "contentHash": "6ec18b64df22af868b48df31fe6829cbd2d0f0f21a4caa9a10004d11d659e648",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_144",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://code.visualstudio.com/docs/agents/run/agent-harnesses",
+          "title": "Choose an agent harness",
+          "language": "en",
+          "checkedAt": "2026-11-20T14:11:43.092Z",
+          "contentHash": "f4c30a8866f05ab925a5b96dae6decb8726d7da49064ba481b0077c6e9a4b559",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_144",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
       "errors": [],
       "research": [
         "Original article explicit links",
