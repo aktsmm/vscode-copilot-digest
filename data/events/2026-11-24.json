@@ -1,16 +1,10 @@
 {
   "date": "2026-11-24",
-  "generatedAt": "2026-11-24T01:07:34.671Z",
+  "generatedAt": "2026-11-24T05:23:19.366Z",
   "latestRun": {
-    "generatedAt": "2026-11-24T01:07:34.671Z",
-    "newEventsCount": 5,
-    "newEventIds": [
-      "vscode-updates:9fd16bf101e3cb27b50b91526e1394026087dd0d9cff90476fbcd33cbfe056cd",
-      "vscode-release-notes-1-109:e85cd68f6ba5159987ec913b85e885fb5739626aa9e3be57d922916850e3c414",
-      "vscode-release-notes-1-144:section:3d022cf73b1878648b377fcdcc786def656bbc5f656894143b72fa0f7c8f0959",
-      "vscode-release-notes-1-143:section:1040fefec9c8c6c63dbdc4d1bbe7807b7d1242132b839f0faa4eba38a3ae3597",
-      "vscode-release-notes-1-143:section:5c2470049e35074a748e4572c4304b28a0276eb392b3d51524ec0798c33aa7b5"
-    ],
+    "generatedAt": "2026-11-24T05:23:19.366Z",
+    "newEventsCount": 0,
+    "newEventIds": [],
     "errorCount": 0,
     "skippedLowInformationEvents": []
   },
@@ -21,7 +15,7 @@
       "sourceName": "VS Code Release Notes 1.143",
       "kind": "vscode_release_note_section",
       "detectedAt": "2026-11-24T01:07:34.652Z",
-      "publishedAt": "2026-11-24T01:07:34.652Z",
+      "publishedAt": "2026-11-24T05:23:19.362Z",
       "title": "Visual Studio Code 1.143: Session Activity Bar (Experimental)",
       "url": "https://code.visualstudio.com/updates/v1_143",
       "summary": "Settings: \n \n \n sessions.showSessionActivityBar\n \n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders\n \n , \n \n \n sessions.sessionActivityBar.showLayoutActions\n \n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders The Session Activity Bar brings a session's Changes, Files, Browser, and available canvases next to the side pane, keeping these editors and artifacts visually connected to where they open. You ca...",
@@ -40,7 +34,7 @@
       "sourceName": "VS Code Release Notes 1.143",
       "kind": "vscode_release_note_section",
       "detectedAt": "2026-11-24T01:07:34.652Z",
-      "publishedAt": "2026-11-24T01:07:34.652Z",
+      "publishedAt": "2026-11-24T05:23:19.362Z",
       "title": "Visual Studio Code 1.143: Improved performance when opening large chats",
       "url": "https://code.visualstudio.com/updates/v1_143",
       "summary": "Opening a long Agent Host chat in the Agents window used to freeze the window for up to half a minute while the chat's history was restored. In this release, history is restored in small slices instead of one long blocking task, so the window stays responsive. Opening, switching back to, and reloading large chats are significantly faster. Median of three runs on macOS, with real chats from day-to-day development. \"C...",
