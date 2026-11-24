@@ -1,8 +1,8 @@
 {
   "date": "2026-11-24",
-  "generatedAt": "2026-11-24T16:01:37.799Z",
+  "generatedAt": "2026-11-24T23:11:54.138Z",
   "latestRun": {
-    "generatedAt": "2026-11-24T16:01:37.799Z",
+    "generatedAt": "2026-11-24T23:11:54.138Z",
     "newEventsCount": 0,
     "newEventIds": [],
     "errorCount": 0,
@@ -15,7 +15,7 @@
       "sourceName": "VS Code Release Notes 1.143",
       "kind": "vscode_release_note_section",
       "detectedAt": "2026-11-24T01:07:34.652Z",
-      "publishedAt": "2026-11-24T16:01:37.794Z",
+      "publishedAt": "2026-11-24T23:11:54.132Z",
       "title": "Visual Studio Code 1.143: Session Activity Bar (Experimental)",
       "url": "https://code.visualstudio.com/updates/v1_143",
       "summary": "Settings: \n \n \n sessions.showSessionActivityBar\n \n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders\n \n , \n \n \n sessions.sessionActivityBar.showLayoutActions\n \n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders The Session Activity Bar brings a session's Changes, Files, Browser, and available canvases next to the side pane, keeping these editors and artifacts visually connected to where they open. You ca...",
@@ -34,7 +34,7 @@
       "sourceName": "VS Code Release Notes 1.143",
       "kind": "vscode_release_note_section",
       "detectedAt": "2026-11-24T01:07:34.652Z",
-      "publishedAt": "2026-11-24T16:01:37.794Z",
+      "publishedAt": "2026-11-24T23:11:54.132Z",
       "title": "Visual Studio Code 1.143: Improved performance when opening large chats",
       "url": "https://code.visualstudio.com/updates/v1_143",
       "summary": "Opening a long Agent Host chat in the Agents window used to freeze the window for up to half a minute while the chat's history was restored. In this release, history is restored in small slices instead of one long blocking task, so the window stays responsive. Opening, switching back to, and reloading large chats are significantly faster. Median of three runs on macOS, with real chats from day-to-day development. \"C...",
