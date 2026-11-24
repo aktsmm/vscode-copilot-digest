@@ -25,8 +25,8 @@ Already installed? Use Check for Updates in VS Code. For upcoming features, use 
 Update 1.143.1: The update addresses these issues.
 H2: Release highlights
 This release makes the Copilot harness the default for new sessions and adds tools to compare models, reclaim storage, run models locally, and navigate file changes.
-Copilot harness by default: The default for new sessions, built on the Copilot SDK, lets you switch between editor and Agents window.
-Copilot harness by default: The default for new sessions, built on the Copilot SDK, lets you switch between editor and Agents window.
+Copilot harness by default: The default for new sessions, built on the Copilot SDK, lets you switch between the editor and Agents window.
+Copilot harness by default: The default for new sessions, built on the Copilot SDK, lets you switch between the editor and Agents window.
 Compare models (Preview): Run the same task with multiple models in the Agents window, then compare and combine their solutions.
 Compare models (Preview): Run the same task with multiple models in the Agents window, then compare and combine their solutions.
 Reclaim worktree storage (Experimental): Free disk space by reviewing and removing inactive agent session worktrees.
@@ -121,7 +121,7 @@ H3: Tab shortcuts in an empty side pane
 When you closed every tab in the Agents window side pane, the editor area was left blank, and you had to find the Add Tab (+) menu to get back to your session's changes or files.
 The empty editor area now lists the tabs you can add, such as Changes, Files, Browser, and Search, each with its icon and keyboard shortcut. Select an entry to open that tab. If you have a canvas extension installed, a Canvas entry lists the available canvases. When you switch to a session whose editor area is empty, VS Code shows this list instead of reopening the Changes and Files tabs automatically.
 H3: Session Activity Bar (Experimental)
-Sessions: 
+Settings: 
  
  
  sessions.showSessionActivityBar
@@ -220,7 +220,7 @@ When you enable
  
  , the empty Files tab shows a search box and a New File action. The search works like Quick Open (⌘P (Windows, Linux Ctrl+P)), with the same ranking, highlights, and file icons, and it only finds files in the folders of the current session. Select a result to open it in the editor, or select New File to create a file in the session's folder. When you close the file, the search box returns.
 H3: Improved performance when opening large chats
-Opening a long Agent Host chat in the Agents window used to freeze the window for up to half a minute while the chat's history was restored. In this release, history is restored in small slices instead of one long blocking task, so the window stays responsive. Opening, switching back to, and reloading large chats is significantly faster.
+Opening a long Agent Host chat in the Agents window used to freeze the window for up to half a minute while the chat's history was restored. In this release, history is restored in small slices instead of one long blocking task, so the window stays responsive. Opening, switching back to, and reloading large chats are significantly faster.
 Median of three runs on macOS, with real chats from day-to-day development. "Cold open" means opening a chat for the first time after the window starts. "Re-open" means switching to another chat and back. "Window unresponsive" is the longest time the window could not respond to input during the open.
 H3: Reclaim storage from inactive worktrees (Experimental)
 Setting: 
@@ -341,7 +341,7 @@ Use your own OpenAI API key and live model for voice-driven coding conversations
  Open in VS Code
  Open in VS Code Insiders
  
- to a live model ID, like gpt-live-1 that your key can access.
+ to a live model ID, like gpt-live-1, that your key can access.
 H2: Sandboxing
 H3: Manage sandbox certificate trust
 Sandbox certificate trust management is available for agent hosts running Windows or macOS.

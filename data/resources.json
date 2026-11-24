@@ -30165,6 +30165,120 @@
         "Original article explicit links",
         "Feature-matched official documentation indexes"
       ]
+    },
+    "6668fda33c8d919d753f3757ae4dd795a322b8e23330e8b82f3dc1ec1b4b4d19": {
+      "version": 6,
+      "checkedAt": "2026-11-24T01:07:35.230Z",
+      "inputUrl": "https://code.visualstudio.com/updates/v1_143",
+      "inputTitle": "Visual Studio Code 1.143: Session Activity Bar (Experimental)",
+      "status": "unconfirmed",
+      "source": {
+        "url": "https://code.visualstudio.com/updates/v1_143#_session-activity-bar-experimental",
+        "status": "verified",
+        "reason": "Exact release heading: Session Activity Bar (Experimental)",
+        "checkedAt": "2026-11-24T01:07:35.694Z",
+        "contentHash": "0057961d743fde4514b40956062f2825a159f2101eded33c24b27b0f64973025"
+      },
+      "documents": [],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "44497f4421d0d9f92bfe6ddf6c452bfc35a70aeb45fa5a301283297ec54536cb": {
+      "version": 6,
+      "checkedAt": "2026-11-24T01:07:35.788Z",
+      "inputUrl": "https://code.visualstudio.com/updates/v1_143",
+      "inputTitle": "Visual Studio Code 1.143: Improved performance when opening large chats",
+      "status": "verified",
+      "source": {
+        "url": "https://code.visualstudio.com/updates/v1_143#_improved-performance-when-opening-large-chats",
+        "status": "verified",
+        "reason": "Exact release heading: Improved performance when opening large chats",
+        "checkedAt": "2026-11-24T01:07:35.694Z",
+        "contentHash": "0057961d743fde4514b40956062f2825a159f2101eded33c24b27b0f64973025"
+      },
+      "documents": [
+        {
+          "url": "https://code.visualstudio.com/docs/agents/concepts/agent-host",
+          "title": "Agent Host architecture",
+          "language": "en",
+          "checkedAt": "2026-11-20T14:11:43.762Z",
+          "contentHash": "97f1cb11fe741e120c0d4d049e7bc4bb806f59e462bf35383296641e8011f9a0",
+          "discoveryUrl": "https://code.visualstudio.com/updates/v1_143#_improved-performance-when-opening-large-chats",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "not_applicable",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "bba7a93a6f91b0a5869b818002392a8bde20e3dc60c155881230ba91a73c75a0": {
+      "version": 6,
+      "checkedAt": "2026-11-24T01:07:35.802Z",
+      "inputUrl": "https://code.visualstudio.com/updates/",
+      "inputTitle": "VS Code Updates changed",
+      "status": "unconfirmed",
+      "source": {
+        "url": "https://code.visualstudio.com/updates/v1_147#_send-later-for-chat-requests-experimental",
+        "status": "unconfirmed",
+        "reason": "Explicit release link for 1.147",
+        "checkedAt": "2026-11-24T01:07:36.800Z",
+        "contentHash": "3abda7d4b955b49cbbe2bc6e55bdde92fc43a2f1fdfb1723edc15b356cf1b91e"
+      },
+      "documents": [],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "efda04dfa7335afb351b57495ede3fd4b4992565729813419492faf225061b61": {
+      "version": 6,
+      "checkedAt": "2026-11-24T01:07:36.858Z",
+      "inputUrl": "https://code.visualstudio.com/updates/v1_144",
+      "inputTitle": "Visual Studio Code 1.144: Agent Host Protocol v1.0",
+      "status": "unconfirmed",
+      "source": {
+        "url": "https://code.visualstudio.com/updates/v1_144#_agent-host-protocol-v10",
+        "status": "verified",
+        "reason": "Exact release heading: Agent Host Protocol v1.0",
+        "checkedAt": "2026-11-24T01:07:37.049Z",
+        "contentHash": "b6ac8159c02c2b4b0ee9b1d3b8dfb47f4a801b60f3fb13de255aad15f19ad278"
+      },
+      "documents": [],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "bcda0e7511c2f50d610c87a1f2e60e8cbe2dd3f75be77fb40be2d136cb420c85": {
+      "version": 6,
+      "checkedAt": "2026-11-24T01:07:37.097Z",
+      "inputUrl": "https://code.visualstudio.com/updates/v1_109",
+      "inputTitle": "VS Code Release Notes 1.109 changed",
+      "status": "unconfirmed",
+      "source": {
+        "url": "https://code.visualstudio.com/updates/v1_109",
+        "status": "unconfirmed",
+        "reason": "Historical changed feature not identifiable in current page",
+        "checkedAt": "2026-11-24T01:07:37.315Z",
+        "contentHash": "2210e43971d5611cc16552f32b8e7ac382156bb36bf712b7b7d6f04bbdb9c03a"
+      },
+      "documents": [],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
     }
   }
 }

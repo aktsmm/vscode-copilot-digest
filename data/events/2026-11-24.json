@@ -1,0 +1,160 @@
+{
+  "date": "2026-11-24",
+  "generatedAt": "2026-11-24T01:07:34.671Z",
+  "latestRun": {
+    "generatedAt": "2026-11-24T01:07:34.671Z",
+    "newEventsCount": 5,
+    "newEventIds": [
+      "vscode-updates:9fd16bf101e3cb27b50b91526e1394026087dd0d9cff90476fbcd33cbfe056cd",
+      "vscode-release-notes-1-109:e85cd68f6ba5159987ec913b85e885fb5739626aa9e3be57d922916850e3c414",
+      "vscode-release-notes-1-144:section:3d022cf73b1878648b377fcdcc786def656bbc5f656894143b72fa0f7c8f0959",
+      "vscode-release-notes-1-143:section:1040fefec9c8c6c63dbdc4d1bbe7807b7d1242132b839f0faa4eba38a3ae3597",
+      "vscode-release-notes-1-143:section:5c2470049e35074a748e4572c4304b28a0276eb392b3d51524ec0798c33aa7b5"
+    ],
+    "errorCount": 0,
+    "skippedLowInformationEvents": []
+  },
+  "events": [
+    {
+      "eventId": "vscode-release-notes-1-143:section:1040fefec9c8c6c63dbdc4d1bbe7807b7d1242132b839f0faa4eba38a3ae3597",
+      "sourceId": "vscode-release-notes-1-143",
+      "sourceName": "VS Code Release Notes 1.143",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-11-24T01:07:34.652Z",
+      "publishedAt": "2026-11-24T01:07:34.652Z",
+      "title": "Visual Studio Code 1.143: Session Activity Bar (Experimental)",
+      "url": "https://code.visualstudio.com/updates/v1_143",
+      "summary": "Settings: \n \n \n sessions.showSessionActivityBar\n \n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders\n \n , \n \n \n sessions.sessionActivityBar.showLayoutActions\n \n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders The Session Activity Bar brings a session's Changes, Files, Browser, and available canvases next to the side pane, keeping these editors and artifacts visually connected to where they open. You ca...",
+      "categories": [
+        "release",
+        "section",
+        "Agents"
+      ],
+      "sectionHeading": "Agents",
+      "sectionTitle": "Session Activity Bar (Experimental)",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-143:section:5c2470049e35074a748e4572c4304b28a0276eb392b3d51524ec0798c33aa7b5",
+      "sourceId": "vscode-release-notes-1-143",
+      "sourceName": "VS Code Release Notes 1.143",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-11-24T01:07:34.652Z",
+      "publishedAt": "2026-11-24T01:07:34.652Z",
+      "title": "Visual Studio Code 1.143: Improved performance when opening large chats",
+      "url": "https://code.visualstudio.com/updates/v1_143",
+      "summary": "Opening a long Agent Host chat in the Agents window used to freeze the window for up to half a minute while the chat's history was restored. In this release, history is restored in small slices instead of one long blocking task, so the window stays responsive. Opening, switching back to, and reloading large chats are significantly faster. Median of three runs on macOS, with real chats from day-to-day development. \"C...",
+      "categories": [
+        "release",
+        "section",
+        "Agents"
+      ],
+      "sectionHeading": "Agents",
+      "sectionTitle": "Improved performance when opening large chats",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-updates:9fd16bf101e3cb27b50b91526e1394026087dd0d9cff90476fbcd33cbfe056cd",
+      "sourceId": "vscode-updates",
+      "sourceName": "VS Code Updates",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-11-24T01:07:31.093Z",
+      "publishedAt": "2026-11-18T00:00:00.000Z",
+      "title": "VS Code Updates changed",
+      "url": "https://code.visualstudio.com/updates/",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [],
+        "additions": [
+          "The Extensions section of Customizations shows the same detailed information about each installed extension, including its version, publisher, and available commands, as you can find in the Extensions view in the editor window."
+        ]
+      },
+      "headings": [
+        "Visual Studio Code 1.147",
+        "Downloads for 1.147.0",
+        "Release highlights",
+        "Agent sessions",
+        "Send Later for chat requests (Experimental)",
+        "Save and resume drafts (Experimental)",
+        "Share remote environments as GitHub Environments",
+        "Keep chat sessions across Dev Container rebuilds (Experimental)",
+        "Inbox mode improvements (Experimental)",
+        "Agent experience",
+        "Decision model-based model routers (Experimental)",
+        "Model comparison improvements (Preview)"
+      ],
+      "score": 2
+    },
+    {
+      "eventId": "vscode-release-notes-1-144:section:3d022cf73b1878648b377fcdcc786def656bbc5f656894143b72fa0f7c8f0959",
+      "sourceId": "vscode-release-notes-1-144",
+      "sourceName": "VS Code Release Notes 1.144",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-11-24T01:07:34.452Z",
+      "publishedAt": "2026-10-28T00:00:00.000Z",
+      "title": "Visual Studio Code 1.144: Agent Host Protocol v1.0",
+      "url": "https://code.visualstudio.com/updates/v1_144",
+      "summary": "We've published the first version of the Agent Host Protocol, the protocol that VS Code uses to communicate with its agents locally and on remote machines, including for cloud automations. It's an open, extensible protocol designed to be an easy way to build custom UIs for your agents, or build agent platforms that plug into any UI that speaks it. You can add a websocket-based agent host to your VS Code instance via...",
+      "categories": [
+        "release",
+        "section",
+        "Session continuity"
+      ],
+      "sectionHeading": "Session continuity",
+      "sectionTitle": "Agent Host Protocol v1.0",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-109:e85cd68f6ba5159987ec913b85e885fb5739626aa9e3be57d922916850e3c414",
+      "sourceId": "vscode-release-notes-1-109",
+      "sourceName": "VS Code Release Notes 1.109",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-11-24T01:07:31.302Z",
+      "publishedAt": "2026-02-04T00:00:00.000Z",
+      "title": "VS Code Release Notes 1.109 changed",
+      "url": "https://code.visualstudio.com/updates/v1_109",
+      "summary": "Detected 12 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 12,
+        "headings": [],
+        "additions": [
+          "Update 1.109.3: When working on longer tasks, you often think of the next task before the current one finishes or notice the agent heading in the wrong direction. Previously, you had to wait for a response to complete or cancel it entirely. Now you can send follow-up messages while a request is still running.",
+          "Keeping track of your active agent sessions is essential when working with multiple agents, especially when you have multiple parallel sessions across different environments.",
+          "Rename background agent sessions",
+          "By default, VS Code looks for skill definitions in the .github/skills and .claude/skills folders of your workspace, or in the ~/.copilot/skills or ~/.claude/skills folder in your user home. You can specify custom paths where VS Code should look for skills by using the",
+          "This release adds Claude Agent support so you can leverage Anthropic's agent SDK directly, MCP Apps that render interactive visualizations in chat, and new provider capabilities that give you more ways to extend what agents can do.",
+          "The new awaitTerminal tool gives the agent the ability to wait for background terminals to complete. This also requires the timeout property. Provided the model leverages this tool, the expectation is that it prevents echo \"successful\" and sleep n calls that were previously used to wait for background commands to finish.",
+          "Support for winpty has been removed from node-pty, which means terminals will no longer work in Windows versions before Windows 10 version 1809 (Fall 2018). ConPTY is the modern mechanism for terminals so we recommend upgrading to a newer version of Windows 10 or moving to Windows 11. You may be able to get terminals to work by setting \"terminal.integrated.windowsUseConptyDll\": true, but note that this is currently experimental.",
+          "Handles both press and release events as well as repeated presses (holding a key down)",
+          "Similar to the above, there's an experimental version of the win32 input mode which accomplishes something similar but is tuned specifically for Windows and its pseudoterminal backend ConPTY. This will remain off for this release. Let us know if you have any problems with it.",
+          "Rename suggestions for TypeScript now also work when typing over an existing declaration. In the following video the user changes the declaration let index = 0; into let chunkIndex = 0; by typing the new identifier name instead of using the rename refactoring. Next edit suggestions still propose to rename index to chunkIndex using Shift+Tab.",
+          "Screen reader users can now quickly access and listen to their current line and column position using the new Announce Cursor Position command with Ctrl/Cmd+Alt+Shift+G.",
+          "When VS Code is installed with context menu support, right-clicking on a file or folder in Windows 11 File Explorer will now show an entry in the top level context menu, eliminating the need to select Show more options to access VS Code. Both user and system installers support this new entry."
+        ]
+      },
+      "headings": [
+        "January 2026 (version 1.109)",
+        "Downloads for 1.109.5",
+        "Upcoming events",
+        "Agent Sessions Day",
+        "Chat UX",
+        "Message steering and queueing (Experimental)",
+        "Anthropic models now show thinking tokens",
+        "Mermaid diagrams in chat responses",
+        "Ask Questions tool (Experimental)",
+        "Plan agent",
+        "Context window details",
+        "Inline chat UX revamp (Preview)"
+      ],
+      "score": 2
+    }
+  ],
+  "errors": []
+}

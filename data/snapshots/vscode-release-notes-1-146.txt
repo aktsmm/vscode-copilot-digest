@@ -199,7 +199,7 @@ Share this computer through GitHub Environments or Dev Tunnels, or turn sharing 
 Open the editor with Manage Remote Environments from the Environment picker in chat, the Command Palette, or the title bar's Remote Connections menu (antenna icon), which also offers the same sharing options.
 Learn more about making a host available for remote access.
 H3: Agent Host support for virtual repositories
-VS Code supports virtual workspaces, allowing you to do things like viewing a GitHub repository without having to clone it.
+VS Code supports virtual workspaces, allowing you to do things like view a GitHub repository without having to clone it.
 The Copilot harness previously did not work in virtual repositories. In this release, we added support for virtual repositories, so you can use the same Copilot features and workflows as you do in local folders.
 H2: Chat
 H3: Continue a Copilot CLI session in VS Code (Experimental)

@@ -90,7 +90,7 @@ Setting:
  
  Open in VS Code
  Open in VS Code Insiders
-Update 1.109.3: When working on longer tasks, you often think of the next task before the current or notice the agent heading in the wrong direction. Previously, you had to wait for a response to complete or cancel it entirely. Now you can send follow-up messages while a request is still running.
+Update 1.109.3: When working on longer tasks, you often think of the next task before the current one finishes or notice the agent heading in the wrong direction. Previously, you had to wait for a response to complete or cancel it entirely. Now you can send follow-up messages while a request is still running.
 While a request is in progress, the Send button changes to a dropdown with three options:
 Add to Queue: your message waits and sends automatically after the current response completes.
 Steer with Message: signals the current request to yield after finishing the active tool execution, then processes your new message immediately. Use this to redirect the agent when it's heading in the wrong direction.
@@ -401,7 +401,7 @@ Choose the type of agent session you want to start
 Hand off an ongoing session to a different agent type (for example, plan a task locally and implement in the cloud)
 Tip: We've added a new workbench.action.chat.newLocalChat command for creating a new local chat session. Bind this command to a keyboard shortcut for even faster access.
 H3: Keeping track of agent sessions
-Keeping track of your active agent sessions is essential when working with multiple agents, especially when you have multiple parallel session across different environments.
+Keeping track of your active agent sessions is essential when working with multiple agents, especially when you have multiple parallel sessions across different environments.
 We've further improved the Agent Sessions view in VS Code to make this task easier:
 Resize the sessions list when showing side-by-side
 Multi-select sessions to perform operations in bulk
@@ -531,9 +531,9 @@ We have updated the background agent loop to commit the changes to the Git workt
 Update 1.109.5: Prompt files, hooks, and skills are now available to background agents as slash commands in chat.
 /slash commands for background agents
 Update 1.109.5: Prompt files, hooks, and skills are now available to background agents as slash commands in chat.
-Rename background agents sessions
+Rename background agent sessions
 Update 1.109.5: You can now rename your background agent sessions to keep track of them more easily.
-Rename background agents sessions
+Rename background agent sessions
 Update 1.109.5: You can now rename your background agent sessions to keep track of them more easily.
 Setting: 
  
@@ -620,7 +620,7 @@ Settings:
  Open in VS Code Insiders
 Agent Skills are now generally available and enabled by default. Skills provide specialized capabilities, domain knowledge, and refined workflows to help the AI produce high-quality outputs. Each skill folder contains tested instructions for specific domains like testing strategies, API design, or performance optimization.
 You can now manage skills in VS Code in the same way you manage prompt files, instructions, or custom agents. Use the Chat: Configure Skills command to view all available skills, or Chat: New Skill File to create a new skill in your workspace or user home.
-By default, VS Code looks for skills definitions in the .github/skills and .claude/skills folder of your workspace, or in the ~/.copilot/skills or ~/.claude/skills folder in your user home. You can specify custom paths where VS Code should look for skills by using the 
+By default, VS Code looks for skill definitions in the .github/skills and .claude/skills folders of your workspace, or in the ~/.copilot/skills or ~/.claude/skills folder in your user home. You can specify custom paths where VS Code should look for skills by using the 
  
  
  chat.agentSkillsLocations
@@ -862,7 +862,7 @@ Prompt Files - Building reusable .prompt.md templates for common tasks
 Skills - Packaging domain expertise in SKILL.md files
 Workspace Instructions - Setting up project-wide conventions in copilot-instructions.md and AGENTS.md
 H2: Agent extensibility
-This release adds Claude Agent support so you can leverage Anthropic's agent SDK directly, MCP Apps that render interactive visualizations in chat, and new provider capabilities are giving you more ways to extend what agents can do.
+This release adds Claude Agent support so you can leverage Anthropic's agent SDK directly, MCP Apps that render interactive visualizations in chat, and new provider capabilities that give you more ways to extend what agents can do.
 H3: Claude compatibility
 If you use both VS Code and Claude, you no longer need to maintain separate configuration files. VS Code now reads Claude configuration files directly, so your agents, skills, instructions, and hooks work across both tools without duplication.
 VS Code detects the following Claude file locations:
@@ -1159,8 +1159,8 @@ You can now manually push a terminal tool call to the background, freeing up the
 You can now manually push a terminal tool call to the background, freeing up the agent to continue with other work.
 A new timeout property is required to be filled in by the agent when a call to the terminal tool is made, where 0 means no timeout. This gives an extra escape to return control back to the agent when something unexpected happens.
 A new timeout property is required to be filled in by the agent when a call to the terminal tool is made, where 0 means no timeout. This gives an extra escape to return control back to the agent when something unexpected happens.
-The new awaitTerminal tool gives the agent the ability to wait for background terminals to complete, this also requires the timeout property. Provided the model leverages this tool, the expectation is that it prevents echo "successful" and sleep n calls that were previously used to wait for background commands to finish.
-The new awaitTerminal tool gives the agent the ability to wait for background terminals to complete, this also requires the timeout property. Provided the model leverages this tool, the expectation is that it prevents echo "successful" and sleep n calls that were previously used to wait for background commands to finish.
+The new awaitTerminal tool gives the agent the ability to wait for background terminals to complete. This also requires the timeout property. Provided the model leverages this tool, the expectation is that it prevents echo "successful" and sleep n calls that were previously used to wait for background commands to finish.
+The new awaitTerminal tool gives the agent the ability to wait for background terminals to complete. This also requires the timeout property. Provided the model leverages this tool, the expectation is that it prevents echo "successful" and sleep n calls that were previously used to wait for background commands to finish.
 The new killTerminal tool gives the agent the ability to kill background terminals to clean up after itself. This aims to prevent how the agent would sometimes kill processes to achieve the same thing in a roundabout way, for example when it wants to stop an old in-progress server command.
 The new killTerminal tool gives the agent the ability to kill background terminals to clean up after itself. This aims to prevent how the agent would sometimes kill processes to achieve the same thing in a roundabout way, for example when it wants to stop an old in-progress server command.
 Several instruction changes around how the current working directory works since the active non-background terminal always persists the current working directory, whereas background terminals always start in the workspace directory.
@@ -1215,7 +1215,7 @@ Setting:
  Open in VS Code Insiders
 Some commands previously appeared in sticky scroll when that behavior was undesirable, for example commands like clear. From this release, you can customize which commands are ignored, and it already includes some common agentic CLIs (that run in the normal buffer) such as copilot, claude, codex, and gemini.
 H3: Removal of winpty support
-Support for winpty has been removed from node-pty, which means terminals will no longer work in Windows versions before Windows 10 version 1809 (Fall 2018). ConPTY is the modern mechanism for terminals so we recommend upgrading to a newer version of Windows 10 or move to Windows 11. You may be able to get terminals to work by setting "terminal.integrated.windowsUseConptyDll": true, but note that this is currently experimental.
+Support for winpty has been removed from node-pty, which means terminals will no longer work in Windows versions before Windows 10 version 1809 (Fall 2018). ConPTY is the modern mechanism for terminals so we recommend upgrading to a newer version of Windows 10 or moving to Windows 11. You may be able to get terminals to work by setting "terminal.integrated.windowsUseConptyDll": true, but note that this is currently experimental.
 H3: Allow terminals to be opened in restricted workspaces
 Setting: 
  
@@ -1245,7 +1245,7 @@ Setting:
  Open in VS Code Insiders
 The Kitty keyboard protocol has been implemented and will be rolling out to stable this release. This feature aims to fix a bunch of limitations around how keystrokes are traditionally encoded, specifically:
 Allows the terminal to encode more modifiers and multiple modifiers, not just alt and ctrl
-Handle both press and release events as well as repeated pressed (holding a key down)
+Handles both press and release events as well as repeated presses (holding a key down)
 Disambiguates many keystrokes, such as Escape which normally sends the ESC (\x1b) sequence which also happens to be the start of all escape sequences.
 This requires the program running in the terminal to support the protocol and request to enable it when it runs. A big benefit you will see immediately is shift+enter should work in some agentic CLIs without the need to run something like /terminalSetup.
 Setting: 
@@ -1262,7 +1262,7 @@ Setting:
  Open in VS Code Insiders
  
  (Experimental)
-Similar to the above, there's an experimental version of the win32 input mode which accomplishes similar but is tuned specifically for Windows and its pseudoterminal backend ConPTY. This will remain off for this release, let us know if you have any problems with it.
+Similar to the above, there's an experimental version of the win32 input mode which accomplishes something similar but is tuned specifically for Windows and its pseudoterminal backend ConPTY. This will remain off for this release. Let us know if you have any problems with it.
 Other:
 Independent control of bold and faint SGR properties (SGR 222, SGR 221). This sequence is rarely used, but it's unambiguous and can corrupt output when used, so we decided to support it.
 H2: Coding and editor
@@ -1273,7 +1273,7 @@ The setting defaults to null, meaning brackets inherit their normal text color. 
 H3: Select bracket and string content with double-click
 You can now double-click immediately after an opening bracket or immediately before a closing bracket to select all the content inside. This also works for strings - double-click right after an opening quote or right before a closing quote to select the string contents. This provides a quick way to select, copy, or replace the content within brackets or strings without manually positioning your cursor.
 H3: Rename suggestions for TypeScript
-Rename suggestions for TypeScript now also work when typing over an existing declaration. In the following video the user changes the declaration let index = 0; into let chunkIndex = 0; by typing the new identifier name instead of using the rename refactoring. Next edit suggestions still proposes to rename index to chunkIndex using Shift+Tab.
+Rename suggestions for TypeScript now also work when typing over an existing declaration. In the following video the user changes the declaration let index = 0; into let chunkIndex = 0; by typing the new identifier name instead of using the rename refactoring. Next edit suggestions still propose to rename index to chunkIndex using Shift+Tab.
 Note: this feature is only available for TypeScript for now.
 H3: Improved ghost text visibility
 Inline suggestions (ghost text) now display a dotted underline when showing short suggestions of fewer than three continuous non-whitespace characters. This visual indicator makes it easier to distinguish ghost text from actual code in your editor. This is particularly useful when the suggestion is a single character like ) that might be confused with existing code.
@@ -1544,7 +1544,7 @@ H3: ARIA alert for new chat sessions
 When a new chat session is created, screen reader users now receive an ARIA alert notification to inform them of the new chat context.
 H3: Improved tool call information in accessible view
 Tool calls in the accessible view now include more complete information, making it easier for screen reader users to understand what actions are being performed by AI agents.
-Screen reader users can now quickly access and listen to their current line and column position using the new Announce Cursor Position using Ctrl/Cmd+Alt+Shift+G.
+Screen reader users can now quickly access and listen to their current line and column position using the new Announce Cursor Position command with Ctrl/Cmd+Alt+Shift+G.
 H3: Enterprise improvements
 Learn more about the enterprise capabilities of VS Code in our documentation.
 This release includes improvements to the reliability of GitHub organization policy enforcement. Policies now correctly apply based on the preferred GitHub Copilot account when multiple accounts are signed in. Additionally, organization policies are now consistently enforced even during temporary network unavailability at startup, ensuring that managed restrictions remain effective regardless of connectivity state.
@@ -1589,7 +1589,7 @@ H2: Engineering
 H3: DMG image for macOS
 VS Code now offers DMG images for macOS to provide a native drag-and-drop installation experience. The images are available for all supported architectures from the VS Code website.
 H3: Windows 11 context menu integration
-When installing VS Code with context menu support, right-click on a file or folder in Windows 11 File Explorer will now add an entry in the top level context menu, eliminating the need to select Show more options to access VS Code. Both user and system installers support this new entry.
+When VS Code is installed with context menu support, right-clicking on a file or folder in Windows 11 File Explorer will now show an entry in the top level context menu, eliminating the need to select Show more options to access VS Code. Both user and system installers support this new entry.
 H3: Redesigned installation layout for Windows
 We redesigned the installation layout on Windows to address long-standing reliability issues related to in-app updates. Most notably, the previous version performed atomic file replacement operations that could fail if they were interrupted by system shutdown, user intervention, or other unexpected events, sometimes leaving VS Code in a broken state. The new implementation takes inspiration from Chromium's update client and uses versioned package paths.
 H3: Avoid consecutive updates for macOS

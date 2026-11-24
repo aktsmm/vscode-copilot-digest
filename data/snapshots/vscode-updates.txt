@@ -345,7 +345,7 @@ Settings:
 In the Agents window, you can position Files, Changes, and other Details views around the editor to make better use of the available space. Open View > Appearance > Details Position and choose Left, Right, Above Editor, Below Editor, or Floating. Right is the default.
 Floating Details overlays the editor instead of reserving space. Hover over or focus the widget to preview its contents, then select the pin control to keep it open. You can also drag and resize it.
 H3: View extension info
-The Extensions section of Customizations shows the same detailed information about each installed extension, including its version, publisher, and available commands, as you can from the Extensions view in the editor window.
+The Extensions section of Customizations shows the same detailed information about each installed extension, including its version, publisher, and available commands, as you can find in the Extensions view in the editor window.
 H2: Chat
 H3: Attach screenshots of other apps (Experimental)
 Setting: 
