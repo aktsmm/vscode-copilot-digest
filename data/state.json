@@ -3,6 +3,7 @@
   "sources": {
     "github-changelog": {
       "seenIds": [
+        "https://github.blog/changelog/2026-11-25-copilot-code-review-billing-will-default-to-the-organization",
         "https://github.blog/changelog/2026-11-18-connect-supabase-clickup-buildkite-and-more-to-copilot",
         "https://github.blog/changelog/2026-11-18-gemini-4-neon-in-github-copilot",
         "https://github.blog/changelog/2026-11-18-customize-github-copilot-for-your-team",
@@ -333,7 +334,7 @@
         "https://github.blog/changelog/2026-04-08-github-mobile-research-and-code-with-copilot-cloud-agent-anywhere"
       ],
       "futureSeenIds": [],
-      "lastCheckedAt": "2026-11-25T15:50:17.936Z"
+      "lastCheckedAt": "2026-11-25T22:39:49.558Z"
     },
     "github-changelog-copilot": {
       "seenIds": [
@@ -668,10 +669,11 @@
         "https://github.blog/changelog/2026-04-02-copilot-sdk-in-public-preview"
       ],
       "futureSeenIds": [],
-      "lastCheckedAt": "2026-11-25T15:50:18.670Z"
+      "lastCheckedAt": "2026-11-25T22:39:49.573Z"
     },
     "github-copilot-blog": {
       "seenIds": [
+        "https://github.blog/?p=99982",
         "https://github.blog/?p=100122",
         "https://github.blog/?p=100047",
         "https://github.blog/?p=99538",
@@ -735,10 +737,11 @@
         "https://github.blog/?p=94179"
       ],
       "futureSeenIds": [],
-      "lastCheckedAt": "2026-11-25T15:50:18.709Z"
+      "lastCheckedAt": "2026-11-25T22:39:49.610Z"
     },
     "vscode-feed": {
       "seenIds": [
+        "https://code.visualstudio.com/updates/v1_148",
         "https://code.visualstudio.com/updates/v1_147",
         "https://code.visualstudio.com/blogs/2026/11/18/copilot-harness",
         "https://code.visualstudio.com/updates/v1_146",
@@ -802,29 +805,28 @@
         "https://code.visualstudio.com/updates/v1_107"
       ],
       "futureSeenIds": [
-        "https://code.visualstudio.com/updates/v1_149",
-        "https://code.visualstudio.com/updates/v1_148"
+        "https://code.visualstudio.com/updates/v1_149"
       ],
-      "lastCheckedAt": "2026-11-25T15:50:18.761Z"
+      "lastCheckedAt": "2026-11-25T22:39:50.268Z"
     },
     "vscode-updates": {
       "releasePublishedAt": "2026-11-25T00:00:00.000Z",
       "releaseTitle": "Visual Studio Code 1.148",
       "snapshotHash": "aac8c71f7195e596f0ba781ce6583b9f6ac487f7f987b85136e3c7f5300ef1f3",
-      "lastCheckedAt": "2026-11-25T15:50:19.456Z",
+      "lastCheckedAt": "2026-11-25T22:39:53.846Z",
       "lastError": "Failed to fetch https://code.visualstudio.com/updates/: 500 Internal Server Error"
     },
     "vscode-release-notes-1-109": {
       "releasePublishedAt": "2026-02-04T00:00:00.000Z",
       "releaseTitle": "January 2026 (version 1.109)",
       "snapshotHash": "156d6e5ba6fd7c255937f4cee7752e9d53ea82ae1571531efcdb0041c6d1f03b",
-      "lastCheckedAt": "2026-11-25T15:50:21.310Z"
+      "lastCheckedAt": "2026-11-25T22:39:54.013Z"
     },
     "copilot-whats-new": {
-      "releasePublishedAt": "2026-11-25T15:50:21.404Z",
+      "releasePublishedAt": "2026-11-25T22:39:54.651Z",
       "releaseTitle": "Changelog",
-      "snapshotHash": "d9c12f8b4d761597f4e2f51c0e1e94155e6730da02ec50fa93a01aa6019e1dba",
-      "lastCheckedAt": "2026-11-25T15:50:21.405Z",
+      "snapshotHash": "9e9a57378f840071cb472ffa963c64db4f5e07333c3463a5152bdf35dada01ec",
+      "lastCheckedAt": "2026-11-25T22:39:54.655Z",
       "lastError": "Failed to fetch https://github.com/features/copilot/whats-new: 504 Gateway Timeout"
     },
     "publickey": {
@@ -848,7 +850,7 @@
         "tag:www.publickey1.jp,2026://2.8527"
       ],
       "futureSeenIds": [],
-      "lastCheckedAt": "2026-11-25T15:50:21.836Z",
+      "lastCheckedAt": "2026-11-25T22:39:54.789Z",
       "lastError": "Failed to fetch https://www.publickey1.jp/atom.xml: 403 Forbidden"
     },
     "vscode-release-notes-1-115": {
@@ -1014,38 +1016,38 @@
       "lastCheckedAt": "2026-07-21T15:22:00.037Z"
     },
     "docs-github-copilot": {
-      "releasePublishedAt": "2026-11-25T15:50:21.990Z",
+      "releasePublishedAt": "2026-11-25T22:39:54.911Z",
       "releaseTitle": "GitHub Copilot documentation",
       "snapshotHash": "198e688a72e67996c2fb14d202feeef99b857296f4aae036c1dc1f24ae46022e",
-      "lastCheckedAt": "2026-11-25T15:50:21.995Z",
+      "lastCheckedAt": "2026-11-25T22:39:54.911Z",
       "snapshotVersion": 2
     },
     "docs-github-cloud-agent": {
-      "releasePublishedAt": "2026-11-25T15:50:22.059Z",
+      "releasePublishedAt": "2026-11-25T22:39:54.960Z",
       "releaseTitle": "GitHub Copilot cloud agent",
       "snapshotHash": "ca7e81839dc4919e59c3761de26c1445ddc72c59c867121b1aaea643850f1cab",
-      "lastCheckedAt": "2026-11-25T15:50:22.059Z",
+      "lastCheckedAt": "2026-11-25T22:39:54.964Z",
       "snapshotVersion": 2
     },
     "docs-github-copilot-howtos": {
-      "releasePublishedAt": "2026-11-25T15:50:22.108Z",
+      "releasePublishedAt": "2026-11-25T22:39:55.843Z",
       "releaseTitle": "How-tos for GitHub Copilot",
       "snapshotHash": "96373c3742ba72e24b1764e49a2ec067e2bc758562ccf7c86858624e5ececf83",
-      "lastCheckedAt": "2026-11-25T15:50:22.108Z",
+      "lastCheckedAt": "2026-11-25T22:39:55.844Z",
       "snapshotVersion": 2
     },
     "docs-github-copilot-concepts": {
-      "releasePublishedAt": "2026-11-25T15:50:22.166Z",
+      "releasePublishedAt": "2026-11-25T22:39:55.888Z",
       "releaseTitle": "Concepts for GitHub Copilot",
       "snapshotHash": "8376b5612fe751087f6aec587fed164e5b8cafdba48c001ac2c887471158cd5d",
-      "lastCheckedAt": "2026-11-25T15:50:22.170Z",
+      "lastCheckedAt": "2026-11-25T22:39:55.888Z",
       "snapshotVersion": 2
     },
     "docs-github-copilot-reference": {
-      "releasePublishedAt": "2026-11-25T15:50:22.960Z",
+      "releasePublishedAt": "2026-11-25T22:39:56.252Z",
       "releaseTitle": "Reference for GitHub Copilot",
       "snapshotHash": "29c28184b53da6a3ad7ad4a81663b6345709e8b71558bd5005475f6679b11fe4",
-      "lastCheckedAt": "2026-11-25T15:50:22.960Z",
+      "lastCheckedAt": "2026-11-25T22:39:56.314Z",
       "snapshotVersion": 2
     },
     "vscode-release-notes-1-127": {
@@ -1261,34 +1263,34 @@
       "lastCheckedAt": "2026-11-18T02:59:01.473Z"
     },
     "vscode-docs-agents-nav": {
-      "releasePublishedAt": "2026-11-25T15:50:24.449Z",
+      "releasePublishedAt": "2026-11-25T22:39:57.134Z",
       "releaseTitle": "VS Code Docs / Agents (new pages)",
       "snapshotHash": "d74f1703102bd210fa1be308d313d6f96fe944f0e4b9dd8fcbe3b61f5e175e3e",
-      "lastCheckedAt": "2026-11-25T15:50:24.451Z"
+      "lastCheckedAt": "2026-11-25T22:39:57.135Z"
     },
     "vscode-docs-agents-automations": {
-      "releasePublishedAt": "2026-11-25T15:50:24.672Z",
+      "releasePublishedAt": "2026-11-25T22:39:57.450Z",
       "releaseTitle": "Create and manage agent automations",
       "snapshotHash": "b50b9f0177cabe7e516225ee29d2eb2a8de34950865624f8c16de6fd01fe3097",
-      "lastCheckedAt": "2026-11-25T15:50:24.672Z"
+      "lastCheckedAt": "2026-11-25T22:39:57.450Z"
     },
     "vscode-docs-agents-window": {
-      "releasePublishedAt": "2026-11-25T15:50:25.373Z",
+      "releasePublishedAt": "2026-11-25T22:39:57.523Z",
       "releaseTitle": "Use the Agents window",
       "snapshotHash": "dc77b9c0ea7e1e5a6e03603c287686ee76de058b6ea7e67b39bcfb6ae8c000eb",
-      "lastCheckedAt": "2026-11-25T15:50:25.377Z"
+      "lastCheckedAt": "2026-11-25T22:39:57.577Z"
     },
     "vscode-docs-agents-remote-sessions": {
-      "releasePublishedAt": "2026-11-25T15:50:25.430Z",
+      "releasePublishedAt": "2026-11-25T22:39:57.826Z",
       "releaseTitle": "Run and manage remote agent sessions",
       "snapshotHash": "05eb7fb289bc3c0b32468c7650678f8bbdea5016c82f582716fe4e8489823790",
-      "lastCheckedAt": "2026-11-25T15:50:25.433Z"
+      "lastCheckedAt": "2026-11-25T22:39:57.827Z"
     },
     "vscode-docs-agents-cheat-sheet": {
-      "releasePublishedAt": "2026-11-25T15:50:25.480Z",
+      "releasePublishedAt": "2026-11-25T22:39:57.866Z",
       "releaseTitle": "AI features cheat sheet",
       "snapshotHash": "d653a540865f1de2564dcae962135de0b3bc6d8d74ab2317ba8d4f9f89ec7d9f",
-      "lastCheckedAt": "2026-11-25T15:50:25.480Z"
+      "lastCheckedAt": "2026-11-25T22:39:57.867Z"
     },
     "vscode-release-notes-1-143": {
       "sectionHashes": {
@@ -1320,7 +1322,7 @@
       "releasePublishedAt": "2026-10-28T00:00:00.000Z",
       "releaseTitle": "Visual Studio Code 1.144",
       "snapshotHash": "0679b210a3773dc8e19b9b7fa3289653fb8fa3248c374438bad8be6e40ed1a0f",
-      "lastCheckedAt": "2026-11-25T15:50:26.042Z"
+      "lastCheckedAt": "2026-11-25T22:40:04.056Z"
     },
     "vscode-release-notes-1-145": {
       "sectionHashes": {
@@ -1336,7 +1338,7 @@
       "releasePublishedAt": "2026-11-04T00:00:00.000Z",
       "releaseTitle": "Visual Studio Code 1.145",
       "snapshotHash": "320a196fdb55ef788083863251caa7593c8f4df9bcefa51ce53d74aeef53f63f",
-      "lastCheckedAt": "2026-11-25T15:50:25.976Z"
+      "lastCheckedAt": "2026-11-25T22:40:02.443Z"
     },
     "vscode-release-notes-1-146": {
       "sectionHashes": {
@@ -1352,7 +1354,7 @@
       "releasePublishedAt": "2026-11-11T00:00:00.000Z",
       "releaseTitle": "Visual Studio Code 1.146",
       "snapshotHash": "afec5fa9ec3ec7b88610a29722ac1918e487419c12c30e6426a53f3840c05255",
-      "lastCheckedAt": "2026-11-25T15:50:25.919Z"
+      "lastCheckedAt": "2026-11-25T22:40:02.396Z"
     },
     "vscode-release-notes-1-147": {
       "sectionHashes": {
@@ -1368,7 +1370,7 @@
       "releasePublishedAt": "2026-11-18T00:00:00.000Z",
       "releaseTitle": "Visual Studio Code 1.147",
       "snapshotHash": "bb587cd6816d0d69bd9ee0184aee22829f1b0f509f2dc95748ca6ef51ac8aac2",
-      "lastCheckedAt": "2026-11-25T15:50:25.869Z"
+      "lastCheckedAt": "2026-11-25T22:39:58.015Z"
     },
     "vscode-release-notes-1-148": {
       "sectionHashes": {
@@ -1384,7 +1386,7 @@
       "releasePublishedAt": "2026-11-25T00:00:00.000Z",
       "releaseTitle": "Visual Studio Code 1.148",
       "snapshotHash": "aac8c71f7195e596f0ba781ce6583b9f6ac487f7f987b85136e3c7f5300ef1f3",
-      "lastCheckedAt": "2026-11-25T15:50:25.809Z"
+      "lastCheckedAt": "2026-11-25T22:39:57.946Z"
     }
   }
 }

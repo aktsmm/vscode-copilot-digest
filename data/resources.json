@@ -24722,7 +24722,7 @@
     },
     "50a7329dc0d0c82b5c175c840eff3abdd1ab692ccacf1786488c2b76736b17d6": {
       "version": 6,
-      "checkedAt": "2026-10-26T19:29:24.026Z",
+      "checkedAt": "2026-11-25T22:40:07.404Z",
       "inputUrl": "https://github.blog/changelog/2026-10-26-gpt-6-1-terra-in-github-copilot",
       "inputTitle": "GPT-6.1 Terra in GitHub Copilot",
       "status": "verified",
@@ -24730,7 +24730,7 @@
         "url": "https://github.blog/changelog/2026-10-26-gpt-6-1-terra-in-github-copilot/",
         "status": "verified",
         "reason": "Fetched original article",
-        "checkedAt": "2026-10-26T19:29:24.119Z",
+        "checkedAt": "2026-11-25T22:40:07.861Z",
         "contentHash": "80a8f429b72575c9ec021537442d9b10c6930a69a51749194ffeb1a56326663b"
       },
       "documents": [
@@ -24738,8 +24738,8 @@
           "url": "https://docs.github.com/ja/copilot/reference/copilot-billing/models-and-pricing",
           "title": "GitHub Copilot のモデルと価格設定",
           "language": "ja",
-          "checkedAt": "2026-10-26T19:29:24.794Z",
-          "contentHash": "6631c2733b26d770d266aeeda4f0a2da558252ae81b0f678e5c0f85124196e89",
+          "checkedAt": "2026-11-25T22:40:08.570Z",
+          "contentHash": "4bf9b00252f842a3b34ddbf3eea4f94aa38eac58c1d0ffb69b17c968181f1fb4",
           "discoveryUrl": "https://github.blog/changelog/2026-10-26-gpt-6-1-terra-in-github-copilot/",
           "basis": "Explicit link in original article/feature section",
           "localization": "japanese_body_verified",
@@ -24751,8 +24751,8 @@
           "url": "https://docs.github.com/ja/copilot/reference/ai-models/supported-models",
           "title": "GitHub Copilotでサポートされている AI モデル",
           "language": "ja",
-          "checkedAt": "2026-10-26T19:29:25.150Z",
-          "contentHash": "ca45253c0ace7b39550f9d440bcaf4ae9bc7c524d5d77801b281f35ebe7db2ad",
+          "checkedAt": "2026-11-25T22:40:10.068Z",
+          "contentHash": "106604c07da11db9b08734c9425c0565f3fb59829ab6c94c696507711899d2dc",
           "discoveryUrl": "https://github.blog/changelog/2026-10-26-gpt-6-1-terra-in-github-copilot/",
           "basis": "Explicit link in original article/feature section",
           "localization": "japanese_body_verified",
@@ -30691,6 +30691,134 @@
         "contentHash": "486350ffe26bc4b3c1a26e3a0cae0233639ff9fc2c1b9bdf27d81daff8becb34"
       },
       "documents": [],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "7f21808df578c6cf30c42158c3509a5caffbb1166549a8a99b754f338fc7283f": {
+      "version": 6,
+      "checkedAt": "2026-11-25T22:40:10.201Z",
+      "inputUrl": "https://github.com/features/copilot/whats-new",
+      "inputTitle": "GitHub Copilot What's New changed",
+      "status": "verified",
+      "source": {
+        "url": "https://github.blog/changelog/2026-11-25-copilot-code-review-billing-will-default-to-the-organization/",
+        "status": "verified",
+        "reason": "Snapshot observation, not a standalone feature: Nov.25 Improvement; explicit article: Copilot code review billing will default to the organization",
+        "checkedAt": "2026-11-25T22:40:10.422Z",
+        "contentHash": "f6fc398fc28419a697477cc78178c7fc144904e13a86c404cfc2687d2ada7883"
+      },
+      "documents": [
+        {
+          "url": "https://docs.github.com/ja/copilot/how-tos/copilot-on-github/set-up-copilot/configure-code-review",
+          "title": "GitHub Copilotによるコード レビューの構成",
+          "language": "ja",
+          "checkedAt": "2026-11-25T22:40:11.466Z",
+          "contentHash": "0958d97c8109f04ef6826c2e3500e1d6c74c27589a15dee6009b274e92b94821",
+          "discoveryUrl": "https://github.blog/changelog/2026-11-25-copilot-code-review-billing-will-default-to-the-organization/",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "25f215b0fcbf1d202dc2fa80358bf58eb850889070043023ea05186e0886d1ac": {
+      "version": 6,
+      "checkedAt": "2026-11-25T22:40:11.534Z",
+      "inputUrl": "https://github.blog/changelog/2026-11-25-copilot-code-review-billing-will-default-to-the-organization",
+      "inputTitle": "Copilot code review billing will default to the organization",
+      "status": "verified",
+      "source": {
+        "url": "https://github.blog/changelog/2026-11-25-copilot-code-review-billing-will-default-to-the-organization/",
+        "status": "verified",
+        "reason": "Fetched original article",
+        "checkedAt": "2026-11-25T22:40:10.422Z",
+        "contentHash": "f6fc398fc28419a697477cc78178c7fc144904e13a86c404cfc2687d2ada7883"
+      },
+      "documents": [
+        {
+          "url": "https://docs.github.com/ja/copilot/how-tos/copilot-on-github/set-up-copilot/configure-code-review",
+          "title": "GitHub Copilotによるコード レビューの構成",
+          "language": "ja",
+          "checkedAt": "2026-11-25T22:40:11.466Z",
+          "contentHash": "0958d97c8109f04ef6826c2e3500e1d6c74c27589a15dee6009b274e92b94821",
+          "discoveryUrl": "https://github.blog/changelog/2026-11-25-copilot-code-review-billing-will-default-to-the-organization/",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "7b05ca910167220ae58395c3d1b484a3ac77f70cd1392b2f1e3b96894354516a": {
+      "version": 6,
+      "checkedAt": "2026-11-25T22:40:11.555Z",
+      "inputUrl": "https://github.blog/ai-and-ml/github-copilot/how-to-choose-the-next-safe-step-in-application-modernization/",
+      "inputTitle": "How to choose the next safe step in application modernization",
+      "status": "verified",
+      "source": {
+        "url": "https://github.blog/ai-and-ml/github-copilot/how-to-choose-the-next-safe-step-in-application-modernization/",
+        "status": "verified",
+        "reason": "Fetched original article",
+        "checkedAt": "2026-11-25T22:40:11.567Z",
+        "contentHash": "4c798de440a082a198d87a0a29a909ec7cbe9700406c685caad1e282076f3fd1"
+      },
+      "documents": [
+        {
+          "url": "https://docs.github.com/ja/enterprise-cloud@latest/copilot/concepts/customizations/agent-skills",
+          "title": "エージェントのスキル",
+          "language": "ja",
+          "checkedAt": "2026-11-25T22:40:12.236Z",
+          "contentHash": "5c55d45b1e2021c12879d553c26eae251a1953d8b31b60fe562712192477a9ad",
+          "discoveryUrl": "https://github.blog/ai-and-ml/github-copilot/how-to-choose-the-next-safe-step-in-application-modernization/",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "none",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://docs.github.com/ja/enterprise-cloud@latest/copilot/how-tos/copilot-cli/customize-copilot/add-skills",
+          "title": "エージェント スキルの追加 GitHub Copilot CLI",
+          "language": "ja",
+          "checkedAt": "2026-11-25T22:40:13.141Z",
+          "contentHash": "786dbd18e37ee7f005f1b7693c3f168b3d4e00a81b38ca312d93daa857cceffe",
+          "discoveryUrl": "https://github.blog/ai-and-ml/github-copilot/how-to-choose-the-next-safe-step-in-application-modernization/",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "Localized anchor not found; verified Japanese document body used: #creating-and-adding-a-skill",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        },
+        {
+          "url": "https://docs.github.com/ja/enterprise-cloud@latest/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/add-skills#managing-skills-with-github-cli",
+          "title": "GitHub Copilot のスキルを追加する",
+          "language": "ja",
+          "checkedAt": "2026-11-25T22:40:13.802Z",
+          "contentHash": "5c88f198cff37ee09c9cf43e680d200eff494e5508a9d253213b60bc46652e3a",
+          "discoveryUrl": "https://github.blog/ai-and-ml/github-copilot/how-to-choose-the-next-safe-step-in-application-modernization/",
+          "basis": "Explicit link in original article/feature section",
+          "localization": "japanese_body_verified",
+          "fragmentVerification": "verified",
+          "kind": "documentation",
+          "scope": "Current documentation; historical availability remains defined by the original announcement"
+        }
+      ],
       "errors": [],
       "research": [
         "Original article explicit links",

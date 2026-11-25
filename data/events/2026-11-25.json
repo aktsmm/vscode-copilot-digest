@@ -1,37 +1,100 @@
 {
   "date": "2026-11-25",
-  "generatedAt": "2026-11-25T15:50:26.050Z",
+  "generatedAt": "2026-11-25T22:40:04.062Z",
   "latestRun": {
-    "generatedAt": "2026-11-25T15:50:26.050Z",
-    "newEventsCount": 13,
+    "generatedAt": "2026-11-25T22:40:04.062Z",
+    "newEventsCount": 3,
     "newEventIds": [
-      "vscode-updates:aac8c71f7195e596f0ba781ce6583b9f6ac487f7f987b85136e3c7f5300ef1f3",
-      "vscode-release-notes-1-109:156d6e5ba6fd7c255937f4cee7752e9d53ea82ae1571531efcdb0041c6d1f03b",
-      "vscode-docs-agents-nav:d74f1703102bd210fa1be308d313d6f96fe944f0e4b9dd8fcbe3b61f5e175e3e",
-      "vscode-docs-agents-window:dc77b9c0ea7e1e5a6e03603c287686ee76de058b6ea7e67b39bcfb6ae8c000eb",
-      "vscode-docs-agents-remote-sessions:05eb7fb289bc3c0b32468c7650678f8bbdea5016c82f582716fe4e8489823790",
-      "vscode-release-notes-1-148:section:9730d7f81d169e22f4e871ba85c48afafc5d160c09b52c8c47eace11cd903d59",
-      "vscode-release-notes-1-148:section:44de156c53b65c50b0c02f4bb70927763914e4f3edde88ac9cc7b318bea8f9b9",
-      "vscode-release-notes-1-148:section:42e504b5e410c0980eca19cca8a5833a4a3e8307fe00c73404f14078b632ece4",
-      "vscode-release-notes-1-148:section:2b636cf77e17f6f708bdcc4dd2bab2355af67cc5305c9713bd273b7074aa5917",
-      "vscode-release-notes-1-148:section:4efda241347052e444608362eada2399713ba6dbb4088b7f4cdb2dcebc66a8e6",
-      "vscode-release-notes-1-148:section:27d5ee60dc5b66036e592180f4ba43bf43195e480e97ec084c0e8f30fc5d558d",
-      "vscode-release-notes-1-148:section:fd23239742d3332174579e46b98914cc17b3dddc2795c4f1735d676e9dca5464",
-      "vscode-release-notes-1-148:section:8435ce49e0a1f30427f6c6a2c9016f98a260ca3e0c58ce951f3ef1707b755c3a"
+      "github-changelog:https://github.blog/changelog/2026-11-25-copilot-code-review-billing-will-default-to-the-organization",
+      "github-copilot-blog:https://github.blog/?p=99982",
+      "copilot-whats-new:9e9a57378f840071cb472ffa963c64db4f5e07333c3463a5152bdf35dada01ec"
     ],
-    "errorCount": 0,
+    "errorCount": 1,
     "skippedLowInformationEvents": [
       {
-        "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_149",
+        "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_148",
         "sourceId": "vscode-feed",
-        "title": "Visual Studio Code 1.149 (Insiders)",
+        "title": "Visual Studio Code 1.148",
         "fallbackMarkers": [
-          "Visual Studio Code 関連の更新。日々の開発フローや agent 利用に効く変更点を確認しておきたい。"
+          "Visual Studio Code のリリース。Copilot、agent、エディタ、ワークベンチ周辺の変更点をまとめて確認できる。"
         ]
       }
     ]
   },
   "events": [
+    {
+      "eventId": "copilot-whats-new:9e9a57378f840071cb472ffa963c64db4f5e07333c3463a5152bdf35dada01ec",
+      "sourceId": "copilot-whats-new",
+      "sourceName": "GitHub Copilot What's New",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-11-25T22:39:54.652Z",
+      "publishedAt": "2026-11-25T22:39:54.651Z",
+      "title": "GitHub Copilot What's New changed",
+      "url": "https://github.com/features/copilot/whats-new",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [
+          "Nov.25 Improvement"
+        ],
+        "additions": [
+          "H3: Nov.25 Improvement"
+        ]
+      },
+      "headings": [
+        "Changelog",
+        "Filters (0 selected)",
+        "November\n Nov\n 2026",
+        "Nov.25 Improvement",
+        "Nov.18 Improvement",
+        "Nov.18 Release",
+        "Nov.18 Release",
+        "Nov.17 Release",
+        "Nov.17 Improvement",
+        "Nov.17 Release",
+        "Nov.17 Release",
+        "Nov.17 Release"
+      ],
+      "score": 3
+    },
+    {
+      "eventId": "github-changelog:https://github.blog/changelog/2026-11-25-copilot-code-review-billing-will-default-to-the-organization",
+      "sourceId": "github-changelog",
+      "sourceName": "GitHub Changelog",
+      "kind": "feed_entry",
+      "detectedAt": "2026-11-25T22:39:49.558Z",
+      "publishedAt": "2026-11-25T22:18:03.000Z",
+      "title": "Copilot code review billing will default to the organization",
+      "url": "https://github.blog/changelog/2026-11-25-copilot-code-review-billing-will-default-to-the-organization",
+      "summary": "If you haven’t chosen how to bill Copilot code review for members with a Copilot license, those reviews will be billed to your organization starting December 30, 2026. To keep…\nThe post Copilot code review billing will default to the organization appeared first on The GitHub Blog.",
+      "categories": [
+        "Improvement",
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 2
+    },
+    {
+      "eventId": "github-copilot-blog:https://github.blog/?p=99982",
+      "sourceId": "github-copilot-blog",
+      "sourceName": "GitHub Blog / GitHub Copilot",
+      "kind": "feed_entry",
+      "detectedAt": "2026-11-25T22:39:49.610Z",
+      "publishedAt": "2026-11-25T15:00:00.000Z",
+      "title": "How to choose the next safe step in application modernization",
+      "url": "https://github.blog/ai-and-ml/github-copilot/how-to-choose-the-next-safe-step-in-application-modernization/",
+      "summary": "Learn how to assess a legacy application, choose a bounded modernization step, and reuse the method with a GitHub Copilot agent skill.\nThe post How to choose the next safe step in application modernization appeared first on The GitHub Blog.",
+      "categories": [
+        "AI & ML",
+        "GitHub Copilot",
+        "application modernization"
+      ],
+      "isFutureDated": false,
+      "score": 3
+    },
     {
       "eventId": "vscode-updates:aac8c71f7195e596f0ba781ce6583b9f6ac487f7f987b85136e3c7f5300ef1f3",
       "sourceId": "vscode-updates",
@@ -253,6 +316,23 @@
       "score": 4
     },
     {
+      "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_149",
+      "sourceId": "vscode-feed",
+      "sourceName": "vscode feed",
+      "kind": "feed_entry",
+      "detectedAt": "2026-11-25T15:50:26.050Z",
+      "publishedAt": "2026-11-25T00:00:00.000Z",
+      "title": "Visual Studio Code 1.149 (Insiders)",
+      "url": "https://code.visualstudio.com/updates/v1_149",
+      "summary": "Follow us on LinkedIn, X, Bluesky, Instagram | Follow Insiders Changelog on X or Bluesky Welcome to the 1.149 Insiders release of Visual Studio Code.",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
+    },
+    {
       "eventId": "vscode-release-notes-1-109:156d6e5ba6fd7c255937f4cee7752e9d53ea82ae1571531efcdb0041c6d1f03b",
       "sourceId": "vscode-release-notes-1-109",
       "sourceName": "VS Code Release Notes 1.109",
@@ -430,24 +510,12 @@
       },
       "headings": [],
       "score": 2
-    },
-    {
-      "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_149",
-      "sourceId": "vscode-feed",
-      "sourceName": "vscode feed",
-      "kind": "feed_entry",
-      "detectedAt": "2026-11-25T15:50:26.050Z",
-      "publishedAt": "2026-11-25T00:00:00.000Z",
-      "title": "Visual Studio Code 1.149 (Insiders)",
-      "url": "https://code.visualstudio.com/updates/v1_149",
-      "summary": "Follow us on LinkedIn, X, Bluesky, Instagram | Follow Insiders Changelog on X or Bluesky Welcome to the 1.149 Insiders release of Visual Studio Code.",
-      "categories": [
-        "copilot"
-      ],
-      "isFutureDated": false,
-      "score": 3,
-      "backfilled": true
     }
   ],
-  "errors": []
+  "errors": [
+    {
+      "sourceId": "vscode-updates",
+      "message": "Failed to fetch https://code.visualstudio.com/updates/: 500 Internal Server Error"
+    }
+  ]
 }
