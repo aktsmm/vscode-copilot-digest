@@ -1,0 +1,81 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "9137b466825ab9c1",
+  "title": {
+    "ja": "VS Code 1.148: リモート環境ごとにサンドボックス プロファイルを割り当て",
+    "subtitleJa": "エージェントのサンドボックス設定に名前を付けて保存し、リモート ホストごとに割り当てられる",
+    "original": "Sandbox profiles for remote environments (Experimental)"
+  },
+  "date": "2026-11-25",
+  "topic": "VS Code",
+  "status": "update",
+  "audience": {
+    "who": "リモート エージェント ホストでエージェントを使い、ホストごとに権限を変えたい開発者",
+    "change": "サンドボックス設定をプロファイルとして保存し、リモート ホストごとに別のプロファイルを割り当てられる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "試すなら chat.agent.sandbox.profiles.enabled を有効にし、プロファイルを作成して割り当てる"
+  },
+  "panels": [
+    {
+      "id": "how-to-use",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "設定 chat.agent.sandbox.profiles.enabled を有効にする（Experimental）",
+        "Sandbox: Manage Sandbox Profiles コマンドでプロファイルを管理する",
+        "Remote Environments エディターで、各リモートにプロファイルを割り当てる"
+      ]
+    },
+    {
+      "id": "prerequisites",
+      "heading": "前提と制限",
+      "priority": "core",
+      "items": [
+        "割り当てはリモート側に保存され、接続するどのデバイスでも同じプロファイルが使われる",
+        "組織のサンドボックス ポリシーは引き続き適用される",
+        "リモートには最新の VS Code Server が必要"
+      ]
+    },
+    {
+      "id": "example",
+      "heading": "利用例",
+      "priority": "detail",
+      "items": [
+        "ビルド サーバーはネットワークを開放し、共有マシンは厳しく制限する"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "サンドボックス プロファイル", "type": "feature", "oneLine": "エージェントのサンドボックス設定一式に名前を付けて保存したもの。" }
+  ],
+  "qa": [
+    {
+      "q": "サンドボックス プロファイルとは何ですか？",
+      "a": "エージェントのサンドボックス設定一式に名前を付けて保存したものです。リモート エージェント ホストごとに 1 つ割り当てられ、ホストごとに異なるルールを使えます。"
+    },
+    {
+      "q": "どうやって有効にしますか？",
+      "a": "実験的機能で、設定 chat.agent.sandbox.profiles.enabled を有効にします。プロファイルは Sandbox: Manage Sandbox Profiles コマンドで管理し、Remote Environments エディターで割り当てます。"
+    },
+    {
+      "q": "割り当てはどこに保存されますか？",
+      "a": "リモート側に保存されます。そのため、そのリモートに接続するすべてのデバイスで同じプロファイルが使われます。"
+    },
+    {
+      "q": "組織のポリシーとの関係や前提条件は？",
+      "a": "組織のサンドボックス ポリシーは引き続き適用されます。また、リモートの VS Code Server が最新である必要があります。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.148",
+      "url": "https://code.visualstudio.com/updates/v1_148#_sandbox-profiles-for-remote-environments-experimental"
+    }
+  },
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_148"
+  ]
+}
