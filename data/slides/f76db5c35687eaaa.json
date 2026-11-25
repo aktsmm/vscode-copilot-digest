@@ -1,0 +1,89 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "f76db5c35687eaaa",
+  "title": {
+    "ja": "VS Code 1.148: リモート接続の障害を診断画面で切り分け",
+    "subtitleJa": "接続失敗時に原因の説明と、再試行・SSH 設定を開くなどの復旧操作を 1 画面に表示",
+    "original": "Troubleshoot remote connections"
+  },
+  "date": "2026-11-25",
+  "topic": "VS Code",
+  "status": "update",
+  "audience": {
+    "who": "VS Code でリモート環境（SSH、WSL など）に接続する開発者",
+    "change": "接続失敗の原因が設定・ネットワーク・リモート マシンのどれかを、診断ページで確認できる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "info",
+    "summary": "接続に失敗したら、通知の Troubleshoot から診断ページを開く"
+  },
+  "panels": [
+    {
+      "id": "how-to-use",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "接続失敗の通知で Troubleshoot を選ぶ",
+        "または任意の環境で More Actions > Troubleshoot Connection... を選ぶ",
+        "Agents: Manage Remote Environments を開き、環境の行の More Actions (...) からも開ける",
+        "復旧操作は再試行、SSH 構成を開く、WSL ディストリビューションの再起動など"
+      ]
+    },
+    {
+      "id": "report",
+      "heading": "診断レポート",
+      "priority": "core",
+      "items": [
+        "Open Diagnostic Report で内容を確認、Copy Report でコピーできる",
+        "レポートには全環境の名前、アドレス、ローカル ログが含まれうる"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "共有前にレポートを確認し、機密情報を削除する",
+        "Restart Distribution は、その WSL ディストリビューション内の全プログラムとエージェント セッションを停止する"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "Agents: Manage Remote Environments", "type": "feature", "oneLine": "リモート環境を管理するコマンド。コマンド パレットから実行する。" }
+  ],
+  "qa": [
+    {
+      "q": "診断ページはどこから開けますか？",
+      "a": "接続失敗の通知の Troubleshoot、または環境の More Actions から Troubleshoot Connection... を選びます。Agents ウィンドウでは Agents: Manage Remote Environments を実行し、環境の行の More Actions (...) から開けます。"
+    },
+    {
+      "q": "診断ページでどんな操作ができますか？",
+      "a": "失敗の原因の説明に加え、再試行、SSH 構成を開く、WSL ディストリビューションの再起動などの復旧操作が表示されます。"
+    },
+    {
+      "q": "診断レポートを共有しても安全ですか？",
+      "a": "レポートには全環境の名前、アドレス、ローカル ログが含まれることがあります。共有前に内容を確認し、機密情報を削除してください。"
+    },
+    {
+      "q": "WSL の再起動で気を付けることは？",
+      "a": "Restart Distribution はその WSL ディストリビューション内の全プログラムとエージェント セッションを停止してから再接続します。事前に作業を保存してください。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.148 - Troubleshoot remote connections",
+      "url": "https://code.visualstudio.com/updates/v1_148#_troubleshoot-remote-connections"
+    },
+    "documents": [
+      {
+        "title": "Run and manage remote agent sessions",
+        "url": "https://code.visualstudio.com/docs/agents/run/remote-agent-sessions#_troubleshoot-remote-sessions"
+      }
+    ]
+  },
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_148",
+    "https://code.visualstudio.com/docs/agents/run/remote-agent-sessions"
+  ]
+}
