@@ -1,0 +1,71 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "f7d8d79ca0804648",
+  "title": {
+    "ja": "VS Code 1.148: エージェント作業中のアイドルスリープ防止",
+    "subtitleJa": "対応 Agent Host が、作業中はマシンをスリープさせず、ウィンドウを閉じても動き続けられる",
+    "original": "Prevent idle sleep while an agent works (Preview)"
+  },
+  "date": "2026-11-25",
+  "topic": "VS Code",
+  "status": "preview",
+  "statusEvidence": "Prevent idle sleep while an agent works (Preview)",
+  "audience": {
+    "who": "無人でエージェントに長時間作業をさせる VS Code ユーザー",
+    "change": "対応 Agent Host がアクティブなターン中はマシンのアイドルスリープを防ぎ、作業終了の少し後に解除する",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "`sessions.keepAwakeWhileWorking` で動作モードを選ぶ。既定は whenPluggedIn"
+  },
+  "panels": [
+    {
+      "id": "usage",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "設定 `sessions.keepAwakeWhileWorking` でモードを選ぶ",
+        "whenPluggedIn（既定）: 電源接続中のみスリープを防ぐ",
+        "always: バッテリー駆動中も作業中はスリープを防ぐ",
+        "never: 作業中でもアイドルスリープを許可する"
+      ]
+    },
+    {
+      "id": "limits",
+      "heading": "前提と制限",
+      "priority": "detail",
+      "items": [
+        "Preview 機能。対応する Agent Host のマシンが対象",
+        "作業終了後、解除は少し遅れて行われる"
+      ]
+    }
+  ],
+  "qa": [
+    {
+      "q": "どんなときに効果がありますか。",
+      "a": "エージェントを動かすマシンがアイドルスリープして、無人の作業が止まる状況を防げます。対応 Agent Host はアクティブなターン中、ウィンドウを閉じた後もマシンを起こし続けられます。"
+    },
+    {
+      "q": "どう設定しますか。",
+      "a": "設定 `sessions.keepAwakeWhileWorking` で whenPluggedIn、always、never から選びます。"
+    },
+    {
+      "q": "バッテリー駆動のときはどうなりますか。",
+      "a": "既定の whenPluggedIn では電源接続中だけスリープを防ぎます。バッテリー中も防ぐには always を選びます。"
+    },
+    {
+      "q": "作業が終わったらすぐ解除されますか。",
+      "a": "作業終了の少し後に解除されます。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.148",
+      "url": "https://code.visualstudio.com/updates/v1_148#_prevent-idle-sleep-while-an-agent-works-preview"
+    }
+  },
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_148#_prevent-idle-sleep-while-an-agent-works-preview"
+  ]
+}
