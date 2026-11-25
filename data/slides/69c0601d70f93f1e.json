@@ -1,0 +1,103 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "69c0601d70f93f1e",
+  "title": {
+    "ja": "Copilot code review の課金先、未設定なら組織が既定に",
+    "subtitleJa": "2026-12-30 以降、選択が未保存のレビュー料金は組織に請求。従来どおりなら Member を選ぶ",
+    "original": "Copilot code review billing will default to the organization"
+  },
+  "date": "2026-11-25",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "Copilot Business / Copilot Enterprise の組織・企業の管理者（企業管理の場合は企業オーナー）",
+    "change": "課金方法が未保存のとき、Copilot ライセンスを持つメンバーのレビュー料金は、リポジトリを所有する組織に請求される",
+    "changeNature": "breaking"
+  },
+  "action": {
+    "required": "yes",
+    "summary": "従来どおりメンバーの利用資格を使うなら、2026-12-30 までに Member を選択する",
+    "deadline": "2026-12-30"
+  },
+  "beforeAfter": {
+    "before": "選択が未保存の場合、ライセンスを持つメンバーのレビューはメンバーの Copilot 利用資格を使う",
+    "after": "2026-12-30 以降、未保存の場合はリポジトリを所有する組織に請求される"
+  },
+  "timeline": [
+    { "when": "〜2026-12-29", "label": "未設定は Default (Member) と通知を表示" },
+    { "when": "2026-12-30", "label": "未設定の既定が組織課金に変わる" }
+  ],
+  "panels": [
+    {
+      "id": "scope",
+      "heading": "使える場所とプラン",
+      "priority": "core",
+      "items": [
+        "対象は Copilot Business または Copilot Enterprise の組織と企業",
+        "Member または Organization を選択済みなら、その選択は変わらない",
+        "Copilot ライセンスのないメンバー向けの別設定は変わらない"
+      ]
+    },
+    {
+      "id": "how-to",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "企業または組織の Copilot ポリシー設定で Member を選ぶと、変更後も維持される",
+        "企業が管理する設定の場合は、企業オーナーが選択する",
+        "設定画面の項目は「Copilot ライセンスを持つメンバーの課金方法を選択」"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "組織課金には AI Credits の有料利用が必要で、組織の支出が増える可能性がある",
+        "有料利用が未有効、課金ロック、課金対象の顧客なしのアカウントは Member になる"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "Member", "type": "label", "oneLine": "メンバーの Copilot 利用資格を使って課金する選択肢。" },
+    { "term": "Organization", "type": "label", "oneLine": "リポジトリを所有する組織に請求する選択肢。" }
+  ],
+  "qa": [
+    {
+      "q": "いつから課金先が変わりますか。",
+      "a": "2026-12-30 からです。課金方法を選択していない場合、Copilot ライセンスを持つメンバーによるレビューは、リポジトリを所有する組織に請求されます。"
+    },
+    {
+      "q": "今の課金を変えたくない場合はどうしますか。",
+      "a": "それまでに企業または組織の Copilot ポリシー設定で Member を選びます。この選択は既定が変わった後も維持されます。企業が設定を管理している場合は企業オーナーが選びます。"
+    },
+    {
+      "q": "すでに Member や Organization を選んでいる場合は。",
+      "a": "選択済みの内容はそのまま有効で、今回の既定の変更の影響を受けません。"
+    },
+    {
+      "q": "組織課金を使うための条件はありますか。",
+      "a": "組織課金には AI Credits の有料利用が必要で、組織の支出が増える可能性があります。有料利用が有効でない、課金ロックがある、課金対象の顧客がないアカウントは Member に設定されます。"
+    },
+    {
+      "q": "ライセンスのないメンバーの設定も変わりますか。",
+      "a": "変わりません。Copilot ライセンスを持たないメンバー向けの設定は別で、今回の変更の対象外です。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Copilot code review billing will default to the organization - GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-11-25-copilot-code-review-billing-will-default-to-the-organization/"
+    },
+    "documents": [
+      {
+        "title": "GitHub Copilotによるコード レビューの構成 - GitHubドキュメント",
+        "url": "https://docs.github.com/ja/copilot/how-tos/copilot-on-github/set-up-copilot/configure-code-review"
+      }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/changelog/2026-11-25-copilot-code-review-billing-will-default-to-the-organization/",
+    "https://docs.github.com/ja/copilot/how-tos/copilot-on-github/set-up-copilot/configure-code-review"
+  ]
+}
