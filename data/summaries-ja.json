@@ -4495,5 +4495,97 @@
       "Business/Enterprise は Editor preview features ポリシーの有効化が必要",
       "MCP許可リストで個別指定している場合は新コネクタの追加が必要"
     ]
+  },
+  "2bf080d2b87c8309": {
+    "title": "VS Code 1.148でAgent Hostのチャット応答開始が約30%高速化",
+    "summary": "VS Code 1.148でAgent Hostのチャット性能が改善され、前回のStable版と比べて応答の開始が平均で約30%速くなった。従来のハーネスとの差も縮まり、チャット開始時間は旧ハーネスの約5%以内に収まっている。",
+    "why": "Agent Hostへの移行で遅さを感じていた利用者は、1.148へ更新して応答開始の速さを試してください。",
+    "points": [
+      "応答開始が前回Stable比で平均約30%高速化",
+      "旧ハーネスとの差は約5%以内まで縮小",
+      "今後のリリースでも改善を継続する予定"
+    ]
+  },
+  "43b57a33d4dc3a17": {
+    "title": "Agentsウィンドウの Remote Environments エディターが刷新",
+    "summary": "Agentsウィンドウの Remote Environments エディターの表が作り直され、各環境の状態、最終アクティビティ、OSを一覧で見られるようになった。接続中か使用中かが一目で分かる。",
+    "why": "複数のリモートマシンでエージェントを動かす人は、新しい表で環境の管理と絞り込みを行えます。",
+    "points": [
+      "各行に Connect と New Session を配置",
+      "設定変更やサーバー更新は More Actions に集約",
+      "検索ボックスの Filter で並べ替えや種類・状態別のグループ化"
+    ]
+  },
+  "9137b466825ab9c1": {
+    "title": "リモートエージェントホストごとにサンドボックスを切替(実験的)",
+    "summary": "名前を付けて保存したエージェントのサンドボックス設定をプロファイルとして、リモートのAgent Hostごとに割り当てられるようになった。ビルドサーバーは通信を開放し、共有マシンは厳しく制限するといった使い分けができる。",
+    "why": "リモートホストごとに安全基準が異なる環境では、プロファイルを作成して各ホストに割り当ててください。",
+    "points": [
+      "有効化は chat.agent.sandbox.profiles.enabled",
+      "Sandbox: Manage Sandbox Profiles コマンドで管理",
+      "割り当てはリモート側に保存され、接続する全端末で共通",
+      "組織のサンドボックスポリシーは引き続き適用、VS Code Serverは最新が必要"
+    ]
+  },
+  "c08c7d33d2b53ad7": {
+    "title": "リモートホストの worktree を整理してディスク容量を回収",
+    "summary": "接続中のリモートAgent Hostでも worktree のクリーンアップが使えるようになった。行と確認画面にホスト名が表示され、別マシンの同一パスも区別できる。Chatビューやコマンドパレットからも開ける。",
+    "why": "古いエージェント用 worktree でディスクが圧迫されているなら、リモートホスト上でも整理できます。",
+    "points": [
+      "コマンドパレットの Chat: Open Worktree Cleanup で起動",
+      "Chatビューのメニューの Open Worktree Cleanup からも可能",
+      "未接続や非対応のホストは整理の対象外"
+    ]
+  },
+  "c14205c84da8ecf7": {
+    "title": "Agentsウィンドウの Inbox モードで返信後の移動先を選択(実験的)",
+    "summary": "Inbox モードは、Agentsウィンドウのセッションを対応が必要なものごとにまとめる。返信後にどこへ移動するかを sessions.list.inboxAutoAdvance で auto、on、off、newSession から選べる。",
+    "why": "対応待ちのセッションを順に処理したい人は、設定で返信後の移動先を好みに合わせてください。",
+    "points": [
+      "Inbox を使うには sessions.list.inboxEnabled を有効化",
+      "auto(既定)は次の Inbox 会話へ、なければ見出しにフォーカス",
+      "スクリーンリーダー接続時の auto は現在の会話に留まる",
+      "newSession は入力欄にフォーカスした新規セッションを開く"
+    ]
+  },
+  "e7a5c186b93d78e6": {
+    "title": "設定不要でエージェント用 Dev Container を作成(実験的)",
+    "summary": "Dev Container の構成ファイルを書かずに、エージェントセッション用の隔離された Ubuntu コンテナを作れるようになった。内部に Agent Host を持ち、ファイルは Docker ボリュームに保存される。SSHホスト、WSL、Dev Tunnel でも Docker があれば作成できる。",
+    "why": "エージェントに隔離環境で作業させたい人は、Docker が使える環境で2つの設定を有効にして試してください。",
+    "points": [
+      "設定は chat.agentHost.devContainer.environments.enabled",
+      "Remote Environments の More Actions から Create Dev Container を選択",
+      "handoff.enabled を有効にすると既存セッションからコンテナ作成を依頼可能"
+    ]
+  },
+  "f76db5c35687eaaa": {
+    "title": "リモート接続エラーの原因を調べる Troubleshoot ページを追加",
+    "summary": "リモート接続に失敗したとき、通知の Troubleshoot か環境の More Actions > Troubleshoot Connection... から診断ページを開ける。原因を説明し、再試行、SSH設定の編集、WSLディストリビューションの再起動などの対処を提示する。",
+    "why": "接続失敗の原因が設定、ネットワーク、リモート側のどれか分からないとき、このページで切り分けてください。",
+    "points": [
+      "失敗通知の Troubleshoot ボタンから起動",
+      "診断レポートを収集して確認・共有できる",
+      "再試行、SSH設定を開く、WSL再起動などの操作を提示"
+    ]
+  },
+  "f7d8d79ca0804648": {
+    "title": "エージェント作業中はマシンのスリープを防止(プレビュー)",
+    "summary": "対応するAgent Hostは、アクティブな処理中にマシンを起こしたままにでき、ウィンドウを閉じた後も有効。作業終了後まもなく保持を解除する。無人実行がスリープで止まるのを避けられる。",
+    "why": "席を離れてエージェントを動かす人は、sessions.keepAwakeWhileWorking のモードを用途に合わせて選んでください。",
+    "points": [
+      "設定は sessions.keepAwakeWhileWorking",
+      "whenPluggedIn(既定)は電源接続中のみ防止",
+      "always はバッテリー駆動中も防止、never は防止しない"
+    ]
+  },
+  "d181d065399fb087": {
+    "title": "VS Code 1.149 Insiders のリリースノートが公開、内容は未掲載",
+    "summary": "VS Code 1.149 の Insiders ビルド向けリリースノートのページが公開された。2026年11月24日時点で「Updates coming soon」とあり、具体的な新機能はまだ載っていない。ノートは機能追加に合わせて更新される。",
+    "why": "1.149の新機能を知りたい人は、Insiders ビルドを使うか、ノートが更新されるまで待ってください。",
+    "points": [
+      "対象は Insiders ビルドで、Stable ではない",
+      "最終更新は2026年11月24日",
+      "進捗は Commit log と Closed issues で追える"
+    ]
   }
 }
