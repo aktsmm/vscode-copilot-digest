@@ -1,0 +1,85 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "2bf080d2b87c8309",
+  "title": {
+    "ja": "VS Code 1.148、Agent Host のチャット性能を改善",
+    "subtitleJa": "応答開始が前回の Stable 比で平均 30% 速くなり、旧ハーネスとの差は約 5% 以内に",
+    "original": "Improved chat performance"
+  },
+  "date": "2026-11-25",
+  "topic": "VS Code",
+  "status": "update",
+  "audience": {
+    "who": "VS Code のチャットで Agent Host 上のエージェントを使う開発者",
+    "change": "Agent Host でのチャットの応答開始が、前回の Stable より平均 30% 速くなった",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "no",
+    "summary": "VS Code 1.148 に更新すれば改善が適用される。設定変更は不要"
+  },
+  "panels": [
+    {
+      "id": "what-changed",
+      "heading": "変わったこと",
+      "priority": "core",
+      "items": [
+        "Agent Host でのチャットのパフォーマンスを複数改善した",
+        "応答の開始は、前回の Stable に比べて平均 30% 速くなる",
+        "チャット開始までの時間は、旧ハーネスの約 5% 以内になった"
+      ]
+    },
+    {
+      "id": "background",
+      "heading": "背景",
+      "priority": "core",
+      "items": [
+        "ハーネスを Agent Host へ移行した後、旧ハーネスとの性能差が繰り返し指摘されていた",
+        "今後のリリースでも、さらなる改善を続ける"
+      ]
+    },
+    {
+      "id": "limits",
+      "heading": "適用範囲",
+      "priority": "detail",
+      "items": [
+        "Local ハーネスの選択時や、以前の拡張機能ホスト方式で作成したセッションは Agent Host を使わない"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "Agent Host", "type": "feature", "oneLine": "エージェント ハーネスを実行し、そのセッションを管理する専用プロセス。" },
+    { "term": "ハーネス", "type": "term", "oneLine": "モデル、ツール、エージェントのワークフローを調整する実装。" }
+  ],
+  "qa": [
+    {
+      "q": "どのくらい速くなりますか。",
+      "a": "リリースノートでは、応答の開始が前回の Stable バージョンに比べて平均 30% 速くなるとされています。チャット開始時間は旧ハーネスの約 5% 以内です。"
+    },
+    {
+      "q": "設定の変更は必要ですか。",
+      "a": "記事に設定の記載はなく、VS Code 1.148 の改善として提供されます。"
+    },
+    {
+      "q": "Agent Host とは何ですか。",
+      "a": "エージェント ハーネスを実行し、そのセッションを管理する専用プロセスです。ウィンドウとは独立してセッションを扱います。"
+    },
+    {
+      "q": "すべてのセッションが対象ですか。",
+      "a": "ドキュメントでは、Local ハーネスを選んだ場合や以前の拡張機能ホスト方式のセッションは Agent Host を使わないとされています。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.148",
+      "url": "https://code.visualstudio.com/updates/v1_148#_improved-chat-performance"
+    },
+    "documents": [
+      { "title": "Agent Host architecture", "url": "https://code.visualstudio.com/docs/agents/concepts/agent-host" }
+    ]
+  },
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_148",
+    "https://code.visualstudio.com/docs/agents/concepts/agent-host"
+  ]
+}
