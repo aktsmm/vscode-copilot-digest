@@ -1,0 +1,97 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "7d5c43e3274406d0",
+  "title": {
+    "ja": "アプリケーション モダナイズの次の一手を、証拠から選ぶ方法",
+    "subtitleJa": "先に動作の証拠を集め、変更の小さい対処から選ぶ手順を、エージェント スキルにする",
+    "original": "How to choose the next safe step in application modernization"
+  },
+  "date": "2026-11-25",
+  "topic": "GitHub Copilot",
+  "status": "update",
+  "audience": {
+    "who": "既存アプリケーションのモダナイズを進める開発者・アーキテクト",
+    "change": "対象技術を決める前に証拠を集め、変更の小さい順に対処を選ぶ手順と、それを組み込んだスキルが示された",
+    "changeNature": "neutral"
+  },
+  "action": {
+    "required": "info",
+    "summary": "自分のアプリ 1 つに、証拠の一覧づくりから試し、必要ならスキルとして残す"
+  },
+  "panels": [
+    {
+      "id": "evidence",
+      "heading": "先に集める証拠",
+      "priority": "core",
+      "items": [
+        "マニフェスト、ロックファイル、エントリ ポイントと、ビルド・テスト・実行の検証済みコマンド",
+        "コンテナ、CI、デプロイ設定に固定された実行環境と、API・データベース・ファイル形式などの外部契約",
+        "確度は「documented」「inferred」「unverified」で記録し、推測を結論にしない"
+      ]
+    },
+    {
+      "id": "treatment",
+      "heading": "対処の選び方",
+      "priority": "core",
+      "items": [
+        "コンポーネントごとに、維持、アップグレード、置き換え、ラップ、書き直しの順に検討する",
+        "より大きな変更を選ぶには根拠が必要。「コードが古い」だけでは足りない",
+        "動かせるなら動作を記録してから更新し、動かせないなら小さな新しい部分から作る"
+      ]
+    },
+    {
+      "id": "skill",
+      "heading": "スキルにする",
+      "priority": "core",
+      "items": [
+        "手順は公開スキル doc-and-modernize にまとめられている",
+        "プロジェクト スキルは .github/skills/doc-and-modernize/ に置き、必須は SKILL.md のみ",
+        "SKILL.md には name と description を含む YAML フロントマターと手順を書く"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "例で使ったバージョンは実験の記録であり、今選ぶ目標の推奨ではない",
+        "最も強い検証でも、すべての動作の正しさは証明できない"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "エージェント スキル", "type": "feature", "oneLine": "タスク固有の指示、スクリプト、リソースのフォルダー。関連するときに読み込まれる。" },
+    { "term": "SKILL.md", "type": "term", "oneLine": "スキルに必須のファイル。name と description を含むフロントマターと指示を持つ。" }
+  ],
+  "references": {
+    "source": {
+      "title": "How to choose the next safe step in application modernization - The GitHub Blog",
+      "url": "https://github.blog/ai-and-ml/github-copilot/how-to-choose-the-next-safe-step-in-application-modernization/"
+    },
+    "documents": [
+      { "title": "エージェントのスキル - GitHub Enterprise Cloud Docs", "url": "https://docs.github.com/ja/enterprise-cloud@latest/copilot/concepts/customizations/agent-skills" }
+    ]
+  },
+  "evidence": [
+    "https://github.blog/ai-and-ml/github-copilot/how-to-choose-the-next-safe-step-in-application-modernization/",
+    "https://docs.github.com/ja/enterprise-cloud@latest/copilot/concepts/customizations/agent-skills"
+  ],
+  "qa": [
+    {
+      "q": "対象技術を決める前に、何をすればよいですか。",
+      "a": "マニフェスト、ロックファイル、検証済みのビルド・テスト・実行コマンド、実行環境の固定箇所、外部契約を一覧にします。確度は documented、inferred、unverified で記録します。"
+    },
+    {
+      "q": "書き直しはいつ選ぶべきですか。",
+      "a": "維持、アップグレード、置き換え、ラップの順に検討し、責任ある更新手段がない、またはアーキテクチャが要件を満たせない場合に書き直します。「コードが古い」だけでは根拠になりません。"
+    },
+    {
+      "q": "古いアプリのテストが通らないときはどうしますか。",
+      "a": "時間を区切って実行可否を調べます。動かせるなら動作を記録してから更新し、動かせないなら最小限の新しい部分を先に作って検証し、広げます。"
+    },
+    {
+      "q": "この手順をスキルにするには何が必要ですか。",
+      "a": ".github/skills/doc-and-modernize/ のようなフォルダーに SKILL.md を置きます。必須はこのファイルだけで、name と description を含む YAML フロントマターと手順を書きます。"
+    }
+  ]
+}
