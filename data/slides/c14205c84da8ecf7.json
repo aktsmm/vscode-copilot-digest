@@ -1,0 +1,90 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "c14205c84da8ecf7",
+  "title": {
+    "ja": "VS Code 1.148: Agents ウィンドウの Inbox でセッションを整理・巡回（試験的）",
+    "subtitleJa": "Inbox モードが要対応のセッションをまとめ、返信後の移動先を設定で選べる",
+    "original": "Inbox navigation and organization (Experimental)"
+  },
+  "date": "2026-11-25",
+  "topic": "VS Code",
+  "status": "update",
+  "audience": {
+    "who": "VS Code の Agents ウィンドウで複数のエージェント セッションを扱う開発者",
+    "change": "Inbox モードで要対応のセッションが集約され、返信後に次の Inbox 会話へ進める",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "使うなら sessions.list.inboxEnabled を有効にし、必要に応じて inboxAutoAdvance を設定する"
+  },
+  "panels": [
+    {
+      "id": "how-to-use",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "設定で sessions.list.inboxEnabled を有効にし、セッション リストの Inbox トグルをオンにする",
+        "Inbox には質問、承認要求、エラー、失敗した PR チェック、確認待ちの応答などが集まる",
+        "右クリックで Acknowledge / Put on Hold / Snooze / Return to Inbox を選べる"
+      ]
+    },
+    {
+      "id": "auto-advance",
+      "heading": "返信後の移動先",
+      "priority": "core",
+      "items": [
+        "sessions.list.inboxAutoAdvance で、返信後にフォーカスを移す先を選ぶ",
+        "auto（既定）: 次の Inbox 会話を開く。スクリーン リーダー使用時は現在の会話に留まる",
+        "on: スクリーン リーダー使用時も含め常に次へ進む。off: 現在の会話に留まる",
+        "newSession: 他の Inbox 会話が残っていても、新規セッションの入力欄を開く"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "Acknowledge や Hold はエージェントを止めず、アーカイブもしない",
+        "Inbox トグルをオフにすると以前のグループ化に戻り、カスタム グループと保存済みの選択は保持される"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "Inbox モード", "type": "feature", "oneLine": "Agents ウィンドウのセッションを、対応が必要なものごとにまとめて表示するモード。" }
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.148",
+      "url": "https://code.visualstudio.com/updates/v1_148#_inbox-navigation-and-organization-experimental"
+    },
+    "documents": [
+      {
+        "title": "Organize and triage agent sessions",
+        "url": "https://code.visualstudio.com/docs/agents/run/sessions/organize-sessions#_triage-sessions-with-inbox-mode"
+      }
+    ]
+  },
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_148",
+    "https://code.visualstudio.com/docs/agents/run/sessions/organize-sessions"
+  ],
+  "qa": [
+    {
+      "q": "Inbox モードはどう有効にしますか？",
+      "a": "設定で sessions.list.inboxEnabled を有効にし、セッション リストの Inbox トグルをオンにします。トグルをオフにすれば以前のグループ化に戻り、カスタム グループや保存済みの選択は保持されます。"
+    },
+    {
+      "q": "Inbox には何が表示されますか？",
+      "a": "質問、承認要求、エラー、失敗した PR チェック、確認待ちの完了した応答、マージ可能な PR など、対応が必要な作業です。"
+    },
+    {
+      "q": "返信後の移動先は変えられますか？",
+      "a": "sessions.list.inboxAutoAdvance で変更できます。auto（既定）は次の Inbox 会話を開き、on は常に進み、off は現在の会話に留まり、newSession は新規セッションを開きます。"
+    },
+    {
+      "q": "Acknowledge や Hold をするとセッションはどうなりますか？",
+      "a": "エージェントは止まらず、既読にもアーカイブにもなりません。Acknowledge は新しい動きがあると解除され、Put on Hold は明示的に再開するまで On hold に残ります。"
+    }
+  ]
+}
