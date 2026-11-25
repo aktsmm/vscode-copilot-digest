@@ -35,11 +35,12 @@ For additional context, select Add Context (+). If prompted, select a repository
 You can optionally change the agent harness, agent, or model.
 To start a session in the background without navigating into it, press Alt+Enter or hold Alt and select Send. Focus stays in the composer so you can start another task. Select Open Session in the confirmation to open the sent conversation. With Inbox grouping selected, you can also press Ctrl+Enter (Cmd+Enter on macOS).
 H3: Choose where an agent makes changes
-For a Git workspace you can choose between applying changes in the current branch or a new worktree. Use the isolation dropdown above the input to choose where the agent edits files.
-Choosing a base branch for New Worktree doesn't switch the branch in your active workspace.
-Git-ignored files, including dependencies and local configuration, are also absent from new worktrees by default. Run your project's setup or configure which ignored files to include.
+For a Git workspace, use the isolation dropdown above the input to choose where the agent edits files:
+Branch: Work directly in the selected folder. If you choose another local branch, switching branches requires a clean working tree.
+New Worktree: Work in a separate directory and branch. Use the branch picker to choose the base branch before sending the prompt. Choosing a base branch doesn't switch the branch in your active workspace.
+For the folder-versus-worktree comparison, Git requirements, and dependency setup, see Work with agents in worktrees. To change the initial choice, configure isolation defaults.
 Dev Container sessions work directly in the container workspace and don't support New Worktree. See Run a session in a Dev Container.
-Worktrees isolate working files, not the agent's access to your machine or external services. Either isolation mode supports the permission levels offered by your harness. For operating system-level restrictions, configure agent sandboxing or use cloud sessions.
+Worktrees isolate working files, not the agent's access to your machine or external services. Review the permission and sandboxing considerations before starting a task.
 H3: Save and resume drafts
 Prepare requests for several tasks and return to them when you're ready to send them. In the Agents window, drafts save unsent New Session requests without starting an agent session.
 Open Settings (⌘, (Windows, Linux Ctrl+,)) and enable 
@@ -214,6 +215,7 @@ Committing records the changes but doesn't necessarily put them in the branch wh
 With Branch isolation, edits are already in the selected folder. Follow your normal branch and pull request workflow.
 With New Worktree, edits remain in the separate worktree. Integrate the reviewed branch into your target branch locally, or create a pull request. For a parallel-work example, follow Integrate and retest.
 After combining changes from multiple sessions, rerun the relevant checks on the combined result. Keep the sessions available until that validation is complete, then mark finished sessions as done.
+To reclaim disk space from inactive or leftover worktrees, run Chat: Open Worktree Cleanup. The shared cleanup procedure covers both windows, local and remote worktrees, and what is preserved.
 H3: Create a pull request
 If the session doesn't already have a pull request:
 Select Create PR in the title bar. Review the repository, source and base branches, and generated title and description. You can edit the text while generation finishes.
@@ -260,7 +262,11 @@ For managed compute that runs independently of your local machine, start a cloud
 . To return to its work later, reopen the existing session.
 You can also use the browser-based Agents window to access remote sessions from another device.
 H3: Run a session in a Dev Container
-Use a Dev Container to run the agent with your project's tools and dependencies. This is supported in the desktop app for local folders and folders on configured SSH, Tunnel, or WSL hosts, but not in the browser-based window.
+Use a Dev Container to run the agent with tools and dependencies inside a container rather than directly on its host. Containers can run on this computer or on a configured SSH, Tunnel, or WSL host. These workflows aren't supported in the VS Code for the Web.
+Choose the starting point that fits your task:
+Use your project's Dev Container to work with its existing files and configuration.
+Create a container without a project for a fresh Ubuntu workspace.
+Ask the agent to continue in a new container to hand off a task to a new session.
 Before starting:
 Install and run Docker on the host that contains the folder, with its CLI on PATH.
 Add a Dev Container configuration at .devcontainer/devcontainer.json or .devcontainer.json.
@@ -314,6 +320,93 @@ Restarting an existing container is different from rebuilding or replacing it. T
  
  Dev Container state volumes is experimental and might change or be removed.
 , especially the warning about the first rebuild of an existing container.
+Create a standalone Ubuntu container when you need a fresh workspace without an existing project folder or devcontainer.json. Its files stay in a Docker volume on the machine that runs the container.
+Before starting, install and run Docker on the intended host, with its CLI on PATH. For a remote host, connect to it first. For WSL, Docker must be available inside the distribution.
+Enable 
+ 
+ 
+ chat.agentHost.devContainer.environments.enabled
+ 
+ 
+ 
+ 
+ 
+ 
+ Open in VS Code
+ Open in VS Code Insiders
+ 
+ , which is off by default. Keep 
+ 
+ 
+ chat.agentHost.devContainer.enabled
+ 
+ 
+ 
+ 
+ 
+ 
+ Open in VS Code
+ Open in VS Code Insiders
+ 
+ and 
+ 
+ 
+ chat.remoteAgentHostsEnabled
+ 
+ 
+ 
+ 
+ 
+ 
+ Open in VS Code
+ Open in VS Code Insiders
+ 
+ enabled.
+Run Agents: Manage Remote Environments from the Command Palette (⇧⌘P (Windows, Linux Ctrl+Shift+P)).
+Run Agents: Manage Remote Environments from the Command Palette (⇧⌘P (Windows, Linux Ctrl+Shift+P)).
+In the search box's Filter menu, choose Group By > Type to show the Dev Containers group.
+In the search box's Filter menu, choose Group By > Type to show the Dev Containers group.
+Select Create Dev Container on the Dev Containers group. If prompted, choose This Computer or a connected host.
+To create the container on a specific connected host, you can instead use the create action on that host's row.
+Select Create Dev Container on the Dev Containers group. If prompted, choose This Computer or a connected host.
+To create the container on a specific connected host, you can instead use the create action on that host's row.
+After the container connects, select New Session and choose it in the Environment picker.
+After the container connects, select New Session and choose it in the Environment picker.
+Choose an available harness and submit your prompt.
+Choose an available harness and submit your prompt.
+Standalone containers persist independently of their sessions. The idle timeout and session cleanup described for project-configured containers don't apply. Disconnecting or marking a session as done doesn't delete the container's files.
+To remove a standalone container, use Delete on its row in Remote Environments. This deletes the container and its Docker volumes, including workspace files. Save any work you need elsewhere first. Sessions that ran in the deleted container can no longer continue.
+To edit or debug the workspace, see open a standalone container in the editor for extension and WSL requirements.
+To let an agent create a standalone container and continue work there, enable standalone containers and turn on 
+ 
+ 
+ chat.agentHost.devContainer.handoff.enabled
+ 
+ 
+ 
+ 
+ 
+ 
+ Open in VS Code
+ Open in VS Code Insiders
+ 
+ , which is off by default. This also provides the remote session tools. You don't need to separately enable 
+ 
+ 
+ chat.remoteSessions.tools.enabled
+ 
+ 
+ 
+ 
+ 
+ 
+ Open in VS Code
+ Open in VS Code Insiders
+ 
+ .
+In an Agent Host-backed session, describe the task and where the container should run. For example:
+Review the container host and the new-session approval before proceeding. By default, the agent creates the container on the current session's host when it supports containers, otherwise on this computer. Name a connected host in your request when its location matters.
+The agent starts a new session in the container and links to it from the original conversation. It passes a task summary, not the full conversation history, and doesn't copy the original project's files into the new workspace. The container appears in Remote Environments and follows the same persistence and deletion rules as a manually created standalone container.
 H3: Start a session from a pull request
 For a local GitHub-backed workspace, start from an existing pull request to ask questions or continue its changes. The session includes the pull request details, changes, and comments, and uses an isolated worktree that tracks its branch.
 Group the sessions list by workspace.
@@ -441,33 +534,7 @@ The
  Open in VS Code Insiders
  
  setting controls the initial isolation choice for a workspace that hasn't started a session before. After you start a session, VS Code remembers that workspace's isolation choice instead. The branch selection isn't remembered.
-Use 
- 
- 
- git.worktreeIncludeFiles
- 
- 
- 
- 
- 
- 
- Open in VS Code
- Open in VS Code Insiders
- 
- to copy ignored files into new worktrees. For large folders, 
- 
- 
- git.worktreeSymlinkFolders
- 
- 
- 
- 
- 
- 
- Open in VS Code
- Open in VS Code Insiders
- 
- (Experimental) can symlink a folder instead. Changes through the symlink affect the original folder, so don't use it for files that must stay isolated.
+For dependencies and ignored files, see Prepare a worktree.
 H2: Limitations
 Sessions that use the experimental Codex integration can run in both the Agents window and the main VS Code window. Local harness sessions 
  

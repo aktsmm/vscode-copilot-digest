@@ -7,6 +7,17 @@ Use remote agent sessions to run tasks on another machine and interact with them
 The machines have two roles:
 Host machine: Runs the agent and contains the project, tools, and session.
 Client machine: Runs the application you use to connect and interact with the session.
+sessions.keepAwakeWhileWorking
+ 
+ 
+ 
+ 
+ 
+ 
+ Open in VS Code
+ Open in VS Code Insiders
+ 
+ can prevent idle sleep while an Agent Host chat is working. Configure it on the host machine, not the client. See the AI settings reference for its modes and platform limitations.
 Keep the host machine awake, online, and its Agent Host or owning application running. Connecting doesn't transfer the session or copy the project to the client machine.
 Make a host available for remote access, then connect to an existing session or start a new remote session. To edit and debug the remote project alongside chat, see Use remote sessions in the Chat view.
 H2: Choose how to connect
@@ -18,6 +29,7 @@ Enable remote access to start or continue agent sessions from another device whi
  The Local harness is deprecated and will be removed in February 2027. Move your workflows to the Copilot harness before then. Learn more about Local harness deprecation.
  and older extension-host sessions aren't shared this way.
 Run these steps on the host machine to make it available for remote access.
+In the Agents window, you can alternatively use the Experimental sharing setup form to compare connection methods before starting sharing.
 If you're already connected to an SSH host, WSL distribution, or dev tunnel, you can instead share that remote as a GitHub environment from the client machine.
 On the host machine, open the Agents window, or use an Agent Host-backed session in the Chat view in an editor window.
 On the host machine, open the Agents window, or use an Agent Host-backed session in the Chat view in an editor window.
@@ -53,10 +65,10 @@ Open the Agents window. If needed, select New Session to show the chat input and
 Open the Agents window. If needed, select New Session to show the chat input and its Environment picker.
 Run the Agents: Manage Remote Environments command from the Command Palette.
 Run the Agents: Manage Remote Environments command from the Command Palette.
-Verify that the remote host appears in the list of available environments.
-Verify that the remote host appears in the list of available environments.
-The sessions list in the Agents window shows available sessions from the remote host. Select the existing session list to continue the conversation.
-The sessions list in the Agents window shows available sessions from the remote host. Select the existing session list to continue the conversation.
+Find the remote host and select Connect on its row.
+Find the remote host and select Connect on its row.
+Select the existing session from the sessions list in the Agents window to continue the conversation.
+Select the existing session from the sessions list in the Agents window to continue the conversation.
 The session's files, tools, and execution remain on the host machine. If you don't see the task, check the selected host and session filters.
 For other supported Copilot clients, use that client's environment connection controls. Registration makes the machine discoverable; it doesn't guarantee that every client supports the same harnesses, sessions, or actions.
 H2: Start a remote session
@@ -177,7 +189,8 @@ In the installed Agents window, discovering a machine doesn't connect to it for 
  on, previously connected online environments can reconnect for the same profile and account. Explicitly disconnecting suppresses automatic reconnection until you connect manually again.
 H3: Manage remote environments (Experimental)
 Use the Remote Environments editor in the installed Agents window to find and manage your remote machines in one place. This editor is optional; you don't need to open it to follow the connection steps above.
-To also manage how this computer is shared, enable 
+You can also create and manage standalone Dev Containers here, on this computer or a connected host. Unlike a connection to an existing machine, each standalone container provides a new workspace with its files in a Docker volume.
+The This Computer section manages how this computer is shared. It requires 
  
  
  sessions.chat.experimental.remoteEnvironmentsThisComputer
@@ -190,8 +203,8 @@ To also manage how this computer is shared, enable
  Open in VS Code
  Open in VS Code Insiders
  
- . In This Computer, choose GitHub Environments (when available), Dev Tunnels, or Off, or select Rename Sharing Name to change the name other clients see. Local sessions continue to run on this computer whether sharing is on or off.
-The table groups known SSH hosts, dev tunnels, and WSL distributions on Windows. When support for GitHub environments is available and enabled, the Environments group also lists your registered machines, including offline ones. These are user-shared machines, not the managed environments used by cloud sessions.
+ , which is on by default. With the default sharing controls, choose GitHub Environments (when available), Dev Tunnels, or Off, or select Rename Sharing Name to change the name other clients see. Alternatively, use the Experimental sharing setup form to choose a method before applying it. Local sessions continue to run on this computer whether sharing is on or off.
+The Other environments table lists known SSH hosts, dev tunnels, and WSL distributions on Windows. When support for GitHub environments is available and enabled, it also lists your registered machines, including offline ones. These are user-shared machines, not the managed environments used by cloud sessions.
 Remote environment management requires 
  
  
@@ -232,17 +245,53 @@ Remote environment management requires
  Open in VS Code Insiders
  
  . All three settings are on by default.
-Run Agents: Manage Remote Environments from the Command Palette (⇧⌘P (Windows, Linux Ctrl+Shift+P)), or select Manage Remote Environments from the sessions list More Actions (...) menu.
+Run Agents: Manage Remote Environments from the Command Palette (⇧⌘P (Windows, Linux Ctrl+Shift+P)), or select Manage Remote Environments from Remote Connections (antenna icon) in the title bar or the sessions list More Actions (...) menu.
 You can also open the editor from the Environment picker:
 Create a new chat or session in the Agents window.
 Create a new chat or session in the Agents window.
 Open the Environment picker and select Manage.
 Open the Environment picker and select Manage.
+To compare connection methods before starting sharing, enable 
+ 
+ 
+ sessions.chat.remoteEnvironments.sharingSetup
+ 
+ 
+ 
+ 
+ 
+ 
+ Open in VS Code
+ Open in VS Code Insiders
+ 
+ . This Experimental setting is off by default and requires the This Computer section to be enabled.
+On the host machine:
+Open remote environment management.
+In This Computer, select Share This Computer.
+Choose a connection method and review the sharing name. Selecting a method alone doesn't start sharing.
+Select Start Sharing and complete any sign-in or confirmation prompts.
+From the client machine, continue an existing session or start a remote session. Sharing enables access to the host's supported sessions, tools, and workspace resources. Review remote connection security before starting sharing.
+To switch methods, select Change Connection Type next to Stop Sharing, choose another method, then select Switch Method. Switching stops sharing with the current method before starting the new one.
+To end remote access, select Stop Sharing. This doesn't stop running agent tasks. If a sharing change fails, select Open Sharing Log in the error message for details.
+Turning off 
+ 
+ 
+ sessions.chat.remoteEnvironments.sharingSetup
+ 
+ 
+ 
+ 
+ 
+ 
+ Open in VS Code
+ Open in VS Code Insiders
+ 
+ restores the previous Off, GitHub Environments, and Dev Tunnels controls.
 Share an SSH host, WSL distribution, or dev tunnel to continue its agent sessions through GitHub environments, including from another machine. Sharing requires GitHub environments to be enabled and available for your account, and a remote Agent Host that supports sharing.
 In Manage Remote Environments, connect to the remote.
 In Manage Remote Environments, connect to the remote.
-On its row, select Share <name> as GitHub Environment (Octocat icon). Complete any sign-in prompts.
-On its row, select Share <name> as GitHub Environment (Octocat icon). Complete any sign-in prompts.
+On its row, select More Actions (...) > Share as GitHub Environment. Complete any sign-in prompts.
+On its row, select More Actions (...) > Share as GitHub Environment. Complete any sign-in prompts.
 When you disconnect from the shared remote, choose what should happen:
 
 Choice
@@ -257,27 +306,38 @@ Stop sharing the remote as a GitHub environment, then disconnect.
 Cancel
 Keep the direct connection.
 When you disconnect from the shared remote, choose what should happen:
-With Keep Sharing, the remote appears under GitHub Environments in remote environment management and the environment picker. Continue its existing sessions without starting new conversations. Their pins and groups are preserved. On another machine, sign in with the same GitHub account.
+With Keep Sharing, the remote appears as a GitHub environment in remote environment management and the environment picker. Continue its existing sessions without starting new conversations. Their pins and groups are preserved. On another machine, sign in with the same GitHub account.
 When you reconnect directly, the same sessions return to that connection and the separate GitHub environment entry is hidden. Sessions aren't duplicated.
-To stop sharing while directly connected, select Stop Sharing <name> as GitHub Environment on the remote's row.
+To stop sharing while directly connected, select More Actions (...) > Stop Sharing as GitHub Environment on the remote's row.
 Keep the remote machine running and reachable. Keep Sharing doesn't move execution to managed cloud compute. Sharing grants access to the host's supported sessions, tools, and workspace resources. Review remote connection security before enabling it.
-Use the table to search, connect, and organize your remote machines. Keep these behaviors in mind:
+Use the search field to find a remote machine. Select Filter in that field to choose Sort By or Group By. Sorting and grouping are remembered for your profile. Use Reset Filter to restore the defaults.
+Connected means this window has an active connection. Available means you can try connecting, not that the host is confirmed reachable. SSH hosts aren't checked for reachability before you connect. Last Activity and System can show previously observed information rather than live measurements.
+Select Connect on a row to use that environment. When New Session is available on a connected row, it opens a new session with that environment selected. To continue an existing task, select its session from the sessions list instead.
+Keep these behaviors in mind:
 Disconnecting doesn't stop running tasks. Refreshing discovers machines without connecting.
 Disconnecting doesn't stop running tasks. Refreshing discovers machines without connecting.
-Renaming or hiding a machine affects only this client. Hiding doesn't disconnect it or remove sessions. Leave a name empty to restore the default.
-Renaming or hiding a machine affects only this client. Hiding doesn't disconnect it or remove sessions. Leave a name empty to restore the default.
-Delete has different effects depending on the connection:
+Use More Actions (...) > Rename or Hide from Environment Picker to change how a machine appears on this client. Hiding doesn't disconnect it or remove sessions. Leave a name empty to restore the default.
+Use More Actions (...) > Rename or Hide from Environment Picker to change how a machine appears on this client. Hiding doesn't disconnect it or remove sessions. Leave a name empty to restore the default.
+Removal actions in More Actions have different effects depending on the connection:
 
-For a GitHub environment, it removes the registration and disconnects this client. The environment can reappear if its owning application registers it again.
-For an eligible saved SSH connection, it forgets the saved connection and disconnects this client. It doesn't change your SSH configuration.
-For a dev tunnel, it deletes the tunnel registration and disconnects its clients. Stop hosting a tunnel from this application before deleting it. A machine that starts hosting the tunnel again can recreate it.
+Remove Environment removes a GitHub environment registration and disconnects this client. The environment can reappear if its owning application registers it again.
+Forget SSH Connection forgets an eligible saved SSH connection and disconnects this client. It doesn't change your SSH configuration.
+Delete Dev Tunnel deletes the tunnel registration and disconnects its clients. Stop hosting a tunnel from this application before deleting it. A machine that starts hosting the tunnel again can recreate it.
 
-None of these actions deletes files on the remote machine.
-Delete has different effects depending on the connection:
-For a GitHub environment, it removes the registration and disconnects this client. The environment can reappear if its owning application registers it again.
-For an eligible saved SSH connection, it forgets the saved connection and disconnects this client. It doesn't change your SSH configuration.
-For a dev tunnel, it deletes the tunnel registration and disconnects its clients. Stop hosting a tunnel from this application before deleting it. A machine that starts hosting the tunnel again can recreate it.
-None of these actions deletes files on the remote machine.
+These connection-removal actions don't delete files on the remote machine. Delete Dev Container for a standalone container is different: it removes the container and its Docker volumes, including workspace files, and its sessions can no longer continue. Save any work you need elsewhere first.
+Removal actions in More Actions have different effects depending on the connection:
+Remove Environment removes a GitHub environment registration and disconnects this client. The environment can reappear if its owning application registers it again.
+Forget SSH Connection forgets an eligible saved SSH connection and disconnects this client. It doesn't change your SSH configuration.
+Delete Dev Tunnel deletes the tunnel registration and disconnects its clients. Stop hosting a tunnel from this application before deleting it. A machine that starts hosting the tunnel again can recreate it.
+These connection-removal actions don't delete files on the remote machine. Delete Dev Container for a standalone container is different: it removes the container and its Docker volumes, including workspace files, and its sessions can no longer continue. Save any work you need elsewhere first.
+To reclaim disk space from agent-managed worktrees on a connected host, use Worktree Cleanup in VS Code Insiders. Unlike disconnecting or forgetting a host, cleanup removes selected worktree folders on that host. Review the host identity and preservation rules before confirming.
+On an SSH host or dev tunnel's row, select More Actions (...) > Configure Agent Run Behavior to choose how agent tasks run:
+Run in the Background: Agents can keep working after you close VS Code on the remote computer.
+Use Remote VS Code: Uses an open editor window on the remote computer when available. Agents stop when that window closes.
+Keep the remote computer awake and online with either choice. Selecting a choice doesn't apply it immediately. For a disconnected environment, Save applies the choice the next time you connect without connecting now. For a connected environment, Save and Reconnect applies the choice and reconnects. If reconnection fails, the preference remains saved, but you need to reconnect before continuing.
+When a connected host supports server updates and a newer build is available, select More Actions (...) > Update Server on its row.
+Updating restarts the remote server and interrupts sessions running on it. Save your work or stop active tasks before confirming the update.
+For an incompatible server that supports updating, Connect offers Update and Connect. If an update isn't offered, follow the setup guidance for your connection method to update the host.
 H2: Other remote workflows
 H3: Start a chat without a workspace on a remote host
 In the installed Agents window, use a chat without a workspace when a task needs the resources or environment of a remote host but doesn't need a repository. The Chat workspace option isn't available in the browser-based interface.
@@ -292,31 +352,10 @@ Choose an agent harness, enter your prompt, and press Enter.
 Choose an agent harness, enter your prompt, and press Enter.
 Select a folder on that host instead when the task needs an existing project.
 H3: Run a session in a remote Dev Container
-Run agents inside your remote project's Dev Container to use its configured tools and dependencies without installing them directly on the remote machine. Starting in VS Code 1.139, this is supported for SSH, Tunnel, and WSL connections in the installed Agents window, not in the browser-based window.
-Dev Container support (
- 
- 
- chat.agentHost.devContainer.enabled
- 
- 
- 
- 
- 
- 
- Open in VS Code
- Open in VS Code Insiders
- 
- ) is on by default. Docker must be installed and running on the remote host, and the project must contain a Dev Container configuration.
-To run a session in a remote Dev Container:
-Connect over SSH, through a tunnel, or to WSL, and select the project folder in the workspace picker.
-Connect over SSH, through a tunnel, or to WSL, and select the project folder in the workspace picker.
-Expand the menu for the remote folder and select Use Dev Container.
-The workspace label gains the - Dev Container suffix.
-Expand the menu for the remote folder and select Use Dev Container.
-The workspace label gains the - Dev Container suffix.
-Choose an available agent harness, configure the session, and enter your prompt.
-Choose an available agent harness, configure the session, and enter your prompt.
-The Use Dev Container option appears only when the source machine advertises Dev Container support. It isn't available for unsupported machines or for folders whose source is nested inside another remote environment. For more information about prerequisites, switching back to the source machine, and troubleshooting, see Run a session in a Dev Container.
+Run agents inside a container on a connected SSH, Tunnel, or WSL host to use its tools and dependencies without installing them directly on that host. This requires the installed Agents window, a host that supports Dev Container sessions, and Docker installed and running on that host.
+For an existing project, select its remote folder and follow Use your project's Dev Container.
+For a fresh workspace without a project configuration, follow Create a container without a project.
+The main Dev Container procedure covers setup, troubleshooting, and the different cleanup behavior of these two choices.
 H3: Preview a remote web app
 In the installed Agents window, use the integrated browser to preview a web app running on a supported session host without forwarding its port. Enable 
  
@@ -397,6 +436,17 @@ Turning off
  
  removes the remote delegation tools, but doesn't disconnect remote machines or stop remote sessions that are already running.
 H2: Troubleshoot remote sessions
+H3: Troubleshoot a connection (Experimental)
+In the Agents window, use Troubleshoot Connection to review connection details and find suggested recovery actions.
+Run Agents: Manage Remote Environments from the Command Palette (⇧⌘P (Windows, Linux Ctrl+Shift+P)).
+Run Agents: Manage Remote Environments from the Command Palette (⇧⌘P (Windows, Linux Ctrl+Shift+P)).
+On the environment's row, select More Actions (...) > Troubleshoot Connection.
+On the environment's row, select More Actions (...) > Troubleshoot Connection.
+Review the details and follow the suggested actions for your connection type. Retry the connection after addressing the problem.
+Review the details and follow the suggested actions for your connection type. Retry the connection after addressing the problem.
+When a connection attempt in Remote Environments fails, select Troubleshoot in its notification while the editor remains open to reach the same page.
+Use Open Diagnostic Report to review the collected details, or Copy Report to copy them. Reports can include names, addresses, and local logs for all environments. Review the report and remove sensitive details before sharing.
+Restart Distribution stops all programs and agent sessions in that WSL distribution before reconnecting. Save your work first.
 H3: Troubleshoot GitHub environments
 For host connectivity or missing sessions, start with the common checks.
 H2: Related resources

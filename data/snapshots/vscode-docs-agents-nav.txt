@@ -7,6 +7,7 @@ Agents Tutorial
 Best Practices
 Use the Chat View
 Agents Window
+Work with Agents in Worktrees
 Canvases
 Review and Undo Changes
 Configure the Agents Window

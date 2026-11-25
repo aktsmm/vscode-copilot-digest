@@ -1,4 +1,5 @@
 Insiders
+1.148
 1.147
 1.146
 1.145
@@ -17,30 +18,31 @@ Insiders
 1.132
 1.131
 View All Releases
-H1: Visual Studio Code 1.147
-Release date: November 18, 2026 Stable
-H2: Downloads for 1.147.0
+H1: Visual Studio Code 1.148
+Release date: November 25, 2026 Stable
+H2: Downloads for 1.148.0
 H2: Release highlights
-Have a task in mind but not ready to send it? This week, save requests as drafts or schedule them for later. When you're ready, let a model router match the task to your preferred model. And when a result is easier to show than explain, ask for a chart or mockup.
-Send later (Experimental): Schedule local agent requests and follow-ups for later in the Agents window.
-Send later (Experimental): Schedule local agent requests and follow-ups for later in the Agents window.
-Browser integration (Preview): Let agents control your default browser, and preview remote HTML files without copying them to your machine.
-Browser integration (Preview): Let agents control your default browser, and preview remote HTML files without copying them to your machine.
-Draft requests (Experimental): Keep multiple unsent requests with their context and configuration in the Agents window, ready to send when you are.
-Draft requests (Experimental): Keep multiple unsent requests with their context and configuration in the Agents window, ready to send when you are.
-Customize assisted permissions: Tell the permission reviewer which actions you consider safe and which should need your approval.
-Customize assisted permissions: Tell the permission reviewer which actions you consider safe and which should need your approval.
-Visual chat responses: Review reports, mockups, and charts inline in the Agents window with HTML previews and experimental native visuals.
-Visual chat responses: Review reports, mockups, and charts inline in the Agents window with HTML previews and experimental native visuals.
-Model routers (Experimental): Let a model router choose from your preferred models for different tasks.
-Model routers (Experimental): Let a model router choose from your preferred models for different tasks.
+Keep agent work moving, even when you step away. This week, chat responses start faster and active agents can keep their hosts awake. Give a task its own Dev Container, and reclaim disk space from old worktrees without switching windows.
+Keep agents going (Preview): Prevent idle sleep of the systemon supported hosts while agents work.
+Keep agents going (Preview): Prevent idle sleep of the systemon supported hosts while agents work.
+Worktree cleanup: Reclaim disk space from inactive agent worktrees on remote hosts.
+Worktree cleanup: Reclaim disk space from inactive agent worktrees on remote hosts.
+Sandbox profiles (Experimental): Tailor sandbox rules to each remote agent host with reusable profiles.
+Sandbox profiles (Experimental): Tailor sandbox rules to each remote agent host with reusable profiles.
+Create Dev Containers (Experimental): Give an agent an isolated Linux workspace without writing a container configuration.
+Create Dev Containers (Experimental): Give an agent an isolated Linux workspace without writing a container configuration.
+Agent chat performance: Spend less time waiting for Agent Host chat responses to begin.
+Agent chat performance: Spend less time waiting for Agent Host chat responses to begin.
 Already installed? Use Check for Updates in VS Code. For upcoming features, use the Insiders build.
-H2: Agent sessions
-H3: Send Later for chat requests (Experimental)
+H2: Agents
+H3: Improved chat performance
+This week we've made several improvements to the performance of chat in the Agent Host. On average you can expect to see responses begin 30% faster than in our previous Stable version.
+We appreciate your feedback as we've transitioned our harness to the Agent Host, and the performance difference compared to the old harness was a recurring topic of discussion. With this release, we see chat start times within ~5% of those of the old harness, and we will continue to find ways to further improve in upcoming releases.
+H3: Prevent idle sleep while an agent works (Preview)
 Setting: 
  
  
- sessions.sendLater.enabled
+ sessions.keepAwakeWhileWorking
  
  
  
@@ -49,38 +51,16 @@ Setting:
  
  Open in VS Code
  Open in VS Code Insiders
- 
- (Agents window only)
-Sometimes you want an agent to run a request after some time has passed. You might want to check a build after it finishes, or follow up on a review in the morning. With the Send Later feature, you can postpone sending a chat request until a specific time.
-You can schedule a chat request by using the Send Later menu on the send button in chat.
-For a specific time, select Choose Date and Time, pick a day in the calendar and a time from the dropdown, and select Schedule.
-Where the request waits depends on where you scheduled it:
-New session: In the Drafts section of the sessions list.
-Existing chat: In that chat's Scheduled area, with its send time. If the agent is still busy at the scheduled time, the request waits its turn instead of interrupting.
-Alternatively, you can ask the agent to schedule a request for you by using plain language in the chat prompt, for example: "Check the build in 10 minutes."
-The agent schedules a one-time, text-only request in the current chat and confirms when it will be sent. The request appears in the chat's Scheduled area, like one you scheduled from the menu.
-The local agent host must be running at the scheduled time. Scheduling doesn't wake a sleeping computer. A missed request is processed once the host is available again.
-To manage your scheduled requests (edit, send immediately, reschedule, or cancel), use the options available when you hover over them in the chat or session list. To find sessions with pending requests, look for the clock indicator in the session list, or select Scheduled Only in the sessions filter menu.
-Learn more about scheduling requests in the Send Later documentation.
-Note: Scheduled requests work only for sessions on This Computer and require automations to be enabled (
- 
- 
- chat.automations.enabled
- 
- 
- 
- 
- 
- 
- Open in VS Code
- Open in VS Code Insiders
- 
- ).
-H3: Save and resume drafts (Experimental)
+Avoid stalled unattended work when the machine running your agent would otherwise idle-sleep. A supported Agent Host can keep its machine awake during active turns, including after you close the window, and release the hold shortly after work ends.
+Choose a mode:
+whenPluggedIn (default): Prevent idle sleep while the host is plugged in.
+always: Prevent idle sleep during agent work, including on battery.
+never: Allow idle sleep during agent work.
+H3: Inbox navigation and organization (Experimental)
 Setting: 
  
  
- sessions.drafts.enabled
+ sessions.list.inboxAutoAdvance
  
  
  
@@ -89,58 +69,7 @@ Setting:
  
  Open in VS Code
  Open in VS Code Insiders
-Previously, the new-session input held a single unsent request at a time. With drafts, you can keep several unsent requests side by side, each with its own workspace, agent, and configuration, and come back to any of them later.
-When you leave a new session that has content, VS Code saves it to the Drafts section of the sessions list. Nothing is sent, and no agent session starts. To jump right back, select Open Draft in the notification.
-Each draft keeps everything you set up: text, attachments, inline references, workspace, agent, model, and other configuration. Drafts survive reloads and restarts.
-From the Drafts list, you can preview, open, or delete a draft. When you send a draft, it's removed only after the request is accepted, so a failed send doesn't lose your work.
-Turning off the setting hides the Drafts section but keeps your saved drafts.
-H3: Share remote environments as GitHub Environments
-Share a remote as a GitHub Environment to pick up its agent sessions from another device or supported Copilot app, using your GitHub account.
-To share a connected SSH host, WSL distribution, or Dev Tunnel, open the Remote Environments editor in the Agents window and select Share as GitHub Environment (GitHub icon) on the remote's row.
-A shared remote stays in its group and shows a GitHub icon after its name. Select the action again to stop sharing.
-Learn more about remote agent sessions.
-H3: Keep chat sessions across Dev Container rebuilds (Experimental)
-Settings: 
- 
- 
- dev.containers.stateVolume.enabled
- 
- 
- 
- 
- 
- 
- Open in VS Code
- Open in VS Code Insiders
- 
- , 
- 
- 
- chat.agentHost.devContainer.stateVolume.enabled
- 
- 
- 
- 
- 
- 
- Open in VS Code
- Open in VS Code Insiders
-Rebuilding a Dev Container used to remove the Copilot chat sessions stored inside it. When you enable these settings, VS Code stores the user and agent state of a new Dev Container on a Docker volume, preserving your chat sessions across rebuilds.
-Important: A container gets the volume only when it's created with the setting enabled, so rebuild once to start keeping your sessions.
-H3: Inbox mode improvements (Experimental)
-Setting: 
- 
- 
- sessions.list.inboxEnabled
- 
- 
- 
- 
- 
- 
- Open in VS Code
- Open in VS Code Insiders
-Inbox mode groups your Agents window sessions by what needs your attention. You can switch to Inbox mode at any time with Grouping > Inbox Mode in the sessions list. The 
+Inbox mode groups Agents window sessions by what needs your attention. Enable 
  
  
  sessions.list.inboxEnabled
@@ -153,36 +82,28 @@ Inbox mode groups your Agents window sessions by what needs your attention. You 
  Open in VS Code
  Open in VS Code Insiders
  
- setting makes it the default grouping.
-This release builds on your feedback to make Inbox mode more useful and manageable:
-Acknowledge sessions you've handled
-If a session doesn't need your attention but isn't finished, you can mark it as acknowledged (eye icon). Acknowledging a session moves it out of the Inbox and into the Acknowledged section. The session isn't marked as read or done, archived, or closed.
-When there is new activity in the session, it returns to the Inbox. You can acknowledge several selected sessions at once.
-Acknowledge sessions you've handled
-If a session doesn't need your attention but isn't finished, you can mark it as acknowledged (eye icon). Acknowledging a session moves it out of the Inbox and into the Acknowledged section. The session isn't marked as read or done, archived, or closed.
-When there is new activity in the session, it returns to the Inbox. You can acknowledge several selected sessions at once.
-Focus on one workspace or environment
-Use the workspace and environment pickers at the top of the sessions list to see only the sessions you care about right now. The filter applies to every section, including pinned and archived sessions, and is remembered across reloads.
-Focus on one workspace or environment
-Use the workspace and environment pickers at the top of the sessions list to see only the sessions you care about right now. The filter applies to every section, including pinned and archived sessions, and is remembered across reloads.
-H2: Agent experience
-H3: Decision model-based model routers (Experimental)
-Setting: chat.copilot.modelRouter.enabled
-With a model router, you describe which model you want for which kind of work. A decision model, gpt-6-luna-decisions, then matches your request to one of your routes, and VS Code runs the chat on that route's model. A router is a YAML file in ~/.agents/model-routers/ that appears in the model picker in Copilot harness sessions.
-Model routers are at an early stage, and your feedback will help shape them. Tell us what works and what doesn't by filing an issue.
-To try model routers, add "chat.copilot.modelRouter.enabled": true to your user settings.json file.
-To author a router, type /model-router in a Copilot harness chat and describe how you want your requests routed. Then select the router in the model picker.
-H3: Model comparison improvements (Preview)
-Model comparison lets you run the same prompt across models in the Agents window, so you can review, judge, and combine their results. This release makes comparisons easier to find and understand:
-Comparisons stay with their chat: When you ask an agent to run a comparison, it appears beneath that chat in the sessions list. The agent's response includes an Open Comparison action to go straight to the results.
-Comparisons stay with their chat: When you ask an agent to run a comparison, it appears beneath that chat in the sessions list. The agent's response includes an Open Comparison action to go straight to the results.
-See how a comparison was set up: Hover over a comparison in the sessions list to see its original settings: repository, isolation, base branch, each attempt's model and effort level, judge, and synthesizer. You no longer need to open each attempt to check.
-See how a comparison was set up: Hover over a comparison in the sessions list to see its original settings: repository, isolation, base branch, each attempt's model and effort level, judge, and synthesizer. You no longer need to open each attempt to check.
-H3: HTML previews and native visuals in agent responses
+ to use it.
+You can choose where to continue after replying to an Inbox session:
+auto (default): Open the next Inbox conversation, or focus the Inbox heading when none remain. With a screen reader attached, stay in the current conversation instead.
+on: Always advance through the Inbox, including with a screen reader.
+off: Stay in the current conversation.
+newSession: Open New Session with its input focused, even when other Inbox conversations remain.
+H2: Remote agents
+H3: Redesigned Remote Environments editor
+The Remote Environments editor in the Agents window is where you manage the machines that your agent sessions run on. Its redesigned table shows the status, last activity, and operating system of each environment, so you can see at a glance which ones are connected and in use.
+Connect and New Session stay on each row, and other actions, such as configuring the agent run behavior or updating an outdated server, are in More Actions. Use Filter in the search box to sort the table, or to group environments by type or status.
+H3: Troubleshoot remote connections
+When a connection fails, it can be hard to tell whether the cause is your configuration, the network, or the remote machine. Select Troubleshoot in the notification of a failed connection, or More Actions > Troubleshoot Connection... on any environment, to open a page that explains what went wrong and offers actions to fix it, such as retrying, opening your SSH configuration, or restarting a WSL distribution. The page can also collect a diagnostic report for you to review and share.
+Learn more about troubleshooting remote sessions.
+H3: Worktree cleanup on remote hosts
+Reclaim disk space on connected remote Agent Hosts with worktree cleanup. The cleanup editor includes worktrees on hosts that support cleanup. Rows and confirmations identify the owning host, so identical paths on different machines remain distinct. Disconnected or unsupported hosts are unavailable for cleanup.
+Previously, you could only invoke the worktree cleanup from the Agents window. You can now also access it directly from the Chat view or the Command Palette. Run Chat: Open Worktree Cleanup from the Command Palette or select Open Worktree Cleanup in the Chat view's menu.
+Learn more about worktree cleanup and its safety constraints.
+H3: Create Dev Containers for agent sessions (Experimental)
 Settings: 
  
  
- chat.htmlPreview.enabled
+ chat.agentHost.devContainer.environments.enabled
  
  
  
@@ -195,7 +116,21 @@ Settings:
  , 
  
  
- chat.nativeComponents.enabled
+ chat.agentHost.devContainer.handoff.enabled
+ 
+ 
+ 
+ 
+ 
+ 
+ Open in VS Code
+ Open in VS Code Insiders
+Run agent sessions in an isolated Linux container without writing a Dev Container configuration first. These Dev Containers are Ubuntu containers with an Agent Host inside and keep their files in a Docker volume. You can create them on this computer or on a connected SSH host, WSL distribution, or Dev Tunnel that has Docker.
+In Remote Environments, select Create Dev Container in More Actions of a connected host. To create one on this computer, group the table by type (Filter > Group By > Type) and select Create Dev Container on the Dev Containers group. Then choose the Dev Container in the Environment picker to start a session in it.
+When you also enable 
+ 
+ 
+ chat.agentHost.devContainer.handoff.enabled
  
  
  
@@ -205,86 +140,12 @@ Settings:
  Open in VS Code
  Open in VS Code Insiders
  
- (Agents window only)
-Some agent responses are easier to review as a visual or a chart than as text, such as a comparison of approaches, a mockup, or build times before and after a change. In the Agents window, agents can show these inline in the response in two ways. Each has its own setting, which is off by default.
-HTML previews: For free-form layouts, such as reports, diagrams, and mockups. Previews display HTML, CSS, tables, inline SVG, and expandable sections. Scripts, forms, external links, and external resources aren't supported. Enable 
- 
- 
- chat.htmlPreview.enabled
- 
- 
- 
- 
- 
- 
- Open in VS Code
- Open in VS Code Insiders
- 
- and use the built-in /html-preview skill in your request, for example /html-preview compare the two caching approaches.
-HTML previews: For free-form layouts, such as reports, diagrams, and mockups. Previews display HTML, CSS, tables, inline SVG, and expandable sections. Scripts, forms, external links, and external resources aren't supported. Enable 
- 
- 
- chat.htmlPreview.enabled
- 
- 
- 
- 
- 
- 
- Open in VS Code
- Open in VS Code Insiders
- 
- and use the built-in /html-preview skill in your request, for example /html-preview compare the two caching approaches.
-Native visuals (Experimental): For data, such as key numbers and comparisons. Agents can show metrics, badges, tables, bar charts, and expandable details that VS Code renders itself, so they match your theme, including high-contrast themes. Enable 
- 
- 
- chat.nativeComponents.enabled
- 
- 
- 
- 
- 
- 
- Open in VS Code
- Open in VS Code Insiders
- 
- and use the built-in /vscode-ui skill in your request, for example /vscode-ui compare the full and incremental build times.
-Native visuals (Experimental): For data, such as key numbers and comparisons. Agents can show metrics, badges, tables, bar charts, and expandable details that VS Code renders itself, so they match your theme, including high-contrast themes. Enable 
- 
- 
- chat.nativeComponents.enabled
- 
- 
- 
- 
- 
- 
- Open in VS Code
- Open in VS Code Insiders
- 
- and use the built-in /vscode-ui skill in your request, for example /vscode-ui compare the full and incremental build times.
-Both appear as part of the response, without a title bar or permanent buttons. Right-click a preview or visual and select Show Source to see its markup. For an HTML preview, you can also select Open Preview for a larger view or Save HTML to export a self-contained HTML file.
-H3: Automations
-Automations allow you to define tasks that run automatically based on specific triggers and conditions. You can create, manage, and monitor automations from the Automations view in the Agents window. This release adds guided setup, end dates, and filters for automation runs:
-Agent-guided automation creation
-Creating an automation with an agent is now a more guided experience. The agent helps you define what a successful result looks like, decide when the automation runs, and choose where it runs. To start, ask an agent to create an automation. You can also select Create with Agent in the Automations view to continue in chat.
-If you prefer configuring everything yourself, open the dropdown next to Create with Agent and select Create Manually.
-Agent-guided automation creation
-Creating an automation with an agent is now a more guided experience. The agent helps you define what a successful result looks like, decide when the automation runs, and choose where it runs. To start, ask an agent to create an automation. You can also select Create with Agent in the Automations view to continue in chat.
-If you prefer configuring everything yourself, open the dropdown next to Create with Agent and select Create Manually.
-Set an end date for automations
-Automations can stop automatically after a specified duration. Set an end date when creating an automation with an agent, or choose Days, Weeks, or Months under Advanced Settings in the manual configuration form. Select Never to remove an existing end date.
-Set an end date for automations
-Automations can stop automatically after a specified duration. Set an end date when creating an automation with an agent, or choose Days, Weeks, or Months under Advanced Settings in the manual configuration form. Select Never to remove an existing end date.
-Filter automation runs in session lists
-Automation runs are hidden from session lists by default. Use the Automations filter to include or exclude them in the Agents window and the editor Chat sessions list.
-Filter automation runs in session lists
-Automation runs are hidden from session lists by default. Use the Automations filter to include or exclude them in the Agents window and the editor Chat sessions list.
-H3: More context for assisted permissions
+ , an agent can create a Dev Container from an existing session, for example when you ask it to try something in an isolated environment. It creates the container on the host that the session runs on and continues the task in a new session inside the container, which can report back when it's done.
+H3: Sandbox profiles for remote environments (Experimental)
 Setting: 
  
  
- chat.permissions.assisted.instructions
+ chat.agent.sandbox.profiles.enabled
  
  
  
@@ -293,122 +154,17 @@ Setting:
  
  Open in VS Code
  Open in VS Code Insiders
-With assisted permissions, an LLM reviewer assesses each tool call in Copilot harness sessions and approves low-risk calls for you. Previously, the reviewer relied only on its default guidance, so it couldn't account for what you consider safe or risky in your own work.
-Use 
- 
- 
- chat.permissions.assisted.instructions
- 
- 
- 
- 
- 
- 
- Open in VS Code
- Open in VS Code Insiders
- 
- to give the LLM reviewer your own instructions, for example:
-Your instructions take precedence over the reviewer's default guidance. Changes to the setting apply to sessions that are already open. They can't override permission rules, organization policy, or the sandbox, and they aren't sent to the agent.
-The reviewer also takes into account who asked for the work:
-Automations and other agents: Requests that an automation starts or that another agent sends are no longer treated as if you wrote them. In these sessions, tool calls might ask for approval where they previously didn't.
-Automations and other agents: Requests that an automation starts or that another agent sends are no longer treated as if you wrote them. In these sessions, tool calls might ask for approval where they previously didn't.
-Your answers: Your answers to an agent's questions and plan reviews count, including when you decline. An approval can cover later work that your answer describes, and a refusal can block an action that was approved before.
-Your answers: Your answers to an agent's questions and plan reviews count, including when you decline. An approval can cover later work that your answer describes, and a refusal can block an action that was approved before.
-H3: Arrange the Details panel around the editor (Experimental)
-Settings: 
- 
- 
- sessions.experimental.detailsPosition
- 
- 
- 
- 
- 
- 
- Open in VS Code
- Open in VS Code Insiders
- 
- , 
- 
- 
- sessions.experimental.floatingDetails
- 
- 
- 
- 
- 
- 
- Open in VS Code
- Open in VS Code Insiders
- 
- (Agents window only)
-In the Agents window, you can position Files, Changes, and other Details views around the editor to make better use of the available space. Open View > Appearance > Details Position and choose Left, Right, Above Editor, Below Editor, or Floating. Right is the default.
-Floating Details overlays the editor instead of reserving space. Hover over or focus the widget to preview its contents, then select the pin control to keep it open. You can also drag and resize it.
-H3: View extension info
-The Extensions section of Customizations shows the same detailed information about each installed extension, including its version, publisher, and available commands, as you can find in the Extensions view in the editor window.
-H2: Chat
-H3: Attach screenshots of other apps (Experimental)
-Setting: 
- 
- 
- chat.appWindowScreenshots.enabled
- 
- 
- 
- 
- 
- 
- Open in VS Code
- Open in VS Code Insiders
-Give the agent a view of the app you're building, even when it runs in another application. Select Add Context > Screenshot App Window and choose a window, such as a browser or simulator.
-You can also press ⌃⌘S (Windows, Linux Ctrl+Shift+Alt+S) while another app is in the foreground to capture its window and attach it to the chat. From VS Code, the shortcut captures the app window you just left. You can mark up the image before sending.
-H3: Capture and mark up images in chat
-Select Mark Up on any image attachment in the chat input to crop it, draw arrows or shapes, or add text before sending. This works with screenshots, pasted images, and images attached from files, so you can point out a layout problem or highlight the part you want changed.
-H3: Inline chat attachment pills (Experimental)
-Setting: 
- 
- 
- chat.inlineAttachments.enabled
- 
- 
- 
- 
- 
- 
- Open in VS Code
- Open in VS Code Insiders
-Inline chat attachments show files, images, and other context as pills at the position where you added them in your prompt, so references stay next to the instructions they belong to. Recent updates make the pills more useful in the chat input and in sent requests:
-Preview and open GitHub references: Hover over or focus a GitHub issue or pull request pill to see its title, status, and description. Select the pill to open the issue or pull request. In sent requests, where selecting a pill previously did nothing, this also works when inline attachments are off.
-Preview and open GitHub references: Hover over or focus a GitHub issue or pull request pill to see its title, status, and description. Select the pill to open the issue or pull request. In sent requests, where selecting a pill previously did nothing, this also works when inline attachments are off.
-Rearrange pills by dragging: Drag a pill to a new position in the same chat input, rather than removing the context and attaching it again.
-Rearrange pills by dragging: Drag a pill to a new position in the same chat input, rather than removing the context and attaching it again.
-Clearer sent requests: Sent requests show attached images as thumbnails above the text, in addition to the inline pills. Pills and slash commands line up with the surrounding text. Image and GitHub pills are restored after you reload the window, instead of appearing as plain links.
-Clearer sent requests: Sent requests show attached images as thumbnails above the text, in addition to the inline pills. Pills and slash commands line up with the surrounding text. Image and GitHub pills are restored after you reload the window, instead of appearing as plain links.
-Inline attachments are enabled by default in Insiders and off by default in Stable.
+When you use remote agent hosts, you might want different sandbox rules for each host. For example, give a build server open network access but keep a shared machine locked down. Sandbox profiles let you save a set of agent sandbox settings under a name and assign one to each remote agent host.
+Manage profiles with the Sandbox: Manage Sandbox Profiles command, and assign them to remotes in the Remote Environments editor. This assignment is stored on the remote, so every device that connects to it uses that same profile. Organization sandbox policies still apply and the remote needs an up-to-date VS Code Server.
 H2: MCP
-H3: Skills over MCP
-Skills over MCP (SEP-2640) is now enabled by default, allowing MCP servers to automatically provide skills to the model.
-The first time you connect to an MCP server that provides skills, you are asked to allow them into your model context. Afterwards, the model can interact with these skills and you can see them on the Skills tab of the Agent Customizations editor.
-You can opt out of skills over MCP by disabling the 
- 
- 
- chat.agentHost.mcpSkills.enabled
- 
- 
- 
- 
- 
- 
- Open in VS Code
- Open in VS Code Insiders
- 
- setting.
-H2: Browser integration
-H3: Let agents use your browser with browser use (Preview)
+H3: Support for fullscreen MCP Apps
+MCP Apps now offer a "fullscreen" button, which moves the app into the editor area in the Editor window or the Secondary Side Bar in the Agents window.
+H2: Integrated browser
+H3: Set a default user agent
 Setting: 
  
  
- chat.agentHost.browserUse.enabled
+ workbench.browser.userAgent
  
  
  
@@ -417,156 +173,16 @@ Setting:
  
  Open in VS Code
  Open in VS Code Insiders
-Browser Use lets agents interact directly with your default browser (Google Chrome or Microsoft Edge). This complements VS Code's integrated browser, for example by allowing agents to reuse existing authenticated sessions and interact with web pages outside of VS Code.
-Browser Use requires the GitHub Copilot browser extension, a Copilot harness session that runs on your own machine, and Node.js 22 or later on your PATH.
-To get started with Browser Use:
-Enable the 
- 
- 
- chat.agentHost.browserUse.enabled
- 
- 
- 
- 
- 
- 
- Open in VS Code
- Open in VS Code Insiders
- 
- setting and restart VS Code.
-Open a local Copilot session and enter /plugin enable browser-use to enable the browser-use plugin.
-Ask Copilot to perform a browser task, for example: Open my app at localhost:3000, check the navigation, and capture a screenshot.
-Approve site access when prompted; complete sign-in and sensitive steps yourself.
-Run /browser-use:doctor and follow its guidance to check your setup in case of any issues.
-H3: Preview remote HTML files in the integrated browser (Preview)
-Setting: 
- 
- 
- workbench.browser.enableRemoteProxy
- 
- 
- 
- 
- 
- 
- Open in VS Code
- Open in VS Code Insiders
-You can now open HTML files from a remote workspace, such as SSH, WSL, or a Dev Container, in the integrated browser, just like local HTML files. In the Explorer, right-click an HTML file and select Open in Integrated Browser. The page keeps its file:// address, and the file and the resources it references, such as scripts, styles, images, and fonts, load from the remote workspace. Remote files only load from folders you trust.
-This also works in the Agents window for sessions on a remote agent host, so you and the agent can preview a page the agent wrote without copying it to your machine.
-Enable 
- 
- 
- workbench.browser.enableRemoteProxy
- 
- 
- 
- 
- 
- 
- Open in VS Code
- Open in VS Code Insiders
- 
- to try it out, and file any issues you encounter in the VS Code repository.
-H3: Open non-localhost links in the integrated browser
-Setting: 
- 
- 
- workbench.externalUriOpeners
- 
- 
- 
- 
- 
- 
- Open in VS Code
- Open in VS Code Insiders
-Localhost links could already open in the integrated browser with 
- 
- 
- workbench.browser.openLocalhostLinks
- 
- 
- 
- 
- 
- 
- Open in VS Code
- Open in VS Code Insiders
- 
- . The integrated browser is now listed as an opener in the 
- 
- 
- workbench.externalUriOpeners
- 
- 
- 
- 
- 
- 
- Open in VS Code
- Open in VS Code Insiders
- 
- setting, so you can choose it for other links instead of using the default browser. For example, to open links to your company's sites in the integrated browser:
-Use * as the pattern to open every link there instead.
-H3: Turn off dimming in the integrated browser
-Setting: 
- 
- 
- workbench.browser.dimOnOverlay
- 
- 
- 
- 
- 
- 
- Open in VS Code
- Open in VS Code Insiders
-When something overlaps the integrated browser, such as a tab hover or a tooltip, the page pauses and dims. As hovers come and go, the page repeatedly darkens and returns to normal, which might appear as flicker and be uncomfortable for users who are sensitive to it.
-You can now disable 
- 
- 
- workbench.browser.dimOnOverlay
- 
- 
- 
- 
- 
- 
- Open in VS Code
- Open in VS Code Insiders
- 
- to keep the page undimmed while it's paused. Notifications still dim the page.
-H2: Sandboxing
-H3: Retry with updated permissions inside the sandbox
-If a terminal command fails because it can't access a file or folder, you can grant access at the session, workspace, or user level. With sandbox bypass enabled, Copilot can use that permission to retry the command inside the sandbox instead of asking to run it outside.
-Use the approval dropdown to choose where the permission applies:
-Allow for This Session (default): Applies to all chats in this session, even after you resume it.
-Allow for This Workspace (when available): Applies to sessions with the same workspace folders on the same Agent Host. The host saves the permission without changing your workspace settings.
-Allow for This User: Saves the permission in your User settings so it applies across sessions and workspaces.
-The command retries inside the sandbox. None of these options grants permission to run outside it.
-H2: Accessibility
-H3: Clearer focus and session attention
-In high-contrast themes, Agents window controls now use a dashed outline for pointer hover and a solid outline for keyboard focus and open or expanded states. This makes it easier to follow your focus when navigating.
-Sessions that need input are also easier to spot: light themes use a clearer amber indicator, and high-contrast themes show a marker at the left edge of the session row. You can customize the color with agentSessionNeedsInput.foreground in 
- 
- 
- workbench.colorCustomizations
- 
- 
- 
- 
- 
- 
- Open in VS Code
- Open in VS Code Insiders
- 
- .
+You can now set the user agent the integrated browser uses. For example, set it in your workspace settings to test how your site responds to a particular user agent without changing it for your other projects.
+H3: Sign in to sites that use HTTP Basic authentication
+You can now sign in to sites that use HTTP Basic authentication in the integrated browser.
+Learn more about the integrated browser in the Integrated Browser documentation.
 H2: Editor Experience
-H3: Customize panel corners and spacing
+H3: New-tab experience (Experimental)
 Setting: 
  
  
- workbench.sizeCustomizations
+ workbench.editor.newTabButton
  
  
  
@@ -575,13 +191,10 @@ Setting:
  
  Open in VS Code
  Open in VS Code Insiders
-Customize panel corners and spacing in the editor window and in Agents windows with the Modern UI enabled. Set corner radii in whole pixels from 0 to 8 and spacing from 0 to 16. For example, you can use square panel corners, add space between panels, and give agent chat panels their own corners:
-Compact layouts remain gapless, and the setting doesn't change controls, individual tabs, or native window corners.
-H3: Connected panel tabs (Experimental)
-With the Modern UI enabled, the connected tab style now extends from editor tabs to horizontal panel and side bar tabs. Selected views visually connect to their content, including when the Activity Bar is at the top or bottom. Choose connected (the default) or pill with 
+We are rolling out an experimental new-tab button in the editor tab bar, or you can enable 
  
  
- workbench.experimental.modernUIEditorTabStyle
+ workbench.editor.newTabButton
  
  
  
@@ -591,41 +204,147 @@ With the Modern UI enabled, the connected tab style now extends from editor tabs
  Open in VS Code
  Open in VS Code Insiders
  
- . The default vertical Activity Bar is unchanged.
-H3: Edit Markdown tables cell by cell
-Editing a Markdown table in the source means keeping pipes and separator rows intact by hand. In the Markdown editor, tables stay rendered while you edit them, and you edit one cell at a time.
-H3: Collapsible details sections in the Markdown editor
-Long documents often hide optional content in <details> sections. The Markdown editor now renders <details> and <summary> as collapsible sections, like GitHub does. Sections with the open attribute start expanded, and other sections start collapsed.
-H2: Enterprise
-H3: Permit Claude and Codex alongside managed settings
-Previously, any Copilot enterprise-managed setting disabled the Claude and Codex harnesses, because they don't enforce those settings. An organization couldn't govern Copilot and still offer Claude or Codex to its developers.
-Administrators can now permit one or both harnesses by listing them in vscode.allowedHarnesses:
-The list permits the harnesses it names and blocks the others, so an empty list blocks both. Without the setting, managed settings disable both harnesses, as before.
-Valid entries are claude and codex, in lowercase. Other entries are ignored.
-Permitting a harness only lifts this restriction. Other controls still apply, such as vscode.temporaryAllowLocalHarness: false.
-Set it in file-based or MDM-managed settings. Server-managed settings don't support it yet.
-Note: Permitting a harness doesn't make it enforce your managed settings. Claude and Codex sessions run without Copilot's managed permission, sandbox, MCP, and plugin controls.
-H3: Regular expressions in managed shell permission rules
-Previously, managed shell permission rules matched only exact text or * wildcards, so a single rule couldn't cover alternatives or word boundaries. In Copilot harness sessions, Shell(...), Bash(...), and PowerShell(...) rules in enterprise-managed settings accept a JavaScript regular expression written as /pattern/flags in permissions.deny, permissions.ask, and permissions.allow.
-For example, require approval for commands that start with git push or git pull:
-H2: Contributions to extensions
-H3: GitHub Pull Requests
-There has been more progress on the GitHub Pull Requests extension, which enables you to work on, create, and manage pull requests and issues. New features include:
-When GitHub Actions workflows are waiting for a maintainer's approval, such as for a pull request from a first-time contributor, the checks section of the pull request overview has an Approve workflows to run button.
-When GitHub Actions workflows are waiting for a maintainer's approval, such as for a pull request from a first-time contributor, the checks section of the pull request overview has an Approve workflows to run button.
-Comments and other timeline items in the pull request overview use the full width once they're below the sidebar, and the overview switches to a single column below 1000px wide instead of 768px.
-Comments and other timeline items in the pull request overview use the full width once they're below the sidebar, and the overview switches to a single column below 1000px wide instead of 768px.
-In the Agents window, the pull request overview can be split into Timeline, Checks/Merge, and Metadata tabs with the experimental setting "githubPullRequests.experimental.agentsOverviewTabs". The Timeline tab shows the number of unresolved conversations, and the Checks/Merge tab shows whether the pull request is ready to merge.
-In the Agents window, the pull request overview can be split into Timeline, Checks/Merge, and Metadata tabs with the experimental setting "githubPullRequests.experimental.agentsOverviewTabs". The Timeline tab shows the number of unresolved conversations, and the Checks/Merge tab shows whether the pull request is ready to merge.
-Review the changelog for the 0.180.0 release of the extension to learn about everything in the release.
+ directly.
+Selecting + opens a menu to create an untitled text file, a Markdown document, a chat editor, or an integrated browser tab. The button remembers your last choice, so selecting + again creates the same kind of tab.
+H3: Actions for new untitled files (Experimental)
+Setting: 
+ 
+ 
+ workbench.editor.experimental.emptyEditorHintActions
+ 
+ 
+ 
+ 
+ 
+ 
+ Open in VS Code
+ Open in VS Code Insiders
+We are rolling out a redesigned empty editor experience for new untitled files, or you can enable 
+ 
+ 
+ workbench.editor.experimental.emptyEditorHintActions
+ 
+ 
+ 
+ 
+ 
+ 
+ Open in VS Code
+ Open in VS Code Insiders
+ 
+ directly.
+A centered list of actions appears below line 1—generate code, start a chat editor, select a language, or reopen the file in another editor such as the Markdown editor—instead of clickable links inline on line 1. Moving the actions off line 1 causes fewer accidental clicks when you click into a new file to start typing. Start typing to dismiss the list. The list replaces the classic hint only when 
+ 
+ 
+ workbench.editor.empty.hint
+ 
+ 
+ 
+ 
+ 
+ 
+ Open in VS Code
+ Open in VS Code Insiders
+ 
+ is set to text, which is the default.
+H3: Rust-based WebAssembly diff algorithm
+Setting: 
+ 
+ 
+ diffEditor.diffAlgorithm
+ 
+ 
+ 
+ 
+ 
+ 
+ Open in VS Code
+ Open in VS Code Insiders
+We are rolling out an experimental Rust-based diff algorithm compiled to WebAssembly (@vscode/diff) via an experiment. You can also try it directly by setting 
+ 
+ 
+ diffEditor.diffAlgorithm
+ 
+ 
+ 
+ 
+ 
+ 
+ Open in VS Code
+ Open in VS Code Insiders
+ 
+ to advanced-wasm. In early rollout measurements, the WebAssembly backend computes diffs more than 2× faster at the median across all diffs, with noticeably fewer slow-tail timeouts. You may not notice the difference on a single small file, but it shows when reviewing multiple heavily modified files at once in the multi-file diff editor.
+H3: Floating comment control (Experimental)
+Settings: 
+ 
+ 
+ comments.thread.experimental.style
+ 
+ 
+ 
+ 
+ 
+ 
+ Open in VS Code
+ Open in VS Code Insiders
+ 
+ , 
+ 
+ 
+ chat.experimental.agentsWindowEditorComments
+ 
+ 
+ 
+ 
+ 
+ 
+ Open in VS Code
+ Open in VS Code Insiders
+The current comment control appears inline with the code, which can push code apart and make it harder to read. A floating comment control addresses this by appearing alongside the code instead. They stay in the same order as the lines they refer to, and can be resized, expanded, and collapsed.
+H2: Terminal
+H3: Enter passwords for agent shell commands in chat
+Setting: 
+ 
+ 
+ chat.agentHost.copilot.shellAuthentication.enabled
+ 
+ 
+ 
+ 
+ 
+ 
+ Open in VS Code
+ Open in VS Code Insiders
+Previously, in Copilot harness sessions, commands that needed a password, such as sudo, ssh, or git, failed because the agent runs commands without an interactive terminal by default.
+When sudo -A, ssh, or git asks for a password, passphrase, or confirmation, the prompt now appears as a question in chat. Your answer goes only to that program and isn't sent to the model.
+Prompts that nobody can answer, such as in Autopilot, are canceled. To turn off this behavior, set 
+ 
+ 
+ chat.agentHost.copilot.shellAuthentication.enabled
+ 
+ 
+ 
+ 
+ 
+ 
+ Open in VS Code
+ Open in VS Code Insiders
+ 
+ to false.
+H2: Extension Authoring
+H3: Agent Host Protocol 1.1.0
+We've released version 1.1.0 of the Agent Host Protocol, which is the protocol that powers our agent system and can be integrated with or hosted by your own tools. This version includes many improvements, including:
+TCP port forwarding support and windowing mechanics for traffic control over networks
+The ability to move chats between sessions and per-chat harness selection
+Support for representing SEP-2640 Skills over MCP
+Support for partial reads and HTTPS interoperability
+We also wrote a blog post about the background and engineering that went into the protocol and agent architecture.
+H2: Engineering
+H3: VS Code CLI is 40% smaller
+The Rust-based VS Code CLI is about 40% smaller, with slight variations per platform. The CLI can be downloaded as a standalone executable and is also used to bootstrap Remote SSH connections, some WSL connections, and remote agent hosts from the Agents window. As a result, you should see faster connections and lower resource usage.
 H2: Deprecated features and settings
 H3: New deprecations in this release
-VS Code desktop on macOS Ventura and macOS Sonoma is deprecated. For details, see the VS Code FAQ.
-VS Code desktop on macOS Ventura and macOS Sonoma is deprecated. For details, see the VS Code FAQ.
-VS Code desktop on 32-bit ARM Linux is deprecated. For details, see the VS Code FAQ.
-VS Code desktop on 32-bit ARM Linux is deprecated. For details, see the VS Code FAQ.
-The experimental AI usage statistics in the Status Bar (editor.aiStats.enabled) are removed because of low usage.
-The experimental AI usage statistics in the Status Bar (editor.aiStats.enabled) are removed because of low usage.
+None
 H3: Upcoming deprecations
 The Local harness is deprecated and will be removed in February 2027.
 H2: Thank you
@@ -637,89 +356,19 @@ Contributions to our issue tracking:
 @albertosantini (Alberto Santini)
 H3: Pull requests
 Contributions to vscode:
-@AAAkater: agentHost: fix incorrect model attribution in Codex subagent responses PR #340470
-@Aryan9891 (Aryan Sachin): fix(terminal): support multiple action view items for create terminal dropdown (#_346848) PR #346854
-@Boulea7 (Langning Zhang): Fix PWA manifest start URL for server base paths PR #330360
-@DivyaRaval1909 (Divya Raval): Hide action list item icon and submenu indicator from screen readers PR #339952
-@Iyanuoluwa007 (Oke Iyanuoluwa Enoch): Report problems of pending lines when a task problem collector is done PR #346122
-@mcumming (Michael Cummings (MSFT)): Never send Entra sign-in tokens to the marketplace PR #343689
-@NeoMetric: agentHost: stream BYOK model output as it is produced PR #341851
-@rudy-07 (Rudransh Shekhar): terminal-suggest: fix root directory check in npm and yarn package.json lookup PR #347265
-@sameerihs (Sameer)
-
-Reset notebook controller language restrictions PR #347068
-Clean up obsolete webview resource caches PR #346867
-Use pending URLs when restoring browser tabs PR #346996
-Invalidate cached TS responses after document reopen PR #347028
-Keep the latest debugger source refresh PR #347124
-Track forwarded tunnel connections by socket PR #347033
-Keep task problem markers scoped to each terminal PR #346994
-Isolate copied notebook output items PR #347117
-Cancel stale format-on-type requests PR #347115
-Keep configuration retries on their original file PR #347074
-Keep in-memory working copy backups distinct PR #347066
-Serialize rapid virtual document refreshes PR #346986
-Clear buffered results before a new Quick Search PR #347031
-Reset notebook controller language restrictions PR #347068
-Clean up obsolete webview resource caches PR #346867
-Use pending URLs when restoring browser tabs PR #346996
-Invalidate cached TS responses after document reopen PR #347028
-Keep the latest debugger source refresh PR #347124
-Track forwarded tunnel connections by socket PR #347033
-Keep task problem markers scoped to each terminal PR #346994
-Isolate copied notebook output items PR #347117
-Cancel stale format-on-type requests PR #347115
-Keep configuration retries on their original file PR #347074
-Keep in-memory working copy backups distinct PR #347066
-Serialize rapid virtual document refreshes PR #346986
-Clear buffered results before a new Quick Search PR #347031
-@ShakilUrRehman21 (SHAKIL UR REHMAN): map: preserve custom toKey and re-key on ResourceMap copy PR #347344
-@shoutoutuoadi325 (Zhiqi Zhang): Fix UTF-16 column counts in TextLength PR #345715
-@SimonSiefke (Simon Siefke)
-
-fix: memory leak in word highlighter PR #346673
-fix: memory leak in task providers PR #338231
-fix: memory leak in untitled editor resolution PR #346674
-perf: avoid rescanning test children in Test Explorer PR #347176
-perf: batch Test Explorer test run updates PR #346656
-fix: memory leak in test results terminal PR #347183
-feature: reduce idle CPU usage by up to 75% PR #338767
-fix: race condition in notebook kernel picker PR #341483
-fix: memory leak in SCM repository context keys PR #346683
-fix: memory leak in emitter warning names PR #347966
-perf: reduce memory usage by 44 kB PR #342392
-fix: memory leak in markersView PR #348007
-fix: memory leak in word highlighter PR #346673
-fix: memory leak in task providers PR #338231
-fix: memory leak in untitled editor resolution PR #346674
-perf: avoid rescanning test children in Test Explorer PR #347176
-perf: batch Test Explorer test run updates PR #346656
-fix: memory leak in test results terminal PR #347183
-feature: reduce idle CPU usage by up to 75% PR #338767
-fix: race condition in notebook kernel picker PR #341483
-fix: memory leak in SCM repository context keys PR #346683
-fix: memory leak in emitter warning names PR #347966
-perf: reduce memory usage by 44 kB PR #342392
-fix: memory leak in markersView PR #348007
-@trivikr (Trivikram Kamat): Add --hidden-window to run extension tests without showing a window PR #344174
-@wasim-builds (MOHAMMED WASIM KHAN): fix: prevent DisposableStore leak per tree node in ExtHostTreeView (#_346620) PR #346727
-@wozhenbang2004 (Kayokoi): Fix authentication provider cleanup when an extension host stops PR #345127
-@wynnsimon (wynn): fix: Fix findWithArgs ignoring empty search strings (#_151311) PR #334803
-@YOSHII-Hiroto (吉井　啓人（YOSHII, Hiroto）): Fix element picker with mobile emulation PR #332183
-Contributions to vscode-pull-request-github:
-@hungud (Uong Dong Hung): fix: handle null review comment commit in parseGraphQLComment (fixes #9159) PR #9168
+@amv146 (Alex Vallone): Fix configuration events when toggling tab focus mode PR #345251
+@ayushkrsingh946 (Ayush Kr Singh): webview: skip load handlers when pending frame is unmounted (#_344744) PR #344773
+@SimonSiefke (Simon Siefke): fix: memory leak in menu hidden defaults PR #348413
 We really appreciate people trying our new features as soon as they are ready, so check back here often and learn what's new.
 If you'd like to read release notes for previous VS Code versions, go to Updates on code.visualstudio.com.
 Release highlights
-Agent sessions
-Agent experience
-Chat
+Agents
+Remote agents
 MCP
-Browser integration
-Sandboxing
-Accessibility
+Integrated browser
 Editor Experience
-Enterprise
-Contributions to extensions
+Terminal
+Extension Authoring
+Engineering
 Deprecated features and settings
 Thank you

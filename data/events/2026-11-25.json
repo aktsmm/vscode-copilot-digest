@@ -1,13 +1,453 @@
 {
   "date": "2026-11-25",
-  "generatedAt": "2026-11-25T04:23:34.134Z",
+  "generatedAt": "2026-11-25T15:50:26.050Z",
   "latestRun": {
-    "generatedAt": "2026-11-25T04:23:34.134Z",
-    "newEventsCount": 0,
-    "newEventIds": [],
+    "generatedAt": "2026-11-25T15:50:26.050Z",
+    "newEventsCount": 13,
+    "newEventIds": [
+      "vscode-updates:aac8c71f7195e596f0ba781ce6583b9f6ac487f7f987b85136e3c7f5300ef1f3",
+      "vscode-release-notes-1-109:156d6e5ba6fd7c255937f4cee7752e9d53ea82ae1571531efcdb0041c6d1f03b",
+      "vscode-docs-agents-nav:d74f1703102bd210fa1be308d313d6f96fe944f0e4b9dd8fcbe3b61f5e175e3e",
+      "vscode-docs-agents-window:dc77b9c0ea7e1e5a6e03603c287686ee76de058b6ea7e67b39bcfb6ae8c000eb",
+      "vscode-docs-agents-remote-sessions:05eb7fb289bc3c0b32468c7650678f8bbdea5016c82f582716fe4e8489823790",
+      "vscode-release-notes-1-148:section:9730d7f81d169e22f4e871ba85c48afafc5d160c09b52c8c47eace11cd903d59",
+      "vscode-release-notes-1-148:section:44de156c53b65c50b0c02f4bb70927763914e4f3edde88ac9cc7b318bea8f9b9",
+      "vscode-release-notes-1-148:section:42e504b5e410c0980eca19cca8a5833a4a3e8307fe00c73404f14078b632ece4",
+      "vscode-release-notes-1-148:section:2b636cf77e17f6f708bdcc4dd2bab2355af67cc5305c9713bd273b7074aa5917",
+      "vscode-release-notes-1-148:section:4efda241347052e444608362eada2399713ba6dbb4088b7f4cdb2dcebc66a8e6",
+      "vscode-release-notes-1-148:section:27d5ee60dc5b66036e592180f4ba43bf43195e480e97ec084c0e8f30fc5d558d",
+      "vscode-release-notes-1-148:section:fd23239742d3332174579e46b98914cc17b3dddc2795c4f1735d676e9dca5464",
+      "vscode-release-notes-1-148:section:8435ce49e0a1f30427f6c6a2c9016f98a260ca3e0c58ce951f3ef1707b755c3a"
+    ],
     "errorCount": 0,
-    "skippedLowInformationEvents": []
+    "skippedLowInformationEvents": [
+      {
+        "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_149",
+        "sourceId": "vscode-feed",
+        "title": "Visual Studio Code 1.149 (Insiders)",
+        "fallbackMarkers": [
+          "Visual Studio Code 関連の更新。日々の開発フローや agent 利用に効く変更点を確認しておきたい。"
+        ]
+      }
+    ]
   },
-  "events": [],
+  "events": [
+    {
+      "eventId": "vscode-updates:aac8c71f7195e596f0ba781ce6583b9f6ac487f7f987b85136e3c7f5300ef1f3",
+      "sourceId": "vscode-updates",
+      "sourceName": "VS Code Updates",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-11-25T15:50:19.452Z",
+      "publishedAt": "2026-11-25T00:00:00.000Z",
+      "title": "VS Code Updates changed",
+      "url": "https://code.visualstudio.com/updates/",
+      "summary": "Detected 112 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 112,
+        "headings": [
+          "Visual Studio Code 1.148",
+          "Downloads for 1.148.0",
+          "Agents",
+          "Improved chat performance",
+          "Prevent idle sleep while an agent works (Preview)",
+          "Inbox navigation and organization (Experimental)",
+          "Remote agents",
+          "Redesigned Remote Environments editor",
+          "Troubleshoot remote connections",
+          "Worktree cleanup on remote hosts",
+          "Create Dev Containers for agent sessions (Experimental)",
+          "Sandbox profiles for remote environments (Experimental)",
+          "MCP",
+          "Support for fullscreen MCP Apps",
+          "Integrated browser",
+          "Set a default user agent"
+        ],
+        "additions": [
+          "1.148",
+          "H1: Visual Studio Code 1.148",
+          "Release date: November 25, 2026 Stable",
+          "H2: Downloads for 1.148.0",
+          "Keep agent work moving, even when you step away. This week, chat responses start faster and active agents can keep their hosts awake. Give a task its own Dev Container, and reclaim disk space from old worktrees without switching windows.",
+          "Keep agents going (Preview): Prevent idle sleep of the systemon supported hosts while agents work.",
+          "Worktree cleanup: Reclaim disk space from inactive agent worktrees on remote hosts.",
+          "Sandbox profiles (Experimental): Tailor sandbox rules to each remote agent host with reusable profiles.",
+          "Create Dev Containers (Experimental): Give an agent an isolated Linux workspace without writing a container configuration.",
+          "Agent chat performance: Spend less time waiting for Agent Host chat responses to begin.",
+          "H2: Agents",
+          "H3: Improved chat performance",
+          "This week we've made several improvements to the performance of chat in the Agent Host. On average you can expect to see responses begin 30% faster than in our previous Stable version.",
+          "We appreciate your feedback as we've transitioned our harness to the Agent Host, and the performance difference compared to the old harness was a recurring topic of discussion. With this release, we see chat start times within ~5% of those of the old harness, and we will continue to find ways to further improve in upcoming releases.",
+          "H3: Prevent idle sleep while an agent works (Preview)",
+          "sessions.keepAwakeWhileWorking"
+        ]
+      },
+      "headings": [
+        "Visual Studio Code 1.148",
+        "Downloads for 1.148.0",
+        "Release highlights",
+        "Agents",
+        "Improved chat performance",
+        "Prevent idle sleep while an agent works (Preview)",
+        "Inbox navigation and organization (Experimental)",
+        "Remote agents",
+        "Redesigned Remote Environments editor",
+        "Troubleshoot remote connections",
+        "Worktree cleanup on remote hosts",
+        "Create Dev Containers for agent sessions (Experimental)"
+      ],
+      "score": 18
+    },
+    {
+      "eventId": "vscode-release-notes-1-148:section:9730d7f81d169e22f4e871ba85c48afafc5d160c09b52c8c47eace11cd903d59",
+      "sourceId": "vscode-release-notes-1-148",
+      "sourceName": "VS Code Release Notes 1.148",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-11-25T15:50:25.808Z",
+      "publishedAt": "2026-11-25T00:00:00.000Z",
+      "title": "Visual Studio Code 1.148: Improved chat performance",
+      "url": "https://code.visualstudio.com/updates/v1_148",
+      "summary": "This week we've made several improvements to the performance of chat in the Agent Host. On average you can expect to see responses begin 30% faster than in our previous Stable version. We appreciate your feedback as we've transitioned our harness to the Agent Host, and the performance difference compared to the old harness was a recurring topic of discussion. With this release, we see chat start times within ~5% of...",
+      "categories": [
+        "release",
+        "section",
+        "Agents"
+      ],
+      "sectionHeading": "Agents",
+      "sectionTitle": "Improved chat performance",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-148:section:44de156c53b65c50b0c02f4bb70927763914e4f3edde88ac9cc7b318bea8f9b9",
+      "sourceId": "vscode-release-notes-1-148",
+      "sourceName": "VS Code Release Notes 1.148",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-11-25T15:50:25.808Z",
+      "publishedAt": "2026-11-25T00:00:00.000Z",
+      "title": "Visual Studio Code 1.148: Prevent idle sleep while an agent works (Preview)",
+      "url": "https://code.visualstudio.com/updates/v1_148",
+      "summary": "Setting: \n \n \n sessions.keepAwakeWhileWorking\n \n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders Avoid stalled unattended work when the machine running your agent would otherwise idle-sleep. A supported Agent Host can keep its machine awake during active turns, including after you close the window, and release the hold shortly after work ends. Choose a mode: whenPluggedIn (default): Prevent idle sleep while...",
+      "categories": [
+        "release",
+        "section",
+        "Agents"
+      ],
+      "sectionHeading": "Agents",
+      "sectionTitle": "Prevent idle sleep while an agent works (Preview)",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-148:section:42e504b5e410c0980eca19cca8a5833a4a3e8307fe00c73404f14078b632ece4",
+      "sourceId": "vscode-release-notes-1-148",
+      "sourceName": "VS Code Release Notes 1.148",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-11-25T15:50:25.808Z",
+      "publishedAt": "2026-11-25T00:00:00.000Z",
+      "title": "Visual Studio Code 1.148: Inbox navigation and organization (Experimental)",
+      "url": "https://code.visualstudio.com/updates/v1_148",
+      "summary": "Setting: \n \n \n sessions.list.inboxAutoAdvance\n \n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders Inbox mode groups Agents window sessions by what needs your attention. Enable \n \n \n sessions.list.inboxEnabled\n \n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders\n \n to use it. You can choose where to continue after replying to an Inbox session: auto (default): Open the next Inbox conversation, or focus th...",
+      "categories": [
+        "release",
+        "section",
+        "Agents"
+      ],
+      "sectionHeading": "Agents",
+      "sectionTitle": "Inbox navigation and organization (Experimental)",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-148:section:2b636cf77e17f6f708bdcc4dd2bab2355af67cc5305c9713bd273b7074aa5917",
+      "sourceId": "vscode-release-notes-1-148",
+      "sourceName": "VS Code Release Notes 1.148",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-11-25T15:50:25.808Z",
+      "publishedAt": "2026-11-25T00:00:00.000Z",
+      "title": "Visual Studio Code 1.148: Redesigned Remote Environments editor",
+      "url": "https://code.visualstudio.com/updates/v1_148",
+      "summary": "The Remote Environments editor in the Agents window is where you manage the machines that your agent sessions run on. Its redesigned table shows the status, last activity, and operating system of each environment, so you can see at a glance which ones are connected and in use. Connect and New Session stay on each row, and other actions, such as configuring the agent run behavior or updating an outdated server, are i...",
+      "categories": [
+        "release",
+        "section",
+        "Remote agents"
+      ],
+      "sectionHeading": "Remote agents",
+      "sectionTitle": "Redesigned Remote Environments editor",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-148:section:4efda241347052e444608362eada2399713ba6dbb4088b7f4cdb2dcebc66a8e6",
+      "sourceId": "vscode-release-notes-1-148",
+      "sourceName": "VS Code Release Notes 1.148",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-11-25T15:50:25.808Z",
+      "publishedAt": "2026-11-25T00:00:00.000Z",
+      "title": "Visual Studio Code 1.148: Troubleshoot remote connections",
+      "url": "https://code.visualstudio.com/updates/v1_148",
+      "summary": "When a connection fails, it can be hard to tell whether the cause is your configuration, the network, or the remote machine. Select Troubleshoot in the notification of a failed connection, or More Actions > Troubleshoot Connection... on any environment, to open a page that explains what went wrong and offers actions to fix it, such as retrying, opening your SSH configuration, or restarting a WSL distribution. The pa...",
+      "categories": [
+        "release",
+        "section",
+        "Remote agents"
+      ],
+      "sectionHeading": "Remote agents",
+      "sectionTitle": "Troubleshoot remote connections",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-148:section:27d5ee60dc5b66036e592180f4ba43bf43195e480e97ec084c0e8f30fc5d558d",
+      "sourceId": "vscode-release-notes-1-148",
+      "sourceName": "VS Code Release Notes 1.148",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-11-25T15:50:25.808Z",
+      "publishedAt": "2026-11-25T00:00:00.000Z",
+      "title": "Visual Studio Code 1.148: Worktree cleanup on remote hosts",
+      "url": "https://code.visualstudio.com/updates/v1_148",
+      "summary": "Reclaim disk space on connected remote Agent Hosts with worktree cleanup. The cleanup editor includes worktrees on hosts that support cleanup. Rows and confirmations identify the owning host, so identical paths on different machines remain distinct. Disconnected or unsupported hosts are unavailable for cleanup. Previously, you could only invoke the worktree cleanup from the Agents window. You can now also access it...",
+      "categories": [
+        "release",
+        "section",
+        "Remote agents"
+      ],
+      "sectionHeading": "Remote agents",
+      "sectionTitle": "Worktree cleanup on remote hosts",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-148:section:fd23239742d3332174579e46b98914cc17b3dddc2795c4f1735d676e9dca5464",
+      "sourceId": "vscode-release-notes-1-148",
+      "sourceName": "VS Code Release Notes 1.148",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-11-25T15:50:25.808Z",
+      "publishedAt": "2026-11-25T00:00:00.000Z",
+      "title": "Visual Studio Code 1.148: Create Dev Containers for agent sessions (Experimental)",
+      "url": "https://code.visualstudio.com/updates/v1_148",
+      "summary": "Settings: \n \n \n chat.agentHost.devContainer.environments.enabled\n \n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders\n \n , \n \n \n chat.agentHost.devContainer.handoff.enabled\n \n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders Run agent sessions in an isolated Linux container without writing a Dev Container configuration first. These Dev Containers are Ubuntu containers with an Agent Host inside and keep...",
+      "categories": [
+        "release",
+        "section",
+        "Remote agents"
+      ],
+      "sectionHeading": "Remote agents",
+      "sectionTitle": "Create Dev Containers for agent sessions (Experimental)",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-148:section:8435ce49e0a1f30427f6c6a2c9016f98a260ca3e0c58ce951f3ef1707b755c3a",
+      "sourceId": "vscode-release-notes-1-148",
+      "sourceName": "VS Code Release Notes 1.148",
+      "kind": "vscode_release_note_section",
+      "detectedAt": "2026-11-25T15:50:25.808Z",
+      "publishedAt": "2026-11-25T00:00:00.000Z",
+      "title": "Visual Studio Code 1.148: Sandbox profiles for remote environments (Experimental)",
+      "url": "https://code.visualstudio.com/updates/v1_148",
+      "summary": "Setting: \n \n \n chat.agent.sandbox.profiles.enabled\n \n \n \n \n \n \n \n \n Open in VS Code\n Open in VS Code Insiders When you use remote agent hosts, you might want different sandbox rules for each host. For example, give a build server open network access but keep a shared machine locked down. Sandbox profiles let you save a set of agent sandbox settings under a name and assign one to each remote agent host. Manage profil...",
+      "categories": [
+        "release",
+        "section",
+        "Remote agents"
+      ],
+      "sectionHeading": "Remote agents",
+      "sectionTitle": "Sandbox profiles for remote environments (Experimental)",
+      "score": 4
+    },
+    {
+      "eventId": "vscode-release-notes-1-109:156d6e5ba6fd7c255937f4cee7752e9d53ea82ae1571531efcdb0041c6d1f03b",
+      "sourceId": "vscode-release-notes-1-109",
+      "sourceName": "VS Code Release Notes 1.109",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-11-25T15:50:21.309Z",
+      "publishedAt": "2026-02-04T00:00:00.000Z",
+      "title": "VS Code Release Notes 1.109 changed",
+      "url": "https://code.visualstudio.com/updates/v1_109",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [],
+        "additions": [
+          "1.148"
+        ]
+      },
+      "headings": [
+        "January 2026 (version 1.109)",
+        "Downloads for 1.109.5",
+        "Upcoming events",
+        "Agent Sessions Day",
+        "Chat UX",
+        "Message steering and queueing (Experimental)",
+        "Anthropic models now show thinking tokens",
+        "Mermaid diagrams in chat responses",
+        "Ask Questions tool (Experimental)",
+        "Plan agent",
+        "Context window details",
+        "Inline chat UX revamp (Preview)"
+      ],
+      "score": 2
+    },
+    {
+      "eventId": "vscode-docs-agents-remote-sessions:05eb7fb289bc3c0b32468c7650678f8bbdea5016c82f582716fe4e8489823790",
+      "sourceId": "vscode-docs-agents-remote-sessions",
+      "sourceName": "VS Code Docs / Remote agent sessions",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-11-25T15:50:25.433Z",
+      "publishedAt": "2026-11-25T15:50:25.430Z",
+      "title": "VS Code Docs / Remote agent sessions changed",
+      "url": "https://code.visualstudio.com/docs/agents/run/remote-agent-sessions",
+      "summary": "Detected 58 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 58,
+        "headings": [
+          "Troubleshoot a connection (Experimental)"
+        ],
+        "additions": [
+          "sessions.keepAwakeWhileWorking",
+          "Open in VS Code",
+          "Open in VS Code Insiders",
+          "can prevent idle sleep while an Agent Host chat is working. Configure it on the host machine, not the client. See the AI settings reference for its modes and platform limitations.",
+          "In the Agents window, you can alternatively use the Experimental sharing setup form to compare connection methods before starting sharing.",
+          "Find the remote host and select Connect on its row.",
+          "Select the existing session from the sessions list in the Agents window to continue the conversation.",
+          "You can also create and manage standalone Dev Containers here, on this computer or a connected host. Unlike a connection to an existing machine, each standalone container provides a new workspace with its files in a Docker volume.",
+          "The This Computer section manages how this computer is shared. It requires",
+          ", which is on by default. With the default sharing controls, choose GitHub Environments (when available), Dev Tunnels, or Off, or select Rename Sharing Name to change the name other clients see. Alternatively, use the Experimental sharing setup form to choose a method before applying it. Local sessions continue to run on this computer whether sharing is on or off.",
+          "The Other environments table lists known SSH hosts, dev tunnels, and WSL distributions on Windows. When support for GitHub environments is available and enabled, it also lists your registered machines, including offline ones. These are user-shared machines, not the managed environments used by cloud sessions.",
+          "Run Agents: Manage Remote Environments from the Command Palette (⇧⌘P (Windows, Linux Ctrl+Shift+P)), or select Manage Remote Environments from Remote Connections (antenna icon) in the title bar or the sessions list More Actions (...) menu.",
+          "To compare connection methods before starting sharing, enable",
+          "sessions.chat.remoteEnvironments.sharingSetup",
+          ". This Experimental setting is off by default and requires the This Computer section to be enabled.",
+          "On the host machine:",
+          "Open remote environment management.",
+          "In This Computer, select Share This Computer.",
+          "Choose a connection method and review the sharing name. Selecting a method alone doesn't start sharing.",
+          "Select Start Sharing and complete any sign-in or confirmation prompts.",
+          "From the client machine, continue an existing session or start a remote session. Sharing enables access to the host's supported sessions, tools, and workspace resources. Review remote connection security before starting sharing.",
+          "To switch methods, select Change Connection Type next to Stop Sharing, choose another method, then select Switch Method. Switching stops sharing with the current method before starting the new one.",
+          "To end remote access, select Stop Sharing. This doesn't stop running agent tasks. If a sharing change fails, select Open Sharing Log in the error message for details.",
+          "Turning off"
+        ]
+      },
+      "headings": [
+        "Run and manage remote agent sessions",
+        "Choose how to connect",
+        "Make a host available for remote access",
+        "Continue an existing remote session",
+        "GitHub environments",
+        "Start a remote session",
+        "Connect via SSH",
+        "Connect via dev tunnel",
+        "Use the Agents window in the browser",
+        "Set up a dev tunnel",
+        "Host management",
+        "Use remote sessions in the Chat view"
+      ],
+      "score": 3
+    },
+    {
+      "eventId": "vscode-docs-agents-window:dc77b9c0ea7e1e5a6e03603c287686ee76de058b6ea7e67b39bcfb6ae8c000eb",
+      "sourceId": "vscode-docs-agents-window",
+      "sourceName": "VS Code Docs / Agents window",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-11-25T15:50:25.376Z",
+      "publishedAt": "2026-11-25T15:50:25.373Z",
+      "title": "VS Code Docs / Agents window changed",
+      "url": "https://code.visualstudio.com/docs/agents/run/agents-window",
+      "summary": "Detected 40 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 40,
+        "headings": [],
+        "additions": [
+          "For a Git workspace, use the isolation dropdown above the input to choose where the agent edits files:",
+          "Branch: Work directly in the selected folder. If you choose another local branch, switching branches requires a clean working tree.",
+          "New Worktree: Work in a separate directory and branch. Use the branch picker to choose the base branch before sending the prompt. Choosing a base branch doesn't switch the branch in your active workspace.",
+          "For the folder-versus-worktree comparison, Git requirements, and dependency setup, see Work with agents in worktrees. To change the initial choice, configure isolation defaults.",
+          "Worktrees isolate working files, not the agent's access to your machine or external services. Review the permission and sandboxing considerations before starting a task.",
+          "To reclaim disk space from inactive or leftover worktrees, run Chat: Open Worktree Cleanup. The shared cleanup procedure covers both windows, local and remote worktrees, and what is preserved.",
+          "Use a Dev Container to run the agent with tools and dependencies inside a container rather than directly on its host. Containers can run on this computer or on a configured SSH, Tunnel, or WSL host. These workflows aren't supported in the VS Code for the Web.",
+          "Choose the starting point that fits your task:",
+          "Use your project's Dev Container to work with its existing files and configuration.",
+          "Create a container without a project for a fresh Ubuntu workspace.",
+          "Ask the agent to continue in a new container to hand off a task to a new session.",
+          "Create a standalone Ubuntu container when you need a fresh workspace without an existing project folder or devcontainer.json. Its files stay in a Docker volume on the machine that runs the container.",
+          "Before starting, install and run Docker on the intended host, with its CLI on PATH. For a remote host, connect to it first. For WSL, Docker must be available inside the distribution.",
+          "Enable",
+          "chat.agentHost.devContainer.environments.enabled",
+          "Open in VS Code",
+          "Open in VS Code Insiders",
+          ", which is off by default. Keep",
+          "chat.agentHost.devContainer.enabled",
+          "and",
+          "chat.remoteAgentHostsEnabled",
+          "enabled.",
+          "Run Agents: Manage Remote Environments from the Command Palette (⇧⌘P (Windows, Linux Ctrl+Shift+P)).",
+          "In the search box's Filter menu, choose Group By > Type to show the Dev Containers group."
+        ]
+      },
+      "headings": [
+        "Use the Agents window",
+        "Open the Agents window",
+        "Agents window interface overview",
+        "Understand the active session",
+        "Start an agent session",
+        "Choose where an agent makes changes",
+        "Save and resume drafts",
+        "Send a request later",
+        "Change or cancel a scheduled request",
+        "Ask the agent to schedule a follow-up",
+        "Work with multiple sessions",
+        "Arrange sessions in a grid"
+      ],
+      "score": 2
+    },
+    {
+      "eventId": "vscode-docs-agents-nav:d74f1703102bd210fa1be308d313d6f96fe944f0e4b9dd8fcbe3b61f5e175e3e",
+      "sourceId": "vscode-docs-agents-nav",
+      "sourceName": "VS Code Docs / Agents (new pages)",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-11-25T15:50:24.449Z",
+      "publishedAt": "2026-11-25T15:50:24.449Z",
+      "title": "VS Code Docs / Agents (new pages) changed",
+      "url": "https://code.visualstudio.com/docs/agents/overview",
+      "summary": "Detected 1 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 1,
+        "headings": [],
+        "additions": [
+          "Work with Agents in Worktrees"
+        ]
+      },
+      "headings": [],
+      "score": 2
+    },
+    {
+      "eventId": "vscode-feed:https://code.visualstudio.com/updates/v1_149",
+      "sourceId": "vscode-feed",
+      "sourceName": "vscode feed",
+      "kind": "feed_entry",
+      "detectedAt": "2026-11-25T15:50:26.050Z",
+      "publishedAt": "2026-11-25T00:00:00.000Z",
+      "title": "Visual Studio Code 1.149 (Insiders)",
+      "url": "https://code.visualstudio.com/updates/v1_149",
+      "summary": "Follow us on LinkedIn, X, Bluesky, Instagram | Follow Insiders Changelog on X or Bluesky Welcome to the 1.149 Insiders release of Visual Studio Code.",
+      "categories": [
+        "copilot"
+      ],
+      "isFutureDated": false,
+      "score": 3,
+      "backfilled": true
+    }
+  ],
   "errors": []
 }
