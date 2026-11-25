@@ -1,0 +1,94 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "c08c7d33d2b53ad7",
+  "title": {
+    "ja": "VS Code 1.148: リモート ホストの worktree もチャットから整理可能に",
+    "subtitleJa": "リモート Agent Host の不要な worktree を削除してディスクを回収。Chat ビューからも開ける",
+    "original": "Worktree cleanup on remote hosts"
+  },
+  "date": "2026-11-25",
+  "topic": "VS Code",
+  "status": "update",
+  "audience": {
+    "who": "リモート Agent Host でエージェント セッションを使い、worktree が溜まっている VS Code ユーザー",
+    "change": "クリーンアップ エディターにリモート ホストの worktree も含まれ、Chat ビューやコマンド パレットからも開ける",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "ディスクを空けたいとき、Chat: Open Worktree Cleanup を実行して対象を確認する"
+  },
+  "beforeAfter": {
+    "before": "worktree のクリーンアップは Agents ウィンドウからのみ実行できた",
+    "after": "Chat ビューやコマンド パレットからも実行でき、リモート ホストの worktree も対象になる"
+  },
+  "panels": [
+    {
+      "id": "how-to",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "コマンド パレットで Chat: Open Worktree Cleanup を実行する",
+        "Chat ビューのメニューの Open Worktree Cleanup からも開ける",
+        "非アクティブ期間のフィルターを選び、ホスト・ブランチ・パス・サイズの目安を確認して Clean Up を選ぶ"
+      ]
+    },
+    {
+      "id": "prerequisites",
+      "heading": "前提と制限",
+      "priority": "core",
+      "items": [
+        "クリーンアップに対応した接続中のホストが対象。切断中や非対応のホストは使えない",
+        "削除は手元のマシンではなくリモート ホスト上のファイルに対して行われる",
+        "行と確認画面には所有ホストが表示され、同じパスでもホストごとに区別される"
+      ]
+    },
+    {
+      "id": "caution",
+      "heading": "注意点",
+      "priority": "detail",
+      "items": [
+        "未追跡ファイルを含む変更はブランチにコミットされ、ブランチとセッション履歴は残る",
+        "無視されるファイルは削除されるため、必要なら事前にコピーする",
+        "他のセッションやチャットが使う worktree は保護される"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "Agent Host", "type": "product", "oneLine": "エージェント セッションを実行するホスト。リモートに接続して使える。" },
+    { "term": "worktree クリーンアップ", "type": "feature", "oneLine": "非アクティブなエージェント管理の worktree を削除してディスクを回収する機能。" }
+  ],
+  "qa": [
+    {
+      "q": "何が新しくなりましたか？",
+      "a": "クリーンアップ エディターに、対応する接続中のリモート Agent Host の worktree が含まれるようになりました。従来は Agents ウィンドウからのみ実行できましたが、Chat ビューやコマンド パレットからも開けます。"
+    },
+    {
+      "q": "どう開きますか？",
+      "a": "コマンド パレットで Chat: Open Worktree Cleanup を実行するか、Chat ビューのメニューで Open Worktree Cleanup を選びます。"
+    },
+    {
+      "q": "削除してもブランチや履歴は消えますか？",
+      "a": "ブランチとセッション履歴は残り、セッションを復元すると worktree が再作成されます。未追跡ファイルを含む無視されない変更はブランチにコミットされますが、無視されるファイルは削除されます。"
+    },
+    {
+      "q": "リモートで使えない場合は？",
+      "a": "クリーンアップに対応した接続中のホストが必要です。切断中や非対応のホストは対象外なので、接続または更新してから更新操作を行います。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.148",
+      "url": "https://code.visualstudio.com/updates/v1_148#_worktree-cleanup-on-remote-hosts"
+    },
+    "documents": [
+      { "title": "Work with agents in worktrees", "url": "https://code.visualstudio.com/docs/agents/run/worktrees#_clean-up-session-worktrees" },
+      { "title": "Manage agent sessions in VS Code", "url": "https://code.visualstudio.com/docs/agents/run/sessions/manage-sessions#_clean-up-session-worktrees" }
+    ]
+  },
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_148",
+    "https://code.visualstudio.com/docs/agents/run/worktrees",
+    "https://code.visualstudio.com/docs/agents/run/sessions/manage-sessions"
+  ]
+}
