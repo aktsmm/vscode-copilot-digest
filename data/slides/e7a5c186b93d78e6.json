@@ -1,0 +1,82 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "e7a5c186b93d78e6",
+  "title": {
+    "ja": "エージェント セッション用の Dev Container を設定なしで作成（試験的）",
+    "subtitleJa": "Dev Container 構成を書かずに、分離した Linux コンテナーでセッションを実行できる",
+    "original": "Create Dev Containers for agent sessions (Experimental)"
+  },
+  "date": "2026-11-25",
+  "topic": "VS Code",
+  "status": "update",
+  "audience": {
+    "who": "エージェント セッションを分離した環境で実行したい VS Code ユーザー",
+    "change": "Remote Environments から Dev Container を作成し、その中でセッションを開始できる",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "optional",
+    "summary": "試すなら、2 つの試験的設定を有効にして Dev Container を作成する"
+  },
+  "panels": [
+    {
+      "id": "where",
+      "heading": "使える場所と設定",
+      "priority": "core",
+      "items": [
+        "Ubuntu コンテナーに Agent Host が入り、ファイルは Docker ボリュームに保存される",
+        "このコンピューター、または Docker のある SSH ホスト、WSL、Dev Tunnel 上に作成できる",
+        "設定: chat.agentHost.devContainer.environments.enabled"
+      ]
+    },
+    {
+      "id": "usage",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "Remote Environments で、接続したホストの More Actions から Create Dev Container を選ぶ",
+        "このコンピューターでは、Filter > Group By > Type で Dev Containers グループの Create Dev Container を選ぶ",
+        "Environment ピッカーで Dev Container を選んでセッションを開始する"
+      ]
+    },
+    {
+      "id": "handoff",
+      "heading": "セッションからの引き継ぎ",
+      "priority": "detail",
+      "items": [
+        "chat.agentHost.devContainer.handoff.enabled も有効にすると、既存セッションからエージェントが作成できる",
+        "セッションのホスト上に作成し、コンテナー内の新しいセッションで作業を続けて結果を報告する"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "Agent Host", "type": "feature", "oneLine": "Dev Container の中で動き、エージェント セッションを実行する要素。" }
+  ],
+  "qa": [
+    {
+      "q": "Dev Container の構成ファイルは必要ですか？",
+      "a": "いいえ。Dev Container の構成を先に書かなくても、分離した Linux コンテナーでエージェント セッションを実行できます。"
+    },
+    {
+      "q": "どこに作成できますか？",
+      "a": "このコンピューターのほか、Docker が使える SSH ホスト、WSL ディストリビューション、Dev Tunnel に作成できます。"
+    },
+    {
+      "q": "どう有効にしますか？",
+      "a": "試験的機能で、chat.agentHost.devContainer.environments.enabled を有効にします。セッションからの作成も使うなら chat.agentHost.devContainer.handoff.enabled も有効にします。"
+    },
+    {
+      "q": "セッションからコンテナーを作れますか？",
+      "a": "handoff 設定を有効にすると、隔離環境で試すよう頼んだときなどに、エージェントが既存セッションからコンテナーを作成し、新しいセッションで作業を続けて結果を報告できます。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.148",
+      "url": "https://code.visualstudio.com/updates/v1_148#_create-dev-containers-for-agent-sessions-experimental"
+    }
+  },
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_148"
+  ]
+}
