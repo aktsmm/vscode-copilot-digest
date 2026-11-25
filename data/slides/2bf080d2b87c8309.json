@@ -1,0 +1,82 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "2bf080d2b87c8309",
+  "title": {
+    "ja": "VS Code 1.148: Agent Host のチャット性能を改善",
+    "subtitleJa": "応答の開始が前回の Stable より平均 30% 速くなり、旧ハーネスとの差は約 5% 以内に",
+    "original": "Improved chat performance"
+  },
+  "date": "2026-11-25",
+  "topic": "VS Code",
+  "status": "update",
+  "audience": {
+    "who": "VS Code のチャットで Agent Host 上のエージェントを使う開発者",
+    "change": "Agent Host のチャットで、応答が始まるまでの時間が平均 30% 短くなった",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "no",
+    "summary": "VS Code 1.148 に更新すれば反映される。特別な設定は不要"
+  },
+  "panels": [
+    {
+      "id": "what-changed",
+      "heading": "変更内容",
+      "priority": "core",
+      "items": [
+        "Agent Host のチャット性能を複数改善。応答の開始が前回の Stable より平均 30% 速い",
+        "旧ハーネスと比べたチャット開始時間の差は約 5% 以内。今後のリリースでさらに改善する",
+        "ハーネスを Agent Host へ移行した際、旧ハーネスとの性能差が繰り返し指摘されていた"
+      ]
+    },
+    {
+      "id": "agent-host",
+      "heading": "Agent Host とは",
+      "priority": "core",
+      "items": [
+        "エージェント ハーネスを実行し、そのセッションを管理する専用プロセス",
+        "ローカルのユーティリティ プロセス、または リモート マシン上のサーバーとして動かせる",
+        "拡張機能で忙しいウィンドウにブロックされずに、専用プロセスで動く"
+      ]
+    },
+    {
+      "id": "scope",
+      "heading": "前提と制限",
+      "priority": "detail",
+      "items": [
+        "Local ハーネスを選んだセッションは、Agent Host ではなく拡張機能ホストを使う"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "Agent Host", "type": "feature", "oneLine": "エージェント ハーネスを実行し、そのセッションを管理する専用プロセス。" },
+    { "term": "エージェント ハーネス", "type": "term", "oneLine": "モデル、ツール、エージェントのワークフローを調整する実装。" }
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.148",
+      "url": "https://code.visualstudio.com/updates/v1_148#_improved-chat-performance"
+    },
+    "documents": [
+      { "title": "Agent Host architecture", "url": "https://code.visualstudio.com/docs/agents/concepts/agent-host" }
+    ]
+  },
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_148",
+    "https://code.visualstudio.com/docs/agents/concepts/agent-host"
+  ],
+  "qa": [
+    {
+      "q": "どれくらい速くなりましたか。",
+      "a": "リリースノートによると、応答の開始は前回の Stable バージョンより平均 30% 速くなります。旧ハーネスとのチャット開始時間の差は約 5% 以内で、今後のリリースでさらに改善する予定です。"
+    },
+    {
+      "q": "Agent Host とは何ですか。",
+      "a": "エージェント ハーネスを実行し、そのセッションを管理する専用プロセスです。ローカルのユーティリティ プロセスとしても、リモート マシン上のスタンドアロン サーバーとしても動かせます。"
+    },
+    {
+      "q": "Local ハーネスのセッションにも効果はありますか。",
+      "a": "Local ハーネスを選んだセッションは Agent Host ではなく拡張機能ホストを使うと、ドキュメントに書かれています。今回の改善は Agent Host のチャットに関するものです。"
+    }
+  ]
+}
