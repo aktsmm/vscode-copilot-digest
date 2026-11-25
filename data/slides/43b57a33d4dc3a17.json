@@ -1,0 +1,72 @@
+{
+  "schema": "vscode-copilot-digest/slide/v2",
+  "id": "43b57a33d4dc3a17",
+  "title": {
+    "ja": "Agents ウィンドウの Remote Environments エディターを刷新",
+    "subtitleJa": "接続状態・最終アクティビティ・OS を一覧表示し、フィルターで並べ替え・グループ化できる",
+    "original": "Redesigned Remote Environments editor"
+  },
+  "date": "2026-11-25",
+  "topic": "VS Code",
+  "status": "update",
+  "audience": {
+    "who": "Agents ウィンドウでリモート マシン上のエージェント セッションを管理する VS Code ユーザー",
+    "change": "環境ごとの状態・最終アクティビティ・OS が表で分かり、操作は行と More Actions に整理された",
+    "changeNature": "benefit"
+  },
+  "action": {
+    "required": "info",
+    "summary": "VS Code 1.148 の Remote Environments エディターで、接続中・利用中の環境を確認する"
+  },
+  "panels": [
+    {
+      "id": "table",
+      "heading": "表の内容",
+      "priority": "core",
+      "items": [
+        "表に各環境の状態、最終アクティビティ、オペレーティング システムを表示する",
+        "どの環境が接続済みで使用中かを一目で把握できる"
+      ]
+    },
+    {
+      "id": "actions",
+      "heading": "使い方",
+      "priority": "core",
+      "items": [
+        "Connect と New Session は各行に常時表示される",
+        "エージェント実行動作の構成や古いサーバーの更新などは More Actions にある",
+        "検索ボックスの Filter で、表の並べ替えや、種類・状態によるグループ化ができる"
+      ]
+    }
+  ],
+  "glossary": [
+    { "term": "Remote Environments", "type": "feature", "oneLine": "Agents ウィンドウで、エージェント セッションを実行するマシンを管理するエディター。" }
+  ],
+  "qa": [
+    {
+      "q": "Remote Environments エディターは何を管理するものですか",
+      "a": "Agents ウィンドウで、エージェント セッションが動作するマシンを管理するエディターです。"
+    },
+    {
+      "q": "表では何が確認できますか",
+      "a": "各環境の状態、最終アクティビティ、オペレーティング システムを表示し、接続済みで使用中の環境を一目で確認できます。"
+    },
+    {
+      "q": "接続や新規セッションの操作はどこにありますか",
+      "a": "Connect と New Session は各行に表示されます。エージェント実行動作の構成や古いサーバーの更新などは More Actions にあります。"
+    },
+    {
+      "q": "環境が多いときの絞り込みはどうしますか",
+      "a": "検索ボックスの Filter で表を並べ替えたり、種類や状態で環境をグループ化したりできます。"
+    }
+  ],
+  "references": {
+    "source": {
+      "title": "Visual Studio Code 1.148",
+      "url": "https://code.visualstudio.com/updates/v1_148#_redesigned-remote-environments-editor"
+    }
+  },
+  "evidence": [
+    "https://code.visualstudio.com/updates/v1_148"
+  ]
+}
