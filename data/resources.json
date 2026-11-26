@@ -24823,7 +24823,7 @@
     },
     "5ade9ee05e8aefd818d59ef4b95cca961069e49e928edac426da8f1c2f526063": {
       "version": 6,
-      "checkedAt": "2026-10-27T10:42:59.953Z",
+      "checkedAt": "2026-11-26T15:29:40.629Z",
       "inputUrl": "https://github.blog/changelog/2026-10-26-github-copilot-assisted-permissions-generally-available",
       "inputTitle": "GitHub Copilot assisted permissions generally available",
       "status": "verified",
@@ -24831,7 +24831,7 @@
         "url": "https://github.blog/changelog/2026-10-26-github-copilot-assisted-permissions-generally-available/",
         "status": "verified",
         "reason": "Fetched original article",
-        "checkedAt": "2026-10-27T10:43:00.544Z",
+        "checkedAt": "2026-11-26T15:29:41.185Z",
         "contentHash": "67dc71cfc3b0d7c8c53c03dadde2990a4b1b3018548f4a8a0700251e281e4473"
       },
       "documents": [
@@ -24839,8 +24839,8 @@
           "url": "https://docs.github.com/ja/enterprise-cloud@latest/copilot/reference/enterprise-administrators/enterprise-managed-settings#permissions",
           "title": "エンタープライズ管理設定",
           "language": "ja",
-          "checkedAt": "2026-10-27T10:43:01.802Z",
-          "contentHash": "d5b125f5c6d7f484ef7e223b5d9987c46f71d2b9015ef0dd279487dde93d6443",
+          "checkedAt": "2026-11-26T15:29:46.754Z",
+          "contentHash": "7532f8793f048745ed5bb8299bd5ba791a0f8caf18b7ecc9b81dd94350448a3b",
           "discoveryUrl": "https://github.blog/changelog/2026-10-26-github-copilot-assisted-permissions-generally-available/",
           "basis": "Explicit link in original article/feature section",
           "localization": "japanese_body_verified",
@@ -24850,10 +24850,10 @@
         },
         {
           "url": "https://docs.github.com/ja/copilot/concepts/customizations/allowing-safe-commands",
-          "title": "Allowing safe commands to run without manual approval",
+          "title": "手動承認なしで安全なコマンドを実行できるようにする",
           "language": "ja",
-          "checkedAt": "2026-10-27T10:43:02.564Z",
-          "contentHash": "1757afe110ac5e8fe1ebee7b3b94710c21a72fb10dbdce43a7116e0f5aa46232",
+          "checkedAt": "2026-11-26T15:29:49.639Z",
+          "contentHash": "dd8eeb46546f68b42a68b3a4bd44abc891f67cac1baf7396cc683cb7d0246f90",
           "discoveryUrl": "https://github.blog/changelog/2026-10-26-github-copilot-assisted-permissions-generally-available/",
           "basis": "Explicit link in original article/feature section",
           "localization": "japanese_body_verified",
@@ -24870,7 +24870,7 @@
     },
     "3af2dc062c63242c117a9f963457ddc9441b3a9ffa2afd215786129d0812f63b": {
       "version": 6,
-      "checkedAt": "2026-10-27T10:43:02.611Z",
+      "checkedAt": "2026-11-26T15:29:49.710Z",
       "inputUrl": "https://docs.github.com/en/copilot/concepts",
       "inputTitle": "GitHub Docs / Copilot concepts changed",
       "status": "unconfirmed",
@@ -24878,8 +24878,8 @@
         "url": "https://docs.github.com/en/copilot/concepts",
         "status": "unconfirmed",
         "reason": "Historical changed feature not identifiable in current page",
-        "checkedAt": "2026-10-27T10:43:02.663Z",
-        "contentHash": "07f61f847f0c9d1a67f4be1d026121c9c7a719215240119e1eeaddccefb02325"
+        "checkedAt": "2026-11-23T16:14:53.006Z",
+        "contentHash": "37464fd2ab4ff962441b6e5879d17c6a7726b82300abacdb5d74a4684341bb99"
       },
       "documents": [],
       "errors": [],
@@ -30792,6 +30792,26 @@
           "scope": "Current documentation; historical availability remains defined by the original announcement"
         }
       ],
+      "errors": [],
+      "research": [
+        "Original article explicit links",
+        "Feature-matched official documentation indexes"
+      ]
+    },
+    "beeadab00e90b61fec787cae29358c315f2a7601b96a48f9f129383b8585c7b6": {
+      "version": 6,
+      "checkedAt": "2026-11-26T15:29:49.723Z",
+      "inputUrl": "https://code.visualstudio.com/docs/agents/overview",
+      "inputTitle": "VS Code Docs / Agents (new pages) changed",
+      "status": "unconfirmed",
+      "source": {
+        "url": "https://code.visualstudio.com/docs/agents/overview",
+        "status": "unconfirmed",
+        "reason": "Historical changed feature not identifiable in current page",
+        "checkedAt": "2026-11-26T15:29:50.403Z",
+        "contentHash": "702aa62f4e1d6074c4f370f17ae37466bb603de02b077e9c8c7d8f760ff27041"
+      },
+      "documents": [],
       "errors": [],
       "research": [
         "Original article explicit links",

@@ -1,11 +1,11 @@
 {
   "date": "2026-11-26",
-  "generatedAt": "2026-11-26T03:40:28.260Z",
+  "generatedAt": "2026-11-26T15:29:40.008Z",
   "latestRun": {
-    "generatedAt": "2026-11-26T03:40:28.260Z",
+    "generatedAt": "2026-11-26T15:29:40.008Z",
     "newEventsCount": 1,
     "newEventIds": [
-      "github-changelog-copilot:https://github.blog/changelog/2026-11-25-copilot-code-review-billing-will-default-to-the-organization"
+      "vscode-docs-agents-nav:12a2ce52c3b67eef33479626a471831943f1e96f9729876539d3f6790fb4ddc5"
     ],
     "errorCount": 0,
     "skippedLowInformationEvents": []
@@ -26,6 +26,47 @@
         "copilot"
       ],
       "isFutureDated": false,
+      "score": 2
+    },
+    {
+      "eventId": "vscode-docs-agents-nav:12a2ce52c3b67eef33479626a471831943f1e96f9729876539d3f6790fb4ddc5",
+      "sourceId": "vscode-docs-agents-nav",
+      "sourceName": "VS Code Docs / Agents (new pages)",
+      "kind": "html_snapshot_change",
+      "detectedAt": "2026-11-26T15:29:39.218Z",
+      "publishedAt": "2026-11-26T15:29:39.216Z",
+      "title": "VS Code Docs / Agents (new pages) changed",
+      "url": "https://code.visualstudio.com/docs/agents/overview",
+      "summary": "Detected 19 added lines on the monitored page.",
+      "categories": [
+        "snapshot"
+      ],
+      "diffSummary": {
+        "addedLineCount": 19,
+        "headings": [],
+        "additions": [
+          "Complete Your First Agent Task",
+          "Build, Refine, and Commit an App",
+          "Find a Guide",
+          "Explore a Codebase",
+          "Fix an API Bug",
+          "Add a Feature",
+          "Refactor Safely",
+          "Work with Jupyter Notebooks",
+          "Add Tests to Existing Code",
+          "Test-Driven Development",
+          "Test Web Apps",
+          "Adapt Agents to Your Project",
+          "Run Parallel Tasks",
+          "Continue a Cloud Session in Your Terminal",
+          "Compare and Choose Models",
+          "Get Back on Track",
+          "Reduce Credit Usage",
+          "Advanced: Connect Planning and Implementation",
+          "Prompt Examples"
+        ]
+      },
+      "headings": [],
       "score": 2
     }
   ],

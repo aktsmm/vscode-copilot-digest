@@ -1,10 +1,25 @@
-Agents Quickstart
+Complete Your First Agent Task
 Overview
 Find a Guide
 AI Features Cheat Sheet
-Agents Quickstart
-Agents Tutorial
+Complete Your First Agent Task
+Build, Refine, and Commit an App
 Best Practices
+Find a Guide
+Explore a Codebase
+Fix an API Bug
+Add a Feature
+Refactor Safely
+Work with Jupyter Notebooks
+Add Tests to Existing Code
+Test-Driven Development
+Test Web Apps
+Adapt Agents to Your Project
+Run Parallel Tasks
+Continue a Cloud Session in Your Terminal
+Compare and Choose Models
+Get Back on Track
+Reduce Credit Usage
 Use the Chat View
 Agents Window
 Work with Agents in Worktrees
@@ -28,26 +43,11 @@ Move from Local to Copilot
 Compare Models Side by Side
 Guide: Choose the Right Model
 Manage MCP Servers
+Advanced: Connect Planning and Implementation
 Tutorial: Agent Continuity
 Remote Agent Sessions
 Cloud Sessions
 Session History
-Find a Guide
-Explore a Codebase
-Add a Feature
-Fix an API Bug
-Refactor Safely
-Compare and Choose Models
-Add Tests
-Test Web Apps
-Test-Driven Development
-Run Parallel Tasks
-Get Back on Track
-Adapt Agents to Your Project
-Context Engineering Workflow
-Work with Jupyter Notebooks
-Reduce Credit Usage
-Prompt Examples
 Agents
 How Models Work
 Context
@@ -57,6 +57,7 @@ Trust and Safety
 Agent Harnesses
 Agent Customization
 AI Features Cheat Sheet
+Prompt Examples
 Tool Names and Context References
 Workspace Context
 AI Settings
